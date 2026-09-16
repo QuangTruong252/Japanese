@@ -1,0 +1,65 @@
+{
+  "character": "新",
+  "level": "n5",
+  "lesson": 2,
+  "meanings": {
+    "en": [
+      "new",
+      "fresh"
+    ],
+    "vi": [
+      "mới"
+    ]
+  },
+  "onyomi": [
+    "シン"
+  ],
+  "kunyomi": [
+    "あたら.しい"
+  ],
+  "strokes": 13,
+  "examples": [
+    {
+      "word": "新[あたら]しい",
+      "meaning": {
+        "en": "new",
+        "vi": "mới"
+      }
+    },
+    {
+      "word": "新聞[しんぶん]",
+      "meaning": {
+        "en": "newspaper",
+        "vi": "tờ báo"
+      }
+    },
+    {
+      "word": "新幹線[しんかんせん]",
+      "meaning": {
+        "en": "Shinkansen",
+        "vi": "tàu siêu tốc Shinkansen"
+      }
+    },
+    {
+      "word": "最新[さいしん]",
+      "meaning": {
+        "en": "the latest",
+        "vi": "the latest"
+      }
+    },
+    {
+      "word": "新鮮[しんせん]",
+      "meaning": {
+        "en": "fresh",
+        "vi": "fresh"
+      }
+    },
+    {
+      "word": "革新[かくしん]",
+      "meaning": {
+        "en": "reform",
+        "vi": "reform"
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "character": "暑",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "hot"
+    ],
+    "vi": [
+      "nóng (thời tiết)"
+    ]
+  },
+  "onyomi": [
+    "ショ"
+  ],
+  "kunyomi": [
+    "あつ.い"
+  ],
+  "strokes": 12,
+  "examples": [
+    {
+      "word": "暑[あつ]い",
+      "meaning": {
+        "en": "hot",
+        "vi": "nóng (thời tiết)"
+      }
+    },
+    {
+      "word": "蒸[む]し 暑[あつ]い",
+      "meaning": {
+        "en": "humid, muggy",
+        "vi": "humid, muggy"
+      }
+    },
+    {
+      "word": "暑気[しょき]",
+      "meaning": {
+        "en": "hot weather",
+        "vi": "hot weather"
+      }
+    },
+    {
+      "word": "残暑[ざんしょ]",
+      "meaning": {
+        "en": "late summer heat",
+        "vi": "late summer heat"
+      }
+    },
+    {
+      "word": "暑中[しょちゅう]",
+      "meaning": {
+        "en": "midsummer",
+        "vi": "midsummer"
+      }
+    }
+  ],
+  "similar": [
+    "者"
+  ]
+}

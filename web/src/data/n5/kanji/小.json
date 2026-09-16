@@ -1,0 +1,63 @@
+{
+  "character": "小",
+  "level": "n5",
+  "lesson": 8,
+  "meanings": {
+    "en": [
+      "small"
+    ],
+    "vi": [
+      "nhỏ",
+      "bé"
+    ]
+  },
+  "onyomi": [
+    "ショウ"
+  ],
+  "kunyomi": [
+    "ちい.さい",
+    "こ"
+  ],
+  "strokes": 3,
+  "examples": [
+    {
+      "word": "小[ちい]さい",
+      "meaning": {
+        "en": "small",
+        "vi": "nhỏ, bé"
+      }
+    },
+    {
+      "word": "小学校[しょうがっこう]",
+      "meaning": {
+        "en": "primary school",
+        "vi": "trường tiểu học"
+      }
+    },
+    {
+      "word": "小鳥[ことり]",
+      "meaning": {
+        "en": "little bird",
+        "vi": "chú chim non, chim nhỏ"
+      }
+    },
+    {
+      "word": "最小[さいしょう]",
+      "meaning": {
+        "en": "minimum",
+        "vi": "minimum"
+      }
+    },
+    {
+      "word": "小説[しょうせつ]",
+      "meaning": {
+        "en": "novel",
+        "vi": "novel"
+      }
+    }
+  ],
+  "similar": [
+    "少",
+    "水"
+  ]
+}

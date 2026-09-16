@@ -1,0 +1,61 @@
+{
+  "character": "二",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "two"
+    ],
+    "vi": [
+      "hai",
+      "số hai"
+    ]
+  },
+  "onyomi": [
+    "ニ"
+  ],
+  "kunyomi": [
+    "ふた.つ"
+  ],
+  "strokes": 2,
+  "examples": [
+    {
+      "word": "二[に]",
+      "meaning": {
+        "en": "two",
+        "vi": "hai, số 2"
+      }
+    },
+    {
+      "word": "二[ふた]つ",
+      "meaning": {
+        "en": "two things",
+        "vi": "hai cái"
+      }
+    },
+    {
+      "word": "二人[ふたり]",
+      "meaning": {
+        "en": "two people",
+        "vi": "hai người"
+      }
+    },
+    {
+      "word": "二月[にがつ]",
+      "meaning": {
+        "en": "February",
+        "vi": "tháng hai"
+      }
+    },
+    {
+      "word": "二日[ふつか]",
+      "meaning": {
+        "en": "2nd day",
+        "vi": "ngày mùng hai"
+      }
+    }
+  ],
+  "similar": [
+    "三"
+  ]
+}

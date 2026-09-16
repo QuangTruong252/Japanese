@@ -1,0 +1,356 @@
+{
+  "level": "n5",
+  "lesson": 17,
+  "words": [
+    {
+      "id": "oboemasu",
+      "word": "覚[おぼ]えます",
+      "kana": "おぼえます",
+      "meaning": {
+        "en": "to memorise",
+        "vi": "nhớ, ghi nhớ"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "wasuremasu",
+      "word": "忘[わす]れます",
+      "kana": "わすれます",
+      "meaning": {
+        "en": "to forget",
+        "vi": "quên"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "nakushimasu",
+      "word": "なくします",
+      "kana": "なくします",
+      "meaning": {
+        "en": "to lose",
+        "vi": "đánh mất, làm mất"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "haraimasu",
+      "word": "払[はら]います",
+      "kana": "はらいます",
+      "meaning": {
+        "en": "to pay",
+        "vi": "trả tiền, thanh toán"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "kaeshimasu",
+      "word": "返[かえ]します",
+      "kana": "かえします",
+      "meaning": {
+        "en": "to give back, to return",
+        "vi": "trả lại, hoàn lại"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "dekakemasu",
+      "word": "出[で]かけます",
+      "kana": "でかけます",
+      "meaning": {
+        "en": "to go out",
+        "vi": "ra ngoài"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "nugimasu",
+      "word": "脱[ぬ]ぎます",
+      "kana": "ぬぎます",
+      "meaning": {
+        "en": "to take off (clothes, shoes)",
+        "vi": "cởi [quần áo, giày]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "motte-ikimasu",
+      "word": "持[も]って 行[い]きます",
+      "kana": "もっていきます",
+      "meaning": {
+        "en": "to carry (something)",
+        "vi": "mang đi"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "motte-kimasu",
+      "word": "持[も]って 来[き]ます",
+      "kana": "もってきます",
+      "meaning": {
+        "en": "to bring (something)",
+        "vi": "mang đến"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "shinpai-shimasu",
+      "word": "心配[しんぱい]します",
+      "kana": "しんぱいします",
+      "meaning": {
+        "en": "to worry",
+        "vi": "lo lắng"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "zangyou-shimasu",
+      "word": "残業[ざんぎょう]します",
+      "kana": "ざんぎょうします",
+      "meaning": {
+        "en": "to work overtime",
+        "vi": "làm thêm giờ, tăng ca"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "shucchou-shimasu",
+      "word": "出張[しゅっちょう]します",
+      "kana": "しゅっちょうします",
+      "meaning": {
+        "en": "to go on a business trip",
+        "vi": "đi công tác"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "nomimasu-kusuri",
+      "word": "飲[の]みます[薬[くすり]を〜]",
+      "kana": "のみます",
+      "meaning": {
+        "en": "to take [medicine]",
+        "vi": "uống [thuốc]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "hairimasu-ofuro",
+      "word": "入[はい]ります[おふろに〜]",
+      "kana": "はいります",
+      "meaning": {
+        "en": "to have [a bath]",
+        "vi": "tắm [bồn nước nóng]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "taisetsu",
+      "word": "大切[たいせつ][な]",
+      "kana": "たいせつ",
+      "meaning": {
+        "en": "important",
+        "vi": "quan trọng, quý giá"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "daijoubu",
+      "word": "大丈夫[だいじょうぶ][な]",
+      "kana": "だいじょうぶ",
+      "meaning": {
+        "en": "to be fine, all right",
+        "vi": "ổn, không sao"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "abunai",
+      "word": "危[あぶ]ない",
+      "kana": "あぶない",
+      "meaning": {
+        "en": "dangerous",
+        "vi": "nguy hiểm"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "kinen",
+      "word": "禁煙[きんえん]",
+      "kana": "きんえん",
+      "meaning": {
+        "en": "no smoking",
+        "vi": "cấm hút thuốc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hokenshou",
+      "word": "[健康[けんこう]]保険証[ほけんしょう]",
+      "kana": "けんこうほけんしょう",
+      "meaning": {
+        "en": "[health] insurance card",
+        "vi": "thẻ bảo hiểm y tế"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "netsu",
+      "word": "熱[ねつ]",
+      "kana": "ねつ",
+      "meaning": {
+        "en": "fever",
+        "vi": "sốt, nhiệt độ cao"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "byouki",
+      "word": "病気[びょうき]",
+      "kana": "びょうき",
+      "meaning": {
+        "en": "illness",
+        "vi": "ốm, bệnh tật"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kusuri",
+      "word": "薬[くすり]",
+      "kana": "くすり",
+      "meaning": {
+        "en": "medicine",
+        "vi": "thuốc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ofuro",
+      "word": "[お]ふろ",
+      "kana": "おふろ",
+      "meaning": {
+        "en": "bath",
+        "vi": "bồn tắm, việc tắm bồn"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "uwagi",
+      "word": "上着[うわぎ]",
+      "kana": "うわぎ",
+      "meaning": {
+        "en": "jacket",
+        "vi": "áo khoác ngoài"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shitagi",
+      "word": "下着[したぎ]",
+      "kana": "したぎ",
+      "meaning": {
+        "en": "underwear",
+        "vi": "quần áo lót"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ni-san-nichi",
+      "word": "2、3日[にち]",
+      "kana": "にさんにち",
+      "meaning": {
+        "en": "a few days",
+        "vi": "hai ba ngày, vài ngày"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "ni-san",
+      "word": "2、3〜",
+      "kana": "にさん",
+      "meaning": {
+        "en": "a few ~, two or three ~",
+        "vi": "hai ba..., vài..."
+      },
+      "type": "expression"
+    },
+    {
+      "id": "madeni",
+      "word": "〜までに",
+      "kana": "までに",
+      "meaning": {
+        "en": "before ~, by ~ (deadline)",
+        "vi": "trước... (hạn chót thời gian)"
+      },
+      "type": "particle"
+    },
+    {
+      "id": "desukara",
+      "word": "ですから",
+      "kana": "ですから",
+      "meaning": {
+        "en": "so, therefore",
+        "vi": "vì thế, do đó"
+      },
+      "type": "conjunction"
+    },
+    {
+      "id": "dou-shimashita-ka",
+      "word": "どうしましたか",
+      "kana": "どうしましたか",
+      "meaning": {
+        "en": "what's the matter?",
+        "vi": "bạn bị làm sao thế?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "nodo",
+      "word": "のど",
+      "kana": "のど",
+      "meaning": {
+        "en": "throat",
+        "vi": "cổ họng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "itai",
+      "word": "[〜が] 痛[いた]いです",
+      "kana": "いたいです",
+      "meaning": {
+        "en": "my [~] hurts",
+        "vi": "đau"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "kaze",
+      "word": "かぜ",
+      "kana": "かぜ",
+      "meaning": {
+        "en": "a cold",
+        "vi": "cảm, cảm cúm"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "sorekara-ademas",
+      "word": "それから",
+      "kana": "それから",
+      "meaning": {
+        "en": "and, besides",
+        "vi": "sau đó, hơn nữa"
+      },
+      "type": "conjunction"
+    },
+    {
+      "id": "odaijini",
+      "word": "お 大事[だいじ]に",
+      "kana": "おだいじに",
+      "meaning": {
+        "en": "get well soon",
+        "vi": "chúc bạn mau khỏe nhé"
+      },
+      "type": "expression"
+    }
+  ]
+}

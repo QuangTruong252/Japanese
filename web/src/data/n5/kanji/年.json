@@ -1,0 +1,75 @@
+{
+  "character": "年",
+  "level": "n5",
+  "lesson": 5,
+  "meanings": {
+    "en": [
+      "year"
+    ],
+    "vi": [
+      "năm",
+      "tuổi"
+    ]
+  },
+  "onyomi": [
+    "ネン"
+  ],
+  "kunyomi": [
+    "とし"
+  ],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "去年[きょねん]",
+      "meaning": {
+        "en": "last year",
+        "vi": "năm ngoái"
+      }
+    },
+    {
+      "word": "来年[らいねん]",
+      "meaning": {
+        "en": "next year",
+        "vi": "năm sau"
+      }
+    },
+    {
+      "word": "年[とし]",
+      "meaning": {
+        "en": "year, age",
+        "vi": "năm, tuổi"
+      }
+    },
+    {
+      "word": "年金[ねんきん]",
+      "meaning": {
+        "en": "annual pension",
+        "vi": "annual pension"
+      }
+    },
+    {
+      "word": "中年[ちゅうねん]",
+      "meaning": {
+        "en": "middle-aged",
+        "vi": "middle-aged"
+      }
+    },
+    {
+      "word": "定年[ていねん]",
+      "meaning": {
+        "en": "retirement",
+        "vi": "retirement"
+      }
+    },
+    {
+      "word": "今年[ことし]",
+      "meaning": {
+        "en": "this year",
+        "vi": "năm nay"
+      }
+    }
+  ],
+  "similar": [
+    "午"
+  ]
+}

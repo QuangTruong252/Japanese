@@ -1,0 +1,41 @@
+{
+  "character": "週",
+  "level": "n5",
+  "lesson": 5,
+  "meanings": {
+    "en": [
+      "week"
+    ],
+    "vi": [
+      "tuần"
+    ]
+  },
+  "onyomi": [
+    "シュウ"
+  ],
+  "kunyomi": [],
+  "strokes": 11,
+  "examples": [
+    {
+      "word": "先週[せんしゅう]",
+      "meaning": {
+        "en": "last week",
+        "vi": "tuần trước"
+      }
+    },
+    {
+      "word": "週末[しゅうまつ]",
+      "meaning": {
+        "en": "weekend",
+        "vi": "cuối tuần"
+      }
+    },
+    {
+      "word": "一週間[いっしゅうかん]",
+      "meaning": {
+        "en": "one week",
+        "vi": "one week"
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "character": "土",
+  "level": "n5",
+  "lesson": 2,
+  "meanings": {
+    "en": [
+      "earth, soil",
+      "floor, ground"
+    ],
+    "vi": [
+      "đất",
+      "thổ nhưỡng"
+    ]
+  },
+  "onyomi": [
+    "ド",
+    "ト"
+  ],
+  "kunyomi": [
+    "つち"
+  ],
+  "strokes": 3,
+  "examples": [
+    {
+      "word": "土曜日[どようび]",
+      "meaning": {
+        "en": "Saturday",
+        "vi": "thứ bảy"
+      }
+    },
+    {
+      "word": "土[つち]",
+      "meaning": {
+        "en": "earth, soil",
+        "vi": "đất, thổ nhưỡng"
+      }
+    },
+    {
+      "word": "国土[こくど]",
+      "meaning": {
+        "en": "national territory",
+        "vi": "national territory"
+      }
+    },
+    {
+      "word": "土砂[どしゃ]",
+      "meaning": {
+        "en": "earth and sand",
+        "vi": "earth and sand"
+      }
+    },
+    {
+      "word": "土器[どき]",
+      "meaning": {
+        "en": "pottery",
+        "vi": "pottery"
+      }
+    }
+  ],
+  "similar": [
+    "上"
+  ]
+}

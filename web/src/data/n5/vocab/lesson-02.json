@@ -1,0 +1,456 @@
+{
+  "level": "n5",
+  "lesson": 2,
+  "words": [
+    {
+      "id": "kore",
+      "word": "これ",
+      "kana": "これ",
+      "meaning": {
+        "en": "this (near the speaker)",
+        "vi": "cái này (gần người nói)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "sore",
+      "word": "それ",
+      "kana": "それ",
+      "meaning": {
+        "en": "that (near the listener)",
+        "vi": "cái đó (gần người nghe)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "are",
+      "word": "あれ",
+      "kana": "あれ",
+      "meaning": {
+        "en": "that one (far from both)",
+        "vi": "cái kia (xa cả hai người)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "kono",
+      "word": "この〜",
+      "kana": "この",
+      "meaning": {
+        "en": "this ~",
+        "vi": "này (đi liền trước danh từ)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "sono",
+      "word": "その〜",
+      "kana": "その",
+      "meaning": {
+        "en": "that ~",
+        "vi": "đó (đi liền trước danh từ)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "ano",
+      "word": "あの〜",
+      "kana": "あの",
+      "meaning": {
+        "en": "that ~ (over there)",
+        "vi": "kia (đi liền trước danh từ)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "hon",
+      "word": "本[ほん]",
+      "kana": "ほん",
+      "meaning": {
+        "en": "book",
+        "vi": "sách"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "jisho",
+      "word": "辞書[じしょ]",
+      "kana": "じしょ",
+      "meaning": {
+        "en": "dictionary",
+        "vi": "từ điển"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "zasshi",
+      "word": "雑誌[ざっし]",
+      "kana": "ざっし",
+      "meaning": {
+        "en": "magazine",
+        "vi": "tạp chí"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shinbun",
+      "word": "新聞[しんぶん]",
+      "kana": "しんぶん",
+      "meaning": {
+        "en": "newspaper",
+        "vi": "báo, tờ báo"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "nooto",
+      "word": "ノート",
+      "kana": "ノート",
+      "meaning": {
+        "en": "notebook",
+        "vi": "vở ghi, sổ tay"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "techou",
+      "word": "手帳[てちょう]",
+      "kana": "てちょう",
+      "meaning": {
+        "en": "diary, planner",
+        "vi": "sổ tay cá nhân"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "meishi",
+      "word": "名刺[めいし]",
+      "kana": "めいし",
+      "meaning": {
+        "en": "business card",
+        "vi": "danh thiếp"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kaado",
+      "word": "カード",
+      "kana": "カード",
+      "meaning": {
+        "en": "card",
+        "vi": "thẻ, cạc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "enpitsu",
+      "word": "鉛筆[えんぴつ]",
+      "kana": "えんぴつ",
+      "meaning": {
+        "en": "pencil",
+        "vi": "bút chì"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "boorupen",
+      "word": "ボールペン",
+      "kana": "ボールペン",
+      "meaning": {
+        "en": "pen",
+        "vi": "bút bi"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shaapupenshiru",
+      "word": "シャープペンシル",
+      "kana": "シャープペンシル",
+      "meaning": {
+        "en": "mechanical pencil",
+        "vi": "bút chì kim, bút chì bấm"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kagi",
+      "word": "かぎ",
+      "kana": "かぎ",
+      "meaning": {
+        "en": "key",
+        "vi": "chìa khóa"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tokei",
+      "word": "時計[とけい]",
+      "kana": "とけい",
+      "meaning": {
+        "en": "clock, watch",
+        "vi": "đồng hồ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kasa",
+      "word": "傘[かさ]",
+      "kana": "かさ",
+      "meaning": {
+        "en": "umbrella",
+        "vi": "ô, dù"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kaban",
+      "word": "かばん",
+      "kana": "かばん",
+      "meaning": {
+        "en": "bag, suitcase",
+        "vi": "cặp sách, túi xách"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "cd",
+      "word": "CD",
+      "kana": "シーディー",
+      "meaning": {
+        "en": "CD",
+        "vi": "đĩa CD"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "terebi",
+      "word": "テレビ",
+      "kana": "テレビ",
+      "meaning": {
+        "en": "television",
+        "vi": "ti vi"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "rajio",
+      "word": "ラジオ",
+      "kana": "ラジオ",
+      "meaning": {
+        "en": "radio",
+        "vi": "đài radio"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kamera",
+      "word": "カメラ",
+      "kana": "カメラ",
+      "meaning": {
+        "en": "camera",
+        "vi": "máy ảnh"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "konpyuutaa",
+      "word": "コンピューター",
+      "kana": "コンピューター",
+      "meaning": {
+        "en": "computer",
+        "vi": "máy vi tính"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kuruma",
+      "word": "車[くるま]",
+      "kana": "くるま",
+      "meaning": {
+        "en": "car, automobile",
+        "vi": "xe ô tô"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tsukue",
+      "word": "机[つくえ]",
+      "kana": "つくえ",
+      "meaning": {
+        "en": "desk",
+        "vi": "bàn làm việc, bàn học"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "isu",
+      "word": "いす",
+      "kana": "いす",
+      "meaning": {
+        "en": "chair",
+        "vi": "ghế"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "chokoreeto",
+      "word": "チョコレート",
+      "kana": "チョコレート",
+      "meaning": {
+        "en": "chocolate",
+        "vi": "sô-cô-la"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "koohii",
+      "word": "コーヒー",
+      "kana": "コーヒー",
+      "meaning": {
+        "en": "coffee",
+        "vi": "cà phê"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "omiyage",
+      "word": "[お]土産[みやげ]",
+      "kana": "おみやげ",
+      "meaning": {
+        "en": "souvenir, gift",
+        "vi": "quà lưu niệm, quà đặc sản"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "eigo",
+      "word": "英語[えいご]",
+      "kana": "えいご",
+      "meaning": {
+        "en": "the English language",
+        "vi": "tiếng Anh"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "nihongo",
+      "word": "日本語[にほんご]",
+      "kana": "にほんご",
+      "meaning": {
+        "en": "the Japanese language",
+        "vi": "tiếng Nhật"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "go",
+      "word": "〜語[ご]",
+      "kana": "ご",
+      "meaning": {
+        "en": "~ language",
+        "vi": "tiếng, ngôn ngữ (hậu tố)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "nan",
+      "word": "何[なん]",
+      "kana": "なん",
+      "meaning": {
+        "en": "what",
+        "vi": "cái gì, gì"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "sou",
+      "word": "そう",
+      "kana": "そう",
+      "meaning": {
+        "en": "yes, that's right",
+        "vi": "như thế, đúng vậy"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "anou",
+      "word": "あのう",
+      "kana": "あのう",
+      "meaning": {
+        "en": "um…, er… (hesitation)",
+        "vi": "À, ờ... (từ đệm khi ngập ngừng)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "e",
+      "word": "えっ",
+      "kana": "えっ",
+      "meaning": {
+        "en": "what? (surprise)",
+        "vi": "hả? / ôi! (bất ngờ)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "douzo",
+      "word": "どうぞ",
+      "kana": "どうぞ",
+      "meaning": {
+        "en": "here you are",
+        "vi": "Xin mời"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "doumo-arigatou",
+      "word": "[どうも]ありがとう[ございます]",
+      "kana": "どうもありがとうございます",
+      "meaning": {
+        "en": "thank you [very much]",
+        "vi": "xin chân thành cảm ơn rất nhiều"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "sou-desu-ka",
+      "word": "そうですか",
+      "kana": "そうですか",
+      "meaning": {
+        "en": "oh really? / I see",
+        "vi": "Thế à? / Ra là vậy"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "chigaimasu",
+      "word": "違[ちが]います",
+      "kana": "ちがいます",
+      "meaning": {
+        "en": "no, that's not right",
+        "vi": "không phải, sai rồi"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "korekara-osewa",
+      "word": "これからお 世話[せわ]になります",
+      "kana": "これからおせわになります",
+      "meaning": {
+        "en": "I look forward to working with you",
+        "vi": "từ nay rất mong được sự giúp đỡ của bạn"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "kochirakoso",
+      "word": "こちらこそ[どうぞ]よろしく",
+      "kana": "こちらこそよろしく",
+      "meaning": {
+        "en": "pleased to meet you too",
+        "vi": "chính tôi mới là người cần sự giúp đỡ của bạn"
+      },
+      "type": "expression"
+    }
+  ]
+}

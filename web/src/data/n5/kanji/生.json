@@ -1,0 +1,75 @@
+{
+  "character": "生",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "life",
+      "to be born",
+      "raw",
+      "student"
+    ],
+    "vi": [
+      "sinh sống",
+      "sinh ra",
+      "học sinh"
+    ]
+  },
+  "onyomi": [
+    "セイ",
+    "ショウ"
+  ],
+  "kunyomi": [
+    "い.きる",
+    "う.まれる",
+    "なま"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "学生[がくせい]",
+      "meaning": {
+        "en": "student",
+        "vi": "học sinh, sinh viên"
+      }
+    },
+    {
+      "word": "先生[せんせい]",
+      "meaning": {
+        "en": "teacher",
+        "vi": "thầy giáo, cô giáo, bác sĩ"
+      }
+    },
+    {
+      "word": "生[う]まれる",
+      "meaning": {
+        "en": "to be born",
+        "vi": "sinh ra, chào đời"
+      }
+    },
+    {
+      "word": "生[なま]",
+      "meaning": {
+        "en": "raw",
+        "vi": "sống, tươi sống"
+      }
+    },
+    {
+      "word": "生[い]きる",
+      "meaning": {
+        "en": "to live",
+        "vi": "sống, sinh tồn"
+      }
+    },
+    {
+      "word": "人生[じんせい]",
+      "meaning": {
+        "en": "life",
+        "vi": "life"
+      }
+    }
+  ],
+  "similar": [
+    "先"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "character": "木",
+  "level": "n5",
+  "lesson": 4,
+  "meanings": {
+    "en": [
+      "tree",
+      "wood"
+    ],
+    "vi": [
+      "cây",
+      "gỗ"
+    ]
+  },
+  "onyomi": [
+    "モク",
+    "ボク"
+  ],
+  "kunyomi": [
+    "き"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "木曜日[もくようび]",
+      "meaning": {
+        "en": "Thursday",
+        "vi": "thứ năm"
+      }
+    },
+    {
+      "word": "木[き]",
+      "meaning": {
+        "en": "tree",
+        "vi": "cây, gỗ"
+      }
+    },
+    {
+      "word": "植木[うえき]",
+      "meaning": {
+        "en": "potted plant",
+        "vi": "potted plant"
+      }
+    },
+    {
+      "word": "木材[もくざい]",
+      "meaning": {
+        "en": "wood",
+        "vi": "wood"
+      }
+    },
+    {
+      "word": "木造[もくぞう]",
+      "meaning": {
+        "en": "wooden",
+        "vi": "wooden"
+      }
+    }
+  ],
+  "similar": [
+    "本",
+    "休"
+  ]
+}

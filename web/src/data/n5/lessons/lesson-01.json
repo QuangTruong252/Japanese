@@ -1,0 +1,172 @@
+{
+  "level": "n5",
+  "number": 1,
+  "title": {
+    "en": "Introductions",
+    "vi": "Giới thiệu bản thân"
+  },
+  "jpTitle": "はじめまして",
+  "description": {
+    "en": "Learn to introduce yourself and give your job and nationality using the most basic Japanese sentence patterns.",
+    "vi": "Làm quen với cấu trúc câu khẳng định, phủ định, câu hỏi với です, trợ từ は, も, の và cách giới thiệu bản thân cơ bản."
+  },
+  "grammar": [
+    {
+      "id": "wa-desu",
+      "title": {
+        "en": "N1 は N2 です — \"N1 is N2\"",
+        "vi": "N1 は N2 です — «N1 là N2»"
+      },
+      "pattern": {
+        "vi": "N1 は N2 です"
+      },
+      "explanation": {
+        "en": "The particle は (read \"wa\") marks the topic of the sentence: what we are talking about. です works like the verb \"to be\" and always comes last. It is the polite way of stating something about the topic.",
+        "vi": "Trợ từ は (đọc là 'wa') đánh dấu chủ đề của câu — điều mà chúng ta đang nói tới. です đứng ở cuối câu mang tính khẳng định lịch sự, tương đương với 'là' trong tiếng Việt."
+      },
+      "examples": [
+        {
+          "jp": "私[わたし]はマイク・ミラーです。",
+          "translation": {
+            "en": "I am Mike Miller.",
+            "vi": "Tôi là Mike Miller."
+          }
+        },
+        {
+          "jp": "私[わたし]は 会社員[かいしゃいん]です。",
+          "translation": {
+            "en": "I am a company employee.",
+            "vi": "Tôi là nhân viên công ty."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ja-arimasen",
+      "title": {
+        "en": "N1 は N2 じゃありません — negation",
+        "vi": "N1 は N2 じゃありません — Phủ định"
+      },
+      "pattern": {
+        "vi": "N1 は N2 じゃありません"
+      },
+      "explanation": {
+        "en": "じゃありません is the polite negative of です: \"is not / am not\". In formal or written contexts ではありません is used instead, with the same meaning.",
+        "vi": "じゃありません là dạng phủ định lịch sự của です, mang nghĩa 'không phải là'. Trong văn viết hoặc hoàn cảnh trang trọng, người ta dùng ではありません."
+      },
+      "examples": [
+        {
+          "jp": "サントスさんは 学生[がくせい]じゃありません。",
+          "translation": {
+            "en": "Mr. Santos is not a student.",
+            "vi": "Anh Santos không phải là sinh viên."
+          }
+        }
+      ]
+    },
+    {
+      "id": "desu-ka",
+      "title": {
+        "en": "〜ですか — questions",
+        "vi": "〜ですか — Câu hỏi"
+      },
+      "pattern": {
+        "vi": "N1 は N2 ですか"
+      },
+      "explanation": {
+        "en": "To ask a question you just add the particle か at the end of the sentence; the word order does not change and Japanese uses no question mark. The intonation rises at the end. You answer with はい (yes) or いいえ (no).",
+        "vi": "Để đặt câu hỏi, chỉ cần thêm trợ từ か vào cuối câu. Trật tự từ không thay đổi và tiếng Nhật không dùng dấu hỏi chấm. Lên giọng ở cuối câu. Trả lời bằng はい (vâng, đúng) hoặc いいえ (không, không phải)."
+      },
+      "examples": [
+        {
+          "jp": "ミラーさんはアメリカ 人[じん]ですか。",
+          "translation": {
+            "en": "Is Mr. Miller American?",
+            "vi": "Anh Miller có phải là người Mỹ không?"
+          }
+        },
+        {
+          "jp": "はい、アメリカ 人[じん]です。",
+          "translation": {
+            "en": "Yes, he is American.",
+            "vi": "Vâng, là người Mỹ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mo",
+      "title": {
+        "en": "N も — \"also\"",
+        "vi": "N も — «cũng»"
+      },
+      "pattern": {
+        "vi": "N1 も N2 です"
+      },
+      "explanation": {
+        "en": "The particle も replaces は when what is said about the new topic is the same as what was said about the previous one: it means \"also, too\".",
+        "vi": "Trợ từ も mang nghĩa là 'cũng', dùng để thay thế cho は khi vị ngữ có cùng nội dung với câu đã nói trước đó."
+      },
+      "examples": [
+        {
+          "jp": "グプタさんも 会社員[かいしゃいん]です。",
+          "translation": {
+            "en": "Mr. Gupta is a company employee too.",
+            "vi": "Anh Gupta cũng là nhân viên công ty."
+          }
+        }
+      ]
+    },
+    {
+      "id": "no",
+      "title": {
+        "en": "N1 の N2 — belonging",
+        "vi": "N1 の N2 — Thuộc về, sở hữu"
+      },
+      "pattern": {
+        "vi": "N1 の N2"
+      },
+      "explanation": {
+        "en": "The particle の joins two nouns: the first one narrows down or classifies the second. Here it shows the organisation someone belongs to.",
+        "vi": "Trợ từ の dùng để nối hai danh từ, trong đó N1 định nghĩa, giới hạn hoặc phân loại cho N2. Ở bài 1, の dùng để chỉ tổ chức, công ty hoặc đoàn thể mà một người trực thuộc."
+      },
+      "examples": [
+        {
+          "jp": "ミラーさんはIMCの 社員[しゃいん]です。",
+          "translation": {
+            "en": "Mr. Miller is an IMC employee.",
+            "vi": "Anh Miller là nhân viên của công ty IMC."
+          }
+        }
+      ]
+    },
+    {
+      "id": "san",
+      "title": {
+        "en": "〜さん — respectful address",
+        "vi": "〜さん — Hậu tố xưng hô lịch sự"
+      },
+      "pattern": {
+        "en": "Surname + さん",
+        "vi": "Họ/Tên + さん"
+      },
+      "explanation": {
+        "en": "さん is added to other people's surname or name to show respect; it works for men and women alike. It is never used with your own name. With small children ちゃん is used, and くん with young boys.",
+        "vi": "さん được thêm vào sau họ hoặc tên của người nghe hoặc người thứ ba để thể hiện sự lịch sự và tôn trọng. Tuyệt đối không dùng さん sau tên của chính bản thân mình."
+      },
+      "examples": [
+        {
+          "jp": "こちらはサントスさんです。",
+          "translation": {
+            "en": "This is Mr. Santos.",
+            "vi": "Đây là anh Santos."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "greetings",
+    "particles"
+  ]
+}

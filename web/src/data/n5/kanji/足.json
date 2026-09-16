@@ -1,0 +1,68 @@
+{
+  "character": "足",
+  "level": "n5",
+  "lesson": 16,
+  "meanings": {
+    "en": [
+      "foot",
+      "leg",
+      "to be enough"
+    ],
+    "vi": [
+      "chân",
+      "đầy đủ"
+    ]
+  },
+  "onyomi": [
+    "ソク"
+  ],
+  "kunyomi": [
+    "あし",
+    "た.りる"
+  ],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "足[あし]",
+      "meaning": {
+        "en": "leg, foot",
+        "vi": "chân, bàn chân"
+      }
+    },
+    {
+      "word": "足[た]ります",
+      "meaning": {
+        "en": "to be enough",
+        "vi": "bắt đầu"
+      }
+    },
+    {
+      "word": "手足[てあし]",
+      "meaning": {
+        "en": "hands and feet",
+        "vi": "hands and feet"
+      }
+    },
+    {
+      "word": "足跡[あしあと]",
+      "meaning": {
+        "en": "footprint",
+        "vi": "footprint"
+      }
+    },
+    {
+      "word": "足[た]りる",
+      "meaning": {
+        "en": "to be enough",
+        "vi": "đầy đủ"
+      }
+    },
+    {
+      "word": "遠足[えんそく]",
+      "meaning": {
+        "en": "excursion",
+        "vi": "dã ngoại, chuyến đi chơi"
+      }
+    }
+  ]
+}

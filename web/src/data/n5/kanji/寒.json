@@ -1,0 +1,59 @@
+{
+  "character": "寒",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "cold"
+    ],
+    "vi": [
+      "lạnh (thời tiết)"
+    ]
+  },
+  "onyomi": [
+    "カン"
+  ],
+  "kunyomi": [
+    "さむ.い"
+  ],
+  "strokes": 12,
+  "examples": [
+    {
+      "word": "寒[さむ]い",
+      "meaning": {
+        "en": "cold",
+        "vi": "lạnh, rét (thời tiết)"
+      }
+    },
+    {
+      "word": "寒空[さむぞら]",
+      "meaning": {
+        "en": "wintry sky",
+        "vi": "wintry sky"
+      }
+    },
+    {
+      "word": "寒帯[かんたい]",
+      "meaning": {
+        "en": "frigid zone",
+        "vi": "frigid zone"
+      }
+    },
+    {
+      "word": "寒気[かんき]",
+      "meaning": {
+        "en": "cold air",
+        "vi": "cold air"
+      }
+    },
+    {
+      "word": "寒波[かんぱ]",
+      "meaning": {
+        "en": "cold spell",
+        "vi": "cold spell"
+      }
+    }
+  ],
+  "similar": [
+    "家"
+  ]
+}

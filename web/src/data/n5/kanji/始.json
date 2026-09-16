@@ -1,0 +1,61 @@
+{
+  "character": "始",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "to begin"
+    ],
+    "vi": [
+      "bắt đầu",
+      "khởi đầu"
+    ]
+  },
+  "onyomi": [
+    "シ"
+  ],
+  "kunyomi": [
+    "はじ.める"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "始[はじ]める",
+      "meaning": {
+        "en": "to begin",
+        "vi": "to begin"
+      }
+    },
+    {
+      "word": "開始[かいし]",
+      "meaning": {
+        "en": "start",
+        "vi": "start"
+      }
+    },
+    {
+      "word": "始動[しどう]",
+      "meaning": {
+        "en": "start-up",
+        "vi": "start-up"
+      }
+    },
+    {
+      "word": "始業式[しぎょうしき]",
+      "meaning": {
+        "en": "opening ceremony",
+        "vi": "opening ceremony"
+      }
+    },
+    {
+      "word": "始末[しまつ]",
+      "meaning": {
+        "en": "to deal with, to sort out",
+        "vi": "to deal with, to sort out"
+      }
+    }
+  ],
+  "similar": [
+    "姉",
+    "妹"
+  ]
+}

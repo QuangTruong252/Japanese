@@ -1,0 +1,238 @@
+{
+  "level": "n5",
+  "number": 2,
+  "title": {
+    "en": "Objects and demonstratives",
+    "vi": "Đồ vật và đại từ chỉ định"
+  },
+  "jpTitle": "これから お 世話[せわ]に なります",
+  "description": {
+    "en": "Point at and ask about objects with これ・それ・あれ, and express possession with the particle の.",
+    "vi": "Nhận biết và hỏi tên các đồ vật xung quanh bằng các đại từ chỉ định これ, それ, あれ, các từ bổ nghĩa この, その, あの và cách trả lời câu hỏi lựa chọn."
+  },
+  "grammar": [
+    {
+      "id": "kore-sore-are",
+      "title": {
+        "en": "これ／それ／あれ — \"this, that, that over there\"",
+        "vi": "これ／それ／あれ — «Cái này, cái đó, cái kia»"
+      },
+      "pattern": {
+        "vi": "これ／それ／あれ は N です"
+      },
+      "explanation": {
+        "en": "These are demonstrative pronouns that work like nouns. これ points at something near the speaker, それ at something near the listener, and あれ at something far from both.",
+        "vi": "Các đại từ chỉ thị đồ vật: これ (cái này, gần người nói), それ (cái đó, gần người nghe), あれ (cái kia, xa cả người nói lẫn người nghe)."
+      },
+      "examples": [
+        {
+          "jp": "これは 辞書[じしょ]です。",
+          "translation": {
+            "en": "This is a dictionary.",
+            "vi": "Đây là cuốn từ điển."
+          }
+        },
+        {
+          "jp": "それはボールペンですか。",
+          "translation": {
+            "en": "Is that a pen?",
+            "vi": "Đó có phải là bút bi không?"
+          }
+        },
+        {
+          "jp": "あれは 私[わたし]のかばんです。",
+          "translation": {
+            "en": "That over there is my bag.",
+            "vi": "Kia là chiếc cặp của tôi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "kono-sono-ano",
+      "title": {
+        "en": "この／その／あの + N — \"this/that + noun\"",
+        "vi": "この／その／あの + N — «N này / N đó / N kia»"
+      },
+      "pattern": {
+        "vi": "この／その／あの N"
+      },
+      "explanation": {
+        "en": "Unlike これ・それ・あれ, these forms never stand alone: they always accompany a noun. Distance works the same way: この (speaker), その (listener), あの (far from both).",
+        "vi": "この, その, あの là từ hạn định bổ nghĩa trực tiếp cho danh từ đi liền phía sau, theo khoảng cách tương ứng: gần người nói (この), gần người nghe (その), xa cả hai (あの)."
+      },
+      "examples": [
+        {
+          "jp": "この 本[ほん]は 私[わたし]のです。",
+          "translation": {
+            "en": "This book is mine.",
+            "vi": "Cuốn sách này là của tôi."
+          }
+        },
+        {
+          "jp": "あの 人[ひと]は 誰[だれ]ですか。",
+          "translation": {
+            "en": "Who is that person over there?",
+            "vi": "Người kia là ai vậy?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sou-desu",
+      "title": {
+        "en": "そうです — \"that's right\"",
+        "vi": "そうです — «Đúng vậy»"
+      },
+      "pattern": {
+        "vi": "はい、そうです ／ いいえ、そうじゃありません"
+      },
+      "explanation": {
+        "en": "To answer \"is N N?\" questions you use そう with です: はい、そうです (yes, that's right) or いいえ、そうじゃありません (no, it isn't). You can also answer with いいえ、違[ちが]います.",
+        "vi": "Trong câu hỏi danh từ vị ngữ, người ta thường dùng そうです để trả lời khẳng định ('đúng vậy') hoặc そうじゃありません (hoặc 違います) để trả lời phủ định ('không phải vậy')."
+      },
+      "examples": [
+        {
+          "jp": "それは 手帳[てちょう]ですか。…はい、そうです。",
+          "translation": {
+            "en": "Is that a diary? …Yes, it is.",
+            "vi": "Đó có phải là sổ tay không? …Vâng, đúng vậy."
+          }
+        },
+        {
+          "jp": "それはノートですか。…いいえ、そうじゃありません。",
+          "translation": {
+            "en": "Is that a notebook? …No, it isn't.",
+            "vi": "Đó có phải là vở ghi không? …Không, không phải vậy."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ka-ka",
+      "title": {
+        "en": "〜か、〜か — alternative questions",
+        "vi": "〜か、〜か — Câu hỏi lựa chọn"
+      },
+      "pattern": {
+        "vi": "N1 ですか、N2 ですか"
+      },
+      "explanation": {
+        "en": "This offers two options and asks the listener to pick one. You do not answer with はい or いいえ, but by saying the right option directly.",
+        "vi": "Mẫu câu dùng để hỏi người nghe lựa chọn giữa hai hay nhiều phương án. Khi trả lời, người nói nêu thẳng phương án lựa chọn mà không dùng はい hay いいえ."
+      },
+      "examples": [
+        {
+          "jp": "これは「9」ですか、「7」ですか。…「9」です。",
+          "translation": {
+            "en": "Is this a 9 or a 7? …It's a 9.",
+            "vi": "Đây là số '9' hay số '7'? …Là số '9'."
+          }
+        }
+      ]
+    },
+    {
+      "id": "no-posesion",
+      "title": {
+        "en": "N1 の N2 — possession and content",
+        "vi": "N1 の N2 — Sở hữu và nội dung"
+      },
+      "pattern": {
+        "vi": "N1 の N2"
+      },
+      "explanation": {
+        "en": "As well as ownership (私[わたし]の 本[ほん], my book), の says what something is about: コンピューターの 本[ほん] is \"a computer book\".",
+        "vi": "Trợ từ の biểu thị N1 giải thích nội dung cho N2 (sách về cái gì) hoặc N1 là chủ sở hữu của N2 (đồ của ai)."
+      },
+      "examples": [
+        {
+          "jp": "これはコンピューターの 本[ほん]です。",
+          "translation": {
+            "en": "This is a computer book.",
+            "vi": "Đây là cuốn sách về máy tính."
+          }
+        },
+        {
+          "jp": "これは 私[わたし]の 傘[かさ]です。",
+          "translation": {
+            "en": "This is my umbrella.",
+            "vi": "Đây là chiếc ô của tôi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "no-sustituto",
+      "title": {
+        "en": "の replacing the noun",
+        "vi": "の thay thế cho danh từ"
+      },
+      "pattern": {
+        "vi": "N1 の"
+      },
+      "explanation": {
+        "en": "When the noun is already understood, の stands in for it so you don't have to repeat it: あれは 私[わたし]のです (that one is mine).",
+        "vi": "Khi danh từ N2 đã rõ ràng trong ngữ cảnh, có thể lược bỏ N2 và chỉ giữ lại N1 の mang nghĩa là 'cái của N1'. Lưu ý: không dùng thay thế khi N2 là người."
+      },
+      "examples": [
+        {
+          "jp": "あのかばんは 誰[だれ]のですか。… 私[わたし]のです。",
+          "translation": {
+            "en": "Whose is that bag over there? …It's mine.",
+            "vi": "Chiếc cặp kia là của ai vậy? …Là của tôi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "o-cortesia",
+      "title": {
+        "en": "お〜 — the polite prefix",
+        "vi": "お〜 — Tiền tố lịch sự"
+      },
+      "pattern": {
+        "vi": "お + N"
+      },
+      "explanation": {
+        "en": "The prefix お is added to certain words to sound more polite, especially when talking about the listener's things: お 土産[みやげ] (souvenir), お 名前[なまえ] (your name).",
+        "vi": "Thêm tiền tố お trước một số danh từ để thể hiện thái độ tôn kính, lịch thiệp của người nói."
+      },
+      "examples": [
+        {
+          "jp": "これはお 土産[みやげ]です。",
+          "translation": {
+            "en": "This is a souvenir (for you).",
+            "vi": "Đây là quà lưu niệm (tặng bạn)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sou-desu-ka",
+      "title": {
+        "en": "そうですか — \"oh, I see\"",
+        "vi": "そうですか — «Thế à / Ra là vậy»"
+      },
+      "pattern": {
+        "vi": "そうですか"
+      },
+      "explanation": {
+        "en": "With falling intonation it shows that you have taken in some new information: \"oh really? I see\". Don't confuse it with the genuine question そうですか↗.",
+        "vi": "Dùng để biểu thị sự tiếp nhận khi vừa nghe một thông tin mới mà mình chưa biết trước đó."
+      },
+      "examples": [
+        {
+          "jp": "この 傘[かさ]はあなたのですか。…いいえ、 違[ちが]います。…そうですか。",
+          "translation": {
+            "en": "Is this umbrella yours? …No, it isn't. …Oh, I see.",
+            "vi": "Chiếc ô này có phải của bạn không? …Không, không phải. …Thế à."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "demonstratives",
+    "particles"
+  ]
+}

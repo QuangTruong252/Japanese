@@ -1,0 +1,176 @@
+{
+  "level": "n5",
+  "lesson": 25,
+  "words": [
+    {
+      "id": "kangaemasu",
+      "word": "考[かんが]えます",
+      "kana": "かんがえます",
+      "meaning": {
+        "en": "to think, to consider",
+        "vi": "suy nghĩ, nghĩ ngợi"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "tsukimasu",
+      "word": "着[つ]きます",
+      "kana": "つきます",
+      "meaning": {
+        "en": "to arrive",
+        "vi": "đến, tới [ga, nơi đến]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "toshi-o-torimasu",
+      "word": "取[と]ります[年[とし]を〜]",
+      "kana": "としをとります",
+      "meaning": {
+        "en": "to grow old",
+        "vi": "thêm tuổi, già đi"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "tarimasu",
+      "word": "足[た]ります",
+      "kana": "たります",
+      "meaning": {
+        "en": "to be enough",
+        "vi": "đủ, đầy đủ"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "inaka",
+      "word": "田舎[いなか]",
+      "kana": "いなか",
+      "meaning": {
+        "en": "countryside, hometown",
+        "vi": "quê hương, nông thôn"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "chansu",
+      "word": "チャンス",
+      "kana": "チャンス",
+      "meaning": {
+        "en": "opportunity",
+        "vi": "cơ hội (chance)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "oku",
+      "word": "億[おく]",
+      "kana": "おく",
+      "meaning": {
+        "en": "hundred million",
+        "vi": "trăm triệu (100.000.000)"
+      },
+      "type": "number"
+    },
+    {
+      "id": "moshi",
+      "word": "もし[〜たら]",
+      "kana": "もし",
+      "meaning": {
+        "en": "if ~",
+        "vi": "nếu (đi kèm ~tara)"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "imi",
+      "word": "意味[いみ]",
+      "kana": "いみ",
+      "meaning": {
+        "en": "meaning, sense",
+        "vi": "ý nghĩa"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "moshimoshi",
+      "word": "もしもし",
+      "kana": "もしもし",
+      "meaning": {
+        "en": "hello? (on the phone)",
+        "vi": "a-lô (nghe điện thoại)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "tenkin",
+      "word": "転勤[てんきん]",
+      "kana": "てんきん",
+      "meaning": {
+        "en": "transfer (at work)",
+        "vi": "việc chuyển nơi công tác"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "koto",
+      "word": "こと",
+      "kana": "こと",
+      "meaning": {
+        "en": "thing, matter",
+        "vi": "việc, điều, sự việc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hima-tiempo",
+      "word": "暇[ひま]",
+      "kana": "ひま",
+      "meaning": {
+        "en": "free time",
+        "vi": "thời gian rảnh rỗi"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "osewa-ni-narimashita",
+      "word": "[いろいろ]お 世話[せわ]になりました",
+      "kana": "おせわになりました",
+      "meaning": {
+        "en": "thank you for everything",
+        "vi": "cảm ơn vì đã luôn giúp đỡ tôi suốt thời gian qua"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "ganbarimasu",
+      "word": "頑張[がんば]ります",
+      "kana": "がんばります",
+      "meaning": {
+        "en": "to do one's best",
+        "vi": "tôi sẽ cố gắng hết sức!"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "douzo-ogenkide",
+      "word": "どうぞお 元気[げんき]で",
+      "kana": "どうぞおげんきで",
+      "meaning": {
+        "en": "take care (on parting)",
+        "vi": "chúc bạn luôn mạnh khỏe / bảo trọng nhé!"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "betonamu",
+      "word": "ベトナム",
+      "kana": "ベトナム",
+      "meaning": {
+        "en": "Vietnam",
+        "vi": "nước Việt Nam"
+      },
+      "type": "noun"
+    }
+  ]
+}

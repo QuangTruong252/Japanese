@@ -1,0 +1,58 @@
+{
+  "character": "所",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "place"
+    ],
+    "vi": [
+      "nơi",
+      "chỗ",
+      "địa điểm"
+    ]
+  },
+  "onyomi": [
+    "ショ"
+  ],
+  "kunyomi": [
+    "ところ"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "所[ところ]",
+      "meaning": {
+        "en": "place, spot",
+        "vi": "nơi, chỗ, địa điểm"
+      }
+    },
+    {
+      "word": "台所[だいどころ]",
+      "meaning": {
+        "en": "kitchen",
+        "vi": "kitchen"
+      }
+    },
+    {
+      "word": "場所[ばしょ]",
+      "meaning": {
+        "en": "place",
+        "vi": "địa điểm, chỗ"
+      }
+    },
+    {
+      "word": "住所[じゅうしょ]",
+      "meaning": {
+        "en": "postal address",
+        "vi": "địa chỉ"
+      }
+    },
+    {
+      "word": "便所[べんじょ]",
+      "meaning": {
+        "en": "toilet",
+        "vi": "toilet"
+      }
+    }
+  ]
+}

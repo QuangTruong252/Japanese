@@ -1,0 +1,57 @@
+{
+  "character": "強",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "strong"
+    ],
+    "vi": [
+      "mạnh",
+      "mạnh mẽ"
+    ]
+  },
+  "onyomi": [
+    "キョウ"
+  ],
+  "kunyomi": [
+    "つよ.い"
+  ],
+  "strokes": 11,
+  "examples": [
+    {
+      "word": "強[つよ]い",
+      "meaning": {
+        "en": "strong",
+        "vi": "mạnh, mạnh mẽ"
+      }
+    },
+    {
+      "word": "力強[ちからづよ]い",
+      "meaning": {
+        "en": "powerful",
+        "vi": "powerful"
+      }
+    },
+    {
+      "word": "勉強[べんきょう]",
+      "meaning": {
+        "en": "study",
+        "vi": "việc học tập"
+      }
+    },
+    {
+      "word": "強国[きょうこく]",
+      "meaning": {
+        "en": "strong country",
+        "vi": "strong country"
+      }
+    },
+    {
+      "word": "最強[さいきょう]",
+      "meaning": {
+        "en": "the strongest",
+        "vi": "the strongest"
+      }
+    }
+  ]
+}

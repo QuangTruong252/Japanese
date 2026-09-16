@@ -1,0 +1,61 @@
+{
+  "character": "田",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "rice field"
+    ],
+    "vi": [
+      "ruộng",
+      "cánh đồng"
+    ]
+  },
+  "onyomi": [
+    "デン"
+  ],
+  "kunyomi": [
+    "た"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "田[た]",
+      "meaning": {
+        "en": "rice field",
+        "vi": "rice field"
+      }
+    },
+    {
+      "word": "田[た]んぼ",
+      "meaning": {
+        "en": "rice field",
+        "vi": "cánh đồng lúa"
+      }
+    },
+    {
+      "word": "乾田[かんでん]",
+      "meaning": {
+        "en": "dry rice field",
+        "vi": "dry rice field"
+      }
+    },
+    {
+      "word": "油田[ゆでん]",
+      "meaning": {
+        "en": "oil field",
+        "vi": "oil field"
+      }
+    },
+    {
+      "word": "炭田[たんでん]",
+      "meaning": {
+        "en": "coalfield",
+        "vi": "coalfield"
+      }
+    }
+  ],
+  "similar": [
+    "男",
+    "思"
+  ]
+}

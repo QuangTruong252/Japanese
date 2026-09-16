@@ -1,0 +1,187 @@
+{
+  "level": "n5",
+  "number": 14,
+  "title": {
+    "en": "The て form",
+    "vi": "Thể て và yêu cầu"
+  },
+  "jpTitle": "みどり 町[ちょう]までお 願[ねが]いします",
+  "description": {
+    "en": "The three verb groups, the て form and its first uses: making requests (〜てください) and actions in progress (〜ています).",
+    "vi": "Cách chia động từ thể て (te), mẫu câu yêu cầu lịch sự 〜てください và hành động đang diễn ra 〜ています."
+  },
+  "grammar": [
+    {
+      "id": "grupos-verbos",
+      "title": {
+        "en": "The three verb groups",
+        "vi": "Phân loại 3 nhóm động từ tiếng Nhật"
+      },
+      "pattern": {
+        "en": "Group I (godan) ／ Group II (ichidan) ／ Group III (irregular)",
+        "vi": "Nhóm I (ngũ đoạn) ／ Nhóm II (nhất đoạn) ／ Nhóm III (bất quy tắc)"
+      },
+      "explanation": {
+        "en": "Japanese verbs fall into three groups according to how they conjugate. Group I: the syllable before ます ends in -i (書[か]きます, 飲[の]みます). Group II: it ends in -e, or in -i for a few like 見[み]ます・います (食[た]べます, 起[お]きます). Group III: します and 来[き]ます. Knowing the group is essential for building the て form.",
+        "vi": "Động từ tiếng Nhật chia thành 3 nhóm: Nhóm I (trước ます là âm hàng -i), Nhóm II (trước ます là âm hàng -e hoặc một số từ đặc biệt hàng -i), Nhóm III (gồm します và 来ます)."
+      },
+      "examples": [
+        {
+          "jp": "書[か]きます（I）・ 食[た]べます（II）・します（III）",
+          "translation": {
+            "en": "To write (I), to eat (II), to do (III).",
+            "vi": "Viết (Nhóm I) ・ Ăn (Nhóm II) ・ Làm (Nhóm III)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "forma-te",
+      "title": {
+        "en": "The て form",
+        "vi": "Cách chia thể て (Te) của động từ"
+      },
+      "pattern": {
+        "vi": "書[か]きます→書[か]いて ／ 飲[の]みます→飲[の]んで ／ 食[た]べます→食[た]べて ／ します→して"
+      },
+      "explanation": {
+        "en": "In group I the ending changes with the syllable: き→いて (書[か]いて), ぎ→いで (急[いそ]いで), み・び・に→んで (飲[の]んで, 呼[よ]んで), い・ち・り→って (買[か]って, 待[ま]って, 取[と]って), し→して (話[はな]して). 行[い]きます is an exception: 行[い]って. Group II simply swaps ます for て (食[た]べて) and group III gives して・来[き]て.",
+        "vi": "Động từ chuyển sang thể て tùy theo nhóm: Nhóm I biến đổi theo âm cuối (い/ち/り→って, み/び/に→んで, き→いて, ぎ→いで, し→して); Nhóm II bỏ ます thêm て; Nhóm III: して, きて."
+      },
+      "examples": [
+        {
+          "jp": "ちょっと 待[ま]って。",
+          "translation": {
+            "en": "Wait a moment.",
+            "vi": "Hãy đợi một chút."
+          }
+        }
+      ]
+    },
+    {
+      "id": "te-kudasai",
+      "title": {
+        "en": "V て ください — making a request",
+        "vi": "V て ください — Nhờ vả, yêu cầu lịch sự"
+      },
+      "pattern": {
+        "vi": "V て ください"
+      },
+      "explanation": {
+        "en": "The て form + ください asks or instructs politely: 住所[じゅうしょ]を 教[おし]えてください (please tell me your address).",
+        "vi": "Mẫu câu dùng để yêu cầu, nhờ vả hoặc chỉ dẫn người nghe làm một việc gì đó một cách lịch sự ('Xin hãy... / Làm ơn...')."
+      },
+      "examples": [
+        {
+          "jp": "すみませんが、この 漢字[かんじ]の 読[よ]み 方[かた]を 教[おし]えてください。",
+          "translation": {
+            "en": "Excuse me, could you tell me how to read this kanji?",
+            "vi": "Xin lỗi, làm ơn hãy chỉ cho tôi cách đọc chữ Hán này."
+          }
+        },
+        {
+          "jp": "信号[しんごう]を 右[みぎ]へ 曲[ま]がってください。",
+          "translation": {
+            "en": "Turn right at the traffic light.",
+            "vi": "Hãy rẽ phải ở cột đèn giao thông."
+          }
+        }
+      ]
+    },
+    {
+      "id": "te-imasu",
+      "title": {
+        "en": "V て います — action in progress",
+        "vi": "V て います — Hành động đang diễn ra"
+      },
+      "pattern": {
+        "vi": "V て います"
+      },
+      "explanation": {
+        "en": "〜ています says the action is happening right now: 雨[あめ]が 降[ふ]っています (it's raining), ミラーさんは 今[いま] 電話[でんわ]を かけています.",
+        "vi": "Mẫu câu biểu thị hành động đang diễn ra tại thời điểm nói ('đang làm gì')."
+      },
+      "examples": [
+        {
+          "jp": "今[いま] 雨[あめ]が 降[ふ]っていますか。…いいえ、 降[ふ]っていません。",
+          "translation": {
+            "en": "Is it raining now? …No, it isn't.",
+            "vi": "Bây giờ trời có đang mưa không? …Không, trời không mưa."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mashou-ka",
+      "title": {
+        "en": "V ましょうか — offering help",
+        "vi": "V ましょうか — Đề nghị giúp đỡ"
+      },
+      "pattern": {
+        "vi": "V ましょうか"
+      },
+      "explanation": {
+        "en": "ましょうか offers to do something for the listener: 手伝[てつだ]いましょうか (shall I help you?). You accept with お 願[ねが]いします and decline with けっこうです.",
+        "vi": "Dùng khi người nói chủ động đề nghị làm một việc gì đó giúp cho đối phương ('Tôi làm giúp bạn nhé?')."
+      },
+      "examples": [
+        {
+          "jp": "荷物[にもつ]を 持[も]ちましょうか。…すみません。お 願[ねが]いします。",
+          "translation": {
+            "en": "Shall I carry your luggage? …Yes, please, thank you.",
+            "vi": "Để tôi xách hành lý giúp bạn nhé? …Cảm ơn bạn. Làm phiền bạn giúp tôi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ga-fenomeno",
+      "title": {
+        "en": "N が V — describing what you notice",
+        "vi": "N が V — Hiện tượng tự nhiên / Trạng thái khách quan"
+      },
+      "pattern": {
+        "vi": "N が V"
+      },
+      "explanation": {
+        "en": "When you describe something just as you perceive it, without making it the topic, the subject takes が: 雨[あめ]が 降[ふ]っています.",
+        "vi": "Trợ từ が được dùng để chỉ chủ ngữ trong câu miêu tả trực tiếp một hiện tượng tự nhiên hoặc tình huống thực tế đang diễn ra (như mưa rơi, tuyết rơi)."
+      },
+      "examples": [
+        {
+          "jp": "あれ？ 雪[ゆき]が 降[ふ]っていますよ。",
+          "translation": {
+            "en": "Oh! It's snowing!",
+            "vi": "Ơ kìa? Tuyết đang rơi đấy nhé."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sumimasen-ga",
+      "title": {
+        "en": "すみませんが — leading into a request",
+        "vi": "すみませんが、〜てください — Mở lời nhờ vả nhẹ nhàng"
+      },
+      "pattern": {
+        "vi": "すみませんが、〜てください"
+      },
+      "explanation": {
+        "en": "すみませんが softens the start of a request (\"excuse me, but…\"). It isn't a real apology, just politeness.",
+        "vi": "Dùng すみませんが (xin lỗi nhưng...) ở đầu câu làm câu đệm nhẹ nhàng trước khi đưa ra lời nhờ vả hoặc yêu cầu."
+      },
+      "examples": [
+        {
+          "jp": "すみませんが、 塩[しお]を 取[と]ってください。",
+          "translation": {
+            "en": "Sorry, could you pass me the salt?",
+            "vi": "Xin lỗi, làm ơn lấy giùm tôi lọ muối."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "verbs"
+  ]
+}

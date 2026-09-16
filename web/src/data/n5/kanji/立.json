@@ -1,0 +1,74 @@
+{
+  "character": "立",
+  "level": "n5",
+  "lesson": 14,
+  "meanings": {
+    "en": [
+      "to stand up",
+      "to stand",
+      "to establish"
+    ],
+    "vi": [
+      "đứng",
+      "thành lập"
+    ]
+  },
+  "onyomi": [
+    "リツ"
+  ],
+  "kunyomi": [
+    "た.つ"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "立[た]ちます",
+      "meaning": {
+        "en": "to stand up",
+        "vi": "lấy, cầm"
+      }
+    },
+    {
+      "word": "役[やく]に 立[た]ちます",
+      "meaning": {
+        "en": "to be useful",
+        "vi": "mượn [tiền, đồ vật]"
+      }
+    },
+    {
+      "word": "立[た]つ",
+      "meaning": {
+        "en": "to stand",
+        "vi": "đứng, đứng dậy"
+      }
+    },
+    {
+      "word": "目立[めだ]つ",
+      "meaning": {
+        "en": "to stand out",
+        "vi": "to stand out"
+      }
+    },
+    {
+      "word": "独立[どくりつ]",
+      "meaning": {
+        "en": "independence",
+        "vi": "independence"
+      }
+    },
+    {
+      "word": "市立[しりつ]",
+      "meaning": {
+        "en": "municipal",
+        "vi": "municipal"
+      }
+    },
+    {
+      "word": "立派[りっぱ]",
+      "meaning": {
+        "en": "excellent, splendid",
+        "vi": "tuyệt vời, nguy nga, lộng lẫy"
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "character": "字",
+  "level": "n5",
+  "lesson": 9,
+  "meanings": {
+    "en": [
+      "character",
+      "letter, character"
+    ],
+    "vi": [
+      "chữ",
+      "chữ viết"
+    ]
+  },
+  "onyomi": [
+    "ジ"
+  ],
+  "kunyomi": [],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "字[じ]",
+      "meaning": {
+        "en": "letter, character",
+        "vi": "chữ cái, chữ viết"
+      }
+    },
+    {
+      "word": "漢字[かんじ]",
+      "meaning": {
+        "en": "kanji",
+        "vi": "chữ Hán, Kanji"
+      }
+    },
+    {
+      "word": "文字[もじ]",
+      "meaning": {
+        "en": "character",
+        "vi": "chữ cái, văn tự"
+      }
+    },
+    {
+      "word": "数字[すうじ]",
+      "meaning": {
+        "en": "number, figure",
+        "vi": "number, figure"
+      }
+    },
+    {
+      "word": "太字[ふとじ]",
+      "meaning": {
+        "en": "bold type",
+        "vi": "bold type"
+      }
+    }
+  ],
+  "similar": [
+    "学",
+    "子"
+  ]
+}

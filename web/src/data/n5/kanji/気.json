@@ -1,0 +1,68 @@
+{
+  "character": "気",
+  "level": "n5",
+  "lesson": 8,
+  "meanings": {
+    "en": [
+      "spirit",
+      "air",
+      "spirit, mood",
+      "gas"
+    ],
+    "vi": [
+      "khí",
+      "tinh thần",
+      "tâm trạng"
+    ]
+  },
+  "onyomi": [
+    "キ",
+    "ケ"
+  ],
+  "kunyomi": [],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "天気[てんき]",
+      "meaning": {
+        "en": "weather",
+        "vi": "thời tiết"
+      }
+    },
+    {
+      "word": "元気[げんき]",
+      "meaning": {
+        "en": "cheerfully, energetically",
+        "vi": "khỏe mạnh"
+      }
+    },
+    {
+      "word": "電気[でんき]",
+      "meaning": {
+        "en": "electricity",
+        "vi": "điện, đèn điện"
+      }
+    },
+    {
+      "word": "勇気[ゆうき]",
+      "meaning": {
+        "en": "courage",
+        "vi": "courage"
+      }
+    },
+    {
+      "word": "気温[きおん]",
+      "meaning": {
+        "en": "air temperature",
+        "vi": "air temperature"
+      }
+    },
+    {
+      "word": "気体[きたい]",
+      "meaning": {
+        "en": "gas, vapour",
+        "vi": "gas, vapour"
+      }
+    }
+  ]
+}

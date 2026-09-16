@@ -1,0 +1,61 @@
+{
+  "character": "父",
+  "level": "n5",
+  "lesson": 7,
+  "meanings": {
+    "en": [
+      "father"
+    ],
+    "vi": [
+      "bố",
+      "cha"
+    ]
+  },
+  "onyomi": [
+    "フ"
+  ],
+  "kunyomi": [
+    "ちち"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "父[ちち]",
+      "meaning": {
+        "en": "my father",
+        "vi": "bố (của mình)"
+      }
+    },
+    {
+      "word": "お 父[とう]さん",
+      "meaning": {
+        "en": "his/her father",
+        "vi": "bố, bác trai (của người khác)"
+      }
+    },
+    {
+      "word": "父親[ちちおや]",
+      "meaning": {
+        "en": "father",
+        "vi": "father"
+      }
+    },
+    {
+      "word": "父母[ふぼ]",
+      "meaning": {
+        "en": "father and mother",
+        "vi": "phụ mẫu, cha mẹ"
+      }
+    },
+    {
+      "word": "祖父[そふ]",
+      "meaning": {
+        "en": "grandfather",
+        "vi": "grandfather"
+      }
+    }
+  ],
+  "similar": [
+    "文"
+  ]
+}

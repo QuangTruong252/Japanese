@@ -1,0 +1,226 @@
+{
+  "level": "n5",
+  "lesson": 20,
+  "words": [
+    {
+      "id": "irimasu",
+      "word": "要[い]ります[ビザが〜]",
+      "kana": "いります",
+      "meaning": {
+        "en": "to need [a visa]",
+        "vi": "cần [thị thực, visa]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "shirabemasu",
+      "word": "調[しら]べます",
+      "kana": "しらべます",
+      "meaning": {
+        "en": "to look into, to check",
+        "vi": "tra cứu, tìm hiểu, điều tra"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "shuuri-shimasu",
+      "word": "修理[しゅうり]します",
+      "kana": "しゅうりします",
+      "meaning": {
+        "en": "to repair",
+        "vi": "sửa chữa, bảo trì"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "boku",
+      "word": "僕[ぼく]",
+      "kana": "ぼく",
+      "meaning": {
+        "en": "I (informal, male)",
+        "vi": "tôi, mình (nam giới xưng thân mật)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "kimi",
+      "word": "君[きみ]",
+      "kana": "きみ",
+      "meaning": {
+        "en": "you (informal)",
+        "vi": "cậu, bạn (xưng thân mật với người ngang/dưới)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "kun-20",
+      "word": "〜君[くん]",
+      "kana": "くん",
+      "meaning": {
+        "en": "informal suffix (like 〜さん)",
+        "vi": "cậu, em (hậu tố thân mật gọi nam giới)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "un",
+      "word": "うん",
+      "kana": "うん",
+      "meaning": {
+        "en": "yes (informal)",
+        "vi": "ừ, ừm (thân mật của はい)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "uun",
+      "word": "ううん",
+      "kana": "ううん",
+      "meaning": {
+        "en": "no (informal)",
+        "vi": "không (thân mật của いいえ)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "kotoba",
+      "word": "ことば",
+      "kana": "ことば",
+      "meaning": {
+        "en": "word, language",
+        "vi": "từ ngữ, tiếng nói, ngôn ngữ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kimono",
+      "word": "着物[きもの]",
+      "kana": "きもの",
+      "meaning": {
+        "en": "kimono",
+        "vi": "áo Kimono truyền thống Nhật"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "biza",
+      "word": "ビザ",
+      "kana": "ビザ",
+      "meaning": {
+        "en": "visa",
+        "vi": "thị thực, visa"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hajime",
+      "word": "初[はじ]め",
+      "kana": "はじめ",
+      "meaning": {
+        "en": "start, beginning",
+        "vi": "lúc đầu, ban đầu"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "owari",
+      "word": "終[お]わり",
+      "kana": "おわり",
+      "meaning": {
+        "en": "end",
+        "vi": "lúc cuối, kết thúc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kocchi",
+      "word": "こっち",
+      "kana": "こっち",
+      "meaning": {
+        "en": "here (informal of こちら)",
+        "vi": "chỗ này, phía này (thân mật của こちら)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "socchi",
+      "word": "そっち",
+      "kana": "そっち",
+      "meaning": {
+        "en": "there (informal of そちら)",
+        "vi": "chỗ đó, phía đó (thân mật của そちら)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "acchi",
+      "word": "あっち",
+      "kana": "あっち",
+      "meaning": {
+        "en": "over there (informal of あちら)",
+        "vi": "chỗ kia, phía kia (thân mật của あちら)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "docchi",
+      "word": "どっち",
+      "kana": "どっち",
+      "meaning": {
+        "en": "which, where (informal of どちら)",
+        "vi": "chỗ nào, phía nào (thân mật của どちら)"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "minnade",
+      "word": "みんなで",
+      "kana": "みんなで",
+      "meaning": {
+        "en": "all together",
+        "vi": "tất cả mọi người cùng nhau"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "kedo",
+      "word": "〜けど",
+      "kana": "けど",
+      "meaning": {
+        "en": "~, but (informal of が)",
+        "vi": "nhưng mà (văn nói thân mật của が)"
+      },
+      "type": "particle"
+    },
+    {
+      "id": "onaka-ippai",
+      "word": "おなかがいっぱいです",
+      "kana": "おなかがいっぱいです",
+      "meaning": {
+        "en": "I'm full",
+        "vi": "tôi no bụng rồi"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "yokattara",
+      "word": "よかったら",
+      "kana": "よかったら",
+      "meaning": {
+        "en": "if you like",
+        "vi": "nếu bạn thích / nếu tiện thì..."
+      },
+      "type": "expression"
+    },
+    {
+      "id": "iroiro",
+      "word": "いろいろ",
+      "kana": "いろいろ",
+      "meaning": {
+        "en": "for various things",
+        "vi": "nhiều điều, nhiều thứ"
+      },
+      "type": "adverb"
+    }
+  ]
+}

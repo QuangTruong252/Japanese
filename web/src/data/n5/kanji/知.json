@@ -1,0 +1,58 @@
+{
+  "character": "知",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "to know",
+      "to know, to meet"
+    ],
+    "vi": [
+      "biết",
+      "hiểu biết"
+    ]
+  },
+  "onyomi": [
+    "チ"
+  ],
+  "kunyomi": [
+    "し.る"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "知[し]る",
+      "meaning": {
+        "en": "to know",
+        "vi": "biết, hiểu biết"
+      }
+    },
+    {
+      "word": "知識[ちしき]",
+      "meaning": {
+        "en": "knowledge",
+        "vi": "knowledge"
+      }
+    },
+    {
+      "word": "知恵[ちえ]",
+      "meaning": {
+        "en": "wisdom",
+        "vi": "wisdom"
+      }
+    },
+    {
+      "word": "知能[ちのう]",
+      "meaning": {
+        "en": "intelligence",
+        "vi": "intelligence"
+      }
+    },
+    {
+      "word": "知人[ちじん]",
+      "meaning": {
+        "en": "acquaintance",
+        "vi": "acquaintance"
+      }
+    }
+  ]
+}

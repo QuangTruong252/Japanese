@@ -1,0 +1,67 @@
+{
+  "character": "買",
+  "level": "n5",
+  "lesson": 6,
+  "meanings": {
+    "en": [
+      "to buy"
+    ],
+    "vi": [
+      "mua"
+    ]
+  },
+  "onyomi": [
+    "バイ"
+  ],
+  "kunyomi": [
+    "か.う"
+  ],
+  "strokes": 12,
+  "examples": [
+    {
+      "word": "買[か]います",
+      "meaning": {
+        "en": "to buy",
+        "vi": "mất, tốn [thời gian, tiền bạc]"
+      }
+    },
+    {
+      "word": "買[か]い 物[もの]",
+      "meaning": {
+        "en": "shopping",
+        "vi": "shopping"
+      }
+    },
+    {
+      "word": "買[か]う",
+      "meaning": {
+        "en": "to buy",
+        "vi": "mua"
+      }
+    },
+    {
+      "word": "買[か]い 手[て]",
+      "meaning": {
+        "en": "buyer",
+        "vi": "buyer"
+      }
+    },
+    {
+      "word": "売買[ばいばい]",
+      "meaning": {
+        "en": "buying and selling",
+        "vi": "buying and selling"
+      }
+    },
+    {
+      "word": "購買[こうばい]",
+      "meaning": {
+        "en": "purchase, acquisition",
+        "vi": "purchase, acquisition"
+      }
+    }
+  ],
+  "similar": [
+    "見"
+  ]
+}

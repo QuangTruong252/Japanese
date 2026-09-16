@@ -1,0 +1,476 @@
+{
+  "level": "n5",
+  "lesson": 7,
+  "words": [
+    {
+      "id": "kirimasu",
+      "word": "切[き]ります",
+      "kana": "きります",
+      "meaning": {
+        "en": "to cut",
+        "vi": "cắt"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "okurimasu",
+      "word": "送[おく]ります",
+      "kana": "おくります",
+      "meaning": {
+        "en": "to send",
+        "vi": "gửi"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "agemasu",
+      "word": "あげます",
+      "kana": "あげます",
+      "meaning": {
+        "en": "to give",
+        "vi": "cho, tặng"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "moraimasu",
+      "word": "もらいます",
+      "kana": "もらいます",
+      "meaning": {
+        "en": "to receive",
+        "vi": "nhận"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "kashimasu",
+      "word": "貸[か]します",
+      "kana": "かします",
+      "meaning": {
+        "en": "to lend",
+        "vi": "cho mượn, cho vay"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "karimasu",
+      "word": "借[か]ります",
+      "kana": "かります",
+      "meaning": {
+        "en": "to borrow",
+        "vi": "mượn, vay"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "oshiemasu",
+      "word": "教[おし]えます",
+      "kana": "おしえます",
+      "meaning": {
+        "en": "to teach",
+        "vi": "dạy, chỉ bảo, hướng dẫn"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "naraimasu",
+      "word": "習[なら]います",
+      "kana": "ならいます",
+      "meaning": {
+        "en": "to learn",
+        "vi": "học, tập (từ ai đó)"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "kakemasu",
+      "word": "かけます",
+      "kana": "かけます",
+      "meaning": {
+        "en": "to make [a call]",
+        "vi": "gọi [điện thoại]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "te",
+      "word": "手[て]",
+      "kana": "て",
+      "meaning": {
+        "en": "hand",
+        "vi": "tay, bàn tay"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hashi",
+      "word": "はし",
+      "kana": "はし",
+      "meaning": {
+        "en": "chopsticks",
+        "vi": "đũa"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "supuun",
+      "word": "スプーン",
+      "kana": "スプーン",
+      "meaning": {
+        "en": "spoon",
+        "vi": "thìa, muỗng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "naifu",
+      "word": "ナイフ",
+      "kana": "ナイフ",
+      "meaning": {
+        "en": "knife",
+        "vi": "dao"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "fooku",
+      "word": "フォーク",
+      "kana": "フォーク",
+      "meaning": {
+        "en": "fork",
+        "vi": "nĩa, dĩa"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hasami",
+      "word": "はさみ",
+      "kana": "はさみ",
+      "meaning": {
+        "en": "scissors",
+        "vi": "kéo"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "pasokon",
+      "word": "パソコン",
+      "kana": "パソコン",
+      "meaning": {
+        "en": "personal computer",
+        "vi": "máy tính cá nhân"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "keetai",
+      "word": "ケータイ",
+      "kana": "ケータイ",
+      "meaning": {
+        "en": "mobile phone",
+        "vi": "điện thoại di động"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "meeru",
+      "word": "メール",
+      "kana": "メール",
+      "meaning": {
+        "en": "email",
+        "vi": "thư điện tử, email"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "nengajou",
+      "word": "年賀状[ねんがじょう]",
+      "kana": "ねんがじょう",
+      "meaning": {
+        "en": "New Year card",
+        "vi": "thiệp chúc mừng năm mới"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "panchi",
+      "word": "パンチ",
+      "kana": "パンチ",
+      "meaning": {
+        "en": "hole punch",
+        "vi": "cái đục lỗ (giấy)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hocchikisu",
+      "word": "ホッチキス",
+      "kana": "ホッチキス",
+      "meaning": {
+        "en": "stapler",
+        "vi": "cái dập ghim"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "seroteepu",
+      "word": "セロテープ",
+      "kana": "セロテープ",
+      "meaning": {
+        "en": "sticky tape",
+        "vi": "băng dính trong"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "keshigomu",
+      "word": "消[け]しゴム",
+      "kana": "けしゴム",
+      "meaning": {
+        "en": "eraser",
+        "vi": "cục tẩy, gôm"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kami",
+      "word": "紙[かみ]",
+      "kana": "かみ",
+      "meaning": {
+        "en": "paper",
+        "vi": "giấy"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hana",
+      "word": "花[はな]",
+      "kana": "はな",
+      "meaning": {
+        "en": "flower",
+        "vi": "hoa"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shatsu",
+      "word": "シャツ",
+      "kana": "シャツ",
+      "meaning": {
+        "en": "shirt",
+        "vi": "áo sơ mi"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "purezento",
+      "word": "プレゼント",
+      "kana": "プレゼント",
+      "meaning": {
+        "en": "present",
+        "vi": "quà tặng, món quà"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "nimotsu",
+      "word": "荷物[にもつ]",
+      "kana": "にもつ",
+      "meaning": {
+        "en": "luggage, parcel",
+        "vi": "hành lý, bưu kiện"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "okane",
+      "word": "お 金[かね]",
+      "kana": "おかね",
+      "meaning": {
+        "en": "money",
+        "vi": "tiền"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kippu",
+      "word": "切符[きっぷ]",
+      "kana": "きっぷ",
+      "meaning": {
+        "en": "ticket (for transport)",
+        "vi": "vé (tàu, xe)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kurisumasu",
+      "word": "クリスマス",
+      "kana": "クリスマス",
+      "meaning": {
+        "en": "Christmas",
+        "vi": "Giáng sinh, Noel"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "chichi",
+      "word": "父[ちち]",
+      "kana": "ちち",
+      "meaning": {
+        "en": "(my) father",
+        "vi": "bố (của mình)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "haha",
+      "word": "母[はは]",
+      "kana": "はは",
+      "meaning": {
+        "en": "(my) mother",
+        "vi": "mẹ (của mình)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "otousan",
+      "word": "お 父[とう]さん",
+      "kana": "おとうさん",
+      "meaning": {
+        "en": "(your) father",
+        "vi": "bố, bác trai (của người khác)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "okaasan",
+      "word": "お 母[かあ]さん",
+      "kana": "おかあさん",
+      "meaning": {
+        "en": "(your) mother",
+        "vi": "mẹ, bác gái (của người khác)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "mou",
+      "word": "もう",
+      "kana": "もう",
+      "meaning": {
+        "en": "already",
+        "vi": "đã, rồi"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "mada",
+      "word": "まだ",
+      "kana": "まだ",
+      "meaning": {
+        "en": "still, yet",
+        "vi": "chưa"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "korekara",
+      "word": "これから",
+      "kana": "これから",
+      "meaning": {
+        "en": "from now on, shortly",
+        "vi": "từ bây giờ, sau đây"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "suteki-desu-ne",
+      "word": "[〜、]すてきですね",
+      "kana": "すてきですね",
+      "meaning": {
+        "en": "how beautiful [~] is!",
+        "vi": "đẹp quá nhỉ / tuyệt quá nhỉ"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "irasshai",
+      "word": "いらっしゃい",
+      "kana": "いらっしゃい",
+      "meaning": {
+        "en": "welcome (to a visitor)",
+        "vi": "Chào mừng bạn đến chơi"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "douzo-oagari",
+      "word": "どうぞお 上[あ]がりください",
+      "kana": "どうぞおあがりください",
+      "meaning": {
+        "en": "please come in",
+        "vi": "xin mời bạn vào nhà"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "shitsurei-shimasu",
+      "word": "失礼[しつれい]します",
+      "kana": "しつれいします",
+      "meaning": {
+        "en": "excuse me (on leaving)",
+        "vi": "xin thất lễ"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "ikaga-desu-ka",
+      "word": "[〜は]いかがですか",
+      "kana": "いかがですか",
+      "meaning": {
+        "en": "would you like [~]?",
+        "vi": "bạn thấy thế nào? / bạn dùng... nhé?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "itadakimasu",
+      "word": "いただきます",
+      "kana": "いただきます",
+      "meaning": {
+        "en": "thank you (before eating)",
+        "vi": "xin mời (nói trước khi ăn/uống)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "gochisousama",
+      "word": "ごちそうさま[でした]",
+      "kana": "ごちそうさまでした",
+      "meaning": {
+        "en": "thank you (after eating)",
+        "vi": "cảm ơn vì bữa ăn ngon (nói sau khi ăn)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "gomen-kudasai",
+      "word": "ごめんください",
+      "kana": "ごめんください",
+      "meaning": {
+        "en": "anyone home? (arriving for a visit)",
+        "vi": "xin lỗi, có ai ở nhà không?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "supein",
+      "word": "スペイン",
+      "kana": "スペイン",
+      "meaning": {
+        "en": "Spain",
+        "vi": "nước Tây Ban Nha"
+      },
+      "type": "noun"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "character": "南",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "south"
+    ],
+    "vi": [
+      "phương nam",
+      "hướng nam"
+    ]
+  },
+  "onyomi": [
+    "ナン"
+  ],
+  "kunyomi": [
+    "みなみ"
+  ],
+  "strokes": 9,
+  "examples": [
+    {
+      "word": "南[みなみ]",
+      "meaning": {
+        "en": "south",
+        "vi": "phương nam, hướng nam"
+      }
+    },
+    {
+      "word": "南口[みなみぐち]",
+      "meaning": {
+        "en": "south exit",
+        "vi": "cửa nam"
+      }
+    },
+    {
+      "word": "南風[みなみかぜ]",
+      "meaning": {
+        "en": "south wind",
+        "vi": "south wind"
+      }
+    },
+    {
+      "word": "南米[なんべい]",
+      "meaning": {
+        "en": "South America",
+        "vi": "South America"
+      }
+    },
+    {
+      "word": "東南[とうなん]",
+      "meaning": {
+        "en": "south-east",
+        "vi": "south-east"
+      }
+    }
+  ]
+}

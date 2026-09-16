@@ -1,0 +1,66 @@
+{
+  "character": "社",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "company",
+      "shrine",
+      "society"
+    ],
+    "vi": [
+      "công ty",
+      "xã hội",
+      "đền thờ"
+    ]
+  },
+  "onyomi": [
+    "シャ"
+  ],
+  "kunyomi": [],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "会社[かいしゃ]",
+      "meaning": {
+        "en": "company",
+        "vi": "công ty"
+      }
+    },
+    {
+      "word": "社員[しゃいん]",
+      "meaning": {
+        "en": "employee",
+        "vi": "nhân viên công ty"
+      }
+    },
+    {
+      "word": "神社[じんじゃ]",
+      "meaning": {
+        "en": "shrine",
+        "vi": "đền thờ (Thần đạo Shinto)"
+      }
+    },
+    {
+      "word": "社会[しゃかい]",
+      "meaning": {
+        "en": "society",
+        "vi": "xã hội"
+      }
+    },
+    {
+      "word": "社長[しゃちょう]",
+      "meaning": {
+        "en": "president of a company",
+        "vi": "giám đốc công ty"
+      }
+    },
+    {
+      "word": "出版社[しゅっぱんしゃ]",
+      "meaning": {
+        "en": "publisher",
+        "vi": "publisher"
+      }
+    }
+  ]
+}

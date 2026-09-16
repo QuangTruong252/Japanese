@@ -1,0 +1,516 @@
+{
+  "level": "n5",
+  "lesson": 6,
+  "words": [
+    {
+      "id": "tabemasu",
+      "word": "食[た]べます",
+      "kana": "たべます",
+      "meaning": {
+        "en": "to eat",
+        "vi": "ăn"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "nomimasu",
+      "word": "飲[の]みます",
+      "kana": "のみます",
+      "meaning": {
+        "en": "to drink",
+        "vi": "uống"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "suimasu",
+      "word": "吸[す]います",
+      "kana": "すいます",
+      "meaning": {
+        "en": "to smoke [a cigarette]",
+        "vi": "hút [thuốc lá]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "mimasu",
+      "word": "見[み]ます",
+      "kana": "みます",
+      "meaning": {
+        "en": "to see, to watch",
+        "vi": "xem, nhìn"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "kikimasu",
+      "word": "聞[き]きます",
+      "kana": "ききます",
+      "meaning": {
+        "en": "to hear, to listen",
+        "vi": "nghe"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "yomimasu",
+      "word": "読[よ]みます",
+      "kana": "よみます",
+      "meaning": {
+        "en": "to read",
+        "vi": "đọc"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "kakimasu",
+      "word": "書[か]きます",
+      "kana": "かきます",
+      "meaning": {
+        "en": "to write",
+        "vi": "viết, vẽ"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "kaimasu",
+      "word": "買[か]います",
+      "kana": "かいます",
+      "meaning": {
+        "en": "to buy",
+        "vi": "mua"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "torimasu",
+      "word": "撮[と]ります",
+      "kana": "とります",
+      "meaning": {
+        "en": "to take [photos]",
+        "vi": "chụp [ảnh]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "shimasu",
+      "word": "します",
+      "kana": "します",
+      "meaning": {
+        "en": "to do, to make",
+        "vi": "làm, chơi [thể thao, trò chơi]"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "aimasu",
+      "word": "会[あ]います",
+      "kana": "あいます",
+      "meaning": {
+        "en": "to see, to meet [friends]",
+        "vi": "gặp [bạn bè]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "gohan",
+      "word": "ごはん",
+      "kana": "ごはん",
+      "meaning": {
+        "en": "meal, cooked rice",
+        "vi": "cơm, bữa ăn"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "asagohan",
+      "word": "朝[あさ]ごはん",
+      "kana": "あさごはん",
+      "meaning": {
+        "en": "breakfast",
+        "vi": "bữa sáng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hirugohan",
+      "word": "昼[ひる]ごはん",
+      "kana": "ひるごはん",
+      "meaning": {
+        "en": "lunch",
+        "vi": "bữa trưa"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "bangohan",
+      "word": "晩[ばん]ごはん",
+      "kana": "ばんごはん",
+      "meaning": {
+        "en": "dinner",
+        "vi": "bữa tối"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "pan",
+      "word": "パン",
+      "kana": "パン",
+      "meaning": {
+        "en": "bread",
+        "vi": "bánh mì"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tamago",
+      "word": "卵[たまご]",
+      "kana": "たまご",
+      "meaning": {
+        "en": "egg",
+        "vi": "trứng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "niku",
+      "word": "肉[にく]",
+      "kana": "にく",
+      "meaning": {
+        "en": "meat",
+        "vi": "thịt"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "sakana",
+      "word": "魚[さかな]",
+      "kana": "さかな",
+      "meaning": {
+        "en": "fish",
+        "vi": "cá"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "yasai",
+      "word": "野菜[やさい]",
+      "kana": "やさい",
+      "meaning": {
+        "en": "vegetables",
+        "vi": "rau"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kudamono",
+      "word": "果物[くだもの]",
+      "kana": "くだもの",
+      "meaning": {
+        "en": "fruit",
+        "vi": "trái cây, hoa quả"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "mizu",
+      "word": "水[みず]",
+      "kana": "みず",
+      "meaning": {
+        "en": "water",
+        "vi": "nước"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ocha",
+      "word": "お 茶[ちゃ]",
+      "kana": "おちゃ",
+      "meaning": {
+        "en": "tea, green tea",
+        "vi": "trà, trà xanh"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "koucha",
+      "word": "紅茶[こうちゃ]",
+      "kana": "こうちゃ",
+      "meaning": {
+        "en": "black tea",
+        "vi": "trà đen, hồng trà"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "gyuunyuu",
+      "word": "牛乳[ぎゅうにゅう]（ミルク）",
+      "kana": "ぎゅうにゅう（ミルク）",
+      "meaning": {
+        "en": "milk",
+        "vi": "sữa bò"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "juusu",
+      "word": "ジュース",
+      "kana": "ジュース",
+      "meaning": {
+        "en": "juice",
+        "vi": "nước hoa quả, nước ép"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "biiru",
+      "word": "ビール",
+      "kana": "ビール",
+      "meaning": {
+        "en": "beer",
+        "vi": "bia"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "osake",
+      "word": "[お]酒[さけ]",
+      "kana": "おさけ",
+      "meaning": {
+        "en": "alcoholic drink, sake",
+        "vi": "rượu, rượu sake"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tabako",
+      "word": "たばこ",
+      "kana": "たばこ",
+      "meaning": {
+        "en": "cigarette",
+        "vi": "thuốc lá"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tegami",
+      "word": "手紙[てがみ]",
+      "kana": "てがみ",
+      "meaning": {
+        "en": "letter, mail",
+        "vi": "thư, bức thư"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "repooto",
+      "word": "レポート",
+      "kana": "レポート",
+      "meaning": {
+        "en": "report",
+        "vi": "báo cáo, bản báo cáo"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shashin",
+      "word": "写真[しゃしん]",
+      "kana": "しゃしん",
+      "meaning": {
+        "en": "photograph",
+        "vi": "ảnh, bức ảnh"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "bideo",
+      "word": "ビデオ",
+      "kana": "ビデオ",
+      "meaning": {
+        "en": "video",
+        "vi": "video, băng video"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "mise",
+      "word": "店[みせ]",
+      "kana": "みせ",
+      "meaning": {
+        "en": "shop, business",
+        "vi": "cửa hàng, tiệm"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "niwa",
+      "word": "庭[にわ]",
+      "kana": "にわ",
+      "meaning": {
+        "en": "garden",
+        "vi": "vườn, sân vườn"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shukudai",
+      "word": "宿題[しゅくだい]",
+      "kana": "しゅくだい",
+      "meaning": {
+        "en": "homework",
+        "vi": "bài tập về nhà"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tenisu",
+      "word": "テニス",
+      "kana": "テニス",
+      "meaning": {
+        "en": "tennis",
+        "vi": "quần vợt, tennis"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "sakkaa",
+      "word": "サッカー",
+      "kana": "サッカー",
+      "meaning": {
+        "en": "football",
+        "vi": "bóng đá"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ohanami",
+      "word": "[お]花見[はなみ]",
+      "kana": "おはなみ",
+      "meaning": {
+        "en": "to go cherry-blossom viewing",
+        "vi": "việc ngắm hoa anh đào"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "nani",
+      "word": "何[なに]",
+      "kana": "なに",
+      "meaning": {
+        "en": "what",
+        "vi": "cái gì"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "isshoni",
+      "word": "いっしょに",
+      "kana": "いっしょに",
+      "meaning": {
+        "en": "together",
+        "vi": "cùng nhau"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "chotto",
+      "word": "ちょっと",
+      "kana": "ちょっと",
+      "meaning": {
+        "en": "a little",
+        "vi": "một chút, một lát"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "itsumo",
+      "word": "いつも",
+      "kana": "いつも",
+      "meaning": {
+        "en": "always, usually",
+        "vi": "luôn luôn, lúc nào cũng"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "tokidoki",
+      "word": "時々[ときどき]",
+      "kana": "ときどき",
+      "meaning": {
+        "en": "sometimes, now and then",
+        "vi": "thỉnh thoảng, đôi khi"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "sorekara",
+      "word": "それから",
+      "kana": "それから",
+      "meaning": {
+        "en": "and then",
+        "vi": "sau đó, tiếp theo"
+      },
+      "type": "conjunction"
+    },
+    {
+      "id": "ee",
+      "word": "ええ",
+      "kana": "ええ",
+      "meaning": {
+        "en": "yes",
+        "vi": "vâng (thân mật)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "ii-desu-ne",
+      "word": "いいですね",
+      "kana": "いいですね",
+      "meaning": {
+        "en": "that's a good idea",
+        "vi": "hay quá nhỉ / được đấy nhỉ"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "wakarimashita",
+      "word": "わかりました",
+      "kana": "わかりました",
+      "meaning": {
+        "en": "understood, very well",
+        "vi": "tôi đã hiểu rồi"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "nan-desu-ka",
+      "word": "何[なん]ですか",
+      "kana": "なんですか",
+      "meaning": {
+        "en": "yes? / how can I help you?",
+        "vi": "có chuyện gì thế? / vâng?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "ja-mata",
+      "word": "じゃ、また[あした]",
+      "kana": "じゃ、またあした",
+      "meaning": {
+        "en": "see you tomorrow, then",
+        "vi": "hẹn gặp lại nhé (ngày mai)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "mekishiko",
+      "word": "メキシコ",
+      "kana": "メキシコ",
+      "meaning": {
+        "en": "Mexico",
+        "vi": "nước Mexico"
+      },
+      "type": "noun"
+    }
+  ]
+}

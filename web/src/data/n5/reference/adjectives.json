@@ -1,0 +1,276 @@
+{
+  "level": "n5",
+  "slug": "adjectives",
+  "title": {
+    "en": "Adjectives",
+    "vi": "Tính từ"
+  },
+  "description": {
+    "en": "How the two kinds of Japanese adjective conjugate and how they attach to a noun.",
+    "vi": "Cách chia hai loại tính từ trong tiếng Nhật và cách bổ nghĩa cho danh từ."
+  },
+  "order": 9,
+  "sections": [
+    {
+      "id": "conjugation",
+      "title": {
+        "en": "Conjugation",
+        "vi": "Cách chia tính từ"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "vi": ""
+            },
+            {
+              "en": "-い adjective (高[たか]い)",
+              "vi": "Tính từ đuôi -い (高[たか]い)"
+            },
+            {
+              "en": "-な adjective (静[しず]か[な])",
+              "vi": "Tính từ đuôi -な (静[しず]か[な])"
+            }
+          ],
+          "rows": [
+            [
+              {
+                "en": "Affirmative",
+                "vi": "Khẳng định"
+              },
+              "高[たか]いです",
+              "静[しず]かです"
+            ],
+            [
+              {
+                "en": "Negative",
+                "vi": "Phủ định"
+              },
+              "高[たか]くないです",
+              "静[しず]かじゃありません"
+            ],
+            [
+              {
+                "en": "Past",
+                "vi": "Quá khứ"
+              },
+              "高[たか]かったです",
+              "静[しず]かでした"
+            ],
+            [
+              {
+                "en": "Past negative",
+                "vi": "Quá khứ phủ định"
+              },
+              "高[たか]くなかったです",
+              "静[しず]かじゃありませんでした"
+            ],
+            [
+              {
+                "en": "+ noun",
+                "vi": "+ Danh từ"
+              },
+              "高[たか]い 山[やま]",
+              "静[しず]かな 町[まち]"
+            ],
+            [
+              {
+                "en": "Joining two adjectives",
+                "vi": "Nối hai tính từ"
+              },
+              "安[やす]くて おいしい",
+              "静[しず]かで きれい"
+            ],
+            [
+              {
+                "en": "To become…",
+                "vi": "Trở nên, trở thành…"
+              },
+              "高[たか]く なります",
+              "静[しず]かに なります"
+            ]
+          ]
+        }
+      ],
+      "note": {
+        "en": "いい is irregular: よくないです, よかったです, よくなかったです.",
+        "vi": "いい là trường hợp bất quy tắc: よくないです, よかったです, よくなかったです."
+      }
+    },
+    {
+      "id": "common",
+      "title": {
+        "en": "Common adjectives in pairs",
+        "vi": "Các cặp tính từ trái nghĩa thông dụng"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Adjective",
+              "vi": "Tính từ"
+            },
+            {
+              "en": "Meaning",
+              "vi": "Ý nghĩa"
+            },
+            {
+              "en": "Opposite",
+              "vi": "Từ trái nghĩa"
+            },
+            {
+              "en": "Meaning",
+              "vi": "Ý nghĩa"
+            }
+          ],
+          "rows": [
+            [
+              "大[おお]きい",
+              {
+                "en": "big",
+                "vi": "to, lớn"
+              },
+              "小[ちい]さい",
+              {
+                "en": "small",
+                "vi": "nhỏ, bé"
+              }
+            ],
+            [
+              "新[あたら]しい",
+              {
+                "en": "new",
+                "vi": "mới"
+              },
+              "古[ふる]い",
+              {
+                "en": "old",
+                "vi": "cũ"
+              }
+            ],
+            [
+              "高[たか]い",
+              {
+                "en": "expensive, high",
+                "vi": "đắt, cao"
+              },
+              "安[やす]い",
+              {
+                "en": "cheap",
+                "vi": "rẻ"
+              }
+            ],
+            [
+              "高[たか]い",
+              {
+                "en": "tall",
+                "vi": "cao"
+              },
+              "低[ひく]い",
+              {
+                "en": "short",
+                "vi": "thấp"
+              }
+            ],
+            [
+              "暑[あつ]い",
+              {
+                "en": "hot",
+                "vi": "nóng (thời tiết)"
+              },
+              "寒[さむ]い",
+              {
+                "en": "cold (weather)",
+                "vi": "lạnh (thời tiết)"
+              }
+            ],
+            [
+              "難[むずか]しい",
+              {
+                "en": "difficult",
+                "vi": "khó"
+              },
+              "易[やさ]しい",
+              {
+                "en": "easy",
+                "vi": "dễ"
+              }
+            ],
+            [
+              "おもしろい",
+              {
+                "en": "interesting",
+                "vi": "thú vị, hay"
+              },
+              "つまらない",
+              {
+                "en": "boring",
+                "vi": "chán, không hay"
+              }
+            ],
+            [
+              "忙[いそが]しい",
+              {
+                "en": "busy",
+                "vi": "bận rộn"
+              },
+              "暇[ひま][な]",
+              {
+                "en": "free",
+                "vi": "rảnh rỗi"
+              }
+            ],
+            [
+              "近[ちか]い",
+              {
+                "en": "near",
+                "vi": "gần"
+              },
+              "遠[とお]い",
+              {
+                "en": "far",
+                "vi": "xa"
+              }
+            ],
+            [
+              "多[おお]い",
+              {
+                "en": "a lot",
+                "vi": "nhiều"
+              },
+              "少[すく]ない",
+              {
+                "en": "few, little",
+                "vi": "ít"
+              }
+            ],
+            [
+              "長[なが]い",
+              {
+                "en": "long",
+                "vi": "dài"
+              },
+              "短[みじか]い",
+              {
+                "en": "short",
+                "vi": "ngắn"
+              }
+            ],
+            [
+              "明[あか]るい",
+              {
+                "en": "light, bright",
+                "vi": "sáng"
+              },
+              "暗[くら]い",
+              {
+                "en": "dark",
+                "vi": "tối"
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

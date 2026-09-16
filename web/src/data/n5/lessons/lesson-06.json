@@ -1,0 +1,226 @@
+{
+  "level": "n5",
+  "number": 6,
+  "title": {
+    "en": "Eating, drinking and making plans",
+    "vi": "Ăn uống và rủ rê"
+  },
+  "jpTitle": "いっしょに 行[い]きませんか",
+  "description": {
+    "en": "Transitive verbs with the particle を, the place of the action with で, and invitations with 〜ませんか and 〜ましょう.",
+    "vi": "Cấu trúc tân ngữ với trợ từ を, địa điểm hành động với で, câu rủ rê 〜ませんか và đề nghị 〜ましょう."
+  },
+  "grammar": [
+    {
+      "id": "o-transitivo",
+      "title": {
+        "en": "N を V — the direct object",
+        "vi": "N を V (tha động từ) — Trợ từ chỉ đối tượng tác động"
+      },
+      "pattern": {
+        "en": "N を V (transitive)",
+        "vi": "N を V (tha động từ)"
+      },
+      "explanation": {
+        "en": "The particle を marks the direct object of a transitive verb: ジュースを 飲[の]みます (I drink juice).",
+        "vi": "Trợ từ を (đọc là 'o') đứng sau danh từ để chỉ đối tượng trực tiếp (tân ngữ) chịu tác động của tha động từ."
+      },
+      "examples": [
+        {
+          "jp": "パンを 食[た]べます。",
+          "translation": {
+            "en": "I eat bread.",
+            "vi": "Tôi ăn bánh mì."
+          }
+        },
+        {
+          "jp": "写真[しゃしん]を 撮[と]ります。",
+          "translation": {
+            "en": "I take photos.",
+            "vi": "Tôi chụp ảnh."
+          }
+        }
+      ]
+    },
+    {
+      "id": "o-shimasu",
+      "title": {
+        "en": "N を します — \"to do / to play\"",
+        "vi": "N を します — «Làm / Chơi N»"
+      },
+      "pattern": {
+        "vi": "N を します"
+      },
+      "explanation": {
+        "en": "します with を covers many activities: sports (サッカーを します), tasks (宿題[しゅくだい]を します) or meetings. Its meaning depends on the noun.",
+        "vi": "Động từ します mang nghĩa rộng: chơi môn thể thao, tham gia sự kiện, làm công việc hoặc nhiệm vụ cụ thể."
+      },
+      "examples": [
+        {
+          "jp": "テニスを します。",
+          "translation": {
+            "en": "I play tennis.",
+            "vi": "Tôi chơi quần vợt."
+          }
+        },
+        {
+          "jp": "宿題[しゅくだい]を します。",
+          "translation": {
+            "en": "I do my homework.",
+            "vi": "Tôi làm bài tập về nhà."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nani-o-shimasu-ka",
+      "title": {
+        "en": "何[なに]を しますか — \"what do you do?\"",
+        "vi": "何[なに]を しますか — «Bạn làm gì?»"
+      },
+      "pattern": {
+        "vi": "何[なに]を しますか"
+      },
+      "explanation": {
+        "en": "It asks about the activity. It can be combined with time and place: 日曜日[にちようび] 何[なに]を しますか.",
+        "vi": "Mẫu câu hỏi dùng để hỏi đối phương sẽ làm hành động gì vào một thời điểm nhất định."
+      },
+      "examples": [
+        {
+          "jp": "月曜日[げつようび] 何[なに]を しますか。… 東京[とうきょう]へ 行[い]きます。",
+          "translation": {
+            "en": "What are you doing on Monday? …I'm going to Tokyo.",
+            "vi": "Thứ hai bạn sẽ làm gì? …Tôi sẽ đi Tokyo."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nan-nani",
+      "title": {
+        "en": "なん and なに — two readings of 何",
+        "vi": "何[なん]／何[なに] — Phân biệt Nan và Nani"
+      },
+      "pattern": {
+        "vi": "何[なん] + âm d, t, n, số đếm ／ 何[なに] + trợ từ を, が..."
+      },
+      "explanation": {
+        "en": "何 is read なん before です, before words starting with t/d/n, and when counting (何[なん] 時[じ]). Otherwise it is read なに: 何[なに]を 買[か]いますか.",
+        "vi": "Cả hai đều viết là 何 (cái gì). Đọc là なん khi đứng trước các từ bắt đầu bằng âm d, t, n hoặc các lượng từ đếm. Đọc là なに trong các trường hợp còn lại hoặc đứng trước trợ từ を."
+      },
+      "examples": [
+        {
+          "jp": "それは 何[なん]ですか。",
+          "translation": {
+            "en": "What is that?",
+            "vi": "Đó là cái gì vậy?"
+          }
+        },
+        {
+          "jp": "何[なに]を 買[か]いますか。",
+          "translation": {
+            "en": "What are you going to buy?",
+            "vi": "Bạn sẽ mua cái gì?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "de-lugar",
+      "title": {
+        "en": "N (place) で V — the place of the action",
+        "vi": "địa điểm で V — Trợ từ chỉ nơi diễn ra hành động"
+      },
+      "pattern": {
+        "en": "place で V",
+        "vi": "địa điểm で V"
+      },
+      "explanation": {
+        "en": "で marks the place where an action happens (unlike へ, which marks direction): 食堂[しょくどう]で 昼[ひる]ごはんを 食[た]べます.",
+        "vi": "Trợ từ で đứng sau danh từ chỉ nơi chốn để biểu thị địa điểm nơi hành động diễn ra."
+      },
+      "examples": [
+        {
+          "jp": "駅[えき]で 新聞[しんぶん]を 買[か]います。",
+          "translation": {
+            "en": "I buy the newspaper at the station.",
+            "vi": "Tôi mua báo ở nhà ga."
+          }
+        }
+      ]
+    },
+    {
+      "id": "masen-ka",
+      "title": {
+        "en": "V ませんか — inviting",
+        "vi": "V ませんか — Lời rủ rê, mời mọc lịch sự"
+      },
+      "pattern": {
+        "vi": "V ませんか"
+      },
+      "explanation": {
+        "en": "The negative form with か is a gentle invitation: いっしょに 行[い]きませんか (won't you come along?). It is politer than asking directly with ますか because it takes the listener's wishes into account.",
+        "vi": "Dùng để rủ rê hoặc mời đối phương cùng thực hiện một hành động nào đó. Thể hiện sự tôn trọng ý kiến của người nghe ('Bạn có muốn cùng... không?')."
+      },
+      "examples": [
+        {
+          "jp": "いっしょにビールを 飲[の]みませんか。…ええ、いいですね。",
+          "translation": {
+            "en": "Shall we have a beer together? …Yes, good idea.",
+            "vi": "Bạn có muốn cùng uống bia không? …Vâng, hay quá nhỉ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mashou",
+      "title": {
+        "en": "V ましょう — \"let's\"",
+        "vi": "V ましょう — Lời đề nghị cùng làm"
+      },
+      "pattern": {
+        "vi": "V ましょう"
+      },
+      "explanation": {
+        "en": "It proposes doing something together, assuming the listener will agree, or accepts an invitation: ロビーで 会[あ]いましょう.",
+        "vi": "Dùng để đề xuất làm một việc gì đó ('Chúng ta hãy cùng làm... nhé') hoặc đáp lại lời rủ rê V ませんか với thái độ chủ động, nhiệt tình."
+      },
+      "examples": [
+        {
+          "jp": "10 時[じ]に 駅[えき]で 会[あ]いましょう。",
+          "translation": {
+            "en": "Let's meet at ten at the station.",
+            "vi": "Chúng ta hãy gặp nhau ở nhà ga lúc 10 giờ nhé."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ka-tema",
+      "title": {
+        "en": "〜か — picking up a topic",
+        "vi": "S か — Nhắc lại để xác nhận chủ đề"
+      },
+      "pattern": {
+        "vi": "S か"
+      },
+      "explanation": {
+        "en": "か at the end also confirms that you have understood a suggestion before answering: お 花見[はなみ]ですか。いいですね。",
+        "vi": "Dùng trợ từ か lặp lại từ hoặc cụm từ mà người đối thoại vừa nói để xác nhận lại thông tin hoặc chuẩn bị đưa ra phản hồi."
+      },
+      "examples": [
+        {
+          "jp": "お 花見[はなみ]を しませんか。…お 花見[はなみ]ですか。いいですね。",
+          "translation": {
+            "en": "Shall we go and see the cherry blossom? …Cherry blossom? What a good idea!",
+            "vi": "Bạn có muốn đi ngắm hoa anh đào cùng không? …Ngắm hoa anh đào à? Tuyệt quá nhỉ."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "particles",
+    "verbs"
+  ]
+}

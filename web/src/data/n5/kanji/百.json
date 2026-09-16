@@ -1,0 +1,66 @@
+{
+  "character": "百",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "hundred"
+    ],
+    "vi": [
+      "trăm",
+      "một trăm"
+    ]
+  },
+  "onyomi": [
+    "ヒャク"
+  ],
+  "kunyomi": [],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "百[ひゃく]",
+      "meaning": {
+        "en": "hundred",
+        "vi": "một trăm (100)"
+      }
+    },
+    {
+      "word": "三百[さんびゃく]",
+      "meaning": {
+        "en": "three hundred",
+        "vi": "three hundred"
+      }
+    },
+    {
+      "word": "百円[ひゃくえん]",
+      "meaning": {
+        "en": "one hundred yen",
+        "vi": "một trăm yên"
+      }
+    },
+    {
+      "word": "百姓[ひゃくしょう]",
+      "meaning": {
+        "en": "farmer",
+        "vi": "farmer"
+      }
+    },
+    {
+      "word": "百科事典[ひゃっかじてん]",
+      "meaning": {
+        "en": "encyclopaedia",
+        "vi": "encyclopaedia"
+      }
+    },
+    {
+      "word": "八百屋[やおや]",
+      "meaning": {
+        "en": "greengrocer's",
+        "vi": "greengrocer's"
+      }
+    }
+  ],
+  "similar": [
+    "白"
+  ]
+}

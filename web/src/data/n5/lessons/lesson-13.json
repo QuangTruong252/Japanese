@@ -1,0 +1,150 @@
+{
+  "level": "n5",
+  "number": 13,
+  "title": {
+    "en": "Wishes and purposes",
+    "vi": "Mong muốn và mục đích"
+  },
+  "jpTitle": "別々[べつべつ]にお 願[ねが]いします",
+  "description": {
+    "en": "Say what you want (欲[ほ]しい), what you want to do (〜たい) and what you are going somewhere for.",
+    "vi": "Bày tỏ mong muốn có đồ vật (ほしい), mong muốn làm việc gì (〜たい) và đi đâu để làm gì (〜に行きます)."
+  },
+  "grammar": [
+    {
+      "id": "hoshii",
+      "title": {
+        "en": "N が 欲[ほ]しいです — \"I want (something)\"",
+        "vi": "N が 欲[ほ]しいです — Mong muốn có được đồ vật"
+      },
+      "pattern": {
+        "vi": "N が 欲[ほ]しいです"
+      },
+      "explanation": {
+        "en": "欲[ほ]しい is an -い adjective expressing the wish to have something; the thing wanted is marked with が: 車[くるま]が 欲[ほ]しいです (I want a car).",
+        "vi": "Dùng để bày tỏ nguyện vọng muốn có một vật hoặc một thứ gì đó của người nói. Đối tượng mong muốn đi với trợ từ が. Phủ định là 欲しくないです."
+      },
+      "examples": [
+        {
+          "jp": "私[わたし]は 友達[ともだち]が 欲[ほ]しいです。",
+          "translation": {
+            "en": "I want friends.",
+            "vi": "Tôi muốn có bạn bè."
+          }
+        }
+      ]
+    },
+    {
+      "id": "tai-desu",
+      "title": {
+        "en": "V たいです — \"I want to do\"",
+        "vi": "V (thể ます) たいです — Mong muốn làm việc gì"
+      },
+      "pattern": {
+        "en": "V (ます form) たいです",
+        "vi": "V (thể ます) たいです"
+      },
+      "explanation": {
+        "en": "Dropping ます and adding たい expresses the wish to do the action: 沖縄[おきなわ]へ 行[い]きたいです. たい conjugates like an -い adjective (行[い]きたくないです, 行[い]きたかったです). The object may be marked with を or が.",
+        "vi": "Bỏ ます thêm たいです để diễn tả ý muốn làm một hành động nào đó của bản thân người nói. Tân ngữ có thể đi với が hoặc を. Phủ định là たくないです."
+      },
+      "examples": [
+        {
+          "jp": "てんぷらを 食[た]べたいです。",
+          "translation": {
+            "en": "I want to eat tempura.",
+            "vi": "Tôi muốn ăn món tempura."
+          }
+        },
+        {
+          "jp": "今日[きょう]はどこ[へ]も 行[い]きたくないです。",
+          "translation": {
+            "en": "I don't want to go anywhere today.",
+            "vi": "Hôm nay tôi không muốn đi đâu cả."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ni-ikimasu",
+      "title": {
+        "en": "N (place) へ V に 行[い]きます — purpose",
+        "vi": "địa điểm へ V (thể ます)／N に 行きます／来ます／帰ります — Mục đích di chuyển"
+      },
+      "pattern": {
+        "en": "place へ V (ます form)／N に 行[い]きます／来[き]ます／帰[かえ]ります",
+        "vi": "địa điểm へ V (thể ます)／N に 行[い]きます／来[き]ます／帰[かえ]ります"
+      },
+      "explanation": {
+        "en": "に marks the purpose of the trip; it can take a verb stem (泳[およ]ぎに 行[い]きます, to go swimming) or an action noun (買[か]い 物[もの]に 行[い]きます, to go shopping).",
+        "vi": "Trợ từ に đứng sau động từ bỏ ます hoặc danh từ chỉ hành động để biểu thị mục đích của việc đi/đến/trở về ('Đi đâu để làm gì')."
+      },
+      "examples": [
+        {
+          "jp": "神戸[こうべ]へインド 料理[りょうり]を 食[た]べに 行[い]きます。",
+          "translation": {
+            "en": "I'm going to Kobe to eat Indian food.",
+            "vi": "Tôi đi Kobe để ăn món ăn Ấn Độ."
+          }
+        },
+        {
+          "jp": "日本[にほん]へ 美術[びじゅつ]の 勉強[べんきょう]に 来[き]ました。",
+          "translation": {
+            "en": "I came to Japan to study fine art.",
+            "vi": "Tôi đến Nhật Bản để học mỹ thuật."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dokoka-nanika",
+      "title": {
+        "en": "どこか／何[なに]か — \"somewhere, something\"",
+        "vi": "どこか へ ／ 何[なに]か を — Đại từ bất định"
+      },
+      "pattern": {
+        "vi": "どこか へ ／ 何[なに]か を"
+      },
+      "explanation": {
+        "en": "どこか (somewhere) and 何[なに]か (something) turn the question word into an indefinite. The particles へ and を are usually dropped after them: どこか 行[い]きましたか.",
+        "vi": "どこか (nơi nào đó), なにか (cái gì đó), だれか (ai đó) biểu thị đối tượng không xác định cụ thể. Các trợ từ như へ, を có thể giữ lại hoặc lược bỏ."
+      },
+      "examples": [
+        {
+          "jp": "冬休[ふゆやす]みはどこか 行[い]きましたか。…はい、 北海道[ほっかいどう]へ 行[い]きました。",
+          "translation": {
+            "en": "Did you go anywhere over the winter holidays? …Yes, I went to Hokkaido.",
+            "vi": "Kỳ nghỉ đông bạn có đi đâu đó không? …Có, tôi đã đi Hokkaido."
+          }
+        }
+      ]
+    },
+    {
+      "id": "go-cortesia",
+      "title": {
+        "en": "ご〜 — the polite prefix",
+        "vi": "ご + N — Tiền tố lịch sự gốc Hán"
+      },
+      "pattern": {
+        "en": "ご + N (Sino-Japanese)",
+        "vi": "ご + N (gốc Hán)"
+      },
+      "explanation": {
+        "en": "ご is the counterpart of お for words with Chinese readings: ご 注文[ちゅうもん] (your order), ご 家族[かぞく] (your family). Both prefixes show respect for the listener's things.",
+        "vi": "Thêm tiền tố ご trước các từ gốc Hán (như ご注文, ご家族) để thể hiện thái độ tôn trọng, lịch sự."
+      },
+      "examples": [
+        {
+          "jp": "ご 注文[ちゅうもん]は？… 牛[ぎゅう]どんをお 願[ねが]いします。",
+          "translation": {
+            "en": "What would you like to order? …A gyudon, please.",
+            "vi": "Quý khách muốn gọi món gì ạ? …Cho tôi một phần cơm bò gyudon."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "particles"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "character": "今",
+  "level": "n5",
+  "lesson": 4,
+  "meanings": {
+    "en": [
+      "now"
+    ],
+    "vi": [
+      "bây giờ",
+      "hiện tại"
+    ]
+  },
+  "onyomi": [
+    "コン",
+    "キン"
+  ],
+  "kunyomi": [
+    "いま"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "今[いま]",
+      "meaning": {
+        "en": "now",
+        "vi": "bây giờ, hiện tại"
+      }
+    },
+    {
+      "word": "今日[きょう]",
+      "meaning": {
+        "en": "today",
+        "vi": "hôm nay"
+      }
+    },
+    {
+      "word": "今月[こんげつ]",
+      "meaning": {
+        "en": "this month",
+        "vi": "tháng này"
+      }
+    },
+    {
+      "word": "今頃[いまごろ]",
+      "meaning": {
+        "en": "at the moment",
+        "vi": "at the moment"
+      }
+    },
+    {
+      "word": "今週[こんしゅう]",
+      "meaning": {
+        "en": "this week",
+        "vi": "tuần này"
+      }
+    },
+    {
+      "word": "今回[こんかい]",
+      "meaning": {
+        "en": "this time",
+        "vi": "this time"
+      }
+    }
+  ],
+  "similar": [
+    "会",
+    "分"
+  ]
+}

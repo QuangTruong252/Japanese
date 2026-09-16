@@ -1,0 +1,56 @@
+{
+  "character": "遠",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "far"
+    ],
+    "vi": [
+      "xa"
+    ]
+  },
+  "onyomi": [
+    "エン"
+  ],
+  "kunyomi": [
+    "とお.い"
+  ],
+  "strokes": 13,
+  "examples": [
+    {
+      "word": "遠[とお]い",
+      "meaning": {
+        "en": "far",
+        "vi": "xa"
+      }
+    },
+    {
+      "word": "遠足[えんそく]",
+      "meaning": {
+        "en": "excursion",
+        "vi": "dã ngoại, chuyến đi chơi"
+      }
+    },
+    {
+      "word": "永遠[えいえん]",
+      "meaning": {
+        "en": "eternity",
+        "vi": "eternity"
+      }
+    },
+    {
+      "word": "遠景[えんけい]",
+      "meaning": {
+        "en": "distant view",
+        "vi": "distant view"
+      }
+    },
+    {
+      "word": "遠視[えんし]",
+      "meaning": {
+        "en": "long-sightedness",
+        "vi": "long-sightedness"
+      }
+    }
+  ]
+}

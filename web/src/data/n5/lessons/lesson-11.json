@@ -1,0 +1,130 @@
+{
+  "level": "n5",
+  "number": 11,
+  "title": {
+    "en": "Counting things and people",
+    "vi": "Số lượng từ và khoảng thời gian"
+  },
+  "jpTitle": "これ、お 願[ねが]いします",
+  "description": {
+    "en": "The Japanese numerals (ひとつ、ふたつ…), the counter suffixes, and how to express quantities and duration.",
+    "vi": "Cách dùng số đếm đồ vật, số đếm người, các lượng từ và cách nói khoảng thời gian, tần suất làm việc."
+  },
+  "grammar": [
+    {
+      "id": "numerales",
+      "title": {
+        "en": "Numerals: ひとつ、ふたつ… and counter suffixes",
+        "vi": "Số từ đếm đồ vật và số từ đếm người/con vật/đồ vật"
+      },
+      "pattern": {
+        "en": "ひとつ〜とお ／ number + 人[にん]・台[だい]・枚[まい]…",
+        "vi": "ひとつ〜とお ／ số đếm + 人[にん]・台[だい]・枚[まい]…"
+      },
+      "explanation": {
+        "en": "To count generic objects you use the native series ひとつ〜とお (up to ten). From eleven on, or for specific categories, you use suffixes: 〜人[にん] (people; ひとり and ふたり are irregular), 〜台[だい] (machines and vehicles), 〜枚[まい] (flat things), 〜回[かい] (times).",
+        "vi": "Đếm đồ vật thuần Nhật từ 1 đến 10 dùng: ひとつ, ふたつ, みっつ... từ 11 trở lên dùng số đếm thường. Đếm người: 1 người (ひとり), 2 người (ふたり), 3 người trở lên (số đếm + にん). Đếm máy móc/xe cộ dùng 台 (dai), đếm vật mỏng dùng 枚 (mai)."
+      },
+      "examples": [
+        {
+          "jp": "みかんをよっつ 買[か]いました。",
+          "translation": {
+            "en": "I bought four mandarins.",
+            "vi": "Tôi đã mua 4 quả quýt."
+          }
+        },
+        {
+          "jp": "外国人[がいこくじん]の 学生[がくせい]が2 人[ふたり]います。",
+          "translation": {
+            "en": "There are two foreign students.",
+            "vi": "Có 2 sinh viên nước ngoài."
+          }
+        }
+      ]
+    },
+    {
+      "id": "uso-cuantificador",
+      "title": {
+        "en": "Where the quantifier goes",
+        "vi": "Vị trí của lượng từ trong câu: N を + lượng từ + V"
+      },
+      "pattern": {
+        "en": "N を + quantity + V",
+        "vi": "N を + lượng từ + V"
+      },
+      "explanation": {
+        "en": "The quantifier normally goes right before the verb, with no particle: りんごをふたつ 食[た]べました. It is not placed between the noun and its particle.",
+        "vi": "Trong tiếng Nhật, số lượng từ thường đặt ngay trước động từ mà nó bổ nghĩa (sau trợ từ を, が...), không đặt trước danh từ như trong tiếng Việt."
+      },
+      "examples": [
+        {
+          "jp": "切手[きって]を5 枚[まい]ください。",
+          "translation": {
+            "en": "Five stamps, please.",
+            "vi": "Xin cho tôi 5 con tem."
+          }
+        }
+      ]
+    },
+    {
+      "id": "duracion-kai",
+      "title": {
+        "en": "Period に 〜回[かい] — frequency",
+        "vi": "khoảng thời gian に − 回[かい] V — Tần suất hành động"
+      },
+      "pattern": {
+        "en": "period に − 回[かい] V",
+        "vi": "khoảng thời gian に − 回[かい] V"
+      },
+      "explanation": {
+        "en": "To express frequency you give the period with に and the number of times with 〜回[かい]: 1か 月[げつ]に2 回[かい] 映画[えいが]を 見[み]ます (I see a film twice a month).",
+        "vi": "Cấu trúc diễn tả tần suất thực hiện một hành động trong một khoảng thời gian nhất định ('Mỗi... làm... lần')."
+      },
+      "examples": [
+        {
+          "jp": "1 週間[しゅうかん]に1 回[かい]テニスをします。",
+          "translation": {
+            "en": "I play tennis once a week.",
+            "vi": "Một tuần tôi chơi tennis một lần."
+          }
+        }
+      ]
+    },
+    {
+      "id": "gurai-dake",
+      "title": {
+        "en": "〜ぐらい and 〜だけ",
+        "vi": "lượng từ ぐらい ／ N だけ — «Khoảng / Chỉ»"
+      },
+      "pattern": {
+        "en": "quantity ぐらい ／ N だけ",
+        "vi": "lượng từ ぐらい ／ N だけ"
+      },
+      "explanation": {
+        "en": "ぐらい after a quantity means \"about\" (30 分[ぷん]ぐらい, about half an hour). だけ means \"only\": 1 人[ひとり]だけ (only one person). どのくらい asks how long something takes; duration is expressed with 〜時間[じかん], 〜週間[しゅうかん], 〜か 月[げつ], 〜年[ねん].",
+        "vi": "ぐらい đặt sau lượng từ để biểu thị con số ước chừng, xấp xỉ ('khoảng'). だけ đặt sau danh từ hoặc lượng từ để biểu thị sự giới hạn duy nhất ('chỉ')."
+      },
+      "examples": [
+        {
+          "jp": "大阪[おおさか]から 東京[とうきょう]までどのくらいかかりますか。…2 時間半[じかんはん]ぐらいかかります。",
+          "translation": {
+            "en": "How long does it take from Osaka to Tokyo? …About two and a half hours.",
+            "vi": "Từ Osaka đến Tokyo mất bao lâu? …Mất khoảng 2 tiếng rưỡi."
+          }
+        },
+        {
+          "jp": "休[やす]みは 日曜日[にちようび]だけです。",
+          "translation": {
+            "en": "I only have Sundays off.",
+            "vi": "Ngày nghỉ chỉ có chủ nhật."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "counters",
+    "numbers",
+    "time"
+  ]
+}

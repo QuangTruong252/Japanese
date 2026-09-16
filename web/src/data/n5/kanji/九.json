@@ -1,0 +1,59 @@
+{
+  "character": "九",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "nine"
+    ],
+    "vi": [
+      "chín",
+      "số chín"
+    ]
+  },
+  "onyomi": [
+    "キュウ",
+    "ク"
+  ],
+  "kunyomi": [
+    "ここの.つ"
+  ],
+  "strokes": 2,
+  "examples": [
+    {
+      "word": "九[きゅう]",
+      "meaning": {
+        "en": "nine",
+        "vi": "chín, số 9"
+      }
+    },
+    {
+      "word": "九[ここの]つ",
+      "meaning": {
+        "en": "nine things",
+        "vi": "chín cái"
+      }
+    },
+    {
+      "word": "九月[くがつ]",
+      "meaning": {
+        "en": "September",
+        "vi": "tháng chín"
+      }
+    },
+    {
+      "word": "九州[きゅうしゅう]",
+      "meaning": {
+        "en": "the island of Kyushu",
+        "vi": "the island of Kyushu"
+      }
+    },
+    {
+      "word": "九日[ここのか]",
+      "meaning": {
+        "en": "9th day",
+        "vi": "ngày mùng chín"
+      }
+    }
+  ]
+}

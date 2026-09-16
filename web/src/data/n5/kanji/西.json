@@ -1,0 +1,61 @@
+{
+  "character": "西",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "west"
+    ],
+    "vi": [
+      "phương tây",
+      "hướng tây"
+    ]
+  },
+  "onyomi": [
+    "セイ",
+    "サイ"
+  ],
+  "kunyomi": [
+    "にし"
+  ],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "西[にし]",
+      "meaning": {
+        "en": "west",
+        "vi": "phương tây, hướng tây"
+      }
+    },
+    {
+      "word": "関西[かんさい]",
+      "meaning": {
+        "en": "the Kansai region",
+        "vi": "the Kansai region"
+      }
+    },
+    {
+      "word": "西口[にしぐち]",
+      "meaning": {
+        "en": "west exit",
+        "vi": "west exit"
+      }
+    },
+    {
+      "word": "西欧[せいおう]",
+      "meaning": {
+        "en": "Western Europe",
+        "vi": "Western Europe"
+      }
+    },
+    {
+      "word": "北西[ほくせい]",
+      "meaning": {
+        "en": "north-west",
+        "vi": "tây bắc"
+      }
+    }
+  ],
+  "similar": [
+    "四"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "character": "子",
+  "level": "n5",
+  "lesson": 9,
+  "meanings": {
+    "en": [
+      "child",
+      "son"
+    ],
+    "vi": [
+      "con",
+      "trẻ con"
+    ]
+  },
+  "onyomi": [
+    "シ",
+    "ス"
+  ],
+  "kunyomi": [
+    "こ"
+  ],
+  "strokes": 3,
+  "examples": [
+    {
+      "word": "子[こ]ども",
+      "meaning": {
+        "en": "child",
+        "vi": "trẻ con, con cái"
+      }
+    },
+    {
+      "word": "男[おとこ]の 子[こ]",
+      "meaning": {
+        "en": "child",
+        "vi": "bé trai"
+      }
+    },
+    {
+      "word": "椅子[いす]",
+      "meaning": {
+        "en": "chair",
+        "vi": "chair"
+      }
+    },
+    {
+      "word": "子[こ]",
+      "meaning": {
+        "en": "child",
+        "vi": "child"
+      }
+    },
+    {
+      "word": "息子[むすこ]",
+      "meaning": {
+        "en": "son",
+        "vi": "son"
+      }
+    },
+    {
+      "word": "弟子[でし]",
+      "meaning": {
+        "en": "disciple",
+        "vi": "disciple"
+      }
+    },
+    {
+      "word": "女子[じょし]",
+      "meaning": {
+        "en": "girl",
+        "vi": "nữ tử, nữ thanh niên"
+      }
+    }
+  ],
+  "similar": [
+    "字",
+    "学"
+  ]
+}

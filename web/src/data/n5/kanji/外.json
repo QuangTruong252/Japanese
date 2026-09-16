@@ -1,0 +1,77 @@
+{
+  "character": "外",
+  "level": "n5",
+  "lesson": 10,
+  "meanings": {
+    "en": [
+      "outside"
+    ],
+    "vi": [
+      "ngoài",
+      "bên ngoài"
+    ]
+  },
+  "onyomi": [
+    "ガイ",
+    "ゲ"
+  ],
+  "kunyomi": [
+    "そと"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "外[そと]",
+      "meaning": {
+        "en": "outside",
+        "vi": "bên ngoài, phía ngoài"
+      }
+    },
+    {
+      "word": "外国[がいこく]",
+      "meaning": {
+        "en": "abroad, foreign",
+        "vi": "nước ngoài"
+      }
+    },
+    {
+      "word": "外国人[がいこくじん]",
+      "meaning": {
+        "en": "foreigner",
+        "vi": "người nước ngoài"
+      }
+    },
+    {
+      "word": "外人[がいじん]",
+      "meaning": {
+        "en": "abroad, foreign",
+        "vi": "abroad, foreign"
+      }
+    },
+    {
+      "word": "意外[いがい]",
+      "meaning": {
+        "en": "unexpected",
+        "vi": "unexpected"
+      }
+    },
+    {
+      "word": "外出[がいしゅつ]",
+      "meaning": {
+        "en": "exit",
+        "vi": "exit"
+      }
+    },
+    {
+      "word": "外科[げか]",
+      "meaning": {
+        "en": "surgery",
+        "vi": "khoa ngoại (bệnh viện)"
+      }
+    }
+  ],
+  "similar": [
+    "多",
+    "名"
+  ]
+}

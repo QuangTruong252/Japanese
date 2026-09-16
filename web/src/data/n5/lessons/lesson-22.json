@@ -1,0 +1,96 @@
+{
+  "level": "n5",
+  "number": 22,
+  "title": {
+    "en": "Clauses that describe nouns",
+    "vi": "Bổ nghĩa cho danh từ"
+  },
+  "jpTitle": "どんなアパートがいいですか",
+  "description": {
+    "en": "Modify a noun with a whole clause: \"the person who…\", \"the cake that… made\".",
+    "vi": "Cách dùng mệnh đề động từ thể thông thường để bổ nghĩa trực tiếp cho danh từ đứng sau."
+  },
+  "grammar": [
+    {
+      "id": "oracion-modificadora",
+      "title": {
+        "en": "The clause that modifies the noun",
+        "vi": "Mệnh đề bổ nghĩa cho danh từ: S (thể thông thường) + N"
+      },
+      "pattern": {
+        "en": "S (plain form) + N",
+        "vi": "S (thể thông thường) + N"
+      },
+      "explanation": {
+        "en": "A whole clause can go in front of a noun to describe it, always in the plain form: ミラーさんが 住[す]んでいる 家[いえ] (the house Mr. Miller lives in), 京都[きょうと]へ 行[い]く 人[ひと] (the people going to Kyoto). The subject inside the clause is marked with が.",
+        "vi": "Trong tiếng Nhật, mệnh đề bổ ngữ luôn đứng trước danh từ mà nó bổ nghĩa và động từ/tính từ trong mệnh đề đó luôn chia ở thể thông thường. Chủ ngữ của mệnh đề bổ ngữ đi với trợ từ が."
+      },
+      "examples": [
+        {
+          "jp": "これは 母[はは]が 作[つく]ったケーキです。",
+          "translation": {
+            "en": "This is the cake my mother made.",
+            "vi": "Đây là chiếc bánh kem mà mẹ tôi đã làm."
+          }
+        },
+        {
+          "jp": "眼鏡[めがね]をかけている 人[ひと]は 誰[だれ]ですか。",
+          "translation": {
+            "en": "Who is the person wearing glasses?",
+            "vi": "Người đang đeo kính kia là ai vậy?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "v-dicc-tiempo",
+      "title": {
+        "en": "V (dict.) 時間[じかん]／約束[やくそく]／用事[ようじ]",
+        "vi": "V (thể từ điển) + 時間／約束／用事 — Thời gian / Cuộc hẹn / Công việc để làm gì"
+      },
+      "pattern": {
+        "en": "V (dictionary form) + 時間[じかん]・約束[やくそく]・用事[ようじ]",
+        "vi": "V (thể từ điển) + 時間[じかん]・約束[やくそく]・用事[ようじ]"
+      },
+      "explanation": {
+        "en": "The same pattern works with abstract nouns: 朝[あさ]ごはんを 食[た]べる 時間[じかん]が ありません (I have no time to eat breakfast), 友達[ともだち]と 会[あ]う 約束[やくそく]が あります.",
+        "vi": "Dùng thể từ điển đứng trước các danh từ chỉ thời gian (時間), cuộc hẹn (約束), việc bận (用事) để nói về thời gian hoặc lịch trình thực hiện một hành động."
+      },
+      "examples": [
+        {
+          "jp": "私[わたし]は 新聞[しんぶん]を 読[よ]む 時間[じかん]がありません。",
+          "translation": {
+            "en": "I have no time to read the newspaper.",
+            "vi": "Tôi không có thời gian để đọc báo."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mashou-ka-22",
+      "title": {
+        "en": "V ましょうか — deciding together",
+        "vi": "V ましょうか — Lời đề nghị, hỏi ý kiến cùng hành động"
+      },
+      "pattern": {
+        "vi": "V ましょうか"
+      },
+      "explanation": {
+        "en": "Here ましょうか suggests settling something between the two of you: 何時[なんじ]ごろ 行[い]きましょうか (about what time shall we go?).",
+        "vi": "Dùng để hỏi ý kiến người đối thoại xem nên cùng nhau làm việc gì ở đâu hoặc vào lúc nào ('Chúng mình cùng làm... nhé?')."
+      },
+      "examples": [
+        {
+          "jp": "どこで 会[あ]いましょうか。… 駅[えき]で 会[あ]いましょう。",
+          "translation": {
+            "en": "Where shall we meet? …Let's meet at the station.",
+            "vi": "Chúng ta sẽ gặp nhau ở đâu đây? …Hãy gặp nhau ở nhà ga nhé."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "verbs"
+  ]
+}

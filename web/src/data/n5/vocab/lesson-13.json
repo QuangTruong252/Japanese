@@ -1,0 +1,316 @@
+{
+  "level": "n5",
+  "lesson": 13,
+  "words": [
+    {
+      "id": "asobimasu",
+      "word": "遊[あそ]びます",
+      "kana": "あそびます",
+      "meaning": {
+        "en": "to play, to enjoy oneself",
+        "vi": "chơi, vui chơi"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "oyogimasu",
+      "word": "泳[およ]ぎます",
+      "kana": "およぎます",
+      "meaning": {
+        "en": "to swim",
+        "vi": "bơi"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "mukaemasu",
+      "word": "迎[むか]えます",
+      "kana": "むかえます",
+      "meaning": {
+        "en": "to pick up, to meet (someone)",
+        "vi": "đón (ai đó)"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "tsukaremasu",
+      "word": "疲[つか]れます",
+      "kana": "つかれます",
+      "meaning": {
+        "en": "to get tired",
+        "vi": "mệt mỏi"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "kekkon-shimasu",
+      "word": "結婚[けっこん]します",
+      "kana": "けっこんします",
+      "meaning": {
+        "en": "to get married",
+        "vi": "kết hôn, cưới"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "kaimono-shimasu",
+      "word": "買[か]い 物[もの]します",
+      "kana": "かいものします",
+      "meaning": {
+        "en": "to go shopping",
+        "vi": "mua sắm"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "shokuji-shimasu",
+      "word": "食事[しょくじ]します",
+      "kana": "しょくじします",
+      "meaning": {
+        "en": "to eat",
+        "vi": "dùng bữa, ăn cơm"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "sanpo-shimasu",
+      "word": "散歩[さんぽ]します[公園[こうえん]を〜]",
+      "kana": "さんぽします",
+      "meaning": {
+        "en": "to take a walk [in the park]",
+        "vi": "đi dạo [trong công viên]"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "taihen",
+      "word": "大変[たいへん][な]",
+      "kana": "たいへん",
+      "meaning": {
+        "en": "tough, terrible",
+        "vi": "vất vả, khó khăn, nghiêm trọng"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "hoshii",
+      "word": "欲[ほ]しい",
+      "kana": "ほしい",
+      "meaning": {
+        "en": "to want (something)",
+        "vi": "muốn có (đồ vật)"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "hiroi",
+      "word": "広[ひろ]い",
+      "kana": "ひろい",
+      "meaning": {
+        "en": "wide, spacious",
+        "vi": "rộng rãi, rộng"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "semai",
+      "word": "狭[せま]い",
+      "kana": "せまい",
+      "meaning": {
+        "en": "narrow",
+        "vi": "chật hẹp, hẹp"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "puuru",
+      "word": "プール",
+      "kana": "プール",
+      "meaning": {
+        "en": "swimming pool",
+        "vi": "hồ bơi, bể bơi"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kawa",
+      "word": "川[かわ]",
+      "kana": "かわ",
+      "meaning": {
+        "en": "river",
+        "vi": "con sông"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "bijutsu",
+      "word": "美術[びじゅつ]",
+      "kana": "びじゅつ",
+      "meaning": {
+        "en": "fine arts",
+        "vi": "mỹ thuật"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tsuri",
+      "word": "釣[つ]り",
+      "kana": "つり",
+      "meaning": {
+        "en": "fishing",
+        "vi": "việc câu cá"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "sukii",
+      "word": "スキー",
+      "kana": "スキー",
+      "meaning": {
+        "en": "skiing",
+        "vi": "trượt tuyết"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shuumatsu",
+      "word": "週末[しゅうまつ]",
+      "kana": "しゅうまつ",
+      "meaning": {
+        "en": "weekend",
+        "vi": "cuối tuần"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "oshougatsu",
+      "word": "[お]正月[しょうがつ]",
+      "kana": "おしょうがつ",
+      "meaning": {
+        "en": "New Year",
+        "vi": "Tết, ngày đầu năm mới"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "goro",
+      "word": "〜ごろ",
+      "kana": "ごろ",
+      "meaning": {
+        "en": "around ~ (time)",
+        "vi": "khoảng chừng (thời điểm)"
+      },
+      "type": "particle"
+    },
+    {
+      "id": "nanika",
+      "word": "何[なに]か",
+      "kana": "なにか",
+      "meaning": {
+        "en": "something",
+        "vi": "cái gì đó"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "dokoka",
+      "word": "どこか",
+      "kana": "どこか",
+      "meaning": {
+        "en": "somewhere",
+        "vi": "nơi nào đó, đâu đó"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "nodo-ga-kawakimasu",
+      "word": "のどが 渇[かわ]きます",
+      "kana": "のどがかわきます",
+      "meaning": {
+        "en": "to be thirsty",
+        "vi": "khát nước"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "onaka-ga-sukimasu",
+      "word": "おなかがすきます",
+      "kana": "おなかがすきます",
+      "meaning": {
+        "en": "to be hungry",
+        "vi": "đói bụng"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "sou-shimashou",
+      "word": "そうしましょう",
+      "kana": "そうしましょう",
+      "meaning": {
+        "en": "let's do that",
+        "vi": "chúng ta hãy làm như thế đi!"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "gochuumon",
+      "word": "ご 注文[ちゅうもん]は？",
+      "kana": "ごちゅうもんは",
+      "meaning": {
+        "en": "what would you like to order?",
+        "vi": "quý khách muốn gọi món gì ạ?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "teishoku",
+      "word": "定食[ていしょく]",
+      "kana": "ていしょく",
+      "meaning": {
+        "en": "set menu",
+        "vi": "suất ăn cơm phần"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "gyuudon",
+      "word": "牛[ぎゅう]どん",
+      "kana": "ぎゅうどん",
+      "meaning": {
+        "en": "gyudon (beef bowl)",
+        "vi": "cơm bát thịt bò"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "omachi-kudasai",
+      "word": "[少々[しょうしょう]]お 待[ま]ちください",
+      "kana": "しょうしょうおまちください",
+      "meaning": {
+        "en": "please wait [a moment]",
+        "vi": "xin vui lòng chờ trong giây lát"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "de-gozaimasu",
+      "word": "〜でございます",
+      "kana": "でございます",
+      "meaning": {
+        "en": "(polite form of です)",
+        "vi": "là (cách nói rất lịch sự của です)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "betsubetsuni",
+      "word": "別々[べつべつ]に",
+      "kana": "べつべつに",
+      "meaning": {
+        "en": "separately",
+        "vi": "riêng rẽ, tách biệt từng người"
+      },
+      "type": "adverb"
+    }
+  ]
+}

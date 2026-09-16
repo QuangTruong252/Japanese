@@ -1,0 +1,66 @@
+{
+  "character": "早",
+  "level": "n5",
+  "lesson": 9,
+  "meanings": {
+    "en": [
+      "early",
+      "fast"
+    ],
+    "vi": [
+      "sớm",
+      "nhanh"
+    ]
+  },
+  "onyomi": [
+    "ソウ"
+  ],
+  "kunyomi": [
+    "はや.い"
+  ],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "早[はや]い",
+      "meaning": {
+        "en": "early",
+        "vi": "sớm"
+      }
+    },
+    {
+      "word": "早[はや]く",
+      "meaning": {
+        "en": "soon",
+        "vi": "soon"
+      }
+    },
+    {
+      "word": "早起[はやお]き",
+      "meaning": {
+        "en": "to get up early",
+        "vi": "to get up early"
+      }
+    },
+    {
+      "word": "早口[はやくち]",
+      "meaning": {
+        "en": "to speak fast",
+        "vi": "to speak fast"
+      }
+    },
+    {
+      "word": "早朝[そうちょう]",
+      "meaning": {
+        "en": "early in the morning",
+        "vi": "sáng sớm"
+      }
+    },
+    {
+      "word": "早産[そうざん]",
+      "meaning": {
+        "en": "premature birth",
+        "vi": "premature birth"
+      }
+    }
+  ]
+}

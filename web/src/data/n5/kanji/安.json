@@ -1,0 +1,64 @@
+{
+  "character": "安",
+  "level": "n5",
+  "lesson": 8,
+  "meanings": {
+    "en": [
+      "cheap",
+      "quiet, calm",
+      "safe"
+    ],
+    "vi": [
+      "rẻ",
+      "an tâm",
+      "yên ổn"
+    ]
+  },
+  "onyomi": [
+    "アン"
+  ],
+  "kunyomi": [
+    "やす.い"
+  ],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "安[やす]い",
+      "meaning": {
+        "en": "cheap",
+        "vi": "rẻ"
+      }
+    },
+    {
+      "word": "安心[あんしん]",
+      "meaning": {
+        "en": "peace of mind",
+        "vi": "an tâm, yên tâm"
+      }
+    },
+    {
+      "word": "安全[あんぜん]",
+      "meaning": {
+        "en": "safety",
+        "vi": "an toàn"
+      }
+    },
+    {
+      "word": "安定[あんてい]",
+      "meaning": {
+        "en": "stability",
+        "vi": "stability"
+      }
+    },
+    {
+      "word": "安易[あんい]",
+      "meaning": {
+        "en": "easy, simple",
+        "vi": "easy, simple"
+      }
+    }
+  ],
+  "similar": [
+    "女"
+  ]
+}

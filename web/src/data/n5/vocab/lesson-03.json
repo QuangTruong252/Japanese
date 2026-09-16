@@ -1,0 +1,426 @@
+{
+  "level": "n5",
+  "lesson": 3,
+  "words": [
+    {
+      "id": "koko",
+      "word": "ここ",
+      "kana": "ここ",
+      "meaning": {
+        "en": "here, in this place",
+        "vi": "chỗ này, ở đây (gần người nói)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "soko",
+      "word": "そこ",
+      "kana": "そこ",
+      "meaning": {
+        "en": "there, in that place",
+        "vi": "chỗ đó, ở đó (gần người nghe)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "asoko",
+      "word": "あそこ",
+      "kana": "あそこ",
+      "meaning": {
+        "en": "over there, in that place",
+        "vi": "chỗ kia, ở kia (xa cả hai)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "doko",
+      "word": "どこ",
+      "kana": "どこ",
+      "meaning": {
+        "en": "where, in what place",
+        "vi": "chỗ nào, ở đâu"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "kochira",
+      "word": "こちら",
+      "kana": "こちら",
+      "meaning": {
+        "en": "here (polite form of ここ)",
+        "vi": "phía này, chỗ này (lịch sự)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "sochira",
+      "word": "そちら",
+      "kana": "そちら",
+      "meaning": {
+        "en": "there (polite form of そこ)",
+        "vi": "phía đó, chỗ đó (lịch sự)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "achira",
+      "word": "あちら",
+      "kana": "あちら",
+      "meaning": {
+        "en": "over there (polite form of あそこ)",
+        "vi": "phía kia, chỗ kia (lịch sự)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "dochira",
+      "word": "どちら",
+      "kana": "どちら",
+      "meaning": {
+        "en": "where (polite form of どこ)",
+        "vi": "phía nào, chỗ nào (lịch sự)"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "kyoushitsu",
+      "word": "教室[きょうしつ]",
+      "kana": "きょうしつ",
+      "meaning": {
+        "en": "classroom",
+        "vi": "lớp học, phòng học"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shokudou",
+      "word": "食堂[しょくどう]",
+      "kana": "しょくどう",
+      "meaning": {
+        "en": "dining room",
+        "vi": "nhà ăn, căn tin"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "jimusho",
+      "word": "事務所[じむしょ]",
+      "kana": "じむしょ",
+      "meaning": {
+        "en": "office",
+        "vi": "văn phòng làm việc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kaigishitsu",
+      "word": "会議室[かいぎしつ]",
+      "kana": "かいぎしつ",
+      "meaning": {
+        "en": "meeting room",
+        "vi": "phòng họp"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "uketsuke",
+      "word": "受付[うけつけ]",
+      "kana": "うけつけ",
+      "meaning": {
+        "en": "reception",
+        "vi": "quầy lễ tân, bàn tiếp đón"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "robii",
+      "word": "ロビー",
+      "kana": "ロビー",
+      "meaning": {
+        "en": "reception, lobby",
+        "vi": "đại sảnh, phòng chờ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "heya",
+      "word": "部屋[へや]",
+      "kana": "へや",
+      "meaning": {
+        "en": "room",
+        "vi": "căn phòng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "toire",
+      "word": "トイレ（お 手洗[てあら]い）",
+      "kana": "トイレ（おてあらい）",
+      "meaning": {
+        "en": "bathroom, toilet",
+        "vi": "nhà vệ sinh"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kaidan",
+      "word": "階段[かいだん]",
+      "kana": "かいだん",
+      "meaning": {
+        "en": "stairs",
+        "vi": "cầu thang bộ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "erebeetaa",
+      "word": "エレベーター",
+      "kana": "エレベーター",
+      "meaning": {
+        "en": "lift, elevator",
+        "vi": "thang máy"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "esukareetaa",
+      "word": "エスカレーター",
+      "kana": "エスカレーター",
+      "meaning": {
+        "en": "escalator",
+        "vi": "thang cuốn"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "jidouhanbaiki",
+      "word": "自動販売機[じどうはんばいき]",
+      "kana": "じどうはんばいき",
+      "meaning": {
+        "en": "vending machine",
+        "vi": "máy bán hàng tự động"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "denwa",
+      "word": "電話[でんわ]",
+      "kana": "でんわ",
+      "meaning": {
+        "en": "telephone, phone call",
+        "vi": "điện thoại, cuộc gọi"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "okuni",
+      "word": "[お]国[くに]",
+      "kana": "おくに",
+      "meaning": {
+        "en": "[your] country, homeland",
+        "vi": "đất nước của bạn (lịch sự)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kaisha",
+      "word": "会社[かいしゃ]",
+      "kana": "かいしゃ",
+      "meaning": {
+        "en": "company, firm",
+        "vi": "công ty"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "uchi",
+      "word": "うち",
+      "kana": "うち",
+      "meaning": {
+        "en": "house, home",
+        "vi": "nhà, tổ ấm"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kutsu",
+      "word": "靴[くつ]",
+      "kana": "くつ",
+      "meaning": {
+        "en": "shoes",
+        "vi": "giày"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "nekutai",
+      "word": "ネクタイ",
+      "kana": "ネクタイ",
+      "meaning": {
+        "en": "tie",
+        "vi": "cà vạt"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "wain",
+      "word": "ワイン",
+      "kana": "ワイン",
+      "meaning": {
+        "en": "wine",
+        "vi": "rượu vang"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "uriba",
+      "word": "売[う]り 場[ば]",
+      "kana": "うりば",
+      "meaning": {
+        "en": "department (in a department store)",
+        "vi": "quầy bán hàng, nơi bán"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "chika",
+      "word": "地下[ちか]",
+      "kana": "ちか",
+      "meaning": {
+        "en": "basement, underground",
+        "vi": "tầng hầm, dưới đất"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kai",
+      "word": "〜階[かい]",
+      "kana": "かい／がい",
+      "meaning": {
+        "en": "~ floor",
+        "vi": "tầng (đếm số tầng lầu)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "nangai",
+      "word": "何階[なんがい]",
+      "kana": "なんがい",
+      "meaning": {
+        "en": "what floor",
+        "vi": "tầng mấy"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "en",
+      "word": "〜円[えん]",
+      "kana": "えん",
+      "meaning": {
+        "en": "~ yen",
+        "vi": "yên (tiền tệ Nhật Bản)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "ikura",
+      "word": "いくら",
+      "kana": "いくら",
+      "meaning": {
+        "en": "how much (money)",
+        "vi": "bao nhiêu tiền"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "hyaku",
+      "word": "百[ひゃく]",
+      "kana": "ひゃく",
+      "meaning": {
+        "en": "hundred",
+        "vi": "trăm (100)"
+      },
+      "type": "number"
+    },
+    {
+      "id": "sen",
+      "word": "千[せん]",
+      "kana": "せん",
+      "meaning": {
+        "en": "thousand",
+        "vi": "nghìn (1.000)"
+      },
+      "type": "number"
+    },
+    {
+      "id": "man",
+      "word": "万[まん]",
+      "kana": "まん",
+      "meaning": {
+        "en": "ten thousand",
+        "vi": "vạn, mười nghìn (10.000)"
+      },
+      "type": "number"
+    },
+    {
+      "id": "sumimasen",
+      "word": "すみません",
+      "kana": "すみません",
+      "meaning": {
+        "en": "excuse me",
+        "vi": "Xin lỗi / Làm phiền bạn"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "doumo",
+      "word": "どうも",
+      "kana": "どうも",
+      "meaning": {
+        "en": "thank you",
+        "vi": "cảm ơn"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "irasshaimase",
+      "word": "いらっしゃいませ",
+      "kana": "いらっしゃいませ",
+      "meaning": {
+        "en": "welcome (greeting customers)",
+        "vi": "xin kính chào quý khách"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "misete-kudasai",
+      "word": "[〜を] 見[み]せてください",
+      "kana": "みせてください",
+      "meaning": {
+        "en": "please show me [~]",
+        "vi": "Xin hãy cho tôi xem"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "ja",
+      "word": "じゃ",
+      "kana": "じゃ",
+      "meaning": {
+        "en": "well then",
+        "vi": "Vậy thì, thế thì"
+      },
+      "type": "conjunction"
+    },
+    {
+      "id": "kudasai",
+      "word": "[〜を]ください",
+      "kana": "ください",
+      "meaning": {
+        "en": "please give me [~]",
+        "vi": "xin hãy cho tôi [món đồ]"
+      },
+      "type": "expression"
+    }
+  ]
+}

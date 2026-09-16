@@ -1,0 +1,65 @@
+{
+  "character": "十",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "ten"
+    ],
+    "vi": [
+      "mười",
+      "số mười"
+    ]
+  },
+  "onyomi": [
+    "ジュウ"
+  ],
+  "kunyomi": [
+    "とお"
+  ],
+  "strokes": 2,
+  "examples": [
+    {
+      "word": "十[じゅう]",
+      "meaning": {
+        "en": "ten",
+        "vi": "mười, số 10"
+      }
+    },
+    {
+      "word": "十[とお]",
+      "meaning": {
+        "en": "ten things",
+        "vi": "mười cái"
+      }
+    },
+    {
+      "word": "十分[じゅっぷん]",
+      "meaning": {
+        "en": "ten minutes",
+        "vi": "ten minutes"
+      }
+    },
+    {
+      "word": "十月[じゅうがつ]",
+      "meaning": {
+        "en": "October",
+        "vi": "tháng mười"
+      }
+    },
+    {
+      "word": "十字架[じゅうじか]",
+      "meaning": {
+        "en": "cross, crucifix",
+        "vi": "cross, crucifix"
+      }
+    },
+    {
+      "word": "十日[とおか]",
+      "meaning": {
+        "en": "10th day",
+        "vi": "ngày mùng mười"
+      }
+    }
+  ]
+}

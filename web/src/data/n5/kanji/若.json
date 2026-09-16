@@ -1,0 +1,54 @@
+{
+  "character": "若",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "young"
+    ],
+    "vi": [
+      "trẻ",
+      "trẻ tuổi"
+    ]
+  },
+  "onyomi": [
+    "ジャク"
+  ],
+  "kunyomi": [
+    "わか.い"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "若[わか]い",
+      "meaning": {
+        "en": "young",
+        "vi": "trẻ, trẻ trung"
+      }
+    },
+    {
+      "word": "若者[わかもの]",
+      "meaning": {
+        "en": "young person, youth",
+        "vi": "người trẻ tuổi, thanh niên"
+      }
+    },
+    {
+      "word": "若夫婦[わかふうふ]",
+      "meaning": {
+        "en": "young couple",
+        "vi": "young couple"
+      }
+    },
+    {
+      "word": "若人[わこうど]",
+      "meaning": {
+        "en": "young people",
+        "vi": "young people"
+      }
+    }
+  ],
+  "similar": [
+    "石",
+    "右"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "character": "女",
+  "level": "n5",
+  "lesson": 5,
+  "meanings": {
+    "en": [
+      "woman"
+    ],
+    "vi": [
+      "phụ nữ",
+      "con gái"
+    ]
+  },
+  "onyomi": [
+    "ジョ",
+    "ニョ"
+  ],
+  "kunyomi": [
+    "おんな"
+  ],
+  "strokes": 3,
+  "examples": [
+    {
+      "word": "女[おんな]",
+      "meaning": {
+        "en": "woman",
+        "vi": "phụ nữ, phái nữ"
+      }
+    },
+    {
+      "word": "女[おんな]の 人[ひと]",
+      "meaning": {
+        "en": "woman",
+        "vi": "người phụ nữ"
+      }
+    },
+    {
+      "word": "女[おんな]の 子[こ]",
+      "meaning": {
+        "en": "girl",
+        "vi": "bé gái"
+      }
+    },
+    {
+      "word": "女[おんな]らしい",
+      "meaning": {
+        "en": "feminine",
+        "vi": "feminine"
+      }
+    },
+    {
+      "word": "女性[じょせい]",
+      "meaning": {
+        "en": "woman, female",
+        "vi": "nữ giới, phụ nữ"
+      }
+    },
+    {
+      "word": "少女[しょうじょ]",
+      "meaning": {
+        "en": "girl",
+        "vi": "thiếu nữ"
+      }
+    },
+    {
+      "word": "女優[じょゆう]",
+      "meaning": {
+        "en": "actress",
+        "vi": "actress"
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "character": "上",
+  "level": "n5",
+  "lesson": 7,
+  "meanings": {
+    "en": [
+      "above, up",
+      "on top",
+      "to go up"
+    ],
+    "vi": [
+      "trên",
+      "phía trên",
+      "lên"
+    ]
+  },
+  "onyomi": [
+    "ジョウ"
+  ],
+  "kunyomi": [
+    "うえ",
+    "あ.げる",
+    "あ.がる",
+    "のぼ.る"
+  ],
+  "strokes": 3,
+  "examples": [
+    {
+      "word": "上[うえ]",
+      "meaning": {
+        "en": "on top",
+        "vi": "phía trên, ở trên"
+      }
+    },
+    {
+      "word": "上手[じょうず]",
+      "meaning": {
+        "en": "skilful",
+        "vi": "giỏi, khéo léo"
+      }
+    },
+    {
+      "word": "上着[うわぎ]",
+      "meaning": {
+        "en": "jacket",
+        "vi": "áo khoác ngoài"
+      }
+    },
+    {
+      "word": "上[あ]がる",
+      "meaning": {
+        "en": "to go up, to rise",
+        "vi": "đi lên, tăng lên"
+      }
+    },
+    {
+      "word": "上[のぼ]る",
+      "meaning": {
+        "en": "to go up (stairs)",
+        "vi": "to go up (stairs)"
+      }
+    },
+    {
+      "word": "屋上[おくじょう]",
+      "meaning": {
+        "en": "rooftop",
+        "vi": "rooftop"
+      }
+    },
+    {
+      "word": "以上[いじょう]",
+      "meaning": {
+        "en": "more than",
+        "vi": "more than"
+      }
+    }
+  ],
+  "similar": [
+    "土"
+  ]
+}

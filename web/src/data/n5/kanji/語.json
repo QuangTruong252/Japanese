@@ -1,0 +1,72 @@
+{
+  "character": "語",
+  "level": "n5",
+  "lesson": 2,
+  "meanings": {
+    "en": [
+      "language",
+      "word",
+      "to relate, to tell"
+    ],
+    "vi": [
+      "ngôn ngữ",
+      "tiếng",
+      "từ ngữ"
+    ]
+  },
+  "onyomi": [
+    "ゴ"
+  ],
+  "kunyomi": [
+    "かた.る"
+  ],
+  "strokes": 14,
+  "examples": [
+    {
+      "word": "日本語[にほんご]",
+      "meaning": {
+        "en": "the Japanese language",
+        "vi": "tiếng Nhật"
+      }
+    },
+    {
+      "word": "英語[えいご]",
+      "meaning": {
+        "en": "the English language",
+        "vi": "tiếng Anh"
+      }
+    },
+    {
+      "word": "語[かた]る",
+      "meaning": {
+        "en": "to relate, to tell",
+        "vi": "to relate, to tell"
+      }
+    },
+    {
+      "word": "物語[ものがたり]",
+      "meaning": {
+        "en": "story, tale",
+        "vi": "story, tale"
+      }
+    },
+    {
+      "word": "単語[たんご]",
+      "meaning": {
+        "en": "word",
+        "vi": "từ vựng"
+      }
+    },
+    {
+      "word": "スペイン 語[ご]",
+      "meaning": {
+        "en": "the Spanish language",
+        "vi": "the Spanish language"
+      }
+    }
+  ],
+  "similar": [
+    "話",
+    "読"
+  ]
+}

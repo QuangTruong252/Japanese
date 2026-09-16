@@ -1,0 +1,596 @@
+{
+  "level": "n5",
+  "lesson": 5,
+  "words": [
+    {
+      "id": "ikimasu",
+      "word": "行[い]きます",
+      "kana": "いきます",
+      "meaning": {
+        "en": "to go",
+        "vi": "đi"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "kimasu",
+      "word": "来[き]ます",
+      "kana": "きます",
+      "meaning": {
+        "en": "to come",
+        "vi": "đến"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "kaerimasu",
+      "word": "帰[かえ]ります",
+      "kana": "かえります",
+      "meaning": {
+        "en": "to go home",
+        "vi": "về, trở về"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "gakkou",
+      "word": "学校[がっこう]",
+      "kana": "がっこう",
+      "meaning": {
+        "en": "school",
+        "vi": "trường học"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "suupaa",
+      "word": "スーパー",
+      "kana": "スーパー",
+      "meaning": {
+        "en": "supermarket",
+        "vi": "siêu thị"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "eki",
+      "word": "駅[えき]",
+      "kana": "えき",
+      "meaning": {
+        "en": "station",
+        "vi": "nhà ga"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hikouki",
+      "word": "飛行機[ひこうき]",
+      "kana": "ひこうき",
+      "meaning": {
+        "en": "aeroplane",
+        "vi": "máy bay"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "fune",
+      "word": "船[ふね]",
+      "kana": "ふね",
+      "meaning": {
+        "en": "ship, boat",
+        "vi": "tàu thủy, thuyền"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "densha",
+      "word": "電車[でんしゃ]",
+      "kana": "でんしゃ",
+      "meaning": {
+        "en": "electric train",
+        "vi": "tàu điện"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "chikatetsu",
+      "word": "地下鉄[ちかてつ]",
+      "kana": "ちかてつ",
+      "meaning": {
+        "en": "underground, subway",
+        "vi": "tàu điện ngầm"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shinkansen",
+      "word": "新幹線[しんかんせん]",
+      "kana": "しんかんせん",
+      "meaning": {
+        "en": "Shinkansen, bullet train",
+        "vi": "tàu siêu tốc Shinkansen"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "basu",
+      "word": "バス",
+      "kana": "バス",
+      "meaning": {
+        "en": "bus",
+        "vi": "xe buýt"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "takushii",
+      "word": "タクシー",
+      "kana": "タクシー",
+      "meaning": {
+        "en": "taxi",
+        "vi": "xe taxi"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "jitensha",
+      "word": "自転車[じてんしゃ]",
+      "kana": "じてんしゃ",
+      "meaning": {
+        "en": "bicycle",
+        "vi": "xe đạp"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "aruite",
+      "word": "歩[ある]いて",
+      "kana": "あるいて",
+      "meaning": {
+        "en": "on foot, walking",
+        "vi": "đi bộ"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "hito",
+      "word": "人[ひと]",
+      "kana": "ひと",
+      "meaning": {
+        "en": "person, people",
+        "vi": "người"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tomodachi",
+      "word": "友達[ともだち]",
+      "kana": "ともだち",
+      "meaning": {
+        "en": "friend(s)",
+        "vi": "bạn, bạn bè"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kare",
+      "word": "彼[かれ]",
+      "kana": "かれ",
+      "meaning": {
+        "en": "he, boyfriend",
+        "vi": "anh ấy, bạn trai"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "kanojo",
+      "word": "彼女[かのじょ]",
+      "kana": "かのじょ",
+      "meaning": {
+        "en": "she, girlfriend",
+        "vi": "cô ấy, bạn gái"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "kazoku",
+      "word": "家族[かぞく]",
+      "kana": "かぞく",
+      "meaning": {
+        "en": "family",
+        "vi": "gia đình"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hitoride",
+      "word": "一人[ひとり]で",
+      "kana": "ひとりで",
+      "meaning": {
+        "en": "alone",
+        "vi": "một mình"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "senshuu",
+      "word": "先週[せんしゅう]",
+      "kana": "せんしゅう",
+      "meaning": {
+        "en": "last week",
+        "vi": "tuần trước"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "konshuu",
+      "word": "今週[こんしゅう]",
+      "kana": "こんしゅう",
+      "meaning": {
+        "en": "this week",
+        "vi": "tuần này"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "raishuu",
+      "word": "来週[らいしゅう]",
+      "kana": "らいしゅう",
+      "meaning": {
+        "en": "next week",
+        "vi": "tuần sau"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "sengetsu",
+      "word": "先月[せんげつ]",
+      "kana": "せんげつ",
+      "meaning": {
+        "en": "last month",
+        "vi": "tháng trước"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kongetsu",
+      "word": "今月[こんげつ]",
+      "kana": "こんげつ",
+      "meaning": {
+        "en": "this month",
+        "vi": "tháng này"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "raigetsu",
+      "word": "来月[らいげつ]",
+      "kana": "らいげつ",
+      "meaning": {
+        "en": "next month",
+        "vi": "tháng sau"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kyonen",
+      "word": "去年[きょねん]",
+      "kana": "きょねん",
+      "meaning": {
+        "en": "last year",
+        "vi": "năm ngoái"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kotoshi",
+      "word": "ことし",
+      "kana": "ことし",
+      "meaning": {
+        "en": "this year",
+        "vi": "năm nay"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "rainen",
+      "word": "来年[らいねん]",
+      "kana": "らいねん",
+      "meaning": {
+        "en": "next year",
+        "vi": "năm sau"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "nen",
+      "word": "〜年[ねん]",
+      "kana": "ねん",
+      "meaning": {
+        "en": "year ~",
+        "vi": "năm (hậu tố đếm năm)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "nannen",
+      "word": "何年[なんねん]",
+      "kana": "なんねん",
+      "meaning": {
+        "en": "what year",
+        "vi": "năm mấy, mấy năm"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "gatsu",
+      "word": "〜月[がつ]",
+      "kana": "がつ",
+      "meaning": {
+        "en": "month of ~",
+        "vi": "tháng (hậu tố chỉ tháng)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "nangatsu",
+      "word": "何月[なんがつ]",
+      "kana": "なんがつ",
+      "meaning": {
+        "en": "what month",
+        "vi": "tháng mấy"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "tsuitachi",
+      "word": "1日[ついたち]",
+      "kana": "ついたち",
+      "meaning": {
+        "en": "the 1st of the month",
+        "vi": "ngày mùng một (1 hàng tháng)"
+      },
+      "type": "number"
+    },
+    {
+      "id": "futsuka",
+      "word": "2日[ふつか]",
+      "kana": "ふつか",
+      "meaning": {
+        "en": "the 2nd, 2 days",
+        "vi": "ngày mùng hai (2) / 2 ngày"
+      },
+      "type": "number"
+    },
+    {
+      "id": "mikka",
+      "word": "3日[みっか]",
+      "kana": "みっか",
+      "meaning": {
+        "en": "the 3rd, 3 days",
+        "vi": "ngày mùng ba (3) / 3 ngày"
+      },
+      "type": "number"
+    },
+    {
+      "id": "yokka",
+      "word": "4日[よっか]",
+      "kana": "よっか",
+      "meaning": {
+        "en": "the 4th, 4 days",
+        "vi": "ngày mùng bốn (4) / 4 ngày"
+      },
+      "type": "number"
+    },
+    {
+      "id": "itsuka",
+      "word": "5日[いつか]",
+      "kana": "いつか",
+      "meaning": {
+        "en": "the 5th, 5 days",
+        "vi": "ngày mùng năm (5) / 5 ngày"
+      },
+      "type": "number"
+    },
+    {
+      "id": "muika",
+      "word": "6日[むいか]",
+      "kana": "むいか",
+      "meaning": {
+        "en": "the 6th, 6 days",
+        "vi": "ngày mùng sáu (6) / 6 ngày"
+      },
+      "type": "number"
+    },
+    {
+      "id": "nanoka",
+      "word": "7日[なのか]",
+      "kana": "なのか",
+      "meaning": {
+        "en": "the 7th, 7 days",
+        "vi": "ngày mùng bảy (7) / 7 ngày"
+      },
+      "type": "number"
+    },
+    {
+      "id": "youka",
+      "word": "8日[ようか]",
+      "kana": "ようか",
+      "meaning": {
+        "en": "the 8th, 8 days",
+        "vi": "ngày mùng tám (8) / 8 ngày"
+      },
+      "type": "number"
+    },
+    {
+      "id": "kokonoka",
+      "word": "9日[ここのか]",
+      "kana": "ここのか",
+      "meaning": {
+        "en": "the 9th, 9 days",
+        "vi": "ngày mùng chín (9) / 9 ngày"
+      },
+      "type": "number"
+    },
+    {
+      "id": "tooka",
+      "word": "10日[とおか]",
+      "kana": "とおか",
+      "meaning": {
+        "en": "the 10th, 10 days",
+        "vi": "ngày mùng mười (10) / 10 ngày"
+      },
+      "type": "number"
+    },
+    {
+      "id": "juuyokka",
+      "word": "14日[じゅうよっか]",
+      "kana": "じゅうよっか",
+      "meaning": {
+        "en": "the 14th, 14 days",
+        "vi": "ngày mười bốn (14) / 14 ngày"
+      },
+      "type": "number"
+    },
+    {
+      "id": "hatsuka",
+      "word": "20日[はつか]",
+      "kana": "はつか",
+      "meaning": {
+        "en": "the 20th, 20 days",
+        "vi": "ngày hai mươi (20) / 20 ngày"
+      },
+      "type": "number"
+    },
+    {
+      "id": "nijuuyokka",
+      "word": "24日[にじゅうよっか]",
+      "kana": "にじゅうよっか",
+      "meaning": {
+        "en": "the 24th, 24 days",
+        "vi": "ngày hai mươi tư (24) / 24 ngày"
+      },
+      "type": "number"
+    },
+    {
+      "id": "nichi",
+      "word": "〜日[にち]",
+      "kana": "にち",
+      "meaning": {
+        "en": "day ~, ~ days",
+        "vi": "ngày (hậu tố chỉ ngày)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "nannichi",
+      "word": "何日[なんにち]",
+      "kana": "なんにち",
+      "meaning": {
+        "en": "what day of the month, how many days",
+        "vi": "ngày mấy, mấy ngày"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "itsu",
+      "word": "いつ",
+      "kana": "いつ",
+      "meaning": {
+        "en": "when",
+        "vi": "khi nào, bao giờ"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "tanjoubi",
+      "word": "誕生日[たんじょうび]",
+      "kana": "たんじょうび",
+      "meaning": {
+        "en": "birthday",
+        "vi": "sinh nhật"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "sou-desu-ne",
+      "word": "そうですね",
+      "kana": "そうですね",
+      "meaning": {
+        "en": "I agree",
+        "vi": "đúng vậy nhỉ / tôi đồng ý"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "arigatou-gozaimashita",
+      "word": "[どうも]ありがとうございました",
+      "kana": "ありがとうございました",
+      "meaning": {
+        "en": "thank you [very much] (for something already done)",
+        "vi": "xin chân thành cảm ơn bạn (cho việc đã làm)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "dou-itashimashite",
+      "word": "どういたしまして",
+      "kana": "どういたしまして",
+      "meaning": {
+        "en": "you're welcome",
+        "vi": "không có chi / đừng bận tâm"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "bansen",
+      "word": "〜番線[ばんせん]",
+      "kana": "ばんせん",
+      "meaning": {
+        "en": "platform ~",
+        "vi": "đường ray số... / ke ga số..."
+      },
+      "type": "counter"
+    },
+    {
+      "id": "tsugi-no",
+      "word": "次[つぎ]の",
+      "kana": "つぎの",
+      "meaning": {
+        "en": "next",
+        "vi": "tiếp theo, kế tiếp"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "futsuu",
+      "word": "普通[ふつう]",
+      "kana": "ふつう",
+      "meaning": {
+        "en": "local (train)",
+        "vi": "tàu thường (dừng mọi ga)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kyuukou",
+      "word": "急行[きゅうこう]",
+      "kana": "きゅうこう",
+      "meaning": {
+        "en": "express (train)",
+        "vi": "tàu nhanh"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tokkyuu",
+      "word": "特急[とっきゅう]",
+      "kana": "とっきゅう",
+      "meaning": {
+        "en": "super express (train)",
+        "vi": "tàu tốc hành đặc biệt"
+      },
+      "type": "noun"
+    }
+  ]
+}

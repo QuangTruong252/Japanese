@@ -1,0 +1,118 @@
+{
+  "level": "n5",
+  "number": 15,
+  "title": {
+    "en": "Permission and prohibition",
+    "vi": "Cho phép và cấm chỉ"
+  },
+  "jpTitle": "ご 家族[かぞく]は？",
+  "description": {
+    "en": "Ask for and give permission with 〜てもいいですか, forbid with 〜てはいけません, and describe states with 〜ています.",
+    "vi": "Xin phép và cho phép làm gì với 〜てもいいです, cấm chỉ với 〜てはいけません và trạng thái tiếp diễn 〜ています."
+  },
+  "grammar": [
+    {
+      "id": "temo-ii",
+      "title": {
+        "en": "V ても いいですか — asking permission",
+        "vi": "V ても いいですか — Xin phép làm việc gì"
+      },
+      "pattern": {
+        "vi": "V ても いいですか"
+      },
+      "explanation": {
+        "en": "The て form + も いいです expresses permission: 写真[しゃしん]を 撮[と]っても いいですか (may I take photos?). You grant it with どうぞ or ええ、いいですよ.",
+        "vi": "Mẫu câu dùng để xin phép làm một điều gì đó ('Tôi làm... có được không?'). Trả lời cho phép: ええ、いいですよ / どうぞ; từ chối khéo: すみません、ちょっと...."
+      },
+      "examples": [
+        {
+          "jp": "たばこを 吸[す]ってもいいですか。…ええ、いいですよ。",
+          "translation": {
+            "en": "May I smoke? …Yes, go ahead.",
+            "vi": "Tôi hút thuốc ở đây có được không? …Vâng, được chứ ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "tewa-ikemasen",
+      "title": {
+        "en": "V ては いけません — prohibition",
+        "vi": "V ては いけません — Cấm chỉ («Không được làm…»)"
+      },
+      "pattern": {
+        "vi": "V ては いけません"
+      },
+      "explanation": {
+        "en": "〜ては いけません forbids: ここで 遊[あそ]んでは いけません (you mustn't play here). It is the negative answer to 〜てもいいですか.",
+        "vi": "Mẫu câu dùng để biểu thị sự cấm đoán, không cho phép làm một việc gì đó ('Không được phép...'). Thường dùng trong quy định, luật lệ hoặc người lớn nói với trẻ con."
+      },
+      "examples": [
+        {
+          "jp": "ここで 写真[しゃしん]を 撮[と]ってはいけません。",
+          "translation": {
+            "en": "You mustn't take photos here.",
+            "vi": "Không được chụp ảnh ở đây."
+          }
+        }
+      ]
+    },
+    {
+      "id": "te-imasu-estado",
+      "title": {
+        "en": "V て います — resulting states",
+        "vi": "V て います (trạng thái tồn tại / kết quả)"
+      },
+      "pattern": {
+        "en": "V て います (state)",
+        "vi": "V て います (kết quả / trạng thái)"
+      },
+      "explanation": {
+        "en": "With certain verbs, 〜ています describes not an action in progress but the resulting state: 結婚[けっこん]しています (I'm married), 知[し]っています (I know), 住[す]んでいます (I live in…). The negative of 知[し]っています is 知[し]りません.",
+        "vi": "Diễn tả trạng thái tĩnh là kết quả còn lưu lại của một hành động đã xảy ra trong quá khứ, như kết hôn (結婚しています), sinh sống (住んでいます), biết (知っています). Chú ý: phủ định của 知っています là 知りません."
+      },
+      "examples": [
+        {
+          "jp": "ミラーさんは 大阪[おおさか]に 住[す]んでいます。",
+          "translation": {
+            "en": "Mr. Miller lives in Osaka.",
+            "vi": "Anh Miller đang sống ở Osaka."
+          }
+        },
+        {
+          "jp": "田中[たなか]さんの 電話番号[でんわばんごう]を 知[し]っていますか。…いいえ、 知[し]りません。",
+          "translation": {
+            "en": "Do you know Mr. Tanaka's phone number? …No, I don't.",
+            "vi": "Bạn có biết số điện thoại của anh Tanaka không? …Không, tôi không biết."
+          }
+        }
+      ]
+    },
+    {
+      "id": "te-imasu-habitual",
+      "title": {
+        "en": "V て います — what someone does habitually",
+        "vi": "N は 〜を V て います — Nghề nghiệp hoặc thói quen lâu dài"
+      },
+      "pattern": {
+        "vi": "N は 〜を V て います"
+      },
+      "explanation": {
+        "en": "〜ています also describes someone's job or regular activity: IMCは ソフトを 作[つく]っています (IMC makes software), 妹[いもうと]は 銀行[ぎんこう]で 働[はたら]いています.",
+        "vi": "Dùng thể V ています để nói về công việc, nghề nghiệp hoặc một thói quen được lặp đi lặp lại trong một thời gian dài."
+      },
+      "examples": [
+        {
+          "jp": "姉[あね]は 高校[こうこう]で 英語[えいご]を 教[おし]えています。",
+          "translation": {
+            "en": "My older sister teaches English at a high school.",
+            "vi": "Chị gái tôi đang dạy tiếng Anh ở trường trung học phổ thông."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "verbs"
+  ]
+}

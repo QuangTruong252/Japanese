@@ -1,0 +1,76 @@
+{
+  "character": "行",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "to go",
+      "to hold (an event)"
+    ],
+    "vi": [
+      "đi",
+      "thực hành",
+      "hàng"
+    ]
+  },
+  "onyomi": [
+    "コウ",
+    "ギョウ"
+  ],
+  "kunyomi": [
+    "い.く",
+    "おこな.う"
+  ],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "行[い]きます",
+      "meaning": {
+        "en": "to go",
+        "vi": "đi"
+      }
+    },
+    {
+      "word": "銀行[ぎんこう]",
+      "meaning": {
+        "en": "bank",
+        "vi": "ngân hàng"
+      }
+    },
+    {
+      "word": "旅行[りょこう]",
+      "meaning": {
+        "en": "trip, journey",
+        "vi": "chuyến du lịch"
+      }
+    },
+    {
+      "word": "行[い]く",
+      "meaning": {
+        "en": "to go",
+        "vi": "đi"
+      }
+    },
+    {
+      "word": "行[おこな]う",
+      "meaning": {
+        "en": "to hold, to carry out",
+        "vi": "tiến hành, tổ chức"
+      }
+    },
+    {
+      "word": "歩行[ほこう]",
+      "meaning": {
+        "en": "walking",
+        "vi": "walking"
+      }
+    },
+    {
+      "word": "行列[ぎょうれつ]",
+      "meaning": {
+        "en": "parade, queue",
+        "vi": "parade, queue"
+      }
+    }
+  ]
+}

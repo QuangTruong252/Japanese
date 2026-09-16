@@ -1,0 +1,73 @@
+{
+  "character": "道",
+  "level": "n5",
+  "lesson": 23,
+  "meanings": {
+    "en": [
+      "road, path",
+      "street"
+    ],
+    "vi": [
+      "đường",
+      "con đường"
+    ]
+  },
+  "onyomi": [
+    "ドウ"
+  ],
+  "kunyomi": [
+    "みち"
+  ],
+  "strokes": 12,
+  "examples": [
+    {
+      "word": "道[みち]",
+      "meaning": {
+        "en": "street",
+        "vi": "con đường, đường đi"
+      }
+    },
+    {
+      "word": "北海道[ほっかいどう]",
+      "meaning": {
+        "en": "Hokkaido",
+        "vi": "vùng Hokkaido"
+      }
+    },
+    {
+      "word": "柔道[じゅうどう]",
+      "meaning": {
+        "en": "judo",
+        "vi": "judo"
+      }
+    },
+    {
+      "word": "道路[どうろ]",
+      "meaning": {
+        "en": "road, highway",
+        "vi": "road, highway"
+      }
+    },
+    {
+      "word": "鉄道[てつどう]",
+      "meaning": {
+        "en": "railway",
+        "vi": "railway"
+      }
+    },
+    {
+      "word": "武道[ぶどう]",
+      "meaning": {
+        "en": "martial arts",
+        "vi": "martial arts"
+      }
+    },
+    {
+      "word": "書道[しょどう]",
+      "meaning": {
+        "en": "calligraphy",
+        "vi": "thư pháp"
+      }
+    }
+  ]
+}

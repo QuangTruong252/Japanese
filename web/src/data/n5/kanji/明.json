@@ -1,0 +1,62 @@
+{
+  "character": "明",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "clear",
+      "bright"
+    ],
+    "vi": [
+      "sáng",
+      "rõ ràng"
+    ]
+  },
+  "onyomi": [
+    "メイ"
+  ],
+  "kunyomi": [
+    "あか.るい"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "明[あか]るい",
+      "meaning": {
+        "en": "bright, light",
+        "vi": "sáng sủa, tươi sáng"
+      }
+    },
+    {
+      "word": "説明[せつめい]",
+      "meaning": {
+        "en": "explanation",
+        "vi": "explanation"
+      }
+    },
+    {
+      "word": "不明[ふめい]",
+      "meaning": {
+        "en": "unknown",
+        "vi": "unknown"
+      }
+    },
+    {
+      "word": "文明[ぶんめい]",
+      "meaning": {
+        "en": "civilisation",
+        "vi": "civilisation"
+      }
+    },
+    {
+      "word": "透明[とうめい]",
+      "meaning": {
+        "en": "transparent",
+        "vi": "transparent"
+      }
+    }
+  ],
+  "similar": [
+    "日",
+    "月"
+  ]
+}

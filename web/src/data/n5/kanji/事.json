@@ -1,0 +1,59 @@
+{
+  "character": "事",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "matter, affair",
+      "abstract thing"
+    ],
+    "vi": [
+      "việc",
+      "sự việc",
+      "công việc"
+    ]
+  },
+  "onyomi": [
+    "ジ"
+  ],
+  "kunyomi": [
+    "こと"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "事[こと]",
+      "meaning": {
+        "en": "thing (abstract)",
+        "vi": "việc, sự việc"
+      }
+    },
+    {
+      "word": "仕事[しごと]",
+      "meaning": {
+        "en": "work, job",
+        "vi": "công việc"
+      }
+    },
+    {
+      "word": "記事[きじ]",
+      "meaning": {
+        "en": "article",
+        "vi": "article"
+      }
+    },
+    {
+      "word": "事件[じけん]",
+      "meaning": {
+        "en": "event, incident",
+        "vi": "event, incident"
+      }
+    },
+    {
+      "word": "用事[ようじ]",
+      "meaning": {
+        "en": "things to do",
+        "vi": "việc bận, việc riêng"
+      }
+    }
+  ]
+}

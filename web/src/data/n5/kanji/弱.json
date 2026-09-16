@@ -1,0 +1,57 @@
+{
+  "character": "弱",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "weak"
+    ],
+    "vi": [
+      "yếu",
+      "yếu ớt"
+    ]
+  },
+  "onyomi": [
+    "ジャク"
+  ],
+  "kunyomi": [
+    "よわ.い"
+  ],
+  "strokes": 10,
+  "examples": [
+    {
+      "word": "弱[よわ]い",
+      "meaning": {
+        "en": "weak",
+        "vi": "yếu, yếu ớt"
+      }
+    },
+    {
+      "word": "弱火[よわび]",
+      "meaning": {
+        "en": "low heat",
+        "vi": "low heat"
+      }
+    },
+    {
+      "word": "弱点[じゃくてん]",
+      "meaning": {
+        "en": "weak point",
+        "vi": "điểm yếu, nhược điểm"
+      }
+    },
+    {
+      "word": "病弱[びょうじゃく]",
+      "meaning": {
+        "en": "sickly",
+        "vi": "sickly"
+      }
+    },
+    {
+      "word": "衰弱[すいじゃく]",
+      "meaning": {
+        "en": "weakening",
+        "vi": "weakening"
+      }
+    }
+  ]
+}

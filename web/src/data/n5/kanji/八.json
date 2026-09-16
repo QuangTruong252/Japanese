@@ -1,0 +1,59 @@
+{
+  "character": "八",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "eight"
+    ],
+    "vi": [
+      "tám",
+      "số tám"
+    ]
+  },
+  "onyomi": [
+    "ハチ"
+  ],
+  "kunyomi": [
+    "や.つ",
+    "やっ.つ"
+  ],
+  "strokes": 2,
+  "examples": [
+    {
+      "word": "八[はち]",
+      "meaning": {
+        "en": "eight",
+        "vi": "tám, số 8"
+      }
+    },
+    {
+      "word": "八[やっ]つ",
+      "meaning": {
+        "en": "eight things",
+        "vi": "tám cái"
+      }
+    },
+    {
+      "word": "八月[はちがつ]",
+      "meaning": {
+        "en": "August",
+        "vi": "tháng tám"
+      }
+    },
+    {
+      "word": "八日[ようか]",
+      "meaning": {
+        "en": "8th day",
+        "vi": "ngày mùng tám"
+      }
+    },
+    {
+      "word": "八百屋[やおや]",
+      "meaning": {
+        "en": "greengrocer's",
+        "vi": "greengrocer's"
+      }
+    }
+  ]
+}

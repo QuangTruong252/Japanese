@@ -1,0 +1,60 @@
+{
+  "character": "水",
+  "level": "n5",
+  "lesson": 4,
+  "meanings": {
+    "en": [
+      "water"
+    ],
+    "vi": [
+      "nước"
+    ]
+  },
+  "onyomi": [
+    "スイ"
+  ],
+  "kunyomi": [
+    "みず"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "水曜日[すいようび]",
+      "meaning": {
+        "en": "Wednesday",
+        "vi": "thứ tư"
+      }
+    },
+    {
+      "word": "水[みず]",
+      "meaning": {
+        "en": "water",
+        "vi": "nước"
+      }
+    },
+    {
+      "word": "水着[みずぎ]",
+      "meaning": {
+        "en": "swimsuit",
+        "vi": "swimsuit"
+      }
+    },
+    {
+      "word": "水道[すいどう]",
+      "meaning": {
+        "en": "water supply",
+        "vi": "nước máy"
+      }
+    },
+    {
+      "word": "海水[かいすい]",
+      "meaning": {
+        "en": "seawater",
+        "vi": "seawater"
+      }
+    }
+  ],
+  "similar": [
+    "小"
+  ]
+}

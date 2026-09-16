@@ -1,0 +1,66 @@
+{
+  "character": "車",
+  "level": "n5",
+  "lesson": 2,
+  "meanings": {
+    "en": [
+      "car",
+      "vehicle"
+    ],
+    "vi": [
+      "xe",
+      "xe ô tô"
+    ]
+  },
+  "onyomi": [
+    "シャ"
+  ],
+  "kunyomi": [
+    "くるま"
+  ],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "車[くるま]",
+      "meaning": {
+        "en": "car",
+        "vi": "xe hơi, xe ô tô"
+      }
+    },
+    {
+      "word": "電車[でんしゃ]",
+      "meaning": {
+        "en": "train",
+        "vi": "tàu điện"
+      }
+    },
+    {
+      "word": "自転車[じてんしゃ]",
+      "meaning": {
+        "en": "bicycle",
+        "vi": "xe đạp"
+      }
+    },
+    {
+      "word": "車椅子[くるまいす]",
+      "meaning": {
+        "en": "wheelchair",
+        "vi": "wheelchair"
+      }
+    },
+    {
+      "word": "自動車[じどうしゃ]",
+      "meaning": {
+        "en": "car, automobile",
+        "vi": "xe ô tô"
+      }
+    },
+    {
+      "word": "風車[ふうしゃ]",
+      "meaning": {
+        "en": "windmill",
+        "vi": "windmill"
+      }
+    }
+  ]
+}

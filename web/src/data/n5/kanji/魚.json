@@ -1,0 +1,29 @@
+{
+  "character": "魚",
+  "level": "n5",
+  "lesson": 6,
+  "meanings": {
+    "en": [
+      "fish"
+    ],
+    "vi": [
+      "cá"
+    ]
+  },
+  "onyomi": [
+    "ギョ"
+  ],
+  "kunyomi": [
+    "さかな"
+  ],
+  "strokes": 11,
+  "examples": [
+    {
+      "word": "魚[さかな]",
+      "meaning": {
+        "en": "fish",
+        "vi": "con cá"
+      }
+    }
+  ]
+}

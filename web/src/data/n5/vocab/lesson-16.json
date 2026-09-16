@@ -1,0 +1,526 @@
+{
+  "level": "n5",
+  "lesson": 16,
+  "words": [
+    {
+      "id": "norimasu",
+      "word": "乗[の]ります[電車[でんしゃ]に〜]",
+      "kana": "のります",
+      "meaning": {
+        "en": "to get on [the train]",
+        "vi": "lên, đi [tàu, xe buýt]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "orimasu",
+      "word": "降[お]ります[電車[でんしゃ]を〜]",
+      "kana": "おります",
+      "meaning": {
+        "en": "to get off [the train]",
+        "vi": "xuống [tàu, xe buýt]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "norikaemasu",
+      "word": "乗[の]り 換[か]えます",
+      "kana": "のりかえます",
+      "meaning": {
+        "en": "to change (trains)",
+        "vi": "đổi, chuyển [tàu, xe]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "abimasu",
+      "word": "浴[あ]びます[シャワーを〜]",
+      "kana": "あびます",
+      "meaning": {
+        "en": "to have [a shower]",
+        "vi": "tắm [vòi sen]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "iremasu",
+      "word": "入[い]れます",
+      "kana": "いれます",
+      "meaning": {
+        "en": "to put in, to insert",
+        "vi": "cho vào, bỏ vào"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "dashimasu",
+      "word": "出[だ]します",
+      "kana": "だします",
+      "meaning": {
+        "en": "to take out, to hand in, to send",
+        "vi": "rút [tiền], lấy ra, nộp"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "oroshimasu",
+      "word": "下[お]ろします[お 金[かね]を〜]",
+      "kana": "おろします",
+      "meaning": {
+        "en": "to withdraw [money from the bank]",
+        "vi": "rút [tiền từ ngân hàng]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "hairimasu-uni",
+      "word": "入[はい]ります[大学[だいがく]に〜]",
+      "kana": "はいります",
+      "meaning": {
+        "en": "to enter [university]",
+        "vi": "nhập học, vào [đại học]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "demasu-uni",
+      "word": "出[で]ます[大学[だいがく]を〜]",
+      "kana": "でます",
+      "meaning": {
+        "en": "to graduate [from university]",
+        "vi": "tốt nghiệp, ra khỏi [đại học]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "oshimasu",
+      "word": "押[お]します",
+      "kana": "おします",
+      "meaning": {
+        "en": "to press, to push",
+        "vi": "ấn, bấm [nút]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "nomimasu-alcohol",
+      "word": "飲[の]みます",
+      "kana": "のみます",
+      "meaning": {
+        "en": "to drink alcohol",
+        "vi": "uống rượu bia"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "hajimemasu",
+      "word": "始[はじ]めます",
+      "kana": "はじめます",
+      "meaning": {
+        "en": "to begin, to start",
+        "vi": "bắt đầu, khởi đầu"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "kengaku-shimasu",
+      "word": "見学[けんがく]します",
+      "kana": "けんがくします",
+      "meaning": {
+        "en": "to visit (to learn)",
+        "vi": "tham quan học hỏi, kiến tập"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "denwa-shimasu",
+      "word": "電話[でんわ]します",
+      "kana": "でんわします",
+      "meaning": {
+        "en": "to phone",
+        "vi": "gọi điện thoại"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "wakai",
+      "word": "若[わか]い",
+      "kana": "わかい",
+      "meaning": {
+        "en": "young",
+        "vi": "trẻ, trẻ trung"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "nagai",
+      "word": "長[なが]い",
+      "kana": "ながい",
+      "meaning": {
+        "en": "long",
+        "vi": "dài"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "mijikai",
+      "word": "短[みじか]い",
+      "kana": "みじかい",
+      "meaning": {
+        "en": "short",
+        "vi": "ngắn"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "akarui",
+      "word": "明[あか]るい",
+      "kana": "あかるい",
+      "meaning": {
+        "en": "bright, light",
+        "vi": "sáng sủa, tươi sáng"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "kurai",
+      "word": "暗[くら]い",
+      "kana": "くらい",
+      "meaning": {
+        "en": "dark",
+        "vi": "tối tăm, u ám"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "karada",
+      "word": "体[からだ]",
+      "kana": "からだ",
+      "meaning": {
+        "en": "body",
+        "vi": "cơ thể, thân thể"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "atama",
+      "word": "頭[あたま]",
+      "kana": "あたま",
+      "meaning": {
+        "en": "head",
+        "vi": "đầu"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kami",
+      "word": "髪[かみ]",
+      "kana": "かみ",
+      "meaning": {
+        "en": "hair",
+        "vi": "tóc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kao",
+      "word": "顔[かお]",
+      "kana": "かお",
+      "meaning": {
+        "en": "face",
+        "vi": "khuôn mặt"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "me",
+      "word": "目[め]",
+      "kana": "め",
+      "meaning": {
+        "en": "eye(s)",
+        "vi": "mắt"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "mimi",
+      "word": "耳[みみ]",
+      "kana": "みみ",
+      "meaning": {
+        "en": "ear(s)",
+        "vi": "tai"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hana-nariz",
+      "word": "鼻[はな]",
+      "kana": "はな",
+      "meaning": {
+        "en": "nose",
+        "vi": "mũi (bộ phận cơ thể)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kuchi",
+      "word": "口[くち]",
+      "kana": "くち",
+      "meaning": {
+        "en": "mouth",
+        "vi": "miệng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ha",
+      "word": "歯[は]",
+      "kana": "は",
+      "meaning": {
+        "en": "tooth, teeth",
+        "vi": "răng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "onaka",
+      "word": "おなか",
+      "kana": "おなか",
+      "meaning": {
+        "en": "stomach",
+        "vi": "bụng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ashi",
+      "word": "足[あし]",
+      "kana": "あし",
+      "meaning": {
+        "en": "leg(s), foot (feet)",
+        "vi": "chân"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "se",
+      "word": "背[せ]",
+      "kana": "せ",
+      "meaning": {
+        "en": "height",
+        "vi": "chiều cao cơ thể, vóc dáng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "saabisu",
+      "word": "サービス",
+      "kana": "サービス",
+      "meaning": {
+        "en": "service",
+        "vi": "dịch vụ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "jogingu",
+      "word": "ジョギング",
+      "kana": "ジョギング",
+      "meaning": {
+        "en": "jogging",
+        "vi": "chạy bộ (thể dục)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shawaa",
+      "word": "シャワー",
+      "kana": "シャワー",
+      "meaning": {
+        "en": "shower",
+        "vi": "vòi hoa sen"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "midori",
+      "word": "緑[みどり]",
+      "kana": "みどり",
+      "meaning": {
+        "en": "green, green space",
+        "vi": "màu xanh lá cây, cây xanh"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "otera",
+      "word": "[お]寺[てら]",
+      "kana": "おてら",
+      "meaning": {
+        "en": "Buddhist temple",
+        "vi": "chùa (Phật giáo)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "jinja",
+      "word": "神社[じんじゃ]",
+      "kana": "じんじゃ",
+      "meaning": {
+        "en": "Shinto shrine",
+        "vi": "đền thờ (Thần đạo Shinto)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ban-numero",
+      "word": "〜番[ばん]",
+      "kana": "ばん",
+      "meaning": {
+        "en": "number ~",
+        "vi": "số... (số hiệu)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "douyatte",
+      "word": "どうやって",
+      "kana": "どうやって",
+      "meaning": {
+        "en": "how, in what way",
+        "vi": "làm thế nào, bằng cách nào"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "dono",
+      "word": "どの〜",
+      "kana": "どの",
+      "meaning": {
+        "en": "which ~ (of three or more)",
+        "vi": "nào (đi liền trước danh từ)"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "dore",
+      "word": "どれ",
+      "kana": "どれ",
+      "meaning": {
+        "en": "which one (of three or more)",
+        "vi": "cái nào (trong số 3 cái trở lên)"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "sugoi-desu-ne",
+      "word": "すごいですね",
+      "kana": "すごいですね",
+      "meaning": {
+        "en": "amazing! how great!",
+        "vi": "tuyệt vời quá nhỉ!"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "madamada",
+      "word": "[いいえ、]まだまだです",
+      "kana": "まだまだです",
+      "meaning": {
+        "en": "I still have a long way to go",
+        "vi": "tôi vẫn còn kém lắm"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "ohikidashi",
+      "word": "お 引[ひ]き 出[だ]しですか",
+      "kana": "おひきだしですか",
+      "meaning": {
+        "en": "are you withdrawing money?",
+        "vi": "quý khách muốn rút tiền ạ?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "mazu",
+      "word": "まず",
+      "kana": "まず",
+      "meaning": {
+        "en": "first",
+        "vi": "trước hết, đầu tiên"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "tsugini",
+      "word": "次[つぎ]に",
+      "kana": "つぎに",
+      "meaning": {
+        "en": "next, after that",
+        "vi": "tiếp theo, sau đó"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "kyasshukaado",
+      "word": "キャッシュカード",
+      "kana": "キャッシュカード",
+      "meaning": {
+        "en": "bank card",
+        "vi": "thẻ rút tiền ngân hàng, thẻ ATM"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "anshoubangou",
+      "word": "暗証番号[あんしょうばんごう]",
+      "kana": "あんしょうばんごう",
+      "meaning": {
+        "en": "PIN, password",
+        "vi": "mã số bí mật PIN"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kingaku",
+      "word": "金額[きんがく]",
+      "kana": "きんがく",
+      "meaning": {
+        "en": "amount, sum of money",
+        "vi": "số tiền"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kakunin",
+      "word": "確認[かくにん]",
+      "kana": "かくにん",
+      "meaning": {
+        "en": "confirmation",
+        "vi": "sự xác nhận"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "botan",
+      "word": "ボタン",
+      "kana": "ボタン",
+      "meaning": {
+        "en": "button",
+        "vi": "nút bấm"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "yukimatsuri",
+      "word": "雪祭[ゆきまつ]り",
+      "kana": "ゆきまつり",
+      "meaning": {
+        "en": "Snow Festival (Sapporo)",
+        "vi": "Lễ hội tuyết (ở Sapporo)"
+      },
+      "type": "noun"
+    }
+  ]
+}

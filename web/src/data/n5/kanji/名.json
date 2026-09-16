@@ -1,0 +1,62 @@
+{
+  "character": "名",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "name"
+    ],
+    "vi": [
+      "tên",
+      "danh tiếng"
+    ]
+  },
+  "onyomi": [
+    "メイ",
+    "ミョウ"
+  ],
+  "kunyomi": [
+    "な"
+  ],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "名前[なまえ]",
+      "meaning": {
+        "en": "name",
+        "vi": "tên"
+      }
+    },
+    {
+      "word": "有名[ゆうめい]",
+      "meaning": {
+        "en": "famous",
+        "vi": "nổi tiếng"
+      }
+    },
+    {
+      "word": "名刺[めいし]",
+      "meaning": {
+        "en": "business card",
+        "vi": "danh thiếp"
+      }
+    },
+    {
+      "word": "仮名[かな]",
+      "meaning": {
+        "en": "kana (Japanese syllabaries)",
+        "vi": "kana (Japanese syllabaries)"
+      }
+    },
+    {
+      "word": "指名[しめい]",
+      "meaning": {
+        "en": "appointment, nomination",
+        "vi": "appointment, nomination"
+      }
+    }
+  ],
+  "similar": [
+    "多"
+  ]
+}

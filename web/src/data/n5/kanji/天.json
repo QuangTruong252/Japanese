@@ -1,0 +1,37 @@
+{
+  "character": "天",
+  "level": "n5",
+  "lesson": 11,
+  "meanings": {
+    "en": [
+      "sky"
+    ],
+    "vi": [
+      "trời",
+      "thiên đường"
+    ]
+  },
+  "onyomi": [
+    "テン"
+  ],
+  "kunyomi": [
+    "あま"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "天気[てんき]",
+      "meaning": {
+        "en": "weather",
+        "vi": "thời tiết"
+      }
+    },
+    {
+      "word": "天才[てんさい]",
+      "meaning": {
+        "en": "genius",
+        "vi": "thiên tài"
+      }
+    }
+  ]
+}

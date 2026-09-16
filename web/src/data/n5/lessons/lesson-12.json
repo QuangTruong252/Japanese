@@ -1,0 +1,171 @@
+{
+  "level": "n5",
+  "number": 12,
+  "title": {
+    "en": "The past and comparisons",
+    "vi": "Thì quá khứ và so sánh"
+  },
+  "jpTitle": "祇園祭[ぎおんまつり]はどうでしたか",
+  "description": {
+    "en": "The past tense of nouns and adjectives, and how to compare two things or pick the best of a group.",
+    "vi": "Chia quá khứ của danh từ và tính từ, cấu trúc so sánh hơn (より) và so sánh nhất (いちばん)."
+  },
+  "grammar": [
+    {
+      "id": "pasado-nominal",
+      "title": {
+        "en": "Past of noun sentences and -な adjectives",
+        "vi": "Thời quá khứ của Danh từ và Tính từ đuôi な"
+      },
+      "pattern": {
+        "vi": "N／A-な でした ／ じゃありませんでした"
+      },
+      "explanation": {
+        "en": "The past of です is でした and the past of じゃありません is じゃありませんでした. It works the same for nouns and -な adjectives: 雨[あめ]でした (it was rainy), 暇[ひま]じゃありませんでした (I wasn't free).",
+        "vi": "Thời quá khứ: khẳng định đổi です thành でした; phủ định đổi じゃありません thành じゃありませんでした (hoặc ではありませんでした)."
+      },
+      "examples": [
+        {
+          "jp": "きのうは 雨[あめ]でした。",
+          "translation": {
+            "en": "It rained yesterday.",
+            "vi": "Hôm qua trời đã mưa."
+          }
+        },
+        {
+          "jp": "先週[せんしゅう]は 暇[ひま]じゃありませんでした。",
+          "translation": {
+            "en": "I wasn't free last week.",
+            "vi": "Tuần trước tôi đã không rảnh rỗi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "pasado-adjetivo-i",
+      "title": {
+        "en": "Past of -い adjectives",
+        "vi": "Thời quá khứ của Tính từ đuôi い"
+      },
+      "pattern": {
+        "vi": "A-い → 〜かったです ／ 〜くなかったです"
+      },
+      "explanation": {
+        "en": "-い adjectives conjugate the past themselves: 暑[あつ]い → 暑[あつ]かったです (it was hot), 暑[あつ]くなかったです (it wasn't hot). The past of いい is よかったです.",
+        "vi": "Tính từ đuôi い ở quá khứ: bỏ い thêm かったです (khẳng định); bỏ い thêm くなかったです (phủ định). Chú ý riêng いい đổi thành よかった / よくなかった."
+      },
+      "examples": [
+        {
+          "jp": "旅行[りょこう]は 楽[たの]しかったです。",
+          "translation": {
+            "en": "The trip was fun.",
+            "vi": "Chuyến du lịch đã rất vui."
+          }
+        },
+        {
+          "jp": "天気[てんき]はよくなかったです。",
+          "translation": {
+            "en": "The weather wasn't good.",
+            "vi": "Thời tiết đã không tốt."
+          }
+        }
+      ]
+    },
+    {
+      "id": "yori",
+      "title": {
+        "en": "N1 は N2 より A です — comparative",
+        "vi": "N1 は N2 より A です — So sánh hơn"
+      },
+      "pattern": {
+        "vi": "N1 は N2 より A です"
+      },
+      "explanation": {
+        "en": "より marks what you compare against: この 車[くるま]は あの 車[くるま]より 大[おお]きいです (this car is bigger than that one).",
+        "vi": "Cấu trúc so sánh tính chất giữa hai sự vật: 'N1 thì A hơn N2'. Danh từ sau より là đối tượng làm chuẩn để so sánh."
+      },
+      "examples": [
+        {
+          "jp": "飛行機[ひこうき]は 船[ふね]より 速[はや]いです。",
+          "translation": {
+            "en": "The plane is faster than the ship.",
+            "vi": "Máy bay nhanh hơn tàu thủy."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dochira-ga",
+      "title": {
+        "en": "N1 と N2 と どちらが A ですか — comparing two",
+        "vi": "N1 と N2 と どちらが A ですか — Câu hỏi so sánh giữa hai đối tượng"
+      },
+      "pattern": {
+        "vi": "N1 と N2 と どちらが A ですか。…N の ほうが A です"
+      },
+      "explanation": {
+        "en": "To ask which of two things is more…, you use どちら, whatever the category. You answer with 〜の ほうが: サッカーと 野球[やきゅう]と どちらが おもしろいですか。…サッカーの ほうが おもしろいです. If they are equal: どちらも (both).",
+        "vi": "Dùng để hỏi so sánh xem giữa N1 và N2 cái nào có tính chất A hơn. Khi trả lời dùng cấu trúc: 'N の ほうが A です' (N thì A hơn)."
+      },
+      "examples": [
+        {
+          "jp": "夏[なつ]と 冬[ふゆ]とどちらが 好[す]きですか。… 夏[なつ]のほうが 好[す]きです。",
+          "translation": {
+            "en": "Which do you prefer, summer or winter? …I prefer summer.",
+            "vi": "Giữa mùa hè và mùa đông bạn thích mùa nào hơn? …Tôi thích mùa hè hơn."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ichiban",
+      "title": {
+        "en": "N [の 中[なか]] で 〜が いちばん A です — superlative",
+        "vi": "N [の 中[なか]]で 何／どこ／誰／いつ が いちばん A ですか — So sánh nhất"
+      },
+      "pattern": {
+        "vi": "N [の 中[なか]]で 何[なに]／どこ／誰[だれ]／いつ が いちばん A ですか"
+      },
+      "explanation": {
+        "en": "いちばん expresses the superlative within a group: 日本[にほん] 料理[りょうり][の 中[なか]]で 何[なに]が いちばん おいしいですか. The question word changes depending on whether you ask about a thing, a place, a person or a time.",
+        "vi": "Cấu trúc so sánh nhất trong một phạm vi N ('Trong số N, cái nào/ở đâu/ai/khi nào là A nhất?'). Trả lời bằng: '...がいちばん A です'."
+      },
+      "examples": [
+        {
+          "jp": "1 年[ねん]でいつがいちばん 寒[さむ]いですか。…2 月[がつ]がいちばん 寒[さむ]いです。",
+          "translation": {
+            "en": "When is it coldest in the year? …In February.",
+            "vi": "Trong một năm khi nào lạnh nhất? …Tháng 2 là lạnh nhất."
+          }
+        }
+      ]
+    },
+    {
+      "id": "no-sustituto-12",
+      "title": {
+        "en": "A の — \"the (adjective) one\"",
+        "vi": "の thay thế cho danh từ sau tính từ"
+      },
+      "pattern": {
+        "vi": "A-い／A-な の"
+      },
+      "explanation": {
+        "en": "の also stands in for the noun after an adjective, so you don't repeat it: 大[おお]きいのを ください (the big one, please).",
+        "vi": "Dùng の thay cho danh từ đã được nhắc trước đó để tránh lặp từ (ví dụ: 黒い本 → 黒いの cuốn màu đen)."
+      },
+      "examples": [
+        {
+          "jp": "どんなかばんですか。… 黒[くろ]いのです。",
+          "translation": {
+            "en": "Which bag is it? …The black one.",
+            "vi": "Chiếc cặp như thế nào vậy? …Là chiếc màu đen."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "adjectives",
+    "question-words"
+  ]
+}

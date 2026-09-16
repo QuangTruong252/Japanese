@@ -1,0 +1,72 @@
+{
+  "character": "言",
+  "level": "n5",
+  "lesson": 21,
+  "meanings": {
+    "en": [
+      "to say",
+      "word"
+    ],
+    "vi": [
+      "nói",
+      "lời nói"
+    ]
+  },
+  "onyomi": [
+    "ゲン",
+    "ゴン"
+  ],
+  "kunyomi": [
+    "い.う",
+    "こと"
+  ],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "言[い]います",
+      "meaning": {
+        "en": "to say",
+        "vi": "nói"
+      }
+    },
+    {
+      "word": "言葉[ことば]",
+      "meaning": {
+        "en": "word",
+        "vi": "word"
+      }
+    },
+    {
+      "word": "言[い]う",
+      "meaning": {
+        "en": "to say",
+        "vi": "nói"
+      }
+    },
+    {
+      "word": "発言[はつげん]",
+      "meaning": {
+        "en": "statement",
+        "vi": "statement"
+      }
+    },
+    {
+      "word": "方言[ほうげん]",
+      "meaning": {
+        "en": "dialect",
+        "vi": "dialect"
+      }
+    },
+    {
+      "word": "無言[むごん]",
+      "meaning": {
+        "en": "silence",
+        "vi": "silence"
+      }
+    }
+  ],
+  "similar": [
+    "話",
+    "読"
+  ]
+}

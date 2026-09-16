@@ -1,0 +1,65 @@
+{
+  "character": "国",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "country"
+    ],
+    "vi": [
+      "nước",
+      "quốc gia"
+    ]
+  },
+  "onyomi": [
+    "コク"
+  ],
+  "kunyomi": [
+    "くに"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "国[くに]",
+      "meaning": {
+        "en": "country",
+        "vi": "đất nước, quốc gia"
+      }
+    },
+    {
+      "word": "外国[がいこく]",
+      "meaning": {
+        "en": "abroad, foreign",
+        "vi": "nước ngoài"
+      }
+    },
+    {
+      "word": "中国[ちゅうごく]",
+      "meaning": {
+        "en": "China",
+        "vi": "nước Trung Quốc"
+      }
+    },
+    {
+      "word": "雪国[ゆきぐに]",
+      "meaning": {
+        "en": "snow country",
+        "vi": "snow country"
+      }
+    },
+    {
+      "word": "国民[こくみん]",
+      "meaning": {
+        "en": "citizens",
+        "vi": "citizens"
+      }
+    },
+    {
+      "word": "国際[こくさい]",
+      "meaning": {
+        "en": "international",
+        "vi": "quốc tế"
+      }
+    }
+  ]
+}

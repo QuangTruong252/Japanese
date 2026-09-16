@@ -1,0 +1,57 @@
+{
+  "character": "昼",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "midday"
+    ],
+    "vi": [
+      "buổi trưa",
+      "ban ngày"
+    ]
+  },
+  "onyomi": [
+    "チュウ"
+  ],
+  "kunyomi": [
+    "ひる"
+  ],
+  "strokes": 9,
+  "examples": [
+    {
+      "word": "昼[ひる]",
+      "meaning": {
+        "en": "midday",
+        "vi": "buổi trưa, ban ngày"
+      }
+    },
+    {
+      "word": "昼寝[ひるね]",
+      "meaning": {
+        "en": "nap",
+        "vi": "nap"
+      }
+    },
+    {
+      "word": "昼間[ひるま]",
+      "meaning": {
+        "en": "during the day",
+        "vi": "ban ngày"
+      }
+    },
+    {
+      "word": "昼食[ちゅうしょく]",
+      "meaning": {
+        "en": "lunch",
+        "vi": "bữa trưa"
+      }
+    },
+    {
+      "word": "昼夜[ちゅうや]",
+      "meaning": {
+        "en": "day and night",
+        "vi": "day and night"
+      }
+    }
+  ]
+}

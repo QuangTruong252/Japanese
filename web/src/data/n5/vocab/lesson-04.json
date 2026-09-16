@@ -1,0 +1,516 @@
+{
+  "level": "n5",
+  "lesson": 4,
+  "words": [
+    {
+      "id": "okimasu",
+      "word": "起[お]きます",
+      "kana": "おきます",
+      "meaning": {
+        "en": "to get up",
+        "vi": "thức dậy, dậy"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "nemasu",
+      "word": "寝[ね]ます",
+      "kana": "ねます",
+      "meaning": {
+        "en": "to go to bed, to sleep",
+        "vi": "đi ngủ, ngủ"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "hatarakimasu",
+      "word": "働[はたら]きます",
+      "kana": "はたらきます",
+      "meaning": {
+        "en": "to work",
+        "vi": "làm việc"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "yasumimasu",
+      "word": "休[やす]みます",
+      "kana": "やすみます",
+      "meaning": {
+        "en": "to rest, to be on holiday",
+        "vi": "nghỉ ngơi, nghỉ phép"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "benkyou-shimasu",
+      "word": "勉強[べんきょう]します",
+      "kana": "べんきょうします",
+      "meaning": {
+        "en": "to study",
+        "vi": "học, học tập"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "owarimasu",
+      "word": "終[お]わります",
+      "kana": "おわります",
+      "meaning": {
+        "en": "to finish",
+        "vi": "kết thúc, xong"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "depaato",
+      "word": "デパート",
+      "kana": "デパート",
+      "meaning": {
+        "en": "department store",
+        "vi": "trung tâm bách hóa, thương mại"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ginkou",
+      "word": "銀行[ぎんこう]",
+      "kana": "ぎんこう",
+      "meaning": {
+        "en": "bank",
+        "vi": "ngân hàng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "yuubinkyoku",
+      "word": "郵便局[ゆうびんきょく]",
+      "kana": "ゆうびんきょく",
+      "meaning": {
+        "en": "post office",
+        "vi": "bưu điện"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "toshokan",
+      "word": "図書館[としょかん]",
+      "kana": "としょかん",
+      "meaning": {
+        "en": "library",
+        "vi": "thư viện"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "bijutsukan",
+      "word": "美術館[びじゅつかん]",
+      "kana": "びじゅつかん",
+      "meaning": {
+        "en": "art museum",
+        "vi": "bảo tàng mỹ thuật"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ima",
+      "word": "今[いま]",
+      "kana": "いま",
+      "meaning": {
+        "en": "now",
+        "vi": "bây giờ, hiện tại"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ji",
+      "word": "〜時[じ]",
+      "kana": "じ",
+      "meaning": {
+        "en": "~ o'clock",
+        "vi": "giờ (chỉ thời gian)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "fun",
+      "word": "〜分[ふん]",
+      "kana": "ふん／ぷん",
+      "meaning": {
+        "en": "~ minutes",
+        "vi": "phút (chỉ thời gian)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "han",
+      "word": "半[はん]",
+      "kana": "はん",
+      "meaning": {
+        "en": "half past ~",
+        "vi": "rưỡi, một nửa (30 phút)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "nanji",
+      "word": "何時[なんじ]",
+      "kana": "なんじ",
+      "meaning": {
+        "en": "what time",
+        "vi": "mấy giờ"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "nanpun",
+      "word": "何分[なんぷん]",
+      "kana": "なんぷん",
+      "meaning": {
+        "en": "what minute",
+        "vi": "mấy phút"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "gozen",
+      "word": "午前[ごぜん]",
+      "kana": "ごぜん",
+      "meaning": {
+        "en": "in the morning (a.m.)",
+        "vi": "buổi sáng, sáng (AM)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "gogo",
+      "word": "午後[ごご]",
+      "kana": "ごご",
+      "meaning": {
+        "en": "in the afternoon (p.m.)",
+        "vi": "buổi chiều, tối (PM)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "asa",
+      "word": "朝[あさ]",
+      "kana": "あさ",
+      "meaning": {
+        "en": "the morning",
+        "vi": "buổi sáng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hiru",
+      "word": "昼[ひる]",
+      "kana": "ひる",
+      "meaning": {
+        "en": "day, midday",
+        "vi": "buổi trưa, ban ngày"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ban",
+      "word": "晩[ばん]（夜[よる]）",
+      "kana": "ばん（よる）",
+      "meaning": {
+        "en": "night",
+        "vi": "buổi tối, đêm"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ototoi",
+      "word": "おととい",
+      "kana": "おととい",
+      "meaning": {
+        "en": "the day before yesterday",
+        "vi": "hôm kia"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kinou",
+      "word": "きのう",
+      "kana": "きのう",
+      "meaning": {
+        "en": "yesterday",
+        "vi": "hôm qua"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kyou",
+      "word": "きょう",
+      "kana": "きょう",
+      "meaning": {
+        "en": "today",
+        "vi": "hôm nay"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ashita",
+      "word": "あした",
+      "kana": "あした",
+      "meaning": {
+        "en": "tomorrow, morning",
+        "vi": "ngày mai"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "asatte",
+      "word": "あさって",
+      "kana": "あさって",
+      "meaning": {
+        "en": "the day after tomorrow",
+        "vi": "ngày kia"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kesa",
+      "word": "けさ",
+      "kana": "けさ",
+      "meaning": {
+        "en": "this morning",
+        "vi": "sáng nay"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "konban",
+      "word": "今晩[こんばん]",
+      "kana": "こんばん",
+      "meaning": {
+        "en": "tonight",
+        "vi": "tối nay"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "yasumi",
+      "word": "休[やす]み",
+      "kana": "やすみ",
+      "meaning": {
+        "en": "rest, day off, holiday",
+        "vi": "ngày nghỉ, sự nghỉ ngơi"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hiruyasumi",
+      "word": "昼休[ひるやす]み",
+      "kana": "ひるやすみ",
+      "meaning": {
+        "en": "midday break",
+        "vi": "nghỉ trưa"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shiken",
+      "word": "試験[しけん]",
+      "kana": "しけん",
+      "meaning": {
+        "en": "exam",
+        "vi": "kỳ thi, bài kiểm tra"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kaigi",
+      "word": "会議[かいぎ]",
+      "kana": "かいぎ",
+      "meaning": {
+        "en": "meeting, conference",
+        "vi": "cuộc họp, hội nghị"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "eiga",
+      "word": "映画[えいが]",
+      "kana": "えいが",
+      "meaning": {
+        "en": "film",
+        "vi": "phim, điện ảnh"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "maiasa",
+      "word": "毎朝[まいあさ]",
+      "kana": "まいあさ",
+      "meaning": {
+        "en": "every morning",
+        "vi": "mỗi sáng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "maiban",
+      "word": "毎晩[まいばん]",
+      "kana": "まいばん",
+      "meaning": {
+        "en": "every night",
+        "vi": "mỗi tối"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "mainichi",
+      "word": "毎日[まいにち]",
+      "kana": "まいにち",
+      "meaning": {
+        "en": "every day",
+        "vi": "mỗi ngày, hàng ngày"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "getsuyoubi",
+      "word": "月曜日[げつようび]",
+      "kana": "げつようび",
+      "meaning": {
+        "en": "Monday",
+        "vi": "thứ hai"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kayoubi",
+      "word": "火曜日[かようび]",
+      "kana": "かようび",
+      "meaning": {
+        "en": "Tuesday",
+        "vi": "thứ ba"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "suiyoubi",
+      "word": "水曜日[すいようび]",
+      "kana": "すいようび",
+      "meaning": {
+        "en": "Wednesday",
+        "vi": "thứ tư"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "mokuyoubi",
+      "word": "木曜日[もくようび]",
+      "kana": "もくようび",
+      "meaning": {
+        "en": "Thursday",
+        "vi": "thứ năm"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kinyoubi",
+      "word": "金曜日[きんようび]",
+      "kana": "きんようび",
+      "meaning": {
+        "en": "Friday",
+        "vi": "thứ sáu"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "doyoubi",
+      "word": "土曜日[どようび]",
+      "kana": "どようび",
+      "meaning": {
+        "en": "Saturday",
+        "vi": "thứ bảy"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "nichiyoubi",
+      "word": "日曜日[にちようび]",
+      "kana": "にちようび",
+      "meaning": {
+        "en": "Sunday",
+        "vi": "chủ nhật"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "nanyoubi",
+      "word": "何曜日[なんようび]",
+      "kana": "なんようび",
+      "meaning": {
+        "en": "what day of the week",
+        "vi": "thứ mấy"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "kara",
+      "word": "〜から",
+      "kana": "から",
+      "meaning": {
+        "en": "from ~",
+        "vi": "từ (thời gian, địa điểm)"
+      },
+      "type": "particle"
+    },
+    {
+      "id": "made",
+      "word": "〜まで",
+      "kana": "まで",
+      "meaning": {
+        "en": "until ~",
+        "vi": "đến (thời gian, địa điểm)"
+      },
+      "type": "particle"
+    },
+    {
+      "id": "to",
+      "word": "〜と〜",
+      "kana": "と",
+      "meaning": {
+        "en": "and (joins nouns)",
+        "vi": "và (nối danh từ)"
+      },
+      "type": "particle"
+    },
+    {
+      "id": "taihen-desu-ne",
+      "word": "大変[たいへん]ですね",
+      "kana": "たいへんですね",
+      "meaning": {
+        "en": "that's tough! (sympathy)",
+        "vi": "vất vả quá nhỉ / cực khổ quá nhỉ"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "bangou",
+      "word": "番号[ばんごう]",
+      "kana": "ばんごう",
+      "meaning": {
+        "en": "number",
+        "vi": "số, số hiệu"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "nanban",
+      "word": "何番[なんばん]",
+      "kana": "なんばん",
+      "meaning": {
+        "en": "what number",
+        "vi": "số mấy"
+      },
+      "type": "interrogative"
+    }
+  ]
+}

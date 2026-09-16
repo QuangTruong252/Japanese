@@ -1,0 +1,266 @@
+{
+  "level": "n5",
+  "lesson": 19,
+  "words": [
+    {
+      "id": "noborimasu",
+      "word": "登[のぼ]ります",
+      "kana": "のぼります",
+      "meaning": {
+        "en": "to climb",
+        "vi": "leo, trèo [núi]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "tomarimasu",
+      "word": "泊[と]まります[ホテルに〜]",
+      "kana": "とまります",
+      "meaning": {
+        "en": "to stay [at a hotel]",
+        "vi": "trọ lại, nghỉ lại [khách sạn]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "souji-shimasu",
+      "word": "掃除[そうじ]します",
+      "kana": "そうじします",
+      "meaning": {
+        "en": "to clean (a room)",
+        "vi": "dọn dẹp, vệ sinh"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "sentaku-shimasu",
+      "word": "洗濯[せんたく]します",
+      "kana": "せんたくします",
+      "meaning": {
+        "en": "to wash (clothes)",
+        "vi": "giặt giũ [quần áo]"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "narimasu",
+      "word": "なります",
+      "kana": "なります",
+      "meaning": {
+        "en": "to become",
+        "vi": "trở thành, trở nên"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "nemui",
+      "word": "眠[ねむ]い",
+      "kana": "ねむい",
+      "meaning": {
+        "en": "to be sleepy",
+        "vi": "buồn ngủ"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "tsuyoi",
+      "word": "強[つよ]い",
+      "kana": "つよい",
+      "meaning": {
+        "en": "strong",
+        "vi": "mạnh, mạnh mẽ"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "yowai",
+      "word": "弱[よわ]い",
+      "kana": "よわい",
+      "meaning": {
+        "en": "weak",
+        "vi": "yếu, yếu ớt"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "renshuu",
+      "word": "練習[れんしゅう]",
+      "kana": "れんしゅう",
+      "meaning": {
+        "en": "practice, rehearsal",
+        "vi": "sự luyện tập"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "gorufu",
+      "word": "ゴルフ",
+      "kana": "ゴルフ",
+      "meaning": {
+        "en": "golf",
+        "vi": "môn đánh golf"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "sumou",
+      "word": "相撲[すもう]",
+      "kana": "すもう",
+      "meaning": {
+        "en": "sumo",
+        "vi": "môn đấu vật Sumo"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ocha-ceremonia",
+      "word": "お 茶[ちゃ]",
+      "kana": "おちゃ",
+      "meaning": {
+        "en": "tea ceremony",
+        "vi": "trà đạo"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hi",
+      "word": "日[ひ]",
+      "kana": "ひ",
+      "meaning": {
+        "en": "day, date",
+        "vi": "ngày, mặt trời"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "choushi",
+      "word": "調子[ちょうし]",
+      "kana": "ちょうし",
+      "meaning": {
+        "en": "shape, condition",
+        "vi": "tình trạng, trạng thái sức khỏe/máy móc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ichido",
+      "word": "一度[いちど]",
+      "kana": "いちど",
+      "meaning": {
+        "en": "once",
+        "vi": "một lần"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "ichidomo",
+      "word": "一度[いちど]も",
+      "kana": "いちども",
+      "meaning": {
+        "en": "never (with a negative)",
+        "vi": "chưa từng một lần nào (đi với phủ định)"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "dandan",
+      "word": "だんだん",
+      "kana": "だんだん",
+      "meaning": {
+        "en": "little by little",
+        "vi": "dần dần, từng bước"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "mousugu",
+      "word": "もうすぐ",
+      "kana": "もうすぐ",
+      "meaning": {
+        "en": "soon, before long",
+        "vi": "sắp sửa, chẳng mấy chốc"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "okagesamade",
+      "word": "おかげさまで",
+      "kana": "おかげさまで",
+      "meaning": {
+        "en": "thanks to you",
+        "vi": "nhờ ơn trời tôi vẫn khỏe"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "demo",
+      "word": "でも",
+      "kana": "でも",
+      "meaning": {
+        "en": "but, however",
+        "vi": "nhưng mà"
+      },
+      "type": "conjunction"
+    },
+    {
+      "id": "kanpai",
+      "word": "乾杯[かんぱい]",
+      "kana": "かんぱい",
+      "meaning": {
+        "en": "cheers!",
+        "vi": "Cạn ly! / Nâng ly!"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "daietto",
+      "word": "ダイエット",
+      "kana": "ダイエット",
+      "meaning": {
+        "en": "diet",
+        "vi": "việc ăn kiêng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "muri",
+      "word": "無理[むり][な]",
+      "kana": "むり",
+      "meaning": {
+        "en": "excessive, impossible",
+        "vi": "quá sức, không thể làm được"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "karada-ni-ii",
+      "word": "体[からだ]にいい",
+      "kana": "からだにいい",
+      "meaning": {
+        "en": "good for your health",
+        "vi": "tốt cho sức khỏe"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "toukyou-sukaitsurii",
+      "word": "東京[とうきょう]スカイツリー",
+      "kana": "とうきょうスカイツリー",
+      "meaning": {
+        "en": "Tokyo Skytree",
+        "vi": "Tháp Tokyo Skytree"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "katsushika-hokusai",
+      "word": "葛飾北斎[かつしかほくさい]",
+      "kana": "かつしかほくさい",
+      "meaning": {
+        "en": "Katsushika Hokusai (Edo-period painter)",
+        "vi": "Katsushika Hokusai (danh họa thời Edo)"
+      },
+      "type": "noun"
+    }
+  ]
+}

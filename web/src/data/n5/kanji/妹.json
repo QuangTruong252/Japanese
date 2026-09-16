@@ -1,0 +1,60 @@
+{
+  "character": "妹",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "younger sister"
+    ],
+    "vi": [
+      "em gái"
+    ]
+  },
+  "onyomi": [
+    "マイ"
+  ],
+  "kunyomi": [
+    "いもうと"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "妹[いもうと]",
+      "meaning": {
+        "en": "younger sister",
+        "vi": "em gái (của mình)"
+      }
+    },
+    {
+      "word": "妹娘[いもうとむすめ]",
+      "meaning": {
+        "en": "younger daughter",
+        "vi": "younger daughter"
+      }
+    },
+    {
+      "word": "姉妹[しまい]",
+      "meaning": {
+        "en": "sisters",
+        "vi": "chị em gái"
+      }
+    },
+    {
+      "word": "義妹[ぎまい]",
+      "meaning": {
+        "en": "younger stepsister",
+        "vi": "younger stepsister"
+      }
+    },
+    {
+      "word": "弟妹[ていまい]",
+      "meaning": {
+        "en": "younger brothers and sisters",
+        "vi": "younger brothers and sisters"
+      }
+    }
+  ],
+  "similar": [
+    "姉",
+    "始"
+  ]
+}

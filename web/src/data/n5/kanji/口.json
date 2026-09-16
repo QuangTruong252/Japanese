@@ -1,0 +1,67 @@
+{
+  "character": "口",
+  "level": "n5",
+  "lesson": 16,
+  "meanings": {
+    "en": [
+      "mouth",
+      "entrance"
+    ],
+    "vi": [
+      "miệng",
+      "cửa vào/ra"
+    ]
+  },
+  "onyomi": [
+    "コウ",
+    "ク"
+  ],
+  "kunyomi": [
+    "くち"
+  ],
+  "strokes": 3,
+  "examples": [
+    {
+      "word": "口[くち]",
+      "meaning": {
+        "en": "mouth",
+        "vi": "miệng"
+      }
+    },
+    {
+      "word": "入口[いりぐち]",
+      "meaning": {
+        "en": "entrance",
+        "vi": "cửa vào, lối vào"
+      }
+    },
+    {
+      "word": "出口[でぐち]",
+      "meaning": {
+        "en": "exit",
+        "vi": "cửa ra, lối ra"
+      }
+    },
+    {
+      "word": "火口[かこう]",
+      "meaning": {
+        "en": "crater",
+        "vi": "crater"
+      }
+    },
+    {
+      "word": "人口[じんこう]",
+      "meaning": {
+        "en": "population",
+        "vi": "dân số"
+      }
+    },
+    {
+      "word": "口座[こうざ]",
+      "meaning": {
+        "en": "bank account",
+        "vi": "bank account"
+      }
+    }
+  ]
+}

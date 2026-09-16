@@ -1,0 +1,180 @@
+{
+  "level": "n5",
+  "number": 4,
+  "title": {
+    "en": "Time and verbs",
+    "vi": "Thời gian và động từ"
+  },
+  "jpTitle": "そちらは 何時[なんじ]までですか",
+  "description": {
+    "en": "Tell the time, name the days of the week, and use your first verbs in present and past, affirmative and negative.",
+    "vi": "Học cách nói giờ giấc, các ngày trong tuần, các thì của động từ (hiện tại, quá khứ, phủ định) và trợ từ thời gian に, から, まで."
+  },
+  "grammar": [
+    {
+      "id": "ima-nanji",
+      "title": {
+        "en": "今[いま] −時[じ]−分[ふん]です — telling the time",
+        "vi": "今[いま] −時[じ]−分[ふん]です — Nói giờ giấc"
+      },
+      "pattern": {
+        "vi": "今[いま] − 時[じ] − 分[ふん]です"
+      },
+      "explanation": {
+        "en": "The time is expressed with numerals followed by 時[じ] (hours) and 分[ふん] (minutes). To ask you use 何時[なんじ] (what time?). 半[はん] means \"half past\".",
+        "vi": "Cấu trúc dùng để nói thời gian hiện tại. Giờ là số đếm + 時 (ji), phút là số đếm + 分 (fun/pun). 半 (han) nghĩa là một nửa (rưỡi). Hỏi giờ dùng 何時 (nanji)."
+      },
+      "examples": [
+        {
+          "jp": "今[いま] 何時[なんじ]ですか。…7 時[じ]10 分[ぷん]です。",
+          "translation": {
+            "en": "What time is it? …It's 7:10.",
+            "vi": "Bây giờ là mấy giờ? …Là 7 giờ 10 phút."
+          }
+        },
+        {
+          "jp": "今[いま]9 時[じ] 半[はん]です。",
+          "translation": {
+            "en": "It's half past nine.",
+            "vi": "Bây giờ là 9 giờ rưỡi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verbos-masu",
+      "title": {
+        "en": "Vます／Vません／Vました／Vませんでした",
+        "vi": "Vます／Vません／Vました／Vませんでした — Động từ lịch sự"
+      },
+      "pattern": {
+        "vi": "V ます ／ V ません ／ V ました ／ V ませんでした"
+      },
+      "explanation": {
+        "en": "The ます form is the polite form of the verb. Its four combinations cover present/future and past, affirmative and negative: 働[はたら]きます (I work/will work), 働[はたら]きません (I don't work), 働[はたら]きました (I worked), 働[はたら]きませんでした (I didn't work).",
+        "vi": "Đuôi ます biểu thị thái độ lịch sự của người nói. ます là khẳng định hiện tại/tương lai hoặc thói quen; ません là phủ định; ました là khẳng định quá khứ; ませんでした là phủ định quá khứ."
+      },
+      "examples": [
+        {
+          "jp": "毎日[まいにち] 勉強[べんきょう]します。",
+          "translation": {
+            "en": "I study every day.",
+            "vi": "Hàng ngày tôi đều học bài."
+          }
+        },
+        {
+          "jp": "きのう 働[はたら]きませんでした。",
+          "translation": {
+            "en": "I didn't work yesterday.",
+            "vi": "Hôm qua tôi đã không làm việc."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ni-tiempo",
+      "title": {
+        "en": "S (time) に V — \"at…\"",
+        "vi": "S (thời gian) に V — Trợ từ chỉ mốc thời gian"
+      },
+      "pattern": {
+        "en": "time に V",
+        "vi": "thời gian に V"
+      },
+      "explanation": {
+        "en": "The particle に marks the point in time when the action happens, when that moment is expressed with numbers (times, dates): 6 時[じ]に 起[お]きます. It is not used with words like きょう or 毎朝[まいあさ].",
+        "vi": "Trợ từ に đứng sau danh từ chỉ mốc thời gian có con số cụ thể (giờ, ngày, tháng, năm) để biểu thị thời điểm hành động xảy ra. Các từ chỉ thời gian không có con số như 今日, あした, 毎朝 thì không dùng に."
+      },
+      "examples": [
+        {
+          "jp": "毎朝[まいあさ]6 時[じ]に 起[お]きます。",
+          "translation": {
+            "en": "I get up at six every morning.",
+            "vi": "Mỗi sáng tôi thức dậy lúc 6 giờ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "kara-made",
+      "title": {
+        "en": "S1 から S2 まで — \"from… to…\"",
+        "vi": "S1 から S2 まで — «Từ… đến…»"
+      },
+      "pattern": {
+        "vi": "N1 から N2 まで"
+      },
+      "explanation": {
+        "en": "から marks the starting point (in time or space) and まで the end point. They can be used together or on their own.",
+        "vi": "から chỉ điểm bắt đầu về thời gian hoặc địa điểm; まで chỉ điểm kết thúc. Chúng có thể được dùng cặp với nhau hoặc dùng độc lập trong câu."
+      },
+      "examples": [
+        {
+          "jp": "銀行[ぎんこう]は9 時[じ]から3 時[じ]までです。",
+          "translation": {
+            "en": "The bank is open from nine to three.",
+            "vi": "Ngân hàng mở cửa từ 9 giờ đến 3 giờ."
+          }
+        },
+        {
+          "jp": "昼休[ひるやす]みは12 時[じ]からです。",
+          "translation": {
+            "en": "The lunch break starts at twelve.",
+            "vi": "Nghỉ trưa bắt đầu từ 12 giờ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "to",
+      "title": {
+        "en": "N1 と N2 — \"and\"",
+        "vi": "N1 と N2 — Trợ từ «và»"
+      },
+      "pattern": {
+        "vi": "N1 と N2"
+      },
+      "explanation": {
+        "en": "と links two nouns in a complete list: 銀行[ぎんこう]は 土曜日[どようび]と 日曜日[にちようび]が 休[やす]みです.",
+        "vi": "Trợ từ と dùng để nối hai danh từ cùng loại với nhau theo hình thức liệt kê đầy đủ ('và')."
+      },
+      "examples": [
+        {
+          "jp": "休[やす]みは 土曜日[どようび]と 日曜日[にちようび]です。",
+          "translation": {
+            "en": "The days off are Saturday and Sunday.",
+            "vi": "Ngày nghỉ là thứ bảy và chủ nhật."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ne",
+      "title": {
+        "en": "〜ね — seeking agreement",
+        "vi": "〜ね — Tìm kiếm sự đồng cảm"
+      },
+      "pattern": {
+        "vi": "S ね"
+      },
+      "explanation": {
+        "en": "The sentence-final particle ね softens the sentence and invites the listener's agreement or sympathy, like English \"isn't it?\" or \"right?\".",
+        "vi": "Trợ từ ね đặt ở cuối câu để biểu lộ cảm xúc, tìm kiếm sự đồng thuận hoặc xác nhận lại từ phía người nghe ('nhỉ, nhé')."
+      },
+      "examples": [
+        {
+          "jp": "毎日[まいにち]10 時[じ]まで 勉強[べんきょう]します。… 大変[たいへん]ですね。",
+          "translation": {
+            "en": "I study every day until ten. …That's tough, isn't it?",
+            "vi": "Mỗi ngày tôi đều học đến 10 giờ. …Vất vả quá nhỉ."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "time",
+    "calendar",
+    "verbs"
+  ]
+}

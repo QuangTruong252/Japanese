@@ -1,0 +1,416 @@
+{
+  "level": "n5",
+  "lesson": 1,
+  "words": [
+    {
+      "id": "watashi",
+      "word": "私[わたし]",
+      "kana": "わたし",
+      "meaning": {
+        "en": "I",
+        "vi": "tôi"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "anata",
+      "word": "あなた",
+      "kana": "あなた",
+      "meaning": {
+        "en": "you",
+        "vi": "bạn, anh, chị (ngôi thứ hai)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "ano-hito",
+      "word": "あの 人[ひと]",
+      "kana": "あのひと",
+      "meaning": {
+        "en": "that person, he/she",
+        "vi": "người kia, người đó"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "ano-kata",
+      "word": "あの 方[かた]",
+      "kana": "あのかた",
+      "meaning": {
+        "en": "that person (polite)",
+        "vi": "vị kia (cách nói lịch sự của 'người kia')"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "san",
+      "word": "〜さん",
+      "kana": "さん",
+      "meaning": {
+        "en": "Mr, Ms (polite suffix)",
+        "vi": "anh, chị, ông, bà (hậu tố xưng hô lịch sự)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "chan",
+      "word": "〜ちゃん",
+      "kana": "ちゃん",
+      "meaning": {
+        "en": "affectionate suffix for children",
+        "vi": "bé (hậu tố thân mật gọi trẻ em hoặc bạn bè thân)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "jin",
+      "word": "〜人[じん]",
+      "kana": "じん",
+      "meaning": {
+        "en": "nationality suffix",
+        "vi": "người (hậu tố quốc tịch, ví dụ: người Nhật)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "sensei",
+      "word": "先生[せんせい]",
+      "kana": "せんせい",
+      "meaning": {
+        "en": "teacher (when addressing them)",
+        "vi": "thầy, cô giáo, bác sĩ (dùng để xưng hô người khác)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kyoushi",
+      "word": "教師[きょうし]",
+      "kana": "きょうし",
+      "meaning": {
+        "en": "teacher (profession)",
+        "vi": "giáo viên (nghề nghiệp, tự xưng)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "gakusei",
+      "word": "学生[がくせい]",
+      "kana": "がくせい",
+      "meaning": {
+        "en": "student",
+        "vi": "học sinh, sinh viên"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kaishain",
+      "word": "会社員[かいしゃいん]",
+      "kana": "かいしゃいん",
+      "meaning": {
+        "en": "company employee",
+        "vi": "nhân viên công ty"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shain",
+      "word": "社員[しゃいん]",
+      "kana": "しゃいん",
+      "meaning": {
+        "en": "employee (of a particular company)",
+        "vi": "nhân viên của công ty..."
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ginkouin",
+      "word": "銀行員[ぎんこういん]",
+      "kana": "ぎんこういん",
+      "meaning": {
+        "en": "bank clerk",
+        "vi": "nhân viên ngân hàng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "isha",
+      "word": "医者[いしゃ]",
+      "kana": "いしゃ",
+      "meaning": {
+        "en": "doctor",
+        "vi": "bác sĩ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kenkyuusha",
+      "word": "研究者[けんきゅうしゃ]",
+      "kana": "けんきゅうしゃ",
+      "meaning": {
+        "en": "researcher",
+        "vi": "nhà nghiên cứu"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "daigaku",
+      "word": "大学[だいがく]",
+      "kana": "だいがく",
+      "meaning": {
+        "en": "university",
+        "vi": "trường đại học"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "byouin",
+      "word": "病院[びょういん]",
+      "kana": "びょういん",
+      "meaning": {
+        "en": "hospital",
+        "vi": "bệnh viện"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "dare",
+      "word": "誰[だれ]",
+      "kana": "だれ",
+      "meaning": {
+        "en": "who",
+        "vi": "ai"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "donata",
+      "word": "どなた",
+      "kana": "どなた",
+      "meaning": {
+        "en": "who (polite)",
+        "vi": "vị nào (cách nói lịch sự của 'ai')"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "sai",
+      "word": "〜歳[さい]",
+      "kana": "さい",
+      "meaning": {
+        "en": "counter for years of age",
+        "vi": "tuổi"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "nansai",
+      "word": "何歳[なんさい]",
+      "kana": "なんさい",
+      "meaning": {
+        "en": "how old",
+        "vi": "mấy tuổi"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "oikutsu",
+      "word": "おいくつ",
+      "kana": "おいくつ",
+      "meaning": {
+        "en": "how old (polite)",
+        "vi": "bao nhiêu tuổi (cách hỏi lịch sự)"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "hai",
+      "word": "はい",
+      "kana": "はい",
+      "meaning": {
+        "en": "yes",
+        "vi": "vâng, dạ, đúng"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "iie",
+      "word": "いいえ",
+      "kana": "いいえ",
+      "meaning": {
+        "en": "no",
+        "vi": "không, không phải"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "shitsurei-desu-ga",
+      "word": "失礼[しつれい]ですが",
+      "kana": "しつれいですが",
+      "meaning": {
+        "en": "excuse me, but… (before a personal question)",
+        "vi": "Xin lỗi (khi làm phiền hoặc hỏi việc riêng)..."
+      },
+      "type": "expression"
+    },
+    {
+      "id": "onamae-wa",
+      "word": "お 名前[なまえ]は？",
+      "kana": "おなまえは",
+      "meaning": {
+        "en": "what is it called?",
+        "vi": "tên của bạn là gì?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "hajimemashite",
+      "word": "はじめまして",
+      "kana": "はじめまして",
+      "meaning": {
+        "en": "pleased to meet you",
+        "vi": "Rất vui được gặp bạn (lần đầu gặp mặt)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "douzo-yoroshiku",
+      "word": "どうぞよろしくお 願[ねが]いします",
+      "kana": "どうぞよろしくおねがいします",
+      "meaning": {
+        "en": "nice to meet you, I look forward to it",
+        "vi": "Rất mong nhận được sự giúp đỡ của bạn"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "kochira-wa",
+      "word": "こちらは〜さんです",
+      "kana": "こちらは…さんです",
+      "meaning": {
+        "en": "let me introduce Mr/Ms …",
+        "vi": "Đây là anh/chị/vị..."
+      },
+      "type": "expression"
+    },
+    {
+      "id": "kara-kimashita",
+      "word": "〜から 来[き]ました",
+      "kana": "からきました",
+      "meaning": {
+        "en": "I'm from… (country or place)",
+        "vi": "Tôi đến từ..."
+      },
+      "type": "expression"
+    },
+    {
+      "id": "amerika",
+      "word": "アメリカ",
+      "kana": "アメリカ",
+      "meaning": {
+        "en": "the United States",
+        "vi": "nước Mỹ, Hoa Kỳ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "igirisu",
+      "word": "イギリス",
+      "kana": "イギリス",
+      "meaning": {
+        "en": "the United Kingdom",
+        "vi": "nước Anh"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "indo",
+      "word": "インド",
+      "kana": "インド",
+      "meaning": {
+        "en": "India",
+        "vi": "nước Ấn Độ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "indoneshia",
+      "word": "インドネシア",
+      "kana": "インドネシア",
+      "meaning": {
+        "en": "Indonesia",
+        "vi": "nước Indonesia"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kankoku",
+      "word": "韓国[かんこく]",
+      "kana": "かんこく",
+      "meaning": {
+        "en": "South Korea",
+        "vi": "nước Hàn Quốc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tai",
+      "word": "タイ",
+      "kana": "タイ",
+      "meaning": {
+        "en": "Thailand",
+        "vi": "nước Thái Lan"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "chuugoku",
+      "word": "中国[ちゅうごく]",
+      "kana": "ちゅうごく",
+      "meaning": {
+        "en": "China",
+        "vi": "nước Trung Quốc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "doitsu",
+      "word": "ドイツ",
+      "kana": "ドイツ",
+      "meaning": {
+        "en": "Germany",
+        "vi": "nước Đức"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "nihon",
+      "word": "日本[にほん]",
+      "kana": "にほん",
+      "meaning": {
+        "en": "Japan",
+        "vi": "nước Nhật Bản"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "furansu",
+      "word": "フランス",
+      "kana": "フランス",
+      "meaning": {
+        "en": "France",
+        "vi": "nước Pháp"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "burajiru",
+      "word": "ブラジル",
+      "kana": "ブラジル",
+      "meaning": {
+        "en": "Brazil",
+        "vi": "nước Brazil"
+      },
+      "type": "noun"
+    }
+  ]
+}

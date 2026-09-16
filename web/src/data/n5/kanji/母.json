@@ -1,0 +1,64 @@
+{
+  "character": "母",
+  "level": "n5",
+  "lesson": 7,
+  "meanings": {
+    "en": [
+      "mother"
+    ],
+    "vi": [
+      "mẹ"
+    ]
+  },
+  "onyomi": [
+    "ボ"
+  ],
+  "kunyomi": [
+    "はは"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "母[はは]",
+      "meaning": {
+        "en": "my mother",
+        "vi": "mẹ (của mình)"
+      }
+    },
+    {
+      "word": "お 母[かあ]さん",
+      "meaning": {
+        "en": "his/her mother",
+        "vi": "mẹ, bác gái (của người khác)"
+      }
+    },
+    {
+      "word": "母[はは]の 日[ひ]",
+      "meaning": {
+        "en": "Mother's Day",
+        "vi": "Ngày của Mẹ"
+      }
+    },
+    {
+      "word": "母親[ははおや]",
+      "meaning": {
+        "en": "mother",
+        "vi": "mother"
+      }
+    },
+    {
+      "word": "祖母[そぼ]",
+      "meaning": {
+        "en": "grandmother",
+        "vi": "grandmother"
+      }
+    },
+    {
+      "word": "母国[ぼこく]",
+      "meaning": {
+        "en": "home country",
+        "vi": "quốc gia quê hương, mẫu quốc"
+      }
+    }
+  ]
+}

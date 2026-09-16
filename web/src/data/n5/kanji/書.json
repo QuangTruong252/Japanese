@@ -1,0 +1,72 @@
+{
+  "character": "書",
+  "level": "n5",
+  "lesson": 2,
+  "meanings": {
+    "en": [
+      "to write"
+    ],
+    "vi": [
+      "viết",
+      "sách"
+    ]
+  },
+  "onyomi": [
+    "ショ"
+  ],
+  "kunyomi": [
+    "か.く"
+  ],
+  "strokes": 10,
+  "examples": [
+    {
+      "word": "書[か]きます",
+      "meaning": {
+        "en": "to write",
+        "vi": "nghe, hỏi"
+      }
+    },
+    {
+      "word": "辞書[じしょ]",
+      "meaning": {
+        "en": "dictionary",
+        "vi": "từ điển"
+      }
+    },
+    {
+      "word": "図書館[としょかん]",
+      "meaning": {
+        "en": "library",
+        "vi": "thư viện"
+      }
+    },
+    {
+      "word": "書[か]く",
+      "meaning": {
+        "en": "to write",
+        "vi": "viết, vẽ"
+      }
+    },
+    {
+      "word": "葉書[はがき]",
+      "meaning": {
+        "en": "postcard",
+        "vi": "postcard"
+      }
+    },
+    {
+      "word": "書道[しょどう]",
+      "meaning": {
+        "en": "calligraphy",
+        "vi": "thư pháp"
+      }
+    },
+    {
+      "word": "書類[しょるい]",
+      "meaning": {
+        "en": "document",
+        "vi": "document"
+      }
+    }
+  ]
+}

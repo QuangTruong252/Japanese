@@ -1,0 +1,56 @@
+{
+  "character": "夏",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "summer"
+    ],
+    "vi": [
+      "mùa hè"
+    ]
+  },
+  "onyomi": [
+    "カ"
+  ],
+  "kunyomi": [
+    "なつ"
+  ],
+  "strokes": 10,
+  "examples": [
+    {
+      "word": "夏[なつ]",
+      "meaning": {
+        "en": "summer",
+        "vi": "mùa hè"
+      }
+    },
+    {
+      "word": "夏休[なつやす]み",
+      "meaning": {
+        "en": "summer holidays",
+        "vi": "kỳ nghỉ hè"
+      }
+    },
+    {
+      "word": "真夏[まなつ]",
+      "meaning": {
+        "en": "midsummer",
+        "vi": "midsummer"
+      }
+    },
+    {
+      "word": "夏期[かき]",
+      "meaning": {
+        "en": "summer period",
+        "vi": "summer period"
+      }
+    },
+    {
+      "word": "初夏[しょか]",
+      "meaning": {
+        "en": "early summer",
+        "vi": "early summer"
+      }
+    }
+  ]
+}

@@ -1,0 +1,536 @@
+{
+  "level": "n5",
+  "lesson": 8,
+  "words": [
+    {
+      "id": "hansamu",
+      "word": "ハンサム[な]",
+      "kana": "ハンサム",
+      "meaning": {
+        "en": "handsome",
+        "vi": "đẹp trai"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "kirei",
+      "word": "きれい[な]",
+      "kana": "きれい",
+      "meaning": {
+        "en": "beautiful, clean",
+        "vi": "đẹp, sạch sẽ"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "shizuka",
+      "word": "静[しず]か[な]",
+      "kana": "しずか",
+      "meaning": {
+        "en": "quiet",
+        "vi": "yên tĩnh"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "nigiyaka",
+      "word": "にぎやか[な]",
+      "kana": "にぎやか",
+      "meaning": {
+        "en": "busy, lively",
+        "vi": "nhộn nhịp, náo nhiệt"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "yuumei",
+      "word": "有名[ゆうめい][な]",
+      "kana": "ゆうめい",
+      "meaning": {
+        "en": "famous, well known",
+        "vi": "nổi tiếng"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "shinsetsu",
+      "word": "親切[しんせつ][な]",
+      "kana": "しんせつ",
+      "meaning": {
+        "en": "kind, generous",
+        "vi": "tốt bụng, thân thiện, tử tế"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "genki",
+      "word": "元気[げんき][な]",
+      "kana": "げんき",
+      "meaning": {
+        "en": "healthy, in good spirits",
+        "vi": "khỏe mạnh"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "hima",
+      "word": "暇[ひま][な]",
+      "kana": "ひま",
+      "meaning": {
+        "en": "free (time)",
+        "vi": "rảnh rỗi"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "benri",
+      "word": "便利[べんり][な]",
+      "kana": "べんり",
+      "meaning": {
+        "en": "useful, handy",
+        "vi": "tiện lợi"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "suteki",
+      "word": "すてき[な]",
+      "kana": "すてき",
+      "meaning": {
+        "en": "pretty",
+        "vi": "tuyệt vời, đẹp đẽ"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "ookii",
+      "word": "大[おお]きい",
+      "kana": "おおきい",
+      "meaning": {
+        "en": "big",
+        "vi": "to, lớn"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "chiisai",
+      "word": "小[ちい]さい",
+      "kana": "ちいさい",
+      "meaning": {
+        "en": "small",
+        "vi": "nhỏ, bé"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "atarashii",
+      "word": "新[あたら]しい",
+      "kana": "あたらしい",
+      "meaning": {
+        "en": "new",
+        "vi": "mới"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "furui",
+      "word": "古[ふる]い",
+      "kana": "ふるい",
+      "meaning": {
+        "en": "old (not for people)",
+        "vi": "cũ"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "ii",
+      "word": "いい（よい）",
+      "kana": "いい",
+      "meaning": {
+        "en": "good",
+        "vi": "tốt, hay"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "warui",
+      "word": "悪[わる]い",
+      "kana": "わるい",
+      "meaning": {
+        "en": "bad",
+        "vi": "xấu, tồi"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "atsui",
+      "word": "暑[あつ]い・熱[あつ]い",
+      "kana": "あつい",
+      "meaning": {
+        "en": "hot, warm",
+        "vi": "nóng (thời tiết)"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "samui",
+      "word": "寒[さむ]い",
+      "kana": "さむい",
+      "meaning": {
+        "en": "cold (weather)",
+        "vi": "lạnh, rét (thời tiết)"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "tsumetai",
+      "word": "冷[つめ]たい",
+      "kana": "つめたい",
+      "meaning": {
+        "en": "cold (to the touch)",
+        "vi": "lạnh, buốt (khi chạm vào đồ vật)"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "muzukashii",
+      "word": "難[むずか]しい",
+      "kana": "むずかしい",
+      "meaning": {
+        "en": "difficult",
+        "vi": "khó"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "yasashii",
+      "word": "易[やさ]しい",
+      "kana": "やさしい",
+      "meaning": {
+        "en": "easy",
+        "vi": "dễ, đơn giản"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "takai",
+      "word": "高[たか]い",
+      "kana": "たかい",
+      "meaning": {
+        "en": "expensive, high",
+        "vi": "đắt, cao"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "yasui",
+      "word": "安[やす]い",
+      "kana": "やすい",
+      "meaning": {
+        "en": "cheap",
+        "vi": "rẻ"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "hikui",
+      "word": "低[ひく]い",
+      "kana": "ひくい",
+      "meaning": {
+        "en": "short (height)",
+        "vi": "thấp"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "omoshiroi",
+      "word": "おもしろい",
+      "kana": "おもしろい",
+      "meaning": {
+        "en": "interesting",
+        "vi": "thú vị, hay"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "oishii",
+      "word": "おいしい",
+      "kana": "おいしい",
+      "meaning": {
+        "en": "delicious",
+        "vi": "ngon"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "isogashii",
+      "word": "忙[いそが]しい",
+      "kana": "いそがしい",
+      "meaning": {
+        "en": "busy",
+        "vi": "bận rộn"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "tanoshii",
+      "word": "楽[たの]しい",
+      "kana": "たのしい",
+      "meaning": {
+        "en": "fun, enjoyable",
+        "vi": "vui vẻ"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "shiroi",
+      "word": "白[しろ]い",
+      "kana": "しろい",
+      "meaning": {
+        "en": "white",
+        "vi": "trắng"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "kuroi",
+      "word": "黒[くろ]い",
+      "kana": "くろい",
+      "meaning": {
+        "en": "black",
+        "vi": "đen"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "akai",
+      "word": "赤[あか]い",
+      "kana": "あかい",
+      "meaning": {
+        "en": "red",
+        "vi": "đỏ"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "aoi",
+      "word": "青[あお]い",
+      "kana": "あおい",
+      "meaning": {
+        "en": "blue",
+        "vi": "xanh da trời, xanh lam"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "sakura",
+      "word": "桜[さくら]",
+      "kana": "さくら",
+      "meaning": {
+        "en": "cherry tree or blossom",
+        "vi": "hoa anh đào"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "yama",
+      "word": "山[やま]",
+      "kana": "やま",
+      "meaning": {
+        "en": "mountain",
+        "vi": "núi"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "machi",
+      "word": "町[まち]",
+      "kana": "まち",
+      "meaning": {
+        "en": "town, city",
+        "vi": "thị trấn, thành phố"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tabemono",
+      "word": "食[た]べ 物[もの]",
+      "kana": "たべもの",
+      "meaning": {
+        "en": "food",
+        "vi": "thức ăn, đồ ăn"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tokoro",
+      "word": "所[ところ]",
+      "kana": "ところ",
+      "meaning": {
+        "en": "place",
+        "vi": "nơi, chỗ, địa điểm"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ryou",
+      "word": "寮[りょう]",
+      "kana": "りょう",
+      "meaning": {
+        "en": "dormitory",
+        "vi": "ký túc xá"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "resutoran",
+      "word": "レストラン",
+      "kana": "レストラン",
+      "meaning": {
+        "en": "restaurant",
+        "vi": "nhà hàng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "seikatsu",
+      "word": "生活[せいかつ]",
+      "kana": "せいかつ",
+      "meaning": {
+        "en": "(daily) life",
+        "vi": "cuộc sống, sinh hoạt"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "oshigoto",
+      "word": "[お]仕事[しごと]",
+      "kana": "おしごと",
+      "meaning": {
+        "en": "work, profession",
+        "vi": "công việc (lịch sự)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "dou",
+      "word": "どう",
+      "kana": "どう",
+      "meaning": {
+        "en": "how",
+        "vi": "như thế nào"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "donna",
+      "word": "どんな〜",
+      "kana": "どんな",
+      "meaning": {
+        "en": "what kind of ~",
+        "vi": "như thế nào (bổ nghĩa danh từ)"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "totemo",
+      "word": "とても",
+      "kana": "とても",
+      "meaning": {
+        "en": "very, a lot",
+        "vi": "rất"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "amari",
+      "word": "あまり",
+      "kana": "あまり",
+      "meaning": {
+        "en": "not very (with a negative)",
+        "vi": "không... lắm (đi với phủ định)"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "soshite",
+      "word": "そして",
+      "kana": "そして",
+      "meaning": {
+        "en": "and (joins sentences)",
+        "vi": "và, rồi thì"
+      },
+      "type": "conjunction"
+    },
+    {
+      "id": "ga-pero",
+      "word": "〜が、〜",
+      "kana": "が",
+      "meaning": {
+        "en": "~, but ~",
+        "vi": "nhưng"
+      },
+      "type": "particle"
+    },
+    {
+      "id": "ogenki-desu-ka",
+      "word": "お 元気[げんき]ですか",
+      "kana": "おげんきですか",
+      "meaning": {
+        "en": "how are you?",
+        "vi": "bạn có khỏe không?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "mou-ippai",
+      "word": "[〜、]もう 一杯[いっぱい]いかがですか",
+      "kana": "もういっぱいいかがですか",
+      "meaning": {
+        "en": "would you like another cup of [~]?",
+        "vi": "bạn có muốn dùng thêm một ly/tách nữa không?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "kekkou-desu",
+      "word": "[いいえ、]けっこうです",
+      "kana": "けっこうです",
+      "meaning": {
+        "en": "no, thank you",
+        "vi": "thôi, tôi đủ rồi ạ / không, cảm ơn"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "sorosoro",
+      "word": "そろそろ 失礼[しつれい]します",
+      "kana": "そろそろしつれいします",
+      "meaning": {
+        "en": "it's time to go",
+        "vi": "đã đến lúc tôi phải xin phép ra về"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "iie-denada",
+      "word": "いいえ",
+      "kana": "いいえ",
+      "meaning": {
+        "en": "you're welcome",
+        "vi": "không có chi"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "mata-irasshatte",
+      "word": "またいらっしゃってください",
+      "kana": "またいらっしゃってください",
+      "meaning": {
+        "en": "please come again",
+        "vi": "lần sau lại ghé chơi nhé"
+      },
+      "type": "expression"
+    }
+  ]
+}

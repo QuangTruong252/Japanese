@@ -1,0 +1,72 @@
+{
+  "character": "五",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "five"
+    ],
+    "vi": [
+      "năm",
+      "số năm"
+    ]
+  },
+  "onyomi": [
+    "ゴ"
+  ],
+  "kunyomi": [
+    "いつ.つ"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "五[ご]",
+      "meaning": {
+        "en": "five",
+        "vi": "năm, số 5"
+      }
+    },
+    {
+      "word": "五[いつ]つ",
+      "meaning": {
+        "en": "five things",
+        "vi": "năm cái"
+      }
+    },
+    {
+      "word": "五分[ごふん]",
+      "meaning": {
+        "en": "five minutes",
+        "vi": "five minutes"
+      }
+    },
+    {
+      "word": "五感[ごかん]",
+      "meaning": {
+        "en": "the five senses",
+        "vi": "the five senses"
+      }
+    },
+    {
+      "word": "五月[ごがつ]",
+      "meaning": {
+        "en": "May",
+        "vi": "tháng năm"
+      }
+    },
+    {
+      "word": "五百[ごひゃく]",
+      "meaning": {
+        "en": "five hundred",
+        "vi": "five hundred"
+      }
+    },
+    {
+      "word": "五日[いつか]",
+      "meaning": {
+        "en": "5th day",
+        "vi": "ngày mùng năm"
+      }
+    }
+  ]
+}

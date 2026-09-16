@@ -1,0 +1,60 @@
+{
+  "character": "兄",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "older brother"
+    ],
+    "vi": [
+      "anh trai"
+    ]
+  },
+  "onyomi": [
+    "ケイ",
+    "キョウ"
+  ],
+  "kunyomi": [
+    "あに"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "兄[あに]",
+      "meaning": {
+        "en": "older brother",
+        "vi": "anh trai (của mình)"
+      }
+    },
+    {
+      "word": "兄貴[あにき]",
+      "meaning": {
+        "en": "older brother",
+        "vi": "older brother"
+      }
+    },
+    {
+      "word": "お 兄[にい]さん",
+      "meaning": {
+        "en": "older brother",
+        "vi": "anh trai (của người khác)"
+      }
+    },
+    {
+      "word": "兄弟[きょうだい]",
+      "meaning": {
+        "en": "brothers, siblings",
+        "vi": "anh chị em"
+      }
+    },
+    {
+      "word": "長兄[ちょうけい]",
+      "meaning": {
+        "en": "eldest brother",
+        "vi": "eldest brother"
+      }
+    }
+  ],
+  "similar": [
+    "見"
+  ]
+}

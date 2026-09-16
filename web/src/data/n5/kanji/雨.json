@@ -1,0 +1,60 @@
+{
+  "character": "雨",
+  "level": "n5",
+  "lesson": 12,
+  "meanings": {
+    "en": [
+      "rain"
+    ],
+    "vi": [
+      "mưa"
+    ]
+  },
+  "onyomi": [
+    "ウ"
+  ],
+  "kunyomi": [
+    "あめ"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "雨[あめ]",
+      "meaning": {
+        "en": "rain",
+        "vi": "mưa, cơn mưa"
+      }
+    },
+    {
+      "word": "大雨[おおあめ]",
+      "meaning": {
+        "en": "heavy rain",
+        "vi": "mưa to, mưa lớn"
+      }
+    },
+    {
+      "word": "雨水[あまみず]",
+      "meaning": {
+        "en": "rainwater",
+        "vi": "rainwater"
+      }
+    },
+    {
+      "word": "雨雲[あまぐも]",
+      "meaning": {
+        "en": "rain cloud",
+        "vi": "rain cloud"
+      }
+    },
+    {
+      "word": "雨量[うりょう]",
+      "meaning": {
+        "en": "rainfall",
+        "vi": "rainfall"
+      }
+    }
+  ],
+  "similar": [
+    "電"
+  ]
+}

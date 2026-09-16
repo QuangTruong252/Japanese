@@ -1,0 +1,123 @@
+{
+  "level": "n5",
+  "slug": "demonstratives",
+  "title": {
+    "en": "Demonstratives",
+    "vi": "Đại từ chỉ thị"
+  },
+  "description": {
+    "en": "The こ・そ・あ・ど series: near me, near you, far from both, and the question.",
+    "vi": "Hệ thống từ chỉ thị こ・そ・あ・ど: gần tôi, gần bạn, xa cả hai và từ để hỏi."
+  },
+  "order": 7,
+  "sections": [
+    {
+      "id": "table",
+      "title": {
+        "en": "The こ・そ・あ・ど series",
+        "vi": "Hệ thống đại từ こ・そ・あ・ど"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "vi": ""
+            },
+            {
+              "en": "こ〜 (near the speaker)",
+              "vi": "こ〜 (gần người nói)"
+            },
+            {
+              "en": "そ〜 (near the listener)",
+              "vi": "そ〜 (gần người nghe)"
+            },
+            {
+              "en": "あ〜 (far from both)",
+              "vi": "あ〜 (xa cả hai)"
+            },
+            {
+              "en": "ど〜 (question)",
+              "vi": "ど〜 (từ để hỏi)"
+            }
+          ],
+          "rows": [
+            [
+              {
+                "en": "Thing",
+                "vi": "Đồ vật (đại từ)"
+              },
+              "これ",
+              "それ",
+              "あれ",
+              "どれ"
+            ],
+            [
+              {
+                "en": "Thing + noun",
+                "vi": "Đồ vật (+ danh từ)"
+              },
+              "この〜",
+              "その〜",
+              "あの〜",
+              "どの〜"
+            ],
+            [
+              {
+                "en": "Place",
+                "vi": "Nơi chốn"
+              },
+              "ここ",
+              "そこ",
+              "あそこ",
+              "どこ"
+            ],
+            [
+              {
+                "en": "Place / direction (polite)",
+                "vi": "Hướng / Lịch sự"
+              },
+              "こちら",
+              "そちら",
+              "あちら",
+              "どちら"
+            ],
+            [
+              {
+                "en": "Place / direction (informal)",
+                "vi": "Người (thân mật)"
+              },
+              "こっち",
+              "そっち",
+              "あっち",
+              "どっち"
+            ],
+            [
+              {
+                "en": "Person",
+                "vi": "Người (lịch sự)"
+              },
+              "この 人[ひと]",
+              "その 人[ひと]",
+              "あの 人[ひと]",
+              "どの 人[ひと]"
+            ],
+            [
+              {
+                "en": "Person (polite)",
+                "vi": "Tính chất (+ danh từ)"
+              },
+              "この 方[かた]",
+              "その 方[かた]",
+              "あの 方[かた]",
+              "どなた"
+            ]
+          ]
+        }
+      ],
+      "note": {
+        "en": "これ・それ・あれ stand alone, like a noun. この・その・あの never stand alone: they always accompany a noun.",
+        "vi": "こ (gần người nói), そ (gần người nghe), あ (xa cả hai), ど (nghi vấn / từ để hỏi)."
+      }
+    }
+  ]
+}

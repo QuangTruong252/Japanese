@@ -1,0 +1,143 @@
+{
+  "level": "n5",
+  "number": 25,
+  "title": {
+    "en": "Conditionals",
+    "vi": "Câu điều kiện nếu (たら) và dù (ても)"
+  },
+  "jpTitle": "いろいろお 世話[せわ]になりました",
+  "description": {
+    "en": "Conditions with 〜たら, concession with 〜ても, and hypotheses with もし.",
+    "vi": "Cấu trúc điều kiện giả định hoặc nối tiếp nếu... thì... (〜たら) và điều kiện nhượng bộ dù... đi nữa thì... (〜ても)."
+  },
+  "grammar": [
+    {
+      "id": "tara",
+      "title": {
+        "en": "V たら、〜 — \"if / when\"",
+        "vi": "Câu điều kiện: 〜たら、S — «Nếu… thì…»"
+      },
+      "pattern": {
+        "en": "V たら、S ／ A-かったら ／ N・A-な だったら",
+        "vi": "V たら、S ／ A-かったら ／ N・A-な だったら"
+      },
+      "explanation": {
+        "en": "Adding ら to the た form makes the conditional: お 金[かね]が あったら、 旅行[りょこう]します (if I had money, I'd travel). It works with adjectives (安[やす]かったら) and nouns (雨[あめ]だったら) too.",
+        "vi": "Mẫu câu điều kiện giả định phổ biến nhất: thêm ら vào sau thể quá khứ ngắn (thể た/だ). Mang nghĩa 'nếu giả sử vế trước xảy ra thì vế sau sẽ diễn ra'. Vế sau có thể dùng câu yêu cầu, nhờ vả, ý chí."
+      },
+      "examples": [
+        {
+          "jp": "時間[じかん]があったら、 遊[あそ]びに 来[き]てください。",
+          "translation": {
+            "en": "If you have time, come and visit us.",
+            "vi": "Nếu có thời gian, hãy đến nhà tôi chơi nhé."
+          }
+        },
+        {
+          "jp": "雨[あめ]だったら、 行[い]きません。",
+          "translation": {
+            "en": "If it rains, I won't go.",
+            "vi": "Nếu trời mưa thì tôi sẽ không đi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "tara-temporal",
+      "title": {
+        "en": "V たら — \"when\" something is finished",
+        "vi": "V1 たら、V2 — Điều kiện thời gian («Sau khi làm xong V1 thì…»)"
+      },
+      "pattern": {
+        "en": "V1 たら、V2 (future)",
+        "vi": "V1 たら、V2 (tương lai)"
+      },
+      "explanation": {
+        "en": "たら also says V2 will happen once V1 is complete: 10 時[じ]に なったら、 出[で]かけましょう (when it gets to ten, let's go out).",
+        "vi": "Dùng để diễn tả một sự việc V1 chắc chắn sẽ xảy ra trong tương lai, và ngay sau khi V1 hoàn tất thì hành động V2 sẽ được thực hiện ('khi/sau khi làm xong... thì sẽ...')."
+      },
+      "examples": [
+        {
+          "jp": "国[くに]へ 帰[かえ]ったら、 父[ちち]の 会社[かいしゃ]で 働[はたら]きます。",
+          "translation": {
+            "en": "When I go back to my country, I'll work at my father's company.",
+            "vi": "Sau khi trở về nước, tôi sẽ làm việc ở công ty của bố tôi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "temo",
+      "title": {
+        "en": "V ても、〜 — \"even if\"",
+        "vi": "Câu điều kiện nhượng bộ: 〜ても、S — «Dù… thì vẫn…»"
+      },
+      "pattern": {
+        "vi": "V ても ／ A-くても ／ N・A-な でも、S"
+      },
+      "explanation": {
+        "en": "〜ても expresses concession: the result goes against what you would expect. 雨[あめ]が 降[ふ]っても、 洗濯[せんたく]します (even if it rains, I'll do the laundry); 安[やす]くても 買[か]いません; 便利[べんり]でも 使[つか]いません.",
+        "vi": "Biểu thị quan hệ nhượng bộ trái ngược: dù điều kiện ở vế trước có xảy ra đi chăng nữa thì kết quả ở vế sau vẫn không thay đổi ('cho dù... thì vẫn...')."
+      },
+      "examples": [
+        {
+          "jp": "日曜日[にちようび]でも 働[はたら]きます。",
+          "translation": {
+            "en": "I work even on Sundays.",
+            "vi": "Cho dù là chủ nhật thì tôi vẫn làm việc."
+          }
+        }
+      ]
+    },
+    {
+      "id": "moshi",
+      "title": {
+        "en": "もし — flagging a hypothesis",
+        "vi": "もし 〜たら、S — «Giả sử nếu như…»"
+      },
+      "pattern": {
+        "vi": "もし 〜たら、S"
+      },
+      "explanation": {
+        "en": "もし announces from the start that the sentence is hypothetical and reinforces the 〜たら: もし1 億円[おくえん]あったら、 何[なに]を したいですか.",
+        "vi": "Phó từ もし đặt ở đầu câu để nhấn mạnh tính chất giả định của điều kiện ('Giả sử nếu như... thì...')."
+      },
+      "examples": [
+        {
+          "jp": "もし1 億円[おくえん]あったら、いろいろな 国[くに]を 旅行[りょこう]したいです。",
+          "translation": {
+            "en": "If I had a hundred million yen, I'd want to travel to lots of countries.",
+            "vi": "Giả sử nếu có 100 triệu yên, tôi muốn đi du lịch thật nhiều quốc gia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sujeto-subordinada",
+      "title": {
+        "en": "The subject of the subordinate clause",
+        "vi": "Chủ ngữ trong mệnh đề phụ: S1 (chủ ngữ が) とき／たら／ても、S2"
+      },
+      "pattern": {
+        "en": "S1 (subject が) とき／たら／ても、S2",
+        "vi": "S1 (chủ ngữ が) とき／たら／ても、S2"
+      },
+      "explanation": {
+        "en": "When the subordinate clause has a different subject from the main clause, it is marked with が: 友達[ともだち]が 来[く]るまえに、 部屋[へや]を 掃除[そうじ]します.",
+        "vi": "Trong một câu phức có mệnh đề phụ chỉ thời gian hoặc điều kiện (とき, たら, ても), chủ ngữ của mệnh đề phụ đó luôn đi kèm với trợ từ が, không dùng は."
+      },
+      "examples": [
+        {
+          "jp": "妻[つま]が 病気[びょうき]のとき、 会社[かいしゃ]を 休[やす]みます。",
+          "translation": {
+            "en": "When my wife is ill, I take time off work.",
+            "vi": "Khi vợ tôi bị ốm, tôi sẽ xin nghỉ làm ở công ty."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "verbs"
+  ]
+}

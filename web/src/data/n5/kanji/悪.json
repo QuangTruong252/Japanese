@@ -1,0 +1,58 @@
+{
+  "character": "悪",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "bad"
+    ],
+    "vi": [
+      "xấu",
+      "tồi",
+      "ác"
+    ]
+  },
+  "onyomi": [
+    "アク"
+  ],
+  "kunyomi": [
+    "わる.い"
+  ],
+  "strokes": 11,
+  "examples": [
+    {
+      "word": "悪[わる]い",
+      "meaning": {
+        "en": "bad",
+        "vi": "xấu, tồi, tệ"
+      }
+    },
+    {
+      "word": "悪口[わるぐち]",
+      "meaning": {
+        "en": "to speak ill of someone",
+        "vi": "to speak ill of someone"
+      }
+    },
+    {
+      "word": "最悪[さいあく]",
+      "meaning": {
+        "en": "the worst",
+        "vi": "the worst"
+      }
+    },
+    {
+      "word": "悪質[あくしつ]",
+      "meaning": {
+        "en": "poor quality, malicious",
+        "vi": "poor quality, malicious"
+      }
+    },
+    {
+      "word": "悪魔[あくま]",
+      "meaning": {
+        "en": "demon",
+        "vi": "demon"
+      }
+    }
+  ]
+}

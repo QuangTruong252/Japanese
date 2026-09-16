@@ -1,0 +1,173 @@
+{
+  "level": "n5",
+  "number": 10,
+  "title": {
+    "en": "Existence and location",
+    "vi": "Sự hiện diện và vị trí"
+  },
+  "jpTitle": "ナンプラー、ありますか",
+  "description": {
+    "en": "Say what there is and where it is with あります・います and the position words (上[うえ], 下[した], 前[まえ], 隣[となり]…).",
+    "vi": "Phân biệt sự hiện diện của đồ vật (あります) và người/động vật (います), các từ chỉ phương hướng vị trí (上, 下, 前, 後...)."
+  },
+  "grammar": [
+    {
+      "id": "arimasu-imasu",
+      "title": {
+        "en": "N が あります／います — \"there is\"",
+        "vi": "N が あります (đồ vật) ／ N が います (người, động vật)"
+      },
+      "pattern": {
+        "en": "N が あります (things) ／ N が います (living beings)",
+        "vi": "N が あります (đồ vật) ／ N が います (người/động vật)"
+      },
+      "explanation": {
+        "en": "あります expresses the existence of inanimate things and plants; います that of people and animals. The thing that exists is marked with が.",
+        "vi": "Dùng để biểu thị sự tồn tại, có mặt. Dùng あります cho đồ vật vô tri hoặc thực vật; dùng います cho con người và động vật có thể tự chuyển động."
+      },
+      "examples": [
+        {
+          "jp": "机[つくえ]の 上[うえ]に 写真[しゃしん]があります。",
+          "translation": {
+            "en": "There is a photo on the desk.",
+            "vi": "Trên bàn có một bức ảnh."
+          }
+        },
+        {
+          "jp": "庭[にわ]に 犬[いぬ]がいます。",
+          "translation": {
+            "en": "There is a dog in the garden.",
+            "vi": "Trong sân có một chú chó."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ni-lugar",
+      "title": {
+        "en": "Place に N が あります／います",
+        "vi": "địa điểm に N が あります／います — «Ở địa điểm có N»"
+      },
+      "pattern": {
+        "en": "place に N が あります／います",
+        "vi": "địa điểm に N が あります／います"
+      },
+      "explanation": {
+        "en": "The particle に marks the place of existence. The usual order gives the place first and then what is in it.",
+        "vi": "Trợ từ に đứng sau danh từ chỉ nơi chốn để chỉ vị trí nơi một đồ vật, người hay động vật đang hiện diện."
+      },
+      "examples": [
+        {
+          "jp": "会議室[かいぎしつ]にミラーさんがいます。",
+          "translation": {
+            "en": "Mr. Miller is in the meeting room.",
+            "vi": "Trong phòng họp có anh Miller."
+          }
+        }
+      ]
+    },
+    {
+      "id": "wa-ni-arimasu",
+      "title": {
+        "en": "N は (place) に あります／います",
+        "vi": "N は địa điểm に あります／います — «N thì ở địa điểm»"
+      },
+      "pattern": {
+        "en": "N は place に あります／います",
+        "vi": "N は địa điểm に あります／います"
+      },
+      "explanation": {
+        "en": "When you ask where something already known is, that thing becomes the topic with は and the place is marked with に: ミラーさんは 事務所[じむしょ]に います.",
+        "vi": "Khi N là chủ đề được đưa lên đầu câu với は, mẫu câu dùng để nhấn mạnh vị trí cụ thể nơi N đang tồn tại hoặc toạ lạc."
+      },
+      "examples": [
+        {
+          "jp": "東京[とうきょう]ディズニーランドは 千葉県[ちばけん]にあります。",
+          "translation": {
+            "en": "Tokyo Disneyland is in Chiba prefecture.",
+            "vi": "Tokyo Disneyland nằm ở tỉnh Chiba."
+          }
+        }
+      ]
+    },
+    {
+      "id": "posiciones",
+      "title": {
+        "en": "N1 (thing/person/place) の N2 (position)",
+        "vi": "Từ chỉ vị trí: 上[うえ]／下[した]／前[まえ]／後[うし]ろ…"
+      },
+      "pattern": {
+        "vi": "N の 上[うえ]／下[した]／前[まえ]／後[うし]ろ／右[みぎ]／左[ひだり]／中[なか]／外[そと]／隣[となり]／近[ちか]く／間[あいだ]"
+      },
+      "explanation": {
+        "en": "Position words combine with の: 机[つくえ]の 上[うえ] (on the desk), 銀行[ぎんこう]の 隣[となり] (next to the bank), AとBの 間[あいだ] (between A and B).",
+        "vi": "Để biểu thị vị trí tương đối so với một vật N, dùng cấu trúc 'N の + danh từ chỉ vị trí' (ví dụ: 机の上 trên bàn, 銀行の隣 bên cạnh ngân hàng)."
+      },
+      "examples": [
+        {
+          "jp": "郵便局[ゆうびんきょく]は 銀行[ぎんこう]の 隣[となり]にあります。",
+          "translation": {
+            "en": "The post office is next to the bank.",
+            "vi": "Bưu điện nằm ở bên cạnh ngân hàng."
+          }
+        },
+        {
+          "jp": "箱[はこ]の 中[なか]に 古[ふる]い 手紙[てがみ]があります。",
+          "translation": {
+            "en": "There are old letters inside the box.",
+            "vi": "Trong hộp có những lá thư cũ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ya-nado",
+      "title": {
+        "en": "N1 や N2 [など] — an open-ended list",
+        "vi": "N1 や N2 [など] — Liệt kê không đầy đủ"
+      },
+      "pattern": {
+        "vi": "N1 や N2 [など]"
+      },
+      "explanation": {
+        "en": "や lists examples without being exhaustive (unlike と, which lists everything). など (\"and so on\") can close the list.",
+        "vi": "Trợ từ や dùng để liệt kê tiêu biểu một vài danh từ đại diện (khác với と là liệt kê toàn bộ). など đứng ở cuối mang nghĩa 'và vân vân'."
+      },
+      "examples": [
+        {
+          "jp": "箱[はこ]の 中[なか]に 手紙[てがみ]や 写真[しゃしん][など]があります。",
+          "translation": {
+            "en": "There are letters, photos and other things in the box.",
+            "vi": "Trong hộp có thư từ, hình ảnh và nhiều thứ khác nữa."
+          }
+        }
+      ]
+    },
+    {
+      "id": "desu-ka-confirmacion",
+      "title": {
+        "en": "アジアストアですか — confirming by repeating",
+        "vi": "N ですか — Xác nhận lại thông tin đối phương vừa hỏi"
+      },
+      "pattern": {
+        "vi": "N ですか"
+      },
+      "explanation": {
+        "en": "Repeating the key word with ですか confirms you have understood before answering — a very common conversational move.",
+        "vi": "Lặp lại danh từ N kèm ですか khi người nói muốn xác nhận lại xem món đồ hoặc điều mà người nghe đang tìm kiếm có đúng là N hay không."
+      },
+      "examples": [
+        {
+          "jp": "ナンプラーはありませんか。…ナンプラーですか。あそこです。",
+          "translation": {
+            "en": "Do you have nam pla? …Nam pla? It's over there.",
+            "vi": "Ở đây có nước mắm không ạ? …Nước mắm à? Ở đằng kia ạ."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "particles"
+  ]
+}

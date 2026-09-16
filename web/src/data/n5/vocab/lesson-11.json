@@ -1,0 +1,616 @@
+{
+  "level": "n5",
+  "lesson": 11,
+  "words": [
+    {
+      "id": "imasu-kodomo",
+      "word": "います[子[こ]どもが〜]",
+      "kana": "います",
+      "meaning": {
+        "en": "to have [children]",
+        "vi": "có [con cái]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "imasu-nihon",
+      "word": "います[日本[にほん]に〜]",
+      "kana": "います",
+      "meaning": {
+        "en": "to stay [in Japan]",
+        "vi": "ở [Nhật Bản]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "kakarimasu",
+      "word": "かかります",
+      "kana": "かかります",
+      "meaning": {
+        "en": "to take (time), to cost (money)",
+        "vi": "mất, tốn [thời gian, tiền bạc]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "yasumimasu-kaisha",
+      "word": "休[やす]みます[会社[かいしゃ]を〜]",
+      "kana": "やすみます",
+      "meaning": {
+        "en": "to be absent [from work]",
+        "vi": "nghỉ [làm việc ở công ty]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "hitotsu",
+      "word": "ひとつ",
+      "kana": "ひとつ",
+      "meaning": {
+        "en": "one (for objects)",
+        "vi": "một cái (đếm đồ vật chung)"
+      },
+      "type": "number"
+    },
+    {
+      "id": "futatsu",
+      "word": "ふたつ",
+      "kana": "ふたつ",
+      "meaning": {
+        "en": "two",
+        "vi": "hai cái"
+      },
+      "type": "number"
+    },
+    {
+      "id": "mittsu",
+      "word": "みっつ",
+      "kana": "みっつ",
+      "meaning": {
+        "en": "three",
+        "vi": "ba cái"
+      },
+      "type": "number"
+    },
+    {
+      "id": "yottsu",
+      "word": "よっつ",
+      "kana": "よっつ",
+      "meaning": {
+        "en": "four",
+        "vi": "bốn cái"
+      },
+      "type": "number"
+    },
+    {
+      "id": "itsutsu",
+      "word": "いつつ",
+      "kana": "いつつ",
+      "meaning": {
+        "en": "five",
+        "vi": "năm cái"
+      },
+      "type": "number"
+    },
+    {
+      "id": "muttsu",
+      "word": "むっつ",
+      "kana": "むっつ",
+      "meaning": {
+        "en": "six",
+        "vi": "sáu cái"
+      },
+      "type": "number"
+    },
+    {
+      "id": "nanatsu",
+      "word": "ななつ",
+      "kana": "ななつ",
+      "meaning": {
+        "en": "seven",
+        "vi": "bảy cái"
+      },
+      "type": "number"
+    },
+    {
+      "id": "yattsu",
+      "word": "やっつ",
+      "kana": "やっつ",
+      "meaning": {
+        "en": "eight",
+        "vi": "tám cái"
+      },
+      "type": "number"
+    },
+    {
+      "id": "kokonotsu",
+      "word": "ここのつ",
+      "kana": "ここのつ",
+      "meaning": {
+        "en": "nine",
+        "vi": "chín cái"
+      },
+      "type": "number"
+    },
+    {
+      "id": "too",
+      "word": "とお",
+      "kana": "とお",
+      "meaning": {
+        "en": "ten",
+        "vi": "mười cái"
+      },
+      "type": "number"
+    },
+    {
+      "id": "ikutsu",
+      "word": "いくつ",
+      "kana": "いくつ",
+      "meaning": {
+        "en": "how many",
+        "vi": "bao nhiêu cái, mấy cái"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "hitori-11",
+      "word": "1人[ひとり]",
+      "kana": "ひとり",
+      "meaning": {
+        "en": "one person",
+        "vi": "một người"
+      },
+      "type": "number"
+    },
+    {
+      "id": "futari",
+      "word": "2人[ふたり]",
+      "kana": "ふたり",
+      "meaning": {
+        "en": "two people",
+        "vi": "hai người"
+      },
+      "type": "number"
+    },
+    {
+      "id": "nin",
+      "word": "〜人[にん]",
+      "kana": "にん",
+      "meaning": {
+        "en": "~ people",
+        "vi": "người (hậu tố đếm người từ 3 người trở lên)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "dai",
+      "word": "〜台[だい]",
+      "kana": "だい",
+      "meaning": {
+        "en": "counter for machines and vehicles",
+        "vi": "chiếc, cái (đếm máy móc, xe cộ)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "mai",
+      "word": "〜枚[まい]",
+      "kana": "まい",
+      "meaning": {
+        "en": "counter for flat things",
+        "vi": "tờ, tấm, chiếc (đếm vật mỏng phẳng như giấy, áo)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "kai-veces",
+      "word": "〜回[かい]",
+      "kana": "かい",
+      "meaning": {
+        "en": "~ times",
+        "vi": "lần (hậu tố đếm số lần)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "ringo",
+      "word": "りんご",
+      "kana": "りんご",
+      "meaning": {
+        "en": "apple",
+        "vi": "quả táo"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "mikan",
+      "word": "みかん",
+      "kana": "みかん",
+      "meaning": {
+        "en": "mandarin orange",
+        "vi": "quả quýt"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "sandoicchi",
+      "word": "サンドイッチ",
+      "kana": "サンドイッチ",
+      "meaning": {
+        "en": "sandwich",
+        "vi": "bánh mì kẹp, sandwich"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "karee",
+      "word": "カレー[ライス]",
+      "kana": "カレーライス",
+      "meaning": {
+        "en": "curry [and rice]",
+        "vi": "món cơm cà ri"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "aisukuriimu",
+      "word": "アイスクリーム",
+      "kana": "アイスクリーム",
+      "meaning": {
+        "en": "ice cream",
+        "vi": "kem, que kem"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kitte",
+      "word": "切手[きって]",
+      "kana": "きって",
+      "meaning": {
+        "en": "postage stamp",
+        "vi": "tem thư"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hagaki",
+      "word": "はがき",
+      "kana": "はがき",
+      "meaning": {
+        "en": "postcard",
+        "vi": "bưu thiếp"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "fuutou",
+      "word": "封筒[ふうとう]",
+      "kana": "ふうとう",
+      "meaning": {
+        "en": "envelope",
+        "vi": "phong bì"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ryoushin",
+      "word": "両親[りょうしん]",
+      "kana": "りょうしん",
+      "meaning": {
+        "en": "parents",
+        "vi": "bố mẹ, phụ huynh"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kyoudai",
+      "word": "兄弟[きょうだい]",
+      "kana": "きょうだい",
+      "meaning": {
+        "en": "brothers and sisters",
+        "vi": "anh chị em"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ani",
+      "word": "兄[あに]",
+      "kana": "あに",
+      "meaning": {
+        "en": "(my) older brother",
+        "vi": "anh trai (của mình)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "oniisan",
+      "word": "お 兄[にい]さん",
+      "kana": "おにいさん",
+      "meaning": {
+        "en": "(your) older brother",
+        "vi": "anh trai (của người khác)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ane",
+      "word": "姉[あね]",
+      "kana": "あね",
+      "meaning": {
+        "en": "(my) older sister",
+        "vi": "chị gái (của mình)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "oneesan",
+      "word": "お 姉[ねえ]さん",
+      "kana": "おねえさん",
+      "meaning": {
+        "en": "(your) older sister",
+        "vi": "chị gái (của người khác)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "otouto",
+      "word": "弟[おとうと]",
+      "kana": "おとうと",
+      "meaning": {
+        "en": "(my) younger brother",
+        "vi": "em trai (của mình)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "otoutosan",
+      "word": "弟[おとうと]さん",
+      "kana": "おとうとさん",
+      "meaning": {
+        "en": "(your) younger brother",
+        "vi": "em trai (của người khác)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "imouto",
+      "word": "妹[いもうと]",
+      "kana": "いもうと",
+      "meaning": {
+        "en": "(my) younger sister",
+        "vi": "em gái (của mình)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "imoutosan",
+      "word": "妹[いもうと]さん",
+      "kana": "いもうとさん",
+      "meaning": {
+        "en": "(your) younger sister",
+        "vi": "em gái (của người khác)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "gaikoku",
+      "word": "外国[がいこく]",
+      "kana": "がいこく",
+      "meaning": {
+        "en": "foreign country",
+        "vi": "nước ngoài"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ryuugakusei",
+      "word": "留学生[りゅうがくせい]",
+      "kana": "りゅうがくせい",
+      "meaning": {
+        "en": "foreign student",
+        "vi": "du học sinh"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kurasu",
+      "word": "クラス",
+      "kana": "クラス",
+      "meaning": {
+        "en": "class, lesson",
+        "vi": "lớp học (class)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "jikan-counter",
+      "word": "〜時間[じかん]",
+      "kana": "じかん",
+      "meaning": {
+        "en": "~ hour(s)",
+        "vi": "tiếng, giờ đồng hồ (khoảng thời gian)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "shuukan",
+      "word": "〜週間[しゅうかん]",
+      "kana": "しゅうかん",
+      "meaning": {
+        "en": "~ week(s)",
+        "vi": "tuần (khoảng thời gian)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "kagetsu",
+      "word": "〜か 月[げつ]",
+      "kana": "かげつ",
+      "meaning": {
+        "en": "~ month(s)",
+        "vi": "tháng (khoảng thời gian)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "nen-counter",
+      "word": "〜年[ねん]",
+      "kana": "ねん",
+      "meaning": {
+        "en": "~ year(s)",
+        "vi": "năm (khoảng thời gian)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "gurai",
+      "word": "〜ぐらい",
+      "kana": "ぐらい",
+      "meaning": {
+        "en": "around ~",
+        "vi": "khoảng, chừng"
+      },
+      "type": "particle"
+    },
+    {
+      "id": "donokurai",
+      "word": "どのくらい",
+      "kana": "どのくらい",
+      "meaning": {
+        "en": "how long",
+        "vi": "bao lâu, khoảng bao nhiêu"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "zenbude",
+      "word": "全部[ぜんぶ]で",
+      "kana": "ぜんぶで",
+      "meaning": {
+        "en": "in total",
+        "vi": "tổng cộng, tất cả"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "minna",
+      "word": "みんな",
+      "kana": "みんな",
+      "meaning": {
+        "en": "everyone, everything",
+        "vi": "tất cả mọi người, toàn bộ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "dake",
+      "word": "〜だけ",
+      "kana": "だけ",
+      "meaning": {
+        "en": "only ~",
+        "vi": "chỉ"
+      },
+      "type": "particle"
+    },
+    {
+      "id": "kashikomarimashita",
+      "word": "かしこまりました",
+      "kana": "かしこまりました",
+      "meaning": {
+        "en": "yes, sir/madam (very formal)",
+        "vi": "Tôi hiểu rồi ạ (nhận lời khách/cấp trên)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "ii-otenki",
+      "word": "いい[お]天気[てんき]ですね",
+      "kana": "いいおてんきですね",
+      "meaning": {
+        "en": "lovely weather, isn't it?",
+        "vi": "thời tiết đẹp quá nhỉ!"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "odekake",
+      "word": "お 出[で]かけですか",
+      "kana": "おでかけですか",
+      "meaning": {
+        "en": "are you going out?",
+        "vi": "bạn đi ra ngoài đấy à?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "chotto-made",
+      "word": "ちょっと〜まで",
+      "kana": "ちょっとまで",
+      "meaning": {
+        "en": "I'm only going as far as ~",
+        "vi": "Tôi đi ra... một chút."
+      },
+      "type": "expression"
+    },
+    {
+      "id": "itterasshai",
+      "word": "行[い]ってらっしゃい",
+      "kana": "いってらっしゃい",
+      "meaning": {
+        "en": "take care",
+        "vi": "bạn đi nhé! (chào người ra khỏi nhà)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "ittekimasu",
+      "word": "行[い]ってきます",
+      "kana": "いってきます",
+      "meaning": {
+        "en": "see you later (leaving and coming back)",
+        "vi": "tôi đi đây! (chào trước khi đi ra ngoài)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "funabin",
+      "word": "船便[ふなびん]",
+      "kana": "ふなびん",
+      "meaning": {
+        "en": "by sea",
+        "vi": "thư gửi đường biển"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "koukuubin",
+      "word": "航空便[こうくうびん]（エアメール）",
+      "kana": "こうくうびん",
+      "meaning": {
+        "en": "by air",
+        "vi": "thư gửi đường hàng không (airmail)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "onegaishimasu",
+      "word": "お 願[ねが]いします",
+      "kana": "おねがいします",
+      "meaning": {
+        "en": "please",
+        "vi": "làm ơn / xin nhờ bạn"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "oosutoraria",
+      "word": "オーストラリア",
+      "kana": "オーストラリア",
+      "meaning": {
+        "en": "Australia",
+        "vi": "nước Úc, Australia"
+      },
+      "type": "noun"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "character": "広",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "wide",
+      "spacious"
+    ],
+    "vi": [
+      "rộng",
+      "rộng rãi"
+    ]
+  },
+  "onyomi": [
+    "コウ"
+  ],
+  "kunyomi": [
+    "ひろ.い"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "広[ひろ]い",
+      "meaning": {
+        "en": "wide, broad",
+        "vi": "rộng, rộng rãi"
+      }
+    },
+    {
+      "word": "背広[せびろ]",
+      "meaning": {
+        "en": "jacket, suit",
+        "vi": "jacket, suit"
+      }
+    },
+    {
+      "word": "広大[こうだい]",
+      "meaning": {
+        "en": "immense",
+        "vi": "immense"
+      }
+    },
+    {
+      "word": "広域[こういき]",
+      "meaning": {
+        "en": "wide area",
+        "vi": "wide area"
+      }
+    },
+    {
+      "word": "広告[こうこく]",
+      "meaning": {
+        "en": "advertisement",
+        "vi": "quảng cáo"
+      }
+    }
+  ]
+}

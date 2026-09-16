@@ -1,0 +1,64 @@
+{
+  "character": "花",
+  "level": "n5",
+  "lesson": 6,
+  "meanings": {
+    "en": [
+      "flower"
+    ],
+    "vi": [
+      "hoa"
+    ]
+  },
+  "onyomi": [
+    "カ"
+  ],
+  "kunyomi": [
+    "はな"
+  ],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "花[はな]",
+      "meaning": {
+        "en": "flower",
+        "vi": "bông hoa, hoa"
+      }
+    },
+    {
+      "word": "花見[はなみ]",
+      "meaning": {
+        "en": "to view the cherry blossom",
+        "vi": "ngắm hoa anh đào"
+      }
+    },
+    {
+      "word": "生[い]け 花[ばな]",
+      "meaning": {
+        "en": "flower arrangement",
+        "vi": "nghệ thuật cắm hoa Ikebana"
+      }
+    },
+    {
+      "word": "花火[はなび]",
+      "meaning": {
+        "en": "fireworks",
+        "vi": "pháo hoa"
+      }
+    },
+    {
+      "word": "開花[かいか]",
+      "meaning": {
+        "en": "blossoming",
+        "vi": "blossoming"
+      }
+    },
+    {
+      "word": "花弁[かべん]",
+      "meaning": {
+        "en": "petal",
+        "vi": "petal"
+      }
+    }
+  ]
+}

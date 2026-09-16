@@ -1,0 +1,151 @@
+{
+  "level": "n5",
+  "number": 23,
+  "title": {
+    "en": "\"When\" and conditions",
+    "vi": "Thời điểm (とき) và điều kiện hễ mà (と)"
+  },
+  "jpTitle": "どうやって 行[い]きますか",
+  "description": {
+    "en": "Say \"when X happens\" with とき and give a natural condition with と, plus how to give street directions.",
+    "vi": "Nói về thời điểm xảy ra sự việc khi... (〜とき) và quan hệ điều kiện tự nhiên hễ... thì... (〜と)."
+  },
+  "grammar": [
+    {
+      "id": "toki",
+      "title": {
+        "en": "〜とき、〜 — \"when\"",
+        "vi": "Khi, lúc: …とき、S"
+      },
+      "pattern": {
+        "en": "V (dict./ない/た)・A-い・A-な[な]・N の + とき、S",
+        "vi": "V (từ điển/ない/た)・A-い・A-な[な]・N の + とき、S"
+      },
+      "explanation": {
+        "en": "とき turns a clause into a time frame: 図書館[としょかん]で 本[ほん]を 借[か]りるとき、カードが 要[い]ります. Before とき the verb takes the plain form; -な adjectives keep な and nouns take の.",
+        "vi": "Mẫu câu dùng để liên kết hai mệnh đề chỉ thời điểm: 'Khi / Lúc việc... xảy ra thì...'. Danh từ nối với とき bằng の, tính từ đuôi な giữ nguyên な."
+      },
+      "examples": [
+        {
+          "jp": "眠[ねむ]いとき、コーヒーを 飲[の]みます。",
+          "translation": {
+            "en": "When I'm sleepy, I drink coffee.",
+            "vi": "Khi buồn ngủ, tôi uống cà phê."
+          }
+        },
+        {
+          "jp": "暇[ひま]なとき、うちへ 遊[あそ]びに 来[き]ませんか。",
+          "translation": {
+            "en": "When you're free, why don't you come over?",
+            "vi": "Khi rảnh rỗi, bạn có muốn đến nhà tôi chơi không?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "toki-aspecto",
+      "title": {
+        "en": "V (dict.) とき ／ V た とき — before or after",
+        "vi": "Phân biệt V (thể từ điển) とき và V た とき"
+      },
+      "pattern": {
+        "en": "行[い]く とき ／ 行[い]った とき",
+        "vi": "V (thể từ điển) とき ／ V た とき"
+      },
+      "explanation": {
+        "en": "With the dictionary form, the main action happens before the subordinate one is complete (国[くに]へ 帰[かえ]るとき、かばんを 買[か]いました: I bought it before going back); with the た form, afterwards (帰[かえ]ったとき: once I had arrived).",
+        "vi": "V (từ điển) とき nghĩa là hành động V chưa hoàn thành tại thời điểm đó ('trước khi/trong khi đi'); V た とき nghĩa là hành động V đã hoàn tất rồi mới làm hành động tiếp theo ('sau khi đã đến')."
+      },
+      "examples": [
+        {
+          "jp": "パリへ 行[い]ったとき、この 絵[え]を 買[か]いました。",
+          "translation": {
+            "en": "When I was in Paris, I bought this painting.",
+            "vi": "Hồi đến Paris (khi đã ở Paris rồi), tôi đã mua bức tranh này."
+          }
+        }
+      ]
+    },
+    {
+      "id": "to-condicional",
+      "title": {
+        "en": "V (dict.) と、〜 — natural condition",
+        "vi": "V (thể từ điển) と、S — Điều kiện tất yếu («Hễ… thì…»)"
+      },
+      "pattern": {
+        "en": "V (dictionary form) と、S",
+        "vi": "V (thể từ điển) と、S"
+      },
+      "explanation": {
+        "en": "と says a result follows automatically or naturally: この ボタンを 押[お]すと、お 釣[つ]りが 出[で]ます (press this button and the change comes out). It is used for machines, directions and facts of nature.",
+        "vi": "Biểu thị quan hệ điều kiện tự nhiên, tất yếu: hễ vế trước xảy ra thì vế sau chắc chắn sẽ xảy ra (hoạt động máy móc, chỉ đường, quy luật tự nhiên). Vế sau không dùng câu mệnh lệnh, nhờ vả."
+      },
+      "examples": [
+        {
+          "jp": "これを 回[まわ]すと、 音[おと]が 大[おお]きくなります。",
+          "translation": {
+            "en": "Turn this and the volume goes up.",
+            "vi": "Hễ vặn cái này thì âm thanh sẽ to lên."
+          }
+        },
+        {
+          "jp": "この 道[みち]をまっすぐ 行[い]くと、 駅[えき]があります。",
+          "translation": {
+            "en": "Go straight along this street and you'll reach the station.",
+            "vi": "Hễ đi thẳng con đường này thì sẽ thấy nhà ga."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ga-adjetivo",
+      "title": {
+        "en": "N が A — describing what you notice",
+        "vi": "N が Tính từ — Trợ từ が chỉ thuộc tính của chủ thể"
+      },
+      "pattern": {
+        "vi": "N が 大[おお]きい／小[ちい]さい…"
+      },
+      "explanation": {
+        "en": "When describing a situation as you perceive it, the subject takes が: 音[おと]が 小[ちい]さいです (the sound is low).",
+        "vi": "Trợ từ が được dùng để chỉ bộ phận, thông số hoặc tính chất của chủ thể đang được miêu tả trực tiếp (như kích cỡ, âm lượng, màu sắc)."
+      },
+      "examples": [
+        {
+          "jp": "サイズが 小[ちい]さいです。",
+          "translation": {
+            "en": "The size is small.",
+            "vi": "Kích cỡ hơi nhỏ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "o-movimiento",
+      "title": {
+        "en": "N を V — moving through a place",
+        "vi": "địa điểm を Đi/Băng qua/Rẽ — Trợ từ を chỉ phạm vi chuyển động"
+      },
+      "pattern": {
+        "vi": "địa điểm を 歩[ある]きます／渡[わた]ります／曲[ま]がります"
+      },
+      "explanation": {
+        "en": "を marks the space you move through with verbs of motion: 道[みち]を 歩[ある]きます (to walk along the street), 橋[はし]を 渡[わた]ります (to cross the bridge), 角[かど]を 曲[ま]がります (to turn the corner).",
+        "vi": "Trợ từ を đứng sau danh từ chỉ không gian hoặc con đường nơi chủ thể di chuyển xuyên qua, đi bộ (歩きます), băng qua (渡ります) hoặc rẽ (曲がります)."
+      },
+      "examples": [
+        {
+          "jp": "2つ 目[め]の 角[かど]を 右[みぎ]へ 曲[ま]がってください。",
+          "translation": {
+            "en": "Turn right at the second corner.",
+            "vi": "Hãy rẽ phải ở khúc cua thứ hai."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "question-words",
+    "verbs"
+  ]
+}

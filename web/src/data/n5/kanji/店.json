@@ -1,0 +1,57 @@
+{
+  "character": "店",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "shop"
+    ],
+    "vi": [
+      "cửa hàng",
+      "quán"
+    ]
+  },
+  "onyomi": [
+    "テン"
+  ],
+  "kunyomi": [
+    "みせ"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "店[みせ]",
+      "meaning": {
+        "en": "shop",
+        "vi": "cửa hàng, tiệm"
+      }
+    },
+    {
+      "word": "店員[てんいん]",
+      "meaning": {
+        "en": "shop assistant",
+        "vi": "nhân viên cửa hàng"
+      }
+    },
+    {
+      "word": "書店[しょてん]",
+      "meaning": {
+        "en": "bookshop",
+        "vi": "bookshop"
+      }
+    },
+    {
+      "word": "支店[してん]",
+      "meaning": {
+        "en": "branch",
+        "vi": "branch"
+      }
+    },
+    {
+      "word": "喫茶店[きっさてん]",
+      "meaning": {
+        "en": "café",
+        "vi": "quán cà phê, quán giải khát"
+      }
+    }
+  ]
+}

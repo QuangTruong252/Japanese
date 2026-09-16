@@ -1,0 +1,80 @@
+{
+  "character": "分",
+  "level": "n5",
+  "lesson": 4,
+  "meanings": {
+    "en": [
+      "minute",
+      "to divide",
+      "to understand"
+    ],
+    "vi": [
+      "phút",
+      "phần",
+      "hiểu"
+    ]
+  },
+  "onyomi": [
+    "フン",
+    "ブン"
+  ],
+  "kunyomi": [
+    "わ.かる",
+    "わ.ける"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "五分[ごふん]",
+      "meaning": {
+        "en": "five minutes",
+        "vi": "five minutes"
+      }
+    },
+    {
+      "word": "自分[じぶん]",
+      "meaning": {
+        "en": "oneself",
+        "vi": "tự bản thân mình"
+      }
+    },
+    {
+      "word": "半分[はんぶん]",
+      "meaning": {
+        "en": "half",
+        "vi": "một nửa"
+      }
+    },
+    {
+      "word": "分[わ]かる",
+      "meaning": {
+        "en": "to understand",
+        "vi": "hiểu, biết"
+      }
+    },
+    {
+      "word": "分[わ]ける",
+      "meaning": {
+        "en": "to divide",
+        "vi": "to divide"
+      }
+    },
+    {
+      "word": "二分[にふん]",
+      "meaning": {
+        "en": "two minutes",
+        "vi": "two minutes"
+      }
+    },
+    {
+      "word": "気分[きぶん]",
+      "meaning": {
+        "en": "mood, state of mind",
+        "vi": "tâm trạng, cảm giác"
+      }
+    }
+  ],
+  "similar": [
+    "今"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "character": "犬",
+  "level": "n5",
+  "lesson": 10,
+  "meanings": {
+    "en": [
+      "dog"
+    ],
+    "vi": [
+      "chó"
+    ]
+  },
+  "onyomi": [
+    "ケン"
+  ],
+  "kunyomi": [
+    "いぬ"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "犬[いぬ]",
+      "meaning": {
+        "en": "dog",
+        "vi": "con chó"
+      }
+    },
+    {
+      "word": "子犬[こいぬ]",
+      "meaning": {
+        "en": "puppy",
+        "vi": "chó con"
+      }
+    }
+  ]
+}

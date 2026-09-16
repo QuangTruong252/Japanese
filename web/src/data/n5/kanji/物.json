@@ -1,0 +1,60 @@
+{
+  "character": "物",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "thing",
+      "object"
+    ],
+    "vi": [
+      "vật",
+      "đồ vật",
+      "sự vật"
+    ]
+  },
+  "onyomi": [
+    "ブツ",
+    "モツ"
+  ],
+  "kunyomi": [
+    "もの"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "物[もの]",
+      "meaning": {
+        "en": "thing, object",
+        "vi": "đồ vật, sự vật"
+      }
+    },
+    {
+      "word": "物語[ものがたり]",
+      "meaning": {
+        "en": "story, tale",
+        "vi": "story, tale"
+      }
+    },
+    {
+      "word": "建物[たてもの]",
+      "meaning": {
+        "en": "building",
+        "vi": "tòa nhà, công trình"
+      }
+    },
+    {
+      "word": "植物[しょくぶつ]",
+      "meaning": {
+        "en": "plant",
+        "vi": "plant"
+      }
+    },
+    {
+      "word": "荷物[にもつ]",
+      "meaning": {
+        "en": "luggage",
+        "vi": "hành lý"
+      }
+    }
+  ]
+}

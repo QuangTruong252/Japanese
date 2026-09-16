@@ -1,0 +1,75 @@
+{
+  "character": "後",
+  "level": "n5",
+  "lesson": 4,
+  "meanings": {
+    "en": [
+      "after, later",
+      "behind"
+    ],
+    "vi": [
+      "sau",
+      "phía sau"
+    ]
+  },
+  "onyomi": [
+    "ゴ",
+    "コウ"
+  ],
+  "kunyomi": [
+    "あと",
+    "うし.ろ"
+  ],
+  "strokes": 9,
+  "examples": [
+    {
+      "word": "午後[ごご]",
+      "meaning": {
+        "en": "in the afternoon",
+        "vi": "buổi chiều (PM)"
+      }
+    },
+    {
+      "word": "後[あと]で",
+      "meaning": {
+        "en": "after, later",
+        "vi": "after, later"
+      }
+    },
+    {
+      "word": "後[うし]ろ",
+      "meaning": {
+        "en": "behind",
+        "vi": "phía sau"
+      }
+    },
+    {
+      "word": "後[あと]",
+      "meaning": {
+        "en": "after, later",
+        "vi": "sau này, lát nữa"
+      }
+    },
+    {
+      "word": "背後[はいご]",
+      "meaning": {
+        "en": "back, rear",
+        "vi": "back, rear"
+      }
+    },
+    {
+      "word": "最後[さいご]",
+      "meaning": {
+        "en": "last, final",
+        "vi": "last, final"
+      }
+    },
+    {
+      "word": "後半[こうはん]",
+      "meaning": {
+        "en": "second half",
+        "vi": "second half"
+      }
+    }
+  ]
+}

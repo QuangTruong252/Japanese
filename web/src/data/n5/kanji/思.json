@@ -1,0 +1,61 @@
+{
+  "character": "思",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "to think"
+    ],
+    "vi": [
+      "nghĩ",
+      "suy nghĩ"
+    ]
+  },
+  "onyomi": [
+    "シ"
+  ],
+  "kunyomi": [
+    "おも.う"
+  ],
+  "strokes": 9,
+  "examples": [
+    {
+      "word": "思[おも]う",
+      "meaning": {
+        "en": "to think",
+        "vi": "nghĩ, suy nghĩ, cho rằng"
+      }
+    },
+    {
+      "word": "思[おも]い 出[だ]す",
+      "meaning": {
+        "en": "to remember",
+        "vi": "to remember"
+      }
+    },
+    {
+      "word": "思考[しこう]",
+      "meaning": {
+        "en": "thought",
+        "vi": "thought"
+      }
+    },
+    {
+      "word": "意思[いし]",
+      "meaning": {
+        "en": "intention, will",
+        "vi": "intention, will"
+      }
+    },
+    {
+      "word": "思案[しあん]",
+      "meaning": {
+        "en": "reflection",
+        "vi": "reflection"
+      }
+    }
+  ],
+  "similar": [
+    "田",
+    "男"
+  ]
+}

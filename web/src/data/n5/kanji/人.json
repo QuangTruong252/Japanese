@@ -1,0 +1,68 @@
+{
+  "character": "人",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "person"
+    ],
+    "vi": [
+      "người"
+    ]
+  },
+  "onyomi": [
+    "ジン",
+    "ニン"
+  ],
+  "kunyomi": [
+    "ひと"
+  ],
+  "strokes": 2,
+  "examples": [
+    {
+      "word": "人[ひと]",
+      "meaning": {
+        "en": "person",
+        "vi": "người"
+      }
+    },
+    {
+      "word": "日本人[にほんじん]",
+      "meaning": {
+        "en": "Japanese (person)",
+        "vi": "Japanese (person)"
+      }
+    },
+    {
+      "word": "三人[さんにん]",
+      "meaning": {
+        "en": "three people",
+        "vi": "ba người"
+      }
+    },
+    {
+      "word": "人間[にんげん]",
+      "meaning": {
+        "en": "person, human being",
+        "vi": "person, human being"
+      }
+    },
+    {
+      "word": "人気[にんき]",
+      "meaning": {
+        "en": "popularity",
+        "vi": "popularity"
+      }
+    },
+    {
+      "word": "人工[じんこう]",
+      "meaning": {
+        "en": "artificial",
+        "vi": "artificial"
+      }
+    }
+  ],
+  "similar": [
+    "入"
+  ]
+}

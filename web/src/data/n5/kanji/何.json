@@ -1,0 +1,45 @@
+{
+  "character": "何",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "what"
+    ],
+    "vi": [
+      "cái gì",
+      "mấy"
+    ]
+  },
+  "onyomi": [
+    "カ"
+  ],
+  "kunyomi": [
+    "なに",
+    "なん"
+  ],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "何[なに]",
+      "meaning": {
+        "en": "what",
+        "vi": "cái gì"
+      }
+    },
+    {
+      "word": "何時[なんじ]",
+      "meaning": {
+        "en": "what time",
+        "vi": "mấy giờ"
+      }
+    },
+    {
+      "word": "何[なん]ですか",
+      "meaning": {
+        "en": "what is it?",
+        "vi": "có chuyện gì thế? / vâng?"
+      }
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "level": "n5",
+  "number": 21,
+  "title": {
+    "en": "Opinions and quoting",
+    "vi": "Ý kiến và trích dẫn"
+  },
+  "jpTitle": "私[わたし]もそう 思[おも]います",
+  "description": {
+    "en": "Say what you think with 〜と 思[おも]います and report what someone said with 〜と 言[い]います.",
+    "vi": "Bày tỏ quan điểm cá nhân (〜と思います), trích dẫn lời nói (〜と言いました) và xác nhận thông tin (〜でしょう)."
+  },
+  "grammar": [
+    {
+      "id": "to-omoimasu",
+      "title": {
+        "en": "Plain form と 思[おも]います — \"I think that\"",
+        "vi": "S (thể thông thường) と 思[おも]います — Bày tỏ suy nghĩ, ý kiến cá nhân"
+      },
+      "pattern": {
+        "en": "S (plain form) と 思[おも]います",
+        "vi": "S (thể thông thường) と 思[おも]います"
+      },
+      "explanation": {
+        "en": "The content of the opinion goes in the plain form followed by と 思[おも]います: あした 雨[あめ]が 降[ふ]ると 思[おも]います. With nouns and -な adjectives you add だ: 便利[べんり]だと 思[おも]います.",
+        "vi": "Dùng để bày tỏ quan điểm, phỏng đoán hoặc suy nghĩ cá nhân của người nói ('Tôi nghĩ rằng...'). Mệnh đề đứng trước trợ từ と luôn chia ở thể thông thường."
+      },
+      "examples": [
+        {
+          "jp": "日本[にほん]は 物価[ぶっか]が 高[たか]いと 思[おも]います。",
+          "translation": {
+            "en": "I think the cost of living in Japan is high.",
+            "vi": "Tôi nghĩ rằng vật giá ở Nhật Bản rất đắt đỏ."
+          }
+        },
+        {
+          "jp": "ミラーさんはもう 帰[かえ]ったと 思[おも]います。",
+          "translation": {
+            "en": "I think Mr. Miller has already gone home.",
+            "vi": "Tôi nghĩ rằng anh Miller đã về nhà rồi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "to-iimasu",
+      "title": {
+        "en": "「〜」と 言[い]います — quoting",
+        "vi": "Trích dẫn lời nói: 「…」と 言いました ／ S (thông thường) と 言いました"
+      },
+      "pattern": {
+        "en": "「direct quote」と 言[い]いました ／ S (plain) と 言[い]っていました",
+        "vi": "「trích dẫn trực tiếp」と 言[い]いました ／ S (thể thông thường) と 言[い]っていました"
+      },
+      "explanation": {
+        "en": "と marks what was said. A direct quote goes in Japanese quotation marks 「」; an indirect quote goes in the plain form: 田中[たなか]さんは 来[く]ると 言[い]っていました.",
+        "vi": "Dùng để trích dẫn lời nói của ai đó ('nói rằng...'). Trích dẫn trực tiếp đặt nguyên văn trong ngoặc 「 」; trích dẫn gián tiếp dùng thể thông thường trước trợ từ と."
+      },
+      "examples": [
+        {
+          "jp": "寝[ね]るまえに、「おやすみなさい」と 言[い]います。",
+          "translation": {
+            "en": "Before going to sleep you say \"oyasuminasai\".",
+            "vi": "Trước khi đi ngủ, người ta sẽ nói «Chúc ngủ ngon»."
+          }
+        }
+      ]
+    },
+    {
+      "id": "deshou",
+      "title": {
+        "en": "〜でしょう？ — asking for confirmation",
+        "vi": "S (thể thông thường) でしょう？ — Xác nhận sự đồng thuận"
+      },
+      "pattern": {
+        "en": "S (plain form) でしょう？",
+        "vi": "S (thể thông thường) でしょう？"
+      },
+      "explanation": {
+        "en": "でしょう with rising intonation asks the listener to confirm something you both know: あしたのパーティー、 行[い]くでしょう？",
+        "vi": "Đọc lên giọng ở cuối câu, dùng khi người nói tin rằng người nghe cũng đồng ý với ý kiến của mình và muốn tìm kiếm sự xác nhận ('...đúng không? / ...phải không nhỉ?')."
+      },
+      "examples": [
+        {
+          "jp": "北海道[ほっかいどう]は 寒[さむ]かったでしょう？…いいえ、そんなに 寒[さむ]くなかったです。",
+          "translation": {
+            "en": "Hokkaido must have been cold, right? …No, it wasn't that cold.",
+            "vi": "Hokkaido chắc là lạnh lắm đúng không? …Không, cũng không lạnh đến mức thế đâu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "de-lugar-evento",
+      "title": {
+        "en": "N1 (place) で N2 が あります — events",
+        "vi": "địa điểm で sự kiện が あります — Nơi diễn ra sự kiện, lễ hội"
+      },
+      "pattern": {
+        "en": "place で event が あります",
+        "vi": "địa điểm で sự kiện が あります"
+      },
+      "explanation": {
+        "en": "あります also means \"to take place\": 大阪[おおさか]で お 祭[まつ]りが あります (there's a festival in Osaka).",
+        "vi": "Khi danh từ là một sự kiện (trận đấu bóng đá, buổi hòa nhạc, lễ hội, bữa tiệc), trợ từ で được dùng sau địa điểm để biểu thị nơi tổ chức hoặc diễn ra sự kiện đó."
+      },
+      "examples": [
+        {
+          "jp": "東京[とうきょう]で 日本[にほん]とブラジルのサッカーの 試合[しあい]があります。",
+          "translation": {
+            "en": "There's a Japan–Brazil football match in Tokyo.",
+            "vi": "Ở Tokyo sẽ có trận đấu bóng đá giữa Nhật Bản và Brazil."
+          }
+        }
+      ]
+    },
+    {
+      "id": "demo-nomimasen-ka",
+      "title": {
+        "en": "N でも 飲[の]みませんか — suggesting with an example",
+        "vi": "N でも V ませんか — Đưa ra gợi ý tiêu biểu nhẹ nhàng"
+      },
+      "pattern": {
+        "vi": "N でも V ませんか"
+      },
+      "explanation": {
+        "en": "でも after a noun offers it as one example among others when inviting: ビールでも 飲[の]みませんか (shall we have a beer or something?).",
+        "vi": "Trợ từ でも được gắn sau danh từ N để đưa ra một ví dụ tiêu biểu nhẹ nhàng khi rủ rê, gợi ý ('hay là dùng thử... hay gì đó chẳng hạn?')."
+      },
+      "examples": [
+        {
+          "jp": "ちょっとお 茶[ちゃ]でも 飲[の]みませんか。",
+          "translation": {
+            "en": "Shall we have a tea or something?",
+            "vi": "Chúng ta cùng đi uống một tách trà hay thứ gì đó không?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nai-to",
+      "title": {
+        "en": "V ないと…… — \"I'd better…\"",
+        "vi": "V (thể ない) ないと…… — Lời nói lấp lửng («Phải làm… thôi»)"
+      },
+      "pattern": {
+        "en": "V (ない form) ないと……",
+        "vi": "V (thể ない) ないと……"
+      },
+      "explanation": {
+        "en": "A shortened colloquial version of 〜なければ なりません: もう 帰[かえ]らないと…… (I'd better be going now).",
+        "vi": "Là cách nói rút gọn thân mật của '...なければなりません' trong văn nói hàng ngày, biểu thị ý 'phải làm việc gì đó ngay thôi'."
+      },
+      "examples": [
+        {
+          "jp": "もう 帰[かえ]らないと……。",
+          "translation": {
+            "en": "I'd better be going now.",
+            "vi": "Tôi phải về bây giờ thôi kẻo muộn……"
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "verbs"
+  ]
+}

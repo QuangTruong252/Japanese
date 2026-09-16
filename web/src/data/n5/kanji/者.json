@@ -1,0 +1,59 @@
+{
+  "character": "者",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "person"
+    ],
+    "vi": [
+      "người"
+    ]
+  },
+  "onyomi": [
+    "シャ"
+  ],
+  "kunyomi": [
+    "もの"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "若者[わかもの]",
+      "meaning": {
+        "en": "young",
+        "vi": "người trẻ tuổi, thanh niên"
+      }
+    },
+    {
+      "word": "何者[なにもの]",
+      "meaning": {
+        "en": "who, what sort of person",
+        "vi": "who, what sort of person"
+      }
+    },
+    {
+      "word": "学者[がくしゃ]",
+      "meaning": {
+        "en": "scholar",
+        "vi": "học giả, nhà nghiên cứu"
+      }
+    },
+    {
+      "word": "医者[いしゃ]",
+      "meaning": {
+        "en": "doctor",
+        "vi": "bác sĩ"
+      }
+    },
+    {
+      "word": "芸者[げいしゃ]",
+      "meaning": {
+        "en": "geisha",
+        "vi": "geisha"
+      }
+    }
+  ],
+  "similar": [
+    "暑"
+  ]
+}

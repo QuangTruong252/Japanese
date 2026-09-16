@@ -1,0 +1,72 @@
+{
+  "character": "話",
+  "level": "n5",
+  "lesson": 2,
+  "meanings": {
+    "en": [
+      "to speak",
+      "history",
+      "conversation"
+    ],
+    "vi": [
+      "nói chuyện",
+      "câu chuyện"
+    ]
+  },
+  "onyomi": [
+    "ワ"
+  ],
+  "kunyomi": [
+    "はな.す",
+    "はなし"
+  ],
+  "strokes": 13,
+  "examples": [
+    {
+      "word": "話[はな]します",
+      "meaning": {
+        "en": "to speak",
+        "vi": "mang, cầm, sở hữu"
+      }
+    },
+    {
+      "word": "電話[でんわ]",
+      "meaning": {
+        "en": "telephone",
+        "vi": "điện thoại"
+      }
+    },
+    {
+      "word": "話[はなし]",
+      "meaning": {
+        "en": "story, talk",
+        "vi": "câu chuyện"
+      }
+    },
+    {
+      "word": "話[はな]す",
+      "meaning": {
+        "en": "to speak",
+        "vi": "nói chuyện, trò chuyện"
+      }
+    },
+    {
+      "word": "会話[かいわ]",
+      "meaning": {
+        "en": "conversation",
+        "vi": "hội thoại, đàm thoại"
+      }
+    },
+    {
+      "word": "話題[わだい]",
+      "meaning": {
+        "en": "topic of conversation",
+        "vi": "topic of conversation"
+      }
+    }
+  ],
+  "similar": [
+    "言",
+    "読"
+  ]
+}

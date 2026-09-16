@@ -1,0 +1,78 @@
+{
+  "character": "入",
+  "level": "n5",
+  "lesson": 14,
+  "meanings": {
+    "en": [
+      "to enter",
+      "to put in"
+    ],
+    "vi": [
+      "vào",
+      "đi vào",
+      "nhập vào"
+    ]
+  },
+  "onyomi": [
+    "ニュウ"
+  ],
+  "kunyomi": [
+    "はい.る",
+    "い.れる"
+  ],
+  "strokes": 2,
+  "examples": [
+    {
+      "word": "入[はい]ります",
+      "meaning": {
+        "en": "to enter",
+        "vi": "to enter"
+      }
+    },
+    {
+      "word": "入[い]れます",
+      "meaning": {
+        "en": "to put in",
+        "vi": "sinh ra, chào đời"
+      }
+    },
+    {
+      "word": "入口[いりぐち]",
+      "meaning": {
+        "en": "entrance",
+        "vi": "cửa vào, lối vào"
+      }
+    },
+    {
+      "word": "入[はい]る",
+      "meaning": {
+        "en": "to enter",
+        "vi": "đi vào"
+      }
+    },
+    {
+      "word": "入[い]れる",
+      "meaning": {
+        "en": "to put in",
+        "vi": "cho vào, bỏ vào"
+      }
+    },
+    {
+      "word": "輸入[ゆにゅう]",
+      "meaning": {
+        "en": "import",
+        "vi": "import"
+      }
+    },
+    {
+      "word": "入学[にゅうがく]",
+      "meaning": {
+        "en": "school admission",
+        "vi": "nhập học"
+      }
+    }
+  ],
+  "similar": [
+    "人"
+  ]
+}

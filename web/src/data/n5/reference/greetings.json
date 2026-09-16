@@ -1,0 +1,273 @@
+{
+  "level": "n5",
+  "slug": "greetings",
+  "title": {
+    "en": "Greetings and set phrases",
+    "vi": "Chào hỏi và câu thành ngữ"
+  },
+  "description": {
+    "en": "The most common set phrases in the book, and frequent in the listening test.",
+    "vi": "Các câu chào hỏi và mẫu câu giao tiếp thông dụng nhất trong giáo trình, thường gặp trong bài thi nghe."
+  },
+  "order": 10,
+  "sections": [
+    {
+      "id": "daily",
+      "title": {
+        "en": "Everyday greetings",
+        "vi": "Chào hỏi hàng ngày"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Expression",
+              "vi": "Câu tiếng Nhật"
+            },
+            {
+              "en": "Meaning",
+              "vi": "Ý nghĩa"
+            }
+          ],
+          "rows": [
+            [
+              "おはようございます",
+              {
+                "en": "good morning",
+                "vi": "Chào buổi sáng"
+              }
+            ],
+            [
+              "こんにちは",
+              {
+                "en": "good afternoon, hello",
+                "vi": "Chào buổi trưa / chiều (Xin chào)"
+              }
+            ],
+            [
+              "こんばんは",
+              {
+                "en": "good evening (on arriving)",
+                "vi": "Chào buổi tối"
+              }
+            ],
+            [
+              "おやすみなさい",
+              {
+                "en": "good night (going to bed)",
+                "vi": "Chúc ngủ ngon"
+              }
+            ],
+            [
+              "さようなら",
+              {
+                "en": "goodbye",
+                "vi": "Chào tạm biệt"
+              }
+            ],
+            [
+              "では、また",
+              {
+                "en": "see you later",
+                "vi": "Hẹn gặp lại nhé (thân mật)"
+              }
+            ],
+            [
+              "行[い]ってきます",
+              {
+                "en": "I'm off (and coming back)",
+                "vi": "Tôi đi đây (rồi sẽ về)"
+              }
+            ],
+            [
+              "行[い]ってらっしゃい",
+              {
+                "en": "take care",
+                "vi": "Bạn đi nhé / Đi cẩn thận nhé"
+              }
+            ],
+            [
+              "ただいま",
+              {
+                "en": "I'm home",
+                "vi": "Tôi đã về rồi đây"
+              }
+            ],
+            [
+              "お 帰[かえ]りなさい",
+              {
+                "en": "welcome back",
+                "vi": "Mừng bạn đã về"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "courtesy",
+      "title": {
+        "en": "Politeness",
+        "vi": "Giao tiếp lịch sự"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Expression",
+              "vi": "Câu tiếng Nhật"
+            },
+            {
+              "en": "Meaning",
+              "vi": "Ý nghĩa"
+            }
+          ],
+          "rows": [
+            [
+              "はじめまして",
+              {
+                "en": "pleased to meet you",
+                "vi": "Rất hân hạnh được làm quen với bạn"
+              }
+            ],
+            [
+              "どうぞよろしくお 願[ねが]いします",
+              {
+                "en": "nice to meet you, I look forward to working with you",
+                "vi": "Rất mong nhận được sự giúp đỡ của bạn"
+              }
+            ],
+            [
+              "ありがとうございます",
+              {
+                "en": "thank you",
+                "vi": "Cảm ơn"
+              }
+            ],
+            [
+              "どういたしまして",
+              {
+                "en": "you're welcome",
+                "vi": "Mừng bạn đã về"
+              }
+            ],
+            [
+              "すみません",
+              {
+                "en": "sorry; excuse me",
+                "vi": "Xin lỗi / Làm phiền bạn"
+              }
+            ],
+            [
+              "失礼[しつれい]します",
+              {
+                "en": "excuse me (on leaving)",
+                "vi": "Xin phép thất lễ (khi ra về hoặc vào phòng)"
+              }
+            ],
+            [
+              "お 願[ねが]いします",
+              {
+                "en": "please",
+                "vi": "Làm ơn / Xin nhờ bạn"
+              }
+            ],
+            [
+              "いただきます",
+              {
+                "en": "thank you (before eating)",
+                "vi": "Mời mọi người cùng ăn cơm (nói trước khi ăn)"
+              }
+            ],
+            [
+              "ごちそうさまでした",
+              {
+                "en": "thank you (after eating)",
+                "vi": "Cảm ơn vì bữa ăn ngon (nói sau khi ăn)"
+              }
+            ],
+            [
+              "お 大事[だいじ]に",
+              {
+                "en": "get well soon",
+                "vi": "Chúc bạn mau chóng bình phục"
+              }
+            ],
+            [
+              "おめでとうございます",
+              {
+                "en": "congratulations",
+                "vi": "Xin chúc mừng"
+              }
+            ],
+            [
+              "お 疲[つか]れさまでした",
+              {
+                "en": "good work (when finishing)",
+                "vi": "Bạn đã vất vả rồi (lời chào khi hoàn thành công việc)"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "classroom",
+      "title": {
+        "en": "In class",
+        "vi": "Trong lớp học"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Expression",
+              "vi": "Câu tiếng Nhật"
+            },
+            {
+              "en": "Meaning",
+              "vi": "Ý nghĩa"
+            }
+          ],
+          "rows": [
+            [
+              "もう 一度[いちど]お 願[ねが]いします",
+              {
+                "en": "again, please",
+                "vi": "Làm ơn nhắc lại một lần nữa"
+              }
+            ],
+            [
+              "ゆっくりお 願[ねが]いします",
+              {
+                "en": "more slowly, please",
+                "vi": "Làm ơn nói chậm lại"
+              }
+            ],
+            [
+              "わかりました",
+              {
+                "en": "understood",
+                "vi": "Đã hiểu"
+              }
+            ],
+            [
+              "わかりません",
+              {
+                "en": "I don't understand",
+                "vi": "Tôi không hiểu"
+              }
+            ],
+            [
+              "質問[しつもん]があります",
+              {
+                "en": "I have a question",
+                "vi": "Tôi có một câu hỏi"
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

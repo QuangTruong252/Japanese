@@ -1,0 +1,42 @@
+{
+  "character": "毎",
+  "level": "n5",
+  "lesson": 4,
+  "meanings": {
+    "en": [
+      "each, every"
+    ],
+    "vi": [
+      "mỗi",
+      "hàng (ngày/tháng/năm)"
+    ]
+  },
+  "onyomi": [
+    "マイ"
+  ],
+  "kunyomi": [],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "毎日[まいにち]",
+      "meaning": {
+        "en": "every day",
+        "vi": "mỗi ngày, hàng ngày"
+      }
+    },
+    {
+      "word": "毎朝[まいあさ]",
+      "meaning": {
+        "en": "every morning",
+        "vi": "mỗi sáng"
+      }
+    },
+    {
+      "word": "毎週[まいしゅう]",
+      "meaning": {
+        "en": "every week",
+        "vi": "mỗi tuần, hàng tuần"
+      }
+    }
+  ]
+}

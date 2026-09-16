@@ -1,0 +1,70 @@
+{
+  "character": "聞",
+  "level": "n5",
+  "lesson": 2,
+  "meanings": {
+    "en": [
+      "to hear",
+      "to listen"
+    ],
+    "vi": [
+      "nghe",
+      "hỏi"
+    ]
+  },
+  "onyomi": [
+    "ブン"
+  ],
+  "kunyomi": [
+    "き.く"
+  ],
+  "strokes": 14,
+  "examples": [
+    {
+      "word": "聞[き]きます",
+      "meaning": {
+        "en": "to listen",
+        "vi": "sống, cư trú [ở đâu]"
+      }
+    },
+    {
+      "word": "新聞[しんぶん]",
+      "meaning": {
+        "en": "newspaper",
+        "vi": "tờ báo"
+      }
+    },
+    {
+      "word": "聞[き]く",
+      "meaning": {
+        "en": "to listen",
+        "vi": "nghe, hỏi"
+      }
+    },
+    {
+      "word": "聞[き]き 取[と]り",
+      "meaning": {
+        "en": "listening comprehension",
+        "vi": "listening comprehension"
+      }
+    },
+    {
+      "word": "伝聞[でんぶん]",
+      "meaning": {
+        "en": "rumour",
+        "vi": "rumour"
+      }
+    },
+    {
+      "word": "見聞[けんぶん]",
+      "meaning": {
+        "en": "experience, observation",
+        "vi": "experience, observation"
+      }
+    }
+  ],
+  "similar": [
+    "間",
+    "開"
+  ]
+}

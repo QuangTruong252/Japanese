@@ -1,0 +1,60 @@
+{
+  "character": "動",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "to move"
+    ],
+    "vi": [
+      "chuyển động",
+      "hoạt động"
+    ]
+  },
+  "onyomi": [
+    "ドウ"
+  ],
+  "kunyomi": [
+    "うご.く"
+  ],
+  "strokes": 11,
+  "examples": [
+    {
+      "word": "動[うご]く",
+      "meaning": {
+        "en": "to move",
+        "vi": "chuyển động, hoạt động"
+      }
+    },
+    {
+      "word": "動物[どうぶつ]",
+      "meaning": {
+        "en": "animal",
+        "vi": "động vật"
+      }
+    },
+    {
+      "word": "運動[うんどう]",
+      "meaning": {
+        "en": "exercise",
+        "vi": "vận động, thể dục"
+      }
+    },
+    {
+      "word": "活動[かつどう]",
+      "meaning": {
+        "en": "activity",
+        "vi": "activity"
+      }
+    },
+    {
+      "word": "感動[かんどう]",
+      "meaning": {
+        "en": "emotion",
+        "vi": "emotion"
+      }
+    }
+  ],
+  "similar": [
+    "重"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "character": "病",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "illness"
+    ],
+    "vi": [
+      "bệnh",
+      "ốm đau"
+    ]
+  },
+  "onyomi": [
+    "ビョウ"
+  ],
+  "kunyomi": [
+    "やまい"
+  ],
+  "strokes": 10,
+  "examples": [
+    {
+      "word": "病[やまい]",
+      "meaning": {
+        "en": "illness",
+        "vi": "illness"
+      }
+    },
+    {
+      "word": "病気[びょうき]",
+      "meaning": {
+        "en": "illness",
+        "vi": "bệnh tật, ốm đau"
+      }
+    },
+    {
+      "word": "病人[びょうにん]",
+      "meaning": {
+        "en": "patient",
+        "vi": "người bệnh, bệnh nhân"
+      }
+    },
+    {
+      "word": "病院[びょういん]",
+      "meaning": {
+        "en": "hospital",
+        "vi": "bệnh viện"
+      }
+    },
+    {
+      "word": "難病[なんびょう]",
+      "meaning": {
+        "en": "incurable illness",
+        "vi": "incurable illness"
+      }
+    }
+  ]
+}

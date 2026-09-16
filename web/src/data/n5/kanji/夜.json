@@ -1,0 +1,58 @@
+{
+  "character": "夜",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "night"
+    ],
+    "vi": [
+      "đêm",
+      "buổi tối"
+    ]
+  },
+  "onyomi": [
+    "ヤ"
+  ],
+  "kunyomi": [
+    "よる",
+    "よ"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "夜[よる]",
+      "meaning": {
+        "en": "night",
+        "vi": "buổi tối, đêm"
+      }
+    },
+    {
+      "word": "夜中[よなか]",
+      "meaning": {
+        "en": "midnight",
+        "vi": "nửa đêm"
+      }
+    },
+    {
+      "word": "夜空[よぞら]",
+      "meaning": {
+        "en": "night sky",
+        "vi": "night sky"
+      }
+    },
+    {
+      "word": "夜間[やかん]",
+      "meaning": {
+        "en": "during the night",
+        "vi": "during the night"
+      }
+    },
+    {
+      "word": "徹夜[てつや]",
+      "meaning": {
+        "en": "to stay up all night",
+        "vi": "to stay up all night"
+      }
+    }
+  ]
+}

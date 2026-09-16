@@ -1,0 +1,74 @@
+{
+  "character": "日",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "day",
+      "sun"
+    ],
+    "vi": [
+      "ngày",
+      "mặt trời",
+      "Nhật Bản"
+    ]
+  },
+  "onyomi": [
+    "ニチ",
+    "ジツ"
+  ],
+  "kunyomi": [
+    "ひ",
+    "〜び",
+    "〜か"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "日本[にほん]",
+      "meaning": {
+        "en": "Japan",
+        "vi": "nước Nhật Bản"
+      }
+    },
+    {
+      "word": "日曜日[にちようび]",
+      "meaning": {
+        "en": "Sunday",
+        "vi": "chủ nhật"
+      }
+    },
+    {
+      "word": "毎日[まいにち]",
+      "meaning": {
+        "en": "every day",
+        "vi": "mỗi ngày, hàng ngày"
+      }
+    },
+    {
+      "word": "日[ひ]",
+      "meaning": {
+        "en": "sun",
+        "vi": "ngày, mặt trời"
+      }
+    },
+    {
+      "word": "祝日[しゅくじつ]",
+      "meaning": {
+        "en": "public holiday",
+        "vi": "public holiday"
+      }
+    },
+    {
+      "word": "二日[ふつか]",
+      "meaning": {
+        "en": "2nd day",
+        "vi": "ngày mùng hai"
+      }
+    }
+  ],
+  "similar": [
+    "目",
+    "白"
+  ]
+}

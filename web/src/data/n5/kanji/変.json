@@ -1,0 +1,61 @@
+{
+  "character": "変",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "strange",
+      "to change"
+    ],
+    "vi": [
+      "thay đổi",
+      "kỳ lạ"
+    ]
+  },
+  "onyomi": [
+    "ヘン"
+  ],
+  "kunyomi": [
+    "か.わる"
+  ],
+  "strokes": 9,
+  "examples": [
+    {
+      "word": "変[か]わる",
+      "meaning": {
+        "en": "to change",
+        "vi": "thay đổi"
+      }
+    },
+    {
+      "word": "変[へん]",
+      "meaning": {
+        "en": "strange, odd",
+        "vi": "kỳ lạ, khác thường"
+      }
+    },
+    {
+      "word": "変化[へんか]",
+      "meaning": {
+        "en": "change, transformation",
+        "vi": "change, transformation"
+      }
+    },
+    {
+      "word": "大変[たいへん]",
+      "meaning": {
+        "en": "hard, tough",
+        "vi": "vất vả, khó khăn, khủng khiếp"
+      }
+    },
+    {
+      "word": "変更[へんこう]",
+      "meaning": {
+        "en": "change, modification",
+        "vi": "change, modification"
+      }
+    }
+  ],
+  "similar": [
+    "赤"
+  ]
+}

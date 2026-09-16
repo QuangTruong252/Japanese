@@ -1,0 +1,56 @@
+{
+  "character": "春",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "spring"
+    ],
+    "vi": [
+      "mùa xuân"
+    ]
+  },
+  "onyomi": [
+    "シュン"
+  ],
+  "kunyomi": [
+    "はる"
+  ],
+  "strokes": 9,
+  "examples": [
+    {
+      "word": "春[はる]",
+      "meaning": {
+        "en": "spring",
+        "vi": "mùa xuân"
+      }
+    },
+    {
+      "word": "春風[はるかぜ]",
+      "meaning": {
+        "en": "spring wind",
+        "vi": "spring wind"
+      }
+    },
+    {
+      "word": "青春[せいしゅん]",
+      "meaning": {
+        "en": "youth",
+        "vi": "youth"
+      }
+    },
+    {
+      "word": "春分[しゅんぶん]",
+      "meaning": {
+        "en": "spring equinox",
+        "vi": "xuân phân"
+      }
+    },
+    {
+      "word": "立春[りっしゅん]",
+      "meaning": {
+        "en": "beginning of spring",
+        "vi": "beginning of spring"
+      }
+    }
+  ]
+}

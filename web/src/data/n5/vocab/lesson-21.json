@@ -1,0 +1,406 @@
+{
+  "level": "n5",
+  "lesson": 21,
+  "words": [
+    {
+      "id": "omoimasu",
+      "word": "思[おも]います",
+      "kana": "おもいます",
+      "meaning": {
+        "en": "to believe, to think",
+        "vi": "nghĩ, cho rằng"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "iimasu",
+      "word": "言[い]います",
+      "kana": "いいます",
+      "meaning": {
+        "en": "to say",
+        "vi": "nói"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "kachimasu",
+      "word": "勝[か]ちます",
+      "kana": "かちます",
+      "meaning": {
+        "en": "to win",
+        "vi": "thắng, chiến thắng"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "makemasu",
+      "word": "負[ま]けます",
+      "kana": "まけます",
+      "meaning": {
+        "en": "to lose, to be beaten",
+        "vi": "thua, thất bại"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "arimasu-evento",
+      "word": "あります[お 祭[まつ]りが〜]",
+      "kana": "あります",
+      "meaning": {
+        "en": "to be held [a festival]",
+        "vi": "được tổ chức, diễn ra [lễ hội]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "yakuni-tachimasu",
+      "word": "役[やく]に 立[た]ちます",
+      "kana": "やくにたちます",
+      "meaning": {
+        "en": "to be useful",
+        "vi": "có ích, hữu dụng"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "ugokimasu",
+      "word": "動[うご]きます",
+      "kana": "うごきます",
+      "meaning": {
+        "en": "to work, to move",
+        "vi": "hoạt động, chuyển động [máy móc]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "yamemasu",
+      "word": "やめます[会社[かいしゃ]を〜]",
+      "kana": "やめます",
+      "meaning": {
+        "en": "to quit, to leave [the company]",
+        "vi": "bỏ việc, nghỉ việc ở [công ty]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "kiotsukemasu",
+      "word": "気[き]をつけます",
+      "kana": "きをつけます",
+      "meaning": {
+        "en": "to pay attention, to be careful",
+        "vi": "chú ý, cẩn thận"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "ryuugaku-shimasu",
+      "word": "留学[りゅうがく]します",
+      "kana": "りゅうがくします",
+      "meaning": {
+        "en": "to study abroad",
+        "vi": "du học"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "muda",
+      "word": "むだ[な]",
+      "kana": "むだ",
+      "meaning": {
+        "en": "unnecessary, useless",
+        "vi": "lãng phí, vô ích"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "fuben",
+      "word": "不便[ふべん][な]",
+      "kana": "ふべん",
+      "meaning": {
+        "en": "inconvenient",
+        "vi": "bất tiện"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "sugoi",
+      "word": "すごい",
+      "kana": "すごい",
+      "meaning": {
+        "en": "terrible, amazing",
+        "vi": "ghê gớm, tuyệt vời"
+      },
+      "type": "adjective-i"
+    },
+    {
+      "id": "hontou",
+      "word": "ほんとう",
+      "kana": "ほんとう",
+      "meaning": {
+        "en": "truth",
+        "vi": "sự thật, thật sự"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "uso",
+      "word": "うそ",
+      "kana": "うそ",
+      "meaning": {
+        "en": "lie",
+        "vi": "lời nói dối"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "jidousha",
+      "word": "自動車[じどうしゃ]",
+      "kana": "じどうしゃ",
+      "meaning": {
+        "en": "car, automobile",
+        "vi": "xe ô tô"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "koutsuu",
+      "word": "交通[こうつう]",
+      "kana": "こうつう",
+      "meaning": {
+        "en": "transport, traffic",
+        "vi": "giao thông"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "bukka",
+      "word": "物価[ぶっか]",
+      "kana": "ぶっか",
+      "meaning": {
+        "en": "cost of living",
+        "vi": "giá cả, vật giá"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "housou",
+      "word": "放送[ほうそう]",
+      "kana": "ほうそう",
+      "meaning": {
+        "en": "broadcast",
+        "vi": "sự phát sóng, phát thanh"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "nyuusu",
+      "word": "ニュース",
+      "kana": "ニュース",
+      "meaning": {
+        "en": "news",
+        "vi": "tin tức, bản tin thời sự"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "anime",
+      "word": "アニメ",
+      "kana": "アニメ",
+      "meaning": {
+        "en": "cartoons",
+        "vi": "phim hoạt hình anime"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "manga",
+      "word": "マンガ",
+      "kana": "マンガ",
+      "meaning": {
+        "en": "comic",
+        "vi": "truyện tranh Manga"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "dezain",
+      "word": "デザイン",
+      "kana": "デザイン",
+      "meaning": {
+        "en": "design",
+        "vi": "thiết kế"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "yume",
+      "word": "夢[ゆめ]",
+      "kana": "ゆめ",
+      "meaning": {
+        "en": "dream",
+        "vi": "giấc mơ, ước mơ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tensai",
+      "word": "天才[てんさい]",
+      "kana": "てんさい",
+      "meaning": {
+        "en": "genius",
+        "vi": "thiên tài"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shiai",
+      "word": "試合[しあい]",
+      "kana": "しあい",
+      "meaning": {
+        "en": "match, game",
+        "vi": "trận đấu, cuộc thi đấu"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "iken",
+      "word": "意見[いけん]",
+      "kana": "いけん",
+      "meaning": {
+        "en": "opinion",
+        "vi": "ý kiến, quan điểm"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hanashi",
+      "word": "話[はなし]",
+      "kana": "はなし",
+      "meaning": {
+        "en": "speech, story",
+        "vi": "câu chuyện, bài nói"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "chikyuu",
+      "word": "地球[ちきゅう]",
+      "kana": "ちきゅう",
+      "meaning": {
+        "en": "the Earth",
+        "vi": "Trái Đất"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tsuki",
+      "word": "月[つき]",
+      "kana": "つき",
+      "meaning": {
+        "en": "moon",
+        "vi": "Mặt Trăng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "saikin",
+      "word": "最近[さいきん]",
+      "kana": "さいきん",
+      "meaning": {
+        "en": "lately",
+        "vi": "gần đây, dạo này"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "tabun",
+      "word": "たぶん",
+      "kana": "たぶん",
+      "meaning": {
+        "en": "probably, maybe",
+        "vi": "có lẽ, có thể"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "kitto",
+      "word": "きっと",
+      "kana": "きっと",
+      "meaning": {
+        "en": "without fail, surely",
+        "vi": "chắc chắn, nhất định"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "hontouni",
+      "word": "ほんとうに",
+      "kana": "ほんとうに",
+      "meaning": {
+        "en": "really",
+        "vi": "thực sự, quả thật"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "sonnani",
+      "word": "そんなに",
+      "kana": "そんなに",
+      "meaning": {
+        "en": "not so (with a negative)",
+        "vi": "không... đến mức như thế (đi với phủ định)"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "nitsuite",
+      "word": "〜について",
+      "kana": "について",
+      "meaning": {
+        "en": "about, regarding ~",
+        "vi": "về ~ (chỉ đối tượng)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "hisashiburi",
+      "word": "久[ひさ]しぶりですね",
+      "kana": "ひさしぶりですね",
+      "meaning": {
+        "en": "long time no see!",
+        "vi": "lâu lắm rồi mới gặp lại!"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "demo-nomimasen",
+      "word": "〜でも 飲[の]みませんか",
+      "kana": "でものみませんか",
+      "meaning": {
+        "en": "how about having ~?",
+        "vi": "cùng uống... hay gì đó nhé?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "mochiron",
+      "word": "もちろん",
+      "kana": "もちろん",
+      "meaning": {
+        "en": "naturally, of course",
+        "vi": "tất nhiên, dĩ nhiên"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "mou-kaeranaito",
+      "word": "もう 帰[かえ]らないと……",
+      "kana": "もうかえらないと",
+      "meaning": {
+        "en": "I have to go now",
+        "vi": "tôi phải về rồi..."
+      },
+      "type": "expression"
+    }
+  ]
+}

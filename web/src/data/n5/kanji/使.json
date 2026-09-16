@@ -1,0 +1,62 @@
+{
+  "character": "使",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "to use",
+      "to send"
+    ],
+    "vi": [
+      "dùng",
+      "sử dụng"
+    ]
+  },
+  "onyomi": [
+    "シ"
+  ],
+  "kunyomi": [
+    "つか.う"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "使[つか]う",
+      "meaning": {
+        "en": "to use",
+        "vi": "sử dụng, dùng"
+      }
+    },
+    {
+      "word": "使用[しよう]",
+      "meaning": {
+        "en": "use",
+        "vi": "use"
+      }
+    },
+    {
+      "word": "行使[こうし]",
+      "meaning": {
+        "en": "use, exercise",
+        "vi": "use, exercise"
+      }
+    },
+    {
+      "word": "天使[てんし]",
+      "meaning": {
+        "en": "angel",
+        "vi": "angel"
+      }
+    },
+    {
+      "word": "使者[ししゃ]",
+      "meaning": {
+        "en": "envoy",
+        "vi": "envoy"
+      }
+    }
+  ],
+  "similar": [
+    "作",
+    "仕"
+  ]
+}

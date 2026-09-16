@@ -1,0 +1,59 @@
+{
+  "character": "六",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "six"
+    ],
+    "vi": [
+      "sáu",
+      "số sáu"
+    ]
+  },
+  "onyomi": [
+    "ロク"
+  ],
+  "kunyomi": [
+    "む.つ",
+    "むっ.つ"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "六[ろく]",
+      "meaning": {
+        "en": "six",
+        "vi": "sáu, số 6"
+      }
+    },
+    {
+      "word": "六[むっ]つ",
+      "meaning": {
+        "en": "six things",
+        "vi": "sáu cái"
+      }
+    },
+    {
+      "word": "六月[ろくがつ]",
+      "meaning": {
+        "en": "June",
+        "vi": "tháng sáu"
+      }
+    },
+    {
+      "word": "第六感[だいろっかん]",
+      "meaning": {
+        "en": "sixth sense",
+        "vi": "sixth sense"
+      }
+    },
+    {
+      "word": "六日[むいか]",
+      "meaning": {
+        "en": "6th day",
+        "vi": "ngày mùng sáu"
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "character": "右",
+  "level": "n5",
+  "lesson": 10,
+  "meanings": {
+    "en": [
+      "right"
+    ],
+    "vi": [
+      "phải",
+      "bên phải"
+    ]
+  },
+  "onyomi": [
+    "ウ",
+    "ユウ"
+  ],
+  "kunyomi": [
+    "みぎ"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "右[みぎ]",
+      "meaning": {
+        "en": "right",
+        "vi": "bên phải, phía phải"
+      }
+    },
+    {
+      "word": "右手[みぎて]",
+      "meaning": {
+        "en": "right hand",
+        "vi": "tay phải"
+      }
+    },
+    {
+      "word": "右折[うせつ]",
+      "meaning": {
+        "en": "right turn",
+        "vi": "right turn"
+      }
+    },
+    {
+      "word": "右翼[うよく]",
+      "meaning": {
+        "en": "the right (politics)",
+        "vi": "the right (politics)"
+      }
+    },
+    {
+      "word": "左右[さゆう]",
+      "meaning": {
+        "en": "left and right",
+        "vi": "left and right"
+      }
+    }
+  ],
+  "similar": [
+    "石",
+    "若"
+  ]
+}

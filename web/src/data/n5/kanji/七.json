@@ -1,0 +1,59 @@
+{
+  "character": "七",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "seven"
+    ],
+    "vi": [
+      "bảy",
+      "số bảy"
+    ]
+  },
+  "onyomi": [
+    "シチ"
+  ],
+  "kunyomi": [
+    "なな",
+    "なな.つ"
+  ],
+  "strokes": 2,
+  "examples": [
+    {
+      "word": "七[なな]",
+      "meaning": {
+        "en": "seven",
+        "vi": "bảy, số 7"
+      }
+    },
+    {
+      "word": "七[なな]つ",
+      "meaning": {
+        "en": "seven things",
+        "vi": "bảy cái"
+      }
+    },
+    {
+      "word": "七月[しちがつ]",
+      "meaning": {
+        "en": "July",
+        "vi": "tháng bảy"
+      }
+    },
+    {
+      "word": "七人[しちにん]",
+      "meaning": {
+        "en": "seven people",
+        "vi": "bảy người"
+      }
+    },
+    {
+      "word": "七日[なのか]",
+      "meaning": {
+        "en": "7th day",
+        "vi": "ngày mùng bảy"
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "character": "下",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "below, under",
+      "below",
+      "to go down, to lower"
+    ],
+    "vi": [
+      "dưới",
+      "phía dưới",
+      "xuống"
+    ]
+  },
+  "onyomi": [
+    "カ",
+    "ゲ"
+  ],
+  "kunyomi": [
+    "した",
+    "さ.げる",
+    "さ.がる",
+    "くだ.る"
+  ],
+  "strokes": 3,
+  "examples": [
+    {
+      "word": "下[した]",
+      "meaning": {
+        "en": "below",
+        "vi": "phía dưới, ở dưới"
+      }
+    },
+    {
+      "word": "下手[へた]",
+      "meaning": {
+        "en": "not good at",
+        "vi": "kém, vụng về"
+      }
+    },
+    {
+      "word": "地下[ちか]",
+      "meaning": {
+        "en": "basement",
+        "vi": "dưới lòng đất, tầng hầm"
+      }
+    },
+    {
+      "word": "下[さ]がる",
+      "meaning": {
+        "en": "to go down, to descend",
+        "vi": "hạ xuống, giảm xuống"
+      }
+    },
+    {
+      "word": "下[くだ]る",
+      "meaning": {
+        "en": "to go down (stairs)",
+        "vi": "to go down (stairs)"
+      }
+    },
+    {
+      "word": "地下鉄[ちかてつ]",
+      "meaning": {
+        "en": "underground, subway",
+        "vi": "tàu điện ngầm"
+      }
+    },
+    {
+      "word": "下品[げひん]",
+      "meaning": {
+        "en": "vulgar",
+        "vi": "vulgar"
+      }
+    }
+  ]
+}

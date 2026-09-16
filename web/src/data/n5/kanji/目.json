@@ -1,0 +1,68 @@
+{
+  "character": "目",
+  "level": "n5",
+  "lesson": 16,
+  "meanings": {
+    "en": [
+      "eye"
+    ],
+    "vi": [
+      "mắt"
+    ]
+  },
+  "onyomi": [
+    "モク"
+  ],
+  "kunyomi": [
+    "め"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "目[め]",
+      "meaning": {
+        "en": "eye",
+        "vi": "mắt"
+      }
+    },
+    {
+      "word": "2つ 目[め]",
+      "meaning": {
+        "en": "the second",
+        "vi": "the second"
+      }
+    },
+    {
+      "word": "目指[めざ]す",
+      "meaning": {
+        "en": "to aim for",
+        "vi": "to aim for"
+      }
+    },
+    {
+      "word": "一番目[いちばんめ]",
+      "meaning": {
+        "en": "the first",
+        "vi": "the first"
+      }
+    },
+    {
+      "word": "注目[ちゅうもく]",
+      "meaning": {
+        "en": "attention",
+        "vi": "attention"
+      }
+    },
+    {
+      "word": "目的[もくてき]",
+      "meaning": {
+        "en": "objective",
+        "vi": "mục đích"
+      }
+    }
+  ],
+  "similar": [
+    "日",
+    "自"
+  ]
+}

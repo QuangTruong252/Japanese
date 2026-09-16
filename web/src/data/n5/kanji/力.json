@@ -1,0 +1,65 @@
+{
+  "character": "力",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "strength"
+    ],
+    "vi": [
+      "sức lực",
+      "năng lực"
+    ]
+  },
+  "onyomi": [
+    "リョク",
+    "リキ"
+  ],
+  "kunyomi": [
+    "ちから"
+  ],
+  "strokes": 2,
+  "examples": [
+    {
+      "word": "力[ちから]",
+      "meaning": {
+        "en": "strength",
+        "vi": "sức lực, sức mạnh"
+      }
+    },
+    {
+      "word": "協力[きょうりょく]",
+      "meaning": {
+        "en": "cooperation",
+        "vi": "cooperation"
+      }
+    },
+    {
+      "word": "体力[たいりょく]",
+      "meaning": {
+        "en": "physical strength, stamina",
+        "vi": "thể lực"
+      }
+    },
+    {
+      "word": "能力[のうりょく]",
+      "meaning": {
+        "en": "ability, capacity",
+        "vi": "ability, capacity"
+      }
+    },
+    {
+      "word": "暴力[ぼうりょく]",
+      "meaning": {
+        "en": "violence",
+        "vi": "violence"
+      }
+    },
+    {
+      "word": "力士[りきし]",
+      "meaning": {
+        "en": "sumo wrestler",
+        "vi": "sumo wrestler"
+      }
+    }
+  ]
+}

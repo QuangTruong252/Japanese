@@ -1,0 +1,70 @@
+{
+  "character": "月",
+  "level": "n5",
+  "lesson": 4,
+  "meanings": {
+    "en": [
+      "moon",
+      "month"
+    ],
+    "vi": [
+      "tháng",
+      "mặt trăng"
+    ]
+  },
+  "onyomi": [
+    "ゲツ",
+    "ガツ"
+  ],
+  "kunyomi": [
+    "つき"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "月曜日[げつようび]",
+      "meaning": {
+        "en": "Monday",
+        "vi": "thứ hai"
+      }
+    },
+    {
+      "word": "一月[いちがつ]",
+      "meaning": {
+        "en": "January",
+        "vi": "tháng một"
+      }
+    },
+    {
+      "word": "月[つき]",
+      "meaning": {
+        "en": "moon",
+        "vi": "mặt trăng, trăng"
+      }
+    },
+    {
+      "word": "満月[まんげつ]",
+      "meaning": {
+        "en": "full moon",
+        "vi": "full moon"
+      }
+    },
+    {
+      "word": "月給[げっきゅう]",
+      "meaning": {
+        "en": "monthly pay",
+        "vi": "monthly pay"
+      }
+    },
+    {
+      "word": "十二月[じゅうにがつ]",
+      "meaning": {
+        "en": "December",
+        "vi": "December"
+      }
+    }
+  ],
+  "similar": [
+    "日"
+  ]
+}

@@ -9,3 +9,15 @@ node_modules/
 /.claude/settings.local.json
 /.codex/config.toml
 /.mcp.json
+
+# design-sync (claude.ai/design) — staged scripts, build output, machine state
+.ds-sync/
+ds-bundle/
+.design-sync/.cache/
+.design-sync/learnings/
+.design-sync/node_modules
+web/.ds-tailwind.css
+web/.ds-tailwind-src.css
+web/dist/
+web/index.d.ts
+web/.ds-tsconfig.json

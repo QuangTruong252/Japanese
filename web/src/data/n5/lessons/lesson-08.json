@@ -1,0 +1,231 @@
+{
+  "level": "n5",
+  "number": 8,
+  "title": {
+    "en": "Adjectives",
+    "vi": "Tính từ"
+  },
+  "jpTitle": "そろそろ 失礼[しつれい]します",
+  "description": {
+    "en": "Describe people, places and things with the two kinds of Japanese adjective: -い and -な.",
+    "vi": "Hai loại tính từ tiếng Nhật (đuôi い và đuôi な), cách biến đổi khẳng định, phủ định và cách bổ nghĩa cho danh từ."
+  },
+  "grammar": [
+    {
+      "id": "adjetivos",
+      "title": {
+        "en": "The two kinds of adjective",
+        "vi": "Tính từ tiếng Nhật (đuôi い và đuôi な)"
+      },
+      "pattern": {
+        "vi": "Tính từ đuôi い ／ Tính từ đuôi な"
+      },
+      "explanation": {
+        "en": "Japanese has -い adjectives (大[おお]きい, 高[たか]い) and -な adjectives (きれい[な], 有名[ゆうめい][な]). They behave differently when modifying nouns and when conjugating, so it pays to memorise each adjective together with its type.",
+        "vi": "Tiếng Nhật có hai nhóm tính từ: Tính từ đuôi い (kết thúc bằng nguyên âm い như 高い, 寒い) và Tính từ đuôi な (như きれい, 静か, 親切 - khi đứng trước danh từ sẽ thêm な)."
+      },
+      "examples": [
+        {
+          "jp": "富士山[ふじさん]は 高[たか]いです。",
+          "translation": {
+            "en": "Mount Fuji is tall.",
+            "vi": "Núi Phú Sĩ rất cao."
+          }
+        },
+        {
+          "jp": "桜[さくら]はきれいです。",
+          "translation": {
+            "en": "Cherry blossoms are beautiful.",
+            "vi": "Hoa anh đào rất đẹp."
+          }
+        }
+      ]
+    },
+    {
+      "id": "predicado-adjetivo",
+      "title": {
+        "en": "N は A です — the adjective as predicate",
+        "vi": "N は A-な[な] です ／ N は A-い です — Vị ngữ tính từ"
+      },
+      "pattern": {
+        "vi": "N は A-な[な] です ／ N は A-い です"
+      },
+      "explanation": {
+        "en": "As a predicate, both types are followed by です. The -な adjective drops the な: 静[しず]かです. The negative differs: -な adjectives use じゃありません (静[しず]かじゃありません) and -い adjectives change 〜い to 〜くないです (高[たか]くないです). The negative of いい is よくないです.",
+        "vi": "Khi làm vị ngữ: Tính từ đuôi い giữ nguyên đuôi い + です; phủ định là bỏ い thêm くないです. Tính từ đuôi な bỏ な + です; phủ định là じゃありません."
+      },
+      "examples": [
+        {
+          "jp": "ペキンは 今[いま] 寒[さむ]いですか。…はい、 寒[さむ]いです。",
+          "translation": {
+            "en": "Is it cold in Beijing now? …Yes, it's cold.",
+            "vi": "Bắc Kinh bây giờ có lạnh không? …Vâng, lạnh lắm."
+          }
+        },
+        {
+          "jp": "この 部屋[へや]は 静[しず]かじゃありません。",
+          "translation": {
+            "en": "This room is not quiet.",
+            "vi": "Căn phòng này không yên tĩnh."
+          }
+        }
+      ]
+    },
+    {
+      "id": "adjetivo-sustantivo",
+      "title": {
+        "en": "A + N — the adjective before the noun",
+        "vi": "A-な[な] N ／ A-い N — Tính từ bổ nghĩa cho danh từ"
+      },
+      "pattern": {
+        "vi": "A-な[な] N ／ A-い N"
+      },
+      "explanation": {
+        "en": "When modifying a noun directly, -な adjectives keep the な (きれいな 花[はな]) and -い adjectives are used as they are (新[あたら]しい 車[くるま]).",
+        "vi": "Để bổ nghĩa cho danh từ: Tính từ đuôi な giữ nguyên đuôi な rồi ghép trực tiếp trước danh từ (親切な先生). Tính từ đuôi い giữ nguyên đuôi い rồi ghép trực tiếp trước danh từ (高い山)."
+      },
+      "examples": [
+        {
+          "jp": "ワット 先生[せんせい]は 親切[しんせつ]な 先生[せんせい]です。",
+          "translation": {
+            "en": "Mr. Watt is a kind teacher.",
+            "vi": "Thầy Watt là một người thầy tốt bụng."
+          }
+        },
+        {
+          "jp": "富士山[ふじさん]は 高[たか]い 山[やま]です。",
+          "translation": {
+            "en": "Mount Fuji is a tall mountain.",
+            "vi": "Núi Phú Sĩ là một ngọn núi cao."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ga-pero",
+      "title": {
+        "en": "〜が、〜 — \"but\"",
+        "vi": "S1 が、S2 — Liên từ nối «nhưng»"
+      },
+      "pattern": {
+        "vi": "S1 が、S2"
+      },
+      "explanation": {
+        "en": "が joins two sentences with a contrasting sense: 日本[にほん]の 食[た]べ 物[もの]はおいしいですが、 高[たか]いです.",
+        "vi": "Liên từ が đặt ở cuối vế câu thứ nhất để nối hai mệnh đề có ý nghĩa tương phản hoặc đối lập nhau ('nhưng, tuy nhiên')."
+      },
+      "examples": [
+        {
+          "jp": "日本[にほん]の 食[た]べ 物[もの]はおいしいですが、 高[たか]いです。",
+          "translation": {
+            "en": "Japanese food is delicious, but expensive.",
+            "vi": "Đồ ăn Nhật Bản ngon nhưng đắt."
+          }
+        }
+      ]
+    },
+    {
+      "id": "totemo-amari",
+      "title": {
+        "en": "とても／あまり — \"very\" and \"not very\"",
+        "vi": "とても A ／ あまり A (phủ định) — Phó từ chỉ mức độ"
+      },
+      "pattern": {
+        "en": "とても A ／ あまり A (negative)",
+        "vi": "とても A ／ あまり A (phủ định)"
+      },
+      "explanation": {
+        "en": "とても intensifies in affirmative sentences (とても 大[おお]きい, very big). あまり only appears with a negative: あまり 有名[ゆうめい]じゃありません (it isn't very famous).",
+        "vi": "とても mang nghĩa 'rất', đi với câu khẳng định. あまり mang nghĩa 'không... lắm', luôn đi với thể phủ định của tính từ hoặc động từ."
+      },
+      "examples": [
+        {
+          "jp": "この 町[まち]はとてもにぎやかです。",
+          "translation": {
+            "en": "This town is very lively.",
+            "vi": "Thị trấn này rất nhộn nhịp."
+          }
+        },
+        {
+          "jp": "この 本[ほん]はあまりおもしろくないです。",
+          "translation": {
+            "en": "This book isn't very interesting.",
+            "vi": "Cuốn sách này không thú vị lắm."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dou-desu-ka",
+      "title": {
+        "en": "N は どうですか — asking for impressions",
+        "vi": "N は どうですか — «N thế nào?»"
+      },
+      "pattern": {
+        "vi": "N は どうですか"
+      },
+      "explanation": {
+        "en": "It asks the listener's impression of something they have already experienced: 日本[にほん]の 生活[せいかつ]は どうですか (how is life in Japan?).",
+        "vi": "Mẫu câu dùng để hỏi cảm nhận, ấn tượng hoặc ý kiến của đối phương về một sự vật, việc làm hoặc địa điểm."
+      },
+      "examples": [
+        {
+          "jp": "仕事[しごと]はどうですか。… 忙[いそが]しいですが、おもしろいです。",
+          "translation": {
+            "en": "How is work? …It's busy, but interesting.",
+            "vi": "Công việc thế nào rồi? …Bận rộn nhưng rất thú vị."
+          }
+        }
+      ]
+    },
+    {
+      "id": "donna",
+      "title": {
+        "en": "N1 は どんな N2 ですか — \"what kind of…?\"",
+        "vi": "N1 は どんな N2 ですか — «N1 là N2 như thế nào?»"
+      },
+      "pattern": {
+        "vi": "N1 は どんな N2 ですか"
+      },
+      "explanation": {
+        "en": "どんな + noun asks for a description; the answer uses an adjective: 奈良[なら]は どんな 町[まち]ですか。… 古[ふる]い 町[まち]です.",
+        "vi": "どんな đứng trước một danh từ, dùng để hỏi về tính chất, đặc điểm hoặc trạng thái chi tiết của sự vật, người hoặc địa điểm đó."
+      },
+      "examples": [
+        {
+          "jp": "奈良[なら]はどんな 町[まち]ですか。… 古[ふる]い 町[まち]です。",
+          "translation": {
+            "en": "What kind of town is Nara? …It's an old town.",
+            "vi": "Nara là một thành phố như thế nào? …Là một thành phố cổ kính."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sou-desu-ne-8",
+      "title": {
+        "en": "そうですね — buying time",
+        "vi": "そうですね… — Cách nói ngập ngừng khi suy nghĩ"
+      },
+      "pattern": {
+        "vi": "そうですね…"
+      },
+      "explanation": {
+        "en": "Said with a thoughtful intonation, そうですね also buys you time while you think of an answer, like \"well… let me see…\".",
+        "vi": "Khi người nói cần chút thời gian để suy nghĩ trước khi đưa ra câu trả lời cho đối phương, có thể nói kéo dài: 'そうですね…' (À, để xem nào...)."
+      },
+      "examples": [
+        {
+          "jp": "日本[にほん]の 生活[せいかつ]はどうですか。…そうですね、 楽[たの]しいです。",
+          "translation": {
+            "en": "How is life in Japan? …Well… it's fun.",
+            "vi": "Cuộc sống ở Nhật Bản thế nào? …À xem nào, rất vui."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "adjectives"
+  ]
+}

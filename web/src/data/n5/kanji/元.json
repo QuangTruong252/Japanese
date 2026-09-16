@@ -1,0 +1,51 @@
+{
+  "character": "元",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "origin"
+    ],
+    "vi": [
+      "nguyên khí",
+      "gốc",
+      "nguồn gốc"
+    ]
+  },
+  "onyomi": [
+    "ゲン"
+  ],
+  "kunyomi": [
+    "もと"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "元[もと]は",
+      "meaning": {
+        "en": "originally",
+        "vi": "originally"
+      }
+    },
+    {
+      "word": "地元[じもと]",
+      "meaning": {
+        "en": "hometown, local area",
+        "vi": "hometown, local area"
+      }
+    },
+    {
+      "word": "元気[げんき]",
+      "meaning": {
+        "en": "healthy, energetic",
+        "vi": "khỏe mạnh"
+      }
+    },
+    {
+      "word": "紀元後[きげんご]",
+      "meaning": {
+        "en": "AD",
+        "vi": "AD"
+      }
+    }
+  ]
+}

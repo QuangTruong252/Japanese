@@ -1,0 +1,72 @@
+{
+  "character": "半",
+  "level": "n5",
+  "lesson": 4,
+  "meanings": {
+    "en": [
+      "half"
+    ],
+    "vi": [
+      "nửa",
+      "rưỡi"
+    ]
+  },
+  "onyomi": [
+    "ハン"
+  ],
+  "kunyomi": [
+    "なか.ば"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "半[はん]",
+      "meaning": {
+        "en": "half past",
+        "vi": "rưỡi, một nửa"
+      }
+    },
+    {
+      "word": "半分[はんぶん]",
+      "meaning": {
+        "en": "half",
+        "vi": "một nửa"
+      }
+    },
+    {
+      "word": "一時半[いちじはん]",
+      "meaning": {
+        "en": "half past one",
+        "vi": "half past one"
+      }
+    },
+    {
+      "word": "半[なか]ば",
+      "meaning": {
+        "en": "middle, half",
+        "vi": "middle, half"
+      }
+    },
+    {
+      "word": "半径[はんけい]",
+      "meaning": {
+        "en": "radius (of a circle)",
+        "vi": "radius (of a circle)"
+      }
+    },
+    {
+      "word": "前半[ぜんはん]",
+      "meaning": {
+        "en": "first half",
+        "vi": "nửa đầu, hiệp một"
+      }
+    },
+    {
+      "word": "半島[はんとう]",
+      "meaning": {
+        "en": "peninsula",
+        "vi": "peninsula"
+      }
+    }
+  ]
+}

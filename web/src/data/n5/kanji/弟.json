@@ -1,0 +1,57 @@
+{
+  "character": "弟",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "younger brother"
+    ],
+    "vi": [
+      "em trai"
+    ]
+  },
+  "onyomi": [
+    "テイ",
+    "ダイ"
+  ],
+  "kunyomi": [
+    "おとうと"
+  ],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "弟[おとうと]",
+      "meaning": {
+        "en": "younger brother",
+        "vi": "em trai (của mình)"
+      }
+    },
+    {
+      "word": "兄弟[きょうだい]",
+      "meaning": {
+        "en": "brothers, siblings",
+        "vi": "anh chị em"
+      }
+    },
+    {
+      "word": "子弟[してい]",
+      "meaning": {
+        "en": "son",
+        "vi": "son"
+      }
+    },
+    {
+      "word": "義弟[ぎてい]",
+      "meaning": {
+        "en": "younger stepbrother",
+        "vi": "younger stepbrother"
+      }
+    },
+    {
+      "word": "師弟[してい]",
+      "meaning": {
+        "en": "master and disciple",
+        "vi": "master and disciple"
+      }
+    }
+  ]
+}

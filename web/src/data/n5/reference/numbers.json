@@ -1,0 +1,393 @@
+{
+  "level": "n5",
+  "slug": "numbers",
+  "title": {
+    "en": "Numbers",
+    "vi": "Số đếm"
+  },
+  "description": {
+    "en": "Japanese numerals from 0 to a hundred million, plus decimals and fractions.",
+    "vi": "Hệ thống số đếm tiếng Nhật từ 0 đến 100 triệu, cùng số thập phân và phân số."
+  },
+  "order": 2,
+  "sections": [
+    {
+      "id": "units",
+      "title": {
+        "en": "From 0 to 20",
+        "vi": "Từ 0 đến 20"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Figure",
+              "vi": "Chữ số"
+            },
+            {
+              "en": "Reading",
+              "vi": "Tiếng Nhật"
+            }
+          ],
+          "rows": [
+            [
+              "0",
+              "ゼロ、れい"
+            ],
+            [
+              "1",
+              "いち"
+            ],
+            [
+              "2",
+              "に"
+            ],
+            [
+              "3",
+              "さん"
+            ],
+            [
+              "4",
+              "よん、し"
+            ],
+            [
+              "5",
+              "ご"
+            ],
+            [
+              "6",
+              "ろく"
+            ],
+            [
+              "7",
+              "なな、しち"
+            ],
+            [
+              "8",
+              "はち"
+            ],
+            [
+              "9",
+              "きゅう、く"
+            ],
+            [
+              "10",
+              "じゅう"
+            ],
+            [
+              "11",
+              "じゅういち"
+            ],
+            [
+              "12",
+              "じゅうに"
+            ],
+            [
+              "13",
+              "じゅうさん"
+            ],
+            [
+              "14",
+              "じゅうよん、じゅうし"
+            ],
+            [
+              "15",
+              "じゅうご"
+            ],
+            [
+              "16",
+              "じゅうろく"
+            ],
+            [
+              "17",
+              "じゅうなな、じゅうしち"
+            ],
+            [
+              "18",
+              "じゅうはち"
+            ],
+            [
+              "19",
+              "じゅうきゅう、じゅうく"
+            ],
+            [
+              "20",
+              "にじゅう"
+            ]
+          ]
+        }
+      ],
+      "note": {
+        "en": "Several numbers have two readings. With counters it pays to learn which one is used: 4 is usually よん, 7 なな and 9 きゅう.",
+        "vi": "4 có thể đọc là よん hoặc し; 7 có thể đọc là なな hoặc しち; 9 có thể đọc là きゅう hoặc く."
+      }
+    },
+    {
+      "id": "tens",
+      "title": {
+        "en": "Tens",
+        "vi": "Hàng chục"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Figure",
+              "vi": "Chữ số"
+            },
+            {
+              "en": "Reading",
+              "vi": "Tiếng Nhật"
+            }
+          ],
+          "rows": [
+            [
+              "30",
+              "さんじゅう"
+            ],
+            [
+              "40",
+              "よんじゅう"
+            ],
+            [
+              "50",
+              "ごじゅう"
+            ],
+            [
+              "60",
+              "ろくじゅう"
+            ],
+            [
+              "70",
+              "ななじゅう、しちじゅう"
+            ],
+            [
+              "80",
+              "はちじゅう"
+            ],
+            [
+              "90",
+              "きゅうじゅう"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hundreds",
+      "title": {
+        "en": "Hundreds",
+        "vi": "Hàng trăm"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Figure",
+              "vi": "Chữ số"
+            },
+            {
+              "en": "Reading",
+              "vi": "Tiếng Nhật"
+            }
+          ],
+          "rows": [
+            [
+              "100",
+              "ひゃく"
+            ],
+            [
+              "200",
+              "にひゃく"
+            ],
+            [
+              "300",
+              "さんびゃく"
+            ],
+            [
+              "400",
+              "よんひゃく"
+            ],
+            [
+              "500",
+              "ごひゃく"
+            ],
+            [
+              "600",
+              "ろっぴゃく"
+            ],
+            [
+              "700",
+              "ななひゃく"
+            ],
+            [
+              "800",
+              "はっぴゃく"
+            ],
+            [
+              "900",
+              "きゅうひゃく"
+            ]
+          ]
+        }
+      ],
+      "note": {
+        "en": "Watch the sound changes: 300 さんびゃく, 600 ろっぴゃく and 800 はっぴゃく.",
+        "vi": "300 (さんびゃく), 600 (ろっぴゃく), 800 (はっぴゃく) có biến âm đặc biệt."
+      }
+    },
+    {
+      "id": "thousands",
+      "title": {
+        "en": "Thousands",
+        "vi": "Hàng nghìn"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Figure",
+              "vi": "Chữ số"
+            },
+            {
+              "en": "Reading",
+              "vi": "Tiếng Nhật"
+            }
+          ],
+          "rows": [
+            [
+              "1.000",
+              "せん"
+            ],
+            [
+              "2.000",
+              "にせん"
+            ],
+            [
+              "3.000",
+              "さんぜん"
+            ],
+            [
+              "4.000",
+              "よんせん"
+            ],
+            [
+              "5.000",
+              "ごせん"
+            ],
+            [
+              "6.000",
+              "ろくせん"
+            ],
+            [
+              "7.000",
+              "ななせん"
+            ],
+            [
+              "8.000",
+              "はっせん"
+            ],
+            [
+              "9.000",
+              "きゅうせん"
+            ]
+          ]
+        }
+      ],
+      "note": {
+        "en": "These change too: 3,000 さんぜん and 8,000 はっせん.",
+        "vi": "3.000 (さんぜん) và 8.000 (はっせん) có biến âm đặc biệt."
+      }
+    },
+    {
+      "id": "big",
+      "title": {
+        "en": "Large quantities",
+        "vi": "Các số lớn"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Figure",
+              "vi": "Chữ số"
+            },
+            {
+              "en": "Reading",
+              "vi": "Tiếng Nhật"
+            }
+          ],
+          "rows": [
+            [
+              "10.000",
+              "いちまん"
+            ],
+            [
+              "100.000",
+              "じゅうまん"
+            ],
+            [
+              "1.000.000",
+              "ひゃくまん"
+            ],
+            [
+              "10.000.000",
+              "せんまん"
+            ],
+            [
+              "100.000.000",
+              "いちおく"
+            ]
+          ]
+        }
+      ],
+      "note": {
+        "en": "Japanese groups digits in fours: 万[まん] is 10,000 and 億[おく] is 100,000,000.",
+        "vi": "Tiếng Nhật nhóm số theo đơn vị 4 chữ số (vạn = 10.000) thay vì 3 chữ số như phương Tây."
+      }
+    },
+    {
+      "id": "decimals",
+      "title": {
+        "en": "Decimals and fractions",
+        "vi": "Số thập phân và phân số"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Figure",
+              "vi": "Chữ số"
+            },
+            {
+              "en": "Reading",
+              "vi": "Tiếng Nhật"
+            }
+          ],
+          "rows": [
+            [
+              "17,5",
+              "じゅうななてんご"
+            ],
+            [
+              "0,83",
+              "れいてんはちさん"
+            ],
+            [
+              "1/2",
+              "にぶんの いち"
+            ],
+            [
+              "3/4",
+              "よんぶんの さん"
+            ]
+          ]
+        }
+      ],
+      "note": {
+        "en": "In fractions the denominator comes first: \"X 分[ぶん]の Y\".",
+        "vi": "Dấu phẩy thập phân đọc là てん. Trong phân số, đọc mẫu số trước kèm theo ぶんの rồi đến tử số."
+      }
+    }
+  ]
+}

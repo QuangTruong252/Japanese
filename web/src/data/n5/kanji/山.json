@@ -1,0 +1,60 @@
+{
+  "character": "山",
+  "level": "n5",
+  "lesson": 8,
+  "meanings": {
+    "en": [
+      "mountain"
+    ],
+    "vi": [
+      "núi"
+    ]
+  },
+  "onyomi": [
+    "サン"
+  ],
+  "kunyomi": [
+    "やま"
+  ],
+  "strokes": 3,
+  "examples": [
+    {
+      "word": "山[やま]",
+      "meaning": {
+        "en": "mountain",
+        "vi": "núi"
+      }
+    },
+    {
+      "word": "富士山[ふじさん]",
+      "meaning": {
+        "en": "Mount Fuji",
+        "vi": "Mount Fuji"
+      }
+    },
+    {
+      "word": "山脈[さんみゃく]",
+      "meaning": {
+        "en": "mountain range",
+        "vi": "mountain range"
+      }
+    },
+    {
+      "word": "火山[かざん]",
+      "meaning": {
+        "en": "volcano",
+        "vi": "núi lửa"
+      }
+    },
+    {
+      "word": "登山[とざん]",
+      "meaning": {
+        "en": "mountain climbing",
+        "vi": "mountain climbing"
+      }
+    }
+  ],
+  "similar": [
+    "出"
+  ]
+}

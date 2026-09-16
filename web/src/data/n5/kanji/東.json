@@ -1,0 +1,58 @@
+{
+  "character": "東",
+  "level": "n5",
+  "lesson": 19,
+  "meanings": {
+    "en": [
+      "east"
+    ],
+    "vi": [
+      "phương đông",
+      "hướng đông"
+    ]
+  },
+  "onyomi": [
+    "トウ"
+  ],
+  "kunyomi": [
+    "ひがし"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "東[ひがし]",
+      "meaning": {
+        "en": "east",
+        "vi": "phương đông, hướng đông"
+      }
+    },
+    {
+      "word": "東京[とうきょう]",
+      "meaning": {
+        "en": "Tokyo",
+        "vi": "thủ đô Tokyo"
+      }
+    },
+    {
+      "word": "東口[ひがしぐち]",
+      "meaning": {
+        "en": "east exit",
+        "vi": "cửa đông (nhà ga)"
+      }
+    },
+    {
+      "word": "東洋[とうよう]",
+      "meaning": {
+        "en": "the East, the Orient",
+        "vi": "the East, the Orient"
+      }
+    },
+    {
+      "word": "東南[とうなん]",
+      "meaning": {
+        "en": "south-east",
+        "vi": "south-east"
+      }
+    }
+  ]
+}

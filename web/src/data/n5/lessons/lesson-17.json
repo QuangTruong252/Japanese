@@ -1,0 +1,161 @@
+{
+  "level": "n5",
+  "number": 17,
+  "title": {
+    "en": "The ない form",
+    "vi": "Thể ない và bắt buộc"
+  },
+  "jpTitle": "どうしましたか",
+  "description": {
+    "en": "The plain negative form of the verb and its uses: don't do, you have to, you don't need to.",
+    "vi": "Cách chia động từ thể ない (nai), yêu cầu không làm gì (〜ないでください) và việc bắt buộc phải làm (〜なければなりません)."
+  },
+  "grammar": [
+    {
+      "id": "forma-nai",
+      "title": {
+        "en": "The ない form",
+        "vi": "Cách chia thể ない (Nai) của động từ"
+      },
+      "pattern": {
+        "vi": "書[か]きます→書[か]かない ／ 食[た]べます→食[た]べない ／ します→しない ／ 来[き]ます→来[こ]ない"
+      },
+      "explanation": {
+        "en": "In group I the syllable before ます changes from -i to -a and ない is added (書[か]きます → 書[か]かない; 買[か]います → 買[か]わない). Group II swaps ます for ない (食[た]べない) and group III gives しない and 来[こ]ない.",
+        "vi": "Thể ない là dạng phủ định ngắn (thông thường) của động từ. Nhóm I: chuyển âm hàng -i trước ます sang hàng -a rồi thêm ない (lưu ý: い đổi thành わ); Nhóm II: bỏ ます thêm ない; Nhóm III: しない, こない."
+      },
+      "examples": [
+        {
+          "jp": "行[い]く → 行[い]かない ／ 飲[の]む → 飲[の]まない",
+          "translation": {
+            "en": "To go → not to go / to drink → not to drink.",
+            "vi": "Đi → không đi ／ Uống → không uống."
+          }
+        }
+      ]
+    },
+    {
+      "id": "naide-kudasai",
+      "title": {
+        "en": "V ないで ください — \"please don't\"",
+        "vi": "V ない で ください — Yêu cầu không làm gì («Xin đừng…»)"
+      },
+      "pattern": {
+        "vi": "V ない で ください"
+      },
+      "explanation": {
+        "en": "It asks someone not to do something: ここで 写真[しゃしん]を 撮[と]らないでください. It can also show concern: 心配[しんぱい]しないでください (don't worry).",
+        "vi": "Mẫu câu dùng để yêu cầu, nhắc nhở hoặc khuyên bảo đối phương không được làm một việc gì đó một cách lịch sự."
+      },
+      "examples": [
+        {
+          "jp": "ここでたばこを 吸[す]わないでください。",
+          "translation": {
+            "en": "Please don't smoke here.",
+            "vi": "Xin đừng hút thuốc ở đây."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nakereba-narimasen",
+      "title": {
+        "en": "V なければ なりません — obligation",
+        "vi": "V なければ なりません — Nghĩa vụ bắt buộc («Phải làm…»)"
+      },
+      "pattern": {
+        "en": "V (ない form) なければ なりません",
+        "vi": "V (thể ない) なければ なりません"
+      },
+      "explanation": {
+        "en": "It expresses obligation (\"have to\"), with no negative sense despite the form: 薬[くすり]を 飲[の]まなければ なりません (I have to take the medicine).",
+        "vi": "Bỏ い ở thể ない rồi thêm ければなりません để diễn tả một hành động bắt buộc phải thực hiện, không phụ thuộc vào ý muốn của người nói ('phải làm gì')."
+      },
+      "examples": [
+        {
+          "jp": "毎日[まいにち] 漢字[かんじ]を 勉強[べんきょう]しなければなりません。",
+          "translation": {
+            "en": "I have to study kanji every day.",
+            "vi": "Mỗi ngày tôi đều phải học chữ Hán."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nakutemo-ii",
+      "title": {
+        "en": "V なくても いいです — \"you don't have to\"",
+        "vi": "V なくても いいです — Không cần phải làm («Không làm cũng được»)"
+      },
+      "pattern": {
+        "en": "V (ない form) なくても いいです",
+        "vi": "V (thể ない) なくても いいです"
+      },
+      "explanation": {
+        "en": "It says the action isn't necessary: あした 来[こ]なくても いいです (you don't have to come tomorrow).",
+        "vi": "Bỏ い ở thể ない rồi thêm くてもいいです để diễn tả một việc không bắt buộc phải thực hiện ('không cần làm... cũng được')."
+      },
+      "examples": [
+        {
+          "jp": "レポートは 出[だ]さなくてもいいです。",
+          "translation": {
+            "en": "You don't have to hand in the report.",
+            "vi": "Không cần nộp báo cáo cũng được."
+          }
+        }
+      ]
+    },
+    {
+      "id": "objeto-tema",
+      "title": {
+        "en": "N は — making the object the topic",
+        "vi": "N は (đưa tân ngữ lên làm chủ đề)"
+      },
+      "pattern": {
+        "en": "N は (topicalised object)",
+        "vi": "N は (tân ngữ làm chủ đề)"
+      },
+      "explanation": {
+        "en": "The object of the sentence can become the topic with は so you can talk about it: 荷物[にもつ]は ロッカーに 入[い]れてください (as for your luggage, please put it in the locker).",
+        "vi": "Để nhấn mạnh tân ngữ trực tiếp, người ta thay trợ từ を bằng は và đưa danh từ đó lên đầu câu làm chủ đề của lời nói."
+      },
+      "examples": [
+        {
+          "jp": "保険証[ほけんしょう]は 持[も]ってきましたか。",
+          "translation": {
+            "en": "Did you bring your insurance card?",
+            "vi": "Thẻ bảo hiểm y tế thì bạn đã mang theo chưa?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "made-ni",
+      "title": {
+        "en": "N (time) までに V — deadline",
+        "vi": "thời gian までに V — Hạn chót hoàn thành hành động"
+      },
+      "pattern": {
+        "en": "time までに V",
+        "vi": "thời gian までに V"
+      },
+      "explanation": {
+        "en": "までに marks the deadline the action must happen by: 土曜日[どようび]までに 本[ほん]を 返[かえ]さなければ なりません. Don't confuse it with まで (up until, continuously).",
+        "vi": "Trợ từ までに biểu thị giới hạn thời gian (hạn chót) mà trước thời điểm đó một hành động đơn lẻ phải được hoàn thành."
+      },
+      "examples": [
+        {
+          "jp": "会議[かいぎ]は5 時[じ]までに 終[お]わります。",
+          "translation": {
+            "en": "The meeting will be over by five.",
+            "vi": "Cuộc họp sẽ kết thúc trước 5 giờ."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "verbs",
+    "time"
+  ]
+}

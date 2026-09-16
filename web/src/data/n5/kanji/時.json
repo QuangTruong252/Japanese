@@ -1,0 +1,71 @@
+{
+  "character": "時",
+  "level": "n5",
+  "lesson": 2,
+  "meanings": {
+    "en": [
+      "hour, time",
+      "time"
+    ],
+    "vi": [
+      "giờ",
+      "thời gian",
+      "khi"
+    ]
+  },
+  "onyomi": [
+    "ジ"
+  ],
+  "kunyomi": [
+    "とき"
+  ],
+  "strokes": 10,
+  "examples": [
+    {
+      "word": "時間[じかん]",
+      "meaning": {
+        "en": "time",
+        "vi": "thời gian, giờ giấc"
+      }
+    },
+    {
+      "word": "一時[いちじ]",
+      "meaning": {
+        "en": "one o'clock",
+        "vi": "one o'clock"
+      }
+    },
+    {
+      "word": "時々[ときどき]",
+      "meaning": {
+        "en": "sometimes",
+        "vi": "thỉnh thoảng, đôi khi"
+      }
+    },
+    {
+      "word": "時[とき]",
+      "meaning": {
+        "en": "time",
+        "vi": "khi, lúc"
+      }
+    },
+    {
+      "word": "五時[ごじ]",
+      "meaning": {
+        "en": "five o'clock",
+        "vi": "five o'clock"
+      }
+    },
+    {
+      "word": "時代[じだい]",
+      "meaning": {
+        "en": "era, period",
+        "vi": "era, period"
+      }
+    }
+  ],
+  "similar": [
+    "持",
+    "待"
+  ]
+}

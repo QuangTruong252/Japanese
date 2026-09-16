@@ -1,0 +1,62 @@
+{
+  "character": "耳",
+  "level": "n5",
+  "lesson": 16,
+  "meanings": {
+    "en": [
+      "ear",
+      "ear, hearing"
+    ],
+    "vi": [
+      "tai"
+    ]
+  },
+  "onyomi": [
+    "ジ"
+  ],
+  "kunyomi": [
+    "みみ"
+  ],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "耳[みみ]",
+      "meaning": {
+        "en": "ear",
+        "vi": "tai, lỗ tai"
+      }
+    },
+    {
+      "word": "左耳[ひだりみみ]",
+      "meaning": {
+        "en": "left ear",
+        "vi": "left ear"
+      }
+    },
+    {
+      "word": "早耳[はやみみ]",
+      "meaning": {
+        "en": "sharp hearing",
+        "vi": "sharp hearing"
+      }
+    },
+    {
+      "word": "内耳[ないじ]",
+      "meaning": {
+        "en": "inner ear",
+        "vi": "inner ear"
+      }
+    },
+    {
+      "word": "耳目[じもく]",
+      "meaning": {
+        "en": "ears and eyes",
+        "vi": "ears and eyes"
+      }
+    }
+  ],
+  "similar": [
+    "目",
+    "日"
+  ]
+}

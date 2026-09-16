@@ -1,0 +1,272 @@
+{
+  "level": "n5",
+  "slug": "particles",
+  "title": {
+    "en": "Particles",
+    "vi": "Trợ từ"
+  },
+  "description": {
+    "en": "Particles mark the role of each word in a sentence. This is the complete list that appears in Minna no Nihongo I.",
+    "vi": "Trợ từ xác định vai trò ngữ pháp của từng từ trong câu. Đây là danh sách đầy đủ xuất hiện trong Minna no Nihongo I."
+  },
+  "order": 1,
+  "sections": [
+    {
+      "id": "basic",
+      "title": {
+        "en": "Basic particles",
+        "vi": "Trợ từ cơ bản"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Particle",
+              "vi": "Trợ từ"
+            },
+            {
+              "en": "Function",
+              "vi": "Chức năng chính"
+            },
+            {
+              "en": "Example",
+              "vi": "Ví dụ"
+            }
+          ],
+          "rows": [
+            [
+              "は",
+              {
+                "en": "Marks the topic of the sentence (read \"wa\")",
+                "vi": "Đánh dấu chủ đề của câu"
+              },
+              "私[わたし]は 学生[がくせい]です。"
+            ],
+            [
+              "が",
+              {
+                "en": "Marks the subject of what exists, is perceived or is wanted",
+                "vi": "Đánh dấu chủ ngữ của sự tồn tại, cảm nhận hoặc mong muốn"
+              },
+              "庭[にわ]に 犬[いぬ]がいます。"
+            ],
+            [
+              "を",
+              {
+                "en": "Marks the direct object",
+                "vi": "Đánh dấu tân ngữ trực tiếp của tha động từ"
+              },
+              "パンを 食[た]べます。"
+            ],
+            [
+              "も",
+              {
+                "en": "\"also\"; replaces は or が",
+                "vi": "«cũng»; dùng thay thế cho は hoặc が"
+              },
+              "グプタさんも 会社員[かいしゃいん]です。"
+            ],
+            [
+              "の",
+              {
+                "en": "Joins two nouns: possession, belonging, origin or topic",
+                "vi": "Nối hai danh từ (sở hữu, thuộc về, xuất xứ)"
+              },
+              "IMCの 社員[しゃいん]です。"
+            ],
+            [
+              "と",
+              {
+                "en": "\"and\" (a complete list); also \"with\" someone",
+                "vi": "«và» (liệt kê toàn bộ); ngoài ra còn chỉ «cùng với» ai đó"
+              },
+              "家族[かぞく]と 行[い]きます。"
+            ],
+            [
+              "や",
+              {
+                "en": "\"and\" between examples, without being exhaustive (often with など)",
+                "vi": "«và» nối các ví dụ không đầy đủ (thường đi với など)"
+              },
+              "手紙[てがみ]や 写真[しゃしん]があります。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "place-time",
+      "title": {
+        "en": "Place, time and direction",
+        "vi": "Địa điểm, thời gian và phương hướng"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Particle",
+              "vi": "Trợ từ"
+            },
+            {
+              "en": "Function",
+              "vi": "Chức năng chính"
+            },
+            {
+              "en": "Example",
+              "vi": "Ví dụ"
+            }
+          ],
+          "rows": [
+            [
+              "へ",
+              {
+                "en": "Direction of movement (read \"e\")",
+                "vi": "Phương hướng của chuyển động (đi kèm với 行きます, 来ます, 帰ります)"
+              },
+              "京都[きょうと]へ 行[い]きます。"
+            ],
+            [
+              "に",
+              {
+                "en": "Point in time, place of existence, recipient and purpose",
+                "vi": "Mốc thời gian cụ thể, nơi tồn tại, người nhận và mục đích"
+              },
+              "6 時[じ]に 起[お]きます。"
+            ],
+            [
+              "で",
+              {
+                "en": "Place where the action happens, means of transport, tool",
+                "vi": "Địa điểm diễn ra hành động / Phương tiện, công cụ"
+              },
+              "駅[えき]で 新聞[しんぶん]を 買[か]います。"
+            ],
+            [
+              "から",
+              {
+                "en": "\"from\" (time or place); also \"because\"",
+                "vi": "«từ» (thời gian hoặc địa điểm); ngoài ra còn mang nghĩa «vì»"
+              },
+              "9 時[じ]からです。"
+            ],
+            [
+              "まで",
+              {
+                "en": "\"until\", \"as far as\" (time or place)",
+                "vi": "«đến» (thời gian hoặc địa điểm)"
+              },
+              "5 時[じ]までです。"
+            ],
+            [
+              "までに",
+              {
+                "en": "\"by\", a deadline",
+                "vi": "«trước khi», chỉ thời hạn (hạn chót)"
+              },
+              "土曜日[どようび]までに 返[かえ]します。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "title": {
+        "en": "Sentence-final and nuance particles",
+        "vi": "Trợ từ cuối câu và sắc thái"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Particle",
+              "vi": "Trợ từ"
+            },
+            {
+              "en": "Function",
+              "vi": "Chức năng chính"
+            },
+            {
+              "en": "Example",
+              "vi": "Ví dụ"
+            }
+          ],
+          "rows": [
+            [
+              "か",
+              {
+                "en": "Turns the sentence into a question",
+                "vi": "Biến câu trần thuật thành câu hỏi"
+              },
+              "学生[がくせい]ですか。"
+            ],
+            [
+              "ね",
+              {
+                "en": "Seeks agreement or confirmation: \"right?\"",
+                "vi": "Tìm kiếm sự đồng tình hoặc xác nhận lại ('nhỉ, nhé')"
+              },
+              "いい 天気[てんき]ですね。"
+            ],
+            [
+              "よ",
+              {
+                "en": "Introduces information the listener does not know",
+                "vi": "Cung cấp thông tin mới mà người nghe chưa biết ('đấy, nhé')"
+              },
+              "この 電車[でんしゃ]は 行[い]きませんよ。"
+            ],
+            [
+              "が",
+              {
+                "en": "\"but\", joins two contrasting sentences",
+                "vi": "«nhưng», nối hai mệnh đề tương phản"
+              },
+              "おいしいですが、 高[たか]いです。"
+            ],
+            [
+              "けど",
+              {
+                "en": "\"but\", the informal version of が",
+                "vi": "«nhưng», thể thân mật của が trong văn nói"
+              },
+              "いいけど、 高[たか]かった？"
+            ],
+            [
+              "だけ",
+              {
+                "en": "\"only\"",
+                "vi": "«chỉ»"
+              },
+              "休[やす]みは 日曜日[にちようび]だけです。"
+            ],
+            [
+              "ぐらい",
+              {
+                "en": "\"about\", an approximate amount",
+                "vi": "«khoảng», lượng từ ước lượng xấp xỉ"
+              },
+              "30 分[ぷん]ぐらいです。"
+            ],
+            [
+              "でも",
+              {
+                "en": "Offers something as an example when inviting",
+                "vi": "Đưa ra một ví dụ tiêu biểu khi mời mọc, rủ rê"
+              },
+              "お 茶[ちゃ]でも 飲[の]みませんか。"
+            ],
+            [
+              "について",
+              {
+                "en": "\"about\", \"regarding\"",
+                "vi": "«về», «liên quan đến»"
+              },
+              "日本[にほん]について 話[はな]します。"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

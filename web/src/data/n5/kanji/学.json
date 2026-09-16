@@ -1,0 +1,64 @@
+{
+  "character": "学",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "to study",
+      "to learn",
+      "school"
+    ],
+    "vi": [
+      "học",
+      "học tập"
+    ]
+  },
+  "onyomi": [
+    "ガク"
+  ],
+  "kunyomi": [
+    "まな.ぶ"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "学生[がくせい]",
+      "meaning": {
+        "en": "student",
+        "vi": "học sinh, sinh viên"
+      }
+    },
+    {
+      "word": "大学[だいがく]",
+      "meaning": {
+        "en": "university",
+        "vi": "trường đại học"
+      }
+    },
+    {
+      "word": "学校[がっこう]",
+      "meaning": {
+        "en": "school",
+        "vi": "trường học"
+      }
+    },
+    {
+      "word": "学[まな]ぶ",
+      "meaning": {
+        "en": "to learn",
+        "vi": "học, học tập"
+      }
+    },
+    {
+      "word": "医学[いがく]",
+      "meaning": {
+        "en": "medicine",
+        "vi": "medicine"
+      }
+    }
+  ],
+  "similar": [
+    "字",
+    "子"
+  ]
+}

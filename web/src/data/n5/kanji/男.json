@@ -1,0 +1,74 @@
+{
+  "character": "男",
+  "level": "n5",
+  "lesson": 10,
+  "meanings": {
+    "en": [
+      "man",
+      "male"
+    ],
+    "vi": [
+      "đàn ông",
+      "nam giới"
+    ]
+  },
+  "onyomi": [
+    "ダン",
+    "ナン"
+  ],
+  "kunyomi": [
+    "おとこ"
+  ],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "男[おとこ]",
+      "meaning": {
+        "en": "man",
+        "vi": "đàn ông, nam giới"
+      }
+    },
+    {
+      "word": "男[おとこ]の 人[ひと]",
+      "meaning": {
+        "en": "man",
+        "vi": "người đàn ông"
+      }
+    },
+    {
+      "word": "男[おとこ]の 子[こ]",
+      "meaning": {
+        "en": "child",
+        "vi": "bé trai"
+      }
+    },
+    {
+      "word": "男前[おとこまえ]",
+      "meaning": {
+        "en": "handsome man",
+        "vi": "handsome man"
+      }
+    },
+    {
+      "word": "男性[だんせい]",
+      "meaning": {
+        "en": "man, male",
+        "vi": "nam giới, đàn ông"
+      }
+    },
+    {
+      "word": "男女[だんじょ]",
+      "meaning": {
+        "en": "man and woman",
+        "vi": "man and woman"
+      }
+    },
+    {
+      "word": "長男[ちょうなん]",
+      "meaning": {
+        "en": "eldest son",
+        "vi": "eldest son"
+      }
+    }
+  ]
+}

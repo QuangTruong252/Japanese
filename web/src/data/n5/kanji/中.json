@@ -1,0 +1,68 @@
+{
+  "character": "中",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "inside",
+      "middle",
+      "centre"
+    ],
+    "vi": [
+      "trong",
+      "ở giữa",
+      "trung tâm"
+    ]
+  },
+  "onyomi": [
+    "チュウ"
+  ],
+  "kunyomi": [
+    "なか"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "中[なか]",
+      "meaning": {
+        "en": "inside",
+        "vi": "bên trong, ở giữa"
+      }
+    },
+    {
+      "word": "中国[ちゅうごく]",
+      "meaning": {
+        "en": "China",
+        "vi": "nước Trung Quốc"
+      }
+    },
+    {
+      "word": "中学校[ちゅうがっこう]",
+      "meaning": {
+        "en": "secondary school",
+        "vi": "secondary school"
+      }
+    },
+    {
+      "word": "中身[なかみ]",
+      "meaning": {
+        "en": "contents",
+        "vi": "contents"
+      }
+    },
+    {
+      "word": "中東[ちゅうとう]",
+      "meaning": {
+        "en": "the Middle East",
+        "vi": "the Middle East"
+      }
+    },
+    {
+      "word": "中世[ちゅうせい]",
+      "meaning": {
+        "en": "the Middle Ages",
+        "vi": "the Middle Ages"
+      }
+    }
+  ]
+}

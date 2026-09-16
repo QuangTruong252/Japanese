@@ -1,0 +1,58 @@
+{
+  "character": "教",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "to teach",
+      "religion"
+    ],
+    "vi": [
+      "dạy",
+      "chỉ bảo"
+    ]
+  },
+  "onyomi": [
+    "キョウ"
+  ],
+  "kunyomi": [
+    "おし.える"
+  ],
+  "strokes": 11,
+  "examples": [
+    {
+      "word": "教[おし]える",
+      "meaning": {
+        "en": "to teach",
+        "vi": "dạy dỗ, chỉ bảo, hướng dẫn"
+      }
+    },
+    {
+      "word": "教育[きょういく]",
+      "meaning": {
+        "en": "education",
+        "vi": "education"
+      }
+    },
+    {
+      "word": "教室[きょうしつ]",
+      "meaning": {
+        "en": "classroom",
+        "vi": "phòng học, lớp học"
+      }
+    },
+    {
+      "word": "宗教[しゅうきょう]",
+      "meaning": {
+        "en": "religion",
+        "vi": "religion"
+      }
+    },
+    {
+      "word": "仏教[ぶっきょう]",
+      "meaning": {
+        "en": "Buddhism",
+        "vi": "Buddhism"
+      }
+    }
+  ]
+}

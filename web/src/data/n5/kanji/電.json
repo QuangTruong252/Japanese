@@ -1,0 +1,59 @@
+{
+  "character": "電",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "electricity"
+    ],
+    "vi": [
+      "điện",
+      "điện lực"
+    ]
+  },
+  "onyomi": [
+    "デン"
+  ],
+  "kunyomi": [],
+  "strokes": 13,
+  "examples": [
+    {
+      "word": "電気[でんき]",
+      "meaning": {
+        "en": "electricity, light",
+        "vi": "điện, đèn điện"
+      }
+    },
+    {
+      "word": "電車[でんしゃ]",
+      "meaning": {
+        "en": "train",
+        "vi": "tàu điện"
+      }
+    },
+    {
+      "word": "電話[でんわ]",
+      "meaning": {
+        "en": "telephone",
+        "vi": "điện thoại"
+      }
+    },
+    {
+      "word": "電子[でんし]",
+      "meaning": {
+        "en": "electron",
+        "vi": "electron"
+      }
+    },
+    {
+      "word": "電球[でんきゅう]",
+      "meaning": {
+        "en": "light bulb",
+        "vi": "light bulb"
+      }
+    }
+  ],
+  "similar": [
+    "雨"
+  ]
+}

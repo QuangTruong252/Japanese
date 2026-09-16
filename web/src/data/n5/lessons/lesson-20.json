@@ -1,0 +1,99 @@
+{
+  "level": "n5",
+  "number": 20,
+  "title": {
+    "en": "The plain style",
+    "vi": "Thể thông thường (văn nói)"
+  },
+  "jpTitle": "いっしょに 行[い]かない？",
+  "description": {
+    "en": "The plain style versus the polite style: when to use each, and how conversation between friends sounds.",
+    "vi": "Cách chuyển đổi giữa thể lịch sự (丁寧形) và thể thông thường (普通形) khi giao tiếp thân mật với bạn bè, người thân."
+  },
+  "grammar": [
+    {
+      "id": "estilos",
+      "title": {
+        "en": "Polite style and plain style",
+        "vi": "Thể lịch sự (丁寧形) và Thể thông thường (普通形)"
+      },
+      "pattern": {
+        "en": "です・ます ↔ plain form (だ, 行[い]く, 高[たか]い…)",
+        "vi": "です・ます ↔ Thể thông thường (だ, 行[い]く, 高[たか]い…)"
+      },
+      "explanation": {
+        "en": "The polite style (です・ます) is used with strangers, with superiors and in formal situations. The plain style uses the plain forms of verbs and adjectives (行[い]く, 行[い]かない, 行[い]った, 高[たか]い, 静[しず]かだ) and belongs to family and friends.",
+        "vi": "Tiếng Nhật chia phong cách giao tiếp thành hai thể chính: Thể lịch sự (丁寧形 - kết thúc bằng です/ます) và Thể thông thường (普通形 - dùng dạng ngắn như từ điển, thể ない, thể た, だ)."
+      },
+      "examples": [
+        {
+          "jp": "あした 東京[とうきょう]へ 行[い]く？…うん、 行[い]く。",
+          "translation": {
+            "en": "Are you going to Tokyo tomorrow? …Yes, I am.",
+            "vi": "Ngày mai cậu có đi Tokyo không? …Ừ, có đi chứ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "uso-estilos",
+      "title": {
+        "en": "When to use each style",
+        "vi": "Phạm vi sử dụng thể lịch sự và thể thông thường"
+      },
+      "pattern": {
+        "en": "polite: superiors/strangers ／ plain: friends/family",
+        "vi": "Thể lịch sự: người lớn hơn, đối tác ／ Thể thân mật: bạn bè, gia đình"
+      },
+      "explanation": {
+        "en": "Using the plain style with the wrong person is rude; using the polite style with close friends sounds distant. When in doubt, the polite style is always the safe choice. きみ, ぼく and 〜くん are informal ways of addressing people.",
+        "vi": "Thể lịch sự dùng khi nói chuyện với cấp trên, người lớn tuổi, người lạ hoặc trong môi trường trang trọng. Thể thông thường dùng trong giao tiếp thân mật với bạn bè, đồng nghiệp thân thiết hoặc gia đình."
+      },
+      "examples": [
+        {
+          "jp": "はい → うん ／ いいえ → ううん",
+          "translation": {
+            "en": "Yes and no have plain versions too.",
+            "vi": "Đồng ý: hai → un ／ Từ chối: iie → uun."
+          }
+        }
+      ]
+    },
+    {
+      "id": "conversacion-informal",
+      "title": {
+        "en": "Features of casual conversation",
+        "vi": "Đặc điểm hội thoại thể thông thường (bỏ trợ từ, ngữ điệu hỏi, けど)"
+      },
+      "pattern": {
+        "en": "particles dropped, か → intonation, けど",
+        "vi": "Lược bỏ trợ từ, câu hỏi lên giọng không dùng か, liên từ けど"
+      },
+      "explanation": {
+        "en": "In casual speech the か of questions is dropped (with rising intonation: 行[い]く？), particles like は・を fall away, and が (but) is usually said as けど. The い of 〜ている is also dropped: 持[も]ってる.",
+        "vi": "Trong hội thoại thân mật: các trợ từ は, が, を thường được lược bỏ; câu hỏi không dùng trợ từ か mà lên giọng ở cuối câu; liên từ が (nhưng) được thay bằng けど."
+      },
+      "examples": [
+        {
+          "jp": "ご 飯[はん][を] 食[た]べた？…ううん、まだ。",
+          "translation": {
+            "en": "Have you eaten? …No, not yet.",
+            "vi": "Cậu ăn cơm chưa? …Chưa, tớ vẫn chưa."
+          }
+        },
+        {
+          "jp": "その 傘[かさ]、いいけど、 高[たか]かった？",
+          "translation": {
+            "en": "That umbrella is nice — was it expensive?",
+            "vi": "Cây dù đó đẹp đấy chứ, mà có đắt không cậu?"
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "verbs",
+    "demonstratives",
+    "greetings"
+  ]
+}

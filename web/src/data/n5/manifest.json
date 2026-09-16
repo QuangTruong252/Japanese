@@ -1,0 +1,72 @@
+{
+  "dataset": "n5-vietnamese",
+  "version": "1.0.0",
+  "editorial_status": "edited",
+  "verification_status": "unverified",
+  "summary": {
+    "total_files": 230,
+    "vocab_files": 25,
+    "vocab_items": 991,
+    "lesson_files": 25,
+    "grammar_points": 141,
+    "example_sentences": 187,
+    "kanji_files": 169,
+    "kanji_items": 169,
+    "kanji_examples": 907,
+    "verbs_files": 1,
+    "verbs_items": 156,
+    "reference_files": 10,
+    "reference_fields": 358
+  },
+  "subdirectories": {
+    "verbs": {
+      "files": 1,
+      "items": 156,
+      "description": "Bảng động từ N5 gồm 156 động từ kèm cách chia thể ます, thể て, thể từ điển, thể ない, thể た và nghĩa tiếng Việt tự nhiên."
+    },
+    "kanji": {
+      "files": 169,
+      "items": 169,
+      "examples": 907,
+      "description": "169 chữ Hán N5 đầy đủ âm Hán-Việt, nét viết, âm On/Kun, nghĩa tiếng Việt và các từ vựng ví dụ đi kèm."
+    },
+    "vocab": {
+      "files": 25,
+      "items": 991,
+      "description": "991 từ vựng tương ứng 25 bài học của giáo trình Minna no Nihongo I, đầy đủ kanji, kana, từ loại và nghĩa tiếng Việt chuẩn mực."
+    },
+    "lessons": {
+      "files": 25,
+      "grammar_points": 141,
+      "examples": 187,
+      "description": "25 bài học ngữ pháp gồm 141 điểm ngữ pháp (tiêu đề, mẫu câu, giải thích chi tiết tiếng Việt) và 187 câu ví dụ minh họa."
+    },
+    "reference": {
+      "files": 10,
+      "fields": 358,
+      "description": "10 bảng tra cứu nhanh chuyên đề: Tính từ, Lịch, Lượng từ đếm, Đại từ chỉ thị, Gia đình, Chào hỏi, Số đếm, Trợ từ, Từ để hỏi, Giờ giấc."
+    }
+  },
+  "verification_checklist": [
+    {
+      "task": "Đối chiếu 991 từ vựng với sách Minna no Nihongo I - Bản dịch và giải thích ngữ pháp tiếng Việt",
+      "status": "pending"
+    },
+    {
+      "task": "Đối chiếu 141 điểm ngữ pháp và 187 câu ví dụ với sách Minna no Nihongo I",
+      "status": "pending"
+    },
+    {
+      "task": "Kiểm tra 169 âm Hán-Việt và 907 ví dụ chữ Hán N5",
+      "status": "pending"
+    },
+    {
+      "task": "Đối chiếu 156 động từ và các dạng thức biến đổi thể",
+      "status": "pending"
+    },
+    {
+      "task": "Đối chiếu 10 bảng tra cứu nhanh với phần phụ lục Minna no Nihongo I",
+      "status": "pending"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "character": "重",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "heavy",
+      "to double"
+    ],
+    "vi": [
+      "nặng",
+      "quan trọng"
+    ]
+  },
+  "onyomi": [
+    "ジュウ",
+    "チョウ"
+  ],
+  "kunyomi": [
+    "おも.い"
+  ],
+  "strokes": 9,
+  "examples": [
+    {
+      "word": "重[おも]い",
+      "meaning": {
+        "en": "heavy",
+        "vi": "nặng"
+      }
+    },
+    {
+      "word": "重量[じゅうりょう]",
+      "meaning": {
+        "en": "weight",
+        "vi": "weight"
+      }
+    },
+    {
+      "word": "重傷[じゅうしょう]",
+      "meaning": {
+        "en": "serious injury",
+        "vi": "serious injury"
+      }
+    },
+    {
+      "word": "重要[じゅうよう]",
+      "meaning": {
+        "en": "important",
+        "vi": "important"
+      }
+    },
+    {
+      "word": "貴重[きちょう]",
+      "meaning": {
+        "en": "valuable, precious",
+        "vi": "valuable, precious"
+      }
+    }
+  ],
+  "similar": [
+    "動"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "character": "方",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "direction",
+      "person",
+      "way of"
+    ],
+    "vi": [
+      "hướng",
+      "phương hướng",
+      "vị (người lịch sự)"
+    ]
+  },
+  "onyomi": [
+    "ホウ"
+  ],
+  "kunyomi": [
+    "かた"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "方[ほう]",
+      "meaning": {
+        "en": "direction",
+        "vi": "phía, hướng, bên"
+      }
+    },
+    {
+      "word": "方法[ほうほう]",
+      "meaning": {
+        "en": "way, method",
+        "vi": "way, method"
+      }
+    },
+    {
+      "word": "方面[ほうめん]",
+      "meaning": {
+        "en": "direction, area",
+        "vi": "direction, area"
+      }
+    },
+    {
+      "word": "話[はな]し 方[かた]",
+      "meaning": {
+        "en": "way of speaking",
+        "vi": "way of speaking"
+      }
+    },
+    {
+      "word": "方[かた]",
+      "meaning": {
+        "en": "person (polite)",
+        "vi": "person (polite)"
+      }
+    }
+  ],
+  "similar": [
+    "万"
+  ]
+}

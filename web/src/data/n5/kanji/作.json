@@ -1,0 +1,63 @@
+{
+  "character": "作",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "to do, to make",
+      "to create"
+    ],
+    "vi": [
+      "làm",
+      "chế tạo",
+      "tạo tác"
+    ]
+  },
+  "onyomi": [
+    "サク",
+    "サ"
+  ],
+  "kunyomi": [
+    "つく.る"
+  ],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "作[つく]る",
+      "meaning": {
+        "en": "to make, to create",
+        "vi": "làm, chế tạo"
+      }
+    },
+    {
+      "word": "製作[せいさく]",
+      "meaning": {
+        "en": "manufacture",
+        "vi": "manufacture"
+      }
+    },
+    {
+      "word": "作品[さくひん]",
+      "meaning": {
+        "en": "work (of art)",
+        "vi": "tác phẩm"
+      }
+    },
+    {
+      "word": "作戦[さくせん]",
+      "meaning": {
+        "en": "strategy",
+        "vi": "strategy"
+      }
+    },
+    {
+      "word": "作業[さぎょう]",
+      "meaning": {
+        "en": "work, operation",
+        "vi": "work, operation"
+      }
+    }
+  ],
+  "similar": [
+    "使"
+  ]
+}

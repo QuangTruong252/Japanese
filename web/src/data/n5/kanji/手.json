@@ -1,0 +1,75 @@
+{
+  "character": "手",
+  "level": "n5",
+  "lesson": 2,
+  "meanings": {
+    "en": [
+      "hand"
+    ],
+    "vi": [
+      "tay",
+      "bàn tay"
+    ]
+  },
+  "onyomi": [
+    "シュ"
+  ],
+  "kunyomi": [
+    "て"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "手[て]",
+      "meaning": {
+        "en": "hand",
+        "vi": "tay, bàn tay"
+      }
+    },
+    {
+      "word": "手紙[てがみ]",
+      "meaning": {
+        "en": "letter",
+        "vi": "bức thư"
+      }
+    },
+    {
+      "word": "上手[じょうず]",
+      "meaning": {
+        "en": "skilful",
+        "vi": "giỏi, khéo léo"
+      }
+    },
+    {
+      "word": "手首[てくび]",
+      "meaning": {
+        "en": "wrist",
+        "vi": "wrist"
+      }
+    },
+    {
+      "word": "相手[あいて]",
+      "meaning": {
+        "en": "opponent",
+        "vi": "opponent"
+      }
+    },
+    {
+      "word": "拍手[はくしゅ]",
+      "meaning": {
+        "en": "applause",
+        "vi": "applause"
+      }
+    },
+    {
+      "word": "歌手[かしゅ]",
+      "meaning": {
+        "en": "singer",
+        "vi": "singer"
+      }
+    }
+  ],
+  "similar": [
+    "千"
+  ]
+}

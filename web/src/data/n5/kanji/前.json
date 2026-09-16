@@ -1,0 +1,66 @@
+{
+  "character": "前",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "before",
+      "in front"
+    ],
+    "vi": [
+      "trước",
+      "phía trước"
+    ]
+  },
+  "onyomi": [
+    "ゼン"
+  ],
+  "kunyomi": [
+    "まえ"
+  ],
+  "strokes": 9,
+  "examples": [
+    {
+      "word": "午前[ごぜん]",
+      "meaning": {
+        "en": "in the morning",
+        "vi": "buổi sáng (AM)"
+      }
+    },
+    {
+      "word": "前[まえ]",
+      "meaning": {
+        "en": "in front",
+        "vi": "phía trước, trước"
+      }
+    },
+    {
+      "word": "名前[なまえ]",
+      "meaning": {
+        "en": "name",
+        "vi": "tên"
+      }
+    },
+    {
+      "word": "人前[ひとまえ]",
+      "meaning": {
+        "en": "in front of others, in public",
+        "vi": "in front of others, in public"
+      }
+    },
+    {
+      "word": "前線[ぜんせん]",
+      "meaning": {
+        "en": "weather front",
+        "vi": "weather front"
+      }
+    },
+    {
+      "word": "前進[ぜんしん]",
+      "meaning": {
+        "en": "advance, progress",
+        "vi": "advance, progress"
+      }
+    }
+  ]
+}

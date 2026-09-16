@@ -1,0 +1,59 @@
+{
+  "character": "古",
+  "level": "n5",
+  "lesson": 8,
+  "meanings": {
+    "en": [
+      "old",
+      "old, ancient"
+    ],
+    "vi": [
+      "cũ",
+      "cổ xưa"
+    ]
+  },
+  "onyomi": [
+    "コ"
+  ],
+  "kunyomi": [
+    "ふる.い"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "古[ふる]い",
+      "meaning": {
+        "en": "old",
+        "vi": "cũ, cổ"
+      }
+    },
+    {
+      "word": "中古[ちゅうこ]",
+      "meaning": {
+        "en": "second-hand",
+        "vi": "second-hand"
+      }
+    },
+    {
+      "word": "古本[ふるほん]",
+      "meaning": {
+        "en": "second-hand book",
+        "vi": "sách cũ"
+      }
+    },
+    {
+      "word": "古風[こふう]",
+      "meaning": {
+        "en": "old-fashioned style",
+        "vi": "old-fashioned style"
+      }
+    },
+    {
+      "word": "古代[こだい]",
+      "meaning": {
+        "en": "antiquity",
+        "vi": "thời cổ đại"
+      }
+    }
+  ]
+}

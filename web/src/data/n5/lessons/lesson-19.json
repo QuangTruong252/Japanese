@@ -1,0 +1,118 @@
+{
+  "level": "n5",
+  "number": 19,
+  "title": {
+    "en": "The た form and experiences",
+    "vi": "Thể た và kinh nghiệm"
+  },
+  "jpTitle": "ダイエットはあしたからします",
+  "description": {
+    "en": "The た form of the verb, talking about experiences with 〜たことがあります, and expressing change with なります.",
+    "vi": "Cách chia động từ thể た (ta), nói về trải nghiệm từng làm gì (〜たことがあります), liệt kê hành động (〜たり〜たりします) và trở nên (〜くなります/〜になります)."
+  },
+  "grammar": [
+    {
+      "id": "forma-ta",
+      "title": {
+        "en": "The た form",
+        "vi": "Cách chia thể た (Ta) của động từ"
+      },
+      "pattern": {
+        "vi": "書[か]いて→書[か]いた ／ 飲[の]んで→飲[の]んだ ／ 食[た]べて→食[た]べた"
+      },
+      "explanation": {
+        "en": "The た form is the plain past, made by changing the て／で of the て form to た／だ: 行[い]って → 行[い]った, 飲[の]んで → 飲[の]んだ.",
+        "vi": "Thể た là dạng thông thường (ngắn) của thời quá khứ. Quy tắc biến đổi hoàn toàn tương tự thể て: chỗ nào là て thì đổi thành た, chỗ nào là で thì đổi thành だ."
+      },
+      "examples": [
+        {
+          "jp": "食[た]べます → 食[た]べて → 食[た]べた",
+          "translation": {
+            "en": "To eat → て form → た form.",
+            "vi": "Ăn: tabemasu → tabete → tabeta."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ta-koto-ga-arimasu",
+      "title": {
+        "en": "V た ことが あります — experiences",
+        "vi": "V た ことが あります — Nói về kinh nghiệm, trải nghiệm từng làm"
+      },
+      "pattern": {
+        "vi": "V た ことが あります"
+      },
+      "explanation": {
+        "en": "It says you have had the experience at some point: 馬[うま]に 乗[の]ったことが あります (I have ridden a horse). The negative with 一度[いちど]も means \"never\": 一度[いちど]も 食[た]べたことが ありません.",
+        "vi": "Dùng để nói về trải nghiệm, việc từng làm trong quá khứ ('đã từng làm gì'). Phủ định là: V た ことが ありません (chưa từng làm bao giờ)."
+      },
+      "examples": [
+        {
+          "jp": "北海道[ほっかいどう]へ 行[い]ったことがありますか。…いいえ、 一度[いちど]もありません。",
+          "translation": {
+            "en": "Have you ever been to Hokkaido? …No, never.",
+            "vi": "Bạn đã từng đi Hokkaido chưa? …Chưa, tôi chưa từng đi một lần nào cả."
+          }
+        }
+      ]
+    },
+    {
+      "id": "tari-tari",
+      "title": {
+        "en": "V1 たり、V2 たり します — listing activities",
+        "vi": "V1 たり、V2 たり します — Liệt kê hành động tiêu biểu"
+      },
+      "pattern": {
+        "vi": "V1 たり、V2 たり します"
+      },
+      "explanation": {
+        "en": "It lists activities as examples, in no particular order (unlike the て form): 日曜日[にちようび]は テニスを したり、 映画[えいが]を 見[み]たり します.",
+        "vi": "Dùng để liệt kê tiêu biểu một vài hành động đại diện trong số nhiều việc mà người nói làm ('nào là làm V1, nào là làm V2...'). Thời của câu đặt ở đuôi します / しました cuối cùng."
+      },
+      "examples": [
+        {
+          "jp": "休[やす]みの 日[ひ]は 掃除[そうじ]したり、 洗濯[せんたく]したりします。",
+          "translation": {
+            "en": "On my days off I clean, do the laundry and so on.",
+            "vi": "Vào ngày nghỉ tôi thường dọn dẹp, giặt giũ và làm những việc tương tự."
+          }
+        }
+      ]
+    },
+    {
+      "id": "narimasu",
+      "title": {
+        "en": "〜く／〜に なります — changes of state",
+        "vi": "Biến đổi trạng thái: 〜くなります ／ 〜になります — «Trở nên, trở thành»"
+      },
+      "pattern": {
+        "vi": "A-い → 〜く なります ／ A-な[な] → 〜に なります ／ N に なります"
+      },
+      "explanation": {
+        "en": "なります expresses a change: 寒[さむ]く なります (it gets cold), 元気[げんき]に なります (to get better), 25 歳[さい]に なります (to turn 25).",
+        "vi": "Biểu thị sự biến đổi sang một trạng thái mới: Tính từ đuôi い bỏ い thêm くなります; Tính từ đuôi な và Danh từ thêm になります ('trở nên... / trở thành...')."
+      },
+      "examples": [
+        {
+          "jp": "日本語[にほんご]が 上手[じょうず]になりましたね。",
+          "translation": {
+            "en": "Your Japanese has got much better!",
+            "vi": "Tiếng Nhật của bạn đã trở nên giỏi hơn rồi đấy nhỉ!"
+          }
+        },
+        {
+          "jp": "もうすぐ 暖[あたた]かくなります。",
+          "translation": {
+            "en": "It will soon start getting hot.",
+            "vi": "Trời sắp sửa trở nên ấm áp rồi."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "verbs",
+    "adjectives"
+  ]
+}

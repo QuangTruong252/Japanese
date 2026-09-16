@@ -1,0 +1,67 @@
+{
+  "character": "万",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "ten thousand"
+    ],
+    "vi": [
+      "vạn",
+      "mười nghìn"
+    ]
+  },
+  "onyomi": [
+    "マン",
+    "バン"
+  ],
+  "kunyomi": [],
+  "strokes": 3,
+  "examples": [
+    {
+      "word": "一万[いちまん]",
+      "meaning": {
+        "en": "ten thousand",
+        "vi": "mười nghìn, một vạn"
+      }
+    },
+    {
+      "word": "万[まん]",
+      "meaning": {
+        "en": "ten thousand",
+        "vi": "vạn, mười nghìn (10.000)"
+      }
+    },
+    {
+      "word": "万年[まんねん]",
+      "meaning": {
+        "en": "ten thousand years",
+        "vi": "vạn năm"
+      }
+    },
+    {
+      "word": "万一[まんいち]",
+      "meaning": {
+        "en": "just in case",
+        "vi": "vạn nhất, phòng khi"
+      }
+    },
+    {
+      "word": "万引[まんび]き",
+      "meaning": {
+        "en": "shoplifting",
+        "vi": "hành vi trộm đồ ở cửa hàng"
+      }
+    },
+    {
+      "word": "万歳[ばんざい]",
+      "meaning": {
+        "en": "hurray!",
+        "vi": "vạn tuế, hoan hô"
+      }
+    }
+  ],
+  "similar": [
+    "方"
+  ]
+}

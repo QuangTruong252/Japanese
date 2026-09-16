@@ -1,0 +1,66 @@
+{
+  "character": "円",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "yen",
+      "circle"
+    ],
+    "vi": [
+      "yên (tiền Nhật)",
+      "tròn"
+    ]
+  },
+  "onyomi": [
+    "エン"
+  ],
+  "kunyomi": [
+    "まる.い"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "円[えん]",
+      "meaning": {
+        "en": "yen",
+        "vi": "yen"
+      }
+    },
+    {
+      "word": "百円[ひゃくえん]",
+      "meaning": {
+        "en": "one hundred yen",
+        "vi": "một trăm yên"
+      }
+    },
+    {
+      "word": "円高[えんだか]",
+      "meaning": {
+        "en": "rise of the yen",
+        "vi": "đồng yên tăng giá"
+      }
+    },
+    {
+      "word": "円周[えんしゅう]",
+      "meaning": {
+        "en": "circumference",
+        "vi": "circumference"
+      }
+    },
+    {
+      "word": "円満[えんまん]",
+      "meaning": {
+        "en": "perfect, harmonious",
+        "vi": "perfect, harmonious"
+      }
+    },
+    {
+      "word": "円[まる]い",
+      "meaning": {
+        "en": "round",
+        "vi": "round"
+      }
+    }
+  ]
+}

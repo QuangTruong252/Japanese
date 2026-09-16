@@ -1,0 +1,57 @@
+{
+  "character": "近",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "near",
+      "recent"
+    ],
+    "vi": [
+      "gần"
+    ]
+  },
+  "onyomi": [
+    "キン"
+  ],
+  "kunyomi": [
+    "ちか.い"
+  ],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "近[ちか]い",
+      "meaning": {
+        "en": "near",
+        "vi": "gần"
+      }
+    },
+    {
+      "word": "近頃[ちかごろ]",
+      "meaning": {
+        "en": "lately",
+        "vi": "lately"
+      }
+    },
+    {
+      "word": "近道[ちかみち]",
+      "meaning": {
+        "en": "shortcut",
+        "vi": "shortcut"
+      }
+    },
+    {
+      "word": "近所[きんじょ]",
+      "meaning": {
+        "en": "neighbourhood",
+        "vi": "khu vực lân cận, hàng xóm"
+      }
+    },
+    {
+      "word": "近眼[きんがん]",
+      "meaning": {
+        "en": "short-sightedness",
+        "vi": "short-sightedness"
+      }
+    }
+  ]
+}

@@ -1,0 +1,450 @@
+{
+  "level": "n5",
+  "slug": "counters",
+  "title": {
+    "en": "Counters",
+    "vi": "Lượng từ đếm"
+  },
+  "description": {
+    "en": "The counter suffixes in the book: each kind of thing is counted with its own counter.",
+    "vi": "Các hậu tố lượng từ đếm trong giáo trình: mỗi loại sự vật được đếm bằng một lượng từ khác nhau."
+  },
+  "order": 5,
+  "sections": [
+    {
+      "id": "table",
+      "title": {
+        "en": "Counter suffixes",
+        "vi": "Hậu tố lượng từ đếm"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Quantity",
+              "vi": "Hậu tố"
+            },
+            {
+              "en": "objects",
+              "vi": "Dùng để đếm"
+            },
+            {
+              "en": "people",
+              "vi": "Ví dụ"
+            },
+            {
+              "en": "order",
+              "vi": "Thứ tự"
+            },
+            {
+              "en": "thin, flat things",
+              "vi": "Vật mỏng, phẳng"
+            },
+            {
+              "en": "machines and vehicles",
+              "vi": "Máy móc, xe cộ"
+            },
+            {
+              "en": "age",
+              "vi": "Tuổi"
+            },
+            {
+              "en": "books and notebooks",
+              "vi": "Sách, vở"
+            },
+            {
+              "en": "clothes",
+              "vi": "Quần áo (bộ)"
+            },
+            {
+              "en": "frequency",
+              "vi": "Tần suất, số lần"
+            },
+            {
+              "en": "small objects",
+              "vi": "Vật nhỏ"
+            },
+            {
+              "en": "footwear and socks",
+              "vi": "Giày, tất (đôi)"
+            },
+            {
+              "en": "houses, dwellings",
+              "vi": "Nhà, căn hộ (căn)"
+            },
+            {
+              "en": "floors of a building",
+              "vi": "Tầng nhà"
+            },
+            {
+              "en": "long objects",
+              "vi": "Vật dài (cây, chai, bút)"
+            },
+            {
+              "en": "drinks in a glass or cup",
+              "vi": "Đồ uống trong ly, cốc"
+            },
+            {
+              "en": "small animals",
+              "vi": "Vật nhỏ"
+            }
+          ],
+          "rows": [
+            [
+              "1",
+              "ひとつ",
+              "ひとり",
+              "いちばん",
+              "いちまい",
+              "いちだい",
+              "いっさい",
+              "いっさつ",
+              "いっちゃく",
+              "いっかい",
+              "いっこ",
+              "いっそく",
+              "いっけん",
+              "いっかい",
+              "いっぽん",
+              "いっぱい",
+              "いっぴき"
+            ],
+            [
+              "2",
+              "ふたつ",
+              "ふたり",
+              "にばん",
+              "にまい",
+              "にだい",
+              "にさい",
+              "にさつ",
+              "にちゃく",
+              "にかい",
+              "にこ",
+              "にそく",
+              "にけん",
+              "にかい",
+              "にほん",
+              "にはい",
+              "にひき"
+            ],
+            [
+              "3",
+              "みっつ",
+              "さんにん",
+              "さんばん",
+              "さんまい",
+              "さんだい",
+              "さんさい",
+              "さんさつ",
+              "さんちゃく",
+              "さんかい",
+              "さんこ",
+              "さんぞく",
+              "さんげん",
+              "さんがい",
+              "さんぼん",
+              "さんばい",
+              "さんびき"
+            ],
+            [
+              "4",
+              "よっつ",
+              "よにん",
+              "よんばん",
+              "よんまい",
+              "よんだい",
+              "よんさい",
+              "よんさつ",
+              "よんちゃく",
+              "よんかい",
+              "よんこ",
+              "よんそく",
+              "よんけん",
+              "よんかい",
+              "よんほん",
+              "よんはい",
+              "よんひき"
+            ],
+            [
+              "5",
+              "いつつ",
+              "ごにん",
+              "ごばん",
+              "ごまい",
+              "ごだい",
+              "ごさい",
+              "ごさつ",
+              "ごちゃく",
+              "ごかい",
+              "ごこ",
+              "ごそく",
+              "ごけん",
+              "ごかい",
+              "ごほん",
+              "ごはい",
+              "ごひき"
+            ],
+            [
+              "6",
+              "むっつ",
+              "ろくにん",
+              "ろくばん",
+              "ろくまい",
+              "ろくだい",
+              "ろくさい",
+              "ろくさつ",
+              "ろくちゃく",
+              "ろっかい",
+              "ろっこ",
+              "ろくそく",
+              "ろっけん",
+              "ろっかい",
+              "ろっぽん",
+              "ろっぱい",
+              "ろっぴき"
+            ],
+            [
+              "7",
+              "ななつ",
+              "ななにん、しちにん",
+              "ななばん",
+              "ななまい",
+              "ななだい",
+              "ななさい",
+              "ななさつ",
+              "ななちゃく",
+              "ななかい",
+              "ななこ",
+              "ななそく",
+              "ななけん",
+              "ななかい",
+              "ななほん",
+              "ななはい",
+              "ななひき"
+            ],
+            [
+              "8",
+              "やっつ",
+              "はちにん",
+              "はちばん",
+              "はちまい",
+              "はちだい",
+              "はっさい",
+              "はっさつ",
+              "はっちゃく",
+              "はっかい",
+              "はっこ",
+              "はっそく",
+              "はっけん",
+              "はっかい",
+              "はっぽん",
+              "はっぱい",
+              "はっぴき"
+            ],
+            [
+              "9",
+              "ここのつ",
+              "きゅうにん",
+              "きゅうばん",
+              "きゅうまい",
+              "きゅうだい",
+              "きゅうさい",
+              "きゅうさつ",
+              "きゅうちゃく",
+              "きゅうかい",
+              "きゅうこ",
+              "きゅうそく",
+              "きゅうけん",
+              "きゅうかい",
+              "きゅうほん",
+              "きゅうはい",
+              "きゅうひき"
+            ],
+            [
+              "10",
+              "とお",
+              "じゅうにん",
+              "じゅうばん",
+              "じゅうまい",
+              "じゅうだい",
+              "じゅっさい、じっさい",
+              "じゅっさつ、じっさつ",
+              "じゅっちゃく、じっちゃく",
+              "じゅっかい、じっかい",
+              "じゅっこ、じっこ",
+              "じゅっそく、じっそく",
+              "じゅっけん、じっけん",
+              "じゅっかい、じっかい",
+              "じゅっぽん、じっぽん",
+              "じゅっぱい、じっぱい",
+              "じゅっぴき、じっぴき"
+            ],
+            [
+              "?",
+              "いくつ",
+              "なんにん",
+              "なんばん",
+              "なんまい",
+              "なんだい",
+              "なんさい",
+              "なんさつ",
+              "なんちゃく",
+              "なんかい",
+              "なんこ",
+              "なんぞく",
+              "なんげん",
+              "なんがい",
+              "なんぼん",
+              "なんばい",
+              "なんびき"
+            ]
+          ],
+          "caption": {
+            "en": "Each column is a counter; the last row is the question form.",
+            "vi": "Mỗi cột là một lượng từ đếm; hàng cuối cùng là dạng câu hỏi."
+          }
+        }
+      ],
+      "note": {
+        "en": "Counters change sound with 1, 3, 6, 8 and 10. The \"?\" row is the matching question (なんにん, なんまい…). The ひとつ〜とお series works for generic objects and only goes up to ten.",
+        "vi": "Khi đếm đồ vật từ 1 đến 10 có thể dùng hệ số đếm thuần Nhật ひとつ〜とお mà không cần thêm hậu tố lượng từ."
+      }
+    },
+    {
+      "id": "suffixes",
+      "title": {
+        "en": "Quick reference of suffixes",
+        "vi": "Bảng tra cứu nhanh các lượng từ"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Counter",
+              "vi": "Số lượng"
+            },
+            {
+              "en": "Used for",
+              "vi": "Đồ vật (ひとつ)"
+            }
+          ],
+          "rows": [
+            [
+              "〜つ",
+              {
+                "en": "objects",
+                "vi": "Đồ vật"
+              }
+            ],
+            [
+              "〜人[にん]",
+              {
+                "en": "people",
+                "vi": "Người"
+              }
+            ],
+            [
+              "〜番[ばん]",
+              {
+                "en": "order",
+                "vi": "Thứ tự, số thứ tự (số số)"
+              }
+            ],
+            [
+              "〜枚[まい]",
+              {
+                "en": "thin, flat things",
+                "vi": "Vật mỏng, phẳng (giấy, áo, đĩa, tem...)"
+              }
+            ],
+            [
+              "〜台[だい]",
+              {
+                "en": "machines and vehicles",
+                "vi": "Xe cộ, máy móc, đồ điện gia dụng"
+              }
+            ],
+            [
+              "〜歳[さい]",
+              {
+                "en": "age",
+                "vi": "Tuổi"
+              }
+            ],
+            [
+              "〜冊[さつ]",
+              {
+                "en": "books and notebooks",
+                "vi": "Sách, vở"
+              }
+            ],
+            [
+              "〜着[ちゃく]",
+              {
+                "en": "clothes",
+                "vi": "Quần áo (bộ)"
+              }
+            ],
+            [
+              "〜回[かい]",
+              {
+                "en": "frequency",
+                "vi": "Số lần, tần suất"
+              }
+            ],
+            [
+              "〜個[こ]",
+              {
+                "en": "small objects",
+                "vi": "Đồ vật nhỏ"
+              }
+            ],
+            [
+              "〜足[そく]",
+              {
+                "en": "footwear and socks",
+                "vi": "Giày, tất (đôi)"
+              }
+            ],
+            [
+              "〜軒[けん]",
+              {
+                "en": "houses, dwellings",
+                "vi": "Nhà, căn hộ (căn)"
+              }
+            ],
+            [
+              "〜階[かい]",
+              {
+                "en": "floors of a building",
+                "vi": "Tầng nhà"
+              }
+            ],
+            [
+              "〜本[ほん]",
+              {
+                "en": "long objects",
+                "vi": "Vật dài (chai, bút...)"
+              }
+            ],
+            [
+              "〜杯[はい]",
+              {
+                "en": "drinks in a glass or cup",
+                "vi": "Đồ uống theo ly, cốc"
+              }
+            ],
+            [
+              "〜匹[ひき]",
+              {
+                "en": "small animals",
+                "vi": "Đồ vật nhỏ"
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

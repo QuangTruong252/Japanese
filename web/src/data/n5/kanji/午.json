@@ -1,0 +1,45 @@
+{
+  "character": "午",
+  "level": "n5",
+  "lesson": 4,
+  "meanings": {
+    "en": [
+      "midday"
+    ],
+    "vi": [
+      "buổi trưa",
+      "chính ngọ"
+    ]
+  },
+  "onyomi": [
+    "ゴ"
+  ],
+  "kunyomi": [],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "午前[ごぜん]",
+      "meaning": {
+        "en": "in the morning",
+        "vi": "buổi sáng (AM)"
+      }
+    },
+    {
+      "word": "午後[ごご]",
+      "meaning": {
+        "en": "in the afternoon",
+        "vi": "buổi chiều (PM)"
+      }
+    },
+    {
+      "word": "正午[しょうご]",
+      "meaning": {
+        "en": "midday",
+        "vi": "chính ngọ, 12 giờ trưa"
+      }
+    }
+  ],
+  "similar": [
+    "年"
+  ]
+}

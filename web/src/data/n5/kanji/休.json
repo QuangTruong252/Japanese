@@ -1,0 +1,83 @@
+{
+  "character": "休",
+  "level": "n5",
+  "lesson": 4,
+  "meanings": {
+    "en": [
+      "to rest"
+    ],
+    "vi": [
+      "nghỉ",
+      "nghỉ ngơi"
+    ]
+  },
+  "onyomi": [
+    "キュウ"
+  ],
+  "kunyomi": [
+    "やす.む"
+  ],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "休[やす]みます",
+      "meaning": {
+        "en": "to rest",
+        "vi": "bắt đầu"
+      }
+    },
+    {
+      "word": "休[やす]み",
+      "meaning": {
+        "en": "rest, break",
+        "vi": "ngày nghỉ, kỳ nghỉ"
+      }
+    },
+    {
+      "word": "昼休[ひるやす]み",
+      "meaning": {
+        "en": "midday break",
+        "vi": "nghỉ trưa"
+      }
+    },
+    {
+      "word": "休[やす]む",
+      "meaning": {
+        "en": "to rest, to be absent",
+        "vi": "nghỉ ngơi, nghỉ phép"
+      }
+    },
+    {
+      "word": "夏休[なつやす]み",
+      "meaning": {
+        "en": "summer holidays",
+        "vi": "kỳ nghỉ hè"
+      }
+    },
+    {
+      "word": "休憩[きゅうけい]",
+      "meaning": {
+        "en": "break",
+        "vi": "break"
+      }
+    },
+    {
+      "word": "休講[きゅうこう]",
+      "meaning": {
+        "en": "cancelled class",
+        "vi": "cancelled class"
+      }
+    },
+    {
+      "word": "休日[きゅうじつ]",
+      "meaning": {
+        "en": "public holiday",
+        "vi": "ngày nghỉ"
+      }
+    }
+  ],
+  "similar": [
+    "体",
+    "木"
+  ]
+}

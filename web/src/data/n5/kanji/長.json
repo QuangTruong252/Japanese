@@ -1,0 +1,45 @@
+{
+  "character": "長",
+  "level": "n5",
+  "lesson": 16,
+  "meanings": {
+    "en": [
+      "long",
+      "boss"
+    ],
+    "vi": [
+      "dài",
+      "trưởng"
+    ]
+  },
+  "onyomi": [
+    "チョウ"
+  ],
+  "kunyomi": [
+    "なが.い"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "長[なが]い",
+      "meaning": {
+        "en": "long",
+        "vi": "dài"
+      }
+    },
+    {
+      "word": "社長[しゃちょう]",
+      "meaning": {
+        "en": "president",
+        "vi": "giám đốc công ty"
+      }
+    },
+    {
+      "word": "部長[ぶちょう]",
+      "meaning": {
+        "en": "manager",
+        "vi": "trưởng ban"
+      }
+    }
+  ]
+}

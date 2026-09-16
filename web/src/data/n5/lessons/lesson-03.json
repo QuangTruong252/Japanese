@@ -1,0 +1,180 @@
+{
+  "level": "n5",
+  "number": 3,
+  "title": {
+    "en": "Places and prices",
+    "vi": "Nơi chốn và giá cả"
+  },
+  "jpTitle": "これを ください",
+  "description": {
+    "en": "Ask and say where places and things are, and learn to ask prices when shopping.",
+    "vi": "Hỏi và chỉ vị trí nơi chốn, các phòng ban trong tòa nhà, hỏi xuất xứ hàng hóa và giá cả khi đi mua sắm."
+  },
+  "grammar": [
+    {
+      "id": "koko-soko-asoko",
+      "title": {
+        "en": "ここ／そこ／あそこ／こちら…",
+        "vi": "ここ／そこ／あそこ／こちら… — Đại từ chỉ nơi chốn"
+      },
+      "pattern": {
+        "vi": "ここ／そこ／あそこ（こちら／そちら／あちら）"
+      },
+      "explanation": {
+        "en": "Place demonstratives: ここ (here, near the speaker), そこ (there, near the listener), あそこ (over there, far from both). こちら・そちら・あちら are their polite forms and also indicate direction.",
+        "vi": "Đại từ chỉ địa điểm: ここ (chỗ này, gần người nói), そこ (chỗ đó, gần người nghe), あそこ (chỗ kia, xa cả hai). こちら, そちら, あちら là các từ chỉ phương hướng đồng thời là dạng trang trọng hơn của chỉ nơi chốn."
+      },
+      "examples": [
+        {
+          "jp": "ここは 会議室[かいぎしつ]です。",
+          "translation": {
+            "en": "This is the meeting room.",
+            "vi": "Đây là phòng họp."
+          }
+        },
+        {
+          "jp": "お 手洗[てあら]いはあそこです。",
+          "translation": {
+            "en": "The toilet is over there.",
+            "vi": "Nhà vệ sinh ở đằng kia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "wa-lugar-desu",
+      "title": {
+        "en": "N は (place) です — \"N is in…\"",
+        "vi": "N は (địa điểm) です — «N ở…»"
+      },
+      "pattern": {
+        "en": "N は place です",
+        "vi": "N は địa điểm です"
+      },
+      "explanation": {
+        "en": "With a place as the predicate, です says where something or someone is. It is the simplest way to locate things without using existence verbs yet.",
+        "vi": "Cấu trúc dùng để nói về vị trí nơi chốn của đồ vật, phòng ban hoặc một người nào đó."
+      },
+      "examples": [
+        {
+          "jp": "電話[でんわ]は 事務所[じむしょ]です。",
+          "translation": {
+            "en": "The telephone is in the office.",
+            "vi": "Điện thoại ở văn phòng."
+          }
+        },
+        {
+          "jp": "山田[やまだ]さんは 食堂[しょくどう]です。",
+          "translation": {
+            "en": "Mr. Yamada is in the dining room.",
+            "vi": "Anh Yamada ở nhà ăn."
+          }
+        }
+      ]
+    },
+    {
+      "id": "doko-dochira",
+      "title": {
+        "en": "どこ／どちら — \"where\"",
+        "vi": "どこ／どちら — «Ở đâu / Hướng nào»"
+      },
+      "pattern": {
+        "vi": "N は どこ／どちら ですか"
+      },
+      "explanation": {
+        "en": "どこ asks about a place and どちら is its polite form (also \"which of two\"). どちら is also used to ask politely about someone's country, company or school.",
+        "vi": "どこ dùng để hỏi địa điểm. どちら lịch sự hơn, vừa dùng để hỏi phương hướng, vừa dùng để hỏi tên công ty, trường học hoặc quốc gia trực thuộc."
+      },
+      "examples": [
+        {
+          "jp": "トイレはどこですか。",
+          "translation": {
+            "en": "Where is the toilet?",
+            "vi": "Nhà vệ sinh ở đâu vậy?"
+          }
+        },
+        {
+          "jp": "会社[かいしゃ]はどちらですか。",
+          "translation": {
+            "en": "Which company do you work for? / Where is your company?",
+            "vi": "Bạn làm việc ở công ty nào? / Công ty của bạn ở đâu?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "no-origen",
+      "title": {
+        "en": "N1 の N2 — origin and brand",
+        "vi": "N1 の N2 — Xuất xứ và thương hiệu"
+      },
+      "pattern": {
+        "vi": "N1 の N2"
+      },
+      "explanation": {
+        "en": "Here の expresses the country or company a product comes from: 日本[にほん]の 車[くるま] is \"a Japanese car\".",
+        "vi": "Khi N1 là tên quốc gia hoặc công ty sản xuất, mẫu câu dùng để chỉ nguồn gốc xuất xứ hoặc nhãn hiệu của món đồ N2. Từ để hỏi là どこの N2."
+      },
+      "examples": [
+        {
+          "jp": "これはどこのコンピューターですか。… 日本[にほん]のコンピューターです。",
+          "translation": {
+            "en": "Where is this computer from? …It's a Japanese computer.",
+            "vi": "Đây là máy tính của nước nào/hãng nào? …Là máy tính của Nhật Bản."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ko-so-a-do",
+      "title": {
+        "en": "The こ／そ／あ／ど series",
+        "vi": "Hệ thống đại từ こ／そ／あ／ど"
+      },
+      "pattern": {
+        "vi": "これ・それ・あれ・どれ ／ ここ・そこ・あそこ・どこ …"
+      },
+      "explanation": {
+        "en": "Japanese demonstratives form a regular four-way system: こ〜 (near the speaker), そ〜 (near the listener), あ〜 (far from both) and ど〜 (question). Once you know the pattern, learning a new column is instant.",
+        "vi": "Hệ thống từ chỉ thị trong tiếng Nhật được chia thành 4 nhóm theo cự ly: こ (gần người nói), そ (gần người nghe), あ (xa cả hai người), ど (từ để hỏi nghi vấn)."
+      },
+      "examples": [
+        {
+          "jp": "エレベーターはどちらですか。…あちらです。",
+          "translation": {
+            "en": "Which way is the lift? …Over there.",
+            "vi": "Thang máy ở phía nào vậy? …Ở phía đằng kia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "o-cortesia-3",
+      "title": {
+        "en": "お〜 with the listener's words",
+        "vi": "お〜 đi với từ liên quan đến người nghe"
+      },
+      "pattern": {
+        "vi": "お + N"
+      },
+      "explanation": {
+        "en": "The prefix お appears in words like お 国[くに] (your country) to speak respectfully about what belongs to the listener.",
+        "vi": "Thêm tiền tố お trước các từ chỉ sự vật liên quan đến người nghe (như quê hương, công việc, gia đình) để bày tỏ sự tôn kính và lịch sự."
+      },
+      "examples": [
+        {
+          "jp": "お 国[くに]はどちらですか。…アメリカです。",
+          "translation": {
+            "en": "Which country are you from? …From the United States.",
+            "vi": "Đất nước của bạn là nước nào? …Là nước Mỹ."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "demonstratives",
+    "numbers",
+    "counters"
+  ]
+}

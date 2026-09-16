@@ -1,0 +1,64 @@
+{
+  "character": "持",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "to hold, to grab",
+      "to have",
+      "to own"
+    ],
+    "vi": [
+      "cầm",
+      "nắm",
+      "mang"
+    ]
+  },
+  "onyomi": [
+    "ジ"
+  ],
+  "kunyomi": [
+    "も.つ"
+  ],
+  "strokes": 9,
+  "examples": [
+    {
+      "word": "持[も]つ",
+      "meaning": {
+        "en": "to hold, to carry",
+        "vi": "cầm, nắm, sở hữu"
+      }
+    },
+    {
+      "word": "金持[かねも]ち",
+      "meaning": {
+        "en": "rich",
+        "vi": "người giàu có"
+      }
+    },
+    {
+      "word": "気持[きも]ち",
+      "meaning": {
+        "en": "feeling",
+        "vi": "tâm trạng, cảm giác, tấm lòng"
+      }
+    },
+    {
+      "word": "支持[しじ]",
+      "meaning": {
+        "en": "support",
+        "vi": "support"
+      }
+    },
+    {
+      "word": "所持[しょじ]",
+      "meaning": {
+        "en": "possession",
+        "vi": "possession"
+      }
+    }
+  ],
+  "similar": [
+    "待",
+    "時"
+  ]
+}

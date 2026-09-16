@@ -1,0 +1,456 @@
+{
+  "level": "n5",
+  "lesson": 14,
+  "words": [
+    {
+      "id": "tsukemasu",
+      "word": "つけます",
+      "kana": "つけます",
+      "meaning": {
+        "en": "to turn on",
+        "vi": "bật [điện, máy móc]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "keshimasu",
+      "word": "消[け]します",
+      "kana": "けします",
+      "meaning": {
+        "en": "to turn off",
+        "vi": "tắt [điện, máy móc]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "akemasu",
+      "word": "開[あ]けます",
+      "kana": "あけます",
+      "meaning": {
+        "en": "to open",
+        "vi": "mở [cửa]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "shimemasu",
+      "word": "閉[し]めます",
+      "kana": "しめます",
+      "meaning": {
+        "en": "to close",
+        "vi": "đóng [cửa]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "isogimasu",
+      "word": "急[いそ]ぎます",
+      "kana": "いそぎます",
+      "meaning": {
+        "en": "to hurry",
+        "vi": "vội, gấp, vội vã"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "machimasu",
+      "word": "待[ま]ちます",
+      "kana": "まちます",
+      "meaning": {
+        "en": "to wait",
+        "vi": "chờ, đợi"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "mochimasu",
+      "word": "持[も]ちます",
+      "kana": "もちます",
+      "meaning": {
+        "en": "to hold, to carry",
+        "vi": "cầm, mang"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "torimasu",
+      "word": "取[と]ります",
+      "kana": "とります",
+      "meaning": {
+        "en": "to take, to pass (something to someone)",
+        "vi": "lấy [đồ vật]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "tetsudaimasu",
+      "word": "手伝[てつだ]います",
+      "kana": "てつだいます",
+      "meaning": {
+        "en": "to help",
+        "vi": "giúp đỡ"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "yobimasu",
+      "word": "呼[よ]びます",
+      "kana": "よびます",
+      "meaning": {
+        "en": "to call",
+        "vi": "gọi [taxi, tên]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "hanashimasu",
+      "word": "話[はな]します",
+      "kana": "はなします",
+      "meaning": {
+        "en": "to speak",
+        "vi": "nói chuyện"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "tsukaimasu",
+      "word": "使[つか]います",
+      "kana": "つかいます",
+      "meaning": {
+        "en": "to use",
+        "vi": "dùng, sử dụng"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "tomemasu",
+      "word": "止[と]めます",
+      "kana": "とめます",
+      "meaning": {
+        "en": "to stop, to park",
+        "vi": "dừng, đỗ [xe]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "misemasu",
+      "word": "見[み]せます",
+      "kana": "みせます",
+      "meaning": {
+        "en": "to show",
+        "vi": "cho xem"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "oshiemasu-direccion",
+      "word": "教[おし]えます[住所[じゅうしょ]を〜]",
+      "kana": "おしえます",
+      "meaning": {
+        "en": "to give [an address]",
+        "vi": "cho biết, chỉ bảo [địa chỉ]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "suwarimasu",
+      "word": "座[すわ]ります",
+      "kana": "すわります",
+      "meaning": {
+        "en": "to sit down",
+        "vi": "ngồi [xuống ghế]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "tachimasu",
+      "word": "立[た]ちます",
+      "kana": "たちます",
+      "meaning": {
+        "en": "to stand up",
+        "vi": "đứng lên, đứng dậy"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "hairimasu",
+      "word": "入[はい]ります[喫茶店[きっさてん]に〜]",
+      "kana": "はいります",
+      "meaning": {
+        "en": "to go into [a café]",
+        "vi": "vào, đi vào [quán cà phê]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "demasu",
+      "word": "出[で]ます[喫茶店[きっさてん]を〜]",
+      "kana": "でます",
+      "meaning": {
+        "en": "to leave [a café]",
+        "vi": "ra khỏi, rời [quán cà phê]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "furimasu",
+      "word": "降[ふ]ります[雨[あめ]が〜]",
+      "kana": "ふります",
+      "meaning": {
+        "en": "to rain",
+        "vi": "rơi [mưa, tuyết]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "kopii-shimasu",
+      "word": "コピーします",
+      "kana": "コピーします",
+      "meaning": {
+        "en": "to make photocopies",
+        "vi": "sao chép, photocopy"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "denki",
+      "word": "電気[でんき]",
+      "kana": "でんき",
+      "meaning": {
+        "en": "electricity, light",
+        "vi": "điện, đèn điện"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "eakon",
+      "word": "エアコン",
+      "kana": "エアコン",
+      "meaning": {
+        "en": "air conditioning",
+        "vi": "máy điều hòa nhiệt độ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "pasupooto",
+      "word": "パスポート",
+      "kana": "パスポート",
+      "meaning": {
+        "en": "passport",
+        "vi": "hộ chiếu"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "namae",
+      "word": "名前[なまえ]",
+      "kana": "なまえ",
+      "meaning": {
+        "en": "name",
+        "vi": "tên"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "juusho",
+      "word": "住所[じゅうしょ]",
+      "kana": "じゅうしょ",
+      "meaning": {
+        "en": "address",
+        "vi": "địa chỉ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "chizu",
+      "word": "地図[ちず]",
+      "kana": "ちず",
+      "meaning": {
+        "en": "map, plan",
+        "vi": "bản đồ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shio",
+      "word": "塩[しお]",
+      "kana": "しお",
+      "meaning": {
+        "en": "salt",
+        "vi": "muối"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "satou",
+      "word": "砂糖[さとう]",
+      "kana": "さとう",
+      "meaning": {
+        "en": "sugar",
+        "vi": "đường (ăn)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "mondai",
+      "word": "問題[もんだい]",
+      "kana": "もんだい",
+      "meaning": {
+        "en": "question, problem",
+        "vi": "vấn đề, câu hỏi"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kotae",
+      "word": "答[こた]え",
+      "kana": "こたえ",
+      "meaning": {
+        "en": "answer",
+        "vi": "câu trả lời, đáp án"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "yomikata",
+      "word": "読[よ]み 方[かた]",
+      "kana": "よみかた",
+      "meaning": {
+        "en": "how to read, reading",
+        "vi": "cách đọc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kata",
+      "word": "〜方[かた]",
+      "kana": "かた",
+      "meaning": {
+        "en": "way of ~",
+        "vi": "cách làm... (hậu tố)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "massugu",
+      "word": "まっすぐ",
+      "kana": "まっすぐ",
+      "meaning": {
+        "en": "straight ahead",
+        "vi": "thẳng, đi thẳng"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "yukkuri",
+      "word": "ゆっくり",
+      "kana": "ゆっくり",
+      "meaning": {
+        "en": "slowly",
+        "vi": "chậm rãi, thong thả"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "sugu",
+      "word": "すぐ",
+      "kana": "すぐ",
+      "meaning": {
+        "en": "immediately",
+        "vi": "ngay lập tức"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "mata",
+      "word": "また",
+      "kana": "また",
+      "meaning": {
+        "en": "again",
+        "vi": "lại, sau này"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "atode",
+      "word": "あとで",
+      "kana": "あとで",
+      "meaning": {
+        "en": "afterwards, later",
+        "vi": "sau đó, lát nữa"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "mou-sukoshi",
+      "word": "もう 少[すこ]し",
+      "kana": "もうすこし",
+      "meaning": {
+        "en": "a little more",
+        "vi": "thêm một chút nữa"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "mou-otro",
+      "word": "もう〜",
+      "kana": "もう",
+      "meaning": {
+        "en": "~ more, another ~",
+        "vi": "thêm... nữa"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "saa",
+      "word": "さあ",
+      "kana": "さあ",
+      "meaning": {
+        "en": "come on! (encouragement)",
+        "vi": "Nào, thôi nào..."
+      },
+      "type": "expression"
+    },
+    {
+      "id": "are-sorpresa",
+      "word": "あれ？",
+      "kana": "あれ",
+      "meaning": {
+        "en": "huh? (surprise)",
+        "vi": "ủa? kìa? (ngạc nhiên)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "shingou-migi",
+      "word": "信号[しんごう]を 右[みぎ]へ 曲[ま]がってください",
+      "kana": "しんごうをみぎへまがってください",
+      "meaning": {
+        "en": "turn right at the traffic light",
+        "vi": "xin hãy rẽ phải ở đèn tín hiệu"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "korede-onegai",
+      "word": "これでお 願[ねが]いします",
+      "kana": "これでおねがいします",
+      "meaning": {
+        "en": "take it out of this, please",
+        "vi": "xin thanh toán bằng số tiền này"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "otsuri",
+      "word": "お 釣[つ]り",
+      "kana": "おつり",
+      "meaning": {
+        "en": "change (money back)",
+        "vi": "tiền thừa, tiền thối lại"
+      },
+      "type": "noun"
+    }
+  ]
+}

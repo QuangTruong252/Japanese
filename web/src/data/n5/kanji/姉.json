@@ -1,0 +1,61 @@
+{
+  "character": "姉",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "older sister"
+    ],
+    "vi": [
+      "chị gái"
+    ]
+  },
+  "onyomi": [
+    "シ"
+  ],
+  "kunyomi": [
+    "あね",
+    "ねえ"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "姉[あね]",
+      "meaning": {
+        "en": "older sister",
+        "vi": "chị gái (của mình)"
+      }
+    },
+    {
+      "word": "お 姉[ねえ]さん",
+      "meaning": {
+        "en": "older sister",
+        "vi": "chị gái (của người khác)"
+      }
+    },
+    {
+      "word": "姉妹[しまい]",
+      "meaning": {
+        "en": "sisters",
+        "vi": "chị em gái"
+      }
+    },
+    {
+      "word": "姉妹都市[しまいとし]",
+      "meaning": {
+        "en": "twin cities",
+        "vi": "twin cities"
+      }
+    },
+    {
+      "word": "義姉[ぎし]",
+      "meaning": {
+        "en": "older stepsister",
+        "vi": "older stepsister"
+      }
+    }
+  ],
+  "similar": [
+    "妹",
+    "始"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "character": "出",
+  "level": "n5",
+  "lesson": 11,
+  "meanings": {
+    "en": [
+      "to go out",
+      "to take out"
+    ],
+    "vi": [
+      "ra",
+      "rời khỏi",
+      "nộp"
+    ]
+  },
+  "onyomi": [
+    "シュツ"
+  ],
+  "kunyomi": [
+    "で.る",
+    "だ.す"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "出[で]ます",
+      "meaning": {
+        "en": "to go out",
+        "vi": "to go out"
+      }
+    },
+    {
+      "word": "出[だ]します",
+      "meaning": {
+        "en": "to take out, to send",
+        "vi": "dừng lại, đỗ xe"
+      }
+    },
+    {
+      "word": "出口[でぐち]",
+      "meaning": {
+        "en": "exit",
+        "vi": "cửa ra, lối ra"
+      }
+    },
+    {
+      "word": "出[で]る",
+      "meaning": {
+        "en": "to go out",
+        "vi": "ra khỏi, xuất hiện"
+      }
+    },
+    {
+      "word": "出[だ]す",
+      "meaning": {
+        "en": "to take out, to hand in",
+        "vi": "đưa ra, nộp, gửi"
+      }
+    },
+    {
+      "word": "輸出[ゆしゅつ]",
+      "meaning": {
+        "en": "export",
+        "vi": "export"
+      }
+    },
+    {
+      "word": "出発[しゅっぱつ]",
+      "meaning": {
+        "en": "departure",
+        "vi": "xuất phát, khởi hành"
+      }
+    }
+  ],
+  "similar": [
+    "山"
+  ]
+}

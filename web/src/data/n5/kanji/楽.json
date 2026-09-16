@@ -1,0 +1,61 @@
+{
+  "character": "楽",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "fun",
+      "comfortable",
+      "music"
+    ],
+    "vi": [
+      "vui vẻ",
+      "nhạc",
+      "dễ chịu"
+    ]
+  },
+  "onyomi": [
+    "ガク",
+    "ラク"
+  ],
+  "kunyomi": [
+    "たの.しい"
+  ],
+  "strokes": 13,
+  "examples": [
+    {
+      "word": "楽[たの]しい",
+      "meaning": {
+        "en": "fun",
+        "vi": "vui vẻ, thú vị"
+      }
+    },
+    {
+      "word": "音楽[おんがく]",
+      "meaning": {
+        "en": "music",
+        "vi": "âm nhạc"
+      }
+    },
+    {
+      "word": "楽器[がっき]",
+      "meaning": {
+        "en": "musical instrument",
+        "vi": "musical instrument"
+      }
+    },
+    {
+      "word": "楽[らく]",
+      "meaning": {
+        "en": "easy, comfortable",
+        "vi": "nhàn nhã, thoải mái"
+      }
+    },
+    {
+      "word": "極楽[ごくらく]",
+      "meaning": {
+        "en": "paradise",
+        "vi": "paradise"
+      }
+    }
+  ]
+}

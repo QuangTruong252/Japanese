@@ -1,0 +1,77 @@
+{
+  "character": "見",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "to see",
+      "to look at"
+    ],
+    "vi": [
+      "nhìn",
+      "xem"
+    ]
+  },
+  "onyomi": [
+    "ケン"
+  ],
+  "kunyomi": [
+    "み.る"
+  ],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "見[み]ます",
+      "meaning": {
+        "en": "to see",
+        "vi": "xem, nhìn"
+      }
+    },
+    {
+      "word": "見学[けんがく]",
+      "meaning": {
+        "en": "study visit",
+        "vi": "study visit"
+      }
+    },
+    {
+      "word": "花見[はなみ]",
+      "meaning": {
+        "en": "to view the cherry blossom",
+        "vi": "ngắm hoa anh đào"
+      }
+    },
+    {
+      "word": "見[み]る",
+      "meaning": {
+        "en": "to see, to watch",
+        "vi": "nhìn, xem"
+      }
+    },
+    {
+      "word": "見本[みほん]",
+      "meaning": {
+        "en": "sample",
+        "vi": "sample"
+      }
+    },
+    {
+      "word": "意見[いけん]",
+      "meaning": {
+        "en": "opinion",
+        "vi": "ý kiến, quan điểm"
+      }
+    },
+    {
+      "word": "発見[はっけん]",
+      "meaning": {
+        "en": "discovery",
+        "vi": "discovery"
+      }
+    }
+  ],
+  "similar": [
+    "目",
+    "買"
+  ]
+}

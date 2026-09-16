@@ -1,0 +1,68 @@
+{
+  "character": "飲",
+  "level": "n5",
+  "lesson": 6,
+  "meanings": {
+    "en": [
+      "to drink"
+    ],
+    "vi": [
+      "uống",
+      "ẩm thực"
+    ]
+  },
+  "onyomi": [
+    "イン"
+  ],
+  "kunyomi": [
+    "の.む"
+  ],
+  "strokes": 12,
+  "examples": [
+    {
+      "word": "飲[の]みます",
+      "meaning": {
+        "en": "to drink",
+        "vi": "nói chuyện, trò chuyện"
+      }
+    },
+    {
+      "word": "飲[の]み 物[もの]",
+      "meaning": {
+        "en": "drink",
+        "vi": "đồ uống"
+      }
+    },
+    {
+      "word": "飲[の]む",
+      "meaning": {
+        "en": "to drink",
+        "vi": "uống"
+      }
+    },
+    {
+      "word": "飲酒[いんしゅ]",
+      "meaning": {
+        "en": "drinking alcohol",
+        "vi": "drinking alcohol"
+      }
+    },
+    {
+      "word": "飲料[いんりょう]",
+      "meaning": {
+        "en": "drink",
+        "vi": "drink"
+      }
+    },
+    {
+      "word": "飲食[いんしょく]",
+      "meaning": {
+        "en": "food and drink",
+        "vi": "food and drink"
+      }
+    }
+  ],
+  "similar": [
+    "食"
+  ]
+}

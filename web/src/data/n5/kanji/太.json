@@ -1,0 +1,60 @@
+{
+  "character": "太",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "fat",
+      "thick"
+    ],
+    "vi": [
+      "béo",
+      "mập",
+      "dày"
+    ]
+  },
+  "onyomi": [
+    "タイ"
+  ],
+  "kunyomi": [
+    "ふと.い",
+    "ふと.る"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "太[ふと]い",
+      "meaning": {
+        "en": "fat, thick",
+        "vi": "béo, mập, dày"
+      }
+    },
+    {
+      "word": "太[ふと]る",
+      "meaning": {
+        "en": "to put on weight",
+        "vi": "béo lên, mập ra"
+      }
+    },
+    {
+      "word": "太字[ふとじ]",
+      "meaning": {
+        "en": "bold type",
+        "vi": "bold type"
+      }
+    },
+    {
+      "word": "太陽[たいよう]",
+      "meaning": {
+        "en": "the sun",
+        "vi": "the sun"
+      }
+    },
+    {
+      "word": "太平洋[たいへいよう]",
+      "meaning": {
+        "en": "the Pacific Ocean",
+        "vi": "the Pacific Ocean"
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "character": "習",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "to learn",
+      "custom, habit"
+    ],
+    "vi": [
+      "học tập",
+      "tập quán"
+    ]
+  },
+  "onyomi": [
+    "シュウ"
+  ],
+  "kunyomi": [
+    "なら.う"
+  ],
+  "strokes": 11,
+  "examples": [
+    {
+      "word": "習[なら]う",
+      "meaning": {
+        "en": "to learn",
+        "vi": "học tập (từ người khác)"
+      }
+    },
+    {
+      "word": "学習[がくしゅう]",
+      "meaning": {
+        "en": "study, learning",
+        "vi": "study, learning"
+      }
+    },
+    {
+      "word": "自習[じしゅう]",
+      "meaning": {
+        "en": "self-study",
+        "vi": "self-study"
+      }
+    },
+    {
+      "word": "習慣[しゅうかん]",
+      "meaning": {
+        "en": "custom, habit",
+        "vi": "tập quán, thói quen"
+      }
+    },
+    {
+      "word": "悪習[あくしゅう]",
+      "meaning": {
+        "en": "bad habit",
+        "vi": "bad habit"
+      }
+    }
+  ]
+}

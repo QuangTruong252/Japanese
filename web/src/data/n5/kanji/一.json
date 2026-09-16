@@ -1,0 +1,59 @@
+{
+  "character": "一",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "one"
+    ],
+    "vi": [
+      "một",
+      "số một"
+    ]
+  },
+  "onyomi": [
+    "イチ",
+    "イツ"
+  ],
+  "kunyomi": [
+    "ひと.つ"
+  ],
+  "strokes": 1,
+  "examples": [
+    {
+      "word": "一[いち]",
+      "meaning": {
+        "en": "one",
+        "vi": "một, số 1"
+      }
+    },
+    {
+      "word": "一[ひと]つ",
+      "meaning": {
+        "en": "one thing",
+        "vi": "một cái"
+      }
+    },
+    {
+      "word": "一人[ひとり]",
+      "meaning": {
+        "en": "one person",
+        "vi": "một người"
+      }
+    },
+    {
+      "word": "一月[いちがつ]",
+      "meaning": {
+        "en": "January",
+        "vi": "tháng một"
+      }
+    },
+    {
+      "word": "一日[ついたち]",
+      "meaning": {
+        "en": "1st day",
+        "vi": "ngày mùng một"
+      }
+    }
+  ]
+}

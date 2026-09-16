@@ -1,0 +1,59 @@
+{
+  "character": "心",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "heart",
+      "soul"
+    ],
+    "vi": [
+      "tim",
+      "tấm lòng",
+      "tâm hồn"
+    ]
+  },
+  "onyomi": [
+    "シン"
+  ],
+  "kunyomi": [
+    "こころ"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "心[こころ]",
+      "meaning": {
+        "en": "heart, spirit",
+        "vi": "trái tim, tấm lòng, tâm hồn"
+      }
+    },
+    {
+      "word": "心理[しんり]",
+      "meaning": {
+        "en": "psychology",
+        "vi": "psychology"
+      }
+    },
+    {
+      "word": "関心[かんしん]",
+      "meaning": {
+        "en": "interest",
+        "vi": "interest"
+      }
+    },
+    {
+      "word": "中心[ちゅうしん]",
+      "meaning": {
+        "en": "centre",
+        "vi": "centre"
+      }
+    },
+    {
+      "word": "心電図[しんでんず]",
+      "meaning": {
+        "en": "electrocardiogram",
+        "vi": "electrocardiogram"
+      }
+    }
+  ]
+}

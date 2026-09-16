@@ -1,0 +1,57 @@
+{
+  "character": "火",
+  "level": "n5",
+  "lesson": 4,
+  "meanings": {
+    "en": [
+      "fire"
+    ],
+    "vi": [
+      "lửa"
+    ]
+  },
+  "onyomi": [
+    "カ"
+  ],
+  "kunyomi": [
+    "ひ"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "火曜日[かようび]",
+      "meaning": {
+        "en": "Tuesday",
+        "vi": "thứ ba"
+      }
+    },
+    {
+      "word": "火[ひ]",
+      "meaning": {
+        "en": "fire",
+        "vi": "lửa, ngọn lửa"
+      }
+    },
+    {
+      "word": "花火[はなび]",
+      "meaning": {
+        "en": "fireworks",
+        "vi": "pháo hoa"
+      }
+    },
+    {
+      "word": "火星[かせい]",
+      "meaning": {
+        "en": "Mars",
+        "vi": "Mars"
+      }
+    },
+    {
+      "word": "火事[かじ]",
+      "meaning": {
+        "en": "fire",
+        "vi": "hỏa hoạn, vụ cháy"
+      }
+    }
+  ]
+}

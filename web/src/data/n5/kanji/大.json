@@ -1,0 +1,70 @@
+{
+  "character": "大",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "big",
+      "university"
+    ],
+    "vi": [
+      "to",
+      "lớn"
+    ]
+  },
+  "onyomi": [
+    "ダイ",
+    "タイ"
+  ],
+  "kunyomi": [
+    "おお.きい"
+  ],
+  "strokes": 3,
+  "examples": [
+    {
+      "word": "大[おお]きい",
+      "meaning": {
+        "en": "big",
+        "vi": "to, lớn"
+      }
+    },
+    {
+      "word": "大学[だいがく]",
+      "meaning": {
+        "en": "university",
+        "vi": "trường đại học"
+      }
+    },
+    {
+      "word": "大切[たいせつ]",
+      "meaning": {
+        "en": "important",
+        "vi": "important"
+      }
+    },
+    {
+      "word": "大型[おおがた]",
+      "meaning": {
+        "en": "large-sized",
+        "vi": "large-sized"
+      }
+    },
+    {
+      "word": "大事[だいじ]",
+      "meaning": {
+        "en": "important",
+        "vi": "quan trọng"
+      }
+    },
+    {
+      "word": "大会[たいかい]",
+      "meaning": {
+        "en": "meeting, convention",
+        "vi": "meeting, convention"
+      }
+    }
+  ],
+  "similar": [
+    "太"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "character": "帰",
+  "level": "n5",
+  "lesson": 5,
+  "meanings": {
+    "en": [
+      "to return"
+    ],
+    "vi": [
+      "về",
+      "trở về"
+    ]
+  },
+  "onyomi": [
+    "キ"
+  ],
+  "kunyomi": [
+    "かえ.る"
+  ],
+  "strokes": 10,
+  "examples": [
+    {
+      "word": "帰[かえ]ります",
+      "meaning": {
+        "en": "to return",
+        "vi": "cho mượn, cho vay"
+      }
+    },
+    {
+      "word": "お 帰[かえ]りなさい",
+      "meaning": {
+        "en": "welcome back",
+        "vi": "Bạn đã về đấy à! (chào người về nhà)"
+      }
+    },
+    {
+      "word": "帰[かえ]る",
+      "meaning": {
+        "en": "to return",
+        "vi": "về, trở về"
+      }
+    },
+    {
+      "word": "帰[かえ]り 道[みち]",
+      "meaning": {
+        "en": "way home",
+        "vi": "way home"
+      }
+    },
+    {
+      "word": "帰国[きこく]",
+      "meaning": {
+        "en": "returning to one's country",
+        "vi": "về nước"
+      }
+    },
+    {
+      "word": "帰宅[きたく]",
+      "meaning": {
+        "en": "returning home",
+        "vi": "returning home"
+      }
+    },
+    {
+      "word": "帰路[きろ]",
+      "meaning": {
+        "en": "way back",
+        "vi": "way back"
+      }
+    }
+  ]
+}

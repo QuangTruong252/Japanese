@@ -1,0 +1,160 @@
+{
+  "level": "n5",
+  "number": 9,
+  "title": {
+    "en": "Likes and abilities",
+    "vi": "Sở thích và năng lực"
+  },
+  "jpTitle": "残念[ざんねん]です",
+  "description": {
+    "en": "Say what you like, what you understand and what you are good at with the particle が, and give reasons with から.",
+    "vi": "Bày tỏ sở thích (好き), năng lực (上手, 下手, わかります), sự sở hữu (あります) và chỉ nguyên nhân với から."
+  },
+  "grammar": [
+    {
+      "id": "ga-objeto",
+      "title": {
+        "en": "N が あります／わかります／好[す]きです…",
+        "vi": "N が あります／わかります／好[す]きです… — Trợ từ が với đối tượng"
+      },
+      "pattern": {
+        "vi": "N が あります／わかります／好[す]きです／嫌[きら]いです／上手[じょうず]です／下手[へた]です"
+      },
+      "explanation": {
+        "en": "Certain predicates mark their object with が instead of を: to have (あります), to understand (わかります), to like (好[す]きです), to dislike (嫌[きら]いです), to be good at (上手[じょうず]です) and to be bad at (下手[へた]です).",
+        "vi": "Với các động từ chỉ sự sở hữu (あります), năng lực (わかります) và các tính từ chỉ sở thích/khả năng (好き, 嫌い, 上手, 下手), đối tượng của câu đi với trợ từ が chứ không dùng を."
+      },
+      "examples": [
+        {
+          "jp": "私[わたし]はイタリア 料理[りょうり]が 好[す]きです。",
+          "translation": {
+            "en": "I like Italian food.",
+            "vi": "Tôi thích món ăn Ý."
+          }
+        },
+        {
+          "jp": "日本語[にほんご]がわかります。",
+          "translation": {
+            "en": "I understand Japanese.",
+            "vi": "Tôi hiểu được tiếng Nhật."
+          }
+        },
+        {
+          "jp": "ミラーさんはワインが 上手[じょうず]じゃありません。",
+          "translation": {
+            "en": "Mr. Miller isn't much of a wine drinker.",
+            "vi": "Anh Miller không giỏi uống rượu vang cho lắm."
+          },
+          "note": {
+            "en": "上手／下手 are used for skills; 好き is used for likes.",
+            "vi": "上手／下手 dùng để nói về năng lực, sở trường; còn 好き dùng để nói về sở thích."
+          }
+        }
+      ]
+    },
+    {
+      "id": "donna-9",
+      "title": {
+        "en": "どんな N — narrowing down a preference",
+        "vi": "どんな N が 好[す]きですか — Hỏi loại N ưa thích"
+      },
+      "pattern": {
+        "vi": "どんな N が 好[す]きですか"
+      },
+      "explanation": {
+        "en": "どんな asks for the specific type within a category: どんなスポーツが 好[す]きですか (what sport do you like?).",
+        "vi": "Mẫu câu dùng để hỏi chi tiết xem đối phương yêu thích thể loại hoặc loại hình cụ thể nào trong một nhóm danh từ N lớn."
+      },
+      "examples": [
+        {
+          "jp": "どんな 音楽[おんがく]が 好[す]きですか。…クラシックが 好[す]きです。",
+          "translation": {
+            "en": "What music do you like? …I like classical music.",
+            "vi": "Bạn thích thể loại âm nhạc nào? …Tôi thích nhạc cổ điển."
+          }
+        }
+      ]
+    },
+    {
+      "id": "adverbios-grado",
+      "title": {
+        "en": "よく／だいたい／たくさん／少[すこ]し／あまり／全然[ぜんぜん]",
+        "vi": "Phó từ chỉ mức độ với động từ và tính từ"
+      },
+      "pattern": {
+        "en": "adverb + V／A",
+        "vi": "phó từ + V／A"
+      },
+      "explanation": {
+        "en": "Adverbs of degree and quantity: よく (well/a lot), だいたい (more or less), たくさん (a lot), 少[すこ]し (a little); あまり and 全然[ぜんぜん] require a negative predicate (あまりわかりません, 全然[ぜんぜん]わかりません).",
+        "vi": "よく (rõ, tốt), だいたい (đại khái), たくさん (nhiều), すこし (một ít) dùng với câu khẳng định. あまり (không... lắm), ぜんぜん (hoàn toàn không) luôn đi với thể phủ định."
+      },
+      "examples": [
+        {
+          "jp": "英語[えいご]がよくわかります。",
+          "translation": {
+            "en": "I understand English well.",
+            "vi": "Tôi hiểu rất rõ tiếng Anh."
+          }
+        },
+        {
+          "jp": "お 酒[さけ]は 全然[ぜんぜん] 飲[の]みません。",
+          "translation": {
+            "en": "I don't drink alcohol at all.",
+            "vi": "Tôi hoàn toàn không uống rượu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "kara-causa",
+      "title": {
+        "en": "〜から — \"because\"",
+        "vi": "S1 から、S2 — Nguyên nhân, lý do («Vì… nên…»)"
+      },
+      "pattern": {
+        "vi": "S1 から、S2"
+      },
+      "explanation": {
+        "en": "から joins the reason (S1) to the result (S2): 時間[じかん]が ありませんから、 新聞[しんぶん]を 読[よ]みません. The reason can also come afterwards, as an answer to どうして.",
+        "vi": "Trợ từ から đứng sau mệnh đề S1 để chỉ nguyên nhân, lý do dẫn tới kết quả hoặc hành động được nêu trong mệnh đề S2 phía sau."
+      },
+      "examples": [
+        {
+          "jp": "時間[じかん]がありませんから、テレビを 見[み]ません。",
+          "translation": {
+            "en": "Since I have no time, I don't watch television.",
+            "vi": "Vì không có thời gian nên tôi không xem tivi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "doushite",
+      "title": {
+        "en": "どうして — \"why\"",
+        "vi": "どうして〜か。…〜から — Hỏi lý do «Tại sao»"
+      },
+      "pattern": {
+        "vi": "どうして〜か。…〜から"
+      },
+      "explanation": {
+        "en": "どうして asks for the reason; the answer ends in から: どうして 来[き]ませんでしたか。… 忙[いそが]しかったですから.",
+        "vi": "Từ nghi vấn どうして dùng để hỏi nguyên nhân, lý do ('Tại sao?'). Khi trả lời lý do, luôn kết thúc câu bằng から ('Vì...')."
+      },
+      "examples": [
+        {
+          "jp": "どうしてお 酒[さけ]を 飲[の]みませんか。…あした 仕事[しごと]がありますから。",
+          "translation": {
+            "en": "Why aren't you drinking? …Because I have work tomorrow.",
+            "vi": "Tại sao bạn không uống rượu? …Vì ngày mai tôi có công việc."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "adjectives",
+    "particles"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "character": "校",
+  "level": "n5",
+  "lesson": 5,
+  "meanings": {
+    "en": [
+      "school"
+    ],
+    "vi": [
+      "trường học"
+    ]
+  },
+  "onyomi": [
+    "コウ"
+  ],
+  "kunyomi": [],
+  "strokes": 10,
+  "examples": [
+    {
+      "word": "学校[がっこう]",
+      "meaning": {
+        "en": "school",
+        "vi": "trường học"
+      }
+    },
+    {
+      "word": "高校[こうこう]",
+      "meaning": {
+        "en": "high school",
+        "vi": "trường trung học phổ thông, cấp ba"
+      }
+    },
+    {
+      "word": "中学校[ちゅうがっこう]",
+      "meaning": {
+        "en": "secondary school",
+        "vi": "secondary school"
+      }
+    },
+    {
+      "word": "校長[こうちょう]",
+      "meaning": {
+        "en": "head teacher",
+        "vi": "hiệu trưởng"
+      }
+    },
+    {
+      "word": "登校[とうこう]",
+      "meaning": {
+        "en": "school attendance",
+        "vi": "school attendance"
+      }
+    },
+    {
+      "word": "校舎[こうしゃ]",
+      "meaning": {
+        "en": "school building",
+        "vi": "school building"
+      }
+    }
+  ]
+}

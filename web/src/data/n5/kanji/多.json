@@ -1,0 +1,61 @@
+{
+  "character": "多",
+  "level": "n5",
+  "lesson": 12,
+  "meanings": {
+    "en": [
+      "a lot, much",
+      "numerous"
+    ],
+    "vi": [
+      "nhiều"
+    ]
+  },
+  "onyomi": [
+    "タ"
+  ],
+  "kunyomi": [
+    "おお.い"
+  ],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "多[おお]い",
+      "meaning": {
+        "en": "a lot, much",
+        "vi": "nhiều"
+      }
+    },
+    {
+      "word": "多分[たぶん]",
+      "meaning": {
+        "en": "probably",
+        "vi": "probably"
+      }
+    },
+    {
+      "word": "多目[おおめ]",
+      "meaning": {
+        "en": "in large quantity",
+        "vi": "in large quantity"
+      }
+    },
+    {
+      "word": "多数[たすう]",
+      "meaning": {
+        "en": "a large number",
+        "vi": "a large number"
+      }
+    },
+    {
+      "word": "多量[たりょう]",
+      "meaning": {
+        "en": "a large amount",
+        "vi": "a large amount"
+      }
+    }
+  ],
+  "similar": [
+    "名"
+  ]
+}

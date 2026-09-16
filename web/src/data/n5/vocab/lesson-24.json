@@ -1,0 +1,186 @@
+{
+  "level": "n5",
+  "lesson": 24,
+  "words": [
+    {
+      "id": "kuremasu",
+      "word": "くれます",
+      "kana": "くれます",
+      "meaning": {
+        "en": "to give (to me)",
+        "vi": "cho, tặng [tôi / người thân tôi]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "naoshimasu",
+      "word": "直[なお]します",
+      "kana": "なおします",
+      "meaning": {
+        "en": "to repair, to correct",
+        "vi": "sửa chữa"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "tsurete-ikimasu",
+      "word": "連[つ]れて 行[い]きます",
+      "kana": "つれていきます",
+      "meaning": {
+        "en": "to take (someone)",
+        "vi": "dẫn [ai đó] đi"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "tsurete-kimasu",
+      "word": "連[つ]れて 来[き]ます",
+      "kana": "つれてきます",
+      "meaning": {
+        "en": "to bring (someone)",
+        "vi": "dẫn [ai đó] đến"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "okurimasu-persona",
+      "word": "送[おく]ります[人[ひと]を〜]",
+      "kana": "おくります",
+      "meaning": {
+        "en": "to accompany [someone]",
+        "vi": "tiễn, đưa [ai đó] về"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "shoukai-shimasu",
+      "word": "紹介[しょうかい]します",
+      "kana": "しょうかいします",
+      "meaning": {
+        "en": "to introduce (someone)",
+        "vi": "giới thiệu [ai đó]"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "annai-shimasu",
+      "word": "案内[あんない]します",
+      "kana": "あんないします",
+      "meaning": {
+        "en": "to guide, to give directions",
+        "vi": "hướng dẫn, chỉ đường"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "setsumei-shimasu",
+      "word": "説明[せつめい]します",
+      "kana": "せつめいします",
+      "meaning": {
+        "en": "to explain",
+        "vi": "giải thích, thuyết minh"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "ojiisan",
+      "word": "おじいさん／おじいちゃん",
+      "kana": "おじいさん",
+      "meaning": {
+        "en": "grandfather, elderly man",
+        "vi": "ông, cụ ông (của người khác)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "obaasan",
+      "word": "おばあさん／おばあちゃん",
+      "kana": "おばあさん",
+      "meaning": {
+        "en": "grandmother, elderly woman",
+        "vi": "bà, cụ bà (của người khác)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "junbi",
+      "word": "準備[じゅんび]",
+      "kana": "じゅんび",
+      "meaning": {
+        "en": "preparation",
+        "vi": "sự chuẩn bị"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hikkoshi",
+      "word": "引[ひ]っ 越[こ]し",
+      "kana": "ひっこし",
+      "meaning": {
+        "en": "moving house",
+        "vi": "sự chuyển nhà"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "okashi",
+      "word": "[お]菓子[かし]",
+      "kana": "おかし",
+      "meaning": {
+        "en": "sweet, candy",
+        "vi": "bánh kẹo, đồ ngọt"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hoomusutei",
+      "word": "ホームステイ",
+      "kana": "ホームステイ",
+      "meaning": {
+        "en": "homestay",
+        "vi": "ở cùng gia đình bản xứ (homestay)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "zenbu",
+      "word": "全部[ぜんぶ]",
+      "kana": "ぜんぶ",
+      "meaning": {
+        "en": "everything, all",
+        "vi": "toàn bộ, tất cả"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "jibunde",
+      "word": "自分[じぶん]で",
+      "kana": "じぶんで",
+      "meaning": {
+        "en": "by oneself",
+        "vi": "tự mình"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "hokani",
+      "word": "ほかに",
+      "kana": "ほかに",
+      "meaning": {
+        "en": "besides, apart from that",
+        "vi": "ngoài ra, bên cạnh đó"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "haha-no-hi",
+      "word": "母[はは]の 日[ひ]",
+      "kana": "ははのひ",
+      "meaning": {
+        "en": "Mother's Day",
+        "vi": "Ngày của Mẹ"
+      },
+      "type": "noun"
+    }
+  ]
+}

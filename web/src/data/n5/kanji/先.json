@@ -1,0 +1,70 @@
+{
+  "character": "先",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "before",
+      "ahead, forward",
+      "in front"
+    ],
+    "vi": [
+      "trước",
+      "tiên tiến"
+    ]
+  },
+  "onyomi": [
+    "セン"
+  ],
+  "kunyomi": [
+    "さき"
+  ],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "先生[せんせい]",
+      "meaning": {
+        "en": "teacher",
+        "vi": "thầy giáo, cô giáo, bác sĩ"
+      }
+    },
+    {
+      "word": "先週[せんしゅう]",
+      "meaning": {
+        "en": "last week",
+        "vi": "tuần trước"
+      }
+    },
+    {
+      "word": "先[さき]",
+      "meaning": {
+        "en": "ahead, forward",
+        "vi": "trước, phía trước"
+      }
+    },
+    {
+      "word": "指先[ゆびさき]",
+      "meaning": {
+        "en": "fingertips",
+        "vi": "fingertips"
+      }
+    },
+    {
+      "word": "先月[せんげつ]",
+      "meaning": {
+        "en": "last month",
+        "vi": "tháng trước"
+      }
+    },
+    {
+      "word": "先行[せんこう]",
+      "meaning": {
+        "en": "advance, precedence",
+        "vi": "advance, precedence"
+      }
+    }
+  ],
+  "similar": [
+    "生"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "character": "地",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "earth, soil",
+      "place"
+    ],
+    "vi": [
+      "đất",
+      "địa điểm"
+    ]
+  },
+  "onyomi": [
+    "チ",
+    "ジ"
+  ],
+  "kunyomi": [],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "地図[ちず]",
+      "meaning": {
+        "en": "map",
+        "vi": "bản đồ"
+      }
+    },
+    {
+      "word": "地理[ちり]",
+      "meaning": {
+        "en": "geography",
+        "vi": "geography"
+      }
+    },
+    {
+      "word": "地球[ちきゅう]",
+      "meaning": {
+        "en": "the Earth",
+        "vi": "Trái Đất"
+      }
+    },
+    {
+      "word": "地面[じめん]",
+      "meaning": {
+        "en": "ground surface",
+        "vi": "ground surface"
+      }
+    },
+    {
+      "word": "地震[じしん]",
+      "meaning": {
+        "en": "earthquake",
+        "vi": "earthquake"
+      }
+    }
+  ]
+}

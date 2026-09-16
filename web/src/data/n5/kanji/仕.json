@@ -1,0 +1,45 @@
+{
+  "character": "仕",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "to serve",
+      "to do, to make"
+    ],
+    "vi": [
+      "làm việc",
+      "phục vụ"
+    ]
+  },
+  "onyomi": [
+    "シ"
+  ],
+  "kunyomi": [],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "仕事[しごと]",
+      "meaning": {
+        "en": "work, job",
+        "vi": "công việc"
+      }
+    },
+    {
+      "word": "仕方[しかた]",
+      "meaning": {
+        "en": "way of doing",
+        "vi": "cách làm, phương pháp"
+      }
+    },
+    {
+      "word": "仕上[しあ]げ",
+      "meaning": {
+        "en": "finish, completion",
+        "vi": "finish, completion"
+      }
+    }
+  ],
+  "similar": [
+    "使"
+  ]
+}

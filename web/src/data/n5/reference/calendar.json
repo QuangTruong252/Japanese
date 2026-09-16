@@ -1,0 +1,672 @@
+{
+  "level": "n5",
+  "slug": "calendar",
+  "title": {
+    "en": "Calendar",
+    "vi": "Lịch"
+  },
+  "description": {
+    "en": "Months, days of the month, days of the week and the book's time expressions.",
+    "vi": "Tháng, ngày trong tháng, ngày trong tuần và các cách diễn đạt thời gian trong giáo trình."
+  },
+  "order": 4,
+  "sections": [
+    {
+      "id": "months",
+      "title": {
+        "en": "Months — 〜月[がつ]",
+        "vi": "Các tháng — 〜月[がつ]"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Month",
+              "vi": "Từ vựng"
+            },
+            {
+              "en": "Reading",
+              "vi": "Ý nghĩa"
+            },
+            {
+              "en": "Meaning",
+              "vi": "Ghi chú"
+            }
+          ],
+          "rows": [
+            [
+              "1",
+              "いちがつ",
+              {
+                "en": "January",
+                "vi": "tháng 1"
+              }
+            ],
+            [
+              "2",
+              "にがつ",
+              {
+                "en": "February",
+                "vi": "tháng 2"
+              }
+            ],
+            [
+              "3",
+              "さんがつ",
+              {
+                "en": "March",
+                "vi": "tháng 3"
+              }
+            ],
+            [
+              "4",
+              "しがつ",
+              {
+                "en": "April",
+                "vi": "tháng 4"
+              }
+            ],
+            [
+              "5",
+              "ごがつ",
+              {
+                "en": "May",
+                "vi": "tháng 5"
+              }
+            ],
+            [
+              "6",
+              "ろくがつ",
+              {
+                "en": "June",
+                "vi": "tháng 6"
+              }
+            ],
+            [
+              "7",
+              "しちがつ",
+              {
+                "en": "July",
+                "vi": "tháng 7"
+              }
+            ],
+            [
+              "8",
+              "はちがつ",
+              {
+                "en": "August",
+                "vi": "tháng 8"
+              }
+            ],
+            [
+              "9",
+              "くがつ",
+              {
+                "en": "September",
+                "vi": "tháng 9"
+              }
+            ],
+            [
+              "10",
+              "じゅうがつ",
+              {
+                "en": "October",
+                "vi": "tháng 10"
+              }
+            ],
+            [
+              "11",
+              "じゅういちがつ",
+              {
+                "en": "November",
+                "vi": "tháng 11"
+              }
+            ],
+            [
+              "12",
+              "じゅうにがつ",
+              {
+                "en": "December",
+                "vi": "tháng 12"
+              }
+            ],
+            [
+              "?",
+              "なんがつ",
+              {
+                "en": "what month",
+                "vi": "tháng mấy"
+              }
+            ]
+          ]
+        }
+      ],
+      "note": {
+        "en": "Months are simply the number + 月[がつ]. Watch out for 4 しがつ, 7 しちがつ and 9 くがつ.",
+        "vi": "Tháng 4 (しがつ), tháng 7 (しちがつ) và tháng 9 (くがつ) có cách đọc đặc biệt. Hỏi tháng mấy dùng: 何月[なんがつ]."
+      }
+    },
+    {
+      "id": "days",
+      "title": {
+        "en": "Days of the month — 〜日[にち]",
+        "vi": "Các ngày trong tháng — 〜日[にち]"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Day",
+              "vi": "Từ vựng"
+            },
+            {
+              "en": "Reading",
+              "vi": "Ý nghĩa"
+            }
+          ],
+          "rows": [
+            [
+              "1",
+              "ついたち"
+            ],
+            [
+              "2",
+              "ふつか"
+            ],
+            [
+              "3",
+              "みっか"
+            ],
+            [
+              "4",
+              "よっか"
+            ],
+            [
+              "5",
+              "いつか"
+            ],
+            [
+              "6",
+              "むいか"
+            ],
+            [
+              "7",
+              "なのか"
+            ],
+            [
+              "8",
+              "ようか"
+            ],
+            [
+              "9",
+              "ここのか"
+            ],
+            [
+              "10",
+              "とおか"
+            ],
+            [
+              "11",
+              "じゅういちにち"
+            ],
+            [
+              "12",
+              "じゅうににち"
+            ],
+            [
+              "13",
+              "じゅうさんにち"
+            ],
+            [
+              "14",
+              "じゅうよっか"
+            ],
+            [
+              "15",
+              "じゅうごにち"
+            ],
+            [
+              "16",
+              "じゅうろくにち"
+            ],
+            [
+              "17",
+              "じゅうしちにち"
+            ],
+            [
+              "18",
+              "じゅうはちにち"
+            ],
+            [
+              "19",
+              "じゅうくにち"
+            ],
+            [
+              "20",
+              "はつか"
+            ],
+            [
+              "21",
+              "にじゅういちにち"
+            ],
+            [
+              "22",
+              "にじゅうににち"
+            ],
+            [
+              "23",
+              "にじゅうさんにち"
+            ],
+            [
+              "24",
+              "にじゅうよっか"
+            ],
+            [
+              "25",
+              "にじゅうごにち"
+            ],
+            [
+              "26",
+              "にじゅうろくにち"
+            ],
+            [
+              "27",
+              "にじゅうしちにち"
+            ],
+            [
+              "28",
+              "にじゅうはちにち"
+            ],
+            [
+              "29",
+              "にじゅうくにち"
+            ],
+            [
+              "30",
+              "さんじゅうにち"
+            ],
+            [
+              "31",
+              "さんじゅういちにち"
+            ],
+            [
+              "?",
+              "なんにち"
+            ]
+          ]
+        }
+      ],
+      "note": {
+        "en": "Days 1 to 10, plus 14, 20 and 24, have their own readings and are worth memorising.",
+        "vi": "Từ ngày 1 đến ngày 10, ngày 14, ngày 20 và ngày 24 có cách đọc đặc biệt theo âm thuần Nhật. Hỏi ngày mấy dùng: 何日[なんにち]."
+      }
+    },
+    {
+      "id": "weekdays",
+      "title": {
+        "en": "Days of the week — 〜曜日[ようび]",
+        "vi": "Các ngày trong tuần — 〜曜日[ようび]"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Reading",
+              "vi": "Từ vựng"
+            },
+            {
+              "en": "Writing",
+              "vi": "Ý nghĩa"
+            },
+            {
+              "en": "Meaning",
+              "vi": "Ghi chú"
+            }
+          ],
+          "rows": [
+            [
+              "にちようび",
+              "日曜日[にちようび]",
+              {
+                "en": "Sunday",
+                "vi": "chủ nhật"
+              }
+            ],
+            [
+              "げつようび",
+              "月曜日[げつようび]",
+              {
+                "en": "Monday",
+                "vi": "thứ hai"
+              }
+            ],
+            [
+              "かようび",
+              "火曜日[かようび]",
+              {
+                "en": "Tuesday",
+                "vi": "thứ ba"
+              }
+            ],
+            [
+              "すいようび",
+              "水曜日[すいようび]",
+              {
+                "en": "Wednesday",
+                "vi": "thứ tư"
+              }
+            ],
+            [
+              "もくようび",
+              "木曜日[もくようび]",
+              {
+                "en": "Thursday",
+                "vi": "thứ năm"
+              }
+            ],
+            [
+              "きんようび",
+              "金曜日[きんようび]",
+              {
+                "en": "Friday",
+                "vi": "thứ sáu"
+              }
+            ],
+            [
+              "どようび",
+              "土曜日[どようび]",
+              {
+                "en": "Saturday",
+                "vi": "thứ bảy"
+              }
+            ],
+            [
+              "なんようび",
+              "何曜日[なんようび]",
+              {
+                "en": "what day of the week",
+                "vi": "thứ mấy"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "when-day",
+      "title": {
+        "en": "Days and times of day",
+        "vi": "Ngày và các buổi trong ngày"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Day",
+              "vi": "Hôm kia"
+            },
+            {
+              "vi": ""
+            },
+            {
+              "en": "Morning",
+              "vi": "Hôm qua"
+            },
+            {
+              "vi": ""
+            },
+            {
+              "en": "Night",
+              "vi": "Hôm nay"
+            },
+            {
+              "vi": ""
+            }
+          ],
+          "rows": [
+            [
+              "おととい",
+              {
+                "en": "the day before yesterday",
+                "vi": "hôm kia"
+              },
+              "おとといの あさ",
+              {
+                "en": "the morning before last",
+                "vi": "sáng hôm kia"
+              },
+              "おとといの ばん（よる）",
+              {
+                "en": "the night before last",
+                "vi": "tối hôm kia"
+              }
+            ],
+            [
+              "きのう",
+              {
+                "en": "yesterday",
+                "vi": "hôm qua"
+              },
+              "きのうの あさ",
+              {
+                "en": "yesterday morning",
+                "vi": "sáng hôm qua"
+              },
+              "きのうの ばん（よる）",
+              {
+                "en": "last night",
+                "vi": "tối hôm qua"
+              }
+            ],
+            [
+              "きょう",
+              {
+                "en": "today",
+                "vi": "hôm nay"
+              },
+              "けさ",
+              {
+                "en": "this morning",
+                "vi": "sáng nay"
+              },
+              "こんばん（きょうの よる）",
+              {
+                "en": "tonight",
+                "vi": "tối nay"
+              }
+            ],
+            [
+              "あした",
+              {
+                "en": "tomorrow",
+                "vi": "ngày mai"
+              },
+              "あしたの あさ",
+              {
+                "en": "tomorrow morning",
+                "vi": "sáng mai"
+              },
+              "あしたの ばん（よる）",
+              {
+                "en": "tomorrow night",
+                "vi": "tối mai"
+              }
+            ],
+            [
+              "あさって",
+              {
+                "en": "the day after tomorrow",
+                "vi": "ngày kia"
+              },
+              "あさっての あさ",
+              {
+                "en": "the morning after tomorrow",
+                "vi": "sáng ngày kia"
+              },
+              "あさっての ばん（よる）",
+              {
+                "en": "the night after tomorrow",
+                "vi": "tối ngày kia"
+              }
+            ],
+            [
+              "まいにち",
+              {
+                "en": "every day",
+                "vi": "mỗi ngày"
+              },
+              "まいあさ",
+              {
+                "en": "every morning",
+                "vi": "mỗi sáng"
+              },
+              "まいばん",
+              {
+                "en": "every night",
+                "vi": "mỗi tối"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "when-long",
+      "title": {
+        "en": "Weeks, months and years",
+        "vi": "Tuần, tháng và năm"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Week",
+              "vi": "Tuần trước"
+            },
+            {
+              "vi": ""
+            },
+            {
+              "en": "Month",
+              "vi": "Tuần này"
+            },
+            {
+              "vi": ""
+            },
+            {
+              "en": "Year",
+              "vi": "Tuần sau"
+            },
+            {
+              "vi": ""
+            }
+          ],
+          "rows": [
+            [
+              "せんせんしゅう",
+              {
+                "en": "two weeks ago",
+                "vi": "hai tuần trước"
+              },
+              "せんせんげつ",
+              {
+                "en": "two months ago",
+                "vi": "hai tháng trước"
+              },
+              "おととし",
+              {
+                "en": "two years ago",
+                "vi": "hai năm trước"
+              }
+            ],
+            [
+              "せんしゅう",
+              {
+                "en": "last week",
+                "vi": "tuần trước"
+              },
+              "せんげつ",
+              {
+                "en": "last month",
+                "vi": "tháng trước"
+              },
+              "きょねん",
+              {
+                "en": "last year",
+                "vi": "năm ngoái"
+              }
+            ],
+            [
+              "こんしゅう",
+              {
+                "en": "this week",
+                "vi": "tuần này"
+              },
+              "こんげつ",
+              {
+                "en": "this month",
+                "vi": "tháng này"
+              },
+              "ことし",
+              {
+                "en": "this year",
+                "vi": "năm nay"
+              }
+            ],
+            [
+              "らいしゅう",
+              {
+                "en": "next week",
+                "vi": "tuần sau"
+              },
+              "らいげつ",
+              {
+                "en": "next month",
+                "vi": "tháng sau"
+              },
+              "らいねん",
+              {
+                "en": "next year",
+                "vi": "năm sau"
+              }
+            ],
+            [
+              "さらいしゅう",
+              {
+                "en": "in two weeks",
+                "vi": "hai tuần nữa"
+              },
+              "さらいげつ",
+              {
+                "en": "in two months",
+                "vi": "hai tháng nữa"
+              },
+              "さらいねん",
+              {
+                "en": "in two years",
+                "vi": "hai năm nữa"
+              }
+            ],
+            [
+              "まいしゅう",
+              {
+                "en": "every week",
+                "vi": "mỗi tuần"
+              },
+              "まいつき",
+              {
+                "en": "every month",
+                "vi": "mỗi tháng"
+              },
+              "まいとし、まいねん",
+              {
+                "en": "every year",
+                "vi": "mỗi năm"
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

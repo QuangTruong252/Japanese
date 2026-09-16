@@ -1,0 +1,75 @@
+{
+  "character": "読",
+  "level": "n5",
+  "lesson": 6,
+  "meanings": {
+    "en": [
+      "to read"
+    ],
+    "vi": [
+      "đọc"
+    ]
+  },
+  "onyomi": [
+    "ドク"
+  ],
+  "kunyomi": [
+    "よ.む"
+  ],
+  "strokes": 14,
+  "examples": [
+    {
+      "word": "読[よ]みます",
+      "meaning": {
+        "en": "to read",
+        "vi": "chạy"
+      }
+    },
+    {
+      "word": "読[よ]み 方[かた]",
+      "meaning": {
+        "en": "way of reading",
+        "vi": "cách đọc"
+      }
+    },
+    {
+      "word": "読[よ]む",
+      "meaning": {
+        "en": "to read",
+        "vi": "đọc"
+      }
+    },
+    {
+      "word": "音読[おんよ]み",
+      "meaning": {
+        "en": "on reading",
+        "vi": "on reading"
+      }
+    },
+    {
+      "word": "訓読[くんよ]み",
+      "meaning": {
+        "en": "kun reading",
+        "vi": "kun reading"
+      }
+    },
+    {
+      "word": "読者[どくしゃ]",
+      "meaning": {
+        "en": "reader",
+        "vi": "reader"
+      }
+    },
+    {
+      "word": "読書[どくしょ]",
+      "meaning": {
+        "en": "reading",
+        "vi": "việc đọc sách"
+      }
+    }
+  ],
+  "similar": [
+    "売",
+    "話"
+  ]
+}

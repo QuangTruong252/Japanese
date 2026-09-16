@@ -1,0 +1,526 @@
+{
+  "level": "n5",
+  "lesson": 9,
+  "words": [
+    {
+      "id": "wakarimasu",
+      "word": "わかります",
+      "kana": "わかります",
+      "meaning": {
+        "en": "to understand",
+        "vi": "hiểu, biết"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "arimasu",
+      "word": "あります",
+      "kana": "あります",
+      "meaning": {
+        "en": "to have, there is",
+        "vi": "có [đồ vật, tiền bạc]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "suki",
+      "word": "好[す]き[な]",
+      "kana": "すき",
+      "meaning": {
+        "en": "to like",
+        "vi": "thích"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "kirai",
+      "word": "嫌[きら]い[な]",
+      "kana": "きらい",
+      "meaning": {
+        "en": "to dislike",
+        "vi": "ghét, không thích"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "jouzu",
+      "word": "上手[じょうず][な]",
+      "kana": "じょうず",
+      "meaning": {
+        "en": "to be good at",
+        "vi": "giỏi, khéo léo"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "heta",
+      "word": "下手[へた][な]",
+      "kana": "へた",
+      "meaning": {
+        "en": "to be no good at",
+        "vi": "kém, dở"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "nomimono",
+      "word": "飲[の]み 物[もの]",
+      "kana": "のみもの",
+      "meaning": {
+        "en": "drink",
+        "vi": "đồ uống"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ryouri",
+      "word": "料理[りょうり]",
+      "kana": "りょうり",
+      "meaning": {
+        "en": "dish, cuisine",
+        "vi": "món ăn, việc nấu ăn"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "supootsu",
+      "word": "スポーツ",
+      "kana": "スポーツ",
+      "meaning": {
+        "en": "sport",
+        "vi": "thể thao"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "yakyuu",
+      "word": "野球[やきゅう]",
+      "kana": "やきゅう",
+      "meaning": {
+        "en": "baseball",
+        "vi": "bóng chày"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "dansu",
+      "word": "ダンス",
+      "kana": "ダンス",
+      "meaning": {
+        "en": "dance",
+        "vi": "khiêu vũ, nhảy"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ryokou",
+      "word": "旅行[りょこう]",
+      "kana": "りょこう",
+      "meaning": {
+        "en": "trip, journey",
+        "vi": "chuyến du lịch"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ongaku",
+      "word": "音楽[おんがく]",
+      "kana": "おんがく",
+      "meaning": {
+        "en": "music",
+        "vi": "âm nhạc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "uta",
+      "word": "歌[うた]",
+      "kana": "うた",
+      "meaning": {
+        "en": "song",
+        "vi": "bài hát"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kurashikku",
+      "word": "クラシック",
+      "kana": "クラシック",
+      "meaning": {
+        "en": "classical music",
+        "vi": "nhạc cổ điển"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "jazu",
+      "word": "ジャズ",
+      "kana": "ジャズ",
+      "meaning": {
+        "en": "jazz",
+        "vi": "nhạc jazz"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "konsaato",
+      "word": "コンサート",
+      "kana": "コンサート",
+      "meaning": {
+        "en": "concert",
+        "vi": "buổi hòa nhạc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "karaoke",
+      "word": "カラオケ",
+      "kana": "カラオケ",
+      "meaning": {
+        "en": "karaoke",
+        "vi": "karaoke"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kabuki",
+      "word": "歌舞伎[かぶき]",
+      "kana": "かぶき",
+      "meaning": {
+        "en": "kabuki (traditional theatre)",
+        "vi": "kịch Kabuki (kịch truyền thống Nhật)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "e",
+      "word": "絵[え]",
+      "kana": "え",
+      "meaning": {
+        "en": "painting, drawing",
+        "vi": "bức tranh, bức vẽ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ji",
+      "word": "字[じ]",
+      "kana": "じ",
+      "meaning": {
+        "en": "letter, character",
+        "vi": "chữ cái, chữ viết"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kanji",
+      "word": "漢字[かんじ]",
+      "kana": "かんじ",
+      "meaning": {
+        "en": "Chinese characters",
+        "vi": "chữ Hán, Kanji"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hiragana",
+      "word": "ひらがな",
+      "kana": "ひらがな",
+      "meaning": {
+        "en": "hiragana script",
+        "vi": "chữ Hiragana (chữ mềm)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "katakana",
+      "word": "かたかな",
+      "kana": "かたかな",
+      "meaning": {
+        "en": "katakana script",
+        "vi": "chữ Katakana (chữ cứng)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "roomaji",
+      "word": "ローマ字[じ]",
+      "kana": "ローマじ",
+      "meaning": {
+        "en": "Latin alphabet",
+        "vi": "chữ La-tinh, Romaji"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "komakai-okane",
+      "word": "細[こま]かいお 金[かね]",
+      "kana": "こまかいおかね",
+      "meaning": {
+        "en": "change, coins",
+        "vi": "tiền lẻ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "chiketto",
+      "word": "チケット",
+      "kana": "チケット",
+      "meaning": {
+        "en": "entrance",
+        "vi": "vé (xem phim, hòa nhạc)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "jikan",
+      "word": "時間[じかん]",
+      "kana": "じかん",
+      "meaning": {
+        "en": "time",
+        "vi": "thời gian"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "youji",
+      "word": "用事[ようじ]",
+      "kana": "ようじ",
+      "meaning": {
+        "en": "something to do",
+        "vi": "việc bận, việc riêng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "yakusoku",
+      "word": "約束[やくそく]",
+      "kana": "やくそく",
+      "meaning": {
+        "en": "appointment, engagement",
+        "vi": "cuộc hẹn, lời hứa"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "arubaito",
+      "word": "アルバイト",
+      "kana": "アルバイト",
+      "meaning": {
+        "en": "part-time job",
+        "vi": "công việc làm thêm"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "goshujin",
+      "word": "ご 主人[しゅじん]",
+      "kana": "ごしゅじん",
+      "meaning": {
+        "en": "(your) husband",
+        "vi": "chồng (của người khác)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "otto",
+      "word": "夫[おっと]／主人[しゅじん]",
+      "kana": "おっと／しゅじん",
+      "meaning": {
+        "en": "(my) husband",
+        "vi": "chồng (của mình)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "okusan",
+      "word": "奥[おく]さん",
+      "kana": "おくさん",
+      "meaning": {
+        "en": "(your) wife",
+        "vi": "vợ (của người khác)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tsuma",
+      "word": "妻[つま]／家内[かない]",
+      "kana": "つま／かない",
+      "meaning": {
+        "en": "(my) wife",
+        "vi": "vợ (của mình)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kodomo",
+      "word": "子[こ]ども",
+      "kana": "こども",
+      "meaning": {
+        "en": "child, (my) son",
+        "vi": "con cái, trẻ em"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "yoku",
+      "word": "よく",
+      "kana": "よく",
+      "meaning": {
+        "en": "well, a lot",
+        "vi": "rõ, tốt, thường xuyên"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "daitai",
+      "word": "だいたい",
+      "kana": "だいたい",
+      "meaning": {
+        "en": "more or less",
+        "vi": "đại khái, phần lớn"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "takusan",
+      "word": "たくさん",
+      "kana": "たくさん",
+      "meaning": {
+        "en": "a lot, much",
+        "vi": "nhiều"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "sukoshi",
+      "word": "少[すこ]し",
+      "kana": "すこし",
+      "meaning": {
+        "en": "a little",
+        "vi": "một chút, ít"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "zenzen",
+      "word": "全然[ぜんぜん]",
+      "kana": "ぜんぜん",
+      "meaning": {
+        "en": "nothing ~ (with a negative)",
+        "vi": "hoàn toàn không... (đi với phủ định)"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "hayaku",
+      "word": "早[はや]く・速[はや]く",
+      "kana": "はやく",
+      "meaning": {
+        "en": "early, fast",
+        "vi": "sớm, nhanh"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "kara-porque",
+      "word": "〜から",
+      "kana": "から",
+      "meaning": {
+        "en": "because ~",
+        "vi": "vì, do (chỉ lý do)"
+      },
+      "type": "particle"
+    },
+    {
+      "id": "doushite",
+      "word": "どうして",
+      "kana": "どうして",
+      "meaning": {
+        "en": "why",
+        "vi": "tại sao, vì sao"
+      },
+      "type": "interrogative"
+    },
+    {
+      "id": "kashite-kudasai",
+      "word": "貸[か]してください",
+      "kana": "かしてください",
+      "meaning": {
+        "en": "please lend me",
+        "vi": "xin hãy cho tôi mượn"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "ii-desu-yo",
+      "word": "いいですよ",
+      "kana": "いいですよ",
+      "meaning": {
+        "en": "yes, of course",
+        "vi": "được chứ / được đấy"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "zannen-desu",
+      "word": "残念[ざんねん]です[が]",
+      "kana": "ざんねんですが",
+      "meaning": {
+        "en": "I'm sorry[, but…]",
+        "vi": "Tiếc quá / Thật đáng tiếc"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "aa",
+      "word": "ああ",
+      "kana": "ああ",
+      "meaning": {
+        "en": "oh!",
+        "vi": "A / Ôi (tiếng thốt lên)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "isshoni-ikaga",
+      "word": "いっしょにいかがですか",
+      "kana": "いっしょにいかがですか",
+      "meaning": {
+        "en": "will you come with me?",
+        "vi": "cùng đi với tôi nhé?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "chotto-euf",
+      "word": "[〜は]ちょっと……",
+      "kana": "ちょっと",
+      "meaning": {
+        "en": "[~] is a little difficult (refusal)",
+        "vi": "thì có chút... (cách từ chối khéo)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "dame-desu-ka",
+      "word": "だめですか",
+      "kana": "だめですか",
+      "meaning": {
+        "en": "can't you?",
+        "vi": "Không được à?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "mata-kondo",
+      "word": "また 今度[こんど]お 願[ねが]いします",
+      "kana": "またこんどおねがいします",
+      "meaning": {
+        "en": "please invite me again",
+        "vi": "Hẹn bạn lần sau nhé"
+      },
+      "type": "expression"
+    }
+  ]
+}

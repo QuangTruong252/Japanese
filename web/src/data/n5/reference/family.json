@@ -1,0 +1,158 @@
+{
+  "level": "n5",
+  "slug": "family",
+  "title": {
+    "en": "The family",
+    "vi": "Gia đình"
+  },
+  "description": {
+    "en": "Japanese uses different words for your own family and for someone else's.",
+    "vi": "Tiếng Nhật sử dụng các từ xưng hô khác nhau khi nói về gia đình mình và gia đình người khác."
+  },
+  "order": 8,
+  "sections": [
+    {
+      "id": "table",
+      "title": {
+        "en": "My family and someone else's",
+        "vi": "Gia đình tôi và gia đình người khác"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Person",
+              "vi": "Thành viên"
+            },
+            {
+              "en": "My family",
+              "vi": "Gia đình tôi (khiêm nhường)"
+            },
+            {
+              "en": "Someone else's family",
+              "vi": "Gia đình người khác (tôn kính)"
+            }
+          ],
+          "rows": [
+            [
+              {
+                "en": "father",
+                "vi": "Bố / Cha"
+              },
+              "父[ちち]",
+              "お 父[とう]さん"
+            ],
+            [
+              {
+                "en": "mother",
+                "vi": "Mẹ"
+              },
+              "母[はは]",
+              "お 母[かあ]さん"
+            ],
+            [
+              {
+                "en": "husband",
+                "vi": "Chồng"
+              },
+              "夫[おっと]／主人[しゅじん]",
+              "ご 主人[しゅじん]"
+            ],
+            [
+              {
+                "en": "wife",
+                "vi": "Vợ"
+              },
+              "妻[つま]／家内[かない]",
+              "奥[おく]さん"
+            ],
+            [
+              {
+                "en": "son/child",
+                "vi": "Con cái"
+              },
+              "子[こ]ども",
+              "お 子[こ]さん"
+            ],
+            [
+              {
+                "en": "older brother",
+                "vi": "Anh trai"
+              },
+              "兄[あに]",
+              "お 兄[にい]さん"
+            ],
+            [
+              {
+                "en": "older sister",
+                "vi": "Chị gái"
+              },
+              "姉[あね]",
+              "お 姉[ねえ]さん"
+            ],
+            [
+              {
+                "en": "younger brother",
+                "vi": "Em trai"
+              },
+              "弟[おとうと]",
+              "弟[おとうと]さん"
+            ],
+            [
+              {
+                "en": "younger sister",
+                "vi": "Em gái"
+              },
+              "妹[いもうと]",
+              "妹[いもうと]さん"
+            ],
+            [
+              {
+                "en": "grandfather",
+                "vi": "Ông"
+              },
+              "祖父[そふ]",
+              "おじいさん"
+            ],
+            [
+              {
+                "en": "grandmother",
+                "vi": "Bà"
+              },
+              "祖母[そぼ]",
+              "おばあさん"
+            ],
+            [
+              {
+                "en": "parents",
+                "vi": "Bố mẹ / Cha mẹ"
+              },
+              "両親[りょうしん]",
+              "ご 両親[りょうしん]"
+            ],
+            [
+              {
+                "en": "siblings",
+                "vi": "Anh chị em"
+              },
+              "兄弟[きょうだい]",
+              "ご 兄弟[きょうだい]"
+            ],
+            [
+              {
+                "en": "family",
+                "vi": "Gia đình"
+              },
+              "家族[かぞく]",
+              "ご 家族[かぞく]"
+            ]
+          ]
+        }
+      ],
+      "note": {
+        "en": "Use the left-hand column when talking about your own family to other people. Use the right-hand one to talk about the listener's family — or to address your own parents.",
+        "vi": "Khi nói về người thân của mình với người ngoài, dùng từ khiêm nhường (cột 'Gia đình tôi'). Khi nói về người thân của người khác hoặc gọi trực tiếp người nhà mình, dùng từ tôn kính (cột 'Gia đình người khác')."
+      }
+    }
+  ]
+}

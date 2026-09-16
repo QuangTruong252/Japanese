@@ -1,0 +1,59 @@
+{
+  "character": "高",
+  "level": "n5",
+  "lesson": 8,
+  "meanings": {
+    "en": [
+      "tall, high",
+      "expensive"
+    ],
+    "vi": [
+      "cao",
+      "đắt"
+    ]
+  },
+  "onyomi": [
+    "コウ"
+  ],
+  "kunyomi": [
+    "たか.い"
+  ],
+  "strokes": 10,
+  "examples": [
+    {
+      "word": "高[たか]い",
+      "meaning": {
+        "en": "tall, expensive",
+        "vi": "cao, đắt"
+      }
+    },
+    {
+      "word": "高校[こうこう]",
+      "meaning": {
+        "en": "high school",
+        "vi": "trường trung học phổ thông, cấp ba"
+      }
+    },
+    {
+      "word": "高速[こうそく]",
+      "meaning": {
+        "en": "high speed",
+        "vi": "high speed"
+      }
+    },
+    {
+      "word": "最高[さいこう]",
+      "meaning": {
+        "en": "maximum, the highest",
+        "vi": "maximum, the highest"
+      }
+    },
+    {
+      "word": "高価[こうか]",
+      "meaning": {
+        "en": "expensive, high-priced",
+        "vi": "expensive, high-priced"
+      }
+    }
+  ]
+}

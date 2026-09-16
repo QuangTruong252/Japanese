@@ -1,0 +1,34 @@
+{
+  "character": "駅",
+  "level": "n5",
+  "lesson": 5,
+  "meanings": {
+    "en": [
+      "station"
+    ],
+    "vi": [
+      "nhà ga"
+    ]
+  },
+  "onyomi": [
+    "エキ"
+  ],
+  "kunyomi": [],
+  "strokes": 14,
+  "examples": [
+    {
+      "word": "駅[えき]",
+      "meaning": {
+        "en": "station",
+        "vi": "nhà ga"
+      }
+    },
+    {
+      "word": "東京駅[とうきょうえき]",
+      "meaning": {
+        "en": "Tokyo Station",
+        "vi": "Tokyo Station"
+      }
+    }
+  ]
+}

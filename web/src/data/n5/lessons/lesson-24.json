@@ -1,0 +1,133 @@
+{
+  "level": "n5",
+  "number": 24,
+  "title": {
+    "en": "Giving and receiving favours",
+    "vi": "Cho và nhận hành động"
+  },
+  "jpTitle": "手伝[てつだ]いに 行[い]きましょうか",
+  "description": {
+    "en": "くれます and favours expressed with 〜てあげます, 〜てもらいます and 〜てくれます.",
+    "vi": "Các cấu trúc cho và nhận hành động giúp đỡ: 〜てくれます (làm cho tôi), 〜てもらいます (được ai làm cho), 〜てあげます (làm cho ai)."
+  },
+  "grammar": [
+    {
+      "id": "kuremasu",
+      "title": {
+        "en": "くれます — \"to give (to me)\"",
+        "vi": "N1 は 私[わたし]に N2 を くれます — Ai đó cho/tặng tôi cái gì"
+      },
+      "pattern": {
+        "vi": "N1 は 私[わたし]に N2 を くれます"
+      },
+      "explanation": {
+        "en": "くれます is used when someone gives something to the speaker or their family: 佐藤[さとう]さんは 私[わたし]に お 菓子[かし]を くれました. あげます can never be used in that direction.",
+        "vi": "Động từ くれます dùng khi người khác tặng hoặc cho chính bản thân người nói (hoặc người thân trong gia đình người nói) một món đồ N2."
+      },
+      "examples": [
+        {
+          "jp": "山田[やまだ]さんは 私[わたし]に 花[はな]をくれました。",
+          "translation": {
+            "en": "Mr. Yamada gave me flowers.",
+            "vi": "Anh Yamada đã tặng hoa cho tôi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "te-agemasu",
+      "title": {
+        "en": "V て あげます — doing a favour",
+        "vi": "V て あげます — Làm việc gì giúp cho ai"
+      },
+      "pattern": {
+        "vi": "V て あげます"
+      },
+      "explanation": {
+        "en": "〜てあげます expresses doing something for someone else's benefit: 私[わたし]は 木村[きむら]さんに 本[ほん]を 貸[か]してあげました. Said straight to the person it can sound condescending, so it is avoided with superiors.",
+        "vi": "Diễn tả hành động người nói làm một điều gì đó với mục đích giúp đỡ đối phương. Cần chú ý khi dùng với người lớn tuổi vì có thể tạo cảm giác ban ơn."
+      },
+      "examples": [
+        {
+          "jp": "私[わたし]は 妹[いもうと]に 宿題[しゅくだい]を 教[おし]えてあげました。",
+          "translation": {
+            "en": "I helped my little sister with her homework.",
+            "vi": "Tôi đã giảng bài tập giúp cho em gái tôi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "te-moraimasu",
+      "title": {
+        "en": "V て もらいます — receiving a favour",
+        "vi": "N1 は N2 に V て もらいます — Nhận được sự giúp đỡ từ ai"
+      },
+      "pattern": {
+        "vi": "N1 は N2 に V て もらいます"
+      },
+      "explanation": {
+        "en": "〜てもらいます expresses receiving the favour, with gratitude: 私[わたし]は 山田[やまだ]さんに 図書館[としょかん]の 電話番号[でんわばんごう]を 教[おし]えてもらいました.",
+        "vi": "Biểu thị việc chủ ngữ N1 nhận được một hành động giúp đỡ từ người N2, đồng thời hàm chứa lòng biết ơn đối với người đã giúp đỡ mình."
+      },
+      "examples": [
+        {
+          "jp": "友達[ともだち]に 引[ひ]っ 越[こ]しを 手伝[てつだ]ってもらいました。",
+          "translation": {
+            "en": "A friend helped me with the move.",
+            "vi": "Tôi đã được một người bạn giúp đỡ dọn nhà."
+          }
+        }
+      ]
+    },
+    {
+      "id": "te-kuremasu",
+      "title": {
+        "en": "V て くれます — a favour done for me",
+        "vi": "N は [私[わたし]に] V て くれます — Ai đó làm việc gì giúp cho tôi"
+      },
+      "pattern": {
+        "vi": "N は [私[わたし]に] V て くれます"
+      },
+      "explanation": {
+        "en": "〜てくれます highlights that someone did the favour of their own accord for the speaker: 母[はは]は [私[わたし]に]セーターを 送[おく]ってくれました. The 私[わたし]に is usually left out.",
+        "vi": "Diễn tả hành động mà một người nào đó làm việc tốt giúp đỡ người nói (hoặc người trong gia đình người nói) với lòng biết ơn từ phía người nhận."
+      },
+      "examples": [
+        {
+          "jp": "佐藤[さとう]さんは 地図[ちず]をかいてくれました。",
+          "translation": {
+            "en": "Ms. Sato drew me a map.",
+            "vi": "Chị Sato đã vẽ bản đồ giúp cho tôi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "wa-ga-v",
+      "title": {
+        "en": "N1 は N2 が V — が inside the sentence",
+        "vi": "N1 は N2 が V て くれました — Nhấn mạnh người đã làm giúp"
+      },
+      "pattern": {
+        "vi": "N1 は N2 が V て くれました"
+      },
+      "explanation": {
+        "en": "When the person who did the favour is new information, they are marked with が: 誰[だれ]が 手伝[てつだ]ってくれましたか。… 母[はは]が 手伝[てつだ]ってくれました.",
+        "vi": "Khi muốn nhấn mạnh chính N2 là người đã tự tay làm món đồ hoặc hành động N1 giúp mình, trợ từ が được đặt sau người thực hiện N2."
+      },
+      "examples": [
+        {
+          "jp": "お 弁当[べんとう]は 妻[つま]が 作[つく]ってくれました。",
+          "translation": {
+            "en": "My wife made the bento for me.",
+            "vi": "Cơm hộp này là do chính vợ tôi đã làm giúp cho tôi."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "family"
+  ]
+}

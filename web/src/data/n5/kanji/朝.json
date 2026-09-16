@@ -1,0 +1,56 @@
+{
+  "character": "朝",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "tomorrow, morning"
+    ],
+    "vi": [
+      "buổi sáng"
+    ]
+  },
+  "onyomi": [
+    "チョウ"
+  ],
+  "kunyomi": [
+    "あさ"
+  ],
+  "strokes": 12,
+  "examples": [
+    {
+      "word": "朝[あさ]",
+      "meaning": {
+        "en": "tomorrow, morning",
+        "vi": "buổi sáng"
+      }
+    },
+    {
+      "word": "朝日[あさひ]",
+      "meaning": {
+        "en": "rising sun",
+        "vi": "rising sun"
+      }
+    },
+    {
+      "word": "朝食[ちょうしょく]",
+      "meaning": {
+        "en": "breakfast",
+        "vi": "bữa ăn sáng"
+      }
+    },
+    {
+      "word": "朝刊[ちょうかん]",
+      "meaning": {
+        "en": "morning edition",
+        "vi": "morning edition"
+      }
+    },
+    {
+      "word": "早朝[そうちょう]",
+      "meaning": {
+        "en": "early in the morning",
+        "vi": "sáng sớm"
+      }
+    }
+  ]
+}

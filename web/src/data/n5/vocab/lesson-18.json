@@ -1,0 +1,286 @@
+{
+  "level": "n5",
+  "lesson": 18,
+  "words": [
+    {
+      "id": "dekimasu",
+      "word": "できます",
+      "kana": "できます",
+      "meaning": {
+        "en": "can, to be able to",
+        "vi": "có thể, biết làm"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "araimasu",
+      "word": "洗[あら]います",
+      "kana": "あらいます",
+      "meaning": {
+        "en": "to wash",
+        "vi": "rửa, giặt"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "hikimasu",
+      "word": "弾[ひ]きます",
+      "kana": "ひきます",
+      "meaning": {
+        "en": "to play (piano, strings)",
+        "vi": "chơi [nhạc cụ phím/dây]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "utaimasu",
+      "word": "歌[うた]います",
+      "kana": "うたいます",
+      "meaning": {
+        "en": "to sing",
+        "vi": "hát"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "atsumemasu",
+      "word": "集[あつ]めます",
+      "kana": "あつめます",
+      "meaning": {
+        "en": "to collect, to gather",
+        "vi": "thu thập, sưu tầm"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "sutemasu",
+      "word": "捨[す]てます",
+      "kana": "すてます",
+      "meaning": {
+        "en": "to throw away",
+        "vi": "vứt, bỏ đi"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "kaemasu",
+      "word": "換[か]えます",
+      "kana": "かえます",
+      "meaning": {
+        "en": "to change, to replace",
+        "vi": "đổi, trao đổi, thay đổi"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "unten-shimasu",
+      "word": "運転[うんてん]します",
+      "kana": "うんてんします",
+      "meaning": {
+        "en": "to drive",
+        "vi": "lái xe"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "yoyaku-shimasu",
+      "word": "予約[よやく]します",
+      "kana": "よやくします",
+      "meaning": {
+        "en": "to book, to reserve",
+        "vi": "đặt chỗ, hẹn trước"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "piano",
+      "word": "ピアノ",
+      "kana": "ピアノ",
+      "meaning": {
+        "en": "piano",
+        "vi": "đàn dương cầm, piano"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "meetoru",
+      "word": "〜メートル",
+      "kana": "メートル",
+      "meaning": {
+        "en": "~ metre(s)",
+        "vi": "mét (đơn vị đo lường)"
+      },
+      "type": "counter"
+    },
+    {
+      "id": "genkin",
+      "word": "現金[げんきん]",
+      "kana": "げんきん",
+      "meaning": {
+        "en": "cash",
+        "vi": "tiền mặt"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shumi",
+      "word": "趣味[しゅみ]",
+      "kana": "しゅみ",
+      "meaning": {
+        "en": "hobby, pastime",
+        "vi": "sở thích"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "nikki",
+      "word": "日記[にっき]",
+      "kana": "にっき",
+      "meaning": {
+        "en": "diary",
+        "vi": "nhật ký"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "oinori",
+      "word": "お 祈[いの]り",
+      "kana": "おいのり",
+      "meaning": {
+        "en": "prayer",
+        "vi": "sự cầu nguyện, lời cầu nguyện"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kachou",
+      "word": "課長[かちょう]",
+      "kana": "かちょう",
+      "meaning": {
+        "en": "section chief",
+        "vi": "trưởng phòng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "buchou",
+      "word": "部長[ぶちょう]",
+      "kana": "ぶちょう",
+      "meaning": {
+        "en": "department manager",
+        "vi": "trưởng ban, giám đốc khối"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shachou",
+      "word": "社長[しゃちょう]",
+      "kana": "しゃちょう",
+      "meaning": {
+        "en": "company president",
+        "vi": "giám đốc công ty, tổng giám đốc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "doubutsu",
+      "word": "動物[どうぶつ]",
+      "kana": "どうぶつ",
+      "meaning": {
+        "en": "animal",
+        "vi": "động vật, thú nuôi"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "uma",
+      "word": "馬[うま]",
+      "kana": "うま",
+      "meaning": {
+        "en": "horse",
+        "vi": "con ngựa"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "intaanetto",
+      "word": "インターネット",
+      "kana": "インターネット",
+      "meaning": {
+        "en": "the internet",
+        "vi": "mạng Internet"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tokuni",
+      "word": "特[とく]に",
+      "kana": "とくに",
+      "meaning": {
+        "en": "particularly",
+        "vi": "đặc biệt là"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "hee",
+      "word": "へえ",
+      "kana": "へえ",
+      "meaning": {
+        "en": "really? (surprise)",
+        "vi": "thế cơ à! (thể hiện ngạc nhiên)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "sorewa-omoshiroi",
+      "word": "それはおもしろいですね",
+      "kana": "それはおもしろいですね",
+      "meaning": {
+        "en": "how interesting!",
+        "vi": "điều đó hay và thú vị thật đấy!"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "nakanaka",
+      "word": "なかなか",
+      "kana": "なかなか",
+      "meaning": {
+        "en": "not that easily (with a negative)",
+        "vi": "mãi mà không... (đi với phủ định)"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "hontou-desu-ka",
+      "word": "ほんとうですか",
+      "kana": "ほんとうですか",
+      "meaning": {
+        "en": "really? seriously?",
+        "vi": "Có thật thế không?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "zehi",
+      "word": "ぜひ",
+      "kana": "ぜひ",
+      "meaning": {
+        "en": "by all means, without fail",
+        "vi": "nhất định"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "furusato",
+      "word": "故郷[ふるさと]",
+      "kana": "ふるさと",
+      "meaning": {
+        "en": "homeland",
+        "vi": "quê hương"
+      },
+      "type": "noun"
+    }
+  ]
+}

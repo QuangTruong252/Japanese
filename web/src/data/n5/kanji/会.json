@@ -1,0 +1,77 @@
+{
+  "character": "会",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "to meet",
+      "society",
+      "meeting"
+    ],
+    "vi": [
+      "gặp",
+      "hội họp"
+    ]
+  },
+  "onyomi": [
+    "カイ"
+  ],
+  "kunyomi": [
+    "あ.う"
+  ],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "会[あ]います",
+      "meaning": {
+        "en": "to meet",
+        "vi": "gặp [bạn bè]"
+      }
+    },
+    {
+      "word": "会社[かいしゃ]",
+      "meaning": {
+        "en": "company",
+        "vi": "công ty"
+      }
+    },
+    {
+      "word": "会議[かいぎ]",
+      "meaning": {
+        "en": "meeting",
+        "vi": "cuộc họp, hội nghị"
+      }
+    },
+    {
+      "word": "会[あ]う",
+      "meaning": {
+        "en": "to meet",
+        "vi": "gặp gỡ"
+      }
+    },
+    {
+      "word": "出会[であ]い",
+      "meaning": {
+        "en": "meeting, encounter",
+        "vi": "meeting, encounter"
+      }
+    },
+    {
+      "word": "会話[かいわ]",
+      "meaning": {
+        "en": "conversation",
+        "vi": "hội thoại, đàm thoại"
+      }
+    },
+    {
+      "word": "会員[かいいん]",
+      "meaning": {
+        "en": "member",
+        "vi": "member"
+      }
+    }
+  ],
+  "similar": [
+    "今"
+  ]
+}

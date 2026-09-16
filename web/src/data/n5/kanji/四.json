@@ -1,0 +1,70 @@
+{
+  "character": "四",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "four"
+    ],
+    "vi": [
+      "bốn",
+      "số bốn"
+    ]
+  },
+  "onyomi": [
+    "シ"
+  ],
+  "kunyomi": [
+    "よん",
+    "よ.つ",
+    "よ"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "四[よん]",
+      "meaning": {
+        "en": "four",
+        "vi": "bốn, số 4"
+      }
+    },
+    {
+      "word": "四[よっ]つ",
+      "meaning": {
+        "en": "four things",
+        "vi": "bốn cái"
+      }
+    },
+    {
+      "word": "四月[しがつ]",
+      "meaning": {
+        "en": "April",
+        "vi": "tháng tư"
+      }
+    },
+    {
+      "word": "四季[しき]",
+      "meaning": {
+        "en": "the four seasons",
+        "vi": "the four seasons"
+      }
+    },
+    {
+      "word": "四人[よにん]",
+      "meaning": {
+        "en": "four people",
+        "vi": "bốn người"
+      }
+    },
+    {
+      "word": "四日[よっか]",
+      "meaning": {
+        "en": "4th day",
+        "vi": "ngày mùng bốn"
+      }
+    }
+  ],
+  "similar": [
+    "西"
+  ]
+}

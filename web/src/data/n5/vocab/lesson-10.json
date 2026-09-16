@@ -1,0 +1,476 @@
+{
+  "level": "n5",
+  "lesson": 10,
+  "words": [
+    {
+      "id": "arimasu",
+      "word": "あります",
+      "kana": "あります",
+      "meaning": {
+        "en": "to be, there is (things)",
+        "vi": "ở, có (dành cho đồ vật vô tri)"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "imasu",
+      "word": "います",
+      "kana": "います",
+      "meaning": {
+        "en": "to be, there is (living things)",
+        "vi": "ở, có (dành cho người và động vật)"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "iroiro",
+      "word": "いろいろ[な]",
+      "kana": "いろいろ",
+      "meaning": {
+        "en": "various",
+        "vi": "nhiều loại, đa dạng"
+      },
+      "type": "adjective-na"
+    },
+    {
+      "id": "otokonohito",
+      "word": "男[おとこ]の 人[ひと]",
+      "kana": "おとこのひと",
+      "meaning": {
+        "en": "man",
+        "vi": "người đàn ông"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "onnanohito",
+      "word": "女[おんな]の 人[ひと]",
+      "kana": "おんなのひと",
+      "meaning": {
+        "en": "woman",
+        "vi": "người phụ nữ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "otokonoko",
+      "word": "男[おとこ]の 子[こ]",
+      "kana": "おとこのこ",
+      "meaning": {
+        "en": "child",
+        "vi": "bé trai, cậu bé"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "onnanoko",
+      "word": "女[おんな]の 子[こ]",
+      "kana": "おんなのこ",
+      "meaning": {
+        "en": "girl",
+        "vi": "bé gái, cô bé"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "inu",
+      "word": "犬[いぬ]",
+      "kana": "いぬ",
+      "meaning": {
+        "en": "dog",
+        "vi": "con chó"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "neko",
+      "word": "猫[ねこ]",
+      "kana": "ねこ",
+      "meaning": {
+        "en": "cat",
+        "vi": "con mèo"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "panda",
+      "word": "パンダ",
+      "kana": "パンダ",
+      "meaning": {
+        "en": "panda",
+        "vi": "gấu trúc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "zou",
+      "word": "象[ぞう]",
+      "kana": "ぞう",
+      "meaning": {
+        "en": "elephant",
+        "vi": "con voi"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ki",
+      "word": "木[き]",
+      "kana": "き",
+      "meaning": {
+        "en": "tree, wood",
+        "vi": "cây, gỗ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "mono",
+      "word": "物[もの]",
+      "kana": "もの",
+      "meaning": {
+        "en": "thing, object",
+        "vi": "đồ vật, vật"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "denchi",
+      "word": "電池[でんち]",
+      "kana": "でんち",
+      "meaning": {
+        "en": "battery",
+        "vi": "pin"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hako",
+      "word": "箱[はこ]",
+      "kana": "はこ",
+      "meaning": {
+        "en": "box",
+        "vi": "cái hộp, thùng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "suicchi",
+      "word": "スイッチ",
+      "kana": "スイッチ",
+      "meaning": {
+        "en": "switch",
+        "vi": "công tắc"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "reizouko",
+      "word": "冷蔵庫[れいぞうこ]",
+      "kana": "れいぞうこ",
+      "meaning": {
+        "en": "fridge",
+        "vi": "tủ lạnh"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "teeburu",
+      "word": "テーブル",
+      "kana": "テーブル",
+      "meaning": {
+        "en": "table",
+        "vi": "bàn ăn, bàn tròn"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "beddo",
+      "word": "ベッド",
+      "kana": "ベッド",
+      "meaning": {
+        "en": "bed",
+        "vi": "giường ngủ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tana",
+      "word": "棚[たな]",
+      "kana": "たな",
+      "meaning": {
+        "en": "shelf",
+        "vi": "giá, kệ sách/đồ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "doa",
+      "word": "ドア",
+      "kana": "ドア",
+      "meaning": {
+        "en": "door",
+        "vi": "cửa ra vào"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "mado",
+      "word": "窓[まど]",
+      "kana": "まど",
+      "meaning": {
+        "en": "window",
+        "vi": "cửa sổ"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "posuto",
+      "word": "ポスト",
+      "kana": "ポスト",
+      "meaning": {
+        "en": "postbox",
+        "vi": "hộp thư bưu điện"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "biru",
+      "word": "ビル",
+      "kana": "ビル",
+      "meaning": {
+        "en": "building",
+        "vi": "tòa nhà cao tầng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "atm",
+      "word": "ATM",
+      "kana": "エーティーエム",
+      "meaning": {
+        "en": "cash machine, ATM",
+        "vi": "máy rút tiền tự động ATM"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "konbini",
+      "word": "コンビニ",
+      "kana": "コンビニ",
+      "meaning": {
+        "en": "convenience store",
+        "vi": "cửa hàng tiện lợi"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kouen",
+      "word": "公園[こうえん]",
+      "kana": "こうえん",
+      "meaning": {
+        "en": "park",
+        "vi": "công viên"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "kissaten",
+      "word": "喫茶店[きっさてん]",
+      "kana": "きっさてん",
+      "meaning": {
+        "en": "café",
+        "vi": "quán cà phê, quán giải khát"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ya-tienda",
+      "word": "〜屋[や]",
+      "kana": "や",
+      "meaning": {
+        "en": "~ shop",
+        "vi": "cửa hàng... (hậu tố)"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "noriba",
+      "word": "乗[の]り 場[ば]",
+      "kana": "のりば",
+      "meaning": {
+        "en": "stop, stand (for taxis, trains…)",
+        "vi": "bến đỗ, điểm đón xe"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ken",
+      "word": "県[けん]",
+      "kana": "けん",
+      "meaning": {
+        "en": "prefecture",
+        "vi": "tỉnh (đơn vị hành chính Nhật)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ue",
+      "word": "上[うえ]",
+      "kana": "うえ",
+      "meaning": {
+        "en": "on top, above",
+        "vi": "trên, phía trên"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shita",
+      "word": "下[した]",
+      "kana": "した",
+      "meaning": {
+        "en": "below, underneath",
+        "vi": "dưới, phía dưới"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "mae",
+      "word": "前[まえ]",
+      "kana": "まえ",
+      "meaning": {
+        "en": "in front",
+        "vi": "trước, phía trước"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ushiro",
+      "word": "後[うし]ろ",
+      "kana": "うしろ",
+      "meaning": {
+        "en": "behind",
+        "vi": "sau, phía sau"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "migi",
+      "word": "右[みぎ]",
+      "kana": "みぎ",
+      "meaning": {
+        "en": "right",
+        "vi": "phải, bên phải"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "hidari",
+      "word": "左[ひだり]",
+      "kana": "ひだり",
+      "meaning": {
+        "en": "left",
+        "vi": "trái, bên trái"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "naka",
+      "word": "中[なか]",
+      "kana": "なか",
+      "meaning": {
+        "en": "inside",
+        "vi": "trong, bên trong"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "soto",
+      "word": "外[そと]",
+      "kana": "そと",
+      "meaning": {
+        "en": "outside",
+        "vi": "ngoài, bên ngoài"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tonari",
+      "word": "隣[となり]",
+      "kana": "となり",
+      "meaning": {
+        "en": "next to, beside",
+        "vi": "bên cạnh, sát bên"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "chikaku",
+      "word": "近[ちか]く",
+      "kana": "ちかく",
+      "meaning": {
+        "en": "near",
+        "vi": "gần, khu vực lân cận"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "aida",
+      "word": "間[あいだ]",
+      "kana": "あいだ",
+      "meaning": {
+        "en": "between",
+        "vi": "ở giữa, khoảng giữa"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ya-nado",
+      "word": "〜や〜[など]",
+      "kana": "や、など",
+      "meaning": {
+        "en": "~, ~, and so on",
+        "vi": "...và... vân vân (liệt kê không đầy đủ)"
+      },
+      "type": "particle"
+    },
+    {
+      "id": "doumo-sumimasen",
+      "word": "[どうも]すみません",
+      "kana": "どうもすみません",
+      "meaning": {
+        "en": "thank you [very much]",
+        "vi": "xin cảm ơn bạn rất nhiều / xin lỗi bạn"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "nanpuraa",
+      "word": "ナンプラー",
+      "kana": "ナンプラー",
+      "meaning": {
+        "en": "nam pla (fish sauce)",
+        "vi": "nước mắm (Nam Pla)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "koonaa",
+      "word": "コーナー",
+      "kana": "コーナー",
+      "meaning": {
+        "en": "section",
+        "vi": "quầy, khu vực (corner)"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "ichiban-shita",
+      "word": "いちばん 下[した]",
+      "kana": "いちばんした",
+      "meaning": {
+        "en": "the lowest",
+        "vi": "dưới cùng, thấp nhất"
+      },
+      "type": "expression"
+    }
+  ]
+}

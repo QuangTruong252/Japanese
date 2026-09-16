@@ -1,0 +1,60 @@
+{
+  "character": "赤",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "red"
+    ],
+    "vi": [
+      "đỏ",
+      "màu đỏ"
+    ]
+  },
+  "onyomi": [
+    "セキ"
+  ],
+  "kunyomi": [
+    "あか.い"
+  ],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "赤[あか]い",
+      "meaning": {
+        "en": "red",
+        "vi": "màu đỏ, đỏ"
+      }
+    },
+    {
+      "word": "赤字[あかじ]",
+      "meaning": {
+        "en": "the red (deficit)",
+        "vi": "the red (deficit)"
+      }
+    },
+    {
+      "word": "赤[あか]ん 坊[ぼう]",
+      "meaning": {
+        "en": "baby",
+        "vi": "baby"
+      }
+    },
+    {
+      "word": "赤道[せきどう]",
+      "meaning": {
+        "en": "equator",
+        "vi": "equator"
+      }
+    },
+    {
+      "word": "赤十字[せきじゅうじ]",
+      "meaning": {
+        "en": "Red Cross",
+        "vi": "Red Cross"
+      }
+    }
+  ],
+  "similar": [
+    "変"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "character": "左",
+  "level": "n5",
+  "lesson": 10,
+  "meanings": {
+    "en": [
+      "left"
+    ],
+    "vi": [
+      "trái",
+      "bên trái"
+    ]
+  },
+  "onyomi": [
+    "サ"
+  ],
+  "kunyomi": [
+    "ひだり"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "左[ひだり]",
+      "meaning": {
+        "en": "left",
+        "vi": "bên trái, phía trái"
+      }
+    },
+    {
+      "word": "左手[ひだりて]",
+      "meaning": {
+        "en": "left hand",
+        "vi": "tay trái"
+      }
+    },
+    {
+      "word": "左折[させつ]",
+      "meaning": {
+        "en": "left turn",
+        "vi": "left turn"
+      }
+    },
+    {
+      "word": "左翼[さよく]",
+      "meaning": {
+        "en": "the left (politics)",
+        "vi": "the left (politics)"
+      }
+    },
+    {
+      "word": "左方[さほう]",
+      "meaning": {
+        "en": "left side",
+        "vi": "left side"
+      }
+    }
+  ],
+  "similar": [
+    "右"
+  ]
+}

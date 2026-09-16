@@ -1,0 +1,61 @@
+{
+  "character": "好",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "to like"
+    ],
+    "vi": [
+      "thích",
+      "tốt"
+    ]
+  },
+  "onyomi": [
+    "コウ"
+  ],
+  "kunyomi": [
+    "す.き"
+  ],
+  "strokes": 6,
+  "examples": [
+    {
+      "word": "好[す]き",
+      "meaning": {
+        "en": "to like",
+        "vi": "thích"
+      }
+    },
+    {
+      "word": "好況[こうきょう]",
+      "meaning": {
+        "en": "good economic conditions",
+        "vi": "good economic conditions"
+      }
+    },
+    {
+      "word": "好都合[こうつごう]",
+      "meaning": {
+        "en": "favourable",
+        "vi": "favourable"
+      }
+    },
+    {
+      "word": "好意[こうい]",
+      "meaning": {
+        "en": "kindness",
+        "vi": "kindness"
+      }
+    },
+    {
+      "word": "好物[こうぶつ]",
+      "meaning": {
+        "en": "favourite dish",
+        "vi": "món ăn yêu thích"
+      }
+    }
+  ],
+  "similar": [
+    "姉",
+    "始"
+  ]
+}

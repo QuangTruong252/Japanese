@@ -1,0 +1,59 @@
+{
+  "character": "売",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "to sell"
+    ],
+    "vi": [
+      "bán"
+    ]
+  },
+  "onyomi": [
+    "バイ"
+  ],
+  "kunyomi": [
+    "う.る"
+  ],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "売[う]る",
+      "meaning": {
+        "en": "to sell",
+        "vi": "bán"
+      }
+    },
+    {
+      "word": "売店[ばいてん]",
+      "meaning": {
+        "en": "kiosk",
+        "vi": "quầy bán hàng, căng tin"
+      }
+    },
+    {
+      "word": "商売[しょうばい]",
+      "meaning": {
+        "en": "business",
+        "vi": "business"
+      }
+    },
+    {
+      "word": "販売[はんばい]",
+      "meaning": {
+        "en": "sale",
+        "vi": "sale"
+      }
+    },
+    {
+      "word": "売[う]り 場[ば]",
+      "meaning": {
+        "en": "counter, department",
+        "vi": "quầy bán hàng, nơi bán"
+      }
+    }
+  ],
+  "similar": [
+    "読"
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "level": "n5",
+  "number": 18,
+  "title": {
+    "en": "The dictionary form",
+    "vi": "Thể từ điển và khả năng"
+  },
+  "jpTitle": "ご 趣味[しゅみ]は 何[なん]ですか",
+  "description": {
+    "en": "The dictionary form of the verb, expressing ability with できます, and talking about hobbies.",
+    "vi": "Cách chia động từ thể từ điển (辞書形), nói về khả năng (〜ことができます), sở thích (趣味は〜ことです) và trước khi (〜まえに)."
+  },
+  "grammar": [
+    {
+      "id": "forma-diccionario",
+      "title": {
+        "en": "The dictionary form",
+        "vi": "Cách chia thể từ điển (辞書形) của động từ"
+      },
+      "pattern": {
+        "vi": "書[か]きます→書[か]く ／ 食[た]べます→食[た]べる ／ します→する ／ 来[き]ます→来[く]る"
+      },
+      "explanation": {
+        "en": "This is the form verbs appear in in dictionaries. Group I: the -i syllable becomes -u (書[か]きます → 書[か]く, 飲[の]みます → 飲[の]む). Group II: add る (食[た]べる). Group III: する and 来[く]る.",
+        "vi": "Thể từ điển (辞書形) là dạng cơ bản của động từ trong từ điển. Nhóm I: đổi âm hàng -i thành âm hàng -u; Nhóm II: bỏ ます thêm る; Nhóm III: する, くる."
+      },
+      "examples": [
+        {
+          "jp": "泳[およ]ぎます → 泳[およ]ぐ ／ 待[ま]ちます → 待[ま]つ",
+          "translation": {
+            "en": "To swim, to wait (in dictionary form).",
+            "vi": "Bơi (oyogimasu → oyogu) ／ Chờ (machimasu → matsu)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dekimasu",
+      "title": {
+        "en": "N／V こと が できます — ability",
+        "vi": "N が できます ／ V (từ điển) こと が できます — Khả năng, năng lực"
+      },
+      "pattern": {
+        "en": "N が できます ／ V (dict.) こと が できます",
+        "vi": "N が できます ／ V (thể từ điển) こと が できます"
+      },
+      "explanation": {
+        "en": "できます expresses ability or possibility. The object can be a noun (日本語[にほんご]が できます) or a verb nominalised with こと: 漢字[かんじ]を 読[よ]む ことが できます.",
+        "vi": "Dùng để biểu thị khả năng có thể làm được một việc gì đó (do năng lực bản thân hoặc do hoàn cảnh cho phép). Danh từ hóa động từ bằng cấu trúc: V (thể từ điển) + こと."
+      },
+      "examples": [
+        {
+          "jp": "ミラーさんは 日本語[にほんご]が 話[はな]せますか。… 日本語[にほんご]を 話[はな]すことができます。",
+          "translation": {
+            "en": "Mr. Miller can speak Japanese.",
+            "vi": "Anh Miller có thể nói tiếng Nhật được không? …Có, anh ấy có thể nói tiếng Nhật."
+          }
+        },
+        {
+          "jp": "カードで 払[はら]うことができます。",
+          "translation": {
+            "en": "You can pay by card.",
+            "vi": "Bạn có thể thanh toán bằng thẻ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "shumi",
+      "title": {
+        "en": "私[わたし]の 趣味[しゅみ]は 〜です — hobbies",
+        "vi": "趣味[しゅみ]は N ／ V (từ điển) こと です — Nói về sở thích"
+      },
+      "pattern": {
+        "en": "趣味[しゅみ]は N ／ V (dict.) こと です",
+        "vi": "趣味[しゅみ]は N ／ V (thể từ điển) こと です"
+      },
+      "explanation": {
+        "en": "To give your hobby you can use a noun (趣味[しゅみ]は 音楽[おんがく]です) or a verb with こと, which is more precise: 趣味[しゅみ]は 音楽[おんがく]を 聞[き]く ことです.",
+        "vi": "Dùng để giới thiệu về sở thích cá nhân. Khi sở thích là một hành động cụ thể, ta dùng V (thể từ điển) + こと です."
+      },
+      "examples": [
+        {
+          "jp": "私[わたし]の 趣味[しゅみ]は 写真[しゃしん]を 撮[と]ることです。",
+          "translation": {
+            "en": "My hobby is taking photos.",
+            "vi": "Sở thích của tôi là chụp ảnh."
+          }
+        }
+      ]
+    },
+    {
+      "id": "mae-ni",
+      "title": {
+        "en": "V (dict.)／N の／period まえに — \"before\"",
+        "vi": "V (từ điển) まえに、V2 ／ N の まえに — «Trước khi làm…»"
+      },
+      "pattern": {
+        "en": "V (dict.) まえに、V2 ／ N の まえに ／ length of time まえに",
+        "vi": "V (thể từ điển) まえに、V2 ／ N の まえに ／ khoảng thời gian まえに"
+      },
+      "explanation": {
+        "en": "まえに means \"before\": 寝[ね]る まえに 本[ほん]を 読[よ]みます (I read before going to sleep), 食事[しょくじ]の まえに (before the meal), 1 年[ねん] まえに (a year ago).",
+        "vi": "Diễn tả hành động V2 diễn ra trước một hành động V1, một sự kiện N hoặc một khoảng thời gian. Chú ý: động từ trước まえに luôn ở thể từ điển, bất kể thời của cả câu."
+      },
+      "examples": [
+        {
+          "jp": "日本[にほん]へ 来[く]るまえに、 日本語[にほんご]を 勉強[べんきょう]しました。",
+          "translation": {
+            "en": "I studied Japanese before coming to Japan.",
+            "vi": "Trước khi sang Nhật Bản, tôi đã học tiếng Nhật."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nakanaka",
+      "title": {
+        "en": "なかなか — \"not so easily\"",
+        "vi": "なかなか + Phủ định — «Mãi mà không… / Khó lòng mà…»"
+      },
+      "pattern": {
+        "en": "なかなか + negative",
+        "vi": "なかなか + phủ định"
+      },
+      "explanation": {
+        "en": "With a negative verb, なかなか says something doesn't happen as easily as you'd like: なかなか 日本人[にほんじん]に 会[あ]えません.",
+        "vi": "Phó từ なかなか kết hợp với động từ thể phủ định để diễn tả ý sự việc khó có thể xảy ra hoặc không dễ dàng đạt được như mong đợi."
+      },
+      "examples": [
+        {
+          "jp": "日本[にほん]では、なかなか 馬[うま]を 見[み]ることができません。",
+          "translation": {
+            "en": "In Japan you don't often get to see horses.",
+            "vi": "Ở Nhật Bản, khó lòng mà nhìn thấy ngựa."
+          }
+        }
+      ]
+    },
+    {
+      "id": "zehi",
+      "title": {
+        "en": "ぜひ — \"by all means\"",
+        "vi": "ぜひ + Mong muốn / Lời mời — «Nhất định…»"
+      },
+      "pattern": {
+        "en": "ぜひ + wish/invitation",
+        "vi": "ぜひ + mong muốn / lời mời"
+      },
+      "explanation": {
+        "en": "ぜひ strengthens wishes and invitations: ぜひ 遊[あそ]びに 来[き]てください (do come and visit us).",
+        "vi": "Phó từ ぜひ kết hợp với các mẫu câu bày tỏ nguyện vọng (~たい, ほしい) hoặc lời mời rủ để nhấn mạnh sự tha thiết, nhiệt tình ('nhất định muốn làm / nhất định hãy đến')."
+      },
+      "examples": [
+        {
+          "jp": "ぜひ 北海道[ほっかいどう]へ 行[い]きたいです。",
+          "translation": {
+            "en": "I really want to go to Hokkaido.",
+            "vi": "Tôi nhất định muốn đi Hokkaido một chuyến."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "verbs"
+  ]
+}

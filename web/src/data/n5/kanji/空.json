@@ -1,0 +1,61 @@
+{
+  "character": "空",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "sky",
+      "empty",
+      "air"
+    ],
+    "vi": [
+      "bầu trời",
+      "trống rỗng"
+    ]
+  },
+  "onyomi": [
+    "クウ"
+  ],
+  "kunyomi": [
+    "そら",
+    "から",
+    "あ.く"
+  ],
+  "strokes": 8,
+  "examples": [
+    {
+      "word": "空[そら]",
+      "meaning": {
+        "en": "sky",
+        "vi": "bầu trời"
+      }
+    },
+    {
+      "word": "空手[からて]",
+      "meaning": {
+        "en": "karate",
+        "vi": "karate"
+      }
+    },
+    {
+      "word": "空[あ]き 缶[かん]",
+      "meaning": {
+        "en": "empty can",
+        "vi": "empty can"
+      }
+    },
+    {
+      "word": "空気[くうき]",
+      "meaning": {
+        "en": "air",
+        "vi": "không khí"
+      }
+    },
+    {
+      "word": "空港[くうこう]",
+      "meaning": {
+        "en": "airport",
+        "vi": "sân bay"
+      }
+    }
+  ]
+}

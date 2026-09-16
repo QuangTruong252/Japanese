@@ -1,0 +1,61 @@
+{
+  "character": "千",
+  "level": "n5",
+  "lesson": 3,
+  "meanings": {
+    "en": [
+      "thousand"
+    ],
+    "vi": [
+      "nghìn",
+      "một nghìn"
+    ]
+  },
+  "onyomi": [
+    "セン"
+  ],
+  "kunyomi": [
+    "ち"
+  ],
+  "strokes": 3,
+  "examples": [
+    {
+      "word": "千[せん]",
+      "meaning": {
+        "en": "thousand",
+        "vi": "nghìn (1.000)"
+      }
+    },
+    {
+      "word": "三千[さんぜん]",
+      "meaning": {
+        "en": "three thousand",
+        "vi": "three thousand"
+      }
+    },
+    {
+      "word": "五千[ごせん]",
+      "meaning": {
+        "en": "five thousand",
+        "vi": "five thousand"
+      }
+    },
+    {
+      "word": "千円[せんえん]",
+      "meaning": {
+        "en": "one thousand yen",
+        "vi": "một nghìn yên"
+      }
+    },
+    {
+      "word": "千葉[ちば]",
+      "meaning": {
+        "en": "Chiba (city)",
+        "vi": "Chiba (city)"
+      }
+    }
+  ],
+  "similar": [
+    "手"
+  ]
+}

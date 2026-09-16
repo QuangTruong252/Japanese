@@ -1,0 +1,62 @@
+{
+  "character": "着",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "to wear",
+      "to arrive"
+    ],
+    "vi": [
+      "mặc (áo)",
+      "đến nơi"
+    ]
+  },
+  "onyomi": [
+    "チャク"
+  ],
+  "kunyomi": [
+    "き.る",
+    "つ.く"
+  ],
+  "strokes": 12,
+  "examples": [
+    {
+      "word": "着[き]る",
+      "meaning": {
+        "en": "to wear, to put on",
+        "vi": "mặc (áo)"
+      }
+    },
+    {
+      "word": "着[つ]く",
+      "meaning": {
+        "en": "to arrive",
+        "vi": "đến nơi, tới nơi"
+      }
+    },
+    {
+      "word": "着物[きもの]",
+      "meaning": {
+        "en": "kimono",
+        "vi": "áo Kimono truyền thống"
+      }
+    },
+    {
+      "word": "到着[とうちゃく]",
+      "meaning": {
+        "en": "arrival",
+        "vi": "arrival"
+      }
+    },
+    {
+      "word": "着席[ちゃくせき]",
+      "meaning": {
+        "en": "to take a seat",
+        "vi": "to take a seat"
+      }
+    }
+  ],
+  "similar": [
+    "目"
+  ]
+}

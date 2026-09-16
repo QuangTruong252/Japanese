@@ -1,0 +1,57 @@
+{
+  "character": "川",
+  "level": "n5",
+  "lesson": 13,
+  "meanings": {
+    "en": [
+      "river"
+    ],
+    "vi": [
+      "sông"
+    ]
+  },
+  "onyomi": [
+    "セン"
+  ],
+  "kunyomi": [
+    "かわ"
+  ],
+  "strokes": 3,
+  "examples": [
+    {
+      "word": "川[かわ]",
+      "meaning": {
+        "en": "river",
+        "vi": "con sông"
+      }
+    },
+    {
+      "word": "川上[かわかみ]",
+      "meaning": {
+        "en": "upstream",
+        "vi": "upstream"
+      }
+    },
+    {
+      "word": "小川[おがわ]",
+      "meaning": {
+        "en": "stream",
+        "vi": "stream"
+      }
+    },
+    {
+      "word": "河川[かせん]",
+      "meaning": {
+        "en": "rivers",
+        "vi": "sông ngòi"
+      }
+    },
+    {
+      "word": "山川[さんせん]",
+      "meaning": {
+        "en": "rivers and mountains",
+        "vi": "rivers and mountains"
+      }
+    }
+  ]
+}

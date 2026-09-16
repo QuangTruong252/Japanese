@@ -1,0 +1,72 @@
+{
+  "character": "来",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "to come"
+    ],
+    "vi": [
+      "đến",
+      "tới"
+    ]
+  },
+  "onyomi": [
+    "ライ"
+  ],
+  "kunyomi": [
+    "く.る"
+  ],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "来[き]ます",
+      "meaning": {
+        "en": "to come",
+        "vi": "hỏng hóc, trục trặc"
+      }
+    },
+    {
+      "word": "来週[らいしゅう]",
+      "meaning": {
+        "en": "next week",
+        "vi": "tuần sau"
+      }
+    },
+    {
+      "word": "来年[らいねん]",
+      "meaning": {
+        "en": "next year",
+        "vi": "năm sau"
+      }
+    },
+    {
+      "word": "来[く]る",
+      "meaning": {
+        "en": "to come",
+        "vi": "đến, tới"
+      }
+    },
+    {
+      "word": "到来[とうらい]",
+      "meaning": {
+        "en": "arrival",
+        "vi": "arrival"
+      }
+    },
+    {
+      "word": "由来[ゆらい]",
+      "meaning": {
+        "en": "origin",
+        "vi": "origin"
+      }
+    },
+    {
+      "word": "将来[しょうらい]",
+      "meaning": {
+        "en": "future",
+        "vi": "future"
+      }
+    }
+  ]
+}

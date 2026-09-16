@@ -1,0 +1,72 @@
+{
+  "character": "間",
+  "level": "n5",
+  "lesson": 9,
+  "meanings": {
+    "en": [
+      "interval",
+      "between"
+    ],
+    "vi": [
+      "khoảng giữa",
+      "thời gian"
+    ]
+  },
+  "onyomi": [
+    "カン",
+    "ケン"
+  ],
+  "kunyomi": [
+    "あいだ",
+    "ま"
+  ],
+  "strokes": 12,
+  "examples": [
+    {
+      "word": "時間[じかん]",
+      "meaning": {
+        "en": "time",
+        "vi": "thời gian, giờ giấc"
+      }
+    },
+    {
+      "word": "間[あいだ]",
+      "meaning": {
+        "en": "between",
+        "vi": "ở giữa, khoảng giữa"
+      }
+    },
+    {
+      "word": "二週間[にしゅうかん]",
+      "meaning": {
+        "en": "two weeks",
+        "vi": "two weeks"
+      }
+    },
+    {
+      "word": "間[ま]に 合[あ]う",
+      "meaning": {
+        "en": "to be on time",
+        "vi": "to be on time"
+      }
+    },
+    {
+      "word": "仲間[なかま]",
+      "meaning": {
+        "en": "companion, mate",
+        "vi": "companion, mate"
+      }
+    },
+    {
+      "word": "空間[くうかん]",
+      "meaning": {
+        "en": "space",
+        "vi": "space"
+      }
+    }
+  ],
+  "similar": [
+    "聞",
+    "開"
+  ]
+}

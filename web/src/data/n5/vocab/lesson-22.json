@@ -1,0 +1,306 @@
+{
+  "level": "n5",
+  "lesson": 22,
+  "words": [
+    {
+      "id": "kimasu-ropa",
+      "word": "着[き]ます",
+      "kana": "きます",
+      "meaning": {
+        "en": "to put on (a shirt, etc.)",
+        "vi": "mặc [áo sơ mi, áo khoác]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "hakimasu",
+      "word": "はきます",
+      "kana": "はきます",
+      "meaning": {
+        "en": "to put on (shoes, trousers)",
+        "vi": "đi, mang, mặc [giày, tất, quần]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "kaburimasu",
+      "word": "かぶります",
+      "kana": "かぶります",
+      "meaning": {
+        "en": "to put on (a hat)",
+        "vi": "đội [mũ]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "kakemasu-gafas",
+      "word": "かけます[眼鏡[めがね]を〜]",
+      "kana": "かけます",
+      "meaning": {
+        "en": "to put on [glasses]",
+        "vi": "đeo [kính]"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "shimasu-corbata",
+      "word": "します[ネクタイを〜]",
+      "kana": "します",
+      "meaning": {
+        "en": "to put on [a tie]",
+        "vi": "thắt [cà vạt]"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "umaremasu",
+      "word": "生[う]まれます",
+      "kana": "うまれます",
+      "meaning": {
+        "en": "to be born",
+        "vi": "sinh ra, chào đời"
+      },
+      "type": "verb-ichidan"
+    },
+    {
+      "id": "watashitachi",
+      "word": "わたしたち",
+      "kana": "わたしたち",
+      "meaning": {
+        "en": "we",
+        "vi": "chúng tôi, chúng ta"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "kooto",
+      "word": "コート",
+      "kana": "コート",
+      "meaning": {
+        "en": "coat",
+        "vi": "áo khoác ngoài, áo choàng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "seetaa",
+      "word": "セーター",
+      "kana": "セーター",
+      "meaning": {
+        "en": "jumper, sweater",
+        "vi": "áo len"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "suutsu",
+      "word": "スーツ",
+      "kana": "スーツ",
+      "meaning": {
+        "en": "suit",
+        "vi": "bộ âu phục, com-lê"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "boushi",
+      "word": "帽子[ぼうし]",
+      "kana": "ぼうし",
+      "meaning": {
+        "en": "hat, cap",
+        "vi": "mũ, nón"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "megane",
+      "word": "眼鏡[めがね]",
+      "kana": "めがね",
+      "meaning": {
+        "en": "glasses",
+        "vi": "kính mắt"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "keeki",
+      "word": "ケーキ",
+      "kana": "ケーキ",
+      "meaning": {
+        "en": "cake",
+        "vi": "bánh ngọt, bánh kem"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "obentou",
+      "word": "[お]弁当[べんとう]",
+      "kana": "おべんとう",
+      "meaning": {
+        "en": "boxed lunch",
+        "vi": "cơm hộp bento"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "robotto",
+      "word": "ロボット",
+      "kana": "ロボット",
+      "meaning": {
+        "en": "robot",
+        "vi": "người máy, robot"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "yuumoa",
+      "word": "ユーモア",
+      "kana": "ユーモア",
+      "meaning": {
+        "en": "mood",
+        "vi": "sự hài hước, khiếu khôi hài"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "tsugou",
+      "word": "都合[つごう]",
+      "kana": "つごう",
+      "meaning": {
+        "en": "convenience",
+        "vi": "sự thuận tiện, điều kiện"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "yoku-frecuente",
+      "word": "よく",
+      "kana": "よく",
+      "meaning": {
+        "en": "often",
+        "vi": "thường xuyên, hay"
+      },
+      "type": "adverb"
+    },
+    {
+      "id": "eeto",
+      "word": "えーと",
+      "kana": "えーと",
+      "meaning": {
+        "en": "well, let's see",
+        "vi": "à, để xem nào..."
+      },
+      "type": "expression"
+    },
+    {
+      "id": "omedetou",
+      "word": "おめでとう[ございます]",
+      "kana": "おめでとうございます",
+      "meaning": {
+        "en": "congratulations!",
+        "vi": "xin chúc mừng!"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "osagashi",
+      "word": "お 探[さが]しですか",
+      "kana": "おさがしですか",
+      "meaning": {
+        "en": "what kind of ~ are you looking for?",
+        "vi": "quý khách đang tìm kiếm món gì ạ?"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "dewa",
+      "word": "では",
+      "kana": "では",
+      "meaning": {
+        "en": "well then",
+        "vi": "vậy thì, thế thì"
+      },
+      "type": "conjunction"
+    },
+    {
+      "id": "kochira-esto",
+      "word": "こちら",
+      "kana": "こちら",
+      "meaning": {
+        "en": "this (polite form of これ)",
+        "vi": "đây, cái này (lịch sự của これ)"
+      },
+      "type": "pronoun"
+    },
+    {
+      "id": "yachin",
+      "word": "家賃[やちん]",
+      "kana": "やちん",
+      "meaning": {
+        "en": "rent (amount)",
+        "vi": "tiền thuê nhà"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "dainingu-kicchin",
+      "word": "ダイニングキッチン",
+      "kana": "ダイニングキッチン",
+      "meaning": {
+        "en": "kitchen-diner",
+        "vi": "phòng bếp liền phòng ăn"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "washitsu",
+      "word": "和室[わしつ]",
+      "kana": "わしつ",
+      "meaning": {
+        "en": "Japanese-style room",
+        "vi": "phòng kiểu Nhật"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "oshiire",
+      "word": "押[お]し 入[い]れ",
+      "kana": "おしいれ",
+      "meaning": {
+        "en": "Japanese closet for futons",
+        "vi": "tủ âm tường kiểu Nhật"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "futon",
+      "word": "布団[ふとん]",
+      "kana": "ふとん",
+      "meaning": {
+        "en": "futon",
+        "vi": "chăn đệm kiểu Nhật"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "pari",
+      "word": "パリ",
+      "kana": "パリ",
+      "meaning": {
+        "en": "Paris",
+        "vi": "thủ đô Paris"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "banri-no-choujou",
+      "word": "万里[ばんり]の 長城[ちょうじょう]",
+      "kana": "ばんりのちょうじょう",
+      "meaning": {
+        "en": "the Great Wall",
+        "vi": "Vạn Lý Trường Thành"
+      },
+      "type": "noun"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "character": "文",
+  "level": "n5",
+  "lesson": 13,
+  "meanings": {
+    "en": [
+      "text",
+      "writing, document",
+      "letter, character",
+      "writing"
+    ],
+    "vi": [
+      "văn",
+      "câu văn",
+      "văn học"
+    ]
+  },
+  "onyomi": [
+    "ブン",
+    "モン"
+  ],
+  "kunyomi": [
+    "ふみ"
+  ],
+  "strokes": 4,
+  "examples": [
+    {
+      "word": "文字[もじ]",
+      "meaning": {
+        "en": "character, letter",
+        "vi": "chữ cái, văn tự"
+      }
+    },
+    {
+      "word": "文化[ぶんか]",
+      "meaning": {
+        "en": "culture",
+        "vi": "culture"
+      }
+    },
+    {
+      "word": "注文[ちゅうもん]",
+      "meaning": {
+        "en": "order",
+        "vi": "order"
+      }
+    },
+    {
+      "word": "文学[ぶんがく]",
+      "meaning": {
+        "en": "literature",
+        "vi": "văn học"
+      }
+    },
+    {
+      "word": "文章[ぶんしょう]",
+      "meaning": {
+        "en": "sentence, text",
+        "vi": "sentence, text"
+      }
+    },
+    {
+      "word": "作文[さくぶん]",
+      "meaning": {
+        "en": "composition, essay",
+        "vi": "bài tập làm văn"
+      }
+    },
+    {
+      "word": "文法[ぶんぽう]",
+      "meaning": {
+        "en": "grammar",
+        "vi": "grammar"
+      }
+    }
+  ],
+  "similar": [
+    "父"
+  ]
+}

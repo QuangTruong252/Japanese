@@ -1,0 +1,226 @@
+{
+  "level": "n5",
+  "lesson": 15,
+  "words": [
+    {
+      "id": "okimasu-poner",
+      "word": "置[お]きます",
+      "kana": "おきます",
+      "meaning": {
+        "en": "to put, to place",
+        "vi": "đặt, để"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "tsukurimasu",
+      "word": "作[つく]ります",
+      "kana": "つくります",
+      "meaning": {
+        "en": "to make, to produce",
+        "vi": "chế tạo, làm ra"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "urimasu",
+      "word": "売[う]ります",
+      "kana": "うります",
+      "meaning": {
+        "en": "to sell",
+        "vi": "bán"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "shirimasu",
+      "word": "知[し]ります",
+      "kana": "しります",
+      "meaning": {
+        "en": "to find out, to learn",
+        "vi": "biết"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "sumimasu",
+      "word": "住[す]みます",
+      "kana": "すみます",
+      "meaning": {
+        "en": "to live, to reside",
+        "vi": "sống, cư trú [ở đâu]"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "kenkyuu-shimasu",
+      "word": "研究[けんきゅう]します",
+      "kana": "けんきゅうします",
+      "meaning": {
+        "en": "to research",
+        "vi": "nghiên cứu"
+      },
+      "type": "verb-irregular"
+    },
+    {
+      "id": "shiryou",
+      "word": "資料[しりょう]",
+      "kana": "しりょう",
+      "meaning": {
+        "en": "materials, data",
+        "vi": "tài liệu"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "katarogu",
+      "word": "カタログ",
+      "kana": "カタログ",
+      "meaning": {
+        "en": "catalogue",
+        "vi": "cuốn danh mục, catalogue"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "jikokuhyou",
+      "word": "時刻表[じこくひょう]",
+      "kana": "じこくひょう",
+      "meaning": {
+        "en": "timetable",
+        "vi": "bảng giờ tàu xe chạy"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "fuku",
+      "word": "服[ふく]",
+      "kana": "ふく",
+      "meaning": {
+        "en": "clothes",
+        "vi": "quần áo"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "seihin",
+      "word": "製品[せいひん]",
+      "kana": "せいひん",
+      "meaning": {
+        "en": "goods, products",
+        "vi": "sản phẩm"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "sofuto",
+      "word": "ソフト",
+      "kana": "ソフト",
+      "meaning": {
+        "en": "software, program",
+        "vi": "phần mềm"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "denshijisho",
+      "word": "電子辞書[でんしじしょ]",
+      "kana": "でんしじしょ",
+      "meaning": {
+        "en": "electronic dictionary",
+        "vi": "từ điển điện tử"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "keizai",
+      "word": "経済[けいざい]",
+      "kana": "けいざい",
+      "meaning": {
+        "en": "economy",
+        "vi": "kinh tế"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "shiyakusho",
+      "word": "市役所[しやくしょ]",
+      "kana": "しやくしょ",
+      "meaning": {
+        "en": "city hall",
+        "vi": "tòa thị chính, ủy ban thành phố"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "koukou",
+      "word": "高校[こうこう]",
+      "kana": "こうこう",
+      "meaning": {
+        "en": "high school",
+        "vi": "trường trung học phổ thông, cấp ba"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "haisha",
+      "word": "歯医者[はいしゃ]",
+      "kana": "はいしゃ",
+      "meaning": {
+        "en": "dentist, dental clinic",
+        "vi": "nha sĩ, bác sĩ răng"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "dokushin",
+      "word": "独身[どくしん]",
+      "kana": "どくしん",
+      "meaning": {
+        "en": "single, unmarried",
+        "vi": "độc thân"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "sumimasen-perdon",
+      "word": "すみません",
+      "kana": "すみません",
+      "meaning": {
+        "en": "sorry, excuse me",
+        "vi": "xin lỗi, làm phiền bạn"
+      },
+      "type": "expression"
+    },
+    {
+      "id": "minasan-15",
+      "word": "皆[みな]さん",
+      "kana": "みなさん",
+      "meaning": {
+        "en": "ladies and gentlemen, everyone",
+        "vi": "tất cả quý vị, mọi người"
+      },
+      "type": "noun"
+    },
+    {
+      "id": "omoidashimasu",
+      "word": "思[おも]い 出[だ]します",
+      "kana": "おもいだします",
+      "meaning": {
+        "en": "to remember, to recall",
+        "vi": "nhớ lại, hồi tưởng"
+      },
+      "type": "verb-godan"
+    },
+    {
+      "id": "irasshaimasu",
+      "word": "いらっしゃいます",
+      "kana": "いらっしゃいます",
+      "meaning": {
+        "en": "to be (polite form of います)",
+        "vi": "ở, có, đi, đến (kính ngữ của います, いきます, きます)"
+      },
+      "type": "verb-godan"
+    }
+  ]
+}

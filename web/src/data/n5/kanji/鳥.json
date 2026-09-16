@@ -1,0 +1,35 @@
+{
+  "character": "鳥",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "bird"
+    ],
+    "vi": [
+      "chim"
+    ]
+  },
+  "onyomi": [
+    "チョウ"
+  ],
+  "kunyomi": [
+    "とり"
+  ],
+  "strokes": 11,
+  "examples": [
+    {
+      "word": "鳥[とり]",
+      "meaning": {
+        "en": "bird",
+        "vi": "con chim"
+      }
+    },
+    {
+      "word": "小鳥[ことり]",
+      "meaning": {
+        "en": "little bird",
+        "vi": "chú chim non, chim nhỏ"
+      }
+    }
+  ]
+}

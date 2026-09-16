@@ -1,0 +1,61 @@
+{
+  "character": "私",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "I",
+      "private"
+    ],
+    "vi": [
+      "tôi",
+      "riêng tư"
+    ]
+  },
+  "onyomi": [
+    "シ"
+  ],
+  "kunyomi": [
+    "わたし"
+  ],
+  "strokes": 7,
+  "examples": [
+    {
+      "word": "私[わたし]",
+      "meaning": {
+        "en": "I",
+        "vi": "tôi"
+      }
+    },
+    {
+      "word": "私学[しがく]",
+      "meaning": {
+        "en": "private school",
+        "vi": "private school"
+      }
+    },
+    {
+      "word": "私立[しりつ]",
+      "meaning": {
+        "en": "private",
+        "vi": "dân lập, tư thục"
+      }
+    },
+    {
+      "word": "私語[しご]",
+      "meaning": {
+        "en": "whispering",
+        "vi": "whispering"
+      }
+    },
+    {
+      "word": "公私[こうし]",
+      "meaning": {
+        "en": "public and private",
+        "vi": "public and private"
+      }
+    }
+  ],
+  "similar": [
+    "秋"
+  ]
+}

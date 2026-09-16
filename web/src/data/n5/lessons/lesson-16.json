@@ -1,0 +1,165 @@
+{
+  "level": "n5",
+  "number": 16,
+  "title": {
+    "en": "Linking actions and describing",
+    "vi": "Nối hành động và miêu tả"
+  },
+  "jpTitle": "使[つか]い 方[かた]を 教[おし]えてください",
+  "description": {
+    "en": "Chain several actions with the て form, describe features with 〜は〜が, and ask how something is done.",
+    "vi": "Nối nhiều hành động liên tiếp bằng thể て, nối tính từ, làm gì sau khi xong việc gì (〜てから) và miêu tả đặc điểm ngoại hình."
+  },
+  "grammar": [
+    {
+      "id": "te-encadenar",
+      "title": {
+        "en": "V1 て、V2 — actions in sequence",
+        "vi": "Nối các hành động và tính từ: V1 て、V2 て… ／ A-くて／A-で"
+      },
+      "pattern": {
+        "vi": "V1 て、V2 て、… ／ A-くて／A-なで、〜"
+      },
+      "explanation": {
+        "en": "The て form chains actions in chronological order: 朝[あさ] 起[お]きて、シャワーを 浴[あ]びて、 会社[かいしゃ]へ 行[い]きます. Adjectives chain too: -い ones with 〜くて (安[やす]くておいしい), and -な ones and nouns with で (ハンサムで 親切[しんせつ]です).",
+        "vi": "Dùng thể て để nối các hành động diễn ra theo trình tự thời gian ('làm V1 rồi làm V2'). Để nối tính từ: tính từ đuôi い đổi thành 〜くて, tính từ đuôi な đổi thành 〜で."
+      },
+      "examples": [
+        {
+          "jp": "日曜日[にちようび]は 買[か]い 物[もの]して、 映画[えいが]を 見[み]ました。",
+          "translation": {
+            "en": "On Sunday I went shopping and saw a film.",
+            "vi": "Chủ nhật tôi đã đi mua sắm rồi xem phim."
+          }
+        },
+        {
+          "jp": "奈良[なら]は 静[しず]かで、きれいな 町[まち]です。",
+          "translation": {
+            "en": "Nara is a quiet, beautiful town.",
+            "vi": "Nara là một thành phố yên tĩnh và xinh đẹp."
+          }
+        }
+      ]
+    },
+    {
+      "id": "te-kara",
+      "title": {
+        "en": "V1 てから、V2 — \"after…\"",
+        "vi": "V1 てから、V2 — «Sau khi làm V1 thì làm V2»"
+      },
+      "pattern": {
+        "vi": "V1 てから、V2"
+      },
+      "explanation": {
+        "en": "〜てから stresses that the second action happens once the first is finished: 仕事[しごと]が 終[お]わってから、 泳[およ]ぎに 行[い]きます.",
+        "vi": "Biểu thị hành động V2 được tiến hành sau khi hành động V1 đã hoàn thành trọn vẹn. Thời của cả câu được quyết định ở động từ cuối cùng V2."
+      },
+      "examples": [
+        {
+          "jp": "お 金[かね]を 入[い]れてから、ボタンを 押[お]してください。",
+          "translation": {
+            "en": "After putting the money in, press the button.",
+            "vi": "Sau khi nhét tiền vào thì hãy nhấn nút."
+          }
+        }
+      ]
+    },
+    {
+      "id": "wa-ga",
+      "title": {
+        "en": "N1 は N2 が A — describing a part",
+        "vi": "N1 は N2 が A です — Miêu tả đặc điểm bộ phận"
+      },
+      "pattern": {
+        "vi": "N1 は N2 が A です"
+      },
+      "explanation": {
+        "en": "To describe a feature of part of the topic you use は…が…: 大阪[おおさか]は 食[た]べ 物[もの]が おいしいです (the food in Osaka is delicious), マリアさんは 髪[かみ]が 長[なが]いです.",
+        "vi": "N1 là chủ đề của câu (người, động vật, địa điểm), N2 là một bộ phận, thuộc tính hoặc đặc điểm nổi bật gắn liền với N1, và A là tính từ miêu tả đặc điểm đó."
+      },
+      "examples": [
+        {
+          "jp": "ミラーさんは 背[せ]が 高[たか]いです。",
+          "translation": {
+            "en": "Mr. Miller is tall.",
+            "vi": "Anh Miller có vóc dáng cao ráo."
+          }
+        }
+      ]
+    },
+    {
+      "id": "o-salir",
+      "title": {
+        "en": "N を 出[で]ます／降[お]ります — the point you leave from",
+        "vi": "N を V (rời khỏi / xuống xe) — Trợ từ を chỉ điểm xuất phát"
+      },
+      "pattern": {
+        "en": "N を V (to leave, to get off)",
+        "vi": "địa điểm を V (xuống xe / rời khỏi)"
+      },
+      "explanation": {
+        "en": "を also marks the place you leave or get off: 電車[でんしゃ]を 降[お]ります (to get off the train), 大学[だいがく]を 出[で]ます (to graduate).",
+        "vi": "Trợ từ を đứng sau danh từ chỉ nơi chốn biểu thị điểm xuất phát, địa điểm mà chủ thể rời khỏi (xuống tàu/xe: 電車を降ります, rời khỏi nhà: うちを出ます)."
+      },
+      "examples": [
+        {
+          "jp": "梅田[うめだ]で 電車[でんしゃ]を 降[お]りてください。",
+          "translation": {
+            "en": "Get off the train at Umeda.",
+            "vi": "Hãy xuống tàu điện ở ga Umeda."
+          }
+        }
+      ]
+    },
+    {
+      "id": "douyatte",
+      "title": {
+        "en": "どうやって — \"how do you do it?\"",
+        "vi": "どうやって V ますか — Hỏi cách thức thực hiện / đường đi"
+      },
+      "pattern": {
+        "vi": "どうやって V ますか"
+      },
+      "explanation": {
+        "en": "どうやって asks about the manner or procedure; the answer chains the steps with the て form.",
+        "vi": "Dùng để hỏi phương thức, cách làm một việc gì đó hoặc chỉ dẫn đường đi từ điểm này đến điểm khác."
+      },
+      "examples": [
+        {
+          "jp": "大学[だいがく]までどうやって 行[い]きますか。… 京都駅[きょうとえき]から16 番[ばん]のバスに 乗[の]って、 大学前[だいがくまえ]で 降[お]ります。",
+          "translation": {
+            "en": "How do you get to the university? …From Kyoto station I take bus 16 and get off at Daigaku-mae.",
+            "vi": "Đi đến trường đại học bằng cách nào vậy? …Từ ga Kyoto bạn lên xe buýt số 16 rồi xuống ở trạm Daigaku-mae."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dore-dono",
+      "title": {
+        "en": "どれ／どの N — \"which\" (of three or more)",
+        "vi": "どれ ／ どの N — Xác định đối tượng trong nhóm từ 3 trở lên"
+      },
+      "pattern": {
+        "vi": "どれ ／ どの N"
+      },
+      "explanation": {
+        "en": "To choose among three or more options you use どれ (on its own) or どの + noun: どれが 私[わたし]の 傘[かさ]ですか, どの 人[ひと]が 山田[やまだ]さんですか.",
+        "vi": "どれ (cái nào) và どの N (N nào) dùng để hỏi nhằm lựa chọn một đối tượng cụ thể trong một nhóm gồm ba đối tượng trở lên."
+      },
+      "examples": [
+        {
+          "jp": "ミラーさんはどの 人[ひと]ですか。…あの 背[せ]が 高[たか]い 人[ひと]です。",
+          "translation": {
+            "en": "Which one is Mr. Miller? …That tall one.",
+            "vi": "Anh Miller là người nào? …Là cái người cao ráo đằng kia kìa."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "question-words",
+    "verbs"
+  ]
+}

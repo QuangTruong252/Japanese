@@ -1,0 +1,2342 @@
+{
+  "level": "n5",
+  "verbs": [
+    {
+      "id": "g1-01",
+      "group": 1,
+      "verb": "会[あ]います[ともだちに〜]",
+      "masu": "あいます",
+      "te": "あって",
+      "dictionary": "あう",
+      "nai": "あわない",
+      "ta": "あった",
+      "meaning": {
+        "en": "to see, to meet [friends]",
+        "vi": "gặp [bạn bè]"
+      },
+      "lesson": 6
+    },
+    {
+      "id": "g1-02",
+      "group": 1,
+      "verb": "遊[あそ]びます",
+      "masu": "あそびます",
+      "te": "あそんで",
+      "dictionary": "あそぶ",
+      "nai": "あそばない",
+      "ta": "あそんだ",
+      "meaning": {
+        "en": "to play, to enjoy oneself",
+        "vi": "chơi, vui chơi"
+      },
+      "lesson": 13
+    },
+    {
+      "id": "g1-03",
+      "group": 1,
+      "verb": "洗[あら]います",
+      "masu": "あらいます",
+      "te": "あらって",
+      "dictionary": "あらう",
+      "nai": "あらわない",
+      "ta": "あらった",
+      "meaning": {
+        "en": "to wash",
+        "vi": "rửa, giặt"
+      },
+      "lesson": 18
+    },
+    {
+      "id": "g1-04",
+      "group": 1,
+      "verb": "あります",
+      "masu": "あります",
+      "te": "あって",
+      "dictionary": "ある",
+      "ta": "あった",
+      "meaning": {
+        "en": "to have, there is",
+        "vi": "có [đồ vật, tiền bạc]"
+      },
+      "lesson": 9
+    },
+    {
+      "id": "g1-05",
+      "group": 1,
+      "verb": "あります",
+      "masu": "あります",
+      "te": "あって",
+      "dictionary": "ある",
+      "ta": "あった",
+      "meaning": {
+        "en": "to be, there is (inanimate things)",
+        "vi": "ở, có [đồ vật vô tri]"
+      },
+      "lesson": 10
+    },
+    {
+      "id": "g1-06",
+      "group": 1,
+      "verb": "あります[おまつりが〜]",
+      "masu": "あります",
+      "te": "あって",
+      "dictionary": "ある",
+      "ta": "あった",
+      "meaning": {
+        "en": "to be held [a festival]",
+        "vi": "được tổ chức, diễn ra [lễ hội]"
+      },
+      "lesson": 21
+    },
+    {
+      "id": "g1-07",
+      "group": 1,
+      "verb": "歩[ある]きます",
+      "masu": "あるきます",
+      "te": "あるいて",
+      "dictionary": "あるく",
+      "nai": "あるかない",
+      "ta": "あるいた",
+      "meaning": {
+        "en": "to walk",
+        "vi": "đi bộ"
+      },
+      "lesson": 23
+    },
+    {
+      "id": "g1-08",
+      "group": 1,
+      "verb": "言[い]います",
+      "masu": "いいます",
+      "te": "いって",
+      "dictionary": "いう",
+      "nai": "いわない",
+      "ta": "いった",
+      "meaning": {
+        "en": "to say",
+        "vi": "nói"
+      },
+      "lesson": 21
+    },
+    {
+      "id": "g1-09",
+      "group": 1,
+      "verb": "行[い]きます",
+      "masu": "いきます",
+      "te": "いって",
+      "dictionary": "いく",
+      "nai": "いかない",
+      "ta": "いった",
+      "meaning": {
+        "en": "to go",
+        "vi": "đi"
+      },
+      "lesson": 5
+    },
+    {
+      "id": "g1-10",
+      "group": 1,
+      "verb": "急[いそ]ぎます",
+      "masu": "いそぎます",
+      "te": "いそいで",
+      "dictionary": "いそぐ",
+      "nai": "いそがない",
+      "ta": "いそいだ",
+      "meaning": {
+        "en": "to hurry",
+        "vi": "vội, gấp, vội vã"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g1-11",
+      "group": 1,
+      "verb": "要[い]ります[ビザが〜]",
+      "masu": "いります",
+      "te": "いって",
+      "dictionary": "いる",
+      "nai": "いらない",
+      "ta": "いった",
+      "meaning": {
+        "en": "to need, to require [a visa]",
+        "vi": "cần [visa]"
+      },
+      "lesson": 20
+    },
+    {
+      "id": "g1-12",
+      "group": 1,
+      "verb": "動[うご]きます",
+      "masu": "うごきます",
+      "te": "うごいて",
+      "dictionary": "うごく",
+      "nai": "うごかない",
+      "ta": "うごいた",
+      "meaning": {
+        "en": "to work, to function",
+        "vi": "hoạt động, chạy [máy móc]"
+      },
+      "lesson": 21
+    },
+    {
+      "id": "g1-13",
+      "group": 1,
+      "verb": "歌[うた]います",
+      "masu": "うたいます",
+      "te": "うたって",
+      "dictionary": "うたう",
+      "nai": "うたわない",
+      "ta": "うたった",
+      "meaning": {
+        "en": "to sing",
+        "vi": "hát"
+      },
+      "lesson": 18
+    },
+    {
+      "id": "g1-14",
+      "group": 1,
+      "verb": "売[う]ります",
+      "masu": "うります",
+      "te": "うって",
+      "dictionary": "うる",
+      "nai": "うらない",
+      "ta": "うった",
+      "meaning": {
+        "en": "to sell",
+        "vi": "bán"
+      },
+      "lesson": 15
+    },
+    {
+      "id": "g1-15",
+      "group": 1,
+      "verb": "置[お]きます",
+      "masu": "おきます",
+      "te": "おいて",
+      "dictionary": "おく",
+      "nai": "おかない",
+      "ta": "おいた",
+      "meaning": {
+        "en": "to put, to place",
+        "vi": "đặt, để"
+      },
+      "lesson": 15
+    },
+    {
+      "id": "g1-16",
+      "group": 1,
+      "verb": "送[おく]ります",
+      "masu": "おくります",
+      "te": "おくって",
+      "dictionary": "おくる",
+      "nai": "おくらない",
+      "ta": "おくった",
+      "meaning": {
+        "en": "to send",
+        "vi": "gửi [hàng, quà]"
+      },
+      "lesson": 7
+    },
+    {
+      "id": "g1-17",
+      "group": 1,
+      "verb": "送[おく]ります[ひとを〜]",
+      "masu": "おくります",
+      "te": "おくって",
+      "dictionary": "おくる",
+      "nai": "おくらない",
+      "ta": "おくった",
+      "meaning": {
+        "en": "to accompany, to take [someone]",
+        "vi": "nhớ ra, nghĩ ra"
+      },
+      "lesson": 24
+    },
+    {
+      "id": "g1-18",
+      "group": 1,
+      "verb": "押[お]します",
+      "masu": "おします",
+      "te": "おして",
+      "dictionary": "おす",
+      "nai": "おさない",
+      "ta": "おした",
+      "meaning": {
+        "en": "to press, to push",
+        "vi": "bơi"
+      },
+      "lesson": 16
+    },
+    {
+      "id": "g1-19",
+      "group": 1,
+      "verb": "思[おも]い 出[だ]します",
+      "masu": "おもいだします",
+      "te": "おもいだして",
+      "dictionary": "おもいだす",
+      "nai": "おもいださない",
+      "ta": "おもいだした",
+      "meaning": {
+        "en": "to remember, to recall",
+        "vi": "hạ xuống, gập xuống [dù]"
+      },
+      "lesson": 15
+    },
+    {
+      "id": "g1-20",
+      "group": 1,
+      "verb": "思[おも]います",
+      "masu": "おもいます",
+      "te": "おもって",
+      "dictionary": "おもう",
+      "nai": "おもわない",
+      "ta": "おもった",
+      "meaning": {
+        "en": "to believe",
+        "vi": "kết thúc, xong"
+      },
+      "lesson": 21
+    },
+    {
+      "id": "g1-21",
+      "group": 1,
+      "verb": "泳[およ]ぎます",
+      "masu": "およぎます",
+      "te": "およいで",
+      "dictionary": "およぐ",
+      "nai": "およがない",
+      "ta": "およいだ",
+      "meaning": {
+        "en": "to swim",
+        "vi": "mua"
+      },
+      "lesson": 13
+    },
+    {
+      "id": "g1-22",
+      "group": 1,
+      "verb": "下[お]ろします[おかねを〜]",
+      "masu": "おろします",
+      "te": "おろして",
+      "dictionary": "おろす",
+      "nai": "おろさない",
+      "ta": "おろした",
+      "meaning": {
+        "en": "to withdraw, to take out [money from the bank]",
+        "vi": "nuôi [thú cưng]"
+      },
+      "lesson": 16
+    },
+    {
+      "id": "g1-23",
+      "group": 1,
+      "verb": "終[お]わります",
+      "masu": "おわります",
+      "te": "おわって",
+      "dictionary": "おわる",
+      "nai": "おわらない",
+      "ta": "おわった",
+      "meaning": {
+        "en": "to finish",
+        "vi": "trả lại, hoàn trả"
+      },
+      "lesson": 4
+    },
+    {
+      "id": "g1-24",
+      "group": 1,
+      "verb": "買[か]います",
+      "masu": "かいます",
+      "te": "かって",
+      "dictionary": "かう",
+      "nai": "かわない",
+      "ta": "かった",
+      "meaning": {
+        "en": "to buy",
+        "vi": "mất, tốn [thời gian, tiền bạc]"
+      },
+      "lesson": 6
+    },
+    {
+      "id": "g1-25",
+      "group": 1,
+      "verb": "返[かえ]します",
+      "masu": "かえします",
+      "te": "かえして",
+      "dictionary": "かえす",
+      "nai": "かえさない",
+      "ta": "かえした",
+      "meaning": {
+        "en": "to give back, to return",
+        "vi": "viết, vẽ"
+      },
+      "lesson": 17
+    },
+    {
+      "id": "g1-26",
+      "group": 1,
+      "verb": "帰[かえ]ります",
+      "masu": "かえります",
+      "te": "かえって",
+      "dictionary": "かえる",
+      "nai": "かえらない",
+      "ta": "かえった",
+      "meaning": {
+        "en": "to return, to go home",
+        "vi": "cho mượn, cho vay"
+      },
+      "lesson": 5
+    },
+    {
+      "id": "g1-27",
+      "group": 1,
+      "verb": "かかります",
+      "masu": "かかります",
+      "te": "かかって",
+      "dictionary": "かかる",
+      "nai": "かからない",
+      "ta": "かかった",
+      "meaning": {
+        "en": "to take (time), to cost (money)",
+        "vi": "chiến thắng, thắng"
+      },
+      "lesson": 11
+    },
+    {
+      "id": "g1-28",
+      "group": 1,
+      "verb": "書[か]きます",
+      "masu": "かきます",
+      "te": "かいて",
+      "dictionary": "かく",
+      "nai": "かかない",
+      "ta": "かいた",
+      "meaning": {
+        "en": "to write, to draw",
+        "vi": "nghe, hỏi"
+      },
+      "lesson": 6
+    },
+    {
+      "id": "g1-29",
+      "group": 1,
+      "verb": "貸[か]します",
+      "masu": "かします",
+      "te": "かして",
+      "dictionary": "かす",
+      "nai": "かさない",
+      "ta": "かした",
+      "meaning": {
+        "en": "to lend",
+        "vi": "cắt"
+      },
+      "lesson": 7
+    },
+    {
+      "id": "g1-30",
+      "group": 1,
+      "verb": "勝[か]ちます",
+      "masu": "かちます",
+      "te": "かって",
+      "dictionary": "かつ",
+      "nai": "かたない",
+      "ta": "かった",
+      "meaning": {
+        "en": "to win",
+        "vi": "tắt [điện, thiết bị]"
+      },
+      "lesson": 21
+    },
+    {
+      "id": "g1-31",
+      "group": 1,
+      "verb": "かぶります",
+      "masu": "かぶります",
+      "te": "かぶって",
+      "dictionary": "かぶる",
+      "nai": "かぶらない",
+      "ta": "かぶった",
+      "meaning": {
+        "en": "to put on (a hat, etc.)",
+        "vi": "chạm, sờ [vào nút bấm]"
+      },
+      "lesson": 22
+    },
+    {
+      "id": "g1-32",
+      "group": 1,
+      "verb": "頑張[がんば]ります",
+      "masu": "がんばります",
+      "te": "がんばって",
+      "dictionary": "がんばる",
+      "nai": "がんばらない",
+      "ta": "がんばった",
+      "meaning": {
+        "en": "to do one's best",
+        "vi": "hút [thuốc lá]"
+      },
+      "lesson": 25
+    },
+    {
+      "id": "g1-33",
+      "group": 1,
+      "verb": "聞[き]きます",
+      "masu": "ききます",
+      "te": "きいて",
+      "dictionary": "きく",
+      "nai": "きかない",
+      "ta": "きいた",
+      "meaning": {
+        "en": "to hear, to listen",
+        "vi": "sống, cư trú [ở đâu]"
+      },
+      "lesson": 6
+    },
+    {
+      "id": "g1-34",
+      "group": 1,
+      "verb": "聞[き]きます[せんせいに〜]",
+      "masu": "ききます",
+      "te": "きいて",
+      "dictionary": "きく",
+      "nai": "きかない",
+      "ta": "きいた",
+      "meaning": {
+        "en": "to ask [the teacher]",
+        "vi": "ngồi [vào ghế]"
+      },
+      "lesson": 23
+    },
+    {
+      "id": "g1-35",
+      "group": 1,
+      "verb": "切[き]ります",
+      "masu": "きります",
+      "te": "きって",
+      "dictionary": "きる",
+      "nai": "きらない",
+      "ta": "きった",
+      "meaning": {
+        "en": "to cut",
+        "vi": "đưa ra, nộp [báo cáo], gửi [thư]"
+      },
+      "lesson": 7
+    },
+    {
+      "id": "g1-36",
+      "group": 1,
+      "verb": "消[け]します",
+      "masu": "けします",
+      "te": "けして",
+      "dictionary": "けす",
+      "nai": "けさない",
+      "ta": "けした",
+      "meaning": {
+        "en": "to turn off",
+        "vi": "đứng lên, đứng dậy"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g1-37",
+      "group": 1,
+      "verb": "触[さわ]ります[ドアに〜]",
+      "masu": "さわります",
+      "te": "さわって",
+      "dictionary": "さわる",
+      "nai": "さわらない",
+      "ta": "さわった",
+      "meaning": {
+        "en": "to knock [on a door]",
+        "vi": "dùng, sử dụng"
+      },
+      "lesson": 23
+    },
+    {
+      "id": "g1-38",
+      "group": 1,
+      "verb": "知[し]ります",
+      "masu": "しります",
+      "te": "しって",
+      "dictionary": "しる",
+      "nai": "しらない",
+      "ta": "しった",
+      "meaning": {
+        "en": "to find out, to learn",
+        "vi": "đến [nơi chốn, ga]"
+      },
+      "lesson": 15
+    },
+    {
+      "id": "g1-39",
+      "group": 1,
+      "verb": "吸[す]います[たばこを〜]",
+      "masu": "すいます",
+      "te": "すって",
+      "dictionary": "すう",
+      "nai": "すわない",
+      "ta": "すった",
+      "meaning": {
+        "en": "to smoke",
+        "vi": "làm, chế tạo"
+      },
+      "lesson": 6
+    },
+    {
+      "id": "g1-40",
+      "group": 1,
+      "verb": "住[す]みます",
+      "masu": "すみます",
+      "te": "すんで",
+      "dictionary": "すむ",
+      "nai": "すまない",
+      "ta": "すんだ",
+      "meaning": {
+        "en": "to live, to reside",
+        "vi": "dẫn đi [người khác]"
+      },
+      "lesson": 15
+    },
+    {
+      "id": "g1-41",
+      "group": 1,
+      "verb": "座[すわ]ります",
+      "masu": "すわります",
+      "te": "すわって",
+      "dictionary": "すわる",
+      "nai": "すわらない",
+      "ta": "すわった",
+      "meaning": {
+        "en": "to sit down",
+        "vi": "giúp đỡ"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g1-42",
+      "group": 1,
+      "verb": "出[だ]します",
+      "masu": "だします",
+      "te": "だして",
+      "dictionary": "だす",
+      "nai": "ださない",
+      "ta": "だした",
+      "meaning": {
+        "en": "to take out (of a bag), to hand in (a report), to send",
+        "vi": "dừng lại, đỗ xe"
+      },
+      "lesson": 16
+    },
+    {
+      "id": "g1-43",
+      "group": 1,
+      "verb": "立[た]ちます",
+      "masu": "たちます",
+      "te": "たって",
+      "dictionary": "たつ",
+      "nai": "たたない",
+      "ta": "たった",
+      "meaning": {
+        "en": "to stand up",
+        "vi": "lấy, cầm"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g1-44",
+      "group": 1,
+      "verb": "使[つか]います",
+      "masu": "つかいます",
+      "te": "つかって",
+      "dictionary": "つかう",
+      "nai": "つかわない",
+      "ta": "つかった",
+      "meaning": {
+        "en": "to use",
+        "vi": "chụp [ảnh]"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g1-45",
+      "group": 1,
+      "verb": "着[つ]きます",
+      "masu": "つきます",
+      "te": "ついて",
+      "dictionary": "つく",
+      "nai": "つかない",
+      "ta": "ついた",
+      "meaning": {
+        "en": "to arrive",
+        "vi": "thêm, già đi [tuổi]"
+      },
+      "lesson": 25
+    },
+    {
+      "id": "g1-46",
+      "group": 1,
+      "verb": "作[つく]ります、 造[つく]ります",
+      "masu": "つくります",
+      "te": "つくって",
+      "dictionary": "つくる",
+      "nai": "つくらない",
+      "ta": "つくった",
+      "meaning": {
+        "en": "to make, to produce",
+        "vi": "chữa, sửa chữa"
+      },
+      "lesson": 15
+    },
+    {
+      "id": "g1-47",
+      "group": 1,
+      "verb": "連[つ]れて 行[い]きます",
+      "masu": "つれていきます",
+      "te": "つれていって",
+      "dictionary": "つれていく",
+      "nai": "つれていかない",
+      "ta": "つれていった",
+      "meaning": {
+        "en": "to take (someone)",
+        "vi": "đánh mất [đồ đạc]"
+      },
+      "lesson": 24
+    },
+    {
+      "id": "g1-48",
+      "group": 1,
+      "verb": "手伝[てつだ]います",
+      "masu": "てつだいます",
+      "te": "てつだって",
+      "dictionary": "てつだう",
+      "nai": "てつだわない",
+      "ta": "てつだった",
+      "meaning": {
+        "en": "to help",
+        "vi": "học, tiếp thu"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g1-49",
+      "group": 1,
+      "verb": "泊[と]まります[ホテルに〜]",
+      "masu": "とまります",
+      "te": "とまって",
+      "dictionary": "とまる",
+      "nai": "とまらない",
+      "ta": "とまった",
+      "meaning": {
+        "en": "to stay, to lodge [at a hotel]",
+        "vi": "trở thành, trở nên"
+      },
+      "lesson": 19
+    },
+    {
+      "id": "g1-50",
+      "group": 1,
+      "verb": "取[と]ります",
+      "masu": "とります",
+      "te": "とって",
+      "dictionary": "とる",
+      "nai": "とらない",
+      "ta": "とった",
+      "meaning": {
+        "en": "to take (in the hand), to pass (something to someone)",
+        "vi": "cởi [quần áo, giày]"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g1-51",
+      "group": 1,
+      "verb": "撮[と]ります[しゃしんを〜]",
+      "masu": "とります",
+      "te": "とって",
+      "dictionary": "とる",
+      "nai": "とらない",
+      "ta": "とった",
+      "meaning": {
+        "en": "to take [photos]",
+        "vi": "lên, leo lên [núi]"
+      },
+      "lesson": 6
+    },
+    {
+      "id": "g1-52",
+      "group": 1,
+      "verb": "取[と]ります[としを〜]",
+      "masu": "とります",
+      "te": "とって",
+      "dictionary": "とる",
+      "nai": "とらない",
+      "ta": "とった",
+      "meaning": {
+        "en": "to grow old",
+        "vi": "uống"
+      },
+      "lesson": 25
+    },
+    {
+      "id": "g1-53",
+      "group": 1,
+      "verb": "直[なお]します",
+      "masu": "なおします",
+      "te": "なおして",
+      "dictionary": "なおす",
+      "nai": "なおさない",
+      "ta": "なおした",
+      "meaning": {
+        "en": "to repair, to fix, to correct",
+        "vi": "uống [thuốc]"
+      },
+      "lesson": 24
+    },
+    {
+      "id": "g1-54",
+      "group": 1,
+      "verb": "なくします",
+      "masu": "なくします",
+      "te": "なくして",
+      "dictionary": "なくす",
+      "nai": "なくさない",
+      "ta": "なくした",
+      "meaning": {
+        "en": "to lose",
+        "vi": "lên, đi [tàu, xe buýt]"
+      },
+      "lesson": 17
+    },
+    {
+      "id": "g1-55",
+      "group": 1,
+      "verb": "習[なら]います",
+      "masu": "ならいます",
+      "te": "ならって",
+      "dictionary": "ならう",
+      "nai": "ならわない",
+      "ta": "ならった",
+      "meaning": {
+        "en": "to learn",
+        "vi": "vào [bồn tắm]"
+      },
+      "lesson": 7
+    },
+    {
+      "id": "g1-56",
+      "group": 1,
+      "verb": "なります",
+      "masu": "なります",
+      "te": "なって",
+      "dictionary": "なる",
+      "nai": "ならない",
+      "ta": "なった",
+      "meaning": {
+        "en": "to become, to come (spring, etc.)",
+        "vi": "vào [phòng, quán]"
+      },
+      "lesson": 19
+    },
+    {
+      "id": "g1-57",
+      "group": 1,
+      "verb": "脱[ぬ]ぎます",
+      "masu": "ぬぎます",
+      "te": "ぬいで",
+      "dictionary": "ぬぐ",
+      "nai": "ぬがない",
+      "ta": "ぬいだ",
+      "meaning": {
+        "en": "to take off (clothes, footwear, etc.)",
+        "vi": "vào [trường đại học]"
+      },
+      "lesson": 17
+    },
+    {
+      "id": "g1-58",
+      "group": 1,
+      "verb": "登[のぼ]ります、 上[のぼ]ります",
+      "masu": "のぼります",
+      "te": "のぼって",
+      "dictionary": "のぼる",
+      "nai": "のぼらない",
+      "ta": "のぼった",
+      "meaning": {
+        "en": "to climb",
+        "vi": "dán, dán tem"
+      },
+      "lesson": 19
+    },
+    {
+      "id": "g1-59",
+      "group": 1,
+      "verb": "飲[の]みます",
+      "masu": "のみます",
+      "te": "のんで",
+      "dictionary": "のむ",
+      "nai": "のまない",
+      "ta": "のんだ",
+      "meaning": {
+        "en": "to drink",
+        "vi": "làm việc"
+      },
+      "lesson": 6
+    },
+    {
+      "id": "g1-60",
+      "group": 1,
+      "verb": "飲[の]みます",
+      "masu": "のみます",
+      "te": "のんで",
+      "dictionary": "のむ",
+      "nai": "のまない",
+      "ta": "のんだ",
+      "meaning": {
+        "en": "to drink alcohol",
+        "vi": "nói chuyện, trò chuyện"
+      },
+      "lesson": 16
+    },
+    {
+      "id": "g1-61",
+      "group": 1,
+      "verb": "飲[の]みます[くすりを〜]",
+      "masu": "のみます",
+      "te": "のんで",
+      "dictionary": "のむ",
+      "nai": "のまない",
+      "ta": "のんだ",
+      "meaning": {
+        "en": "to take [medicine]",
+        "vi": "trả [tiền]"
+      },
+      "lesson": 17
+    },
+    {
+      "id": "g1-62",
+      "group": 1,
+      "verb": "乗[の]ります[でんしゃに〜]",
+      "masu": "のります",
+      "te": "のって",
+      "dictionary": "のる",
+      "nai": "のらない",
+      "ta": "のった",
+      "meaning": {
+        "en": "to get on [the train]",
+        "vi": "kéo, tra [từ điển]"
+      },
+      "lesson": 16
+    },
+    {
+      "id": "g1-63",
+      "group": 1,
+      "verb": "入[はい]ります[きっさてんに〜]",
+      "masu": "はいります",
+      "te": "はいって",
+      "dictionary": "はいる",
+      "nai": "はいらない",
+      "ta": "はいった",
+      "meaning": {
+        "en": "to go into [a café]",
+        "vi": "chơi [đàn piano, nhạc cụ]"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g1-64",
+      "group": 1,
+      "verb": "入[はい]ります[だいがくに〜]",
+      "masu": "はいります",
+      "te": "はいって",
+      "dictionary": "はいる",
+      "nai": "はいらない",
+      "ta": "はいった",
+      "meaning": {
+        "en": "to enter [a university]",
+        "vi": "rơi, đổ [mưa, tuyết]"
+      },
+      "lesson": 16
+    },
+    {
+      "id": "g1-65",
+      "group": 1,
+      "verb": "入[はい]ります[おふろに〜]",
+      "masu": "はいります",
+      "te": "はいって",
+      "dictionary": "はいる",
+      "nai": "はいらない",
+      "ta": "はいった",
+      "meaning": {
+        "en": "to have [a bath]",
+        "vi": "uốn, bẻ, gập"
+      },
+      "lesson": 17
+    },
+    {
+      "id": "g1-66",
+      "group": 1,
+      "verb": "はきます",
+      "masu": "はきます",
+      "te": "はいて",
+      "dictionary": "はく",
+      "nai": "はかない",
+      "ta": "はいた",
+      "meaning": {
+        "en": "to put on (shoes, trousers, etc.)",
+        "vi": "chờ, đợi"
+      },
+      "lesson": 22
+    },
+    {
+      "id": "g1-67",
+      "group": 1,
+      "verb": "働[はたら]きます",
+      "masu": "はたらきます",
+      "te": "はたらいて",
+      "dictionary": "はたらく",
+      "nai": "はたらかない",
+      "ta": "はたらいた",
+      "meaning": {
+        "en": "to work",
+        "vi": "xoay, vặn [núm điều khiển]"
+      },
+      "lesson": 4
+    },
+    {
+      "id": "g1-68",
+      "group": 1,
+      "verb": "話[はな]します",
+      "masu": "はなします",
+      "te": "はなして",
+      "dictionary": "はなす",
+      "nai": "はなさない",
+      "ta": "はなした",
+      "meaning": {
+        "en": "to speak",
+        "vi": "mang, cầm, sở hữu"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g1-69",
+      "group": 1,
+      "verb": "払[はら]います",
+      "masu": "はらいます",
+      "te": "はらって",
+      "dictionary": "はらう",
+      "nai": "はらわない",
+      "ta": "はらった",
+      "meaning": {
+        "en": "to pay",
+        "vi": "mang đi, mang theo"
+      },
+      "lesson": 17
+    },
+    {
+      "id": "g1-70",
+      "group": 1,
+      "verb": "弾[ひ]きます",
+      "masu": "ひきます",
+      "te": "ひいて",
+      "dictionary": "ひく",
+      "nai": "ひかない",
+      "ta": "ひいた",
+      "meaning": {
+        "en": "to play (string instruments, piano, etc.)",
+        "vi": "nhận lại, nhận lấy"
+      },
+      "lesson": 18
+    },
+    {
+      "id": "g1-71",
+      "group": 1,
+      "verb": "引[ひ]きます",
+      "masu": "ひきます",
+      "te": "ひいて",
+      "dictionary": "ひく",
+      "nai": "ひかない",
+      "ta": "ひいた",
+      "meaning": {
+        "en": "to pull",
+        "vi": "sửa chữa"
+      },
+      "lesson": 23
+    },
+    {
+      "id": "g1-72",
+      "group": 1,
+      "verb": "降[ふ]ります[あめが〜]",
+      "masu": "ふります",
+      "te": "ふって",
+      "dictionary": "ふる",
+      "nai": "ふらない",
+      "ta": "ふった",
+      "meaning": {
+        "en": "to rain",
+        "vi": "gọi [tên, taxi]"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g1-73",
+      "group": 1,
+      "verb": "曲[ま]がります[みぎへ〜]",
+      "masu": "まがります",
+      "te": "まがって",
+      "dictionary": "まがる",
+      "nai": "まがらない",
+      "ta": "まがった",
+      "meaning": {
+        "en": "to turn [right]",
+        "vi": "đọc"
+      },
+      "lesson": 23
+    },
+    {
+      "id": "g1-74",
+      "group": 1,
+      "verb": "待[ま]ちます",
+      "masu": "まちます",
+      "te": "まって",
+      "dictionary": "まつ",
+      "nai": "またない",
+      "ta": "まった",
+      "meaning": {
+        "en": "to wait",
+        "vi": "hiểu, biết"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g1-75",
+      "group": 1,
+      "verb": "回[まわ]します",
+      "masu": "まわします",
+      "te": "まわして",
+      "dictionary": "まわす",
+      "nai": "まわさない",
+      "ta": "まわした",
+      "meaning": {
+        "en": "to turn",
+        "vi": "bấm, ấn [nút]"
+      },
+      "lesson": 23
+    },
+    {
+      "id": "g1-76",
+      "group": 1,
+      "verb": "持[も]ちます",
+      "masu": "もちます",
+      "te": "もって",
+      "dictionary": "もつ",
+      "nai": "もたない",
+      "ta": "もった",
+      "meaning": {
+        "en": "to hold something",
+        "vi": "gửi đi"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g1-77",
+      "group": 1,
+      "verb": "持[も]って 行[い]きます",
+      "masu": "もっていきます",
+      "te": "もっていって",
+      "dictionary": "もっていく",
+      "nai": "もっていかない",
+      "ta": "もっていった",
+      "meaning": {
+        "en": "to carry (something)",
+        "vi": "vội vàng"
+      },
+      "lesson": 17
+    },
+    {
+      "id": "g1-78",
+      "group": 1,
+      "verb": "もらいます",
+      "masu": "もらいます",
+      "te": "もらって",
+      "dictionary": "もらう",
+      "nai": "もらわない",
+      "ta": "もらった",
+      "meaning": {
+        "en": "to receive (gifts, etc.)",
+        "vi": "nghỉ ngơi, nghỉ phép"
+      },
+      "lesson": 7
+    },
+    {
+      "id": "g1-79",
+      "group": 1,
+      "verb": "役[やく]に 立[た]ちます",
+      "masu": "やくにたちます",
+      "te": "やくにたって",
+      "dictionary": "やくにたつ",
+      "nai": "やくにたたない",
+      "ta": "やくにたった",
+      "meaning": {
+        "en": "to be useful",
+        "vi": "mượn [tiền, đồ vật]"
+      },
+      "lesson": 21
+    },
+    {
+      "id": "g1-80",
+      "group": 1,
+      "verb": "休[やす]みます",
+      "masu": "やすみます",
+      "te": "やすんで",
+      "dictionary": "やすむ",
+      "nai": "やすまない",
+      "ta": "やすんだ",
+      "meaning": {
+        "en": "to rest, to be on holiday",
+        "vi": "bắt đầu"
+      },
+      "lesson": 4
+    },
+    {
+      "id": "g1-81",
+      "group": 1,
+      "verb": "休[やす]みます[かいしゃを〜]",
+      "masu": "やすみます",
+      "te": "やすんで",
+      "dictionary": "やすむ",
+      "nai": "やすまない",
+      "ta": "やすんだ",
+      "meaning": {
+        "en": "to be absent, to miss [work]",
+        "vi": "gặp [người khác]"
+      },
+      "lesson": 11
+    },
+    {
+      "id": "g1-82",
+      "group": 1,
+      "verb": "呼[よ]びます",
+      "masu": "よびます",
+      "te": "よんで",
+      "dictionary": "よぶ",
+      "nai": "よばない",
+      "ta": "よんだ",
+      "meaning": {
+        "en": "to call",
+        "vi": "bán [hàng]"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g1-83",
+      "group": 1,
+      "verb": "読[よ]みます",
+      "masu": "よみます",
+      "te": "よんで",
+      "dictionary": "よむ",
+      "nai": "よまない",
+      "ta": "よんだ",
+      "meaning": {
+        "en": "to read",
+        "vi": "chạy"
+      },
+      "lesson": 6
+    },
+    {
+      "id": "g1-84",
+      "group": 1,
+      "verb": "わかります",
+      "masu": "わかります",
+      "te": "わかって",
+      "dictionary": "わかる",
+      "nai": "わからない",
+      "ta": "わかった",
+      "meaning": {
+        "en": "to understand",
+        "vi": "rửa [tay, bát đĩa]"
+      },
+      "lesson": 9
+    },
+    {
+      "id": "g1-85",
+      "group": 1,
+      "verb": "渡[わた]ります[はしを〜]",
+      "masu": "わたります",
+      "te": "わたって",
+      "dictionary": "わたる",
+      "nai": "わたらない",
+      "ta": "わたった",
+      "meaning": {
+        "en": "to cross [a bridge]",
+        "vi": "chết"
+      },
+      "lesson": 23
+    },
+    {
+      "id": "g2-01",
+      "group": 2,
+      "verb": "開[あ]けます",
+      "masu": "あけます",
+      "te": "あけて",
+      "dictionary": "あける",
+      "nai": "あけない",
+      "ta": "あけた",
+      "meaning": {
+        "en": "to open",
+        "vi": "mở [cửa]"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g2-02",
+      "group": 2,
+      "verb": "あげます",
+      "masu": "あげます",
+      "te": "あげて",
+      "dictionary": "あげる",
+      "nai": "あげない",
+      "ta": "あげた",
+      "meaning": {
+        "en": "to give",
+        "vi": "cho, tặng [người khác]"
+      },
+      "lesson": 7
+    },
+    {
+      "id": "g2-03",
+      "group": 2,
+      "verb": "集[あつ]めます",
+      "masu": "あつめます",
+      "te": "あつめて",
+      "dictionary": "あつめる",
+      "nai": "あつめない",
+      "ta": "あつめた",
+      "meaning": {
+        "en": "to collect, to gather",
+        "vi": "tập hợp, thu thập"
+      },
+      "lesson": 18
+    },
+    {
+      "id": "g2-04",
+      "group": 2,
+      "verb": "浴[あ]びます[シャワーを〜]",
+      "masu": "あびます",
+      "te": "あびて",
+      "dictionary": "あびる",
+      "nai": "あびない",
+      "ta": "あびた",
+      "meaning": {
+        "en": "to have [a shower]",
+        "vi": "ở, có [người, động vật]"
+      },
+      "lesson": 16
+    },
+    {
+      "id": "g2-05",
+      "group": 2,
+      "verb": "います",
+      "masu": "います",
+      "te": "いて",
+      "dictionary": "いる",
+      "nai": "いない",
+      "ta": "いた",
+      "meaning": {
+        "en": "to be, to exist (living things)",
+        "vi": "có [con cái]"
+      },
+      "lesson": 10
+    },
+    {
+      "id": "g2-06",
+      "group": 2,
+      "verb": "います[こどもが〜]",
+      "masu": "います",
+      "te": "いて",
+      "dictionary": "いる",
+      "nai": "いない",
+      "ta": "いた",
+      "meaning": {
+        "en": "to have [children]",
+        "vi": "ở [Nhật Bản]"
+      },
+      "lesson": 11
+    },
+    {
+      "id": "g2-07",
+      "group": 2,
+      "verb": "います[にほんに〜]",
+      "masu": "います",
+      "te": "いて",
+      "dictionary": "いる",
+      "nai": "いない",
+      "ta": "いた",
+      "meaning": {
+        "en": "to stay [in Japan]",
+        "vi": "cho vào, bỏ vào"
+      },
+      "lesson": 11
+    },
+    {
+      "id": "g2-08",
+      "group": 2,
+      "verb": "入[い]れます",
+      "masu": "いれます",
+      "te": "いれて",
+      "dictionary": "いれる",
+      "nai": "いれない",
+      "ta": "いれた",
+      "meaning": {
+        "en": "to put in, to insert",
+        "vi": "sinh ra, chào đời"
+      },
+      "lesson": 16
+    },
+    {
+      "id": "g2-09",
+      "group": 2,
+      "verb": "生[う]まれます",
+      "masu": "うまれます",
+      "te": "うまれて",
+      "dictionary": "うまれる",
+      "nai": "うまれない",
+      "ta": "うまれた",
+      "meaning": {
+        "en": "to be born",
+        "vi": "thức dậy, dậy"
+      },
+      "lesson": 22
+    },
+    {
+      "id": "g2-10",
+      "group": 2,
+      "verb": "起[お]きます",
+      "masu": "おきます",
+      "te": "おきて",
+      "dictionary": "おきる",
+      "nai": "おきない",
+      "ta": "おきた",
+      "meaning": {
+        "en": "to get up",
+        "vi": "dạy, chỉ dẫn, cho biết"
+      },
+      "lesson": 4
+    },
+    {
+      "id": "g2-11",
+      "group": 2,
+      "verb": "教[おし]えます",
+      "masu": "おしえます",
+      "te": "おしえて",
+      "dictionary": "おしえる",
+      "nai": "おしえない",
+      "ta": "おしえた",
+      "meaning": {
+        "en": "to teach",
+        "vi": "nhớ, ghi nhớ"
+      },
+      "lesson": 7
+    },
+    {
+      "id": "g2-12",
+      "group": 2,
+      "verb": "教[おし]えます[じゅうしょを〜]",
+      "masu": "おしえます",
+      "te": "おしえて",
+      "dictionary": "おしえる",
+      "nai": "おしえない",
+      "ta": "おしえた",
+      "meaning": {
+        "en": "to teach, to tell [an address]",
+        "vi": "xuống [xe, tàu, xe buýt]"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g2-13",
+      "group": 2,
+      "verb": "覚[おぼ]えます",
+      "masu": "おぼえます",
+      "te": "おぼえて",
+      "dictionary": "おぼえる",
+      "nai": "おぼえない",
+      "ta": "おぼえた",
+      "meaning": {
+        "en": "to memorise",
+        "vi": "đổi, thay đổi"
+      },
+      "lesson": 17
+    },
+    {
+      "id": "g2-14",
+      "group": 2,
+      "verb": "降[お]ります[でんしゃを〜]",
+      "masu": "おります",
+      "te": "おりて",
+      "dictionary": "おりる",
+      "nai": "おりない",
+      "ta": "おりた",
+      "meaning": {
+        "en": "to get off [the train]",
+        "vi": "vay, mượn"
+      },
+      "lesson": 16
+    },
+    {
+      "id": "g2-15",
+      "group": 2,
+      "verb": "換[か]えます",
+      "masu": "かえます",
+      "te": "かえて",
+      "dictionary": "かえる",
+      "nai": "かえない",
+      "ta": "かえた",
+      "meaning": {
+        "en": "to change, to replace",
+        "vi": "tắt, biến mất [điện]"
+      },
+      "lesson": 18
+    },
+    {
+      "id": "g2-16",
+      "group": 2,
+      "verb": "変[か]えます",
+      "masu": "かえます",
+      "te": "かえて",
+      "dictionary": "かえる",
+      "nai": "かえない",
+      "ta": "かえた",
+      "meaning": {
+        "en": "to change",
+        "vi": "đóng [cửa]"
+      },
+      "lesson": 23
+    },
+    {
+      "id": "g2-17",
+      "group": 2,
+      "verb": "かけます[でんわを〜]",
+      "masu": "かけます",
+      "te": "かけて",
+      "dictionary": "かける",
+      "nai": "かけない",
+      "ta": "かけた",
+      "meaning": {
+        "en": "to make [a phone call]",
+        "vi": "suy nghĩ, nghĩ ngợi"
+      },
+      "lesson": 7
+    },
+    {
+      "id": "g2-18",
+      "group": 2,
+      "verb": "かけます[めがねを〜]",
+      "masu": "かけます",
+      "te": "かけて",
+      "dictionary": "かける",
+      "nai": "かけない",
+      "ta": "かけた",
+      "meaning": {
+        "en": "to put on [glasses]",
+        "vi": "vứt, ném đi"
+      },
+      "lesson": 22
+    },
+    {
+      "id": "g2-19",
+      "group": 2,
+      "verb": "借[か]ります",
+      "masu": "かります",
+      "te": "かりて",
+      "dictionary": "かりる",
+      "nai": "かりない",
+      "ta": "かりた",
+      "meaning": {
+        "en": "to borrow",
+        "vi": "ăn"
+      },
+      "lesson": 7
+    },
+    {
+      "id": "g2-20",
+      "group": 2,
+      "verb": "考[かんが]えます",
+      "masu": "かんがえます",
+      "te": "かんがえて",
+      "dictionary": "かんがえる",
+      "nai": "かんがえない",
+      "ta": "かんがえた",
+      "meaning": {
+        "en": "to think, to consider",
+        "vi": "mệt mỏi, mệt"
+      },
+      "lesson": 25
+    },
+    {
+      "id": "g2-21",
+      "group": 2,
+      "verb": "着[き]ます",
+      "masu": "きます",
+      "te": "きて",
+      "dictionary": "きる",
+      "nai": "きない",
+      "ta": "きた",
+      "meaning": {
+        "en": "to put on (a shirt, etc.)",
+        "vi": "bật [điện, máy móc]"
+      },
+      "lesson": 22
+    },
+    {
+      "id": "g2-22",
+      "group": 2,
+      "verb": "気[き]を つけます",
+      "masu": "きをつけます",
+      "te": "きをつけて",
+      "dictionary": "きをつける",
+      "nai": "きをつけない",
+      "ta": "きをつけた",
+      "meaning": {
+        "en": "to pay attention, to be careful",
+        "vi": "tiếp tục"
+      },
+      "lesson": 21
+    },
+    {
+      "id": "g2-23",
+      "group": 2,
+      "verb": "くれます",
+      "masu": "くれます",
+      "te": "くれて",
+      "dictionary": "くれる",
+      "nai": "くれない",
+      "ta": "くれた",
+      "meaning": {
+        "en": "to give (to me)",
+        "vi": "bỏ, từ bỏ [thuốc lá]"
+      },
+      "lesson": 24
+    },
+    {
+      "id": "g2-24",
+      "group": 2,
+      "verb": "閉[し]めます",
+      "masu": "しめます",
+      "te": "しめて",
+      "dictionary": "しめる",
+      "nai": "しめない",
+      "ta": "しめた",
+      "meaning": {
+        "en": "to close",
+        "vi": "ra khỏi, xuất phát, rời khỏi"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g2-25",
+      "group": 2,
+      "verb": "調[しら]べます",
+      "masu": "しらべます",
+      "te": "しらべて",
+      "dictionary": "しらべる",
+      "nai": "しらべない",
+      "ta": "しらべた",
+      "meaning": {
+        "en": "to look into, to check",
+        "vi": "ngừng, tạnh [mưa]"
+      },
+      "lesson": 20
+    },
+    {
+      "id": "g2-26",
+      "group": 2,
+      "verb": "捨[す]てます",
+      "masu": "すてます",
+      "te": "すてて",
+      "dictionary": "すてる",
+      "nai": "すてない",
+      "ta": "すてた",
+      "meaning": {
+        "en": "to throw away",
+        "vi": "ngủ"
+      },
+      "lesson": 18
+    },
+    {
+      "id": "g2-27",
+      "group": 2,
+      "verb": "食[た]べます",
+      "masu": "たべます",
+      "te": "たべて",
+      "dictionary": "たべる",
+      "nai": "たべない",
+      "ta": "たべた",
+      "meaning": {
+        "en": "to eat",
+        "vi": "đổi [tàu, xe]"
+      },
+      "lesson": 6
+    },
+    {
+      "id": "g2-28",
+      "group": 2,
+      "verb": "足[た]ります",
+      "masu": "たります",
+      "te": "たりて",
+      "dictionary": "たりる",
+      "nai": "たりない",
+      "ta": "たりた",
+      "meaning": {
+        "en": "to be enough",
+        "vi": "bắt đầu"
+      },
+      "lesson": 25
+    },
+    {
+      "id": "g2-29",
+      "group": 2,
+      "verb": "疲[つか]れます",
+      "masu": "つかれます",
+      "te": "つかれて",
+      "dictionary": "つかれる",
+      "nai": "つかれない",
+      "ta": "つかれた",
+      "meaning": {
+        "en": "to get tired",
+        "vi": "thua, thất bại"
+      },
+      "lesson": 13
+    },
+    {
+      "id": "g2-30",
+      "group": 2,
+      "verb": "つけます",
+      "masu": "つけます",
+      "te": "つけて",
+      "dictionary": "つける",
+      "nai": "つけない",
+      "ta": "つけた",
+      "meaning": {
+        "en": "to turn on",
+        "vi": "nhìn, xem"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g2-31",
+      "group": 2,
+      "verb": "出[で]かけます",
+      "masu": "でかけます",
+      "te": "でかけて",
+      "dictionary": "でかける",
+      "nai": "でかけない",
+      "ta": "でかけた",
+      "meaning": {
+        "en": "to go out",
+        "vi": "cho xem, cho thấy"
+      },
+      "lesson": 17
+    },
+    {
+      "id": "g2-32",
+      "group": 2,
+      "verb": "できます",
+      "masu": "できます",
+      "te": "できて",
+      "dictionary": "できる",
+      "nai": "できない",
+      "ta": "できた",
+      "meaning": {
+        "en": "can, to be able to",
+        "vi": "quên"
+      },
+      "lesson": 18
+    },
+    {
+      "id": "g2-33",
+      "group": 2,
+      "verb": "出[で]ます[おつりが〜]",
+      "masu": "でます",
+      "te": "でて",
+      "dictionary": "でる",
+      "nai": "でない",
+      "ta": "でた",
+      "meaning": {
+        "en": "for change to come out",
+        "vi": "gọi [điện thoại]"
+      },
+      "lesson": 23
+    },
+    {
+      "id": "g2-34",
+      "group": 2,
+      "verb": "出[で]ます[きっさてんを〜]",
+      "masu": "でます",
+      "te": "でて",
+      "dictionary": "でる",
+      "nai": "でない",
+      "ta": "でた",
+      "meaning": {
+        "en": "to leave [a café]",
+        "vi": "tắm [vòi sen]"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g2-35",
+      "group": 2,
+      "verb": "出[で]ます[だいがくを〜]",
+      "masu": "でます",
+      "te": "でて",
+      "dictionary": "でる",
+      "nai": "でない",
+      "ta": "でた",
+      "meaning": {
+        "en": "to graduate [from a university]",
+        "vi": "đeo [kính]"
+      },
+      "lesson": 16
+    },
+    {
+      "id": "g2-36",
+      "group": 2,
+      "verb": "止[と]めます",
+      "masu": "とめます",
+      "te": "とめて",
+      "dictionary": "とめる",
+      "nai": "とめない",
+      "ta": "とめた",
+      "meaning": {
+        "en": "to stop, to park",
+        "vi": "mặc [áo sơ mi, áo khoác]"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g2-37",
+      "group": 2,
+      "verb": "寝[ね]ます",
+      "masu": "ねます",
+      "te": "ねて",
+      "dictionary": "ねる",
+      "nai": "ねない",
+      "ta": "ねた",
+      "meaning": {
+        "en": "to go to bed, to sleep",
+        "vi": "chú ý, cẩn thận"
+      },
+      "lesson": 4
+    },
+    {
+      "id": "g2-38",
+      "group": 2,
+      "verb": "乗[の]り 換[か]えます",
+      "masu": "のりかえます",
+      "te": "のりかえて",
+      "dictionary": "のりかえる",
+      "nai": "のりかえない",
+      "ta": "のりかえた",
+      "meaning": {
+        "en": "to change (trains, etc.)",
+        "vi": "chuyển [tàu, xe]"
+      },
+      "lesson": 16
+    },
+    {
+      "id": "g2-39",
+      "group": 2,
+      "verb": "始[はじ]めます",
+      "masu": "はじめます",
+      "te": "はじめて",
+      "dictionary": "はじめる",
+      "nai": "はじめない",
+      "ta": "はじめた",
+      "meaning": {
+        "en": "to begin, to start",
+        "vi": "bắt đầu, khởi đầu"
+      },
+      "lesson": 16
+    },
+    {
+      "id": "g2-40",
+      "group": 2,
+      "verb": "負[ま]けます",
+      "masu": "まけます",
+      "te": "まけて",
+      "dictionary": "まける",
+      "nai": "まけない",
+      "ta": "まけた",
+      "meaning": {
+        "en": "to lose (a match, etc.), to be beaten",
+        "vi": "thua [trận đấu, đối thủ]"
+      },
+      "lesson": 21
+    },
+    {
+      "id": "g2-41",
+      "group": 2,
+      "verb": "見[み]せます",
+      "masu": "みせます",
+      "te": "みせて",
+      "dictionary": "みせる",
+      "nai": "みせない",
+      "ta": "みせた",
+      "meaning": {
+        "en": "to show",
+        "vi": "cho xem, đưa xem"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g2-42",
+      "group": 2,
+      "verb": "見[み]ます",
+      "masu": "みます",
+      "te": "みて",
+      "dictionary": "みる",
+      "nai": "みない",
+      "ta": "みた",
+      "meaning": {
+        "en": "to see, to watch",
+        "vi": "xem, nhìn"
+      },
+      "lesson": 6
+    },
+    {
+      "id": "g2-43",
+      "group": 2,
+      "verb": "迎[むか]えます",
+      "masu": "むかえます",
+      "te": "むかえて",
+      "dictionary": "むかえる",
+      "nai": "むかえない",
+      "ta": "むかえた",
+      "meaning": {
+        "en": "to pick up, to meet (people)",
+        "vi": "đón [người]"
+      },
+      "lesson": 13
+    },
+    {
+      "id": "g2-44",
+      "group": 2,
+      "verb": "やめます[かいしゃを〜]",
+      "masu": "やめます",
+      "te": "やめて",
+      "dictionary": "やめる",
+      "nai": "やめない",
+      "ta": "やめた",
+      "meaning": {
+        "en": "to resign, to leave [a company]",
+        "vi": "nghỉ việc, rời [công ty]"
+      },
+      "lesson": 21
+    },
+    {
+      "id": "g2-45",
+      "group": 2,
+      "verb": "忘[わす]れます",
+      "masu": "わすれます",
+      "te": "わすれて",
+      "dictionary": "わすれる",
+      "nai": "わすれない",
+      "ta": "わすれた",
+      "meaning": {
+        "en": "to forget",
+        "vi": "quên [đồ đạc, việc gì]"
+      },
+      "lesson": 17
+    },
+    {
+      "id": "g3-01",
+      "group": 3,
+      "verb": "案内[あんない]します",
+      "masu": "あんないします",
+      "te": "あんないして",
+      "dictionary": "あんないする",
+      "nai": "あんないしない",
+      "ta": "あんないした",
+      "meaning": {
+        "en": "to show around (a city), to give directions",
+        "vi": "hướng dẫn, dẫn đường"
+      },
+      "lesson": 24
+    },
+    {
+      "id": "g3-02",
+      "group": 3,
+      "verb": "運転[うんてん]します",
+      "masu": "うんてんします",
+      "te": "うんてんして",
+      "dictionary": "うんてんする",
+      "nai": "うんてんしない",
+      "ta": "うんてんした",
+      "meaning": {
+        "en": "to drive (a vehicle)",
+        "vi": "lái xe"
+      },
+      "lesson": 18
+    },
+    {
+      "id": "g3-03",
+      "group": 3,
+      "verb": "買[か]い 物[もの]します",
+      "masu": "かいものします",
+      "te": "かいものして",
+      "dictionary": "かいものする",
+      "nai": "かいものしない",
+      "ta": "かいものした",
+      "meaning": {
+        "en": "to go shopping",
+        "vi": "đi dạo"
+      },
+      "lesson": 13
+    },
+    {
+      "id": "g3-04",
+      "group": 3,
+      "verb": "来[き]ます",
+      "masu": "きます",
+      "te": "きて",
+      "dictionary": "くる",
+      "nai": "こない",
+      "ta": "きた",
+      "meaning": {
+        "en": "to come",
+        "vi": "hỏng hóc, trục trặc"
+      },
+      "lesson": 5
+    },
+    {
+      "id": "g3-05",
+      "group": 3,
+      "verb": "結婚[けっこん]します",
+      "masu": "けっこんします",
+      "te": "けっこんして",
+      "dictionary": "けっこんする",
+      "nai": "けっこんしない",
+      "ta": "けっこんした",
+      "meaning": {
+        "en": "to get married",
+        "vi": "kết hôn, cưới"
+      },
+      "lesson": 13
+    },
+    {
+      "id": "g3-06",
+      "group": 3,
+      "verb": "見学[けんがく]します",
+      "masu": "けんがくします",
+      "te": "けんがくして",
+      "dictionary": "けんがくする",
+      "nai": "けんがくしない",
+      "ta": "けんがくした",
+      "meaning": {
+        "en": "to visit a place (mainly to study it)",
+        "vi": "đến"
+      },
+      "lesson": 16
+    },
+    {
+      "id": "g3-07",
+      "group": 3,
+      "verb": "研究[けんきゅう]します",
+      "masu": "けんきゅうします",
+      "te": "けんきゅうして",
+      "dictionary": "けんきゅうする",
+      "nai": "けんきゅうしない",
+      "ta": "けんきゅうした",
+      "meaning": {
+        "en": "to research",
+        "vi": "sao chép, photocopy"
+      },
+      "lesson": 15
+    },
+    {
+      "id": "g3-08",
+      "group": 3,
+      "verb": "コピーします",
+      "masu": "コピーします",
+      "te": "コピーして",
+      "dictionary": "コピーする",
+      "nai": "コピーしない",
+      "ta": "コピーした",
+      "meaning": {
+        "en": "to make photocopies",
+        "vi": "làm [việc gì đó]"
+      },
+      "lesson": 14
+    },
+    {
+      "id": "g3-09",
+      "group": 3,
+      "verb": "散歩[さんぽ]します[こうえんを〜]",
+      "masu": "さんぽします",
+      "te": "さんぽして",
+      "dictionary": "さんぽする",
+      "nai": "さんぽしない",
+      "ta": "さんぽした",
+      "meaning": {
+        "en": "to take a walk [in the park]",
+        "vi": "sửa chữa, bảo trì"
+      },
+      "lesson": 13
+    },
+    {
+      "id": "g3-10",
+      "group": 3,
+      "verb": "残業[ざんぎょう]します",
+      "masu": "ざんぎょうします",
+      "te": "ざんぎょうして",
+      "dictionary": "ざんぎょうする",
+      "nai": "ざんぎょうしない",
+      "ta": "ざんぎょうした",
+      "meaning": {
+        "en": "to work overtime",
+        "vi": "giới thiệu"
+      },
+      "lesson": 17
+    },
+    {
+      "id": "g3-11",
+      "group": 3,
+      "verb": "します",
+      "masu": "します",
+      "te": "して",
+      "dictionary": "する",
+      "nai": "しない",
+      "ta": "した",
+      "meaning": {
+        "en": "to do, to make",
+        "vi": "dùng bữa, ăn cơm"
+      },
+      "lesson": 6
+    },
+    {
+      "id": "g3-12",
+      "group": 3,
+      "verb": "します[ネクタイを〜]",
+      "masu": "します",
+      "te": "して",
+      "dictionary": "する",
+      "nai": "しない",
+      "ta": "した",
+      "meaning": {
+        "en": "to put on [a tie]",
+        "vi": "thực tập, tu nghiệp"
+      },
+      "lesson": 22
+    },
+    {
+      "id": "g3-13",
+      "group": 3,
+      "verb": "修理[しゅうり]します",
+      "masu": "しゅうりします",
+      "te": "しゅうりして",
+      "dictionary": "しゅうりする",
+      "nai": "しゅうりしない",
+      "ta": "しゅうりした",
+      "meaning": {
+        "en": "to repair",
+        "vi": "xuất hiện, tham gia"
+      },
+      "lesson": 20
+    },
+    {
+      "id": "g3-14",
+      "group": 3,
+      "verb": "出張[しゅっちょう]します",
+      "masu": "しゅっちょうします",
+      "te": "しゅっちょうして",
+      "dictionary": "しゅっちょうする",
+      "nai": "しゅっちょうしない",
+      "ta": "しゅっちょうした",
+      "meaning": {
+        "en": "to travel for work",
+        "vi": "chuyển nhà"
+      },
+      "lesson": 17
+    },
+    {
+      "id": "g3-15",
+      "group": 3,
+      "verb": "紹介[しょうかい]します",
+      "masu": "しょうかいします",
+      "te": "しょうかいして",
+      "dictionary": "しょうかいする",
+      "nai": "しょうかいしない",
+      "ta": "しょうかいした",
+      "meaning": {
+        "en": "to introduce (someone)",
+        "vi": "học tập"
+      },
+      "lesson": 24
+    },
+    {
+      "id": "g3-16",
+      "group": 3,
+      "verb": "食事[しょくじ]します",
+      "masu": "しょくじします",
+      "te": "しょくじして",
+      "dictionary": "しょくじする",
+      "nai": "しょくじしない",
+      "ta": "しょくじした",
+      "meaning": {
+        "en": "to eat",
+        "vi": "du lịch"
+      },
+      "lesson": 13
+    },
+    {
+      "id": "g3-17",
+      "group": 3,
+      "verb": "心配[しんぱい]します",
+      "masu": "しんぱいします",
+      "te": "しんぱいして",
+      "dictionary": "しんぱいする",
+      "nai": "しんぱいしない",
+      "ta": "しんぱいした",
+      "meaning": {
+        "en": "to worry",
+        "vi": "đặt chỗ, hẹn trước"
+      },
+      "lesson": 17
+    },
+    {
+      "id": "g3-18",
+      "group": 3,
+      "verb": "説明[せつめい]します",
+      "masu": "せつめいします",
+      "te": "せつめいして",
+      "dictionary": "せつめいする",
+      "nai": "せつめいしない",
+      "ta": "せつめいした",
+      "meaning": {
+        "en": "to explain",
+        "vi": "tăng ca, làm thêm giờ"
+      },
+      "lesson": 24
+    },
+    {
+      "id": "g3-19",
+      "group": 3,
+      "verb": "洗濯[せんたく]します",
+      "masu": "せんたくします",
+      "te": "せんたくして",
+      "dictionary": "せんたくする",
+      "nai": "せんたくしない",
+      "ta": "せんたくした",
+      "meaning": {
+        "en": "to wash (clothes)",
+        "vi": "giặt giũ [quần áo]"
+      },
+      "lesson": 19
+    },
+    {
+      "id": "g3-20",
+      "group": 3,
+      "verb": "掃除[そうじ]します",
+      "masu": "そうじします",
+      "te": "そうじして",
+      "dictionary": "そうじする",
+      "nai": "そうじしない",
+      "ta": "そうじした",
+      "meaning": {
+        "en": "to clean (a room)",
+        "vi": "dọn dẹp [phòng]"
+      },
+      "lesson": 19
+    },
+    {
+      "id": "g3-21",
+      "group": 3,
+      "verb": "連[つ]れて 来[き]ます",
+      "masu": "つれてきます",
+      "te": "つれてきて",
+      "dictionary": "つれてくる",
+      "nai": "つれてこない",
+      "ta": "つれてきた",
+      "meaning": {
+        "en": "to bring (someone)",
+        "vi": "dẫn [ai đó] đến"
+      },
+      "lesson": 24
+    },
+    {
+      "id": "g3-22",
+      "group": 3,
+      "verb": "電話[でんわ]します",
+      "masu": "でんわします",
+      "te": "でんわして",
+      "dictionary": "でんわする",
+      "nai": "でんわしない",
+      "ta": "でんわした",
+      "meaning": {
+        "en": "to phone, to call",
+        "vi": "gọi điện thoại"
+      },
+      "lesson": 16
+    },
+    {
+      "id": "g3-23",
+      "group": 3,
+      "verb": "勉強[べんきょう]します",
+      "masu": "べんきょうします",
+      "te": "べんきょうして",
+      "dictionary": "べんきょうする",
+      "nai": "べんきょうしない",
+      "ta": "べんきょうした",
+      "meaning": {
+        "en": "to study",
+        "vi": "học, học tập"
+      },
+      "lesson": 4
+    },
+    {
+      "id": "g3-24",
+      "group": 3,
+      "verb": "持[も]って 来[き]ます",
+      "masu": "もってきます",
+      "te": "もってきて",
+      "dictionary": "もってくる",
+      "nai": "もってこない",
+      "ta": "もってきた",
+      "meaning": {
+        "en": "to bring (something)",
+        "vi": "mang [cái gì] đến"
+      },
+      "lesson": 17
+    },
+    {
+      "id": "g3-25",
+      "group": 3,
+      "verb": "予約[よやく]します",
+      "masu": "よやくします",
+      "te": "よやくして",
+      "dictionary": "よやくする",
+      "nai": "よやくしない",
+      "ta": "よやくした",
+      "meaning": {
+        "en": "to book, to reserve",
+        "vi": "đặt trước, hẹn trước"
+      },
+      "lesson": 18
+    },
+    {
+      "id": "g3-26",
+      "group": 3,
+      "verb": "留学[りゅうがく]します",
+      "masu": "りゅうがくします",
+      "te": "りゅうがくして",
+      "dictionary": "りゅうがくする",
+      "nai": "りゅうがくしない",
+      "ta": "りゅうがくした",
+      "meaning": {
+        "en": "to study abroad",
+        "vi": "du học"
+      },
+      "lesson": 21
+    }
+  ]
+}

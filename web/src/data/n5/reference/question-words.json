@@ -1,0 +1,236 @@
+{
+  "level": "n5",
+  "slug": "question-words",
+  "title": {
+    "en": "Question words",
+    "vi": "Từ để hỏi"
+  },
+  "description": {
+    "en": "The question words that appear in the book, with an example of each.",
+    "vi": "Các từ để hỏi xuất hiện trong giáo trình kèm ví dụ minh họa."
+  },
+  "order": 6,
+  "sections": [
+    {
+      "id": "people-things",
+      "title": {
+        "en": "People and things",
+        "vi": "Người và vật"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Question word",
+              "vi": "Từ để hỏi"
+            },
+            {
+              "en": "Meaning",
+              "vi": "Ý nghĩa"
+            },
+            {
+              "en": "Example",
+              "vi": "Ví dụ"
+            }
+          ],
+          "rows": [
+            [
+              "何[なに]／何[なん]",
+              {
+                "en": "what",
+                "vi": "cái gì"
+              },
+              "何[なに]を 買[か]いますか。"
+            ],
+            [
+              "誰[だれ]",
+              {
+                "en": "who",
+                "vi": "ai"
+              },
+              "あの 人[ひと]は 誰[だれ]ですか。"
+            ],
+            [
+              "どなた",
+              {
+                "en": "who (polite)",
+                "vi": "vị nào / ai (cách nói lịch sự)"
+              },
+              "どなたですか。"
+            ],
+            [
+              "どれ",
+              {
+                "en": "which one (of three or more)",
+                "vi": "cái nào (trong số 3 cái trở lên)"
+              },
+              "どれが 山田[やまだ]さんの 傘[かさ]ですか。"
+            ],
+            [
+              "どの〜",
+              {
+                "en": "which ~ (of three or more)",
+                "vi": "~ nào (+ danh từ, trong 3 cái trở lên)"
+              },
+              "どの 人[ひと]ですか。"
+            ],
+            [
+              "どちら",
+              {
+                "en": "which (of two); also \"which way\"",
+                "vi": "bên nào / cái nào (trong 2 đối tượng); hoặc hướng nào"
+              },
+              "夏[なつ]と 冬[ふゆ]とどちらが 好[す]きですか。"
+            ],
+            [
+              "どんな〜",
+              {
+                "en": "what kind of ~",
+                "vi": "như thế nào / loại nào"
+              },
+              "どんな 音楽[おんがく]が 好[す]きですか。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "place-time",
+      "title": {
+        "en": "Place, time and quantity",
+        "vi": "Nơi chốn, thời gian và số lượng"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Question word",
+              "vi": "Từ để hỏi"
+            },
+            {
+              "en": "Meaning",
+              "vi": "Ý nghĩa"
+            },
+            {
+              "en": "Example",
+              "vi": "Ví dụ"
+            }
+          ],
+          "rows": [
+            [
+              "どこ",
+              {
+                "en": "where",
+                "vi": "ở đâu"
+              },
+              "トイレはどこですか。"
+            ],
+            [
+              "いつ",
+              {
+                "en": "when",
+                "vi": "khi nào, bao giờ"
+              },
+              "いつ 日本[にほん]へ 来[き]ましたか。"
+            ],
+            [
+              "何時[なんじ]",
+              {
+                "en": "what time",
+                "vi": "mấy giờ"
+              },
+              "今[いま] 何時[なんじ]ですか。"
+            ],
+            [
+              "何曜日[なんようび]",
+              {
+                "en": "what day of the week",
+                "vi": "thứ mấy"
+              },
+              "今日[きょう]は 何曜日[なんようび]ですか。"
+            ],
+            [
+              "いくら",
+              {
+                "en": "how much (money)",
+                "vi": "bao nhiêu tiền"
+              },
+              "これはいくらですか。"
+            ],
+            [
+              "いくつ",
+              {
+                "en": "how many (objects); also age",
+                "vi": "mấy cái / bao nhiêu tuổi"
+              },
+              "みかんをいくつ 買[か]いますか。"
+            ],
+            [
+              "どのくらい",
+              {
+                "en": "how long",
+                "vi": "mất bao lâu / khoảng bao nhiêu"
+              },
+              "どのくらいかかりますか。"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manner",
+      "title": {
+        "en": "Manner and reason",
+        "vi": "Cách thức và lý do"
+      },
+      "tables": [
+        {
+          "headers": [
+            {
+              "en": "Question word",
+              "vi": "Từ để hỏi"
+            },
+            {
+              "en": "Meaning",
+              "vi": "Ý nghĩa"
+            },
+            {
+              "en": "Example",
+              "vi": "Ví dụ"
+            }
+          ],
+          "rows": [
+            [
+              "どう",
+              {
+                "en": "how (impression)",
+                "vi": "thế nào (cảm nhận, ấn tượng)"
+              },
+              "日本[にほん]の 生活[せいかつ]はどうですか。"
+            ],
+            [
+              "どうやって",
+              {
+                "en": "how (method)",
+                "vi": "bằng cách nào / như thế nào (cách làm)"
+              },
+              "大学[だいがく]までどうやって 行[い]きますか。"
+            ],
+            [
+              "どうして",
+              {
+                "en": "why",
+                "vi": "tại sao"
+              },
+              "どうして 来[き]ませんでしたか。"
+            ]
+          ]
+        }
+      ],
+      "note": {
+        "en": "A question word + も with a negative verb negates everything: どこも 行[い]きません (I'm not going anywhere). A question word + か makes it indefinite: どこか (somewhere), 何[なに]か (something).",
+        "vi": "Từ để hỏi + も kết hợp với động từ phủ định mang nghĩa phủ định hoàn toàn: どこも 行[い]きません (không đi bất cứ đâu). Từ để hỏi + か biến thành đại từ bất định: どこか (nơi nào đó), 何[なに]か (cái gì đó)."
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "character": "北",
+  "level": "n5",
+  "lesson": 19,
+  "meanings": {
+    "en": [
+      "north"
+    ],
+    "vi": [
+      "phương bắc",
+      "hướng bắc"
+    ]
+  },
+  "onyomi": [
+    "ホク"
+  ],
+  "kunyomi": [
+    "きた"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "北[きた]",
+      "meaning": {
+        "en": "north",
+        "vi": "phương bắc, hướng bắc"
+      }
+    },
+    {
+      "word": "北海道[ほっかいどう]",
+      "meaning": {
+        "en": "Hokkaido",
+        "vi": "vùng Hokkaido"
+      }
+    },
+    {
+      "word": "北口[きたぐち]",
+      "meaning": {
+        "en": "north exit",
+        "vi": "north exit"
+      }
+    },
+    {
+      "word": "北西[ほくせい]",
+      "meaning": {
+        "en": "north-west",
+        "vi": "tây bắc"
+      }
+    },
+    {
+      "word": "北極[ほっきょく]",
+      "meaning": {
+        "en": "the North Pole",
+        "vi": "the North Pole"
+      }
+    }
+  ]
+}

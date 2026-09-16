@@ -1,0 +1,61 @@
+{
+  "character": "待",
+  "level": "n5",
+  "meanings": {
+    "en": [
+      "to wait"
+    ],
+    "vi": [
+      "chờ",
+      "đợi"
+    ]
+  },
+  "onyomi": [
+    "タイ"
+  ],
+  "kunyomi": [
+    "ま.つ"
+  ],
+  "strokes": 9,
+  "examples": [
+    {
+      "word": "待[ま]つ",
+      "meaning": {
+        "en": "to wait",
+        "vi": "chờ, đợi"
+      }
+    },
+    {
+      "word": "信号待[しんごうま]ち",
+      "meaning": {
+        "en": "to wait at the traffic light",
+        "vi": "to wait at the traffic light"
+      }
+    },
+    {
+      "word": "期待[きたい]",
+      "meaning": {
+        "en": "expectation",
+        "vi": "sự kỳ vọng, trông đợi"
+      }
+    },
+    {
+      "word": "招待[しょうたい]",
+      "meaning": {
+        "en": "invitation",
+        "vi": "invitation"
+      }
+    },
+    {
+      "word": "接待[せったい]",
+      "meaning": {
+        "en": "to receive, to attend to",
+        "vi": "to receive, to attend to"
+      }
+    }
+  ],
+  "similar": [
+    "持",
+    "時"
+  ]
+}

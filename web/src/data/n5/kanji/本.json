@@ -1,0 +1,72 @@
+{
+  "character": "本",
+  "level": "n5",
+  "lesson": 1,
+  "meanings": {
+    "en": [
+      "book",
+      "origin",
+      "base, foundation"
+    ],
+    "vi": [
+      "sách",
+      "gốc",
+      "nguồn cội"
+    ]
+  },
+  "onyomi": [
+    "ホン"
+  ],
+  "kunyomi": [
+    "もと"
+  ],
+  "strokes": 5,
+  "examples": [
+    {
+      "word": "日本[にほん]",
+      "meaning": {
+        "en": "Japan",
+        "vi": "nước Nhật Bản"
+      }
+    },
+    {
+      "word": "本[ほん]",
+      "meaning": {
+        "en": "book",
+        "vi": "cuốn sách"
+      }
+    },
+    {
+      "word": "本棚[ほんだな]",
+      "meaning": {
+        "en": "bookshelf",
+        "vi": "bookshelf"
+      }
+    },
+    {
+      "word": "絵本[えほん]",
+      "meaning": {
+        "en": "picture book",
+        "vi": "picture book"
+      }
+    },
+    {
+      "word": "基本[きほん]",
+      "meaning": {
+        "en": "base, foundation",
+        "vi": "base, foundation"
+      }
+    },
+    {
+      "word": "本当[ほんとう]",
+      "meaning": {
+        "en": "true",
+        "vi": "sự thật, thật sự"
+      }
+    }
+  ],
+  "similar": [
+    "木",
+    "体"
+  ]
+}

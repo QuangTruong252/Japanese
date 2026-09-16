@@ -1,0 +1,205 @@
+{
+  "level": "n5",
+  "number": 5,
+  "title": {
+    "en": "Coming and going",
+    "vi": "Đi lại và phương tiện giao thông"
+  },
+  "jpTitle": "この 電車[でんしゃ]は 甲子園[こうしえん]へ 行[い]きますか",
+  "description": {
+    "en": "Talk about travel: where you are going, by what means of transport, with whom and when.",
+    "vi": "Nói về hành động di chuyển với 行きます, 来ます, 帰ります, phương tiện đi lại với trợ từ で và mốc thời gian ngày tháng năm."
+  },
+  "grammar": [
+    {
+      "id": "e-ikimasu",
+      "title": {
+        "en": "N (place) へ 行[い]きます／来[き]ます／帰[かえ]ります",
+        "vi": "N (địa điểm) へ 行[い]きます／来[き]ます／帰[かえ]ります"
+      },
+      "pattern": {
+        "en": "place へ 行[い]きます／来[き]ます／帰[かえ]ります",
+        "vi": "địa điểm へ 行[い]きます／来[き]ます／帰[かえ]ります"
+      },
+      "explanation": {
+        "en": "The particle へ (read \"e\") marks the direction of movement with the verbs to go, to come and to return.",
+        "vi": "Trợ từ へ (đọc là 'e') đứng sau danh từ chỉ nơi chốn để biểu thị phương hướng hoặc đích đến của hành động di chuyển với các động từ: 行きます (đi), 来ます (đến), 帰ります (trở về)."
+      },
+      "examples": [
+        {
+          "jp": "京都[きょうと]へ 行[い]きます。",
+          "translation": {
+            "en": "I'm going to Kyoto.",
+            "vi": "Tôi đi Kyoto."
+          }
+        },
+        {
+          "jp": "うちへ 帰[かえ]ります。",
+          "translation": {
+            "en": "I'm going back home.",
+            "vi": "Tôi trở về nhà."
+          }
+        }
+      ]
+    },
+    {
+      "id": "doko-mo",
+      "title": {
+        "en": "どこ[へ]も 行[い]きません — \"nowhere\"",
+        "vi": "どこ[へ]も 行[い]きません — Phủ định hoàn toàn"
+      },
+      "pattern": {
+        "en": "どこ[へ]も V (negative)",
+        "vi": "địa điểm[へ]も V (phủ định)"
+      },
+      "explanation": {
+        "en": "A question word + も with a negative verb negates the whole range of the question: どこも 行[い]きません means \"I'm not going anywhere\".",
+        "vi": "Khi kết hợp từ để hỏi nghi vấn với trợ từ も và động từ thể phủ định, cấu trúc diễn tả sự phủ định hoàn toàn toàn bộ đối tượng ('không đi đâu cả')."
+      },
+      "examples": [
+        {
+          "jp": "きのうどこ[へ]も 行[い]きませんでした。",
+          "translation": {
+            "en": "I didn't go anywhere yesterday.",
+            "vi": "Hôm qua tôi đã không đi đâu cả."
+          }
+        }
+      ]
+    },
+    {
+      "id": "de-vehiculo",
+      "title": {
+        "en": "N (vehicle) で 行[い]きます — means of transport",
+        "vi": "N (phương tiện) で 行[い]きます — Phương tiện di chuyển"
+      },
+      "pattern": {
+        "en": "vehicle で 行[い]きます／来[き]ます／帰[かえ]ります",
+        "vi": "phương tiện で 行[い]きます／来[き]ます／帰[かえ]ります"
+      },
+      "explanation": {
+        "en": "The particle で indicates the means of transport. For \"on foot\" you use 歩[ある]いて, with no particle.",
+        "vi": "Trợ từ で đứng sau danh từ chỉ phương tiện giao thông để biểu thị phương tiện dùng để di chuyển. Nếu đi bộ thì dùng cụm 歩いて (không dùng trợ từ で)."
+      },
+      "examples": [
+        {
+          "jp": "電車[でんしゃ]で 会社[かいしゃ]へ 行[い]きます。",
+          "translation": {
+            "en": "I go to the company by train.",
+            "vi": "Tôi đi đến công ty bằng tàu điện."
+          }
+        },
+        {
+          "jp": "駅[えき]から 歩[ある]いて 帰[かえ]ります。",
+          "translation": {
+            "en": "I walk home from the station.",
+            "vi": "Tôi đi bộ từ nhà ga về nhà."
+          }
+        }
+      ]
+    },
+    {
+      "id": "to-persona",
+      "title": {
+        "en": "N (person/animal) と V — \"with someone\"",
+        "vi": "N (người/động vật) と V — Cùng với ai đó"
+      },
+      "pattern": {
+        "en": "person と V",
+        "vi": "người と V"
+      },
+      "explanation": {
+        "en": "と marks the person (or animal) you do the action with. \"Alone\" is 一人[ひとり]で, without と.",
+        "vi": "Trợ từ と đứng sau danh từ chỉ người hoặc động vật để chỉ đối tượng cùng tham gia thực hiện hành động ('cùng với'). Nếu làm hành động một mình thì dùng 一人で (không dùng と)."
+      },
+      "examples": [
+        {
+          "jp": "家族[かぞく]と 日本[にほん]へ 来[き]ました。",
+          "translation": {
+            "en": "I came to Japan with my family.",
+            "vi": "Tôi đã đến Nhật Bản cùng với gia đình."
+          }
+        },
+        {
+          "jp": "一人[ひとり]で 東京[とうきょう]へ 行[い]きます。",
+          "translation": {
+            "en": "I'm going to Tokyo alone.",
+            "vi": "Tôi đi Tokyo một mình."
+          }
+        }
+      ]
+    },
+    {
+      "id": "itsu",
+      "title": {
+        "en": "いつ — \"when\"",
+        "vi": "いつ — «Khi nào»"
+      },
+      "pattern": {
+        "vi": "いつ V ますか"
+      },
+      "explanation": {
+        "en": "いつ asks about a time without needing the particle に. In the answer, に only appears if the time is a number (a date or a clock time).",
+        "vi": "Từ nghi vấn いつ dùng để hỏi thời điểm xảy ra sự việc ('khi nào, bao giờ'). Chú ý: sau いつ không dùng trợ từ に."
+      },
+      "examples": [
+        {
+          "jp": "いつ 日本[にほん]へ 来[き]ましたか。…3 月[がつ]25 日[にち]に 来[き]ました。",
+          "translation": {
+            "en": "When did you come to Japan? …I came on 25 March.",
+            "vi": "Bạn đến Nhật Bản khi nào? …Tôi đến vào ngày 25 tháng 3."
+          }
+        }
+      ]
+    },
+    {
+      "id": "yo",
+      "title": {
+        "en": "〜よ — giving new information",
+        "vi": "〜よ — Nhấn mạnh thông tin mới"
+      },
+      "pattern": {
+        "vi": "S よ"
+      },
+      "explanation": {
+        "en": "The sentence-final particle よ stresses that you are giving information the listener does not have, like a friendly heads-up.",
+        "vi": "Trợ từ よ đặt ở cuối câu dùng để cung cấp một thông tin mà người nghe chưa biết, hoặc để nhấn mạnh ý kiến, lời khuyên của người nói."
+      },
+      "examples": [
+        {
+          "jp": "この 電車[でんしゃ]は 甲子園[こうしえん]へ 行[い]きませんよ。",
+          "translation": {
+            "en": "This train doesn't go to Koshien, you know.",
+            "vi": "Chuyến tàu này không đi Koshien đâu đấy nhé."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sou-desu-ne",
+      "title": {
+        "en": "そうですね — showing agreement",
+        "vi": "そうですね — Biểu thị sự đồng tình"
+      },
+      "pattern": {
+        "vi": "そうですね"
+      },
+      "explanation": {
+        "en": "It expresses agreement or sympathy with what was said (\"that's true\", \"I agree\"). Don't confuse it with そうですか, which reacts to new information.",
+        "vi": "Cụm từ dùng để bày tỏ sự đồng cảm, đồng tình với cảm nghĩ hoặc ý kiến mà người đối thoại vừa đưa ra."
+      },
+      "examples": [
+        {
+          "jp": "今日[きょう]はいい 天気[てんき]ですね。…そうですね。",
+          "translation": {
+            "en": "The weather is nice today, isn't it? …It is.",
+            "vi": "Hôm nay thời tiết đẹp nhỉ. …Đúng thế thật đấy nhỉ."
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "calendar",
+    "particles"
+  ]
+}
