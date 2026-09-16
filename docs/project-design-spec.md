@@ -4,7 +4,7 @@
 > **Mã tài liệu:** SPEC-JPN-01 (Rev. 2)  
 > **Ngày phê duyệt:** 16/09/2026  
 > **Trạng thái:** Đã phê duyệt (Approved)  
-> **Kiến trúc cốt lõi:** Next.js 15 (App Router) + Supabase (Auth/PostgreSQL) + IndexedDB (Dexie.js) + FSRS (`ts-fsrs`) + Tailwind CSS v4 + shadcn/ui
+> **Kiến trúc cốt lõi:** Next.js 16 (App Router) + Supabase (Auth/PostgreSQL) + IndexedDB (Dexie.js) + FSRS (`ts-fsrs`) + Tailwind CSS v4 + shadcn/ui (Base UI)
 
 ---
 
@@ -62,8 +62,8 @@ Xây dựng một nền tảng tự học và ôn luyện tiếng Nhật cá nh�
 ```
 
 ### 2.2. Tech Stack lựa chọn
-- **Framework:** Next.js 15 (App Router, React 19, TypeScript strict).
-- **Styling & UI Library:** Tailwind CSS v4 + `shadcn/ui` (Radix Primitives) + `framer-motion` (hoạt ảnh kéo thả, thẻ lật) + `lucide-react`.
+- **Framework:** Next.js 16 (App Router, React 19, TypeScript strict).
+- **Styling & UI Library:** Tailwind CSS v4 + `shadcn/ui` (style `base-nova`, Base UI primitives) + `framer-motion` (hoạt ảnh kéo thả, thẻ lật) + `lucide-react`.
 - **Quản lý trạng thái:** `Zustand` **chỉ cho state UI tạm thời** (bộ lọc đang chọn, con trỏ câu hỏi hiện tại, trạng thái player). Không dùng persist middleware.
 - **Lưu trữ cục bộ & Xử lý File:** `Dexie.js` (IndexedDB ORM wrapper) — **nguồn sự thật duy nhất cho mọi dữ liệu cần lưu**, đọc qua `dexie-react-hooks` (`useLiveQuery`) để component tự cập nhật, bỏ hẳn tầng đồng bộ thủ công giữa store và DB. Kèm `jszip` (giải nén trong Web Worker) + Web Crypto API.
 - **Lịch ôn tập ngắt quãng:** `ts-fsrs` (FSRS v5) — thuật toán chạy hoàn toàn client-side.

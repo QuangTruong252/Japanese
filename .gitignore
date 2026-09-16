@@ -3,3 +3,9 @@
 
 node_modules/
 .DS_Store
+
+# Liên kết và MCP config tạo theo từng máy bởi scripts/setup.mjs.
+/.claude/skills/
+/.claude/settings.local.json
+/.codex/config.toml
+/.mcp.json
