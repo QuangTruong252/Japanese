@@ -1,0 +1,212 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/noto-sans-jp";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* Không tự tham chiếu var(--font-sans) bên trong @theme inline: giá trị được
+     nội tuyến tại điểm dùng nên tham chiếu vòng sẽ hỏng ngầm, không báo lỗi. */
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-jp: 'Noto Sans JP Variable', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', 'Cascadia Code', monospace;
+  --font-heading: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Màu phản hồi ngữ nghĩa — dùng cho chấm bài, trạng thái đồng bộ, cảnh báo.
+     Luôn đi kèm icon + nhãn chữ, không bao giờ để màu tự mang nghĩa một mình. */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
+  --color-verb-1: var(--verb-1);
+  --color-verb-2: var(--verb-2);
+  --color-verb-3: var(--verb-3);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  --background: oklch(0.99 0.002 90);
+  --foreground: oklch(0.2 0.01 285);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.01 285);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.01 285);
+  --primary: oklch(0.55 0.2 25);
+  --primary-foreground: oklch(0.98 0.005 90);
+  --secondary: oklch(0.96 0.006 90);
+  --secondary-foreground: oklch(0.25 0.01 285);
+  --muted: oklch(0.96 0.006 90);
+  --muted-foreground: oklch(0.5 0.012 285);
+  --accent: oklch(0.95 0.02 25);
+  --accent-foreground: oklch(0.35 0.1 25);
+  --destructive: oklch(0.58 0.24 27);
+  --border: oklch(0.91 0.006 90);
+  --input: oklch(0.91 0.006 90);
+  --ring: oklch(0.55 0.2 25);
+  --radius: 0.625rem;
+
+  /* Phản hồi ngữ nghĩa — đã kiểm tra đạt ≥ 4.5:1 trên nền card trắng nên
+     dùng trực tiếp làm màu chữ được, không chỉ làm màu nền. */
+  --success: oklch(0.52 0.15 155);            /* #008140 · 5.01:1 */
+  --success-foreground: oklch(0.99 0.01 155);
+  --warning: oklch(0.56 0.14 70);             /* #a76200 · 4.78:1 */
+  --warning-foreground: oklch(0.99 0.01 70);
+  --info: oklch(0.52 0.14 250);               /* #116bb5 · 5.51:1 */
+  --info-foreground: oklch(0.99 0.01 250);
+
+  /* Verb groups */
+  --verb-1: oklch(0.53 0.19 25);
+  --verb-2: oklch(0.48 0.15 250);
+  --verb-3: oklch(0.48 0.12 155);
+
+  /* Biểu đồ thống kê — bộ 5 slot đã qua validator trên nền card #ffffff:
+     lightness band PASS · chroma PASS · CVD ΔE 9.1 PASS · normal-vision ΔE 19.6 PASS.
+     chart-3/4/5 dưới 3:1 nên biểu đồ BẮT BUỘC có nhãn trực tiếp hoặc bảng số. */
+  --chart-1: #2a78d6;  /* blue    */
+  --chart-2: #eb6834;  /* orange  */
+  --chart-3: #1baf7a;  /* aqua    */
+  --chart-4: #eda100;  /* yellow  */
+  --chart-5: #e87ba4;  /* magenta */
+
+  --furigana-scale: 1;
+}
+
+.dark {
+  --background: oklch(0.17 0.01 285);
+  --foreground: oklch(0.93 0.005 90);
+  --card: oklch(0.21 0.01 285);
+  --card-foreground: oklch(0.93 0.005 90);
+  --popover: oklch(0.21 0.01 285);
+  --popover-foreground: oklch(0.93 0.005 90);
+  --primary: oklch(0.65 0.19 25);
+  --primary-foreground: oklch(0.15 0.01 285);
+  --secondary: oklch(0.26 0.01 285);
+  --secondary-foreground: oklch(0.93 0.005 90);
+  --muted: oklch(0.26 0.01 285);
+  --muted-foreground: oklch(0.68 0.012 285);
+  --accent: oklch(0.3 0.04 25);
+  --accent-foreground: oklch(0.9 0.03 25);
+  --destructive: oklch(0.65 0.2 27);
+  --border: oklch(0.28 0.01 285);
+  --input: oklch(0.28 0.01 285);
+  --ring: oklch(0.65 0.19 25);
+
+  /* Bậc riêng cho nền tối, không phải đảo màu tự động của bậc sáng. */
+  --success: oklch(0.72 0.15 155);            /* #43c07a · 7.62:1 */
+  --success-foreground: oklch(0.16 0.02 155);
+  --warning: oklch(0.8 0.14 75);              /* #f2af48 · 9.32:1 */
+  --warning-foreground: oklch(0.16 0.02 75);
+  --info: oklch(0.72 0.13 250);               /* #60aaf3 · 7.19:1 */
+  --info-foreground: oklch(0.16 0.02 250);
+
+  --verb-1: oklch(0.72 0.17 25);
+  --verb-2: oklch(0.72 0.13 250);
+  --verb-3: oklch(0.72 0.12 155);
+
+  /* Bộ 5 slot bậc tối — validator trên nền card #18181d: mọi check PASS,
+     gồm cả tương phản ≥ 3:1 (nền tối không cần luật nhãn bắt buộc như nền sáng). */
+  --chart-1: #3987e5;
+  --chart-2: #d95926;
+  --chart-3: #199e70;
+  --chart-4: #c98500;
+  --chart-5: #d55181;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+/* Japanese typography & Furigana rules */
+.jp {
+  font-family: var(--font-jp);
+  line-height: 2;
+}
+
+ruby {
+  ruby-align: center;
+}
+
+rt {
+  font-size: calc(min(0.62em, 0.95rem) * var(--furigana-scale));
+  font-weight: 500;
+  color: var(--muted-foreground);
+  user-select: none;
+}
+
+/* Settings toggles */
+html.hide-furigana rt {
+  visibility: hidden;
+}
+
+html.furigana-large {
+  --furigana-scale: 1.25;
+}
+
+/* Active Recall / Study Mode */
+html.hide-translations .translation {
+  filter: blur(5px);
+  transition: filter 150ms ease;
+  cursor: pointer;
+}
+
+html.hide-translations .translation:hover,
+html.hide-translations .translation:focus-visible,
+html.hide-translations .translation:active {
+  filter: none;
+}
+
+/* Furigana hover zoom */
+@media (hover: hover) and (pointer: fine) {
+  .ruby-word {
+    display: inline-block;
+    transform-origin: 50% 100%;
+    transition: transform 0.15s ease;
+  }
+
+  .ruby-word:hover {
+    position: relative;
+    z-index: 10;
+    transform: scale(1.5);
+    background: var(--background);
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 10px oklch(0 0 0 / 0.18);
+  }
+}

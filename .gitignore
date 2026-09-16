@@ -1,0 +1,5 @@
+# Bản sao repo tham chiếu chỉ để đọc (có .git riêng, không track)
+/repo-reference/
+
+node_modules/
+.DS_Store
