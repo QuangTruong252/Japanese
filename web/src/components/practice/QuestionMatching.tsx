@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AnswerOption, type AnswerOptionState } from './AnswerOption';
+import { Furigana } from '@/components/Furigana';
 import type { QuestionProps } from './types';
 import { shuffle, targetTypeFromId } from '@/lib/practice';
 import { cn } from '@/lib/utils';
@@ -188,7 +189,8 @@ export function QuestionMatching({
                 disabled={matched || answered}
                 onClick={() => handleLeftClick(item.targetId)}
               >
-                {item.text}
+                {/* pairs[].jp là notation furigana, không phải chữ đã dựng ruby */}
+                <Furigana text={item.text} zoomable={false} />
               </AnswerOption>
             </div>
           );

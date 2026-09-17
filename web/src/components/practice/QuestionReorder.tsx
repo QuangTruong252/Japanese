@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { PhraseToken } from './PhraseToken';
+import { Furigana } from '@/components/Furigana';
 import type { QuestionProps } from './types';
 import { checkReorderAnswer, targetTypeFromId } from '@/lib/practice';
 import { cn } from '@/lib/utils';
@@ -91,7 +92,8 @@ export function QuestionReorder({
               disabled={answered}
               onClick={() => handleRemove(token.id)}
             >
-              {token.text}
+              {/* khối từ tách từ example.jp: vẫn là notation furigana */}
+              <Furigana text={token.text} zoomable={false} />
             </PhraseToken>
           ))
         )}
@@ -108,7 +110,8 @@ export function QuestionReorder({
               disabled={answered}
               onClick={() => handlePick(token.id)}
             >
-              {token.text}
+              {/* khối từ tách từ example.jp: vẫn là notation furigana */}
+              <Furigana text={token.text} zoomable={false} />
             </PhraseToken>
           );
         })}

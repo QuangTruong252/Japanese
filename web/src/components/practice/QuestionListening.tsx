@@ -1,11 +1,12 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Volume2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { JpInput } from './JpInput';
 import type { QuestionProps } from './types';
 import { checkTextAnswer, targetTypeFromId } from '@/lib/practice';
+import { toKanaSentence } from '@/lib/japanese';
 import { speak } from '@/lib/tts';
 import { cn } from '@/lib/utils';
 
@@ -17,14 +18,18 @@ export function QuestionListening({
   const [value, setValue] = useState('');
   const [rate, setRate] = useState<number>(1.0);
 
+  // prompt của dạng nghe là notation furigana (SPEC-01 sinh từ example.jp), không phải kana.
+  // Đưa thẳng vào speechSynthesis thì máy đọc cả chữ Hán lẫn phần đọc trong ngoặc.
+  const spoken = useMemo(() => toKanaSentence(question.prompt), [question.prompt]);
+
   const play = useCallback(() => {
-    speak(question.prompt, rate);
-  }, [question.prompt, rate]);
+    speak(spoken, rate);
+  }, [spoken, rate]);
 
   // Tự phát một lần khi câu hiện lên
   useEffect(() => {
-    speak(question.prompt, 1.0);
-  }, [question.prompt]);
+    speak(spoken, 1.0);
+  }, [spoken]);
 
   // Phím Space để phát lại khi không focus trong input
   useEffect(() => {
