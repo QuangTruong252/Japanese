@@ -270,7 +270,7 @@ export function PracticeRunner({
   };
 
   return (
-    <main className="mx-auto flex h-[100dvh] w-full max-w-xl flex-col overflow-hidden px-4">
+    <main className="fixed inset-0 z-40 mx-auto flex w-full max-w-xl flex-col bg-background overflow-hidden px-4">
       {/* Thanh điều hướng và thông tin phiên */}
       <header className="flex h-14 shrink-0 items-center justify-between">
         <Button

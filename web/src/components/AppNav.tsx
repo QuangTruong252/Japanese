@@ -61,6 +61,11 @@ export function AppNav() {
       [now]
     ) ?? 0;
 
+  // Luồng làm bài chiếm trọn màn hình và có nút thoát riêng: dock ở đây vừa thừa vừa làm
+  // trang cao quá 100dvh (children của layout có pb-32/pb-40), phá ràng buộc không cuộn
+  // của SPEC-04 §3.2.
+  if (pathname.startsWith('/luyen-tap/phien')) return null;
+
   return (
     <nav
       aria-label="Điều hướng chính"

@@ -68,7 +68,7 @@ export default function PracticeSessionPage() {
   // không đổi nữa nên không bao giờ dựng lại (SPEC-04 §B.5).
   if (hasVoice === null || loading || (questions.length > 0 && sessionQuestions === null)) {
     return (
-      <main className="mx-auto flex h-[100dvh] w-full max-w-xl flex-col justify-between px-4 py-6">
+      <main className="fixed inset-0 z-40 mx-auto flex w-full max-w-xl flex-col bg-background justify-between px-4 py-6">
         <div className="flex items-center justify-between">
           <Skeleton className="size-8 rounded-lg" />
           <Skeleton className="h-4 w-16" />
@@ -91,7 +91,7 @@ export default function PracticeSessionPage() {
   // Không có câu hỏi nào hợp lệ
   if (!sessionQuestions || sessionQuestions.length === 0) {
     return (
-      <main className="mx-auto flex h-[100dvh] w-full max-w-xl flex-col items-center justify-center gap-4 px-4 text-center">
+      <main className="fixed inset-0 z-40 mx-auto flex w-full max-w-xl flex-col bg-background items-center justify-center gap-4 px-4 text-center">
         <p className="text-muted-foreground">
           Không có câu hỏi nào hợp lệ với lựa chọn hiện tại.
         </p>
