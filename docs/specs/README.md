@@ -48,11 +48,11 @@ Lý do và phạm vi áp dụng ghi tại chỗ; dữ liệu học vẫn atomic 
 | [SPEC-01](SPEC-01-du-lieu-va-sinh-cau-hoi.md) | Dữ liệu bài học & sinh câu hỏi | **Hoàn thành 100%** | Không — hợp đồng dữ liệu |
 | [SPEC-02](SPEC-02-shell-dieu-huong.md) | Shell điều hướng & trạng thái toàn cục | Sẵn sàng triển khai | Có |
 | [SPEC-03](SPEC-03-man-hoc.md) | Màn Học (danh sách + chi tiết bài) | Sẵn sàng triển khai | Có |
-| [SPEC-04](SPEC-04-luyen-tap.md) | Luyện tập: khung phiên + 5 dạng bài | Sẵn sàng triển khai | Có |
+| [SPEC-04](SPEC-04-luyen-tap.md) | Luyện tập: khung phiên + 5 dạng bài | **Hoàn thành 100%** | Có |
 | [SPEC-05](SPEC-05-on-tap.md) | Ôn tập hôm nay, kết quả & điểm yếu | Sẵn sàng triển khai | Có |
 
-Thứ tự build: SPEC-01 (xong) → SPEC-02 + SPEC-03 → SPEC-04 → SPEC-05.
-SPEC-01 đã hoàn thành và mở khóa cho các spec tiếp theo.
+Thứ tự build: SPEC-01 (xong) → SPEC-02 + SPEC-03 (xong) → SPEC-04 (xong) → SPEC-05.
+SPEC-04 đã nghiệm thu trong trình duyệt; ghi chú bàn giao ở `docs/handoff/SPEC-04.md`.
 
 ## Đợt 2 — đã viết
 

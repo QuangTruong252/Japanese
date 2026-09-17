@@ -1,8 +1,8 @@
 # Handoff — SPEC-04 (Luyện tập)
 
-> **Trạng thái:** ĐÃ CÀI, CHƯA NGHIỆM THU TRÌNH DUYỆT · **Ngày:** 17/09/2026
+> **Trạng thái:** COMPLETED · **Ngày:** 17/09/2026
 > **Plan:** `docs/superpowers/plans/2026-09-17-spec-04-luyen-tap.md`
-> Chưa đặt `COMPLETED` — xem mục "Còn nợ" ở cuối.
+> Mục 9 của spec đã kiểm hết trong trình duyệt — xem "Đã nghiệm thu" ở cuối.
 
 ## Những gì SPEC sau dùng lại được
 
@@ -64,7 +64,7 @@ không đổi identity nữa nên không bao giờ dựng lại.
 |---|---|
 | `types.ts` | `QuestionProps` — hợp đồng chung của cả 5 dạng: `{ question, answered, onAnswer }` |
 | `AnswerOption.tsx` | 5 trạng thái. Dùng `aria-disabled`, **không** `disabled` — ô đã chấm vẫn phải Tab tới được |
-| `JpInput.tsx` | `wanakana.bind` + **`unbind` trong cleanup**. Có `<label>` thật và caption gắn `aria-describedby` |
+| `JpInput.tsx` | Chuyển kana bằng `toTypedKana()` trong `onChange`. **Không dùng `wanakana.bind()`** — xem quy ước 4 |
 | `PhraseToken.tsx` | Chip khối từ. `used` → `opacity-40` + `pointer-events-none`, **vẫn giữ chỗ** |
 | `PracticeRunner.tsx` | Wrapper: con trỏ câu, đồng hồ, phản hồi, ghi cuối phiên, dialog thoát |
 | `SessionResult.tsx` | Màn kết quả. Nhận `saveError` + `onRetrySave` |
@@ -73,7 +73,7 @@ không đổi identity nữa nên không bao giờ dựng lại.
 **SPEC-05 dùng lại `PracticeRunner` nguyên vẹn.** Nó chỉ nhận `questions` + `config`; không
 biết `mode` là `lesson` hay `due`.
 
-## Ba quy ước dễ vi phạm
+## Bốn quy ước dễ vi phạm
 
 **1. Luật đồng hồ.** Component dạng bài luôn gửi `elapsedMs: 0`; `PracticeRunner` ghi đè bằng
 số đo thật. Điều kiện ghi đè là `results.length === 1`. Dạng `matching` trả nhiều phần tử nên
@@ -87,6 +87,12 @@ phần đọc trong ngoặc. Đây là lỗi đã xảy ra một lần ở cả 
 **3. `maxLearnedLesson = Math.max(...config.lessons)`.** Không suy từ `reviewItems`. Ở
 `mode: 'due'` (SPEC-05) là số bài lớn nhất trong các mục đang đến hạn.
 
+**4. Không dùng `wanakana.bind()` cho ô nhập controlled của React.** `bind` ghi thẳng vào DOM
+node, React render lại từ state của nó và ghi đè ngược: gõ "ha" thì màn hình hiện "は" nhưng
+state đọng ở "h", và câu gõ ĐÚNG bị chấm SAI. Chuyển kana bằng `toTypedKana()` trong `onChange`.
+`normalizeJapaneseInput` và `toTypedKana` đều `normalize('NFKC')` trước — thiếu bước này thì IME
+ở chế độ chữ La-tinh đủ-rộng ("ｈａ") không bao giờ ra kana.
+
 ## Trạng thái dữ liệu sau SPEC-04
 
 - `reviewItems` giờ **có bên ghi**. `createdAt` được điền đúng lần đầu → SPEC-05 đếm mục mới
@@ -96,21 +102,37 @@ phần đọc trong ngoặc. Đây là lỗi đã xảy ra một lần ở cả 
   `{ kind: 'practice', session, reviewItems }`, id `sync-<session.id>`.
 - `db.ts` version 2 (thêm `createdAt`, `recentElapsedMs`) đã có từ trước, không đổi trong phase này.
 
-## Còn nợ
+## Đã nghiệm thu (17/09/2026, agent-browser trên dev server)
 
-**Chưa kiểm chứng trên trình duyệt** (Task 10 của plan). `pnpm check` exit 0, `pnpm test` 70/70,
-`pnpm build` xanh, hai route prerender static. Nhưng những mục sau chỉ kiểm được bằng DevTools
-và **chưa ai chạy**:
+`pnpm check` exit 0 · `pnpm test` 73/73 · `pnpm build` xanh · hai route prerender static.
 
-- Nội dung IndexedDB sau một phiên thật (`dueAt`, `fsrsCard`, `recentElapsedMs` giữ 5 mẫu,
-  matching 5 cặp ra 5 bản ghi)
-- Không cuộn trang ở 390px trong suốt phiên
-- Chạy khi offline hoàn toàn
-- `prefers-reduced-motion`: hết rung, thông tin đúng/sai vẫn đủ
-- Chiều cao thật của mọi nút ≥ 48px
-- Dạng 3: gõ `wo` ra `を`, full-width vẫn chấm đúng
-- Dạng 5 trên máy không có giọng ja-JP: câu bị loại, `dueAt` không đổi
+| Tiêu chí (SPEC-04 §9) | Đo được |
+|---|---|
+| Người dùng mới chọn bài 1 ra câu hỏi thật | "Sẵn 100 câu" |
+| Phiên `mc` ghi `reviewItems` có `dueAt` + `fsrsCard` | 12 bản ghi / 15 câu, `state` 1, `reps` tăng dần |
+| `matching` 5 cặp ra 5 bản ghi riêng | 8 câu × 5 cặp = 40 bản ghi; 11 giá trị `elapsedMs` khác nhau |
+| Sai không thêm mẫu `recentElapsedMs` | 22 mục sai đều `[]`; 18 mục đúng có đúng 18 mẫu |
+| `createdAt` đúng ngày | toàn bộ bản ghi |
+| Sai cho `dueAt` gần hơn | sai +1 phút, đúng +10 phút |
+| Offline hoàn toàn | `navigator.onLine === false`, làm hết 15 câu, phiên ghi được |
+| Không cuộn ở 390px | `scrollHeight 625 === innerHeight 625` |
+| Nút trong luồng ≥ 48px | nút thấp nhất 48px |
+| Dạng 3: `wo` → `を` | gõ `ha` → `は` → "Chính xác" |
+| Dạng 4 không nhảy vị trí | 5 chip, `movedAfterPick: 0`, chip đã dùng `opacity 0.4` / `pointer-events none` |
+| Dạng 5 không có giọng ja-JP | "8 câu nghe bị loại", 0 màn hình nghe trong phiên |
+| Dạng 5 đọc kana | `speak("サントスさんは がくせいじゃありません。")`, không có ngoặc |
+| `prefers-reduced-motion` | `animationName: none`, chữ + icon + đáp án đúng vẫn đủ |
+| Thoát giữa phiên không ghi | giữa phiên `reviewItems: 0`, `sessions: 0` |
+| Bộ lọc ra 0 câu | "Bắt đầu" disabled + nêu lý do |
 
-**Ngoài phạm vi có chủ đích:** `usedHint` luôn `false` (giao diện gợi ý để đợt sau); kéo thả
-`framer-motion` ở dạng 4 chưa làm, có `ponytail:` comment tại chỗ — 1-chạm là đường chính và
-đã đủ nghiệm thu.
+Hai mục kiểm ở mức unit thay vì trình duyệt, vì cần dựng trạng thái rất dài:
+`recentElapsedMs` cắt còn 5 mẫu sau 6 lần đúng (`practice.test.ts`), và chọn bài 3 không lọt
+từ bài 4+ (`filter.test.ts`).
+
+## Ngoài phạm vi có chủ đích
+
+- `usedHint` luôn `false` — giao diện gợi ý để đợt sau.
+- Kéo thả `framer-motion` ở dạng 4 chưa làm, có `ponytail:` comment tại chỗ. 1-chạm là đường
+  chính và đã đủ nghiệm thu.
+- Ở dev, `speechSynthesis.speak` bị gọi hai lần cho một câu nghe do React StrictMode gọi effect
+  đôi. Production chỉ một lần, và `speak()` đã `cancel()` trước mỗi lượt nên không chồng tiếng.

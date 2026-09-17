@@ -1,6 +1,7 @@
 # SPEC-04 — Luyện tập: khung phiên & 5 dạng bài
 
-> **Mã:** SPEC-JPN-F04 · **Trạng thái:** Draft · **Ngày:** 16/09/2026
+> **Mã:** SPEC-JPN-F04 · **Trạng thái:** **Complete** · **Ngày:** 16/09/2026 ·
+> **Nghiệm thu:** 17/09/2026 (mục 9 kiểm hết trong trình duyệt) · **Handoff:** `docs/handoff/SPEC-04.md`
 > **Đối tượng đọc:** Google Stitch / Claude Design (mục 3–6 và phần B), lập trình viên (toàn bộ).
 > **Phụ thuộc:** SPEC-01 (câu hỏi + `filterExercises` + TTS), SPEC-02 (khung nav).
 
