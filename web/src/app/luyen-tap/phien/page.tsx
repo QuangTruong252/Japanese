@@ -63,8 +63,10 @@ export default function PracticeSessionPage() {
     return null;
   }
 
-  // Đang nạp dữ liệu câu hỏi
-  if (loading || (questions.length > 0 && sessionQuestions === null)) {
+  // Đang nạp dữ liệu câu hỏi. hasVoice === null nghĩa là còn đang dò giọng ja-JP: dựng phiên
+  // lúc này sẽ chốt audioKeys rỗng và loại sạch câu nghe trên máy thật ra CÓ giọng, mà bể câu
+  // không đổi nữa nên không bao giờ dựng lại (SPEC-04 §B.5).
+  if (hasVoice === null || loading || (questions.length > 0 && sessionQuestions === null)) {
     return (
       <main className="mx-auto flex h-[100dvh] w-full max-w-xl flex-col justify-between px-4 py-6">
         <div className="flex items-center justify-between">
