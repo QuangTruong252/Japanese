@@ -212,7 +212,7 @@ test('summarizeSession tính đúng tỷ lệ theo tổng câu', () => {
     { targetId: 'a', targetType: 'vocab', isCorrect: true, elapsedMs: 1000, usedHint: false },
     { targetId: 'b', targetType: 'vocab', isCorrect: false, elapsedMs: 1000, usedHint: false },
   ];
-  const s = summarizeSession(config({ lessons: [1, 2] }), results, 2, 42, now);
+  const s = summarizeSession(config({ lessons: [1, 2] }), results, 42, now);
   assert.equal(s.totalQuestions, 2);
   assert.equal(s.correctCount, 1);
   assert.equal(s.accuracyRate, 0.5);
@@ -220,4 +220,22 @@ test('summarizeSession tính đúng tỷ lệ theo tổng câu', () => {
   assert.deepEqual(s.selectedLessons, [1, 2]);
   assert.equal(s.createdAt, now.toISOString());
   assert.ok(s.id.length > 0);
+});
+
+test('summarizeSession đếm theo mục tiêu đã chấm, không theo số câu hiện ra', () => {
+  // Ca hồi quy: một lượt ghép cặp là MỘT câu nhưng chấm 5 mục tiêu. Lấy số câu thì bản ghi
+  // tự mâu thuẫn (correctCount > totalQuestions) và SPEC-07 tính sai tỷ lệ đúng.
+  const now = new Date('2026-09-17T10:00:00Z');
+  const pairResults: AnswerResult[] = ['a', 'b', 'c', 'd', 'e'].map((id, i) => ({
+    targetId: id,
+    targetType: 'vocab' as const,
+    isCorrect: i < 3,
+    elapsedMs: 1000,
+    usedHint: false,
+  }));
+  const s = summarizeSession(config(), pairResults, 30, now);
+  assert.equal(s.totalQuestions, 5);
+  assert.equal(s.correctCount, 3);
+  assert.equal(s.accuracyRate, 3 / 5);
+  assert.ok(s.correctCount <= s.totalQuestions);
 });

@@ -128,14 +128,19 @@ export function applyResults(
   return [...draft.values()];
 }
 
+/**
+ * `totalQuestions` đếm MỤC TIÊU ĐÃ CHẤM, không phải số câu hiện ra. Một lượt ghép cặp là
+ * một câu nhưng chấm 5 mục tiêu; lấy số câu thì bản ghi tự mâu thuẫn (correctCount 18 trên
+ * totalQuestions 8) và SPEC-07 tính sai tỷ lệ đúng.
+ */
 export function summarizeSession(
   config: PracticeConfig,
   results: AnswerResult[],
-  totalQuestions: number,
   durationSeconds: number,
   now: Date = new Date(),
 ): PracticeSession {
   const correctCount = results.filter((r) => r.isCorrect).length;
+  const totalQuestions = results.length;
   return {
     id: `session-${now.getTime()}-${Math.random().toString(36).slice(2, 8)}`,
     selectedLessons: [...config.lessons],

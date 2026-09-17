@@ -12,18 +12,16 @@ export async function savePracticeSession({
   config,
   results,
   lessonByTargetId,
-  totalQuestions,
   durationSeconds,
 }: {
   config: PracticeConfig;
   results: AnswerResult[];
   lessonByTargetId: Map<string, number>;
-  totalQuestions: number;
   durationSeconds: number;
 }): Promise<PracticeSession> {
   const now = new Date();
   const targetIds = [...new Set(results.map((r) => r.targetId))];
-  const session = summarizeSession(config, results, totalQuestions, durationSeconds, now);
+  const session = summarizeSession(config, results, durationSeconds, now);
 
   await db.transaction('rw', db.practiceSessions, db.reviewItems, db.pendingSync, async () => {
     const existing = (await db.reviewItems.bulkGet(targetIds)).filter(

@@ -119,7 +119,6 @@ export function PracticeRunner({
           config,
           results: finalResults,
           lessonByTargetId,
-          totalQuestions: questions.length,
           durationSeconds: sessionDuration,
         });
         setSavedSession(session);
@@ -127,7 +126,7 @@ export function PracticeRunner({
         setSaveError(err instanceof Error ? err.message : 'Lỗi lưu phiên vào cơ sở dữ liệu');
       }
     },
-    [config, lessonByTargetId, questions.length, sessionDuration],
+    [config, lessonByTargetId, sessionDuration],
   );
 
   // Sang câu tiếp theo hoặc kết thúc
@@ -197,12 +196,7 @@ export function PracticeRunner({
 
   // Nếu phiên đã hoàn tất: hiển thị màn hình kết quả
   if (isFinished) {
-    const displaySession: PracticeSession = savedSession ?? summarizeSession(
-      config,
-      allResults,
-      questions.length,
-      sessionDuration,
-    );
+    const displaySession: PracticeSession = savedSession ?? summarizeSession(config, allResults, sessionDuration);
 
     return (
       <SessionResult

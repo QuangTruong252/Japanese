@@ -17,12 +17,16 @@ checkTextAnswer(input, question): boolean        // dạng 3 và 5
 checkOptionAnswer(chosen, question): boolean     // dạng 1
 checkReorderAnswer(chosen[], question): boolean  // dạng 4
 applyResults(existing, results, lessonByTargetId, now?): ReviewItem[]
-summarizeSession(config, results, totalQuestions, durationSeconds, now?): PracticeSession
+summarizeSession(config, results, durationSeconds, now?): PracticeSession
 ```
 
 **`buildSession` đã nhận `dueTargetIds`** — SPEC-05 chỉ cần truyền `mode: 'due'` và tập
 `targetId` đến hạn, không phải viết thêm gì. `filterExercises` tự loại dạng `matching` ở
 `mode: 'due'`.
+
+**`PracticeSession.totalQuestions` đếm MỤC TIÊU ĐÃ CHẤM, không phải số câu hiện ra.** Một lượt
+ghép cặp là một câu nhưng chấm 5 mục tiêu; `summarizeSession` tự suy từ `results.length` nên
+`correctCount <= totalQuestions` luôn đúng. **SPEC-07 tính tỷ lệ đúng trên hai trường này.**
 
 `applyResults` là chỗ duy nhất biết luật lên lịch: chỉ ghi mẫu `recentElapsedMs` khi đúng,
 giữ nguyên `createdAt` của bản ghi cũ, và áp `applyReview` lần lượt khi một `targetId` xuất
@@ -31,7 +35,7 @@ hiện nhiều lần trong cùng phiên. **SPEC-05 dùng lại nguyên, không v
 ### `src/lib/practice-write.ts`
 
 ```ts
-savePracticeSession({ config, results, lessonByTargetId, totalQuestions, durationSeconds })
+savePracticeSession({ config, results, lessonByTargetId, durationSeconds })
   -> Promise<PracticeSession>
 ```
 
