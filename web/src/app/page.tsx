@@ -25,12 +25,14 @@ export default function DashboardPage() {
     []
   );
 
-  // 3. Query 3 điểm yếu hàng đầu
-  const weakItems = useLiveQuery(
-    () => db.reviewItems.where('incorrectCount').above(0).sortBy('incorrectCount'),
-    []
-  );
-  const topWeakItems = weakItems ? weakItems.reverse().slice(0, 3) : [];
+  // 3. Query 3 điểm yếu hàng đầu (dùng filter duyệt collection, không phụ thuộc vào index đơn)
+  const weakItems = useLiveQuery(async () => {
+    const items = await db.reviewItems
+      .filter((item) => item.incorrectCount > 0)
+      .toArray();
+    return items.sort((a, b) => b.incorrectCount - a.incorrectCount).slice(0, 3);
+  }, []);
+  const topWeakItems = weakItems ?? [];
 
   // Tính toán Streak và Phút học hôm nay
   const todayStr = now.toISOString().slice(0, 10);
