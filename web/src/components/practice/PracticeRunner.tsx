@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/alert-dialog';
 import { QuestionCloze } from './QuestionCloze';
 import { QuestionListening } from './QuestionListening';
+import { QuestionMatching } from './QuestionMatching';
 import { QuestionMc } from './QuestionMc';
 import { QuestionReorder } from './QuestionReorder';
 import { SessionResult } from './SessionResult';
@@ -99,7 +100,11 @@ export function PracticeRunner({
       const measured = results.length === 1 ? [{ ...results[0]!, elapsedMs }] : results;
 
       setAllResults((prev) => [...prev, ...measured]);
-      setLastResult(measured[0] ?? null);
+      const hasIncorrect = measured.some((r) => !r.isCorrect);
+      const representativeResult = hasIncorrect
+        ? (measured.find((r) => !r.isCorrect) ?? measured[0])
+        : measured[0];
+      setLastResult(representativeResult ?? null);
       setAnswered(true);
     },
     [answered],
@@ -179,6 +184,17 @@ export function PracticeRunner({
     });
   }, [questions, allResults]);
 
+  // Tính đáp án đúng để hiển thị trong vùng phản hồi
+  const correctAnswerText = useMemo(() => {
+    if (!currentQuestion) return '';
+    if (currentQuestion.type === 'matching' && currentQuestion.pairs) {
+      return currentQuestion.pairs.map((p) => `${p.jp} ↔ ${p.vi}`).join(' · ');
+    }
+    return Array.isArray(currentQuestion.answer)
+      ? currentQuestion.answer.join(', ')
+      : currentQuestion.answer;
+  }, [currentQuestion]);
+
   // Nếu phiên đã hoàn tất: hiển thị màn hình kết quả
   if (isFinished) {
     const displaySession: PracticeSession = savedSession ?? summarizeSession(
@@ -204,6 +220,15 @@ export function PracticeRunner({
 
   const renderQuestionComponent = () => {
     switch (currentQuestion.type) {
+      case 'matching':
+        return (
+          <QuestionMatching
+            key={currentQuestion.id}
+            question={currentQuestion}
+            answered={answered}
+            onAnswer={handleAnswer}
+          />
+        );
       case 'reorder':
         return (
           <QuestionReorder
@@ -243,10 +268,6 @@ export function PracticeRunner({
         );
     }
   };
-
-  const correctAnswerText = Array.isArray(currentQuestion.answer)
-    ? currentQuestion.answer.join(', ')
-    : currentQuestion.answer;
 
   return (
     <main className="mx-auto flex h-[100dvh] w-full max-w-xl flex-col overflow-hidden px-4">
