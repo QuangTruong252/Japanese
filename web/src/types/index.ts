@@ -32,7 +32,7 @@ export interface VocabWord {
   kana: string;
   romaji?: string;
   meaning: LocalizedText;
-  type: 'noun' | 'verb-1' | 'verb-2' | 'verb-3' | 'i-adj' | 'na-adj' | 'adverb' | 'particle' | 'expression';
+  type: 'noun' | 'pronoun' | 'verb-1' | 'verb-2' | 'verb-3' | 'i-adj' | 'na-adj' | 'adverb' | 'particle' | 'expression';
   kanjiIds?: string[];
   audioKey?: string;
   notes?: LocalizedText;
