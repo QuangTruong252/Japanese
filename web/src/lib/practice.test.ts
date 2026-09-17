@@ -239,3 +239,57 @@ test('summarizeSession đếm theo mục tiêu đã chấm, không theo số câ
   assert.equal(s.accuracyRate, 3 / 5);
   assert.ok(s.correctCount <= s.totalQuestions);
 });
+
+test('buildSession ở mode due chỉ lấy một câu cho mỗi mục tiêu', () => {
+  const questions: QuestionItem[] = [
+    { id: 'c1', type: 'cloze', lesson: 1, auxiliaryLessons: [1], targetId: 'particle-wo',
+      prompt: 'p1', answer: 'を' },
+    { id: 'c2', type: 'cloze', lesson: 2, auxiliaryLessons: [2], targetId: 'particle-wo',
+      prompt: 'p2', answer: 'を' },
+    { id: 'c3', type: 'cloze', lesson: 3, auxiliaryLessons: [3], targetId: 'particle-wo',
+      prompt: 'p3', answer: 'を' },
+    { id: 'm1', type: 'mc', lesson: 1, auxiliaryLessons: [1], targetId: 'vocab-01-01',
+      prompt: '私', answer: 'わたし' },
+  ];
+  const config: PracticeConfig = {
+    mode: 'due',
+    lessons: [1, 2, 3],
+    maxLearnedLesson: 3,
+    selectedTypes: ['mc', 'cloze'],
+    questionCount: 10,
+  };
+
+  const result = buildSession(
+    questions,
+    config,
+    new Set<string>(),
+    new Set(['particle-wo', 'vocab-01-01']),
+    () => 0,
+  );
+
+  assert.equal(result.questions.length, 2);
+  assert.equal(new Set(result.questions.map((q) => q.targetId)).size, 2);
+  // eligibleCount vẫn là số câu hợp lệ TRƯỚC khi khử trùng lặp
+  assert.equal(result.eligibleCount, 4);
+});
+
+test('buildSession ở mode lesson KHÔNG khử trùng lặp mục tiêu', () => {
+  const questions: QuestionItem[] = [
+    { id: 'a', type: 'mc', lesson: 1, auxiliaryLessons: [1], targetId: 'vocab-01-01',
+      prompt: '私', answer: 'わたし' },
+    { id: 'b', type: 'mc', lesson: 1, auxiliaryLessons: [1], targetId: 'vocab-01-01',
+      prompt: '私[わたし]', answer: 'tôi' },
+  ];
+  const config: PracticeConfig = {
+    mode: 'lesson',
+    lessons: [1],
+    maxLearnedLesson: 1,
+    selectedTypes: ['mc'],
+    questionCount: 10,
+  };
+
+  assert.equal(
+    buildSession(questions, config, new Set<string>(), undefined, () => 0).questions.length,
+    2,
+  );
+});

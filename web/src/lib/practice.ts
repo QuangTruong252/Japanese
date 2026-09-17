@@ -37,6 +37,22 @@ export function shuffle<T>(items: T[], rng: () => number = Math.random): T[] {
   return out;
 }
 
+/**
+ * Ở phiên ôn theo lịch, mỗi mục tiêu chỉ được hỏi MỘT câu. Một targetId có thể có hàng chục
+ * câu (`particle-wo` xuất hiện ở mọi bài): không khử trùng lặp thì một mục chiếm hết phiên,
+ * các mục đến hạn còn lại không được hỏi và dueAt của chúng đứng yên.
+ */
+function oneQuestionPerTarget(questions: QuestionItem[]): QuestionItem[] {
+  const seen = new Set<string>();
+  const picked: QuestionItem[] = [];
+  for (const question of questions) {
+    if (seen.has(question.targetId)) continue;
+    seen.add(question.targetId);
+    picked.push(question);
+  }
+  return picked;
+}
+
 export function buildSession(
   allQuestions: QuestionItem[],
   config: PracticeConfig,
@@ -50,8 +66,11 @@ export function buildSession(
     availableAudioKeys,
     dueTargetIds,
   );
+  const shuffled = shuffle(eligibleQuestions, rng);
+  const picked = config.mode === 'due' ? oneQuestionPerTarget(shuffled) : shuffled;
+
   return {
-    questions: shuffle(eligibleQuestions, rng).slice(0, config.questionCount),
+    questions: picked.slice(0, config.questionCount),
     excludedAudioCount,
     eligibleCount: eligibleQuestions.length,
   };
