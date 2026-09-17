@@ -23,6 +23,7 @@ import { QuestionReorder } from './QuestionReorder';
 import { SessionResult } from './SessionResult';
 import { savePracticeSession } from '@/lib/practice-write';
 import { summarizeSession } from '@/lib/practice';
+import { describeNextReviews } from '@/lib/review-queue';
 import { useUIStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
 import type {
@@ -56,11 +57,14 @@ export function PracticeRunner({
   const [sessionDuration, setSessionDuration] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [savedSession, setSavedSession] = useState<PracticeSession | null>(null);
+  const [nextReviewLine, setNextReviewLine] = useState<string | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [exitDialogOpen, setExitDialogOpen] = useState(false);
 
   const startedAtRef = useRef<number>(0);
   const currentQuestion = questions[currentIndex];
+  // Phiên ôn và phiên luyện dùng chung toàn bộ khung này; chỉ khác nhãn và đường thoát.
+  const isDue = config.mode === 'due';
 
   // Đặt lại con trỏ câu trong store khi mount và ghi nhận mốc thời gian bắt đầu
   useEffect(() => {
@@ -115,13 +119,14 @@ export function PracticeRunner({
     async (finalResults: AnswerResult[]) => {
       setSaveError(null);
       try {
-        const session = await savePracticeSession({
+        const { session, reviewItems } = await savePracticeSession({
           config,
           results: finalResults,
           lessonByTargetId,
           durationSeconds: sessionDuration,
         });
         setSavedSession(session);
+        setNextReviewLine(describeNextReviews(reviewItems.map((item) => item.dueAt), new Date()));
       } catch (err) {
         setSaveError(err instanceof Error ? err.message : 'Lỗi lưu phiên vào cơ sở dữ liệu');
       }
@@ -204,6 +209,8 @@ export function PracticeRunner({
         incorrectQuestions={incorrectQuestions}
         saveError={saveError}
         onRetrySave={() => void saveResults(allResults)}
+        mode={config.mode}
+        nextReviewLine={nextReviewLine}
       />
     );
   }
@@ -279,7 +286,9 @@ export function PracticeRunner({
         </Button>
 
         <span className="text-sm font-medium text-muted-foreground">
-          {currentIndex + 1}/{questions.length}
+          {isDue
+            ? `Ôn tập · ${currentIndex + 1}/${questions.length}`
+            : `${currentIndex + 1}/${questions.length}`}
         </span>
 
         <span className="text-sm font-medium text-muted-foreground tabular-nums">
@@ -368,7 +377,9 @@ export function PracticeRunner({
       <AlertDialog open={exitDialogOpen} onOpenChange={setExitDialogOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Thoát phiên luyện tập?</AlertDialogTitle>
+            <AlertDialogTitle>
+              {isDue ? 'Thoát phiên ôn tập?' : 'Thoát phiên luyện tập?'}
+            </AlertDialogTitle>
             <AlertDialogDescription>
               Tiến độ của phiên này sẽ không được lưu nếu bạn thoát bây giờ.
             </AlertDialogDescription>
@@ -378,7 +389,7 @@ export function PracticeRunner({
             <AlertDialogAction
               size="quiz"
               variant="destructive"
-              onClick={() => router.push('/luyen-tap')}
+              onClick={() => router.push(isDue ? '/on-tap' : '/luyen-tap')}
             >
               Thoát
             </AlertDialogAction>

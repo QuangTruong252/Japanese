@@ -63,8 +63,8 @@ export function AppNav() {
 
   // Luồng làm bài chiếm trọn màn hình và có nút thoát riêng: dock ở đây vừa thừa vừa làm
   // trang cao quá 100dvh (children của layout có pb-32/pb-40), phá ràng buộc không cuộn
-  // của SPEC-04 §3.2.
-  if (pathname.startsWith('/luyen-tap/phien')) return null;
+  // của SPEC-04 §3.2. Màn phiên ôn cũng fixed inset-0 nên dock vừa thừa vừa làm trang cao quá 100dvh.
+  if (pathname.startsWith('/luyen-tap/phien') || pathname.startsWith('/on-tap/phien')) return null;
 
   return (
     <nav

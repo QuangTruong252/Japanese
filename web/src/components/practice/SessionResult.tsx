@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { Furigana } from '@/components/Furigana';
 import { Button } from '@/components/ui/button';
 import { CheckCircle2, AlertCircle } from 'lucide-react';
-import type { PracticeSession, QuestionItem } from '@/types';
+import type { PracticeConfig, PracticeSession, QuestionItem } from '@/types';
 
 function formatDuration(seconds: number): string {
   const m = Math.floor(seconds / 60);
@@ -17,21 +17,30 @@ export function SessionResult({
   incorrectQuestions,
   saveError,
   onRetrySave,
+  mode = 'lesson',
+  nextReviewLine,
 }: {
   session: PracticeSession;
   incorrectQuestions: QuestionItem[];
   saveError?: string | null;
   onRetrySave?: () => void;
+  mode?: PracticeConfig['mode'];
+  nextReviewLine?: string | null;
 }) {
   const router = useRouter();
   const percentage = Math.round(session.accuracyRate * 100);
+  const isDue = mode === 'due';
 
   return (
     <main className="mx-auto max-w-xl space-y-6 px-4 py-8">
       <div className="space-y-1 text-center">
-        <h1 className="font-heading text-xl font-medium">Kết quả luyện tập</h1>
+        <h1 className="font-heading text-xl font-medium">
+          {isDue ? 'Kết quả ôn tập' : 'Kết quả luyện tập'}
+        </h1>
         <p className="text-sm text-muted-foreground">
-          Đã hoàn thành phiên luyện tập tiếng Nhật
+          {isDue
+            ? 'Đã hoàn thành phiên ôn tập theo lịch'
+            : 'Đã hoàn thành phiên luyện tập tiếng Nhật'}
         </p>
       </div>
 
@@ -78,6 +87,12 @@ export function SessionResult({
         </div>
       </div>
 
+      {isDue && nextReviewLine && (
+        <p className="text-center text-sm text-muted-foreground">
+          Lần ôn kế tiếp: {nextReviewLine}
+        </p>
+      )}
+
       {/* Danh sách câu sai hoặc lời khen */}
       {incorrectQuestions.length === 0 ? (
         <div className="flex items-center justify-center gap-2 rounded-xl border border-success/30 bg-success/10 p-4 text-center text-sm font-medium text-success">
@@ -123,9 +138,9 @@ export function SessionResult({
         <Button
           size="quiz"
           className="flex-1"
-          onClick={() => router.push('/luyen-tap')}
+          onClick={() => router.push(isDue ? '/on-tap' : '/luyen-tap')}
         >
-          Luyện tiếp
+          {isDue ? 'Về ôn tập' : 'Luyện tiếp'}
         </Button>
         <Button
           size="quiz"

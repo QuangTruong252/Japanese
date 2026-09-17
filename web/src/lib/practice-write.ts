@@ -1,6 +1,6 @@
 import { db } from '@/lib/db';
 import { applyResults, summarizeSession } from '@/lib/practice';
-import type { AnswerResult, PracticeConfig, PracticeSession } from '@/types';
+import type { AnswerResult, PracticeConfig, PracticeSession, ReviewItem } from '@/types';
 
 /**
  * Ghi kết quả cuối phiên. Ba bảng, MỘT transaction (SPEC-04 §2): phiên, lịch ôn, và hàng đợi
@@ -18,16 +18,19 @@ export async function savePracticeSession({
   results: AnswerResult[];
   lessonByTargetId: Map<string, number>;
   durationSeconds: number;
-}): Promise<PracticeSession> {
+}): Promise<{ session: PracticeSession; reviewItems: ReviewItem[] }> {
   const now = new Date();
   const targetIds = [...new Set(results.map((r) => r.targetId))];
   const session = summarizeSession(config, results, durationSeconds, now);
+  // Lịch ôn mới của đúng các mục tiêu vừa làm — màn kết quả phiên ôn cần nó để nói
+  // "Lần ôn kế tiếp" mà không phải đọc Dexie lần nữa (SPEC-05 §3.3).
+  let updated: ReviewItem[] = [];
 
   await db.transaction('rw', db.practiceSessions, db.reviewItems, db.pendingSync, async () => {
     const existing = (await db.reviewItems.bulkGet(targetIds)).filter(
       (item): item is NonNullable<typeof item> => item != null,
     );
-    const updated = applyResults(existing, results, lessonByTargetId, now);
+    updated = applyResults(existing, results, lessonByTargetId, now);
 
     await db.practiceSessions.add(session);
     await db.reviewItems.bulkPut(updated);
@@ -39,5 +42,5 @@ export async function savePracticeSession({
     });
   });
 
-  return session;
+  return { session, reviewItems: updated };
 }
