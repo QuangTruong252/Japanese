@@ -836,43 +836,52 @@ import type { QuestionItem } from '@/types';
  * Nạp dữ liệu bài đã chọn rồi sinh bể câu hỏi. generateQuestions đã memoize theo tập bài nên
  * đổi qua lại giữa các lựa chọn không sinh lại từ đầu.
  */
+interface Pool {
+  key: string;
+  questions: QuestionItem[];
+  unverifiedLessons: number[];
+}
+
+const EMPTY_POOL: Pool = { key: '', questions: [], unverifiedLessons: [] };
+
 export function useQuestionPool(lessons: number[]): {
   questions: QuestionItem[];
   unverifiedLessons: number[];
   loading: boolean;
 } {
-  const [questions, setQuestions] = useState<QuestionItem[]>([]);
-  const [unverifiedLessons, setUnverifiedLessons] = useState<number[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Một state duy nhất mang theo key của bể câu đang giữ. `loading` SUY RA từ việc key đó đã
+  // khớp lựa chọn hiện tại chưa — không phải một state riêng. Gọi setState thẳng trong thân
+  // effect vi phạm react-hooks/set-state-in-effect và làm `pnpm check` exit 1.
+  const [pool, setPool] = useState<Pool>(EMPTY_POOL);
   const key = [...lessons].sort((a, b) => a - b).join(',');
 
   useEffect(() => {
     let alive = true;
     const nums = key.length === 0 ? [] : key.split(',').map(Number);
     if (nums.length === 0) {
-      setQuestions([]);
-      setUnverifiedLessons([]);
-      setLoading(false);
+      setPool(EMPTY_POOL);
       return;
     }
-    setLoading(true);
-    Promise.all([loadLessons(nums), loadVocabMap(nums)])
-      .then(([lessonData, vocabMap]) => {
-        if (!alive) return;
-        setQuestions(generateQuestions(lessonData, vocabMap));
-        setUnverifiedLessons(
-          lessonData.filter((l) => (l.verification ?? 'unverified') === 'unverified').map((l) => l.number),
-        );
-      })
-      .finally(() => {
-        if (alive) setLoading(false);
+    Promise.all([loadLessons(nums), loadVocabMap(nums)]).then(([lessonData, vocabMap]) => {
+      if (!alive) return;
+      setPool({
+        key,
+        questions: generateQuestions(lessonData, vocabMap),
+        unverifiedLessons: lessonData
+          .filter((l) => (l.verification ?? 'unverified') === 'unverified')
+          .map((l) => l.number),
       });
+    });
     return () => {
       alive = false;
     };
   }, [key]);
 
-  return { questions, unverifiedLessons, loading };
+  return {
+    questions: pool.questions,
+    unverifiedLessons: pool.unverifiedLessons,
+    loading: pool.key !== key,
+  };
 }
 
 /** null = đang dò giọng. `availableAudioKeys` của SPEC-01 §5 nghĩa là "máy có giọng ja-JP". */
