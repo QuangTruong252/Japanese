@@ -210,3 +210,37 @@ html.hide-translations .translation:active {
     box-shadow: 0 2px 10px oklch(0 0 0 / 0.18);
   }
 }
+
+/* Bậc chữ Nhật (DESIGN.md §Japanese scale). Luôn đi kèm class `jp`. */
+.jp-quiz {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.jp-example {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.jp-vocab {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.jp-inline {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Rung báo sai: 300ms, biên độ 4px, 3 nhịp (SPEC-04 §6). */
+@keyframes jp-shake {
+  0%, 100% { transform: translateX(0); }
+  16%, 50%, 83% { transform: translateX(-4px); }
+  33%, 66% { transform: translateX(4px); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .jp-shake {
+    animation: jp-shake 300ms ease-in-out;
+  }
+}
