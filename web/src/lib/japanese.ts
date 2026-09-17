@@ -68,10 +68,26 @@ export function containsKanji(text: string): boolean {
 export function normalizeJapaneseInput(input: string): string {
   if (!input) return '';
   const trimmed = input
+    .normalize('NFKC')
     .trim()
     .replace(/[\s\u3000]+/g, '')
     .replace(SKIPPED_PUNCTUATION, '');
   return wanakana.toHiragana(trimmed, { useObsoleteKana: false });
+}
+
+/**
+ * Chuyển romaji sang hiragana NGAY TRONG LÚC GÕ, giữ nguyên phụ âm chưa đủ cặp
+ * ("h" vẫn là "h", "ha" thành "は"). Dùng cho ô nhập controlled của React.
+ *
+ * Không dùng `wanakana.bind()` cho ô nhập controlled: bind ghi thẳng vào DOM node,
+ * còn React render lại từ state của nó và ghi đè ngược — state đọng lại ở "h" trong
+ * khi màn hình hiện "は", và bài bị chấm sai (SPEC-04 §B.3).
+ */
+export function toTypedKana(input: string): string {
+  // NFKC gộp full-width ASCII về half-width ("ｈａ" -> "ha") và nửa-rộng katakana về
+  // đủ-rộng. wanakana không tự làm bước này, nên IME ở chế độ chữ La-tinh đủ-rộng sẽ
+  // không bao giờ chuyển được thành kana.
+  return wanakana.toKana(input.normalize('NFKC'), { IMEMode: 'toHiragana' });
 }
 
 export { wanakana };

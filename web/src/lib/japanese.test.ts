@@ -4,6 +4,7 @@ import {
   containsKanji,
   normalizeJapaneseInput,
   parseFurigana,
+  toTypedKana,
   stripFurigana,
   toKanaSentence,
 } from './japanese.ts';
@@ -59,4 +60,21 @@ test('normalizeJapaneseInput: bỏ dấu câu ở cả hai vế', () => {
   assert.equal(normalizeJapaneseInput('「はい」'), 'はい');
   // Không nới lỏng sai kana
   assert.notEqual(normalizeJapaneseInput('がくせい'), normalizeJapaneseInput('がくせえ'));
+});
+
+test('toTypedKana chuyển romaji khi gõ, giữ phụ âm chưa đủ cặp', () => {
+  // Ca hồi quy: ô nhập controlled từng dùng wanakana.bind() nên state đọng ở "h"
+  // trong khi DOM hiện "は" — bài gõ đúng vẫn bị chấm sai (SPEC-04 §B.3).
+  assert.equal(toTypedKana('h'), 'h');
+  assert.equal(toTypedKana('ha'), 'は');
+  assert.equal(toTypedKana('wo'), 'を');
+  assert.equal(toTypedKana('watashi'), 'わたし');
+  assert.equal(toTypedKana('n'), 'n');
+  assert.equal(toTypedKana('nn'), 'ん');
+  assert.equal(toTypedKana('は'), 'は', 'kana gõ sẵn giữ nguyên');
+});
+
+test('gõ romaji rồi chấm: chuỗi qua toTypedKana khớp đáp án kana', () => {
+  assert.equal(normalizeJapaneseInput(toTypedKana('ha')), normalizeJapaneseInput('は'));
+  assert.equal(normalizeJapaneseInput(toTypedKana('ｈａ')), normalizeJapaneseInput('は'));
 });

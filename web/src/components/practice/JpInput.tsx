@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useId, useRef } from 'react';
-import { wanakana } from '@/lib/japanese';
+import { useId } from 'react';
+import { toTypedKana } from '@/lib/japanese';
 import { cn } from '@/lib/utils';
 
 export function JpInput({
@@ -21,22 +21,12 @@ export function JpInput({
 }) {
   const id = useId();
   const captionId = `${id}-caption`;
-  const ref = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    wanakana.bind(el);
-    return () => wanakana.unbind(el);
-  }, []);
-
   return (
     <div className="flex flex-col gap-2">
       <label htmlFor={id} className="sr-only">
         {label}
       </label>
       <input
-        ref={ref}
         id={id}
         aria-describedby={captionId}
         value={value}
@@ -44,7 +34,7 @@ export function JpInput({
         autoComplete="off"
         autoCapitalize="off"
         spellCheck={false}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => onChange(toTypedKana(e.target.value))}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
             e.preventDefault();
