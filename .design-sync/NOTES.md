@@ -108,3 +108,35 @@ Do not "fix" `src/lib/japanese.ts` for this.
   since it is the only copy that survives a clone.
 - `.design-sync/previews/` currently covers only the 8 user-scoped components.
   The other 66 ship the floor card and can be authored on any later re-sync.
+
+## Upload blocker — account subscription (2026-09-17)
+
+The bundle is complete and `ok: true`, but the upload cannot start on this
+account:
+
+- `DesignSync(list_projects)` succeeds and returns `[]` — the design scope IS
+  granted, so a `/design-consent` prompt is **not** what's missing.
+- `DesignSync(create_project)` returns
+  `HTTP 403 {"code":"permission_denied","message":"subscription required for this action"}`.
+
+Read methods are allowed on the free tier; project creation is not. Re-running
+`/design-sync` — from the CLI or via the tool — hits the same 403, so do not
+rebuild `ds-bundle/` hoping to clear it. Unblock by upgrading the claude.ai
+plan (or syncing from an account that has one), then resume at the upload
+sequence in §6; the bundle on disk is still valid and no source file is newer
+than `_ds_bundle.js`.
+
+Upload manifests for that resume are cached at
+`.design-sync/.cache/up-components.txt` and `up-fonts.txt` (gitignored —
+regenerate with `find components -type f` / `find fonts -type f` in `ds-bundle/`).
+
+**What actually uploads: 444 files, not 537.** `_screenshots/` (85) and the
+dot-prefixed receipts stay local per §6 "What stays local". The rest is
+296 `components/**` (74 × `.d.ts`/`.html`/`.jsx`/`.prompt.md`), 132 `fonts/**`,
+8 `_preview/**`, 2 `_vendor/**`, and 6 top-level files. `tokens/` and
+`guidelines/` are empty in this build — their globs stay in the `writes` list
+anyway, since an under-scoped list permanently desyncs the project.
+
+`_ds_needs_recompile` is the upload **sentinel** (written by `emit.mjs`, sent
+first and re-armed last). Its presence is normal and does NOT mean the bundle
+needs recompiling.
