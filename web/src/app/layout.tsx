@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { getFOUCScriptContent } from "@/lib/settings";
+import { AppNav } from "@/components/AppNav";
+import { ShortcutListener } from "@/components/ShortcutListener";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,7 +31,11 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: getFOUCScriptContent() }} />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
-        {children}
+        <ShortcutListener />
+        <AppNav />
+        <div className="flex-1 flex flex-col pb-24 lg:pb-0 lg:pt-14">
+          {children}
+        </div>
       </body>
     </html>
   );
