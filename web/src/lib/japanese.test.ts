@@ -1,6 +1,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseFurigana, stripFurigana, normalizeJapaneseInput } from './japanese.ts';
+import {
+  containsKanji,
+  normalizeJapaneseInput,
+  parseFurigana,
+  stripFurigana,
+  toKanaSentence,
+} from './japanese.ts';
 
 test('parseFurigana tách kanji + ruby và giữ nguyên phần thuần', () => {
   assert.deepEqual(parseFurigana('私[わたし]は 学生[がくせい]です'), [
@@ -23,4 +29,34 @@ test('normalizeJapaneseInput: romaji + full-width space + trim', () => {
   assert.equal(normalizeJapaneseInput('わたし　は'), 'わたしは');
   assert.equal(normalizeJapaneseInput('カタカナ'), 'かたかな');
   assert.equal(normalizeJapaneseInput(''), '');
+});
+
+test('toKanaSentence: chuyển notation furigana thành kana thuần', () => {
+  assert.equal(
+    toKanaSentence('私[わたし]は 会社員[かいしゃいん]です。'),
+    'わたしは かいしゃいんです。'
+  );
+  // Câu không có kanji giữ nguyên
+  assert.equal(toKanaSentence('これは ほんです。'), 'これは ほんです。');
+});
+
+test('listening: chuỗi người học gõ khớp đáp án kana, KHÔNG khớp dạng kanji', () => {
+  const jp = '私[わたし]は 会社員[かいしゃいん]です。';
+  const typed = normalizeJapaneseInput('わたしはかいしゃいんです');
+
+  assert.equal(normalizeJapaneseInput(toKanaSentence(jp)), typed);
+  // Hồi quy: đáp án dạng kanji (bản cài cũ) luôn chấm sai câu trả lời đúng
+  assert.notEqual(normalizeJapaneseInput(stripFurigana(jp)), typed);
+});
+
+test('containsKanji: phát hiện câu còn thiếu cách đọc', () => {
+  assert.equal(containsKanji('わたしはがくせいです'), false);
+  assert.equal(containsKanji('わたしは学生です'), true);
+});
+
+test('normalizeJapaneseInput: bỏ dấu câu ở cả hai vế', () => {
+  assert.equal(normalizeJapaneseInput('わたしは、がくせいです。'), 'わたしはがくせいです');
+  assert.equal(normalizeJapaneseInput('「はい」'), 'はい');
+  // Không nới lỏng sai kana
+  assert.notEqual(normalizeJapaneseInput('がくせい'), normalizeJapaneseInput('がくせえ'));
 });

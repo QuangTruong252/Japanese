@@ -7,7 +7,7 @@ offline-first và đồng bộ tiến độ đa thiết bị. Trả lời ngư�
 
 - Code nằm trong `web/`: Next.js 16 App Router, React 19, TypeScript, pnpm.
 - Đọc `docs/project-design-spec.md` cho kiến trúc và 5 dạng bài tập;
-  `docs/design-system.md` và `web/DESIGN.md` cho thiết kế Washi.
+  `docs/design-system.md` và `DESIGN.md` cho thiết kế Washi.
 - `web/package.json`, lockfile và code xác định phiên bản/API đang dùng.
   Nếu đặc tả mâu thuẫn với code, báo rõ; không tự đổi kiến trúc sản phẩm.
 - `repo-reference/noken/` chỉ để đọc. Giữ nguyên thay đổi không liên quan;

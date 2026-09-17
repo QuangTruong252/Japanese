@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   buildAuxiliaryIndex,
+  clearQuestionsCache,
   extractAuxiliaryLessons,
   generateQuestions,
   PARTICLE_PATTERN,
@@ -115,4 +116,32 @@ test('generateQuestions sinh đủ 5 dạng bài và tuân thủ các điều ki
 
   const reorder = questions.find((q) => q.type === 'reorder');
   assert.match(reorder!.targetId, /^grammar-01-01$/);
+});
+
+test('generateQuestions memo hóa kết quả theo tập bài học', () => {
+  clearQuestionsCache();
+
+  const mockLessons: Lesson[] = [
+    {
+      level: 'n5',
+      number: 1,
+      title: { vi: 'Bài 1' },
+      description: { vi: 'Mô tả' },
+      grammar: [],
+    },
+  ];
+  const mockVocab = new Map<number, VocabWord[]>([
+    [1, [{ id: '01-01', lesson: 1, word: '私[わたし]', kana: 'わたし', meaning: { vi: 'tôi' }, type: 'pronoun' }]],
+  ]);
+
+  const q1 = generateQuestions(mockLessons, mockVocab);
+  const q2 = generateQuestions(mockLessons, mockVocab);
+  // Phải trả về cùng một instance do đã được cache
+  assert.equal(q1, q2);
+
+  // Sau khi xóa cache, gọi lại sẽ sinh instance mới
+  clearQuestionsCache();
+  const q3 = generateQuestions(mockLessons, mockVocab);
+  assert.notEqual(q1, q3);
+  assert.equal(q3.length, q1.length);
 });

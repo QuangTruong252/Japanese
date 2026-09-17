@@ -55,6 +55,47 @@ await db.transaction('rw', db.practiceSessions, db.reviewItems, db.pendingSync, 
 > "store đã đổi nhưng DB chưa ghi" để phải đồng bộ tay. Zustand chỉ giữ con trỏ câu hỏi và
 > bộ lọc đang chọn — thứ mất đi không sao khi tải lại trang.
 
+### 2.1. Hợp đồng kết quả một lượt trả lời
+
+Một lượt trả lời có thể sinh **nhiều** kết quả: dạng ghép cặp chấm theo từng cặp (§B.2), mỗi
+cặp là một mục tiêu riêng (SPEC-01 §4.2). Callback của wrapper vì thế nhận một mảng:
+
+```ts
+interface AnswerResult {
+  targetId: string;
+  targetType: TargetType;
+  isCorrect: boolean;
+  elapsedMs: number;      // đo riêng cho từng cặp ở dạng matching
+  usedHint: boolean;      // luôn false ở phase này
+}
+
+type OnAnswer = (results: AnswerResult[]) => void;
+```
+
+Bốn dạng còn lại trả mảng đúng một phần tử. Một hợp đồng cho cả năm dạng; wrapper không cần
+biết dạng nào đang chạy.
+
+### 2.2. Median thời gian trả lời — cần chỗ lưu thật
+
+`rateAnswer(isCorrect, elapsedMs, medianMs, usedHint)` cần `medianMs` **của chính mục tiêu đó**,
+mà `ReviewItem` hiện không có chỗ nào chứa nó, và `fsrsCard` là shape do `ts-fsrs` định nghĩa —
+không nhét thêm trường vào đó.
+
+Thêm hai trường vào `ReviewItem` (và migration Dexie version 2):
+
+```ts
+recentElapsedMs: number[];   // tối đa 5 mẫu gần nhất, đẩy vào cuối, cắt đầu
+createdAt: string;           // ISO — thời điểm mục tiêu được đưa vào lịch ôn lần đầu
+```
+
+- `medianMs` = median của `recentElapsedMs`; mảng rỗng → `null` → `rateAnswer` trả `Good`.
+- Chỉ giữ 5 mẫu: người học nhanh dần theo thời gian, median toàn lịch sử sẽ luôn tụt hậu.
+- **Chỉ ghi mẫu khi trả lời đúng.** Thời gian của một câu trả sai không nói gì về độ thành thạo.
+- `createdAt` là thứ SPEC-05 dùng để đếm mục mới trong ngày — `fsrsCard.reps === 0` **không
+  dùng được**, vì ngay sau lần trả lời đầu tiên `reps` đã là 1.
+
+Migration Dexie version 2 điền `recentElapsedMs: []` và `createdAt` = `updatedAt` cho bản ghi cũ.
+
 **Ánh xạ kết quả → FSRS `Rating`** (`project-design-spec.md` §4.3.3, đã cài trong `fsrs.ts`):
 
 | Kết quả | Điều kiện | Rating |
@@ -87,8 +128,19 @@ Bề rộng `max-w-xl` (576px).
 [Nút default: "Bắt đầu" — cỡ quiz]
 ```
 
-`maxLearnedLesson` = số bài lớn nhất người dùng đã chạm tới, suy từ `reviewItems`; không bắt
-người dùng tự nhập.
+**`maxLearnedLesson` = `Math.max(...config.lessons)`** — số bài lớn nhất người dùng vừa chọn
+trong chính màn này.
+
+> Bản trước suy con số này từ `reviewItems` và tạo ra một vòng luẩn quẩn: SPEC-03 chỉ đọc, chưa
+> bao giờ tạo `reviewItems`, nên người mới có `maxLearnedLesson = 0`, và `filterExercises` loại
+> sạch mọi câu (mọi `auxiliaryLessons` đều ≥ 1). Kết quả: chọn bài 1 ra **0 câu**, không có lối
+> thoát nào trong app.
+>
+> Chọn bài chính là lời khai "tôi đã học tới đây" — không cần suy diễn từ đâu khác, không cần
+> một ô nhập riêng. Chọn bài 7 thì câu của bài 7 được phép chứa từ bài 1–7, vẫn bị chặn từ bài
+> 8 trở lên. Đúng mục đích ban đầu của bộ lọc.
+
+Ở `mode: 'due'` (SPEC-05): `maxLearnedLesson` = số bài lớn nhất trong các mục đang đến hạn.
 
 ### 3.2. `/luyen-tap/phien` — Màn làm bài
 
@@ -161,6 +213,7 @@ Cao tối thiểu 48px, `rounded-xl`, `p-4`, chữ Nhật `1.125rem`. Số thứ
 | Đang nạp dữ liệu bài | Skeleton, không cho bấm "Bắt đầu" |
 | Thoát giữa chừng | Hỏi xác nhận. Đồng ý → **không ghi** `reviewItems` cho câu chưa trả lời |
 | Ghi Dexie lỗi | Giữ người dùng ở màn kết quả, nêu lỗi. Không nuốt lỗi im lặng |
+| Bể câu hỏi có bài `unverified` (SPEC-01 §3.1) | Một dòng `muted` ở màn cấu hình: "Nội dung các bài này chưa được đối chiếu với bản in". Nhắc **một lần**, không chèn nhãn vào từng câu — đang làm bài thì không phải lúc đọc chú thích biên tập |
 
 Mọi phần tử bấm được đủ sáu trạng thái theo `design-system.md` §8.
 
@@ -210,12 +263,16 @@ cắm vào wrapper đã có.
 
 ## B.2. Dạng 2 — Ghép cặp (`matching`)
 
-- **Câu hỏi:** 4–5 cặp. Ba biến thể: Từ vựng ↔ Tiếng Việt · Chữ Hán ↔ Âm On/Kun ·
-  Động từ nguyên mẫu ↔ Thể て/ます.
+- **Câu hỏi:** 4–5 cặp, đọc từ `question.pairs` (SPEC-01 §4.2) — **không** parse chuỗi
+  `"từ:::nghĩa"`. Ở phase này chỉ có biến thể Từ vựng ↔ Tiếng Việt; hai biến thể Chữ Hán ↔ Âm
+  On/Kun và Động từ ↔ thể て/ます cần dữ liệu của SPEC-12, để sau.
 - **Trả lời:** hai cột `answer-option`. Chạm liên tiếp 2 ô cần ghép.
 - **Phản hồi:** đúng → hai ô chuyển `success` rồi tan nhẹ. Sai → **rung 3 nhịp 300ms biên độ
   4px** màu `destructive`, hai ô trở về trạng thái rảnh.
-- **Chấm:** theo từng cặp, không phải cả lượt. Mỗi cặp là một `targetId` riêng.
+- **Chấm:** theo từng cặp, không phải cả lượt. Mỗi cặp là một `targetId` riêng, và **đo
+  `elapsedMs` riêng cho từng cặp** (tính từ lúc cặp trước được chốt). Trả về mảng
+  `AnswerResult[]` theo §2.1 — một phần tử cho mỗi cặp.
+- **Không dùng dạng này ở `mode: 'due'`** (SPEC-01 §4.2).
 
 ## B.3. Dạng 3 — Điền từ / Trợ từ (`cloze`)
 
@@ -279,8 +336,17 @@ bay hoàn toàn offline — đây là tiêu chí nghiệm thu, không phải mon
 
 ## 9. Tiêu chí nghiệm thu
 
+- [ ] **Người dùng mới hoàn toàn**: mở `/luyen-tap`, chọn bài 1, bấm Bắt đầu → có câu hỏi
+      thật. (Bản cài hiện tại ra 0 câu — đây là ca hồi quy bắt buộc)
+- [ ] Chọn bài 3 → không câu nào chứa từ của bài 4 trở lên
 - [ ] Làm hết một phiên `mc` 5 câu → DevTools › Application › IndexedDB › `JapaneseLearningDB` ›
       `reviewItems` có bản ghi với `dueAt` và `fsrsCard` đúng
+- [ ] Làm một câu `matching` 5 cặp → **5 bản ghi `reviewItems`** được tạo/cập nhật, mỗi cặp
+      một `targetId`, cặp sai có `incorrectCount` tăng đúng ở chính nó
+- [ ] Làm một câu `listening`: gõ đúng kana của câu → **chấm đúng** (ca hồi quy cho SPEC-01 §4.5)
+- [ ] Trả lời đúng cùng một mục tiêu 6 lần → `recentElapsedMs` giữ đúng 5 mẫu gần nhất
+- [ ] Trả lời sai → **không** thêm mẫu vào `recentElapsedMs`
+- [ ] Mục tiêu lần đầu vào lịch có `createdAt` đúng ngày hôm đó
 - [ ] Trả lời sai một câu → `dueAt` gần hơn rõ rệt so với trả lời đúng cùng mục tiêu
 - [ ] **Tắt mạng hoàn toàn**, làm thêm một phiên: chạy y hệt
 - [ ] Ở 390px, trong suốt phiên **không cuộn được trang**; vùng trả lời luôn ở nửa dưới

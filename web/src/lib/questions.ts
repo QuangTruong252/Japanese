@@ -1,5 +1,5 @@
-import type { Lesson, VocabWord, QuestionItem } from '../types/index.ts';
-import { stripFurigana } from './japanese.ts';
+import type { Lesson, VocabWord, QuestionItem, MatchingPair } from '../types/index.ts';
+import { containsKanji, stripFurigana, toKanaSentence } from './japanese.ts';
 import { pickDistractors, type DistractorCandidate } from './distractors.ts';
 
 export const CONFUSION_PARTICLES: Record<string, string[]> = {
@@ -69,10 +69,31 @@ export const extractAuxiliaryLessons = (sentence: string, index: Map<string, num
 
 const pad2 = (n: number | string): string => String(n).padStart(2, '0');
 
+const questionsCache = new Map<string, QuestionItem[]>();
+
+export const getQuestionsCacheKey = (
+  lessons: Lesson[],
+  vocabByLesson: Map<number, VocabWord[]>
+): string => {
+  const lessonNums = lessons.map((l) => l.number).sort((a, b) => a - b);
+  const vocabNums = Array.from(vocabByLesson.keys()).sort((a, b) => a - b);
+  return `lessons:${lessonNums.join(',')};vocab:${vocabNums.join(',')}`;
+};
+
+export const clearQuestionsCache = (): void => {
+  questionsCache.clear();
+};
+
 export const generateQuestions = (
   lessons: Lesson[],
   vocabByLesson: Map<number, VocabWord[]>
 ): QuestionItem[] => {
+  const cacheKey = getQuestionsCacheKey(lessons, vocabByLesson);
+  const cached = questionsCache.get(cacheKey);
+  if (cached) {
+    return cached;
+  }
+
   const questions: QuestionItem[] = [];
   const auxIndex = buildAuxiliaryIndex(vocabByLesson);
 
@@ -139,18 +160,26 @@ export const generateQuestions = (
     });
 
     // 2. Dạng Matching từ Vocab (chia từng nhóm 4-5 từ cùng bài)
+    // Mỗi cặp mang targetId riêng: cả nhóm dùng chung một targetId thì 4 từ còn lại
+    // không bao giờ được lên lịch ôn (SPEC-01 §4.2).
     for (let i = 0; i < words.length; i += 5) {
       const chunk = words.slice(i, i + 5);
       if (chunk.length >= 4) {
+        const pairs: MatchingPair[] = chunk.map((w, chunkIdx) => ({
+          targetId: `vocab-${pad2(lessonNum)}-${pad2(i + chunkIdx + 1)}`,
+          jp: w.word,
+          vi: w.meaning.vi,
+        }));
         questions.push({
           id: `matching-${pad2(lessonNum)}-${Math.floor(i / 5) + 1}`,
           type: 'matching',
           lesson: lessonNum,
           auxiliaryLessons: [lessonNum],
-          targetId: `vocab-${pad2(lessonNum)}-${pad2(i + 1)}`,
+          targetId: pairs[0]!.targetId,
           prompt: 'Ghép từ tiếng Nhật với nghĩa tiếng Việt tương ứng',
-          options: chunk.map((w) => w.word),
-          answer: chunk.map((w) => `${w.word}:::${w.meaning.vi}`),
+          pairs,
+          options: pairs.map((p) => p.vi).sort(),
+          answer: pairs.map((p) => p.vi),
         });
       }
     }
@@ -219,22 +248,28 @@ export const generateQuestions = (
         }
 
         // 3.3 Listening (Nghe và chép chính tả câu)
-        questions.push({
-          id: `listening-${pad2(lessonNum)}-${point.id}-${exIdx}`,
-          type: 'listening',
-          lesson: lessonNum,
-          auxiliaryLessons: auxLessons,
-          targetId: grammarTargetId,
-          prompt: example.jp,
-          context: 'Nghe audio/phát âm và nhập lại câu chính xác',
-          answer: stripFurigana(example.jp),
-          acceptedVariants: [stripFurigana(example.jp)],
-          explanationVi: example.translation.vi,
-          explanationJp: example.jp,
-        });
+        // Đáp án là KANA: người nghe xong gõ kana, không gõ kanji (SPEC-01 §4.5).
+        // Câu còn sót chữ Hán sau khi chuyển nghĩa là thiếu cách đọc — loại, không đoán.
+        const kanaAnswer = toKanaSentence(example.jp);
+        if (!containsKanji(kanaAnswer)) {
+          questions.push({
+            id: `listening-${pad2(lessonNum)}-${point.id}-${exIdx}`,
+            type: 'listening',
+            lesson: lessonNum,
+            auxiliaryLessons: auxLessons,
+            targetId: grammarTargetId,
+            prompt: example.jp,
+            context: 'Nghe audio/phát âm và nhập lại câu chính xác',
+            answer: kanaAnswer,
+            acceptedVariants: [kanaAnswer, stripFurigana(example.jp)],
+            explanationVi: example.translation.vi,
+            explanationJp: example.jp,
+          });
+        }
       });
     });
   }
 
+  questionsCache.set(cacheKey, questions);
   return questions;
 };

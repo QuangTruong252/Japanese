@@ -15,6 +15,18 @@ export class AppDatabase extends Dexie {
       practiceSessions: 'id, createdAt',
       pendingSync: 'id, createdAt',
     });
+
+    // v2: ReviewItem thêm createdAt (đếm mục mới trong ngày) và recentElapsedMs (suy median).
+    // Index không đổi, chỉ điền dữ liệu cho bản ghi cũ.
+    this.version(2).upgrade(async (tx) => {
+      await tx
+        .table('reviewItems')
+        .toCollection()
+        .modify((item: Partial<ReviewItem>) => {
+          item.recentElapsedMs ??= [];
+          item.createdAt ??= item.updatedAt ?? new Date().toISOString();
+        });
+    });
   }
 }
 

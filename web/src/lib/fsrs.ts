@@ -10,6 +10,27 @@ import {
 // FSRS scheduler với tham số enable_fuzz để tránh dồn thẻ cùng ngày
 const scheduler = fsrs(generatorParameters({ enable_fuzz: true }));
 
+/** Số mẫu thời gian trả lời giữ lại cho mỗi mục tiêu (SPEC-04 §2.2) */
+export const ELAPSED_SAMPLE_SIZE = 5;
+
+/**
+ * Median của các mẫu thời gian trả lời đúng gần nhất. Mảng rỗng -> null (lần đầu).
+ */
+export function medianElapsedMs(samples: number[]): number | null {
+  if (samples.length === 0) return null;
+  const sorted = [...samples].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 0 ? (sorted[mid - 1]! + sorted[mid]!) / 2 : sorted[mid]!;
+}
+
+/**
+ * Thêm một mẫu thời gian trả lời ĐÚNG, giữ tối đa ELAPSED_SAMPLE_SIZE mẫu gần nhất.
+ * Câu trả lời sai không nói gì về độ thành thạo nên không được ghi mẫu.
+ */
+export function pushElapsedSample(samples: number[], elapsedMs: number): number[] {
+  return [...samples, elapsedMs].slice(-ELAPSED_SAMPLE_SIZE);
+}
+
 /**
  * Suy ra Rating từ kết quả chấm tự động + tốc độ trả lời (so với median)
  */

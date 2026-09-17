@@ -7,22 +7,28 @@ import { SyncBadge } from '@/components/SyncBadge';
 import { Flame, Clock, Target, ArrowRight, BookOpen, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
+import { accuracyOverDays, currentStreak, minutesOnDay } from '@/lib/stats';
+import { useDueClock } from '@/lib/use-due-clock';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 
 export default function DashboardPage() {
-  const now = new Date();
+  // Thời gian trôi qua không phải là thay đổi của Dexie: badge và số liệu phải được tính lại
+  // khi tab hiện lại và khi qua mốc dueAt kế tiếp (SPEC-02 §2.2).
+  const now = useDueClock();
 
   // 1. Query các mục đến hạn ôn
   const dueItems = useLiveQuery(
     () => db.reviewItems.where('dueAt').belowOrEqual(now).toArray(),
-    []
+    [now]
   );
   const dueCount = dueItems ? dueItems.length : 0;
 
-  // 2. Query phiên học gần nhất
+  // 2. Query lịch sử phiên trong 90 ngày — đủ cho streak và % đúng 7 ngày.
+  // Không .limit(10): giới hạn theo SỐ PHIÊN làm sai tỷ lệ đúng của người học nhiều.
+  const historyCutoff = new Date(now.getTime() - 90 * 24 * 60 * 60 * 1000).toISOString();
   const recentSessions = useLiveQuery(
-    () => db.practiceSessions.orderBy('createdAt').reverse().limit(10).toArray(),
-    []
+    () => db.practiceSessions.where('createdAt').above(historyCutoff).reverse().sortBy('createdAt'),
+    [historyCutoff]
   );
 
   // 3. Query 3 điểm yếu hàng đầu (dùng filter duyệt collection, không phụ thuộc vào index đơn)
@@ -34,23 +40,12 @@ export default function DashboardPage() {
   }, []);
   const topWeakItems = weakItems ?? [];
 
-  // Tính toán Streak và Phút học hôm nay
-  const todayStr = now.toISOString().slice(0, 10);
-  const todaySessions = recentSessions?.filter(
-    (s) => s.createdAt.slice(0, 10) === todayStr
-  ) || [];
-
-  const todayMinutes = Math.round(
-    todaySessions.reduce((acc, s) => acc + (s.durationSeconds || 0), 0) / 60
-  );
-
-  // Tính độ chính xác 7 ngày gần nhất
-  const sevenDaysAgoStr = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString();
-  const pastWeekSessions = recentSessions?.filter((s) => s.createdAt >= sevenDaysAgoStr) || [];
-  const totalQuestions7d = pastWeekSessions.reduce((acc, s) => acc + s.totalQuestions, 0);
-  const correctCount7d = pastWeekSessions.reduce((acc, s) => acc + s.correctCount, 0);
-  const accuracyRate7d =
-    totalQuestions7d > 0 ? Math.round((correctCount7d / totalQuestions7d) * 100) : null;
+  // Số liệu tính bằng src/lib/stats.ts — dùng chung với trang Thống kê (SPEC-02 §2.3).
+  // Ranh giới ngày là nửa đêm GIỜ ĐỊA PHƯƠNG, không phải UTC.
+  const sessions = recentSessions ?? [];
+  const streak = currentStreak(sessions, now);
+  const todayMinutes = minutesOnDay(sessions, now);
+  const accuracyRate7d = accuracyOverDays(sessions, 7, now);
 
   // Bài học gần nhất
   const lastLesson = recentSessions?.[0]?.selectedLessons?.[0] || 1;
@@ -137,13 +132,15 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>
           <CardContent className="p-5 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-chart-1/10 text-chart-1 flex items-center justify-center shrink-0">
               <Flame className="w-6 h-6" />
             </div>
             <div>
               <p className="text-xs font-medium text-muted-foreground">Chuỗi học tập</p>
               <p className="text-2xl font-bold text-foreground">
-                {hasHistory ? '1 ngày' : '0 ngày'}
+                {streak.days > 0
+                  ? `${streak.days}${streak.truncated ? '+' : ''} ngày`
+                  : 'Chưa có chuỗi'}
               </p>
             </div>
           </CardContent>
@@ -151,13 +148,13 @@ export default function DashboardPage() {
 
         <Card>
           <CardContent className="p-5 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-chart-2/10 text-chart-2 flex items-center justify-center shrink-0">
               <Clock className="w-6 h-6" />
             </div>
             <div>
               <p className="text-xs font-medium text-muted-foreground">Thời gian học hôm nay</p>
               <p className="text-2xl font-bold text-foreground">
-                {hasHistory ? `${todayMinutes} phút` : '—'}
+                {sessions.length > 0 ? `${todayMinutes} phút` : '—'}
               </p>
             </div>
           </CardContent>
@@ -165,7 +162,7 @@ export default function DashboardPage() {
 
         <Card>
           <CardContent className="p-5 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-chart-3/10 text-chart-3 flex items-center justify-center shrink-0">
               <Target className="w-6 h-6" />
             </div>
             <div>
@@ -213,7 +210,7 @@ export default function DashboardPage() {
         <Card className="h-full flex flex-col">
           <CardHeader className="pb-3">
             <CardTitle className="text-base font-semibold flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 text-amber-500" />
+              <AlertCircle className="w-4 h-4 text-warning" />
               <span>Điểm yếu cần củng cố</span>
             </CardTitle>
           </CardHeader>
@@ -234,7 +231,7 @@ export default function DashboardPage() {
               </div>
             ) : (
               <div className="p-6 rounded-lg bg-muted/30 border border-dashed border-border flex flex-col items-center justify-center text-center space-y-2 flex-1">
-                <CheckCircle2 className="w-8 h-8 text-emerald-500/80" />
+                <CheckCircle2 className="w-8 h-8 text-success/80" />
                 <p className="text-sm font-medium text-foreground">Chưa có điểm yếu nào</p>
                 <p className="text-xs text-muted-foreground max-w-xs">
                   Hệ thống sẽ tự động ghi nhận các từ vựng hoặc ngữ pháp bạn trả lời sai trong quá trình làm bài để giúp bạn ôn tập trọng điểm.

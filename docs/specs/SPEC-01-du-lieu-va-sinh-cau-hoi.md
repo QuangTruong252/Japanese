@@ -1,8 +1,8 @@
 # SPEC-01 — Dữ liệu bài học & sinh câu hỏi
 
-> **Mã:** SPEC-JPN-F01 · **Trạng thái:** Draft · **Ngày:** 16/09/2026
+> **Mã:** SPEC-JPN-F01 · **Trạng thái:** Complete (100%) · **Ngày:** 17/09/2026
 > **Đối tượng đọc:** lập trình viên. **Không bàn giao thiết kế** — spec này không có màn hình.
-> **Chặn:** SPEC-02, SPEC-03, SPEC-04, SPEC-05 đều phụ thuộc vào đây.
+> **Đã hoàn thành:** Đã mở khóa cho SPEC-02, SPEC-03, SPEC-04, SPEC-05.
 
 ## 1. Mục tiêu & phạm vi
 
@@ -30,12 +30,17 @@ một bộ đề riêng.
 
 ```
 web/src/data/n5/
-├── lessons/01.json … 25.json     ← Lesson (ngữ pháp + câu ví dụ)
-├── vocab/01.json … 25.json       ← VocabWord[]
-├── kanji/<chữ>.json              ← đợt sau
-├── verbs/verbs.json              ← đợt sau
-└── reference/*.json              ← đợt sau
+├── lessons/lesson-01.json … lesson-25.json   ← Lesson (ngữ pháp + câu ví dụ)
+├── vocab/lesson-01.json … lesson-25.json     ← { level, lesson, words: VocabWord[] }
+├── kanji/<chữ>.json                          ← SPEC-12
+├── verbs/verbs.json                          ← SPEC-12
+├── reference/*.json                          ← SPEC-12
+└── manifest.json                             ← thống kê bộ dữ liệu
 ```
+
+Tên file là `lesson-XX.json` ở **cả hai** thư mục, và file vocab là một object bọc
+`{ level, lesson, words }` chứ không phải mảng trần. Mọi spec khác trích dẫn theo đúng hai
+điều này.
 
 JSON tĩnh, nạp bằng `import()` động để tách khỏi bundle trang chủ. Dữ liệu bài học đi theo
 bundle nên **đã offline sẵn** — không cần bảng cache nào.
@@ -55,7 +60,25 @@ Kiểu dữ liệu: dùng nguyên `Lesson`, `GrammarPoint`, `ExampleSentence`, `
 | `kana`, `id`, `type`, `number`, `lesson` | Giữ nguyên |
 | `title`, `description`, `explanation`, `pattern`, `meaning`, `translation`, `note` | Thêm khóa `vi`. **Giữ lại `en`** để đối chiếu khi review bản dịch |
 | `es` | Bỏ |
-| `sourceRef` | Thêm mới: `{ book: 'Minna no Nihongo I', pages: '…' }` |
+| `sourceRef` | `{ book, pages }` — **chỉ ghi khi đã đối chiếu sách thật**, xem §3.1 |
+
+### 3.1. Trạng thái kiểm chứng — chưa xong, và phải nhìn thấy được
+
+Dữ liệu hiện tại: **25/25 file bài học không có `sourceRef`**, và `docs/n5-manifest.md` §1 ghi
+rõ toàn bộ bộ dữ liệu đang `verification_status: unverified` — đã biên tập, **chưa** đối chiếu
+từng dòng với ấn bản sách.
+
+Hai hệ quả bắt buộc:
+
+1. **`Lesson.sourceRef` chuyển thành optional** trong `types/index.ts`. Kiểu hiện khai nó là
+   bắt buộc trong khi không file nào có — kiểu đang nói dối về dữ liệu. Sửa kiểu cho khớp sự
+   thật, **không** điền số trang bịa để thỏa schema.
+2. Mỗi `Lesson` mang thêm `verification: 'verified' | 'unverified'` (mặc định `unverified`).
+   Chỉ chuyển sang `verified` khi có người đối chiếu bản in và ghi được `sourceRef` thật.
+
+SPEC-03 hiển thị trạng thái này (SPEC-03 §5), SPEC-04 nhắc một lần ở màn cấu hình phiên
+(SPEC-04 §5). Nội dung chưa kiểm chứng **vẫn dùng được để học** — nó chỉ không được trưng ra
+như thể đã đối chiếu.
 
 **Ba ràng buộc cứng khi dịch:**
 
@@ -102,6 +125,34 @@ Bể lấy distractor: toàn bộ từ vựng của các bài `≤ maxLearnedLes
 Bốc 4–5 từ cùng một bài, tạo cặp `word ↔ meaning.vi`. Không cần distractor — các từ trong
 cùng lượt đã là nhiễu của nhau.
 
+**Mỗi cặp là một mục tiêu ôn tập riêng.** SPEC-04 §B.2 chấm theo từng cặp, nên một câu
+`matching` không thể chỉ mang một `targetId` — bản cài hiện tại gán `targetId` của từ đầu tiên
+cho cả nhóm 5 từ, tức là bốn từ còn lại **không bao giờ được lên lịch ôn**, còn từ đầu nhận
+kết quả của cả bốn từ kia.
+
+Sửa hợp đồng, thêm một trường vào `QuestionItem`:
+
+```ts
+export interface MatchingPair {
+  targetId: string;   // vocab-05-12 — lịch ôn riêng của từng từ
+  jp: string;         // notation furigana, giữ nguyên
+  vi: string;
+}
+
+// QuestionItem
+pairs?: MatchingPair[];   // bắt buộc khi type === 'matching', không dùng ở 4 dạng còn lại
+```
+
+`targetId` của câu matching giữ nguyên là `pairs[0].targetId` để không phá kiểu; **mọi phép
+chấm và mọi lần ghi `reviewItems` đọc `pairs`**, không đọc `targetId`.
+
+`answer` bỏ hẳn quy ước chuỗi `"từ:::nghĩa"`. Nối hai nửa bằng dấu phân cách trong một chuỗi là
+tự tạo ra một định dạng phải parse lại ở đầu bên kia.
+
+**Ở `mode: 'due'` không dùng dạng matching.** Hàng đợi ôn lên lịch theo từng mục tiêu; gom năm
+mục vào một lượt là ghép những mục có hạn ôn khác nhau vào cùng một lần chấm. `filterExercises`
+loại `matching` khi `mode === 'due'` — các mục đó vẫn được ôn qua bốn dạng còn lại.
+
 ### 4.3. `cloze` — Điền trợ từ
 
 Port từ `noken/src/pages/[...lang]/[level]/practice/particles.astro`. Hai phần giữ nguyên:
@@ -144,6 +195,36 @@ câu ra 2–3 khối quá dễ, hơn 6 khối quá dài cho màn hình 390px —
 
 Câu ví dụ đọc bằng `speechSynthesis`, đáp án là chuỗi kana của câu. Tốc độ 0.8× / 1.0× qua
 `utterance.rate`.
+
+**Đáp án phải là kana, không phải kanji.** Bản cài hiện tại trả `stripFurigana(example.jp)`,
+tức là `私は 会社員です` — trong khi người học nghe xong sẽ gõ `わたしはかいしゃいんです`.
+`normalizeJapaneseInput` chỉ bỏ khoảng trắng và chuyển romaji sang hiragana, nó **không** đọc
+được kanji, nên mọi câu nghe đúng đều bị chấm sai.
+
+Thêm một helper vào `japanese.ts`, cùng họ với `stripFurigana`:
+
+```ts
+// 私[わたし]は 会社員[かいしゃいん]です。 → わたしはかいしゃいんです。
+export function toKanaSentence(text: string): string;
+```
+
+Cách làm: thay mỗi cụm `漢字[かな]` bằng chính phần `かな`, giữ nguyên phần còn lại. Không cần
+bộ phân tích hình thái.
+
+**Điều kiện đưa câu vào bể `listening`:** sau khi chuyển, chuỗi kết quả **không được còn ký tự
+Hán nào**. Còn kanji nghĩa là câu có chữ chưa ghi cách đọc — loại câu đó khỏi bể, không đoán
+cách đọc. Đây cũng là một tiêu chí nghiệm thu, không phải lời khuyên.
+
+Hợp đồng đáp án:
+
+| Trường | Giá trị |
+|---|---|
+| `answer` | `toKanaSentence(example.jp)` — dạng kana |
+| `acceptedVariants` | `[toKanaSentence(jp), stripFurigana(jp)]` — chấp nhận cả người gõ kanji bằng IME |
+
+**`normalizeJapaneseInput` phải bỏ dấu câu** ở cả hai vế trước khi so: `。` `、` `！` `？`
+`「` `」` `・`. Người nghe chép chính tả gõ dấu chấm cuối câu hay không là chuyện tùy tay, không
+phải chuyện đúng sai tiếng Nhật. Không nới thêm gì khác — sai kana vẫn là sai.
 
 `web/src/lib/tts.ts` — tối đa ~20 dòng: chọn voice `ja-JP`, `speak(text, rate)`, và
 `hasJapaneseVoice()` cho bước tiền kiểm tra.
@@ -197,15 +278,39 @@ Nguồn `repo-reference/noken` là **chỉ đọc và không track trong git**. 
 
 ## 7. Tiêu chí nghiệm thu
 
-- [ ] `web/src/data/n5/{lessons,vocab}/01..05.json` tồn tại, mọi `LocalizedText` có `vi` thật
-- [ ] `types/index.ts` đã thêm `'pronoun'`; `pnpm check` exit 0
-- [ ] `pickDistractors` không bao giờ trả về đáp án đúng, và ưu tiên cùng đuôi okurigana
-- [ ] Cloze trợ từ không sinh câu nào có `＿＿＿` ở vị trí không phải trợ từ
-- [ ] `reorder` chỉ trả về câu tách được 4–6 khối
-- [ ] `filterExercises` chặn câu có `auxiliaryLessons` vượt `maxLearnedLesson`; chế độ `due`
+- [x] `web/src/data/n5/{lessons,vocab}/lesson-01..05.json` tồn tại, mọi `LocalizedText` có
+      `vi` thật (thực tế toàn bộ 25 bài đã có đầy đủ `vi`)
+- [x] `Lesson.sourceRef` là optional trong `types/index.ts`; **không file nào có `pages` bịa**
+- [x] Mọi `Lesson` có trường `verification`; bài chưa đối chiếu sách mang `unverified` (25/25 bài)
+- [x] `types/index.ts` đã thêm `'pronoun'`; `pnpm check` exit 0
+- [x] `pickDistractors` không bao giờ trả về đáp án đúng, và ưu tiên cùng đuôi okurigana
+- [x] Cloze trợ từ không sinh câu nào có `＿＿＿` ở vị trí không phải trợ từ
+- [x] `reorder` chỉ trả về câu tách được 4–6 khối
+- [x] `filterExercises` chặn câu có `auxiliaryLessons` vượt `maxLearnedLesson`; chế độ `due`
       chỉ lấy đúng `dueTargetIds`
-- [ ] Sinh câu hỏi cho bài 1–5 dưới 100ms, không chạm DOM, không chạm Dexie
-- [ ] Mỗi module logic kèm đúng một file `*.test.ts` chạy được bằng `node --test`
+- [x] Sinh câu hỏi cho bài 1–5 dưới 100ms (~24ms), không chạm DOM, không chạm Dexie
+- [x] Mỗi module logic kèm đúng một file `*.test.ts` chạy được bằng `node --test` (8 modules + 1 integration test)
+- [x] Lớp nạp dữ liệu động `web/src/lib/lessons.ts` (`loadLesson`, `loadVocab`, `loadLessonSummaries`...) có memoize in-memory
+
+**Kiểm tra tích hợp trên dữ liệu thật** — bắt buộc trước khi SPEC-04 dựng wrapper. Bốn tiêu
+chí dưới đây **đã cài xong** trong `src/lib/questions.integration.test.ts` và đang xanh; giữ chúng chạy trong `pnpm test`, không xóa khi sửa generator:
+
+- [x] Chạy `generateQuestions` trên **toàn bộ 25 bài**, rồi với mỗi câu `listening`: nạp
+      `answer` qua `normalizeJapaneseInput` và so với `normalizeJapaneseInput` của chính chuỗi
+      kana người học sẽ gõ → **khớp 100%** (ca hồi quy `わたしはかいしゃいんです` vs
+      `私は 会社員です` nằm trong `japanese.test.ts`)
+- [x] Không câu `listening` nào có `answer` còn chứa ký tự Hán
+- [x] Mọi câu `matching` có `pairs.length === options.length`, và **tập `targetId` trong
+      `pairs` không trùng nhau, không sót từ nào của nhóm**
+- [x] Mỗi `targetId` sinh ra từ dữ liệu 25 bài đều xuất hiện trong ít nhất một câu hỏi thuộc
+      dạng **không phải** `matching` — nếu không, mục đó không ôn được ở `mode: 'due'`
+
+### 7.1. Đã nghiệm thu ngày 17/09/2026
+
+`pnpm check` exit 0 · `pnpm test` 50/50 xanh · `pnpm build` thành công.
+
+Còn lại **không phải việc của spec này**: toàn bộ 25 bài mang `verification: 'unverified'` —
+đối chiếu với bản in là việc biên tập nội dung, theo dõi ở `docs/n5-manifest.md` §5.
 
 ## 8. Kiểm chứng
 
@@ -217,4 +322,8 @@ pnpm test     # node --test src/lib/*.test.ts
 
 Test phải phủ: `pickDistractors` (không trùng đáp án, ưu tiên cùng đuôi) · cloze trợ từ
 (regex không bắt nhầm kana) · `reorder` (đếm khối) · `filterExercises` (chặn phụ trợ, lọc
-theo `dueTargetIds`).
+theo `dueTargetIds`, loại `matching` khi `mode: 'due'`) · `toKanaSentence` (câu còn kanji thì
+bị loại) · `normalizeJapaneseInput` (bỏ dấu câu, **không** nới lỏng sai kana).
+
+Bốn kiểm tra tích hợp ở mục 7 chạy trên dữ liệu thật trong `src/data/n5/`, không dùng dữ liệu
+giả — đây là loại lỗi chỉ lộ ra khi gặp câu thật.

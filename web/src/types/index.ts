@@ -44,9 +44,19 @@ export interface Lesson {
   title: LocalizedText;
   jpTitle?: string;
   description: LocalizedText;
-  sourceRef: { book: string; pages: string };
+  /** Chỉ có khi đã đối chiếu bản in. Không điền số trang phỏng đoán (SPEC-01 §3.1). */
+  sourceRef?: { book: string; pages: string };
+  /** Mặc định 'unverified' khi vắng mặt. */
+  verification?: 'verified' | 'unverified';
   grammar: GrammarPoint[];
   references?: string[];
+}
+
+/** Một cặp của dạng `matching`. Mỗi cặp có lịch ôn riêng (SPEC-01 §4.2). */
+export interface MatchingPair {
+  targetId: string;
+  jp: string;
+  vi: string;
 }
 
 export interface QuestionItem {
@@ -63,6 +73,17 @@ export interface QuestionItem {
   acceptedVariants?: string[];
   explanationVi?: string;
   explanationJp?: string;
+  /** Bắt buộc khi type === 'matching'; chấm và ghi review đọc trường này, không đọc targetId. */
+  pairs?: MatchingPair[];
+}
+
+/** Kết quả một lượt trả lời. Dạng matching trả nhiều phần tử, bốn dạng còn lại trả một (SPEC-04 §2.1). */
+export interface AnswerResult {
+  targetId: string;
+  targetType: TargetType;
+  isCorrect: boolean;
+  elapsedMs: number;
+  usedHint: boolean;
 }
 
 export interface PracticeConfig {
@@ -83,6 +104,10 @@ export interface ReviewItem {
   dueAt: Date;
   fsrsCard: Card;
   updatedAt: string;
+  /** Lần đầu mục tiêu vào lịch ôn — dùng để đếm mục mới trong ngày (SPEC-05 §2.1). */
+  createdAt: string;
+  /** Tối đa 5 mẫu thời gian trả lời ĐÚNG gần nhất, để suy median (SPEC-04 §2.2). */
+  recentElapsedMs: number[];
 }
 
 export interface PracticeSession {

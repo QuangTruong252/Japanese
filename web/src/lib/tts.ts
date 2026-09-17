@@ -31,9 +31,9 @@ export const hasJapaneseVoice = async (): Promise<boolean> => {
   });
 };
 
-export const speak = (text: string, rate = 1.0): void => {
+export const speak = (text: string, rate = 1.0): SpeechSynthesisUtterance | null => {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
-    return;
+    return null;
   }
 
   window.speechSynthesis.cancel();
@@ -48,4 +48,5 @@ export const speak = (text: string, rate = 1.0): void => {
   }
 
   window.speechSynthesis.speak(utterance);
+  return utterance;
 };

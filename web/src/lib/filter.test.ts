@@ -82,3 +82,47 @@ test('filterExercises loại bỏ câu thiếu audio và tăng excludedAudioCoun
   assert.equal(res2.eligibleQuestions.length, 1);
   assert.equal(res2.excludedAudioCount, 0);
 });
+
+test('mode due: loại dạng matching khỏi bể câu hỏi', () => {
+  const matchingQuestion: QuestionItem = {
+    id: 'm1',
+    type: 'matching',
+    lesson: 1,
+    auxiliaryLessons: [1],
+    targetId: 'vocab-01-01',
+    prompt: 'Ghép cặp',
+    options: ['a', 'b', 'c', 'd'],
+    answer: ['a', 'b', 'c', 'd'],
+    pairs: [
+      { targetId: 'vocab-01-01', jp: 'A[あ]', vi: 'a' },
+      { targetId: 'vocab-01-02', jp: 'B[い]', vi: 'b' },
+      { targetId: 'vocab-01-03', jp: 'C[う]', vi: 'c' },
+      { targetId: 'vocab-01-04', jp: 'D[え]', vi: 'd' },
+    ],
+  };
+
+  const config: PracticeConfig = {
+    mode: 'due',
+    lessons: [1],
+    maxLearnedLesson: 1,
+    selectedTypes: ['mc', 'matching'],
+    questionCount: 10,
+  };
+
+  const { eligibleQuestions } = filterExercises(
+    [matchingQuestion],
+    config,
+    new Set(['tts']),
+    new Set(['vocab-01-01'])
+  );
+
+  assert.deepEqual(eligibleQuestions, []);
+
+  // Cùng câu đó vẫn dùng được ở chế độ luyện theo bài
+  const lessonMode = filterExercises(
+    [matchingQuestion],
+    { ...config, mode: 'lesson' },
+    new Set(['tts'])
+  );
+  assert.equal(lessonMode.eligibleQuestions.length, 1);
+});

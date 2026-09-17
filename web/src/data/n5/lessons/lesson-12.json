@@ -167,5 +167,6 @@
   "references": [
     "adjectives",
     "question-words"
-  ]
+  ],
+  "verification": "unverified"
 }

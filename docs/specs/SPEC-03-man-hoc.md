@@ -30,12 +30,27 @@ một bài tập nào**, nên nó được dựng trước phần luyện tập.
 
 | Nguồn | Chiều | Dùng cho |
 |---|---|---|
-| `src/data/n5/lessons/<so>.json` | Đọc, `import()` động | Ngữ pháp, mẫu câu, câu ví dụ |
-| `src/data/n5/vocab/<so>.json` | Đọc, `import()` động | Bảng từ vựng |
-| `db.reviewItems` | Đọc, `useLiveQuery` | Thanh tiến độ: đếm mục `targetId` bắt đầu bằng `vocab-<so>-` đã có bản ghi |
-| `useUIStore` | Đọc | `furiganaVisible`, `studyMode` |
+| `src/data/n5/lessons/lesson-XX.json` | Đọc, `import()` động | Ngữ pháp, mẫu câu, câu ví dụ |
+| `src/data/n5/vocab/lesson-XX.json` | Đọc, `import()` động | `{ level, lesson, words }` — **object bọc, không phải mảng trần** |
+| `db.reviewItems` | Đọc, `useLiveQuery` | Thanh tiến độ, xem §2.1 |
+| `useUIStore` | Đọc | `furigana`, `hideTranslations` (tên theo SPEC-02 §2.1) |
 
 Kiểu: `Lesson`, `GrammarPoint`, `ExampleSentence`, `VocabWord` trong `src/types/index.ts`.
+Tên file là `lesson-01.json … lesson-25.json` ở **cả hai** thư mục (SPEC-01 §2), số bài có
+đệm 0.
+
+### 2.1. "Đã học" và "đã thuộc" là hai chuyện khác nhau
+
+Thanh tiến độ mỗi bài đếm **mục đã vào lịch ôn**: số `targetId` khớp `vocab-<XX>-` có bản ghi
+trong `reviewItems`, chia cho tổng số từ của bài. Nhãn đúng là **"Đã học 12/34"** — nghĩa là đã
+gặp trong một phiên làm bài, không phải đã nhớ.
+
+**Không** dùng từ "đã thuộc" ở đây. Mức thành thạo là chuyện của FSRS (`fsrsCard.stability`),
+và nếu sau này muốn hiện nó thì đó là một chỉ số thứ hai với ngưỡng riêng — không phải cách
+đọc khác của cùng con số.
+
+Đọc bài ở `/hoc/[so]` **không** tạo `reviewItems`, nên thanh tiến độ của một bài mới đọc xong
+vẫn là 0. Đó là đúng: tiến độ ở đây đo việc luyện, không đo việc mở trang.
 
 **Nạp theo bài, không nạp cả 25.** `/hoc` chỉ cần số bài + tiêu đề — dùng một file chỉ mục
 nhẹ hoặc `import()` song song lấy `title`/`jpTitle`. Chi tiết bài nạp đúng hai file JSON của
@@ -106,6 +121,8 @@ Nhóm động từ lấy từ `VocabWord.type`: `verb-1` → Nhóm 1 (ngũ đo�
 | Tình huống | Hiển thị |
 |---|---|
 | Bài chưa có bản dịch `vi` | Thẻ ở `/hoc` mờ `opacity-50`, nhãn "Chưa có bản dịch", không bấm được. Sẽ gặp thường xuyên trong lúc dịch dần bài 6–25 |
+| Bài `verification: 'unverified'` (SPEC-01 §3.1) | Vẫn mở và học bình thường. Cuối trang chi tiết: một dòng `muted` "Nội dung bài này chưa được đối chiếu với bản in" |
+| Bài không có `sourceRef` | **Không hiện dòng nguồn sách**, không bịa số trang. `design-system.md` §10.3 mô tả dòng nguồn là *khi có* |
 | Bài chưa học (0 mục trong `reviewItems`) | Thanh tiến độ rỗng, chữ "Chưa học" thay cho "0/34" |
 | Đang nạp JSON bài | Skeleton đúng kích thước khối thật |
 | Nạp bài lỗi / số bài không tồn tại | Thông báo + nút về `/hoc`. Không để màn hình trắng |

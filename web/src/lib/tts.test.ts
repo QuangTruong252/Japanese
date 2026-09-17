@@ -13,3 +13,7 @@ test('speak không ném lỗi trong môi trường không hỗ trợ speechSynth
     speak('こんにちは', 1.0);
   });
 });
+
+test('speak trả về null khi môi trường không hỗ trợ speechSynthesis', () => {
+  assert.equal(speak('こんにちは', 1.0), null);
+});

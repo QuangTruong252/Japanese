@@ -31,7 +31,7 @@ thật, và mỗi ngày người học có một danh sách cụ thể để là
 |---|---|---|
 | `db.reviewItems` | Đọc `useLiveQuery`, ghi cuối phiên | Hàng đợi đến hạn, bảng điểm yếu |
 | `src/lib/questions.ts` | Đọc | Lấy câu hỏi cho các `targetId` đến hạn |
-| `src/lib/filter.ts` | Gọi với `mode: 'due'` | Lọc theo `dueTargetIds` |
+| `src/lib/filter.ts` | Gọi với `mode: 'due'` | Lọc theo `dueTargetIds`; **loại dạng `matching`** (SPEC-01 §4.2) |
 | `src/lib/fsrs.ts` | Gọi | `rateAnswer` + `applyReview`. **Đã có, không viết lại** |
 | `db.practiceSessions`, `db.pendingSync` | Ghi | Như SPEC-04 |
 
@@ -61,8 +61,32 @@ Ngoài các mục đã đến hạn, bổ sung mục tiêu **chưa có bản ghi
 **Không giới hạn số lượt ôn lại trong ngày.** Lượng mục đến hạn tự nó đã bị chặn từ đầu vào
 bởi `dailyNewLimit`; chặn thêm lần nữa ở đầu ra chỉ làm lịch ôn sai.
 
-Đếm mục mới đã nạp trong ngày: đếm `reviewItems` có `fsrsCard.reps === 0` hoặc dựa vào ngày
-tạo bản ghi. Chốt cách đếm khi cài đặt, miễn là ổn định qua các lần tải lại trang.
+**Cách đếm mục mới — chốt ở đây:**
+
+```ts
+db.reviewItems.filter(r => r.createdAt >= startOfLocalDay(now)).count()
+```
+
+`createdAt` là trường SPEC-04 §2.2 thêm vào `ReviewItem`. **Không đếm bằng `fsrsCard.reps === 0`**:
+ngay sau lần trả lời đầu tiên `reps` đã là 1, nên cách đó luôn đếm ra 0 và hạn mức không bao giờ
+có tác dụng.
+
+`startOfLocalDay` là nửa đêm **giờ địa phương** — cùng định nghĩa ngày với SPEC-07 §2.1, dùng
+chung hàm, không viết bản thứ hai.
+
+**Hạn mức áp ở đâu:**
+
+| Luồng | `dailyNewLimit` có chặn không |
+|---|---|
+| `/on-tap` nạp mục mới | **Có.** Đây là chỗ hạn mức tồn tại |
+| `/luyen-tap` người dùng tự chọn bài | **Không.** Người học chủ động mở bài 5 để luyện thì không chặn họ |
+
+Mục tiêu mới sinh ra từ một phiên luyện tự do **vẫn tính vào số đã nạp trong ngày** (vì
+`createdAt` là hôm nay), nên `/on-tap` sẽ không nạp thêm nữa sau khi đã đủ. Hạn mức bảo vệ hàng
+đợi ôn, không kiểm duyệt ý chí của người học.
+
+**`maxLearnedLesson` ở `mode: 'due'`** = số bài lớn nhất trong các mục đang đến hạn (SPEC-04
+§3.1). Mục đã vào lịch ôn nghĩa là người học đã gặp bài đó rồi.
 
 ## 3. Màn hình & bố cục
 
@@ -166,6 +190,9 @@ Người dùng xóa dữ liệu site của trình duyệt là mất toàn bộ l
       vừa học, mục quá hạn lâu nhất xếp trước
 - [ ] Mục quá hạn hiện `badge-overdue` + icon + số ngày trễ
 - [ ] Học liên tiếp nhiều bài mới → số mục mới nạp trong ngày **dừng ở 20**, có thông báo
+- [ ] Đặt `dailyNewLimit` = 5, làm một phiên luyện tự do sinh 8 mục mới → `/on-tap` **không**
+      nạp thêm mục mới nào trong ngày đó, và **không** chặn phiên luyện tự do tiếp theo
+- [ ] Sau nửa đêm giờ địa phương, số mục mới trong ngày về 0 (kiểm bằng cách đổi giờ hệ thống)
 - [ ] Không có mục đến hạn → màn hình có nội dung và lối đi tiếp, **không trống trơn**
 - [ ] Mục tiêu chỉ có câu `listening` trên máy thiếu giọng `ja-JP`: bị loại khỏi phiên và
       `dueAt` **không đổi** — kiểm tra trực tiếp trong DevTools › IndexedDB

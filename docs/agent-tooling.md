@@ -43,6 +43,12 @@ Web Design Guidelines vẫn tải bản guidelines mới khi review theo thiết
 License shadcn được lưu trong `.agents/skills/LICENSE.shadcn`. Repo Vercel ở commit
 trên không có file LICENSE riêng; giữ nguyên metadata/license trong skills upstream.
 
+`superpowers` không nằm trong `.agents/skills/`: đây là plugin Claude Code, bật ở
+phạm vi project qua `.claude/settings.json` (`superpowers@claude-plugins-official`,
+v6.3.0, [obra/superpowers](https://github.com/obra/superpowers), MIT). Claude Code tự
+tải sau khi clone; không cần `scripts/setup.mjs` và Codex không dùng plugin này. Gỡ
+bằng `claude plugin uninstall superpowers@claude-plugins-official --scope project`.
+
 Ví dụ sử dụng:
 
 - “Dùng vercel-react-best-practices review component bài học vừa sửa.”

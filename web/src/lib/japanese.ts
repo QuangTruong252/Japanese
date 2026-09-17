@@ -39,6 +39,26 @@ export function stripFurigana(text: string): string {
   return text.replace(KANJI_RUN_WITH_READING, '$1');
 }
 
+/** Ký tự Hán — dùng để kiểm câu đã kana hóa hết chưa */
+const KANJI_CHAR = /[一-鿿㐀-䶿々〆ヶ]/;
+
+/** Dấu câu bỏ qua khi chấm: người chép chính tả gõ hay không gõ đều được (SPEC-01 §4.5) */
+const SKIPPED_PUNCTUATION = /[。、．，！？!?「」『』・…‥]/g;
+
+/**
+ * Chuyển câu notation furigana thành chuỗi kana thuần.
+ * "私[わたし]は 会社員[かいしゃいん]です。" -> "わたしは かいしゃいんです。"
+ * Không phân tích hình thái: chỉ thay mỗi cụm Kanji[đọc] bằng chính phần đọc.
+ */
+export function toKanaSentence(text: string): string {
+  return text.replace(KANJI_RUN_WITH_READING, '$2');
+}
+
+/** Còn chữ Hán nghĩa là câu thiếu cách đọc — không đoán, loại khỏi bể câu hỏi nghe */
+export function containsKanji(text: string): boolean {
+  return KANJI_CHAR.test(text);
+}
+
 /**
  * Chuẩn hóa input câu trả lời người dùng:
  * - Chuyển Romaji sang Hiragana qua wanakana
@@ -47,7 +67,10 @@ export function stripFurigana(text: string): string {
  */
 export function normalizeJapaneseInput(input: string): string {
   if (!input) return '';
-  const trimmed = input.trim().replace(/[\s\u3000]+/g, '');
+  const trimmed = input
+    .trim()
+    .replace(/[\s\u3000]+/g, '')
+    .replace(SKIPPED_PUNCTUATION, '');
   return wanakana.toHiragana(trimmed, { useObsoleteKana: false });
 }
 

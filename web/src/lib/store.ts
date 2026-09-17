@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import type { ExerciseType } from '@/types';
+import { DEFAULT_SETTINGS, type AppSettings } from '@/lib/settings';
 
 export interface UIState {
   // Practice session state
@@ -24,13 +25,15 @@ export interface UIState {
   setLoopB: (time: number | null) => void;
   setShowTranscript: (show: boolean) => void;
 
-  // Global UI settings (toggles)
-  furiganaVisible: boolean;
+  // Global UI settings — tên trường khớp AppSettings (src/lib/settings.ts)
+  furigana: boolean;
   furiganaSize: 'normal' | 'large';
-  studyMode: boolean; // hide translations
-  setFuriganaVisible: (visible: boolean) => void;
+  hideTranslations: boolean;
+  theme: AppSettings['theme'];
+  setFurigana: (visible: boolean) => void;
   setFuriganaSize: (size: 'normal' | 'large') => void;
-  setStudyMode: (enabled: boolean) => void;
+  setHideTranslations: (enabled: boolean) => void;
+  setTheme: (theme: AppSettings['theme']) => void;
 }
 
 export const useUIStore = create<UIState>((set) => ({
@@ -56,11 +59,13 @@ export const useUIStore = create<UIState>((set) => ({
   setLoopB: (loopB) => set({ loopB }),
   setShowTranscript: (showTranscript) => set({ showTranscript }),
 
-  // UI Settings defaults
-  furiganaVisible: true,
-  furiganaSize: 'normal',
-  studyMode: false,
-  setFuriganaVisible: (furiganaVisible) => set({ furiganaVisible }),
+  // UI Settings defaults — lấy từ DEFAULT_SETTINGS, không khai lại giá trị
+  furigana: DEFAULT_SETTINGS.furigana,
+  furiganaSize: DEFAULT_SETTINGS.furiganaSize,
+  hideTranslations: DEFAULT_SETTINGS.hideTranslations,
+  theme: DEFAULT_SETTINGS.theme,
+  setFurigana: (furigana) => set({ furigana }),
   setFuriganaSize: (furiganaSize) => set({ furiganaSize }),
-  setStudyMode: (studyMode) => set({ studyMode }),
+  setHideTranslations: (hideTranslations) => set({ hideTranslations }),
+  setTheme: (theme) => set({ theme }),
 }));
