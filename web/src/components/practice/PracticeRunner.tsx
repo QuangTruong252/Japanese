@@ -16,6 +16,7 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import { QuestionCloze } from './QuestionCloze';
+import { QuestionListening } from './QuestionListening';
 import { QuestionMc } from './QuestionMc';
 import { SessionResult } from './SessionResult';
 import { savePracticeSession } from '@/lib/practice-write';
@@ -202,6 +203,15 @@ export function PracticeRunner({
 
   const renderQuestionComponent = () => {
     switch (currentQuestion.type) {
+      case 'listening':
+        return (
+          <QuestionListening
+            key={currentQuestion.id}
+            question={currentQuestion}
+            answered={answered}
+            onAnswer={handleAnswer}
+          />
+        );
       case 'cloze':
         return (
           <QuestionCloze
@@ -254,14 +264,22 @@ export function PracticeRunner({
 
       {/* VÙNG CÂU HỎI: co được, min-h-0 + overflow-y-auto để chính nó thu nhỏ */}
       <section className="flex min-h-0 flex-1 flex-col items-center justify-center overflow-y-auto py-4 text-center">
-        {currentQuestion.context && (
-          <p className="mb-2 text-sm text-muted-foreground">
-            {currentQuestion.context}
+        {currentQuestion.type !== 'listening' ? (
+          <>
+            {currentQuestion.context && (
+              <p className="mb-2 text-sm text-muted-foreground">
+                {currentQuestion.context}
+              </p>
+            )}
+            <div className="jp jp-quiz">
+              <Furigana text={currentQuestion.prompt} />
+            </div>
+          </>
+        ) : (
+          <p className="text-sm font-medium text-muted-foreground">
+            Nghe và nhập lại câu tiếng Nhật
           </p>
         )}
-        <div className="jp jp-quiz">
-          <Furigana text={currentQuestion.prompt} />
-        </div>
       </section>
 
       {/* VÙNG TRẢ LỜI: luôn ở nửa dưới */}
