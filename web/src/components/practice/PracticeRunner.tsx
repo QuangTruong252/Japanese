@@ -18,6 +18,7 @@ import {
 import { QuestionCloze } from './QuestionCloze';
 import { QuestionListening } from './QuestionListening';
 import { QuestionMc } from './QuestionMc';
+import { QuestionReorder } from './QuestionReorder';
 import { SessionResult } from './SessionResult';
 import { savePracticeSession } from '@/lib/practice-write';
 import { summarizeSession } from '@/lib/practice';
@@ -203,6 +204,15 @@ export function PracticeRunner({
 
   const renderQuestionComponent = () => {
     switch (currentQuestion.type) {
+      case 'reorder':
+        return (
+          <QuestionReorder
+            key={currentQuestion.id}
+            question={currentQuestion}
+            answered={answered}
+            onAnswer={handleAnswer}
+          />
+        );
       case 'listening':
         return (
           <QuestionListening
