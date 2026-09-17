@@ -15,6 +15,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
+import { QuestionCloze } from './QuestionCloze';
 import { QuestionMc } from './QuestionMc';
 import { SessionResult } from './SessionResult';
 import { savePracticeSession } from '@/lib/practice-write';
@@ -201,6 +202,15 @@ export function PracticeRunner({
 
   const renderQuestionComponent = () => {
     switch (currentQuestion.type) {
+      case 'cloze':
+        return (
+          <QuestionCloze
+            key={currentQuestion.id}
+            question={currentQuestion}
+            answered={answered}
+            onAnswer={handleAnswer}
+          />
+        );
       case 'mc':
       default:
         return (
