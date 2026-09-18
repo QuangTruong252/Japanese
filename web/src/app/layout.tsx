@@ -4,15 +4,14 @@ import { AppNav } from "@/components/AppNav";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Tự học Tiếng Nhật - Minna no Nihongo",
+  title: "MaiPace — Tự học tiếng Nhật",
   description:
-    "Nền tảng tự học và ôn luyện tiếng Nhật cá nhân với FSRS Spaced Repetition, Shadowing Audio và 5 dạng bài tập thông minh.",
+    "Học tiếng Nhật theo nhịp của bạn. Học bài N5, luyện tập và ôn theo lịch cùng MaiPace, với giao diện tiếng Việt.",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#faf9f6" },
     { media: "(prefers-color-scheme: dark)", color: "#1a191b" },
@@ -34,7 +33,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <AppNav />
-        <div className="flex-1 flex flex-col pb-32 sm:pb-40">
+        <div className="flex-1 flex flex-col pb-36 sm:pb-44">
           {children}
         </div>
       </body>

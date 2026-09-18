@@ -3,6 +3,33 @@
 Bộ spec chi tiết từng feature, tách từ `docs/project-design-spec.md` (SPEC-JPN-01) để bàn
 giao được cho Google Stitch / Claude Design.
 
+## Trạng thái hiện tại — đối chiếu code 18/09/2026
+
+**Đặc tả ≠ code ≠ nghiệm thu.** Bảng này là điểm bắt đầu, không phải chứng nhận
+toàn app. Code/lockfile xác định hiện trạng; spec xác định yêu cầu. Báo cáo cũ
+chỉ chứng minh phạm vi ở ngày ghi nhận. Khi tiếp tục, kiểm tra Git/code liên quan.
+
+| Phần | Đặc tả | Code quan sát được | Bằng chứng / phần chưa kiểm chứng |
+| --- | --- | --- | --- |
+| SPEC-01: dữ liệu/câu hỏi | Có | Có generator, filter, notation, FSRS | Ghi nhận static gates 17/09 ở mục bên dưới; [nội dung N5](../n5-manifest.md) chưa xác minh sách |
+| SPEC-02: shell/dashboard | Có | [AppNav](../../web/src/components/AppNav.tsx), [dashboard](../../web/src/app/page.tsx) | Có code; chưa có handoff nghiệm thu toàn feature |
+| SPEC-03: học | Có | [Danh sách](../../web/src/app/hoc/page.tsx), [chi tiết](../../web/src/app/hoc/[so]/page.tsx) | Có code; chưa có handoff nghiệm thu toàn feature |
+| SPEC-04: luyện tập | Có | [PracticeRunner](../../web/src/components/practice/PracticeRunner.tsx) và các dạng bài | [Handoff 17/09](../handoff/SPEC-04.md), có nghiệm thu và giới hạn; chưa tái nghiệm thu toàn bộ hôm nay |
+| SPEC-05: ôn/điểm yếu | Có | [Ôn](../../web/src/app/on-tap/page.tsx), [phiên](../../web/src/app/on-tap/phien/page.tsx), [điểm yếu](../../web/src/app/on-tap/diem-yeu/page.tsx) | Có code; chưa có handoff nghiệm thu toàn feature; không kết luận từ header Draft |
+| SPEC-06: cài đặt/import/export | Có | [Settings helper](../../web/src/lib/settings.ts), chưa có route cài đặt | Chưa nghiệm thu feature |
+| SPEC-07: thống kê | Có | [stats.ts](../../web/src/lib/stats.ts), chưa có route thống kê | Helper được dashboard dùng; chưa nghiệm thu màn thống kê |
+| SPEC-08: auth/sync | Có | [Supabase helpers](../../web/src/lib/supabase/), chưa có chu trình sync | Chưa nghiệm thu; đọc sai khác RPC/phân trang trước khi triển khai |
+| SPEC-09/10: audio ZIP/Shadowing | Có | Chưa có importer/player; [TTS](../../web/src/lib/tts.ts) là chức năng khác | Chưa nghiệm thu |
+| SPEC-12/13: tra cứu/tìm kiếm | Có | Chưa có route/màn tương ứng | Chưa nghiệm thu |
+| SPEC-14: PWA/offline shell | Có | Chưa có service worker/manifest PWA | Offline một phiên đã nạp không chứng minh offline reload toàn app |
+| F11: N4 | Chưa có spec biên tập | Chưa có dữ liệu N4 | Cần nguồn và biên tập trước khi xây UI |
+
+Bước tiếp theo: đối chiếu và nghiệm thu SPEC-05 trước khi gọi là hoàn tất, rồi
+tiếp tục SPEC-06 → SPEC-08 → SPEC-07 nếu người dùng không giao ưu tiên khác.
+Phạm vi brand/agent riêng theo [handoff MaiPace](../handoff/MAIPACE.md).
+Khi làm xong một phần, cập nhật hàng tương ứng và handoff với ngày, kiểm tra
+đã chạy, giới hạn và bước tiếp theo. Không đổi trạng thái phần chưa được kiểm tra.
+
 ## Vòng rà soát 17/09/2026 — hợp đồng dữ liệu & offline/sync
 
 Toàn bộ spec đã được sửa theo một vòng đối chiếu với code thật. Những thay đổi **bắt buộc đọc
@@ -43,15 +70,15 @@ Lý do và phạm vi áp dụng ghi tại chỗ; dữ liệu học vẫn atomic 
 
 ## Đợt 1 — đã viết
 
-| Spec | Feature | Trạng thái | Bàn giao thiết kế |
-|---|---|---|---|
-| [SPEC-01](SPEC-01-du-lieu-va-sinh-cau-hoi.md) | Dữ liệu bài học & sinh câu hỏi | **Hoàn thành 100%** | Không — hợp đồng dữ liệu |
-| [SPEC-02](SPEC-02-shell-dieu-huong.md) | Shell điều hướng & trạng thái toàn cục | Sẵn sàng triển khai | Có |
-| [SPEC-03](SPEC-03-man-hoc.md) | Màn Học (danh sách + chi tiết bài) | Sẵn sàng triển khai | Có |
-| [SPEC-04](SPEC-04-luyen-tap.md) | Luyện tập: khung phiên + 5 dạng bài | **Hoàn thành 100%** | Có |
-| [SPEC-05](SPEC-05-on-tap.md) | Ôn tập hôm nay, kết quả & điểm yếu | Sẵn sàng triển khai | Có |
+| Spec | Feature | Bàn giao thiết kế |
+|---|---|---|
+| [SPEC-01](SPEC-01-du-lieu-va-sinh-cau-hoi.md) | Dữ liệu bài học & sinh câu hỏi | Không — hợp đồng dữ liệu |
+| [SPEC-02](SPEC-02-shell-dieu-huong.md) | Shell điều hướng & trạng thái toàn cục | Có |
+| [SPEC-03](SPEC-03-man-hoc.md) | Màn Học (danh sách + chi tiết bài) | Có |
+| [SPEC-04](SPEC-04-luyen-tap.md) | Luyện tập: khung phiên + 5 dạng bài | Có |
+| [SPEC-05](SPEC-05-on-tap.md) | Ôn tập hôm nay, kết quả & điểm yếu | Có |
 
-Thứ tự build: SPEC-01 (xong) → SPEC-02 + SPEC-03 (xong) → SPEC-04 (xong) → SPEC-05.
+Thứ tự phụ thuộc: SPEC-01 → SPEC-02 + SPEC-03 → SPEC-04 → SPEC-05.
 SPEC-04 đã nghiệm thu trong trình duyệt; ghi chú bàn giao ở `docs/handoff/SPEC-04.md`.
 
 ## Đợt 2 — đã viết
@@ -123,7 +150,7 @@ SPEC-01 là ngoại lệ — không có màn hình nên không có mục 3–7 v
 
 | Tệp | Vai trò |
 |---|---|
-| `web/DESIGN.md` | Hợp đồng token máy đọc được — **nạp file này vào công cụ AI** |
+| `DESIGN.md` tại root | Hợp đồng token máy đọc được — **nạp file này vào công cụ AI** |
 | `docs/design-system.md` | Lý do thiết kế, khuôn mẫu màn hình, luật biểu đồ, checklist |
 | `web/src/app/globals.css` | Bản thi hành lúc chạy (OKLCH, chế độ tối, `@theme inline`) |
 | `docs/project-design-spec.md` | Đặc tả hệ thống gốc |

@@ -1,7 +1,28 @@
-# Japanese — hướng dẫn dùng chung cho coding agents
+# MaiPace — hướng dẫn dùng chung cho coding agents
 
 App cá nhân tự học Minna no Nihongo N5/N4, ưu tiên nội dung đáng tin,
-offline-first và đồng bộ tiến độ đa thiết bị. Trả lời người dùng bằng tiếng Việt.
+offline-first và đồng bộ tiến độ đa thiết bị. Đây là định hướng; trạng thái triển khai
+nằm trong `docs/specs/README.md`. Trả lời người dùng bằng tiếng Việt.
+
+## Bắt đầu và phối hợp
+
+- Codex, Claude Code và Antigravity dùng cùng quy ước này, làm việc luân phiên.
+  Đầu phiên đọc `PRODUCT.md`, mục trạng thái trong `docs/specs/README.md`, rồi chỉ
+  đọc spec/handoff liên quan. Kiểm tra Git root, status và code thật trước khi sửa.
+- `PRODUCT.md` chốt MaiPace, thông điệp và cách dùng logo; Washi là hệ thiết kế.
+  Spec mô tả hành vi mong muốn; code thể hiện hiện trạng; kết quả kiểm tra có ngày
+  và phạm vi mới là bằng chứng đã kiểm chứng. Không suy từ có spec thành đã xong.
+- Khi người dùng yêu cầu thực hiện, tự quyết chi tiết kỹ thuật trong phạm vi đã
+  giao. Tìm thông tin trong repo trước khi hỏi; chỉ hỏi khi còn lựa chọn ảnh hưởng
+  mục tiêu sản phẩm, dữ liệu hoặc phạm vi. Không hỏi lại việc đã được cho phép.
+- Yêu cầu review/phân tích là chỉ đọc. Không tự commit/push, giao agent khác,
+  thay kiến trúc hoặc mở rộng phạm vi; chỉ làm khi người dùng yêu cầu tương ứng.
+- Báo tiến độ ngắn, nêu phát hiện và việc tiếp theo. Khi xong, nêu thay đổi,
+  kiểm tra thực chạy và giới hạn; không gọi typecheck là nghiệm thu trình duyệt.
+- Với thay đổi đáng kể, cập nhật trạng thái spec và handoff liên quan: ngày,
+  quyết định, file/API dùng lại, kiểm tra, phần chưa kiểm chứng và bước tiếp theo.
+  Dùng mẫu `docs/handoff/PROMPT-phien-moi.md`; hỏi đáp đơn thuần không tạo báo cáo.
+  Không đánh dấu hoàn tất tính năng chỉ vì vừa sửa tài liệu về tính năng đó.
 
 ## Phạm vi và nguồn sự thật
 
@@ -13,7 +34,8 @@ offline-first và đồng bộ tiến độ đa thiết bị. Trả lời ngư�
 - `repo-reference/noken/` chỉ để đọc. Giữ nguyên thay đổi không liên quan;
   không commit/push trừ khi người dùng yêu cầu.
 - Đọc docs tương ứng trong `web/node_modules/next/dist/docs/` trước khi sửa
-  code Next.js. Giữ block do Next.js quản lý trong `web/AGENTS.md`.
+  code Next.js. Nếu có hướng dẫn lồng trong thư mục làm việc thì đọc thêm;
+  giữ block do Next.js quản lý nếu tồn tại, không tự tạo block giả.
 - Tái sử dụng helper, component và dependency hiện có. Không thêm framework,
   abstraction hay tối ưu hiệu năng nếu chưa có nhu cầu thực tế.
 
@@ -68,7 +90,9 @@ offline-first và đồng bộ tiến độ đa thiết bị. Trả lời ngư�
   từ root để cài dependency, tạo liên kết skills và MCP config của máy hiện tại.
   Nguồn cấu hình MCP là script setup; không commit file cấu hình được sinh ra.
 - `vercel-react-best-practices`: React/Next; `shadcn`: component;
-  `web-design-guidelines`: review UI/accessibility. Quy ước riêng của repo
+  `web-design-guidelines`: review UI/accessibility; `impeccable`: thiết kế/UI.
+  Plugin riêng của một agent không phải điều kiện bắt buộc cho agent khác.
+  Nếu thiếu công cụ, dùng tài liệu chung và ghi rõ giới hạn. Quy ước riêng của repo
   được ưu tiên hơn ví dụ chung; không tự thêm SWR hoặc đổi design system.
 - Lệnh shadcn dùng dependency đang cài: `pnpm exec shadcn ...` trong `web/`.
   Ưu tiên component hiện có, rồi registry chính thức `@shadcn`; registry ngoài

@@ -1,4 +1,4 @@
-# Product
+# MaiPace
 
 <!-- impeccable:product-schema 1 -->
 
@@ -8,71 +8,107 @@ web
 
 ## Users
 
-- **Người dùng chính:** Cá nhân người Việt tự học tiếng Nhật từ sơ cấp (Minna no Nihongo N5 và N4).
-- **Tình huống sử dụng:**
-  - Học linh hoạt trên điện thoại thông minh khi di chuyển (xe buýt, tàu điện, máy bay) — yêu cầu hỗ trợ ngoại tuyến mượt mà và thao tác chạm một tay thuận tiện.
-  - Học chuyên sâu trên máy tính để bàn/laptop tại bàn học — yêu cầu hệ thống phím tắt nhanh và không gian hiển thị rộng rãi.
-- **Nhiệm vụ của người dùng:** Nắm vững từ vựng, ngữ pháp, kanji theo từng bài học; luyện tập củng cố phản xạ qua 5 dạng bài tập; luyện nghe shadowing A-B; và duy trì nhịp ôn tập hàng ngày theo thuật toán lặp lại ngắt quãng (FSRS) mà không bị gián đoạn.
+Người Việt tự học tiếng Nhật sơ cấp theo Minna no Nihongo, học ngắn trên điện
+thoại hoặc tập trung ở máy tính. Ưu tiên nhu cầu cá nhân, thao tác rõ ràng và
+giải thích tiếng Việt; chưa mở rộng thành nền tảng lớp học hoặc mạng xã hội.
 
 ## Product Purpose
 
-- Cung cấp một nền tảng tự học và ôn luyện toàn diện giáo trình Minna no Nihongo N5 & N4, kế thừa dữ liệu chuẩn hóa, bổ sung bản dịch và giải thích ngữ pháp tiếng Việt chi tiết kèm nguồn dẫn sách.
-- Định nghĩa thành công: Người học có thể học tập và ôn tập mọi lúc mọi nơi kể cả khi không có kết nối internet; tiến độ học được đồng bộ an toàn đa thiết bị; ghi nhớ kiến thức bền vững qua thuật toán FSRS; và trải nghiệm học tập không ma sát (không quảng cáo, không phân tâm).
+**Học tiếng Nhật theo nhịp của bạn.** MaiPace giúp người học đọc bài, luyện tập
+và quay lại ôn kiến thức đến hạn. Mục tiêu dài hạn là học N5/N4, lưu trên máy,
+học khi mất mạng và đồng bộ tiến độ an toàn giữa thiết bị.
+
+Thành công là người học biết nên làm gì tiếp theo, hiểu phản hồi và tiếp tục
+được nhịp học của mình. Không hứa đạt trình độ trong một số ngày cố định.
 
 ## Positioning
 
-- **Offline-First đích thực:** Khác với hầu hết các web app học ngoại ngữ phụ thuộc vào máy chủ, hệ thống coi IndexedDB (Dexie.js) tại trình duyệt là nguồn sự thật (single source of truth). Thuật toán FSRS v5 chạy hoàn toàn phía client, đảm bảo việc tính toán chu kỳ ôn tập hoạt động trơn tru cả khi ngoại tuyến.
-- **Tự nạp âm thanh cục bộ (BYOA - Bring Your Own Audio):** Người học tự nhập bộ đĩa CD Minna no Nihongo qua file ZIP, giải nén an toàn qua Web Worker và xác thực hash SHA-256 từng file đối chiếu manifest. Giải pháp này giúp tránh hoàn toàn vấn đề bản quyền âm thanh và chi phí CDN băng thông lớn.
-- **5 dạng bài tập cốt lõi chuẩn mực:** Trắc nghiệm, Ghép cặp, Điền từ/trợ từ, Sắp xếp câu, và Nghe chép chính tả; tích hợp chuẩn hóa ký tự tự động bằng `wanakana` và hiển thị chữ Hán kèm furigana bằng thẻ `<ruby>` gốc của trình duyệt.
+- Tự học có hướng dẫn bằng tiếng Việt, nội dung tiếng Nhật là trọng tâm.
+- Luyện tập theo bài và ôn theo lịch, khuyến khích học đều mà không gây áp lực.
+- Ưu tiên lưu dữ liệu phía người học. Offline toàn ứng dụng và đồng bộ đa thiết
+  bị là mục tiêu phải nghiệm thu riêng, không suy ra từ việc đã dùng Dexie.
+- Minna no Nihongo là giáo trình tham chiếu; không mô tả MaiPace là sản phẩm
+  chính thức hoặc được nhà xuất bản bảo chứng.
 
 ## Operating Context
 
-- **Thiết bị:** Trình duyệt web hiện đại trên Mobile (iOS Safari, Android Chrome) và Desktop (Chrome, Edge, Firefox, Safari).
-- **Quy trình học tập thường ngày:**
-  1. *Học bài mới:* Duyệt từ vựng (phân loại nhóm động từ rõ ràng), học điểm ngữ pháp kèm câu ví dụ chuẩn nguồn sách.
-  2. *Luyện tập:* Làm bài tập củng cố theo bài hoặc tổ hợp bài, lọc thông minh theo lượng kiến thức đã tích lũy và điều kiện âm thanh sẵn có trên máy.
-  3. *Luyện nghe Shadowing:* Nghe bài đàm thoại / câu ví dụ, lặp đoạn A-B, tùy biến tốc độ (0.75x–1.2x), ẩn/hiện transcript.
-  4. *Ôn tập hôm nay:* Thực hiện phiên ôn tập theo lịch FSRS cho các mục tiêu (từ vựng, ngữ pháp, kanji, trợ từ) đến hạn; đồng bộ ngầm lên Supabase khi có mạng.
+Luồng chính: chọn bài → học → luyện tập → ôn mục đến hạn. Thiết kế cho điện thoại
+và máy tính, hỗ trợ chạm, bàn phím và furigana. Audio ZIP, Shadowing, tìm kiếm,
+PWA và đồng bộ là các phần của lộ trình, không phải lời quảng bá tính năng đã có.
 
 ## Capabilities and Constraints
 
-- **Chức năng đã xác nhận:**
-  - Dữ liệu 25 bài N5 (từ vựng, ngữ pháp, câu ví dụ) có furigana notation, dịch nghĩa tiếng Việt và tham chiếu sách Minna no Nihongo I.
-  - 5 dạng bài tập với cơ chế tạo đáp án nhiễu thông minh và phím tắt đầy đủ (`1`-`4`, `Space`, `[`, `]`, `R`, `T`).
-  - Trình phát Shadowing A-B loop phát trực tiếp từ Blob trong IndexedDB.
-  - Hệ thống ôn tập FSRS v5 cục bộ, ghi nhận kết quả và cập nhật `due_at` ngay lập tức.
-  - Đồng bộ đa thiết bị Optimistic Sync lên Supabase qua Google OAuth, giải quyết xung đột bằng chính sách last-write-wins dựa trên `updated_at`.
-- **Ràng buộc kỹ thuật & dữ liệu:**
-  - Stack: Next.js 16 (App Router), React 19, TypeScript strict, pnpm, Tailwind CSS v4, shadcn/ui (`base-nova` với Base UI).
-  - Dexie.js là nguồn sự thật phía client. Không gọi Supabase trực tiếp trong render path; đọc dữ liệu qua `useLiveQuery`.
-  - Không gọi network hoặc giải nén ZIP bên trong Dexie transaction. Giải nén ZIP và tính hash SHA-256 bắt buộc chạy trong Web Worker để tránh treo UI.
-  - Hiển thị Furigana bắt buộc dùng thẻ ngữ nghĩa `<ruby>` và `<rt>`, không dùng overlay CSS `position: absolute`.
-  - Tuyệt đối không đưa file âm thanh bản quyền vào bundle/public/cloud storage.
+Trạng thái có ngày và bằng chứng nằm tại [chỉ mục spec](docs/specs/README.md).
+Đọc code và handoff tương ứng trước khi tiếp tục; không dùng trang này làm báo
+cáo nghiệm thu. Tại lần đối chiếu 18/09/2026:
+
+- Có code màn học N5, năm dạng luyện tập, lịch ôn FSRS và màn ôn/điểm yếu.
+  SPEC-04 có báo cáo nghiệm thu trước đó; SPEC-05 có code nhưng chưa có handoff
+  nghiệm thu toàn bộ. Xem chỉ mục để phân biệt phạm vi đã kiểm tra.
+- Dữ liệu 25 bài N5 đang mang trạng thái chưa xác minh; có dữ liệu không đồng
+  nghĩa đã đối chiếu sách. Không gọi nội dung là “chuẩn sách đã kiểm chứng”.
+- Supabase có client/server helper; chưa có luồng sync hoàn chỉnh. Shadowing,
+  import audio và vỏ PWA chưa được triển khai. N4 là mục tiêu biên tập sau.
+- Phiên bản lấy từ package/lockfile. Dexie giữ dữ liệu client; Zustand chỉ giữ
+  UI tạm thời; FSRS qua helper hiện có. Quy tắc kỹ thuật ở [AGENTS.md](AGENTS.md).
+- Audio nguồn không đưa vào bundle/public/cloud sync. Người học tự nạp audio
+  là định hướng kỹ thuật, không phải bảo đảm về quyền sử dụng nội dung.
 
 ## Brand Commitments
 
-- **Hệ thống thiết kế:** **Washi** — cảm hứng từ bề mặt giấy Washi ấm áp của Nhật Bản.
-- **Bảng màu:** Nền giấy Washi kem sáng (`oklch(0.99 0.002 90)`), điểm nhấn đỏ đất Torii (`oklch(0.55 0.2 25)`), nền tối Than chì (`oklch(0.17 0.01 285)`), kết hợp màu phân biệt 3 nhóm động từ (Cam đất, Xanh Indigo, Xanh tre Moso).
-- **Typography:** Font chữ Latin Inter kết hợp font tiếng Nhật Noto Sans JP.
-- **Phong cách & Giọng điệu:** Tĩnh lặng, tao nhã, tập trung, chuẩn mực sư phạm; ngôn ngữ giao diện tiếng Việt rõ ràng, tôn trọng người học.
+- **Tên sản phẩm:** MaiPace, viết đúng hoa/thường. Không tự sáng tác nguồn gốc tên.
+- **Thông điệp:** “Học tiếng Nhật theo nhịp của bạn.”
+- **Hệ thiết kế:** Washi. MaiPace dùng Washi, không đổi tên hệ token thành MaiPace.
+- **Giọng văn:** rõ ràng, nhẹ nhàng, tôn trọng. Nút nói việc sẽ làm; lỗi nói vấn đề
+  và cách tiếp tục. Ví dụ: “Ôn tập ngay”, “Chưa có dữ liệu ôn tập”. Không dùng
+  lời trách móc vì mất streak, xếp hạng hay hứa “thành thạo nhanh chóng”.
+- **Màu, chữ và component:** theo [DESIGN.md](DESIGN.md),
+  [hướng dẫn thiết kế](docs/design-system.md) và token trong stylesheet hiện có.
+  Không tạo bảng token thứ hai ở tài liệu thương hiệu.
+
+### Bộ logo
+
+Tài sản nằm trong [web/public/brand/](web/public/brand/):
+
+| Tệp | Cách dùng |
+| --- | --- |
+| `maipace-lockup.svg` | Logo kèm tên, trên nền sáng |
+| `maipace-lockup-reversed.svg` | Logo kèm tên, trên nền tối |
+| `maipace-mark.svg` | Biểu tượng đỏ, trên nền sáng; có thể ghép chữ MaiPace bằng font giao diện |
+| `maipace-mark-reversed.svg` | Biểu tượng sáng, trên nền tối hoặc nền đỏ |
+| `maipace-mark-monochrome.svg` | Bản một màu trên nền sáng |
+| `maipace-app-icon.svg` | Biểu tượng trên nền đỏ cho ứng dụng |
+| `logo.png` | Bản phác/tham khảo; không dùng làm ảnh giao diện |
+
+Giữ nguyên tỷ lệ, đường nét và màu các SVG. Chừa khoảng trống ngoài hình tối
+thiểu bằng 1/4 chiều cao biểu tượng; biểu tượng trong UI tối thiểu 24px cao.
+Logo kèm tên tối thiểu 160px rộng; nếu thiếu chỗ, dùng biểu tượng và chữ thật.
+Favicon là ngoại lệ 16–32px, kiểm tra độ rõ thực tế trước khi dùng.
+Không kéo méo, cắt hình, thêm gradient, bóng hoặc chuyển động. SVG tài sản có
+màu cố định là nguồn nhận diện; component dùng token Washi, không chép mã màu.
+
+Logo cạnh chữ MaiPace dùng alt rỗng để tránh đọc tên hai lần. Logo đứng một mình
+cần tên truy cập “MaiPace”; nếu là liên kết về đầu trang, tên phải nêu đích đến.
 
 ## Evidence on Hand
 
-- `docs/project-design-spec.md`: Bản đặc tả hệ thống toàn diện đã được phê duyệt.
-- `docs/design-system.md` & `DESIGN.md`: Tài liệu đặc tả design system Washi cùng đầy đủ tokens và nguyên tắc thiết kế.
-- `AGENTS.md`: Quy chuẩn kỹ thuật, bảo vệ dữ liệu và hướng dẫn vận hành cho AI agents.
-- `web/src/data/n5/lessons/`: Tập hợp dữ liệu các bài học N5 đã chuẩn hóa.
+- [Chỉ mục spec](docs/specs/README.md): trạng thái, thứ tự triển khai, nguồn kiểm tra.
+- [Handoff SPEC-04](docs/handoff/SPEC-04.md): bằng chứng nghiệm thu ngày 17/09/2026;
+  không thay thế kiểm tra sau những thay đổi mới.
+- [Manifest nội dung](docs/n5-manifest.md): nguồn dữ liệu và phần cần đối chiếu.
+- [Đặc tả kiến trúc](docs/project-design-spec.md): thiết kế mong muốn; các sai khác
+  đã ghi ở spec chi tiết phải được đọc trước khi triển khai phần liên quan.
 
 ## Product Principles
 
-1. **Offline-First là cốt lõi:** Không bao giờ để việc mất mạng làm gián đoạn buổi học hay mất mát dữ liệu ôn tập; máy của người học luôn là nguồn sự thật ưu tiên.
-2. **Nội dung chuẩn xác và truy vết được:** Mọi từ vựng, ngữ pháp, câu ví dụ phải đối chiếu chuẩn xác với giáo trình Minna no Nihongo gốc; không sáng tác hay đoán mò kiến thức.
-3. **Trải nghiệm học tập tập trung (Distraction-Free):** Loại bỏ mọi yếu tố gây nhiễu, gamification thừa thãi hoặc quảng cáo; giữ nhịp học điềm tĩnh và tôn trọng thời gian của người học.
-4. **Tối ưu không ma sát (Frictionless Interaction):** Nút bấm tối thiểu 48px trên di động, phím tắt tức thì trên máy tính, tự động chuyển đổi Romaji sang Hiragana giúp việc nhập liệu nhanh chóng và chính xác.
+1. Nội dung có nguồn truy vết; chưa đối chiếu thì ghi rõ chưa xác minh.
+2. Bảo vệ dữ liệu học; không đánh đổi tính toàn vẹn lấy đường triển khai ngắn hơn.
+3. Mỗi màn hình giúp người học chọn hành động tiếp theo, không trang trí gây nhiễu.
+4. Tái sử dụng code và thiết kế hiện có, chỉ thêm thứ phục vụ nhu cầu đang làm.
 
 ## Accessibility & Inclusion
 
-- **Furigana ngữ nghĩa:** Sử dụng thẻ `<ruby>` / `<rt>` giúp trình đọc màn hình (screen reader) diễn giải chính xác và cho phép bôi đen copy văn bản sạch.
-- **Vùng chạm chuẩn di động:** Mọi phần tử tương tác trong luồng học và làm bài đều có kích thước tối thiểu `48px x 48px` (`size="quiz"`).
-- **Độ tương phản và Thị giác:** Tuân thủ tiêu chuẩn tương phản WCAG AA ở cả chế độ Sáng và Tối; hỗ trợ `prefers-reduced-motion` cho mọi hoạt ảnh chuyển động.
-- **Điều hướng bàn phím:** Giữ rõ ràng vòng báo focus (`ring`), hỗ trợ thao tác hoàn toàn bằng bàn phím trên desktop.
+Yêu cầu thiết kế: furigana ngữ nghĩa, vùng chạm trong luyện tập tối thiểu 48px,
+focus rõ, bàn phím, zoom, reduced motion và tương phản phù hợp ở sáng/tối.
+Đây là tiêu chí kiểm tra theo từng màn hình, không phải chứng nhận toàn app đã
+đạt WCAG hay đã được thử với mọi trình đọc màn hình.

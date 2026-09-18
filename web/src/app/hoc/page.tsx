@@ -7,8 +7,18 @@ import { LessonGrid } from '@/components/LessonGrid';
 export default async function HocPage() {
   const summaries = await loadLessonSummaries();
   return (
-    <main className="mx-auto w-full max-w-5xl space-y-6 px-4 py-6">
-      <h1 className="font-heading text-xl font-medium">Học bài</h1>
+    <main className="mx-auto w-full max-w-6xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10">
+      <div className="space-y-1">
+        <div className="flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
+          <span>Giáo trình Minna no Nihongo</span>
+        </div>
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+          Danh sách bài học N5
+        </h1>
+        <p className="text-sm text-muted-foreground">
+          25 bài học nền tảng từ vựng, mẫu câu và hội thoại giao tiếp tiếng Nhật cơ bản.
+        </p>
+      </div>
       <LessonGrid summaries={summaries} />
     </main>
   );
