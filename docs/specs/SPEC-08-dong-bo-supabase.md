@@ -1,6 +1,6 @@
 # SPEC-08 — Đăng nhập & đồng bộ Supabase
 
-> **Mã:** SPEC-JPN-F08 · **Trạng thái:** Draft · **Ngày:** 17/09/2026
+> **Mã:** SPEC-JPN-F08 · **Trạng thái:** Completed · **Ngày:** 22/09/2026
 > **Đối tượng đọc:** Google Stitch / Claude Design (mục 3–6), lập trình viên (toàn bộ).
 > **Phụ thuộc:** SPEC-02 (huy hiệu đồng bộ — spec này nối dây), SPEC-04 và SPEC-05 (bên ghi
 > vào `pendingSync`), SPEC-06 (màn Cài đặt — nhóm "Tài khoản" trống chờ spec này lấp).

@@ -15,17 +15,16 @@ chỉ chứng minh phạm vi ở ngày ghi nhận. Khi tiếp tục, kiểm tra 
 | SPEC-02: shell/dashboard | Có | [AppNav](../../web/src/components/AppNav.tsx), [dashboard](../../web/src/app/page.tsx) | Có code; chưa có handoff nghiệm thu toàn feature |
 | SPEC-03: học | Có | [Danh sách](../../web/src/app/hoc/page.tsx), [chi tiết](../../web/src/app/hoc/[so]/page.tsx) | Có code; chưa có handoff nghiệm thu toàn feature |
 | SPEC-04: luyện tập | Có | [PracticeRunner](../../web/src/components/practice/PracticeRunner.tsx) và các dạng bài | [Handoff 17/09](../handoff/SPEC-04.md), có nghiệm thu và giới hạn; chưa tái nghiệm thu toàn bộ hôm nay |
-| SPEC-05: ôn/điểm yếu | Có | [Ôn](../../web/src/app/on-tap/page.tsx), [phiên](../../web/src/app/on-tap/phien/page.tsx), [điểm yếu](../../web/src/app/on-tap/diem-yeu/page.tsx) | Có code; chưa có handoff nghiệm thu toàn feature; không kết luận từ header Draft |
-| SPEC-06: cài đặt/import/export | Có | [Settings helper](../../web/src/lib/settings.ts), chưa có route cài đặt | Chưa nghiệm thu feature |
-| SPEC-07: thống kê | Có | [stats.ts](../../web/src/lib/stats.ts), chưa có route thống kê | Helper được dashboard dùng; chưa nghiệm thu màn thống kê |
-| SPEC-08: auth/sync | Có | [Supabase helpers](../../web/src/lib/supabase/), chưa có chu trình sync | Chưa nghiệm thu; đọc sai khác RPC/phân trang trước khi triển khai |
+| SPEC-05: ôn/điểm yếu | Có | [Ôn](../../web/src/app/on-tap/page.tsx), [phiên](../../web/src/app/on-tap/phien/page.tsx), [điểm yếu](../../web/src/app/on-tap/diem-yeu/page.tsx) | [Handoff 22/09](../handoff/SPEC-05.md) — đã nghiệm thu trình duyệt (empty state, hàng đợi, phiên FSRS, bảng điểm yếu, responsive 390px/1280px) |
+| SPEC-06: cài đặt/import/export | Có | [Cài đặt](../../web/src/app/cai-dat/page.tsx), [backup.ts](../../web/src/lib/backup.ts) | [Handoff 22/09](../handoff/SPEC-06.md) — đã nghiệm thu trình duyệt (hiển thị, preview, export/import JSON, danger zone wipe, responsive) |
+| SPEC-07: thống kê | Có | [stats.ts](../../web/src/lib/stats.ts), [thong-ke/page.tsx](../../web/src/app/thong-ke/page.tsx) | [Handoff 22/09](../handoff/SPEC-07.md) — đã nghiệm thu trình duyệt (4 ô KPI, lịch nhiệt 12 tuần cuộn ngang mobile, biểu đồ cột 14d, biểu đồ đường 30d ngắt quãng, thanh phân bố, responsive) |
+| SPEC-08: auth/sync | Có | [supabase/migrations/0001_init.sql](../../supabase/migrations/0001_init.sql), [sync.ts](../../web/src/lib/sync.ts), [SyncBadge.tsx](../../web/src/components/SyncBadge.tsx), [cai-dat/page.tsx](../../web/src/app/cai-dat/page.tsx) | [Handoff 22/09](../handoff/SPEC-08.md) — đã nghiệm thu trình duyệt (SyncBadge hàng đợi, card trạng thái Supabase, responsive, push-pull RPC, RLS) |
 | SPEC-09/10: audio ZIP/Shadowing | Có | Chưa có importer/player; [TTS](../../web/src/lib/tts.ts) là chức năng khác | Chưa nghiệm thu |
 | SPEC-12/13: tra cứu/tìm kiếm | Có | Chưa có route/màn tương ứng | Chưa nghiệm thu |
 | SPEC-14: PWA/offline shell | Có | Chưa có service worker/manifest PWA | Offline một phiên đã nạp không chứng minh offline reload toàn app |
 | F11: N4 | Chưa có spec biên tập | Chưa có dữ liệu N4 | Cần nguồn và biên tập trước khi xây UI |
 
-Bước tiếp theo: đối chiếu và nghiệm thu SPEC-05 trước khi gọi là hoàn tất, rồi
-tiếp tục SPEC-06 → SPEC-08 → SPEC-07 nếu người dùng không giao ưu tiên khác.
+Bước tiếp theo: triển khai Chuỗi Audio & Trình phát (SPEC-09 & SPEC-10) → Chuỗi Tra cứu (SPEC-12 & SPEC-13).
 Phạm vi brand/agent riêng theo [handoff MaiPace](../handoff/MAIPACE.md).
 Khi làm xong một phần, cập nhật hàng tương ứng và handoff với ngày, kiểm tra
 đã chạy, giới hạn và bước tiếp theo. Không đổi trạng thái phần chưa được kiểm tra.

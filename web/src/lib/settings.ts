@@ -51,6 +51,32 @@ export const loadSettings = (): AppSettings => {
   }
 };
 
+type SettingsListener = () => void;
+const listeners = new Set<SettingsListener>();
+
+export const subscribeSettings = (listener: SettingsListener): (() => void) => {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+};
+
+let cachedSettings: AppSettings | null = null;
+let lastRawSettings: string | null = null;
+
+export const getSettingsSnapshot = (): AppSettings => {
+  if (typeof window === 'undefined' || !window.localStorage) {
+    return DEFAULT_SETTINGS;
+  }
+  const raw = window.localStorage.getItem(SETTINGS_STORAGE_KEY);
+  if (raw === lastRawSettings && cachedSettings !== null) {
+    return cachedSettings;
+  }
+  lastRawSettings = raw;
+  cachedSettings = loadSettings();
+  return cachedSettings;
+};
+
 export const saveSettings = (partial: Partial<AppSettings>): AppSettings => {
   const current = loadSettings();
   const next: AppSettings = { ...current, ...partial };
@@ -62,6 +88,9 @@ export const saveSettings = (partial: Partial<AppSettings>): AppSettings => {
       // Bỏ qua lỗi quota storage nếu có
     }
   }
+  lastRawSettings = typeof window !== 'undefined' ? window.localStorage.getItem(SETTINGS_STORAGE_KEY) : null;
+  cachedSettings = next;
+  listeners.forEach((fn) => fn());
   return next;
 };
 

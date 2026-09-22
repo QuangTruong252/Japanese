@@ -1,6 +1,6 @@
 # SPEC-07 — Thống kê & biểu đồ
 
-> **Mã:** SPEC-JPN-F07 · **Trạng thái:** Draft · **Ngày:** 17/09/2026
+> **Mã:** SPEC-JPN-F07 · **Trạng thái:** Completed · **Ngày:** 22/09/2026
 > **Đối tượng đọc:** Google Stitch / Claude Design (mục 3–6), lập trình viên (toàn bộ).
 > **Phụ thuộc:** SPEC-04 (ghi `practiceSessions`), SPEC-05 (bảng điểm yếu — **dùng lại, không
 > vẽ lại**), SPEC-02 (ô số liệu dashboard — spec này **thay** phần tính toán của nó).

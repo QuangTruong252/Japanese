@@ -7,8 +7,12 @@ import {
   minutesOnDay,
   startOfLocalDay,
   countLearnedByLesson,
+  dailyMinutes,
+  dailyAccuracy,
+  targetsByType,
+  activityHeatmap,
 } from './stats.ts';
-import type { PracticeSession } from '../types/index.ts';
+import type { PracticeSession, ReviewItem } from '../types/index.ts';
 
 /** Phiên học lúc `local` (giờ địa phương của máy chạy test) */
 const session = (
@@ -127,4 +131,89 @@ test('countLearnedByLesson gom targetId từ vựng theo bài', () => {
 
 test('countLearnedByLesson trả Map rỗng khi chưa ôn gì', () => {
   assert.equal(countLearnedByLesson([]).size, 0);
+});
+
+test('dailyMinutes sinh đúng số ngày và tính đúng số phút từng ngày', () => {
+  const now = new Date(2026, 8, 17, 12, 0);
+  const sessions = [
+    session('2026-09-17T08:00:00', { durationSeconds: 600 }), // 10p
+    session('2026-09-15T10:00:00', { durationSeconds: 1200 }), // 20p
+  ];
+
+  const results = dailyMinutes(sessions, 3, now);
+  assert.equal(results.length, 3);
+  assert.equal(results[0].dayKey, '2026-09-15');
+  assert.equal(results[0].value, 20);
+  assert.equal(results[0].hasData, true);
+
+  assert.equal(results[1].dayKey, '2026-09-16');
+  assert.equal(results[1].value, 0);
+  assert.equal(results[1].hasData, false);
+
+  assert.equal(results[2].dayKey, '2026-09-17');
+  assert.equal(results[2].value, 10);
+  assert.equal(results[2].hasData, true);
+});
+
+test('dailyAccuracy đánh dấu ngày không có phiên là hasData = false', () => {
+  const now = new Date(2026, 8, 17, 12, 0);
+  const sessions = [
+    session('2026-09-17T08:00:00', { totalQuestions: 10, correctCount: 8 }), // 80%
+  ];
+
+  const results = dailyAccuracy(sessions, 2, now);
+  assert.equal(results.length, 2);
+  assert.equal(results[0].dayKey, '2026-09-16');
+  assert.equal(results[0].hasData, false);
+  assert.equal(results[0].value, 0);
+
+  assert.equal(results[1].dayKey, '2026-09-17');
+  assert.equal(results[1].hasData, true);
+  assert.equal(results[1].value, 80);
+});
+
+test('targetsByType đếm đúng số mục theo từng loại mục tiêu', () => {
+  const items = [
+    { targetType: 'vocab' },
+    { targetType: 'vocab' },
+    { targetType: 'grammar' },
+    { targetType: 'kanji' },
+    { targetType: 'particle' },
+  ] as unknown as ReviewItem[];
+
+  const counts = targetsByType(items);
+  assert.equal(counts.vocab, 2);
+  assert.equal(counts.grammar, 1);
+  assert.equal(counts.kanji, 1);
+  assert.equal(counts.particle, 1);
+  assert.equal(counts.listening, 0);
+});
+
+test('activityHeatmap tạo đủ 12 tuần và tô đúng level (kể cả 0 phút vẫn level 1 nếu có phiên)', () => {
+  const now = new Date(2026, 8, 17, 12, 0); // Thứ 5
+  const sessions = [
+    session('2026-09-17T08:00:00', { durationSeconds: 0 }), // 0 giây nhưng có học -> level 1
+    session('2026-09-16T08:00:00', { durationSeconds: 900 }), // 15 phút -> level 2
+    session('2026-09-15T08:00:00', { durationSeconds: 1800 }), // 30 phút -> level 3
+    session('2026-09-14T08:00:00', { durationSeconds: 3000 }), // 50 phút -> level 4
+  ];
+
+  const weeks = activityHeatmap(sessions, 12, now);
+  assert.equal(weeks.length, 12);
+  // Mỗi tuần 7 ngày
+  for (const w of weeks) {
+    assert.equal(w.days.length, 7);
+  }
+
+  // Tuần cuối cùng chứa ngày hiện tại
+  const lastWeek = weeks[weeks.length - 1];
+  const t2 = lastWeek.days.find((d) => d.dayKey === '2026-09-14');
+  const t3 = lastWeek.days.find((d) => d.dayKey === '2026-09-15');
+  const t4 = lastWeek.days.find((d) => d.dayKey === '2026-09-16');
+  const t5 = lastWeek.days.find((d) => d.dayKey === '2026-09-17');
+
+  assert.equal(t2?.level, 4);
+  assert.equal(t3?.level, 3);
+  assert.equal(t4?.level, 2);
+  assert.equal(t5?.level, 1);
 });

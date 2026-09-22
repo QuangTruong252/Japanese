@@ -1,6 +1,6 @@
 # SPEC-06 — Cài đặt, Export & Import dữ liệu
 
-> **Mã:** SPEC-JPN-F06 · **Trạng thái:** Draft · **Ngày:** 17/09/2026
+> **Mã:** SPEC-JPN-F06 · **Trạng thái:** Completed (đã nghiệm thu trình duyệt 22/09/2026) · **Handoff:** [SPEC-06](../handoff/SPEC-06.md)
 > **Đối tượng đọc:** Google Stitch / Claude Design (mục 3–6), lập trình viên (toàn bộ).
 > **Phụ thuộc:** SPEC-02 (lối vào mục Cài đặt, script chống FOUC — spec này **sửa** script đó).
 

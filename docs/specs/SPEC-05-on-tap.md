@@ -1,6 +1,6 @@
 # SPEC-05 — Ôn tập hôm nay, kết quả & điểm yếu
 
-> **Mã:** SPEC-JPN-F05 · **Trạng thái:** Draft · **Ngày:** 16/09/2026
+> **Mã:** SPEC-JPN-F05 · **Trạng thái:** Completed (đã nghiệm thu trình duyệt 22/09/2026) · **Handoff:** [SPEC-05](../handoff/SPEC-05.md)
 > **Đối tượng đọc:** Google Stitch / Claude Design (mục 3–6), lập trình viên (toàn bộ).
 > **Phụ thuộc:** SPEC-01 (câu hỏi), SPEC-02 (khung nav), SPEC-04 (wrapper phiên — dùng lại nguyên).
 

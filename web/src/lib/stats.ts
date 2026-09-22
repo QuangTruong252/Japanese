@@ -1,4 +1,4 @@
-import type { PracticeSession } from '@/types';
+import type { PracticeSession, ReviewItem, TargetType } from '@/types';
 
 /**
  * Số liệu học tập — hàm thuần, nhận mảng trả số (SPEC-07 §2.2).
@@ -17,6 +17,13 @@ export function localDayKey(date: Date): string {
   const m = String(date.getMonth() + 1).padStart(2, '0');
   const d = String(date.getDate()).padStart(2, '0');
   return `${y}-${m}-${d}`;
+}
+
+/** Format ngày ngắn dạng DD/MM */
+export function formatDayShort(date: Date): string {
+  const d = String(date.getDate()).padStart(2, '0');
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  return `${d}/${m}`;
 }
 
 /** Một phiên thuộc về ngày của createdAt — thời điểm ghi xong (SPEC-07 §2.1) */
@@ -75,7 +82,7 @@ export function minutesOnDay(sessions: PracticeSession[], day: Date): number {
 export function accuracyOverDays(
   sessions: PracticeSession[],
   days: number,
-  now: Date
+  now: Date,
 ): number | null {
   const cutoff = startOfLocalDay(now);
   cutoff.setDate(cutoff.getDate() - (days - 1));
@@ -101,4 +108,189 @@ export function countLearnedByLesson(targetIds: string[]): Map<number, number> {
     counts.set(lesson, (counts.get(lesson) ?? 0) + 1);
   }
   return counts;
+}
+
+export interface DayValue {
+  date: Date;
+  dayKey: string;
+  label: string;
+  value: number;
+  hasData: boolean;
+  totalQuestions?: number;
+  correctCount?: number;
+  sessionCount?: number;
+}
+
+/**
+ * Phút học từng ngày trong cửa sổ `days` ngày gần nhất (tính cả hôm nay) (SPEC-07 §2.2).
+ */
+export function dailyMinutes(sessions: PracticeSession[], days: number, now: Date): DayValue[] {
+  const results: DayValue[] = [];
+  const startDay = startOfLocalDay(now);
+  startDay.setDate(startDay.getDate() - (days - 1));
+
+  for (let i = 0; i < days; i++) {
+    const current = new Date(startDay);
+    current.setDate(startDay.getDate() + i);
+    const key = localDayKey(current);
+
+    const daySessions = sessions.filter((s) => sessionDayKey(s) === key);
+    const totalSecs = daySessions.reduce((sum, s) => sum + (s.durationSeconds || 0), 0);
+    const mins = Math.round(totalSecs / 60);
+
+    results.push({
+      date: current,
+      dayKey: key,
+      label: formatDayShort(current),
+      value: mins,
+      hasData: daySessions.length > 0,
+      sessionCount: daySessions.length,
+    });
+  }
+
+  return results;
+}
+
+/**
+ * Tỷ lệ đúng từng ngày trong cửa sổ `days` ngày gần nhất (SPEC-07 §2.2).
+ * Ngày không có phiên có hasData = false, value = 0 (tránh nối đường thẳng qua khoảng trống).
+ */
+export function dailyAccuracy(sessions: PracticeSession[], days: number, now: Date): DayValue[] {
+  const results: DayValue[] = [];
+  const startDay = startOfLocalDay(now);
+  startDay.setDate(startDay.getDate() - (days - 1));
+
+  for (let i = 0; i < days; i++) {
+    const current = new Date(startDay);
+    current.setDate(startDay.getDate() + i);
+    const key = localDayKey(current);
+
+    const daySessions = sessions.filter((s) => sessionDayKey(s) === key);
+    const totalQ = daySessions.reduce((sum, s) => sum + s.totalQuestions, 0);
+    const correctQ = daySessions.reduce((sum, s) => sum + s.correctCount, 0);
+
+    const acc = totalQ > 0 ? Math.round((correctQ / totalQ) * 100) : 0;
+
+    results.push({
+      date: current,
+      dayKey: key,
+      label: formatDayShort(current),
+      value: acc,
+      hasData: totalQ > 0,
+      totalQuestions: totalQ,
+      correctCount: correctQ,
+      sessionCount: daySessions.length,
+    });
+  }
+
+  return results;
+}
+
+/**
+ * Gom số lượng mục theo từng loại mục tiêu (SPEC-07 §2.2, §3.1).
+ * Cố định: vocab, grammar, kanji, particle, listening.
+ */
+export function targetsByType(items: ReviewItem[]): Record<TargetType, number> {
+  const counts: Record<TargetType, number> = {
+    vocab: 0,
+    grammar: 0,
+    kanji: 0,
+    particle: 0,
+    listening: 0,
+  };
+
+  for (const item of items) {
+    if (item.targetType && counts[item.targetType] !== undefined) {
+      counts[item.targetType]++;
+    }
+  }
+
+  return counts;
+}
+
+export interface HeatmapDay {
+  date: Date;
+  dayKey: string;
+  label: string;
+  minutes: number;
+  sessionCount: number;
+  level: 0 | 1 | 2 | 3 | 4;
+}
+
+export interface HeatmapWeek {
+  days: HeatmapDay[];
+}
+
+/**
+ * Lưới lịch nhiệt `weeksCount` tuần gần nhất (SPEC-07 §3.1, §5).
+ * Tuần bắt đầu từ Thứ Hai (Monday = 1) và kết thúc ở Chủ Nhật (Sunday = 0).
+ * Cấp độ 0: Không học
+ * Cấp độ 1: 1-10 phút (kể cả 0 phút nếu có ít nhất 1 phiên - SPEC-07 §5)
+ * Cấp độ 2: 11-20 phút
+ * Cấp độ 3: 21-35 phút
+ * Cấp độ 4: > 35 phút
+ */
+export function activityHeatmap(
+  sessions: PracticeSession[],
+  weeksCount: number,
+  now: Date,
+): HeatmapWeek[] {
+  // Tìm Chủ Nhật của tuần hiện tại (kết thúc lưới)
+  const today = startOfLocalDay(now);
+  const dayOfWeek = today.getDay(); // 0 = CN, 1 = T2, ..., 6 = T7
+  const daysUntilSunday = dayOfWeek === 0 ? 0 : 7 - dayOfWeek;
+
+  const endSunday = new Date(today);
+  endSunday.setDate(today.getDate() + daysUntilSunday);
+
+  // Đi lùi lại đúng weeksCount tuần (mỗi tuần 7 ngày)
+  const totalDays = weeksCount * 7;
+  const startMonday = new Date(endSunday);
+  startMonday.setDate(endSunday.getDate() - totalDays + 1);
+
+  // Map nhanh các session theo localDayKey
+  const sessionMap = new Map<string, PracticeSession[]>();
+  for (const s of sessions) {
+    const key = sessionDayKey(s);
+    const list = sessionMap.get(key) || [];
+    list.push(s);
+    sessionMap.set(key, list);
+  }
+
+  const weeks: HeatmapWeek[] = [];
+  const currentDay = new Date(startMonday);
+
+  for (let w = 0; w < weeksCount; w++) {
+    const days: HeatmapDay[] = [];
+    for (let d = 0; d < 7; d++) {
+      const key = localDayKey(currentDay);
+      const daySessions = sessionMap.get(key) || [];
+
+      const totalSecs = daySessions.reduce((sum, s) => sum + (s.durationSeconds || 0), 0);
+      const mins = Math.round(totalSecs / 60);
+      const sCount = daySessions.length;
+
+      let level: 0 | 1 | 2 | 3 | 4 = 0;
+      if (sCount > 0) {
+        if (mins <= 10) level = 1; // Có học là có tô
+        else if (mins <= 20) level = 2;
+        else if (mins <= 35) level = 3;
+        else level = 4;
+      }
+
+      days.push({
+        date: new Date(currentDay),
+        dayKey: key,
+        label: formatDayShort(currentDay),
+        minutes: mins,
+        sessionCount: sCount,
+        level,
+      });
+
+      currentDay.setDate(currentDay.getDate() + 1);
+    }
+    weeks.push({ days });
+  }
+
+  return weeks;
 }
