@@ -265,21 +265,34 @@ export function VerbTable({ verbs }: VerbTableProps) {
                           isFirstMatch && 'bg-primary/15'
                         )}
                       >
-                        <div className="space-y-1">
-                          <Furigana text={v.verb} className="font-bold text-sm sm:text-base text-foreground" />
-                          <div>
-                            <span
-                              className={cn(
-                                'text-[10px] font-bold px-1.5 py-0.2 rounded-md inline-block',
-                                v.group === 1 && 'bg-verb-1/15 text-verb-1',
-                                v.group === 2 && 'bg-verb-2/15 text-verb-2',
-                                v.group === 3 && 'bg-verb-3/15 text-verb-3'
+                        {(() => {
+                          const match = v.verb.match(/\[([^\]]*〜)\]$/);
+                          const mainVerb = match ? v.verb.slice(0, match.index) : v.verb;
+                          const colocation = match ? match[1] : null;
+
+                          return (
+                            <div className="space-y-1">
+                              <Furigana text={mainVerb} className="font-bold text-sm sm:text-base text-foreground" />
+                              {colocation && (
+                                <span className="text-[11px] text-muted-foreground block font-normal leading-tight">
+                                  （{colocation}）
+                                </span>
                               )}
-                            >
-                              Nhóm {v.group}
-                            </span>
-                          </div>
-                        </div>
+                              <div>
+                                <span
+                                  className={cn(
+                                    'text-[10px] font-bold px-1.5 py-0.2 rounded-md inline-block',
+                                    v.group === 1 && 'bg-verb-1/15 text-verb-1',
+                                    v.group === 2 && 'bg-verb-2/15 text-verb-2',
+                                    v.group === 3 && 'bg-verb-3/15 text-verb-3'
+                                  )}
+                                >
+                                  Nhóm {v.group}
+                                </span>
+                              </div>
+                            </div>
+                          );
+                        })()}
                       </th>
 
                       {/* Cột 2: ます */}

@@ -4,7 +4,6 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import Dexie from 'dexie';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { ArrowLeft } from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
 import { TARGET_TYPE_LABEL, TargetTypeBadge } from '@/components/review/TargetTypeBadge';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -49,14 +48,22 @@ export default function WeakPointsPage() {
 
   return (
     <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6">
-      <div className="space-y-2">
-        <Link
-          href="/on-tap"
-          className="inline-flex min-h-12 items-center gap-1 text-sm text-muted-foreground underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
-        >
-          <ArrowLeft className="size-4" aria-hidden="true" /> Ôn tập hôm nay
-        </Link>
-        <h1 className="font-heading text-xl font-medium">Điểm yếu của tôi</h1>
+      <div className="space-y-4">
+        <h1 className="font-heading text-xl font-medium">Ôn tập</h1>
+        <div className="flex items-center gap-6 border-b border-border/80 text-sm">
+          <Link
+            href="/on-tap"
+            className="text-muted-foreground hover:text-foreground pb-2.5 -mb-px transition-colors"
+          >
+            Hôm nay
+          </Link>
+          <Link
+            href="/on-tap/diem-yeu"
+            className="font-semibold text-primary border-b-2 border-primary pb-2.5 -mb-px transition-colors"
+          >
+            Điểm yếu của tôi
+          </Link>
+        </div>
       </div>
 
       <div role="group" aria-label="Lọc theo loại mục tiêu" className="flex flex-wrap gap-2">

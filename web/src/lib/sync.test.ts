@@ -8,6 +8,7 @@ import {
   subscribeSyncStatus,
   updateSyncStatus,
   getSyncStatusSnapshot,
+  getServerSyncStatusSnapshot,
 } from './sync.ts';
 
 test('OwnerUserId: đọc và ghi localStorage chuẩn khóa jp:ownerUserId', () => {
@@ -21,6 +22,15 @@ test('LastPulledAt: đọc và ghi an toàn', () => {
   assert.equal(getLastPulledAt(), null);
   setLastPulledAt(new Date().toISOString());
   assert.equal(getLastPulledAt(), null);
+});
+
+test('getServerSyncStatusSnapshot: trả về đối tượng snapshot cố định cho SSR', () => {
+  const s1 = getServerSyncStatusSnapshot();
+  const s2 = getServerSyncStatusSnapshot();
+  assert.equal(s1, s2);
+  assert.equal(s1.state, 'offline');
+  assert.equal(s1.pendingCount, 0);
+  assert.equal(s1.lastSyncedAt, null);
 });
 
 test('SyncStatus: thông báo cho các listener khi có cập nhật', () => {

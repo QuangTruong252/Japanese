@@ -187,7 +187,7 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
             onChange={(e) => handleQueryChange(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Tìm từ vựng, ngữ pháp, kanji…"
-            className="flex-1 bg-transparent text-base sm:text-lg font-medium text-foreground placeholder:text-muted-foreground outline-hidden"
+            className="flex-1 bg-transparent text-base sm:text-lg font-medium text-foreground placeholder:text-muted-foreground outline-hidden [&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none"
           />
 
           {query && (

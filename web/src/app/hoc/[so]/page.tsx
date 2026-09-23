@@ -97,6 +97,16 @@ export default async function LessonDetailPage({
             </span>
           </div>
         </div>
+        <Link
+          href={`/hoc/${lessonNum}/tu-vung`}
+          className={cn(
+            buttonVariants({ variant: 'outline', size: 'quiz' }),
+            'w-full justify-center sm:w-auto',
+          )}
+        >
+          Học và theo dõi từ vựng bài này
+          <ArrowRight className="size-4" aria-hidden="true" />
+        </Link>
 
         <Card className="rounded-2xl border-border/80 bg-card shadow-sm overflow-hidden">
           <div className="overflow-x-auto">

@@ -7,6 +7,7 @@ import { CloudCheck, CloudOff, CloudUpload } from 'lucide-react';
 import { db } from '@/lib/db';
 import {
   getSyncStatusSnapshot,
+  getServerSyncStatusSnapshot,
   subscribeSyncStatus,
   triggerSync,
   type SyncState,
@@ -52,11 +53,7 @@ export function SyncBadge({ className, showTextOnMobile = false, state }: SyncBa
   const engineStatus = useSyncExternalStore(
     subscribeSyncStatus,
     getSyncStatusSnapshot,
-    () => ({
-      state: 'offline' as SyncState,
-      pendingCount: 0,
-      lastSyncedAt: null,
-    }),
+    getServerSyncStatusSnapshot,
   );
 
   const resolvedState: SyncState =

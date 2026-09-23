@@ -69,6 +69,7 @@ import {
 import { useUIStore } from '@/lib/store';
 import {
   getSyncStatusSnapshot,
+  getServerSyncStatusSnapshot,
   signInWithGoogle,
   signOut,
   subscribeSyncStatus,
@@ -193,11 +194,7 @@ export default function SettingsPage() {
   const syncEngineStatus = useSyncExternalStore(
     subscribeSyncStatus,
     getSyncStatusSnapshot,
-    () => ({
-      state: 'offline' as const,
-      pendingCount: 0,
-      lastSyncedAt: null,
-    }),
+    getServerSyncStatusSnapshot,
   );
 
   useEffect(() => {

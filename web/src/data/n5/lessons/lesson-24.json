@@ -84,13 +84,13 @@
       "id": "te-kuremasu",
       "title": {
         "en": "V て くれます — a favour done for me",
-        "vi": "N は [私[わたし]に] V て くれます — Ai đó làm việc gì giúp cho tôi"
+        "vi": "N は（私[わたし]に）V て くれます — Ai đó làm việc gì giúp cho tôi"
       },
       "pattern": {
-        "vi": "N は [私[わたし]に] V て くれます"
+        "vi": "N は（私[わたし]に）V て くれます"
       },
       "explanation": {
-        "en": "〜てくれます highlights that someone did the favour of their own accord for the speaker: 母[はは]は [私[わたし]に]セーターを 送[おく]ってくれました. The 私[わたし]に is usually left out.",
+        "en": "〜てくれます highlights that someone did the favour of their own accord for the speaker: 母[はは]は（私[わたし]に）セーターを 送[おく]ってくれました. The 私[わたし]に is usually left out.",
         "vi": "Diễn tả hành động mà một người nào đó làm việc tốt giúp đỡ người nói (hoặc người trong gia đình người nói) với lòng biết ơn từ phía người nhận."
       },
       "examples": [

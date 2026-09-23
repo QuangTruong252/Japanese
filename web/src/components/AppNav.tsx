@@ -46,8 +46,12 @@ export function AppNav() {
       [now]
     ) ?? 0;
 
-  // Luồng làm bài chiếm trọn màn hình và có nút thoát riêng
-  if (pathname.startsWith('/luyen-tap/phien') || pathname.startsWith('/on-tap/phien')) {
+  // Luồng làm bài và học từ vựng chiếm trọn màn hình, có điều hướng riêng.
+  if (
+    pathname.startsWith('/luyen-tap/phien') ||
+    pathname.startsWith('/on-tap/phien') ||
+    /^\/hoc\/\d+\/tu-vung$/.test(pathname)
+  ) {
     return null;
   }
 
@@ -59,9 +63,9 @@ export function AppNav() {
       <nav
         aria-label="Điều hướng chính"
         className={cn(
-          'fixed bottom-[calc(0.75rem+env(safe-area-inset-bottom))] left-1/2 -translate-x-1/2 z-50',
+          'fixed bottom-[calc(0.75rem+env(safe-area-inset-bottom))] inset-x-4 mx-auto z-50',
           'flex items-center justify-between gap-1 px-2.5 py-1.5',
-          'rounded-full w-[calc(100%-2rem)] max-w-md',
+          'rounded-full max-w-md w-auto',
           'bg-background/90 dark:bg-card/90 backdrop-blur-2xl',
           'border border-border/80 dark:border-white/10',
           'shadow-xl shadow-black/5 dark:shadow-black/40 ring-1 ring-black/5 dark:ring-white/5',
@@ -134,6 +138,7 @@ export function AppNav() {
                 alt=""
                 width={24}
                 height={24}
+                style={{ width: 'auto', height: 'auto' }}
                 className="object-contain"
                 priority
               />
@@ -214,10 +219,14 @@ export function AppNav() {
         </div>
 
         {/* Đáy: Khối Tài khoản thứ cấp (SyncBadge + Cài đặt) */}
-        <div className="pt-4 border-t border-border/80 space-y-2">
-          <div className="px-2 flex items-center justify-between">
-            <span className="text-xs text-muted-foreground font-medium">Đồng bộ đám mây</span>
-            <SyncBadge />
+        <div className="pt-3 border-t border-border/80 space-y-2">
+          <div className="px-1 space-y-1.5">
+            <div className="flex items-center justify-between px-1">
+              <span className="text-[11px] font-medium text-muted-foreground uppercase tracking-wider">
+                Đồng bộ dữ liệu
+              </span>
+            </div>
+            <SyncBadge className="w-full justify-start px-3 py-1.5 text-xs shadow-2xs" />
           </div>
 
           <Link

@@ -120,14 +120,14 @@
     {
       "id": "ichiban",
       "title": {
-        "en": "N [の 中[なか]] で 〜が いちばん A です — superlative",
-        "vi": "N [の 中[なか]]で 何／どこ／誰／いつ が いちばん A ですか — So sánh nhất"
+        "en": "N（の 中[なか]）で 〜が いちばん A です — superlative",
+        "vi": "N（の 中[なか]）で 何／どこ／誰／いつ が いちばん A ですか — So sánh nhất"
       },
       "pattern": {
-        "vi": "N [の 中[なか]]で 何[なに]／どこ／誰[だれ]／いつ が いちばん A ですか"
+        "vi": "N（の 中[なか]）で 何[なに]／どこ／誰[だれ]／いつ が いちばん A ですか"
       },
       "explanation": {
-        "en": "いちばん expresses the superlative within a group: 日本[にほん] 料理[りょうり][の 中[なか]]で 何[なに]が いちばん おいしいですか. The question word changes depending on whether you ask about a thing, a place, a person or a time.",
+        "en": "いちばん expresses the superlative within a group: 日本[にほん] 料理[りょうり]（の 中[なか]）で 何[なに]が いちばん おいしいですか. The question word changes depending on whether you ask about a thing, a place, a person or a time.",
         "vi": "Cấu trúc so sánh nhất trong một phạm vi N ('Trong số N, cái nào/ở đâu/ai/khi nào là A nhất?'). Trả lời bằng: '...がいちばん A です'."
       },
       "examples": [

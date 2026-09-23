@@ -116,7 +116,10 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
     if (!audio) return;
 
     if (!activeRecord) {
-      audio.src = '';
+      if (audio.hasAttribute('src')) {
+        audio.removeAttribute('src');
+        audio.load();
+      }
       return;
     }
 
@@ -126,7 +129,8 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
 
     return () => {
       URL.revokeObjectURL(url);
-      audio.src = '';
+      audio.removeAttribute('src');
+      audio.load();
     };
   }, [activeRecord]);
 
@@ -166,7 +170,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
   const handleTogglePlay = useCallback(() => {
     if (!audioRef.current || !activeRecord) return;
     if (audioRef.current.paused) {
-      audioRef.current.play().catch((err) => console.error('Play error:', err));
+      audioRef.current.play().catch((err) => console.warn('Play error:', err));
     } else {
       audioRef.current.pause();
     }
@@ -286,8 +290,17 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
     setShowTranscript,
   ]);
 
+  // Khi đang tải dữ liệu audio từ Dexie (SPEC-10)
+  if (audioRecords === undefined) {
+    return (
+      <div className="h-28 rounded-2xl border border-border/60 bg-card/40 animate-pulse flex items-center justify-center">
+        <span className="text-xs text-muted-foreground">Đang kiểm tra audio…</span>
+      </div>
+    );
+  }
+
   // Khi chưa nạp bất kỳ track nào cho bài này (SPEC-10 §5)
-  if (audioRecords !== undefined && audioRecords.length === 0) {
+  if (audioRecords.length === 0) {
     return (
       <Card className="rounded-2xl border-dashed border-border/80 bg-card/60 p-6 text-center space-y-3">
         <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -343,7 +356,9 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
           }
         }}
         onError={() => {
-          console.error('Audio load error');
+          const audio = audioRef.current;
+          if (!audio || !audio.currentSrc || !activeRecord) return;
+          console.warn('Audio playback error on track:', activeRecord.type);
         }}
         className="hidden"
       />

@@ -45,7 +45,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
 
   // 3. Số nội dung cần củng cố (từng sai ít nhất 1 lần)
   const weakCount = useLiveQuery(
-    () => db.reviewItems.where('incorrectCount').above(0).count(),
+    () => db.reviewItems.filter((item) => item.incorrectCount > 0).count(),
     []
   ) ?? 0;
 
@@ -136,12 +136,10 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
           )}
         </div>
 
-        {/* Lối vào thứ cấp cho Tìm kiếm, Tài khoản & Cài đặt */}
-        <div className="flex items-center gap-2 pt-1">
+        {/* Lối vào thứ cấp cho Tìm kiếm, Tài khoản & Cài đặt (chỉ hiện trên Mobile/Tablet) */}
+        <div className="flex items-center gap-2 pt-1 lg:hidden">
           <SearchTrigger iconOnly className="size-9 rounded-xl" />
-          <div className="hidden sm:block">
-            <SyncBadge />
-          </div>
+          <SyncBadge />
           <Link
             href="/cai-dat"
             aria-label="Cài đặt và Tài khoản"

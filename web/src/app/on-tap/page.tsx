@@ -137,7 +137,23 @@ export default function ReviewTodayPage() {
   if (!queue.hasAnyReviewItem) {
     return (
       <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6">
-        <h1 className="font-heading text-xl font-medium">Ôn tập hôm nay</h1>
+        <div className="space-y-4">
+          <h1 className="font-heading text-xl font-medium">Ôn tập</h1>
+          <div className="flex items-center gap-6 border-b border-border/80 text-sm">
+            <Link
+              href="/on-tap"
+              className="font-semibold text-primary border-b-2 border-primary pb-2.5 -mb-px transition-colors"
+            >
+              Hôm nay
+            </Link>
+            <Link
+              href="/on-tap/diem-yeu"
+              className="text-muted-foreground hover:text-foreground pb-2.5 -mb-px transition-colors"
+            >
+              Điểm yếu của tôi
+            </Link>
+          </div>
+        </div>
         <Card>
           <CardContent className="space-y-4 p-6 text-center">
             <h2 className="text-lg font-semibold">Chưa có gì để ôn</h2>
@@ -157,7 +173,23 @@ export default function ReviewTodayPage() {
   if (totalCount === 0) {
     return (
       <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6">
-        <h1 className="font-heading text-xl font-medium">Ôn tập hôm nay</h1>
+        <div className="space-y-4">
+          <h1 className="font-heading text-xl font-medium">Ôn tập</h1>
+          <div className="flex items-center gap-6 border-b border-border/80 text-sm">
+            <Link
+              href="/on-tap"
+              className="font-semibold text-primary border-b-2 border-primary pb-2.5 -mb-px transition-colors"
+            >
+              Hôm nay
+            </Link>
+            <Link
+              href="/on-tap/diem-yeu"
+              className="text-muted-foreground hover:text-foreground pb-2.5 -mb-px transition-colors"
+            >
+              Điểm yếu của tôi
+            </Link>
+          </div>
+        </div>
         <Card>
           <CardContent className="space-y-4 p-6 text-center">
             <h2 className="text-lg font-semibold">Đã ôn xong hôm nay</h2>
@@ -197,7 +229,23 @@ export default function ReviewTodayPage() {
 
   return (
     <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6">
-      <h1 className="font-heading text-xl font-medium">Ôn tập hôm nay</h1>
+      <div className="space-y-4">
+        <h1 className="font-heading text-xl font-medium">Ôn tập</h1>
+        <div className="flex items-center gap-6 border-b border-border/80 text-sm">
+          <Link
+            href="/on-tap"
+            className="font-semibold text-primary border-b-2 border-primary pb-2.5 -mb-px transition-colors"
+          >
+            Hôm nay
+          </Link>
+          <Link
+            href="/on-tap/diem-yeu"
+            className="text-muted-foreground hover:text-foreground pb-2.5 -mb-px transition-colors"
+          >
+            Điểm yếu của tôi
+          </Link>
+        </div>
+      </div>
 
       <Card>
         <CardContent className="space-y-4 p-6">

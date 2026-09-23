@@ -60,6 +60,16 @@ export function subscribeSyncStatus(listener: SyncListener): () => void {
   };
 }
 
+const DEFAULT_SERVER_SYNC_STATUS: SyncEngineStatus = {
+  state: 'offline',
+  pendingCount: 0,
+  lastSyncedAt: null,
+};
+
+export function getServerSyncStatusSnapshot(): SyncEngineStatus {
+  return DEFAULT_SERVER_SYNC_STATUS;
+}
+
 export function getSyncStatusSnapshot(): SyncEngineStatus {
   return currentStatus;
 }
