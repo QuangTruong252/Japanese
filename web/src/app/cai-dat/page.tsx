@@ -8,6 +8,7 @@ import {
   Check,
   CheckCircle2,
   Download,
+  FileArchive,
   LogOut,
   Minus,
   Plus,
@@ -163,6 +164,7 @@ export default function SettingsPage() {
   // 2. Đọc thống kê dữ liệu hiện có trên máy
   const reviewCount = useLiveQuery(() => db.reviewItems.count(), []) ?? 0;
   const sessionCount = useLiveQuery(() => db.practiceSessions.count(), []) ?? 0;
+  const audioCount = useLiveQuery(() => db.audioFiles.count(), []) ?? 0;
 
   // 3. Trạng thái Export / Import / Wipe
   const [notification, setNotification] = useState<{
@@ -751,6 +753,40 @@ export default function SettingsPage() {
                 />
               </div>
             </div>
+          </CardContent>
+        </Card>
+
+        {/* Audio đĩa CD (SPEC-09) */}
+        <Card>
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <CardTitle className="text-sm font-medium">Audio đĩa CD</CardTitle>
+              <span
+                className={cn(
+                  'text-xs px-2 py-0.5 rounded-full font-medium',
+                  audioCount > 0
+                    ? 'bg-primary/10 text-primary'
+                    : 'bg-muted text-muted-foreground'
+                )}
+              >
+                {audioCount > 0 ? `${audioCount}/100 track` : 'Chưa nạp'}
+              </span>
+            </div>
+            <CardDescription className="text-xs">
+              Quản lý gói âm thanh luyện nghe từ đĩa CD Minna no Nihongo I đã nạp trên máy.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button
+              type="button"
+              variant="secondary"
+              size="quiz"
+              className="w-full gap-2"
+              onClick={() => router.push('/cai-dat/audio')}
+            >
+              <FileArchive className="size-4" />
+              <span>Quản lý audio đĩa CD</span>
+            </Button>
           </CardContent>
         </Card>
       </section>

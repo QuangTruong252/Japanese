@@ -60,7 +60,7 @@ bài đó. Không kéo 500KB dữ liệu vào trang danh sách.
 
 ### 3.1. `/hoc` — Danh sách bài
 
-Khuôn mẫu: `design-system.md` §10.2. Bề rộng `max-w-5xl`.
+Khuôn bề rộng: `content-wide` (`DESIGN.md` §Layout and containers) — `max-w-5xl`.
 
 Lưới thẻ: **1 cột mobile, 2 cột từ `md`**. Mỗi thẻ:
 
@@ -75,7 +75,7 @@ Lưới thẻ: **1 cột mobile, 2 cột từ `md`**. Mỗi thẻ:
 
 ### 3.2. `/hoc/[so]` — Chi tiết bài
 
-Khuôn mẫu: `design-system.md` §10.3. Bề rộng **`max-w-2xl` (672px)** — giữ độ dài dòng dễ đọc.
+Khuôn bề rộng: `content-narrow` (`DESIGN.md` §Layout and containers) — **`max-w-2xl` (672px)** — giữ độ dài dòng dễ đọc.
 
 Thứ tự khối **cố định**, không đảo: **Từ vựng → Ngữ pháp → Câu ví dụ → Audio**.
 
@@ -122,7 +122,7 @@ Nhóm động từ lấy từ `VocabWord.type`: `verb-1` → Nhóm 1 (ngũ đo�
 |---|---|
 | Bài chưa có bản dịch `vi` | Thẻ ở `/hoc` mờ `opacity-50`, nhãn "Chưa có bản dịch", không bấm được. Sẽ gặp thường xuyên trong lúc dịch dần bài 6–25 |
 | Bài `verification: 'unverified'` (SPEC-01 §3.1) | Vẫn mở và học bình thường. Cuối trang chi tiết: một dòng `muted` "Nội dung bài này chưa được đối chiếu với bản in" |
-| Bài không có `sourceRef` | **Không hiện dòng nguồn sách**, không bịa số trang. `design-system.md` §10.3 mô tả dòng nguồn là *khi có* |
+| Bài không có `sourceRef` | **Không hiện dòng nguồn sách**, không bịa số trang. §3.2 mô tả dòng nguồn là *khi có* |
 | Bài chưa học (0 mục trong `reviewItems`) | Thanh tiến độ rỗng, chữ "Chưa học" thay cho "0/34" |
 | Đang nạp JSON bài | Skeleton đúng kích thước khối thật |
 | Nạp bài lỗi / số bài không tồn tại | Thông báo + nút về `/hoc`. Không để màn hình trắng |
@@ -134,7 +134,7 @@ trong `globals.css` dòng 183–194 qua class `.translation` và `html.hide-tran
 Việc của spec này là gắn class `translation` vào đúng phần tử và cho người dùng thấy nó
 chạm được (con trỏ `cursor: pointer`, đã có trong CSS).
 
-Mọi phần tử bấm được đủ sáu trạng thái theo `design-system.md` §8.
+Mọi phần tử bấm được đủ sáu trạng thái theo `DESIGN.md` §Interaction states.
 
 ## 6. Tương tác & chuyển động
 
@@ -233,4 +233,4 @@ Cần cả chế độ sáng và tối.
 
 > **Không** dùng file Stitch export để ghi đè `web/src/app/globals.css`. Bản export đổi màu
 > về hex, bỏ toàn bộ chế độ tối, và mất lớp `@theme inline` — chính là thứ cho phép class
-> `.dark` ghi đè token lúc chạy (`design-system.md` §12).
+> `.dark` ghi đè token lúc chạy (`DESIGN.md` §What this file is).

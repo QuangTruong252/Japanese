@@ -252,7 +252,7 @@ Kéo xong thì chuyển thẳng về `/`. **Không** hiện màn này khi chỉ 
 | Avatar | `<img>` thường, bo tròn 40px, có `alt` là tên hiển thị |
 
 Icon Lucide: `CloudCheck` · `CloudUpload` · `CloudOff` (ba trạng thái, đúng bảng
-`design-system.md` §9.7) · `LogOut` · `RefreshCw`.
+`DESIGN.md` §Components) · `LogOut` · `RefreshCw`.
 
 **Không thêm component mới.** Không dùng thư viện UI đăng nhập của Supabase — nó mang theo
 design system riêng và sẽ phá vỡ Washi.
@@ -272,7 +272,7 @@ design system riêng và sẽ phá vỡ Washi.
 | Token hết hạn giữa chừng | Làm mới session im lặng; thất bại thì chuyển về trạng thái chưa đăng nhập, **không mất dữ liệu cục bộ** |
 | Kéo dữ liệu về lỗi giữa chừng | Transaction Dexie rollback; hiện nút thử lại; dữ liệu cũ còn nguyên |
 
-Mọi phần tử bấm được đủ sáu trạng thái theo `design-system.md` §8.
+Mọi phần tử bấm được đủ sáu trạng thái theo `DESIGN.md` §Interaction states.
 
 ## 6. Tương tác & chuyển động
 
@@ -405,4 +405,4 @@ Cần cả chế độ sáng và tối.
 
 > **Không** dùng file Stitch export để ghi đè `web/src/app/globals.css`. Bản export đổi màu
 > về hex, bỏ toàn bộ chế độ tối, và mất lớp `@theme inline` — chính là thứ cho phép class
-> `.dark` ghi đè token lúc chạy (`design-system.md` §12).
+> `.dark` ghi đè token lúc chạy (`DESIGN.md` §What this file is).

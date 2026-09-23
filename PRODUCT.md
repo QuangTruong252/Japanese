@@ -62,9 +62,9 @@ cáo nghiệm thu. Tại lần đối chiếu 18/09/2026:
 - **Giọng văn:** rõ ràng, nhẹ nhàng, tôn trọng. Nút nói việc sẽ làm; lỗi nói vấn đề
   và cách tiếp tục. Ví dụ: “Ôn tập ngay”, “Chưa có dữ liệu ôn tập”. Không dùng
   lời trách móc vì mất streak, xếp hạng hay hứa “thành thạo nhanh chóng”.
-- **Màu, chữ và component:** theo [DESIGN.md](DESIGN.md),
-  [hướng dẫn thiết kế](docs/design-system.md) và token trong stylesheet hiện có.
-  Không tạo bảng token thứ hai ở tài liệu thương hiệu.
+- **Màu, chữ và component:** hợp đồng thiết kế ở [DESIGN.md](DESIGN.md), giá trị token
+  ở [globals.css](web/src/app/globals.css); [hướng dẫn tiếng Việt](docs/design-system.md)
+  chỉ là bản đọc. Không tạo bảng token thứ hai ở tài liệu thương hiệu.
 
 ### Bộ logo
 

@@ -28,7 +28,7 @@ nằm trong `docs/specs/README.md`. Trả lời người dùng bằng tiếng Vi
 
 - Code nằm trong `web/`: Next.js 16 App Router, React 19, TypeScript, pnpm.
 - Đọc `docs/project-design-spec.md` cho kiến trúc và 5 dạng bài tập;
-  `docs/design-system.md` và `DESIGN.md` cho thiết kế Washi.
+  thiết kế Washi theo thứ tự ở mục "Nguồn sự thật thiết kế" bên dưới.
 - `web/package.json`, lockfile và code xác định phiên bản/API đang dùng.
   Nếu đặc tả mâu thuẫn với code, báo rõ; không tự đổi kiến trúc sản phẩm.
 - `repo-reference/noken/` chỉ để đọc. Giữ nguyên thay đổi không liên quan;
@@ -38,6 +38,27 @@ nằm trong `docs/specs/README.md`. Trả lời người dùng bằng tiếng Vi
   giữ block do Next.js quản lý nếu tồn tại, không tự tạo block giả.
 - Tái sử dụng helper, component và dependency hiện có. Không thêm framework,
   abstraction hay tối ưu hiệu năng nếu chưa có nhu cầu thực tế.
+
+## Nguồn sự thật thiết kế
+
+Đọc theo thứ tự này; mỗi loại kiến thức chỉ có một nguồn có thẩm quyền.
+
+1. `PRODUCT.md` — mục tiêu, người dùng, phạm vi, nguyên tắc sản phẩm.
+2. `DESIGN.md` — hợp đồng UX và thị giác toàn cục: ý nghĩa token, typography,
+   khoảng cách, bề mặt, chuyển động, responsive, điều hướng, pattern component
+   và bảng ánh xạ pattern sang file code.
+3. `web/src/app/globals.css` — giá trị token lúc chạy. Giá trị thô ở đây; ý nghĩa
+   sử dụng ở `DESIGN.md`. Không chép giá trị sang tài liệu khác.
+4. `docs/specs/SPEC-xx.md` — yêu cầu và bố cục từng màn, prompt Stitch ở §10.
+5. `docs/handoff/SPEC-xx.md` — bằng chứng nghiệm thu có ngày.
+
+- `docs/design-system.md` là **hướng dẫn đọc bằng tiếng Việt**, không phải nguồn
+  token hay nguồn luật. Không lấy giá trị thiết kế từ file này.
+- Luật toàn cục ở `DESIGN.md`, quyết định riêng từng màn ở SPEC. SPEC không được
+  âm thầm nói ngược `DESIGN.md`; nếu cần đổi luật toàn cục thì sửa `DESIGN.md`
+  có chủ đích trong cùng thay đổi và nói rõ.
+- Phần YAML đầu `DESIGN.md` là bản máy đọc được cho công cụ AI. Khi nó lệch với
+  `globals.css` thì stylesheet đúng. Không dùng export của Stitch ghi đè stylesheet.
 
 ## Dữ liệu, sync và ôn tập
 

@@ -1,21 +1,24 @@
 # SPEC-02 — Shell điều hướng & trạng thái toàn cục
 
-> **Mã:** SPEC-JPN-F02 · **Trạng thái:** 🟡 Đã cài xong, chờ kiểm tra trình duyệt ·
-> **Ngày:** 16/09/2026 · **Rà soát:** 17/09/2026
+> **Mã:** SPEC-JPN-F02 · **Ngày:** 16/09/2026 · **Rà soát:** 17/09/2026, 22/09/2026
+> **Trạng thái:** 🟠 *Vỏ điều hướng* — UX duyệt 22/09/2026, thị giác chưa duyệt, code chưa theo.
+> 🟠 *Bảng tin* — **UX duyệt 22/09/2026**, **thị giác chưa duyệt**, code đã có nhưng lệch.
+> Phần lệch của cả hai nằm ở §9; hợp đồng UX Bảng tin ở §3.2; khối lệnh cho công cụ thị giác ở §10.
 > **Đối tượng đọc:** Google Stitch / Claude Design (mục 3–6), lập trình viên (toàn bộ).
 > **Phụ thuộc:** SPEC-01 (số mục đến hạn lấy từ Dexie, có thể là 0 ở giai đoạn đầu).
 
 ## 1. Mục tiêu & phạm vi
 
 Dựng khung bao quanh mọi màn hình: thanh điều hướng 5 khu vực, huy hiệu trạng thái dữ liệu,
-và cơ chế áp cài đặt hiển thị lên toàn trang. Thay trang chủ hiện tại bằng dashboard thật.
+và cơ chế áp cài đặt hiển thị lên toàn trang, cùng hợp đồng UX của màn Bảng tin (§3.2).
 
 **Trong phạm vi**
 
-- Thanh nav 5 khu vực: Học · Luyện tập · Ôn tập · Thống kê · Cài đặt
-- Huy hiệu trạng thái đồng bộ ở góc phải nav
+- Vỏ điều hướng 5 khu vực chính: Bảng tin · Học bài · Luyện tập · Ôn tập · Thống kê
+- Lối vào thứ cấp (Cài đặt, hồ sơ, trạng thái đồng bộ) — **không** nằm trong nav chính
+- Huy hiệu trạng thái đồng bộ, đặt trong lối vào thứ cấp (§3.1)
 - Áp `settings` lên `<html>` bằng class, chống FOUC (gồm cả `theme`)
-- Dashboard `/` theo khuôn mẫu `design-system.md` §10.1
+- Bảng tin `/` — hợp đồng UX ở §3.2, khuôn bề rộng `content-wide` (`DESIGN.md` §Layout and containers)
 - `src/lib/stats.ts` — ba hàm số liệu dùng chung với SPEC-07
 
 **Ngoài phạm vi**
@@ -24,14 +27,18 @@ và cơ chế áp cài đặt hiển thị lên toàn trang. Thay trang chủ hi
 - Màn hình Cài đặt (chỉ dựng lối vào) — đợt spec 2
 - Phím tắt `Ctrl+K` và hộp tìm kiếm — **cả hai** thuộc SPEC-13, xem mục 6
 - Màn hình Thống kê và mọi biểu đồ — SPEC-07. Spec này chỉ dùng ba hàm số liệu
-- Đăng nhập, avatar, mọi thứ liên quan Supabase
+- Đăng nhập và mọi thứ liên quan Supabase — spec này dựng **lối vào** tài khoản, không dựng
+  danh tính người dùng. Chừng nào chưa có danh tính thật thì không có tên người dùng trên màn
+- Mục tiêu học theo ngày (số phút/ngày, "hôm nay đủ chưa", danh sách việc hôm nay) — chưa có
+  định nghĩa sản phẩm lẫn mô hình dữ liệu; xem §3.2
+- Widget "Kanji hôm nay" — không còn thuộc hợp đồng Bảng tin; xem §3.2
 
 ## 2. Dữ liệu
 
 | Nguồn | Chiều | Dùng cho |
 |---|---|---|
 | `db.reviewItems` (Dexie) | Đọc, qua `useLiveQuery` | Số mục đến hạn → badge trên mục "Ôn tập" |
-| `db.practiceSessions` | Đọc | Ô số liệu dashboard, **qua `src/lib/stats.ts`** |
+| `db.practiceSessions` | Đọc | Nhịp học ở Bảng tin và số liệu `/thong-ke`, **qua `src/lib/stats.ts`** |
 | `db.pendingSync` | Đọc, đếm | Trạng thái huy hiệu đồng bộ |
 | `useUIStore` (`src/lib/store.ts`) | Đọc/ghi | `furigana`, `furiganaSize`, `hideTranslations`, `theme` |
 | `src/lib/settings.ts` | Gọi | `loadSettings` / `saveSettings` / `applySettingsToDOM`. **Đã cài** |
@@ -73,9 +80,14 @@ Kỹ thuật: giữ một state `now` (Date), đưa vào dependency của `useLi
 việc cập nhật `now`. **Đã cài** trong `web/src/lib/use-due-clock.ts` — `AppNav` và mọi màn hình
 đọc số đến hạn dùng chung hook này, không tự viết bản thứ hai.
 
-Cùng cơ chế này áp cho thẻ "Ôn tập hôm nay" của dashboard — cùng con số thì cùng nguồn.
+Cùng cơ chế này áp cho khối hành động chính của Bảng tin — cùng con số thì cùng nguồn.
 
-### 2.3. Ô số liệu dashboard dùng `src/lib/stats.ts`
+### 2.3. Số liệu dùng chung `src/lib/stats.ts`
+
+> **Đọc theo ngày.** Mục này ghi lại lý do `stats.ts` được tách ra (17/09/2026). Từ 22/09/2026,
+> **Bảng tin không còn ba ô số liệu đó** — xem §3.2. Bảng tin chỉ còn đọc `currentStreak` cho
+> tín hiệu nhịp học P2; `minutesOnDay` và `accuracyOverDays` phục vụ `/thong-ke`. Luật "một con
+> số thì một nguồn" bên dưới vẫn còn hiệu lực nguyên vẹn.
 
 Ba ô số liệu (streak · phút học hôm nay · % đúng 7 ngày) tính bằng các hàm thuần của SPEC-07
 §2.2 — `currentStreak`, `minutesOnDay`, `accuracyOverDays` — **viết ngay trong phase này**,
@@ -103,14 +115,12 @@ ngày sai ngay khi người học làm hơn 10 phiên.
 
 ### 3.1. Khung chung (áp cho mọi trang)
 
-Thanh điều hướng là một **dock nổi**, không phải thanh nav đặc kín đáy màn hình như
-`design-system.md` §6.3 mô tả. Đây là thay đổi có chủ đích, đã cài trong
-`web/src/components/AppNav.tsx`; mục này là hợp đồng mới, §6.3 của design system đọc theo đây
-cho phần nav.
+> **Hợp đồng vỏ ứng dụng — chốt 22/09/2026.** Mục này thay bản "dock nổi 6 mục" trước đó và
+> khớp với `DESIGN.md` §Navigation. Code hiện tại **chưa** theo bản này; phần lệch ghi ở §9.
 
-**Sáu khu vực, không phải năm.** Bản đầu của spec liệt kê 5 mục và để dashboard `/` không có
-lối vào nào trong nav — người dùng đang ở `/hoc` không có cách nào quay về trang chủ ngoài
-logo hay nút back. Dock thêm mục **Bảng tin** (`/`) đứng đầu, lấp đúng lỗ đó.
+**Năm khu vực chính.** Cài đặt ra khỏi nav chính — người học mở nó vài lần, không mở mỗi ngày.
+Lỗ hổng mà bản trước phải thêm mục thứ sáu để vá (không có lối về trang chủ) được lấp bằng
+cách khác: **Bảng tin là một trong năm khu vực chính**, còn Cài đặt xuống lối vào thứ cấp.
 
 | Thứ tự | Nhãn | Đường dẫn | Icon Lucide |
 |---|---|---|---|
@@ -119,69 +129,218 @@ logo hay nút back. Dock thêm mục **Bảng tin** (`/`) đứng đầu, lấp 
 | 3 | Luyện tập | `/luyen-tap` | `Dumbbell` |
 | 4 | Ôn tập | `/on-tap` | `RotateCcw` |
 | 5 | Thống kê | `/thong-ke` | `BarChart3` |
-| 6 | Cài đặt | `/cai-dat` | `Settings` |
 
-**Mobile (< 640px) — dock có nhãn**
+**Hai vỏ, một mốc chuyển — `lg` (1024px).**
+
+**< 1024px — thanh điều hướng đáy**
 
 ```
 ┌──────────────────────────────────┐
 │                                  │
-│   Nội dung trang                 │  ← chừa chỗ cho dock: pb-32
-│                                  │
+│   Nội dung trang                 │  ← chừa chỗ cho thanh nav đáy
 │                                  │
 │   ╭────────────────────────────╮ │
-│   │ ▣   ▤   ▥   ▦•  ▧   ▨      │ │  ← icon 22px
-│   │Bảng Học Luyện Ôn Thống Cài  │ │  ← nhãn Caption 10px, LUÔN HIỆN
-│   ╰────────────────────────────╯ │  ← dock nổi, bo tròn, cách đáy 12px + safe-area
+│   │  ▣    ▤    ▥    ▦•   ▧     │ │  ← icon 24px
+│   │ Bảng  Học Luyện  Ôn  Thống │ │  ← nhãn Caption, LUÔN HIỆN ở mọi bề rộng < lg
+│   ╰────────────────────────────╯ │
 └──────────────────────────────────┘
 ```
 
-Mỗi ô **56×56px**, icon 22px phía trên, nhãn Caption 10px phía dưới. Sáu ô là 336px cộng
-padding 12px = **348px**, còn dư hơn 20px mỗi bên ở màn hình 390px.
+Giữ kiểu **dock nổi** đã duyệt: bo tròn hết cỡ, cách đáy 12px cộng safe-area, nền mờ có
+`backdrop-blur`, viền mảnh. Đây là bề mặt "nav nổi" duy nhất được phép blur
+(`DESIGN.md` §Surfaces and elevation).
 
-> **Nhãn phải luôn hiện ở mobile — đây là ràng buộc cứng.** Bản cài hiện tại chỉ có nhãn trong
-> tooltip `group-hover`, mà thiết bị cảm ứng không có trạng thái hover: người dùng mobile thấy
-> sáu icon câm và phải bấm thử từng cái. Tooltip là cơ chế của con trỏ chuột, không phải của
-> ngón tay. Không thay bằng chạm-giữ: một cử chỉ không có dấu hiệu nào báo là nó tồn tại thì
-> không ai dùng.
+> **Nhãn phải luôn hiện ở mọi bề rộng dưới `lg` — ràng buộc cứng.** Máy tính bảng cũng là thiết
+> bị cảm ứng; tooltip là cơ chế của con trỏ chuột, không phải của ngón tay. Không có biến thể
+> "chỉ icon" ở 640px nữa. Không thay bằng chạm-giữ: một cử chỉ không có dấu hiệu nào báo là nó
+> tồn tại thì không ai dùng.
 
-**≥ 640px — dock icon, tooltip khi hover**
+Mỗi ô tối thiểu 48px chiều cao (`DESIGN.md` §Spacing and touch targets), icon 24px phía trên,
+nhãn Caption phía dưới. Năm ô rộng rãi trong 390px.
 
-Ô 52×52px, chỉ icon 24px. Nhãn hiện trong tooltip phía trên, chỉ trong
-`@media (hover: hover)`. Sau sáu mục là một vạch ngăn 1px rồi **nút tìm kiếm** (`Search`) —
-nút này thuộc SPEC-13; cho tới khi SPEC-13 có route thật thì **ẩn nó đi**, đừng để một nút dẫn
-tới 404.
+**≥ 1024px — sidebar trái**
 
-Dock giữ nguyên vị trí nổi ở đáy trên mọi bề rộng. **Không** đổi sang nav đầu trang ở desktop:
-một thanh cố định ở đáy với sáu đích lớn dùng được bằng ngón cái trên mobile và bằng chuột
-trên desktop; hai bố cục khác nhau là hai thứ phải bảo trì.
+Năm khu vực xếp dọc trong sidebar trái; **không** có thanh đầu trang, và thanh nav đáy biến mất
+hoàn toàn. Khu vực tài khoản nằm cuối sidebar. Sidebar là bề mặt thường, phân tách bằng viền
+1px — không blur, vì nội dung nằm **cạnh** nó chứ không trôi **dưới** nó.
 
-**Vỏ dock:** nền `background/85` (dark: `card/80`) + `backdrop-blur`, viền `border/70`,
-`shadow-2xl`, bo tròn hết cỡ. Mục đang mở: chữ `primary` trên nền `primary/15`. Mục không mở:
-`muted-foreground`, hover về `foreground` trên nền `muted/60`.
+> **Chi tiết sidebar chưa chốt và không chốt ở đây:** bề rộng, trạng thái thu gọn, vị trí logo,
+> bố cục khu vực tài khoản. Đó là câu hỏi thị giác, sẽ khám phá bằng Stitch khi làm màn Bảng
+> tin (Golden Screen #1) rồi ghi ngược về mục này.
 
-**Khoảng chừa nội dung:** `pb-32` (mobile) / `pb-40` (≥640px) — dock nổi nên cần nhiều chỗ hơn
-`pb-24` của nav đặc. Trang cuối cùng không được bị dock che.
+**Lối vào thứ cấp.** Cài đặt, hồ sơ, trạng thái đồng bộ, chủ đề và đăng xuất nằm sau **một**
+lối vào tài khoản:
 
-**Huy hiệu đồng bộ không nằm trong dock.** Dock đã đủ chật với sáu mục; huy hiệu đặt ở góc phải
-header của từng trang (dashboard đã làm đúng).
+| Vỏ | Vị trí |
+|---|---|
+| < `lg` | Nút avatar/hồ sơ ở header trang Bảng tin |
+| ≥ `lg` | Khu vực tài khoản cuối sidebar |
 
-### 3.2. Dashboard `/`
+**Không** thêm mục "Thêm" vào nav đáy. Khi menu thứ cấp lớn hơn một lối vào thì quay lại sửa
+hợp đồng, không tự ứng biến thêm slot.
 
-Khuôn mẫu: `design-system.md` §10.1. Bề rộng `max-w-5xl`.
+**Tìm kiếm** (SPEC-13) là mục thứ cấp, không phải khu vực chính; chưa có route thật thì không
+hiện lối vào nào.
+
+**Khoảng chừa nội dung** theo ngữ nghĩa vỏ, đặt **một lần** trong app shell, không rải ở từng
+trang:
+
+| Vỏ | Chừa đáy |
+|---|---|
+| < `lg` (nav đáy) | Chừa đủ để phần tử cuối không bị thanh nav che |
+| ≥ `lg` (sidebar) | **Không chừa đáy** — không còn gì ở đáy để tránh |
+
+Giá trị pixel của phần chừa mobile chốt cùng lúc với bản thị giác của thanh nav đáy khi duyệt
+màn Bảng tin. Không khóa con số ở thời điểm này.
+
+**Huy hiệu đồng bộ không nằm trong nav chính** — nó thuộc lối vào tài khoản ở trên.
+
+### 3.2. Bảng tin `/` — hợp đồng UX
+
+> **Chốt 22/09/2026 — UX đã duyệt, thị giác chưa duyệt.** Mục này thay bản "dashboard bốn ô số
+> liệu" trước đó. Code hiện tại **chưa** theo bản này; phần lệch ghi ở §9. Phần thị giác (bố cục
+> cụ thể, tỷ lệ, mật độ) chưa chốt — đó là việc của §10.
+
+Khuôn bề rộng: `content-wide` (`DESIGN.md` §Layout and containers) — `max-w-5xl`, đo trong
+**vùng nội dung cạnh sidebar** khi ở desktop, không đo theo viewport.
+
+**Mục tiêu của màn.** Giúp người học bắt đầu ngay hành động học phù hợp nhất mà không phải tự
+phân tích nên làm gì tiếp theo.
+
+Bảng tin **không phải** trang phân tích, **không phải** danh mục tính năng (nav năm khu vực đã
+làm việc đó), và **không phải** hệ thống việc-cần-làm theo ngày.
+
+Hướng đã duyệt là kết hợp hai thứ: *quyết định việc nên làm tiếp theo* và *giữ ngữ cảnh mình
+đang học bài nào*.
+
+#### Kiến trúc thông tin
+
+Đây là kiến trúc thông tin, không phải bố cục pixel. Cách sắp xếp thị giác thuộc §10.
 
 ```
-[Header: lời chào + huy hiệu streak + huy hiệu đồng bộ (phải)]
-[Thẻ lớn: "Ôn tập hôm nay — n mục đến hạn" → nút default duy nhất của trang]
-[Hàng 3 ô số liệu: streak · phút học hôm nay · % đúng 7 ngày]
-[Thẻ: bài học đang dở]
-[Thẻ: 3 điểm yếu hàng đầu]
+Bảng tin
+├── Header
+│   ├── lời chào ngắn
+│   └── lối vào tài khoản / avatar     (§3.1 — đường duy nhất tới Cài đặt ở < lg)
+├── Việc nên làm tiếp theo             P0
+├── Bài đang học                       P0 hoặc P1 — xem luật hợp nhất
+├── Cần củng cố                        P1, ẩn khi bằng 0
+└── Nhịp học                           P2
 ```
 
-Mobile xếp dọc `gap-4`; từ `md` hàng số liệu thành 3 cột.
+| Mức | Nội dung |
+|---|---|
+| **P0** | Việc nên làm tiếp theo · số mục đến hạn khi lớn hơn 0 · lối vào tài khoản · bài đang học **khi nó chính là** việc nên làm tiếp theo |
+| **P1** | Bài đang học khi ôn tập đang là hành động chính · lối đi thay thế · tóm tắt "Cần củng cố" |
+| **P2** | Nhịp học |
 
-> **Xóa hẳn `web/src/app/page.tsx` hiện tại.** 124 dòng marketing với 6 thẻ "Sẵn sàng…" mô tả
-> các tính năng chưa tồn tại. Không sửa, thay.
+Không có nội dung P3 trên Bảng tin ở phiên bản này.
+
+#### Việc nên làm tiếp theo — P0
+
+Đúng **một** hành động nổi bật trên màn. Quy tắc chọn:
+
+| Điều kiện | Hành động chính | Đích |
+|---|---|---|
+| `dueCount > 0` | Ôn các mục đến hạn | `/on-tap` |
+| `dueCount = 0` và có bài đang học | Học tiếp bài đang học | `/hoc/<số>` |
+| `dueCount = 0` và chưa học gì | Bắt đầu bài 1 | `/hoc/1` |
+
+Đây là bản mở rộng của quy tắc đã duyệt trước đó (đổi `variant` giữa hai nút ngang hàng) thành
+**chọn một hành động**. Nút chính vẫn là nút `default` duy nhất của trang.
+
+Chữ trên nút nói **việc sẽ làm**, theo giọng văn ở `PRODUCT.md`: "Bắt đầu ôn", "Học tiếp bài 7",
+"Bắt đầu bài 1". Số liệu đi kèm (`12 mục cần ôn`, `Bài 7 đang học`) nằm ở phần ngữ cảnh của
+khối, không nhồi hết vào nhãn nút.
+
+**Luôn phải có một lối đi thay thế.** Khi hành động chính là ôn tập, người học vẫn phải tới
+được bài đang học mà không cần đi vòng qua nav — lối đó chính là khối "Bài đang học".
+
+#### Bài đang học — và luật không nhân đôi
+
+**Ràng buộc cứng.** Khi hành động chính *là* "học tiếp bài đang học", thì "Việc nên làm tiếp
+theo" và "Bài đang học" phải là **một khối duy nhất**. Không dựng một thẻ lớn "Việc nên làm"
+rồi ngay dưới đặt một thẻ lớn thứ hai lặp lại cùng bài, cùng tiến độ, cùng nút.
+
+| Tình huống | Cấu trúc |
+|---|---|
+| `dueCount > 0` | Khối ôn tập là P0; **Bài đang học** là khối P1 riêng bên dưới |
+| `dueCount = 0` | Hai vai trò **hợp nhất**: một khối vừa là ngữ cảnh vừa mang nút chính của trang |
+
+Khối "Bài đang học" trả lời đúng một câu — *tôi đang ở đâu* — và được phép chứa: số bài, tên
+bài, tiến độ **thật** trong bài, lối vào học tiếp.
+
+**Không** chứa: số mẫu ngữ pháp viết cứng, tổng số từ ước lượng, hay số liệu phân tích của bài.
+
+##### Dữ liệu "bài đang học" phải đúng
+
+Bản cài hiện tại suy bài đang học bằng `recentSessions[0].selectedLessons[0]`
+(`web/src/app/page.tsx`). **Đó không phải hợp đồng đúng**: nó trả về bài *nhỏ nhất trong lần
+chọn luyện tập gần nhất*, nên người học đang ở bài 7 mà lần luyện gần nhất chọn [1, 2, 7] thì
+Bảng tin nói "bài 1"; người chưa học gì thì rơi về `1` và bị gọi là "đang học dở".
+
+Hợp đồng:
+
+> "Bài đang học" phải phản ánh tiến trình học thật và phải **nhất quán với cách khu vực Học
+> xác định bài hiện hành**. Bên triển khai **dùng lại hoặc hợp nhất** logic đã có
+> (`countLearnedByLesson` + `vocabCount` thật, như `web/src/components/LessonGrid.tsx` đang
+> làm), **không** viết thuật toán riêng cho Bảng tin.
+
+Không refactor trong task tài liệu này; đây là yêu cầu cho phase triển khai (§9).
+
+#### Cần củng cố — P1
+
+Chỉ **số lượng** và **một** lối vào: "n nội dung cần củng cố → Xem và luyện lại" →
+`/on-tap/diem-yeu`.
+
+Không liệt kê ba mục tiêu kèm ba nút "Luyện lại" trên Bảng tin — danh sách, bộ lọc theo loại và
+thao tác từng mục thuộc `/on-tap/diem-yeu`.
+
+`n = 0` thì **ẩn hẳn khối**, không render thẻ rỗng để giữ bố cục.
+
+#### Nhịp học — P2
+
+Một tín hiệu **nhẹ** trả lời "tôi có đang đều không". Chuỗi ngày (`currentStreak`) là ứng viên
+duy nhất đang có dữ liệu thật. Ràng buộc:
+
+- Không phải ô số liệu, không phải thẻ KPI.
+- Không dùng chuyển động để gây chú ý.
+- Không tạo áp lực, không trách móc khi chuỗi đứt (`PRODUCT.md` — Giọng văn).
+- Không được trở thành điểm nhấn thị giác của màn.
+
+Trình bày cụ thể (chip nhỏ ở header, dòng phụ, tóm tắt ở chân trang) là phần §10 khám phá.
+
+#### Không thuộc Bảng tin
+
+| Đã bỏ khỏi hợp đồng | Thuộc về |
+|---|---|
+| Bốn ô số liệu: chuỗi ngày · phút hôm nay · % đúng 7 ngày · từ vựng N5 | `/thong-ke`; tiến độ N5 theo bài ở `/hoc` |
+| Phân loại mục đến hạn theo từ vựng/ngữ pháp | `/on-tap` |
+| Danh sách xem trước hàng đợi ôn | `/on-tap` |
+| Ba dòng điểm yếu kèm nút riêng từng dòng | `/on-tap/diem-yeu` |
+| Widget "Kanji hôm nay" | Không thuộc màn nào hiện có; cân nhắc lại ở luồng Học hoặc Tra cứu sau |
+| Mục tiêu phút/ngày, danh sách việc hôm nay, trạng thái "xong việc hôm nay" | Chưa tồn tại — xem ghi chú dưới |
+| Tên người dùng viết cứng, tục ngữ, emoji trang trí | Không phải nội dung bắt buộc của màn |
+
+> **Không phát minh mục tiêu theo ngày.** Con số `30 phút` trong code hiện tại không phải yêu
+> cầu sản phẩm: `settings.ts` chỉ có `dailyNewLimit`, không có mục tiêu thời gian nào. Muốn có
+> khái niệm "hôm nay đủ chưa" thì cần một quyết định sản phẩm riêng kèm mô hình dữ liệu, không
+> phải một mẫu số viết thẳng trong JSX.
+
+Lời chào ở header phải ngắn, không chiếm thứ bậc, không mang tên người viết cứng, và không có
+chuyển động trang trí.
+
+#### Responsive
+
+| Bề rộng | Bố cục |
+|---|---|
+| ~390px | Xếp dọc đúng thứ tự kiến trúc thông tin. Hành động chính phải xuất hiện **rất sớm** — không có hàng số liệu nào chen phía trên. Chừa đáy cho thanh nav nổi (§3.1) |
+| `sm` / `md` | Được nới khoảng trắng, cho một vài khối phụ thành hai cột, làm dày thêm ngữ cảnh bài học. **Không** thêm nhóm thông tin mới chỉ vì có thêm bề rộng |
+| `lg` trở lên | Có sidebar; nội dung nằm trong `content-wide` **đo trong vùng nội dung**. Được phép chia cột chính / cột phụ. **Không** bịa section mới để lấp chỗ trống |
+
+> **Xóa hẳn `web/src/app/page.tsx` bản 16/09.** 124 dòng marketing với 6 thẻ "Sẵn sàng…" mô tả
+> các tính năng chưa tồn tại. Việc này **đã làm xong** ngày 17/09; bản hiện tại là bản khác và
+> lệch theo cách khác — xem §9.
 
 ## 4. Component dùng lại
 
@@ -189,24 +348,27 @@ Lấy từ `DESIGN.md`, không mô tả lại:
 
 | Vai trò | Token component |
 |---|---|
-| Mục dock đang mở / không mở | `nav-item-active` / `nav-item-inactive` — nếu token chưa khớp dock thì **sửa token**, không hardcode màu trong component |
-| Vỏ dock | `nav-bar` + `backdrop-blur`, bo tròn hết cỡ |
+| Mục nav đang mở / không mở | `nav-item-active` / `nav-item-inactive` — nếu token chưa khớp thì **sửa token**, không hardcode màu trong component |
+| Vỏ nav đáy (< `lg`) | `nav-bar` + `backdrop-blur`, bo tròn hết cỡ |
+| Vỏ sidebar (≥ `lg`) | Bề mặt thường + viền 1px, **không** blur |
 | Huy hiệu đồng bộ | `sync-badge-synced` / `sync-badge-pending` / `sync-badge-offline` |
-| Thẻ "Ôn tập hôm nay", ô số liệu, thẻ điểm yếu | `card` |
-| Nút vào phiên ôn | `button-primary` cỡ `quiz` (48px) |
-| Thẻ mục tiêu trong "3 điểm yếu" | `design-system.md` §9.8, quá hạn dùng `badge-overdue` |
+| Khối "Việc nên làm tiếp theo" / "Bài đang học" / "Cần củng cố" | `card` |
+| Nút hành động chính của Bảng tin | `button-primary` cỡ `quiz` (48px) |
+| Tiến độ trong bài | `ui/progress.tsx` + `LessonProgress.tsx` — **không** dựng thanh thứ ba tại chỗ |
+| Khung tải | `ui/skeleton.tsx` |
+| Lối vào tài khoản / avatar | **Chưa có implementation** — xem §9 |
 
-Icon Lucide: xem bảng sáu mục ở §3.1.
+Icon Lucide: xem bảng năm khu vực ở §3.1.
 
 **Chỉ dùng token màu theo tên.** Bản cài hiện tại có màu bảng Tailwind viết thẳng — 5 chỗ trong
 `page.tsx` (`amber-500`, `blue-500`, `emerald-500`) và 1 chỗ trong `SyncBadge.tsx`. Đổi hết
-sang token: ô số liệu dùng `chart-1…5` theo ánh xạ cố định (`design-system.md` §11.3), huy hiệu
+sang token: ô số liệu dùng `chart-1…5` theo ánh xạ cố định (`DESIGN.md` §Charts), huy hiệu
 chờ đồng bộ dùng `warning`. `AGENTS.md` cấm hardcode màu trong component, và bộ màu Washi mất
 tác dụng ngay khi có một ô lệch tông.
 
 ## 5. Trạng thái
 
-**Huy hiệu đồng bộ** (`design-system.md` §9.7) — mỗi trạng thái có icon **và** chữ riêng:
+**Huy hiệu đồng bộ** (`DESIGN.md` §Components) — mỗi trạng thái có icon **và** chữ riêng:
 
 | Trạng thái | Màu | Icon | Chữ |
 |---|---|---|---|
@@ -226,31 +388,37 @@ tác dụng ngay khi có một ô lệch tông.
 
 Trên mobile chỉ hiện icon; chữ hiện khi chạm.
 
-**Mọi phần tử bấm được** đủ sáu trạng thái theo `design-system.md` §8: Mặc định · Hover
+**Mọi phần tử bấm được** đủ sáu trạng thái theo `DESIGN.md` §Interaction states: Mặc định · Hover
 (chỉ trong `(hover: hover)`) · Focus (ring 3px `ring-ring/50`, **không bao giờ tắt outline**) ·
 Active (`translate-y-px`) · Disabled (`opacity-50`, `pointer-events-none`) · Loading (spinner
 thay icon, giữ nguyên bề rộng).
 
-**Trạng thái của dashboard**
+**Trạng thái của Bảng tin** (hợp đồng §3.2)
 
 | Tình huống | Hiển thị |
 |---|---|
-| Chưa học buổi nào | Thẻ lớn thành "Bắt đầu bài 1" → `/hoc/1`. Ô số liệu hiện `—`, không hiện `0%` |
-| Không có mục đến hạn | "Hôm nay không có gì đến hạn" + gợi ý học bài mới. Không để thẻ trống |
-| Đang tải Dexie | Skeleton đúng kích thước thẻ thật, không đẩy bố cục |
-| Badge "Ôn tập" = 0 | Ẩn hẳn badge, không hiện số 0 |
+| **Đang tải** — truy vấn Dexie chưa trả về | Skeleton đúng kích thước khối thật, không đẩy bố cục. **Không coi `undefined` là `0`**: dựng nhánh "không có gì đến hạn" trong lúc dữ liệu chưa về là hiện một trạng thái thành công sai rồi nhảy sang trạng thái thật ngay sau đó |
+| **Người dùng mới** — chưa có phiên, chưa có `reviewItems` | Hành động chính là "Bắt đầu bài 1" → `/hoc/1`. **Không** gọi bài 1 là "đang học dở". Không hiện `0%` hay `0/650`, không có lời nhắc nào về chuỗi ngày bằng 0 |
+| **Không có mục đến hạn** | Không render thẻ ôn tập rỗng. Hành động chính chuyển sang bài đang học theo luật hợp nhất ở §3.2 |
+| **Không có điểm yếu** | Ẩn hẳn khối "Cần củng cố", không giữ thẻ rỗng để cân bố cục |
+| **Dữ liệu thưa** | Hiện `—` cho thứ chưa tính được. Không bịa giá trị mặc định, không vẽ tiến độ trên mẫu số ước lượng |
+| Badge "Ôn tập" trên nav = 0 | Ẩn hẳn badge, không hiện số 0 |
 | Badge > 99 | Hiện `99+` |
-| Mục nav trỏ route chưa dựng | Vẫn hiện trong dock (5/6 route sẽ 404 cho tới khi SPEC-03–07 xong). **Trừ nút tìm kiếm**: ẩn cho tới khi SPEC-13 có route |
+| Mục nav trỏ route chưa dựng | Vẫn hiện trong nav (một số route 404 cho tới khi SPEC-03–07 xong). Lối vào **thứ cấp** thì ngược lại: chưa có route thật thì ẩn, đừng để một nút dẫn tới 404 |
 
 ## 6. Tương tác & chuyển động
 
-- Đổi mục dock: 150ms `ease-out` cho màu. Không animate chuyển trang.
-- Hover trên dock (chỉ `@media (hover: hover)`): icon phóng nhẹ và nhấc lên 2px, 150ms.
+- Đổi mục nav: 150ms `ease-out` cho màu. Không animate chuyển trang, không animate lúc vỏ
+  chuyển giữa nav đáy và sidebar ở `lg`.
+- Hover trên mục nav (chỉ `@media (hover: hover)`): icon phóng nhẹ và nhấc lên 2px, 150ms.
   Chạm: `active:scale-95`.
-- **Badge số đến hạn không được `animate-pulse` trần.** Bản cài hiện tại nhấp nháy vĩnh viễn
-  và không tôn trọng `prefers-reduced-motion`. Bọc trong
-  `@media (prefers-reduced-motion: no-preference)`, hoặc bỏ hẳn — con số đỏ trên nền dock đã
-  đủ nổi, một vật thể động thường trực trong tầm mắt là thứ gây mỏi ở một app học 30 phút liền.
+- **Badge số đến hạn không nhấp nháy — bỏ hẳn `animate-pulse`.** `DESIGN.md` §Navigation cấm
+  chuyển động lặp vô hạn để gây chú ý; bọc trong `prefers-reduced-motion` cũng không đủ, vì
+  người không bật tùy chọn đó vẫn phải nhìn nó suốt buổi học. Con số đỏ đã đủ nổi, và một vật
+  thể động thường trực trong tầm mắt là thứ gây mỏi ở một app học 30 phút liền.
+- **Không có chuyển động trang trí thường trực trên Bảng tin.** Cùng lý do trên, áp cho mọi
+  phần tử của màn — kể cả chấm nhấp nháy cạnh lời chào. Chuyển động chỉ dùng để phản hồi một
+  thao tác, không dùng để làm màn hình "sống động".
 - **`Ctrl+K`: chưa làm gì thì chưa đăng ký.** Hộp tìm kiếm thuộc SPEC-13. Một listener
   `preventDefault` mà không mở gì chỉ có một tác dụng: chặn mất thao tác sẵn có của trình
   duyệt (Chrome/Edge: nhảy vào thanh địa chỉ ở chế độ tìm kiếm; Firefox: mở thanh tìm kiếm).
@@ -297,39 +465,106 @@ mục Cài đặt.
 
 ## 9. Tiêu chí nghiệm thu
 
+> **Đọc kỹ ngày.** Danh sách "đã kiểm 17/09/2026" nghiệm thu bản **dock nổi 6 mục**, tức hợp
+> đồng cũ. Hợp đồng vỏ ứng dụng đổi ngày 22/09/2026 (§3.1) và **code chưa được sửa theo**.
+> Những mục đánh dấu ✱ dưới đây là bằng chứng lịch sử, không còn là tiêu chí hiện hành.
+
+**Lệch so với hợp đồng 22/09/2026 — chưa sửa, không sửa trong task tài liệu:**
+
+- [ ] Nav còn 6 mục gồm Cài đặt (`AppNav.tsx`) — hợp đồng chốt 5 khu vực chính
+- [ ] Chưa có lối vào tài khoản/avatar; Cài đặt vẫn là một mục nav
+- [ ] Vỏ đổi ở 640px bằng `useMediaQuery` JS — hợp đồng chốt mốc `lg` (1024px) và ưu tiên CSS
+- [ ] Chưa có sidebar trái ở ≥ 1024px; dock đáy hiện ở mọi bề rộng
+- [ ] Từ 640px nav còn biến thể chỉ-icon + tooltip — hợp đồng yêu cầu nhãn luôn hiện dưới `lg`
+- [ ] Badge đến hạn còn `motion-safe:animate-pulse` — hợp đồng cấm nhấp nháy thường trực
+- [ ] Khoảng chừa đáy còn rải ở từng trang (`pb-36 sm:pb-44` ở shell, `pb-32 sm:pb-16`,
+      `pb-28` ở trang) — hợp đồng yêu cầu đặt một lần ở shell và bằng 0 từ `lg`
+
+**Lệch so với hợp đồng UX Bảng tin 22/09/2026** (§3.2) — chưa sửa, không sửa trong task tài
+liệu. Bằng chứng ở `web/src/app/page.tsx` trừ khi ghi khác:
+
+- [ ] Còn bốn ô số liệu (chuỗi học tập · thời gian hôm nay · tỷ lệ nhớ 7 ngày · từ vựng N5) —
+      hợp đồng bỏ hết khỏi Bảng tin
+- [ ] Hai thẻ lớn ngang hàng ("bài đang học dở" và "hàng đợi ôn tập") — hợp đồng chỉ cho **một**
+      hành động chính, và bắt hợp nhất hai vai trò khi `dueCount = 0`
+- [ ] "Bài đang học" suy từ `recentSessions[0].selectedLessons[0]` — sai theo §3.2; phải nhất
+      quán với cách `LessonGrid.tsx` xác định bài hiện hành
+- [ ] Mẫu số viết cứng: `estimatedLessonTotal = 35`, `/ 650 từ`, `/ 30 phút`, `4 mẫu câu` —
+      `% tiến trình bài` đang tính trên mẫu số ước lượng
+- [ ] Tên người dùng viết cứng trong lời chào — chưa có danh tính người dùng nào trong app
+- [ ] Chấm `animate-pulse` trang trí cạnh lời chào — §6 cấm chuyển động lặp thường trực
+- [ ] Hiện phân loại mục đến hạn theo từ vựng/ngữ pháp — thuộc `/on-tap`
+- [ ] Hiện ba dòng điểm yếu kèm ba nút "Luyện lại" — hợp đồng chỉ cho số lượng + một lối vào
+- [ ] Vẫn render `DailyKanji` — không còn thuộc hợp đồng Bảng tin
+- [ ] Không có lối vào tài khoản/avatar ở header — hợp đồng coi đây là P0
+- [ ] Không có skeleton; `useLiveQuery` trả `undefined` bị coi như `dueCount = 0`, nên lần vẽ
+      đầu hiện trạng thái "đã hoàn tất hôm nay" rồi mới nhảy sang số thật
+- [ ] Khuôn bề rộng là `max-w-6xl`, hợp đồng là `content-wide` = `max-w-5xl`
+- [ ] Trang không chừa đáy (`main` không có `pb`), nên thanh nav nổi che khối cuối ở mobile
+- [ ] Màu bảng Tailwind quay lại trong `page.tsx` (`amber-500`, `emerald-500/600`,
+      `blue-500/600`) và trong `AppNav.tsx` — **hồi quy** so với mục đã nghiệm thu 17/09 bên dưới
+- [ ] Thanh tiến độ tự chế viết tại chỗ (hai chỗ trong `page.tsx`) thay vì dùng
+      `ui/progress.tsx` / `LessonProgress.tsx`
+
 **Đã kiểm bằng code + `pnpm check` / `pnpm test` / `pnpm build` (17/09/2026):**
 
-- [x] Mỗi mục dock có nhãn chữ thật ở mobile (`<span className="sm:hidden">`), ô `w-14 h-14`
-      = 56×56px đúng §3.1
-- [x] Từ 640px tooltip chỉ render khi `isDesktop` — **không** có phần tử `role="tooltip"` nào
+- [x] ✱ Mỗi mục dock có nhãn chữ thật ở mobile (`<span className="sm:hidden">`), ô `w-14 h-14`
+      = 56×56px đúng §3.1 *(bản 6 mục)*
+- [x] ✱ Từ 640px tooltip chỉ render khi `isDesktop` — **không** có phần tử `role="tooltip"` nào
       trong DOM ở mobile
-- [x] Trang chừa `pb-32 sm:pb-40` trong `layout.tsx`
-- [x] Nút tìm kiếm đã gỡ khỏi dock, không còn link nào trỏ `/tim-kiem`
-- [x] Không còn màu bảng Tailwind trong `page.tsx` và `SyncBadge.tsx` (dùng `chart-1..3`,
-      `warning`, `success`)
-- [x] Badge đến hạn dùng `motion-safe:animate-pulse`
+- [x] ✱ Trang chừa `pb-32 sm:pb-40` trong `layout.tsx`
+- [x] ✱ Nút tìm kiếm đã gỡ khỏi dock, không còn link nào trỏ `/tim-kiem`
+- [x] ✱ Không còn màu bảng Tailwind trong `page.tsx` và `SyncBadge.tsx` (dùng `chart-1..3`,
+      `warning`, `success`) — **đúng ở 17/09, đã hồi quy**: xem danh sách lệch bên trên
+- [x] ✱ Badge đến hạn dùng `motion-safe:animate-pulse`
 - [x] Badge "Ôn tập" đếm `dueAt <= now`, bằng 0 thì ẩn hẳn
 - [x] `AppNav` và dashboard cùng lấy mốc thời gian từ `useDueClock` — `visibilitychange`,
       `focus`, và `setTimeout` hẹn tới `dueAt` gần nhất
 - [x] `store.ts` không còn `furiganaVisible` / `studyMode`; cài đặt đọc qua `settings.ts`
-- [x] Ba ô số liệu gọi `stats.ts`, không còn phép tính nào viết tại chỗ trong `page.tsx`
+- [x] ✱ Ba ô số liệu gọi `stats.ts`, không còn phép tính nào viết tại chỗ trong `page.tsx`
+      *(hợp đồng 22/09 bỏ hẳn các ô số liệu khỏi Bảng tin — mục này không còn là tiêu chí)*
 - [x] Không còn listener `Ctrl+K` nào — phím trả về hành vi mặc định của trình duyệt
 - [x] Streak tính từ `practiceSessions`, không phải hằng số
 - [x] Phiên lúc 23:30 giờ địa phương tính vào hôm nay (`stats.test.ts`)
 - [x] `% đúng 7 ngày` tính trên mọi phiên trong cửa sổ 90 ngày, không giới hạn số phiên
-- [x] Dashboard tài khoản trắng hiện `—` và "Chưa có chuỗi", không hiện `0%`
+- [x] ✱ Dashboard tài khoản trắng hiện `—` và "Chưa có chuỗi", không hiện `0%` *(nguyên tắc
+      còn hiệu lực, nhưng các ô số liệu mang nó đã bị bỏ — xem §3.2)*
 - [x] `page.tsx` cũ đã bị thay hẳn, không còn thẻ "Sẵn sàng…" nào
-- [x] Đúng một nút `default` hiển thị trên dashboard (ba nhánh `size="quiz"` loại trừ nhau)
+- [x] Đúng một nút `default` hiển thị trên Bảng tin — nguyên tắc này §3.2 giữ nguyên và siết
+      thêm: chỉ một **hành động chính**, không phải hai thẻ lớn tranh nhau
+
+**Tiêu chí nghiệm thu Bảng tin cho phase triển khai sau** (hợp đồng §3.2 — chưa mục nào đạt):
+
+- [ ] Hành động chính được chọn đúng theo ba nhánh ở §3.2, và trên màn chỉ có **một** hành động
+      mang trọng số chính
+- [ ] Khi `dueCount = 0`, "Việc nên làm tiếp theo" và "Bài đang học" là **một khối**, không phải
+      hai thẻ lặp nội dung
+- [ ] Lúc dữ liệu chưa về: hiện skeleton, **không** chớp qua trạng thái "không có gì đến hạn"
+- [ ] Người dùng mới không bị gọi là "đang học dở", không thấy `0%` hay `0/650`
+- [ ] Không có tên người dùng viết cứng ở bất kỳ đâu
+- [ ] Không còn mẫu số ước lượng: tiến độ bài tính trên số từ thật của bài đó
+- [ ] Không còn bốn ô số liệu KPI
+- [ ] Không còn phân loại mục đến hạn theo loại trên Bảng tin
+- [ ] Không còn ba dòng điểm yếu kèm nút riêng; chỉ còn số lượng + một lối vào
+- [ ] Không còn `DailyKanji` trên Bảng tin
+- [ ] "Bài đang học" cho cùng kết quả với khu vực Học trên cùng một bộ dữ liệu
+- [ ] Có lối vào tài khoản/avatar, và ở `< lg` nó mở được tới Cài đặt
+- [ ] Ở 390px không phần tử nào bị thanh nav nổi che, kể cả khối cuối trang
+- [ ] Khuôn bề rộng là `content-wide`, đo trong vùng nội dung khi có sidebar
+- [ ] Không có chuyển động lặp thường trực nào trên màn
 
 **Chưa kiểm được bằng code — cần mở trình duyệt thật:**
 
-- [ ] Ở 390px: dock 6 mục không tràn, nhãn không bị cắt chữ, không cuộn ngang
+- [ ] Ở 390px: nav 5 mục không tràn, nhãn không bị cắt chữ, không cuộn ngang
+- [ ] Ở 768px (máy tính bảng): vẫn là nav đáy, nhãn vẫn hiện, **không** có tooltip nào
+- [ ] Ở 1280px: sidebar trái, không còn nav đáy, nội dung không bị chừa thừa ở đáy
+- [ ] Lối vào tài khoản mở được Cài đặt · trạng thái đồng bộ · chủ đề, ở cả hai vỏ
 - [ ] Bật "ẩn furigana", tải lại trang → furigana **không** nhấp nháy lần nào (thử với CPU
       throttle 4×)
 - [ ] Để tab mở qua một mốc `dueAt` (chỉnh `dueAt` về 1 phút sau trong DevTools) → badge tự
       tăng, **không** cần tải lại trang
-- [ ] Chuyển tab rồi quay lại sau nửa đêm → badge và thẻ dashboard tính theo ngày mới
-- [ ] Bật "giảm chuyển động" của hệ điều hành → badge ngừng nhấp nháy, số vẫn hiện
+- [ ] Chuyển tab rồi quay lại sau nửa đêm → badge và khối hành động chính tính theo ngày mới
+- [ ] Badge đến hạn không có chuyển động lặp ở bất kỳ chế độ nào, số vẫn hiện
 - [ ] Đủ sáu trạng thái cho mọi phần tử bấm được, focus ring còn nguyên
 - [ ] Xem ở 390px và 1280px, cả chế độ sáng lẫn tối
 
@@ -338,59 +573,164 @@ mục Cài đặt.
 
 ## 10. Khối lệnh bàn giao thiết kế
 
-Dán nguyên khối dưới đây kèm `web/DESIGN.md` vào Stitch / Claude Design.
+Dán nguyên khối dưới đây kèm `DESIGN.md` (ở gốc repo) vào Stitch / Claude Design.
+
+> **Hai thứ đã được quyết định trước khi khối này chạy.** Vỏ điều hướng (§3.1 và `DESIGN.md`
+> §Navigation) và kiến trúc thông tin của Bảng tin (§3.2). Công cụ thị giác **không** chọn lại
+> số khu vực, vị trí Cài đặt, mốc chuyển vỏ, hay các nhóm thông tin của Bảng tin. Nó khám phá
+> **bố cục, mật độ và thứ bậc thị giác** — phần được phép quyết định liệt kê ở khối D, phần đã
+> khóa liệt kê ở khối E.
 
 ---
 
-Nạp `DESIGN.md` làm hợp đồng token. Ba ràng buộc bắt buộc:
+*Bối cảnh: ứng dụng web học tiếng Nhật N5 cho một người học, theo giáo trình Minna no Nihongo,
+giao diện tiếng Việt. Ưu tiên điện thoại; viewport chính là **390px**, mở rộng lên desktop.*
+
+Nạp `DESIGN.md` làm hợp đồng token và hướng thị giác. Ba ràng buộc bắt buộc:
 
 1. Chỉ dùng token màu theo tên (`bg-primary`, `text-muted-foreground`), **tuyệt đối không
    hardcode mã hex**.
 2. Mobile-first: dựng bố cục 390px trước, rồi mới mở rộng lên 1024px.
 3. Mọi chữ tiếng Nhật phải bọc trong phần tử có class `jp`.
 
-Dựng hai thứ:
+Dựng các phần sau:
 
-**A. Dock điều hướng.** Một thanh **nổi, bo tròn hết cỡ**, cách đáy màn hình 12px cộng
-safe-area, căn giữa theo chiều ngang, nền mờ có `backdrop-blur`, viền mảnh và bóng đổ sâu —
-không phải thanh nav đặc kín chiều rộng. Sáu khu vực theo đúng thứ tự: Bảng tin, Học bài,
-Luyện tập, Ôn tập, Thống kê, Cài đặt.
+**A. Vỏ điều hướng — hai vỏ, một mốc chuyển ở 1024px.**
 
-*Ở 390px:* mỗi mục là một ô **56×56px** gồm icon 22px phía trên và **nhãn chữ 10px phía dưới,
-luôn hiện** — không giấu nhãn trong tooltip, vì thiết bị cảm ứng không có trạng thái hover.
-Sáu ô vừa khít trong 390px với lề hai bên.
+Năm khu vực, đúng thứ tự: **Bảng tin · Học bài · Luyện tập · Ôn tập · Thống kê**. Cài đặt
+**không** nằm trong nav; nó thuộc lối vào tài khoản.
 
-*Từ 640px:* mỗi mục là ô **52×52px chỉ có icon**; nhãn chuyển thành tooltip nổi phía trên, chỉ
-xuất hiện khi rê chuột. Sau sáu mục là một vạch ngăn dọc mảnh rồi một nút kính lúp (tìm kiếm).
+*Dưới 1024px — thanh điều hướng đáy.* Kiểu **nổi, bo tròn hết cỡ**, cách đáy màn hình 12px
+cộng safe-area, căn giữa theo chiều ngang, nền mờ có `backdrop-blur`, viền mảnh — không phải
+thanh đặc kín chiều rộng. Mỗi mục cao tối thiểu 48px, icon 24px phía trên và **nhãn chữ phía
+dưới luôn hiện ở mọi bề rộng dưới 1024px**, kể cả trên máy tính bảng: không giấu nhãn vào
+tooltip, vì thiết bị cảm ứng không có trạng thái hover.
+
+*Từ 1024px — sidebar trái.* Năm khu vực xếp dọc; thanh nav đáy biến mất hoàn toàn; không có
+thanh đầu trang. Khu vực tài khoản nằm cuối sidebar. Sidebar là bề mặt thường có viền 1px,
+**không** blur. Nội dung nằm cạnh sidebar và không cần chừa trống ở đáy.
 
 Mục đang mở: chữ và icon màu `primary` trên nền `primary/15` bo tròn. Mục không mở:
 `muted-foreground`. Mục "Ôn tập" mang một badge số đếm nhỏ màu `destructive` ở góc trên phải
-icon khi lớn hơn 0, quá 99 thì hiện `99+`. **Badge không nhấp nháy.**
+icon khi lớn hơn 0, quá 99 thì hiện `99+`. **Badge không nhấp nháy, không có chuyển động lặp.**
 
-Dock giữ nguyên kiểu nổi ở đáy trên **mọi** bề rộng — không đổi thành thanh đầu trang ở
-desktop, không sidebar dọc.
+*Phần cần khám phá ở đây:* bề rộng sidebar, có trạng thái thu gọn hay không, vị trí logo, và
+bố cục khu vực tài khoản (avatar, tên, trạng thái đồng bộ, lối vào Cài đặt). Đưa 2–3 phương án.
 
-**B. Trang chủ / Dashboard**, bề rộng tối đa `max-w-5xl`, theo thứ tự khối: header lời chào
-kèm huy hiệu trạng thái dữ liệu bên phải · một thẻ lớn "Ôn tập hôm nay — n mục đến hạn" chứa
-nút chính duy nhất của trang (cỡ `quiz`, cao 48px) · hàng ba ô số liệu (chuỗi ngày, phút học
-hôm nay, phần trăm đúng 7 ngày) xếp dọc ở mobile và thành 3 cột từ 768px · thẻ bài học đang
-dở · thẻ ba điểm yếu hàng đầu.
+**B. Màn Bảng tin (trang chủ `/`).** Bề rộng tối đa `max-w-5xl`, đo trong **vùng nội dung cạnh
+sidebar** khi ở desktop, không đo theo viewport.
 
-Mỗi ô số liệu có một ô icon vuông bo góc bên trái. **Màu của ba ô icon lấy từ bộ màu biểu đồ
-`chart-1`, `chart-2`, `chart-3`** — không dùng màu bảng Tailwind như amber, blue, emerald.
+*Đây là màn gì.* Người học mở app ra và cần biết ngay nên làm gì tiếp theo. Bảng tin quyết định
+hộ việc đó, đồng thời cho thấy họ đang học tới bài nào. Nó **không** phải trang phân tích,
+**không** phải danh mục tính năng, **không** phải danh sách việc theo ngày.
 
-Trang phải chừa khoảng trống đáy đủ cho dock nổi (`pb-32`, từ 640px là `pb-40`).
+*Kiến trúc thông tin — cố định, không đổi:*
+
+```
+Header          lời chào ngắn  +  lối vào tài khoản/avatar (bên phải)
+Việc nên làm tiếp theo                          P0
+Bài đang học                                    P0 hoặc P1 (xem dưới)
+Cần củng cố     "n nội dung cần củng cố" + 1 lối vào     P1, ẩn khi n = 0
+Nhịp học        tín hiệu chuỗi ngày rất nhẹ              P2
+```
+
+*Việc nên làm tiếp theo* là khối quan trọng nhất và mang **nút chính duy nhất** của trang (cỡ
+`quiz`, cao 48px). Nội dung của nó do dữ liệu quyết định:
+
+- có mục đến hạn → "Bắt đầu ôn", kèm số mục đến hạn;
+- không có mục đến hạn nhưng có bài đang học → "Học tiếp bài 7";
+- người dùng mới → "Bắt đầu bài 1".
+
+**Luật quan trọng nhất của màn này:** khi hành động chính là "học tiếp bài đang học" thì *Việc
+nên làm tiếp theo* và *Bài đang học* phải là **một khối duy nhất**. Tuyệt đối không vẽ một thẻ
+lớn "việc nên làm" rồi ngay dưới một thẻ lớn thứ hai lặp lại cùng bài, cùng tiến độ, cùng nút.
+Khi có mục đến hạn thì khối ôn tập là chính, còn *Bài đang học* lùi xuống thành một khối phụ
+nhỏ hơn ở dưới — nó vẫn phải tới được bằng một cú chạm.
+
+*Bài đang học* chỉ trả lời "tôi đang ở đâu": số bài, tên bài, tiến độ trong bài, lối vào học
+tiếp. Không thêm số liệu phân tích nào.
+
+*Cần củng cố* chỉ có **một con số và một lối vào** — ví dụ "3 nội dung cần củng cố → Xem và
+luyện lại". Không liệt kê từng mục, không có nút riêng cho từng dòng. Bằng 0 thì khối biến mất
+hoàn toàn, không để lại thẻ rỗng.
+
+*Nhịp học* là tín hiệu nhẹ nhất trên màn (chuỗi ngày). Không phải ô số liệu, không phải thẻ KPI,
+không có chuyển động, không gây áp lực. Nó có thể là một chip nhỏ, một dòng phụ, hoặc một dòng
+tóm tắt ở chân trang — chỗ đặt nó là một trong những thứ cần bạn đề xuất.
+
+**Ba trạng thái phải chứng minh được** (không bắt buộc mỗi trạng thái một màn riêng, nhưng bố
+cục phải cho thấy nó xử lý được cả ba):
+
+- **Trạng thái 1 — có mục đến hạn.** Ôn tập là hành động chính; bài đang học là khối phụ.
+- **Trạng thái 2 — không có mục đến hạn.** Bài đang học *là* hành động chính, hai vai trò hợp
+  nhất thành một khối.
+- **Trạng thái 3 — người dùng mới.** Chưa có phiên nào, chưa có gì đến hạn, chưa có điểm yếu. Hành động
+  chính là "Bắt đầu bài 1". Không gọi bài 1 là "đang học dở", không hiện `0%` hay `0/650`, không
+  có lời nhắc nào về chuỗi ngày bằng 0. Màn này phải trông **bình thường**, không trông hỏng.
+
+**Cấm trong màn Bảng tin:**
+
+- Không có hàng ô số liệu / KPI dashboard (chuỗi ngày, phút học, % chính xác, tổng từ vựng).
+  Các số đó thuộc màn Thống kê. Không thêm lại chúng để lấp khoảng trống.
+- Không phân loại mục đến hạn theo từ vựng/ngữ pháp, không danh sách xem trước hàng đợi ôn —
+  thuộc màn Ôn tập.
+- Không bảng điểm yếu chi tiết — thuộc màn Ôn tập → Điểm yếu.
+- Không widget "Kanji hôm nay".
+- Không mục tiêu theo ngày, không "3 việc hôm nay", không "đã xong hôm nay", không "30 phút/ngày".
+- Không lưới nút dẫn tới các khu vực — thanh điều hướng đã làm việc đó.
+- Không tên người dùng, không số liệu bịa, không tính năng mới.
+- Không tục ngữ/emoji trang trí như một phần bắt buộc, và không chấm nhấp nháy cạnh lời chào.
+
+**Khoảng chừa đáy.** Dưới 1024px trang phải chừa đủ để thanh nav nổi không che phần tử cuối —
+và không đặt hành động quan trọng nào nằm sau thanh nav. Từ 1024px **không** chừa đáy. Hãy đề
+xuất con số cụ thể cho phần chừa mobile: giá trị hiện có trong máy đọc được của `DESIGN.md` chỉ
+là bản tạm, con số thật chốt từ bản thị giác được duyệt.
+
+**Thứ tự ở ~390px:** header → việc nên làm tiếp theo → bài đang học (nếu tách riêng) → cần củng
+cố → nhịp học. Hành động chính phải thấy được rất sớm, không có hàng số liệu nào chen phía trên.
+Từ `sm`/`md` được nới khoảng trắng và cho vài khối phụ thành hai cột, nhưng **không thêm nhóm
+thông tin mới chỉ vì có thêm bề rộng**. Từ 1024px được chia cột chính / cột phụ trong vùng nội
+dung — vẫn **không** bịa thêm section để lấp chỗ trống.
+
+**C. Ba phương án thị giác — cùng một kiến trúc thông tin.**
+
+Cả ba phương án dùng **chung** kiến trúc, cùng luật ưu tiên và cùng các điều cấm ở trên. Chỉ
+khác nhau ở bố cục, mật độ, thứ bậc thị giác và cách trình bày. Không phương án nào được thêm,
+bớt hay đổi chỗ nhóm thông tin.
+
+1. **Calm Learning** — tĩnh, tập trung, nhiều khoảng trắng, hành động chính rất mạnh, mọi thứ
+   khác lùi hẳn về sau.
+2. **Structured Study** — phân khu rõ ràng hơn, mật độ nhỉnh hơn, ngữ cảnh bài đang học đậm hơn.
+3. **Japanese Editorial** — tiết chế, dẫn dắt bằng typography, mang chất tài liệu học tiếng Nhật
+   một cách kín đáo.
+
+Cả ba đều lấy màu, kiểu chữ, bo góc, bề mặt và chuyển động từ `DESIGN.md` — không tự đặt hướng
+thị giác riêng, không thêm bóng đổ, gradient hay màu ngoài bộ token.
+
+**D. Phần bạn được quyết định.** Bố cục khối "Việc nên làm tiếp theo"; cách hợp nhất nó với "Bài
+đang học" khi không có mục đến hạn; cách "Bài đang học" lùi xuống khi có mục đến hạn; cách trình
+bày "Cần củng cố"; chỗ đặt "Nhịp học"; nhịp khoảng trắng và thứ bậc; bố cục desktop; cùng các
+câu hỏi về sidebar ở khối A.
+
+**E. Phần đã chốt, không đề xuất lại.** Số khu vực điều hướng (5) · vị trí Cài đặt (thứ cấp, sau
+lối vào tài khoản) · nav đáy dưới 1024px và sidebar từ 1024px · mốc chuyển vỏ · việc bỏ ô số
+liệu KPI khỏi Bảng tin · việc bỏ widget kanji · việc bỏ phân loại mục đến hạn và bảng điểm yếu
+khỏi Bảng tin · việc không có mục tiêu theo ngày.
+
+---
+
+**Áp cho cả hai phần.**
 
 Huy hiệu trạng thái dữ liệu có ba biến thể — `sync-badge-synced`, `sync-badge-pending`,
 `sync-badge-offline` — mỗi biến thể **phải có cả icon lẫn nhãn chữ**, màu không bao giờ đứng
-một mình. Trên mobile chỉ hiện icon.
+một mình. Huy hiệu nằm trong lối vào tài khoản, không nằm trong nav chính.
 
 Mọi phần tử bấm được cần đủ sáu trạng thái: Mặc định, Hover (chỉ khi `(hover: hover)`), Focus
 (ring 3px, không bao giờ tắt), Active (dịch xuống 1px), Disabled (`opacity-50`), Loading
 (spinner thay icon, giữ nguyên bề rộng).
 
-Trang phải chừa `pb-32` (từ 640px: `pb-40`) cho dock nổi. Hoạt ảnh bọc trong `@media (prefers-reduced-motion:
-no-preference)`, 150ms `ease-out` cho đổi màu.
+Hoạt ảnh bọc trong `@media (prefers-reduced-motion: no-preference)`, 150ms `ease-out` cho đổi
+màu. Không có chuyển động lặp vô hạn ở bất kỳ đâu.
 
 Cần cả chế độ sáng và tối.
 
@@ -398,4 +738,4 @@ Cần cả chế độ sáng và tối.
 
 > **Không** dùng file Stitch export để ghi đè `web/src/app/globals.css`. Bản export đổi màu
 > về hex, bỏ toàn bộ chế độ tối, và mất lớp `@theme inline` — chính là thứ cho phép class
-> `.dark` ghi đè token lúc chạy (`design-system.md` §12).
+> `.dark` ghi đè token lúc chạy (`DESIGN.md` §What this file is).

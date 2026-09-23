@@ -12,16 +12,16 @@ phép tính số liệu về **một** module dùng chung cho cả dashboard l�
 
 **Trong phạm vi**
 
-- `/thong-ke` — trang thống kê, khuôn mẫu `design-system.md` §10.5
+- `/thong-ke` — trang thống kê, khuôn bề rộng `content-wide` (`DESIGN.md` §Layout and containers)
 - `src/lib/stats.ts` — toàn bộ phép tính, hàm thuần, có test
 - Bốn ô số liệu: streak · phút học hôm nay · % đúng 7 ngày · số mục đang theo dõi
-- Ba biểu đồ + một lịch nhiệt, theo luật `design-system.md` §11
+- Ba biểu đồ + một lịch nhiệt, theo luật `DESIGN.md` §Charts
 - Nối lại ô số liệu của dashboard (SPEC-02 §3.2) vào `stats.ts`
 
 **Ngoài phạm vi**
 
 - Bảng "Điểm yếu của tôi" — **đã có ở SPEC-05 tại `/on-tap/diem-yeu`**. Trang này chỉ đặt một
-  link tới đó. `design-system.md` §10.5 mô tả bảng nằm cuối trang Thống kê; một bảng ở hai nơi
+  link tới đó. Bản đầu của spec đặt bảng ở cuối trang Thống kê; một bảng ở hai nơi
   là hai chỗ để sai khác nhau
 - Dự báo số mục đến hạn những ngày tới — thêm khi thật sự cần, không dựng trước
 - Mục tiêu học theo tuần/tháng, huy hiệu thành tích, gamification — trái nguyên tắc 3 của
@@ -109,7 +109,7 @@ code là lỗi chờ xảy ra.
 
 ### 3.1. `/thong-ke`
 
-Bề rộng `max-w-5xl` (`design-system.md` §10.5).
+Bề rộng `max-w-5xl` — khuôn `content-wide` (`DESIGN.md` §Layout and containers).
 
 ```
 [H1 "Thống kê"]
@@ -148,11 +148,11 @@ thẳng token màu `chart-1…5`.
 | Vai trò | Token component |
 |---|---|
 | Ô số liệu, khung biểu đồ | `card` |
-| Nhãn loại mục tiêu | `badge`, màu theo ánh xạ cố định §11.3 |
+| Nhãn loại mục tiêu | `badge`, màu theo ánh xạ cố định (`DESIGN.md` §Charts) |
 | Link sang bảng điểm yếu | `button-ghost` |
 | Đang tải | `skeleton` đúng kích thước biểu đồ thật |
 
-Ánh xạ màu **cố định, không xoay vòng** (`design-system.md` §11.3): `vocab → chart-1`,
+Ánh xạ màu **cố định, không xoay vòng** (`DESIGN.md` §Charts): `vocab → chart-1`,
 `grammar → chart-2`, `kanji → chart-3`, `particle → chart-4`, `listening → chart-5`. Đổi bộ
 lọc, đổi thứ hạng đều **không** được đổi màu của các mục còn lại.
 
@@ -164,7 +164,7 @@ Luật biểu đồ phải tuân thủ, nhắc lại ba điều dễ vi phạm n
   trắng, nên mỗi thanh ngang phải có con số hiện rõ bên cạnh.
 - **Chữ mang màu chữ**, không mang màu chuỗi. Chỉ ô màu nhỏ cạnh nhãn mới mang màu chuỗi.
 
-Lịch nhiệt dùng **một sắc `chart-1`** chuyển từ nhạt sang đậm (§11.7). Không cầu vồng, không
+Lịch nhiệt dùng **một sắc `chart-1`** chuyển từ nhạt sang đậm (`DESIGN.md` §Charts, luật 6). Không cầu vồng, không
 dùng `success`/`destructive` làm màu chuỗi.
 
 ## 5. Trạng thái
@@ -179,7 +179,7 @@ dùng `success`/`destructive` làm màu chuỗi.
 | Đang tải Dexie | `skeleton` đúng kích thước, bố cục không nhảy |
 | Một ngày có phiên nhưng 0 phút (phiên quá ngắn) | Ô lịch nhiệt vẫn tô mức nhạt nhất — có học là có tô |
 
-Mọi phần tử bấm được đủ sáu trạng thái theo `design-system.md` §8.
+Mọi phần tử bấm được đủ sáu trạng thái theo `DESIGN.md` §Interaction states.
 
 ## 6. Tương tác & chuyển động
 
@@ -197,7 +197,7 @@ Mọi phần tử bấm được đủ sáu trạng thái theo `design-system.md
 - Mỗi biểu đồ `<svg>` có `role="img"` và `aria-label` tóm tắt thành câu: "Phút học 14 ngày gần
   nhất, cao nhất 42 phút ngày 12/09, trung bình 18 phút".
 - Dưới mỗi biểu đồ có **bảng số thật** (`<table>`) — có thể thu gọn trong `<details>`. Đây vừa
-  là lối đi cho screen reader, vừa là nhãn trực tiếp mà §11.4 yêu cầu.
+  là lối đi cho screen reader, vừa là nhãn trực tiếp mà `DESIGN.md` §Charts luật 5 yêu cầu.
 - Lịch nhiệt: mỗi ô có `aria-label` ngày và số phút. Không phải là bản đồ màu vô danh.
 - Con số lớn trong ô số liệu đi kèm nhãn chữ đọc được, không đọc trần số.
 - Mức đậm nhạt của lịch nhiệt **không** là thông tin duy nhất — tooltip và bảng số mang đủ
@@ -295,4 +295,4 @@ Cần cả chế độ sáng và tối.
 
 > **Không** dùng file Stitch export để ghi đè `web/src/app/globals.css`. Bản export đổi màu
 > về hex, bỏ toàn bộ chế độ tối, và mất lớp `@theme inline` — chính là thứ cho phép class
-> `.dark` ghi đè token lúc chạy (`design-system.md` §12).
+> `.dark` ghi đè token lúc chạy (`DESIGN.md` §What this file is).

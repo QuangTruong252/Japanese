@@ -12,19 +12,21 @@ chỉ chứng minh phạm vi ở ngày ghi nhận. Khi tiếp tục, kiểm tra 
 | Phần | Đặc tả | Code quan sát được | Bằng chứng / phần chưa kiểm chứng |
 | --- | --- | --- | --- |
 | SPEC-01: dữ liệu/câu hỏi | Có | Có generator, filter, notation, FSRS | Ghi nhận static gates 17/09 ở mục bên dưới; [nội dung N5](../n5-manifest.md) chưa xác minh sách |
-| SPEC-02: shell/dashboard | Có | [AppNav](../../web/src/components/AppNav.tsx), [dashboard](../../web/src/app/page.tsx) | Có code; chưa có handoff nghiệm thu toàn feature |
+| SPEC-02: shell/Bảng tin | Có | [AppNav](../../web/src/components/AppNav.tsx), [Bảng tin](../../web/src/app/page.tsx), [DashboardContent](../../web/src/components/DashboardContent.tsx) | [Handoff 23/09](../handoff/SPEC-02.md) — code đã cập nhật theo hợp đồng UX 22/09/2026 (dock 5 mục mobile, sidebar desktop, Bảng tin 1 hành động chính P0, hợp nhất bài đang học, bỏ 4 ô KPI cũ) |
 | SPEC-03: học | Có | [Danh sách](../../web/src/app/hoc/page.tsx), [chi tiết](../../web/src/app/hoc/[so]/page.tsx) | Có code; chưa có handoff nghiệm thu toàn feature |
 | SPEC-04: luyện tập | Có | [PracticeRunner](../../web/src/components/practice/PracticeRunner.tsx) và các dạng bài | [Handoff 17/09](../handoff/SPEC-04.md), có nghiệm thu và giới hạn; chưa tái nghiệm thu toàn bộ hôm nay |
 | SPEC-05: ôn/điểm yếu | Có | [Ôn](../../web/src/app/on-tap/page.tsx), [phiên](../../web/src/app/on-tap/phien/page.tsx), [điểm yếu](../../web/src/app/on-tap/diem-yeu/page.tsx) | [Handoff 22/09](../handoff/SPEC-05.md) — đã nghiệm thu trình duyệt (empty state, hàng đợi, phiên FSRS, bảng điểm yếu, responsive 390px/1280px) |
 | SPEC-06: cài đặt/import/export | Có | [Cài đặt](../../web/src/app/cai-dat/page.tsx), [backup.ts](../../web/src/lib/backup.ts) | [Handoff 22/09](../handoff/SPEC-06.md) — đã nghiệm thu trình duyệt (hiển thị, preview, export/import JSON, danger zone wipe, responsive) |
 | SPEC-07: thống kê | Có | [stats.ts](../../web/src/lib/stats.ts), [thong-ke/page.tsx](../../web/src/app/thong-ke/page.tsx) | [Handoff 22/09](../handoff/SPEC-07.md) — đã nghiệm thu trình duyệt (4 ô KPI, lịch nhiệt 12 tuần cuộn ngang mobile, biểu đồ cột 14d, biểu đồ đường 30d ngắt quãng, thanh phân bố, responsive) |
 | SPEC-08: auth/sync | Có | [supabase/migrations/0001_init.sql](../../supabase/migrations/0001_init.sql), [sync.ts](../../web/src/lib/sync.ts), [SyncBadge.tsx](../../web/src/components/SyncBadge.tsx), [cai-dat/page.tsx](../../web/src/app/cai-dat/page.tsx) | [Handoff 22/09](../handoff/SPEC-08.md) — đã nghiệm thu trình duyệt (SyncBadge hàng đợi, card trạng thái Supabase, responsive, push-pull RPC, RLS) |
-| SPEC-09/10: audio ZIP/Shadowing | Có | Chưa có importer/player; [TTS](../../web/src/lib/tts.ts) là chức năng khác | Chưa nghiệm thu |
-| SPEC-12/13: tra cứu/tìm kiếm | Có | Chưa có route/màn tương ứng | Chưa nghiệm thu |
+| SPEC-09: audio ZIP | Có | [audio-zip.ts](../../web/src/lib/audio-zip.ts), [audio-import.worker.ts](../../web/src/workers/audio-import.worker.ts), [use-audio-import.ts](../../web/src/hooks/use-audio-import.ts), [cai-dat/audio](../../web/src/app/cai-dat/audio/page.tsx) | [Handoff 23/09](../handoff/SPEC-09.md) — code, worker, hook, UI 25 bài theo mockup 20-audio-zip.png, static gates & tests PASS 100% |
+| SPEC-10: Shadowing player | Có | [ShadowingPlayer.tsx](../../web/src/components/audio/ShadowingPlayer.tsx), [shadowing.ts](../../web/src/lib/shadowing.ts), [hoc/[so]](../../web/src/app/hoc/[so]/page.tsx) | [Handoff 23/09](../handoff/SPEC-10.md) — code, lặp A-B, tốc độ, phím tắt, UI theo mockup 21-shadowing.png, static gates & tests PASS 100% |
+| SPEC-12: tra cứu (Kanji, động từ, 10 bảng) | Có | [lookup.ts](../../web/src/lib/lookup.ts), [tra-cuu](../../web/src/app/hoc/tra-cuu/page.tsx), [kanji](../../web/src/app/hoc/tra-cuu/kanji/page.tsx), [dong-tu](../../web/src/app/hoc/tra-cuu/dong-tu/page.tsx), [bang](../../web/src/app/hoc/tra-cuu/bang/page.tsx) | [Handoff 23/09](../handoff/SPEC-12.md) — code, 169 chữ Kanji, 156 động từ 5 thể, 10 bảng tham chiếu, chỉ mục tra ngược, static gates & tests PASS 100% |
+| SPEC-13: tìm kiếm toàn cục | Có | [search.ts](../../web/src/lib/search.ts), [SearchDialog.tsx](../../web/src/components/search/SearchDialog.tsx), [SearchTrigger.tsx](../../web/src/components/search/SearchTrigger.tsx) | [Handoff 23/09](../handoff/SPEC-13.md) — code, ARIA combobox/listbox, xếp hạng 3 tầng, chuẩn hóa đ->d, phím tắt Ctrl+K, kiểm thử trình duyệt PASS 100% |
 | SPEC-14: PWA/offline shell | Có | Chưa có service worker/manifest PWA | Offline một phiên đã nạp không chứng minh offline reload toàn app |
 | F11: N4 | Chưa có spec biên tập | Chưa có dữ liệu N4 | Cần nguồn và biên tập trước khi xây UI |
 
-Bước tiếp theo: triển khai Chuỗi Audio & Trình phát (SPEC-09 & SPEC-10) → Chuỗi Tra cứu (SPEC-12 & SPEC-13).
+Bước tiếp theo: triển khai SPEC-14 (PWA & Offline shell).
 Phạm vi brand/agent riêng theo [handoff MaiPace](../handoff/MAIPACE.md).
 Khi làm xong một phần, cập nhật hàng tương ứng và handoff với ngày, kiểm tra
 đã chạy, giới hạn và bước tiếp theo. Không đổi trạng thái phần chưa được kiểm tra.
@@ -149,9 +151,9 @@ SPEC-01 là ngoại lệ — không có màn hình nên không có mục 3–7 v
 
 | Tệp | Vai trò |
 |---|---|
-| `DESIGN.md` tại root | Hợp đồng token máy đọc được — **nạp file này vào công cụ AI** |
-| `docs/design-system.md` | Lý do thiết kế, khuôn mẫu màn hình, luật biểu đồ, checklist |
-| `web/src/app/globals.css` | Bản thi hành lúc chạy (OKLCH, chế độ tối, `@theme inline`) |
+| `DESIGN.md` tại root | Hợp đồng UX + thị giác toàn cục — **nạp file này vào công cụ AI** |
+| `web/src/app/globals.css` | Giá trị token lúc chạy (OKLCH, chế độ tối, `@theme inline`) |
+| `docs/design-system.md` | Hướng dẫn đọc bằng tiếng Việt + checklist — không phải nguồn token |
 | `docs/project-design-spec.md` | Đặc tả hệ thống gốc |
 
 **Không** dùng file Stitch export để ghi đè `globals.css` — bản export đổi màu về hex, bỏ

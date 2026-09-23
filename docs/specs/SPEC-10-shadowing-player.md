@@ -67,7 +67,7 @@ Ràng buộc: `B > A + 0.5s`. Đặt B trước A thì **hoán đổi hai mốc*
 ### 2.3. Tốc độ
 
 `audio.playbackRate`. Trình duyệt hiện đại giữ nguyên cao độ (`preservesPitch` mặc định bật) —
-không cần thư viện xử lý âm thanh. Tốc độ đang chọn tô nền `primary` (`design-system.md` §9.6).
+không cần thư viện xử lý âm thanh. Tốc độ đang chọn tô nền `primary` (`DESIGN.md` §Components).
 
 ### 2.4. Transcript — nói thẳng phần chưa có
 
@@ -103,14 +103,14 @@ có mốc thời gian từng câu, thứ chưa tồn tại.
 
 ### 3.1. Vị trí
 
-Khối cuối cùng của `/hoc/[so]`, đúng thứ tự cố định của `design-system.md` §10.3:
+Khối cuối cùng của `/hoc/[so]`, đúng thứ tự cố định của SPEC-03 §3.2:
 **Từ vựng → Ngữ pháp → Câu ví dụ → Audio**. Không thêm route mới, không mini-player bám đáy.
 
 Bề rộng theo màn chi tiết bài: `max-w-2xl`.
 
 ### 3.2. Bố cục player
 
-Ba tầng, đúng `design-system.md` §9.6:
+Ba tầng, đúng `DESIGN.md` §Components:
 
 ```
 [Hàng chọn track: Từ vựng | Mẫu câu | Câu ví dụ | Hội thoại]
@@ -138,7 +138,7 @@ Hàng điều khiển phụ xuống hai dòng: chip tốc độ một dòng, `Đ
 
 | Vai trò | Token component |
 |---|---|
-| Toàn bộ player | `design-system.md` §9.6 |
+| Toàn bộ player | `DESIGN.md` §Components |
 | Chọn track | `toggle-group` (đã có), kiểu `single` |
 | Chip tốc độ | `toggle-group`, tốc độ đang chọn nền `primary` |
 | Đặt A / Đặt B / Lặp / Transcript | `button-secondary`, trạng thái bật dùng `aria-pressed` |
@@ -166,7 +166,7 @@ tua, đệm dữ liệu, giải mã, giữ cao độ khi đổi tốc độ — 
 | Track không có transcript | Nút `Transcript` `disabled` + chữ lý do, không im lặng |
 | Đổi track khi đang phát | Dừng, xóa mốc A-B, giữ nguyên tốc độ đang chọn |
 
-Mọi phần tử bấm được đủ sáu trạng thái theo `design-system.md` §8.
+Mọi phần tử bấm được đủ sáu trạng thái theo `DESIGN.md` §Interaction states.
 
 ## 6. Tương tác & chuyển động
 
@@ -297,4 +297,4 @@ Cần cả chế độ sáng và tối.
 
 > **Không** dùng file Stitch export để ghi đè `web/src/app/globals.css`. Bản export đổi màu
 > về hex, bỏ toàn bộ chế độ tối, và mất lớp `@theme inline` — chính là thứ cho phép class
-> `.dark` ghi đè token lúc chạy (`design-system.md` §12).
+> `.dark` ghi đè token lúc chạy (`DESIGN.md` §What this file is).

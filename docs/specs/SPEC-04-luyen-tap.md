@@ -145,7 +145,7 @@ trong chính màn này.
 
 ### 3.2. `/luyen-tap/phien` — Màn làm bài
 
-Khuôn mẫu: `design-system.md` §10.4. Bề rộng `max-w-xl` (576px).
+Khuôn bề rộng: `content-default` (`DESIGN.md` §Layout and containers) — `max-w-xl` (576px).
 
 ```
 ┌─────────────────────────────┐
@@ -192,7 +192,7 @@ Bề rộng `max-w-xl`. Số câu đúng / tổng, phần trăm, thời lượng
 
 ## 5. Trạng thái
 
-**`answer-option` — năm trạng thái** (`design-system.md` §9.3, component quan trọng nhất của app):
+**`answer-option` — năm trạng thái** (`DESIGN.md` §Components, component quan trọng nhất của app):
 
 | Trạng thái | Nền | Viền | Phụ trợ ngoài màu |
 |---|---|---|---|
@@ -216,7 +216,7 @@ Cao tối thiểu 48px, `rounded-xl`, `p-4`, chữ Nhật `1.125rem`. Số thứ
 | Ghi Dexie lỗi | Giữ người dùng ở màn kết quả, nêu lỗi. Không nuốt lỗi im lặng |
 | Bể câu hỏi có bài `unverified` (SPEC-01 §3.1) | Một dòng `muted` ở màn cấu hình: "Nội dung các bài này chưa được đối chiếu với bản in". Nhắc **một lần**, không chèn nhãn vào từng câu — đang làm bài thì không phải lúc đọc chú thích biên tập |
 
-Mọi phần tử bấm được đủ sáu trạng thái theo `design-system.md` §8.
+Mọi phần tử bấm được đủ sáu trạng thái theo `DESIGN.md` §Interaction states.
 
 ## 6. Tương tác & chuyển động
 
@@ -419,4 +419,4 @@ Cần cả chế độ sáng và tối.
 
 > **Không** dùng file Stitch export để ghi đè `web/src/app/globals.css`. Bản export đổi màu
 > về hex, bỏ toàn bộ chế độ tối, và mất lớp `@theme inline` — chính là thứ cho phép class
-> `.dark` ghi đè token lúc chạy (`design-system.md` §12).
+> `.dark` ghi đè token lúc chạy (`DESIGN.md` §What this file is).

@@ -128,14 +128,14 @@ Mỗi dòng: nội dung mục tiêu · nhãn loại · số lần sai / tổng s
 
 | Vai trò | Token component |
 |---|---|
-| Thẻ mục tiêu ôn tập | `design-system.md` §9.8 — nội dung + nhãn `targetType` + hạn ôn |
+| Thẻ mục tiêu ôn tập | `DESIGN.md` §Components — nội dung + nhãn `targetType` + hạn ôn |
 | Mục quá hạn | `badge-overdue` + icon `<AlarmClock />` + số ngày trễ |
 | Thẻ lớn, thẻ danh sách | `card` |
 | "Bắt đầu ôn" | `button-primary` cỡ `quiz` — nút `default` duy nhất của trang |
 | Chip lọc loại mục tiêu | `button-secondary` / `button-ghost` |
 | Toàn bộ màn làm bài | SPEC-04 §4, không sửa |
 
-Màu nhãn `targetType` dùng đúng ánh xạ cố định của luật biểu đồ (`design-system.md` §11.3):
+Màu nhãn `targetType` dùng đúng ánh xạ cố định của luật biểu đồ (`DESIGN.md` §Charts):
 `vocab → chart-1`, `grammar → chart-2`, `kanji → chart-3`, `particle → chart-4`,
 `listening → chart-5`. **Màu gắn với thực thể, không gắn với thứ hạng** — đổi bộ lọc không
 được đổi màu của các mục còn lại. Nhãn luôn có chữ kèm màu.
@@ -151,7 +151,7 @@ Màu nhãn `targetType` dùng đúng ánh xạ cố định của luật biểu 
 | Đang tải Dexie | Skeleton đúng kích thước thẻ thật |
 | Bảng điểm yếu rỗng | "Chưa có điểm yếu nào được ghi nhận" — đây là tin tốt, viết như tin tốt |
 
-Mọi phần tử bấm được đủ sáu trạng thái theo `design-system.md` §8.
+Mọi phần tử bấm được đủ sáu trạng thái theo `DESIGN.md` §Interaction states.
 
 ## 6. Tương tác & chuyển động
 
@@ -252,4 +252,4 @@ Cần cả chế độ sáng và tối.
 
 > **Không** dùng file Stitch export để ghi đè `web/src/app/globals.css`. Bản export đổi màu
 > về hex, bỏ toàn bộ chế độ tối, và mất lớp `@theme inline` — chính là thứ cho phép class
-> `.dark` ghi đè token lúc chạy (`design-system.md` §12).
+> `.dark` ghi đè token lúc chạy (`DESIGN.md` §What this file is).

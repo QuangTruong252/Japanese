@@ -9,6 +9,8 @@ import { SpeakButton } from '@/components/SpeakButton';
 import { AVAILABLE_N5_LESSONS, loadLessonData, parseLessonNumber } from '@/lib/lessons';
 import { stripFurigana } from '@/lib/japanese';
 import { Card } from '@/components/ui/card';
+import { ShadowingPlayer } from '@/components/audio/ShadowingPlayer';
+import { SearchTrigger } from '@/components/search/SearchTrigger';
 import { cn } from '@/lib/utils';
 
 export function generateStaticParams() {
@@ -36,16 +38,19 @@ export default async function LessonDetailPage({
     <main className="mx-auto max-w-4xl space-y-8 px-4 sm:px-6 pt-6 sm:pt-10">
       {/* 1. Header bài học & Breadcrumb */}
       <header className="space-y-4">
-        <Link
-          href="/hoc"
-          className={cn(
-            buttonVariants({ variant: 'ghost', size: 'sm' }),
-            '-ml-2.5 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors'
-          )}
-        >
-          <ChevronLeft className="size-4 mr-1" />
-          <span>Danh sách bài học N5</span>
-        </Link>
+        <div className="flex items-center justify-between">
+          <Link
+            href="/hoc"
+            className={cn(
+              buttonVariants({ variant: 'ghost', size: 'sm' }),
+              '-ml-2.5 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors'
+            )}
+          >
+            <ChevronLeft className="size-4 mr-1" />
+            <span>Danh sách bài học N5</span>
+          </Link>
+          <SearchTrigger iconOnly className="size-9 rounded-xl" />
+        </div>
 
         <div className="space-y-2">
           <div className="flex items-center gap-2">
@@ -212,7 +217,21 @@ export default async function LessonDetailPage({
         </div>
       </section>
 
-      {/* 4. Nguồn và Xác minh */}
+      {/* 4. Khối Audio & Trình phát Shadowing (SPEC-10) */}
+      <section className="space-y-4 pt-6 border-t border-border/80">
+        <div className="space-y-1">
+          <h2 className="text-xl font-bold text-foreground">Audio & Shadowing</h2>
+          <p className="text-sm text-muted-foreground">
+            Luyện nghe và nói theo bài học với tính năng lặp đoạn A-B và điều chỉnh tốc độ.
+          </p>
+        </div>
+        <ShadowingPlayer
+          lessonNum={lessonNum}
+          examples={lesson.grammar.flatMap((g) => g.examples)}
+        />
+      </section>
+
+      {/* 5. Nguồn và Xác minh */}
       <div className="space-y-1.5 pt-4 border-t border-border/80 text-xs text-muted-foreground">
         {lesson.sourceRef && (
           <p>

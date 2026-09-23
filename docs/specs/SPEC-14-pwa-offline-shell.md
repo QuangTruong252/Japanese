@@ -219,7 +219,7 @@ hình dùng dấu ấn chữ Nhật của app — dựng từ cùng nguồn vớ
 | Đang chạy ở chế độ đã cài (standalone) | Ẩn khối hướng dẫn cài đặt |
 | Đăng ký service worker thất bại | Ghi log ở dev, **im lặng với người dùng**. Đây không phải lỗi họ sửa được |
 
-Mọi phần tử bấm được đủ sáu trạng thái theo `design-system.md` §8.
+Mọi phần tử bấm được đủ sáu trạng thái theo `DESIGN.md` §Interaction states.
 
 ## 6. Tương tác & chuyển động
 
@@ -336,4 +336,4 @@ Cần cả chế độ sáng và tối.
 
 > **Không** dùng file Stitch export để ghi đè `web/src/app/globals.css`. Bản export đổi màu
 > về hex, bỏ toàn bộ chế độ tối, và mất lớp `@theme inline` — chính là thứ cho phép class
-> `.dark` ghi đè token lúc chạy (`design-system.md` §12).
+> `.dark` ghi đè token lúc chạy (`DESIGN.md` §What this file is).

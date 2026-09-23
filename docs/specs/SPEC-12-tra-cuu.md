@@ -76,7 +76,7 @@ trả `notFound()` nếu không — nếu không, mọi đường dẫn con lạ
 crash ở chỗ đọc dữ liệu.
 
 Tra cứu đặt dưới `/hoc/` để nav vẫn sáng đúng mục "Học". **Không thêm khu vực thứ sáu** vào
-thanh nav (`design-system.md` §6.3).
+thanh nav (`DESIGN.md` §Navigation).
 
 ## 3. Màn hình & bố cục
 
@@ -135,7 +135,7 @@ thể từ điển và nghĩa tiếng Việt. Dòng khớp đầu tiên được
 156 dòng và bỏ mặc người dùng tự dò.
 
 Nhãn nhóm dùng token màu nhóm động từ có sẵn:
-`--verb-1` cam đất · `--verb-2` xanh Indigo · `--verb-3` xanh tre (`design-system.md` §2.3),
+`--verb-1` cam đất · `--verb-2` xanh Indigo · `--verb-3` xanh tre (`DESIGN.md` §Verb groups),
 luôn kèm chữ "Nhóm 1 / 2 / 3".
 
 Ở 390px bảng cuộn ngang trong khung riêng, **cột đầu (động từ) ghim lại** — bảng 7 cột bóp vừa
@@ -180,7 +180,7 @@ xong.
 | Máy không có giọng `ja-JP` | Ẩn nút phát âm, không hiện nút bấm vào không kêu |
 | Ô header rỗng của bảng tham chiếu | Để trống đúng như dữ liệu, giữ lưới |
 
-Mọi phần tử bấm được đủ sáu trạng thái theo `design-system.md` §8.
+Mọi phần tử bấm được đủ sáu trạng thái theo `DESIGN.md` §Interaction states.
 
 ## 6. Tương tác & chuyển động
 
@@ -294,4 +294,4 @@ Cần cả chế độ sáng và tối.
 
 > **Không** dùng file Stitch export để ghi đè `web/src/app/globals.css`. Bản export đổi màu
 > về hex, bỏ toàn bộ chế độ tối, và mất lớp `@theme inline` — chính là thứ cho phép class
-> `.dark` ghi đè token lúc chạy (`design-system.md` §12).
+> `.dark` ghi đè token lúc chạy (`DESIGN.md` §What this file is).

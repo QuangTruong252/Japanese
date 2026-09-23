@@ -34,6 +34,13 @@ export interface UIState {
   setFuriganaSize: (size: 'normal' | 'large') => void;
   setHideTranslations: (enabled: boolean) => void;
   setTheme: (theme: AppSettings['theme']) => void;
+
+  // Search dialog state (SPEC-13)
+  isSearchOpen: boolean;
+  setIsSearchOpen: (open: boolean) => void;
+  openSearch: () => void;
+  closeSearch: () => void;
+  toggleSearch: () => void;
 }
 
 export const useUIStore = create<UIState>((set) => ({
@@ -68,4 +75,11 @@ export const useUIStore = create<UIState>((set) => ({
   setFuriganaSize: (furiganaSize) => set({ furiganaSize }),
   setHideTranslations: (hideTranslations) => set({ hideTranslations }),
   setTheme: (theme) => set({ theme }),
+
+  // Search dialog defaults
+  isSearchOpen: false,
+  setIsSearchOpen: (isSearchOpen) => set({ isSearchOpen }),
+  openSearch: () => set({ isSearchOpen: true }),
+  closeSearch: () => set({ isSearchOpen: false }),
+  toggleSearch: () => set((state) => ({ isSearchOpen: !state.isSearchOpen })),
 }));
