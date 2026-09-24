@@ -7,7 +7,9 @@ import {
   describeNextReviews,
   lessonFromTargetId,
   overdueDays,
+  planReviewBatch,
   selectNewTargetIds,
+  withDeclaredLessons,
 } from './review-queue.ts';
 import type { QuestionItem } from '../types/index.ts';
 
@@ -113,4 +115,32 @@ test('buildTargetLabels ưu tiên nguồn mang cả tiếng Nhật lẫn nghĩa'
     jp: '私[わたし]は 学生[がくせい]です',
     vi: 'Tôi là học sinh',
   });
+});
+
+test('planReviewBatch: mục đến hạn lấp lô trước, mục mới chỉ lấp chỗ trống', () => {
+  const pool = ['vocab-01-01', 'vocab-01-02', 'vocab-01-03'];
+  const plan = planReviewBatch(['a', 'b'], pool, new Set(), 20, 3);
+  assert.deepEqual(plan.batchDue, ['a', 'b']);
+  assert.deepEqual(plan.newTargetIds, ['vocab-01-01']);
+  assert.equal(plan.remainingDue, 0);
+});
+
+test('planReviewBatch: tồn đọng ≥ một lô thì không nạp mục mới', () => {
+  const due = Array.from({ length: 50 }, (_, i) => `d${i}`);
+  const plan = planReviewBatch(due, ['vocab-01-01'], new Set(), 20, 20);
+  assert.equal(plan.batchDue.length, 20);
+  assert.deepEqual(plan.batchDue.slice(0, 2), ['d0', 'd1']);
+  assert.deepEqual(plan.newTargetIds, []);
+  assert.equal(plan.remainingDue, 30);
+});
+
+test('planReviewBatch: vẫn chịu hạn mức mục mới còn lại trong ngày', () => {
+  const pool = ['vocab-01-01', 'vocab-01-02', 'vocab-01-03'];
+  assert.deepEqual(planReviewBatch([], pool, new Set(), 1, 20).newTargetIds, ['vocab-01-01']);
+  assert.deepEqual(planReviewBatch([], pool, new Set(), 0, 20).newTargetIds, []);
+});
+
+test('withDeclaredLessons gộp bài 1..N, không trùng, xếp tăng dần', () => {
+  assert.deepEqual(withDeclaredLessons([2, 7], 3), [1, 2, 3, 7]);
+  assert.deepEqual(withDeclaredLessons([5], 0), [5]);
 });

@@ -11,6 +11,8 @@ import {
   dailyAccuracy,
   targetsByType,
   activityHeatmap,
+  pickActiveLesson,
+  secondsPerQuestion,
 } from './stats.ts';
 import type { PracticeSession, ReviewItem } from '../types/index.ts';
 
@@ -216,4 +218,30 @@ test('activityHeatmap tạo đủ 12 tuần và tô đúng level (kể cả 0 ph
   assert.equal(t3?.level, 3);
   assert.equal(t4?.level, 2);
   assert.equal(t5?.level, 1);
+});
+
+test('pickActiveLesson: bài nhỏ nhất đang học dở, rồi bài đầu chưa xong', () => {
+  const summaries = [1, 2, 3, 4].map((number) => ({ number, vocabCount: 10 }));
+  assert.equal(pickActiveLesson(summaries, new Map()), 1);
+  assert.equal(pickActiveLesson(summaries, new Map([[1, 10], [3, 4]])), 3);
+  assert.equal(pickActiveLesson(summaries, new Map([[1, 10], [2, 10]])), 3);
+  assert.equal(pickActiveLesson(summaries, new Map([[1, 10], [2, 10], [3, 10], [4, 10]])), 4);
+});
+
+test('pickActiveLesson: bài đã khai báo không bao giờ là bài đang học', () => {
+  const summaries = [1, 2, 3, 4].map((number) => ({ number, vocabCount: 10 }));
+  // Nhỏ giọt từ vựng bài 1 không kéo "bài đang học" lùi về bài 1.
+  assert.equal(pickActiveLesson(summaries, new Map([[1, 3]]), 2), 3);
+});
+
+test('secondsPerQuestion lấy trung bình theo tổng câu, bỏ phiên rỗng', () => {
+  assert.equal(secondsPerQuestion([]), null);
+  assert.equal(
+    secondsPerQuestion([
+      { durationSeconds: 100, totalQuestions: 10 },
+      { durationSeconds: 200, totalQuestions: 10 },
+      { durationSeconds: 50, totalQuestions: 0 },
+    ]),
+    15,
+  );
 });

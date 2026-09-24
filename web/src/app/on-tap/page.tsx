@@ -146,8 +146,9 @@ export default function ReviewTodayPage() {
     );
   }
 
-  // Chưa học gì bao giờ: lịch ôn rỗng vì chưa có gì sinh ra nó.
-  if (!queue.hasAnyReviewItem) {
+  // Chưa học gì bao giờ: lịch ôn rỗng vì chưa có gì sinh ra nó. Người đã khai báo "đã học đến
+  // bài N" thì chưa có reviewItems nhưng vẫn có mục mới để nạp — không rơi vào nhánh này.
+  if (!queue.hasAnyReviewItem && totalCount === 0) {
     return (
       <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6">
         <div className="space-y-4">
@@ -286,6 +287,13 @@ export default function ReviewTodayPage() {
           <Button size="quiz" className="w-full" disabled={!canStart} onClick={startSession}>
             Bắt đầu ôn
           </Button>
+
+          {queue.remainingDue > 0 && (
+            <p className="text-sm text-muted-foreground">
+              Còn {queue.remainingDue} mục đến hạn cho các lô sau. Mỗi lô tối đa{' '}
+              {queue.reviewBatchSize} mục; tạm chưa nạp mục mới cho tới khi ôn kịp.
+            </p>
+          )}
 
           {queue.limitReached && (
             <p className="text-sm text-muted-foreground">

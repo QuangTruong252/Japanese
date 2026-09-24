@@ -109,6 +109,76 @@ function GoogleIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+function NumberStepper({
+  id,
+  label,
+  hint,
+  unit,
+  value,
+  min,
+  max,
+  step,
+  onChange,
+}: {
+  id?: string;
+  label: string;
+  hint: string;
+  unit: string;
+  value: number;
+  min: number;
+  max: number;
+  step: number;
+  onChange: (value: number) => void;
+}) {
+  const inputId = useId();
+  const clamp = (n: number) => Math.max(min, Math.min(max, n));
+  return (
+    <div id={id} className="flex scroll-mt-24 flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="space-y-0.5">
+        <label htmlFor={inputId} className="text-sm font-medium text-foreground cursor-pointer">
+          {label}
+        </label>
+        <p className="text-xs text-muted-foreground">{hint}</p>
+      </div>
+
+      <div className="flex shrink-0 items-center gap-2">
+        <Button
+          type="button"
+          variant="outline"
+          size="icon-sm"
+          aria-label={`Giảm ${step} ${unit}`}
+          disabled={value <= min}
+          onClick={() => onChange(clamp(value - step))}
+        >
+          <Minus className="size-4" />
+        </Button>
+        <Input
+          id={inputId}
+          type="number"
+          min={min}
+          max={max}
+          value={value}
+          onChange={(e) => {
+            const val = Number.parseInt(e.target.value, 10);
+            if (!Number.isNaN(val)) onChange(clamp(val));
+          }}
+          className="h-8 w-16 text-center tabular-nums font-medium"
+        />
+        <Button
+          type="button"
+          variant="outline"
+          size="icon-sm"
+          aria-label={`Tăng ${step} ${unit}`}
+          disabled={value >= max}
+          onClick={() => onChange(clamp(value + step))}
+        >
+          <Plus className="size-4" />
+        </Button>
+      </div>
+    </div>
+  );
+}
+
 export default function SettingsPage() {
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -370,7 +440,6 @@ export default function SettingsPage() {
   };
 
   const volumeId = useId();
-  const dailyNewLimitId = useId();
   const wipeInputId = useId();
 
   if (!mounted) {
@@ -585,67 +654,41 @@ export default function SettingsPage() {
 
         <Card>
           <CardContent className="divide-y divide-border p-0">
-            {/* Số mục mới mỗi ngày */}
-            <div className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="space-y-0.5">
-                <label
-                  htmlFor={dailyNewLimitId}
-                  className="text-sm font-medium text-foreground cursor-pointer"
-                >
-                  Số mục mới mỗi ngày
-                </label>
-                <p className="text-xs text-muted-foreground">
-                  Giới hạn số lượng mục mới nạp vào hàng đợi Ôn tập (/on-tap)
-                </p>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="icon-sm"
-                  aria-label="Giảm 5 mục"
-                  disabled={settings.dailyNewLimit <= 1}
-                  onClick={() =>
-                    updateSettings({
-                      dailyNewLimit: Math.max(1, settings.dailyNewLimit - 5),
-                    })
-                  }
-                >
-                  <Minus className="size-4" />
-                </Button>
-                <Input
-                  id={dailyNewLimitId}
-                  type="number"
-                  min={1}
-                  max={100}
-                  value={settings.dailyNewLimit}
-                  onChange={(e) => {
-                    const val = Number.parseInt(e.target.value, 10);
-                    if (!Number.isNaN(val)) {
-                      updateSettings({
-                        dailyNewLimit: Math.max(1, Math.min(100, val)),
-                      });
-                    }
-                  }}
-                  className="h-8 w-16 text-center tabular-nums font-medium"
-                />
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="icon-sm"
-                  aria-label="Tăng 5 mục"
-                  disabled={settings.dailyNewLimit >= 100}
-                  onClick={() =>
-                    updateSettings({
-                      dailyNewLimit: Math.min(100, settings.dailyNewLimit + 5),
-                    })
-                  }
-                >
-                  <Plus className="size-4" />
-                </Button>
-              </div>
-            </div>
+            <NumberStepper
+              label="Số mục mới mỗi ngày"
+              hint="Giới hạn số lượng mục mới nạp vào hàng đợi Ôn tập (/on-tap)"
+              unit="mục"
+              value={settings.dailyNewLimit}
+              min={1}
+              max={100}
+              step={5}
+              onChange={(dailyNewLimit) => updateSettings({ dailyNewLimit })}
+            />
+            <NumberStepper
+              label="Số mục mỗi lô ôn"
+              hint="Một phiên ôn lấy tối đa chừng này mục; còn nhiều thì ôn tiếp ở lô sau"
+              unit="mục"
+              value={settings.reviewBatchSize}
+              min={5}
+              max={100}
+              step={5}
+              onChange={(reviewBatchSize) => updateSettings({ reviewBatchSize })}
+            />
+            <NumberStepper
+              id="hoc-den-bai"
+              label="Đã học đến bài"
+              hint={
+                settings.learnedThroughLesson === 0
+                  ? 'Chưa khai báo. Nếu đã học Minna trước đây, chọn bài cuối bạn đã học — từ vựng các bài đó sẽ vào lịch ôn dần theo số mục mới mỗi ngày.'
+                  : `Từ vựng bài 1–${settings.learnedThroughLesson} vào lịch ôn dần theo số mục mới mỗi ngày. Hạ số này không xóa mục đã vào lịch.`
+              }
+              unit="bài"
+              value={settings.learnedThroughLesson}
+              min={0}
+              max={25}
+              step={1}
+              onChange={(learnedThroughLesson) => updateSettings({ learnedThroughLesson })}
+            />
 
             {/* Âm lượng phát âm */}
             <div className="space-y-3 p-4">

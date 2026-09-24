@@ -45,3 +45,46 @@ Ngày: 23/09/2026. Trạng thái: Đã cập nhật code theo hợp đồng UX 2
 - Sẵn sàng chuyển sang **Đợt 3: Chuỗi Audio & Trình phát (SPEC-09 & SPEC-10)**:
   - SPEC-09: Quản lý nạp Audio qua file ZIP, xác thực SHA-256 nội bộ, lưu trữ IndexedDB, quản lý dung lượng/quota và xóa audio.
   - SPEC-10: Trình phát Shadowing Player, lặp đoạn A-B, điều khiển tốc độ (0.8x-1.2x) tích hợp vào cuối màn `/hoc/[so]`.
+
+---
+
+## Cập nhật 24/09/2026 — Bảng tin theo benchmark UI/UX (kèm SPEC-05 §2.1a)
+
+Quyết định người dùng duyệt ngày 24/09/2026, nguồn: [benchmark](../research/ux-benchmark/README.md).
+Hợp đồng đã sửa ở SPEC-02 §3.2 và SPEC-05 §2.1a.
+
+**Thay đổi**
+
+- Bỏ streak khỏi Bảng tin (chip ngọn lửa + màu `amber-*` thô). Streak còn ở `/thong-ke`.
+- Bảng tin lấy số từ `useDueQueue` (cùng hook với `/on-tap`): "20 mục · khoảng N phút · còn M mục
+  đến hạn cho lô sau". Số phút suy từ `secondsPerQuestion` của 20 phiên gần nhất; chưa có phiên → không hiện.
+- Trạng thái "Đã ôn xong các mục đến hạn. Ngày mai có N mục." trong khối hợp nhất.
+- Người mới: lối phụ "Tôi đã học đến bài…" → `/cai-dat#hoc-den-bai`.
+- Cài đặt mới `reviewBatchSize` (5–100, mặc định 20) và `learnedThroughLesson` (0–25) trong
+  `settings.ts`; trang Cài đặt dùng `NumberStepper` chung cho 3 ô số.
+- `review-queue.ts`: `planReviewBatch` (lô ôn; mục mới chỉ lấp chỗ trống → tồn đọng ≥ lô thì không
+  nạp mới), `withDeclaredLessons`. `useDueQueue`: `dueItems` giờ là mục đến hạn **của lô**, thêm
+  `remainingDue`, `reviewBatchSize`. `/on-tap` hiện dòng "Còn N mục cho các lô sau".
+- `stats.ts`: `pickActiveLesson` dùng chung cho Bảng tin và `LessonGrid` (bỏ hai bản tính riêng);
+  bài ≤ N đã khai báo không bao giờ là bài đang học.
+- `fsrs.ts` không đổi.
+
+**Kiểm chứng (24/09/2026)**
+
+- `pnpm check` PASS; `pnpm test` PASS 140/140 (thêm test `planReviewBatch`, `withDeclaredLessons`,
+  `pickActiveLesson`, `secondsPerQuestion`, kẹp giá trị settings).
+- Trình duyệt (agent-browser, dev server 3000, dữ liệu giả lập, đã xóa sau khi thử):
+  - 390px, người mới: "Bắt đầu bài 1" + "Tôi đã học đến bài…", không có streak.
+  - Link cuộn tới mục khai báo; nhập 10 → Bảng tin "Ôn tập · 20 mục", bài đang học = bài 11; `/hoc` cũng bài 11.
+  - 50 mục quá hạn: `/on-tap` "20 mục đến hạn · 0 mục mới · còn 30 mục"; phiên ôn "1/20"; Bảng tin cùng số.
+  - Mọi mục hạn ngày mai + hết hạn mức: "Đã ôn xong… Ngày mai có 50 mục." (390px và 1280px).
+  - `get_errors`: không có lỗi.
+
+**Chưa kiểm chứng / giới hạn**
+
+- Chưa làm hết một lô thật đến màn kết quả; màn kết quả vẫn dẫn "Về ôn tập" (chưa có nút "Ôn tiếp lô sau" một chạm).
+- `learnedThroughLesson` nằm ở localStorage nên không đồng bộ giữa thiết bị (đã chấp nhận).
+- Chưa kiểm tra ước lượng số phút với dữ liệu phiên thật; chưa chạy `pnpm build`.
+
+**Bước tiếp theo:** nhóm P0 còn lại của benchmark (câu sai quay lại trong phiên, thanh tiến độ, khung
+phản hồi cố định đáy, nút "Luyện lại câu sai").

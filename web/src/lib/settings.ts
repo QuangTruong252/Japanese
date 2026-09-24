@@ -5,6 +5,10 @@ export interface AppSettings {
   theme: 'light' | 'dark' | 'system';
   soundVolume: number;
   dailyNewLimit: number;
+  /** Số mục tối đa của một phiên ôn (SPEC-05 §2.1a). */
+  reviewBatchSize: number;
+  /** "Đã học đến bài N" do người học khai báo; 0 = chưa khai báo (SPEC-05 §2.1a). */
+  learnedThroughLesson: number;
 }
 
 export const SETTINGS_STORAGE_KEY = 'jp:settings';
@@ -16,7 +20,14 @@ export const DEFAULT_SETTINGS: AppSettings = {
   theme: 'system',
   soundVolume: 1.0,
   dailyNewLimit: 20,
+  reviewBatchSize: 20,
+  learnedThroughLesson: 0,
 };
+
+const clampInt = (value: unknown, min: number, max: number, fallback: number): number =>
+  typeof value === 'number' && Number.isFinite(value)
+    ? Math.max(min, Math.min(max, Math.round(value)))
+    : fallback;
 
 export const loadSettings = (): AppSettings => {
   if (typeof window === 'undefined' || !window.localStorage) {
@@ -45,6 +56,8 @@ export const loadSettings = (): AppSettings => {
         typeof parsed.dailyNewLimit === 'number'
           ? Math.max(1, Math.min(100, parsed.dailyNewLimit))
           : DEFAULT_SETTINGS.dailyNewLimit,
+      reviewBatchSize: clampInt(parsed.reviewBatchSize, 5, 100, DEFAULT_SETTINGS.reviewBatchSize),
+      learnedThroughLesson: clampInt(parsed.learnedThroughLesson, 0, 25, 0),
     };
   } catch {
     return DEFAULT_SETTINGS;

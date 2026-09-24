@@ -197,6 +197,12 @@ màn Bảng tin. Không khóa con số ở thời điểm này.
 
 ### 3.2. Bảng tin `/` — hợp đồng UX
 
+> **Sửa 24/09/2026 — người dùng duyệt**, dựa trên [benchmark UI/UX](../research/ux-benchmark/README.md):
+> (1) **bỏ hẳn Nhịp học/streak** khỏi Bảng tin; (2) người mới có lối phụ **"Tôi đã học đến
+> bài…"** — từ vựng các bài đó vào lịch ôn **nhỏ giọt** theo `dailyNewLimit`, không nạp hàng
+> loạt (SPEC-05 §2.1); (3) thêm trạng thái **"Đã ôn xong"** kèm số mục ngày mai; (4) ôn theo
+> **lô** do người học chỉnh (`reviewBatchSize`, SPEC-05 §2.1). Các chỗ bên dưới đã sửa theo.
+>
 > **Chốt 22/09/2026 — UX đã duyệt, thị giác chưa duyệt.** Mục này thay bản "dashboard bốn ô số
 > liệu" trước đó. Code hiện tại **chưa** theo bản này; phần lệch ghi ở §9. Phần thị giác (bố cục
 > cụ thể, tỷ lệ, mật độ) chưa chốt — đó là việc của §10.
@@ -224,17 +230,15 @@ Bảng tin
 │   └── lối vào tài khoản / avatar     (§3.1 — đường duy nhất tới Cài đặt ở < lg)
 ├── Việc nên làm tiếp theo             P0
 ├── Bài đang học                       P0 hoặc P1 — xem luật hợp nhất
-├── Cần củng cố                        P1, ẩn khi bằng 0
-└── Nhịp học                           P2
+└── Cần củng cố                        P1, ẩn khi bằng 0
 ```
 
 | Mức | Nội dung |
 |---|---|
-| **P0** | Việc nên làm tiếp theo · số mục đến hạn khi lớn hơn 0 · lối vào tài khoản · bài đang học **khi nó chính là** việc nên làm tiếp theo |
-| **P1** | Bài đang học khi ôn tập đang là hành động chính · lối đi thay thế · tóm tắt "Cần củng cố" |
-| **P2** | Nhịp học |
+| **P0** | Việc nên làm tiếp theo · số mục của lô ôn khi lớn hơn 0 · lối vào tài khoản · bài đang học **khi nó chính là** việc nên làm tiếp theo |
+| **P1** | Bài đang học khi ôn tập đang là hành động chính · lối đi thay thế · tóm tắt "Cần củng cố" · lối phụ "Tôi đã học đến bài…" (chỉ người mới) |
 
-Không có nội dung P3 trên Bảng tin ở phiên bản này.
+Không có nội dung P2/P3 trên Bảng tin ở phiên bản này.
 
 #### Việc nên làm tiếp theo — P0
 
@@ -242,9 +246,22 @@ Không có nội dung P3 trên Bảng tin ở phiên bản này.
 
 | Điều kiện | Hành động chính | Đích |
 |---|---|---|
-| `dueCount > 0` | Ôn các mục đến hạn | `/on-tap` |
-| `dueCount = 0` và có bài đang học | Học tiếp bài đang học | `/hoc/<số>` |
-| `dueCount = 0` và chưa học gì | Bắt đầu bài 1 | `/hoc/1` |
+| Lô ôn hôm nay > 0 (mục đến hạn + mục mới, `useDueQueue`) | Ôn lô hiện tại | `/on-tap` |
+| Lô ôn = 0 và có bài đang học | Học tiếp bài đang học | `/hoc/<số>` |
+| Lô ôn = 0 và chưa học gì | Bắt đầu bài 1 | `/hoc/1` |
+
+Số trên Bảng tin lấy **cùng hook** `useDueQueue` với `/on-tap`, nên hai màn luôn ra một con số.
+Khối ôn ghi khối lượng, không giải thích thuật toán: "20 mục · khoảng 6 phút", thêm "còn 180 mục
+đến hạn" khi tồn đọng vượt một lô. Số phút chỉ hiện khi có phiên cũ để suy thời gian mỗi câu
+(`durationSeconds / totalQuestions`), không bịa giá trị mặc định.
+
+**Người mới** (chưa có `reviewItems`, chưa khai báo): nút chính "Bắt đầu bài 1", kèm một lối phụ
+"Tôi đã học đến bài…" dẫn tới mục khai báo trong Cài đặt. Khai báo xong, bài đang học là bài
+đầu tiên sau bài đã khai báo.
+
+**Đã ôn xong** (lô = 0, đã có `reviewItems`): khối hợp nhất ghi "Đã ôn xong các mục đến hạn.
+Ngày mai có N mục." (hoặc "Ngày mai chưa có mục nào đến hạn."), nút chính vẫn là học tiếp bài
+đang học. Đây là mô tả trạng thái, không phải mục tiêu theo ngày.
 
 Đây là bản mở rộng của quy tắc đã duyệt trước đó (đổi `variant` giữa hai nút ngang hàng) thành
 **chọn một hành động**. Nút chính vẫn là nút `default` duy nhất của trang.
@@ -298,17 +315,11 @@ thao tác từng mục thuộc `/on-tap/diem-yeu`.
 
 `n = 0` thì **ẩn hẳn khối**, không render thẻ rỗng để giữ bố cục.
 
-#### Nhịp học — P2
+#### Nhịp học — đã bỏ 24/09/2026
 
-Một tín hiệu **nhẹ** trả lời "tôi có đang đều không". Chuỗi ngày (`currentStreak`) là ứng viên
-duy nhất đang có dữ liệu thật. Ràng buộc:
-
-- Không phải ô số liệu, không phải thẻ KPI.
-- Không dùng chuyển động để gây chú ý.
-- Không tạo áp lực, không trách móc khi chuỗi đứt (`PRODUCT.md` — Giọng văn).
-- Không được trở thành điểm nhấn thị giác của màn.
-
-Trình bày cụ thể (chip nhỏ ở header, dòng phụ, tóm tắt ở chân trang) là phần §10 khám phá.
+Bảng tin **không** hiện chuỗi ngày dưới bất kỳ dạng nào. Lý do: streak là cơ chế loss-aversion
+bị phê bình nhiều nhất ở Duolingo, trái giọng văn `PRODUCT.md`; bản cài cũ còn dùng màu
+`amber-*` thô. Chuỗi ngày vẫn ở `/thong-ke` (SPEC-07).
 
 #### Không thuộc Bảng tin
 
@@ -319,7 +330,8 @@ Trình bày cụ thể (chip nhỏ ở header, dòng phụ, tóm tắt ở chân
 | Danh sách xem trước hàng đợi ôn | `/on-tap` |
 | Ba dòng điểm yếu kèm nút riêng từng dòng | `/on-tap/diem-yeu` |
 | Widget "Kanji hôm nay" | Không thuộc màn nào hiện có; cân nhắc lại ở luồng Học hoặc Tra cứu sau |
-| Mục tiêu phút/ngày, danh sách việc hôm nay, trạng thái "xong việc hôm nay" | Chưa tồn tại — xem ghi chú dưới |
+| Chuỗi ngày (streak) | `/thong-ke` |
+| Mục tiêu phút/ngày, danh sách việc hôm nay | Chưa tồn tại — xem ghi chú dưới. Trạng thái "Đã ôn xong" ở trên chỉ mô tả hàng đợi, không phải mục tiêu |
 | Tên người dùng viết cứng, tục ngữ, emoji trang trí | Không phải nội dung bắt buộc của màn |
 
 > **Không phát minh mục tiêu theo ngày.** Con số `30 phút` trong code hiện tại không phải yêu

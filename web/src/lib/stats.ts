@@ -110,6 +110,38 @@ export function countLearnedByLesson(targetIds: string[]): Map<number, number> {
   return counts;
 }
 
+/**
+ * Bài đang học — dùng chung cho Bảng tin và `/hoc` (SPEC-02 §3.2). Bài ≤ `learnedThroughLesson`
+ * (người học khai báo đã học) không bao giờ là bài đang học. Ưu tiên bài nhỏ nhất đang học dở,
+ * rồi tới bài đầu tiên chưa xong; học xong hết thì về bài cuối.
+ */
+export function pickActiveLesson(
+  summaries: { number: number; vocabCount: number }[],
+  learnedByLesson: Map<number, number>,
+  learnedThroughLesson = 0,
+): number {
+  const candidates = summaries.filter((s) => s.number > learnedThroughLesson);
+  const isDone = (s: { number: number; vocabCount: number }) =>
+    s.vocabCount > 0 && (learnedByLesson.get(s.number) ?? 0) >= s.vocabCount;
+  const inProgress = candidates.find((s) => !isDone(s) && (learnedByLesson.get(s.number) ?? 0) > 0);
+  const notDone = candidates.find((s) => !isDone(s));
+  return (inProgress ?? notDone ?? summaries[summaries.length - 1])?.number ?? 1;
+}
+
+/** Giây trung bình mỗi câu của các phiên đã có (gồm cả đọc phản hồi); không có phiên → null. */
+export function secondsPerQuestion(
+  sessions: { durationSeconds: number; totalQuestions: number }[],
+): number | null {
+  let seconds = 0;
+  let questions = 0;
+  for (const s of sessions) {
+    if (s.totalQuestions <= 0) continue;
+    seconds += s.durationSeconds;
+    questions += s.totalQuestions;
+  }
+  return questions > 0 ? seconds / questions : null;
+}
+
 export interface DayValue {
   date: Date;
   dayKey: string;

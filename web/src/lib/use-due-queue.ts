@@ -3,7 +3,7 @@
 import { useMemo } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db';
-import { collectTargetIds, selectNewTargetIds } from '@/lib/review-queue';
+import { collectTargetIds, planReviewBatch, withDeclaredLessons } from '@/lib/review-queue';
 import { DEFAULT_SETTINGS, loadSettings } from '@/lib/settings';
 import { startOfLocalDay } from '@/lib/stats';
 import { useDueClock } from '@/lib/use-due-clock';
@@ -20,12 +20,15 @@ export interface DueQueue {
   loading: boolean;
   /** Mốc "bây giờ" dùng chung cho mọi phép so hạn ôn của trang. */
   now: Date;
-  /** Mục đến hạn, quá hạn lâu nhất xếp trước. */
+  /** Mục đến hạn của lô này, quá hạn lâu nhất xếp trước (SPEC-05 §2.1a). */
   dueItems: ReviewItem[];
-  /** Mục tiêu mới sẽ nạp hôm nay, đã cắt theo hạn mức còn lại. */
+  /** Mục đến hạn còn lại sau lô này — ôn ở lô sau. */
+  remainingDue: number;
+  /** Mục tiêu mới của lô: chỉ lấp chỗ trống, đã cắt theo hạn mức còn lại. */
   newTargetIds: string[];
-  /** Tập mục tiêu của phiên ôn = đến hạn + mới. */
+  /** Tập mục tiêu của phiên ôn = đến hạn + mới, tối đa một lô. */
   sessionTargetIds: Set<string>;
+  reviewBatchSize: number;
   newLoadedToday: number;
   dailyNewLimit: number;
   limitReached: boolean;
@@ -46,7 +49,7 @@ export function useDueQueue(): DueQueue {
   const snapshot = useLiveQuery(async () => {
     // loadSettings đọc localStorage. Callback của useLiveQuery chỉ chạy phía client nên
     // không lệch hydrate, và không phải gọi setState trong effect.
-    const dailyNewLimit = loadSettings().dailyNewLimit;
+    const { dailyNewLimit, reviewBatchSize, learnedThroughLesson } = loadSettings();
 
     const startToday = startOfLocalDay(now);
     const startTomorrow = new Date(startToday);
@@ -63,7 +66,8 @@ export function useDueQueue(): DueQueue {
 
     return {
       dailyNewLimit,
-      dueItems: all
+      reviewBatchSize,
+      allDueItems: all
         .filter((item) => item.dueAt.getTime() <= now.getTime())
         .sort((a, b) => a.dueAt.getTime() - b.dueAt.getTime()),
       existingTargetIds: new Set(all.map((item) => item.targetId)),
@@ -72,22 +76,27 @@ export function useDueQueue(): DueQueue {
         (item) => item.dueAt >= startTomorrow && item.dueAt < startDayAfter,
       ).length,
       hasAnyReviewItem: all.length > 0,
-      learnedLessons: [...new Set(all.map((item) => item.lesson))]
-        .filter((lesson) => lesson > 0)
-        .sort((a, b) => a - b),
+      learnedLessons: withDeclaredLessons(
+        [...new Set(all.map((item) => item.lesson))].filter((lesson) => lesson > 0),
+        learnedThroughLesson,
+      ),
     };
   }, [now]);
 
   const learnedLessons = useMemo(() => snapshot?.learnedLessons ?? [], [snapshot]);
   const { questions, loading: poolLoading } = useQuestionPool(learnedLessons);
 
-  const newTargetIds = useMemo(() => {
-    if (!snapshot) return [];
-    const remaining = Math.max(0, snapshot.dailyNewLimit - snapshot.newLoadedToday);
-    return selectNewTargetIds(collectTargetIds(questions), snapshot.existingTargetIds, remaining);
+  const plan = useMemo(() => {
+    if (!snapshot) return { batchDue: [] as ReviewItem[], newTargetIds: [] as string[], remainingDue: 0 };
+    return planReviewBatch(
+      snapshot.allDueItems,
+      collectTargetIds(questions),
+      snapshot.existingTargetIds,
+      Math.max(0, snapshot.dailyNewLimit - snapshot.newLoadedToday),
+      snapshot.reviewBatchSize,
+    );
   }, [snapshot, questions]);
-
-  const dueItems = useMemo(() => snapshot?.dueItems ?? [], [snapshot]);
+  const { batchDue: dueItems, newTargetIds, remainingDue } = plan;
 
   const sessionTargetIds = useMemo(
     () => new Set([...dueItems.map((item) => item.targetId), ...newTargetIds]),
@@ -113,8 +122,10 @@ export function useDueQueue(): DueQueue {
     loading: snapshot === undefined || poolLoading,
     now,
     dueItems,
+    remainingDue,
     newTargetIds,
     sessionTargetIds,
+    reviewBatchSize: snapshot?.reviewBatchSize ?? DEFAULT_SETTINGS.reviewBatchSize,
     newLoadedToday: snapshot?.newLoadedToday ?? 0,
     dailyNewLimit: snapshot?.dailyNewLimit ?? DEFAULT_SETTINGS.dailyNewLimit,
     limitReached: snapshot ? snapshot.newLoadedToday >= snapshot.dailyNewLimit : false,

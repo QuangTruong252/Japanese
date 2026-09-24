@@ -1,12 +1,13 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { Card } from '@/components/ui/card';
 import { ProgressBar } from '@/components/LessonProgress';
 import { db } from '@/lib/db';
-import { countLearnedByLesson } from '@/lib/stats';
+import { countLearnedByLesson, pickActiveLesson } from '@/lib/stats';
+import { DEFAULT_SETTINGS, getSettingsSnapshot, subscribeSettings } from '@/lib/settings';
 import type { LessonSummary } from '@/lib/lessons';
 import {
   Search,
@@ -31,13 +32,17 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
     [] as string[]
   );
   const learnedByLesson = useMemo(() => countLearnedByLesson(targetIds), [targetIds]);
+  const { learnedThroughLesson } = useSyncExternalStore(
+    subscribeSettings,
+    getSettingsSnapshot,
+    () => DEFAULT_SETTINGS,
+  );
 
   // Phân loại trạng thái các bài học
   const lessonStats = useMemo(() => {
     let completed = 0;
     let inProgress = 0;
     let notStarted = 0;
-    let activeLessonNum = 1;
     let totalVocabInN5 = 0;
     let totalGrammarInN5 = 0;
 
@@ -49,9 +54,6 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
         completed++;
       } else if (learned > 0) {
         inProgress++;
-        if (activeLessonNum === 1 || s.number < activeLessonNum) {
-          activeLessonNum = s.number;
-        }
       } else {
         notStarted++;
       }
@@ -61,11 +63,11 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
       completed,
       inProgress,
       notStarted,
-      activeLessonNum: inProgress > 0 ? activeLessonNum : (completed < 25 ? completed + 1 : 1),
+      activeLessonNum: pickActiveLesson(summaries, learnedByLesson, learnedThroughLesson),
       totalVocabInN5: totalVocabInN5 || 650,
       totalGrammarInN5: totalGrammarInN5 || 98,
     };
-  }, [summaries, learnedByLesson]);
+  }, [summaries, learnedByLesson, learnedThroughLesson]);
 
   // Lọc và tìm kiếm bài học
   const filteredSummaries = useMemo(() => {

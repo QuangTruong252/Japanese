@@ -1,11 +1,12 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db';
-import { useDueClock } from '@/lib/use-due-clock';
-import { countLearnedByLesson, currentStreak } from '@/lib/stats';
+import { useDueQueue } from '@/lib/use-due-queue';
+import { countLearnedByLesson, pickActiveLesson, secondsPerQuestion } from '@/lib/stats';
+import { DEFAULT_SETTINGS, getSettingsSnapshot, subscribeSettings } from '@/lib/settings';
 import type { LessonSummary } from '@/lib/lessons';
 import { SyncBadge } from '@/components/SyncBadge';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
@@ -17,7 +18,7 @@ import {
   RotateCcw,
   BookOpen,
   ArrowRight,
-  Flame,
+  CheckCircle2,
   Settings,
   Sparkles,
   AlertCircle,
@@ -25,15 +26,17 @@ import {
 import { cn } from '@/lib/utils';
 
 export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) {
-  const now = useDueClock();
-
-  // 1. Số mục đến hạn (FSRS)
-  const dueCount = useLiveQuery(
-    () => db.reviewItems.where('dueAt').belowOrEqual(now).count(),
-    [now]
+  // Cùng hook với /on-tap để hai màn luôn ra một con số (SPEC-02 §3.2).
+  const queue = useDueQueue();
+  const now = queue.now;
+  const { learnedThroughLesson } = useSyncExternalStore(
+    subscribeSettings,
+    getSettingsSnapshot,
+    () => DEFAULT_SETTINGS,
   );
+  const batchCount = queue.sessionTargetIds.size;
 
-  // 2. Lấy danh sách ID từ vựng đã học để tính tiến độ theo bài
+  // Tiến độ theo bài: danh sách ID từ vựng đã vào lịch ôn
   const vocabTargetIds = useLiveQuery(
     () => db.reviewItems.where('targetId').startsWith('vocab-').primaryKeys(),
     [],
@@ -44,53 +47,29 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
     [vocabTargetIds]
   );
 
-  // 3. Số nội dung cần củng cố (từng sai ít nhất 1 lần)
+  // Số nội dung cần củng cố (từng sai ít nhất 1 lần)
   const weakCount = useLiveQuery(
     () => db.reviewItems.filter((item) => item.incorrectCount > 0).count(),
     []
   ) ?? 0;
 
-  // 4. Lịch sử phiên trong 90 ngày để tính Streak nhẹ nhàng (P2)
-  const historyCutoff = useMemo(
-    () => new Date(now.getTime() - 90 * 24 * 60 * 60 * 1000).toISOString(),
-    [now]
-  );
+  // Thời gian thật mỗi câu từ các phiên gần đây, để ước lượng số phút của lô ôn
   const recentSessions = useLiveQuery(
-    () => db.practiceSessions.where('createdAt').above(historyCutoff).reverse().sortBy('createdAt'),
-    [historyCutoff]
+    () => db.practiceSessions.orderBy('createdAt').reverse().limit(20).toArray(),
+    []
   );
-  const streak = useMemo(
-    () => currentStreak(recentSessions ?? [], now),
-    [recentSessions, now]
-  );
+  const minutesEstimate = useMemo(() => {
+    const spq = secondsPerQuestion(recentSessions ?? []);
+    return spq === null ? null : Math.max(1, Math.round((batchCount * spq) / 60));
+  }, [recentSessions, batchCount]);
 
-  // 5. Xác định bài học hiện tại (đồng bộ chuẩn xác với LessonGrid / SPEC-03)
-  const activeLessonInfo = useMemo(() => {
-    let completed = 0;
-    let inProgressLesson: number | null = null;
-
-    for (const s of summaries) {
-      const learned = learnedByLesson.get(s.number) ?? 0;
-      if (s.vocabCount > 0 && learned >= s.vocabCount) {
-        completed++;
-      } else if (learned > 0 && inProgressLesson === null) {
-        inProgressLesson = s.number;
-      }
-    }
-
-    const activeLessonNum = inProgressLesson ?? (completed < 25 ? completed + 1 : 1);
-    const activeSummary = summaries.find((s) => s.number === activeLessonNum) ?? summaries[0];
-    const learnedInActive = learnedByLesson.get(activeLessonNum) ?? 0;
-    const totalInActive = activeSummary.vocabCount;
-    const isNewUser = (vocabTargetIds?.length ?? 0) === 0;
-    return {
-      activeLessonNum,
-      activeSummary,
-      learnedInActive,
-      totalInActive,
-      isNewUser,
-    };
-  }, [summaries, learnedByLesson, vocabTargetIds]);
+  // Bài đang học — cùng logic với /hoc (pickActiveLesson)
+  const activeLessonNum = pickActiveLesson(summaries, learnedByLesson, learnedThroughLesson);
+  const activeSummary = summaries.find((s) => s.number === activeLessonNum) ?? summaries[0];
+  const learnedInActive = learnedByLesson.get(activeLessonNum) ?? 0;
+  const totalInActive = activeSummary.vocabCount;
+  const isNewUser =
+    !queue.hasAnyReviewItem && (vocabTargetIds?.length ?? 0) === 0 && learnedThroughLesson === 0;
 
   // Lời chào và định dạng ngày tháng
   const hour = now.getHours();
@@ -101,13 +80,6 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
     month: 'long',
   });
 
-  const {
-    activeLessonNum,
-    activeSummary,
-    learnedInActive,
-    totalInActive,
-    isNewUser,
-  } = activeLessonInfo;
 
   return (
     <main className="mx-auto w-full max-w-5xl px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8">
@@ -123,18 +95,6 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
             {greeting}
           </h1>
 
-          {/* Nhịp học P2: Tín hiệu chuỗi ngày nhẹ nhàng, không gây áp lực */}
-          {streak.days > 0 && (
-            <div className="pt-1.5 flex items-center gap-2">
-              <div
-                title={`Chuỗi ${streak.days} ngày học liên tục`}
-                className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-500/10 border border-amber-500/20 shadow-xs"
-              >
-                <Flame className="w-3.5 h-3.5 text-amber-500 fill-amber-500 shrink-0" />
-                <span>{streak.days} ngày liên tục</span>
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Lối vào thứ cấp cho Tìm kiếm, Tài khoản, Chủ đề & Cài đặt */}
@@ -159,14 +119,14 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
       {/* ========================================================
           2. Khối P0 Hành động chính & Bài đang học (Luật hợp nhất)
           ======================================================== */}
-      {dueCount === undefined ? (
+      {queue.loading ? (
         // Trạng thái chờ tải dữ liệu Dexie: Skeleton nhẹ chống chớp giao diện
         <Card className="p-6 border border-border/80 animate-pulse bg-card space-y-4">
           <div className="h-4 w-32 bg-muted rounded" />
           <div className="h-8 w-64 bg-muted rounded" />
           <div className="h-12 w-48 bg-muted rounded-xl" />
         </Card>
-      ) : dueCount > 0 ? (
+      ) : batchCount > 0 ? (
         // TH1: Có mục đến hạn -> Ôn tập là P0, Bài đang học là P1 bên dưới
         <div className="space-y-4">
           {/* Card P0: Bắt đầu ôn tập */}
@@ -177,12 +137,12 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
                 <span>Việc nên làm tiếp theo</span>
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-foreground">
-                Ôn tập các mục đến hạn
+                Ôn tập
               </h2>
               <p className="text-sm text-muted-foreground max-w-xl">
-                Bạn có <strong className="text-foreground font-semibold">{dueCount}</strong> mục đến
-                hạn ôn tập hôm nay theo lịch lặp lại ngắt quãng (FSRS). Ôn đều đặn giúp củng cố trí nhớ
-                dài hạn.
+                <strong className="text-foreground font-semibold">{batchCount} mục</strong>
+                {minutesEstimate !== null && <> · khoảng {minutesEstimate} phút</>}
+                {queue.remainingDue > 0 && <> · còn {queue.remainingDue} mục đến hạn cho lô sau</>}
               </p>
             </div>
 
@@ -195,7 +155,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
                 )}
               >
                 <RotateCcw className="w-5 h-5 mr-2" />
-                Bắt đầu ôn ({dueCount} mục)
+                Bắt đầu ôn
               </Link>
             </div>
           </Card>
@@ -234,7 +194,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
           </Card>
         </div>
       ) : (
-        // TH2: dueCount = 0 -> HỢP NHẤT thành một thẻ duy nhất mang nút chính
+        // TH2: lô ôn = 0 -> HỢP NHẤT thành một thẻ duy nhất mang nút chính
         <Card className="border-2 border-primary/20 bg-card shadow-sm p-6 sm:p-8 space-y-5">
           <div className="space-y-1.5">
             <div className="flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
@@ -249,8 +209,19 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
             <p className="text-sm text-muted-foreground max-w-xl">
               {isNewUser
                 ? 'Chào mừng bạn đến với MaiPace! Hãy bắt đầu bài học đầu tiên với từ vựng, ngữ pháp và mẫu câu giao tiếp cơ bản.'
-                : `${activeSummary.description.vi}. Không có mục nào đến hạn ôn hôm nay, bạn có thể tiếp tục tiến độ bài học!`}
+                : activeSummary.description.vi}
             </p>
+            {queue.hasAnyReviewItem && (
+              <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                <CheckCircle2 className="w-4 h-4 text-success shrink-0" aria-hidden="true" />
+                <span>
+                  Đã ôn xong các mục đến hạn.{' '}
+                  {queue.dueTomorrowCount > 0
+                    ? `Ngày mai có ${queue.dueTomorrowCount} mục.`
+                    : 'Ngày mai chưa có mục nào đến hạn.'}
+                </span>
+              </p>
+            )}
           </div>
 
           {!isNewUser && (
@@ -271,6 +242,14 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
               {isNewUser ? 'Bắt đầu bài 1' : `Học tiếp bài ${activeLessonNum}`}
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
+            {isNewUser && (
+              <Link
+                href="/cai-dat#hoc-den-bai"
+                className="mt-3 inline-flex min-h-12 items-center text-sm font-medium text-primary underline-offset-4 hover:underline sm:mt-0 sm:ml-4"
+              >
+                Tôi đã học đến bài…
+              </Link>
+            )}
           </div>
         </Card>
       )}

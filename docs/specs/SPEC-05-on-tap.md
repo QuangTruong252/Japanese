@@ -61,6 +61,26 @@ Ngoài các mục đã đến hạn, bổ sung mục tiêu **chưa có bản ghi
 **Không giới hạn số lượt ôn lại trong ngày.** Lượng mục đến hạn tự nó đã bị chặn từ đầu vào
 bởi `dailyNewLimit`; chặn thêm lần nữa ở đầu ra chỉ làm lịch ôn sai.
 
+#### 2.1a. Ôn theo lô và khai báo bài đã học — duyệt 24/09/2026
+
+Lý do: nghỉ vài ngày là gặp một phiên hàng trăm câu — nguyên nhân bỏ app hàng đầu ở
+WaniKani/Renshuu ([benchmark](../research/ux-benchmark/renshuu-wanikani-bunpro.md)). Ba luật,
+tất cả nằm trong `useDueQueue` / `review-queue.ts`; **không đổi FSRS** (`fsrs.ts` giữ nguyên):
+
+1. **Lô ôn** (`settings.reviewBatchSize`, mặc định 20, 5–100, người học chỉnh ở Cài đặt): một
+   phiên lấy tối đa một lô — mục quá hạn lâu nhất trước, còn chỗ mới thêm mục mới. Không phải
+   trần theo ngày: xong lô, người học bắt đầu lô tiếp ngay được. Câu trên vẫn đúng — không có
+   mục nào bị bỏ khỏi lịch, chỉ được chia phiên.
+2. **Ôn trước, học mới sau**: mục mới chỉ lấp chỗ còn trống trong lô, nên khi số mục đến hạn
+   ≥ một lô thì hôm đó **không nạp mục mới** (vẫn chịu thêm `dailyNewLimit`). Tồn đọng tự giảm.
+3. **Khai báo "Đã học đến bài N"** (`settings.learnedThroughLesson`, 0–25, 0 = chưa khai báo):
+   bài 1…N được gộp vào tập bài đã học của hàng đợi. **Không** tạo `reviewItems` hàng loạt —
+   mục của các bài đó vào lịch ôn qua đúng cơ chế nạp mục mới ở trên (bài nhỏ trước). Mục đã
+   thuộc sẽ tự giãn lịch nhờ `rateAnswer` (đúng và nhanh → `Easy`). Hạ N không xóa mục đã nạp.
+
+Giới hạn đã chấp nhận: N nằm trong `jp:settings` (localStorage) nên **không đồng bộ** giữa thiết
+bị; các `reviewItems` đã nạp thì đồng bộ bình thường (SPEC-08).
+
 **Cách đếm mục mới — chốt ở đây:**
 
 ```ts

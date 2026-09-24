@@ -58,6 +58,33 @@ export function selectNewTargetIds(
   return fresh;
 }
 
+/**
+ * Chia hàng đợi thành một lô (SPEC-05 §2.1a). Mục đến hạn (đã xếp quá hạn lâu nhất trước) lấp
+ * lô trước; mục mới chỉ lấp chỗ còn trống — nên khi tồn đọng ≥ một lô thì không nạp mục mới.
+ */
+export function planReviewBatch<T>(
+  dueItems: T[],
+  poolTargetIds: string[],
+  existingTargetIds: Set<string>,
+  remainingNewQuota: number,
+  batchSize: number,
+): { batchDue: T[]; newTargetIds: string[]; remainingDue: number } {
+  const batchDue = dueItems.slice(0, batchSize);
+  const room = Math.min(remainingNewQuota, batchSize - batchDue.length);
+  return {
+    batchDue,
+    newTargetIds: selectNewTargetIds(poolTargetIds, existingTargetIds, room),
+    remainingDue: dueItems.length - batchDue.length,
+  };
+}
+
+/** Gộp bài 1…N người học khai báo đã học vào tập bài đã có trong lịch ôn. */
+export function withDeclaredLessons(learnedLessons: number[], learnedThroughLesson: number): number[] {
+  const all = new Set(learnedLessons);
+  for (let lesson = 1; lesson <= learnedThroughLesson; lesson++) all.add(lesson);
+  return [...all].sort((a, b) => a - b);
+}
+
 /** Phân rã theo loại mục tiêu cho dòng "12 từ vựng · 4 ngữ pháp · 2 trợ từ". */
 export function countByTargetType(targetIds: string[]): Record<TargetType, number> {
   const counts: Record<TargetType, number> = {
