@@ -98,7 +98,7 @@ export function VerbTable({ verbs }: VerbTableProps) {
             value={query}
             onChange={(e) => handleQueryChange(e.target.value)}
             placeholder="Tìm động từ (あう, 行きます, gặp...)"
-            className="w-full h-11 pl-10 pr-9 rounded-xl border border-border bg-background text-sm font-medium text-foreground placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring"
+            className="w-full h-11 pl-10 pr-9 rounded-xl border border-border bg-background text-sm font-medium text-foreground placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring [&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none"
           />
           {query && (
             <button

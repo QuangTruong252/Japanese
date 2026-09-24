@@ -103,7 +103,7 @@ export function SyncBadge({ className, showTextOnMobile = false, state }: SyncBa
       {(resolvedState === 'offline' || resolvedState === 'unconfigured') && (
         <CloudOff className="size-3.5 shrink-0" aria-hidden="true" />
       )}
-      <span className={cn('whitespace-nowrap', !showTextOnMobile && 'hidden sm:inline')}>
+      <span className={cn('truncate', !showTextOnMobile && 'hidden sm:inline')}>
         {label}
       </span>
     </button>

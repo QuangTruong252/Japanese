@@ -49,7 +49,7 @@ export default async function LessonDetailPage({
             <ChevronLeft className="size-4 mr-1" />
             <span>Danh sách bài học N5</span>
           </Link>
-          <SearchTrigger iconOnly className="size-9 rounded-xl" />
+          <SearchTrigger iconOnly className="size-9 rounded-xl lg:hidden" />
         </div>
 
         <div className="space-y-2">

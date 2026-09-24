@@ -244,3 +244,11 @@ html.hide-translations .translation:active {
     animation: jp-shake 300ms ease-in-out;
   }
 }
+
+/* Ẩn nút cancel (x) mặc định của trình duyệt trong input search để không bị nhân đôi (BUG-04) */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}

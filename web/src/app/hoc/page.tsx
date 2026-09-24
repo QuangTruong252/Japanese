@@ -27,7 +27,7 @@ export default async function HocPage() {
         </div>
 
         <div className="flex items-center gap-2">
-          <SearchTrigger />
+          <SearchTrigger className="lg:hidden" />
           <Link
             href="/hoc/tra-cuu"
             className={cn(

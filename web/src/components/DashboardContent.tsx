@@ -139,7 +139,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
         {/* Lối vào thứ cấp cho Tìm kiếm, Tài khoản & Cài đặt (chỉ hiện trên Mobile/Tablet) */}
         <div className="flex items-center gap-2 pt-1 lg:hidden">
           <SearchTrigger iconOnly className="size-9 rounded-xl" />
-          <SyncBadge />
+          <SyncBadge className="h-9 px-2.5 rounded-xl text-xs shadow-2xs" />
           <Link
             href="/cai-dat"
             aria-label="Cài đặt và Tài khoản"

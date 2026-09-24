@@ -121,7 +121,20 @@ export default function ReviewTodayPage() {
   if (loading) {
     return (
       <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6">
-        <h1 className="font-heading text-xl font-medium">Ôn tập hôm nay</h1>
+        <div className="space-y-4">
+          <h1 className="font-heading text-xl font-medium">Ôn tập</h1>
+          <div className="flex items-center gap-6 border-b border-border/80 text-sm">
+            <span className="font-semibold text-primary border-b-2 border-primary pb-2.5 -mb-px">
+              Hôm nay
+            </span>
+            <Link
+              href="/on-tap/diem-yeu"
+              className="text-muted-foreground hover:text-foreground pb-2.5 -mb-px transition-colors"
+            >
+              Điểm yếu của tôi
+            </Link>
+          </div>
+        </div>
         <Skeleton className="h-40 w-full rounded-2xl" />
         <Skeleton className="h-5 w-56" />
         <div className="space-y-3">

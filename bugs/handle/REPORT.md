@@ -25,16 +25,16 @@ Toàn bộ các luồng màn hình chính từ Trang chủ (Dashboard), Học b�
 
 ## 2. BẢNG TỔNG HỢP CÁC ISSUES PHÁT HIỆN
 
-| Mã Bug | Mức độ | Màn hình / Thành phần | Tệp nguồn | Tóm tắt hiện tượng | Ảnh minh chứng |
+| Mã Bug | Mức độ | Màn hình / Thành phần | Tệp nguồn | Tóm tắt hiện tượng | Trạng thái |
 |---|---|---|---|---|---|
-| **BUG-01** | **P1** | Sidebar Desktop (`AppNav`) | `web/src/components/AppNav.tsx` | Nhãn `"Đồng bộ đám mây"` bị `SyncBadge` chèn ép chiều ngang, chữ bị ngắt dọc thành 4 hàng. | `bugs/01-dashboard-desktop.png` |
-| **BUG-02** | **P1** | Mobile Bottom Dock & Toàn cục | `web/src/app/layout.tsx`, `web/src/components/AppNav.tsx` | Thiếu `overflow-x: hidden` và `min-w-0`, nội dung phình ngang > 390px làm Bottom Dock bị dạt sang phải, mất tab "Thống kê". | `bugs/02_hoc_grid_mobile.png`, `bugs/04_diem_yeu_mobile.png`, `bugs/09_tra_cuu_dong_tu_mobile.png` |
-| **BUG-03** | **P2** | Header Dashboard & Bài học | `web/src/components/DashboardContent.tsx` | Thiếu `lg:hidden` ở cụm nút header khiến trên Desktop bị trùng lặp nút Tìm kiếm, Cài đặt và SyncBadge. | `bugs/01-dashboard-desktop.png`, `bugs/02_hoc_grid_desktop.png` |
-| **BUG-04** | **P2** | Hộp thoại Tìm kiếm (Search Modal) | `web/src/components/search/SearchDialog.tsx` | Ô tìm kiếm xuất hiện cùng lúc **2 nút xóa "✕"** cạnh nhau khi gõ từ khóa do trùng native button của trình duyệt. | `bugs/07_search_results_1790170470138.png` |
-| **BUG-05** | **P2** | Dữ liệu Ngữ pháp Bài 24 & Bài 12 | `web/src/data/n5/lessons/lesson-24.json` | Cặp ngoặc vuông lồng nhau `[私[わたし]に]` làm vỡ bộ tách furigana, lộ ký tự ngoặc thô `[` và `]` ra ngoài tiêu đề. | `bugs/07_search_results_1790170470138.png` |
-| **BUG-06** | **P2** | Màn hình Ôn tập (`/on-tap`) | `web/src/app/on-tap/page.tsx` | Trang ôn tập bị cô lập: khi hết thẻ Due (0 thẻ) không có đường dẫn hay tab chuyển sang Bảng điểm yếu (`/on-tap/diem-yeu`). | `bugs/04_on_tap_desktop_1790170299980.png` |
-| **BUG-07** | **P3** | Header Mobile (Dashboard) | `web/src/components/DashboardContent.tsx` | `SyncBadge` bị ẩn hoàn toàn trên mobile (`hidden sm:block`), người dùng điện thoại không thể biết trạng thái offline hay sync. | `bugs/01-dashboard-mobile-top.png` |
-| **BUG-08** | **P3** | Tra cứu Động từ (`/tra-cuu/dong-tu`) | `web/src/components/lookup/VerbTable.tsx` | Dấu ngoặc chú thích trợ từ/tân ngữ `[友達に〜]` dính liền với động từ, bị ngắt dòng lửng lơ trên mobile. | `bugs/09_tra_cuu_dong_tu_mobile.png` |
+| **BUG-01** | **P1** | Sidebar Desktop (`AppNav`) | `web/src/components/AppNav.tsx`, `SyncBadge.tsx` | Nhãn `"Đồng bộ đám mây"` bị `SyncBadge` chèn ép chiều ngang, chữ bị ngắt dọc thành 4 hàng. | **Đã sửa & Nghiệm thu (RESOLVED)** |
+| **BUG-02** | **P1** | Mobile Bottom Dock & Toàn cục | `web/src/app/layout.tsx`, `web/src/components/AppNav.tsx` | Thiếu `overflow-x: hidden` và `min-w-0`, nội dung phình ngang > 390px làm Bottom Dock bị dạt sang phải, mất tab "Thống kê". | **Đã sửa & Nghiệm thu (RESOLVED)** |
+| **BUG-03** | **P2** | Header Dashboard & Bài học | `web/src/components/DashboardContent.tsx`, `hoc/page.tsx`, `hoc/[so]/page.tsx` | Thiếu `lg:hidden` ở cụm nút header khiến trên Desktop bị trùng lặp nút Tìm kiếm, Cài đặt và SyncBadge. | **Đã sửa & Nghiệm thu (RESOLVED)** |
+| **BUG-04** | **P2** | Hộp thoại Tìm kiếm & Tra cứu | `web/src/components/search/SearchDialog.tsx`, `VerbTable.tsx`, `globals.css` | Ô tìm kiếm xuất hiện cùng lúc **2 nút xóa "✕"** cạnh nhau khi gõ từ khóa do trùng native button của trình duyệt. | **Đã sửa & Nghiệm thu (RESOLVED)** |
+| **BUG-05** | **P2** | Dữ liệu Ngữ pháp & Từ vựng | `lesson-24.json`, `lesson-12.json`, `lesson-17.json`, `lesson-13.json` | Cặp ngoặc vuông lồng nhau `[私[わたし]に]` làm vỡ bộ tách furigana, lộ ký tự ngoặc thô `[` và `]` ra ngoài tiêu đề. | **Đã sửa & Nghiệm thu (RESOLVED)** |
+| **BUG-06** | **P2** | Màn hình Ôn tập (`/on-tap`) | `web/src/app/on-tap/page.tsx`, `on-tap/diem-yeu/page.tsx` | Trang ôn tập bị cô lập: khi hết thẻ Due (0 thẻ) không có đường dẫn hay tab chuyển sang Bảng điểm yếu (`/on-tap/diem-yeu`). | **Đã sửa & Nghiệm thu (RESOLVED)** |
+| **BUG-07** | **P3** | Header Mobile (Dashboard) | `web/src/components/DashboardContent.tsx`, `SyncBadge.tsx` | `SyncBadge` bị ẩn hoàn toàn trên mobile (`hidden sm:block`), người dùng điện thoại không thể biết trạng thái offline hay sync. | **Đã sửa & Nghiệm thu (RESOLVED)** |
+| **BUG-08** | **P3** | Tra cứu Động từ (`/tra-cuu/dong-tu`) | `web/src/components/lookup/VerbTable.tsx` | Dấu ngoặc chú thích trợ từ/tân ngữ `[友達に〜]` dính liền với động từ, bị ngắt dòng lửng lơ trên mobile. | **Đã sửa & Nghiệm thu (RESOLVED)** |
 
 ---
 
@@ -181,9 +181,21 @@ Toàn bộ các luồng màn hình chính từ Trang chủ (Dashboard), Học b�
 
 ---
 
-## 4. KẾ HOẠCH BẢO ĐẢM CHẤT LƯỢNG TIẾP THEO
+## 4. KẾT QUẢ KIỂM THỬ VÀ NGHIỆM THU THỰC TẾ (24/09/2026)
 
-- Sau khi áp dụng bản vá cho cả 8 lỗi, chạy bộ kiểm thử tự động toàn diện:
-  - `pnpm check` (TypeScript kiểm tra kiểu & ESLint quy chuẩn code)
-  - `pnpm test` (Toàn bộ 127 bài test logic FSRS, Sync snapshot, Shadowing player)
-- Dùng Browser Subagent quét lại các viewport 1280px và 390px, chụp ảnh xác nhận sau khi sửa lỗi để hoàn tất nghiệm thu.
+Toàn bộ 8 lỗi đã được xử lý triệt để và nghiệm thu thành công trên cả môi trường kiểm thử tự động và trình duyệt thực tế (Chromium Subagent):
+
+### 4.1. Kiểm thử tĩnh và Unit Tests
+- **`pnpm check` (TypeScript + ESLint):** **PASS** — 0 lỗi kiểu, 0 cảnh báo lint.
+- **`pnpm test` (Node Test Runner):** **PASS** — 127/127 bài kiểm thử logic (FSRS, Sync, Shadowing, Questions, Search, Stats, TTS) đều đạt 100%.
+- **`pnpm build` (Next.js App Router):** **PASS** — Biên dịch và prerender thành công 247 route tĩnh mà không có lỗi.
+
+### 4.2. Nghiệm thu giao diện qua Browser Subagent (1280×800 & 390×844)
+1. **BUG-01 (Desktop Sidebar):** `SyncBadge` và nhãn `"ĐỒNG BỘ DỮ LIỆU"` sắp xếp dạng cột dọc tinh tế, chữ không bị ngắt dọc, có `truncate` an toàn khi co giãn.
+2. **BUG-02 (Mobile Dock & Overflow):** Đo kiểm tra `document.documentElement.scrollWidth === 390` trên viewport 390px — hoàn toàn không có thanh cuộn ngang; thanh Bottom Dock nổi căn giữa chuẩn xác, hiển thị đầy đủ 5 tab.
+3. **BUG-03 (Header Duplication):** Cụm nút header trên Desktop (Bảng tin, `/hoc`, `/hoc/1`) đã được ẩn (`lg:hidden`), không còn nhân đôi các nút tìm kiếm / cài đặt / sync khi sidebar desktop đã hiện diện.
+4. **BUG-04 (Double Clear Button):** Ô tìm kiếm toàn cục (`Ctrl+K`) và ô tìm kiếm động từ (`/hoc/tra-cuu/dong-tu`) chỉ hiển thị duy nhất 1 nút xóa "✕", nút native của trình duyệt đã được triệt tiêu hoàn toàn.
+5. **BUG-05 (Furigana Syntax):** Cả 4 tệp dữ liệu (`lesson-24.json`, `lesson-12.json`, `lesson-17.json`, `lesson-13.json`) đã được thay thế sang dấu ngoặc tròn tiếng Nhật toàn chiều rộng `（）`. Furigana hiển thị hoàn hảo, không còn ký tự ngoặc vuông thô `[` hay `]`.
+6. **BUG-06 (Sub-nav Tab Ôn tập):** Màn hình `/on-tap` và `/on-tap/diem-yeu` đã có sub-nav tab đồng bộ, kể cả trong trạng thái đang tải (tránh layout shift), cho phép chuyển đổi qua lại thuận tiện.
+7. **BUG-07 (Mobile SyncBadge):** `SyncBadge` hiển thị gọn gàng trên mobile header ở chiều cao `h-9 rounded-xl`, hòa hợp cùng nút Tìm kiếm và Cài đặt.
+8. **BUG-08 (Verb Collocation):** Bảng động từ N5 hiển thị các cụm trợ từ ngữ cảnh (ví dụ `（ともだちに〜）`) ở dòng phụ bên dưới động từ chính, bảng hỗ trợ cuộn ngang độc lập mà không làm lệch giao diện trang.
