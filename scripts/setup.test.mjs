@@ -3,7 +3,7 @@ import { mkdtempSync, mkdirSync, readFileSync, realpathSync, rmSync, symlinkSync
 import { tmpdir } from 'node:os';
 import { join, resolve, sep } from 'node:path';
 import { test } from 'node:test';
-import { mcpServer, pnpmCommand, setupAgents } from './setup.mjs';
+import { mcpServer, pnpmCommand, setupAgents, skills } from './setup.mjs';
 
 test('setup is relocatable, repeatable and preserves unrelated configuration/data', t => {
   const root = mkdtempSync(join(tmpdir(), 'japanese-agents-'));
@@ -11,7 +11,7 @@ test('setup is relocatable, repeatable and preserves unrelated configuration/dat
     assert.ok(resolve(root).startsWith(resolve(tmpdir()) + sep));
     rmSync(root, { recursive: true, force: true });
   });
-  for (const name of ['react-best-practices', 'web-design-guidelines', 'shadcn']) {
+  for (const name of skills) {
     const source = join(root, '.agents/skills', name);
     mkdirSync(source, { recursive: true });
     writeFileSync(join(source, 'SKILL.md'), name);
@@ -27,7 +27,7 @@ test('setup is relocatable, repeatable and preserves unrelated configuration/dat
   assert.ok(first.startsWith(custom.trimEnd()));
   assert.equal(first.match(/\[mcp_servers.next-devtools\]/g).length, 1);
   assert.equal(JSON.parse(readFileSync(join(root, '.mcp.json'))).mcpServers.example.command, 'example');
-  for (const name of ['react-best-practices', 'web-design-guidelines', 'shadcn']) {
+  for (const name of skills) {
     assert.equal(realpathSync(join(root, '.claude/skills', name)), realpathSync(join(root, '.agents/skills', name)));
   }
   for (const platform of ['linux', 'darwin']) {

@@ -55,8 +55,10 @@ Thư mục thật trong `.claude/skills/` cũng được giữ nguyên và báo 
 | `web-design-guidelines` | `web-design-guidelines` | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4df8453406c830b0a7df0f2860278/skills/web-design-guidelines) — cùng commit trên |
 | `shadcn` | `shadcn` | [shadcn-ui/ui](https://github.com/shadcn-ui/ui/tree/2b3e6d4f8d9161fe5c19340dc383aade392012dd/skills/shadcn) — `2b3e6d4f8d9161fe5c19340dc383aade392012dd` |
 | `impeccable` | `impeccable` | Bản đã lưu trong repo; metadata SKILL.md 4.3.1, launcher VERSION 0.1.5; thiết kế và tinh chỉnh UI |
+| `transitions-dev` | `transitions-dev` | [Jakubantalik/transitions.dev](https://github.com/Jakubantalik/transitions.dev/tree/e2d5551656e4d3274e075d1cbd9a95af50f53225/skills/transitions-dev) — `e2d5551656e4d3274e075d1cbd9a95af50f53225`; 32 transition CSS + motion token |
+| `transitions-polish` | `transitions-polish` | Cùng repo/commit trên (`skills/transitions-polish`); rà và tinh chỉnh motion hiện có theo token |
 
-Bootstrap hiện nối **ba** skills đầu sang Claude. Impeccable có thể đọc trực tiếp
+Bootstrap hiện nối các skills trừ Impeccable sang Claude (danh sách `skills` trong `scripts/setup.mjs`). Impeccable có thể đọc trực tiếp
 từ `.agents/skills/impeccable/SKILL.md` khi nhiệm vụ cần; không giả định alias đã
 được cài trong mọi agent. Nếu công cụ không tự tìm thấy skill, mở SKILL.md bằng
 đường dẫn trong repo. Không tự cài plugin hoặc sửa cấu hình global để bù.
@@ -65,6 +67,8 @@ từ `.agents/skills/impeccable/SKILL.md` khi nhiệm vụ cần; không giả �
 của shadcn dùng `pnpm exec shadcn info --json` trong `web/`, thay lệnh tự chạy
 `npx shadcn@latest` ở cwd không xác định. Giữ điều chỉnh này khi cập nhật skill.
 Web Design Guidelines vẫn tải bản guidelines mới khi review theo thiết kế upstream.
+Transitions.dev: repo upstream ở commit trên không có file LICENSE; token motion của skill
+không thay luật Motion trong `DESIGN.md` — muốn dùng thì sửa `DESIGN.md` có chủ đích.
 License shadcn được lưu trong `.agents/skills/LICENSE.shadcn`. Repo Vercel ở commit
 trên không có file LICENSE riêng; giữ nguyên metadata/license trong skills upstream.
 

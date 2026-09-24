@@ -3,7 +3,7 @@ import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 
-const skills = ['react-best-practices', 'web-design-guidelines', 'shadcn'];
+export const skills = ['react-best-practices', 'web-design-guidelines', 'shadcn', 'transitions-dev', 'transitions-polish'];
 const begin = '# BEGIN Japanese Next DevTools (managed by scripts/setup.mjs)';
 const end = '# END Japanese Next DevTools';
 
@@ -70,7 +70,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     const result = spawnSync(command, args, { cwd: join(root, 'web'), stdio: 'inherit', windowsHide: true });
     if (result.error || result.status !== 0) throw new Error('pnpm install failed. Install Node.js 24+ and pnpm 11.9.0, then retry.');
     setupAgents(root);
-    console.log('Ready: dependencies, 3 shared skills, Codex/Claude Next DevTools config.');
+    console.log('Ready: dependencies, 5 shared skills, Codex/Claude Next DevTools config.');
     console.log('Open the repository root in your agent and approve workspace/MCP trust if prompted.');
   } catch (error) {
     console.error(error.message);
