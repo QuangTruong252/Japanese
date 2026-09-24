@@ -4,6 +4,7 @@ import { loadLessonSummaries } from '@/lib/lessons';
 import { LessonGrid } from '@/components/LessonGrid';
 import { buttonVariants } from '@/components/ui/button';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { cn } from '@/lib/utils';
 
 // ponytail: loadLessonSummaries() nạp cả 50 file JSON để đếm số từ mỗi bài, nhưng chạy trên
@@ -28,6 +29,7 @@ export default async function HocPage() {
 
         <div className="flex items-center gap-2">
           <SearchTrigger className="lg:hidden" />
+          <ThemeToggle className="size-10 rounded-xl" />
           <Link
             href="/hoc/tra-cuu"
             className={cn(

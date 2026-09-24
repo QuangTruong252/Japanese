@@ -15,8 +15,8 @@ giải thích tiếng Việt; chưa mở rộng thành nền tảng lớp học 
 ## Product Purpose
 
 **Học tiếng Nhật theo nhịp của bạn.** MaiPace giúp người học đọc bài, luyện tập
-và quay lại ôn kiến thức đến hạn. Mục tiêu dài hạn là học N5/N4, lưu trên máy,
-học khi mất mạng và đồng bộ tiến độ an toàn giữa thiết bị.
+và quay lại ôn kiến thức đến hạn. Mục tiêu dài hạn là học N5/N4, lưu tiến độ trên máy
+và đồng bộ tiến độ an toàn giữa thiết bị.
 
 Thành công là người học biết nên làm gì tiếp theo, hiểu phản hồi và tiếp tục
 được nhịp học của mình. Không hứa đạt trình độ trong một số ngày cố định.
@@ -25,30 +25,32 @@ Thành công là người học biết nên làm gì tiếp theo, hiểu phản 
 
 - Tự học có hướng dẫn bằng tiếng Việt, nội dung tiếng Nhật là trọng tâm.
 - Luyện tập theo bài và ôn theo lịch, khuyến khích học đều mà không gây áp lực.
-- Ưu tiên lưu dữ liệu phía người học. Offline toàn ứng dụng và đồng bộ đa thiết
-  bị là mục tiêu phải nghiệm thu riêng, không suy ra từ việc đã dùng Dexie.
+- Ưu tiên lưu dữ liệu phía người học. Đồng bộ đa thiết bị là mục tiêu phải
+  nghiệm thu riêng, không suy ra từ việc đã dùng Dexie. PWA/offline toàn ứng dụng
+  (mở lại app khi mất mạng) đã loại khỏi lộ trình ngày 24/09/2026.
 - Minna no Nihongo là giáo trình tham chiếu; không mô tả MaiPace là sản phẩm
   chính thức hoặc được nhà xuất bản bảo chứng.
 
 ## Operating Context
 
 Luồng chính: chọn bài → học → luyện tập → ôn mục đến hạn. Thiết kế cho điện thoại
-và máy tính, hỗ trợ chạm, bàn phím và furigana. Audio ZIP, Shadowing, tìm kiếm,
-PWA và đồng bộ là các phần của lộ trình, không phải lời quảng bá tính năng đã có.
+và máy tính, hỗ trợ chạm, bàn phím và furigana. Audio ZIP, Shadowing, tìm kiếm
+và đồng bộ đã có code; phần nào chưa nghiệm thu đủ thì không quảng bá là hoàn tất.
 
 ## Capabilities and Constraints
 
 Trạng thái có ngày và bằng chứng nằm tại [chỉ mục spec](docs/specs/README.md).
 Đọc code và handoff tương ứng trước khi tiếp tục; không dùng trang này làm báo
-cáo nghiệm thu. Tại lần đối chiếu 18/09/2026:
+cáo nghiệm thu. Tại lần đối chiếu 24/09/2026:
 
-- Có code màn học N5, năm dạng luyện tập, lịch ôn FSRS và màn ôn/điểm yếu.
-  SPEC-04 có báo cáo nghiệm thu trước đó; SPEC-05 có code nhưng chưa có handoff
-  nghiệm thu toàn bộ. Xem chỉ mục để phân biệt phạm vi đã kiểm tra.
+- Có code màn học N5, năm dạng luyện tập, lịch ôn FSRS, màn ôn/điểm yếu, cài đặt,
+  thống kê, tra cứu, tìm kiếm và học từ vựng theo bài. SPEC-03 chưa có handoff
+  nghiệm thu toàn feature. Xem chỉ mục để phân biệt phạm vi đã kiểm tra.
 - Dữ liệu 25 bài N5 là nội dung tự biên soạn cho học cá nhân, chưa đối chiếu sách;
   chấp nhận sai sót nhỏ và sửa khi phát hiện.
-- Supabase có client/server helper; chưa có luồng sync hoàn chỉnh. Shadowing,
-  import audio và vỏ PWA chưa được triển khai. N4 là mục tiêu biên tập sau.
+- Sync Supabase (Google OAuth, RPC, RLS) đã có code, chưa kiểm với project
+  Supabase thật trên nhiều thiết bị. Import audio ZIP và Shadowing đã có code,
+  test tự động đạt. Vỏ PWA không làm. N4 là mục tiêu biên tập sau.
 - Phiên bản lấy từ package/lockfile. Dexie giữ dữ liệu client; Zustand chỉ giữ
   UI tạm thời; FSRS qua helper hiện có. Quy tắc kỹ thuật ở [AGENTS.md](AGENTS.md).
 - Audio nguồn không đưa vào bundle/public/cloud sync. Người học tự nạp audio

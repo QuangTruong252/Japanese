@@ -11,6 +11,7 @@ import { stripFurigana } from '@/lib/japanese';
 import { Card } from '@/components/ui/card';
 import { ShadowingPlayer } from '@/components/audio/ShadowingPlayer';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { cn } from '@/lib/utils';
 
 export function generateStaticParams() {
@@ -49,7 +50,10 @@ export default async function LessonDetailPage({
             <ChevronLeft className="size-4 mr-1" />
             <span>Danh sách bài học N5</span>
           </Link>
-          <SearchTrigger iconOnly className="size-9 rounded-xl lg:hidden" />
+          <div className="flex items-center gap-2">
+            <ThemeToggle className="size-9 rounded-xl" />
+            <SearchTrigger iconOnly className="size-9 rounded-xl lg:hidden" />
+          </div>
         </div>
 
         <div className="space-y-2">

@@ -110,10 +110,6 @@
 
 ![27-tim-kiem.png](27-tim-kiem.png)
 
-## 28-ngoai-tuyen
-
-![28-ngoai-tuyen.png](28-ngoai-tuyen.png)
-
 ## 29-dong-bo-lan-dau
 
 ![29-dong-bo-lan-dau.png](29-dong-bo-lan-dau.png)

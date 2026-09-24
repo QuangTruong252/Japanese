@@ -23,11 +23,11 @@ chỉ chứng minh phạm vi ở ngày ghi nhận. Khi tiếp tục, kiểm tra 
 | SPEC-10: Shadowing player | Có | [ShadowingPlayer.tsx](../../web/src/components/audio/ShadowingPlayer.tsx), [shadowing.ts](../../web/src/lib/shadowing.ts), [hoc/[so]](../../web/src/app/hoc/[so]/page.tsx) | [Handoff 23/09](../handoff/SPEC-10.md) — code, lặp A-B, tốc độ, phím tắt, UI theo mockup 21-shadowing.png, static gates & tests PASS 100% |
 | SPEC-12: tra cứu (Kanji, động từ, 10 bảng) | Có | [lookup.ts](../../web/src/lib/lookup.ts), [tra-cuu](../../web/src/app/hoc/tra-cuu/page.tsx), [kanji](../../web/src/app/hoc/tra-cuu/kanji/page.tsx), [dong-tu](../../web/src/app/hoc/tra-cuu/dong-tu/page.tsx), [bang](../../web/src/app/hoc/tra-cuu/bang/page.tsx) | [Handoff 23/09](../handoff/SPEC-12.md) — code, 169 chữ Kanji, 156 động từ 5 thể, 10 bảng tham chiếu, chỉ mục tra ngược, static gates & tests PASS 100% |
 | SPEC-13: tìm kiếm toàn cục | Có | [search.ts](../../web/src/lib/search.ts), [SearchDialog.tsx](../../web/src/components/search/SearchDialog.tsx), [SearchTrigger.tsx](../../web/src/components/search/SearchTrigger.tsx) | [Handoff 23/09](../handoff/SPEC-13.md) — code, ARIA combobox/listbox, xếp hạng 3 tầng, chuẩn hóa đ->d, phím tắt Ctrl+K, kiểm thử trình duyệt PASS 100% |
-| SPEC-14: PWA/offline shell | Có | Chưa có service worker/manifest PWA | Offline một phiên đã nạp không chứng minh offline reload toàn app |
+| SPEC-14: PWA/offline shell | Đã xóa | Không có service worker/manifest PWA | **Loại khỏi lộ trình 24/09/2026** theo quyết định người dùng; spec cũ còn trong lịch sử Git. Không triển khai lại nếu chưa có yêu cầu mới |
 | SPEC-15: học từ vựng chủ động theo bài | Có | [Luồng học và theo dõi](../../web/src/components/vocab/VocabLearningFlow.tsx), [route](../../web/src/app/hoc/[so]/tu-vung/page.tsx) | [Handoff 24/09](../handoff/SPEC-15.md) — lật 3D; 991/991 từ N5 có ví dụ và kana (tự biên soạn, đã duyệt); đã xem ở 390px, còn kiểm tra phát audio thật và lưu/sync |
 | F11: N4 | Chưa có spec biên tập | Chưa có dữ liệu N4 | Cần nguồn và biên tập trước khi xây UI |
 
-Bước tiếp theo: triển khai SPEC-14 (PWA & Offline shell).
+Bước tiếp theo: kiểm tra sync với Supabase thật (SPEC-08), nghiệm thu SPEC-03 và phần còn lại của SPEC-15.
 Phạm vi brand/agent riêng theo [handoff MaiPace](../handoff/MAIPACE.md).
 Khi làm xong một phần, cập nhật hàng tương ứng và handoff với ngày, kiểm tra
 đã chạy, giới hạn và bước tiếp theo. Không đổi trạng thái phần chưa được kiểm tra.
@@ -55,7 +55,7 @@ lại** trước khi triển khai tiếp:
 | SPEC-10 §2.4 | Câu ví dụ **chưa phải** transcript của track — đổi nhãn, không tô sáng theo thời gian |
 | SPEC-12 §3.2, §3.4 | "Đã học" suy từ từ vựng chứa chữ; bảng động từ nhận `?q=` |
 | SPEC-13 §2.2, §6 | Chuẩn hóa thêm `đ → d`; `Tab` không đóng hộp (mâu thuẫn với bẫy focus) |
-| SPEC-14 §2.1a–2.1c | **Cache RSC** trong `jp-rsc-<BUILD_ID>`; truyền BUILD_ID qua `?v=`; precache thêm `/hoc`, `/luyen-tap`, `/on-tap` |
+| SPEC-14 §2.1a–2.1c (đã loại 24/09) | **Cache RSC** trong `jp-rsc-<BUILD_ID>`; truyền BUILD_ID qua `?v=`; precache thêm `/hoc`, `/luyen-tap`, `/on-tap` |
 
 **Phần đã cài vào code trong cùng vòng này** (`pnpm check` + `pnpm test` + `pnpm build` xanh):
 `types/index.ts` (`MatchingPair`, `AnswerResult`, `ReviewItem.createdAt`/`recentElapsedMs`,
@@ -112,10 +112,10 @@ Ba spec này sửa lại một số chỗ đã chốt ở đợt 1 — sửa lu�
 | [SPEC-10](SPEC-10-shadowing-player.md) | Trình phát Shadowing (A-B repeat) | Có |
 | [SPEC-12](SPEC-12-tra-cuu.md) | Tra cứu: kanji, động từ, 10 bảng tham chiếu | Có |
 | [SPEC-13](SPEC-13-tim-kiem.md) | Hộp tìm kiếm `Ctrl+K` | Có |
-| [SPEC-14](SPEC-14-pwa-offline-shell.md) | PWA & vỏ ứng dụng ngoại tuyến | Có |
+| ~~SPEC-14~~ | PWA & vỏ ứng dụng ngoại tuyến — **đã loại khỏi lộ trình 24/09/2026** | — |
 
 Hai chuỗi phụ thuộc, chạy song song được: **SPEC-09 → SPEC-10** và **SPEC-12 → SPEC-13**.
-SPEC-14 độc lập, cài lúc nào cũng được.
+SPEC-14 đã loại khỏi lộ trình (24/09/2026).
 
 Những chỗ các spec này chạm vào đợt trước:
 

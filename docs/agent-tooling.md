@@ -125,7 +125,7 @@ permission và không giao thêm agent con.
 
 > Chỉ đọc, không sửa file, không commit, không chạy build/setup và không giao
 > agent khác. Hãy giải thích: MaiPace và Washi là gì; thông điệp sản phẩm; nguồn
-> dữ liệu client; trạng thái nội dung N5, sync, Shadowing và PWA; quyền thay đổi
+> dữ liệu client; trạng thái nội dung N5, sync và Shadowing; quyền thay đổi
 > của bạn; bước tiếp theo của dự án. Nêu các file hướng dẫn đã được nạp hoặc đã
 > đọc và dẫn nguồn file cho kết luận. Phân biệt rõ đã có code với đã kiểm chứng.
 > Trả lời ngắn bằng tiếng Việt. Không đọc secret hoặc file cấu hình tài khoản.

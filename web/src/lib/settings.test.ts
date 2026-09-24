@@ -24,3 +24,10 @@ test('getFOUCScriptContent sinh chuỗi JavaScript hợp lệ chống FOUC', () 
   assert.ok(script.includes('hide-translations'));
   assert.ok(script.includes('dark'));
 });
+
+test('Theme mặc định là system và chấp nhận light / dark', () => {
+  assert.equal(DEFAULT_SETTINGS.theme, 'system');
+  const validThemes = ['light', 'dark', 'system'];
+  assert.ok(validThemes.includes(DEFAULT_SETTINGS.theme));
+});
+

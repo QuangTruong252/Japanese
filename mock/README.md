@@ -120,7 +120,7 @@ Planned mobile fullscreen search overlay NO dock. Top search field entered 'họ
 
 ### 28-ngoai-tuyen.png
 
-Planned /offline. Calm centered cloud-off line icon. 'Trang này chưa được tải về máy'. Explanation 'Những phần bạn đã mở trước đó vẫn dùng được bình thường.' Red Về trang chủ and secondary Ôn tập hôm nay. Thin bottom offline status band 'Đang ngoại tuyến — tiến độ vẫn được lưu trên máy' immediately above five dock. No alarming error styling, no invented retry success.
+**Đã loại khỏi lộ trình 24/09/2026 (SPEC-14), ảnh đã xóa.** Planned /offline. Calm centered cloud-off line icon. 'Trang này chưa được tải về máy'. Explanation 'Những phần bạn đã mở trước đó vẫn dùng được bình thường.' Red Về trang chủ and secondary Ôn tập hôm nay. Thin bottom offline status band 'Đang ngoại tuyến — tiến độ vẫn được lưu trên máy' immediately above five dock. No alarming error styling, no invented retry success.
 
 ### 29-dong-bo-lan-dau.png
 

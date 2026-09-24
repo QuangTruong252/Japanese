@@ -3,8 +3,9 @@
 **Học tiếng Nhật theo nhịp của bạn.**
 
 Ứng dụng cá nhân cho người Việt tự học tiếng Nhật theo Minna no Nihongo.
-Hiện có màn học N5, luyện tập và ôn theo lịch; N4, sync và offline toàn ứng dụng
-là lộ trình. Xem [sản phẩm và thương hiệu](PRODUCT.md) và
+Hiện có màn học N5, luyện tập, ôn theo lịch, tra cứu, audio/Shadowing và sync
+(chưa kiểm với Supabase thật); N4 là lộ trình. PWA/offline toàn ứng dụng không
+nằm trong lộ trình. Xem [sản phẩm và thương hiệu](PRODUCT.md) và
 [trạng thái có bằng chứng](docs/specs/README.md).
 
 ## Làm việc với coding agent

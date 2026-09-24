@@ -10,6 +10,7 @@ import type { LessonSummary } from '@/lib/lessons';
 import { SyncBadge } from '@/components/SyncBadge';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
 import { ProgressBar } from '@/components/LessonProgress';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { buttonVariants } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import {
@@ -136,16 +137,17 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
           )}
         </div>
 
-        {/* Lối vào thứ cấp cho Tìm kiếm, Tài khoản & Cài đặt (chỉ hiện trên Mobile/Tablet) */}
-        <div className="flex items-center gap-2 pt-1 lg:hidden">
-          <SearchTrigger iconOnly className="size-9 rounded-xl" />
-          <SyncBadge className="h-9 px-2.5 rounded-xl text-xs shadow-2xs" />
+        {/* Lối vào thứ cấp cho Tìm kiếm, Tài khoản, Chủ đề & Cài đặt */}
+        <div className="flex items-center gap-2 pt-1">
+          <SearchTrigger iconOnly className="size-9 rounded-xl lg:hidden" />
+          <SyncBadge className="h-9 px-2.5 rounded-xl text-xs shadow-2xs lg:hidden" />
+          <ThemeToggle className="size-9 rounded-xl" />
           <Link
             href="/cai-dat"
             aria-label="Cài đặt và Tài khoản"
             className={cn(
               buttonVariants({ variant: 'outline', size: 'sm' }),
-              'gap-1.5 h-9 px-3 rounded-xl border-border/80'
+              'gap-1.5 h-9 px-3 rounded-xl border-border/80 lg:hidden'
             )}
           >
             <Settings className="w-4 h-4 text-muted-foreground" />

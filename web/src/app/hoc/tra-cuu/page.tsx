@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Table2 } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -66,7 +67,10 @@ export default function TraCuuHubPage() {
               Chọn nội dung bạn muốn xem lại.
             </p>
           </div>
-          <SearchTrigger iconOnly />
+          <div className="flex items-center gap-2">
+            <ThemeToggle className="size-11 sm:size-12 rounded-xl" />
+            <SearchTrigger iconOnly />
+          </div>
         </div>
       </header>
 
