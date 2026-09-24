@@ -251,7 +251,7 @@ export default async function KanjiDetailPage({
                   href={`/hoc/tra-cuu/kanji/${encodeURIComponent(simChar)}`}
                   className={cn(
                     'group flex items-center justify-between p-3 rounded-xl border border-border/80 bg-muted/30',
-                    'hover:border-primary/40 hover:bg-card transition-all',
+                    'hover:border-primary/40 hover:bg-card transition',
                     'focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring'
                   )}
                 >
@@ -272,7 +272,7 @@ export default async function KanjiDetailPage({
                     </div>
                   </div>
 
-                  <ChevronRight className="size-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 transition-all" />
+                  <ChevronRight className="size-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 transition" />
                 </Link>
               );
             })}

@@ -614,16 +614,17 @@ component belongs to exactly one:
 |---|---|---|---|---|---|
 | **Default card** | The workhorse container: content blocks, answer options, list rows, stat tiles | `xl` | 1px `border` | none | none |
 | **Elevated** | Menus, popovers, dropdowns: attached to a trigger, dismissible | `xl` | 1px `border` | `shadow-md` | none |
-| **Overlay** | Dialogs, sheets, the hovered furigana zoom: blocking, above everything | `xl` | 1px `border` | `shadow-lg` | scrim only |
-| **Floating navigation** | The persistent shell surface that hovers over scrolling content | `full` or `xl` | 1px `border` | `shadow-md` | allowed, because it is the one surface content passes beneath |
+| **Overlay** | Dialogs, sheets, the hovered furigana zoom: blocking, above everything | `xl` | 1px `border` | `shadow-lg` | scrim only, from `sm` up |
+| **Floating navigation** | The persistent shell surface that hovers over scrolling content | `full` or `xl` | 1px `border` | `shadow-md` | none below `lg`; a near-opaque fill instead |
 
 Rules that follow from the table:
 
 - A default card gets **no shadow**. If two surfaces need separating, a 1px rule does it.
-- Blur is not a texture. It is permitted only where content genuinely scrolls under a floating
-  surface, and never on a card sitting in the page flow. The bottom navigation is that floating
-  surface; the desktop sidebar is not — content sits beside it, not under it, so the sidebar is
-  an ordinary surface separated by a 1px rule.
+- Blur is not a texture, and on phones it is a cost: a `backdrop-filter` on a fixed bar is
+  recomputed on every scrolled frame. The bottom navigation therefore uses a near-opaque fill
+  (`bg-card/95`) instead of blur; overlay scrims blur only from `sm` up. Never blur a card in
+  the page flow. The desktop sidebar is not floating — content sits beside it, not under it, so
+  it is an ordinary surface separated by a 1px rule.
 - **Radius comes from the scale**: `sm` for badges and small chips, `md` for inputs and small
   buttons, `lg` for standard buttons and quoted blocks, `xl` for cards and answer options,
   `full` for avatars, circular controls and speed chips. A radius outside the approved surface
@@ -647,6 +648,14 @@ Motion explains what just happened; it does not decorate.
 | Card entry/exit, question change | 250ms | ease-in-out |
 | Dragging a phrase token | spring | stiffness 400, damping 30 |
 | Wrong-answer shake | 300ms, 4px, 3 beats | ease-in-out |
+| Route change | 250ms in, 150ms out, 8px slide, no blur | smooth-out |
+| Overlay open / close (dialog, menu, sheet) | open 250ms, close 150ms | smooth-out |
+| Progress fill | 250ms, `scaleX` only | smooth-out |
+
+`smooth-out` is `--ease-smooth-out` in `globals.css` (from the transitions.dev token scale).
+Animate only `transform` and `opacity`; never `transition-all`, width/height, or box-shadow
+on the hot path. No `backdrop-filter` on fixed bars: the bottom nav repaints its blur every
+scrolled frame on phones. Closes are faster than opens and are never delayed.
 
 Wrap all animation in `@media (prefers-reduced-motion: no-preference)`. With motion reduced
 the correct/wrong result must still appear in full, only the movement is dropped. Nothing
@@ -832,7 +841,7 @@ hex value in a component.
 screen finished.
 
 **Don't** use a shadow where a 1px `border` will separate two surfaces, and don't use blur
-outside the floating-navigation surface.
+on phones or outside an overlay scrim.
 
 **Don't** use `success`, `destructive`, `warning` or `info` as a chart series or as
 decoration. They are reserved for state.

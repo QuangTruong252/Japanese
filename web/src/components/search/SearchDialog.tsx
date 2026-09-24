@@ -159,7 +159,7 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
       role="dialog"
       aria-modal="true"
       aria-label="Hộp tìm kiếm toàn cục"
-      className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 backdrop-blur-xs p-0 sm:p-4 sm:pt-[12vh]"
+      className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 sm:backdrop-blur-xs p-0 sm:p-4 sm:pt-[12vh]"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -169,7 +169,9 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
           'w-full bg-card shadow-2xl flex flex-col overflow-hidden',
           // Mobile: chiếm toàn màn hình
           'h-full sm:h-auto sm:max-h-[80vh] sm:max-w-xl sm:rounded-2xl sm:border sm:border-border/80',
-          'transition-all duration-150 motion-safe:animate-in motion-safe:fade-in-0'
+          // Mở 250ms smooth-out: mobile trồi 8px, desktop phóng từ 0.96. Đóng tức thì (gỡ khỏi DOM).
+          'motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-2 motion-safe:duration-250 motion-safe:ease-smooth-out',
+          'sm:motion-safe:slide-in-from-bottom-0 sm:motion-safe:zoom-in-96'
         )}
       >
         {/* 1. Header & Ô nhập Combobox */}

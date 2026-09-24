@@ -125,5 +125,5 @@ nằm trong `docs/specs/README.md`. Trả lời người dùng bằng tiếng Vi
 - Đổi logic: chạy `pnpm test` (node:test), thêm kiểm tra hồi quy nhỏ khi cần.
 - Đổi build/config ứng dụng: chạy `pnpm build` khi phù hợp.
 - Đổi luồng UI: kiểm tra browser. Luồng học cần chạy tiếp khi mất mạng trong
-  trang đã mở (không có PWA nên không yêu cầu reload offline); sync cần kiểm tra reconnect/retry. Nêu rõ phần chưa kiểm chứng.
+  trang đã mở (không có service worker nên không yêu cầu reload offline); sync cần kiểm tra reconnect/retry. Nêu rõ phần chưa kiểm chứng.
 - Không cần test mới cho thay đổi chỉ là tài liệu/cấu hình agent.

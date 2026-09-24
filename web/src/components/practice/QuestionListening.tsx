@@ -97,7 +97,7 @@ export function QuestionListening({
               'flex h-11 min-w-11 items-center justify-center rounded-xl px-3 text-xs font-medium transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px',
               rate === 0.8
                 ? 'border-2 border-primary bg-accent text-foreground'
-                : 'border border-border bg-card text-muted-foreground [@media(hover:hover)]:hover:bg-accent [@media(hover:hover)]:hover:text-foreground',
+                : 'border border-border bg-card text-muted-foreground hover:bg-accent hover:text-foreground',
             )}
           >
             0.8×
@@ -110,7 +110,7 @@ export function QuestionListening({
               'flex h-11 min-w-11 items-center justify-center rounded-xl px-3 text-xs font-medium transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px',
               rate === 1.0
                 ? 'border-2 border-primary bg-accent text-foreground'
-                : 'border border-border bg-card text-muted-foreground [@media(hover:hover)]:hover:bg-accent [@media(hover:hover)]:hover:text-foreground',
+                : 'border border-border bg-card text-muted-foreground hover:bg-accent hover:text-foreground',
             )}
           >
             1.0×

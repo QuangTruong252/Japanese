@@ -119,7 +119,7 @@ export function VerbTable({ verbs }: VerbTableProps) {
               type="button"
               onClick={() => handleGroupSelect(null)}
               className={cn(
-                'px-3 py-1.5 rounded-full text-xs font-semibold transition-all',
+                'px-3 py-1.5 rounded-full text-xs font-semibold transition',
                 'focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring',
                 selectedGroup === null
                   ? 'bg-foreground text-background shadow-xs'
@@ -133,7 +133,7 @@ export function VerbTable({ verbs }: VerbTableProps) {
               type="button"
               onClick={() => handleGroupSelect(selectedGroup === 1 ? null : 1)}
               className={cn(
-                'px-3 py-1.5 rounded-full text-xs font-semibold border transition-all',
+                'px-3 py-1.5 rounded-full text-xs font-semibold border transition',
                 'focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring',
                 selectedGroup === 1
                   ? 'bg-verb-1 text-primary-foreground border-verb-1 shadow-xs'
@@ -147,7 +147,7 @@ export function VerbTable({ verbs }: VerbTableProps) {
               type="button"
               onClick={() => handleGroupSelect(selectedGroup === 2 ? null : 2)}
               className={cn(
-                'px-3 py-1.5 rounded-full text-xs font-semibold border transition-all',
+                'px-3 py-1.5 rounded-full text-xs font-semibold border transition',
                 'focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring',
                 selectedGroup === 2
                   ? 'bg-verb-2 text-primary-foreground border-verb-2 shadow-xs'
@@ -161,7 +161,7 @@ export function VerbTable({ verbs }: VerbTableProps) {
               type="button"
               onClick={() => handleGroupSelect(selectedGroup === 3 ? null : 3)}
               className={cn(
-                'px-3 py-1.5 rounded-full text-xs font-semibold border transition-all',
+                'px-3 py-1.5 rounded-full text-xs font-semibold border transition',
                 'focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring',
                 selectedGroup === 3
                   ? 'bg-verb-3 text-primary-foreground border-verb-3 shadow-xs'
@@ -231,7 +231,7 @@ export function VerbTable({ verbs }: VerbTableProps) {
               </caption>
               <thead>
                 <tr className="border-b border-border bg-muted/40 text-xs font-bold text-muted-foreground">
-                  <th scope="col" className="sticky left-0 bg-muted/95 backdrop-blur-xs py-3.5 px-4 z-20 min-w-[130px] shadow-[1px_0_0_0_var(--color-border)]">
+                  <th scope="col" className="sticky left-0 bg-muted py-3.5 px-4 z-20 min-w-[130px] shadow-[1px_0_0_0_var(--color-border)]">
                     Động từ
                   </th>
                   <th scope="col" className="py-3.5 px-3 min-w-[100px]">ます</th>

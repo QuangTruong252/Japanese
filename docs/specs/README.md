@@ -23,7 +23,7 @@ chỉ chứng minh phạm vi ở ngày ghi nhận. Khi tiếp tục, kiểm tra 
 | SPEC-10: Shadowing player | Có | [ShadowingPlayer.tsx](../../web/src/components/audio/ShadowingPlayer.tsx), [shadowing.ts](../../web/src/lib/shadowing.ts), [hoc/[so]](../../web/src/app/hoc/[so]/page.tsx) | [Handoff 23/09](../handoff/SPEC-10.md) — code, lặp A-B, tốc độ, phím tắt, UI theo mockup 21-shadowing.png, static gates & tests PASS 100% |
 | SPEC-12: tra cứu (Kanji, động từ, 10 bảng) | Có | [lookup.ts](../../web/src/lib/lookup.ts), [tra-cuu](../../web/src/app/hoc/tra-cuu/page.tsx), [kanji](../../web/src/app/hoc/tra-cuu/kanji/page.tsx), [dong-tu](../../web/src/app/hoc/tra-cuu/dong-tu/page.tsx), [bang](../../web/src/app/hoc/tra-cuu/bang/page.tsx) | [Handoff 23/09](../handoff/SPEC-12.md) — code, 169 chữ Kanji, 156 động từ 5 thể, 10 bảng tham chiếu, chỉ mục tra ngược, static gates & tests PASS 100% |
 | SPEC-13: tìm kiếm toàn cục | Có | [search.ts](../../web/src/lib/search.ts), [SearchDialog.tsx](../../web/src/components/search/SearchDialog.tsx), [SearchTrigger.tsx](../../web/src/components/search/SearchTrigger.tsx) | [Handoff 23/09](../handoff/SPEC-13.md) — code, ARIA combobox/listbox, xếp hạng 3 tầng, chuẩn hóa đ->d, phím tắt Ctrl+K, kiểm thử trình duyệt PASS 100% |
-| SPEC-14: PWA/offline shell | Đã xóa | Không có service worker/manifest PWA | **Loại khỏi lộ trình 24/09/2026** theo quyết định người dùng; spec cũ còn trong lịch sử Git. Không triển khai lại nếu chưa có yêu cầu mới |
+| SPEC-14: PWA cài đặt & standalone | Có (thu hẹp 24/09) | [manifest.ts](../../web/src/app/manifest.ts), [InstallAppCard.tsx](../../web/src/components/InstallAppCard.tsx) | [Handoff 24/09](../handoff/SPEC-14.md) — installability Chrome không lỗi trên bản build; chưa thử iOS/Android thật và OAuth standalone. Không service worker |
 | SPEC-15: học từ vựng chủ động theo bài | Có | [Luồng học và theo dõi](../../web/src/components/vocab/VocabLearningFlow.tsx), [route](../../web/src/app/hoc/[so]/tu-vung/page.tsx) | [Handoff 24/09](../handoff/SPEC-15.md) — lật 3D; 991/991 từ N5 có ví dụ và kana (tự biên soạn, đã duyệt); đã xem ở 390px, còn kiểm tra phát audio thật và lưu/sync |
 | F11: N4 | Chưa có spec biên tập | Chưa có dữ liệu N4 | Cần nguồn và biên tập trước khi xây UI |
 
@@ -112,10 +112,10 @@ Ba spec này sửa lại một số chỗ đã chốt ở đợt 1 — sửa lu�
 | [SPEC-10](SPEC-10-shadowing-player.md) | Trình phát Shadowing (A-B repeat) | Có |
 | [SPEC-12](SPEC-12-tra-cuu.md) | Tra cứu: kanji, động từ, 10 bảng tham chiếu | Có |
 | [SPEC-13](SPEC-13-tim-kiem.md) | Hộp tìm kiếm `Ctrl+K` | Có |
-| ~~SPEC-14~~ | PWA & vỏ ứng dụng ngoại tuyến — **đã loại khỏi lộ trình 24/09/2026** | — |
+| [SPEC-14](SPEC-14-pwa-cai-dat.md) | PWA cài đặt & chế độ standalone (không service worker) | Có |
 
 Hai chuỗi phụ thuộc, chạy song song được: **SPEC-09 → SPEC-10** và **SPEC-12 → SPEC-13**.
-SPEC-14 đã loại khỏi lộ trình (24/09/2026).
+SPEC-14 thu hẹp còn phần cài đặt/standalone (24/09/2026); offline reload toàn app không làm.
 
 Những chỗ các spec này chạm vào đợt trước:
 

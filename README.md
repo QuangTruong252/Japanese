@@ -4,8 +4,8 @@
 
 Ứng dụng cá nhân cho người Việt tự học tiếng Nhật theo Minna no Nihongo.
 Hiện có màn học N5, luyện tập, ôn theo lịch, tra cứu, audio/Shadowing và sync
-(chưa kiểm với Supabase thật); N4 là lộ trình. PWA/offline toàn ứng dụng không
-nằm trong lộ trình. Xem [sản phẩm và thương hiệu](PRODUCT.md) và
+(chưa kiểm với Supabase thật); N4 là lộ trình. Cài lên màn hình chính (PWA không
+service worker) là lộ trình; mở lại app khi mất mạng thì không. Xem [sản phẩm và thương hiệu](PRODUCT.md) và
 [trạng thái có bằng chứng](docs/specs/README.md).
 
 ## Làm việc với coding agent

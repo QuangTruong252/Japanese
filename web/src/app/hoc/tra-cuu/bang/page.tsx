@@ -46,7 +46,7 @@ export default function ReferenceTablesIndexPage() {
             href={`/hoc/tra-cuu/bang/${doc.slug}`}
             className={cn(
               'group flex items-center justify-between p-4 sm:p-5 rounded-2xl',
-              'border border-border/80 bg-card shadow-xs transition-all duration-150',
+              'border border-border/80 bg-card shadow-xs transition duration-150',
               'hover:border-primary/40 hover:shadow-sm hover:translate-y-[-1px]',
               'active:translate-y-[1px]',
               'focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring'
@@ -74,7 +74,7 @@ export default function ReferenceTablesIndexPage() {
               </div>
             </div>
 
-            <ChevronRight className="size-5 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 transition-all shrink-0 ml-2" />
+            <ChevronRight className="size-5 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 transition shrink-0 ml-2" />
           </Link>
         ))}
       </div>

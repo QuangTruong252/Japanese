@@ -20,6 +20,7 @@ import {
   Volume2,
 } from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
+import { InstallAppCard } from '@/components/InstallAppCard';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -466,7 +467,7 @@ export default function SettingsPage() {
           role={notification.type === 'error' ? 'alert' : 'status'}
           aria-live={notification.type === 'error' ? 'assertive' : 'polite'}
           className={cn(
-            'flex items-center gap-3 rounded-xl border p-4 text-sm transition-all',
+            'flex items-center gap-3 rounded-xl border p-4 text-sm transition',
             notification.type === 'success'
               ? 'border-success/30 bg-success/10 text-success-foreground'
               : 'border-destructive/30 bg-destructive/10 text-destructive',
@@ -830,6 +831,8 @@ export default function SettingsPage() {
           </CardContent>
         </Card>
       </section>
+
+      <InstallAppCard />
 
       {/* NHÓM 4: TÀI KHOẢN (SPEC-08) */}
       <section className="space-y-4" aria-labelledby="heading-account">

@@ -66,10 +66,10 @@ export function AppNav() {
           'fixed bottom-[calc(0.75rem+env(safe-area-inset-bottom))] inset-x-4 mx-auto z-50',
           'flex items-center justify-between gap-1 px-2.5 py-1.5',
           'rounded-full max-w-md w-auto',
-          'bg-background/90 dark:bg-card/90 backdrop-blur-2xl',
+          'bg-background/95 dark:bg-card/95',
           'border border-border/80 dark:border-white/10',
           'shadow-xl shadow-black/5 dark:shadow-black/40 ring-1 ring-black/5 dark:ring-white/5',
-          'lg:hidden select-none'
+          'lg:hidden select-none [view-transition-name:app-dock]'
         )}
       >
         {NAV_ITEMS.map((item) => {
@@ -87,7 +87,7 @@ export function AppNav() {
               aria-current={isActive ? 'page' : undefined}
               aria-label={showBadge ? `${item.label}, ${dueCount} mục đến hạn` : item.label}
               className={cn(
-                'flex-1 flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-2xl transition-all duration-150 outline-none',
+                'flex-1 flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-2xl transition duration-150 outline-none',
                 'focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2',
                 isActive
                   ? 'text-primary font-semibold'
@@ -123,7 +123,7 @@ export function AppNav() {
           ======================================================== */}
       <aside
         aria-label="Điều hướng ứng dụng"
-        className="hidden lg:flex fixed inset-y-0 left-0 w-64 z-40 flex-col justify-between border-r border-border bg-card p-4 select-none"
+        className="hidden lg:flex fixed inset-y-0 left-0 w-64 z-40 flex-col justify-between border-r border-border bg-card p-4 select-none [view-transition-name:app-sidebar]"
       >
         <div>
           {/* Đỉnh: Logo thương hiệu MaiPace */}
@@ -164,7 +164,7 @@ export function AppNav() {
             onClick={openSearch}
             className={cn(
               'mt-5 w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium',
-              'border border-border/80 bg-muted/40 text-muted-foreground transition-all duration-150',
+              'border border-border/80 bg-muted/40 text-muted-foreground transition duration-150',
               'hover:bg-muted/70 hover:text-foreground hover:border-primary/40',
               'focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/60 cursor-pointer'
             )}
@@ -195,7 +195,7 @@ export function AppNav() {
                   href={item.href}
                   aria-current={isActive ? 'page' : undefined}
                   className={cn(
-                    'flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-150 outline-none',
+                    'flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition duration-150 outline-none',
                     'focus-visible:ring-2 focus-visible:ring-primary/60',
                     isActive
                       ? 'bg-primary/15 text-primary font-semibold shadow-sm'
@@ -232,7 +232,7 @@ export function AppNav() {
           <Link
             href="/cai-dat"
             className={cn(
-              'flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-150 outline-none',
+              'flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition duration-150 outline-none',
               'focus-visible:ring-2 focus-visible:ring-primary/60',
               pathname === '/cai-dat'
                 ? 'bg-primary/15 text-primary font-semibold'

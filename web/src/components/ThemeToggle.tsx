@@ -72,15 +72,15 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       title={isDark ? 'Giao diện: Tối (Bấm để chuyển Sáng)' : 'Giao diện: Sáng (Bấm để chuyển Tối)'}
       className={cn(
         'size-9 rounded-xl border border-border/80 bg-card flex items-center justify-center text-muted-foreground',
-        'hover:text-foreground hover:border-primary/40 hover:bg-muted/40 transition-all shadow-2xs cursor-pointer',
+        'hover:text-foreground hover:border-primary/40 hover:bg-muted/40 transition shadow-2xs cursor-pointer',
         'focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring',
         className,
       )}
     >
       {isDark ? (
-        <Sun className="size-4 text-amber-500 fill-amber-500/20 transition-transform duration-200 hover:rotate-45" />
+        <Sun className="size-4 text-amber-500 fill-amber-500/20 transition-transform duration-200 hover:rotate-45 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:zoom-in-50 motion-safe:duration-250 motion-safe:ease-in-out" />
       ) : (
-        <Moon className="size-4 text-muted-foreground transition-transform duration-200 hover:-rotate-12" />
+        <Moon className="size-4 text-muted-foreground transition-transform duration-200 hover:-rotate-12 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:zoom-in-50 motion-safe:duration-250 motion-safe:ease-in-out" />
       )}
     </button>
   );

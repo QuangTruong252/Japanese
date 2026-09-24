@@ -33,7 +33,7 @@ export function SessionResult({
 
   return (
     <main className="mx-auto max-w-xl space-y-6 px-4 py-8">
-      <div className="space-y-1 text-center">
+      <div className="space-y-1 text-center motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3 motion-safe:duration-400 motion-safe:ease-in-out motion-safe:fill-mode-both">
         <h1 className="font-heading text-xl font-medium">
           {isDue ? 'Kết quả ôn tập' : 'Kết quả luyện tập'}
         </h1>
@@ -66,7 +66,7 @@ export function SessionResult({
       )}
 
       {/* Thẻ tóm tắt kết quả */}
-      <div className="grid grid-cols-3 gap-3 rounded-2xl border border-border bg-card p-4 text-center">
+      <div className="grid grid-cols-3 gap-3 rounded-2xl border border-border bg-card p-4 text-center motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3 motion-safe:duration-400 motion-safe:ease-in-out motion-safe:fill-mode-both motion-safe:delay-40">
         <div className="space-y-1">
           <span className="text-xs text-muted-foreground">Tỷ lệ đúng</span>
           <p className="text-2xl font-bold tracking-tight text-primary">
@@ -134,7 +134,7 @@ export function SessionResult({
       )}
 
       {/* Điều hướng */}
-      <div className="flex flex-col gap-3 pt-2 sm:flex-row">
+      <div className="flex flex-col gap-3 pt-2 sm:flex-row motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3 motion-safe:duration-400 motion-safe:ease-in-out motion-safe:fill-mode-both motion-safe:delay-80">
         <Button
           size="quiz"
           className="flex-1"

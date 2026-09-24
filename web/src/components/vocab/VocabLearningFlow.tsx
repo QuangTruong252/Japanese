@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import {
   ArrowLeft,
@@ -13,6 +13,7 @@ import {
   Turtle,
 } from 'lucide-react';
 import { useLiveQuery } from 'dexie-react-hooks';
+import { LazyMotion, MotionConfig, animate, domMax, m, useMotionValue, useTransform, type PanInfo } from 'framer-motion';
 import { Furigana } from '@/components/Furigana';
 import { SpeakButton } from '@/components/SpeakButton';
 import { Button, buttonVariants } from '@/components/ui/button';
@@ -78,6 +79,10 @@ const RATING_OPTIONS: RatingOption[] = [
 ];
 
 type RatingCounts = Record<'again' | 'hard' | 'good' | 'easy', number>;
+
+// Vuốt thẻ đã lật: phải = Nhớ được, trái = Quên mất. Là lối tắt, bốn nút vẫn giữ nguyên.
+const SWIPE_DISTANCE = 100;
+const SWIPE_VELOCITY = 500;
 
 const EMPTY_RATING_COUNTS: RatingCounts = { again: 0, hard: 0, good: 0, easy: 0 };
 
@@ -293,6 +298,8 @@ export function VocabLearningFlow({
   const [saveError, setSaveError] = useState<string | null>(null);
   const [ratingCounts, setRatingCounts] = useState<RatingCounts>(EMPTY_RATING_COUNTS);
   const cardStartedAt = useRef(0);
+  const dragX = useMotionValue(0);
+  const dragRotate = useTransform(dragX, [-240, 240], [-6, 6]);
   const studyContentRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -332,8 +339,8 @@ export function VocabLearningFlow({
     setStage('study');
   };
 
-  const rateCurrentWord = async (grade: Grade) => {
-    if (!activeWord || saving) return;
+  const rateCurrentWord = async (grade: Grade): Promise<boolean> => {
+    if (!activeWord || saving) return false;
     setSaving(true);
     setSaveError(null);
     try {
@@ -351,12 +358,27 @@ export function VocabLearningFlow({
         setRevealed(false);
         cardStartedAt.current = getVocabLearningTime();
       }
+      return true;
     } catch {
       setSaveError('Chưa lưu được kết quả vào máy. Hãy thử lại; thẻ này chưa được ghi nhận.');
+      return false;
     } finally {
       setSaving(false);
     }
   };
+
+  const handleSwipeEnd = async (_: unknown, info: PanInfo) => {
+    const dir = info.offset.x > SWIPE_DISTANCE || info.velocity.x > SWIPE_VELOCITY ? 1
+      : info.offset.x < -SWIPE_DISTANCE || info.velocity.x < -SWIPE_VELOCITY ? -1 : 0;
+    if (dir === 0 || saving) return; // dragSnapToOrigin đưa thẻ về chỗ
+    await animate(dragX, dir * window.innerWidth, { duration: 0.2, ease: [0.22, 1, 0.36, 1] });
+    if (!(await rateCurrentWord(dir > 0 ? Rating.Good : Rating.Again))) dragX.set(0); // lưu lỗi: thẻ cũ quay lại
+  };
+
+  // Thẻ mới về giữa trước khi vẽ, để thẻ cũ không nháy lại giữa màn hình.
+  useLayoutEffect(() => {
+    dragX.set(0);
+  }, [currentIndex, dragX]);
 
   const backHref = `/hoc/${lessonNumber}`;
 
@@ -507,12 +529,19 @@ export function VocabLearningFlow({
               <div className="flex items-center justify-between text-sm text-muted-foreground">
                 <span>Bài {lessonNumber} · Từ {currentIndex + 1} / {sessionWords.length}</span>
               </div>
-              <progress
-                className="h-1.5 w-full overflow-hidden rounded-full accent-primary"
-                value={currentIndex}
-                max={sessionWords.length}
+              <div
+                role="progressbar"
+                aria-valuemin={0}
+                aria-valuemax={sessionWords.length}
+                aria-valuenow={currentIndex}
                 aria-label={`Đã đánh giá ${currentIndex} trên ${sessionWords.length} từ`}
-              />
+                className="h-1.5 w-full overflow-hidden rounded-full bg-muted"
+              >
+                <div
+                  className="h-full origin-left bg-primary transition-transform duration-250 ease-smooth-out"
+                  style={{ transform: `scaleX(${currentIndex / Math.max(1, sessionWords.length)})` }}
+                />
+              </div>
             </div>
 
             <section
@@ -521,7 +550,17 @@ export function VocabLearningFlow({
               className="flex flex-1 flex-col items-center justify-center gap-3 py-5 text-center"
               aria-live="polite"
             >
-              <article key={activeWord.targetId} className="w-full max-w-xl text-left [perspective:1200px]">
+              <LazyMotion features={domMax} strict>
+              <MotionConfig reducedMotion="user">
+              <m.article
+                key={activeWord.targetId}
+                drag={revealed && !saving ? 'x' : false}
+                dragSnapToOrigin
+                dragElastic={0.6}
+                onDragEnd={handleSwipeEnd}
+                style={{ x: dragX, rotate: dragRotate }}
+                className="w-full max-w-xl text-left [perspective:1200px] motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-2 motion-safe:duration-250 motion-safe:ease-in-out"
+              >
                 <div className={cn(
                   'grid w-full [transform-style:preserve-3d] motion-safe:transition-transform motion-safe:duration-[250ms] motion-safe:ease-in-out',
                   revealed && '[transform:rotateY(180deg)]',
@@ -603,7 +642,9 @@ export function VocabLearningFlow({
                     </div>
                   </div>
                 </div>
-              </article>
+              </m.article>
+              </MotionConfig>
+              </LazyMotion>
 
               {revealed ? (
                 <section className="w-full max-w-xl" aria-label="Mức độ ghi nhớ">
@@ -626,7 +667,11 @@ export function VocabLearningFlow({
                       </div>
                     ))}
                   </div>
-                  {saving && <p role="status" className="mt-2 text-center text-sm text-muted-foreground">Đang lưu kết quả…</p>}
+                  {saving ? (
+                    <p role="status" className="mt-2 text-center text-sm text-muted-foreground">Đang lưu kết quả…</p>
+                  ) : (
+                    <p className="mt-2 text-center text-xs text-muted-foreground">Vuốt thẻ sang phải: Nhớ được · sang trái: Quên mất</p>
+                  )}
                 </section>
               ) : (
                 <p className="text-sm text-muted-foreground">Chạm thẻ để xem đáp án.</p>

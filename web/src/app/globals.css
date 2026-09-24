@@ -55,6 +55,11 @@
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
+
+  /* Chuyển động (DESIGN.md §Motion). Sinh utility `ease-smooth-out`, `animate-jp-shake`. */
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-jp-shake: jp-shake 300ms ease-in-out;
+  --animate-draw-check: draw-check 300ms 80ms ease-out both;
 }
 
 :root {
@@ -152,6 +157,19 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
+  /* App đã cài (SPEC-14): kéo quá không lộ nền, không kéo-để-tải-lại giữa phiên học. */
+  @media (display-mode: standalone) {
+    html,
+    body {
+      overscroll-behavior-y: none;
+    }
+  }
+  /* Chạm trên mobile: bỏ vệt xám mặc định (đã có trạng thái active riêng) và
+     bỏ double-tap zoom để phản hồi nhấn tức thì. */
+  a, button, label, summary, [role="button"], [role="tab"], [role="option"] {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
 }
 
 /* Japanese typography & Furigana rules */
@@ -232,17 +250,26 @@ html.hide-translations .translation:active {
   font-weight: 500;
 }
 
-/* Rung báo sai: 300ms, biên độ 4px, 3 nhịp (SPEC-04 §6). */
+/* Nét dấu tích khi đáp đúng (transitions.dev success check, chỉ phần vẽ nét). Path của
+   lucide Check dài ~23 đơn vị. Giảm chuyển động: hiện nét đầy đủ ngay. */
+@keyframes draw-check {
+  from { stroke-dashoffset: 24; }
+  to { stroke-dashoffset: 0; }
+}
+.animate-draw-check path {
+  stroke-dasharray: 24;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-draw-check {
+    animation: none;
+  }
+}
+
+/* Rung báo sai: 300ms, biên độ 4px, 3 nhịp (SPEC-04 §6). Dùng `motion-safe:animate-jp-shake`. */
 @keyframes jp-shake {
   0%, 100% { transform: translateX(0); }
   16%, 50%, 83% { transform: translateX(-4px); }
   33%, 66% { transform: translateX(4px); }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .jp-shake {
-    animation: jp-shake 300ms ease-in-out;
-  }
 }
 
 /* Ẩn nút cancel (x) mặc định của trình duyệt trong input search để không bị nhân đôi (BUG-04) */
@@ -251,4 +278,53 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
   appearance: none;
   display: none;
+}
+/* Chuyển trang (DESIGN.md §Motion): mới vào 250ms, cũ ra 150ms, trượt 8px theo --nav-dir
+   (1 tiến, -1 lùi, 0 chỉ mờ; đặt bởi PageTransition). Không blur: blur snapshot cả màn hình
+   rất tốn trên điện thoại. Nav giữ nguyên chỗ trong lúc chuyển. */
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-group(app-dock),
+::view-transition-group(app-sidebar) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(app-dock),
+::view-transition-old(app-sidebar) {
+  display: none;
+}
+::view-transition-new(app-dock),
+::view-transition-new(app-sidebar) {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(.page) {
+    animation: 150ms cubic-bezier(0.22, 1, 0.36, 1) both vt-page-out;
+  }
+  ::view-transition-new(.page) {
+    animation: 250ms cubic-bezier(0.22, 1, 0.36, 1) both vt-page-in;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+@keyframes vt-page-in {
+  from {
+    opacity: 0;
+    translate: calc(var(--nav-dir, 0) * 8px) 0;
+  }
+}
+@keyframes vt-page-out {
+  to {
+    opacity: 0;
+    translate: calc(var(--nav-dir, 0) * -8px) 0;
+  }
 }

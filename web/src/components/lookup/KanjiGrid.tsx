@@ -217,7 +217,7 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
                 aria-label={`${k.character} — ${meaning}, bài ${lesson ?? 'N5'}${isLearned ? ', đã học' : ''}`}
                 className={cn(
                   'group relative flex flex-col items-center justify-between min-h-[92px] p-2.5 rounded-2xl',
-                  'border border-border/80 bg-card shadow-2xs transition-all duration-150',
+                  'border border-border/80 bg-card shadow-2xs transition duration-150',
                   'hover:border-primary/50 hover:shadow-xs hover:translate-y-[-1px]',
                   'active:translate-y-[1px]',
                   'focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring'

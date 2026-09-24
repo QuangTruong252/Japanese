@@ -18,6 +18,19 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
+import { LazyMotion, MotionConfig, domMax, m } from 'framer-motion';
+
+// Nền của lựa chọn đang bật trượt sang nút mới (tabs sliding, 250ms smooth-out).
+function FilterPill() {
+  return (
+    <m.span
+      layoutId="lesson-filter-pill"
+      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+      className="absolute inset-0 -z-10 rounded-xl bg-primary shadow-sm"
+      aria-hidden
+    />
+  );
+}
 
 type FilterType = 'all' | 'completed' | 'in-progress' | 'not-started';
 
@@ -120,7 +133,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
           </div>
           <div className="w-full bg-muted h-2 rounded-full overflow-hidden">
             <div
-              className="bg-primary h-full rounded-full transition-all duration-300"
+              className="bg-primary h-full rounded-full transition-[width] duration-250 ease-smooth-out"
               style={{ width: `${Math.round((lessonStats.completed / Math.max(1, summaries.length)) * 100)}%` }}
             />
           </div>
@@ -146,7 +159,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
           </div>
           <div className="w-full bg-muted h-2 rounded-full overflow-hidden">
             <div
-              className="bg-emerald-600 dark:bg-emerald-500 h-full rounded-full transition-all duration-300"
+              className="bg-emerald-600 dark:bg-emerald-500 h-full rounded-full transition-[width] duration-250 ease-smooth-out"
               style={{ width: `${Math.min(100, Math.round((targetIds.length / lessonStats.totalVocabInN5) * 100))}%` }}
             />
           </div>
@@ -210,56 +223,64 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
       {/* 2. Thanh công cụ Lọc & Tìm kiếm */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-2 border-t border-border/80">
         {/* Segmented Filter Buttons */}
+        <LazyMotion features={domMax} strict>
+        <MotionConfig reducedMotion="user">
         <div className="flex items-center gap-1 bg-card p-1 rounded-2xl border border-border/80 shadow-sm overflow-x-auto">
           <button
             type="button"
             onClick={() => setFilter('all')}
             className={cn(
-              'px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all whitespace-nowrap',
+              'relative isolate px-3.5 py-1.5 rounded-xl text-xs font-medium transition-colors whitespace-nowrap',
               filter === 'all'
-                ? 'bg-primary text-primary-foreground font-semibold shadow-sm'
+                ? 'text-primary-foreground font-semibold'
                 : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
             )}
           >
+            {filter === 'all' && <FilterPill />}
             Tất cả ({summaries.length})
           </button>
           <button
             type="button"
             onClick={() => setFilter('completed')}
             className={cn(
-              'px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all whitespace-nowrap',
+              'relative isolate px-3.5 py-1.5 rounded-xl text-xs font-medium transition-colors whitespace-nowrap',
               filter === 'completed'
-                ? 'bg-primary text-primary-foreground font-semibold shadow-sm'
+                ? 'text-primary-foreground font-semibold'
                 : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
             )}
           >
+            {filter === 'completed' && <FilterPill />}
             Đã hoàn thành ({lessonStats.completed})
           </button>
           <button
             type="button"
             onClick={() => setFilter('in-progress')}
             className={cn(
-              'px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all whitespace-nowrap',
+              'relative isolate px-3.5 py-1.5 rounded-xl text-xs font-medium transition-colors whitespace-nowrap',
               filter === 'in-progress'
-                ? 'bg-primary text-primary-foreground font-semibold shadow-sm'
+                ? 'text-primary-foreground font-semibold'
                 : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
             )}
           >
+            {filter === 'in-progress' && <FilterPill />}
             Đang học ({lessonStats.inProgress})
           </button>
           <button
             type="button"
             onClick={() => setFilter('not-started')}
             className={cn(
-              'px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all whitespace-nowrap',
+              'relative isolate px-3.5 py-1.5 rounded-xl text-xs font-medium transition-colors whitespace-nowrap',
               filter === 'not-started'
-                ? 'bg-primary text-primary-foreground font-semibold shadow-sm'
+                ? 'text-primary-foreground font-semibold'
                 : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
             )}
           >
+            {filter === 'not-started' && <FilterPill />}
             Chưa học ({lessonStats.notStarted})
           </button>
         </div>
+        </MotionConfig>
+        </LazyMotion>
 
         {/* Search Box */}
         <div className="flex items-center gap-3">
@@ -325,7 +346,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                 href={`/hoc/${s.number}`}
                 className="group outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-2xl"
               >
-                <Card className="h-full rounded-2xl border-border/80 bg-card p-5 shadow-sm hover:shadow-md hover:border-primary/40 transition-all flex flex-col justify-between relative">
+                <Card className="h-full rounded-2xl border-border/80 bg-card p-5 shadow-sm hover:shadow-md hover:border-primary/40 transition flex flex-col justify-between relative">
                   <div className="space-y-3">
                     {/* Badge Trạng thái */}
                     <div className="flex items-center justify-between">

@@ -417,7 +417,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
               )}
               {/* Vạch tiến độ đã phát */}
               <div
-                className="h-full bg-primary transition-all duration-75"
+                className="h-full bg-primary transition-[width] duration-75"
                 style={{ width: `${progressPercent}%` }}
               />
             </div>

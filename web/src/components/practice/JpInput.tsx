@@ -48,7 +48,7 @@ export function JpInput({
           'disabled:opacity-50',
           state === 'idle' && 'border-border',
           state === 'correct' && 'border-success bg-success/10',
-          state === 'incorrect' && 'border-destructive bg-destructive/10 motion-safe:jp-shake',
+          state === 'incorrect' && 'border-destructive bg-destructive/10 motion-safe:animate-jp-shake',
         )}
       />
       <p id={captionId} className="text-center text-sm text-muted-foreground">

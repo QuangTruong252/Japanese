@@ -296,8 +296,19 @@ export function PracticeRunner({
         </span>
       </header>
 
+      {/* Tiến độ phiên: scaleX để chỉ chạy trên compositor */}
+      <div className="h-1 shrink-0 overflow-hidden rounded-full bg-muted" aria-hidden>
+        <div
+          className="h-full origin-left bg-primary transition-transform duration-250 ease-smooth-out"
+          style={{ transform: `scaleX(${(currentIndex + (answered ? 1 : 0)) / questions.length})` }}
+        />
+      </div>
+
       {/* VÙNG CÂU HỎI: co được, min-h-0 + overflow-y-auto để chính nó thu nhỏ */}
-      <section className="flex min-h-0 flex-1 flex-col items-center justify-center overflow-y-auto py-4 text-center">
+      <section
+        key={`prompt-${currentQuestion.id}`}
+        className="flex min-h-0 flex-1 flex-col items-center justify-center overflow-y-auto py-4 text-center motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-2 motion-safe:duration-250 motion-safe:ease-in-out"
+      >
         {currentQuestion.type !== 'listening' ? (
           <>
             {currentQuestion.context && (
@@ -317,7 +328,7 @@ export function PracticeRunner({
       </section>
 
       {/* VÙNG TRẢ LỜI: luôn ở nửa dưới */}
-      <section className="shrink-0 pb-4">
+      <section key={`answer-${currentQuestion.id}`} className="shrink-0 pb-4 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-2 motion-safe:duration-250 motion-safe:ease-in-out">
         {renderQuestionComponent()}
 
         {/* VÙNG PHẢN HỒI: hiện sau khi trả lời */}
@@ -326,6 +337,7 @@ export function PracticeRunner({
             aria-live="polite"
             className={cn(
               'mt-4 rounded-xl border p-4 transition-colors duration-150',
+              'motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-2 motion-safe:duration-200 motion-safe:ease-out',
               lastResult.isCorrect
                 ? 'border-success/30 bg-success/10'
                 : 'border-destructive/30 bg-destructive/10',
@@ -334,7 +346,7 @@ export function PracticeRunner({
             <div className="flex items-center gap-2 font-medium">
               {lastResult.isCorrect ? (
                 <>
-                  <Check className="size-5 shrink-0 text-success" />
+                  <Check className="size-5 shrink-0 text-success animate-draw-check" />
                   <span className="text-success">Chính xác!</span>
                 </>
               ) : (

@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { LazyMotion, MotionConfig, domMax } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { PhraseToken } from './PhraseToken';
 import { Furigana } from '@/components/Furigana';
@@ -8,7 +9,9 @@ import type { QuestionProps } from './types';
 import { checkReorderAnswer, targetTypeFromId } from '@/lib/practice';
 import { cn } from '@/lib/utils';
 
-// ponytail: chỉ 1-chạm; thêm kéo thả framer-motion khi có nhu cầu thật.
+// Chạm để chọn/bỏ; khối từ bay giữa kho và thanh trả lời (shared layout).
+// ponytail: chưa kéo để đổi thứ tự — Reorder của framer-motion chỉ hỗ trợ một hàng,
+// thanh trả lời xuống dòng; thêm khi có cách kéo cho hàng wrap.
 export function QuestionReorder({
   question,
   answered,
@@ -71,6 +74,8 @@ export function QuestionReorder({
     : null;
 
   return (
+    <LazyMotion features={domMax} strict>
+    <MotionConfig reducedMotion="user">
     <div className="flex flex-col gap-4">
       {/* Thanh trả lời: vùng chứa các khối từ đã chọn */}
       <div
@@ -78,7 +83,7 @@ export function QuestionReorder({
           'flex min-h-16 w-full flex-wrap items-center gap-2 rounded-xl border-2 p-3 transition-colors duration-150',
           !answered && 'border-dashed border-border bg-card/50',
           answered && isCorrect && 'border-success bg-success/10',
-          answered && !isCorrect && 'border-destructive bg-destructive/10 motion-safe:jp-shake',
+          answered && !isCorrect && 'border-destructive bg-destructive/10 motion-safe:animate-jp-shake',
         )}
       >
         {chosenTokens.length === 0 ? (
@@ -89,6 +94,7 @@ export function QuestionReorder({
           chosenTokens.map((token) => (
             <PhraseToken
               key={token.id}
+              layoutId={token.id}
               disabled={answered}
               onClick={() => handleRemove(token.id)}
             >
@@ -105,7 +111,8 @@ export function QuestionReorder({
           const used = chosenIds.includes(token.id);
           return (
             <PhraseToken
-              key={token.id}
+              key={used ? `${token.id}-slot` : token.id}
+              layoutId={used ? undefined : token.id}
               used={used}
               disabled={answered}
               onClick={() => handlePick(token.id)}
@@ -129,5 +136,7 @@ export function QuestionReorder({
         </Button>
       )}
     </div>
+    </MotionConfig>
+    </LazyMotion>
   );
 }

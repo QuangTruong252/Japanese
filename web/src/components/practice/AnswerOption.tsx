@@ -6,10 +6,10 @@ import { cn } from '@/lib/utils';
 export type AnswerOptionState = 'idle' | 'selected' | 'correct' | 'incorrect';
 
 const STATE_CLASS: Record<AnswerOptionState, string> = {
-  idle: 'bg-card border-border [@media(hover:hover)]:hover:bg-accent',
+  idle: 'bg-card border-border hover:bg-accent',
   selected: 'bg-accent border-primary',
   correct: 'bg-success/10 border-success',
-  incorrect: 'bg-destructive/10 border-destructive motion-safe:jp-shake',
+  incorrect: 'bg-destructive/10 border-destructive motion-safe:animate-jp-shake',
 };
 
 export function AnswerOption({

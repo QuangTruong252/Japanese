@@ -26,8 +26,9 @@ Thành công là người học biết nên làm gì tiếp theo, hiểu phản 
 - Tự học có hướng dẫn bằng tiếng Việt, nội dung tiếng Nhật là trọng tâm.
 - Luyện tập theo bài và ôn theo lịch, khuyến khích học đều mà không gây áp lực.
 - Ưu tiên lưu dữ liệu phía người học. Đồng bộ đa thiết bị là mục tiêu phải
-  nghiệm thu riêng, không suy ra từ việc đã dùng Dexie. PWA/offline toàn ứng dụng
-  (mở lại app khi mất mạng) đã loại khỏi lộ trình ngày 24/09/2026.
+  nghiệm thu riêng, không suy ra từ việc đã dùng Dexie. Cài lên màn hình chính
+  (PWA không service worker, SPEC-14) nằm trong lộ trình; mở lại app khi mất mạng
+  (offline reload) đã loại khỏi lộ trình ngày 24/09/2026.
 - Minna no Nihongo là giáo trình tham chiếu; không mô tả MaiPace là sản phẩm
   chính thức hoặc được nhà xuất bản bảo chứng.
 
@@ -50,7 +51,7 @@ cáo nghiệm thu. Tại lần đối chiếu 24/09/2026:
   chấp nhận sai sót nhỏ và sửa khi phát hiện.
 - Sync Supabase (Google OAuth, RPC, RLS) đã có code, chưa kiểm với project
   Supabase thật trên nhiều thiết bị. Import audio ZIP và Shadowing đã có code,
-  test tự động đạt. Vỏ PWA không làm. N4 là mục tiêu biên tập sau.
+  test tự động đạt. PWA chỉ làm phần cài đặt (SPEC-14), chưa triển khai. N4 là mục tiêu biên tập sau.
 - Phiên bản lấy từ package/lockfile. Dexie giữ dữ liệu client; Zustand chỉ giữ
   UI tạm thời; FSRS qua helper hiện có. Quy tắc kỹ thuật ở [AGENTS.md](AGENTS.md).
 - Audio nguồn không đưa vào bundle/public/cloud sync. Người học tự nạp audio

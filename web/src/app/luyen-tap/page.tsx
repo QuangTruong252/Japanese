@@ -145,7 +145,7 @@ export default function PracticeConfigPage() {
                   'flex size-11 min-h-11 min-w-11 items-center justify-center rounded-xl text-sm font-medium transition-colors duration-150 ease-out outline-none focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px',
                   selected
                     ? 'border-2 border-primary bg-accent text-foreground'
-                    : 'border border-border bg-card text-muted-foreground [@media(hover:hover)]:hover:bg-accent [@media(hover:hover)]:hover:text-foreground',
+                    : 'border border-border bg-card text-muted-foreground hover:bg-accent hover:text-foreground',
                 )}
               >
                 {num}
@@ -171,7 +171,7 @@ export default function PracticeConfigPage() {
                   'flex min-h-11 items-center justify-center rounded-xl px-4 py-2.5 text-sm font-medium transition-colors duration-150 ease-out outline-none focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px',
                   selected
                     ? 'border-2 border-primary bg-accent text-foreground'
-                    : 'border border-border bg-card text-muted-foreground [@media(hover:hover)]:hover:bg-accent [@media(hover:hover)]:hover:text-foreground',
+                    : 'border border-border bg-card text-muted-foreground hover:bg-accent hover:text-foreground',
                 )}
               >
                 {label}
@@ -197,7 +197,7 @@ export default function PracticeConfigPage() {
                   'flex min-h-11 min-w-11 items-center justify-center rounded-xl px-4 py-2.5 text-sm font-medium transition-colors duration-150 ease-out outline-none focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px',
                   selected
                     ? 'border-2 border-primary bg-accent text-foreground'
-                    : 'border border-border bg-card text-muted-foreground [@media(hover:hover)]:hover:bg-accent [@media(hover:hover)]:hover:text-foreground',
+                    : 'border border-border bg-card text-muted-foreground hover:bg-accent hover:text-foreground',
                 )}
               >
                 {count}
