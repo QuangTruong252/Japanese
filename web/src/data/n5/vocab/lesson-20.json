@@ -10,7 +10,14 @@
         "en": "to need [a visa]",
         "vi": "cần [thị thực, visa]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "日本[にほん]へ 行[い]く 前[まえ]に、ビザが 要[い]ります。",
+        "kana": "にほんへ いく まえに、ビザが いります。",
+        "translation": {
+          "vi": "Trước khi đi Nhật, cần có visa."
+        }
+      }
     },
     {
       "id": "shirabemasu",
@@ -20,7 +27,14 @@
         "en": "to look into, to check",
         "vi": "tra cứu, tìm hiểu, điều tra"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "パソコンで 言葉[ことば]を 調[しら]べます。",
+        "kana": "パソコンで ことばを しらべます。",
+        "translation": {
+          "vi": "Tôi tra cứu từ vựng bằng máy tính."
+        }
+      }
     },
     {
       "id": "shuuri-shimasu",
@@ -30,7 +44,14 @@
         "en": "to repair",
         "vi": "sửa chữa, bảo trì"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "父[ちち]は 車[くるま]を 修理[しゅうり]しました。",
+        "kana": "ちちは くるまを しゅうりしました。",
+        "translation": {
+          "vi": "Bố tôi đã sửa xe ô tô."
+        }
+      }
     },
     {
       "id": "boku",
@@ -40,7 +61,14 @@
         "en": "I (informal, male)",
         "vi": "tôi, mình (nam giới xưng thân mật)"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "僕[ぼく]は 毎朝[まいあさ] パンを 食[た]べる。",
+        "kana": "ぼくは まいあさ パンを たべる。",
+        "translation": {
+          "vi": "Mình ăn bánh mì mỗi sáng."
+        }
+      }
     },
     {
       "id": "kimi",
@@ -50,7 +78,14 @@
         "en": "you (informal)",
         "vi": "cậu, bạn (xưng thân mật với người ngang/dưới)"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "君[きみ]は 昨日[きのう] どこへ 行[い]った？",
+        "kana": "きみは きのう どこへ いった？",
+        "translation": {
+          "vi": "Cậu đã đi đâu ngày hôm qua vậy?"
+        }
+      }
     },
     {
       "id": "kun-20",
@@ -60,7 +95,14 @@
         "en": "informal suffix (like 〜さん)",
         "vi": "cậu, em (hậu tố thân mật gọi nam giới)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "ミラー君[くん]は 今[いま] 部屋[へや]に いる。",
+        "kana": "ミラーくんは いま へやに いる。",
+        "translation": {
+          "vi": "Cậu Miller bây giờ đang ở trong phòng."
+        }
+      }
     },
     {
       "id": "un",
@@ -70,7 +112,14 @@
         "en": "yes (informal)",
         "vi": "ừ, ừm (thân mật của はい)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「ご飯[はん]を 食[た]べた？」「うん、食[た]べた。」",
+        "kana": "「ごはんを たべた？」「うん、たべた。」",
+        "translation": {
+          "vi": "\"Cậu ăn cơm chưa?\" \"Ừ, mình ăn rồi.\""
+        }
+      }
     },
     {
       "id": "uun",
@@ -80,7 +129,14 @@
         "en": "no (informal)",
         "vi": "không (thân mật của いいえ)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「暇[ひま]？」「ううん、暇[ひま]じゃない。」",
+        "kana": "「ひま？」「ううん、ひまじゃない。」",
+        "translation": {
+          "vi": "\"Cậu rảnh không?\" \"Không, mình không rảnh.\""
+        }
+      }
     },
     {
       "id": "kotoba",
@@ -90,7 +146,14 @@
         "en": "word, language",
         "vi": "từ ngữ, tiếng nói, ngôn ngữ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "この ことばの 意味[いみ]が わかりません。",
+        "kana": "この ことばの いみが わかりません。",
+        "translation": {
+          "vi": "Tôi không hiểu ý nghĩa của từ này."
+        }
+      }
     },
     {
       "id": "kimono",
@@ -100,7 +163,14 @@
         "en": "kimono",
         "vi": "áo Kimono truyền thống Nhật"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "着物[きもの]を 買[か]いたいです。",
+        "kana": "きものを かいたいです。",
+        "translation": {
+          "vi": "Tôi muốn mua áo Kimono."
+        }
+      }
     },
     {
       "id": "biza",
@@ -110,7 +180,14 @@
         "en": "visa",
         "vi": "thị thực, visa"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "アメリカの ビザを もらいました。",
+        "kana": "アメリカの ビザを もらいました。",
+        "translation": {
+          "vi": "Tôi đã nhận được visa Mỹ."
+        }
+      }
     },
     {
       "id": "hajime",
@@ -120,7 +197,14 @@
         "en": "start, beginning",
         "vi": "lúc đầu, ban đầu"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "初[はじ]めは 日本語[にほんご]が わかりませんでした。",
+        "kana": "はじめは にほんごが わかりませんでした。",
+        "translation": {
+          "vi": "Lúc đầu tôi đã không hiểu tiếng Nhật."
+        }
+      }
     },
     {
       "id": "owari",
@@ -130,7 +214,14 @@
         "en": "end",
         "vi": "lúc cuối, kết thúc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "映画[えいが]の 終[お]わりは どうでしたか。",
+        "kana": "えいがの おわりは どうでしたか。",
+        "translation": {
+          "vi": "Kết thúc của bộ phim thì như thế nào?"
+        }
+      }
     },
     {
       "id": "kocchi",
@@ -140,7 +231,14 @@
         "en": "here (informal of こちら)",
         "vi": "chỗ này, phía này (thân mật của こちら)"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "こっちは 涼[すず]しいです。",
+        "kana": "こっちは すずしいです。",
+        "translation": {
+          "vi": "Chỗ này thì mát mẻ."
+        }
+      }
     },
     {
       "id": "socchi",
@@ -150,7 +248,14 @@
         "en": "there (informal of そちら)",
         "vi": "chỗ đó, phía đó (thân mật của そちら)"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "そっちは 暑[あつ]いですか。",
+        "kana": "そっちは あついですか。",
+        "translation": {
+          "vi": "Chỗ đó có nóng không?"
+        }
+      }
     },
     {
       "id": "acchi",
@@ -160,7 +265,14 @@
         "en": "over there (informal of あちら)",
         "vi": "chỗ kia, phía kia (thân mật của あちら)"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "あっちで 休[やす]みましょう。",
+        "kana": "あっちで やすみましょう。",
+        "translation": {
+          "vi": "Chúng ta hãy nghỉ ngơi ở đằng kia nhé."
+        }
+      }
     },
     {
       "id": "docchi",
@@ -170,7 +282,14 @@
         "en": "which, where (informal of どちら)",
         "vi": "chỗ nào, phía nào (thân mật của どちら)"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "海[うみ]と 山[やま]と、どっちが 好[す]き？",
+        "kana": "うみと やまと、どっちが すき？",
+        "translation": {
+          "vi": "Biển và núi, cậu thích nơi nào hơn?"
+        }
+      }
     },
     {
       "id": "minnade",
@@ -180,7 +299,14 @@
         "en": "all together",
         "vi": "tất cả mọi người cùng nhau"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "みんなで 写真[しゃしん]を 撮[と]りました。",
+        "kana": "みんなで しゃしんを とりました。",
+        "translation": {
+          "vi": "Tất cả mọi người đã cùng nhau chụp ảnh."
+        }
+      }
     },
     {
       "id": "kedo",
@@ -190,7 +316,14 @@
         "en": "~, but (informal of が)",
         "vi": "nhưng mà (văn nói thân mật của が)"
       },
-      "type": "particle"
+      "type": "particle",
+      "example": {
+        "jp": "カレーを 作[つく]ったけど、食[た]べる？",
+        "kana": "カレーを つくったけど、たべる？",
+        "translation": {
+          "vi": "Mình đã làm món cà ri, cậu ăn không?"
+        }
+      }
     },
     {
       "id": "onaka-ippai",
@@ -200,7 +333,14 @@
         "en": "I'm full",
         "vi": "tôi no bụng rồi"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "たくさん 食[た]べましたから、おなかがいっぱいです。",
+        "kana": "たくさん たべましたから、おなかがいっぱいです。",
+        "translation": {
+          "vi": "Vì tôi đã ăn nhiều nên no bụng rồi."
+        }
+      }
     },
     {
       "id": "yokattara",
@@ -210,7 +350,14 @@
         "en": "if you like",
         "vi": "nếu bạn thích / nếu tiện thì..."
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "よかったら、一緒[いっしょ]に 映画[えいが]を 見[み]ませんか。",
+        "kana": "よかったら、いっしょに えいがを みませんか。",
+        "translation": {
+          "vi": "Nếu tiện thì, bạn có muốn đi xem phim cùng tôi không?"
+        }
+      }
     },
     {
       "id": "iroiro",
@@ -220,7 +367,14 @@
         "en": "for various things",
         "vi": "nhiều điều, nhiều thứ"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "デパートで いろいろな 物[もの]を 買[か]いました。",
+        "kana": "デパートで いろいろな ものを かいました。",
+        "translation": {
+          "vi": "Tôi đã mua nhiều thứ ở cửa hàng bách hóa."
+        }
+      }
     }
   ]
 }

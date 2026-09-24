@@ -11,6 +11,7 @@ export interface LocalizedText {
 
 export interface ExampleSentence {
   jp: string; // Furigana bracket notation: "私[わたし]は 学生[がくせい]です"
+  kana?: string; // Cách đọc câu để phát âm và hiển thị dưới ví dụ
   translation: LocalizedText;
   note?: LocalizedText;
   audioKey?: string;
@@ -32,7 +33,11 @@ export interface VocabWord {
   kana: string;
   romaji?: string;
   meaning: LocalizedText;
-  type: 'noun' | 'pronoun' | 'verb-1' | 'verb-2' | 'verb-3' | 'i-adj' | 'na-adj' | 'adverb' | 'particle' | 'expression';
+  example?: ExampleSentence;
+  type:
+    | 'noun' | 'pronoun' | 'verb-godan' | 'verb-ichidan' | 'verb-irregular'
+    | 'adjective-i' | 'adjective-na' | 'adverb' | 'particle' | 'expression'
+    | 'interrogative' | 'counter' | 'number' | 'conjunction';
   kanjiIds?: string[];
   audioKey?: string;
   notes?: LocalizedText;
@@ -44,7 +49,7 @@ export interface Lesson {
   title: LocalizedText;
   jpTitle?: string;
   description: LocalizedText;
-  /** Chỉ có khi đã đối chiếu bản in. Không điền số trang phỏng đoán (SPEC-01 §3.1). */
+  /** Tùy chọn; không điền số trang phỏng đoán (SPEC-01 §3.1). */
   sourceRef?: { book: string; pages: string };
   /** Mặc định 'unverified' khi vắng mặt. */
   verification?: 'verified' | 'unverified';

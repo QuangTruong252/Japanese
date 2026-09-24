@@ -10,7 +10,14 @@
         "en": "to eat",
         "vi": "ăn"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "毎日[まいにち] パンを 食[た]べます。",
+        "kana": "まいにち パンを たべます。",
+        "translation": {
+          "vi": "Mỗi ngày tôi đều ăn bánh mì."
+        }
+      }
     },
     {
       "id": "nomimasu",
@@ -20,7 +27,14 @@
         "en": "to drink",
         "vi": "uống"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "水[みず]を 飲[の]みます。",
+        "kana": "みずを のみます。",
+        "translation": {
+          "vi": "Tôi uống nước."
+        }
+      }
     },
     {
       "id": "suimasu",
@@ -30,7 +44,14 @@
         "en": "to smoke [a cigarette]",
         "vi": "hút [thuốc lá]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "たばこを 吸[す]いますか。",
+        "kana": "たばこを すいますか。",
+        "translation": {
+          "vi": "Bạn có hút thuốc lá không?"
+        }
+      }
     },
     {
       "id": "mimasu",
@@ -40,7 +61,14 @@
         "en": "to see, to watch",
         "vi": "xem, nhìn"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "テレビを 見[み]ません。",
+        "kana": "テレビを みません。",
+        "translation": {
+          "vi": "Tôi không xem tivi."
+        }
+      }
     },
     {
       "id": "kikimasu",
@@ -50,7 +78,14 @@
         "en": "to hear, to listen",
         "vi": "nghe"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "ラジオを 聞[き]きます。",
+        "kana": "ラジオを ききます。",
+        "translation": {
+          "vi": "Tôi nghe đài."
+        }
+      }
     },
     {
       "id": "yomimasu",
@@ -60,7 +95,14 @@
         "en": "to read",
         "vi": "đọc"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "新聞[しんぶん]を 読[よ]みます。",
+        "kana": "しんぶんを よみます。",
+        "translation": {
+          "vi": "Tôi đọc báo."
+        }
+      }
     },
     {
       "id": "kakimasu",
@@ -70,7 +112,14 @@
         "en": "to write",
         "vi": "viết, vẽ"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "手紙[てがみ]を 書[か]きます。",
+        "kana": "てがみを かきます。",
+        "translation": {
+          "vi": "Tôi viết thư."
+        }
+      }
     },
     {
       "id": "kaimasu",
@@ -80,7 +129,14 @@
         "en": "to buy",
         "vi": "mua"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "スーパーで 時計[とけい]を 買[か]いました。",
+        "kana": "スーパーで とけいを かいました。",
+        "translation": {
+          "vi": "Tôi đã mua đồng hồ ở siêu thị."
+        }
+      }
     },
     {
       "id": "torimasu",
@@ -90,7 +146,14 @@
         "en": "to take [photos]",
         "vi": "chụp [ảnh]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "写真[しゃしん]を 撮[と]ります。",
+        "kana": "しゃしんを とります。",
+        "translation": {
+          "vi": "Tôi chụp ảnh."
+        }
+      }
     },
     {
       "id": "shimasu",
@@ -100,7 +163,14 @@
         "en": "to do, to make",
         "vi": "làm, chơi [thể thao, trò chơi]"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "テニスを しますか。",
+        "kana": "テニスを しますか。",
+        "translation": {
+          "vi": "Bạn có chơi tennis không?"
+        }
+      }
     },
     {
       "id": "aimasu",
@@ -110,7 +180,14 @@
         "en": "to see, to meet [friends]",
         "vi": "gặp [bạn bè]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "駅[えき]で 友達[ともだち]に 会[あ]います。",
+        "kana": "えきで ともだちに あいます。",
+        "translation": {
+          "vi": "Tôi gặp bạn ở nhà ga."
+        }
+      }
     },
     {
       "id": "gohan",
@@ -120,7 +197,14 @@
         "en": "meal, cooked rice",
         "vi": "cơm, bữa ăn"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ごはんを 食[た]べます。",
+        "kana": "ごはんを たべます。",
+        "translation": {
+          "vi": "Tôi ăn cơm."
+        }
+      }
     },
     {
       "id": "asagohan",
@@ -130,7 +214,14 @@
         "en": "breakfast",
         "vi": "bữa sáng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "朝[あさ]ごはんを 食[た]べません。",
+        "kana": "あさごはんを たべません。",
+        "translation": {
+          "vi": "Tôi không ăn sáng."
+        }
+      }
     },
     {
       "id": "hirugohan",
@@ -140,7 +231,14 @@
         "en": "lunch",
         "vi": "bữa trưa"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "昼[ひる]ごはんを 食[た]べました。",
+        "kana": "ひるごはんを たべました。",
+        "translation": {
+          "vi": "Tôi đã ăn trưa."
+        }
+      }
     },
     {
       "id": "bangohan",
@@ -150,7 +248,14 @@
         "en": "dinner",
         "vi": "bữa tối"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "晩[ばん]ごはんを 食[た]べます。",
+        "kana": "ばんごはんを たべます。",
+        "translation": {
+          "vi": "Tôi ăn tối."
+        }
+      }
     },
     {
       "id": "pan",
@@ -160,7 +265,14 @@
         "en": "bread",
         "vi": "bánh mì"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "朝[あさ] パンを 食[た]べます。",
+        "kana": "あさ パンを たべます。",
+        "translation": {
+          "vi": "Buổi sáng tôi ăn bánh mì."
+        }
+      }
     },
     {
       "id": "tamago",
@@ -170,7 +282,14 @@
         "en": "egg",
         "vi": "trứng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "卵[たまご]を 買[か]いました。",
+        "kana": "たまごを かいました。",
+        "translation": {
+          "vi": "Tôi đã mua trứng."
+        }
+      }
     },
     {
       "id": "niku",
@@ -180,7 +299,14 @@
         "en": "meat",
         "vi": "thịt"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "肉[にく]を 食[た]べます。",
+        "kana": "にくを たべます。",
+        "translation": {
+          "vi": "Tôi ăn thịt."
+        }
+      }
     },
     {
       "id": "sakana",
@@ -190,7 +316,14 @@
         "en": "fish",
         "vi": "cá"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "魚[さかな]を 買[か]います。",
+        "kana": "さかなを かいます。",
+        "translation": {
+          "vi": "Tôi mua cá."
+        }
+      }
     },
     {
       "id": "yasai",
@@ -200,7 +333,14 @@
         "en": "vegetables",
         "vi": "rau"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "野菜[やさい]を 食[た]べます。",
+        "kana": "やさいを たべます。",
+        "translation": {
+          "vi": "Tôi ăn rau."
+        }
+      }
     },
     {
       "id": "kudamono",
@@ -210,7 +350,14 @@
         "en": "fruit",
         "vi": "trái cây, hoa quả"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "果物[くだもの]を 買[か]いました。",
+        "kana": "くだものを かいました。",
+        "translation": {
+          "vi": "Tôi đã mua hoa quả."
+        }
+      }
     },
     {
       "id": "mizu",
@@ -220,7 +367,14 @@
         "en": "water",
         "vi": "nước"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "水[みず]を 飲[の]みます。",
+        "kana": "みずを のみます。",
+        "translation": {
+          "vi": "Tôi uống nước."
+        }
+      }
     },
     {
       "id": "ocha",
@@ -230,7 +384,14 @@
         "en": "tea, green tea",
         "vi": "trà, trà xanh"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "お茶[ちゃ]を 飲[の]みませんか。",
+        "kana": "おちゃを のみませんか。",
+        "translation": {
+          "vi": "Anh/chị có muốn cùng uống trà không?"
+        }
+      }
     },
     {
       "id": "koucha",
@@ -240,7 +401,14 @@
         "en": "black tea",
         "vi": "trà đen, hồng trà"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "紅茶[こうちゃ]を 飲[の]みます。",
+        "kana": "こうちゃを のみます。",
+        "translation": {
+          "vi": "Tôi uống trà đen."
+        }
+      }
     },
     {
       "id": "gyuunyuu",
@@ -250,7 +418,14 @@
         "en": "milk",
         "vi": "sữa bò"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "牛乳[ぎゅうにゅう]を 飲[の]みますか。",
+        "kana": "ぎゅうにゅうを のみますか。",
+        "translation": {
+          "vi": "Bạn có uống sữa bò không?"
+        }
+      }
     },
     {
       "id": "juusu",
@@ -260,7 +435,14 @@
         "en": "juice",
         "vi": "nước hoa quả, nước ép"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ジュースを 飲[の]みます。",
+        "kana": "ジュースを のみます。",
+        "translation": {
+          "vi": "Tôi uống nước ép."
+        }
+      }
     },
     {
       "id": "biiru",
@@ -270,7 +452,14 @@
         "en": "beer",
         "vi": "bia"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ビールを 飲[の]みましょう。",
+        "kana": "ビールを のみましょう。",
+        "translation": {
+          "vi": "Cùng uống bia thôi."
+        }
+      }
     },
     {
       "id": "osake",
@@ -280,7 +469,14 @@
         "en": "alcoholic drink, sake",
         "vi": "rượu, rượu sake"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "お酒[さけ]を 飲[の]みません。",
+        "kana": "おさけを のみません。",
+        "translation": {
+          "vi": "Tôi không uống rượu."
+        }
+      }
     },
     {
       "id": "tabako",
@@ -290,7 +486,14 @@
         "en": "cigarette",
         "vi": "thuốc lá"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "たばこを 吸[す]いません。",
+        "kana": "たばこを すいません。",
+        "translation": {
+          "vi": "Tôi không hút thuốc lá."
+        }
+      }
     },
     {
       "id": "tegami",
@@ -300,7 +503,14 @@
         "en": "letter, mail",
         "vi": "thư, bức thư"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "手紙[てがみ]を 書[か]きます。",
+        "kana": "てがみを かきます。",
+        "translation": {
+          "vi": "Tôi viết thư."
+        }
+      }
     },
     {
       "id": "repooto",
@@ -310,7 +520,14 @@
         "en": "report",
         "vi": "báo cáo, bản báo cáo"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "レポートを 書[か]きました。",
+        "kana": "レポートを かきました。",
+        "translation": {
+          "vi": "Tôi đã viết báo cáo."
+        }
+      }
     },
     {
       "id": "shashin",
@@ -320,7 +537,14 @@
         "en": "photograph",
         "vi": "ảnh, bức ảnh"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "写真[しゃしん]を 撮[と]りました。",
+        "kana": "しゃしんを とりました。",
+        "translation": {
+          "vi": "Tôi đã chụp ảnh."
+        }
+      }
     },
     {
       "id": "bideo",
@@ -330,7 +554,14 @@
         "en": "video",
         "vi": "video, băng video"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ビデオを 見[み]ます。",
+        "kana": "ビデオを みます。",
+        "translation": {
+          "vi": "Tôi xem video."
+        }
+      }
     },
     {
       "id": "mise",
@@ -340,7 +571,14 @@
         "en": "shop, business",
         "vi": "cửa hàng, tiệm"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 店[みせ]で 買[か]いました。",
+        "kana": "あの みせで かいました。",
+        "translation": {
+          "vi": "Tôi đã mua ở cửa hàng kia."
+        }
+      }
     },
     {
       "id": "niwa",
@@ -350,7 +588,14 @@
         "en": "garden",
         "vi": "vườn, sân vườn"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "庭[にわ]で 写真[しゃしん]を 撮[と]ります。",
+        "kana": "にわで しゃしんを とります。",
+        "translation": {
+          "vi": "Tôi chụp ảnh ở sân vườn."
+        }
+      }
     },
     {
       "id": "shukudai",
@@ -360,7 +605,14 @@
         "en": "homework",
         "vi": "bài tập về nhà"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "宿題[しゅくだい]を します。",
+        "kana": "しゅくだいを します。",
+        "translation": {
+          "vi": "Tôi làm bài tập về nhà."
+        }
+      }
     },
     {
       "id": "tenisu",
@@ -370,7 +622,14 @@
         "en": "tennis",
         "vi": "quần vợt, tennis"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "テニスを しましょう。",
+        "kana": "テニスを しましょう。",
+        "translation": {
+          "vi": "Cùng chơi tennis thôi."
+        }
+      }
     },
     {
       "id": "sakkaa",
@@ -380,7 +639,14 @@
         "en": "football",
         "vi": "bóng đá"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "サッカーを しません。",
+        "kana": "サッカーを しません。",
+        "translation": {
+          "vi": "Tôi không chơi bóng đá."
+        }
+      }
     },
     {
       "id": "ohanami",
@@ -390,7 +656,14 @@
         "en": "to go cherry-blossom viewing",
         "vi": "việc ngắm hoa anh đào"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "お 花見[はなみ]を します。",
+        "kana": "お はなみを します。",
+        "translation": {
+          "vi": "Tôi đi ngắm hoa anh đào."
+        }
+      }
     },
     {
       "id": "nani",
@@ -400,7 +673,14 @@
         "en": "what",
         "vi": "cái gì"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "何[なに]を 買[か]いますか。",
+        "kana": "なにを かいますか。",
+        "translation": {
+          "vi": "Bạn mua cái gì?"
+        }
+      }
     },
     {
       "id": "isshoni",
@@ -410,7 +690,14 @@
         "en": "together",
         "vi": "cùng nhau"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "いっしょに 行[い]きませんか。",
+        "kana": "いっしょに いきませんか。",
+        "translation": {
+          "vi": "Anh/chị có muốn đi cùng không?"
+        }
+      }
     },
     {
       "id": "chotto",
@@ -420,7 +707,14 @@
         "en": "a little",
         "vi": "một chút, một lát"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "ちょっと 休[やす]みましょう。",
+        "kana": "ちょっと やすみましょう。",
+        "translation": {
+          "vi": "Cùng nghỉ một chút thôi."
+        }
+      }
     },
     {
       "id": "itsumo",
@@ -430,7 +724,14 @@
         "en": "always, usually",
         "vi": "luôn luôn, lúc nào cũng"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "いつも パンを 食[た]べます。",
+        "kana": "いつも パンを たべます。",
+        "translation": {
+          "vi": "Tôi luôn ăn bánh mì."
+        }
+      }
     },
     {
       "id": "tokidoki",
@@ -440,7 +741,14 @@
         "en": "sometimes, now and then",
         "vi": "thỉnh thoảng, đôi khi"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "時々[ときどき] 映画[えいが]を 見[み]ます。",
+        "kana": "ときどき えいがを みます。",
+        "translation": {
+          "vi": "Thỉnh thoảng tôi xem phim."
+        }
+      }
     },
     {
       "id": "sorekara",
@@ -450,7 +758,14 @@
         "en": "and then",
         "vi": "sau đó, tiếp theo"
       },
-      "type": "conjunction"
+      "type": "conjunction",
+      "example": {
+        "jp": "それから、手紙[てがみ]を 書[か]きました。",
+        "kana": "それから、てがみを かきました。",
+        "translation": {
+          "vi": "Sau đó, tôi đã viết thư."
+        }
+      }
     },
     {
       "id": "ee",
@@ -460,7 +775,14 @@
         "en": "yes",
         "vi": "vâng (thân mật)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "ええ、いいですね。",
+        "kana": "ええ、いいですね。",
+        "translation": {
+          "vi": "Vâng, được đó."
+        }
+      }
     },
     {
       "id": "ii-desu-ne",
@@ -470,7 +792,14 @@
         "en": "that's a good idea",
         "vi": "hay quá nhỉ / được đấy nhỉ"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "いいですね。",
+        "kana": "いいですね。",
+        "translation": {
+          "vi": "Được đấy / Hay quá nhỉ."
+        }
+      }
     },
     {
       "id": "wakarimashita",
@@ -480,7 +809,14 @@
         "en": "understood, very well",
         "vi": "tôi đã hiểu rồi"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "はい、わかりました。",
+        "kana": "はい、わかりました。",
+        "translation": {
+          "vi": "Vâng, tôi đã hiểu."
+        }
+      }
     },
     {
       "id": "nan-desu-ka",
@@ -490,7 +826,14 @@
         "en": "yes? / how can I help you?",
         "vi": "có chuyện gì thế? / vâng?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "何[なん]ですか。",
+        "kana": "なんですか。",
+        "translation": {
+          "vi": "Cái gì vậy? / Có chuyện gì vậy?"
+        }
+      }
     },
     {
       "id": "ja-mata",
@@ -500,7 +843,14 @@
         "en": "see you tomorrow, then",
         "vi": "hẹn gặp lại nhé (ngày mai)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "じゃ、また 明日[あした]。",
+        "kana": "じゃ、また あした。",
+        "translation": {
+          "vi": "Thế thì, hẹn gặp lại ngày mai."
+        }
+      }
     },
     {
       "id": "mekishiko",
@@ -510,7 +860,14 @@
         "en": "Mexico",
         "vi": "nước Mexico"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "メキシコへ 行[い]きます。",
+        "kana": "メキシコへ いきます。",
+        "translation": {
+          "vi": "Tôi đi Mexico."
+        }
+      }
     }
   ]
 }

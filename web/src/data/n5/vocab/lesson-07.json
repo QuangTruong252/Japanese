@@ -10,7 +10,14 @@
         "en": "to cut",
         "vi": "cắt"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "はさみで 紙[かみ]を 切[き]ります。",
+        "kana": "はさみで かみを きります。",
+        "translation": {
+          "vi": "Tôi cắt giấy bằng kéo."
+        }
+      }
     },
     {
       "id": "okurimasu",
@@ -20,7 +27,14 @@
         "en": "to send",
         "vi": "gửi"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "友達[ともだち]に メールを 送[おく]ります。",
+        "kana": "ともだちに メールを おくります。",
+        "translation": {
+          "vi": "Tôi gửi email cho bạn."
+        }
+      }
     },
     {
       "id": "agemasu",
@@ -30,7 +44,14 @@
         "en": "to give",
         "vi": "cho, tặng"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "母[はは]に 花[はな]を あげます。",
+        "kana": "ははに はなを あげます。",
+        "translation": {
+          "vi": "Tôi tặng hoa cho mẹ."
+        }
+      }
     },
     {
       "id": "moraimasu",
@@ -40,7 +61,14 @@
         "en": "to receive",
         "vi": "nhận"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "友達[ともだち]に プレゼントを もらいました。",
+        "kana": "ともだちに プレゼントを もらいました。",
+        "translation": {
+          "vi": "Tôi đã nhận quà từ bạn."
+        }
+      }
     },
     {
       "id": "kashimasu",
@@ -50,7 +78,14 @@
         "en": "to lend",
         "vi": "cho mượn, cho vay"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "友達[ともだち]に 本[ほん]を 貸[か]します。",
+        "kana": "ともだちに ほんを かします。",
+        "translation": {
+          "vi": "Tôi cho bạn mượn sách."
+        }
+      }
     },
     {
       "id": "karimasu",
@@ -60,7 +95,14 @@
         "en": "to borrow",
         "vi": "mượn, vay"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "友達[ともだち]に 本[ほん]を 借[か]ります。",
+        "kana": "ともだちに ほんを かります。",
+        "translation": {
+          "vi": "Tôi mượn sách từ bạn."
+        }
+      }
     },
     {
       "id": "oshiemasu",
@@ -70,7 +112,14 @@
         "en": "to teach",
         "vi": "dạy, chỉ bảo, hướng dẫn"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "友達[ともだち]に 日本語[にほんご]を 教[おし]えます。",
+        "kana": "ともだちに にほんごを おしえます。",
+        "translation": {
+          "vi": "Tôi dạy tiếng Nhật cho bạn."
+        }
+      }
     },
     {
       "id": "naraimasu",
@@ -80,7 +129,14 @@
         "en": "to learn",
         "vi": "học, tập (từ ai đó)"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "先生[せんせい]に 日本語[にほんご]を 習[なら]います。",
+        "kana": "せんせいに にほんごを ならいます。",
+        "translation": {
+          "vi": "Tôi học tiếng Nhật từ thầy cô."
+        }
+      }
     },
     {
       "id": "kakemasu",
@@ -90,7 +146,14 @@
         "en": "to make [a call]",
         "vi": "gọi [điện thoại]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "母[はは]に 電話[でんわ]を かけます。",
+        "kana": "ははに でんわを かけます。",
+        "translation": {
+          "vi": "Tôi gọi điện cho mẹ."
+        }
+      }
     },
     {
       "id": "te",
@@ -100,7 +163,14 @@
         "en": "hand",
         "vi": "tay, bàn tay"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "手[て]を 洗[あら]います。",
+        "kana": "てを あらいます。",
+        "translation": {
+          "vi": "Tôi rửa tay."
+        }
+      }
     },
     {
       "id": "hashi",
@@ -110,7 +180,14 @@
         "en": "chopsticks",
         "vi": "đũa"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "はしで ごはんを 食[た]べます。",
+        "kana": "はしで ごはんを たべます。",
+        "translation": {
+          "vi": "Tôi ăn cơm bằng đũa."
+        }
+      }
     },
     {
       "id": "supuun",
@@ -120,7 +197,14 @@
         "en": "spoon",
         "vi": "thìa, muỗng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "スプーンで カレーを 食[た]べます。",
+        "kana": "スプーンで カレーを たべます。",
+        "translation": {
+          "vi": "Tôi ăn cà ri bằng thìa."
+        }
+      }
     },
     {
       "id": "naifu",
@@ -130,7 +214,14 @@
         "en": "knife",
         "vi": "dao"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ナイフで パンを 切[き]ります。",
+        "kana": "ナイフで パンを きります。",
+        "translation": {
+          "vi": "Tôi cắt bánh mì bằng dao."
+        }
+      }
     },
     {
       "id": "fooku",
@@ -140,7 +231,14 @@
         "en": "fork",
         "vi": "nĩa, dĩa"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "フォークで パスタを 食[た]べます。",
+        "kana": "フォークで パスタを たべます。",
+        "translation": {
+          "vi": "Tôi ăn mì Ý bằng nĩa."
+        }
+      }
     },
     {
       "id": "hasami",
@@ -150,7 +248,14 @@
         "en": "scissors",
         "vi": "kéo"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "はさみで 紙[かみ]を 切[き]ります。",
+        "kana": "はさみで かみを きります。",
+        "translation": {
+          "vi": "Tôi cắt giấy bằng kéo."
+        }
+      }
     },
     {
       "id": "pasokon",
@@ -160,7 +265,14 @@
         "en": "personal computer",
         "vi": "máy tính cá nhân"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "パソコンで メールを 書[か]きます。",
+        "kana": "パソコンで メールを かきます。",
+        "translation": {
+          "vi": "Tôi viết email trên máy tính."
+        }
+      }
     },
     {
       "id": "keetai",
@@ -170,7 +282,14 @@
         "en": "mobile phone",
         "vi": "điện thoại di động"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ケータイで 母[はは]に 電話[でんわ]を かけます。",
+        "kana": "ケータイで ははに でんわを かけます。",
+        "translation": {
+          "vi": "Tôi gọi cho mẹ bằng điện thoại di động."
+        }
+      }
     },
     {
       "id": "meeru",
@@ -180,7 +299,14 @@
         "en": "email",
         "vi": "thư điện tử, email"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "友達[ともだち]に メールを 送[おく]ります。",
+        "kana": "ともだちに メールを おくります。",
+        "translation": {
+          "vi": "Tôi gửi email cho bạn."
+        }
+      }
     },
     {
       "id": "nengajou",
@@ -190,7 +316,14 @@
         "en": "New Year card",
         "vi": "thiệp chúc mừng năm mới"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "友達[ともだち]に 年賀状[ねんがじょう]を 送[おく]ります。",
+        "kana": "ともだちに ねんがじょうを おくります。",
+        "translation": {
+          "vi": "Tôi gửi thiệp chúc mừng năm mới cho bạn."
+        }
+      }
     },
     {
       "id": "panchi",
@@ -200,7 +333,14 @@
         "en": "hole punch",
         "vi": "cái đục lỗ (giấy)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "パンチで 紙[かみ]に 穴[あな]を 開[あ]けます。",
+        "kana": "パンチで かみに あなを あけます。",
+        "translation": {
+          "vi": "Tôi đục lỗ trên giấy bằng dụng cụ đục lỗ."
+        }
+      }
     },
     {
       "id": "hocchikisu",
@@ -210,7 +350,14 @@
         "en": "stapler",
         "vi": "cái dập ghim"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ホッチキスで 紙[かみ]を とめます。",
+        "kana": "ホッチキスで かみを とめます。",
+        "translation": {
+          "vi": "Tôi dập ghim giấy bằng cái dập ghim."
+        }
+      }
     },
     {
       "id": "seroteepu",
@@ -220,7 +367,14 @@
         "en": "sticky tape",
         "vi": "băng dính trong"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "セロテープで 写真[しゃしん]を 貼[は]ります。",
+        "kana": "セロテープで しゃしんを はります。",
+        "translation": {
+          "vi": "Tôi dán ảnh bằng băng dính trong."
+        }
+      }
     },
     {
       "id": "keshigomu",
@@ -230,7 +384,14 @@
         "en": "eraser",
         "vi": "cục tẩy, gôm"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "消[け]しゴムで 字[じ]を 消[け]します。",
+        "kana": "けしゴムで じを けします。",
+        "translation": {
+          "vi": "Tôi xóa chữ bằng cục tẩy."
+        }
+      }
     },
     {
       "id": "kami",
@@ -240,7 +401,14 @@
         "en": "paper",
         "vi": "giấy"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "紙[かみ]に 名前[なまえ]を 書[か]きます。",
+        "kana": "かみに なまえを かきます。",
+        "translation": {
+          "vi": "Tôi viết tên lên giấy."
+        }
+      }
     },
     {
       "id": "hana",
@@ -250,7 +418,14 @@
         "en": "flower",
         "vi": "hoa"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "母[はは]に 花[はな]を あげます。",
+        "kana": "ははに はなを あげます。",
+        "translation": {
+          "vi": "Tôi tặng hoa cho mẹ."
+        }
+      }
     },
     {
       "id": "shatsu",
@@ -260,7 +435,14 @@
         "en": "shirt",
         "vi": "áo sơ mi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "その シャツは すてきですね。",
+        "kana": "その シャツは すてきですね。",
+        "translation": {
+          "vi": "Chiếc áo sơ mi đó đẹp quá nhỉ."
+        }
+      }
     },
     {
       "id": "purezento",
@@ -270,7 +452,14 @@
         "en": "present",
         "vi": "quà tặng, món quà"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "父[ちち]に プレゼントを あげます。",
+        "kana": "ちちに プレゼントを あげます。",
+        "translation": {
+          "vi": "Tôi tặng quà cho bố."
+        }
+      }
     },
     {
       "id": "nimotsu",
@@ -280,7 +469,14 @@
         "en": "luggage, parcel",
         "vi": "hành lý, bưu kiện"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "荷物[にもつ]を 送[おく]ります。",
+        "kana": "にもつを おくります。",
+        "translation": {
+          "vi": "Tôi gửi hành lý."
+        }
+      }
     },
     {
       "id": "okane",
@@ -290,7 +486,14 @@
         "en": "money",
         "vi": "tiền"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "母[はは]に お 金[かね]を 借[か]ります。",
+        "kana": "ははに おかねを かります。",
+        "translation": {
+          "vi": "Tôi mượn tiền của mẹ."
+        }
+      }
     },
     {
       "id": "kippu",
@@ -300,7 +503,14 @@
         "en": "ticket (for transport)",
         "vi": "vé (tàu, xe)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "駅[えき]で 切符[きっぷ]を 買[か]います。",
+        "kana": "えきで きっぷを かいます。",
+        "translation": {
+          "vi": "Tôi mua vé ở ga."
+        }
+      }
     },
     {
       "id": "kurisumasu",
@@ -310,7 +520,14 @@
         "en": "Christmas",
         "vi": "Giáng sinh, Noel"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "クリスマスに プレゼントを あげます。",
+        "kana": "クリスマスに プレゼントを あげます。",
+        "translation": {
+          "vi": "Tôi tặng quà vào dịp Giáng sinh."
+        }
+      }
     },
     {
       "id": "chichi",
@@ -320,7 +537,14 @@
         "en": "(my) father",
         "vi": "bố (của mình)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "父[ちち]に シャツを あげます。",
+        "kana": "ちちに シャツを あげます。",
+        "translation": {
+          "vi": "Tôi tặng bố một chiếc áo sơ mi."
+        }
+      }
     },
     {
       "id": "haha",
@@ -330,7 +554,14 @@
         "en": "(my) mother",
         "vi": "mẹ (của mình)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "母[はは]に 花[はな]を あげます。",
+        "kana": "ははに はなを あげます。",
+        "translation": {
+          "vi": "Tôi tặng hoa cho mẹ."
+        }
+      }
     },
     {
       "id": "otousan",
@@ -340,7 +571,14 @@
         "en": "(your) father",
         "vi": "bố, bác trai (của người khác)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "田中[たなか]さんの お父[とう]さんは 先生[せんせい]です。",
+        "kana": "たなかさんの おとうさんは せんせいです。",
+        "translation": {
+          "vi": "Bố của anh Tanaka là giáo viên."
+        }
+      }
     },
     {
       "id": "okaasan",
@@ -350,7 +588,14 @@
         "en": "(your) mother",
         "vi": "mẹ, bác gái (của người khác)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "田中[たなか]さんの お母[かあ]さんは 先生[せんせい]です。",
+        "kana": "たなかさんの おかあさんは せんせいです。",
+        "translation": {
+          "vi": "Mẹ của anh Tanaka là giáo viên."
+        }
+      }
     },
     {
       "id": "mou",
@@ -360,7 +605,14 @@
         "en": "already",
         "vi": "đã, rồi"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "もう メールを 送[おく]りました。",
+        "kana": "もう メールを おくりました。",
+        "translation": {
+          "vi": "Tôi đã gửi email rồi."
+        }
+      }
     },
     {
       "id": "mada",
@@ -370,7 +622,14 @@
         "en": "still, yet",
         "vi": "chưa"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "「もう 荷物[にもつ]を 送[おく]りましたか。」「いいえ、まだです。」",
+        "kana": "「もう にもつを おくりましたか。」「いいえ、まだです。」",
+        "translation": {
+          "vi": "“Bạn đã gửi hành lý chưa?” “Chưa, vẫn chưa.”"
+        }
+      }
     },
     {
       "id": "korekara",
@@ -380,7 +639,14 @@
         "en": "from now on, shortly",
         "vi": "từ bây giờ, sau đây"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "これから 学校[がっこう]へ 行[い]きます。",
+        "kana": "これから がっこうへ いきます。",
+        "translation": {
+          "vi": "Từ giờ tôi sẽ đến trường."
+        }
+      }
     },
     {
       "id": "suteki-desu-ne",
@@ -390,7 +656,14 @@
         "en": "how beautiful [~] is!",
         "vi": "đẹp quá nhỉ / tuyệt quá nhỉ"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "その シャツ、すてきですね。",
+        "kana": "その シャツ、すてきですね。",
+        "translation": {
+          "vi": "Chiếc áo sơ mi đó đẹp quá nhỉ."
+        }
+      }
     },
     {
       "id": "irasshai",
@@ -400,7 +673,14 @@
         "en": "welcome (to a visitor)",
         "vi": "Chào mừng bạn đến chơi"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「いらっしゃい。どうぞ お上[あ]がりください。」",
+        "kana": "いらっしゃい。どうぞ おあがりください。",
+        "translation": {
+          "vi": "“Chào mừng bạn đến chơi. Xin mời vào nhà.”"
+        }
+      }
     },
     {
       "id": "douzo-oagari",
@@ -410,7 +690,14 @@
         "en": "please come in",
         "vi": "xin mời bạn vào nhà"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "どうぞ お上[あ]がりください。",
+        "kana": "どうぞ おあがりください。",
+        "translation": {
+          "vi": "Xin mời vào nhà."
+        }
+      }
     },
     {
       "id": "shitsurei-shimasu",
@@ -420,7 +707,14 @@
         "en": "excuse me (on leaving)",
         "vi": "xin thất lễ"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「どうぞ。」「失礼[しつれい]します。」",
+        "kana": "「どうぞ。」「しつれいします。」",
+        "translation": {
+          "vi": "“Mời vào.” “Tôi xin phép.”"
+        }
+      }
     },
     {
       "id": "ikaga-desu-ka",
@@ -430,7 +724,14 @@
         "en": "would you like [~]?",
         "vi": "bạn thấy thế nào? / bạn dùng... nhé?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "コーヒーは いかがですか。",
+        "kana": "コーヒーは いかがですか。",
+        "translation": {
+          "vi": "Bạn dùng cà phê nhé?"
+        }
+      }
     },
     {
       "id": "itadakimasu",
@@ -440,7 +741,14 @@
         "en": "thank you (before eating)",
         "vi": "xin mời (nói trước khi ăn/uống)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "じゃ、いただきます。",
+        "kana": "じゃ、いただきます。",
+        "translation": {
+          "vi": "Vậy thì, tôi xin phép ăn."
+        }
+      }
     },
     {
       "id": "gochisousama",
@@ -450,7 +758,14 @@
         "en": "thank you (after eating)",
         "vi": "cảm ơn vì bữa ăn ngon (nói sau khi ăn)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "ごちそうさまでした。",
+        "kana": "ごちそうさまでした。",
+        "translation": {
+          "vi": "Cảm ơn vì bữa ăn."
+        }
+      }
     },
     {
       "id": "gomen-kudasai",
@@ -460,7 +775,14 @@
         "en": "anyone home? (arriving for a visit)",
         "vi": "xin lỗi, có ai ở nhà không?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「ごめんください。」「はい、どうぞ。」",
+        "kana": "ごめんください。はい、どうぞ。",
+        "translation": {
+          "vi": "“Xin lỗi, có ai ở nhà không?” “Vâng, mời vào.”"
+        }
+      }
     },
     {
       "id": "supein",
@@ -470,7 +792,14 @@
         "en": "Spain",
         "vi": "nước Tây Ban Nha"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "スペインへ 行[い]きます。",
+        "kana": "スペインへ いきます。",
+        "translation": {
+          "vi": "Tôi đi Tây Ban Nha."
+        }
+      }
     }
   ]
 }

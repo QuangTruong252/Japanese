@@ -8,6 +8,7 @@ Ngày: 23/09/2026. Trạng thái: Đã hoàn tất toàn bộ mã nguồn, các 
   - Tích hợp 169 chữ Kanji N5 tĩnh thông qua [web/src/data/n5/kanji-index.ts](file:///d:/Projects/Lab/Japanese/web/src/data/n5/kanji-index.ts), 156 động từ 5 thể từ `verbs.json`, 10 bảng tham chiếu ngữ pháp/từ vựng từ `reference/*.json`.
   - Hàm `buildKanjiVocabIndex` & `getKanjiVocabIndex`: quét 25 bài học từ vựng (991 từ) tại runtime bằng `stripFurigana(word)` và regex ký tự Kanji, dựng `Map<string, VocabRef[]>` (singleton cache). Trích xuất chính xác các từ vựng trong giáo trình chứa từng chữ Kanji kèm số bài học và `targetId`.
   - Quy tắc xác thực trung thực dữ liệu `isExampleVerified`: phát hiện 431/907 ví dụ ghép có `vi === en`. Khi hiển thị, gán badge `[Chưa xác minh] (Đang đối chiếu nguồn)` và tuyệt đối không hiển thị tiếng Anh giả làm tiếng Việt.
+  - **24/09/2026:** đã dịch 431 nghĩa từ ghép còn chép tiếng Anh (agent Claude dịch, áp bằng script có đối chiếu `vi === en` theo chữ + chỉ số). 907/907 ví dụ có nghĩa Việt; test `lookup.test.ts` chặn tái phát. Nhãn trên UI đổi thành `Chưa dịch` và hiện không còn mục nào mang nhãn.
   - Hàm `filterKanji` (lọc theo bài, số nét, chỉ chữ đã học) và `filterVerbs` (lọc theo nhóm 1/2/3, theo bài, tìm kiếm `?q=` trên cả dạng ます, từ điển và nghĩa).
   - Bộ unit test ([web/src/lib/lookup.test.ts](file:///d:/Projects/Lab/Japanese/web/src/lib/lookup.test.ts)) bao phủ 9 test suite kiểm thử đơn vị.
 - **Hub Tra cứu ([web/src/app/hoc/tra-cuu/page.tsx](file:///d:/Projects/Lab/Japanese/web/src/app/hoc/tra-cuu/page.tsx)):**
@@ -23,7 +24,7 @@ Ngày: 23/09/2026. Trạng thái: Đã hoàn tất toàn bộ mã nguồn, các 
     - SSG sinh tĩnh cho 169 chữ Kanji (`generateStaticParams`).
     - Hero card: chữ Hán cỡ lớn 64px (`font-jp`, `lang="ja"`), badge số bài, số nét, nghĩa tiếng Việt in đậm.
     - Khối cách đọc: âm On, âm Kun kèm nút phát âm `SpeakButton`.
-    - Khối từ ghép: hiển thị Furigana, nghĩa (hoặc nhãn `Chưa xác minh` với 431 mục chưa đối chiếu), nút phát âm.
+    - Khối từ ghép: hiển thị Furigana, nghĩa (hoặc nhãn `Chưa dịch` khi `vi` trùng `en` — 0 mục từ 24/09/2026), nút phát âm.
     - Khối từ vựng trong bài học: hiển thị các từ trong 25 bài học có chứa chữ Hán này lấy từ chỉ mục tra ngược runtime.
     - Khối chữ dễ nhầm: các chữ tương tự bấm được dẫn sang trang chi tiết chữ đó.
 - **Bảng Động từ 5 thể ([web/src/app/hoc/tra-cuu/dong-tu/page.tsx](file:///d:/Projects/Lab/Japanese/web/src/app/hoc/tra-cuu/dong-tu/page.tsx)):**

@@ -14,10 +14,12 @@ export function SpeakButton({
   text,
   label,
   visibleLabel,
+  iconClassName,
 }: {
   text: string;
   label: string;
   visibleLabel?: string;
+  iconClassName?: string;
 }) {
   const [hasVoice, setHasVoice] = useState(false);
   const [speaking, setSpeaking] = useState(false);
@@ -52,7 +54,11 @@ export function SpeakButton({
       aria-label={visibleLabel ? `${visibleLabel}: ${label}` : `Phát âm ${label}`}
       onClick={handleClick}
     >
-      {speaking ? <Loader2 className="motion-safe:animate-spin" /> : <Volume2 />}
+      {speaking ? (
+        <Loader2 className={cn('motion-safe:animate-spin', iconClassName)} />
+      ) : (
+        <Volume2 className={iconClassName} />
+      )}
       {visibleLabel && <span>{visibleLabel}</span>}
     </Button>
   );

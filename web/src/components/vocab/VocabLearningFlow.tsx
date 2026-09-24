@@ -10,7 +10,7 @@ import {
   CircleHelp,
   RotateCcw,
   Sparkles,
-  TriangleAlert,
+  Turtle,
 } from 'lucide-react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { Furigana } from '@/components/Furigana';
@@ -27,7 +27,6 @@ import type { ExampleSentence, ReviewItem, VocabWord } from '@/types';
 interface VocabLearningFlowProps {
   lessonNumber: number;
   lessonTitle: string;
-  verified: boolean;
   words: VocabWord[];
   examples: ExampleSentence[];
 }
@@ -42,7 +41,6 @@ interface VocabEntry {
 interface RatingOption {
   grade: Grade;
   label: string;
-  hint: string;
   icon: typeof RotateCcw;
   statusClassName: string;
   className: string;
@@ -52,7 +50,6 @@ const RATING_OPTIONS: RatingOption[] = [
   {
     grade: Rating.Again,
     label: 'Quên mất',
-    hint: 'Gặp lại sớm',
     icon: RotateCcw,
     statusClassName: 'text-destructive',
     className: 'border-destructive/30 bg-destructive/5 hover:bg-destructive/10',
@@ -60,15 +57,13 @@ const RATING_OPTIONS: RatingOption[] = [
   {
     grade: Rating.Hard,
     label: 'Khó nhớ',
-    hint: 'Nhớ sau khi cố gắng',
-    icon: TriangleAlert,
+    icon: Turtle,
     statusClassName: 'text-warning',
     className: 'border-warning/30 bg-warning/5 hover:bg-warning/10',
   },
   {
     grade: Rating.Good,
     label: 'Nhớ được',
-    hint: 'Đúng như dự kiến',
     icon: Check,
     statusClassName: 'text-success',
     className: 'border-success/30 bg-success/5 hover:bg-success/10',
@@ -76,7 +71,6 @@ const RATING_OPTIONS: RatingOption[] = [
   {
     grade: Rating.Easy,
     label: 'Dễ nhớ',
-    hint: 'Nhớ ngay',
     icon: Sparkles,
     statusClassName: 'text-primary',
     className: 'border-primary/30 bg-accent/40 hover:bg-accent',
@@ -245,7 +239,6 @@ function MemoryList({
                 <div className="jp jp-vocab font-medium">
                   <Furigana text={entry.word.word} />
                 </div>
-                <p className="truncate text-xs text-muted-foreground">{entry.word.meaning.vi}</p>
               </div>
               <span className="shrink-0 text-right text-xs tabular-nums text-muted-foreground">
                 {value(entry)}
@@ -261,7 +254,6 @@ function MemoryList({
 export function VocabLearningFlow({
   lessonNumber,
   lessonTitle,
-  verified,
   words,
   examples,
 }: VocabLearningFlowProps) {
@@ -274,7 +266,7 @@ export function VocabLearningFlow({
     () => words.map((word, index) => ({
       word,
       targetId: getVocabTargetId(lessonNumber, index),
-      example: findExampleForWord(word, examples),
+      example: word.example ?? findExampleForWord(word, examples),
     })),
     [examples, lessonNumber, words],
   );
@@ -412,11 +404,6 @@ export function VocabLearningFlow({
               <p className="max-w-prose text-sm leading-relaxed text-muted-foreground">
                 Nhìn từ tiếng Nhật, tự nhớ nghĩa rồi chọn mức độ nhớ. Mỗi lần đánh giá sẽ cập nhật lịch ôn FSRS.
               </p>
-              {!verified && (
-                <p className="rounded-lg border border-warning/40 bg-warning/10 p-3 text-sm text-warning">
-                  Nội dung bài này chưa được đối chiếu với bản in.
-                </p>
-              )}
             </section>
 
             <section className="space-y-4" aria-labelledby="vocab-selection-title">
@@ -470,7 +457,7 @@ export function VocabLearningFlow({
                           type="button"
                           aria-pressed={selected}
                           disabled={!hasMeaning}
-                          aria-label={`${selected ? 'Bỏ chọn' : 'Chọn'} ${stripFurigana(word.word)}, ${word.meaning.vi || 'chưa có bản dịch'}`}
+                          aria-label={`${selected ? 'Bỏ chọn' : 'Chọn'} ${stripFurigana(word.word)}`}
                           onClick={() => toggleWord(targetId)}
                           className={cn(
                             'flex min-h-[76px] w-full items-center gap-3 px-2 py-3 text-left outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50',
@@ -488,9 +475,7 @@ export function VocabLearningFlow({
                           </span>
                           <span className="min-w-0 flex-1">
                             <span className="jp jp-vocab block font-medium"><Furigana text={word.word} /></span>
-                            <span className="block text-sm text-foreground/90">
-                              {hasMeaning ? word.meaning.vi : 'Chưa có bản dịch tiếng Việt'}
-                            </span>
+                            {!hasMeaning && <span className="block text-sm text-muted-foreground">Chưa có bản dịch tiếng Việt</span>}
                             <span className="mt-1 block text-xs text-muted-foreground">
                               {attempts > 0 ? `${progressText} · ôn ${formatDate(reviewItem!.dueAt)}` : progressText}
                             </span>
@@ -520,136 +505,132 @@ export function VocabLearningFlow({
           <div className="flex flex-1 flex-col py-5">
             <div className="space-y-2">
               <div className="flex items-center justify-between text-sm text-muted-foreground">
-                <span>Tự nhớ nghĩa của từ</span>
-                <span className="tabular-nums">{currentIndex + 1} / {sessionWords.length}</span>
+                <span>Bài {lessonNumber} · Từ {currentIndex + 1} / {sessionWords.length}</span>
               </div>
               <progress
                 className="h-1.5 w-full overflow-hidden rounded-full accent-primary"
-                value={currentIndex + (revealed ? 1 : 0)}
+                value={currentIndex}
                 max={sessionWords.length}
-                aria-label={`Tiến độ học từ ${currentIndex + 1} trên ${sessionWords.length}`}
+                aria-label={`Đã đánh giá ${currentIndex} trên ${sessionWords.length} từ`}
               />
             </div>
 
             <section
               ref={studyContentRef}
               tabIndex={-1}
-              className="flex flex-1 flex-col items-center justify-center gap-5 py-6 text-center"
+              className="flex flex-1 flex-col items-center justify-center gap-3 py-5 text-center"
               aria-live="polite"
             >
-              <article className="w-full max-w-xl space-y-5 rounded-xl border border-border bg-card p-5 text-left sm:p-7">
-                <div className="space-y-3 text-center">
-                  <p className="text-sm text-muted-foreground">Bài {lessonNumber} · Từ {currentIndex + 1}</p>
-                  <div className="jp jp-quiz text-3xl sm:text-4xl">
-                    <Furigana text={activeWord.word.word} />
+              <article key={activeWord.targetId} className="w-full max-w-xl text-left [perspective:1200px]">
+                <div className={cn(
+                  'grid w-full [transform-style:preserve-3d] motion-safe:transition-transform motion-safe:duration-[250ms] motion-safe:ease-in-out',
+                  revealed && '[transform:rotateY(180deg)]',
+                )}>
+                  <div
+                    aria-hidden={revealed}
+                    inert={revealed}
+                    className="relative col-start-1 row-start-1 flex min-h-[24rem] flex-col rounded-xl border border-border bg-card [backface-visibility:hidden]"
+                  >
+                    <button
+                      type="button"
+                      aria-label={`Lật thẻ xem đáp án của ${stripFurigana(activeWord.word.word)}`}
+                      onClick={() => setRevealed(true)}
+                      className="absolute inset-0 z-10 cursor-pointer rounded-xl border-0 bg-transparent p-0 outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+                    />
+                    <div className="absolute right-3 top-3 z-20">
+                      <SpeakButton text={activeWord.word.kana} label={stripFurigana(activeWord.word.word)} />
+                    </div>
+                    <div className="pointer-events-none flex flex-1 flex-col items-center justify-center gap-1 px-8 py-16 text-center">
+                      <div className="jp jp-quiz text-4xl font-medium sm:text-5xl">
+                        <Furigana text={stripFurigana(activeWord.word.word)} zoomable={false} />
+                      </div>
+                      <span className="jp jp-example text-sm text-muted-foreground">{activeWord.word.kana}</span>
+                    </div>
                   </div>
-                </div>
 
-                {revealed ? (
-                  <div className="space-y-5 border-t border-border pt-5">
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="min-w-0 space-y-1">
-                        <h2 className="text-sm font-medium text-muted-foreground">Ý nghĩa</h2>
-                        <p className="text-xl font-semibold leading-relaxed text-foreground">
+                  <div
+                    aria-hidden={!revealed}
+                    inert={!revealed}
+                    hidden={!revealed}
+                    className={cn(
+                      'relative col-start-1 row-start-1 min-h-[24rem] flex-col rounded-xl border border-border bg-card [backface-visibility:hidden] [transform:rotateY(180deg)]',
+                      revealed ? 'flex' : 'hidden',
+                    )}
+                  >
+                    <div className="absolute right-3 top-3 z-20">
+                      <SpeakButton text={activeWord.word.kana} label={stripFurigana(activeWord.word.word)} />
+                    </div>
+                    <div className="flex flex-1 flex-col px-5 pb-5 pt-16 sm:px-7 sm:pb-7">
+                      <div className="flex flex-1 items-center justify-center py-8 text-center">
+                        <p className="text-2xl font-semibold leading-relaxed text-foreground sm:text-3xl">
                           {activeWord.word.meaning.vi}
                         </p>
                       </div>
-                      <SpeakButton
-                        text={activeWord.word.kana}
-                        label={stripFurigana(activeWord.word.word)}
-                        visibleLabel="Nghe từ"
-                      />
-                    </div>
 
-                    <div className="space-y-3 border-t border-border pt-5">
-                      <h2 className="text-sm font-semibold">Câu ví dụ trong bài</h2>
-                      {activeWord.example ? (
-                        <div className="space-y-2">
-                          <Furigana
-                            text={activeWord.example.jp}
-                            className="jp jp-example block text-base font-medium sm:text-lg"
-                          />
-                          {activeWord.example.translation.vi.trim() && (
-                            <div className="flex items-end justify-between gap-3">
-                              <p className="min-w-0 flex-1 text-sm leading-relaxed text-muted-foreground">
-                                {activeWord.example.translation.vi}
-                              </p>
-                              <SpeakButton
-                                text={stripFurigana(activeWord.example.jp)}
-                                label="câu ví dụ"
-                                visibleLabel="Nghe câu"
-                              />
-                            </div>
-                          )}
-                          {!activeWord.example.translation.vi.trim() && (
+                      <section className="space-y-3 border-t border-border pt-5" aria-labelledby="example-title">
+                        <div className="flex items-center gap-1.5">
+                          <h2 id="example-title" className="text-sm font-semibold">Câu ví dụ</h2>
+                          {activeWord.example && (
                             <SpeakButton
-                              text={stripFurigana(activeWord.example.jp)}
+                              text={activeWord.example.kana ?? toKanaSentence(activeWord.example.jp)}
                               label="câu ví dụ"
-                              visibleLabel="Nghe câu"
+                              iconClassName="size-4"
                             />
                           )}
                         </div>
-                      ) : (
-                        <p className="text-sm leading-relaxed text-muted-foreground">
-                          Bài này chưa có câu ví dụ khớp với từ vựng này.
-                        </p>
-                      )}
+                        {activeWord.example ? (
+                          <div className="space-y-2">
+                            <Furigana
+                              text={activeWord.example.jp}
+                              className="jp jp-example block text-base font-medium sm:text-lg"
+                              zoomable={false}
+                            />
+                            {activeWord.example.kana && activeWord.example.kana !== stripFurigana(activeWord.example.jp) && (
+                              <p className="jp jp-example text-sm text-muted-foreground">{activeWord.example.kana}</p>
+                            )}
+                            {activeWord.example.translation.vi.trim() && (
+                              <p className="text-sm leading-relaxed text-muted-foreground">
+                                {activeWord.example.translation.vi}
+                              </p>
+                            )}
+                          </div>
+                        ) : (
+                          <p className="text-sm leading-relaxed text-muted-foreground">
+                            Bài này chưa có câu ví dụ khớp với từ vựng này.
+                          </p>
+                        )}
+                      </section>
                     </div>
-
-                    {activeReviewItem && (
-                      <p className="border-t border-border pt-4 text-sm text-muted-foreground">
-                        Trước đây: {getAccuracy(activeReviewItem)}% nhớ đúng · {activeReviewItem.incorrectCount} lần quên
-                      </p>
-                    )}
-
-                    <section className="space-y-3 border-t border-border pt-5" aria-labelledby="rating-title">
-                      <div className="space-y-1 text-center">
-                        <h2 id="rating-title" className="text-base font-semibold">Bạn nhớ từ này thế nào?</h2>
-                        <p className="text-xs text-muted-foreground">Chọn mức gần nhất để đặt lịch ôn tiếp theo.</p>
-                      </div>
-                      <div className="grid grid-cols-2 gap-2">
-                        {ratingPreviews.map(({ grade, label, hint, icon: Icon, statusClassName, className, interval }) => (
-                          <Button
-                            key={grade}
-                            type="button"
-                            variant="outline"
-                            size="quiz"
-                            disabled={saving}
-                            onClick={() => rateCurrentWord(grade)}
-                            className={cn('h-auto min-h-[76px] w-full justify-start gap-3 whitespace-normal rounded-xl border px-3 py-2 text-left', className)}
-                          >
-                            <span className={cn('flex size-9 shrink-0 items-center justify-center rounded-lg', statusClassName, 'bg-background/70')}>
-                              <Icon aria-hidden="true" className="size-4" />
-                            </span>
-                            <span className="flex min-w-0 flex-col items-start leading-tight">
-                              <span className="font-semibold text-foreground">{label}</span>
-                              <span className="mt-1 text-[11px] font-normal text-muted-foreground">{hint}</span>
-                              <span className="mt-1 text-xs font-medium tabular-nums text-foreground">{interval}</span>
-                            </span>
-                          </Button>
-                        ))}
-                      </div>
-                      {saving && <p role="status" className="text-center text-sm text-muted-foreground">Đang lưu kết quả…</p>}
-                    </section>
                   </div>
-                ) : (
-                  <div className="flex flex-col items-center gap-4 border-t border-border pt-5 text-center">
-                    <div className="space-y-2 text-muted-foreground">
-                      <CircleHelp className="mx-auto size-6" aria-hidden="true" />
-                      <p className="text-sm">Thử nhớ nghĩa trước khi lật thẻ.</p>
-                    </div>
-                    <SpeakButton
-                      text={activeWord.word.kana}
-                      label={stripFurigana(activeWord.word.word)}
-                      visibleLabel="Nghe từ"
-                    />
-                    <Button type="button" size="quiz" className="w-full" onClick={() => setRevealed(true)}>
-                      Lật thẻ xem đáp án
-                      <ChevronRight aria-hidden="true" />
-                    </Button>
-                  </div>
-                )}
+                </div>
               </article>
+
+              {revealed ? (
+                <section className="w-full max-w-xl" aria-label="Mức độ ghi nhớ">
+                  <div className="grid grid-cols-4 gap-2">
+                    {ratingPreviews.map(({ grade, label, icon: Icon, statusClassName, className, interval }) => (
+                      <div key={grade} className="flex min-w-0 flex-col items-center gap-1.5">
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="quiz"
+                          aria-label={`${label}, ôn lại ${interval}`}
+                          title={`Ôn lại ${interval}`}
+                          disabled={saving}
+                          onClick={() => rateCurrentWord(grade)}
+                          className={cn('h-14 w-full min-w-12 rounded-xl px-0', className)}
+                        >
+                          <Icon aria-hidden="true" className="size-6" />
+                        </Button>
+                        <span className={cn('text-center text-xs leading-tight sm:text-sm', statusClassName)}>{label}</span>
+                      </div>
+                    ))}
+                  </div>
+                  {saving && <p role="status" className="mt-2 text-center text-sm text-muted-foreground">Đang lưu kết quả…</p>}
+                </section>
+              ) : (
+                <p className="text-sm text-muted-foreground">Chạm thẻ để xem đáp án.</p>
+              )}
             </section>
 
             {saveError && <p role="alert" className="mx-auto w-full max-w-xl text-sm text-destructive">{saveError}</p>}

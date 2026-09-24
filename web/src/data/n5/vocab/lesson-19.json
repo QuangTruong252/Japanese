@@ -10,7 +10,14 @@
         "en": "to climb",
         "vi": "leo, trèo [núi]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "富士山[ふじさん]に 登[のぼ]った ことが ありますか。",
+        "kana": "ふじさんに のぼった ことが ありますか。",
+        "translation": {
+          "vi": "Bạn đã từng leo núi Phú Sĩ chưa?"
+        }
+      }
     },
     {
       "id": "tomarimasu",
@@ -20,7 +27,14 @@
         "en": "to stay [at a hotel]",
         "vi": "trọ lại, nghỉ lại [khách sạn]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "ホテルに 泊[と]まった ことが あります。",
+        "kana": "ホテルに とまった ことが あります。",
+        "translation": {
+          "vi": "Tôi đã từng nghỉ lại ở khách sạn."
+        }
+      }
     },
     {
       "id": "souji-shimasu",
@@ -30,7 +44,14 @@
         "en": "to clean (a room)",
         "vi": "dọn dẹp, vệ sinh"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "日曜日[にちようび] 部屋[へや]を 掃除[そうじ]したり、洗濯[せんたく]したり します。",
+        "kana": "にちようび へやを そうじしたり、せんたくしたり します。",
+        "translation": {
+          "vi": "Chủ Nhật tôi dọn dẹp phòng, giặt giũ quần áo."
+        }
+      }
     },
     {
       "id": "sentaku-shimasu",
@@ -40,7 +61,14 @@
         "en": "to wash (clothes)",
         "vi": "giặt giũ [quần áo]"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "服[ふく]を 洗濯[せんたく]しなければ なりません。",
+        "kana": "ふくを せんたくしなければ なりません。",
+        "translation": {
+          "vi": "Tôi phải giặt quần áo."
+        }
+      }
     },
     {
       "id": "narimasu",
@@ -50,7 +78,14 @@
         "en": "to become",
         "vi": "trở thành, trở nên"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "これからは 暑[あつ]く なります。",
+        "kana": "これからは あつく なります。",
+        "translation": {
+          "vi": "Từ bây giờ trời sẽ trở nên nóng."
+        }
+      }
     },
     {
       "id": "nemui",
@@ -60,7 +95,14 @@
         "en": "to be sleepy",
         "vi": "buồn ngủ"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "私[わたし]は 眠[ねむ]いです。",
+        "kana": "わたしは ねむいです。",
+        "translation": {
+          "vi": "Tôi buồn ngủ."
+        }
+      }
     },
     {
       "id": "tsuyoi",
@@ -70,7 +112,14 @@
         "en": "strong",
         "vi": "mạnh, mạnh mẽ"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "彼[かれ]は とても 強[つよ]いです。",
+        "kana": "かれは とても つよいです。",
+        "translation": {
+          "vi": "Anh ấy rất mạnh."
+        }
+      }
     },
     {
       "id": "yowai",
@@ -80,7 +129,14 @@
         "en": "weak",
         "vi": "yếu, yếu ớt"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "私[わたし]は お 酒[さけ]が 弱[よわ]いです。",
+        "kana": "わたしは おさけが よわいです。",
+        "translation": {
+          "vi": "Tôi tửu lượng kém (uống rượu yếu)."
+        }
+      }
     },
     {
       "id": "renshuu",
@@ -90,7 +146,14 @@
         "en": "practice, rehearsal",
         "vi": "sự luyện tập"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "毎日[まいにち] ピアノの 練習[れんしゅう]を しています。",
+        "kana": "まいにち ピアノの れんしゅうを しています。",
+        "translation": {
+          "vi": "Hàng ngày tôi đều luyện tập piano."
+        }
+      }
     },
     {
       "id": "gorufu",
@@ -100,7 +163,14 @@
         "en": "golf",
         "vi": "môn đánh golf"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ゴルフを したいです。",
+        "kana": "ゴルフを したいです。",
+        "translation": {
+          "vi": "Tôi muốn chơi golf."
+        }
+      }
     },
     {
       "id": "sumou",
@@ -110,7 +180,14 @@
         "en": "sumo",
         "vi": "môn đấu vật Sumo"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "相撲[すもう]を 見[み]た ことが ありますか。",
+        "kana": "すもうを みた ことが ありますか。",
+        "translation": {
+          "vi": "Bạn đã từng xem đấu vật Sumo chưa?"
+        }
+      }
     },
     {
       "id": "ocha-ceremonia",
@@ -120,7 +197,14 @@
         "en": "tea ceremony",
         "vi": "trà đạo"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "お 茶[ちゃ]を 習[なら]った ことが あります。",
+        "kana": "おちゃを ならった ことが あります。",
+        "translation": {
+          "vi": "Tôi đã từng học trà đạo."
+        }
+      }
     },
     {
       "id": "hi",
@@ -130,7 +214,14 @@
         "en": "day, date",
         "vi": "ngày, mặt trời"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "休[やす]みの 日[ひ]は うちに います。",
+        "kana": "やすみの ひは うちに います。",
+        "translation": {
+          "vi": "Vào ngày nghỉ tôi ở nhà."
+        }
+      }
     },
     {
       "id": "choushi",
@@ -140,7 +231,14 @@
         "en": "shape, condition",
         "vi": "tình trạng, trạng thái sức khỏe/máy móc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "体[からだ]の 調子[ちょうし]が いいです。",
+        "kana": "からだの ちょうしが いいです。",
+        "translation": {
+          "vi": "Tình trạng cơ thể rất tốt."
+        }
+      }
     },
     {
       "id": "ichido",
@@ -150,7 +248,14 @@
         "en": "once",
         "vi": "một lần"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "一度[いちど] 富士山[ふじさん]に 登[のぼ]りたいです。",
+        "kana": "いちど ふじさんに のぼりたいです。",
+        "translation": {
+          "vi": "Tôi muốn leo núi Phú Sĩ một lần."
+        }
+      }
     },
     {
       "id": "ichidomo",
@@ -160,7 +265,14 @@
         "en": "never (with a negative)",
         "vi": "chưa từng một lần nào (đi với phủ định)"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "一度[いちど]も お 寿司[すし]を 食[た]べた ことが ありません。",
+        "kana": "いちども おすしを たべた ことが ありません。",
+        "translation": {
+          "vi": "Tôi chưa từng ăn sushi một lần nào."
+        }
+      }
     },
     {
       "id": "dandan",
@@ -170,7 +282,14 @@
         "en": "little by little",
         "vi": "dần dần, từng bước"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "だんだん 寒[さむ]く なりました。",
+        "kana": "だんだん さむく なりました。",
+        "translation": {
+          "vi": "Trời đã dần dần trở nên lạnh."
+        }
+      }
     },
     {
       "id": "mousugu",
@@ -180,7 +299,14 @@
         "en": "soon, before long",
         "vi": "sắp sửa, chẳng mấy chốc"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "もうすぐ 夏[なつ]に なります。",
+        "kana": "もうすぐ なつに なります。",
+        "translation": {
+          "vi": "Sắp sửa sang mùa hè rồi."
+        }
+      }
     },
     {
       "id": "okagesamade",
@@ -190,7 +316,14 @@
         "en": "thanks to you",
         "vi": "nhờ ơn trời tôi vẫn khỏe"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「おかげさまで、元気[げんき]です。」",
+        "kana": "「おかげさまで、げんきです。」",
+        "translation": {
+          "vi": "\"Nhờ ơn trời, tôi vẫn khỏe.\""
+        }
+      }
     },
     {
       "id": "demo",
@@ -200,7 +333,14 @@
         "en": "but, however",
         "vi": "nhưng mà"
       },
-      "type": "conjunction"
+      "type": "conjunction",
+      "example": {
+        "jp": "この カメラは 小[ちい]さいです。でも、高[たか]いです。",
+        "kana": "この カメラは ちいさいです。でも、たかいです。",
+        "translation": {
+          "vi": "Cái máy ảnh này nhỏ. Nhưng mà đắt."
+        }
+      }
     },
     {
       "id": "kanpai",
@@ -210,7 +350,14 @@
         "en": "cheers!",
         "vi": "Cạn ly! / Nâng ly!"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「乾杯[かんぱい]！」",
+        "kana": "「かんぱい！」",
+        "translation": {
+          "vi": "\"Cạn ly!\""
+        }
+      }
     },
     {
       "id": "daietto",
@@ -220,7 +367,14 @@
         "en": "diet",
         "vi": "việc ăn kiêng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "明日[あした]から ダイエットを します。",
+        "kana": "あしたから ダイエットを します。",
+        "translation": {
+          "vi": "Tôi sẽ ăn kiêng từ ngày mai."
+        }
+      }
     },
     {
       "id": "muri",
@@ -230,7 +384,14 @@
         "en": "excessive, impossible",
         "vi": "quá sức, không thể làm được"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "無理[むり]な ダイエットは 体[からだ]に よくないです。",
+        "kana": "むりな ダイエットは からだに よくないです。",
+        "translation": {
+          "vi": "Việc ăn kiêng quá sức thì không tốt cho cơ thể."
+        }
+      }
     },
     {
       "id": "karada-ni-ii",
@@ -240,7 +401,14 @@
         "en": "good for your health",
         "vi": "tốt cho sức khỏe"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "スポーツは 体[からだ]に いいです。",
+        "kana": "スポーツは からだに いいです。",
+        "translation": {
+          "vi": "Thể thao tốt cho cơ thể."
+        }
+      }
     },
     {
       "id": "toukyou-sukaitsurii",
@@ -250,7 +418,14 @@
         "en": "Tokyo Skytree",
         "vi": "Tháp Tokyo Skytree"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "東京[とうきょう]スカイツリーへ 行[い]った ことが ありますか。",
+        "kana": "とうきょうスカイツリーへ いった ことが ありますか。",
+        "translation": {
+          "vi": "Bạn đã từng đi Tháp Tokyo Skytree chưa?"
+        }
+      }
     },
     {
       "id": "katsushika-hokusai",
@@ -260,7 +435,14 @@
         "en": "Katsushika Hokusai (Edo-period painter)",
         "vi": "Katsushika Hokusai (danh họa thời Edo)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "葛飾北斎[かつしかほくさい]の 絵[え]を 見[み]た ことが ありますか。",
+        "kana": "かつしかほくさいの えを みた ことが ありますか。",
+        "translation": {
+          "vi": "Bạn đã từng xem tranh của Katsushika Hokusai chưa?"
+        }
+      }
     }
   ]
 }

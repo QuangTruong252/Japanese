@@ -10,7 +10,14 @@
         "en": "to turn on",
         "vi": "bật [điện, máy móc]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "電気[でんき]を つけてください。",
+        "kana": "でんきを つけてください。",
+        "translation": {
+          "vi": "Hãy bật đèn lên."
+        }
+      }
     },
     {
       "id": "keshimasu",
@@ -20,7 +27,14 @@
         "en": "to turn off",
         "vi": "tắt [điện, máy móc]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "エアコンを 消[け]してください。",
+        "kana": "エアコンを けしてください。",
+        "translation": {
+          "vi": "Hãy tắt máy điều hòa."
+        }
+      }
     },
     {
       "id": "akemasu",
@@ -30,7 +44,14 @@
         "en": "to open",
         "vi": "mở [cửa]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "窓[まど]を 開[あ]けましょうか。",
+        "kana": "まどを あけましょうか。",
+        "translation": {
+          "vi": "Tôi mở cửa sổ giúp bạn nhé?"
+        }
+      }
     },
     {
       "id": "shimemasu",
@@ -40,7 +61,14 @@
         "en": "to close",
         "vi": "đóng [cửa]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "ドアを 閉[し]めてください。",
+        "kana": "ドアを しめてください。",
+        "translation": {
+          "vi": "Hãy đóng cửa lại."
+        }
+      }
     },
     {
       "id": "isogimasu",
@@ -50,7 +78,14 @@
         "en": "to hurry",
         "vi": "vội, gấp, vội vã"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "急[いそ]ぎましょう。",
+        "kana": "いそぎましょう。",
+        "translation": {
+          "vi": "Chúng ta hãy nhanh lên nào."
+        }
+      }
     },
     {
       "id": "machimasu",
@@ -60,7 +95,14 @@
         "en": "to wait",
         "vi": "chờ, đợi"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "ちょっと 待[ま]ってください。",
+        "kana": "ちょっと まってください。",
+        "translation": {
+          "vi": "Xin hãy đợi một chút."
+        }
+      }
     },
     {
       "id": "mochimasu",
@@ -70,7 +112,14 @@
         "en": "to hold, to carry",
         "vi": "cầm, mang"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "荷物[にもつ]を 持[も]ちましょうか。",
+        "kana": "にもつを もちましょうか。",
+        "translation": {
+          "vi": "Tôi mang hành lý giúp bạn nhé?"
+        }
+      }
     },
     {
       "id": "torimasu",
@@ -80,7 +129,14 @@
         "en": "to take, to pass (something to someone)",
         "vi": "lấy [đồ vật]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "塩[しお]を 取[と]ってください。",
+        "kana": "しおを とってください。",
+        "translation": {
+          "vi": "Xin hãy lấy giúp tôi muối."
+        }
+      }
     },
     {
       "id": "tetsudaimasu",
@@ -90,7 +146,14 @@
         "en": "to help",
         "vi": "giúp đỡ"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "仕事[しごと]を 手伝[てつだ]ってください。",
+        "kana": "しごとを てつだってください。",
+        "translation": {
+          "vi": "Hãy giúp tôi làm việc."
+        }
+      }
     },
     {
       "id": "yobimasu",
@@ -100,7 +163,14 @@
         "en": "to call",
         "vi": "gọi [taxi, tên]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "タクシーを 呼[よ]びましょうか。",
+        "kana": "タクシーを よびましょうか。",
+        "translation": {
+          "vi": "Tôi gọi taxi giúp bạn nhé?"
+        }
+      }
     },
     {
       "id": "hanashimasu",
@@ -110,7 +180,14 @@
         "en": "to speak",
         "vi": "nói chuyện"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "英語[えいご]で 話[はな]してください。",
+        "kana": "えいごで はなしてください。",
+        "translation": {
+          "vi": "Xin hãy nói bằng tiếng Anh."
+        }
+      }
     },
     {
       "id": "tsukaimasu",
@@ -120,7 +197,14 @@
         "en": "to use",
         "vi": "dùng, sử dụng"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "この パソコンを 使[つか]ってください。",
+        "kana": "この パソコンを つかってください。",
+        "translation": {
+          "vi": "Xin hãy dùng máy tính này."
+        }
+      }
     },
     {
       "id": "tomemasu",
@@ -130,7 +214,14 @@
         "en": "to stop, to park",
         "vi": "dừng, đỗ [xe]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "あそこに 車[くるま]を 止[と]めてください。",
+        "kana": "あそこに くるまを とめてください。",
+        "translation": {
+          "vi": "Xin hãy đỗ xe ở chỗ kia."
+        }
+      }
     },
     {
       "id": "misemasu",
@@ -140,7 +231,14 @@
         "en": "to show",
         "vi": "cho xem"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "パスポートを 見[み]せてください。",
+        "kana": "パスポートを みせてください。",
+        "translation": {
+          "vi": "Xin hãy cho tôi xem hộ chiếu."
+        }
+      }
     },
     {
       "id": "oshiemasu-direccion",
@@ -150,7 +248,14 @@
         "en": "to give [an address]",
         "vi": "cho biết, chỉ bảo [địa chỉ]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "住所[じゅうしょ]を 教[おし]えてください。",
+        "kana": "じゅうしょを おしえてください。",
+        "translation": {
+          "vi": "Xin hãy cho tôi biết địa chỉ."
+        }
+      }
     },
     {
       "id": "suwarimasu",
@@ -160,7 +265,14 @@
         "en": "to sit down",
         "vi": "ngồi [xuống ghế]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "いすに 座[すわ]ってください。",
+        "kana": "いすに すわってください。",
+        "translation": {
+          "vi": "Xin hãy ngồi xuống ghế."
+        }
+      }
     },
     {
       "id": "tachimasu",
@@ -170,7 +282,14 @@
         "en": "to stand up",
         "vi": "đứng lên, đứng dậy"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "立[た]ってください。",
+        "kana": "たってください。",
+        "translation": {
+          "vi": "Xin hãy đứng lên."
+        }
+      }
     },
     {
       "id": "hairimasu",
@@ -180,7 +299,14 @@
         "en": "to go into [a café]",
         "vi": "vào, đi vào [quán cà phê]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "喫茶店[きっさてん]に 入[はい]りましょう。",
+        "kana": "きっさてんに はいりましょう。",
+        "translation": {
+          "vi": "Chúng ta cùng vào quán cà phê nhé."
+        }
+      }
     },
     {
       "id": "demasu",
@@ -190,7 +316,14 @@
         "en": "to leave [a café]",
         "vi": "ra khỏi, rời [quán cà phê]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "喫茶店[きっさてん]を 出[で]ました。",
+        "kana": "きっさてんを でました。",
+        "translation": {
+          "vi": "Tôi đã rời quán cà phê."
+        }
+      }
     },
     {
       "id": "furimasu",
@@ -200,7 +333,14 @@
         "en": "to rain",
         "vi": "rơi [mưa, tuyết]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "雨[あめ]が 降[ふ]っています。",
+        "kana": "あめが ふっています。",
+        "translation": {
+          "vi": "Trời đang mưa."
+        }
+      }
     },
     {
       "id": "kopii-shimasu",
@@ -210,7 +350,14 @@
         "en": "to make photocopies",
         "vi": "sao chép, photocopy"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "これを コピーしてください。",
+        "kana": "これを コピーしてください。",
+        "translation": {
+          "vi": "Xin hãy photocopy cái này."
+        }
+      }
     },
     {
       "id": "denki",
@@ -220,7 +367,14 @@
         "en": "electricity, light",
         "vi": "điện, đèn điện"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "電気[でんき]を つけてください。",
+        "kana": "でんきを つけてください。",
+        "translation": {
+          "vi": "Hãy bật đèn lên."
+        }
+      }
     },
     {
       "id": "eakon",
@@ -230,7 +384,14 @@
         "en": "air conditioning",
         "vi": "máy điều hòa nhiệt độ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "エアコンを 消[け]してください。",
+        "kana": "エアコンを けしてください。",
+        "translation": {
+          "vi": "Hãy tắt máy điều hòa."
+        }
+      }
     },
     {
       "id": "pasupooto",
@@ -240,7 +401,14 @@
         "en": "passport",
         "vi": "hộ chiếu"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "パスポートを 見[み]せてください。",
+        "kana": "パスポートを みせてください。",
+        "translation": {
+          "vi": "Xin hãy cho tôi xem hộ chiếu."
+        }
+      }
     },
     {
       "id": "namae",
@@ -250,7 +418,14 @@
         "en": "name",
         "vi": "tên"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ここに 名前[なまえ]を 書[か]いてください。",
+        "kana": "ここに なまえを かいてください。",
+        "translation": {
+          "vi": "Xin hãy viết tên vào đây."
+        }
+      }
     },
     {
       "id": "juusho",
@@ -260,7 +435,14 @@
         "en": "address",
         "vi": "địa chỉ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "住所[じゅうしょ]を 教[おし]えてください。",
+        "kana": "じゅうしょを おしえてください。",
+        "translation": {
+          "vi": "Xin hãy cho tôi biết địa chỉ."
+        }
+      }
     },
     {
       "id": "chizu",
@@ -270,7 +452,14 @@
         "en": "map, plan",
         "vi": "bản đồ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "地図[ちず]を 書[か]きましょうか。",
+        "kana": "ちずを かきましょうか。",
+        "translation": {
+          "vi": "Tôi vẽ bản đồ giúp bạn nhé?"
+        }
+      }
     },
     {
       "id": "shio",
@@ -280,7 +469,14 @@
         "en": "salt",
         "vi": "muối"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "塩[しお]を 取[と]ってください。",
+        "kana": "しおを とってください。",
+        "translation": {
+          "vi": "Xin hãy lấy giúp tôi muối."
+        }
+      }
     },
     {
       "id": "satou",
@@ -290,7 +486,14 @@
         "en": "sugar",
         "vi": "đường (ăn)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "コーヒーに 砂糖[さとう]を 入[い]れますか。",
+        "kana": "コーヒーに さとうを いれますか。",
+        "translation": {
+          "vi": "Bạn có cho đường vào cà phê không?"
+        }
+      }
     },
     {
       "id": "mondai",
@@ -300,7 +503,14 @@
         "en": "question, problem",
         "vi": "vấn đề, câu hỏi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "この 問題[もんだい]が わかりますか。",
+        "kana": "この もんだいが わかりますか。",
+        "translation": {
+          "vi": "Bạn có hiểu câu hỏi này không?"
+        }
+      }
     },
     {
       "id": "kotae",
@@ -310,7 +520,14 @@
         "en": "answer",
         "vi": "câu trả lời, đáp án"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "答[こた]えを 書[か]いてください。",
+        "kana": "こたえを かいてください。",
+        "translation": {
+          "vi": "Xin hãy viết câu trả lời."
+        }
+      }
     },
     {
       "id": "yomikata",
@@ -320,7 +537,14 @@
         "en": "how to read, reading",
         "vi": "cách đọc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "この 漢字[かんじ]の 読[よ]み 方[かた]を 教[おし]えてください。",
+        "kana": "この かんじの よみかたを おしえてください。",
+        "translation": {
+          "vi": "Hãy dạy cho tôi cách đọc chữ Hán này."
+        }
+      }
     },
     {
       "id": "kata",
@@ -330,7 +554,14 @@
         "en": "way of ~",
         "vi": "cách làm... (hậu tố)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "この ケーキの 作[つく]り 方[かた]を 教[おし]えてください。",
+        "kana": "この ケーキの つくりかたを おしえてください。",
+        "translation": {
+          "vi": "Hãy dạy cho tôi cách làm cái bánh này."
+        }
+      }
     },
     {
       "id": "massugu",
@@ -340,7 +571,14 @@
         "en": "straight ahead",
         "vi": "thẳng, đi thẳng"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "まっすぐ 行[い]ってください。",
+        "kana": "まっすぐ いってください。",
+        "translation": {
+          "vi": "Xin hãy đi thẳng."
+        }
+      }
     },
     {
       "id": "yukkuri",
@@ -350,7 +588,14 @@
         "en": "slowly",
         "vi": "chậm rãi, thong thả"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "ゆっくり 話[はな]してください。",
+        "kana": "ゆっくり はなしてください。",
+        "translation": {
+          "vi": "Xin hãy nói chậm lại."
+        }
+      }
     },
     {
       "id": "sugu",
@@ -360,7 +605,14 @@
         "en": "immediately",
         "vi": "ngay lập tức"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "すぐ 行[い]きます。",
+        "kana": "すぐ いきます。",
+        "translation": {
+          "vi": "Tôi sẽ đi ngay."
+        }
+      }
     },
     {
       "id": "mata",
@@ -370,7 +622,14 @@
         "en": "again",
         "vi": "lại, sau này"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "また 来[き]ます。",
+        "kana": "また きます。",
+        "translation": {
+          "vi": "Tôi sẽ lại đến."
+        }
+      }
     },
     {
       "id": "atode",
@@ -380,7 +639,14 @@
         "en": "afterwards, later",
         "vi": "sau đó, lát nữa"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "あとで 電話[でんわ]を かけます。",
+        "kana": "あとで でんわを かけます。",
+        "translation": {
+          "vi": "Lát nữa tôi sẽ gọi điện."
+        }
+      }
     },
     {
       "id": "mou-sukoshi",
@@ -390,7 +656,14 @@
         "en": "a little more",
         "vi": "thêm một chút nữa"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "もう 少[すこ]し 大[おお]きい のを 見[み]せてください。",
+        "kana": "もう すこし おおきい のを みせてください。",
+        "translation": {
+          "vi": "Xin hãy cho tôi xem cái lớn hơn một chút nữa."
+        }
+      }
     },
     {
       "id": "mou-otro",
@@ -400,7 +673,14 @@
         "en": "~ more, another ~",
         "vi": "thêm... nữa"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "りんごを もう 一[ひと]つ 買[か]いました。",
+        "kana": "りんごを もう ひとつ かいました。",
+        "translation": {
+          "vi": "Tôi đã mua thêm một quả táo."
+        }
+      }
     },
     {
       "id": "saa",
@@ -410,7 +690,14 @@
         "en": "come on! (encouragement)",
         "vi": "Nào, thôi nào..."
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「さあ、行[い]きましょう。」",
+        "kana": "「さあ、いきましょう。」",
+        "translation": {
+          "vi": "\"Nào, chúng ta cùng đi thôi.\""
+        }
+      }
     },
     {
       "id": "are-sorpresa",
@@ -420,7 +707,14 @@
         "en": "huh? (surprise)",
         "vi": "ủa? kìa? (ngạc nhiên)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「あれ？ ミラーさんが いません。」",
+        "kana": "「あれ？ ミラーさんが いません。」",
+        "translation": {
+          "vi": "\"Ủa? Anh Miller không có ở đây.\""
+        }
+      }
     },
     {
       "id": "shingou-migi",
@@ -430,7 +724,14 @@
         "en": "turn right at the traffic light",
         "vi": "xin hãy rẽ phải ở đèn tín hiệu"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "あの 信号[しんごう]を 右[みぎ]へ 曲[ま]がってください。",
+        "kana": "あの しんごうを みぎへ まがってください。",
+        "translation": {
+          "vi": "Xin hãy rẽ phải ở đèn tín hiệu kia."
+        }
+      }
     },
     {
       "id": "korede-onegai",
@@ -440,7 +741,14 @@
         "en": "take it out of this, please",
         "vi": "xin thanh toán bằng số tiền này"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「これで お 願[ねが]いします。」",
+        "kana": "「これで おねがいします。」",
+        "translation": {
+          "vi": "\"Xin thanh toán bằng số tiền này.\""
+        }
+      }
     },
     {
       "id": "otsuri",
@@ -450,7 +758,14 @@
         "en": "change (money back)",
         "vi": "tiền thừa, tiền thối lại"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "お 釣[つ]りは 三百[さんびゃく]円[えん]です。",
+        "kana": "おつりは さんびゃくえんです。",
+        "translation": {
+          "vi": "Tiền thối lại là 300 yên."
+        }
+      }
     }
   ]
 }

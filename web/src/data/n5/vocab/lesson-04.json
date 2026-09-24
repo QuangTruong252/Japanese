@@ -10,7 +10,14 @@
         "en": "to get up",
         "vi": "thức dậy, dậy"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "毎朝[まいあさ] 六時[ろくじ]に 起[お]きます。",
+        "kana": "まいあさ ろくじに おきます。",
+        "translation": {
+          "vi": "Mỗi sáng tôi thức dậy lúc 6 giờ."
+        }
+      }
     },
     {
       "id": "nemasu",
@@ -20,7 +27,14 @@
         "en": "to go to bed, to sleep",
         "vi": "đi ngủ, ngủ"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "十時[じゅうじ]半[はん]に 寝[ね]ます。",
+        "kana": "じゅうじはんに ねます。",
+        "translation": {
+          "vi": "Tôi ngủ lúc 10 rưỡi."
+        }
+      }
     },
     {
       "id": "hatarakimasu",
@@ -30,7 +44,14 @@
         "en": "to work",
         "vi": "làm việc"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "毎日[まいにち] 働[はたら]きます。",
+        "kana": "まいにち はたらきます。",
+        "translation": {
+          "vi": "Mỗi ngày tôi đều làm việc."
+        }
+      }
     },
     {
       "id": "yasumimasu",
@@ -40,7 +61,14 @@
         "en": "to rest, to be on holiday",
         "vi": "nghỉ ngơi, nghỉ phép"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "昨日[きのう] 休[やす]みました。",
+        "kana": "きのう やすみました。",
+        "translation": {
+          "vi": "Hôm qua tôi đã nghỉ."
+        }
+      }
     },
     {
       "id": "benkyou-shimasu",
@@ -50,7 +78,14 @@
         "en": "to study",
         "vi": "học, học tập"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "毎晩[まいばん] 勉強[べんきょう]します。",
+        "kana": "まいばん べんきょうします。",
+        "translation": {
+          "vi": "Mỗi tối tôi đều học bài."
+        }
+      }
     },
     {
       "id": "owarimasu",
@@ -60,7 +95,14 @@
         "en": "to finish",
         "vi": "kết thúc, xong"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "会議[かいぎ]は 三時[さんじ]に 終[お]わります。",
+        "kana": "かいぎは さんじに おわります。",
+        "translation": {
+          "vi": "Cuộc họp kết thúc lúc 3 giờ."
+        }
+      }
     },
     {
       "id": "depaato",
@@ -70,7 +112,14 @@
         "en": "department store",
         "vi": "trung tâm bách hóa, thương mại"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "デパートは 十時[じゅうじ]から 八時[はちじ]までです。",
+        "kana": "デパートは じゅうじから はちじまでです。",
+        "translation": {
+          "vi": "Trung tâm thương mại mở cửa từ 10 giờ đến 8 giờ."
+        }
+      }
     },
     {
       "id": "ginkou",
@@ -80,7 +129,14 @@
         "en": "bank",
         "vi": "ngân hàng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "銀行[ぎんこう]は 九時[くじ]からです。",
+        "kana": "ぎんこうは くじからです。",
+        "translation": {
+          "vi": "Ngân hàng mở cửa từ 9 giờ."
+        }
+      }
     },
     {
       "id": "yuubinkyoku",
@@ -90,7 +146,14 @@
         "en": "post office",
         "vi": "bưu điện"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "郵便局[ゆうびんきょく]は どちらですか。",
+        "kana": "ゆうびんきょくは どちらですか。",
+        "translation": {
+          "vi": "Bưu điện ở phía nào?"
+        }
+      }
     },
     {
       "id": "toshokan",
@@ -100,7 +163,14 @@
         "en": "library",
         "vi": "thư viện"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "図書館[としょかん]は 九時[くじ]から 五時[ごじ]までです。",
+        "kana": "としょかんは くじから ごじまでです。",
+        "translation": {
+          "vi": "Thư viện mở cửa từ 9 giờ đến 5 giờ."
+        }
+      }
     },
     {
       "id": "bijutsukan",
@@ -110,7 +180,14 @@
         "en": "art museum",
         "vi": "bảo tàng mỹ thuật"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "美術館[びじゅつかん]は 休[やす]みです。",
+        "kana": "びじゅつかんは やすみです。",
+        "translation": {
+          "vi": "Bảo tàng mỹ thuật nghỉ."
+        }
+      }
     },
     {
       "id": "ima",
@@ -120,7 +197,14 @@
         "en": "now",
         "vi": "bây giờ, hiện tại"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "今[いま] 四時[よじ]です。",
+        "kana": "いま よじです。",
+        "translation": {
+          "vi": "Bây giờ là 4 giờ."
+        }
+      }
     },
     {
       "id": "ji",
@@ -130,7 +214,14 @@
         "en": "~ o'clock",
         "vi": "giờ (chỉ thời gian)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "今[いま] 四時[よじ]です。",
+        "kana": "いま よじです。",
+        "translation": {
+          "vi": "Bây giờ là 4 giờ."
+        }
+      }
     },
     {
       "id": "fun",
@@ -140,7 +231,14 @@
         "en": "~ minutes",
         "vi": "phút (chỉ thời gian)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "今[いま] 四時[よじ] 五分[ごふん]です。",
+        "kana": "いま よじ ごふんです。",
+        "translation": {
+          "vi": "Bây giờ là 4 giờ 5 phút."
+        }
+      }
     },
     {
       "id": "han",
@@ -150,7 +248,14 @@
         "en": "half past ~",
         "vi": "rưỡi, một nửa (30 phút)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "十時[じゅうじ]半[はん]に 寝[ね]ます。",
+        "kana": "じゅうじはんに ねます。",
+        "translation": {
+          "vi": "Tôi ngủ lúc 10 rưỡi."
+        }
+      }
     },
     {
       "id": "nanji",
@@ -160,7 +265,14 @@
         "en": "what time",
         "vi": "mấy giờ"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "今[いま] 何時[なんじ]ですか。",
+        "kana": "いま なんじですか。",
+        "translation": {
+          "vi": "Bây giờ là mấy giờ?"
+        }
+      }
     },
     {
       "id": "nanpun",
@@ -170,7 +282,14 @@
         "en": "what minute",
         "vi": "mấy phút"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "今[いま] 何時[なんじ] 何分[なんぷん]ですか。",
+        "kana": "いま なんじ なんぷんですか。",
+        "translation": {
+          "vi": "Bây giờ là mấy giờ mấy phút?"
+        }
+      }
     },
     {
       "id": "gozen",
@@ -180,7 +299,14 @@
         "en": "in the morning (a.m.)",
         "vi": "buổi sáng, sáng (AM)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "午前[ごぜん] 九時[くじ]に 起[お]きました。",
+        "kana": "ごぜん くじに おきました。",
+        "translation": {
+          "vi": "Tôi đã thức dậy lúc 9 giờ sáng."
+        }
+      }
     },
     {
       "id": "gogo",
@@ -190,7 +316,14 @@
         "en": "in the afternoon (p.m.)",
         "vi": "buổi chiều, tối (PM)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "午後[ごご] 勉強[べんきょう]します。",
+        "kana": "ごご べんきょうします。",
+        "translation": {
+          "vi": "Tôi học bài vào buổi chiều."
+        }
+      }
     },
     {
       "id": "asa",
@@ -200,7 +333,14 @@
         "en": "the morning",
         "vi": "buổi sáng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "朝[あさ] 六時[ろくじ]に 起[お]きます。",
+        "kana": "あさ ろくじに おきます。",
+        "translation": {
+          "vi": "Tôi thức dậy lúc 6 giờ sáng."
+        }
+      }
     },
     {
       "id": "hiru",
@@ -210,7 +350,14 @@
         "en": "day, midday",
         "vi": "buổi trưa, ban ngày"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "昼[ひる] 十二時[じゅうにじ]に 終[お]わります。",
+        "kana": "ひる じゅうにじに おわります。",
+        "translation": {
+          "vi": "Kết thúc lúc 12 giờ trưa."
+        }
+      }
     },
     {
       "id": "ban",
@@ -220,7 +367,14 @@
         "en": "night",
         "vi": "buổi tối, đêm"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "晩[ばん] 十時[じゅうじ]に 寝[ね]ます。",
+        "kana": "ばん じゅうじに ねます。",
+        "translation": {
+          "vi": "Buổi tối tôi ngủ lúc 10 giờ."
+        }
+      }
     },
     {
       "id": "ototoi",
@@ -230,7 +384,14 @@
         "en": "the day before yesterday",
         "vi": "hôm kia"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "おととい 働[はたら]きました。",
+        "kana": "おととい はたらきました。",
+        "translation": {
+          "vi": "Tôi đã làm việc hôm kia."
+        }
+      }
     },
     {
       "id": "kinou",
@@ -240,7 +401,14 @@
         "en": "yesterday",
         "vi": "hôm qua"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "きのう 勉強[べんきょう]しました。",
+        "kana": "きのう べんきょうしました。",
+        "translation": {
+          "vi": "Hôm qua tôi đã học bài."
+        }
+      }
     },
     {
       "id": "kyou",
@@ -250,7 +418,14 @@
         "en": "today",
         "vi": "hôm nay"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "きょうは 月曜日[げつようび]です。",
+        "kana": "きょうは げつようびです。",
+        "translation": {
+          "vi": "Hôm nay là thứ hai."
+        }
+      }
     },
     {
       "id": "ashita",
@@ -260,7 +435,14 @@
         "en": "tomorrow, morning",
         "vi": "ngày mai"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あしたは 働[はたら]きません。",
+        "kana": "あしたは はたらきません。",
+        "translation": {
+          "vi": "Ngày mai tôi không làm việc."
+        }
+      }
     },
     {
       "id": "asatte",
@@ -270,7 +452,14 @@
         "en": "the day after tomorrow",
         "vi": "ngày kia"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あさっては 休[やす]みです。",
+        "kana": "あさっては やすみです。",
+        "translation": {
+          "vi": "Ngày kia là ngày nghỉ."
+        }
+      }
     },
     {
       "id": "kesa",
@@ -280,7 +469,14 @@
         "en": "this morning",
         "vi": "sáng nay"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "けさ 六時[ろくじ]に 起[お]きました。",
+        "kana": "けさ ろくじに おきました。",
+        "translation": {
+          "vi": "Sáng nay tôi đã thức dậy lúc 6 giờ."
+        }
+      }
     },
     {
       "id": "konban",
@@ -290,7 +486,14 @@
         "en": "tonight",
         "vi": "tối nay"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "今晩[こんばん] 勉強[べんきょう]します。",
+        "kana": "こんばん べんきょうします。",
+        "translation": {
+          "vi": "Tối nay tôi sẽ học bài."
+        }
+      }
     },
     {
       "id": "yasumi",
@@ -300,7 +503,14 @@
         "en": "rest, day off, holiday",
         "vi": "ngày nghỉ, sự nghỉ ngơi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "明日[あした]は 休[やす]みです。",
+        "kana": "あしたは やすみです。",
+        "translation": {
+          "vi": "Ngày mai là ngày nghỉ."
+        }
+      }
     },
     {
       "id": "hiruyasumi",
@@ -310,7 +520,14 @@
         "en": "midday break",
         "vi": "nghỉ trưa"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "昼休[ひるやす]みは 十二時[じゅうにじ]からです。",
+        "kana": "ひるやすみは じゅうにじからです。",
+        "translation": {
+          "vi": "Giờ nghỉ trưa bắt đầu từ 12 giờ."
+        }
+      }
     },
     {
       "id": "shiken",
@@ -320,7 +537,14 @@
         "en": "exam",
         "vi": "kỳ thi, bài kiểm tra"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "試験[しけん]は 明日[あした]です。",
+        "kana": "しけんは あしたです。",
+        "translation": {
+          "vi": "Kỳ thi là ngày mai."
+        }
+      }
     },
     {
       "id": "kaigi",
@@ -330,7 +554,14 @@
         "en": "meeting, conference",
         "vi": "cuộc họp, hội nghị"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "会議[かいぎ]は 三時[さんじ]に 終[お]わります。",
+        "kana": "かいぎは さんじに おわります。",
+        "translation": {
+          "vi": "Cuộc họp kết thúc lúc 3 giờ."
+        }
+      }
     },
     {
       "id": "eiga",
@@ -340,7 +571,14 @@
         "en": "film",
         "vi": "phim, điện ảnh"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "映画[えいが]は 午後[ごご] 二時[にじ]からです。",
+        "kana": "えいがは ごご にじからです。",
+        "translation": {
+          "vi": "Bộ phim bắt đầu từ 2 giờ chiều."
+        }
+      }
     },
     {
       "id": "maiasa",
@@ -350,7 +588,14 @@
         "en": "every morning",
         "vi": "mỗi sáng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "毎朝[まいあさ] 六時[ろくじ]に 起[お]きます。",
+        "kana": "まいあさ ろくじに おきます。",
+        "translation": {
+          "vi": "Mỗi sáng tôi thức dậy lúc 6 giờ."
+        }
+      }
     },
     {
       "id": "maiban",
@@ -360,7 +605,14 @@
         "en": "every night",
         "vi": "mỗi tối"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "毎晩[まいばん] 勉強[べんきょう]します。",
+        "kana": "まいばん べんきょうします。",
+        "translation": {
+          "vi": "Mỗi tối tôi đều học bài."
+        }
+      }
     },
     {
       "id": "mainichi",
@@ -370,7 +622,14 @@
         "en": "every day",
         "vi": "mỗi ngày, hàng ngày"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "毎日[まいにち] 働[はたら]きます。",
+        "kana": "まいにち はたらきます。",
+        "translation": {
+          "vi": "Mỗi ngày tôi đều làm việc."
+        }
+      }
     },
     {
       "id": "getsuyoubi",
@@ -380,7 +639,14 @@
         "en": "Monday",
         "vi": "thứ hai"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "今日[きょう]は 月曜日[げつようび]です。",
+        "kana": "きょうは げつようびです。",
+        "translation": {
+          "vi": "Hôm nay là thứ hai."
+        }
+      }
     },
     {
       "id": "kayoubi",
@@ -390,7 +656,14 @@
         "en": "Tuesday",
         "vi": "thứ ba"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "火曜日[かようび] 勉強[べんきょう]します。",
+        "kana": "かようび べんきょうします。",
+        "translation": {
+          "vi": "Tôi học bài vào thứ ba."
+        }
+      }
     },
     {
       "id": "suiyoubi",
@@ -400,7 +673,14 @@
         "en": "Wednesday",
         "vi": "thứ tư"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "水曜日[すいようび]は 休[やす]みです。",
+        "kana": "すいようびは やすみです。",
+        "translation": {
+          "vi": "Thứ tư là ngày nghỉ."
+        }
+      }
     },
     {
       "id": "mokuyoubi",
@@ -410,7 +690,14 @@
         "en": "Thursday",
         "vi": "thứ năm"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "木曜日[もくようび]に 働[はたら]きます。",
+        "kana": "もくようびに はたらきます。",
+        "translation": {
+          "vi": "Tôi làm việc vào thứ năm."
+        }
+      }
     },
     {
       "id": "kinyoubi",
@@ -420,7 +707,14 @@
         "en": "Friday",
         "vi": "thứ sáu"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "金曜日[きんようび]の 晩[ばん]です。",
+        "kana": "きんようびの ばんです。",
+        "translation": {
+          "vi": "Là buổi tối thứ sáu."
+        }
+      }
     },
     {
       "id": "doyoubi",
@@ -430,7 +724,14 @@
         "en": "Saturday",
         "vi": "thứ bảy"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "土曜日[どようび]は 働[はたら]きません。",
+        "kana": "どようびは はたらきません。",
+        "translation": {
+          "vi": "Thứ bảy tôi không làm việc."
+        }
+      }
     },
     {
       "id": "nichiyoubi",
@@ -440,7 +741,14 @@
         "en": "Sunday",
         "vi": "chủ nhật"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "日曜日[にちようび]は 休[やす]みです。",
+        "kana": "にちようびは やすみです。",
+        "translation": {
+          "vi": "Chủ nhật là ngày nghỉ."
+        }
+      }
     },
     {
       "id": "nanyoubi",
@@ -450,7 +758,14 @@
         "en": "what day of the week",
         "vi": "thứ mấy"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "今日[きょう]は 何曜日[なんようび]ですか。",
+        "kana": "きょうは なんようびですか。",
+        "translation": {
+          "vi": "Hôm nay là thứ mấy?"
+        }
+      }
     },
     {
       "id": "kara",
@@ -460,7 +775,14 @@
         "en": "from ~",
         "vi": "từ (thời gian, địa điểm)"
       },
-      "type": "particle"
+      "type": "particle",
+      "example": {
+        "jp": "銀行[ぎんこう]は 九時[くじ]からです。",
+        "kana": "ぎんこうは くじからです。",
+        "translation": {
+          "vi": "Ngân hàng mở cửa từ 9 giờ."
+        }
+      }
     },
     {
       "id": "made",
@@ -470,7 +792,14 @@
         "en": "until ~",
         "vi": "đến (thời gian, địa điểm)"
       },
-      "type": "particle"
+      "type": "particle",
+      "example": {
+        "jp": "銀行[ぎんこう]は 三時[さんじ]までです。",
+        "kana": "ぎんこうは さんじまでです。",
+        "translation": {
+          "vi": "Ngân hàng mở cửa đến 3 giờ."
+        }
+      }
     },
     {
       "id": "to",
@@ -480,7 +809,14 @@
         "en": "and (joins nouns)",
         "vi": "và (nối danh từ)"
       },
-      "type": "particle"
+      "type": "particle",
+      "example": {
+        "jp": "銀行[ぎんこう]の 休[やす]みは 土曜日[どようび]と 日曜日[にちようび]です。",
+        "kana": "ぎんこうの やすみは どようびと にちようびです。",
+        "translation": {
+          "vi": "Ngày nghỉ của ngân hàng là thứ bảy và chủ nhật."
+        }
+      }
     },
     {
       "id": "taihen-desu-ne",
@@ -490,7 +826,14 @@
         "en": "that's tough! (sympathy)",
         "vi": "vất vả quá nhỉ / cực khổ quá nhỉ"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "大変[たいへん]ですね。",
+        "kana": "たいへんですね。",
+        "translation": {
+          "vi": "Vất vả nhỉ."
+        }
+      }
     },
     {
       "id": "bangou",
@@ -500,7 +843,14 @@
         "en": "number",
         "vi": "số, số hiệu"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "電話[でんわ] 番号[ばんごう]は 何番[なんばん]ですか。",
+        "kana": "でんわ ばんごうは なんばんですか。",
+        "translation": {
+          "vi": "Số điện thoại là số mấy?"
+        }
+      }
     },
     {
       "id": "nanban",
@@ -510,7 +860,14 @@
         "en": "what number",
         "vi": "số mấy"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "電話[でんわ] 番号[ばんごう]は 何番[なんばん]ですか。",
+        "kana": "でんわ ばんごうは なんばんですか。",
+        "translation": {
+          "vi": "Số điện thoại là số mấy?"
+        }
+      }
     }
   ]
 }

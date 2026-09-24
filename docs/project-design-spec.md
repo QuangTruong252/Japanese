@@ -117,7 +117,9 @@ export interface VocabWord {
   kana: string; // "いきます"
   romaji?: string;
   meaning: { vi: string; en: string };
-  type: 'noun' | 'verb-1' | 'verb-2' | 'verb-3' | 'i-adj' | 'na-adj' | 'adverb' | 'particle' | 'expression';
+  type: 'noun' | 'pronoun' | 'verb-godan' | 'verb-ichidan' | 'verb-irregular' | 'adjective-i' | 'adjective-na'
+    | 'adverb' | 'particle' | 'expression' | 'interrogative' | 'counter' | 'number' | 'conjunction';
+  // Nhóm động từ: verb-godan = nhóm 1 (`--verb-1`), verb-ichidan = nhóm 2, verb-irregular = nhóm 3.
   kanjiIds?: string[];
   audioKey?: string;
   notes?: { vi: string; en: string };

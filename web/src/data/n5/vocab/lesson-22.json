@@ -10,7 +10,14 @@
         "en": "to put on (a shirt, etc.)",
         "vi": "mặc [áo sơ mi, áo khoác]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "私[わたし]は 青[あお]い シャツを 着[き]ます。",
+        "kana": "わたしは あおい シャツを きます。",
+        "translation": {
+          "vi": "Tôi mặc áo sơ mi màu xanh."
+        }
+      }
     },
     {
       "id": "hakimasu",
@@ -20,7 +27,14 @@
         "en": "to put on (shoes, trousers)",
         "vi": "đi, mang, mặc [giày, tất, quần]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "新[あたら]しい 靴[くつ]を はきます。",
+        "kana": "あたらしい くつを はきます。",
+        "translation": {
+          "vi": "Tôi mang đôi giày mới."
+        }
+      }
     },
     {
       "id": "kaburimasu",
@@ -30,7 +44,14 @@
         "en": "to put on (a hat)",
         "vi": "đội [mũ]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "黒[くろ]い 帽子[ぼうし]を かぶって います。",
+        "kana": "くろい ぼうしを かぶって います。",
+        "translation": {
+          "vi": "Tôi đang đội chiếc mũ màu đen."
+        }
+      }
     },
     {
       "id": "kakemasu-gafas",
@@ -40,7 +61,14 @@
         "en": "to put on [glasses]",
         "vi": "đeo [kính]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "父[ちち]は 眼鏡[めがね]を かけて います。",
+        "kana": "ちちは めがねを かけて います。",
+        "translation": {
+          "vi": "Bố tôi đang đeo kính."
+        }
+      }
     },
     {
       "id": "shimasu-corbata",
@@ -50,7 +78,14 @@
         "en": "to put on [a tie]",
         "vi": "thắt [cà vạt]"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "ネクタイを して いる 人[ひと]は 誰[だれ]ですか。",
+        "kana": "ネクタイを して いる ひとは だれですか。",
+        "translation": {
+          "vi": "Người đang thắt cà vạt là ai vậy?"
+        }
+      }
     },
     {
       "id": "umaremasu",
@@ -60,7 +95,14 @@
         "en": "to be born",
         "vi": "sinh ra, chào đời"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "私[わたし]は 東京[とうきょう]で 生[う]まれました。",
+        "kana": "わたしは とうきょうで うまれました。",
+        "translation": {
+          "vi": "Tôi đã sinh ra ở Tokyo."
+        }
+      }
     },
     {
       "id": "watashitachi",
@@ -70,7 +112,14 @@
         "en": "we",
         "vi": "chúng tôi, chúng ta"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "わたしたちの 学校[がっこう]は 大[おお]きいです。",
+        "kana": "わたしたちの がっこうは おおきいです。",
+        "translation": {
+          "vi": "Trường của chúng tôi thì lớn."
+        }
+      }
     },
     {
       "id": "kooto",
@@ -80,7 +129,14 @@
         "en": "coat",
         "vi": "áo khoác ngoài, áo choàng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "寒[さむ]いから、コートを 着[き]ます。",
+        "kana": "さむいから、コートを きます。",
+        "translation": {
+          "vi": "Vì trời lạnh nên tôi mặc áo khoác."
+        }
+      }
     },
     {
       "id": "seetaa",
@@ -90,7 +146,14 @@
         "en": "jumper, sweater",
         "vi": "áo len"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "姉[あね]が 作[つく]った セーターを 着[き]ます。",
+        "kana": "あねが つくった セーターを きます。",
+        "translation": {
+          "vi": "Tôi mặc chiếc áo len mà chị gái đã làm."
+        }
+      }
     },
     {
       "id": "suutsu",
@@ -100,7 +163,14 @@
         "en": "suit",
         "vi": "bộ âu phục, com-lê"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "彼[かれ]は スーツを 着[き]て います。",
+        "kana": "かれは スーツを きて います。",
+        "translation": {
+          "vi": "Anh ấy đang mặc bộ âu phục."
+        }
+      }
     },
     {
       "id": "boushi",
@@ -110,7 +180,14 @@
         "en": "hat, cap",
         "vi": "mũ, nón"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "帽子[ぼうし]を かぶって いる 人[ひと]は カリナさんです。",
+        "kana": "ぼうしを かぶって いる ひとは カリナさんです。",
+        "translation": {
+          "vi": "Người đang đội mũ là chị Karina."
+        }
+      }
     },
     {
       "id": "megane",
@@ -120,7 +197,14 @@
         "en": "glasses",
         "vi": "kính mắt"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "眼鏡[めがね]を かけた 人[ひと]が 好[す]きです。",
+        "kana": "めがねを かけた ひとが すきです。",
+        "translation": {
+          "vi": "Tôi thích người đeo kính."
+        }
+      }
     },
     {
       "id": "keeki",
@@ -130,7 +214,14 @@
         "en": "cake",
         "vi": "bánh ngọt, bánh kem"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "母[はは]が 作[つく]った ケーキは おいしいです。",
+        "kana": "ははが つくった ケーキは おいしいです。",
+        "translation": {
+          "vi": "Chiếc bánh ngọt mẹ làm rất ngon."
+        }
+      }
     },
     {
       "id": "obentou",
@@ -140,7 +231,14 @@
         "en": "boxed lunch",
         "vi": "cơm hộp bento"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "妻[つま]が 作[つく]った お 弁当[べんとう]を 食[た]べます。",
+        "kana": "つまが つくった お べんとうを たべます。",
+        "translation": {
+          "vi": "Tôi ăn hộp cơm bento vợ làm."
+        }
+      }
     },
     {
       "id": "robotto",
@@ -150,7 +248,14 @@
         "en": "robot",
         "vi": "người máy, robot"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "私[わたし]は 新[あたら]しい ロボットを 買[か]いました。",
+        "kana": "わたしは あたらしい ロボットを かいました。",
+        "translation": {
+          "vi": "Tôi đã mua một con robot mới."
+        }
+      }
     },
     {
       "id": "yuumoa",
@@ -160,7 +265,14 @@
         "en": "mood",
         "vi": "sự hài hước, khiếu khôi hài"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "彼[かれ]は ユーモアが わかる 人[ひと]です。",
+        "kana": "かれは ユーモアが わかる ひとです。",
+        "translation": {
+          "vi": "Anh ấy là người có khiếu hài hước."
+        }
+      }
     },
     {
       "id": "tsugou",
@@ -170,7 +282,14 @@
         "en": "convenience",
         "vi": "sự thuận tiện, điều kiện"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "明日[あした]は 都合[つごう]が 悪[わる]いです。",
+        "kana": "あしたは つごうが わるいです。",
+        "translation": {
+          "vi": "Ngày mai tôi bận (không thuận tiện)."
+        }
+      }
     },
     {
       "id": "yoku-frecuente",
@@ -180,7 +299,14 @@
         "en": "often",
         "vi": "thường xuyên, hay"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "よく 行[い]く 喫茶店[きっさてん]は 駅[えき]の 前[まえ]に あります。",
+        "kana": "よく いく きっさてんは えきの まえに あります。",
+        "translation": {
+          "vi": "Quán giải khát tôi hay đến nằm ở trước nhà ga."
+        }
+      }
     },
     {
       "id": "eeto",
@@ -190,7 +316,14 @@
         "en": "well, let's see",
         "vi": "à, để xem nào..."
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「この 漢字[かんじ]の 読[よ]み方[かた]は…」「えーと、わかりません。」",
+        "kana": "「この かんじの よみかたは…」「えーと、わかりません。」",
+        "translation": {
+          "vi": "\"Cách đọc của chữ Hán này là...\" \"À, để xem nào, tôi không biết.\""
+        }
+      }
     },
     {
       "id": "omedetou",
@@ -200,7 +333,14 @@
         "en": "congratulations!",
         "vi": "xin chúc mừng!"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "お 誕生日[たんじょうび]、おめでとう ございます。",
+        "kana": "お たんじょうび、おめでとう ございます。",
+        "translation": {
+          "vi": "Chúc mừng sinh nhật bạn!"
+        }
+      }
     },
     {
       "id": "osagashi",
@@ -210,7 +350,14 @@
         "en": "what kind of ~ are you looking for?",
         "vi": "quý khách đang tìm kiếm món gì ạ?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "何[なに]か お 探[さが]しですか。",
+        "kana": "なにか お さがしですか。",
+        "translation": {
+          "vi": "Quý khách đang tìm kiếm món gì ạ?"
+        }
+      }
     },
     {
       "id": "dewa",
@@ -220,7 +367,14 @@
         "en": "well then",
         "vi": "vậy thì, thế thì"
       },
-      "type": "conjunction"
+      "type": "conjunction",
+      "example": {
+        "jp": "では、これを 見[み]せて ください。",
+        "kana": "では、これを みせて ください。",
+        "translation": {
+          "vi": "Vậy thì, xin cho tôi xem cái này."
+        }
+      }
     },
     {
       "id": "kochira-esto",
@@ -230,7 +384,14 @@
         "en": "this (polite form of これ)",
         "vi": "đây, cái này (lịch sự của これ)"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "こちらは ドイツで 作[つく]った カメラです。",
+        "kana": "こちらは ドイツで つくった カメラです。",
+        "translation": {
+          "vi": "Đây là chiếc máy ảnh được làm ở Đức."
+        }
+      }
     },
     {
       "id": "yachin",
@@ -240,7 +401,14 @@
         "en": "rent (amount)",
         "vi": "tiền thuê nhà"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "この 部屋[へや]は 家賃[やちん]が 高[たか]いです。",
+        "kana": "この へやは やちんが たかいです。",
+        "translation": {
+          "vi": "Căn phòng này tiền thuê nhà cao."
+        }
+      }
     },
     {
       "id": "dainingu-kicchin",
@@ -250,7 +418,14 @@
         "en": "kitchen-diner",
         "vi": "phòng bếp liền phòng ăn"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "新[あたら]しい 家[いえ]に ダイニングキッチンが あります。",
+        "kana": "あたらしい いえに ダイニングキッチンが あります。",
+        "translation": {
+          "vi": "Trong ngôi nhà mới có phòng bếp liền phòng ăn."
+        }
+      }
     },
     {
       "id": "washitsu",
@@ -260,7 +435,14 @@
         "en": "Japanese-style room",
         "vi": "phòng kiểu Nhật"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "私[わたし]の 部屋[へや]は 和室[わしつ]です。",
+        "kana": "わたしの へやは わしつです。",
+        "translation": {
+          "vi": "Phòng của tôi là phòng kiểu Nhật."
+        }
+      }
     },
     {
       "id": "oshiire",
@@ -270,7 +452,14 @@
         "en": "Japanese closet for futons",
         "vi": "tủ âm tường kiểu Nhật"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "押[お]し 入[い]れに 布団[ふとん]を 入[い]れました。",
+        "kana": "おしいれに ふとんを いれました。",
+        "translation": {
+          "vi": "Tôi đã cất chăn đệm vào tủ âm tường."
+        }
+      }
     },
     {
       "id": "futon",
@@ -280,7 +469,14 @@
         "en": "futon",
         "vi": "chăn đệm kiểu Nhật"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "毎晩[まいばん] 布団[ふとん]で 寝[ね]て います。",
+        "kana": "まいばん ふとんで ねて います。",
+        "translation": {
+          "vi": "Mỗi tối tôi ngủ trên chăn đệm kiểu Nhật."
+        }
+      }
     },
     {
       "id": "pari",
@@ -290,7 +486,14 @@
         "en": "Paris",
         "vi": "thủ đô Paris"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "パリは きれいな 町[まち]だと 思[おも]います。",
+        "kana": "パリは きれいな まちだと おもいます。",
+        "translation": {
+          "vi": "Tôi nghĩ Paris là một thành phố đẹp."
+        }
+      }
     },
     {
       "id": "banri-no-choujou",
@@ -300,7 +503,14 @@
         "en": "the Great Wall",
         "vi": "Vạn Lý Trường Thành"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "万里[ばんり]の 長城[ちょうじょう]へ 行[い]った ことが ありますか。",
+        "kana": "ばんりの ちょうじょうへ いった ことが ありますか。",
+        "translation": {
+          "vi": "Bạn đã từng đến Vạn Lý Trường Thành chưa?"
+        }
+      }
     }
   ]
 }

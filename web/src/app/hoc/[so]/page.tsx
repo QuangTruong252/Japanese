@@ -18,9 +18,9 @@ export function generateStaticParams() {
 }
 
 const VERB_GROUP: Record<string, { label: string; className: string }> = {
-  'verb-1': { label: 'Nhóm 1', className: 'bg-verb-1 text-primary-foreground font-semibold' },
-  'verb-2': { label: 'Nhóm 2', className: 'bg-verb-2 text-primary-foreground font-semibold' },
-  'verb-3': { label: 'Nhóm 3', className: 'bg-verb-3 text-primary-foreground font-semibold' },
+  'verb-godan': { label: 'Nhóm 1', className: 'bg-verb-1 text-primary-foreground font-semibold' },
+  'verb-ichidan': { label: 'Nhóm 2', className: 'bg-verb-2 text-primary-foreground font-semibold' },
+  'verb-irregular': { label: 'Nhóm 3', className: 'bg-verb-3 text-primary-foreground font-semibold' },
 };
 
 export default async function LessonDetailPage({
@@ -241,19 +241,12 @@ export default async function LessonDetailPage({
         />
       </section>
 
-      {/* 5. Nguồn và Xác minh */}
-      <div className="space-y-1.5 pt-4 border-t border-border/80 text-xs text-muted-foreground">
-        {lesson.sourceRef && (
-          <p>
-            Tài liệu tham khảo: Giáo trình Minna no Nihongo {lesson.sourceRef.book}, tr. {lesson.sourceRef.pages}
-          </p>
-        )}
-        {lesson.verification !== 'verified' && (
-          <p className="text-amber-600 dark:text-amber-400">
-            Nội dung bài này đang đối chiếu bản in chính thức. Vui lòng đối chiếu với sách giáo khoa nếu có thắc mắc.
-          </p>
-        )}
-      </div>
+      {/* 5. Nguồn */}
+      {lesson.sourceRef && (
+        <p className="pt-4 border-t border-border/80 text-xs text-muted-foreground">
+          Tài liệu tham khảo: Giáo trình Minna no Nihongo {lesson.sourceRef.book}, tr. {lesson.sourceRef.pages}
+        </p>
+      )}
 
       {/* 5. Nút CTA chuyển sang Luyện tập */}
       <div className="pt-2">

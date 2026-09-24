@@ -15,16 +15,17 @@ export default async function LessonVocabularyPage({
   const lessonNumber = parseLessonNumber(so);
   if (lessonNumber === null) notFound();
 
-  const [lesson, words] = await Promise.all([loadLesson(lessonNumber), loadVocab(lessonNumber)]);
+  const lesson = await loadLesson(lessonNumber);
+  const words = await loadVocab(lessonNumber);
+  const examples = lesson.grammar.flatMap((point) => point.examples);
 
   return (
     <VocabLearningFlow
       key={lessonNumber}
       lessonNumber={lessonNumber}
       lessonTitle={lesson.title.vi}
-      verified={lesson.verification === 'verified'}
       words={words}
-      examples={lesson.grammar.flatMap((point) => point.examples)}
+      examples={examples}
     />
   );
 }

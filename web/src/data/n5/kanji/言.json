@@ -33,7 +33,7 @@
       "word": "言葉[ことば]",
       "meaning": {
         "en": "word",
-        "vi": "word"
+        "vi": "từ, lời nói, ngôn ngữ"
       }
     },
     {
@@ -47,21 +47,21 @@
       "word": "発言[はつげん]",
       "meaning": {
         "en": "statement",
-        "vi": "statement"
+        "vi": "phát biểu, lời phát biểu"
       }
     },
     {
       "word": "方言[ほうげん]",
       "meaning": {
         "en": "dialect",
-        "vi": "dialect"
+        "vi": "phương ngữ, tiếng địa phương"
       }
     },
     {
       "word": "無言[むごん]",
       "meaning": {
         "en": "silence",
-        "vi": "silence"
+        "vi": "im lặng, không nói gì"
       }
     }
   ],

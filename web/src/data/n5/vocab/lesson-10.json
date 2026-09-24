@@ -10,7 +10,14 @@
         "en": "to be, there is (things)",
         "vi": "ở, có (dành cho đồ vật vô tri)"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "机[つくえ]の 上[うえ]に 本[ほん]が あります。",
+        "kana": "つくえの うえに ほんが あります。",
+        "translation": {
+          "vi": "Trên bàn có cuốn sách."
+        }
+      }
     },
     {
       "id": "imasu",
@@ -20,7 +27,14 @@
         "en": "to be, there is (living things)",
         "vi": "ở, có (dành cho người và động vật)"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "教室[きょうしつ]に 先生[せんせい]が います。",
+        "kana": "きょうしつに せんせいが います。",
+        "translation": {
+          "vi": "Trong phòng học có thầy giáo."
+        }
+      }
     },
     {
       "id": "iroiro",
@@ -30,7 +44,14 @@
         "en": "various",
         "vi": "nhiều loại, đa dạng"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "いろいろな 飲[の]み 物[もの]が あります。",
+        "kana": "いろいろな のみものが あります。",
+        "translation": {
+          "vi": "Có nhiều loại đồ uống."
+        }
+      }
     },
     {
       "id": "otokonohito",
@@ -40,7 +61,14 @@
         "en": "man",
         "vi": "người đàn ông"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あそこに 男[おとこ]の 人[ひと]が います。",
+        "kana": "あそこに おとこの ひとが います。",
+        "translation": {
+          "vi": "Ở đằng kia có người đàn ông."
+        }
+      }
     },
     {
       "id": "onnanohito",
@@ -50,7 +78,14 @@
         "en": "woman",
         "vi": "người phụ nữ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 女[おんな]の 人[ひと]は だれですか。",
+        "kana": "あの おんなの ひとは だれですか。",
+        "translation": {
+          "vi": "Người phụ nữ kia là ai?"
+        }
+      }
     },
     {
       "id": "otokonoko",
@@ -60,7 +95,14 @@
         "en": "child",
         "vi": "bé trai, cậu bé"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "男[おとこ]の 子[こ]が います。",
+        "kana": "おとこの こが います。",
+        "translation": {
+          "vi": "Có một cậu bé."
+        }
+      }
     },
     {
       "id": "onnanoko",
@@ -70,7 +112,14 @@
         "en": "girl",
         "vi": "bé gái, cô bé"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "女[おんな]の 子[こ]が 公園[こうえん]に います。",
+        "kana": "おんなの こが こうえんに います。",
+        "translation": {
+          "vi": "Có bé gái ở công viên."
+        }
+      }
     },
     {
       "id": "inu",
@@ -80,7 +129,14 @@
         "en": "dog",
         "vi": "con chó"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "犬[いぬ]が 外[そと]に います。",
+        "kana": "いぬが そとに います。",
+        "translation": {
+          "vi": "Có con chó ở bên ngoài."
+        }
+      }
     },
     {
       "id": "neko",
@@ -90,7 +146,14 @@
         "en": "cat",
         "vi": "con mèo"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "猫[ねこ]は 箱[はこ]の 中[なか]に います。",
+        "kana": "ねこは はこの なかに います。",
+        "translation": {
+          "vi": "Con mèo ở trong hộp."
+        }
+      }
     },
     {
       "id": "panda",
@@ -100,7 +163,14 @@
         "en": "panda",
         "vi": "gấu trúc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "動物園[どうぶつえん]に パンダが います。",
+        "kana": "どうぶつえんに パンダが います。",
+        "translation": {
+          "vi": "Ở sở thú có gấu trúc."
+        }
+      }
     },
     {
       "id": "zou",
@@ -110,7 +180,14 @@
         "en": "elephant",
         "vi": "con voi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "象[ぞう]は 大[おお]きいです。",
+        "kana": "ぞうは おおきいです。",
+        "translation": {
+          "vi": "Con voi to."
+        }
+      }
     },
     {
       "id": "ki",
@@ -120,7 +197,14 @@
         "en": "tree, wood",
         "vi": "cây, gỗ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "庭[にわ]に 木[き]が あります。",
+        "kana": "にわに きが あります。",
+        "translation": {
+          "vi": "Trong vườn có cái cây."
+        }
+      }
     },
     {
       "id": "mono",
@@ -130,7 +214,14 @@
         "en": "thing, object",
         "vi": "đồ vật, vật"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "机[つくえ]の 上[うえ]に 物[もの]が たくさん あります。",
+        "kana": "つくえの うえに ものが たくさん あります。",
+        "translation": {
+          "vi": "Trên bàn có nhiều đồ vật."
+        }
+      }
     },
     {
       "id": "denchi",
@@ -140,7 +231,14 @@
         "en": "battery",
         "vi": "pin"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "リモコンの 電池[でんち]が ありません。",
+        "kana": "リモコンの でんちが ありません。",
+        "translation": {
+          "vi": "Không có pin cho điều khiển từ xa."
+        }
+      }
     },
     {
       "id": "hako",
@@ -150,7 +248,14 @@
         "en": "box",
         "vi": "cái hộp, thùng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "箱[はこ]の 中[なか]に 何[なに]が ありますか。",
+        "kana": "はこの なかに なにが ありますか。",
+        "translation": {
+          "vi": "Trong hộp có cái gì?"
+        }
+      }
     },
     {
       "id": "suicchi",
@@ -160,7 +265,14 @@
         "en": "switch",
         "vi": "công tắc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "電気[でんき]の スイッチは どこですか。",
+        "kana": "でんきの スイッチは どこですか。",
+        "translation": {
+          "vi": "Công tắc điện ở đâu?"
+        }
+      }
     },
     {
       "id": "reizouko",
@@ -170,7 +282,14 @@
         "en": "fridge",
         "vi": "tủ lạnh"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "冷蔵庫[れいぞうこ]に 果物[くだもの]が あります。",
+        "kana": "れいぞうこに くだものが あります。",
+        "translation": {
+          "vi": "Trong tủ lạnh có hoa quả."
+        }
+      }
     },
     {
       "id": "teeburu",
@@ -180,7 +299,14 @@
         "en": "table",
         "vi": "bàn ăn, bàn tròn"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "テーブルの 上[うえ]に 本[ほん]が あります。",
+        "kana": "テーブルの うえに ほんが あります。",
+        "translation": {
+          "vi": "Trên bàn ăn có cuốn sách."
+        }
+      }
     },
     {
       "id": "beddo",
@@ -190,7 +316,14 @@
         "en": "bed",
         "vi": "giường ngủ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ベッドの 下[した]に 猫[ねこ]が います。",
+        "kana": "ベッドの したに ねこが います。",
+        "translation": {
+          "vi": "Dưới giường có con mèo."
+        }
+      }
     },
     {
       "id": "tana",
@@ -200,7 +333,14 @@
         "en": "shelf",
         "vi": "giá, kệ sách/đồ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "棚[たな]の 上[うえ]に 写真[しゃしん]が あります。",
+        "kana": "たなの うえに しゃしんが あります。",
+        "translation": {
+          "vi": "Trên giá sách có bức ảnh."
+        }
+      }
     },
     {
       "id": "doa",
@@ -210,7 +350,14 @@
         "en": "door",
         "vi": "cửa ra vào"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ドアの 前[まえ]に 人[ひと]が います。",
+        "kana": "ドアの まえに ひとが います。",
+        "translation": {
+          "vi": "Trước cửa có người."
+        }
+      }
     },
     {
       "id": "mado",
@@ -220,7 +367,14 @@
         "en": "window",
         "vi": "cửa sổ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "窓[まど]の 近[ちか]くに 机[つくえ]が あります。",
+        "kana": "まどの ちかくに つくえが あります。",
+        "translation": {
+          "vi": "Gần cửa sổ có cái bàn."
+        }
+      }
     },
     {
       "id": "posuto",
@@ -230,7 +384,14 @@
         "en": "postbox",
         "vi": "hộp thư bưu điện"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "駅[えき]の 前[まえ]に ポストが あります。",
+        "kana": "えきの まえに ポストが あります。",
+        "translation": {
+          "vi": "Trước nhà ga có hộp thư bưu điện."
+        }
+      }
     },
     {
       "id": "biru",
@@ -240,7 +401,14 @@
         "en": "building",
         "vi": "tòa nhà cao tầng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あそこに 高[たか]い ビルが あります。",
+        "kana": "あそこに たかい ビルが あります。",
+        "translation": {
+          "vi": "Đằng kia có tòa nhà cao tầng."
+        }
+      }
     },
     {
       "id": "atm",
@@ -250,7 +418,14 @@
         "en": "cash machine, ATM",
         "vi": "máy rút tiền tự động ATM"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "コンビニの 中[なか]に ATMが あります。",
+        "kana": "コンビニの なかに ATMが あります。",
+        "translation": {
+          "vi": "Trong cửa hàng tiện lợi có máy ATM."
+        }
+      }
     },
     {
       "id": "konbini",
@@ -260,7 +435,14 @@
         "en": "convenience store",
         "vi": "cửa hàng tiện lợi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "コンビニは どこですか。",
+        "kana": "コンビニは どこですか。",
+        "translation": {
+          "vi": "Cửa hàng tiện lợi ở đâu?"
+        }
+      }
     },
     {
       "id": "kouen",
@@ -270,7 +452,14 @@
         "en": "park",
         "vi": "công viên"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "公園[こうえん]に 子[こ]どもが います。",
+        "kana": "こうえんに こどもが います。",
+        "translation": {
+          "vi": "Trong công viên có trẻ em."
+        }
+      }
     },
     {
       "id": "kissaten",
@@ -280,7 +469,14 @@
         "en": "café",
         "vi": "quán cà phê, quán giải khát"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "喫茶店[きっさてん]で コーヒーを 飲[の]みます。",
+        "kana": "きっさてんで コーヒーを のみます。",
+        "translation": {
+          "vi": "Tôi uống cà phê ở quán cà phê."
+        }
+      }
     },
     {
       "id": "ya-tienda",
@@ -290,7 +486,14 @@
         "en": "~ shop",
         "vi": "cửa hàng... (hậu tố)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "パン屋[や]は 駅[えき]の 近[ちか]くに あります。",
+        "kana": "パンやは えきの ちかくに あります。",
+        "translation": {
+          "vi": "Cửa hàng bánh mì ở gần nhà ga."
+        }
+      }
     },
     {
       "id": "noriba",
@@ -300,7 +503,14 @@
         "en": "stop, stand (for taxis, trains…)",
         "vi": "bến đỗ, điểm đón xe"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "タクシー乗[の]り 場[ば]は あそこです。",
+        "kana": "タクシーのりばは あそこです。",
+        "translation": {
+          "vi": "Bến đón taxi ở đằng kia."
+        }
+      }
     },
     {
       "id": "ken",
@@ -310,7 +520,14 @@
         "en": "prefecture",
         "vi": "tỉnh (đơn vị hành chính Nhật)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "千葉県[ちばけん]に います。",
+        "kana": "ちばけんに います。",
+        "translation": {
+          "vi": "Tôi ở tỉnh Chiba."
+        }
+      }
     },
     {
       "id": "ue",
@@ -320,7 +537,14 @@
         "en": "on top, above",
         "vi": "trên, phía trên"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "机[つくえ]の 上[うえ]に ペンが あります。",
+        "kana": "つくえの うえに ペンが あります。",
+        "translation": {
+          "vi": "Trên bàn có cái bút."
+        }
+      }
     },
     {
       "id": "shita",
@@ -330,7 +554,14 @@
         "en": "below, underneath",
         "vi": "dưới, phía dưới"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "いすの 下[した]に 犬[いぬ]が います。",
+        "kana": "いすの したに いぬが います。",
+        "translation": {
+          "vi": "Dưới ghế có con chó."
+        }
+      }
     },
     {
       "id": "mae",
@@ -340,7 +571,14 @@
         "en": "in front",
         "vi": "trước, phía trước"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "私[わたし]の 前[まえ]に 先生[せんせい]が います。",
+        "kana": "わたしの まえに せんせいが います。",
+        "translation": {
+          "vi": "Trước mặt tôi có thầy giáo."
+        }
+      }
     },
     {
       "id": "ushiro",
@@ -350,7 +588,14 @@
         "en": "behind",
         "vi": "sau, phía sau"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "家[いえ]の 後[うし]ろに 山[やま]が あります。",
+        "kana": "いえの うしろに やまが あります。",
+        "translation": {
+          "vi": "Phía sau nhà có ngọn núi."
+        }
+      }
     },
     {
       "id": "migi",
@@ -360,7 +605,14 @@
         "en": "right",
         "vi": "phải, bên phải"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "右[みぎ]に トイレが あります。",
+        "kana": "みぎに トイレが あります。",
+        "translation": {
+          "vi": "Bên phải có nhà vệ sinh."
+        }
+      }
     },
     {
       "id": "hidari",
@@ -370,7 +622,14 @@
         "en": "left",
         "vi": "trái, bên trái"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "左[ひだり]に 銀行[ぎんこう]が あります。",
+        "kana": "ひだりに ぎんこうが あります。",
+        "translation": {
+          "vi": "Bên trái có ngân hàng."
+        }
+      }
     },
     {
       "id": "naka",
@@ -380,7 +639,14 @@
         "en": "inside",
         "vi": "trong, bên trong"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "かばんの 中[なか]に 本[ほん]が あります。",
+        "kana": "かばんの なかに ほんが あります。",
+        "translation": {
+          "vi": "Trong cặp có cuốn sách."
+        }
+      }
     },
     {
       "id": "soto",
@@ -390,7 +656,14 @@
         "en": "outside",
         "vi": "ngoài, bên ngoài"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "外[そと]に 誰[だれ]が いますか。",
+        "kana": "そとに だれが いますか。",
+        "translation": {
+          "vi": "Bên ngoài có ai thế?"
+        }
+      }
     },
     {
       "id": "tonari",
@@ -400,7 +673,14 @@
         "en": "next to, beside",
         "vi": "bên cạnh, sát bên"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "銀行[ぎんこう]の 隣[となり]に 郵便局[ゆうびんきょく]が あります。",
+        "kana": "ぎんこうの となりに ゆうびんきょくが あります。",
+        "translation": {
+          "vi": "Bên cạnh ngân hàng có bưu điện."
+        }
+      }
     },
     {
       "id": "chikaku",
@@ -410,7 +690,14 @@
         "en": "near",
         "vi": "gần, khu vực lân cận"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "家[いえ]の 近[ちか]くに スーパーが あります。",
+        "kana": "いえの ちかくに スーパーが あります。",
+        "translation": {
+          "vi": "Gần nhà có siêu thị."
+        }
+      }
     },
     {
       "id": "aida",
@@ -420,7 +707,14 @@
         "en": "between",
         "vi": "ở giữa, khoảng giữa"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "本屋[ほんや]と 銀行[ぎんこう]の 間[あいだ]に カフェが あります。",
+        "kana": "ほんやと ぎんこうの あいだに カフェが あります。",
+        "translation": {
+          "vi": "Giữa hiệu sách và ngân hàng có quán cà phê."
+        }
+      }
     },
     {
       "id": "ya-nado",
@@ -430,7 +724,14 @@
         "en": "~, ~, and so on",
         "vi": "...và... vân vân (liệt kê không đầy đủ)"
       },
-      "type": "particle"
+      "type": "particle",
+      "example": {
+        "jp": "箱[はこ]の 中[なか]に 手紙[てがみ]や 写真[しゃしん]などが あります。",
+        "kana": "はこの なかに てがみや しゃしんなどが あります。",
+        "translation": {
+          "vi": "Trong hộp có những thứ như thư và ảnh."
+        }
+      }
     },
     {
       "id": "doumo-sumimasen",
@@ -440,7 +741,14 @@
         "en": "thank you [very much]",
         "vi": "xin cảm ơn bạn rất nhiều / xin lỗi bạn"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "どうも すみません。",
+        "kana": "どうも すみません。",
+        "translation": {
+          "vi": "Xin cảm ơn bạn rất nhiều."
+        }
+      }
     },
     {
       "id": "nanpuraa",
@@ -450,7 +758,14 @@
         "en": "nam pla (fish sauce)",
         "vi": "nước mắm (Nam Pla)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ナンプラーは ありますか。",
+        "kana": "ナンプラーは ありますか。",
+        "translation": {
+          "vi": "Có nước mắm không?"
+        }
+      }
     },
     {
       "id": "koonaa",
@@ -460,7 +775,14 @@
         "en": "section",
         "vi": "quầy, khu vực (corner)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "パンの コーナーは どこですか。",
+        "kana": "パンの コーナーは どこですか。",
+        "translation": {
+          "vi": "Quầy bánh mì ở đâu?"
+        }
+      }
     },
     {
       "id": "ichiban-shita",
@@ -470,7 +792,14 @@
         "en": "the lowest",
         "vi": "dưới cùng, thấp nhất"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "いちばん 下[した]の 棚[たな]に あります。",
+        "kana": "いちばん したの たなに あります。",
+        "translation": {
+          "vi": "Nó ở trên kệ dưới cùng."
+        }
+      }
     }
   ]
 }

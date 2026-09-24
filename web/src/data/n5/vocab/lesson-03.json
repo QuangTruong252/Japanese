@@ -10,7 +10,14 @@
         "en": "here, in this place",
         "vi": "chỗ này, ở đây (gần người nói)"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "ここは 教室[きょうしつ]です。",
+        "kana": "ここは きょうしつです。",
+        "translation": {
+          "vi": "Chỗ này là phòng học."
+        }
+      }
     },
     {
       "id": "soko",
@@ -20,7 +27,14 @@
         "en": "there, in that place",
         "vi": "chỗ đó, ở đó (gần người nghe)"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "そこは 食堂[しょくどう]ですか。",
+        "kana": "そこは しょくどうですか。",
+        "translation": {
+          "vi": "Chỗ đó là nhà ăn phải không?"
+        }
+      }
     },
     {
       "id": "asoko",
@@ -30,7 +44,14 @@
         "en": "over there, in that place",
         "vi": "chỗ kia, ở kia (xa cả hai)"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "あそこは トイレです。",
+        "kana": "あそこは トイレです。",
+        "translation": {
+          "vi": "Chỗ kia là nhà vệ sinh."
+        }
+      }
     },
     {
       "id": "doko",
@@ -40,7 +61,14 @@
         "en": "where, in what place",
         "vi": "chỗ nào, ở đâu"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "トイレは どこですか。",
+        "kana": "トイレは どこですか。",
+        "translation": {
+          "vi": "Nhà vệ sinh ở đâu?"
+        }
+      }
     },
     {
       "id": "kochira",
@@ -50,7 +78,14 @@
         "en": "here (polite form of ここ)",
         "vi": "phía này, chỗ này (lịch sự)"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "こちらは エレベーターです。",
+        "kana": "こちらは エレベーターです。",
+        "translation": {
+          "vi": "Phía này là thang máy."
+        }
+      }
     },
     {
       "id": "sochira",
@@ -60,7 +95,14 @@
         "en": "there (polite form of そこ)",
         "vi": "phía đó, chỗ đó (lịch sự)"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "そちらは 部屋[へや]ですか。",
+        "kana": "そちらは へやですか。",
+        "translation": {
+          "vi": "Phía đó là căn phòng phải không?"
+        }
+      }
     },
     {
       "id": "achira",
@@ -70,7 +112,14 @@
         "en": "over there (polite form of あそこ)",
         "vi": "phía kia, chỗ kia (lịch sự)"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "あちらは トイレです。",
+        "kana": "あちらは トイレです。",
+        "translation": {
+          "vi": "Phía kia là nhà vệ sinh."
+        }
+      }
     },
     {
       "id": "dochira",
@@ -80,7 +129,14 @@
         "en": "where (polite form of どこ)",
         "vi": "phía nào, chỗ nào (lịch sự)"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "エレベーターは どちらですか。",
+        "kana": "エレベーターは どちらですか。",
+        "translation": {
+          "vi": "Thang máy ở phía nào?"
+        }
+      }
     },
     {
       "id": "kyoushitsu",
@@ -90,7 +146,14 @@
         "en": "classroom",
         "vi": "lớp học, phòng học"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ここは 教室[きょうしつ]です。",
+        "kana": "ここは きょうしつです。",
+        "translation": {
+          "vi": "Chỗ này là phòng học."
+        }
+      }
     },
     {
       "id": "shokudou",
@@ -100,7 +163,14 @@
         "en": "dining room",
         "vi": "nhà ăn, căn tin"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "そこは 食堂[しょくどう]ですか。",
+        "kana": "そこは しょくどうですか。",
+        "translation": {
+          "vi": "Chỗ đó là nhà ăn phải không?"
+        }
+      }
     },
     {
       "id": "jimusho",
@@ -110,7 +180,14 @@
         "en": "office",
         "vi": "văn phòng làm việc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "事務所[じむしょ]は どちらですか。",
+        "kana": "じむしょは どちらですか。",
+        "translation": {
+          "vi": "Văn phòng ở phía nào?"
+        }
+      }
     },
     {
       "id": "kaigishitsu",
@@ -120,7 +197,14 @@
         "en": "meeting room",
         "vi": "phòng họp"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "会議室[かいぎしつ]は どこですか。",
+        "kana": "かいぎしつは どこですか。",
+        "translation": {
+          "vi": "Phòng họp ở đâu?"
+        }
+      }
     },
     {
       "id": "uketsuke",
@@ -130,7 +214,14 @@
         "en": "reception",
         "vi": "quầy lễ tân, bàn tiếp đón"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "受付[うけつけ]は あそこです。",
+        "kana": "うけつけは あそこです。",
+        "translation": {
+          "vi": "Quầy lễ tân ở đằng kia."
+        }
+      }
     },
     {
       "id": "robii",
@@ -140,7 +231,14 @@
         "en": "reception, lobby",
         "vi": "đại sảnh, phòng chờ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ロビーは ここです。",
+        "kana": "ロビーは ここです。",
+        "translation": {
+          "vi": "Sảnh ở đây."
+        }
+      }
     },
     {
       "id": "heya",
@@ -150,7 +248,14 @@
         "en": "room",
         "vi": "căn phòng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "そちらは 部屋[へや]ですか。",
+        "kana": "そちらは へやですか。",
+        "translation": {
+          "vi": "Phía đó là căn phòng phải không?"
+        }
+      }
     },
     {
       "id": "toire",
@@ -160,7 +265,14 @@
         "en": "bathroom, toilet",
         "vi": "nhà vệ sinh"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "すみません、トイレは どこですか。",
+        "kana": "すみません、トイレは どこですか。",
+        "translation": {
+          "vi": "Xin lỗi, nhà vệ sinh ở đâu?"
+        }
+      }
     },
     {
       "id": "kaidan",
@@ -170,7 +282,14 @@
         "en": "stairs",
         "vi": "cầu thang bộ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "階段[かいだん]は あちらです。",
+        "kana": "かいだんは あちらです。",
+        "translation": {
+          "vi": "Cầu thang ở phía kia."
+        }
+      }
     },
     {
       "id": "erebeetaa",
@@ -180,7 +299,14 @@
         "en": "lift, elevator",
         "vi": "thang máy"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "エレベーターは どちらですか。",
+        "kana": "エレベーターは どちらですか。",
+        "translation": {
+          "vi": "Thang máy ở phía nào?"
+        }
+      }
     },
     {
       "id": "esukareetaa",
@@ -190,7 +316,14 @@
         "en": "escalator",
         "vi": "thang cuốn"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "エスカレーターは あそこです。",
+        "kana": "エスカレーターは あそこです。",
+        "translation": {
+          "vi": "Thang cuốn ở đằng kia."
+        }
+      }
     },
     {
       "id": "jidouhanbaiki",
@@ -200,7 +333,14 @@
         "en": "vending machine",
         "vi": "máy bán hàng tự động"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "自動販売機[じどうはんばいき]は あそこです。",
+        "kana": "じどうはんばいきは あそこです。",
+        "translation": {
+          "vi": "Máy bán hàng tự động ở đằng kia."
+        }
+      }
     },
     {
       "id": "denwa",
@@ -210,7 +350,14 @@
         "en": "telephone, phone call",
         "vi": "điện thoại, cuộc gọi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "電話[でんわ]は あそこです。",
+        "kana": "でんわは あそこです。",
+        "translation": {
+          "vi": "Điện thoại ở đằng kia."
+        }
+      }
     },
     {
       "id": "okuni",
@@ -220,7 +367,14 @@
         "en": "[your] country, homeland",
         "vi": "đất nước của bạn (lịch sự)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "お 国[くに]は どちらですか。",
+        "kana": "お くには どちらですか。",
+        "translation": {
+          "vi": "Đất nước của bạn là ở đâu?"
+        }
+      }
     },
     {
       "id": "kaisha",
@@ -230,7 +384,14 @@
         "en": "company, firm",
         "vi": "công ty"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "会社[かいしゃ]は どちらですか。",
+        "kana": "かいしゃは どちらですか。",
+        "translation": {
+          "vi": "Anh/chị làm ở công ty nào?"
+        }
+      }
     },
     {
       "id": "uchi",
@@ -240,7 +401,14 @@
         "en": "house, home",
         "vi": "nhà, tổ ấm"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "うちは どこですか。",
+        "kana": "うちは どこですか。",
+        "translation": {
+          "vi": "Nhà ở đâu?"
+        }
+      }
     },
     {
       "id": "kutsu",
@@ -250,7 +418,14 @@
         "en": "shoes",
         "vi": "giày"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "この 靴[くつ]は 誰[だれ]のですか。",
+        "kana": "この くつは だれのですか。",
+        "translation": {
+          "vi": "Đôi giày này là của ai?"
+        }
+      }
     },
     {
       "id": "nekutai",
@@ -260,7 +435,14 @@
         "en": "tie",
         "vi": "cà vạt"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "その ネクタイは イタリアのです。",
+        "kana": "その ネクタイは イタリアのです。",
+        "translation": {
+          "vi": "Cái cà vạt đó là của Ý."
+        }
+      }
     },
     {
       "id": "wain",
@@ -270,7 +452,14 @@
         "en": "wine",
         "vi": "rượu vang"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "これは フランスの ワインです。",
+        "kana": "これは フランスの ワインです。",
+        "translation": {
+          "vi": "Đây là rượu vang Pháp."
+        }
+      }
     },
     {
       "id": "uriba",
@@ -280,7 +469,14 @@
         "en": "department (in a department store)",
         "vi": "quầy bán hàng, nơi bán"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ワイン 売[う]り 場[ば]は どこですか。",
+        "kana": "ワイン うり ばは どこですか。",
+        "translation": {
+          "vi": "Quầy bán rượu vang ở đâu?"
+        }
+      }
     },
     {
       "id": "chika",
@@ -290,7 +486,14 @@
         "en": "basement, underground",
         "vi": "tầng hầm, dưới đất"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "食堂[しょくどう]は 地下[ちか]です。",
+        "kana": "しょくどうは ちかです。",
+        "translation": {
+          "vi": "Nhà ăn ở tầng hầm."
+        }
+      }
     },
     {
       "id": "kai",
@@ -300,7 +503,14 @@
         "en": "~ floor",
         "vi": "tầng (đếm số tầng lầu)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "事務所[じむしょ]は 二階[にかい]です。",
+        "kana": "じむしょは にかいです。",
+        "translation": {
+          "vi": "Văn phòng ở tầng 2."
+        }
+      }
     },
     {
       "id": "nangai",
@@ -310,7 +520,14 @@
         "en": "what floor",
         "vi": "tầng mấy"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "会議室[かいぎしつ]は 何階[なんがい]ですか。",
+        "kana": "かいぎしつは なんがいですか。",
+        "translation": {
+          "vi": "Phòng họp ở tầng mấy?"
+        }
+      }
     },
     {
       "id": "en",
@@ -320,7 +537,14 @@
         "en": "~ yen",
         "vi": "yên (tiền tệ Nhật Bản)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "この 本[ほん]は 五百円[ごひゃくえん]です。",
+        "kana": "この ほんは ごひゃくえんです。",
+        "translation": {
+          "vi": "Quyển sách này giá 500 yên."
+        }
+      }
     },
     {
       "id": "ikura",
@@ -330,7 +554,14 @@
         "en": "how much (money)",
         "vi": "bao nhiêu tiền"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "この ワインは いくらですか。",
+        "kana": "この ワインは いくらですか。",
+        "translation": {
+          "vi": "Chai rượu vang này giá bao nhiêu?"
+        }
+      }
     },
     {
       "id": "hyaku",
@@ -340,7 +571,14 @@
         "en": "hundred",
         "vi": "trăm (100)"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "この 鉛筆[えんぴつ]は 百円[ひゃくえん]です。",
+        "kana": "この えんぴつは ひゃくえんです。",
+        "translation": {
+          "vi": "Cây bút chì này giá 100 yên."
+        }
+      }
     },
     {
       "id": "sen",
@@ -350,7 +588,14 @@
         "en": "thousand",
         "vi": "nghìn (1.000)"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "その 雑誌[ざっし]は 千円[せんえん]です。",
+        "kana": "その ざっしは せんえんです。",
+        "translation": {
+          "vi": "Cuốn tạp chí đó giá 1000 yên."
+        }
+      }
     },
     {
       "id": "man",
@@ -360,7 +605,14 @@
         "en": "ten thousand",
         "vi": "vạn, mười nghìn (10.000)"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "この 鞄[かばん]は 一万円[いちまんえん]です。",
+        "kana": "この かばんは いちまんえんです。",
+        "translation": {
+          "vi": "Cái cặp này giá 1 vạn yên."
+        }
+      }
     },
     {
       "id": "sumimasen",
@@ -370,7 +622,14 @@
         "en": "excuse me",
         "vi": "Xin lỗi / Làm phiền bạn"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "すみません、トイレは どこですか。",
+        "kana": "すみません、トイレは どこですか。",
+        "translation": {
+          "vi": "Xin lỗi, nhà vệ sinh ở đâu?"
+        }
+      }
     },
     {
       "id": "doumo",
@@ -380,7 +639,14 @@
         "en": "thank you",
         "vi": "cảm ơn"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "どうもありがとうございます。",
+        "kana": "どうもありがとうございます。",
+        "translation": {
+          "vi": "Xin cảm ơn rất nhiều."
+        }
+      }
     },
     {
       "id": "irasshaimase",
@@ -390,7 +656,14 @@
         "en": "welcome (greeting customers)",
         "vi": "xin kính chào quý khách"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "いらっしゃいませ。",
+        "kana": "いらっしゃいませ。",
+        "translation": {
+          "vi": "Xin chào quý khách."
+        }
+      }
     },
     {
       "id": "misete-kudasai",
@@ -400,7 +673,14 @@
         "en": "please show me [~]",
         "vi": "Xin hãy cho tôi xem"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "その 時計[とけい]を 見[み]せてください。",
+        "kana": "その とけいを みせてください。",
+        "translation": {
+          "vi": "Hãy cho tôi xem cái đồng hồ đó."
+        }
+      }
     },
     {
       "id": "ja",
@@ -410,7 +690,14 @@
         "en": "well then",
         "vi": "Vậy thì, thế thì"
       },
-      "type": "conjunction"
+      "type": "conjunction",
+      "example": {
+        "jp": "じゃ、これを ください。",
+        "kana": "じゃ、これを ください。",
+        "translation": {
+          "vi": "Thế thì, cho tôi cái này."
+        }
+      }
     },
     {
       "id": "kudasai",
@@ -420,7 +707,14 @@
         "en": "please give me [~]",
         "vi": "xin hãy cho tôi [món đồ]"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "これを ください。",
+        "kana": "これを ください。",
+        "translation": {
+          "vi": "Cho tôi cái này."
+        }
+      }
     }
   ]
 }

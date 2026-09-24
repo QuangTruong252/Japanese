@@ -10,7 +10,14 @@
         "en": "to give (to me)",
         "vi": "cho, tặng [tôi / người thân tôi]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "友達[ともだち]が 私[わたし]に 時計[とけい]を くれました。",
+        "kana": "ともだちが わたしに とけいを くれました。",
+        "translation": {
+          "vi": "Bạn tôi đã tặng cho tôi một chiếc đồng hồ."
+        }
+      }
     },
     {
       "id": "naoshimasu",
@@ -20,7 +27,14 @@
         "en": "to repair, to correct",
         "vi": "sửa chữa"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "父[ちち]は 私[わたし]の 自転車[じてんしゃ]を 直[なお]して くれました。",
+        "kana": "ちちは わたしの じてんしゃを なおして くれました。",
+        "translation": {
+          "vi": "Bố đã sửa xe đạp giúp tôi."
+        }
+      }
     },
     {
       "id": "tsurete-ikimasu",
@@ -30,7 +44,14 @@
         "en": "to take (someone)",
         "vi": "dẫn [ai đó] đi"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "明日[あした] 妹[いもうと]を 動物園[どうぶつえん]へ 連[つ]れて 行[い]きます。",
+        "kana": "あした いもうとを どうぶつえんへ つれて いきます。",
+        "translation": {
+          "vi": "Ngày mai tôi sẽ dẫn em gái đi vườn thú."
+        }
+      }
     },
     {
       "id": "tsurete-kimasu",
@@ -40,7 +61,14 @@
         "en": "to bring (someone)",
         "vi": "dẫn [ai đó] đến"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "パーティーに 友達[ともだち]を 連[つ]れて 来[き]ても いいですか。",
+        "kana": "パーティーに ともだちを つれて きても いいですか。",
+        "translation": {
+          "vi": "Tôi dẫn bạn đến bữa tiệc có được không?"
+        }
+      }
     },
     {
       "id": "okurimasu-persona",
@@ -50,7 +78,14 @@
         "en": "to accompany [someone]",
         "vi": "tiễn, đưa [ai đó] về"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "私[わたし]は 車[くるま]で 先生[せんせい]を 駅[えき]まで 送[おく]ります。",
+        "kana": "わたしは くるまで せんせいを えきまで おくります。",
+        "translation": {
+          "vi": "Tôi sẽ đưa thầy giáo đến ga bằng xe ô tô."
+        }
+      }
     },
     {
       "id": "shoukai-shimasu",
@@ -60,7 +95,14 @@
         "en": "to introduce (someone)",
         "vi": "giới thiệu [ai đó]"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "あなたに 友達[ともだち]を 紹介[しょうかい]します。",
+        "kana": "あなたに ともだちを しょうかいします。",
+        "translation": {
+          "vi": "Tôi sẽ giới thiệu một người bạn cho bạn."
+        }
+      }
     },
     {
       "id": "annai-shimasu",
@@ -70,7 +112,14 @@
         "en": "to guide, to give directions",
         "vi": "hướng dẫn, chỉ đường"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "京都[きょうと]を 案内[あんない]して あげます。",
+        "kana": "きょうとを あんないして あげます。",
+        "translation": {
+          "vi": "Tôi sẽ hướng dẫn tham quan Kyoto cho bạn."
+        }
+      }
     },
     {
       "id": "setsumei-shimasu",
@@ -80,7 +129,14 @@
         "en": "to explain",
         "vi": "giải thích, thuyết minh"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "この 機械[きかい]の 使[つか]い方[かた]を 説明[せつめい]して もらいました。",
+        "kana": "この きかいの つかいかたを せつめいして もらいました。",
+        "translation": {
+          "vi": "Tôi đã được giải thích cách sử dụng của cái máy này."
+        }
+      }
     },
     {
       "id": "ojiisan",
@@ -90,7 +146,14 @@
         "en": "grandfather, elderly man",
         "vi": "ông, cụ ông (của người khác)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの おじいさんに 道[みち]を 教[おし]えて あげました。",
+        "kana": "あの おじいさんに みちを おしえて あげました。",
+        "translation": {
+          "vi": "Tôi đã chỉ đường giúp cho cụ ông kia."
+        }
+      }
     },
     {
       "id": "obaasan",
@@ -100,7 +163,14 @@
         "en": "grandmother, elderly woman",
         "vi": "bà, cụ bà (của người khác)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "おばあさんは 毎日[まいにち] 公園[こうえん]を 散歩[さんぽ]します。",
+        "kana": "おばあさんは まいにち こうえんを さんぽします。",
+        "translation": {
+          "vi": "Cụ bà đi dạo công viên mỗi ngày."
+        }
+      }
     },
     {
       "id": "junbi",
@@ -110,7 +180,14 @@
         "en": "preparation",
         "vi": "sự chuẩn bị"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "友達[ともだち]が 旅行[りょこう]の 準備[じゅんび]を 手伝[てつだ]って くれました。",
+        "kana": "ともだちが りょこうの じゅんびを てつだって くれました。",
+        "translation": {
+          "vi": "Bạn bè đã giúp tôi chuẩn bị cho chuyến du lịch."
+        }
+      }
     },
     {
       "id": "hikkoshi",
@@ -120,7 +197,14 @@
         "en": "moving house",
         "vi": "sự chuyển nhà"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "友達[ともだち]に 引[ひ]っ 越[こ]しを 手伝[てつだ]って もらいました。",
+        "kana": "ともだちに ひっ こしを てつだって もらいました。",
+        "translation": {
+          "vi": "Tôi đã được bạn bè giúp đỡ việc chuyển nhà."
+        }
+      }
     },
     {
       "id": "okashi",
@@ -130,7 +214,14 @@
         "en": "sweet, candy",
         "vi": "bánh kẹo, đồ ngọt"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "母[はは]が おいしい お 菓子[かし]を くれました。",
+        "kana": "ははが おいしい お かしを くれました。",
+        "translation": {
+          "vi": "Mẹ đã cho tôi bánh kẹo ngon."
+        }
+      }
     },
     {
       "id": "hoomusutei",
@@ -140,7 +231,14 @@
         "en": "homestay",
         "vi": "ở cùng gia đình bản xứ (homestay)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "日本[にほん]で ホームステイを した ことが あります。",
+        "kana": "にほんで ホームステイを した ことが あります。",
+        "translation": {
+          "vi": "Tôi đã từng ở homestay tại Nhật Bản."
+        }
+      }
     },
     {
       "id": "zenbu",
@@ -150,7 +248,14 @@
         "en": "everything, all",
         "vi": "toàn bộ, tất cả"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "宿題[しゅくだい]は 全部[ぜんぶ] 終[お]わりました。",
+        "kana": "しゅくだいは ぜんぶ おわりました。",
+        "translation": {
+          "vi": "Tôi đã làm xong toàn bộ bài tập về nhà."
+        }
+      }
     },
     {
       "id": "jibunde",
@@ -160,7 +265,14 @@
         "en": "by oneself",
         "vi": "tự mình"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "自分[じぶん]で 料理[りょうり]を 作[つく]りました。",
+        "kana": "じぶんで りょうりを つくりました。",
+        "translation": {
+          "vi": "Tôi đã tự mình nấu ăn."
+        }
+      }
     },
     {
       "id": "hokani",
@@ -170,7 +282,14 @@
         "en": "besides, apart from that",
         "vi": "ngoài ra, bên cạnh đó"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "ほかに 誰[だれ]が 行[い]きますか。",
+        "kana": "ほかに だれが いきますか。",
+        "translation": {
+          "vi": "Ngoài ra thì còn ai đi nữa không?"
+        }
+      }
     },
     {
       "id": "haha-no-hi",
@@ -180,7 +299,14 @@
         "en": "Mother's Day",
         "vi": "Ngày của Mẹ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "母[はは]の 日[ひ]に 花[はな]を 買[か]って あげました。",
+        "kana": "ははの ひに はなを かって あげました。",
+        "translation": {
+          "vi": "Vào Ngày của Mẹ, tôi đã mua hoa tặng mẹ."
+        }
+      }
     }
   ]
 }

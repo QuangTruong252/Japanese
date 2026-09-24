@@ -10,7 +10,14 @@
         "en": "easy, simple",
         "vi": "đơn giản, dễ"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "この テストは 簡単[かんたん]でした。",
+        "kana": "この テストは かんたんでした。",
+        "translation": {
+          "vi": "Bài kiểm tra này đã rất dễ."
+        }
+      }
     },
     {
       "id": "chikai",
@@ -20,7 +27,14 @@
         "en": "nearby",
         "vi": "gần"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "私[わたし]の 家[いえ]は 駅[えき]から 近[ちか]いです。",
+        "kana": "わたしの いえは えきから ちかいです。",
+        "translation": {
+          "vi": "Nhà của tôi thì gần nhà ga."
+        }
+      }
     },
     {
       "id": "tooi",
@@ -30,7 +44,14 @@
         "en": "distant, far",
         "vi": "xa"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "大学[だいがく]は 遠[とお]かったです。",
+        "kana": "だいがくは とおかったです。",
+        "translation": {
+          "vi": "Trường đại học đã rất xa."
+        }
+      }
     },
     {
       "id": "hayai",
@@ -40,7 +61,14 @@
         "en": "fast, early",
         "vi": "sớm, nhanh"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "新幹線[しんかんせん]は 速[はや]いです。",
+        "kana": "しんかんせんは はやいです。",
+        "translation": {
+          "vi": "Tàu Shinkansen thì nhanh."
+        }
+      }
     },
     {
       "id": "osoi",
@@ -50,7 +78,14 @@
         "en": "late, slow",
         "vi": "chậm, muộn"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "バスは 遅[おそ]かったです。",
+        "kana": "バスは おそかったです。",
+        "translation": {
+          "vi": "Xe buýt đã rất chậm."
+        }
+      }
     },
     {
       "id": "ooi",
@@ -60,7 +95,14 @@
         "en": "many [people], a lot",
         "vi": "nhiều (người, vật)"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "日曜日[にちようび]は 人[ひと]が 多[おお]いです。",
+        "kana": "にちようびは ひとが おおいです。",
+        "translation": {
+          "vi": "Chủ nhật thì đông người."
+        }
+      }
     },
     {
       "id": "sukunai",
@@ -70,7 +112,14 @@
         "en": "few [people], little",
         "vi": "ít (người, vật)"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "今日[きょう]は 学生[がくせい]が 少[すく]ないです。",
+        "kana": "きょうは がくせいが すくないです。",
+        "translation": {
+          "vi": "Hôm nay thì ít học sinh."
+        }
+      }
     },
     {
       "id": "atatakai",
@@ -80,7 +129,14 @@
         "en": "warm, mild",
         "vi": "ấm áp (thời tiết, đồ vật)"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "春[はる]は 暖[あたた]かいです。",
+        "kana": "はるは あたたかいです。",
+        "translation": {
+          "vi": "Mùa xuân thì ấm áp."
+        }
+      }
     },
     {
       "id": "suzushii",
@@ -90,7 +146,14 @@
         "en": "fresh",
         "vi": "mát mẻ (thời tiết)"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "秋[あき]は 涼[すず]しいです。",
+        "kana": "あきは すずしいです。",
+        "translation": {
+          "vi": "Mùa thu thì mát mẻ."
+        }
+      }
     },
     {
       "id": "amai",
@@ -100,7 +163,14 @@
         "en": "sweet",
         "vi": "ngọt"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "この ケーキは 甘[あま]いです。",
+        "kana": "この ケーキは あまいです。",
+        "translation": {
+          "vi": "Cái bánh này ngọt."
+        }
+      }
     },
     {
       "id": "karai",
@@ -110,7 +180,14 @@
         "en": "spicy",
         "vi": "cay"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "タイの 料理[りょうり]は 辛[から]いです。",
+        "kana": "タイの りょうりは からいです。",
+        "translation": {
+          "vi": "Món ăn Thái Lan thì cay."
+        }
+      }
     },
     {
       "id": "omoi",
@@ -120,7 +197,14 @@
         "en": "heavy",
         "vi": "nặng"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "この かばんは 重[おも]いです。",
+        "kana": "この かばんは おもいです。",
+        "translation": {
+          "vi": "Cái cặp này nặng."
+        }
+      }
     },
     {
       "id": "karui",
@@ -130,7 +214,14 @@
         "en": "light (in weight)",
         "vi": "nhẹ"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "この パソコンは 軽[かる]いです。",
+        "kana": "この パソコンは かるいです。",
+        "translation": {
+          "vi": "Cái máy tính này nhẹ."
+        }
+      }
     },
     {
       "id": "ii-preferir",
@@ -140,7 +231,14 @@
         "en": "to prefer [coffee]",
         "vi": "thích hơn, chọn... hơn [cà phê]"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "私[わたし]は コーヒーが いいです。",
+        "kana": "わたしは コーヒーが いいです。",
+        "translation": {
+          "vi": "Tôi chọn cà phê."
+        }
+      }
     },
     {
       "id": "kisetsu",
@@ -150,7 +248,14 @@
         "en": "season",
         "vi": "mùa (trong năm)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "季節[きせつ]の 中[なか]で 春[はる]が いちばん 好[す]きです。",
+        "kana": "きせつの なかで はるが いちばん すきです。",
+        "translation": {
+          "vi": "Trong các mùa, tôi thích mùa xuân nhất."
+        }
+      }
     },
     {
       "id": "haru",
@@ -160,7 +265,14 @@
         "en": "spring",
         "vi": "mùa xuân"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "春[はる]が 好[す]きです。",
+        "kana": "はるが すきです。",
+        "translation": {
+          "vi": "Tôi thích mùa xuân."
+        }
+      }
     },
     {
       "id": "natsu",
@@ -170,7 +282,14 @@
         "en": "summer",
         "vi": "mùa hè"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "夏[なつ]は 暑[あつ]いです。",
+        "kana": "なつは あついです。",
+        "translation": {
+          "vi": "Mùa hè thì nóng."
+        }
+      }
     },
     {
       "id": "aki",
@@ -180,7 +299,14 @@
         "en": "autumn",
         "vi": "mùa thu"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "秋[あき]は 涼[すず]しいです。",
+        "kana": "あきは すずしいです。",
+        "translation": {
+          "vi": "Mùa thu thì mát mẻ."
+        }
+      }
     },
     {
       "id": "fuyu",
@@ -190,7 +316,14 @@
         "en": "winter",
         "vi": "mùa đông"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "冬[ふゆ]は 寒[さむ]いです。",
+        "kana": "ふゆは さむいです。",
+        "translation": {
+          "vi": "Mùa đông thì lạnh."
+        }
+      }
     },
     {
       "id": "tenki",
@@ -200,7 +333,14 @@
         "en": "weather",
         "vi": "thời tiết"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "昨日[きのう]は 天気[てんき]が よかったです。",
+        "kana": "きのうは てんきが よかったです。",
+        "translation": {
+          "vi": "Hôm qua thời tiết đã rất đẹp."
+        }
+      }
     },
     {
       "id": "ame",
@@ -210,7 +350,14 @@
         "en": "rain",
         "vi": "mưa"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "昨日[きのう]は 雨[あめ]でした。",
+        "kana": "きのうは あめでした。",
+        "translation": {
+          "vi": "Hôm qua trời đã mưa."
+        }
+      }
     },
     {
       "id": "yuki",
@@ -220,7 +367,14 @@
         "en": "snow",
         "vi": "tuyết"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "雪[ゆき]が きれいです。",
+        "kana": "ゆきが きれいです。",
+        "translation": {
+          "vi": "Tuyết đẹp."
+        }
+      }
     },
     {
       "id": "kumori",
@@ -230,7 +384,14 @@
         "en": "cloudy",
         "vi": "trời nhiều mây, u ám"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "今日[きょう]は 曇[くも]りです。",
+        "kana": "きょうは くもりです。",
+        "translation": {
+          "vi": "Hôm nay trời nhiều mây."
+        }
+      }
     },
     {
       "id": "hoteru",
@@ -240,7 +401,14 @@
         "en": "hotel",
         "vi": "khách sạn"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "この ホテルは きれいでした。",
+        "kana": "この ホテルは きれいでした。",
+        "translation": {
+          "vi": "Khách sạn này đã rất sạch đẹp."
+        }
+      }
     },
     {
       "id": "kuukou",
@@ -250,7 +418,14 @@
         "en": "airport",
         "vi": "sân bay"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "空港[くうこう]は 遠[とお]いです。",
+        "kana": "くうこうは とおいです。",
+        "translation": {
+          "vi": "Sân bay thì xa."
+        }
+      }
     },
     {
       "id": "umi",
@@ -260,7 +435,14 @@
         "en": "sea, ocean",
         "vi": "biển, đại dương"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "夏[なつ] 海[うみ]へ 行[い]きます。",
+        "kana": "なつ うみへ いきます。",
+        "translation": {
+          "vi": "Mùa hè tôi đi biển."
+        }
+      }
     },
     {
       "id": "sekai",
@@ -270,7 +452,14 @@
         "en": "world",
         "vi": "thế giới"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "世界[せかい]の 中[なか]で どこが いちばん 好[す]きですか。",
+        "kana": "せかいの なかで どこが いちばん すきですか。",
+        "translation": {
+          "vi": "Trên thế giới, bạn thích nơi nào nhất?"
+        }
+      }
     },
     {
       "id": "paatii",
@@ -280,7 +469,14 @@
         "en": "party",
         "vi": "bữa tiệc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "昨日[きのう] パーティーを しました。",
+        "kana": "きのう パーティーを しました。",
+        "translation": {
+          "vi": "Hôm qua tôi đã tổ chức tiệc."
+        }
+      }
     },
     {
       "id": "omatsuri",
@@ -290,7 +486,14 @@
         "en": "festival, fair",
         "vi": "lễ hội"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "お 祭[まつ]りは にぎやかでした。",
+        "kana": "おまつりは にぎやかでした。",
+        "translation": {
+          "vi": "Lễ hội đã rất nhộn nhịp."
+        }
+      }
     },
     {
       "id": "sukiyaki",
@@ -300,7 +503,14 @@
         "en": "sukiyaki (beef and vegetable hotpot)",
         "vi": "món lẩu Sukiyaki"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "すき焼[や]きは おいしいです。",
+        "kana": "すきやきは おいしいです。",
+        "translation": {
+          "vi": "Lẩu Sukiyaki thì ngon."
+        }
+      }
     },
     {
       "id": "sashimi",
@@ -310,7 +520,14 @@
         "en": "sashimi (sliced raw fish)",
         "vi": "món gỏi cá sống Sashimi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "刺身[さしみ]を 食[た]べます。",
+        "kana": "さしみを たべます。",
+        "translation": {
+          "vi": "Tôi ăn Sashimi."
+        }
+      }
     },
     {
       "id": "osushi",
@@ -320,7 +537,14 @@
         "en": "sushi",
         "vi": "món sushi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "日本[にほん]の 料理[りょうり]の 中[なか]で おすしが いちばん 好[す]きです。",
+        "kana": "にほんの りょうりの なかで おすしが いちばん すきです。",
+        "translation": {
+          "vi": "Trong các món ăn Nhật Bản, tôi thích sushi nhất."
+        }
+      }
     },
     {
       "id": "tenpura",
@@ -330,7 +554,14 @@
         "en": "tempura",
         "vi": "món tẩm bột chiên Tempura"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "てんぷらを 食[た]べました。",
+        "kana": "てんぷらを たべました。",
+        "translation": {
+          "vi": "Tôi đã ăn Tempura."
+        }
+      }
     },
     {
       "id": "butaniku",
@@ -340,7 +571,14 @@
         "en": "pork",
         "vi": "thịt lợn, thịt heo"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "豚肉[ぶたにく]と 牛肉[ぎゅうにく]と どちらが 好[す]きですか。",
+        "kana": "ぶたにくと ぎゅうにくと どちらが すきですか。",
+        "translation": {
+          "vi": "Thịt lợn và thịt bò, bạn thích loại nào hơn?"
+        }
+      }
     },
     {
       "id": "toriniku",
@@ -350,7 +588,14 @@
         "en": "chicken",
         "vi": "thịt gà"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "とり肉[にく]が 好[す]きです。",
+        "kana": "とりにくが すきです。",
+        "translation": {
+          "vi": "Tôi thích thịt gà."
+        }
+      }
     },
     {
       "id": "gyuuniku",
@@ -360,7 +605,14 @@
         "en": "beef",
         "vi": "thịt bò"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "牛肉[ぎゅうにく]は 高[たか]いです。",
+        "kana": "ぎゅうにくは たかいです。",
+        "translation": {
+          "vi": "Thịt bò thì đắt."
+        }
+      }
     },
     {
       "id": "remon",
@@ -370,7 +622,14 @@
         "en": "lemon",
         "vi": "quả chanh tây"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "レモンは すっぱいです。",
+        "kana": "レモンは すっぱいです。",
+        "translation": {
+          "vi": "Chanh thì chua."
+        }
+      }
     },
     {
       "id": "ikebana",
@@ -380,7 +639,14 @@
         "en": "flower arrangement",
         "vi": "nghệ thuật cắm hoa Ikebana"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "生[い]け花[ばな]を 習[なら]います。",
+        "kana": "いけばなを ならいます。",
+        "translation": {
+          "vi": "Tôi học cắm hoa Ikebana."
+        }
+      }
     },
     {
       "id": "momiji",
@@ -390,7 +656,14 @@
         "en": "maple, autumn leaves",
         "vi": "lá đỏ phong mùa thu"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "紅葉[もみじ]が きれいです。",
+        "kana": "もみじが きれいです。",
+        "translation": {
+          "vi": "Lá phong đỏ rất đẹp."
+        }
+      }
     },
     {
       "id": "dochira-cual",
@@ -400,7 +673,14 @@
         "en": "which one (of two)",
         "vi": "cái nào, bên nào (trong 2 cái)"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "コーヒーと 紅茶[こうちゃ]と どちらが いいですか。",
+        "kana": "コーヒーと こうちゃと どちらが いいですか。",
+        "translation": {
+          "vi": "Cà phê và hồng trà, bạn thích loại nào hơn?"
+        }
+      }
     },
     {
       "id": "dochiramo",
@@ -410,7 +690,14 @@
         "en": "both",
         "vi": "cả hai bên, cả hai cái"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "どちらも 好[す]きです。",
+        "kana": "どちらも すきです。",
+        "translation": {
+          "vi": "Tôi thích cả hai."
+        }
+      }
     },
     {
       "id": "ichiban",
@@ -420,7 +707,14 @@
         "en": "the most, the first",
         "vi": "nhất, đứng đầu"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "スポーツの 中[なか]で サッカーが いちばん 好[す]きです。",
+        "kana": "スポーツの なかで サッカーが いちばん すきです。",
+        "translation": {
+          "vi": "Trong các môn thể thao, tôi thích bóng đá nhất."
+        }
+      }
     },
     {
       "id": "zutto",
@@ -430,7 +724,14 @@
         "en": "much more",
         "vi": "hơn hẳn, suốt"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "日本[にほん]は ベトナムより ずっと 寒[さむ]いです。",
+        "kana": "にほんは ベトナムより ずっと さむいです。",
+        "translation": {
+          "vi": "Nhật Bản lạnh hơn Việt Nam nhiều."
+        }
+      }
     },
     {
       "id": "hajimete",
@@ -440,7 +741,14 @@
         "en": "for the first time",
         "vi": "lần đầu tiên"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "初[はじ]めて 日本[にほん]へ 行[い]きました。",
+        "kana": "はじめて にほんへ いきました。",
+        "translation": {
+          "vi": "Tôi đã đi Nhật Bản lần đầu tiên."
+        }
+      }
     },
     {
       "id": "tadaima",
@@ -450,7 +758,14 @@
         "en": "I'm home",
         "vi": "Tôi đã về rồi đây! (chào khi về đến nhà)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「ただいま。」「お帰[かえ]りなさい。」",
+        "kana": "「ただいま。」「おかえりなさい。」",
+        "translation": {
+          "vi": "\"Tôi đã về đây.\" \"Bạn đã về đấy à.\""
+        }
+      }
     },
     {
       "id": "okaerinasai",
@@ -460,7 +775,14 @@
         "en": "welcome back",
         "vi": "Bạn đã về đấy à! (chào người về nhà)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「お帰[かえ]りなさい。」",
+        "kana": "「おかえりなさい。」",
+        "translation": {
+          "vi": "\"Bạn đã về đấy à.\""
+        }
+      }
     },
     {
       "id": "waa-sugoi",
@@ -470,7 +792,14 @@
         "en": "wow, what a crowd!",
         "vi": "ồ, đông người thật đấy nhỉ!"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "わあ、すごい 人[ひと]ですね。",
+        "kana": "わあ、すごい ひとですね。",
+        "translation": {
+          "vi": "Ồ, đông người thật đấy nhỉ."
+        }
+      }
     },
     {
       "id": "tsukaremashita",
@@ -480,7 +809,14 @@
         "en": "I'm tired",
         "vi": "Tôi mệt rồi"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "とても 疲[つか]れました。",
+        "kana": "とても つかれました。",
+        "translation": {
+          "vi": "Tôi đã rất mệt."
+        }
+      }
     },
     {
       "id": "gionmatsuri",
@@ -490,7 +826,14 @@
         "en": "Gion Festival (Kyoto)",
         "vi": "Lễ hội Gion (Kyoto)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "祇園祭[ぎおんまつり]は 有名[ゆうめい]な お祭[まつ]りです。",
+        "kana": "ぎおんまつりは ゆうめいな おまつりです。",
+        "translation": {
+          "vi": "Lễ hội Gion là một lễ hội nổi tiếng."
+        }
+      }
     },
     {
       "id": "honkon",
@@ -500,7 +843,14 @@
         "en": "Hong Kong",
         "vi": "Hồng Kông"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ホンコンへ 行[い]きました。",
+        "kana": "ホンコンへ いきました。",
+        "translation": {
+          "vi": "Tôi đã đi Hồng Kông."
+        }
+      }
     },
     {
       "id": "shingapooru",
@@ -510,7 +860,14 @@
         "en": "Singapore",
         "vi": "Singapore"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "シンガポールは きれいな 町[まち]です。",
+        "kana": "シンガポールは きれいな まちです。",
+        "translation": {
+          "vi": "Singapore là thành phố sạch đẹp."
+        }
+      }
     }
   ]
 }

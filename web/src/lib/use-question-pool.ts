@@ -13,14 +13,12 @@ import type { QuestionItem } from '../types/index.ts';
 interface Pool {
   key: string;
   questions: QuestionItem[];
-  unverifiedLessons: number[];
 }
 
-const EMPTY_POOL: Pool = { key: '', questions: [], unverifiedLessons: [] };
+const EMPTY_POOL: Pool = { key: '', questions: [] };
 
 export function useQuestionPool(lessons: number[]): {
   questions: QuestionItem[];
-  unverifiedLessons: number[];
   loading: boolean;
 } {
   // Một state duy nhất mang theo key của bể câu đang giữ. `loading` SUY RA từ việc key đó đã
@@ -43,9 +41,6 @@ export function useQuestionPool(lessons: number[]): {
       setPool({
         key,
         questions: generateQuestions(lessonData, vocabMap),
-        unverifiedLessons: lessonData
-          .filter((l) => (l.verification ?? 'unverified') === 'unverified')
-          .map((l) => l.number),
       });
     });
     return () => {
@@ -55,7 +50,6 @@ export function useQuestionPool(lessons: number[]): {
 
   return {
     questions: pool.questions,
-    unverifiedLessons: pool.unverifiedLessons,
     loading: pool.key !== key,
   };
 }

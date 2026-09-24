@@ -45,8 +45,8 @@ cáo nghiệm thu. Tại lần đối chiếu 18/09/2026:
 - Có code màn học N5, năm dạng luyện tập, lịch ôn FSRS và màn ôn/điểm yếu.
   SPEC-04 có báo cáo nghiệm thu trước đó; SPEC-05 có code nhưng chưa có handoff
   nghiệm thu toàn bộ. Xem chỉ mục để phân biệt phạm vi đã kiểm tra.
-- Dữ liệu 25 bài N5 đang mang trạng thái chưa xác minh; có dữ liệu không đồng
-  nghĩa đã đối chiếu sách. Không gọi nội dung là “chuẩn sách đã kiểm chứng”.
+- Dữ liệu 25 bài N5 là nội dung tự biên soạn cho học cá nhân, chưa đối chiếu sách;
+  chấp nhận sai sót nhỏ và sửa khi phát hiện.
 - Supabase có client/server helper; chưa có luồng sync hoàn chỉnh. Shadowing,
   import audio và vỏ PWA chưa được triển khai. N4 là mục tiêu biên tập sau.
 - Phiên bản lấy từ package/lockfile. Dexie giữ dữ liệu client; Zustand chỉ giữ
@@ -101,7 +101,7 @@ cần tên truy cập “MaiPace”; nếu là liên kết về đầu trang, t�
 
 ## Product Principles
 
-1. Nội dung có nguồn truy vết; chưa đối chiếu thì ghi rõ chưa xác minh.
+1. Nội dung đủ đúng để tự học N5/N4; không bắt buộc đối chiếu sách, sửa lỗi khi phát hiện.
 2. Bảo vệ dữ liệu học; không đánh đổi tính toàn vẹn lấy đường triển khai ngắn hơn.
 3. Mỗi màn hình giúp người học chọn hành động tiếp theo, không trang trí gây nhiễu.
 4. Tái sử dụng code và thiết kế hiện có, chỉ thêm thứ phục vụ nhu cầu đang làm.

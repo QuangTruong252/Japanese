@@ -10,7 +10,14 @@
         "en": "to think, to consider",
         "vi": "suy nghĩ, nghĩ ngợi"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "一人[ひとり]で よく 考[かんが]えます。",
+        "kana": "ひとりで よく かんがえます。",
+        "translation": {
+          "vi": "Tôi sẽ tự mình suy nghĩ kỹ."
+        }
+      }
     },
     {
       "id": "tsukimasu",
@@ -20,7 +27,14 @@
         "en": "to arrive",
         "vi": "đến, tới [ga, nơi đến]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "駅[えき]に 着[つ]いたら、電話[でんわ]を して ください。",
+        "kana": "えきに ついたら、でんわを して ください。",
+        "translation": {
+          "vi": "Khi đến nhà ga thì hãy gọi điện cho tôi."
+        }
+      }
     },
     {
       "id": "toshi-o-torimasu",
@@ -30,7 +44,14 @@
         "en": "to grow old",
         "vi": "thêm tuổi, già đi"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "年[とし]を 取[と]っても、働[はたら]きたいです。",
+        "kana": "としを とっても、はたらきたいです。",
+        "translation": {
+          "vi": "Dù già đi, tôi vẫn muốn làm việc."
+        }
+      }
     },
     {
       "id": "tarimasu",
@@ -40,7 +61,14 @@
         "en": "to be enough",
         "vi": "đủ, đầy đủ"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "お金[かね]が 足[た]りなかったら、銀行[ぎんこう]で 借[か]ります。",
+        "kana": "おかねが たりなかったら、ぎんこうで かります。",
+        "translation": {
+          "vi": "Nếu không đủ tiền thì tôi sẽ mượn ở ngân hàng."
+        }
+      }
     },
     {
       "id": "inaka",
@@ -50,7 +78,14 @@
         "en": "countryside, hometown",
         "vi": "quê hương, nông thôn"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "休[やす]みに なったら、田舎[いなか]へ 帰[かえ]ります。",
+        "kana": "やすみに なったら、いなかへ かえります。",
+        "translation": {
+          "vi": "Nếu được nghỉ thì tôi sẽ về quê."
+        }
+      }
     },
     {
       "id": "chansu",
@@ -60,7 +95,14 @@
         "en": "opportunity",
         "vi": "cơ hội (chance)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "チャンスが あったら、イギリスへ 行[い]きたいです。",
+        "kana": "チャンスが あったら、イギリスへ いきたいです。",
+        "translation": {
+          "vi": "Nếu có cơ hội, tôi muốn đi Anh."
+        }
+      }
     },
     {
       "id": "oku",
@@ -70,7 +112,14 @@
         "en": "hundred million",
         "vi": "trăm triệu (100.000.000)"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "一億[いちおく]円[えん] あったら、家[いえ]を 買[か]います。",
+        "kana": "いちおくえん あったら、いえを かいます。",
+        "translation": {
+          "vi": "Nếu có một trăm triệu yên, tôi sẽ mua nhà."
+        }
+      }
     },
     {
       "id": "moshi",
@@ -80,7 +129,14 @@
         "en": "if ~",
         "vi": "nếu (đi kèm ~tara)"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "もし 暇[ひま]だったら、手伝[てつだ]って ください。",
+        "kana": "もし ひまだったら、てつだって ください。",
+        "translation": {
+          "vi": "Giả sử nếu rảnh rỗi thì xin hãy giúp tôi."
+        }
+      }
     },
     {
       "id": "imi",
@@ -90,7 +146,14 @@
         "en": "meaning, sense",
         "vi": "ý nghĩa"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "辞書[じしょ]を 見[み]ても、意味[いみ]が わかりません。",
+        "kana": "じしょを みても、いみが わかりません。",
+        "translation": {
+          "vi": "Dù có tra từ điển cũng không hiểu ý nghĩa."
+        }
+      }
     },
     {
       "id": "moshimoshi",
@@ -100,7 +163,14 @@
         "en": "hello? (on the phone)",
         "vi": "a-lô (nghe điện thoại)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「もしもし、山田[やまだ]さんですか。」",
+        "kana": "「もしもし、やまださんですか。」",
+        "translation": {
+          "vi": "“A lô, anh Yamada phải không?”"
+        }
+      }
     },
     {
       "id": "tenkin",
@@ -110,7 +180,14 @@
         "en": "transfer (at work)",
         "vi": "việc chuyển nơi công tác"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "東京[とうきょう]へ 転勤[てんきん]したら、寂[さび]しく なります。",
+        "kana": "とうきょうへ てんきんしたら、さびしく なります。",
+        "translation": {
+          "vi": "Nếu chuyển công tác đến Tokyo thì tôi sẽ thấy buồn."
+        }
+      }
     },
     {
       "id": "koto",
@@ -120,7 +197,14 @@
         "en": "thing, matter",
         "vi": "việc, điều, sự việc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "いろいろな ことを 勉強[べんきょう]しました。",
+        "kana": "いろいろな ことを べんきょうしました。",
+        "translation": {
+          "vi": "Tôi đã học được nhiều điều."
+        }
+      }
     },
     {
       "id": "hima-tiempo",
@@ -130,7 +214,14 @@
         "en": "free time",
         "vi": "thời gian rảnh rỗi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "暇[ひま]だったら、遊[あそ]びに 来[き]て ください。",
+        "kana": "ひまだったら、あそびに きて ください。",
+        "translation": {
+          "vi": "Nếu rảnh thì xin hãy đến chơi."
+        }
+      }
     },
     {
       "id": "osewa-ni-narimashita",
@@ -140,7 +231,14 @@
         "en": "thank you for everything",
         "vi": "cảm ơn vì đã luôn giúp đỡ tôi suốt thời gian qua"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "いろいろ お 世話[せわ]になりました。",
+        "kana": "いろいろ お せわになりました。",
+        "translation": {
+          "vi": "Cảm ơn vì đã luôn giúp đỡ tôi suốt thời gian qua."
+        }
+      }
     },
     {
       "id": "ganbarimasu",
@@ -150,7 +248,14 @@
         "en": "to do one's best",
         "vi": "tôi sẽ cố gắng hết sức!"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "明日[あした]からも 頑張[がんば]ります。",
+        "kana": "あしたからも がんばります。",
+        "translation": {
+          "vi": "Từ ngày mai tôi cũng sẽ cố gắng!"
+        }
+      }
     },
     {
       "id": "douzo-ogenkide",
@@ -160,7 +265,14 @@
         "en": "take care (on parting)",
         "vi": "chúc bạn luôn mạnh khỏe / bảo trọng nhé!"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "どうぞお 元気[げんき]で。",
+        "kana": "どうぞお げんきで。",
+        "translation": {
+          "vi": "Chúc bạn luôn mạnh khỏe."
+        }
+      }
     },
     {
       "id": "betonamu",
@@ -170,7 +282,14 @@
         "en": "Vietnam",
         "vi": "nước Việt Nam"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ベトナムに 帰[かえ]っても、日本語[にほんご]を 勉強[べんきょう]します。",
+        "kana": "ベトナムに かえっても、にほんごを べんきょうします。",
+        "translation": {
+          "vi": "Dù về Việt Nam, tôi vẫn sẽ học tiếng Nhật."
+        }
+      }
     }
   ]
 }

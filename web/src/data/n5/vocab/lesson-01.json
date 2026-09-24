@@ -10,7 +10,14 @@
         "en": "I",
         "vi": "tôi"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "私[わたし]は 学生[がくせい]です。",
+        "kana": "わたしは がくせいです。",
+        "translation": {
+          "vi": "Tôi là học sinh."
+        }
+      }
     },
     {
       "id": "anata",
@@ -20,7 +27,14 @@
         "en": "you",
         "vi": "bạn, anh, chị (ngôi thứ hai)"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "あなたは 会社員[かいしゃいん]ですか。",
+        "kana": "あなたは かいしゃいんですか。",
+        "translation": {
+          "vi": "Bạn là nhân viên công ty phải không?"
+        }
+      }
     },
     {
       "id": "ano-hito",
@@ -30,7 +44,14 @@
         "en": "that person, he/she",
         "vi": "người kia, người đó"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "あの 人[ひと]は 誰[だれ]ですか。",
+        "kana": "あの ひとは だれですか。",
+        "translation": {
+          "vi": "Người kia là ai?"
+        }
+      }
     },
     {
       "id": "ano-kata",
@@ -40,7 +61,14 @@
         "en": "that person (polite)",
         "vi": "vị kia (cách nói lịch sự của 'người kia')"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "あの 方[かた]は どなたですか。",
+        "kana": "あの かたは どなたですか。",
+        "translation": {
+          "vi": "Vị kia là ai?"
+        }
+      }
     },
     {
       "id": "san",
@@ -50,7 +78,14 @@
         "en": "Mr, Ms (polite suffix)",
         "vi": "anh, chị, ông, bà (hậu tố xưng hô lịch sự)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "こちらは ミラーさんです。",
+        "kana": "こちらは ミラーさんです。",
+        "translation": {
+          "vi": "Đây là anh Miller."
+        }
+      }
     },
     {
       "id": "chan",
@@ -60,7 +95,14 @@
         "en": "affectionate suffix for children",
         "vi": "bé (hậu tố thân mật gọi trẻ em hoặc bạn bè thân)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "テレサちゃんは 九歳[きゅうさい]です。",
+        "kana": "テレサちゃんは きゅうさいです。",
+        "translation": {
+          "vi": "Bé Teresa 9 tuổi."
+        }
+      }
     },
     {
       "id": "jin",
@@ -70,7 +112,14 @@
         "en": "nationality suffix",
         "vi": "người (hậu tố quốc tịch, ví dụ: người Nhật)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "あの 人[ひと]は アメリカ人[じん]です。",
+        "kana": "あの ひとは アメリカじんです。",
+        "translation": {
+          "vi": "Người kia là người Mỹ."
+        }
+      }
     },
     {
       "id": "sensei",
@@ -80,7 +129,14 @@
         "en": "teacher (when addressing them)",
         "vi": "thầy, cô giáo, bác sĩ (dùng để xưng hô người khác)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "私[わたし]は 先生[せんせい]じゃありません。",
+        "kana": "わたしは せんせいじゃありません。",
+        "translation": {
+          "vi": "Tôi không phải là giáo viên."
+        }
+      }
     },
     {
       "id": "kyoushi",
@@ -90,7 +146,14 @@
         "en": "teacher (profession)",
         "vi": "giáo viên (nghề nghiệp, tự xưng)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "私[わたし]は 教師[きょうし]です。",
+        "kana": "わたしは きょうしです。",
+        "translation": {
+          "vi": "Tôi là giáo viên."
+        }
+      }
     },
     {
       "id": "gakusei",
@@ -100,7 +163,14 @@
         "en": "student",
         "vi": "học sinh, sinh viên"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "私[わたし]は 学生[がくせい]です。",
+        "kana": "わたしは がくせいです。",
+        "translation": {
+          "vi": "Tôi là học sinh."
+        }
+      }
     },
     {
       "id": "kaishain",
@@ -110,7 +180,14 @@
         "en": "company employee",
         "vi": "nhân viên công ty"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 人[ひと]は 会社員[かいしゃいん]です。",
+        "kana": "あの ひとは かいしゃいんです。",
+        "translation": {
+          "vi": "Người kia là nhân viên công ty."
+        }
+      }
     },
     {
       "id": "shain",
@@ -120,7 +197,14 @@
         "en": "employee (of a particular company)",
         "vi": "nhân viên của công ty..."
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "IMCの 社員[しゃいん]です。",
+        "kana": "IMCの しゃいんです。",
+        "translation": {
+          "vi": "Là nhân viên của IMC."
+        }
+      }
     },
     {
       "id": "ginkouin",
@@ -130,7 +214,14 @@
         "en": "bank clerk",
         "vi": "nhân viên ngân hàng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 方[かた]は 銀行員[ぎんこういん]です。",
+        "kana": "あの かたは ぎんこういんです。",
+        "translation": {
+          "vi": "Vị kia là nhân viên ngân hàng."
+        }
+      }
     },
     {
       "id": "isha",
@@ -140,7 +231,14 @@
         "en": "doctor",
         "vi": "bác sĩ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "先生[せんせい]は 医者[いしゃ]ですか。",
+        "kana": "せんせいは いしゃですか。",
+        "translation": {
+          "vi": "Giáo viên là bác sĩ phải không?"
+        }
+      }
     },
     {
       "id": "kenkyuusha",
@@ -150,7 +248,14 @@
         "en": "researcher",
         "vi": "nhà nghiên cứu"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 人[ひと]は 研究者[けんきゅうしゃ]じゃありません。",
+        "kana": "あの ひとは けんきゅうしゃじゃありません。",
+        "translation": {
+          "vi": "Người kia không phải là nhà nghiên cứu."
+        }
+      }
     },
     {
       "id": "daigaku",
@@ -160,7 +265,14 @@
         "en": "university",
         "vi": "trường đại học"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "さくら大学[だいがく]の 先生[せんせい]です。",
+        "kana": "さくらだいがくの せんせいです。",
+        "translation": {
+          "vi": "Là giáo viên của đại học Sakura."
+        }
+      }
     },
     {
       "id": "byouin",
@@ -170,7 +282,14 @@
         "en": "hospital",
         "vi": "bệnh viện"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "こうべ病院[びょういん]の 医者[いしゃ]です。",
+        "kana": "こうべびょういんの いしゃです。",
+        "translation": {
+          "vi": "Là bác sĩ của bệnh viện Kobe."
+        }
+      }
     },
     {
       "id": "dare",
@@ -180,7 +299,14 @@
         "en": "who",
         "vi": "ai"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "あの 人[ひと]は 誰[だれ]ですか。",
+        "kana": "あの ひとは だれですか。",
+        "translation": {
+          "vi": "Người kia là ai?"
+        }
+      }
     },
     {
       "id": "donata",
@@ -190,7 +316,14 @@
         "en": "who (polite)",
         "vi": "vị nào (cách nói lịch sự của 'ai')"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "あの 方[かた]は どなたですか。",
+        "kana": "あの かたは どなたですか。",
+        "translation": {
+          "vi": "Vị kia là vị nào?"
+        }
+      }
     },
     {
       "id": "sai",
@@ -200,7 +333,14 @@
         "en": "counter for years of age",
         "vi": "tuổi"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "テレサちゃんは 九歳[きゅうさい]です。",
+        "kana": "テレサちゃんは きゅうさいです。",
+        "translation": {
+          "vi": "Bé Teresa 9 tuổi."
+        }
+      }
     },
     {
       "id": "nansai",
@@ -210,7 +350,14 @@
         "en": "how old",
         "vi": "mấy tuổi"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "テレサちゃんは 何歳[なんさい]ですか。",
+        "kana": "テレサちゃんは なんさいですか。",
+        "translation": {
+          "vi": "Bé Teresa mấy tuổi?"
+        }
+      }
     },
     {
       "id": "oikutsu",
@@ -220,7 +367,14 @@
         "en": "how old (polite)",
         "vi": "bao nhiêu tuổi (cách hỏi lịch sự)"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "先生[せんせい]は おいくつですか。",
+        "kana": "せんせいは おいくつですか。",
+        "translation": {
+          "vi": "Giáo viên bao nhiêu tuổi?"
+        }
+      }
     },
     {
       "id": "hai",
@@ -230,7 +384,14 @@
         "en": "yes",
         "vi": "vâng, dạ, đúng"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "はい、私[わたし]は 学生[がくせい]です。",
+        "kana": "はい、わたしは がくせいです。",
+        "translation": {
+          "vi": "Vâng, tôi là học sinh."
+        }
+      }
     },
     {
       "id": "iie",
@@ -240,7 +401,14 @@
         "en": "no",
         "vi": "không, không phải"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "いいえ、私[わたし]は 先生[せんせい]じゃありません。",
+        "kana": "いいえ、わたしは せんせいじゃありません。",
+        "translation": {
+          "vi": "Không, tôi không phải là giáo viên."
+        }
+      }
     },
     {
       "id": "shitsurei-desu-ga",
@@ -250,7 +418,14 @@
         "en": "excuse me, but… (before a personal question)",
         "vi": "Xin lỗi (khi làm phiền hoặc hỏi việc riêng)..."
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "失礼[しつれい]ですが、お 名前[なまえ]は？",
+        "kana": "しつれいですが、お なまえは？",
+        "translation": {
+          "vi": "Xin lỗi, tên của bạn là gì?"
+        }
+      }
     },
     {
       "id": "onamae-wa",
@@ -260,7 +435,14 @@
         "en": "what is it called?",
         "vi": "tên của bạn là gì?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "失礼[しつれい]ですが、お 名前[なまえ]は？",
+        "kana": "しつれいですが、お なまえは？",
+        "translation": {
+          "vi": "Xin lỗi, tên của bạn là gì?"
+        }
+      }
     },
     {
       "id": "hajimemashite",
@@ -270,7 +452,14 @@
         "en": "pleased to meet you",
         "vi": "Rất vui được gặp bạn (lần đầu gặp mặt)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "はじめまして。私[わたし]は ミラーです。",
+        "kana": "はじめまして。わたしは ミラーです。",
+        "translation": {
+          "vi": "Rất vui được gặp bạn. Tôi là Miller."
+        }
+      }
     },
     {
       "id": "douzo-yoroshiku",
@@ -280,7 +469,14 @@
         "en": "nice to meet you, I look forward to it",
         "vi": "Rất mong nhận được sự giúp đỡ của bạn"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "どうぞよろしくお 願[ねが]いします。",
+        "kana": "どうぞよろしくお ねがいします。",
+        "translation": {
+          "vi": "Rất mong được giúp đỡ."
+        }
+      }
     },
     {
       "id": "kochira-wa",
@@ -290,7 +486,14 @@
         "en": "let me introduce Mr/Ms …",
         "vi": "Đây là anh/chị/vị..."
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "こちらは ミラーさんです。",
+        "kana": "こちらは ミラーさんです。",
+        "translation": {
+          "vi": "Đây là anh Miller."
+        }
+      }
     },
     {
       "id": "kara-kimashita",
@@ -300,7 +503,14 @@
         "en": "I'm from… (country or place)",
         "vi": "Tôi đến từ..."
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "アメリカから 来[き]ました。",
+        "kana": "アメリカから きました。",
+        "translation": {
+          "vi": "Tôi đến từ Mỹ."
+        }
+      }
     },
     {
       "id": "amerika",
@@ -310,7 +520,14 @@
         "en": "the United States",
         "vi": "nước Mỹ, Hoa Kỳ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "アメリカから 来[き]ました。",
+        "kana": "アメリカから きました。",
+        "translation": {
+          "vi": "Tôi đến từ Mỹ."
+        }
+      }
     },
     {
       "id": "igirisu",
@@ -320,7 +537,14 @@
         "en": "the United Kingdom",
         "vi": "nước Anh"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 人[ひと]は イギリス人[じん]です。",
+        "kana": "あの ひとは イギリスじんです。",
+        "translation": {
+          "vi": "Người kia là người Anh."
+        }
+      }
     },
     {
       "id": "indo",
@@ -330,7 +554,14 @@
         "en": "India",
         "vi": "nước Ấn Độ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 方[かた]は インド人[じん]です。",
+        "kana": "あの かたは インドじんです。",
+        "translation": {
+          "vi": "Vị kia là người Ấn Độ."
+        }
+      }
     },
     {
       "id": "indoneshia",
@@ -340,7 +571,14 @@
         "en": "Indonesia",
         "vi": "nước Indonesia"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 人[ひと]は インドネシア人[じん]です。",
+        "kana": "あの ひとは インドネシアじんです。",
+        "translation": {
+          "vi": "Người kia là người Indonesia."
+        }
+      }
     },
     {
       "id": "kankoku",
@@ -350,7 +588,14 @@
         "en": "South Korea",
         "vi": "nước Hàn Quốc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 方[かた]は 韓国人[かんこくじん]です。",
+        "kana": "あの かたは かんこくじんです。",
+        "translation": {
+          "vi": "Vị kia là người Hàn Quốc."
+        }
+      }
     },
     {
       "id": "tai",
@@ -360,7 +605,14 @@
         "en": "Thailand",
         "vi": "nước Thái Lan"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 人[ひと]は タイ人[じん]です。",
+        "kana": "あの ひとは タイじんです。",
+        "translation": {
+          "vi": "Người kia là người Thái Lan."
+        }
+      }
     },
     {
       "id": "chuugoku",
@@ -370,7 +622,14 @@
         "en": "China",
         "vi": "nước Trung Quốc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 方[かた]は 中国人[ちゅうごくじん]です。",
+        "kana": "あの かたは ちゅうごくじんです。",
+        "translation": {
+          "vi": "Vị kia là người Trung Quốc."
+        }
+      }
     },
     {
       "id": "doitsu",
@@ -380,7 +639,14 @@
         "en": "Germany",
         "vi": "nước Đức"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 人[ひと]は ドイツ人[じん]です。",
+        "kana": "あの ひとは ドイツじんです。",
+        "translation": {
+          "vi": "Người kia là người Đức."
+        }
+      }
     },
     {
       "id": "nihon",
@@ -390,7 +656,14 @@
         "en": "Japan",
         "vi": "nước Nhật Bản"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 方[かた]は 日本人[にほんじん]です。",
+        "kana": "あの かたは にほんじんです。",
+        "translation": {
+          "vi": "Vị kia là người Nhật Bản."
+        }
+      }
     },
     {
       "id": "furansu",
@@ -400,7 +673,14 @@
         "en": "France",
         "vi": "nước Pháp"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 人[ひと]は フランス人[じん]です。",
+        "kana": "あの ひとは フランスじんです。",
+        "translation": {
+          "vi": "Người kia là người Pháp."
+        }
+      }
     },
     {
       "id": "burajiru",
@@ -410,7 +690,14 @@
         "en": "Brazil",
         "vi": "nước Brazil"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 方[かた]は ブラジル人[じん]です。",
+        "kana": "あの かたは ブラジルじんです。",
+        "translation": {
+          "vi": "Vị kia là người Brazil."
+        }
+      }
     }
   ]
 }

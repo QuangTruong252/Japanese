@@ -62,23 +62,13 @@ Kiểu dữ liệu: dùng nguyên `Lesson`, `GrammarPoint`, `ExampleSentence`, `
 | `es` | Bỏ |
 | `sourceRef` | `{ book, pages }` — **chỉ ghi khi đã đối chiếu sách thật**, xem §3.1 |
 
-### 3.1. Trạng thái kiểm chứng — chưa xong, và phải nhìn thấy được
+### 3.1. Trạng thái kiểm chứng — không bắt buộc (24/09/2026)
 
-Dữ liệu hiện tại: **25/25 file bài học không có `sourceRef`**, và `docs/n5-manifest.md` §1 ghi
-rõ toàn bộ bộ dữ liệu đang `verification_status: unverified` — đã biên tập, **chưa** đối chiếu
-từng dòng với ấn bản sách.
+App chỉ phục vụ học cá nhân N5/N4, nên việc đối chiếu bản in **không còn là yêu cầu**. Nội dung
+tự biên soạn/AI soạn được dùng trực tiếp, chấp nhận sai sót nhỏ và sửa khi phát hiện.
 
-Hai hệ quả bắt buộc:
-
-1. **`Lesson.sourceRef` chuyển thành optional** trong `types/index.ts`. Kiểu hiện khai nó là
-   bắt buộc trong khi không file nào có — kiểu đang nói dối về dữ liệu. Sửa kiểu cho khớp sự
-   thật, **không** điền số trang bịa để thỏa schema.
-2. Mỗi `Lesson` mang thêm `verification: 'verified' | 'unverified'` (mặc định `unverified`).
-   Chỉ chuyển sang `verified` khi có người đối chiếu bản in và ghi được `sourceRef` thật.
-
-SPEC-03 hiển thị trạng thái này (SPEC-03 §5), SPEC-04 nhắc một lần ở màn cấu hình phiên
-(SPEC-04 §5). Nội dung chưa kiểm chứng **vẫn dùng được để học** — nó chỉ không được trưng ra
-như thể đã đối chiếu.
+Trường dữ liệu hiện có giữ nguyên để tương thích: `Lesson.sourceRef` optional (không điền số
+trang bịa), `Lesson.verification` mặc định `unverified`. Dòng nhắc "chưa đối chiếu" trên UI đã bỏ (24/09/2026).
 
 **Ba ràng buộc cứng khi dịch:**
 

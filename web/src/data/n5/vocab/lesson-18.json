@@ -10,7 +10,14 @@
         "en": "can, to be able to",
         "vi": "có thể, biết làm"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "私[わたし]は 車[くるま]の 運転[うんてん]が できます。",
+        "kana": "わたしは くるまの うんてんが できます。",
+        "translation": {
+          "vi": "Tôi có thể lái xe ô tô."
+        }
+      }
     },
     {
       "id": "araimasu",
@@ -20,7 +27,14 @@
         "en": "to wash",
         "vi": "rửa, giặt"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "ご飯[はん]を 食[た]べる 前[まえ]に、手[て]を 洗[あら]います。",
+        "kana": "ごはんを たべる まえに、てを あらいます。",
+        "translation": {
+          "vi": "Trước khi ăn cơm, tôi rửa tay."
+        }
+      }
     },
     {
       "id": "hikimasu",
@@ -30,7 +44,14 @@
         "en": "to play (piano, strings)",
         "vi": "chơi [nhạc cụ phím/dây]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "マリアさんは ピアノを 弾[ひ]く ことが できます。",
+        "kana": "マリアさんは ピアノを ひく ことが できます。",
+        "translation": {
+          "vi": "Chị Maria có thể đánh đàn piano."
+        }
+      }
     },
     {
       "id": "utaimasu",
@@ -40,7 +61,14 @@
         "en": "to sing",
         "vi": "hát"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "歌[うた]を 歌[うた]います。",
+        "kana": "うたを うたいます。",
+        "translation": {
+          "vi": "Tôi hát một bài hát."
+        }
+      }
     },
     {
       "id": "atsumemasu",
@@ -50,7 +78,14 @@
         "en": "to collect, to gather",
         "vi": "thu thập, sưu tầm"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "私[わたし]の 趣味[しゅみ]は 切手[きって]を 集[あつ]める ことです。",
+        "kana": "わたしの しゅみは きってを あつめる ことです。",
+        "translation": {
+          "vi": "Sở thích của tôi là sưu tầm tem."
+        }
+      }
     },
     {
       "id": "sutemasu",
@@ -60,7 +95,14 @@
         "en": "to throw away",
         "vi": "vứt, bỏ đi"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "これを 捨[す]てないで ください。",
+        "kana": "これを すてないで ください。",
+        "translation": {
+          "vi": "Xin đừng vứt cái này."
+        }
+      }
     },
     {
       "id": "kaemasu",
@@ -70,7 +112,14 @@
         "en": "to change, to replace",
         "vi": "đổi, trao đổi, thay đổi"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "銀行[ぎんこう]で お 金[かね]を 換[か]える ことが できます。",
+        "kana": "ぎんこうで おかねを かえる ことが できます。",
+        "translation": {
+          "vi": "Có thể đổi tiền ở ngân hàng."
+        }
+      }
     },
     {
       "id": "unten-shimasu",
@@ -80,7 +129,14 @@
         "en": "to drive",
         "vi": "lái xe"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "車[くるま]を 運転[うんてん]する ことが できますか。",
+        "kana": "くるまを うんてんする ことが できますか。",
+        "translation": {
+          "vi": "Bạn có biết lái xe ô tô không?"
+        }
+      }
     },
     {
       "id": "yoyaku-shimasu",
@@ -90,7 +146,14 @@
         "en": "to book, to reserve",
         "vi": "đặt chỗ, hẹn trước"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "ホテルを 予約[よやく]しなければ なりません。",
+        "kana": "ホテルを よやくしなければ なりません。",
+        "translation": {
+          "vi": "Tôi phải đặt trước khách sạn."
+        }
+      }
     },
     {
       "id": "piano",
@@ -100,7 +163,14 @@
         "en": "piano",
         "vi": "đàn dương cầm, piano"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "趣味[しゅみ]は ピアノを 弾[ひ]く ことです。",
+        "kana": "しゅみは ピアノを ひく ことです。",
+        "translation": {
+          "vi": "Sở thích của tôi là chơi đàn piano."
+        }
+      }
     },
     {
       "id": "meetoru",
@@ -110,7 +180,14 @@
         "en": "~ metre(s)",
         "vi": "mét (đơn vị đo lường)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "私[わたし]は 百[ひゃく]メートル 泳[およ]ぐ ことが できます。",
+        "kana": "わたしは ひゃくメートル およぐ ことが できます。",
+        "translation": {
+          "vi": "Tôi có thể bơi 100 mét."
+        }
+      }
     },
     {
       "id": "genkin",
@@ -120,7 +197,14 @@
         "en": "cash",
         "vi": "tiền mặt"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "現金[げんきん]で 払[はら]わなければ なりません。",
+        "kana": "げんきんで はらわなければ なりません。",
+        "translation": {
+          "vi": "Phải trả bằng tiền mặt."
+        }
+      }
     },
     {
       "id": "shumi",
@@ -130,7 +214,14 @@
         "en": "hobby, pastime",
         "vi": "sở thích"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "私[わたし]の 趣味[しゅみ]は 音楽[おんがく]を 聞[き]く ことです。",
+        "kana": "わたしの しゅみは おんがくを きく ことです。",
+        "translation": {
+          "vi": "Sở thích của tôi là nghe nhạc."
+        }
+      }
     },
     {
       "id": "nikki",
@@ -140,7 +231,14 @@
         "en": "diary",
         "vi": "nhật ký"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "寝[ね]る 前[まえ]に、日記[にっき]を 書[か]きます。",
+        "kana": "ねる まえに、にっきを かきます。",
+        "translation": {
+          "vi": "Trước khi ngủ, tôi viết nhật ký."
+        }
+      }
     },
     {
       "id": "oinori",
@@ -150,7 +248,14 @@
         "en": "prayer",
         "vi": "sự cầu nguyện, lời cầu nguyện"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "寝[ね]る 前[まえ]に、お 祈[いの]りを します。",
+        "kana": "ねる まえに、おいのりを します。",
+        "translation": {
+          "vi": "Trước khi ngủ, tôi cầu nguyện."
+        }
+      }
     },
     {
       "id": "kachou",
@@ -160,7 +265,14 @@
         "en": "section chief",
         "vi": "trưởng phòng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "彼[かれ]は 会社[かいしゃ]の 課長[かちょう]です。",
+        "kana": "かれは かいしゃの かちょうです。",
+        "translation": {
+          "vi": "Anh ấy là trưởng phòng của công ty."
+        }
+      }
     },
     {
       "id": "buchou",
@@ -170,7 +282,14 @@
         "en": "department manager",
         "vi": "trưởng ban, giám đốc khối"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "部長[ぶちょう]は 部屋[へや]に います。",
+        "kana": "ぶちょうは へやに います。",
+        "translation": {
+          "vi": "Trưởng ban đang ở trong phòng."
+        }
+      }
     },
     {
       "id": "shachou",
@@ -180,7 +299,14 @@
         "en": "company president",
         "vi": "giám đốc công ty, tổng giám đốc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "社長[しゃちょう]は 車[くるま]の 運転[うんてん]が できません。",
+        "kana": "しゃちょうは くるまの うんてんが できません。",
+        "translation": {
+          "vi": "Giám đốc không biết lái xe."
+        }
+      }
     },
     {
       "id": "doubutsu",
@@ -190,7 +316,14 @@
         "en": "animal",
         "vi": "động vật, thú nuôi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "私[わたし]は 動物[どうぶつ]が 好[す]きです。",
+        "kana": "わたしは どうぶつが すきです。",
+        "translation": {
+          "vi": "Tôi thích động vật."
+        }
+      }
     },
     {
       "id": "uma",
@@ -200,7 +333,14 @@
         "en": "horse",
         "vi": "con ngựa"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "馬[うま]に 乗[の]る ことが できますか。",
+        "kana": "うまに のる ことが できますか。",
+        "translation": {
+          "vi": "Bạn có biết cưỡi ngựa không?"
+        }
+      }
     },
     {
       "id": "intaanetto",
@@ -210,7 +350,14 @@
         "en": "the internet",
         "vi": "mạng Internet"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "インターネットで ホテルを 予約[よやく]する ことが できます。",
+        "kana": "インターネットで ホテルを よやくする ことが できます。",
+        "translation": {
+          "vi": "Có thể đặt khách sạn trên mạng Internet."
+        }
+      }
     },
     {
       "id": "tokuni",
@@ -220,7 +367,14 @@
         "en": "particularly",
         "vi": "đặc biệt là"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "私[わたし]は 動物[どうぶつ]が 好[す]きです。特[とく]に 馬[うま]が 好[す]きです。",
+        "kana": "わたしは どうぶつが すきです。とくに うまが すきです。",
+        "translation": {
+          "vi": "Tôi thích động vật. Đặc biệt là tôi thích ngựa."
+        }
+      }
     },
     {
       "id": "hee",
@@ -230,7 +384,14 @@
         "en": "really? (surprise)",
         "vi": "thế cơ à! (thể hiện ngạc nhiên)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「へえ、すごいですね。」",
+        "kana": "「へえ、すごいですね。」",
+        "translation": {
+          "vi": "\"Thế cơ à, tuyệt vời quá nhỉ.\""
+        }
+      }
     },
     {
       "id": "sorewa-omoshiroi",
@@ -240,7 +401,14 @@
         "en": "how interesting!",
         "vi": "điều đó hay và thú vị thật đấy!"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「それは おもしろいですね。」",
+        "kana": "「それは おもしろいですね。」",
+        "translation": {
+          "vi": "\"Điều đó thú vị thật đấy.\""
+        }
+      }
     },
     {
       "id": "nakanaka",
@@ -250,7 +418,14 @@
         "en": "not that easily (with a negative)",
         "vi": "mãi mà không... (đi với phủ định)"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "日本[にほん]で なかなか 馬[うま]を 見[み]る ことが できません。",
+        "kana": "にほんで なかなか うまを みる ことが できません。",
+        "translation": {
+          "vi": "Ở Nhật Bản mãi mà không thể nhìn thấy ngựa."
+        }
+      }
     },
     {
       "id": "hontou-desu-ka",
@@ -260,7 +435,14 @@
         "en": "really? seriously?",
         "vi": "Có thật thế không?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「ほんとうですか。」",
+        "kana": "「ほんとうですか。」",
+        "translation": {
+          "vi": "\"Có thật thế không?\""
+        }
+      }
     },
     {
       "id": "zehi",
@@ -270,7 +452,14 @@
         "en": "by all means, without fail",
         "vi": "nhất định"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "ぜひ 日本[にほん]へ 行[い]きたいです。",
+        "kana": "ぜひ にほんへ いきたいです。",
+        "translation": {
+          "vi": "Tôi nhất định muốn đi Nhật Bản."
+        }
+      }
     },
     {
       "id": "furusato",
@@ -280,7 +469,14 @@
         "en": "homeland",
         "vi": "quê hương"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "故郷[ふるさと]の 歌[うた]を 歌[うた]います。",
+        "kana": "ふるさとの うたを うたいます。",
+        "translation": {
+          "vi": "Tôi hát bài hát của quê hương."
+        }
+      }
     }
   ]
 }

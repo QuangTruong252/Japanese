@@ -10,7 +10,14 @@
         "en": "to get on [the train]",
         "vi": "lên, đi [tàu, xe buýt]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "京都[きょうと]で 電車[でんしゃ]に 乗[の]りました。",
+        "kana": "きょうとで でんしゃに のりました。",
+        "translation": {
+          "vi": "Tôi đã lên tàu ở Kyoto."
+        }
+      }
     },
     {
       "id": "orimasu",
@@ -20,7 +27,14 @@
         "en": "to get off [the train]",
         "vi": "xuống [tàu, xe buýt]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "次[つぎ]の 駅[えき]で 電車[でんしゃ]を 降[お]ります。",
+        "kana": "つぎの えきで でんしゃを おります。",
+        "translation": {
+          "vi": "Tôi sẽ xuống tàu ở nhà ga tiếp theo."
+        }
+      }
     },
     {
       "id": "norikaemasu",
@@ -30,7 +44,14 @@
         "en": "to change (trains)",
         "vi": "đổi, chuyển [tàu, xe]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "大阪[おおさか]で 地下鉄[ちかてつ]に 乗[の]り 換[か]えます。",
+        "kana": "おおさかで ちかてつに のりかえます。",
+        "translation": {
+          "vi": "Tôi sẽ chuyển sang tàu điện ngầm ở Osaka."
+        }
+      }
     },
     {
       "id": "abimasu",
@@ -40,7 +61,14 @@
         "en": "to have [a shower]",
         "vi": "tắm [vòi sen]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "朝[あさ] シャワーを 浴[あ]びてから、会社[かいしゃ]へ 行[い]きます。",
+        "kana": "あさ シャワーを あびてから、かいしゃへ いきます。",
+        "translation": {
+          "vi": "Sau khi tắm vòi sen vào buổi sáng, tôi đi đến công ty."
+        }
+      }
     },
     {
       "id": "iremasu",
@@ -50,7 +78,14 @@
         "en": "to put in, to insert",
         "vi": "cho vào, bỏ vào"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "コーヒーに 砂糖[さとう]を 入[い]れました。",
+        "kana": "コーヒーに さとうを いれました。",
+        "translation": {
+          "vi": "Tôi đã cho đường vào cà phê."
+        }
+      }
     },
     {
       "id": "dashimasu",
@@ -60,7 +95,14 @@
         "en": "to take out, to hand in, to send",
         "vi": "rút [tiền], lấy ra, nộp"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "手紙[てがみ]を 出[だ]してから、家[うち]へ 帰[かえ]ります。",
+        "kana": "てがみを だしてから、うちへ かえります。",
+        "translation": {
+          "vi": "Sau khi gửi thư, tôi sẽ về nhà."
+        }
+      }
     },
     {
       "id": "oroshimasu",
@@ -70,7 +112,14 @@
         "en": "to withdraw [money from the bank]",
         "vi": "rút [tiền từ ngân hàng]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "銀行[ぎんこう]で お 金[かね]を 下[お]ろしました。",
+        "kana": "ぎんこうで おかねを おろしました。",
+        "translation": {
+          "vi": "Tôi đã rút tiền ở ngân hàng."
+        }
+      }
     },
     {
       "id": "hairimasu-uni",
@@ -80,7 +129,14 @@
         "en": "to enter [university]",
         "vi": "nhập học, vào [đại học]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "来年[らいねん] 大学[だいがく]に 入[はい]ります。",
+        "kana": "らいねん だいがくに はいります。",
+        "translation": {
+          "vi": "Năm sau tôi sẽ vào đại học."
+        }
+      }
     },
     {
       "id": "demasu-uni",
@@ -90,7 +146,14 @@
         "en": "to graduate [from university]",
         "vi": "tốt nghiệp, ra khỏi [đại học]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "去年[きょねん] 大学[だいがく]を 出[で]ました。",
+        "kana": "きょねん だいがくを でました。",
+        "translation": {
+          "vi": "Tôi đã tốt nghiệp đại học năm ngoái."
+        }
+      }
     },
     {
       "id": "oshimasu",
@@ -100,7 +163,14 @@
         "en": "to press, to push",
         "vi": "ấn, bấm [nút]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "この ボタンを 押[お]してください。",
+        "kana": "この ボタンを おしてください。",
+        "translation": {
+          "vi": "Xin hãy ấn nút này."
+        }
+      }
     },
     {
       "id": "nomimasu-alcohol",
@@ -110,7 +180,14 @@
         "en": "to drink alcohol",
         "vi": "uống rượu bia"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "友達[ともだち]と 一緒[いっしょ]に 飲[の]みました。",
+        "kana": "ともだちと いっしょに のみました。",
+        "translation": {
+          "vi": "Tôi đã uống rượu cùng với bạn bè."
+        }
+      }
     },
     {
       "id": "hajimemasu",
@@ -120,7 +197,14 @@
         "en": "to begin, to start",
         "vi": "bắt đầu, khởi đầu"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "これから 会議[かいぎ]を 始[はじ]めます。",
+        "kana": "これから かいぎを はじめます。",
+        "translation": {
+          "vi": "Bây giờ chúng ta sẽ bắt đầu cuộc họp."
+        }
+      }
     },
     {
       "id": "kengaku-shimasu",
@@ -130,7 +214,14 @@
         "en": "to visit (to learn)",
         "vi": "tham quan học hỏi, kiến tập"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "学校[がっこう]を 見学[けんがく]します。",
+        "kana": "がっこうを けんがくします。",
+        "translation": {
+          "vi": "Tôi sẽ tham quan trường học."
+        }
+      }
     },
     {
       "id": "denwa-shimasu",
@@ -140,7 +231,14 @@
         "en": "to phone",
         "vi": "gọi điện thoại"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "家族[かぞく]に 電話[でんわ]しました。",
+        "kana": "かぞくに でんわしました。",
+        "translation": {
+          "vi": "Tôi đã gọi điện cho gia đình."
+        }
+      }
     },
     {
       "id": "wakai",
@@ -150,7 +248,14 @@
         "en": "young",
         "vi": "trẻ, trẻ trung"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "山田[やまだ]さんは 若[わか]いです。",
+        "kana": "やまださんは わかいです。",
+        "translation": {
+          "vi": "Anh Yamada trẻ."
+        }
+      }
     },
     {
       "id": "nagai",
@@ -160,7 +265,14 @@
         "en": "long",
         "vi": "dài"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "ミラーさんは 髪[かみ]が 長[なが]いです。",
+        "kana": "ミラーさんは かみが ながいです。",
+        "translation": {
+          "vi": "Anh Miller có mái tóc dài."
+        }
+      }
     },
     {
       "id": "mijikai",
@@ -170,7 +282,14 @@
         "en": "short",
         "vi": "ngắn"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "私[わたし]は 髪[かみ]が 短[みじか]いです。",
+        "kana": "わたしは かみが みじかいです。",
+        "translation": {
+          "vi": "Tôi có mái tóc ngắn."
+        }
+      }
     },
     {
       "id": "akarui",
@@ -180,7 +299,14 @@
         "en": "bright, light",
         "vi": "sáng sủa, tươi sáng"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "この 部屋[へや]は 明[あか]るいです。",
+        "kana": "この へやは あかるいです。",
+        "translation": {
+          "vi": "Căn phòng này sáng sủa."
+        }
+      }
     },
     {
       "id": "kurai",
@@ -190,7 +316,14 @@
         "en": "dark",
         "vi": "tối tăm, u ám"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "この 部屋[へや]は 暗[くら]いです。",
+        "kana": "この へやは くらいです。",
+        "translation": {
+          "vi": "Căn phòng này tối."
+        }
+      }
     },
     {
       "id": "karada",
@@ -200,7 +333,14 @@
         "en": "body",
         "vi": "cơ thể, thân thể"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "体[からだ]が 大[おお]きいです。",
+        "kana": "からだが おおきいです。",
+        "translation": {
+          "vi": "Cơ thể to lớn."
+        }
+      }
     },
     {
       "id": "atama",
@@ -210,7 +350,14 @@
         "en": "head",
         "vi": "đầu"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "マリアさんは 頭[あたま]が いいです。",
+        "kana": "マリアさんは あたまが いいです。",
+        "translation": {
+          "vi": "Chị Maria rất thông minh."
+        }
+      }
     },
     {
       "id": "kami",
@@ -220,7 +367,14 @@
         "en": "hair",
         "vi": "tóc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "髪[かみ]が 長[なが]いです。",
+        "kana": "かみが ながいです。",
+        "translation": {
+          "vi": "Tóc dài."
+        }
+      }
     },
     {
       "id": "kao",
@@ -230,7 +384,14 @@
         "en": "face",
         "vi": "khuôn mặt"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "彼女[かのじょ]は 顔[かお]が 小[ちい]さいです。",
+        "kana": "かのじょは かおが ちいさいです。",
+        "translation": {
+          "vi": "Cô ấy có khuôn mặt nhỏ."
+        }
+      }
     },
     {
       "id": "me",
@@ -240,7 +401,14 @@
         "en": "eye(s)",
         "vi": "mắt"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "サントスさんは 目[め]が 黒[くろ]いです。",
+        "kana": "サントスさんは めが くろいです。",
+        "translation": {
+          "vi": "Anh Santos có đôi mắt màu đen."
+        }
+      }
     },
     {
       "id": "mimi",
@@ -250,7 +418,14 @@
         "en": "ear(s)",
         "vi": "tai"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "犬[いぬ]は 耳[みみ]が 大[おお]きいです。",
+        "kana": "いぬは みみが おおきいです。",
+        "translation": {
+          "vi": "Con chó có đôi tai lớn."
+        }
+      }
     },
     {
       "id": "hana-nariz",
@@ -260,7 +435,14 @@
         "en": "nose",
         "vi": "mũi (bộ phận cơ thể)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "彼女[かのじょ]は 鼻[はな]が 高[たか]いです。",
+        "kana": "かのじょは はなが たかいです。",
+        "translation": {
+          "vi": "Cô ấy có cái mũi cao."
+        }
+      }
     },
     {
       "id": "kuchi",
@@ -270,7 +452,14 @@
         "en": "mouth",
         "vi": "miệng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "口[くち]が 大[おお]きいです。",
+        "kana": "くちが おおきいです。",
+        "translation": {
+          "vi": "Cái miệng to."
+        }
+      }
     },
     {
       "id": "ha",
@@ -280,7 +469,14 @@
         "en": "tooth, teeth",
         "vi": "răng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "歯[は]が 白[しろ]いです。",
+        "kana": "はが しろいです。",
+        "translation": {
+          "vi": "Răng trắng."
+        }
+      }
     },
     {
       "id": "onaka",
@@ -290,7 +486,14 @@
         "en": "stomach",
         "vi": "bụng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "おなかが すきました。",
+        "kana": "おなかが すきました。",
+        "translation": {
+          "vi": "Tôi đã đói bụng rồi."
+        }
+      }
     },
     {
       "id": "ashi",
@@ -300,7 +503,14 @@
         "en": "leg(s), foot (feet)",
         "vi": "chân"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "彼[かれ]は 足[あし]が 長[なが]いです。",
+        "kana": "かれは あしが ながいです。",
+        "translation": {
+          "vi": "Anh ấy có đôi chân dài."
+        }
+      }
     },
     {
       "id": "se",
@@ -310,7 +520,14 @@
         "en": "height",
         "vi": "chiều cao cơ thể, vóc dáng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "彼[かれ]は 背[せ]が 高[たか]いです。",
+        "kana": "かれは せが たかいです。",
+        "translation": {
+          "vi": "Anh ấy cao."
+        }
+      }
     },
     {
       "id": "saabisu",
@@ -320,7 +537,14 @@
         "en": "service",
         "vi": "dịch vụ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの レストランは サービスが いいです。",
+        "kana": "あの レストランは サービスが いいです。",
+        "translation": {
+          "vi": "Nhà hàng kia dịch vụ rất tốt."
+        }
+      }
     },
     {
       "id": "jogingu",
@@ -330,7 +554,14 @@
         "en": "jogging",
         "vi": "chạy bộ (thể dục)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "毎日[まいにち] ジョギングを しています。",
+        "kana": "まいにち ジョギングを しています。",
+        "translation": {
+          "vi": "Hàng ngày tôi đều chạy bộ."
+        }
+      }
     },
     {
       "id": "shawaa",
@@ -340,7 +571,14 @@
         "en": "shower",
         "vi": "vòi hoa sen"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "シャワーを 浴[あ]びます。",
+        "kana": "シャワーを あびます。",
+        "translation": {
+          "vi": "Tôi tắm vòi sen."
+        }
+      }
     },
     {
       "id": "midori",
@@ -350,7 +588,14 @@
         "en": "green, green space",
         "vi": "màu xanh lá cây, cây xanh"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "この 町[まち]は 緑[みどり]が 多[おお]いです。",
+        "kana": "この まちは みどりが おおいです。",
+        "translation": {
+          "vi": "Thị trấn này có nhiều cây xanh."
+        }
+      }
     },
     {
       "id": "otera",
@@ -360,7 +605,14 @@
         "en": "Buddhist temple",
         "vi": "chùa (Phật giáo)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "京都[きょうと]で お 寺[てら]を 見[み]ました。",
+        "kana": "きょうとで おてらを みました。",
+        "translation": {
+          "vi": "Tôi đã thấy chùa ở Kyoto."
+        }
+      }
     },
     {
       "id": "jinja",
@@ -370,7 +622,14 @@
         "en": "Shinto shrine",
         "vi": "đền thờ (Thần đạo Shinto)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "神社[じんじゃ]へ 行[い]きました。",
+        "kana": "じんじゃへ いきました。",
+        "translation": {
+          "vi": "Tôi đã đi đến đền thờ."
+        }
+      }
     },
     {
       "id": "ban-numero",
@@ -380,7 +639,14 @@
         "en": "number ~",
         "vi": "số... (số hiệu)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "十二[じゅうに]番[ばん]の バスに 乗[の]ります。",
+        "kana": "じゅうにばんの バスに のります。",
+        "translation": {
+          "vi": "Tôi đi xe buýt số 12."
+        }
+      }
     },
     {
       "id": "douyatte",
@@ -390,7 +656,14 @@
         "en": "how, in what way",
         "vi": "làm thế nào, bằng cách nào"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "どうやって 会社[かいしゃ]へ 行[い]きますか。",
+        "kana": "どうやって かいしゃへ いきますか。",
+        "translation": {
+          "vi": "Bạn đi đến công ty bằng cách nào?"
+        }
+      }
     },
     {
       "id": "dono",
@@ -400,7 +673,14 @@
         "en": "which ~ (of three or more)",
         "vi": "nào (đi liền trước danh từ)"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "ミラーさんは どの 人[ひと]ですか。",
+        "kana": "ミラーさんは どの ひとですか。",
+        "translation": {
+          "vi": "Anh Miller là người nào?"
+        }
+      }
     },
     {
       "id": "dore",
@@ -410,7 +690,14 @@
         "en": "which one (of three or more)",
         "vi": "cái nào (trong số 3 cái trở lên)"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "あなたの かばんは どれですか。",
+        "kana": "あなたの かばんは どれですか。",
+        "translation": {
+          "vi": "Cặp sách của bạn là cái nào?"
+        }
+      }
     },
     {
       "id": "sugoi-desu-ne",
@@ -420,7 +707,14 @@
         "en": "amazing! how great!",
         "vi": "tuyệt vời quá nhỉ!"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「すごいですね。」",
+        "kana": "「すごいですね。」",
+        "translation": {
+          "vi": "\"Tuyệt vời quá nhỉ!\""
+        }
+      }
     },
     {
       "id": "madamada",
@@ -430,7 +724,14 @@
         "en": "I still have a long way to go",
         "vi": "tôi vẫn còn kém lắm"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「いいえ、まだまだです。」",
+        "kana": "「いいえ、まだまだです。」",
+        "translation": {
+          "vi": "\"Không, tôi vẫn còn kém lắm.\""
+        }
+      }
     },
     {
       "id": "ohikidashi",
@@ -440,7 +741,14 @@
         "en": "are you withdrawing money?",
         "vi": "quý khách muốn rút tiền ạ?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「お 引[ひ]き 出[だ]しですか。」",
+        "kana": "「おひきだしですか。」",
+        "translation": {
+          "vi": "\"Quý khách muốn rút tiền ạ?\""
+        }
+      }
     },
     {
       "id": "mazu",
@@ -450,7 +758,14 @@
         "en": "first",
         "vi": "trước hết, đầu tiên"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "まず この ボタンを 押[お]してください。",
+        "kana": "まず この ボタンを おしてください。",
+        "translation": {
+          "vi": "Trước hết xin hãy ấn nút này."
+        }
+      }
     },
     {
       "id": "tsugini",
@@ -460,7 +775,14 @@
         "en": "next, after that",
         "vi": "tiếp theo, sau đó"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "次[つぎ]に お 金[かね]を 入[い]れてください。",
+        "kana": "つぎに おかねを いれてください。",
+        "translation": {
+          "vi": "Tiếp theo xin hãy cho tiền vào."
+        }
+      }
     },
     {
       "id": "kyasshukaado",
@@ -470,7 +792,14 @@
         "en": "bank card",
         "vi": "thẻ rút tiền ngân hàng, thẻ ATM"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "キャッシュカードを 入[い]れてください。",
+        "kana": "キャッシュカードを いれてください。",
+        "translation": {
+          "vi": "Xin hãy cho thẻ ATM vào."
+        }
+      }
     },
     {
       "id": "anshoubangou",
@@ -480,7 +809,14 @@
         "en": "PIN, password",
         "vi": "mã số bí mật PIN"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "暗証番号[あんしょうばんごう]を 押[お]してください。",
+        "kana": "あんしょうばんごうを おしてください。",
+        "translation": {
+          "vi": "Xin hãy bấm mã số PIN."
+        }
+      }
     },
     {
       "id": "kingaku",
@@ -490,7 +826,14 @@
         "en": "amount, sum of money",
         "vi": "số tiền"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "金額[きんがく]を 押[お]してください。",
+        "kana": "きんがくを おしてください。",
+        "translation": {
+          "vi": "Xin hãy bấm số tiền."
+        }
+      }
     },
     {
       "id": "kakunin",
@@ -500,7 +843,14 @@
         "en": "confirmation",
         "vi": "sự xác nhận"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "確認[かくにん]の ボタンを 押[お]します。",
+        "kana": "かくにんの ボタンを おします。",
+        "translation": {
+          "vi": "Tôi bấm nút xác nhận."
+        }
+      }
     },
     {
       "id": "botan",
@@ -510,7 +860,14 @@
         "en": "button",
         "vi": "nút bấm"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "この ボタンを 押[お]してください。",
+        "kana": "この ボタンを おしてください。",
+        "translation": {
+          "vi": "Xin hãy bấm nút này."
+        }
+      }
     },
     {
       "id": "yukimatsuri",
@@ -520,7 +877,14 @@
         "en": "Snow Festival (Sapporo)",
         "vi": "Lễ hội tuyết (ở Sapporo)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "雪祭[ゆきまつ]りへ 行[い]きたいです。",
+        "kana": "ゆきまつりへ いきたいです。",
+        "translation": {
+          "vi": "Tôi muốn đi Lễ hội tuyết."
+        }
+      }
     }
   ]
 }

@@ -8,6 +8,7 @@ Bộ dữ liệu tiếng Việt N5 (`web/src/data/n5/`) được khởi tạo v�
 - **Trạng thái biên tập (editorial_status):** `edited` (Đã hoàn thành biên soạn và dịch nghĩa tiếng Việt tự nhiên)
 - **Trạng thái kiểm chứng (verification_status):** `unverified` (Chưa đối chiếu từng dòng với ấn bản sách giáo trình thực tế theo quy định `AGENTS.md`)
 - **Ngôn ngữ hỗ trợ:** Song ngữ `vi / en` (Thay thế hoàn toàn tiếng Tây Ban Nha `es`, bảo toàn 100% tiếng Anh `en`, ID, tiếng Nhật, Furigana và liên kết)
+- **Ví dụ từ vựng bổ sung 24/09/2026:** 991/991 từ ở 25 file `vocab/lesson-NN.json` có một câu ví dụ, cách đọc kana và nghĩa Việt. Câu do app tự biên soạn (bài 7 trước, 24 bài còn lại do agent Gemini soạn và coordinator rà), giới hạn từ vựng/ngữ pháp trong bài 1..N, đã duyệt đọc toàn bộ; chưa đối chiếu bản in (không bắt buộc), không nằm trong 187 câu ví dụ ngữ pháp từ Noken.
 
 ---
 
@@ -16,11 +17,11 @@ Bộ dữ liệu tiếng Việt N5 (`web/src/data/n5/`) được khởi tạo v�
 | Nhóm dữ liệu | Thư mục con | Số file JSON | Số lượng thực thể chi tiết | Ghi chú |
 | :--- | :--- | :---: | :--- | :--- |
 | **Động từ** | `verbs/` | 1 | 156 động từ | Bao gồm các thể: ます, て, từ điển, ない, た, nhóm động từ và nghĩa tiếng Việt |
-| **Chữ Hán** | `kanji/` | 169 | 169 chữ Hán, 907 ví dụ | Đầy đủ âm Hán-Việt, nét viết, âm On/Kun, nghĩa tiếng Việt và các từ ví dụ |
-| **Từ vựng** | `vocab/` | 25 | 991 từ vựng | 25 bài học tương ứng Minna no Nihongo I, đầy đủ kanji, kana, từ loại |
+| **Chữ Hán** | `kanji/` | 169 | 169 chữ Hán, 907 ví dụ (nghĩa Việt đủ 907/907 từ 24/09/2026) | Đầy đủ âm Hán-Việt, nét viết, âm On/Kun, nghĩa tiếng Việt và các từ ví dụ |
+| **Từ vựng** | `vocab/` | 25 | 991 từ vựng, 991 ví dụ từ vựng | 25 bài học tương ứng Minna no Nihongo I, đầy đủ kanji, kana, từ loại |
 | **Bài học ngữ pháp** | `lessons/` | 25 | 141 điểm ngữ pháp, 187 câu ví dụ | Tiêu đề, mô tả bài học, mẫu câu, giải thích chi tiết và câu ví dụ song ngữ vi/en |
 | **Bảng tra cứu** | `reference/` | 10 | 358 trường nội dung dịch | 10 bảng chuyên đề: Tính từ, Lịch, Lượng từ đếm, Đại từ chỉ thị, Gia đình, Chào hỏi, Số đếm, Trợ từ, Từ để hỏi, Giờ giấc |
-| **Tổng cộng** | | **230** | **991 từ, 141 ngữ pháp, 187 ví dụ, 169 kanji, 156 động từ, 10 bảng** | **Không thiếu sót bất kỳ trường nào** |
+| **Tổng cộng** | | **230** | **991 từ, 141 ngữ pháp, 187 ví dụ ngữ pháp + 991 ví dụ từ vựng, 169 kanji, 156 động từ, 10 bảng** | **991 ví dụ từ vựng tự biên soạn, chưa đối chiếu bản in** |
 
 ---
 

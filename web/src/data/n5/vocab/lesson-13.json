@@ -10,7 +10,14 @@
         "en": "to play, to enjoy oneself",
         "vi": "chơi, vui chơi"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "友達[ともだち]と 公園[こうえん]へ 遊[あそ]びに 行[い]きます。",
+        "kana": "ともだちと こうえんへ あそびに いきます。",
+        "translation": {
+          "vi": "Tôi đi đến công viên chơi với bạn."
+        }
+      }
     },
     {
       "id": "oyogimasu",
@@ -20,7 +27,14 @@
         "en": "to swim",
         "vi": "bơi"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "プールへ 泳[およ]ぎに 行[い]きたいです。",
+        "kana": "プールへ およぎに いきたいです。",
+        "translation": {
+          "vi": "Tôi muốn đi bơi ở bể bơi."
+        }
+      }
     },
     {
       "id": "mukaemasu",
@@ -30,7 +44,14 @@
         "en": "to pick up, to meet (someone)",
         "vi": "đón (ai đó)"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "空港[くうこう]へ 友達[ともだち]を 迎[むか]えに 行[い]きます。",
+        "kana": "くうこうへ ともだちを むかえに いきます。",
+        "translation": {
+          "vi": "Tôi đi đến sân bay để đón bạn."
+        }
+      }
     },
     {
       "id": "tsukaremasu",
@@ -40,7 +61,14 @@
         "en": "to get tired",
         "vi": "mệt mỏi"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "仕事[しごと]が たくさん ありますから、疲[つか]れます。",
+        "kana": "しごとが たくさん ありますから、つかれます。",
+        "translation": {
+          "vi": "Vì có nhiều công việc nên tôi mệt mỏi."
+        }
+      }
     },
     {
       "id": "kekkon-shimasu",
@@ -50,7 +78,14 @@
         "en": "to get married",
         "vi": "kết hôn, cưới"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "私[わたし]は 結婚[けっこん]したいです。",
+        "kana": "わたしは けっこんしたいです。",
+        "translation": {
+          "vi": "Tôi muốn kết hôn."
+        }
+      }
     },
     {
       "id": "kaimono-shimasu",
@@ -60,7 +95,14 @@
         "en": "to go shopping",
         "vi": "mua sắm"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "デパートへ 買[か]い物[もの]しに 行[い]きます。",
+        "kana": "デパートへ かいものしに いきます。",
+        "translation": {
+          "vi": "Tôi đi đến trung tâm thương mại để mua sắm."
+        }
+      }
     },
     {
       "id": "shokuji-shimasu",
@@ -70,7 +112,14 @@
         "en": "to eat",
         "vi": "dùng bữa, ăn cơm"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "レストランへ 食事[しょくじ]しに 行[い]きます。",
+        "kana": "レストランへ しょくじしに いきます。",
+        "translation": {
+          "vi": "Tôi đi đến nhà hàng để dùng bữa."
+        }
+      }
     },
     {
       "id": "sanpo-shimasu",
@@ -80,7 +129,14 @@
         "en": "to take a walk [in the park]",
         "vi": "đi dạo [trong công viên]"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "朝[あさ] 公園[こうえん]を 散歩[さんぽ]します。",
+        "kana": "あさ こうえんを さんぽします。",
+        "translation": {
+          "vi": "Buổi sáng tôi đi dạo trong công viên."
+        }
+      }
     },
     {
       "id": "taihen",
@@ -90,7 +146,14 @@
         "en": "tough, terrible",
         "vi": "vất vả, khó khăn, nghiêm trọng"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "仕事[しごと]は 大変[たいへん]です。",
+        "kana": "しごとは たいへんです。",
+        "translation": {
+          "vi": "Công việc rất vất vả."
+        }
+      }
     },
     {
       "id": "hoshii",
@@ -100,7 +163,14 @@
         "en": "to want (something)",
         "vi": "muốn có (đồ vật)"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "私[わたし]は 新[あたら]しい パソコンが 欲[ほ]しいです。",
+        "kana": "わたしは あたらしい パソコンが ほしいです。",
+        "translation": {
+          "vi": "Tôi muốn có cái máy tính mới."
+        }
+      }
     },
     {
       "id": "hiroi",
@@ -110,7 +180,14 @@
         "en": "wide, spacious",
         "vi": "rộng rãi, rộng"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "私[わたし]の 部屋[へや]は 広[ひろ]いです。",
+        "kana": "わたしの へやは ひろいです。",
+        "translation": {
+          "vi": "Phòng của tôi rộng rãi."
+        }
+      }
     },
     {
       "id": "semai",
@@ -120,7 +197,14 @@
         "en": "narrow",
         "vi": "chật hẹp, hẹp"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "この 部屋[へや]は 狭[せま]いです。",
+        "kana": "この へやは せまいです。",
+        "translation": {
+          "vi": "Căn phòng này chật hẹp."
+        }
+      }
     },
     {
       "id": "puuru",
@@ -130,7 +214,14 @@
         "en": "swimming pool",
         "vi": "hồ bơi, bể bơi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "プールへ 行[い]きたいです。",
+        "kana": "プールへ いきたいです。",
+        "translation": {
+          "vi": "Tôi muốn đi bể bơi."
+        }
+      }
     },
     {
       "id": "kawa",
@@ -140,7 +231,14 @@
         "en": "river",
         "vi": "con sông"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "川[かわ]へ 釣[つ]りに 行[い]きます。",
+        "kana": "かわへ つりに いきます。",
+        "translation": {
+          "vi": "Tôi đi câu cá ở con sông."
+        }
+      }
     },
     {
       "id": "bijutsu",
@@ -150,7 +248,14 @@
         "en": "fine arts",
         "vi": "mỹ thuật"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "私[わたし]は 美術[びじゅつ]を 勉強[べんきょう]します。",
+        "kana": "わたしは びじゅつを べんきょうします。",
+        "translation": {
+          "vi": "Tôi học mỹ thuật."
+        }
+      }
     },
     {
       "id": "tsuri",
@@ -160,7 +265,14 @@
         "en": "fishing",
         "vi": "việc câu cá"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "明日[あした] 釣[つ]りを します。",
+        "kana": "あした つりを します。",
+        "translation": {
+          "vi": "Ngày mai tôi sẽ câu cá."
+        }
+      }
     },
     {
       "id": "sukii",
@@ -170,7 +282,14 @@
         "en": "skiing",
         "vi": "trượt tuyết"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "冬[ふゆ] スキーに 行[い]きたいです。",
+        "kana": "ふゆ スキーに いきたいです。",
+        "translation": {
+          "vi": "Mùa đông tôi muốn đi trượt tuyết."
+        }
+      }
     },
     {
       "id": "shuumatsu",
@@ -180,7 +299,14 @@
         "en": "weekend",
         "vi": "cuối tuần"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "週末[しゅうまつ] どこへ 行[い]きますか。",
+        "kana": "しゅうまつ どこへ いきますか。",
+        "translation": {
+          "vi": "Cuối tuần bạn đi đâu?"
+        }
+      }
     },
     {
       "id": "oshougatsu",
@@ -190,7 +316,14 @@
         "en": "New Year",
         "vi": "Tết, ngày đầu năm mới"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "お 正月[しょうがつ]は 休[やす]みです。",
+        "kana": "おしょうがつは やすみです。",
+        "translation": {
+          "vi": "Tết thì được nghỉ."
+        }
+      }
     },
     {
       "id": "goro",
@@ -200,7 +333,14 @@
         "en": "around ~ (time)",
         "vi": "khoảng chừng (thời điểm)"
       },
-      "type": "particle"
+      "type": "particle",
+      "example": {
+        "jp": "十二時[じゅうにじ]ごろ ご飯[はん]を 食[た]べます。",
+        "kana": "じゅうにじごろ ごはんを たべます。",
+        "translation": {
+          "vi": "Khoảng 12 giờ tôi ăn cơm."
+        }
+      }
     },
     {
       "id": "nanika",
@@ -210,7 +350,14 @@
         "en": "something",
         "vi": "cái gì đó"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "何[なに]か 飲[の]みたいです。",
+        "kana": "なにか のみたいです。",
+        "translation": {
+          "vi": "Tôi muốn uống cái gì đó."
+        }
+      }
     },
     {
       "id": "dokoka",
@@ -220,7 +367,14 @@
         "en": "somewhere",
         "vi": "nơi nào đó, đâu đó"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "夏休[なつやす]みに どこかへ 行[い]きたいです。",
+        "kana": "なつやすみに どこかへ いきたいです。",
+        "translation": {
+          "vi": "Kỳ nghỉ hè tôi muốn đi đâu đó."
+        }
+      }
     },
     {
       "id": "nodo-ga-kawakimasu",
@@ -230,7 +384,14 @@
         "en": "to be thirsty",
         "vi": "khát nước"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "夏[なつ]は のどが 渇[かわ]きます。",
+        "kana": "なつは のどが かわきます。",
+        "translation": {
+          "vi": "Mùa hè thì khát nước."
+        }
+      }
     },
     {
       "id": "onaka-ga-sukimasu",
@@ -240,7 +401,14 @@
         "en": "to be hungry",
         "vi": "đói bụng"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "朝[あさ] おなかが すきます。",
+        "kana": "あさ おなかが すきます。",
+        "translation": {
+          "vi": "Buổi sáng thì đói bụng."
+        }
+      }
     },
     {
       "id": "sou-shimashou",
@@ -250,7 +418,14 @@
         "en": "let's do that",
         "vi": "chúng ta hãy làm như thế đi!"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「休[やす]みましょう。」「そうしましょう。」",
+        "kana": "「やすみましょう。」「そうしましょう。」",
+        "translation": {
+          "vi": "\"Chúng ta nghỉ ngơi thôi.\" \"Hãy làm như thế đi!\""
+        }
+      }
     },
     {
       "id": "gochuumon",
@@ -260,7 +435,14 @@
         "en": "what would you like to order?",
         "vi": "quý khách muốn gọi món gì ạ?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「ご 注文[ちゅうもん]は？」「コーヒーを お願[ねが]いします。」",
+        "kana": "「ごちゅうもんは？」「コーヒーを おねがいします。」",
+        "translation": {
+          "vi": "\"Quý khách muốn gọi món gì ạ?\" \"Cho tôi một cà phê.\""
+        }
+      }
     },
     {
       "id": "teishoku",
@@ -270,7 +452,14 @@
         "en": "set menu",
         "vi": "suất ăn cơm phần"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "定食[ていしょく]を 二[ふた]つ お願[ねが]いします。",
+        "kana": "ていしょくを ふたつ おねがいします。",
+        "translation": {
+          "vi": "Cho tôi 2 suất ăn cơm phần."
+        }
+      }
     },
     {
       "id": "gyuudon",
@@ -280,7 +469,14 @@
         "en": "gyudon (beef bowl)",
         "vi": "cơm bát thịt bò"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "牛[ぎゅう]どんを 食[た]べたいです。",
+        "kana": "ぎゅうどんを たべたいです。",
+        "translation": {
+          "vi": "Tôi muốn ăn cơm bát thịt bò."
+        }
+      }
     },
     {
       "id": "omachi-kudasai",
@@ -290,7 +486,14 @@
         "en": "please wait [a moment]",
         "vi": "xin vui lòng chờ trong giây lát"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "少々[しょうしょう] お 待[ま]ち ください。",
+        "kana": "しょうしょう おまち ください。",
+        "translation": {
+          "vi": "Xin vui lòng chờ trong giây lát."
+        }
+      }
     },
     {
       "id": "de-gozaimasu",
@@ -300,7 +503,14 @@
         "en": "(polite form of です)",
         "vi": "là (cách nói rất lịch sự của です)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "私[わたし]は マイク・ミラーでございます。",
+        "kana": "わたしは マイク・ミラーでございます。",
+        "translation": {
+          "vi": "Tôi là Mike Miller."
+        }
+      }
     },
     {
       "id": "betsubetsuni",
@@ -310,7 +520,14 @@
         "en": "separately",
         "vi": "riêng rẽ, tách biệt từng người"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "別々[べつべつ]に お 願[ねが]いします。",
+        "kana": "べつべつに おねがいします。",
+        "translation": {
+          "vi": "Xin vui lòng thanh toán riêng rẽ."
+        }
+      }
     }
   ]
 }

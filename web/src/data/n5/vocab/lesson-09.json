@@ -10,7 +10,14 @@
         "en": "to understand",
         "vi": "hiểu, biết"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "日本語[にほんご]が わかります。",
+        "kana": "にほんごが わかります。",
+        "translation": {
+          "vi": "Tôi hiểu tiếng Nhật."
+        }
+      }
     },
     {
       "id": "arimasu",
@@ -20,7 +27,14 @@
         "en": "to have, there is",
         "vi": "có [đồ vật, tiền bạc]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "時間[じかん]が あります。",
+        "kana": "じかんが あります。",
+        "translation": {
+          "vi": "Tôi có thời gian."
+        }
+      }
     },
     {
       "id": "suki",
@@ -30,7 +44,14 @@
         "en": "to like",
         "vi": "thích"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "私[わたし]は 犬[いぬ]が 好[す]きです。",
+        "kana": "わたしは いぬが すきです。",
+        "translation": {
+          "vi": "Tôi thích chó."
+        }
+      }
     },
     {
       "id": "kirai",
@@ -40,7 +61,14 @@
         "en": "to dislike",
         "vi": "ghét, không thích"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "野菜[やさい]が 嫌[きら]いです。",
+        "kana": "やさいが きらいです。",
+        "translation": {
+          "vi": "Tôi ghét rau."
+        }
+      }
     },
     {
       "id": "jouzu",
@@ -50,7 +78,14 @@
         "en": "to be good at",
         "vi": "giỏi, khéo léo"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "母[はは]は 料理[りょうり]が 上手[じょうず]です。",
+        "kana": "ははは りょうりが じょうずです。",
+        "translation": {
+          "vi": "Mẹ tôi nấu ăn giỏi."
+        }
+      }
     },
     {
       "id": "heta",
@@ -60,7 +95,14 @@
         "en": "to be no good at",
         "vi": "kém, dở"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "私[わたし]は ダンスが 下手[へた]です。",
+        "kana": "わたしは ダンスが へたです。",
+        "translation": {
+          "vi": "Tôi khiêu vũ kém."
+        }
+      }
     },
     {
       "id": "nomimono",
@@ -70,7 +112,14 @@
         "en": "drink",
         "vi": "đồ uống"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "飲[の]み 物[もの]を 買[か]います。",
+        "kana": "のみものを かいます。",
+        "translation": {
+          "vi": "Tôi mua đồ uống."
+        }
+      }
     },
     {
       "id": "ryouri",
@@ -80,7 +129,14 @@
         "en": "dish, cuisine",
         "vi": "món ăn, việc nấu ăn"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "日本[にほん]の 料理[りょうり]は おいしいです。",
+        "kana": "にほんの りょうりは おいしいです。",
+        "translation": {
+          "vi": "Món ăn Nhật Bản rất ngon."
+        }
+      }
     },
     {
       "id": "supootsu",
@@ -90,7 +146,14 @@
         "en": "sport",
         "vi": "thể thao"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "スポーツが 好[す]きですか。",
+        "kana": "スポーツが すきですか。",
+        "translation": {
+          "vi": "Bạn có thích thể thao không?"
+        }
+      }
     },
     {
       "id": "yakyuu",
@@ -100,7 +163,14 @@
         "en": "baseball",
         "vi": "bóng chày"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "野球[やきゅう]が 好[す]きです。",
+        "kana": "やきゅうが すきです。",
+        "translation": {
+          "vi": "Tôi thích bóng chày."
+        }
+      }
     },
     {
       "id": "dansu",
@@ -110,7 +180,14 @@
         "en": "dance",
         "vi": "khiêu vũ, nhảy"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ダンスが 下手[へた]です。",
+        "kana": "ダンスが へたです。",
+        "translation": {
+          "vi": "Tôi nhảy kém."
+        }
+      }
     },
     {
       "id": "ryokou",
@@ -120,7 +197,14 @@
         "en": "trip, journey",
         "vi": "chuyến du lịch"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "旅行[りょこう]が 好[す]きです。",
+        "kana": "りょこうが すきです。",
+        "translation": {
+          "vi": "Tôi thích đi du lịch."
+        }
+      }
     },
     {
       "id": "ongaku",
@@ -130,7 +214,14 @@
         "en": "music",
         "vi": "âm nhạc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "音楽[おんがく]を 聞[き]きます。",
+        "kana": "おんがくを ききます。",
+        "translation": {
+          "vi": "Tôi nghe nhạc."
+        }
+      }
     },
     {
       "id": "uta",
@@ -140,7 +231,14 @@
         "en": "song",
         "vi": "bài hát"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "日本[にほん]の 歌[うた]が 好[す]きです。",
+        "kana": "にほんの うたが すきです。",
+        "translation": {
+          "vi": "Tôi thích bài hát Nhật Bản."
+        }
+      }
     },
     {
       "id": "kurashikku",
@@ -150,7 +248,14 @@
         "en": "classical music",
         "vi": "nhạc cổ điển"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "クラシックを 聞[き]きます。",
+        "kana": "クラシックを ききます。",
+        "translation": {
+          "vi": "Tôi nghe nhạc cổ điển."
+        }
+      }
     },
     {
       "id": "jazu",
@@ -160,7 +265,14 @@
         "en": "jazz",
         "vi": "nhạc jazz"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ジャズが 好[す]きです。",
+        "kana": "ジャズが すきです。",
+        "translation": {
+          "vi": "Tôi thích nhạc jazz."
+        }
+      }
     },
     {
       "id": "konsaato",
@@ -170,7 +282,14 @@
         "en": "concert",
         "vi": "buổi hòa nhạc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "明日[あした] コンサートに 行[い]きます。",
+        "kana": "あした コンサートに いきます。",
+        "translation": {
+          "vi": "Ngày mai tôi sẽ đi buổi hòa nhạc."
+        }
+      }
     },
     {
       "id": "karaoke",
@@ -180,7 +299,14 @@
         "en": "karaoke",
         "vi": "karaoke"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "友達[ともだち]と カラオケに 行[い]きます。",
+        "kana": "ともだちと カラオケに いきます。",
+        "translation": {
+          "vi": "Tôi đi karaoke với bạn bè."
+        }
+      }
     },
     {
       "id": "kabuki",
@@ -190,7 +316,14 @@
         "en": "kabuki (traditional theatre)",
         "vi": "kịch Kabuki (kịch truyền thống Nhật)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "歌舞伎[かぶき]が 好[す]きですか。",
+        "kana": "かぶきが すきですか。",
+        "translation": {
+          "vi": "Bạn có thích kịch Kabuki không?"
+        }
+      }
     },
     {
       "id": "e",
@@ -200,7 +333,14 @@
         "en": "painting, drawing",
         "vi": "bức tranh, bức vẽ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "子供[こども]は 絵[え]が 上手[じょうず]です。",
+        "kana": "こどもは えが じょうずです。",
+        "translation": {
+          "vi": "Đứa trẻ vẽ tranh giỏi."
+        }
+      }
     },
     {
       "id": "ji",
@@ -210,7 +350,14 @@
         "en": "letter, character",
         "vi": "chữ cái, chữ viết"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "先生[せんせい]の 字[じ]は きれいです。",
+        "kana": "せんせいの じは きれいです。",
+        "translation": {
+          "vi": "Chữ của thầy giáo rất đẹp."
+        }
+      }
     },
     {
       "id": "kanji",
@@ -220,7 +367,14 @@
         "en": "Chinese characters",
         "vi": "chữ Hán, Kanji"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "漢字[かんじ]が わかります。",
+        "kana": "かんじが わかります。",
+        "translation": {
+          "vi": "Tôi hiểu chữ Hán."
+        }
+      }
     },
     {
       "id": "hiragana",
@@ -230,7 +384,14 @@
         "en": "hiragana script",
         "vi": "chữ Hiragana (chữ mềm)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ひらがなが わかりますか。",
+        "kana": "ひらがなが わかりますか。",
+        "translation": {
+          "vi": "Bạn có hiểu chữ Hiragana không?"
+        }
+      }
     },
     {
       "id": "katakana",
@@ -240,7 +401,14 @@
         "en": "katakana script",
         "vi": "chữ Katakana (chữ cứng)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "かたかなが わかります。",
+        "kana": "かたかなが わかります。",
+        "translation": {
+          "vi": "Tôi hiểu chữ Katakana."
+        }
+      }
     },
     {
       "id": "roomaji",
@@ -250,7 +418,14 @@
         "en": "Latin alphabet",
         "vi": "chữ La-tinh, Romaji"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ローマ字[じ]で 書[か]きます。",
+        "kana": "ローマじで かきます。",
+        "translation": {
+          "vi": "Tôi viết bằng chữ La-tinh."
+        }
+      }
     },
     {
       "id": "komakai-okane",
@@ -260,7 +435,14 @@
         "en": "change, coins",
         "vi": "tiền lẻ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "細[こま]かい お 金[かね]が ありません。",
+        "kana": "こまかい おかねが ありません。",
+        "translation": {
+          "vi": "Tôi không có tiền lẻ."
+        }
+      }
     },
     {
       "id": "chiketto",
@@ -270,7 +452,14 @@
         "en": "entrance",
         "vi": "vé (xem phim, hòa nhạc)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "映画[えいが]の チケットが あります。",
+        "kana": "えいがの チケットが あります。",
+        "translation": {
+          "vi": "Tôi có vé xem phim."
+        }
+      }
     },
     {
       "id": "jikan",
@@ -280,7 +469,14 @@
         "en": "time",
         "vi": "thời gian"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "今日[きょう]は 時間[じかん]が ありません。",
+        "kana": "きょうは じかんが ありません。",
+        "translation": {
+          "vi": "Hôm nay tôi không có thời gian."
+        }
+      }
     },
     {
       "id": "youji",
@@ -290,7 +486,14 @@
         "en": "something to do",
         "vi": "việc bận, việc riêng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "用事[ようじ]が ありますから、帰[かえ]ります。",
+        "kana": "ようじが ありますから、かえります。",
+        "translation": {
+          "vi": "Vì có việc bận nên tôi về."
+        }
+      }
     },
     {
       "id": "yakusoku",
@@ -300,7 +503,14 @@
         "en": "appointment, engagement",
         "vi": "cuộc hẹn, lời hứa"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "友達[ともだち]と 約束[やくそく]が あります。",
+        "kana": "ともだちと やくそくが あります。",
+        "translation": {
+          "vi": "Tôi có cuộc hẹn với bạn."
+        }
+      }
     },
     {
       "id": "arubaito",
@@ -310,7 +520,14 @@
         "en": "part-time job",
         "vi": "công việc làm thêm"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "明日[あした] アルバイトが あります。",
+        "kana": "あした アルバイトが あります。",
+        "translation": {
+          "vi": "Ngày mai tôi có việc làm thêm."
+        }
+      }
     },
     {
       "id": "goshujin",
@@ -320,7 +537,14 @@
         "en": "(your) husband",
         "vi": "chồng (của người khác)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ご 主人[しゅじん]は 会社員[かいしゃいん]ですか。",
+        "kana": "ごしゅじんは かいしゃいんですか。",
+        "translation": {
+          "vi": "Chồng của chị là nhân viên công ty phải không?"
+        }
+      }
     },
     {
       "id": "otto",
@@ -330,7 +554,14 @@
         "en": "(my) husband",
         "vi": "chồng (của mình)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "夫[おっと]は 英語[えいご]が わかります。",
+        "kana": "おっとは えいごが わかります。",
+        "translation": {
+          "vi": "Chồng tôi hiểu tiếng Anh."
+        }
+      }
     },
     {
       "id": "okusan",
@@ -340,7 +571,14 @@
         "en": "(your) wife",
         "vi": "vợ (của người khác)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "奥[おく]さんは 料理[りょうり]が 上手[じょうず]ですか。",
+        "kana": "おくさんは りょうりが じょうずですか。",
+        "translation": {
+          "vi": "Vợ của anh nấu ăn có giỏi không?"
+        }
+      }
     },
     {
       "id": "tsuma",
@@ -350,7 +588,14 @@
         "en": "(my) wife",
         "vi": "vợ (của mình)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "妻[つま]は 花[はな]が 好[す]きです。",
+        "kana": "つまは はなが すきです。",
+        "translation": {
+          "vi": "Vợ tôi thích hoa."
+        }
+      }
     },
     {
       "id": "kodomo",
@@ -360,7 +605,14 @@
         "en": "child, (my) son",
         "vi": "con cái, trẻ em"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "子[こ]どもは 野菜[やさい]が 嫌[きら]いです。",
+        "kana": "こどもは やさいが きらいです。",
+        "translation": {
+          "vi": "Trẻ con không thích rau."
+        }
+      }
     },
     {
       "id": "yoku",
@@ -370,7 +622,14 @@
         "en": "well, a lot",
         "vi": "rõ, tốt, thường xuyên"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "英語[えいご]が よく わかります。",
+        "kana": "えいごが よく わかります。",
+        "translation": {
+          "vi": "Tôi rất hiểu tiếng Anh."
+        }
+      }
     },
     {
       "id": "daitai",
@@ -380,7 +639,14 @@
         "en": "more or less",
         "vi": "đại khái, phần lớn"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "漢字[かんじ]が だいたい わかります。",
+        "kana": "かんじが だいたい わかります。",
+        "translation": {
+          "vi": "Tôi hiểu đại khái chữ Hán."
+        }
+      }
     },
     {
       "id": "takusan",
@@ -390,7 +656,14 @@
         "en": "a lot, much",
         "vi": "nhiều"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "お金[かね]が たくさん あります。",
+        "kana": "おかねが たくさん あります。",
+        "translation": {
+          "vi": "Tôi có nhiều tiền."
+        }
+      }
     },
     {
       "id": "sukoshi",
@@ -400,7 +673,14 @@
         "en": "a little",
         "vi": "một chút, ít"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "日本語[にほんご]が 少[すこ]し わかります。",
+        "kana": "にほんごが すこし わかります。",
+        "translation": {
+          "vi": "Tôi hiểu một chút tiếng Nhật."
+        }
+      }
     },
     {
       "id": "zenzen",
@@ -410,7 +690,14 @@
         "en": "nothing ~ (with a negative)",
         "vi": "hoàn toàn không... (đi với phủ định)"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "韓国語[かんこくご]が 全然[ぜんぜん] わかりません。",
+        "kana": "かんこくごが ぜんぜん わかりません。",
+        "translation": {
+          "vi": "Tôi hoàn toàn không hiểu tiếng Hàn Quốc."
+        }
+      }
     },
     {
       "id": "hayaku",
@@ -420,7 +707,14 @@
         "en": "early, fast",
         "vi": "sớm, nhanh"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "今日[きょう]は 早[はや]く 帰[かえ]ります。",
+        "kana": "きょうは はやく かえります。",
+        "translation": {
+          "vi": "Hôm nay tôi về sớm."
+        }
+      }
     },
     {
       "id": "kara-porque",
@@ -430,7 +724,14 @@
         "en": "because ~",
         "vi": "vì, do (chỉ lý do)"
       },
-      "type": "particle"
+      "type": "particle",
+      "example": {
+        "jp": "時間[じかん]が ありませんから、タクシーで 行[い]きます。",
+        "kana": "じかんが ありませんから、タクシーで いきます。",
+        "translation": {
+          "vi": "Vì không có thời gian nên tôi đi bằng taxi."
+        }
+      }
     },
     {
       "id": "doushite",
@@ -440,7 +741,14 @@
         "en": "why",
         "vi": "tại sao, vì sao"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "どうして 新聞[しんぶん]を 読[よ]みませんか。",
+        "kana": "どうして しんぶんを よみませんか。",
+        "translation": {
+          "vi": "Tại sao bạn không đọc báo?"
+        }
+      }
     },
     {
       "id": "kashite-kudasai",
@@ -450,7 +758,14 @@
         "en": "please lend me",
         "vi": "xin hãy cho tôi mượn"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "その 本[ほん]を 貸[か]して ください。",
+        "kana": "その ほんを かして ください。",
+        "translation": {
+          "vi": "Xin hãy cho tôi mượn cuốn sách đó."
+        }
+      }
     },
     {
       "id": "ii-desu-yo",
@@ -460,7 +775,14 @@
         "en": "yes, of course",
         "vi": "được chứ / được đấy"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "いいですよ、どうぞ。",
+        "kana": "いいですよ、どうぞ。",
+        "translation": {
+          "vi": "Được chứ, xin mời."
+        }
+      }
     },
     {
       "id": "zannen-desu",
@@ -470,7 +792,14 @@
         "en": "I'm sorry[, but…]",
         "vi": "Tiếc quá / Thật đáng tiếc"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "残念[ざんねん]ですが、時間[じかん]が ありません。",
+        "kana": "ざんねんですが、じかんが ありません。",
+        "translation": {
+          "vi": "Thật đáng tiếc nhưng tôi không có thời gian."
+        }
+      }
     },
     {
       "id": "aa",
@@ -480,7 +809,14 @@
         "en": "oh!",
         "vi": "A / Ôi (tiếng thốt lên)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "ああ、そうですか。",
+        "kana": "ああ、そうですか。",
+        "translation": {
+          "vi": "A, vậy à."
+        }
+      }
     },
     {
       "id": "isshoni-ikaga",
@@ -490,7 +826,14 @@
         "en": "will you come with me?",
         "vi": "cùng đi với tôi nhé?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "いっしょに いかがですか。",
+        "kana": "いっしょに いかがですか。",
+        "translation": {
+          "vi": "Cùng đi với tôi nhé?"
+        }
+      }
     },
     {
       "id": "chotto-euf",
@@ -500,7 +843,14 @@
         "en": "[~] is a little difficult (refusal)",
         "vi": "thì có chút... (cách từ chối khéo)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "今日[きょう]は ちょっと……。",
+        "kana": "きょうは ちょっと……。",
+        "translation": {
+          "vi": "Hôm nay thì có chút..."
+        }
+      }
     },
     {
       "id": "dame-desu-ka",
@@ -510,7 +860,14 @@
         "en": "can't you?",
         "vi": "Không được à?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "だめですか。",
+        "kana": "だめですか。",
+        "translation": {
+          "vi": "Không được à?"
+        }
+      }
     },
     {
       "id": "mata-kondo",
@@ -520,7 +877,14 @@
         "en": "please invite me again",
         "vi": "Hẹn bạn lần sau nhé"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "また 今度[こんど] お願[ねが]いします。",
+        "kana": "また こんど おねがいします。",
+        "translation": {
+          "vi": "Hẹn bạn lần sau nhé."
+        }
+      }
     }
   ]
 }

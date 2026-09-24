@@ -1,5 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { stripFurigana, toKanaSentence } from './japanese.ts';
+import type { VocabWord } from '../types/index.ts';
 import {
   loadLesson,
   loadVocab,
@@ -36,6 +38,82 @@ test('loadVocab nạp đúng từ vựng và kiểu dữ liệu', async () => {
   assert.equal(watashi.kana, 'わたし');
   assert.equal(watashi.type, 'pronoun');
   assert.equal(watashi.meaning.vi, 'tôi');
+});
+
+const IGNORED_IN_READING = /[「」『』\s　]/gu;
+// Mỗi cách viết của từ là một nhóm phần phải cùng có mặt: `こちらは〜さんです` → [こちらは, さんです];
+// `トイレ（お手洗い）`, `おばあさん／おばあちゃん`, `暑い・熱い` là các cách viết thay thế. Từ đích hiện trong
+// câu ở dạng chia (て形, ない形…) nên động từ và tính từ い chỉ so phần gốc ổn định.
+function exampleTargets(word: VocabWord): string[][] {
+  return [stripFurigana(word.word), word.kana].flatMap((form) =>
+    form
+      .replace(/\[[^\]]*\]/gu, '')
+      .replace(IGNORED_IN_READING, '')
+      .split(/[（）()／・]/u)
+      .filter(Boolean)
+      .map((variant) => {
+        const parts = variant.split(/[〜～…]/u).filter(Boolean);
+        const last = parts.length - 1;
+        if (word.type.startsWith('verb')) {
+          const stem = parts[last]!.replace(/ます$/u, '');
+          parts[last] = stem.slice(0, Math.max(1, stem.length - 1));
+        }
+        if (word.type === 'adjective-i') parts[last] = parts[last]!.replace(/い$/u, '');
+        return parts;
+      })
+  );
+}
+
+test('ví dụ từ vựng khớp furigana, kana và chứa từ đích', async () => {
+  for (const lesson of AVAILABLE_N5_LESSONS) {
+    for (const word of await loadVocab(lesson)) {
+      const example = word.example;
+      if (!example) continue;
+      const id = `bài ${lesson} ${word.id}`;
+      assert.ok(example.jp && example.kana && example.translation.vi.trim(), id);
+      const reading = toKanaSentence(example.jp).replace(IGNORED_IN_READING, '');
+      assert.doesNotMatch(reading, /[一-鿿㐀-䶿々〆〇ヶ]/u, id);
+      // Chữ số nằm ngoài furigana sẽ bị TTS đọc thừa (`６時[ろくじ]` → `６ろくじ`).
+      assert.doesNotMatch(example.kana, /[0-9０-９]/u, `${id}: kana còn chữ số`);
+      assert.equal(reading, example.kana.replace(IGNORED_IN_READING, ''), id);
+      const written = stripFurigana(example.jp).replace(IGNORED_IN_READING, '');
+      // Câu chỉ dùng một cách viết: không chép ngoặc, ／ hay cả cụm `A・B` từ trường word.
+      assert.doesNotMatch(written, /[（）()／]/u, `${id}: câu chép cách viết thay thế`);
+      const writtenWord = stripFurigana(word.word).replace(/\[[^\]]*\]/gu, '');
+      if (writtenWord.includes('・')) assert.ok(!written.includes(writtenWord), `${id}: câu chép cả cụm ・`);
+      assert.ok(
+        exampleTargets(word).some((parts) =>
+          parts.every((part) => written.includes(part) || reading.includes(part))
+        ),
+        `${id}: câu không chứa từ đích`
+      );
+    }
+  }
+});
+
+// JSON chỉ được cast sang VocabWord, TypeScript không bắt được tên loại từ lệch với union.
+const VOCAB_TYPES = new Set<string>([
+  'noun', 'pronoun', 'verb-godan', 'verb-ichidan', 'verb-irregular', 'adjective-i', 'adjective-na',
+  'adverb', 'particle', 'expression', 'interrogative', 'counter', 'number', 'conjunction',
+] satisfies VocabWord['type'][]);
+
+test('loại từ trong JSON khớp VocabWord.type', async () => {
+  for (const lesson of AVAILABLE_N5_LESSONS) {
+    for (const word of await loadVocab(lesson)) {
+      assert.ok(VOCAB_TYPES.has(word.type), `bài ${lesson} ${word.id}: ${word.type}`);
+    }
+  }
+});
+
+test('mọi từ vựng N5 đều có ví dụ riêng', async () => {
+  let total = 0;
+  for (const lesson of AVAILABLE_N5_LESSONS) {
+    for (const word of await loadVocab(lesson)) {
+      assert.ok(word.example, `bài ${lesson} ${word.id}`);
+      total++;
+    }
+  }
+  assert.equal(total, 991);
 });
 
 test('loadLessonData nạp đồng thời bài học và từ vựng', async () => {

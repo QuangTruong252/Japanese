@@ -10,7 +10,14 @@
         "en": "handsome",
         "vi": "đẹp trai"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "あの 人[ひと]は ハンサムです。",
+        "kana": "あの ひとは ハンサムです。",
+        "translation": {
+          "vi": "Người kia đẹp trai."
+        }
+      }
     },
     {
       "id": "kirei",
@@ -20,7 +27,14 @@
         "en": "beautiful, clean",
         "vi": "đẹp, sạch sẽ"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "この 部屋[へや]は きれいです。",
+        "kana": "この へやは きれいです。",
+        "translation": {
+          "vi": "Căn phòng này sạch sẽ."
+        }
+      }
     },
     {
       "id": "shizuka",
@@ -30,7 +44,14 @@
         "en": "quiet",
         "vi": "yên tĩnh"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "ここは 静[しず]かです。",
+        "kana": "ここは しずかです。",
+        "translation": {
+          "vi": "Chỗ này yên tĩnh."
+        }
+      }
     },
     {
       "id": "nigiyaka",
@@ -40,7 +61,14 @@
         "en": "busy, lively",
         "vi": "nhộn nhịp, náo nhiệt"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "東京[とうきょう]は にぎやかです。",
+        "kana": "とうきょうは にぎやかです。",
+        "translation": {
+          "vi": "Tokyo thì nhộn nhịp."
+        }
+      }
     },
     {
       "id": "yuumei",
@@ -50,7 +78,14 @@
         "en": "famous, well known",
         "vi": "nổi tiếng"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "富士山[ふじさん]は 有名[ゆうめい]です。",
+        "kana": "ふじさんは ゆうめいです。",
+        "translation": {
+          "vi": "Núi Phú Sĩ thì nổi tiếng."
+        }
+      }
     },
     {
       "id": "shinsetsu",
@@ -60,7 +95,14 @@
         "en": "kind, generous",
         "vi": "tốt bụng, thân thiện, tử tế"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "先生[せんせい]は 親切[しんせつ]です。",
+        "kana": "せんせいは しんせつです。",
+        "translation": {
+          "vi": "Thầy giáo rất tốt bụng."
+        }
+      }
     },
     {
       "id": "genki",
@@ -70,7 +112,14 @@
         "en": "healthy, in good spirits",
         "vi": "khỏe mạnh"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "子供[こども]は 元気[げんき]です。",
+        "kana": "こどもは げんきです。",
+        "translation": {
+          "vi": "Đứa trẻ thì khỏe mạnh."
+        }
+      }
     },
     {
       "id": "hima",
@@ -80,7 +129,14 @@
         "en": "free (time)",
         "vi": "rảnh rỗi"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "今日[きょう]は 暇[ひま]です。",
+        "kana": "きょうは ひまです。",
+        "translation": {
+          "vi": "Hôm nay tôi rảnh rỗi."
+        }
+      }
     },
     {
       "id": "benri",
@@ -90,7 +146,14 @@
         "en": "useful, handy",
         "vi": "tiện lợi"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "車[くるま]は 便利[べんり]です。",
+        "kana": "くるまは べんりです。",
+        "translation": {
+          "vi": "Ô tô thì tiện lợi."
+        }
+      }
     },
     {
       "id": "suteki",
@@ -100,7 +163,14 @@
         "en": "pretty",
         "vi": "tuyệt vời, đẹp đẽ"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "すてきな カバンですね。",
+        "kana": "すてきな カバンですね。",
+        "translation": {
+          "vi": "Cái cặp tuyệt vời quá nhỉ."
+        }
+      }
     },
     {
       "id": "ookii",
@@ -110,7 +180,14 @@
         "en": "big",
         "vi": "to, lớn"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "この 車[くるま]は 大[おお]きいです。",
+        "kana": "この くるまは おおきいです。",
+        "translation": {
+          "vi": "Chiếc xe này to."
+        }
+      }
     },
     {
       "id": "chiisai",
@@ -120,7 +197,14 @@
         "en": "small",
         "vi": "nhỏ, bé"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "私[わたし]の 部屋[へや]は 小[ちい]さいです。",
+        "kana": "わたしの へやは ちいさいです。",
+        "translation": {
+          "vi": "Phòng của tôi nhỏ."
+        }
+      }
     },
     {
       "id": "atarashii",
@@ -130,7 +214,14 @@
         "en": "new",
         "vi": "mới"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "新[あたら]しい パソコンを 買[か]いました。",
+        "kana": "あたらしい パソコンを かいました。",
+        "translation": {
+          "vi": "Tôi đã mua máy tính mới."
+        }
+      }
     },
     {
       "id": "furui",
@@ -140,7 +231,14 @@
         "en": "old (not for people)",
         "vi": "cũ"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "この 時計[とけい]は 古[ふる]いです。",
+        "kana": "この とけいは ふるいです。",
+        "translation": {
+          "vi": "Cái đồng hồ này cũ."
+        }
+      }
     },
     {
       "id": "ii",
@@ -150,7 +248,14 @@
         "en": "good",
         "vi": "tốt, hay"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "いい 天気[てんき]ですね。",
+        "kana": "いい てんきですね。",
+        "translation": {
+          "vi": "Thời tiết đẹp nhỉ."
+        }
+      }
     },
     {
       "id": "warui",
@@ -160,7 +265,14 @@
         "en": "bad",
         "vi": "xấu, tồi"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "今日[きょう]は 天気[てんき]が 悪[わる]いです。",
+        "kana": "きょうは てんきが わるいです。",
+        "translation": {
+          "vi": "Hôm nay thời tiết xấu."
+        }
+      }
     },
     {
       "id": "atsui",
@@ -170,7 +282,14 @@
         "en": "hot, warm",
         "vi": "nóng (thời tiết)"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "今日[きょう]は 暑[あつ]いです。",
+        "kana": "きょうは あついです。",
+        "translation": {
+          "vi": "Hôm nay trời nóng."
+        }
+      }
     },
     {
       "id": "samui",
@@ -180,7 +299,14 @@
         "en": "cold (weather)",
         "vi": "lạnh, rét (thời tiết)"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "日本[にほん]は 寒[さむ]いです。",
+        "kana": "にほんは さむいです。",
+        "translation": {
+          "vi": "Nhật Bản thì lạnh."
+        }
+      }
     },
     {
       "id": "tsumetai",
@@ -190,7 +316,14 @@
         "en": "cold (to the touch)",
         "vi": "lạnh, buốt (khi chạm vào đồ vật)"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "冷[つめ]たい 水[みず]を 飲[の]みます。",
+        "kana": "つめたい みずを のみます。",
+        "translation": {
+          "vi": "Tôi uống nước lạnh."
+        }
+      }
     },
     {
       "id": "muzukashii",
@@ -200,7 +333,14 @@
         "en": "difficult",
         "vi": "khó"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "日本語[にほんご]は 難[むずか]しいです。",
+        "kana": "にほんごは むずかしいです。",
+        "translation": {
+          "vi": "Tiếng Nhật thì khó."
+        }
+      }
     },
     {
       "id": "yasashii",
@@ -210,7 +350,14 @@
         "en": "easy",
         "vi": "dễ, đơn giản"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "この テストは 易[やさ]しいです。",
+        "kana": "この テストは やさしいです。",
+        "translation": {
+          "vi": "Bài kiểm tra này dễ."
+        }
+      }
     },
     {
       "id": "takai",
@@ -220,7 +367,14 @@
         "en": "expensive, high",
         "vi": "đắt, cao"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "この 本[ほん]は 高[たか]いです。",
+        "kana": "この ほんは たかいです。",
+        "translation": {
+          "vi": "Cuốn sách này đắt."
+        }
+      }
     },
     {
       "id": "yasui",
@@ -230,7 +384,14 @@
         "en": "cheap",
         "vi": "rẻ"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "その かばんは 安[やす]いです。",
+        "kana": "その かばんは やすいです。",
+        "translation": {
+          "vi": "Cái cặp đó thì rẻ."
+        }
+      }
     },
     {
       "id": "hikui",
@@ -240,7 +401,14 @@
         "en": "short (height)",
         "vi": "thấp"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "あの 山[やま]は 低[ひく]いです。",
+        "kana": "あの やまは ひくいです。",
+        "translation": {
+          "vi": "Ngọn núi kia thì thấp."
+        }
+      }
     },
     {
       "id": "omoshiroi",
@@ -250,7 +418,14 @@
         "en": "interesting",
         "vi": "thú vị, hay"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "この 映画[えいが]は おもしろいです。",
+        "kana": "この えいがは おもしろいです。",
+        "translation": {
+          "vi": "Bộ phim này thú vị."
+        }
+      }
     },
     {
       "id": "oishii",
@@ -260,7 +435,14 @@
         "en": "delicious",
         "vi": "ngon"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "日本[にほん]の 食[た]べ 物[もの]は おいしいです。",
+        "kana": "にほんの たべものは おいしいです。",
+        "translation": {
+          "vi": "Đồ ăn Nhật Bản ngon."
+        }
+      }
     },
     {
       "id": "isogashii",
@@ -270,7 +452,14 @@
         "en": "busy",
         "vi": "bận rộn"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "毎日[まいにち] 忙[いそが]しいです。",
+        "kana": "まいにち いそがしいです。",
+        "translation": {
+          "vi": "Mỗi ngày tôi đều bận rộn."
+        }
+      }
     },
     {
       "id": "tanoshii",
@@ -280,7 +469,14 @@
         "en": "fun, enjoyable",
         "vi": "vui vẻ"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "大学[だいがく]は 楽[たの]しいです。",
+        "kana": "だいがくは たのしいです。",
+        "translation": {
+          "vi": "Đại học thì vui vẻ."
+        }
+      }
     },
     {
       "id": "shiroi",
@@ -290,7 +486,14 @@
         "en": "white",
         "vi": "trắng"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "白[しろ]い シャツを 買[か]いました。",
+        "kana": "しろい シャツを かいました。",
+        "translation": {
+          "vi": "Tôi đã mua áo sơ mi trắng."
+        }
+      }
     },
     {
       "id": "kuroi",
@@ -300,7 +503,14 @@
         "en": "black",
         "vi": "đen"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "黒[くろ]い 靴[くつ]ですね。",
+        "kana": "くろい くつですね。",
+        "translation": {
+          "vi": "Đôi giày màu đen nhỉ."
+        }
+      }
     },
     {
       "id": "akai",
@@ -310,7 +520,14 @@
         "en": "red",
         "vi": "đỏ"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "赤[あか]い 花[はな]を あげます。",
+        "kana": "あかい はなを あげます。",
+        "translation": {
+          "vi": "Tôi tặng hoa màu đỏ."
+        }
+      }
     },
     {
       "id": "aoi",
@@ -320,7 +537,14 @@
         "en": "blue",
         "vi": "xanh da trời, xanh lam"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "あの 青[あお]い 車[くるま]は 私[わたし]のです。",
+        "kana": "あの あおい くるまは わたしのです。",
+        "translation": {
+          "vi": "Chiếc xe màu xanh kia là của tôi."
+        }
+      }
     },
     {
       "id": "sakura",
@@ -330,7 +554,14 @@
         "en": "cherry tree or blossom",
         "vi": "hoa anh đào"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "桜[さくら]は きれいです。",
+        "kana": "さくらは きれいです。",
+        "translation": {
+          "vi": "Hoa anh đào đẹp."
+        }
+      }
     },
     {
       "id": "yama",
@@ -340,7 +571,14 @@
         "en": "mountain",
         "vi": "núi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "富士山[ふじさん]は 高[たか]い 山[やま]です。",
+        "kana": "ふじさんは たかい やまです。",
+        "translation": {
+          "vi": "Phú Sĩ là ngọn núi cao."
+        }
+      }
     },
     {
       "id": "machi",
@@ -350,7 +588,14 @@
         "en": "town, city",
         "vi": "thị trấn, thành phố"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ハノイは にぎやかな 町[まち]です。",
+        "kana": "ハノイは にぎやかな まちです。",
+        "translation": {
+          "vi": "Hà Nội là thành phố nhộn nhịp."
+        }
+      }
     },
     {
       "id": "tabemono",
@@ -360,7 +605,14 @@
         "en": "food",
         "vi": "thức ăn, đồ ăn"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "食[た]べ 物[もの]を 買[か]います。",
+        "kana": "たべものを かいます。",
+        "translation": {
+          "vi": "Tôi mua thức ăn."
+        }
+      }
     },
     {
       "id": "tokoro",
@@ -370,7 +622,14 @@
         "en": "place",
         "vi": "nơi, chỗ, địa điểm"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ここは いい 所[ところ]です。",
+        "kana": "ここは いい ところです。",
+        "translation": {
+          "vi": "Chỗ này là nơi tốt."
+        }
+      }
     },
     {
       "id": "ryou",
@@ -380,7 +639,14 @@
         "en": "dormitory",
         "vi": "ký túc xá"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "寮[りょう]の 部屋[へや]は 古[ふる]いです。",
+        "kana": "りょうの へやは ふるいです。",
+        "translation": {
+          "vi": "Phòng ở ký túc xá thì cũ."
+        }
+      }
     },
     {
       "id": "resutoran",
@@ -390,7 +656,14 @@
         "en": "restaurant",
         "vi": "nhà hàng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの レストランは おいしいです。",
+        "kana": "あの レストランは おいしいです。",
+        "translation": {
+          "vi": "Nhà hàng kia ngon."
+        }
+      }
     },
     {
       "id": "seikatsu",
@@ -400,7 +673,14 @@
         "en": "(daily) life",
         "vi": "cuộc sống, sinh hoạt"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "日本[にほん]の 生活[せいかつ]は 楽[たの]しいです。",
+        "kana": "にほんの せいかつは たのしいです。",
+        "translation": {
+          "vi": "Cuộc sống ở Nhật Bản rất vui."
+        }
+      }
     },
     {
       "id": "oshigoto",
@@ -410,7 +690,14 @@
         "en": "work, profession",
         "vi": "công việc (lịch sự)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "お 仕事[しごと]は 忙[いそが]しいですか。",
+        "kana": "おしごとは いそがしいですか。",
+        "translation": {
+          "vi": "Công việc của bạn có bận không?"
+        }
+      }
     },
     {
       "id": "dou",
@@ -420,7 +707,14 @@
         "en": "how",
         "vi": "như thế nào"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "日本[にほん]の 生活[せいかつ]は どうですか。",
+        "kana": "にほんの せいかつは どうですか。",
+        "translation": {
+          "vi": "Cuộc sống ở Nhật Bản thế nào?"
+        }
+      }
     },
     {
       "id": "donna",
@@ -430,7 +724,14 @@
         "en": "what kind of ~",
         "vi": "như thế nào (bổ nghĩa danh từ)"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "どんな 映画[えいが]を 見[み]ますか。",
+        "kana": "どんな えいがを みますか。",
+        "translation": {
+          "vi": "Bạn xem loại phim như thế nào?"
+        }
+      }
     },
     {
       "id": "totemo",
@@ -440,7 +741,14 @@
         "en": "very, a lot",
         "vi": "rất"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "この ケーキは とても おいしいです。",
+        "kana": "この ケーキは とても おいしいです。",
+        "translation": {
+          "vi": "Cái bánh kem này rất ngon."
+        }
+      }
     },
     {
       "id": "amari",
@@ -450,7 +758,14 @@
         "en": "not very (with a negative)",
         "vi": "không... lắm (đi với phủ định)"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "この カメラは あまり よくないです。",
+        "kana": "この カメラは あまり よくないです。",
+        "translation": {
+          "vi": "Cái máy ảnh này không tốt lắm."
+        }
+      }
     },
     {
       "id": "soshite",
@@ -460,7 +775,14 @@
         "en": "and (joins sentences)",
         "vi": "và, rồi thì"
       },
-      "type": "conjunction"
+      "type": "conjunction",
+      "example": {
+        "jp": "この 部屋[へや]は 大[おお]きいです。そして、きれいです。",
+        "kana": "この へやは おおきいです。そして、きれいです。",
+        "translation": {
+          "vi": "Căn phòng này lớn. Và còn sạch sẽ nữa."
+        }
+      }
     },
     {
       "id": "ga-pero",
@@ -470,7 +792,14 @@
         "en": "~, but ~",
         "vi": "nhưng"
       },
-      "type": "particle"
+      "type": "particle",
+      "example": {
+        "jp": "日本[にほん]の 食[た]べ物[もの]は おいしいですが、高[たか]いです。",
+        "kana": "にほんの たべものは おいしいですが、たかいです。",
+        "translation": {
+          "vi": "Đồ ăn Nhật Bản ngon nhưng đắt."
+        }
+      }
     },
     {
       "id": "ogenki-desu-ka",
@@ -480,7 +809,14 @@
         "en": "how are you?",
         "vi": "bạn có khỏe không?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "お 元気[げんき]ですか。",
+        "kana": "おげんきですか。",
+        "translation": {
+          "vi": "Bạn có khỏe không?"
+        }
+      }
     },
     {
       "id": "mou-ippai",
@@ -490,7 +826,14 @@
         "en": "would you like another cup of [~]?",
         "vi": "bạn có muốn dùng thêm một ly/tách nữa không?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "もう 一杯[いっぱい] いかがですか。",
+        "kana": "もう いっぱい いかがですか。",
+        "translation": {
+          "vi": "Bạn có muốn dùng thêm một ly nữa không?"
+        }
+      }
     },
     {
       "id": "kekkou-desu",
@@ -500,7 +843,14 @@
         "en": "no, thank you",
         "vi": "thôi, tôi đủ rồi ạ / không, cảm ơn"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "いいえ、けっこうです。",
+        "kana": "いいえ、けっこうです。",
+        "translation": {
+          "vi": "Không, cảm ơn."
+        }
+      }
     },
     {
       "id": "sorosoro",
@@ -510,7 +860,14 @@
         "en": "it's time to go",
         "vi": "đã đến lúc tôi phải xin phép ra về"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "そろそろ 失礼[しつれい]します。",
+        "kana": "そろそろ しつれいします。",
+        "translation": {
+          "vi": "Đã đến lúc tôi phải xin phép ra về."
+        }
+      }
     },
     {
       "id": "iie-denada",
@@ -520,7 +877,14 @@
         "en": "you're welcome",
         "vi": "không có chi"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「どうも ありがとう ございました。」「いいえ。」",
+        "kana": "「どうも ありがとう ございました。」「いいえ。」",
+        "translation": {
+          "vi": "“Cảm ơn nhiều.” “Không có chi.”"
+        }
+      }
     },
     {
       "id": "mata-irasshatte",
@@ -530,7 +894,14 @@
         "en": "please come again",
         "vi": "lần sau lại ghé chơi nhé"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "また いらっしゃって ください。",
+        "kana": "また いらっしゃって ください。",
+        "translation": {
+          "vi": "Lần sau lại ghé chơi nhé."
+        }
+      }
     }
   ]
 }

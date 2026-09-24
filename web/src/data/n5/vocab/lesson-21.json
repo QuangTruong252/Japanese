@@ -10,7 +10,14 @@
         "en": "to believe, to think",
         "vi": "nghĩ, cho rằng"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "明日[あした]は 雨[あめ]が 降[ふ]ると 思[おも]います。",
+        "kana": "あしたは あめが ふると おもいます。",
+        "translation": {
+          "vi": "Tôi nghĩ ngày mai trời sẽ mưa."
+        }
+      }
     },
     {
       "id": "iimasu",
@@ -20,7 +27,14 @@
         "en": "to say",
         "vi": "nói"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "彼[かれ]は 明日[あした] 休[やす]むと 言[い]いました。",
+        "kana": "かれは あした やすむと いいました。",
+        "translation": {
+          "vi": "Anh ấy đã nói là ngày mai sẽ nghỉ."
+        }
+      }
     },
     {
       "id": "kachimasu",
@@ -30,7 +44,14 @@
         "en": "to win",
         "vi": "thắng, chiến thắng"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "日本[にほん]の チームが 勝[か]ちました。",
+        "kana": "にほんの チームが かちました。",
+        "translation": {
+          "vi": "Đội tuyển Nhật Bản đã chiến thắng."
+        }
+      }
     },
     {
       "id": "makemasu",
@@ -40,7 +61,14 @@
         "en": "to lose, to be beaten",
         "vi": "thua, thất bại"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "試合[しあい]に 負[ま]けました。",
+        "kana": "しあいに まけました。",
+        "translation": {
+          "vi": "Tôi đã thua trong trận đấu."
+        }
+      }
     },
     {
       "id": "arimasu-evento",
@@ -50,7 +78,14 @@
         "en": "to be held [a festival]",
         "vi": "được tổ chức, diễn ra [lễ hội]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "京都[きょうと]で お 祭[まつ]りが あります。",
+        "kana": "きょうとで お まつりが あります。",
+        "translation": {
+          "vi": "Ở Kyoto sẽ diễn ra lễ hội."
+        }
+      }
     },
     {
       "id": "yakuni-tachimasu",
@@ -60,7 +95,14 @@
         "en": "to be useful",
         "vi": "có ích, hữu dụng"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "この 辞書[じしょ]は 役[やく]に 立[た]ちます。",
+        "kana": "この じしょは やくに たちます。",
+        "translation": {
+          "vi": "Cuốn từ điển này rất có ích."
+        }
+      }
     },
     {
       "id": "ugokimasu",
@@ -70,7 +112,14 @@
         "en": "to work, to move",
         "vi": "hoạt động, chuyển động [máy móc]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "この 時計[とけい]は 動[うご]きません。",
+        "kana": "この とけいは うごきません。",
+        "translation": {
+          "vi": "Chiếc đồng hồ này không hoạt động."
+        }
+      }
     },
     {
       "id": "yamemasu",
@@ -80,7 +129,14 @@
         "en": "to quit, to leave [the company]",
         "vi": "bỏ việc, nghỉ việc ở [công ty]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "会社[かいしゃ]を やめたいと 思[おも]います。",
+        "kana": "かいしゃを やめたいと おもいます。",
+        "translation": {
+          "vi": "Tôi nghĩ là mình muốn nghỉ việc ở công ty."
+        }
+      }
     },
     {
       "id": "kiotsukemasu",
@@ -90,7 +146,14 @@
         "en": "to pay attention, to be careful",
         "vi": "chú ý, cẩn thận"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "車[くるま]に 気[き]をつけて ください。",
+        "kana": "くるまに きをつけて ください。",
+        "translation": {
+          "vi": "Xin hãy chú ý xe ô tô."
+        }
+      }
     },
     {
       "id": "ryuugaku-shimasu",
@@ -100,7 +163,14 @@
         "en": "to study abroad",
         "vi": "du học"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "イギリスへ 留学[りゅうがく]したいです。",
+        "kana": "イギリスへ りゅうがくしたいです。",
+        "translation": {
+          "vi": "Tôi muốn đi du học Anh."
+        }
+      }
     },
     {
       "id": "muda",
@@ -110,7 +180,14 @@
         "en": "unnecessary, useless",
         "vi": "lãng phí, vô ích"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "むだな 買[か]い物[もの]を しました。",
+        "kana": "むだな かいものを しました。",
+        "translation": {
+          "vi": "Tôi đã mua sắm lãng phí."
+        }
+      }
     },
     {
       "id": "fuben",
@@ -120,7 +197,14 @@
         "en": "inconvenient",
         "vi": "bất tiện"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "この 町[まち]は 不便[ふべん]だと 思[おも]います。",
+        "kana": "この まちは ふべんだと おもいます。",
+        "translation": {
+          "vi": "Tôi nghĩ thị trấn này thì bất tiện."
+        }
+      }
     },
     {
       "id": "sugoi",
@@ -130,7 +214,14 @@
         "en": "terrible, amazing",
         "vi": "ghê gớm, tuyệt vời"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "その パソコンは すごいですね。",
+        "kana": "その パソコンは すごいですね。",
+        "translation": {
+          "vi": "Chiếc máy tính đó thật tuyệt vời nhỉ."
+        }
+      }
     },
     {
       "id": "hontou",
@@ -140,7 +231,14 @@
         "en": "truth",
         "vi": "sự thật, thật sự"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "それは ほんとうですか。",
+        "kana": "それは ほんとうですか。",
+        "translation": {
+          "vi": "Điều đó là sự thật hả?"
+        }
+      }
     },
     {
       "id": "uso",
@@ -150,7 +248,14 @@
         "en": "lie",
         "vi": "lời nói dối"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "彼[かれ]の 話[はなし]は うそだと 思[おも]います。",
+        "kana": "かれの はなしは うそだと おもいます。",
+        "translation": {
+          "vi": "Tôi nghĩ câu chuyện của anh ấy là lời nói dối."
+        }
+      }
     },
     {
       "id": "jidousha",
@@ -160,7 +265,14 @@
         "en": "car, automobile",
         "vi": "xe ô tô"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "自動車[じどうしゃ]の 会社[かいしゃ]で 働[はたら]きたいです。",
+        "kana": "じどうしゃの かいしゃで はたらきたいです。",
+        "translation": {
+          "vi": "Tôi muốn làm việc ở công ty ô tô."
+        }
+      }
     },
     {
       "id": "koutsuu",
@@ -170,7 +282,14 @@
         "en": "transport, traffic",
         "vi": "giao thông"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "東京[とうきょう]は 交通[こうつう]が 便利[べんり]です。",
+        "kana": "とうきょうは こうつうが べんりです。",
+        "translation": {
+          "vi": "Giao thông ở Tokyo rất tiện lợi."
+        }
+      }
     },
     {
       "id": "bukka",
@@ -180,7 +299,14 @@
         "en": "cost of living",
         "vi": "giá cả, vật giá"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "日本[にほん]は 物価[ぶっか]が 高[たか]いと 思[おも]います。",
+        "kana": "にほんは ぶっかが たかいと おもいます。",
+        "translation": {
+          "vi": "Tôi nghĩ vật giá ở Nhật Bản đắt đỏ."
+        }
+      }
     },
     {
       "id": "housou",
@@ -190,7 +316,14 @@
         "en": "broadcast",
         "vi": "sự phát sóng, phát thanh"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ニュースの 放送[ほうそう]を 見[み]ました。",
+        "kana": "ニュースの ほうそうを みました。",
+        "translation": {
+          "vi": "Tôi đã xem chương trình phát sóng tin tức."
+        }
+      }
     },
     {
       "id": "nyuusu",
@@ -200,7 +333,14 @@
         "en": "news",
         "vi": "tin tức, bản tin thời sự"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "毎晩[まいばん] ニュースを 見[み]ます。",
+        "kana": "まいばん ニュースを みます。",
+        "translation": {
+          "vi": "Tôi xem tin tức mỗi tối."
+        }
+      }
     },
     {
       "id": "anime",
@@ -210,7 +350,14 @@
         "en": "cartoons",
         "vi": "phim hoạt hình anime"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "日本[にほん]の アニメは 面白[おもしろ]いでしょう？",
+        "kana": "にほんの アニメは おもしろいでしょう？",
+        "translation": {
+          "vi": "Phim hoạt hình của Nhật thú vị phải không?"
+        }
+      }
     },
     {
       "id": "manga",
@@ -220,7 +367,14 @@
         "en": "comic",
         "vi": "truyện tranh Manga"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "休[やす]みの 日[ひ]は マンガを 読[よ]みます。",
+        "kana": "やすみの ひは マンガを よみます。",
+        "translation": {
+          "vi": "Ngày nghỉ tôi đọc truyện tranh Manga."
+        }
+      }
     },
     {
       "id": "dezain",
@@ -230,7 +384,14 @@
         "en": "design",
         "vi": "thiết kế"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "この 靴[くつ]の デザインは いいですね。",
+        "kana": "この くつの デザインは いいですね。",
+        "translation": {
+          "vi": "Thiết kế của đôi giày này đẹp nhỉ."
+        }
+      }
     },
     {
       "id": "yume",
@@ -240,7 +401,14 @@
         "en": "dream",
         "vi": "giấc mơ, ước mơ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "私[わたし]の 夢[ゆめ]は 先生[せんせい]に なる ことです。",
+        "kana": "わたしの ゆめは せんせいに なる ことです。",
+        "translation": {
+          "vi": "Ước mơ của tôi là trở thành giáo viên."
+        }
+      }
     },
     {
       "id": "tensai",
@@ -250,7 +418,14 @@
         "en": "genius",
         "vi": "thiên tài"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "彼[かれ]は 天才[てんさい]だと 思[おも]います。",
+        "kana": "かれは てんさいだと おもいます。",
+        "translation": {
+          "vi": "Tôi nghĩ anh ấy là thiên tài."
+        }
+      }
     },
     {
       "id": "shiai",
@@ -260,7 +435,14 @@
         "en": "match, game",
         "vi": "trận đấu, cuộc thi đấu"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "サッカーの 試合[しあい]を 見[み]に 行[い]きます。",
+        "kana": "サッカーの しあいを みに いきます。",
+        "translation": {
+          "vi": "Tôi đi xem trận đấu bóng đá."
+        }
+      }
     },
     {
       "id": "iken",
@@ -270,7 +452,14 @@
         "en": "opinion",
         "vi": "ý kiến, quan điểm"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "私[わたし]の 意見[いけん]は 少[すこ]し 違[ちが]います。",
+        "kana": "わたしの いけんは すこし ちがいます。",
+        "translation": {
+          "vi": "Ý kiến của tôi thì hơi khác một chút."
+        }
+      }
     },
     {
       "id": "hanashi",
@@ -280,7 +469,14 @@
         "en": "speech, story",
         "vi": "câu chuyện, bài nói"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "部長[ぶちょう]の 話[はなし]は 長[なが]いと 思[おも]います。",
+        "kana": "ぶちょうの はなしは ながいと おもいます。",
+        "translation": {
+          "vi": "Tôi nghĩ bài nói của trưởng phòng thì dài."
+        }
+      }
     },
     {
       "id": "chikyuu",
@@ -290,7 +486,14 @@
         "en": "the Earth",
         "vi": "Trái Đất"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "地球[ちきゅう]は 青[あお]いと 思[おも]います。",
+        "kana": "ちきゅうは あおいと おもいます。",
+        "translation": {
+          "vi": "Tôi nghĩ Trái Đất có màu xanh."
+        }
+      }
     },
     {
       "id": "tsuki",
@@ -300,7 +503,14 @@
         "en": "moon",
         "vi": "Mặt Trăng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "今晩[こんばん]は 月[つき]が きれいですね。",
+        "kana": "こんばんは つきが きれいですね。",
+        "translation": {
+          "vi": "Tối nay Mặt Trăng đẹp quá nhỉ."
+        }
+      }
     },
     {
       "id": "saikin",
@@ -310,7 +520,14 @@
         "en": "lately",
         "vi": "gần đây, dạo này"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "最近[さいきん]は とても 忙[いそが]しいです。",
+        "kana": "さいきんは とても いそがしいです。",
+        "translation": {
+          "vi": "Dạo này tôi rất bận rộn."
+        }
+      }
     },
     {
       "id": "tabun",
@@ -320,7 +537,14 @@
         "en": "probably, maybe",
         "vi": "có lẽ, có thể"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "彼[かれ]は たぶん 来[こ]ないと 思[おも]います。",
+        "kana": "かれは たぶん こないと おもいます。",
+        "translation": {
+          "vi": "Tôi nghĩ có lẽ anh ấy sẽ không đến."
+        }
+      }
     },
     {
       "id": "kitto",
@@ -330,7 +554,14 @@
         "en": "without fail, surely",
         "vi": "chắc chắn, nhất định"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "明日[あした]は きっと いい 天気[てんき]だと 思[おも]います。",
+        "kana": "あしたは きっと いい てんきだと おもいます。",
+        "translation": {
+          "vi": "Tôi nghĩ ngày mai chắc chắn thời tiết sẽ đẹp."
+        }
+      }
     },
     {
       "id": "hontouni",
@@ -340,7 +571,14 @@
         "en": "really",
         "vi": "thực sự, quả thật"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "この 料理[りょうり]は ほんとうに おいしいです。",
+        "kana": "この りょうりは ほんとうに おいしいです。",
+        "translation": {
+          "vi": "Món ăn này thực sự rất ngon."
+        }
+      }
     },
     {
       "id": "sonnani",
@@ -350,7 +588,14 @@
         "en": "not so (with a negative)",
         "vi": "không... đến mức như thế (đi với phủ định)"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "テストは そんなに 難[むずか]しくなかったと 思[おも]います。",
+        "kana": "テストは そんなに むずかしくなかったと おもいます。",
+        "translation": {
+          "vi": "Tôi nghĩ bài kiểm tra đã không khó đến mức như thế."
+        }
+      }
     },
     {
       "id": "nitsuite",
@@ -360,7 +605,14 @@
         "en": "about, regarding ~",
         "vi": "về ~ (chỉ đối tượng)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "日本[にほん]について 調[しら]べます。",
+        "kana": "にほんについて しらべます。",
+        "translation": {
+          "vi": "Tôi tìm hiểu về Nhật Bản."
+        }
+      }
     },
     {
       "id": "hisashiburi",
@@ -370,7 +622,14 @@
         "en": "long time no see!",
         "vi": "lâu lắm rồi mới gặp lại!"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "久[ひさ]しぶりですね。お 元気[げんき]ですか。",
+        "kana": "ひさしぶりですね。お げんきですか。",
+        "translation": {
+          "vi": "Lâu lắm rồi mới gặp lại! Bạn có khỏe không?"
+        }
+      }
     },
     {
       "id": "demo-nomimasen",
@@ -380,7 +639,14 @@
         "en": "how about having ~?",
         "vi": "cùng uống... hay gì đó nhé?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "コーヒーでも 飲[の]みませんか。",
+        "kana": "コーヒーでも のみませんか。",
+        "translation": {
+          "vi": "Chúng ta cùng uống cà phê hay gì đó nhé?"
+        }
+      }
     },
     {
       "id": "mochiron",
@@ -390,7 +656,14 @@
         "en": "naturally, of course",
         "vi": "tất nhiên, dĩ nhiên"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "「パーティーに 行[い]く？」「もちろん 行[い]くよ。」",
+        "kana": "「パーティーに いく？」「もちろん いくよ。」",
+        "translation": {
+          "vi": "\"Cậu đi dự tiệc chứ?\" \"Dĩ nhiên là đi rồi.\""
+        }
+      }
     },
     {
       "id": "mou-kaeranaito",
@@ -400,7 +673,14 @@
         "en": "I have to go now",
         "vi": "tôi phải về rồi..."
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "遅[おそ]いから、もう 帰[かえ]らないと……。",
+        "kana": "おそいから、もう かえらないと……。",
+        "translation": {
+          "vi": "Muộn rồi, tôi phải về thôi..."
+        }
+      }
     }
   ]
 }

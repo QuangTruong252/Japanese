@@ -10,7 +10,14 @@
         "en": "to memorise",
         "vi": "nhớ, ghi nhớ"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "漢字[かんじ]を 覚[おぼ]えなければ なりません。",
+        "kana": "かんじを おぼえなければ なりません。",
+        "translation": {
+          "vi": "Tôi phải nhớ chữ Hán."
+        }
+      }
     },
     {
       "id": "wasuremasu",
@@ -20,7 +27,14 @@
         "en": "to forget",
         "vi": "quên"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "傘[かさ]を 忘[わす]れないで ください。",
+        "kana": "かさを わすれないで ください。",
+        "translation": {
+          "vi": "Xin đừng quên ô."
+        }
+      }
     },
     {
       "id": "nakushimasu",
@@ -30,7 +44,14 @@
         "en": "to lose",
         "vi": "đánh mất, làm mất"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "パスポートを なくさないで ください。",
+        "kana": "パスポートを なくさないで ください。",
+        "translation": {
+          "vi": "Xin đừng làm mất hộ chiếu."
+        }
+      }
     },
     {
       "id": "haraimasu",
@@ -40,7 +61,14 @@
         "en": "to pay",
         "vi": "trả tiền, thanh toán"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "お 金[かね]を 払[はら]わなければ なりません。",
+        "kana": "おかねを はらわなければ なりません。",
+        "translation": {
+          "vi": "Tôi phải trả tiền."
+        }
+      }
     },
     {
       "id": "kaeshimasu",
@@ -50,7 +78,14 @@
         "en": "to give back, to return",
         "vi": "trả lại, hoàn lại"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "本[ほん]を 返[かえ]さなければ なりません。",
+        "kana": "ほんを かえさなければ なりません。",
+        "translation": {
+          "vi": "Tôi phải trả lại sách."
+        }
+      }
     },
     {
       "id": "dekakemasu",
@@ -60,7 +95,14 @@
         "en": "to go out",
         "vi": "ra ngoài"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "今日[きょう]は 出[で]かけません。",
+        "kana": "きょうは でかけません。",
+        "translation": {
+          "vi": "Hôm nay tôi sẽ không ra ngoài."
+        }
+      }
     },
     {
       "id": "nugimasu",
@@ -70,7 +112,14 @@
         "en": "to take off (clothes, shoes)",
         "vi": "cởi [quần áo, giày]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "ここで 靴[くつ]を 脱[ぬ]がなくても いいです。",
+        "kana": "ここで くつを ぬがなくても いいです。",
+        "translation": {
+          "vi": "Bạn không cần phải cởi giày ở đây đâu."
+        }
+      }
     },
     {
       "id": "motte-ikimasu",
@@ -80,7 +129,14 @@
         "en": "to carry (something)",
         "vi": "mang đi"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "お 弁当[べんとう]を 持[も]って 行[い]きます。",
+        "kana": "おべんとうを もっていきます。",
+        "translation": {
+          "vi": "Tôi sẽ mang cơm hộp đi."
+        }
+      }
     },
     {
       "id": "motte-kimasu",
@@ -90,7 +146,14 @@
         "en": "to bring (something)",
         "vi": "mang đến"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "明日[あした] 辞書[じしょ]を 持[も]って 来[き]てください。",
+        "kana": "あした じしょを もってきてください。",
+        "translation": {
+          "vi": "Ngày mai xin hãy mang từ điển đến."
+        }
+      }
     },
     {
       "id": "shinpai-shimasu",
@@ -100,7 +163,14 @@
         "en": "to worry",
         "vi": "lo lắng"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "心配[しんぱい]しないで ください。",
+        "kana": "しんぱいしないで ください。",
+        "translation": {
+          "vi": "Xin đừng lo lắng."
+        }
+      }
     },
     {
       "id": "zangyou-shimasu",
@@ -110,7 +180,14 @@
         "en": "to work overtime",
         "vi": "làm thêm giờ, tăng ca"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "今日[きょう] 残業[ざんぎょう]しなければ なりません。",
+        "kana": "きょう ざんぎょうしなければ なりません。",
+        "translation": {
+          "vi": "Hôm nay tôi phải làm thêm giờ."
+        }
+      }
     },
     {
       "id": "shucchou-shimasu",
@@ -120,7 +197,14 @@
         "en": "to go on a business trip",
         "vi": "đi công tác"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "明日[あした] 東京[とうきょう]へ 出張[しゅっちょう]します。",
+        "kana": "あした とうきょうへ しゅっちょうします。",
+        "translation": {
+          "vi": "Ngày mai tôi sẽ đi công tác ở Tokyo."
+        }
+      }
     },
     {
       "id": "nomimasu-kusuri",
@@ -130,7 +214,14 @@
         "en": "to take [medicine]",
         "vi": "uống [thuốc]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "薬[くすり]を 飲[の]まなければ なりません。",
+        "kana": "くすりを のまなければ なりません。",
+        "translation": {
+          "vi": "Tôi phải uống thuốc."
+        }
+      }
     },
     {
       "id": "hairimasu-ofuro",
@@ -140,7 +231,14 @@
         "en": "to have [a bath]",
         "vi": "tắm [bồn nước nóng]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "今日[きょう]は おふろに 入[はい]らないで ください。",
+        "kana": "きょうは おふろに はいらないで ください。",
+        "translation": {
+          "vi": "Hôm nay bạn đừng tắm bồn nhé."
+        }
+      }
     },
     {
       "id": "taisetsu",
@@ -150,7 +248,14 @@
         "en": "important",
         "vi": "quan trọng, quý giá"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "これは 大切[たいせつ]な 手紙[てがみ]です。",
+        "kana": "これは たいせつな てがみです。",
+        "translation": {
+          "vi": "Đây là bức thư quan trọng."
+        }
+      }
     },
     {
       "id": "daijoubu",
@@ -160,7 +265,14 @@
         "en": "to be fine, all right",
         "vi": "ổn, không sao"
       },
-      "type": "adjective-na"
+      "type": "adjective-na",
+      "example": {
+        "jp": "私[わたし]は 大丈夫[だいじょうぶ]です。",
+        "kana": "わたしは だいじょうぶです。",
+        "translation": {
+          "vi": "Tôi không sao."
+        }
+      }
     },
     {
       "id": "abunai",
@@ -170,7 +282,14 @@
         "en": "dangerous",
         "vi": "nguy hiểm"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "そこは 危[あぶ]ないです。",
+        "kana": "そこは あぶないです。",
+        "translation": {
+          "vi": "Chỗ đó nguy hiểm."
+        }
+      }
     },
     {
       "id": "kinen",
@@ -180,7 +299,14 @@
         "en": "no smoking",
         "vi": "cấm hút thuốc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ここは 禁煙[きんえん]です。",
+        "kana": "ここは きんえんです。",
+        "translation": {
+          "vi": "Ở đây cấm hút thuốc."
+        }
+      }
     },
     {
       "id": "hokenshou",
@@ -190,7 +316,14 @@
         "en": "[health] insurance card",
         "vi": "thẻ bảo hiểm y tế"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "健康[けんこう]保険証[ほけんしょう]を 持[も]って 来[き]てください。",
+        "kana": "けんこうほけんしょうを もってきてください。",
+        "translation": {
+          "vi": "Xin hãy mang thẻ bảo hiểm y tế đến."
+        }
+      }
     },
     {
       "id": "netsu",
@@ -200,7 +333,14 @@
         "en": "fever",
         "vi": "sốt, nhiệt độ cao"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "熱[ねつ]が あります。",
+        "kana": "ねつが あります。",
+        "translation": {
+          "vi": "Tôi bị sốt."
+        }
+      }
     },
     {
       "id": "byouki",
@@ -210,7 +350,14 @@
         "en": "illness",
         "vi": "ốm, bệnh tật"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "病気[びょうき]ですから、病院[びょういん]へ 行[い]きます。",
+        "kana": "びょうきですから、びょういんへ いきます。",
+        "translation": {
+          "vi": "Vì tôi bị ốm nên tôi sẽ đi bệnh viện."
+        }
+      }
     },
     {
       "id": "kusuri",
@@ -220,7 +367,14 @@
         "en": "medicine",
         "vi": "thuốc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "薬[くすり]を 飲[の]んでください。",
+        "kana": "くすりを のんでください。",
+        "translation": {
+          "vi": "Xin hãy uống thuốc."
+        }
+      }
     },
     {
       "id": "ofuro",
@@ -230,7 +384,14 @@
         "en": "bath",
         "vi": "bồn tắm, việc tắm bồn"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "毎日[まいにち] おふろに 入[はい]ります。",
+        "kana": "まいにち おふろに はいります。",
+        "translation": {
+          "vi": "Hàng ngày tôi đều tắm bồn."
+        }
+      }
     },
     {
       "id": "uwagi",
@@ -240,7 +401,14 @@
         "en": "jacket",
         "vi": "áo khoác ngoài"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "上着[うわぎ]を 脱[ぬ]いでも いいですか。",
+        "kana": "うわぎを ぬいでも いいですか。",
+        "translation": {
+          "vi": "Tôi cởi áo khoác ngoài ra có được không?"
+        }
+      }
     },
     {
       "id": "shitagi",
@@ -250,7 +418,14 @@
         "en": "underwear",
         "vi": "quần áo lót"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "デパートで 下着[したぎ]を 買[か]いました。",
+        "kana": "デパートで したぎを かいました。",
+        "translation": {
+          "vi": "Tôi đã mua quần áo lót ở trung tâm thương mại."
+        }
+      }
     },
     {
       "id": "ni-san-nichi",
@@ -260,7 +435,14 @@
         "en": "a few days",
         "vi": "hai ba ngày, vài ngày"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "二[に]三[さん]日[にち] 休[やす]みます。",
+        "kana": "にさんにち やすみます。",
+        "translation": {
+          "vi": "Tôi sẽ nghỉ vài ngày."
+        }
+      }
     },
     {
       "id": "ni-san",
@@ -270,7 +452,14 @@
         "en": "a few ~, two or three ~",
         "vi": "hai ba..., vài..."
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "CDを 二[に]三[さん]枚[まい] 買[か]います。",
+        "kana": "CDを にさんまい かいます。",
+        "translation": {
+          "vi": "Tôi sẽ mua vài đĩa CD."
+        }
+      }
     },
     {
       "id": "madeni",
@@ -280,7 +469,14 @@
         "en": "before ~, by ~ (deadline)",
         "vi": "trước... (hạn chót thời gian)"
       },
-      "type": "particle"
+      "type": "particle",
+      "example": {
+        "jp": "土曜日[どようび]までに 本[ほん]を 返[かえ]さなければ なりません。",
+        "kana": "どようびまでに ほんを かえさなければ なりません。",
+        "translation": {
+          "vi": "Tôi phải trả sách trước thứ Bảy."
+        }
+      }
     },
     {
       "id": "desukara",
@@ -290,7 +486,14 @@
         "en": "so, therefore",
         "vi": "vì thế, do đó"
       },
-      "type": "conjunction"
+      "type": "conjunction",
+      "example": {
+        "jp": "熱[ねつ]が あります。ですから、病院[びょういん]へ 行[い]きます。",
+        "kana": "ねつが あります。ですから、びょういんへ いきます。",
+        "translation": {
+          "vi": "Tôi bị sốt. Vì thế tôi sẽ đi bệnh viện."
+        }
+      }
     },
     {
       "id": "dou-shimashita-ka",
@@ -300,7 +503,14 @@
         "en": "what's the matter?",
         "vi": "bạn bị làm sao thế?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「どうしましたか。」",
+        "kana": "「どうしましたか。」",
+        "translation": {
+          "vi": "\"Bạn bị làm sao thế?\""
+        }
+      }
     },
     {
       "id": "nodo",
@@ -310,7 +520,14 @@
         "en": "throat",
         "vi": "cổ họng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "のどが 痛[いた]いです。",
+        "kana": "のどが いたいです。",
+        "translation": {
+          "vi": "Tôi bị đau cổ họng."
+        }
+      }
     },
     {
       "id": "itai",
@@ -320,7 +537,14 @@
         "en": "my [~] hurts",
         "vi": "đau"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "頭[あたま]が 痛[いた]いです。",
+        "kana": "あたまが いたいです。",
+        "translation": {
+          "vi": "Tôi bị đau đầu."
+        }
+      }
     },
     {
       "id": "kaze",
@@ -330,7 +554,14 @@
         "en": "a cold",
         "vi": "cảm, cảm cúm"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "かぜですから、休[やす]みます。",
+        "kana": "かぜですから、やすみます。",
+        "translation": {
+          "vi": "Vì tôi bị cảm nên tôi sẽ nghỉ ngơi."
+        }
+      }
     },
     {
       "id": "sorekara-ademas",
@@ -340,7 +571,14 @@
         "en": "and, besides",
         "vi": "sau đó, hơn nữa"
       },
-      "type": "conjunction"
+      "type": "conjunction",
+      "example": {
+        "jp": "「それから、今日[きょう]は おふろに 入[はい]らないで ください。」",
+        "kana": "「それから、きょうは おふろに はいらないで ください。」",
+        "translation": {
+          "vi": "\"Hơn nữa, hôm nay bạn đừng tắm bồn nhé.\""
+        }
+      }
     },
     {
       "id": "odaijini",
@@ -350,7 +588,14 @@
         "en": "get well soon",
         "vi": "chúc bạn mau khỏe nhé"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「お 大事[だいじ]に。」",
+        "kana": "「おだいじに。」",
+        "translation": {
+          "vi": "\"Chúc bạn mau khỏe nhé.\""
+        }
+      }
     }
   ]
 }

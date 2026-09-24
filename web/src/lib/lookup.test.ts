@@ -169,3 +169,10 @@ test('filterVerbs lọc theo nhóm, bài và tìm kiếm q', () => {
   const byMeaning = filterVerbs(all, { query: 'rửa' });
   assert.ok(byMeaning.some((v) => v.meaning.vi.includes('rửa')));
 });
+
+test('mọi ví dụ Kanji đều đã có nghĩa tiếng Việt', () => {
+  const untranslated = getAllKanji().flatMap((kanji) =>
+    kanji.examples.filter((ex) => !isExampleVerified(ex)).map((ex) => `${kanji.character} ${ex.word}`)
+  );
+  assert.deepEqual(untranslated, []);
+});

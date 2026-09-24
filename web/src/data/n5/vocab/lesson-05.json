@@ -10,7 +10,14 @@
         "en": "to go",
         "vi": "đi"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "明日[あした] 学校[がっこう]へ 行[い]きます。",
+        "kana": "あした がっこうへ いきます。",
+        "translation": {
+          "vi": "Ngày mai tôi đi đến trường."
+        }
+      }
     },
     {
       "id": "kimasu",
@@ -20,7 +27,14 @@
         "en": "to come",
         "vi": "đến"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "昨日[きのう] ここへ 来[き]ました。",
+        "kana": "きのう ここへ きました。",
+        "translation": {
+          "vi": "Tôi đã đến đây hôm qua."
+        }
+      }
     },
     {
       "id": "kaerimasu",
@@ -30,7 +44,14 @@
         "en": "to go home",
         "vi": "về, trở về"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "今日[きょう] うちへ 帰[かえ]ります。",
+        "kana": "きょう うちへ かえります。",
+        "translation": {
+          "vi": "Hôm nay tôi về nhà."
+        }
+      }
     },
     {
       "id": "gakkou",
@@ -40,7 +61,14 @@
         "en": "school",
         "vi": "trường học"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "明日[あした] 学校[がっこう]へ 行[い]きます。",
+        "kana": "あした がっこうへ いきます。",
+        "translation": {
+          "vi": "Ngày mai tôi đi đến trường."
+        }
+      }
     },
     {
       "id": "suupaa",
@@ -50,7 +78,14 @@
         "en": "supermarket",
         "vi": "siêu thị"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "スーパーへ 行[い]きます。",
+        "kana": "スーパーへ いきます。",
+        "translation": {
+          "vi": "Tôi đi đến siêu thị."
+        }
+      }
     },
     {
       "id": "eki",
@@ -60,7 +95,14 @@
         "en": "station",
         "vi": "nhà ga"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "駅[えき]は どこですか。",
+        "kana": "えきは どこですか。",
+        "translation": {
+          "vi": "Nhà ga ở đâu?"
+        }
+      }
     },
     {
       "id": "hikouki",
@@ -70,7 +112,14 @@
         "en": "aeroplane",
         "vi": "máy bay"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "飛行機[ひこうき]で アメリカへ 行[い]きます。",
+        "kana": "ひこうきで アメリカへ いきます。",
+        "translation": {
+          "vi": "Tôi đi Mỹ bằng máy bay."
+        }
+      }
     },
     {
       "id": "fune",
@@ -80,7 +129,14 @@
         "en": "ship, boat",
         "vi": "tàu thủy, thuyền"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "船[ふね]で 帰[かえ]ります。",
+        "kana": "ふねで かえります。",
+        "translation": {
+          "vi": "Tôi về bằng tàu thủy."
+        }
+      }
     },
     {
       "id": "densha",
@@ -90,7 +146,14 @@
         "en": "electric train",
         "vi": "tàu điện"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "電車[でんしゃ]で 会社[かいしゃ]へ 行[い]きます。",
+        "kana": "でんしゃで かいしゃへ いきます。",
+        "translation": {
+          "vi": "Tôi đi đến công ty bằng tàu điện."
+        }
+      }
     },
     {
       "id": "chikatetsu",
@@ -100,7 +163,14 @@
         "en": "underground, subway",
         "vi": "tàu điện ngầm"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "地下鉄[ちかてつ]で 行[い]きます。",
+        "kana": "ちかてつで いきます。",
+        "translation": {
+          "vi": "Tôi đi bằng tàu điện ngầm."
+        }
+      }
     },
     {
       "id": "shinkansen",
@@ -110,7 +180,14 @@
         "en": "Shinkansen, bullet train",
         "vi": "tàu siêu tốc Shinkansen"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "新幹線[しんかんせん]で 来[き]ました。",
+        "kana": "しんかんせんで きました。",
+        "translation": {
+          "vi": "Tôi đã đến bằng tàu shinkansen."
+        }
+      }
     },
     {
       "id": "basu",
@@ -120,7 +197,14 @@
         "en": "bus",
         "vi": "xe buýt"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "バスで 学校[がっこう]へ 行[い]きます。",
+        "kana": "バスで がっこうへ いきます。",
+        "translation": {
+          "vi": "Tôi đi đến trường bằng xe buýt."
+        }
+      }
     },
     {
       "id": "takushii",
@@ -130,7 +214,14 @@
         "en": "taxi",
         "vi": "xe taxi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "タクシーで 帰[かえ]ります。",
+        "kana": "タクシーで かえります。",
+        "translation": {
+          "vi": "Tôi về bằng taxi."
+        }
+      }
     },
     {
       "id": "jitensha",
@@ -140,7 +231,14 @@
         "en": "bicycle",
         "vi": "xe đạp"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "自転車[じてんしゃ]で スーパーへ 行[い]きます。",
+        "kana": "じてんしゃで スーパーへ いきます。",
+        "translation": {
+          "vi": "Tôi đi đến siêu thị bằng xe đạp."
+        }
+      }
     },
     {
       "id": "aruite",
@@ -150,7 +248,14 @@
         "en": "on foot, walking",
         "vi": "đi bộ"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "歩[ある]いて 会社[かいしゃ]へ 行[い]きます。",
+        "kana": "あるいて かいしゃへ いきます。",
+        "translation": {
+          "vi": "Tôi đi bộ đến công ty."
+        }
+      }
     },
     {
       "id": "hito",
@@ -160,7 +265,14 @@
         "en": "person, people",
         "vi": "người"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 人[ひと]は 誰[だれ]ですか。",
+        "kana": "あの ひとは だれですか。",
+        "translation": {
+          "vi": "Người kia là ai?"
+        }
+      }
     },
     {
       "id": "tomodachi",
@@ -170,7 +282,14 @@
         "en": "friend(s)",
         "vi": "bạn, bạn bè"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "友達[ともだち]と 日本[にほん]へ 行[い]きます。",
+        "kana": "ともだちと にほんへ いきます。",
+        "translation": {
+          "vi": "Tôi đi Nhật với bạn."
+        }
+      }
     },
     {
       "id": "kare",
@@ -180,7 +299,14 @@
         "en": "he, boyfriend",
         "vi": "anh ấy, bạn trai"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "彼[かれ]は 医者[いしゃ]です。",
+        "kana": "かれは いしゃです。",
+        "translation": {
+          "vi": "Anh ấy là bác sĩ."
+        }
+      }
     },
     {
       "id": "kanojo",
@@ -190,7 +316,14 @@
         "en": "she, girlfriend",
         "vi": "cô ấy, bạn gái"
       },
-      "type": "pronoun"
+      "type": "pronoun",
+      "example": {
+        "jp": "彼女[かのじょ]は 先生[せんせい]です。",
+        "kana": "かのじょは せんせいです。",
+        "translation": {
+          "vi": "Cô ấy là giáo viên."
+        }
+      }
     },
     {
       "id": "kazoku",
@@ -200,7 +333,14 @@
         "en": "family",
         "vi": "gia đình"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "家族[かぞく]と 日本[にほん]へ 来[き]ました。",
+        "kana": "かぞくと にほんへ きました。",
+        "translation": {
+          "vi": "Tôi đã đến Nhật cùng gia đình."
+        }
+      }
     },
     {
       "id": "hitoride",
@@ -210,7 +350,14 @@
         "en": "alone",
         "vi": "một mình"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "一人[ひとり]で デパートへ 行[い]きます。",
+        "kana": "ひとりで デパートへ いきます。",
+        "translation": {
+          "vi": "Tôi đi đến trung tâm thương mại một mình."
+        }
+      }
     },
     {
       "id": "senshuu",
@@ -220,7 +367,14 @@
         "en": "last week",
         "vi": "tuần trước"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "先週[せんしゅう] 日本[にほん]へ 来[き]ました。",
+        "kana": "せんしゅう にほんへ きました。",
+        "translation": {
+          "vi": "Tôi đã đến Nhật tuần trước."
+        }
+      }
     },
     {
       "id": "konshuu",
@@ -230,7 +384,14 @@
         "en": "this week",
         "vi": "tuần này"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "今週[こんしゅう] 働[はたら]きます。",
+        "kana": "こんしゅう はたらきます。",
+        "translation": {
+          "vi": "Tuần này tôi làm việc."
+        }
+      }
     },
     {
       "id": "raishuu",
@@ -240,7 +401,14 @@
         "en": "next week",
         "vi": "tuần sau"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "来週[らいしゅう] アメリカへ 行[い]きます。",
+        "kana": "らいしゅう アメリカへ いきます。",
+        "translation": {
+          "vi": "Tuần sau tôi đi Mỹ."
+        }
+      }
     },
     {
       "id": "sengetsu",
@@ -250,7 +418,14 @@
         "en": "last month",
         "vi": "tháng trước"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "先月[せんげつ] 勉強[べんきょう]しました。",
+        "kana": "せんげつ べんきょうしました。",
+        "translation": {
+          "vi": "Tháng trước tôi đã học bài."
+        }
+      }
     },
     {
       "id": "kongetsu",
@@ -260,7 +435,14 @@
         "en": "this month",
         "vi": "tháng này"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "今月[こんげつ]は 忙[いそが]しいです。",
+        "kana": "こんげつは いそがしいです。",
+        "translation": {
+          "vi": "Tháng này thì bận rộn."
+        }
+      }
     },
     {
       "id": "raigetsu",
@@ -270,7 +452,14 @@
         "en": "next month",
         "vi": "tháng sau"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "来月[らいげつ] うちへ 帰[かえ]ります。",
+        "kana": "らいげつ うちへ かえります。",
+        "translation": {
+          "vi": "Tháng sau tôi về nhà."
+        }
+      }
     },
     {
       "id": "kyonen",
@@ -280,7 +469,14 @@
         "en": "last year",
         "vi": "năm ngoái"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "去年[きょねん] 日本[にほん]へ 来[き]ました。",
+        "kana": "きょねん にほんへ きました。",
+        "translation": {
+          "vi": "Tôi đã đến Nhật năm ngoái."
+        }
+      }
     },
     {
       "id": "kotoshi",
@@ -290,7 +486,14 @@
         "en": "this year",
         "vi": "năm nay"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "ことし アメリカへ 行[い]きます。",
+        "kana": "ことし アメリカへ いきます。",
+        "translation": {
+          "vi": "Năm nay tôi đi Mỹ."
+        }
+      }
     },
     {
       "id": "rainen",
@@ -300,7 +503,14 @@
         "en": "next year",
         "vi": "năm sau"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "来年[らいねん] 日本[にほん]へ 行[い]きます。",
+        "kana": "らいねん にほんへ いきます。",
+        "translation": {
+          "vi": "Năm sau tôi đi Nhật."
+        }
+      }
     },
     {
       "id": "nen",
@@ -310,7 +520,14 @@
         "en": "year ~",
         "vi": "năm (hậu tố đếm năm)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "二千二十年[にせんにじゅうねん]に 日本[にほん]へ 来[き]ました。",
+        "kana": "にせんにじゅうねんに にほんへ きました。",
+        "translation": {
+          "vi": "Tôi đã đến Nhật vào năm 2020."
+        }
+      }
     },
     {
       "id": "nannen",
@@ -320,7 +537,14 @@
         "en": "what year",
         "vi": "năm mấy, mấy năm"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "何年[なんねん]に 日本[にほん]へ 来[き]ましたか。",
+        "kana": "なんねんに にほんへ きましたか。",
+        "translation": {
+          "vi": "Bạn đến Nhật năm nào?"
+        }
+      }
     },
     {
       "id": "gatsu",
@@ -330,7 +554,14 @@
         "en": "month of ~",
         "vi": "tháng (hậu tố chỉ tháng)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "三月[さんがつ]に 帰[かえ]ります。",
+        "kana": "さんがつに かえります。",
+        "translation": {
+          "vi": "Tôi về vào tháng 3."
+        }
+      }
     },
     {
       "id": "nangatsu",
@@ -340,7 +571,14 @@
         "en": "what month",
         "vi": "tháng mấy"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "何月[なんがつ]に 行[い]きますか。",
+        "kana": "なんがつに いきますか。",
+        "translation": {
+          "vi": "Tháng mấy bạn đi?"
+        }
+      }
     },
     {
       "id": "tsuitachi",
@@ -350,7 +588,14 @@
         "en": "the 1st of the month",
         "vi": "ngày mùng một (1 hàng tháng)"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "今日[きょう]は 一日[ついたち]です。",
+        "kana": "きょうは ついたちです。",
+        "translation": {
+          "vi": "Hôm nay là mùng 1."
+        }
+      }
     },
     {
       "id": "futsuka",
@@ -360,7 +605,14 @@
         "en": "the 2nd, 2 days",
         "vi": "ngày mùng hai (2) / 2 ngày"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "明日[あした]は 二日[ふつか]です。",
+        "kana": "あしたは ふつかです。",
+        "translation": {
+          "vi": "Ngày mai là mùng 2."
+        }
+      }
     },
     {
       "id": "mikka",
@@ -370,7 +622,14 @@
         "en": "the 3rd, 3 days",
         "vi": "ngày mùng ba (3) / 3 ngày"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "三日[みっか]に 帰[かえ]ります。",
+        "kana": "みっかに かえります。",
+        "translation": {
+          "vi": "Tôi về vào mùng 3."
+        }
+      }
     },
     {
       "id": "yokka",
@@ -380,7 +639,14 @@
         "en": "the 4th, 4 days",
         "vi": "ngày mùng bốn (4) / 4 ngày"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "四日[よっか]に 行[い]きます。",
+        "kana": "よっかに いきます。",
+        "translation": {
+          "vi": "Tôi đi vào mùng 4."
+        }
+      }
     },
     {
       "id": "itsuka",
@@ -390,7 +656,14 @@
         "en": "the 5th, 5 days",
         "vi": "ngày mùng năm (5) / 5 ngày"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "今日[きょう]は 五日[いつか]です。",
+        "kana": "きょうは いつかです。",
+        "translation": {
+          "vi": "Hôm nay là mùng 5."
+        }
+      }
     },
     {
       "id": "muika",
@@ -400,7 +673,14 @@
         "en": "the 6th, 6 days",
         "vi": "ngày mùng sáu (6) / 6 ngày"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "六日[むいか]に 勉強[べんきょう]します。",
+        "kana": "むいかに べんきょうします。",
+        "translation": {
+          "vi": "Tôi học bài vào mùng 6."
+        }
+      }
     },
     {
       "id": "nanoka",
@@ -410,7 +690,14 @@
         "en": "the 7th, 7 days",
         "vi": "ngày mùng bảy (7) / 7 ngày"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "七日[なのか]に 休[やす]みます。",
+        "kana": "なのかに やすみます。",
+        "translation": {
+          "vi": "Tôi nghỉ vào mùng 7."
+        }
+      }
     },
     {
       "id": "youka",
@@ -420,7 +707,14 @@
         "en": "the 8th, 8 days",
         "vi": "ngày mùng tám (8) / 8 ngày"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "八日[ようか]に 働[はたら]きます。",
+        "kana": "ようかに はたらきます。",
+        "translation": {
+          "vi": "Tôi làm việc vào mùng 8."
+        }
+      }
     },
     {
       "id": "kokonoka",
@@ -430,7 +724,14 @@
         "en": "the 9th, 9 days",
         "vi": "ngày mùng chín (9) / 9 ngày"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "今日[きょう]は 九日[ここのか]です。",
+        "kana": "きょうは ここのかです。",
+        "translation": {
+          "vi": "Hôm nay là mùng 9."
+        }
+      }
     },
     {
       "id": "tooka",
@@ -440,7 +741,14 @@
         "en": "the 10th, 10 days",
         "vi": "ngày mùng mười (10) / 10 ngày"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "十日[とおか]に 帰[かえ]ります。",
+        "kana": "とおかに かえります。",
+        "translation": {
+          "vi": "Tôi về vào mùng 10."
+        }
+      }
     },
     {
       "id": "juuyokka",
@@ -450,7 +758,14 @@
         "en": "the 14th, 14 days",
         "vi": "ngày mười bốn (14) / 14 ngày"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "十四日[じゅうよっか]に 行[い]きます。",
+        "kana": "じゅうよっかに いきます。",
+        "translation": {
+          "vi": "Tôi đi vào ngày 14."
+        }
+      }
     },
     {
       "id": "hatsuka",
@@ -460,7 +775,14 @@
         "en": "the 20th, 20 days",
         "vi": "ngày hai mươi (20) / 20 ngày"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "今日[きょう]は 二十日[はつか]です。",
+        "kana": "きょうは はつかです。",
+        "translation": {
+          "vi": "Hôm nay là ngày 20."
+        }
+      }
     },
     {
       "id": "nijuuyokka",
@@ -470,7 +792,14 @@
         "en": "the 24th, 24 days",
         "vi": "ngày hai mươi tư (24) / 24 ngày"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "二十四日[にじゅうよっか]に 休[やす]みます。",
+        "kana": "にじゅうよっかに やすみます。",
+        "translation": {
+          "vi": "Tôi nghỉ vào ngày 24."
+        }
+      }
     },
     {
       "id": "nichi",
@@ -480,7 +809,14 @@
         "en": "day ~, ~ days",
         "vi": "ngày (hậu tố chỉ ngày)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "今日[きょう]は 二十五日[にじゅうごにち]です。",
+        "kana": "きょうは にじゅうごにちです。",
+        "translation": {
+          "vi": "Hôm nay là ngày 25."
+        }
+      }
     },
     {
       "id": "nannichi",
@@ -490,7 +826,14 @@
         "en": "what day of the month, how many days",
         "vi": "ngày mấy, mấy ngày"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "何日[なんにち]に 帰[かえ]りますか。",
+        "kana": "なんにちに かえりますか。",
+        "translation": {
+          "vi": "Ngày mấy bạn về?"
+        }
+      }
     },
     {
       "id": "itsu",
@@ -500,7 +843,14 @@
         "en": "when",
         "vi": "khi nào, bao giờ"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "いつ 日本[にほん]へ 行[い]きますか。",
+        "kana": "いつ にほんへ いきますか。",
+        "translation": {
+          "vi": "Bao giờ bạn đi Nhật?"
+        }
+      }
     },
     {
       "id": "tanjoubi",
@@ -510,7 +860,14 @@
         "en": "birthday",
         "vi": "sinh nhật"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "誕生日[たんじょうび]は いつですか。",
+        "kana": "たんじょうびは いつですか。",
+        "translation": {
+          "vi": "Sinh nhật bạn là khi nào?"
+        }
+      }
     },
     {
       "id": "sou-desu-ne",
@@ -520,7 +877,14 @@
         "en": "I agree",
         "vi": "đúng vậy nhỉ / tôi đồng ý"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "そうですね。",
+        "kana": "そうですね。",
+        "translation": {
+          "vi": "À nhỉ... (thể hiện sự đồng tình)."
+        }
+      }
     },
     {
       "id": "arigatou-gozaimashita",
@@ -530,7 +894,14 @@
         "en": "thank you [very much] (for something already done)",
         "vi": "xin chân thành cảm ơn bạn (cho việc đã làm)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "どうもありがとうございました。",
+        "kana": "どうもありがとうございました。",
+        "translation": {
+          "vi": "Xin cảm ơn anh/chị rất nhiều."
+        }
+      }
     },
     {
       "id": "dou-itashimashite",
@@ -540,7 +911,14 @@
         "en": "you're welcome",
         "vi": "không có chi / đừng bận tâm"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "いいえ、どういたしまして。",
+        "kana": "いいえ、どういたしまして。",
+        "translation": {
+          "vi": "Không có gì."
+        }
+      }
     },
     {
       "id": "bansen",
@@ -550,7 +928,14 @@
         "en": "platform ~",
         "vi": "đường ray số... / ke ga số..."
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "一番[いちばん]線[せん]です。",
+        "kana": "いちばんせんです。",
+        "translation": {
+          "vi": "Là sân ga số 1."
+        }
+      }
     },
     {
       "id": "tsugi-no",
@@ -560,7 +945,14 @@
         "en": "next",
         "vi": "tiếp theo, kế tiếp"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "次[つぎ]の 電車[でんしゃ]で 行[い]きます。",
+        "kana": "つぎの でんしゃで いきます。",
+        "translation": {
+          "vi": "Tôi đi bằng chuyến tàu điện tiếp theo."
+        }
+      }
     },
     {
       "id": "futsuu",
@@ -570,7 +962,14 @@
         "en": "local (train)",
         "vi": "tàu thường (dừng mọi ga)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "普通[ふつう]で 行[い]きます。",
+        "kana": "ふつうで いきます。",
+        "translation": {
+          "vi": "Tôi đi bằng tàu thường."
+        }
+      }
     },
     {
       "id": "kyuukou",
@@ -580,7 +979,14 @@
         "en": "express (train)",
         "vi": "tàu nhanh"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "急行[きゅうこう]で 帰[かえ]ります。",
+        "kana": "きゅうこうで かえります。",
+        "translation": {
+          "vi": "Tôi về bằng tàu tốc hành."
+        }
+      }
     },
     {
       "id": "tokkyuu",
@@ -590,7 +996,14 @@
         "en": "super express (train)",
         "vi": "tàu tốc hành đặc biệt"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "特急[とっきゅう]で 行[い]きます。",
+        "kana": "とっきゅうで いきます。",
+        "translation": {
+          "vi": "Tôi đi bằng tàu tốc hành đặc biệt."
+        }
+      }
     }
   ]
 }

@@ -70,8 +70,8 @@ Ba việc làm được, làm đủ, và nói đúng những gì đã làm:
 2. **Ghi nhớ lần nạp đầu (trust-on-first-use)**: lưu hash của từng track. Lần nạp sau, track
    nào có hash khác hash đã lưu sẽ hiện cảnh báo "track này khác bản đã nạp trước đây" và hỏi
    người dùng có thay không. Đây là thứ phát hiện được gói lẫn lộn giữa các ấn bản.
-3. **Nói đúng sự thật trên giao diện**: "Đã kiểm toàn vẹn gói · **chưa xác minh ấn bản**". Không
-   dùng chữ "đã xác thực" trống nghĩa.
+3. **Nói đúng sự thật trên giao diện**: "Đã kiểm toàn vẹn gói". Không dùng chữ "đã xác thực"
+   trống nghĩa. (24/09/2026: bỏ vế "chưa xác minh ấn bản" — app học cá nhân, không yêu cầu đối chiếu ấn bản.)
 
 Không có bảng hash tham chiếu đáng tin nào trong repo, và **không bịa ra một bảng** — hash của
 đĩa CD gốc không phải thứ suy đoán được.
@@ -301,8 +301,7 @@ Ghi đè chỉ xảy ra với file đã băm khớp. Không có `clear()` trong 
 - [ ] Gói thiếu bài L07 → báo rõ "thiếu bài 7", phần còn lại vẫn nạp
 - [ ] Nạp gói thứ hai có một track khác nội dung (hash khác bản đã lưu) → **hỏi trước khi
       thay**, không im lặng ghi đè
-- [ ] Giao diện ghi đúng "đã kiểm toàn vẹn gói, chưa xác minh ấn bản" — không dùng chữ "đã
-      xác thực" trống nghĩa
+- [ ] Giao diện ghi đúng "đã kiểm toàn vẹn gói" — không dùng chữ "đã xác thực" trống nghĩa
 - [ ] Nạp 100 track trên máy 4 GB RAM → tab không bị thu hồi; số blob giữ đồng thời ≤ 20
 - [ ] Nạp lại gói ZIP khác khi đã có audio → chỉ file khớp hash bị ghi đè, **không mất** những
       bài không có trong gói mới

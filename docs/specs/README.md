@@ -3,7 +3,7 @@
 Bộ spec chi tiết từng feature, tách từ `docs/project-design-spec.md` (SPEC-JPN-01) để bàn
 giao được cho Google Stitch / Claude Design.
 
-## Trạng thái hiện tại — đối chiếu code 23/09/2026
+## Trạng thái hiện tại — đối chiếu code 24/09/2026
 
 **Đặc tả ≠ code ≠ nghiệm thu.** Bảng này là điểm bắt đầu, không phải chứng nhận
 toàn app. Code/lockfile xác định hiện trạng; spec xác định yêu cầu. Báo cáo cũ
@@ -24,7 +24,7 @@ chỉ chứng minh phạm vi ở ngày ghi nhận. Khi tiếp tục, kiểm tra 
 | SPEC-12: tra cứu (Kanji, động từ, 10 bảng) | Có | [lookup.ts](../../web/src/lib/lookup.ts), [tra-cuu](../../web/src/app/hoc/tra-cuu/page.tsx), [kanji](../../web/src/app/hoc/tra-cuu/kanji/page.tsx), [dong-tu](../../web/src/app/hoc/tra-cuu/dong-tu/page.tsx), [bang](../../web/src/app/hoc/tra-cuu/bang/page.tsx) | [Handoff 23/09](../handoff/SPEC-12.md) — code, 169 chữ Kanji, 156 động từ 5 thể, 10 bảng tham chiếu, chỉ mục tra ngược, static gates & tests PASS 100% |
 | SPEC-13: tìm kiếm toàn cục | Có | [search.ts](../../web/src/lib/search.ts), [SearchDialog.tsx](../../web/src/components/search/SearchDialog.tsx), [SearchTrigger.tsx](../../web/src/components/search/SearchTrigger.tsx) | [Handoff 23/09](../handoff/SPEC-13.md) — code, ARIA combobox/listbox, xếp hạng 3 tầng, chuẩn hóa đ->d, phím tắt Ctrl+K, kiểm thử trình duyệt PASS 100% |
 | SPEC-14: PWA/offline shell | Có | Chưa có service worker/manifest PWA | Offline một phiên đã nạp không chứng minh offline reload toàn app |
-| SPEC-15: học từ vựng chủ động theo bài | Có | [Luồng học và theo dõi](../../web/src/components/vocab/VocabLearningFlow.tsx), [route](../../web/src/app/hoc/[so]/tu-vung/page.tsx) | [Handoff 23/09](../handoff/SPEC-15.md) — chọn từ, flashcard hai mặt, nghe từ/câu riêng, FSRS, ranking; còn kiểm tra UI và lưu/sync sau cập nhật |
+| SPEC-15: học từ vựng chủ động theo bài | Có | [Luồng học và theo dõi](../../web/src/components/vocab/VocabLearningFlow.tsx), [route](../../web/src/app/hoc/[so]/tu-vung/page.tsx) | [Handoff 24/09](../handoff/SPEC-15.md) — lật 3D; 991/991 từ N5 có ví dụ và kana (tự biên soạn, đã duyệt); đã xem ở 390px, còn kiểm tra phát audio thật và lưu/sync |
 | F11: N4 | Chưa có spec biên tập | Chưa có dữ liệu N4 | Cần nguồn và biên tập trước khi xây UI |
 
 Bước tiếp theo: triển khai SPEC-14 (PWA & Offline shell).

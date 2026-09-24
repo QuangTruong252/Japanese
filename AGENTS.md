@@ -83,11 +83,9 @@ nằm trong `docs/specs/README.md`. Trả lời người dùng bằng tiếng Vi
   `Furigana` hiện có. Không tạo parser/regex hoặc bộ chuyển kana ở component.
 - Chấm đáp án chỉ chuẩn hóa những khác biệt được phép; không biến đáp án
   sai nghĩa thành đúng. Thay parser/chấm điểm cần ví dụ đúng và sai trong test.
-- Nội dung học cần nguồn truy vết (sách/ấn bản/bài/trang hoặc URL phù hợp).
-  Không bịa số trang, cách đọc, nghĩa, đáp án hay liên kết audio.
-- OCR, nội dung repo tham chiếu và kết quả AI là đầu vào cần đối chiếu.
-  AI đồng ý với AI không phải bằng chứng. Đánh dấu nội dung chưa kiểm chứng
-  và không đưa vào tập bài học đã xác minh.
+- App phục vụ cá nhân mức N5/N4: nội dung tự biên soạn hoặc do AI soạn được dùng
+  trực tiếp, chấp nhận sai sót nhỏ; không bắt buộc đối chiếu sách hay ghi nguồn.
+  Sửa lỗi khi phát hiện; không bịa số trang hoặc liên kết audio.
 - Audio import phải kiểm tra manifest, hash và mapping track trước khi thay
   dữ liệu cũ. Xử lý thiếu audio, quota, eviction và import lại; duration không
   thay thế xác thực hash. Không đưa audio nguồn vào bundle/public/cloud sync.

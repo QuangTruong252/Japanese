@@ -33,7 +33,7 @@ export default function PracticeConfigPage() {
     setQuestionCount,
   } = useUIStore();
 
-  const { questions, unverifiedLessons, loading } = useQuestionPool(selectedLessons);
+  const { questions, loading } = useQuestionPool(selectedLessons);
   const hasVoice = useJapaneseVoice();
 
   const audioKeys = useMemo(
@@ -220,11 +220,6 @@ export default function PracticeConfigPage() {
                     ? ` · ${sessionPreview.excludedAudioCount} câu nghe bị loại (máy không có giọng tiếng Nhật)`
                     : ''
                 }`}
-          </p>
-        )}
-        {unverifiedLessons.length > 0 && (
-          <p className="text-sm text-muted-foreground">
-            Nội dung các bài này chưa được đối chiếu với bản in.
           </p>
         )}
       </section>

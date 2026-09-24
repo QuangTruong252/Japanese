@@ -10,7 +10,14 @@
         "en": "to put, to place",
         "vi": "đặt, để"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "ここに 荷物[にもつ]を 置[お]いても いいですか。",
+        "kana": "ここに にもつを おいても いいですか。",
+        "translation": {
+          "vi": "Tôi đặt hành lý ở đây có được không?"
+        }
+      }
     },
     {
       "id": "tsukurimasu",
@@ -20,7 +27,14 @@
         "en": "to make, to produce",
         "vi": "chế tạo, làm ra"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "毎日[まいにち] 料理[りょうり]を 作[つく]っています。",
+        "kana": "まいにち りょうりを つくっています。",
+        "translation": {
+          "vi": "Hàng ngày tôi đều làm đồ ăn."
+        }
+      }
     },
     {
       "id": "urimasu",
@@ -30,7 +44,14 @@
         "en": "to sell",
         "vi": "bán"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "スーパーで パンを 売[う]っています。",
+        "kana": "スーパーで パンを うっています。",
+        "translation": {
+          "vi": "Người ta đang bán bánh mì ở siêu thị."
+        }
+      }
     },
     {
       "id": "shirimasu",
@@ -40,7 +61,14 @@
         "en": "to find out, to learn",
         "vi": "biết"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "ミラーさんの 電話番号[でんわばんごう]を 知[し]っていますか。",
+        "kana": "ミラーさんの でんわばんごうを しっていますか。",
+        "translation": {
+          "vi": "Bạn có biết số điện thoại của anh Miller không?"
+        }
+      }
     },
     {
       "id": "sumimasu",
@@ -50,7 +78,14 @@
         "en": "to live, to reside",
         "vi": "sống, cư trú [ở đâu]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "東京[とうきょう]に 住[す]んでいます。",
+        "kana": "とうきょうに すんでいます。",
+        "translation": {
+          "vi": "Tôi đang sống ở Tokyo."
+        }
+      }
     },
     {
       "id": "kenkyuu-shimasu",
@@ -60,7 +95,14 @@
         "en": "to research",
         "vi": "nghiên cứu"
       },
-      "type": "verb-irregular"
+      "type": "verb-irregular",
+      "example": {
+        "jp": "大学[だいがく]で コンピューターを 研究[けんきゅう]しています。",
+        "kana": "だいがくで コンピューターを けんきゅうしています。",
+        "translation": {
+          "vi": "Tôi đang nghiên cứu máy tính ở trường đại học."
+        }
+      }
     },
     {
       "id": "shiryou",
@@ -70,7 +112,14 @@
         "en": "materials, data",
         "vi": "tài liệu"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "この 資料[しりょう]を 見[み]ても いいですか。",
+        "kana": "この しりょうを みても いいですか。",
+        "translation": {
+          "vi": "Tôi xem tài liệu này có được không?"
+        }
+      }
     },
     {
       "id": "katarogu",
@@ -80,7 +129,14 @@
         "en": "catalogue",
         "vi": "cuốn danh mục, catalogue"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "カメラの カタログを もらっても いいですか。",
+        "kana": "カメラの カタログを もらっても いいですか。",
+        "translation": {
+          "vi": "Tôi nhận cuốn danh mục máy ảnh có được không?"
+        }
+      }
     },
     {
       "id": "jikokuhyou",
@@ -90,7 +146,14 @@
         "en": "timetable",
         "vi": "bảng giờ tàu xe chạy"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "駅[えき]で 時刻表[じこくひょう]を もらいました。",
+        "kana": "えきで じこくひょうを もらいました。",
+        "translation": {
+          "vi": "Tôi đã nhận bảng giờ tàu chạy ở nhà ga."
+        }
+      }
     },
     {
       "id": "fuku",
@@ -100,7 +163,14 @@
         "en": "clothes",
         "vi": "quần áo"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "デパートで 服[ふく]を 買[か]いました。",
+        "kana": "デパートで ふくを かいました。",
+        "translation": {
+          "vi": "Tôi đã mua quần áo ở trung tâm thương mại."
+        }
+      }
     },
     {
       "id": "seihin",
@@ -110,7 +180,14 @@
         "en": "goods, products",
         "vi": "sản phẩm"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "これは 日本[にほん]の 製品[せいひん]です。",
+        "kana": "これは にほんの せいひんです。",
+        "translation": {
+          "vi": "Đây là sản phẩm của Nhật Bản."
+        }
+      }
     },
     {
       "id": "sofuto",
@@ -120,7 +197,14 @@
         "en": "software, program",
         "vi": "phần mềm"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "コンピューターの ソフトを 作[つく]っています。",
+        "kana": "コンピューターの ソフトを つくっています。",
+        "translation": {
+          "vi": "Tôi đang làm phần mềm máy tính."
+        }
+      }
     },
     {
       "id": "denshijisho",
@@ -130,7 +214,14 @@
         "en": "electronic dictionary",
         "vi": "từ điển điện tử"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "電子辞書[でんしじしょ]を 使[つか]っても いいですか。",
+        "kana": "でんしじしょを つかっても いいですか。",
+        "translation": {
+          "vi": "Tôi dùng từ điển điện tử có được không?"
+        }
+      }
     },
     {
       "id": "keizai",
@@ -140,7 +231,14 @@
         "en": "economy",
         "vi": "kinh tế"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "大学[だいがく]で 経済[けいざい]を 勉強[べんきょう]しています。",
+        "kana": "だいがくで けいざいを べんきょうしています。",
+        "translation": {
+          "vi": "Tôi đang học kinh tế ở trường đại học."
+        }
+      }
     },
     {
       "id": "shiyakusho",
@@ -150,7 +248,14 @@
         "en": "city hall",
         "vi": "tòa thị chính, ủy ban thành phố"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "市役所[しやくしょ]の 電話番号[でんわばんごう]を 知[し]っていますか。",
+        "kana": "しやくしょの でんわばんごうを しっていますか。",
+        "translation": {
+          "vi": "Bạn có biết số điện thoại của ủy ban thành phố không?"
+        }
+      }
     },
     {
       "id": "koukou",
@@ -160,7 +265,14 @@
         "en": "high school",
         "vi": "trường trung học phổ thông, cấp ba"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "高校[こうこう]で 英語[えいご]を 教[おし]えています。",
+        "kana": "こうこうで えいごを おしえています。",
+        "translation": {
+          "vi": "Tôi đang dạy tiếng Anh ở trường cấp ba."
+        }
+      }
     },
     {
       "id": "haisha",
@@ -170,7 +282,14 @@
         "en": "dentist, dental clinic",
         "vi": "nha sĩ, bác sĩ răng"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "明日[あした] 歯医者[はいしゃ]へ 行[い]きます。",
+        "kana": "あした はいしゃへ いきます。",
+        "translation": {
+          "vi": "Ngày mai tôi sẽ đi nha sĩ."
+        }
+      }
     },
     {
       "id": "dokushin",
@@ -180,7 +299,14 @@
         "en": "single, unmarried",
         "vi": "độc thân"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "サントスさんは 独身[どくしん]です。",
+        "kana": "サントスさんは どくしんです。",
+        "translation": {
+          "vi": "Anh Santos vẫn còn độc thân."
+        }
+      }
     },
     {
       "id": "sumimasen-perdon",
@@ -190,7 +316,14 @@
         "en": "sorry, excuse me",
         "vi": "xin lỗi, làm phiền bạn"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「すみません、この 辞書[じしょ]を 借[か]りても いいですか。」",
+        "kana": "「すみません、この じしょを かりても いいですか。」",
+        "translation": {
+          "vi": "\"Xin lỗi, tôi mượn cuốn từ điển này có được không?\""
+        }
+      }
     },
     {
       "id": "minasan-15",
@@ -200,7 +333,14 @@
         "en": "ladies and gentlemen, everyone",
         "vi": "tất cả quý vị, mọi người"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "「皆[みな]さん、この 資料[しりょう]を 見[み]てください。」",
+        "kana": "「みなさん、この しりょうを みてください。」",
+        "translation": {
+          "vi": "\"Mọi người, xin hãy xem tài liệu này.\""
+        }
+      }
     },
     {
       "id": "omoidashimasu",
@@ -210,7 +350,14 @@
         "en": "to remember, to recall",
         "vi": "nhớ lại, hồi tưởng"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "家族[かぞく]を 思[おも]い 出[だ]します。",
+        "kana": "かぞくを おもいだします。",
+        "translation": {
+          "vi": "Tôi nhớ về gia đình."
+        }
+      }
     },
     {
       "id": "irasshaimasu",
@@ -220,7 +367,14 @@
         "en": "to be (polite form of います)",
         "vi": "ở, có, đi, đến (kính ngữ của います, いきます, きます)"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "「木村[きむら]さんは いらっしゃいますか。」",
+        "kana": "「きむらさんは いらっしゃいますか。」",
+        "translation": {
+          "vi": "\"Anh Kimura có ở đó không ạ?\""
+        }
+      }
     }
   ]
 }

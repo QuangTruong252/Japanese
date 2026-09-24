@@ -130,7 +130,7 @@ export default function AudioSettingsPage() {
           </div>
           <div className="text-xs text-muted-foreground/90">
             {totalTracks > 0
-              ? 'Đã kiểm toàn vẹn gói · chưa xác minh ấn bản'
+              ? 'Đã kiểm toàn vẹn gói'
               : storageEstimate
               ? `Bộ nhớ trình duyệt còn trống khoảng ${storageEstimate}`
               : 'File audio nằm lại trên máy bạn, không được tải lên đâu cả.'}

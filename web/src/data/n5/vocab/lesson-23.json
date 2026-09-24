@@ -10,7 +10,14 @@
         "en": "to ask [the teacher]",
         "vi": "hỏi [thầy cô giáo]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "わからない とき、先生[せんせい]に 聞[き]きます。",
+        "kana": "わからない とき、せんせいに ききます。",
+        "translation": {
+          "vi": "Khi không hiểu, tôi hỏi thầy giáo."
+        }
+      }
     },
     {
       "id": "mawashimasu",
@@ -20,7 +27,14 @@
         "en": "to turn",
         "vi": "xoay, vặn [núm điều khiển]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "この つまみを 回[まわ]すと、音[おと]が 大[おお]きく なります。",
+        "kana": "この つまみを まわすと、おとが おおきく なります。",
+        "translation": {
+          "vi": "Hễ vặn núm này thì âm thanh sẽ lớn lên."
+        }
+      }
     },
     {
       "id": "hikimasu-tirar",
@@ -30,7 +44,14 @@
         "en": "to pull",
         "vi": "kéo [cửa, dây]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "これを 引[ひ]くと、水[みず]が 出[で]ます。",
+        "kana": "これを ひくと、みずが でます。",
+        "translation": {
+          "vi": "Hễ kéo cái này thì nước sẽ chảy ra."
+        }
+      }
     },
     {
       "id": "kaemasu-cambiar",
@@ -40,7 +61,14 @@
         "en": "to change",
         "vi": "đổi, thay đổi"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "約束[やくそく]の 時間[じかん]を 変[か]えたいです。",
+        "kana": "やくそくの じかんを かえたいです。",
+        "translation": {
+          "vi": "Tôi muốn thay đổi thời gian cuộc hẹn."
+        }
+      }
     },
     {
       "id": "sawarimasu",
@@ -50,7 +78,14 @@
         "en": "to knock [on a door]",
         "vi": "chạm vào, sờ vào [nút bấm]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "この ドアに 触[さわ]ると、開[あ]きます。",
+        "kana": "この ドアに さわると、あきます。",
+        "translation": {
+          "vi": "Hễ chạm vào cửa này thì nó sẽ mở."
+        }
+      }
     },
     {
       "id": "demasu-cambio",
@@ -60,7 +95,14 @@
         "en": "for change to come out",
         "vi": "chảy ra, chạy ra [tiền thừa]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "ボタンを 押[お]すと、お 釣[つ]りが 出[で]ます。",
+        "kana": "ボタンを おすと、お つりが でます。",
+        "translation": {
+          "vi": "Hễ bấm nút thì tiền thừa sẽ chạy ra."
+        }
+      }
     },
     {
       "id": "arukimasu",
@@ -70,7 +112,14 @@
         "en": "to walk",
         "vi": "đi bộ"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "時間[じかん]が ない とき、速[はや]く 歩[ある]きます。",
+        "kana": "じかんが ない とき、はやく あるきます。",
+        "translation": {
+          "vi": "Khi không có thời gian, tôi đi bộ nhanh."
+        }
+      }
     },
     {
       "id": "watarimasu",
@@ -80,7 +129,14 @@
         "en": "to cross [a bridge]",
         "vi": "băng qua, qua [cầu, đường]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "あの 橋[はし]を 渡[わた]ると、左[ひだり]に 駅[えき]が あります。",
+        "kana": "あの はしを わたると、ひだりに えきが あります。",
+        "translation": {
+          "vi": "Hễ qua cây cầu kia thì sẽ có nhà ga ở bên trái."
+        }
+      }
     },
     {
       "id": "magarimasu",
@@ -90,7 +146,14 @@
         "en": "to turn [right]",
         "vi": "rẽ, quẹo [phải]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "交差点[こうさてん]を 右[みぎ]へ 曲[ま]がって ください。",
+        "kana": "こうさてんを みぎへ まがって ください。",
+        "translation": {
+          "vi": "Xin hãy rẽ phải ở ngã tư."
+        }
+      }
     },
     {
       "id": "sabishii",
@@ -100,7 +163,14 @@
         "en": "lonely",
         "vi": "buồn, cô đơn"
       },
-      "type": "adjective-i"
+      "type": "adjective-i",
+      "example": {
+        "jp": "寂[さび]しい とき、家族[かぞく]に 電話[でんわ]を します。",
+        "kana": "さびしい とき、かぞくに でんわを します。",
+        "translation": {
+          "vi": "Khi buồn, tôi gọi điện cho gia đình."
+        }
+      }
     },
     {
       "id": "oyu",
@@ -110,7 +180,14 @@
         "en": "hot water",
         "vi": "nước nóng, nước sôi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "お 湯[ゆ]を 飲[の]むと、元気[げんき]に なります。",
+        "kana": "お ゆを のむと、げんきに なります。",
+        "translation": {
+          "vi": "Hễ uống nước nóng thì sẽ khỏe lại."
+        }
+      }
     },
     {
       "id": "oto",
@@ -120,7 +197,14 @@
         "en": "sound",
         "vi": "âm thanh, tiếng động"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "隣[となり]の 部屋[へや]の 音[おと]が うるさいです。",
+        "kana": "となりの へやの おとが うるさいです。",
+        "translation": {
+          "vi": "Âm thanh từ phòng bên cạnh thật ồn ào."
+        }
+      }
     },
     {
       "id": "saizu",
@@ -130,7 +214,14 @@
         "en": "size",
         "vi": "kích cỡ, kích thước (size)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "この 服[ふく]の サイズは 小[ちい]さいです。",
+        "kana": "この ふくの サイズは ちいさいです。",
+        "translation": {
+          "vi": "Kích cỡ của bộ quần áo này thì nhỏ."
+        }
+      }
     },
     {
       "id": "koshou",
@@ -140,7 +231,14 @@
         "en": "breakdown, fault",
         "vi": "sự hỏng hóc, trục trặc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "機械[きかい]が 故障[こしょう]した とき、私[わたし]に 言[い]って ください。",
+        "kana": "きかいが こしょうした とき、わたしに いって ください。",
+        "translation": {
+          "vi": "Khi máy móc hỏng, xin hãy nói với tôi."
+        }
+      }
     },
     {
       "id": "michi",
@@ -150,7 +248,14 @@
         "en": "street, road",
         "vi": "con đường, đường đi"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "道[みち]を 渡[わた]る とき、車[くるま]に 気[き]をつけます。",
+        "kana": "みちを わたる とき、くるまに きをつけます。",
+        "translation": {
+          "vi": "Khi sang đường, tôi chú ý xe ô tô."
+        }
+      }
     },
     {
       "id": "kousaten",
@@ -160,7 +265,14 @@
         "en": "crossing, intersection",
         "vi": "ngã tư (đường giao nhau)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "次[つぎ]の 交差点[こうさてん]を 左[ひだり]へ 曲[ま]がります。",
+        "kana": "つぎの こうさてんを ひだりへ まがります。",
+        "translation": {
+          "vi": "Tôi rẽ trái ở ngã tư tiếp theo."
+        }
+      }
     },
     {
       "id": "shingou",
@@ -170,7 +282,14 @@
         "en": "traffic light",
         "vi": "đèn tín hiệu giao thông"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "信号[しんごう]が 赤[あか]の とき、渡[わた]りません。",
+        "kana": "しんごうが あかの とき、わたりません。",
+        "translation": {
+          "vi": "Khi đèn tín hiệu màu đỏ, không băng qua đường."
+        }
+      }
     },
     {
       "id": "kado",
@@ -180,7 +299,14 @@
         "en": "corner",
         "vi": "góc đường, góc"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "その 角[かど]を 右[みぎ]へ 曲[ま]がると、銀行[ぎんこう]が あります。",
+        "kana": "その かどを みぎへ まがると、ぎんこうが あります。",
+        "translation": {
+          "vi": "Hễ rẽ phải ở góc đường đó thì sẽ có ngân hàng."
+        }
+      }
     },
     {
       "id": "hashi-puente",
@@ -190,7 +316,14 @@
         "en": "bridge",
         "vi": "cây cầu"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "長[なが]い 橋[はし]を 渡[わた]ります。",
+        "kana": "ながい はしを わたります。",
+        "translation": {
+          "vi": "Tôi băng qua cây cầu dài."
+        }
+      }
     },
     {
       "id": "chuushajou",
@@ -200,7 +333,14 @@
         "en": "car park, parking",
         "vi": "bãi đỗ xe"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "駐車場[ちゅうしゃじょう]に 車[くるま]を 止[と]めます。",
+        "kana": "ちゅうしゃじょうに くるまを とめます。",
+        "translation": {
+          "vi": "Tôi đỗ xe ô tô vào bãi đỗ xe."
+        }
+      }
     },
     {
       "id": "tatemono",
@@ -210,7 +350,14 @@
         "en": "building",
         "vi": "tòa nhà, công trình"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "あの 白[しろ]い 建物[たてもの]は 病院[びょういん]です。",
+        "kana": "あの しろい たてものは びょういんです。",
+        "translation": {
+          "vi": "Tòa nhà màu trắng kia là bệnh viện."
+        }
+      }
     },
     {
       "id": "nankaimo",
@@ -220,7 +367,14 @@
         "en": "many times",
         "vi": "nhiều lần"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "何回[なんかい]も 日本[にほん]へ 行[い]った ことが あります。",
+        "kana": "なんかいも にほんへ いった ことが あります。",
+        "translation": {
+          "vi": "Tôi đã đi Nhật Bản rất nhiều lần."
+        }
+      }
     },
     {
       "id": "me-orden",
@@ -230,7 +384,14 @@
         "en": "the ~th (ordinal)",
         "vi": "thứ... (số thứ tự)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "二[ふた]つ目[め]の 角[かど]を 左[ひだり]へ 曲[ま]がって ください。",
+        "kana": "ふたつめの かどを ひだりへ まがって ください。",
+        "translation": {
+          "vi": "Xin hãy rẽ trái ở góc đường thứ hai."
+        }
+      }
     },
     {
       "id": "shoutokutaishi",
@@ -240,7 +401,14 @@
         "en": "Prince Shotoku (574–622)",
         "vi": "Thái tử Shotoku (nhân vật lịch sử Nhật)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "聖徳太子[しょうとくたいし]は 昔[むかし]の 人[ひと]です。",
+        "kana": "しょうとくたいしは むかしの ひとです。",
+        "translation": {
+          "vi": "Thái tử Shotoku là người thời xưa."
+        }
+      }
     },
     {
       "id": "houryuuji",
@@ -250,7 +418,14 @@
         "en": "Horyuji Temple (Nara)",
         "vi": "Chùa Horyu-ji (ở Nara)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "休[やす]みの 日[ひ]、法隆寺[ほうりゅうじ]へ 行[い]きます。",
+        "kana": "やすみの ひ、ほうりゅうじへ いきます。",
+        "translation": {
+          "vi": "Ngày nghỉ, tôi đi Chùa Horyu-ji."
+        }
+      }
     }
   ]
 }

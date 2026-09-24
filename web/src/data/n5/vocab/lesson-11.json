@@ -10,7 +10,14 @@
         "en": "to have [children]",
         "vi": "có [con cái]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "私[わたし]は 子[こ]どもが います。",
+        "kana": "わたしは こどもが います。",
+        "translation": {
+          "vi": "Tôi có con."
+        }
+      }
     },
     {
       "id": "imasu-nihon",
@@ -20,7 +27,14 @@
         "en": "to stay [in Japan]",
         "vi": "ở [Nhật Bản]"
       },
-      "type": "verb-ichidan"
+      "type": "verb-ichidan",
+      "example": {
+        "jp": "今[いま] 日本[にほん]に います。",
+        "kana": "いま にほんに います。",
+        "translation": {
+          "vi": "Bây giờ tôi đang ở Nhật Bản."
+        }
+      }
     },
     {
       "id": "kakarimasu",
@@ -30,7 +44,14 @@
         "en": "to take (time), to cost (money)",
         "vi": "mất, tốn [thời gian, tiền bạc]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "家[いえ]から 駅[えき]まで 十分[じゅっぷん] かかります。",
+        "kana": "いえから えきまで じゅっぷん かかります。",
+        "translation": {
+          "vi": "Từ nhà đến ga mất 10 phút."
+        }
+      }
     },
     {
       "id": "yasumimasu-kaisha",
@@ -40,7 +61,14 @@
         "en": "to be absent [from work]",
         "vi": "nghỉ [làm việc ở công ty]"
       },
-      "type": "verb-godan"
+      "type": "verb-godan",
+      "example": {
+        "jp": "明日[あした] 会社[かいしゃ]を 休[やす]みます。",
+        "kana": "あした かいしゃを やすみます。",
+        "translation": {
+          "vi": "Ngày mai tôi sẽ nghỉ làm ở công ty."
+        }
+      }
     },
     {
       "id": "hitotsu",
@@ -50,7 +78,14 @@
         "en": "one (for objects)",
         "vi": "một cái (đếm đồ vật chung)"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "りんごを ひとつ 買[か]いました。",
+        "kana": "りんごを ひとつ かいました。",
+        "translation": {
+          "vi": "Tôi đã mua một quả táo."
+        }
+      }
     },
     {
       "id": "futatsu",
@@ -60,7 +95,14 @@
         "en": "two",
         "vi": "hai cái"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "みかんを ふたつ 食[た]べました。",
+        "kana": "みかんを ふたつ たべました。",
+        "translation": {
+          "vi": "Tôi đã ăn hai quả quýt."
+        }
+      }
     },
     {
       "id": "mittsu",
@@ -70,7 +112,14 @@
         "en": "three",
         "vi": "ba cái"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "パンを みっつ 買[か]いました。",
+        "kana": "パンを みっつ かいました。",
+        "translation": {
+          "vi": "Tôi đã mua ba cái bánh mì."
+        }
+      }
     },
     {
       "id": "yottsu",
@@ -80,7 +129,14 @@
         "en": "four",
         "vi": "bốn cái"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "かばんが よっつ あります。",
+        "kana": "かばんが よっつ あります。",
+        "translation": {
+          "vi": "Có bốn cái cặp."
+        }
+      }
     },
     {
       "id": "itsutsu",
@@ -90,7 +146,14 @@
         "en": "five",
         "vi": "năm cái"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "箱[はこ]が いつつ あります。",
+        "kana": "はこが いつつ あります。",
+        "translation": {
+          "vi": "Có năm cái hộp."
+        }
+      }
     },
     {
       "id": "muttsu",
@@ -100,7 +163,14 @@
         "en": "six",
         "vi": "sáu cái"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "いすが むっつ あります。",
+        "kana": "いすが むっつ あります。",
+        "translation": {
+          "vi": "Có sáu cái ghế."
+        }
+      }
     },
     {
       "id": "nanatsu",
@@ -110,7 +180,14 @@
         "en": "seven",
         "vi": "bảy cái"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "消[け]しゴムを ななつ 買[か]いました。",
+        "kana": "けしゴムを ななつ かいました。",
+        "translation": {
+          "vi": "Tôi đã mua bảy cục tẩy."
+        }
+      }
     },
     {
       "id": "yattsu",
@@ -120,7 +197,14 @@
         "en": "eight",
         "vi": "tám cái"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "時計[とけい]が やっつ あります。",
+        "kana": "とけいが やっつ あります。",
+        "translation": {
+          "vi": "Có tám cái đồng hồ."
+        }
+      }
     },
     {
       "id": "kokonotsu",
@@ -130,7 +214,14 @@
         "en": "nine",
         "vi": "chín cái"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "りんごが ここのつ あります。",
+        "kana": "りんごが ここのつ あります。",
+        "translation": {
+          "vi": "Có chín quả táo."
+        }
+      }
     },
     {
       "id": "too",
@@ -140,7 +231,14 @@
         "en": "ten",
         "vi": "mười cái"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "みかんを とお 買[か]いました。",
+        "kana": "みかんを とお かいました。",
+        "translation": {
+          "vi": "Tôi đã mua mười quả quýt."
+        }
+      }
     },
     {
       "id": "ikutsu",
@@ -150,7 +248,14 @@
         "en": "how many",
         "vi": "bao nhiêu cái, mấy cái"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "りんごが いくつ ありますか。",
+        "kana": "りんごが いくつ ありますか。",
+        "translation": {
+          "vi": "Có bao nhiêu quả táo?"
+        }
+      }
     },
     {
       "id": "hitori-11",
@@ -160,7 +265,14 @@
         "en": "one person",
         "vi": "một người"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "学生[がくせい]が 一人[ひとり] います。",
+        "kana": "がくせいが ひとり います。",
+        "translation": {
+          "vi": "Có một học sinh."
+        }
+      }
     },
     {
       "id": "futari",
@@ -170,7 +282,14 @@
         "en": "two people",
         "vi": "hai người"
       },
-      "type": "number"
+      "type": "number",
+      "example": {
+        "jp": "先生[せんせい]が 二人[ふたり] います。",
+        "kana": "せんせいが ふたり います。",
+        "translation": {
+          "vi": "Có hai thầy giáo."
+        }
+      }
     },
     {
       "id": "nin",
@@ -180,7 +299,14 @@
         "en": "~ people",
         "vi": "người (hậu tố đếm người từ 3 người trở lên)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "会社[かいしゃ]に 人[ひと]が 十人[じゅうにん] います。",
+        "kana": "かいしゃに ひとが じゅうにん います。",
+        "translation": {
+          "vi": "Ở công ty có 10 người."
+        }
+      }
     },
     {
       "id": "dai",
@@ -190,7 +316,14 @@
         "en": "counter for machines and vehicles",
         "vi": "chiếc, cái (đếm máy móc, xe cộ)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "車[くるま]が 三台[さんだい] あります。",
+        "kana": "くるまが さんだい あります。",
+        "translation": {
+          "vi": "Có 3 chiếc ô tô."
+        }
+      }
     },
     {
       "id": "mai",
@@ -200,7 +333,14 @@
         "en": "counter for flat things",
         "vi": "tờ, tấm, chiếc (đếm vật mỏng phẳng như giấy, áo)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "切手[きって]を 五枚[ごまい] 買[か]いました。",
+        "kana": "きってを ごまい かいました。",
+        "translation": {
+          "vi": "Tôi đã mua 5 con tem."
+        }
+      }
     },
     {
       "id": "kai-veces",
@@ -210,7 +350,14 @@
         "en": "~ times",
         "vi": "lần (hậu tố đếm số lần)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "一週間[いっしゅうかん]に 二回[にかい] テニスを します。",
+        "kana": "いっしゅうかんに にかい テニスを します。",
+        "translation": {
+          "vi": "Tôi chơi tennis 2 lần 1 tuần."
+        }
+      }
     },
     {
       "id": "ringo",
@@ -220,7 +367,14 @@
         "en": "apple",
         "vi": "quả táo"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "りんごを 食[た]べます。",
+        "kana": "りんごを たべます。",
+        "translation": {
+          "vi": "Tôi ăn táo."
+        }
+      }
     },
     {
       "id": "mikan",
@@ -230,7 +384,14 @@
         "en": "mandarin orange",
         "vi": "quả quýt"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "みかんが あります。",
+        "kana": "みかんが あります。",
+        "translation": {
+          "vi": "Có quýt."
+        }
+      }
     },
     {
       "id": "sandoicchi",
@@ -240,7 +401,14 @@
         "en": "sandwich",
         "vi": "bánh mì kẹp, sandwich"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "サンドイッチを 作[つく]ります。",
+        "kana": "サンドイッチを つくります。",
+        "translation": {
+          "vi": "Tôi làm bánh sandwich."
+        }
+      }
     },
     {
       "id": "karee",
@@ -250,7 +418,14 @@
         "en": "curry [and rice]",
         "vi": "món cơm cà ri"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "カレーライスが 好[す]きです。",
+        "kana": "カレーライスが すきです。",
+        "translation": {
+          "vi": "Tôi thích cơm cà ri."
+        }
+      }
     },
     {
       "id": "aisukuriimu",
@@ -260,7 +435,14 @@
         "en": "ice cream",
         "vi": "kem, que kem"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "アイスクリームを 買[か]います。",
+        "kana": "アイスクリームを かいます。",
+        "translation": {
+          "vi": "Tôi mua kem."
+        }
+      }
     },
     {
       "id": "kitte",
@@ -270,7 +452,14 @@
         "en": "postage stamp",
         "vi": "tem thư"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "郵便局[ゆうびんきょく]で 切手[きって]を 買[か]いました。",
+        "kana": "ゆうびんきょくで きってを かいました。",
+        "translation": {
+          "vi": "Tôi đã mua tem ở bưu điện."
+        }
+      }
     },
     {
       "id": "hagaki",
@@ -280,7 +469,14 @@
         "en": "postcard",
         "vi": "bưu thiếp"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "はがきを 送[おく]ります。",
+        "kana": "はがきを おくります。",
+        "translation": {
+          "vi": "Tôi gửi bưu thiếp."
+        }
+      }
     },
     {
       "id": "fuutou",
@@ -290,7 +486,14 @@
         "en": "envelope",
         "vi": "phong bì"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "封筒[ふうとう]に 手紙[てがみ]を 入[い]れます。",
+        "kana": "ふうとうに てがみを いれます。",
+        "translation": {
+          "vi": "Tôi cho thư vào phong bì."
+        }
+      }
     },
     {
       "id": "ryoushin",
@@ -300,7 +503,14 @@
         "en": "parents",
         "vi": "bố mẹ, phụ huynh"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "両親[りょうしん]は 日本[にほん]に います。",
+        "kana": "りょうしんは にほんに います。",
+        "translation": {
+          "vi": "Bố mẹ tôi ở Nhật Bản."
+        }
+      }
     },
     {
       "id": "kyoudai",
@@ -310,7 +520,14 @@
         "en": "brothers and sisters",
         "vi": "anh chị em"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "兄弟[きょうだい]が 三人[さんにん] います。",
+        "kana": "きょうだいが さんにん います。",
+        "translation": {
+          "vi": "Tôi có 3 anh chị em."
+        }
+      }
     },
     {
       "id": "ani",
@@ -320,7 +537,14 @@
         "en": "(my) older brother",
         "vi": "anh trai (của mình)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "兄[あに]は 会社員[かいしゃいん]です。",
+        "kana": "あには かいしゃいんです。",
+        "translation": {
+          "vi": "Anh trai tôi là nhân viên công ty."
+        }
+      }
     },
     {
       "id": "oniisan",
@@ -330,7 +554,14 @@
         "en": "(your) older brother",
         "vi": "anh trai (của người khác)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "お 兄[にい]さんは 何歳[なんさい]ですか。",
+        "kana": "おにいさんは なんさいですか。",
+        "translation": {
+          "vi": "Anh trai bạn bao nhiêu tuổi?"
+        }
+      }
     },
     {
       "id": "ane",
@@ -340,7 +571,14 @@
         "en": "(my) older sister",
         "vi": "chị gái (của mình)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "姉[あね]は 大学[だいがく]で 勉強[べんきょう]します。",
+        "kana": "あねは だいがくで べんきょうします。",
+        "translation": {
+          "vi": "Chị gái tôi học ở đại học."
+        }
+      }
     },
     {
       "id": "oneesan",
@@ -350,7 +588,14 @@
         "en": "(your) older sister",
         "vi": "chị gái (của người khác)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "お 姉[ねえ]さんは どこに いますか。",
+        "kana": "おねえさんは どこに いますか。",
+        "translation": {
+          "vi": "Chị gái bạn ở đâu?"
+        }
+      }
     },
     {
       "id": "otouto",
@@ -360,7 +605,14 @@
         "en": "(my) younger brother",
         "vi": "em trai (của mình)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "弟[おとうと]は 学生[がくせい]です。",
+        "kana": "おとうとは がくせいです。",
+        "translation": {
+          "vi": "Em trai tôi là học sinh."
+        }
+      }
     },
     {
       "id": "otoutosan",
@@ -370,7 +622,14 @@
         "en": "(your) younger brother",
         "vi": "em trai (của người khác)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "弟[おとうと]さんは カメラが ありますか。",
+        "kana": "おとうとさんは カメラが ありますか。",
+        "translation": {
+          "vi": "Em trai bạn có máy ảnh không?"
+        }
+      }
     },
     {
       "id": "imouto",
@@ -380,7 +639,14 @@
         "en": "(my) younger sister",
         "vi": "em gái (của mình)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "妹[いもうと]は 日本語[にほんご]が わかります。",
+        "kana": "いもうとは にほんごが わかります。",
+        "translation": {
+          "vi": "Em gái tôi hiểu tiếng Nhật."
+        }
+      }
     },
     {
       "id": "imoutosan",
@@ -390,7 +656,14 @@
         "en": "(your) younger sister",
         "vi": "em gái (của người khác)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "妹[いもうと]さんは テニスが 好[す]きですか。",
+        "kana": "いもうとさんは テニスが すきですか。",
+        "translation": {
+          "vi": "Em gái bạn có thích tennis không?"
+        }
+      }
     },
     {
       "id": "gaikoku",
@@ -400,7 +673,14 @@
         "en": "foreign country",
         "vi": "nước ngoài"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "来月[らいげつ] 外国[がいこく]へ 行[い]きます。",
+        "kana": "らいげつ がいこくへ いきます。",
+        "translation": {
+          "vi": "Tháng sau tôi sẽ đi nước ngoài."
+        }
+      }
     },
     {
       "id": "ryuugakusei",
@@ -410,7 +690,14 @@
         "en": "foreign student",
         "vi": "du học sinh"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "私[わたし]は 留学生[りゅうがくせい]です。",
+        "kana": "わたしは りゅうがくせいです。",
+        "translation": {
+          "vi": "Tôi là du học sinh."
+        }
+      }
     },
     {
       "id": "kurasu",
@@ -420,7 +707,14 @@
         "en": "class, lesson",
         "vi": "lớp học (class)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "私[わたし]の クラスに 学生[がくせい]が 二十人[にじゅうにん] います。",
+        "kana": "わたしの クラスに がくせいが にじゅうにん います。",
+        "translation": {
+          "vi": "Trong lớp học của tôi có 20 học sinh."
+        }
+      }
     },
     {
       "id": "jikan-counter",
@@ -430,7 +724,14 @@
         "en": "~ hour(s)",
         "vi": "tiếng, giờ đồng hồ (khoảng thời gian)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "毎日[まいにち] 八時間[はちじかん] 働[はたら]きます。",
+        "kana": "まいにち はちじかん はたらきます。",
+        "translation": {
+          "vi": "Mỗi ngày tôi làm việc 8 tiếng."
+        }
+      }
     },
     {
       "id": "shuukan",
@@ -440,7 +741,14 @@
         "en": "~ week(s)",
         "vi": "tuần (khoảng thời gian)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "三週間[さんしゅうかん] 日本[にほん]に います。",
+        "kana": "さんしゅうかん にほんに います。",
+        "translation": {
+          "vi": "Tôi ở Nhật 3 tuần."
+        }
+      }
     },
     {
       "id": "kagetsu",
@@ -450,7 +758,14 @@
         "en": "~ month(s)",
         "vi": "tháng (khoảng thời gian)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "二[に]か 月[げつ] 日本語[にほんご]を 勉強[べんきょう]しました。",
+        "kana": "にかげつ にほんごを べんきょうしました。",
+        "translation": {
+          "vi": "Tôi đã học tiếng Nhật 2 tháng."
+        }
+      }
     },
     {
       "id": "nen-counter",
@@ -460,7 +775,14 @@
         "en": "~ year(s)",
         "vi": "năm (khoảng thời gian)"
       },
-      "type": "counter"
+      "type": "counter",
+      "example": {
+        "jp": "一年[いちねん] 日本[にほん]に います。",
+        "kana": "いちねん にほんに います。",
+        "translation": {
+          "vi": "Tôi ở Nhật 1 năm."
+        }
+      }
     },
     {
       "id": "gurai",
@@ -470,7 +792,14 @@
         "en": "around ~",
         "vi": "khoảng, chừng"
       },
-      "type": "particle"
+      "type": "particle",
+      "example": {
+        "jp": "駅[えき]まで 十分[じゅっぷん]ぐらい かかります。",
+        "kana": "えきまで じゅっぷんぐらい かかります。",
+        "translation": {
+          "vi": "Mất khoảng 10 phút để đến ga."
+        }
+      }
     },
     {
       "id": "donokurai",
@@ -480,7 +809,14 @@
         "en": "how long",
         "vi": "bao lâu, khoảng bao nhiêu"
       },
-      "type": "interrogative"
+      "type": "interrogative",
+      "example": {
+        "jp": "どのくらい 日本語[にほんご]を 勉強[べんきょう]しましたか。",
+        "kana": "どのくらい にほんごを べんきょうしましたか。",
+        "translation": {
+          "vi": "Bạn đã học tiếng Nhật khoảng bao lâu?"
+        }
+      }
     },
     {
       "id": "zenbude",
@@ -490,7 +826,14 @@
         "en": "in total",
         "vi": "tổng cộng, tất cả"
       },
-      "type": "adverb"
+      "type": "adverb",
+      "example": {
+        "jp": "全部[ぜんぶ]で 千円[せんえん]です。",
+        "kana": "ぜんぶで せんえんです。",
+        "translation": {
+          "vi": "Tổng cộng là 1000 yên."
+        }
+      }
     },
     {
       "id": "minna",
@@ -500,7 +843,14 @@
         "en": "everyone, everything",
         "vi": "tất cả mọi người, toàn bộ"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "みんなで ご飯[はん]を 食[た]べます。",
+        "kana": "みんなで ごはんを たべます。",
+        "translation": {
+          "vi": "Mọi người cùng nhau ăn cơm."
+        }
+      }
     },
     {
       "id": "dake",
@@ -510,7 +860,14 @@
         "en": "only ~",
         "vi": "chỉ"
       },
-      "type": "particle"
+      "type": "particle",
+      "example": {
+        "jp": "休[やす]みは 日曜日[にちようび]だけです。",
+        "kana": "やすみは にちようびだけです。",
+        "translation": {
+          "vi": "Ngày nghỉ chỉ có chủ nhật."
+        }
+      }
     },
     {
       "id": "kashikomarimashita",
@@ -520,7 +877,14 @@
         "en": "yes, sir/madam (very formal)",
         "vi": "Tôi hiểu rồi ạ (nhận lời khách/cấp trên)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「コーヒーを お 願[ねが]いします。」「かしこまりました。」",
+        "kana": "「コーヒーを おねがいします。」「かしこまりました。」",
+        "translation": {
+          "vi": "\"Cho tôi một cà phê.\" \"Tôi hiểu rồi ạ.\""
+        }
+      }
     },
     {
       "id": "ii-otenki",
@@ -530,7 +894,14 @@
         "en": "lovely weather, isn't it?",
         "vi": "thời tiết đẹp quá nhỉ!"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "いい お 天気[てんき]ですね。",
+        "kana": "いい おてんきですね。",
+        "translation": {
+          "vi": "Thời tiết đẹp quá nhỉ."
+        }
+      }
     },
     {
       "id": "odekake",
@@ -540,7 +911,14 @@
         "en": "are you going out?",
         "vi": "bạn đi ra ngoài đấy à?"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "お 出[で]かけですか。",
+        "kana": "おでかけですか。",
+        "translation": {
+          "vi": "Bạn ra ngoài đấy à?"
+        }
+      }
     },
     {
       "id": "chotto-made",
@@ -550,7 +928,14 @@
         "en": "I'm only going as far as ~",
         "vi": "Tôi đi ra... một chút."
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "ちょっと 郵便局[ゆうびんきょく]まで 行[い]きます。",
+        "kana": "ちょっと ゆうびんきょくまで いきます。",
+        "translation": {
+          "vi": "Tôi đi ra bưu điện một chút."
+        }
+      }
     },
     {
       "id": "itterasshai",
@@ -560,7 +945,14 @@
         "en": "take care",
         "vi": "bạn đi nhé! (chào người ra khỏi nhà)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "「行[い]ってきます。」「行[い]ってらっしゃい。」",
+        "kana": "「いってきます。」「いってらっしゃい。」",
+        "translation": {
+          "vi": "\"Tôi đi đây.\" \"Bạn đi nhé.\""
+        }
+      }
     },
     {
       "id": "ittekimasu",
@@ -570,7 +962,14 @@
         "en": "see you later (leaving and coming back)",
         "vi": "tôi đi đây! (chào trước khi đi ra ngoài)"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "行[い]ってきます。",
+        "kana": "いってきます。",
+        "translation": {
+          "vi": "Tôi đi đây."
+        }
+      }
     },
     {
       "id": "funabin",
@@ -580,7 +979,14 @@
         "en": "by sea",
         "vi": "thư gửi đường biển"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "船便[ふなびん]で 送[おく]ります。",
+        "kana": "ふなびんで おくります。",
+        "translation": {
+          "vi": "Tôi gửi bằng đường biển."
+        }
+      }
     },
     {
       "id": "koukuubin",
@@ -590,7 +996,14 @@
         "en": "by air",
         "vi": "thư gửi đường hàng không (airmail)"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "航空便[こうくうびん]で お 願[ねが]いします。",
+        "kana": "こうくうびんで おねがいします。",
+        "translation": {
+          "vi": "Cho tôi gửi bằng đường hàng không."
+        }
+      }
     },
     {
       "id": "onegaishimasu",
@@ -600,7 +1013,14 @@
         "en": "please",
         "vi": "làm ơn / xin nhờ bạn"
       },
-      "type": "expression"
+      "type": "expression",
+      "example": {
+        "jp": "これを お 願[ねが]いします。",
+        "kana": "これを おねがいします。",
+        "translation": {
+          "vi": "Xin nhờ bạn việc này."
+        }
+      }
     },
     {
       "id": "oosutoraria",
@@ -610,7 +1030,14 @@
         "en": "Australia",
         "vi": "nước Úc, Australia"
       },
-      "type": "noun"
+      "type": "noun",
+      "example": {
+        "jp": "来月[らいげつ] オーストラリアへ 行[い]きます。",
+        "kana": "らいげつ オーストラリアへ いきます。",
+        "translation": {
+          "vi": "Tháng sau tôi sẽ đi Úc."
+        }
+      }
     }
   ]
 }

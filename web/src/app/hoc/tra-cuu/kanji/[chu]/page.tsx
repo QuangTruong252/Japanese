@@ -174,10 +174,7 @@ export default async function KanjiDetailPage({
                       ) : (
                         <span className="inline-flex items-center gap-1.5 flex-wrap">
                           <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300">
-                            Chưa xác minh
-                          </span>
-                          <span className="text-xs text-muted-foreground italic">
-                            (Đang đối chiếu nguồn)
+                            Chưa dịch
                           </span>
                         </span>
                       )}
@@ -288,7 +285,7 @@ export default async function KanjiDetailPage({
         <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-muted/50 border border-border/60 text-xs text-muted-foreground">
           <Info className="size-4 shrink-0 text-muted-foreground mt-0.5" />
           <span>
-            Một số từ ghép chưa đối chiếu được với giáo trình bản in chuẩn mực đang được gắn nhãn Chưa xác minh theo quy ước trung thực dữ liệu.
+            Một số từ ghép chưa có nghĩa tiếng Việt nên được gắn nhãn Chưa dịch.
           </span>
         </div>
       )}
