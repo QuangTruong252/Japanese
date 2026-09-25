@@ -26,6 +26,19 @@ export interface GrammarPoint {
   examples: ExampleSentence[];
 }
 
+export interface VerbForms {
+  dictionary: string;
+  dictionaryKana: string;
+  masu: string;
+  masuKana: string;
+  te?: string;
+  teKana?: string;
+  nai?: string;
+  naiKana?: string;
+  ta?: string;
+  taKana?: string;
+}
+
 export interface VocabWord {
   id: string;
   lesson: number;
@@ -38,6 +51,8 @@ export interface VocabWord {
     | 'noun' | 'pronoun' | 'verb-godan' | 'verb-ichidan' | 'verb-irregular'
     | 'adjective-i' | 'adjective-na' | 'adverb' | 'particle' | 'expression'
     | 'interrogative' | 'counter' | 'number' | 'conjunction';
+  verbGroup?: 1 | 2 | 3;
+  verbForms?: VerbForms;
   kanjiIds?: string[];
   audioKey?: string;
   notes?: LocalizedText;

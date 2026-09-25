@@ -186,3 +186,30 @@ test('parseLessonNumber từ chối mọi tham số không phải số bài 1..2
     assert.equal(parseLessonNumber(raw), null, `phải từ chối: "${raw}"`);
   }
 });
+
+test('VocabWord hỗ trợ cấu trúc verbForms và verbGroup', () => {
+  const sampleVerb: VocabWord = {
+    id: 'kirimasu',
+    lesson: 7,
+    word: '切[き]る',
+    kana: 'きる',
+    meaning: { vi: 'cắt', en: 'to cut' },
+    type: 'verb-godan',
+    verbGroup: 1,
+    verbForms: {
+      dictionary: '切[き]る',
+      dictionaryKana: 'きる',
+      masu: '切[き]ります',
+      masuKana: 'きります',
+      te: '切[き]って',
+      teKana: 'きって',
+      nai: '切[き]らない',
+      naiKana: 'きらない',
+      ta: '切[き]った',
+      taKana: 'きった',
+    },
+  };
+  assert.equal(sampleVerb.verbForms?.masu, '切[き]ります');
+  assert.equal(sampleVerb.verbGroup, 1);
+});
+
