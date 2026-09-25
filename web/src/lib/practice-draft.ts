@@ -8,24 +8,26 @@ import { normalizeJapaneseInput, toKanaSentence } from './japanese.ts';
 export const PRACTICE_DRAFT_KEY = 'jp:practice-draft';
 export const PRACTICE_DRAFT_VERSION = 1;
 
-export interface ExtendedAnswerResult extends AnswerResult {
-  userAnswer?: string;
-}
-
-declare module '@/types' {
-  interface AnswerResult {
-    userAnswer?: string;
-  }
-}
-
 export interface PracticeDraft {
   version: number;
   questions: QuestionItem[];
   currentIndex: number;
-  results: ExtendedAnswerResult[];
+  results: AnswerResult[];
   elapsedSec: number;
   savedAt: number;
   config?: PracticeConfig;
+}
+
+/**
+ * Xác định xem có nên lưu nháp sau khi trả lời câu hỏi hay không.
+ * Ở câu cuối cùng (currentIndex + 1 >= totalQuestions), không lưu nháp
+ * để tránh câu cuối bị lặp lại hoặc tính 2 lần khi khôi phục.
+ */
+export function shouldSaveDraftOnAnswer(
+  currentIndex: number,
+  totalQuestions: number,
+): boolean {
+  return currentIndex + 1 < totalQuestions;
 }
 
 /**
@@ -95,7 +97,7 @@ export function validatePracticeDraft(data: unknown): PracticeDraft | null {
     version: PRACTICE_DRAFT_VERSION,
     questions: obj.questions as QuestionItem[],
     currentIndex: Math.floor(obj.currentIndex),
-    results: obj.results as ExtendedAnswerResult[],
+    results: obj.results as AnswerResult[],
     elapsedSec,
     savedAt,
     ...(config ? { config } : {}),

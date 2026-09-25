@@ -56,7 +56,7 @@ export function SessionResult({
       },
     });
 
-    router.push('/luyen-tap/phien?resume=1');
+    router.push(`/luyen-tap/phien?resume=${Date.now()}`);
   };
 
   return (

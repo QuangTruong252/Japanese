@@ -104,6 +104,8 @@ export interface AnswerResult {
   isCorrect: boolean;
   elapsedMs: number;
   usedHint: boolean;
+  /** Chỉ để hiển thị vùng phản hồi/kết quả, không lưu Dexie/sync */
+  userAnswer?: string;
 }
 
 export interface PracticeConfig {

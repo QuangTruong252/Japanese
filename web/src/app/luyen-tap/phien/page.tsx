@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useEffect, useMemo, useSyncExternalStore } from 'react';
+import { Suspense, useEffect, useMemo, useState, useSyncExternalStore } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
@@ -8,10 +8,7 @@ import { PracticeRunner } from '@/components/practice/PracticeRunner';
 import { buildSession } from '@/lib/practice';
 import { useUIStore } from '@/lib/store';
 import { useJapaneseVoice, useQuestionPool } from '@/lib/use-question-pool';
-import {
-  getPracticeDraftSnapshot,
-  subscribePracticeDraft,
-} from '@/lib/practice-draft';
+import { loadPracticeDraft } from '@/lib/practice-draft';
 import type { PracticeConfig } from '@/types';
 
 function PracticeSessionLoading() {
@@ -36,33 +33,45 @@ function PracticeSessionLoading() {
   );
 }
 
-function PracticeSessionContent() {
+function ResumedSession() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const resumeParam = searchParams.get('resume') === '1';
+  // Đọc nháp MỘT lần khi mount, không subscribe nháp đang sống
+  const [draft] = useState(() => loadPracticeDraft());
 
-  const mounted = useSyncExternalStore(
-    () => () => {},
-    () => true,
-    () => false,
+  useEffect(() => {
+    if (!draft || draft.questions.length === 0) {
+      router.replace('/luyen-tap');
+    }
+  }, [draft, router]);
+
+  if (!draft || draft.questions.length === 0) {
+    return <PracticeSessionLoading />;
+  }
+
+  const resumeConfig: PracticeConfig = draft.config ?? {
+    mode: 'lesson',
+    lessons: [...new Set(draft.questions.map((q) => q.lesson))].sort((a, b) => a - b),
+    maxLearnedLesson: Math.max(0, ...draft.questions.map((q) => q.lesson)),
+    selectedTypes: [...new Set(draft.questions.map((q) => q.type))],
+    questionCount: draft.questions.length,
+  };
+
+  return (
+    <PracticeRunner
+      questions={draft.questions}
+      config={resumeConfig}
+      initialIndex={draft.currentIndex}
+      initialResults={draft.results}
+      initialDuration={draft.elapsedSec}
+    />
   );
+}
 
-  const draft = useSyncExternalStore(
-    subscribePracticeDraft,
-    getPracticeDraftSnapshot,
-    () => null,
-  );
-
+function NewSession() {
+  const router = useRouter();
   const { selectedLessons, selectedTypes, questionCount } = useUIStore();
   const { questions, loading } = useQuestionPool(selectedLessons);
   const hasVoice = useJapaneseVoice();
-
-  const isResuming = Boolean(
-    mounted &&
-      draft &&
-      draft.questions.length > 0 &&
-      (resumeParam || selectedLessons.length === 0),
-  );
 
   const audioKeys = useMemo(
     () => new Set(hasVoice ? ['tts'] : []),
@@ -85,49 +94,12 @@ function PracticeSessionContent() {
     [selectedLessons, maxLearnedLesson, selectedTypes, questionCount],
   );
 
-  // Dựng danh sách câu hỏi nếu bắt đầu phiên mới
+  // Dựng danh sách câu hỏi cho phiên mới
   const sessionQuestions = useMemo(() => {
-    if (isResuming || loading || questions.length === 0) return null;
+    if (loading || questions.length === 0) return null;
     const { questions: sessionList } = buildSession(questions, config, audioKeys);
     return sessionList;
-  }, [isResuming, loading, questions, config, audioKeys]);
-
-  // Chuyển hướng nếu không có bài nào được chọn và không có nháp để khôi phục
-  useEffect(() => {
-    if (mounted && !isResuming && selectedLessons.length === 0) {
-      router.replace('/luyen-tap');
-    }
-  }, [mounted, isResuming, selectedLessons.length, router]);
-
-  // Chờ mount
-  if (!mounted) {
-    return <PracticeSessionLoading />;
-  }
-
-  // Khôi phục từ nháp phiên
-  if (isResuming && draft) {
-    const resumeConfig: PracticeConfig = draft.config ?? {
-      mode: 'lesson',
-      lessons: [...new Set(draft.questions.map((q) => q.lesson))].sort((a, b) => a - b),
-      maxLearnedLesson: Math.max(0, ...draft.questions.map((q) => q.lesson)),
-      selectedTypes: [...new Set(draft.questions.map((q) => q.type))],
-      questionCount: draft.questions.length,
-    };
-
-    return (
-      <PracticeRunner
-        questions={draft.questions}
-        config={resumeConfig}
-        initialIndex={draft.currentIndex}
-        initialResults={draft.results}
-        initialDuration={draft.elapsedSec}
-      />
-    );
-  }
-
-  if (selectedLessons.length === 0) {
-    return null;
-  }
+  }, [loading, questions, config, audioKeys]);
 
   // Đang nạp dữ liệu câu hỏi cho phiên mới
   if (hasVoice === null || loading || (questions.length > 0 && sessionQuestions === null)) {
@@ -154,6 +126,47 @@ function PracticeSessionContent() {
       config={config}
     />
   );
+}
+
+function PracticeSessionContent() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const resumeToken = searchParams.get('resume');
+
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+
+  const { selectedLessons } = useUIStore();
+
+  // Trường hợp reload mất store (không có query resume nhưng selectedLessons rỗng)
+  useEffect(() => {
+    if (mounted && !resumeToken && selectedLessons.length === 0) {
+      const existingDraft = loadPracticeDraft();
+      if (existingDraft && existingDraft.questions.length > 0) {
+        router.replace(`/luyen-tap/phien?resume=${Date.now()}`);
+      } else {
+        router.replace('/luyen-tap');
+      }
+    }
+  }, [mounted, resumeToken, selectedLessons.length, router]);
+
+  if (!mounted) {
+    return <PracticeSessionLoading />;
+  }
+
+  // 1. Quyết định khôi phục CHỈ bằng query resume
+  if (resumeToken) {
+    return <ResumedSession key={resumeToken} />;
+  }
+
+  if (selectedLessons.length === 0) {
+    return null;
+  }
+
+  return <NewSession />;
 }
 
 export default function PracticeSessionPage() {

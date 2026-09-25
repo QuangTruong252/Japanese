@@ -29,7 +29,6 @@ import {
   savePracticeDraft,
   particleHint,
   PRACTICE_DRAFT_VERSION,
-  type ExtendedAnswerResult,
 } from '@/lib/practice-draft';
 import { useUIStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
@@ -107,11 +106,13 @@ export function PracticeRunner({
     return Math.max(1, Math.round(total));
   }, []);
 
-  // Đặt lại con trỏ câu trong store khi mount và ghi nhận mốc thời gian bắt đầu
+  // Đặt lại con trỏ câu trong store khi mount và ghi nhận mốc thời gian bắt đầu (chỉ chạy khi mount)
+  const initialIndexRef = useRef(initialIndex);
   useEffect(() => {
-    setCurrentQuestionIndex(initialIndex);
+    setCurrentQuestionIndex(initialIndexRef.current);
     startQuestionTimer();
-  }, [setCurrentQuestionIndex, initialIndex, startQuestionTimer]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Đồng hồ tổng phiên: tự dừng khi đã trả lời hoặc đang tạm dừng
   useEffect(() => {
@@ -167,16 +168,18 @@ export function PracticeRunner({
       setLastResult(representativeResult ?? null);
       setAnswered(true);
 
-      // Cập nhật nháp sau mỗi câu trả lời (Requirement 2)
-      savePracticeDraft({
-        version: PRACTICE_DRAFT_VERSION,
-        questions,
-        currentIndex: Math.min(currentIndex + 1, questions.length - 1),
-        results: nextResults,
-        elapsedSec: sessionDuration,
-        savedAt: Date.now(),
-        config,
-      });
+      // Cập nhật nháp sau mỗi câu trả lời (chỉ lưu khi chưa phải câu cuối)
+      if (currentIndex + 1 < questions.length) {
+        savePracticeDraft({
+          version: PRACTICE_DRAFT_VERSION,
+          questions,
+          currentIndex: currentIndex + 1,
+          results: nextResults,
+          elapsedSec: sessionDuration,
+          savedAt: Date.now(),
+          config,
+        });
+      }
     },
     [answered, pauseQuestionTimer, getQuestionElapsedMs, allResults, questions, currentIndex, sessionDuration, config],
   );
@@ -276,8 +279,8 @@ export function PracticeRunner({
   const userAnswers = useMemo(() => {
     const map: Record<string, string> = {};
     for (const r of allResults) {
-      if ((r as ExtendedAnswerResult).userAnswer !== undefined) {
-        map[r.targetId] = (r as ExtendedAnswerResult).userAnswer ?? '';
+      if (r.userAnswer !== undefined) {
+        map[r.targetId] = r.userAnswer ?? '';
       }
     }
     return map;
@@ -297,16 +300,21 @@ export function PracticeRunner({
   // Gợi ý trợ từ khi người dùng làm sai
   const currentHint = useMemo(() => {
     if (!lastResult || lastResult.isCorrect || !currentQuestion) return null;
-    const userAnswer = (lastResult as ExtendedAnswerResult).userAnswer;
+    const userAnswer = lastResult.userAnswer;
     if (!userAnswer) return null;
     return particleHint(userAnswer, currentQuestion.answer);
   }, [lastResult, currentQuestion]);
 
   // Thoát: Lưu và học tiếp sau (nút chính)
   const handleSaveAndExit = () => {
-    const resumeIndex = answered
-      ? Math.min(currentIndex + 1, questions.length - 1)
-      : currentIndex;
+    setExitDialogOpen(false);
+    // Nếu đã trả lời và đang ở câu cuối -> kết thúc phiên như bấm Tiếp (lưu Dexie, hiện kết quả), không lưu nháp
+    if (answered && currentIndex + 1 >= questions.length) {
+      handleNext();
+      return;
+    }
+
+    const resumeIndex = answered ? currentIndex + 1 : currentIndex;
     savePracticeDraft({
       version: PRACTICE_DRAFT_VERSION,
       questions,
@@ -316,7 +324,6 @@ export function PracticeRunner({
       savedAt: Date.now(),
       config,
     });
-    setExitDialogOpen(false);
     router.push(isDue ? '/on-tap' : '/luyen-tap');
   };
 
@@ -407,7 +414,7 @@ export function PracticeRunner({
     }
   };
 
-  const userAnswerText = (lastResult as ExtendedAnswerResult)?.userAnswer;
+  const userAnswerText = lastResult?.userAnswer;
 
   return (
     <main className="fixed inset-0 z-40 mx-auto flex w-full max-w-xl flex-col bg-background overflow-hidden px-4">

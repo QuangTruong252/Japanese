@@ -30,7 +30,7 @@ export default function PracticeDraftBanner() {
   }
 
   const handleResume = () => {
-    router.push('/luyen-tap/phien?resume=1');
+    router.push(`/luyen-tap/phien?resume=${Date.now()}`);
   };
 
   const handleDiscard = () => {

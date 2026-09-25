@@ -10,6 +10,7 @@ import {
   loadPracticeDraft,
   clearPracticeDraft,
   particleHint,
+  shouldSaveDraftOnAnswer,
   type PracticeDraft,
 } from './practice-draft.ts';
 import type { QuestionItem } from '../types/index.ts';
@@ -350,5 +351,32 @@ test('Kịch bản acceptance: 15 câu -> làm 2 câu -> lưu nháp -> khôi ph�
   assert.equal(loadedRetry.currentIndex, 0);
   assert.equal(loadedRetry.questions.length, 1);
   assert.equal(loadedRetry.questions[0]?.targetId, 't-2');
+});
+
+test('shouldSaveDraftOnAnswer: chỉ lưu nháp khi chưa phải câu cuối cùng', () => {
+  // 15 câu: câu 1 đến câu 14 (index 0 đến 13) được lưu nháp
+  assert.equal(shouldSaveDraftOnAnswer(0, 15), true);
+  assert.equal(shouldSaveDraftOnAnswer(13, 15), true);
+
+  // Câu 15 (index 14): không lưu nháp vì là câu cuối cùng
+  assert.equal(shouldSaveDraftOnAnswer(14, 15), false);
+
+  // Trường hợp phiên 1 câu duy nhất: câu 1 (index 0) là câu cuối -> không lưu nháp
+  assert.equal(shouldSaveDraftOnAnswer(0, 1), false);
+});
+
+test('Scenario (c): trả lời câu cuối -> không lưu nháp -> phiên kết thúc sạch', () => {
+  const storage = new MockStorage();
+
+  const totalQuestions = 5;
+  const lastQuestionIndex = 4;
+
+  // Khi trả lời câu cuối
+  const shouldSave = shouldSaveDraftOnAnswer(lastQuestionIndex, totalQuestions);
+  assert.equal(shouldSave, false);
+
+  // Nếu trước đó có nháp ở câu 4, khi câu 5 được trả lời xong và kết thúc phiên -> xóa nháp
+  clearPracticeDraft(storage);
+  assert.equal(loadPracticeDraft(storage), null);
 });
 
