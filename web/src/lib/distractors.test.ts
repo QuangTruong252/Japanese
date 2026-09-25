@@ -5,6 +5,9 @@ import { okuriganaTail, pickDistractors, type DistractorCandidate } from './dist
 test('okuriganaTail trích xuất đúng đuôi kana của từ', () => {
   assert.equal(okuriganaTail('食べます'), 'べます');
   assert.equal(okuriganaTail('行きます'), 'きます');
+  assert.equal(okuriganaTail('食べる'), 'べる');
+  assert.equal(okuriganaTail('行く'), 'く');
+  assert.equal(okuriganaTail('切る'), 'る');
   assert.equal(okuriganaTail('学生'), ''); // danh từ không có đuôi okurigana
   assert.equal(okuriganaTail('高い'), 'い');
 });
@@ -35,3 +38,16 @@ test('pickDistractors ưu tiên ứng viên cùng loại từ và cùng đuôi o
   const result = pickDistractors(answer, pool, 1, () => 0);
   assert.equal(result[0], 'みせます');
 });
+
+test('pickDistractors chọn distractor thể từ điển chuẩn xác', () => {
+  const answer: DistractorCandidate = { kana: 'きる', type: 'verb-godan', stripped: '切る' };
+  const pool: DistractorCandidate[] = [
+    { kana: 'とる', type: 'verb-godan', stripped: '取る' }, // cùng type verb-godan (+3), cùng đuôi "る" (+3)
+    { kana: 'がくせい', type: 'noun', stripped: '学生' },
+    { kana: 'いく', type: 'verb-godan', stripped: '行く' },   // cùng type, khác đuôi "く" vs "る"
+  ];
+
+  const result = pickDistractors(answer, pool, 1, () => 0);
+  assert.equal(result[0], 'とる');
+});
+

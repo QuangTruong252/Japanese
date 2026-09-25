@@ -145,3 +145,48 @@ test('generateQuestions memo hóa kết quả theo tập bài học', () => {
   assert.notEqual(q1, q3);
   assert.equal(q3.length, q1.length);
 });
+
+test('sinh câu hỏi MC Đọc và Nghĩa từ động từ sử dụng thể từ điển và đáp án kana từ điển', () => {
+  const mockLessons: Lesson[] = [
+    {
+      level: 'n5',
+      number: 7,
+      title: { vi: 'Bài 7' },
+      description: { vi: 'Mô tả bài 7' },
+      grammar: [],
+    },
+  ];
+  const mockVocab = new Map<number, VocabWord[]>([
+    [
+      7,
+      [
+        {
+          id: 'kirimasu',
+          lesson: 7,
+          word: '切[き]る',
+          kana: 'きる',
+          meaning: { vi: 'cắt' },
+          type: 'verb-godan',
+          verbGroup: 1,
+          verbForms: {
+            dictionary: '切[き]る',
+            dictionaryKana: 'きる',
+            masu: '切[き]ります',
+            masuKana: 'きります',
+          },
+        },
+      ],
+    ],
+  ]);
+  const questions = generateQuestions(mockLessons, mockVocab);
+  const readQ = questions.find((q) => q.id === 'mc-read-vocab-07-01');
+  assert.ok(readQ);
+  assert.equal(readQ.prompt, '切る');
+  assert.equal(readQ.answer, 'きる');
+
+  const meanQ = questions.find((q) => q.id === 'mc-mean-vocab-07-01');
+  assert.ok(meanQ);
+  assert.equal(meanQ.prompt, '切[き]る');
+  assert.equal(meanQ.answer, 'cắt');
+});
+
