@@ -45,7 +45,11 @@ const IGNORED_IN_READING = /[「」『』\s　]/gu;
 // `トイレ（お手洗い）`, `おばあさん／おばあちゃん`, `暑い・熱い` là các cách viết thay thế. Từ đích hiện trong
 // câu ở dạng chia (て形, ない形…) nên động từ và tính từ い chỉ so phần gốc ổn định.
 function exampleTargets(word: VocabWord): string[][] {
-  return [stripFurigana(word.word), word.kana].flatMap((form) =>
+  const forms = [stripFurigana(word.word), word.kana];
+  if (word.verbForms) {
+    forms.push(stripFurigana(word.verbForms.masu), word.verbForms.masuKana);
+  }
+  return forms.flatMap((form) =>
     form
       .replace(/\[[^\]]*\]/gu, '')
       .replace(IGNORED_IN_READING, '')
@@ -55,8 +59,11 @@ function exampleTargets(word: VocabWord): string[][] {
         const parts = variant.split(/[〜～…]/u).filter(Boolean);
         const last = parts.length - 1;
         if (word.type.startsWith('verb')) {
-          const stem = parts[last]!.replace(/ます$/u, '');
-          parts[last] = stem.slice(0, Math.max(1, stem.length - 1));
+          const stem = parts[last]!
+            .replace(/ます$/u, '')
+            .replace(/する$/u, '')
+            .replace(/[うくぐすつぬぶむる]$/u, '');
+          parts[last] = stem.length > 1 ? stem.slice(0, stem.length - 1) : stem;
         }
         if (word.type === 'adjective-i') parts[last] = parts[last]!.replace(/い$/u, '');
         return parts;
@@ -212,4 +219,26 @@ test('VocabWord hỗ trợ cấu trúc verbForms và verbGroup', () => {
   assert.equal(sampleVerb.verbForms?.masu, '切[き]ります');
   assert.equal(sampleVerb.verbGroup, 1);
 });
+
+test('toàn bộ động từ N5 có word thể từ điển, verbGroup và verbForms hợp lệ', async () => {
+  let verbCount = 0;
+
+  for (const lesson of AVAILABLE_N5_LESSONS) {
+    const vocab = await loadVocab(lesson);
+    for (const w of vocab) {
+      if (w.type.startsWith('verb-')) {
+        verbCount++;
+        assert.ok(w.verbForms, `Từ ${w.id} (bài ${lesson}) thiếu verbForms`);
+        assert.ok(w.verbGroup, `Từ ${w.id} (bài ${lesson}) thiếu verbGroup`);
+        assert.ok(w.verbForms.dictionary, `Từ ${w.id} thiếu dictionary form`);
+        assert.ok(w.verbForms.masu, `Từ ${w.id} thiếu masu form`);
+        assert.equal(w.word, w.verbForms.dictionary, `Từ ${w.id}: w.word phải là dictionary form`);
+        assert.equal(w.kana, w.verbForms.dictionaryKana, `Từ ${w.id}: w.kana phải là dictionaryKana`);
+      }
+    }
+  }
+
+  assert.equal(verbCount, 157, `Kỳ vọng 157 động từ, thực tế có ${verbCount}`);
+});
+
 

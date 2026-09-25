@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "okimasu-poner",
-      "word": "置[お]きます",
-      "kana": "おきます",
+      "word": "置[お]く",
+      "kana": "おく",
       "meaning": {
         "en": "to put, to place",
         "vi": "đặt, để"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Tôi đặt hành lý ở đây có được không?"
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "置[お]く",
+        "dictionaryKana": "おく",
+        "masu": "置[お]きます",
+        "masuKana": "おきます",
+        "te": "置[お]いて",
+        "teKana": "おいて",
+        "nai": "置[お]かない",
+        "naiKana": "おかない",
+        "ta": "置[お]いた",
+        "taKana": "おいた"
       }
     },
     {
       "id": "tsukurimasu",
-      "word": "作[つく]ります",
-      "kana": "つくります",
+      "word": "作[つく]る",
+      "kana": "つくる",
       "meaning": {
         "en": "to make, to produce",
         "vi": "chế tạo, làm ra"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Hàng ngày tôi đều làm đồ ăn."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "作[つく]る",
+        "dictionaryKana": "つくる",
+        "masu": "作[つく]ります",
+        "masuKana": "つくります",
+        "te": "作[つく]って",
+        "teKana": "つくって",
+        "nai": "作[つく]らない",
+        "naiKana": "つくらない",
+        "ta": "作[つく]った",
+        "taKana": "つくった"
       }
     },
     {
       "id": "urimasu",
-      "word": "売[う]ります",
-      "kana": "うります",
+      "word": "売[う]る",
+      "kana": "うる",
       "meaning": {
         "en": "to sell",
         "vi": "bán"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Người ta đang bán bánh mì ở siêu thị."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "売[う]る",
+        "dictionaryKana": "うる",
+        "masu": "売[う]ります",
+        "masuKana": "うります",
+        "te": "売[う]って",
+        "teKana": "うって",
+        "nai": "売[う]らない",
+        "naiKana": "うらない",
+        "ta": "売[う]った",
+        "taKana": "うった"
       }
     },
     {
       "id": "shirimasu",
-      "word": "知[し]ります",
-      "kana": "しります",
+      "word": "知[し]る",
+      "kana": "しる",
       "meaning": {
         "en": "to find out, to learn",
         "vi": "biết"
@@ -68,12 +107,25 @@
         "translation": {
           "vi": "Bạn có biết số điện thoại của anh Miller không?"
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "知[し]る",
+        "dictionaryKana": "しる",
+        "masu": "知[し]ります",
+        "masuKana": "しります",
+        "te": "知[し]って",
+        "teKana": "しって",
+        "nai": "知[し]らない",
+        "naiKana": "しらない",
+        "ta": "知[し]った",
+        "taKana": "しった"
       }
     },
     {
       "id": "sumimasu",
-      "word": "住[す]みます",
-      "kana": "すみます",
+      "word": "住[す]む",
+      "kana": "すむ",
       "meaning": {
         "en": "to live, to reside",
         "vi": "sống, cư trú [ở đâu]"
@@ -85,12 +137,25 @@
         "translation": {
           "vi": "Tôi đang sống ở Tokyo."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "住[す]む",
+        "dictionaryKana": "すむ",
+        "masu": "住[す]みます",
+        "masuKana": "すみます",
+        "te": "住[す]んで",
+        "teKana": "すんで",
+        "nai": "住[す]まない",
+        "naiKana": "すまない",
+        "ta": "住[す]んだ",
+        "taKana": "すんだ"
       }
     },
     {
       "id": "kenkyuu-shimasu",
-      "word": "研究[けんきゅう]します",
-      "kana": "けんきゅうします",
+      "word": "研究[けんきゅう]する",
+      "kana": "けんきゅうする",
       "meaning": {
         "en": "to research",
         "vi": "nghiên cứu"
@@ -102,6 +167,19 @@
         "translation": {
           "vi": "Tôi đang nghiên cứu máy tính ở trường đại học."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "研究[けんきゅう]する",
+        "dictionaryKana": "けんきゅうする",
+        "masu": "研究[けんきゅう]します",
+        "masuKana": "けんきゅうします",
+        "te": "研究[けんきゅう]して",
+        "teKana": "けんきゅうして",
+        "nai": "研究[けんきゅう]しない",
+        "naiKana": "けんきゅうしない",
+        "ta": "研究[けんきゅう]した",
+        "taKana": "けんきゅうした"
       }
     },
     {
@@ -344,8 +422,8 @@
     },
     {
       "id": "omoidashimasu",
-      "word": "思[おも]い 出[だ]します",
-      "kana": "おもいだします",
+      "word": "思[おも]い 出[だ]す",
+      "kana": "おもいだす",
       "meaning": {
         "en": "to remember, to recall",
         "vi": "nhớ lại, hồi tưởng"
@@ -357,12 +435,25 @@
         "translation": {
           "vi": "Tôi nhớ về gia đình."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "思[おも]い 出[だ]す",
+        "dictionaryKana": "おもいだす",
+        "masu": "思[おも]い 出[だ]します",
+        "masuKana": "おもいだします",
+        "te": "思[おも]い 出[だ]して",
+        "teKana": "おもいだして",
+        "nai": "思[おも]い 出[だ]さない",
+        "naiKana": "おもいださない",
+        "ta": "思[おも]い 出[だ]した",
+        "taKana": "おもいだした"
       }
     },
     {
       "id": "irasshaimasu",
-      "word": "いらっしゃいます",
-      "kana": "いらっしゃいます",
+      "word": "いらっしゃる",
+      "kana": "いらっしゃる",
       "meaning": {
         "en": "to be (polite form of います)",
         "vi": "ở, có, đi, đến (kính ngữ của います, いきます, きます)"
@@ -374,6 +465,19 @@
         "translation": {
           "vi": "\"Anh Kimura có ở đó không ạ?\""
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "いらっしゃる",
+        "dictionaryKana": "いらっしゃる",
+        "masu": "いらっしゃいます",
+        "masuKana": "いらっしゃいます",
+        "te": "いらっしゃって",
+        "teKana": "いらっしゃって",
+        "nai": "いらっしゃらない",
+        "naiKana": "いらっしゃらない",
+        "ta": "いらっしゃった",
+        "taKana": "いらっしゃった"
       }
     }
   ]

@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "tabemasu",
-      "word": "食[た]べます",
-      "kana": "たべます",
+      "word": "食[た]べる",
+      "kana": "たべる",
       "meaning": {
         "en": "to eat",
         "vi": "ăn"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Mỗi ngày tôi đều ăn bánh mì."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "食[た]べる",
+        "dictionaryKana": "たべる",
+        "masu": "食[た]べます",
+        "masuKana": "たべます",
+        "te": "食[た]べて",
+        "teKana": "たべて",
+        "nai": "食[た]べない",
+        "naiKana": "たべない",
+        "ta": "食[た]べた",
+        "taKana": "たべた"
       }
     },
     {
       "id": "nomimasu",
-      "word": "飲[の]みます",
-      "kana": "のみます",
+      "word": "飲[の]む",
+      "kana": "のむ",
       "meaning": {
         "en": "to drink",
         "vi": "uống"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Tôi uống nước."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "飲[の]む",
+        "dictionaryKana": "のむ",
+        "masu": "飲[の]みます",
+        "masuKana": "のみます",
+        "te": "飲[の]んで",
+        "teKana": "のんで",
+        "nai": "飲[の]まない",
+        "naiKana": "のまない",
+        "ta": "飲[の]んだ",
+        "taKana": "のんだ"
       }
     },
     {
       "id": "suimasu",
-      "word": "吸[す]います",
-      "kana": "すいます",
+      "word": "吸[す]う",
+      "kana": "すう",
       "meaning": {
         "en": "to smoke [a cigarette]",
         "vi": "hút [thuốc lá]"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Bạn có hút thuốc lá không?"
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "吸[す]う",
+        "dictionaryKana": "すう",
+        "masu": "吸[す]います",
+        "masuKana": "すいます",
+        "te": "吸[す]って",
+        "teKana": "すって",
+        "nai": "吸[す]わない",
+        "naiKana": "すわない",
+        "ta": "吸[す]った",
+        "taKana": "すった"
       }
     },
     {
       "id": "mimasu",
-      "word": "見[み]ます",
-      "kana": "みます",
+      "word": "見[み]る",
+      "kana": "みる",
       "meaning": {
         "en": "to see, to watch",
         "vi": "xem, nhìn"
@@ -68,12 +107,25 @@
         "translation": {
           "vi": "Tôi không xem tivi."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "見[み]る",
+        "dictionaryKana": "みる",
+        "masu": "見[み]ます",
+        "masuKana": "みます",
+        "te": "見[み]て",
+        "teKana": "みて",
+        "nai": "見[み]ない",
+        "naiKana": "みない",
+        "ta": "見[み]た",
+        "taKana": "みた"
       }
     },
     {
       "id": "kikimasu",
-      "word": "聞[き]きます",
-      "kana": "ききます",
+      "word": "聞[き]く",
+      "kana": "きく",
       "meaning": {
         "en": "to hear, to listen",
         "vi": "nghe"
@@ -85,12 +137,25 @@
         "translation": {
           "vi": "Tôi nghe đài."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "聞[き]く",
+        "dictionaryKana": "きく",
+        "masu": "聞[き]きます",
+        "masuKana": "ききます",
+        "te": "聞[き]いて",
+        "teKana": "きいて",
+        "nai": "聞[き]かない",
+        "naiKana": "きかない",
+        "ta": "聞[き]いた",
+        "taKana": "きいた"
       }
     },
     {
       "id": "yomimasu",
-      "word": "読[よ]みます",
-      "kana": "よみます",
+      "word": "読[よ]む",
+      "kana": "よむ",
       "meaning": {
         "en": "to read",
         "vi": "đọc"
@@ -102,12 +167,25 @@
         "translation": {
           "vi": "Tôi đọc báo."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "読[よ]む",
+        "dictionaryKana": "よむ",
+        "masu": "読[よ]みます",
+        "masuKana": "よみます",
+        "te": "読[よ]んで",
+        "teKana": "よんで",
+        "nai": "読[よ]まない",
+        "naiKana": "よまない",
+        "ta": "読[よ]んだ",
+        "taKana": "よんだ"
       }
     },
     {
       "id": "kakimasu",
-      "word": "書[か]きます",
-      "kana": "かきます",
+      "word": "書[か]く",
+      "kana": "かく",
       "meaning": {
         "en": "to write",
         "vi": "viết, vẽ"
@@ -119,12 +197,25 @@
         "translation": {
           "vi": "Tôi viết thư."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "書[か]く",
+        "dictionaryKana": "かく",
+        "masu": "書[か]きます",
+        "masuKana": "かきます",
+        "te": "書[か]いて",
+        "teKana": "かいて",
+        "nai": "書[か]かない",
+        "naiKana": "かかない",
+        "ta": "書[か]いた",
+        "taKana": "かいた"
       }
     },
     {
       "id": "kaimasu",
-      "word": "買[か]います",
-      "kana": "かいます",
+      "word": "買[か]う",
+      "kana": "かう",
       "meaning": {
         "en": "to buy",
         "vi": "mua"
@@ -136,12 +227,25 @@
         "translation": {
           "vi": "Tôi đã mua đồng hồ ở siêu thị."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "買[か]う",
+        "dictionaryKana": "かう",
+        "masu": "買[か]います",
+        "masuKana": "かいます",
+        "te": "買[か]って",
+        "teKana": "かって",
+        "nai": "買[か]わない",
+        "naiKana": "かわない",
+        "ta": "買[か]った",
+        "taKana": "かった"
       }
     },
     {
       "id": "torimasu",
-      "word": "撮[と]ります",
-      "kana": "とります",
+      "word": "撮[と]る",
+      "kana": "とる",
       "meaning": {
         "en": "to take [photos]",
         "vi": "chụp [ảnh]"
@@ -153,12 +257,25 @@
         "translation": {
           "vi": "Tôi chụp ảnh."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "撮[と]る",
+        "dictionaryKana": "とる",
+        "masu": "撮[と]ります",
+        "masuKana": "とります",
+        "te": "撮[と]って",
+        "teKana": "とって",
+        "nai": "撮[と]らない",
+        "naiKana": "とらない",
+        "ta": "撮[と]った",
+        "taKana": "とった"
       }
     },
     {
       "id": "shimasu",
-      "word": "します",
-      "kana": "します",
+      "word": "する",
+      "kana": "する",
       "meaning": {
         "en": "to do, to make",
         "vi": "làm, chơi [thể thao, trò chơi]"
@@ -170,12 +287,25 @@
         "translation": {
           "vi": "Bạn có chơi tennis không?"
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "する",
+        "dictionaryKana": "する",
+        "masu": "します",
+        "masuKana": "します",
+        "te": "して",
+        "teKana": "して",
+        "nai": "しない",
+        "naiKana": "しない",
+        "ta": "した",
+        "taKana": "した"
       }
     },
     {
       "id": "aimasu",
-      "word": "会[あ]います",
-      "kana": "あいます",
+      "word": "会[あ]う",
+      "kana": "あう",
       "meaning": {
         "en": "to see, to meet [friends]",
         "vi": "gặp [bạn bè]"
@@ -187,6 +317,19 @@
         "translation": {
           "vi": "Tôi gặp bạn ở nhà ga."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "会[あ]う",
+        "dictionaryKana": "あう",
+        "masu": "会[あ]います",
+        "masuKana": "あいます",
+        "te": "会[あ]って",
+        "teKana": "あって",
+        "nai": "会[あ]わない",
+        "naiKana": "あわない",
+        "ta": "会[あ]った",
+        "taKana": "あった"
       }
     },
     {

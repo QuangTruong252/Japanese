@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "imasu-kodomo",
-      "word": "います[子[こ]どもが〜]",
-      "kana": "います",
+      "word": "いる[子[こ]どもが〜]",
+      "kana": "いる",
       "meaning": {
         "en": "to have [children]",
         "vi": "có [con cái]"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Tôi có con."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "いる[子[こ]どもが〜]",
+        "dictionaryKana": "いる",
+        "masu": "います[子[こ]どもが〜]",
+        "masuKana": "います",
+        "te": "いて[子[こ]どもが〜]",
+        "teKana": "いて",
+        "nai": "いない[子[こ]どもが〜]",
+        "naiKana": "いない",
+        "ta": "いた[子[こ]どもが〜]",
+        "taKana": "いた"
       }
     },
     {
       "id": "imasu-nihon",
-      "word": "います[日本[にほん]に〜]",
-      "kana": "います",
+      "word": "いる[日本[にほん]に〜]",
+      "kana": "いる",
       "meaning": {
         "en": "to stay [in Japan]",
         "vi": "ở [Nhật Bản]"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Bây giờ tôi đang ở Nhật Bản."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "いる[日本[にほん]に〜]",
+        "dictionaryKana": "いる",
+        "masu": "います[日本[にほん]に〜]",
+        "masuKana": "います",
+        "te": "いて[日本[にほん]に〜]",
+        "teKana": "いて",
+        "nai": "いない[日本[にほん]に〜]",
+        "naiKana": "いない",
+        "ta": "いた[日本[にほん]に〜]",
+        "taKana": "いた"
       }
     },
     {
       "id": "kakarimasu",
-      "word": "かかります",
-      "kana": "かかります",
+      "word": "かかる",
+      "kana": "かかる",
       "meaning": {
         "en": "to take (time), to cost (money)",
         "vi": "mất, tốn [thời gian, tiền bạc]"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Từ nhà đến ga mất 10 phút."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "かかる",
+        "dictionaryKana": "かかる",
+        "masu": "かかります",
+        "masuKana": "かかります",
+        "te": "かかって",
+        "teKana": "かかって",
+        "nai": "かからない",
+        "naiKana": "かからない",
+        "ta": "かかった",
+        "taKana": "かかった"
       }
     },
     {
       "id": "yasumimasu-kaisha",
-      "word": "休[やす]みます[会社[かいしゃ]を〜]",
-      "kana": "やすみます",
+      "word": "休[やす]む[会社[かいしゃ]を〜]",
+      "kana": "やすむ",
       "meaning": {
         "en": "to be absent [from work]",
         "vi": "nghỉ [làm việc ở công ty]"
@@ -68,6 +107,19 @@
         "translation": {
           "vi": "Ngày mai tôi sẽ nghỉ làm ở công ty."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "休[やす]む[会社[かいしゃ]を〜]",
+        "dictionaryKana": "やすむ",
+        "masu": "休[やす]みます[会社[かいしゃ]を〜]",
+        "masuKana": "やすみます",
+        "te": "休[やす]んで[会社[かいしゃ]を〜]",
+        "teKana": "やすんで",
+        "nai": "休[やす]まない[会社[かいしゃ]を〜]",
+        "naiKana": "やすまない",
+        "ta": "休[やす]んだ[会社[かいしゃ]を〜]",
+        "taKana": "やすんだ"
       }
     },
     {

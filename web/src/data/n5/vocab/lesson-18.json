@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "dekimasu",
-      "word": "できます",
-      "kana": "できます",
+      "word": "できる",
+      "kana": "できる",
       "meaning": {
         "en": "can, to be able to",
         "vi": "có thể, biết làm"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Tôi có thể lái xe ô tô."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "できる",
+        "dictionaryKana": "できる",
+        "masu": "できます",
+        "masuKana": "できます",
+        "te": "できて",
+        "teKana": "できて",
+        "nai": "できない",
+        "naiKana": "できない",
+        "ta": "できた",
+        "taKana": "できた"
       }
     },
     {
       "id": "araimasu",
-      "word": "洗[あら]います",
-      "kana": "あらいます",
+      "word": "洗[あら]う",
+      "kana": "あらう",
       "meaning": {
         "en": "to wash",
         "vi": "rửa, giặt"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Trước khi ăn cơm, tôi rửa tay."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "洗[あら]う",
+        "dictionaryKana": "あらう",
+        "masu": "洗[あら]います",
+        "masuKana": "あらいます",
+        "te": "洗[あら]って",
+        "teKana": "あらって",
+        "nai": "洗[あら]わない",
+        "naiKana": "あらわない",
+        "ta": "洗[あら]った",
+        "taKana": "あらった"
       }
     },
     {
       "id": "hikimasu",
-      "word": "弾[ひ]きます",
-      "kana": "ひきます",
+      "word": "弾[ひ]く",
+      "kana": "ひく",
       "meaning": {
         "en": "to play (piano, strings)",
         "vi": "chơi [nhạc cụ phím/dây]"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Chị Maria có thể đánh đàn piano."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "弾[ひ]く",
+        "dictionaryKana": "ひく",
+        "masu": "弾[ひ]きます",
+        "masuKana": "ひきます",
+        "te": "弾[ひ]いて",
+        "teKana": "ひいて",
+        "nai": "弾[ひ]かない",
+        "naiKana": "ひかない",
+        "ta": "弾[ひ]いた",
+        "taKana": "ひいた"
       }
     },
     {
       "id": "utaimasu",
-      "word": "歌[うた]います",
-      "kana": "うたいます",
+      "word": "歌[うた]う",
+      "kana": "うたう",
       "meaning": {
         "en": "to sing",
         "vi": "hát"
@@ -68,12 +107,25 @@
         "translation": {
           "vi": "Tôi hát một bài hát."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "歌[うた]う",
+        "dictionaryKana": "うたう",
+        "masu": "歌[うた]います",
+        "masuKana": "うたいます",
+        "te": "歌[うた]って",
+        "teKana": "うたって",
+        "nai": "歌[うた]わない",
+        "naiKana": "うたわない",
+        "ta": "歌[うた]った",
+        "taKana": "うたった"
       }
     },
     {
       "id": "atsumemasu",
-      "word": "集[あつ]めます",
-      "kana": "あつめます",
+      "word": "集[あつ]める",
+      "kana": "あつめる",
       "meaning": {
         "en": "to collect, to gather",
         "vi": "thu thập, sưu tầm"
@@ -85,12 +137,25 @@
         "translation": {
           "vi": "Sở thích của tôi là sưu tầm tem."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "集[あつ]める",
+        "dictionaryKana": "あつめる",
+        "masu": "集[あつ]めます",
+        "masuKana": "あつめます",
+        "te": "集[あつ]めて",
+        "teKana": "あつめて",
+        "nai": "集[あつ]めない",
+        "naiKana": "あつめない",
+        "ta": "集[あつ]めた",
+        "taKana": "あつめた"
       }
     },
     {
       "id": "sutemasu",
-      "word": "捨[す]てます",
-      "kana": "すてます",
+      "word": "捨[す]てる",
+      "kana": "すてる",
       "meaning": {
         "en": "to throw away",
         "vi": "vứt, bỏ đi"
@@ -102,12 +167,25 @@
         "translation": {
           "vi": "Xin đừng vứt cái này."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "捨[す]てる",
+        "dictionaryKana": "すてる",
+        "masu": "捨[す]てます",
+        "masuKana": "すてます",
+        "te": "捨[す]てて",
+        "teKana": "すてて",
+        "nai": "捨[す]てない",
+        "naiKana": "すてない",
+        "ta": "捨[す]てた",
+        "taKana": "すてた"
       }
     },
     {
       "id": "kaemasu",
-      "word": "換[か]えます",
-      "kana": "かえます",
+      "word": "換[か]える",
+      "kana": "かえる",
       "meaning": {
         "en": "to change, to replace",
         "vi": "đổi, trao đổi, thay đổi"
@@ -119,12 +197,25 @@
         "translation": {
           "vi": "Có thể đổi tiền ở ngân hàng."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "換[か]える",
+        "dictionaryKana": "かえる",
+        "masu": "換[か]えます",
+        "masuKana": "かえます",
+        "te": "換[か]えて",
+        "teKana": "かえて",
+        "nai": "換[か]えない",
+        "naiKana": "かえない",
+        "ta": "換[か]えた",
+        "taKana": "かえた"
       }
     },
     {
       "id": "unten-shimasu",
-      "word": "運転[うんてん]します",
-      "kana": "うんてんします",
+      "word": "運転[うんてん]する",
+      "kana": "うんてんする",
       "meaning": {
         "en": "to drive",
         "vi": "lái xe"
@@ -136,12 +227,25 @@
         "translation": {
           "vi": "Bạn có biết lái xe ô tô không?"
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "運転[うんてん]する",
+        "dictionaryKana": "うんてんする",
+        "masu": "運転[うんてん]します",
+        "masuKana": "うんてんします",
+        "te": "運転[うんてん]して",
+        "teKana": "うんてんして",
+        "nai": "運転[うんてん]しない",
+        "naiKana": "うんてんしない",
+        "ta": "運転[うんてん]した",
+        "taKana": "うんてんした"
       }
     },
     {
       "id": "yoyaku-shimasu",
-      "word": "予約[よやく]します",
-      "kana": "よやくします",
+      "word": "予約[よやく]する",
+      "kana": "よやくする",
       "meaning": {
         "en": "to book, to reserve",
         "vi": "đặt chỗ, hẹn trước"
@@ -153,6 +257,19 @@
         "translation": {
           "vi": "Tôi phải đặt trước khách sạn."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "予約[よやく]する",
+        "dictionaryKana": "よやくする",
+        "masu": "予約[よやく]します",
+        "masuKana": "よやくします",
+        "te": "予約[よやく]して",
+        "teKana": "よやくして",
+        "nai": "予約[よやく]しない",
+        "naiKana": "よやくしない",
+        "ta": "予約[よやく]した",
+        "taKana": "よやくした"
       }
     },
     {

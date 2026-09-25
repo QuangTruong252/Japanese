@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "wakarimasu",
-      "word": "わかります",
-      "kana": "わかります",
+      "word": "わかる",
+      "kana": "わかる",
       "meaning": {
         "en": "to understand",
         "vi": "hiểu, biết"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Tôi hiểu tiếng Nhật."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "わかる",
+        "dictionaryKana": "わかる",
+        "masu": "わかります",
+        "masuKana": "わかります",
+        "te": "わかって",
+        "teKana": "わかって",
+        "nai": "わからない",
+        "naiKana": "わからない",
+        "ta": "わかった",
+        "taKana": "わかった"
       }
     },
     {
       "id": "arimasu",
-      "word": "あります",
-      "kana": "あります",
+      "word": "ある",
+      "kana": "ある",
       "meaning": {
         "en": "to have, there is",
         "vi": "có [đồ vật, tiền bạc]"
@@ -34,6 +47,18 @@
         "translation": {
           "vi": "Tôi có thời gian."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "ある",
+        "dictionaryKana": "ある",
+        "masu": "あります",
+        "masuKana": "あります",
+        "te": "あって",
+        "teKana": "あって",
+        "naiKana": "",
+        "ta": "あった",
+        "taKana": "あった"
       }
     },
     {

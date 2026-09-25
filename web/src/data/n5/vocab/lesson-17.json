@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "oboemasu",
-      "word": "覚[おぼ]えます",
-      "kana": "おぼえます",
+      "word": "覚[おぼ]える",
+      "kana": "おぼえる",
       "meaning": {
         "en": "to memorise",
         "vi": "nhớ, ghi nhớ"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Tôi phải nhớ chữ Hán."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "覚[おぼ]える",
+        "dictionaryKana": "おぼえる",
+        "masu": "覚[おぼ]えます",
+        "masuKana": "おぼえます",
+        "te": "覚[おぼ]えて",
+        "teKana": "おぼえて",
+        "nai": "覚[おぼ]えない",
+        "naiKana": "おぼえない",
+        "ta": "覚[おぼ]えた",
+        "taKana": "おぼえた"
       }
     },
     {
       "id": "wasuremasu",
-      "word": "忘[わす]れます",
-      "kana": "わすれます",
+      "word": "忘[わす]れる",
+      "kana": "わすれる",
       "meaning": {
         "en": "to forget",
         "vi": "quên"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Xin đừng quên ô."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "忘[わす]れる",
+        "dictionaryKana": "わすれる",
+        "masu": "忘[わす]れます",
+        "masuKana": "わすれます",
+        "te": "忘[わす]れて",
+        "teKana": "わすれて",
+        "nai": "忘[わす]れない",
+        "naiKana": "わすれない",
+        "ta": "忘[わす]れた",
+        "taKana": "わすれた"
       }
     },
     {
       "id": "nakushimasu",
-      "word": "なくします",
-      "kana": "なくします",
+      "word": "なくす",
+      "kana": "なくす",
       "meaning": {
         "en": "to lose",
         "vi": "đánh mất, làm mất"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Xin đừng làm mất hộ chiếu."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "なくす",
+        "dictionaryKana": "なくす",
+        "masu": "なくします",
+        "masuKana": "なくします",
+        "te": "なくして",
+        "teKana": "なくして",
+        "nai": "なくさない",
+        "naiKana": "なくさない",
+        "ta": "なくした",
+        "taKana": "なくした"
       }
     },
     {
       "id": "haraimasu",
-      "word": "払[はら]います",
-      "kana": "はらいます",
+      "word": "払[はら]う",
+      "kana": "はらう",
       "meaning": {
         "en": "to pay",
         "vi": "trả tiền, thanh toán"
@@ -68,12 +107,25 @@
         "translation": {
           "vi": "Tôi phải trả tiền."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "払[はら]う",
+        "dictionaryKana": "はらう",
+        "masu": "払[はら]います",
+        "masuKana": "はらいます",
+        "te": "払[はら]って",
+        "teKana": "はらって",
+        "nai": "払[はら]わない",
+        "naiKana": "はらわない",
+        "ta": "払[はら]った",
+        "taKana": "はらった"
       }
     },
     {
       "id": "kaeshimasu",
-      "word": "返[かえ]します",
-      "kana": "かえします",
+      "word": "返[かえ]す",
+      "kana": "かえす",
       "meaning": {
         "en": "to give back, to return",
         "vi": "trả lại, hoàn lại"
@@ -85,12 +137,25 @@
         "translation": {
           "vi": "Tôi phải trả lại sách."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "返[かえ]す",
+        "dictionaryKana": "かえす",
+        "masu": "返[かえ]します",
+        "masuKana": "かえします",
+        "te": "返[かえ]して",
+        "teKana": "かえして",
+        "nai": "返[かえ]さない",
+        "naiKana": "かえさない",
+        "ta": "返[かえ]した",
+        "taKana": "かえした"
       }
     },
     {
       "id": "dekakemasu",
-      "word": "出[で]かけます",
-      "kana": "でかけます",
+      "word": "出[で]かける",
+      "kana": "でかける",
       "meaning": {
         "en": "to go out",
         "vi": "ra ngoài"
@@ -102,12 +167,25 @@
         "translation": {
           "vi": "Hôm nay tôi sẽ không ra ngoài."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "出[で]かける",
+        "dictionaryKana": "でかける",
+        "masu": "出[で]かけます",
+        "masuKana": "でかけます",
+        "te": "出[で]かけて",
+        "teKana": "でかけて",
+        "nai": "出[で]かけない",
+        "naiKana": "でかけない",
+        "ta": "出[で]かけた",
+        "taKana": "でかけた"
       }
     },
     {
       "id": "nugimasu",
-      "word": "脱[ぬ]ぎます",
-      "kana": "ぬぎます",
+      "word": "脱[ぬ]ぐ",
+      "kana": "ぬぐ",
       "meaning": {
         "en": "to take off (clothes, shoes)",
         "vi": "cởi [quần áo, giày]"
@@ -119,12 +197,25 @@
         "translation": {
           "vi": "Bạn không cần phải cởi giày ở đây đâu."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "脱[ぬ]ぐ",
+        "dictionaryKana": "ぬぐ",
+        "masu": "脱[ぬ]ぎます",
+        "masuKana": "ぬぎます",
+        "te": "脱[ぬ]いで",
+        "teKana": "ぬいで",
+        "nai": "脱[ぬ]がない",
+        "naiKana": "ぬがない",
+        "ta": "脱[ぬ]いだ",
+        "taKana": "ぬいだ"
       }
     },
     {
       "id": "motte-ikimasu",
-      "word": "持[も]って 行[い]きます",
-      "kana": "もっていきます",
+      "word": "持[も]って 行[い]く",
+      "kana": "もっていく",
       "meaning": {
         "en": "to carry (something)",
         "vi": "mang đi"
@@ -136,12 +227,25 @@
         "translation": {
           "vi": "Tôi sẽ mang cơm hộp đi."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "持[も]って 行[い]く",
+        "dictionaryKana": "もっていく",
+        "masu": "持[も]って 行[い]きます",
+        "masuKana": "もっていきます",
+        "te": "持[も]って 行[い]って",
+        "teKana": "もっていって",
+        "nai": "持[も]って 行[い]かない",
+        "naiKana": "もっていかない",
+        "ta": "持[も]って 行[い]った",
+        "taKana": "もっていった"
       }
     },
     {
       "id": "motte-kimasu",
-      "word": "持[も]って 来[き]ます",
-      "kana": "もってきます",
+      "word": "持[も]って 来[く]る",
+      "kana": "もってくる",
       "meaning": {
         "en": "to bring (something)",
         "vi": "mang đến"
@@ -153,12 +257,25 @@
         "translation": {
           "vi": "Ngày mai xin hãy mang từ điển đến."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "持[も]って 来[く]る",
+        "dictionaryKana": "もってくる",
+        "masu": "持[も]って 来[き]ます",
+        "masuKana": "もってきます",
+        "te": "持[も]って 来[き]て",
+        "teKana": "もってきて",
+        "nai": "持[も]って 来[こ]ない",
+        "naiKana": "もってこない",
+        "ta": "持[も]って 来[き]た",
+        "taKana": "もってきた"
       }
     },
     {
       "id": "shinpai-shimasu",
-      "word": "心配[しんぱい]します",
-      "kana": "しんぱいします",
+      "word": "心配[しんぱい]する",
+      "kana": "しんぱいする",
       "meaning": {
         "en": "to worry",
         "vi": "lo lắng"
@@ -170,12 +287,25 @@
         "translation": {
           "vi": "Xin đừng lo lắng."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "心配[しんぱい]する",
+        "dictionaryKana": "しんぱいする",
+        "masu": "心配[しんぱい]します",
+        "masuKana": "しんぱいします",
+        "te": "心配[しんぱい]して",
+        "teKana": "しんぱいして",
+        "nai": "心配[しんぱい]しない",
+        "naiKana": "しんぱいしない",
+        "ta": "心配[しんぱい]した",
+        "taKana": "しんぱいした"
       }
     },
     {
       "id": "zangyou-shimasu",
-      "word": "残業[ざんぎょう]します",
-      "kana": "ざんぎょうします",
+      "word": "残業[ざんぎょう]する",
+      "kana": "ざんぎょうする",
       "meaning": {
         "en": "to work overtime",
         "vi": "làm thêm giờ, tăng ca"
@@ -187,12 +317,25 @@
         "translation": {
           "vi": "Hôm nay tôi phải làm thêm giờ."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "残業[ざんぎょう]する",
+        "dictionaryKana": "ざんぎょうする",
+        "masu": "残業[ざんぎょう]します",
+        "masuKana": "ざんぎょうします",
+        "te": "残業[ざんぎょう]して",
+        "teKana": "ざんぎょうして",
+        "nai": "残業[ざんぎょう]しない",
+        "naiKana": "ざんぎょうしない",
+        "ta": "残業[ざんぎょう]した",
+        "taKana": "ざんぎょうした"
       }
     },
     {
       "id": "shucchou-shimasu",
-      "word": "出張[しゅっちょう]します",
-      "kana": "しゅっちょうします",
+      "word": "出張[しゅっちょう]する",
+      "kana": "しゅっちょうする",
       "meaning": {
         "en": "to go on a business trip",
         "vi": "đi công tác"
@@ -204,12 +347,25 @@
         "translation": {
           "vi": "Ngày mai tôi sẽ đi công tác ở Tokyo."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "出張[しゅっちょう]する",
+        "dictionaryKana": "しゅっちょうする",
+        "masu": "出張[しゅっちょう]します",
+        "masuKana": "しゅっちょうします",
+        "te": "出張[しゅっちょう]して",
+        "teKana": "しゅっちょうして",
+        "nai": "出張[しゅっちょう]しない",
+        "naiKana": "しゅっちょうしない",
+        "ta": "出張[しゅっちょう]した",
+        "taKana": "しゅっちょうした"
       }
     },
     {
       "id": "nomimasu-kusuri",
-      "word": "飲[の]みます[薬[くすり]を〜]",
-      "kana": "のみます",
+      "word": "飲[の]む[薬[くすり]を〜]",
+      "kana": "のむ",
       "meaning": {
         "en": "to take [medicine]",
         "vi": "uống [thuốc]"
@@ -221,12 +377,25 @@
         "translation": {
           "vi": "Tôi phải uống thuốc."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "飲[の]む[薬[くすり]を〜]",
+        "dictionaryKana": "のむ",
+        "masu": "飲[の]みます[薬[くすり]を〜]",
+        "masuKana": "のみます",
+        "te": "飲[の]んで[薬[くすり]を〜]",
+        "teKana": "のんで",
+        "nai": "飲[の]まない[薬[くすり]を〜]",
+        "naiKana": "のまない",
+        "ta": "飲[の]んだ[薬[くすり]を〜]",
+        "taKana": "のんだ"
       }
     },
     {
       "id": "hairimasu-ofuro",
-      "word": "入[はい]ります[おふろに〜]",
-      "kana": "はいります",
+      "word": "入[はい]る[おふろに〜]",
+      "kana": "はいる",
       "meaning": {
         "en": "to have [a bath]",
         "vi": "tắm [bồn nước nóng]"
@@ -238,6 +407,19 @@
         "translation": {
           "vi": "Hôm nay bạn đừng tắm bồn nhé."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "入[はい]る[おふろに〜]",
+        "dictionaryKana": "はいる",
+        "masu": "入[はい]ります[おふろに〜]",
+        "masuKana": "はいります",
+        "te": "入[はい]って[おふろに〜]",
+        "teKana": "はいって",
+        "nai": "入[はい]らない[おふろに〜]",
+        "naiKana": "はいらない",
+        "ta": "入[はい]った[おふろに〜]",
+        "taKana": "はいった"
       }
     },
     {

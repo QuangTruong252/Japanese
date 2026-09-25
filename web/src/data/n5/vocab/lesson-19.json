@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "noborimasu",
-      "word": "登[のぼ]ります",
-      "kana": "のぼります",
+      "word": "登[のぼ]る",
+      "kana": "のぼる",
       "meaning": {
         "en": "to climb",
         "vi": "leo, trèo [núi]"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Bạn đã từng leo núi Phú Sĩ chưa?"
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "登[のぼ]る",
+        "dictionaryKana": "のぼる",
+        "masu": "登[のぼ]ります",
+        "masuKana": "のぼります",
+        "te": "登[のぼ]って",
+        "teKana": "のぼって",
+        "nai": "登[のぼ]らない",
+        "naiKana": "のぼらない",
+        "ta": "登[のぼ]った",
+        "taKana": "のぼった"
       }
     },
     {
       "id": "tomarimasu",
-      "word": "泊[と]まります[ホテルに〜]",
-      "kana": "とまります",
+      "word": "泊[と]まる[ホテルに〜]",
+      "kana": "とまる",
       "meaning": {
         "en": "to stay [at a hotel]",
         "vi": "trọ lại, nghỉ lại [khách sạn]"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Tôi đã từng nghỉ lại ở khách sạn."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "泊[と]まる[ホテルに〜]",
+        "dictionaryKana": "とまる",
+        "masu": "泊[と]まります[ホテルに〜]",
+        "masuKana": "とまります",
+        "te": "泊[と]まって[ホテルに〜]",
+        "teKana": "とまって",
+        "nai": "泊[と]まらない[ホテルに〜]",
+        "naiKana": "とまらない",
+        "ta": "泊[と]まった[ホテルに〜]",
+        "taKana": "とまった"
       }
     },
     {
       "id": "souji-shimasu",
-      "word": "掃除[そうじ]します",
-      "kana": "そうじします",
+      "word": "掃除[そうじ]する",
+      "kana": "そうじする",
       "meaning": {
         "en": "to clean (a room)",
         "vi": "dọn dẹp, vệ sinh"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Chủ Nhật tôi dọn dẹp phòng, giặt giũ quần áo."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "掃除[そうじ]する",
+        "dictionaryKana": "そうじする",
+        "masu": "掃除[そうじ]します",
+        "masuKana": "そうじします",
+        "te": "掃除[そうじ]して",
+        "teKana": "そうじして",
+        "nai": "掃除[そうじ]しない",
+        "naiKana": "そうじしない",
+        "ta": "掃除[そうじ]した",
+        "taKana": "そうじした"
       }
     },
     {
       "id": "sentaku-shimasu",
-      "word": "洗濯[せんたく]します",
-      "kana": "せんたくします",
+      "word": "洗濯[せんたく]する",
+      "kana": "せんたくする",
       "meaning": {
         "en": "to wash (clothes)",
         "vi": "giặt giũ [quần áo]"
@@ -68,12 +107,25 @@
         "translation": {
           "vi": "Tôi phải giặt quần áo."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "洗濯[せんたく]する",
+        "dictionaryKana": "せんたくする",
+        "masu": "洗濯[せんたく]します",
+        "masuKana": "せんたくします",
+        "te": "洗濯[せんたく]して",
+        "teKana": "せんたくして",
+        "nai": "洗濯[せんたく]しない",
+        "naiKana": "せんたくしない",
+        "ta": "洗濯[せんたく]した",
+        "taKana": "せんたくした"
       }
     },
     {
       "id": "narimasu",
-      "word": "なります",
-      "kana": "なります",
+      "word": "なる",
+      "kana": "なる",
       "meaning": {
         "en": "to become",
         "vi": "trở thành, trở nên"
@@ -85,6 +137,19 @@
         "translation": {
           "vi": "Từ bây giờ trời sẽ trở nên nóng."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "なる",
+        "dictionaryKana": "なる",
+        "masu": "なります",
+        "masuKana": "なります",
+        "te": "なって",
+        "teKana": "なって",
+        "nai": "ならない",
+        "naiKana": "ならない",
+        "ta": "なった",
+        "taKana": "なった"
       }
     },
     {

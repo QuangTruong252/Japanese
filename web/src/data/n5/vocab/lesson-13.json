@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "asobimasu",
-      "word": "遊[あそ]びます",
-      "kana": "あそびます",
+      "word": "遊[あそ]ぶ",
+      "kana": "あそぶ",
       "meaning": {
         "en": "to play, to enjoy oneself",
         "vi": "chơi, vui chơi"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Tôi đi đến công viên chơi với bạn."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "遊[あそ]ぶ",
+        "dictionaryKana": "あそぶ",
+        "masu": "遊[あそ]びます",
+        "masuKana": "あそびます",
+        "te": "遊[あそ]んで",
+        "teKana": "あそんで",
+        "nai": "遊[あそ]ばない",
+        "naiKana": "あそばない",
+        "ta": "遊[あそ]んだ",
+        "taKana": "あそんだ"
       }
     },
     {
       "id": "oyogimasu",
-      "word": "泳[およ]ぎます",
-      "kana": "およぎます",
+      "word": "泳[およ]ぐ",
+      "kana": "およぐ",
       "meaning": {
         "en": "to swim",
         "vi": "bơi"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Tôi muốn đi bơi ở bể bơi."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "泳[およ]ぐ",
+        "dictionaryKana": "およぐ",
+        "masu": "泳[およ]ぎます",
+        "masuKana": "およぎます",
+        "te": "泳[およ]いで",
+        "teKana": "およいで",
+        "nai": "泳[およ]がない",
+        "naiKana": "およがない",
+        "ta": "泳[およ]いだ",
+        "taKana": "およいだ"
       }
     },
     {
       "id": "mukaemasu",
-      "word": "迎[むか]えます",
-      "kana": "むかえます",
+      "word": "迎[むか]える",
+      "kana": "むかえる",
       "meaning": {
         "en": "to pick up, to meet (someone)",
         "vi": "đón (ai đó)"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Tôi đi đến sân bay để đón bạn."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "迎[むか]える",
+        "dictionaryKana": "むかえる",
+        "masu": "迎[むか]えます",
+        "masuKana": "むかえます",
+        "te": "迎[むか]えて",
+        "teKana": "むかえて",
+        "nai": "迎[むか]えない",
+        "naiKana": "むかえない",
+        "ta": "迎[むか]えた",
+        "taKana": "むかえた"
       }
     },
     {
       "id": "tsukaremasu",
-      "word": "疲[つか]れます",
-      "kana": "つかれます",
+      "word": "疲[つか]れる",
+      "kana": "つかれる",
       "meaning": {
         "en": "to get tired",
         "vi": "mệt mỏi"
@@ -68,12 +107,25 @@
         "translation": {
           "vi": "Vì có nhiều công việc nên tôi mệt mỏi."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "疲[つか]れる",
+        "dictionaryKana": "つかれる",
+        "masu": "疲[つか]れます",
+        "masuKana": "つかれます",
+        "te": "疲[つか]れて",
+        "teKana": "つかれて",
+        "nai": "疲[つか]れない",
+        "naiKana": "つかれない",
+        "ta": "疲[つか]れた",
+        "taKana": "つかれた"
       }
     },
     {
       "id": "kekkon-shimasu",
-      "word": "結婚[けっこん]します",
-      "kana": "けっこんします",
+      "word": "結婚[けっこん]する",
+      "kana": "けっこんする",
       "meaning": {
         "en": "to get married",
         "vi": "kết hôn, cưới"
@@ -85,12 +137,25 @@
         "translation": {
           "vi": "Tôi muốn kết hôn."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "結婚[けっこん]する",
+        "dictionaryKana": "けっこんする",
+        "masu": "結婚[けっこん]します",
+        "masuKana": "けっこんします",
+        "te": "結婚[けっこん]して",
+        "teKana": "けっこんして",
+        "nai": "結婚[けっこん]しない",
+        "naiKana": "けっこんしない",
+        "ta": "結婚[けっこん]した",
+        "taKana": "けっこんした"
       }
     },
     {
       "id": "kaimono-shimasu",
-      "word": "買[か]い 物[もの]します",
-      "kana": "かいものします",
+      "word": "買[か]い 物[もの]する",
+      "kana": "かいものする",
       "meaning": {
         "en": "to go shopping",
         "vi": "mua sắm"
@@ -102,12 +167,25 @@
         "translation": {
           "vi": "Tôi đi đến trung tâm thương mại để mua sắm."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "買[か]い 物[もの]する",
+        "dictionaryKana": "かいものする",
+        "masu": "買[か]い 物[もの]します",
+        "masuKana": "かいものします",
+        "te": "買[か]い 物[もの]して",
+        "teKana": "かいものして",
+        "nai": "買[か]い 物[もの]しない",
+        "naiKana": "かいものしない",
+        "ta": "買[か]い 物[もの]した",
+        "taKana": "かいものした"
       }
     },
     {
       "id": "shokuji-shimasu",
-      "word": "食事[しょくじ]します",
-      "kana": "しょくじします",
+      "word": "食事[しょくじ]する",
+      "kana": "しょくじする",
       "meaning": {
         "en": "to eat",
         "vi": "dùng bữa, ăn cơm"
@@ -119,12 +197,25 @@
         "translation": {
           "vi": "Tôi đi đến nhà hàng để dùng bữa."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "食事[しょくじ]する",
+        "dictionaryKana": "しょくじする",
+        "masu": "食事[しょくじ]します",
+        "masuKana": "しょくじします",
+        "te": "食事[しょくじ]して",
+        "teKana": "しょくじして",
+        "nai": "食事[しょくじ]しない",
+        "naiKana": "しょくじしない",
+        "ta": "食事[しょくじ]した",
+        "taKana": "しょくじした"
       }
     },
     {
       "id": "sanpo-shimasu",
-      "word": "散歩[さんぽ]します[公園[こうえん]を〜]",
-      "kana": "さんぽします",
+      "word": "散歩[さんぽ]する[公園[こうえん]を〜]",
+      "kana": "さんぽする",
       "meaning": {
         "en": "to take a walk [in the park]",
         "vi": "đi dạo [trong công viên]"
@@ -136,6 +227,19 @@
         "translation": {
           "vi": "Buổi sáng tôi đi dạo trong công viên."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "散歩[さんぽ]する[公園[こうえん]を〜]",
+        "dictionaryKana": "さんぽする",
+        "masu": "散歩[さんぽ]します[公園[こうえん]を〜]",
+        "masuKana": "さんぽします",
+        "te": "散歩[さんぽ]して[公園[こうえん]を〜]",
+        "teKana": "さんぽして",
+        "nai": "散歩[さんぽ]しない[公園[こうえん]を〜]",
+        "naiKana": "さんぽしない",
+        "ta": "散歩[さんぽ]した[公園[こうえん]を〜]",
+        "taKana": "さんぽした"
       }
     },
     {

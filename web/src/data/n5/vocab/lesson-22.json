@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "kimasu-ropa",
-      "word": "着[き]ます",
-      "kana": "きます",
+      "word": "着[き]る",
+      "kana": "きる",
       "meaning": {
         "en": "to put on (a shirt, etc.)",
         "vi": "mặc [áo sơ mi, áo khoác]"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Tôi mặc áo sơ mi màu xanh."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "着[き]る",
+        "dictionaryKana": "きる",
+        "masu": "着[き]ます",
+        "masuKana": "きます",
+        "te": "着[き]て",
+        "teKana": "きて",
+        "nai": "着[き]ない",
+        "naiKana": "きない",
+        "ta": "着[き]た",
+        "taKana": "きた"
       }
     },
     {
       "id": "hakimasu",
-      "word": "はきます",
-      "kana": "はきます",
+      "word": "はく",
+      "kana": "はく",
       "meaning": {
         "en": "to put on (shoes, trousers)",
         "vi": "đi, mang, mặc [giày, tất, quần]"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Tôi mang đôi giày mới."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "はく",
+        "dictionaryKana": "はく",
+        "masu": "はきます",
+        "masuKana": "はきます",
+        "te": "はいて",
+        "teKana": "はいて",
+        "nai": "はかない",
+        "naiKana": "はかない",
+        "ta": "はいた",
+        "taKana": "はいた"
       }
     },
     {
       "id": "kaburimasu",
-      "word": "かぶります",
-      "kana": "かぶります",
+      "word": "かぶる",
+      "kana": "かぶる",
       "meaning": {
         "en": "to put on (a hat)",
         "vi": "đội [mũ]"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Tôi đang đội chiếc mũ màu đen."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "かぶる",
+        "dictionaryKana": "かぶる",
+        "masu": "かぶります",
+        "masuKana": "かぶります",
+        "te": "かぶって",
+        "teKana": "かぶって",
+        "nai": "かぶらない",
+        "naiKana": "かぶらない",
+        "ta": "かぶった",
+        "taKana": "かぶった"
       }
     },
     {
       "id": "kakemasu-gafas",
-      "word": "かけます[眼鏡[めがね]を〜]",
-      "kana": "かけます",
+      "word": "かける[眼鏡[めがね]を〜]",
+      "kana": "かける",
       "meaning": {
         "en": "to put on [glasses]",
         "vi": "đeo [kính]"
@@ -68,12 +107,25 @@
         "translation": {
           "vi": "Bố tôi đang đeo kính."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "かける[眼鏡[めがね]を〜]",
+        "dictionaryKana": "かける",
+        "masu": "かけます[眼鏡[めがね]を〜]",
+        "masuKana": "かけます",
+        "te": "かけて[眼鏡[めがね]を〜]",
+        "teKana": "かけて",
+        "nai": "かけない[眼鏡[めがね]を〜]",
+        "naiKana": "かけない",
+        "ta": "かけた[眼鏡[めがね]を〜]",
+        "taKana": "かけた"
       }
     },
     {
       "id": "shimasu-corbata",
-      "word": "します[ネクタイを〜]",
-      "kana": "します",
+      "word": "する[ネクタイを〜]",
+      "kana": "する",
       "meaning": {
         "en": "to put on [a tie]",
         "vi": "thắt [cà vạt]"
@@ -85,12 +137,25 @@
         "translation": {
           "vi": "Người đang thắt cà vạt là ai vậy?"
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "する[ネクタイを〜]",
+        "dictionaryKana": "する",
+        "masu": "します[ネクタイを〜]",
+        "masuKana": "します",
+        "te": "して[ネクタイを〜]",
+        "teKana": "して",
+        "nai": "しない[ネクタイを〜]",
+        "naiKana": "しない",
+        "ta": "した[ネクタイを〜]",
+        "taKana": "した"
       }
     },
     {
       "id": "umaremasu",
-      "word": "生[う]まれます",
-      "kana": "うまれます",
+      "word": "生[う]まれる",
+      "kana": "うまれる",
       "meaning": {
         "en": "to be born",
         "vi": "sinh ra, chào đời"
@@ -102,6 +167,19 @@
         "translation": {
           "vi": "Tôi đã sinh ra ở Tokyo."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "生[う]まれる",
+        "dictionaryKana": "うまれる",
+        "masu": "生[う]まれます",
+        "masuKana": "うまれます",
+        "te": "生[う]まれて",
+        "teKana": "うまれて",
+        "nai": "生[う]まれない",
+        "naiKana": "うまれない",
+        "ta": "生[う]まれた",
+        "taKana": "うまれた"
       }
     },
     {

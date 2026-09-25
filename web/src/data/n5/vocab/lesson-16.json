@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "norimasu",
-      "word": "乗[の]ります[電車[でんしゃ]に〜]",
-      "kana": "のります",
+      "word": "乗[の]る[電車[でんしゃ]に〜]",
+      "kana": "のる",
       "meaning": {
         "en": "to get on [the train]",
         "vi": "lên, đi [tàu, xe buýt]"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Tôi đã lên tàu ở Kyoto."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "乗[の]る[電車[でんしゃ]に〜]",
+        "dictionaryKana": "のる",
+        "masu": "乗[の]ります[電車[でんしゃ]に〜]",
+        "masuKana": "のります",
+        "te": "乗[の]って[電車[でんしゃ]に〜]",
+        "teKana": "のって",
+        "nai": "乗[の]らない[電車[でんしゃ]に〜]",
+        "naiKana": "のらない",
+        "ta": "乗[の]った[電車[でんしゃ]に〜]",
+        "taKana": "のった"
       }
     },
     {
       "id": "orimasu",
-      "word": "降[お]ります[電車[でんしゃ]を〜]",
-      "kana": "おります",
+      "word": "降[お]りる[電車[でんしゃ]を〜]",
+      "kana": "おりる",
       "meaning": {
         "en": "to get off [the train]",
         "vi": "xuống [tàu, xe buýt]"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Tôi sẽ xuống tàu ở nhà ga tiếp theo."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "降[お]りる[電車[でんしゃ]を〜]",
+        "dictionaryKana": "おりる",
+        "masu": "降[お]ります[電車[でんしゃ]を〜]",
+        "masuKana": "おります",
+        "te": "降[お]りて[電車[でんしゃ]を〜]",
+        "teKana": "おりて",
+        "nai": "降[お]りない[電車[でんしゃ]を〜]",
+        "naiKana": "おりない",
+        "ta": "降[お]りた[電車[でんしゃ]を〜]",
+        "taKana": "おりた"
       }
     },
     {
       "id": "norikaemasu",
-      "word": "乗[の]り 換[か]えます",
-      "kana": "のりかえます",
+      "word": "乗[の]り 換[か]える",
+      "kana": "のりかえる",
       "meaning": {
         "en": "to change (trains)",
         "vi": "đổi, chuyển [tàu, xe]"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Tôi sẽ chuyển sang tàu điện ngầm ở Osaka."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "乗[の]り 換[か]える",
+        "dictionaryKana": "のりかえる",
+        "masu": "乗[の]り 換[か]えます",
+        "masuKana": "のりかえます",
+        "te": "乗[の]り 換[か]えて",
+        "teKana": "のりかえて",
+        "nai": "乗[の]り 換[か]えない",
+        "naiKana": "のりかえない",
+        "ta": "乗[の]り 換[か]えた",
+        "taKana": "のりかえた"
       }
     },
     {
       "id": "abimasu",
-      "word": "浴[あ]びます[シャワーを〜]",
-      "kana": "あびます",
+      "word": "浴[あ]びる[シャワーを〜]",
+      "kana": "あびる",
       "meaning": {
         "en": "to have [a shower]",
         "vi": "tắm [vòi sen]"
@@ -68,12 +107,25 @@
         "translation": {
           "vi": "Sau khi tắm vòi sen vào buổi sáng, tôi đi đến công ty."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "浴[あ]びる[シャワーを〜]",
+        "dictionaryKana": "あびる",
+        "masu": "浴[あ]びます[シャワーを〜]",
+        "masuKana": "あびます",
+        "te": "浴[あ]びて[シャワーを〜]",
+        "teKana": "あびて",
+        "nai": "浴[あ]びない[シャワーを〜]",
+        "naiKana": "あびない",
+        "ta": "浴[あ]びた[シャワーを〜]",
+        "taKana": "あびた"
       }
     },
     {
       "id": "iremasu",
-      "word": "入[い]れます",
-      "kana": "いれます",
+      "word": "入[い]れる",
+      "kana": "いれる",
       "meaning": {
         "en": "to put in, to insert",
         "vi": "cho vào, bỏ vào"
@@ -85,12 +137,25 @@
         "translation": {
           "vi": "Tôi đã cho đường vào cà phê."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "入[い]れる",
+        "dictionaryKana": "いれる",
+        "masu": "入[い]れます",
+        "masuKana": "いれます",
+        "te": "入[い]れて",
+        "teKana": "いれて",
+        "nai": "入[い]れない",
+        "naiKana": "いれない",
+        "ta": "入[い]れた",
+        "taKana": "いれた"
       }
     },
     {
       "id": "dashimasu",
-      "word": "出[だ]します",
-      "kana": "だします",
+      "word": "出[だ]す",
+      "kana": "だす",
       "meaning": {
         "en": "to take out, to hand in, to send",
         "vi": "rút [tiền], lấy ra, nộp"
@@ -102,12 +167,25 @@
         "translation": {
           "vi": "Sau khi gửi thư, tôi sẽ về nhà."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "出[だ]す",
+        "dictionaryKana": "だす",
+        "masu": "出[だ]します",
+        "masuKana": "だします",
+        "te": "出[だ]して",
+        "teKana": "だして",
+        "nai": "出[だ]さない",
+        "naiKana": "ださない",
+        "ta": "出[だ]した",
+        "taKana": "だした"
       }
     },
     {
       "id": "oroshimasu",
-      "word": "下[お]ろします[お 金[かね]を〜]",
-      "kana": "おろします",
+      "word": "下[お]ろす[お 金[かね]を〜]",
+      "kana": "おろす",
       "meaning": {
         "en": "to withdraw [money from the bank]",
         "vi": "rút [tiền từ ngân hàng]"
@@ -119,12 +197,25 @@
         "translation": {
           "vi": "Tôi đã rút tiền ở ngân hàng."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "下[お]ろす[お 金[かね]を〜]",
+        "dictionaryKana": "おろす",
+        "masu": "下[お]ろします[お 金[かね]を〜]",
+        "masuKana": "おろします",
+        "te": "下[お]ろして[お 金[かね]を〜]",
+        "teKana": "おろして",
+        "nai": "下[お]ろさない[お 金[かね]を〜]",
+        "naiKana": "おろさない",
+        "ta": "下[お]ろした[お 金[かね]を〜]",
+        "taKana": "おろした"
       }
     },
     {
       "id": "hairimasu-uni",
-      "word": "入[はい]ります[大学[だいがく]に〜]",
-      "kana": "はいります",
+      "word": "入[はい]る[大学[だいがく]に〜]",
+      "kana": "はいる",
       "meaning": {
         "en": "to enter [university]",
         "vi": "nhập học, vào [đại học]"
@@ -136,12 +227,25 @@
         "translation": {
           "vi": "Năm sau tôi sẽ vào đại học."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "入[はい]る[大学[だいがく]に〜]",
+        "dictionaryKana": "はいる",
+        "masu": "入[はい]ります[大学[だいがく]に〜]",
+        "masuKana": "はいります",
+        "te": "入[はい]って[大学[だいがく]に〜]",
+        "teKana": "はいって",
+        "nai": "入[はい]らない[大学[だいがく]に〜]",
+        "naiKana": "はいらない",
+        "ta": "入[はい]った[大学[だいがく]に〜]",
+        "taKana": "はいった"
       }
     },
     {
       "id": "demasu-uni",
-      "word": "出[で]ます[大学[だいがく]を〜]",
-      "kana": "でます",
+      "word": "出[で]る[大学[だいがく]を〜]",
+      "kana": "でる",
       "meaning": {
         "en": "to graduate [from university]",
         "vi": "tốt nghiệp, ra khỏi [đại học]"
@@ -153,12 +257,25 @@
         "translation": {
           "vi": "Tôi đã tốt nghiệp đại học năm ngoái."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "出[で]る[大学[だいがく]を〜]",
+        "dictionaryKana": "でる",
+        "masu": "出[で]ます[大学[だいがく]を〜]",
+        "masuKana": "でます",
+        "te": "出[で]て[大学[だいがく]を〜]",
+        "teKana": "でて",
+        "nai": "出[で]ない[大学[だいがく]を〜]",
+        "naiKana": "でない",
+        "ta": "出[で]た[大学[だいがく]を〜]",
+        "taKana": "でた"
       }
     },
     {
       "id": "oshimasu",
-      "word": "押[お]します",
-      "kana": "おします",
+      "word": "押[お]す",
+      "kana": "おす",
       "meaning": {
         "en": "to press, to push",
         "vi": "ấn, bấm [nút]"
@@ -170,12 +287,25 @@
         "translation": {
           "vi": "Xin hãy ấn nút này."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "押[お]す",
+        "dictionaryKana": "おす",
+        "masu": "押[お]します",
+        "masuKana": "おします",
+        "te": "押[お]して",
+        "teKana": "おして",
+        "nai": "押[お]さない",
+        "naiKana": "おさない",
+        "ta": "押[お]した",
+        "taKana": "おした"
       }
     },
     {
       "id": "nomimasu-alcohol",
-      "word": "飲[の]みます",
-      "kana": "のみます",
+      "word": "飲[の]む",
+      "kana": "のむ",
       "meaning": {
         "en": "to drink alcohol",
         "vi": "uống rượu bia"
@@ -187,12 +317,25 @@
         "translation": {
           "vi": "Tôi đã uống rượu cùng với bạn bè."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "飲[の]む",
+        "dictionaryKana": "のむ",
+        "masu": "飲[の]みます",
+        "masuKana": "のみます",
+        "te": "飲[の]んで",
+        "teKana": "のんで",
+        "nai": "飲[の]まない",
+        "naiKana": "のまない",
+        "ta": "飲[の]んだ",
+        "taKana": "のんだ"
       }
     },
     {
       "id": "hajimemasu",
-      "word": "始[はじ]めます",
-      "kana": "はじめます",
+      "word": "始[はじ]める",
+      "kana": "はじめる",
       "meaning": {
         "en": "to begin, to start",
         "vi": "bắt đầu, khởi đầu"
@@ -204,12 +347,25 @@
         "translation": {
           "vi": "Bây giờ chúng ta sẽ bắt đầu cuộc họp."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "始[はじ]める",
+        "dictionaryKana": "はじめる",
+        "masu": "始[はじ]めます",
+        "masuKana": "はじめます",
+        "te": "始[はじ]めて",
+        "teKana": "はじめて",
+        "nai": "始[はじ]めない",
+        "naiKana": "はじめない",
+        "ta": "始[はじ]めた",
+        "taKana": "はじめた"
       }
     },
     {
       "id": "kengaku-shimasu",
-      "word": "見学[けんがく]します",
-      "kana": "けんがくします",
+      "word": "見学[けんがく]する",
+      "kana": "けんがくする",
       "meaning": {
         "en": "to visit (to learn)",
         "vi": "tham quan học hỏi, kiến tập"
@@ -221,12 +377,25 @@
         "translation": {
           "vi": "Tôi sẽ tham quan trường học."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "見学[けんがく]する",
+        "dictionaryKana": "けんがくする",
+        "masu": "見学[けんがく]します",
+        "masuKana": "けんがくします",
+        "te": "見学[けんがく]して",
+        "teKana": "けんがくして",
+        "nai": "見学[けんがく]しない",
+        "naiKana": "けんがくしない",
+        "ta": "見学[けんがく]した",
+        "taKana": "けんがくした"
       }
     },
     {
       "id": "denwa-shimasu",
-      "word": "電話[でんわ]します",
-      "kana": "でんわします",
+      "word": "電話[でんわ]する",
+      "kana": "でんわする",
       "meaning": {
         "en": "to phone",
         "vi": "gọi điện thoại"
@@ -238,6 +407,19 @@
         "translation": {
           "vi": "Tôi đã gọi điện cho gia đình."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "電話[でんわ]する",
+        "dictionaryKana": "でんわする",
+        "masu": "電話[でんわ]します",
+        "masuKana": "でんわします",
+        "te": "電話[でんわ]して",
+        "teKana": "でんわして",
+        "nai": "電話[でんわ]しない",
+        "naiKana": "でんわしない",
+        "ta": "電話[でんわ]した",
+        "taKana": "でんわした"
       }
     },
     {

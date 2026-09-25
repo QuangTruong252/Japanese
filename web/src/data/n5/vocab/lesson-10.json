@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "arimasu",
-      "word": "あります",
-      "kana": "あります",
+      "word": "ある",
+      "kana": "ある",
       "meaning": {
         "en": "to be, there is (things)",
         "vi": "ở, có (dành cho đồ vật vô tri)"
@@ -17,12 +17,24 @@
         "translation": {
           "vi": "Trên bàn có cuốn sách."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "ある",
+        "dictionaryKana": "ある",
+        "masu": "あります",
+        "masuKana": "あります",
+        "te": "あって",
+        "teKana": "あって",
+        "naiKana": "",
+        "ta": "あった",
+        "taKana": "あった"
       }
     },
     {
       "id": "imasu",
-      "word": "います",
-      "kana": "います",
+      "word": "いる",
+      "kana": "いる",
       "meaning": {
         "en": "to be, there is (living things)",
         "vi": "ở, có (dành cho người và động vật)"
@@ -34,6 +46,19 @@
         "translation": {
           "vi": "Trong phòng học có thầy giáo."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "いる",
+        "dictionaryKana": "いる",
+        "masu": "います",
+        "masuKana": "います",
+        "te": "いて",
+        "teKana": "いて",
+        "nai": "いない",
+        "naiKana": "いない",
+        "ta": "いた",
+        "taKana": "いた"
       }
     },
     {

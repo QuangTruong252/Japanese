@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "kirimasu",
-      "word": "切[き]ります",
-      "kana": "きります",
+      "word": "切[き]る",
+      "kana": "きる",
       "meaning": {
         "en": "to cut",
         "vi": "cắt"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Tôi cắt giấy bằng kéo."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "切[き]る",
+        "dictionaryKana": "きる",
+        "masu": "切[き]ります",
+        "masuKana": "きります",
+        "te": "切[き]って",
+        "teKana": "きって",
+        "nai": "切[き]らない",
+        "naiKana": "きらない",
+        "ta": "切[き]った",
+        "taKana": "きった"
       }
     },
     {
       "id": "okurimasu",
-      "word": "送[おく]ります",
-      "kana": "おくります",
+      "word": "送[おく]る",
+      "kana": "おくる",
       "meaning": {
         "en": "to send",
         "vi": "gửi"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Tôi gửi email cho bạn."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "送[おく]る",
+        "dictionaryKana": "おくる",
+        "masu": "送[おく]ります",
+        "masuKana": "おくります",
+        "te": "送[おく]って",
+        "teKana": "おくって",
+        "nai": "送[おく]らない",
+        "naiKana": "おくらない",
+        "ta": "送[おく]った",
+        "taKana": "おくった"
       }
     },
     {
       "id": "agemasu",
-      "word": "あげます",
-      "kana": "あげます",
+      "word": "あげる",
+      "kana": "あげる",
       "meaning": {
         "en": "to give",
         "vi": "cho, tặng"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Tôi tặng hoa cho mẹ."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "あげる",
+        "dictionaryKana": "あげる",
+        "masu": "あげます",
+        "masuKana": "あげます",
+        "te": "あげて",
+        "teKana": "あげて",
+        "nai": "あげない",
+        "naiKana": "あげない",
+        "ta": "あげた",
+        "taKana": "あげた"
       }
     },
     {
       "id": "moraimasu",
-      "word": "もらいます",
-      "kana": "もらいます",
+      "word": "もらう",
+      "kana": "もらう",
       "meaning": {
         "en": "to receive",
         "vi": "nhận"
@@ -68,12 +107,25 @@
         "translation": {
           "vi": "Tôi đã nhận quà từ bạn."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "もらう",
+        "dictionaryKana": "もらう",
+        "masu": "もらいます",
+        "masuKana": "もらいます",
+        "te": "もらって",
+        "teKana": "もらって",
+        "nai": "もらわない",
+        "naiKana": "もらわない",
+        "ta": "もらった",
+        "taKana": "もらった"
       }
     },
     {
       "id": "kashimasu",
-      "word": "貸[か]します",
-      "kana": "かします",
+      "word": "貸[か]す",
+      "kana": "かす",
       "meaning": {
         "en": "to lend",
         "vi": "cho mượn, cho vay"
@@ -85,12 +137,25 @@
         "translation": {
           "vi": "Tôi cho bạn mượn sách."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "貸[か]す",
+        "dictionaryKana": "かす",
+        "masu": "貸[か]します",
+        "masuKana": "かします",
+        "te": "貸[か]して",
+        "teKana": "かして",
+        "nai": "貸[か]さない",
+        "naiKana": "かさない",
+        "ta": "貸[か]した",
+        "taKana": "かした"
       }
     },
     {
       "id": "karimasu",
-      "word": "借[か]ります",
-      "kana": "かります",
+      "word": "借[か]りる",
+      "kana": "かりる",
       "meaning": {
         "en": "to borrow",
         "vi": "mượn, vay"
@@ -102,12 +167,25 @@
         "translation": {
           "vi": "Tôi mượn sách từ bạn."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "借[か]りる",
+        "dictionaryKana": "かりる",
+        "masu": "借[か]ります",
+        "masuKana": "かります",
+        "te": "借[か]りて",
+        "teKana": "かりて",
+        "nai": "借[か]りない",
+        "naiKana": "かりない",
+        "ta": "借[か]りた",
+        "taKana": "かりた"
       }
     },
     {
       "id": "oshiemasu",
-      "word": "教[おし]えます",
-      "kana": "おしえます",
+      "word": "教[おし]える",
+      "kana": "おしえる",
       "meaning": {
         "en": "to teach",
         "vi": "dạy, chỉ bảo, hướng dẫn"
@@ -119,12 +197,25 @@
         "translation": {
           "vi": "Tôi dạy tiếng Nhật cho bạn."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "教[おし]える",
+        "dictionaryKana": "おしえる",
+        "masu": "教[おし]えます",
+        "masuKana": "おしえます",
+        "te": "教[おし]えて",
+        "teKana": "おしえて",
+        "nai": "教[おし]えない",
+        "naiKana": "おしえない",
+        "ta": "教[おし]えた",
+        "taKana": "おしえた"
       }
     },
     {
       "id": "naraimasu",
-      "word": "習[なら]います",
-      "kana": "ならいます",
+      "word": "習[なら]う",
+      "kana": "ならう",
       "meaning": {
         "en": "to learn",
         "vi": "học, tập (từ ai đó)"
@@ -136,12 +227,25 @@
         "translation": {
           "vi": "Tôi học tiếng Nhật từ thầy cô."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "習[なら]う",
+        "dictionaryKana": "ならう",
+        "masu": "習[なら]います",
+        "masuKana": "ならいます",
+        "te": "習[なら]って",
+        "teKana": "ならって",
+        "nai": "習[なら]わない",
+        "naiKana": "ならわない",
+        "ta": "習[なら]った",
+        "taKana": "ならった"
       }
     },
     {
       "id": "kakemasu",
-      "word": "かけます",
-      "kana": "かけます",
+      "word": "かける",
+      "kana": "かける",
       "meaning": {
         "en": "to make [a call]",
         "vi": "gọi [điện thoại]"
@@ -153,6 +257,19 @@
         "translation": {
           "vi": "Tôi gọi điện cho mẹ."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "かける",
+        "dictionaryKana": "かける",
+        "masu": "かけます",
+        "masuKana": "かけます",
+        "te": "かけて",
+        "teKana": "かけて",
+        "nai": "かけない",
+        "naiKana": "かけない",
+        "ta": "かけた",
+        "taKana": "かけた"
       }
     },
     {

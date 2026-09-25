@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "irimasu",
-      "word": "要[い]ります[ビザが〜]",
-      "kana": "いります",
+      "word": "要[い]る[ビザが〜]",
+      "kana": "いる",
       "meaning": {
         "en": "to need [a visa]",
         "vi": "cần [thị thực, visa]"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Trước khi đi Nhật, cần có visa."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "要[い]る[ビザが〜]",
+        "dictionaryKana": "いる",
+        "masu": "要[い]ります[ビザが〜]",
+        "masuKana": "いります",
+        "te": "要[い]って[ビザが〜]",
+        "teKana": "いって",
+        "nai": "要[い]らない[ビザが〜]",
+        "naiKana": "いらない",
+        "ta": "要[い]った[ビザが〜]",
+        "taKana": "いった"
       }
     },
     {
       "id": "shirabemasu",
-      "word": "調[しら]べます",
-      "kana": "しらべます",
+      "word": "調[しら]べる",
+      "kana": "しらべる",
       "meaning": {
         "en": "to look into, to check",
         "vi": "tra cứu, tìm hiểu, điều tra"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Tôi tra cứu từ vựng bằng máy tính."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "調[しら]べる",
+        "dictionaryKana": "しらべる",
+        "masu": "調[しら]べます",
+        "masuKana": "しらべます",
+        "te": "調[しら]べて",
+        "teKana": "しらべて",
+        "nai": "調[しら]べない",
+        "naiKana": "しらべない",
+        "ta": "調[しら]べた",
+        "taKana": "しらべた"
       }
     },
     {
       "id": "shuuri-shimasu",
-      "word": "修理[しゅうり]します",
-      "kana": "しゅうりします",
+      "word": "修理[しゅうり]する",
+      "kana": "しゅうりする",
       "meaning": {
         "en": "to repair",
         "vi": "sửa chữa, bảo trì"
@@ -51,6 +77,19 @@
         "translation": {
           "vi": "Bố tôi đã sửa xe ô tô."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "修理[しゅうり]する",
+        "dictionaryKana": "しゅうりする",
+        "masu": "修理[しゅうり]します",
+        "masuKana": "しゅうりします",
+        "te": "修理[しゅうり]して",
+        "teKana": "しゅうりして",
+        "nai": "修理[しゅうり]しない",
+        "naiKana": "しゅうりしない",
+        "ta": "修理[しゅうり]した",
+        "taKana": "しゅうりした"
       }
     },
     {

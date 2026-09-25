@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "tsukemasu",
-      "word": "つけます",
-      "kana": "つけます",
+      "word": "つける",
+      "kana": "つける",
       "meaning": {
         "en": "to turn on",
         "vi": "bật [điện, máy móc]"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Hãy bật đèn lên."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "つける",
+        "dictionaryKana": "つける",
+        "masu": "つけます",
+        "masuKana": "つけます",
+        "te": "つけて",
+        "teKana": "つけて",
+        "nai": "つけない",
+        "naiKana": "つけない",
+        "ta": "つけた",
+        "taKana": "つけた"
       }
     },
     {
       "id": "keshimasu",
-      "word": "消[け]します",
-      "kana": "けします",
+      "word": "消[け]す",
+      "kana": "けす",
       "meaning": {
         "en": "to turn off",
         "vi": "tắt [điện, máy móc]"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Hãy tắt máy điều hòa."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "消[け]す",
+        "dictionaryKana": "けす",
+        "masu": "消[け]します",
+        "masuKana": "けします",
+        "te": "消[け]して",
+        "teKana": "けして",
+        "nai": "消[け]さない",
+        "naiKana": "けさない",
+        "ta": "消[け]した",
+        "taKana": "けした"
       }
     },
     {
       "id": "akemasu",
-      "word": "開[あ]けます",
-      "kana": "あけます",
+      "word": "開[あ]ける",
+      "kana": "あける",
       "meaning": {
         "en": "to open",
         "vi": "mở [cửa]"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Tôi mở cửa sổ giúp bạn nhé?"
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "開[あ]ける",
+        "dictionaryKana": "あける",
+        "masu": "開[あ]けます",
+        "masuKana": "あけます",
+        "te": "開[あ]けて",
+        "teKana": "あけて",
+        "nai": "開[あ]けない",
+        "naiKana": "あけない",
+        "ta": "開[あ]けた",
+        "taKana": "あけた"
       }
     },
     {
       "id": "shimemasu",
-      "word": "閉[し]めます",
-      "kana": "しめます",
+      "word": "閉[し]める",
+      "kana": "しめる",
       "meaning": {
         "en": "to close",
         "vi": "đóng [cửa]"
@@ -68,12 +107,25 @@
         "translation": {
           "vi": "Hãy đóng cửa lại."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "閉[し]める",
+        "dictionaryKana": "しめる",
+        "masu": "閉[し]めます",
+        "masuKana": "しめます",
+        "te": "閉[し]めて",
+        "teKana": "しめて",
+        "nai": "閉[し]めない",
+        "naiKana": "しめない",
+        "ta": "閉[し]めた",
+        "taKana": "しめた"
       }
     },
     {
       "id": "isogimasu",
-      "word": "急[いそ]ぎます",
-      "kana": "いそぎます",
+      "word": "急[いそ]ぐ",
+      "kana": "いそぐ",
       "meaning": {
         "en": "to hurry",
         "vi": "vội, gấp, vội vã"
@@ -85,12 +137,25 @@
         "translation": {
           "vi": "Chúng ta hãy nhanh lên nào."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "急[いそ]ぐ",
+        "dictionaryKana": "いそぐ",
+        "masu": "急[いそ]ぎます",
+        "masuKana": "いそぎます",
+        "te": "急[いそ]いで",
+        "teKana": "いそいで",
+        "nai": "急[いそ]がない",
+        "naiKana": "いそがない",
+        "ta": "急[いそ]いだ",
+        "taKana": "いそいだ"
       }
     },
     {
       "id": "machimasu",
-      "word": "待[ま]ちます",
-      "kana": "まちます",
+      "word": "待[ま]つ",
+      "kana": "まつ",
       "meaning": {
         "en": "to wait",
         "vi": "chờ, đợi"
@@ -102,12 +167,25 @@
         "translation": {
           "vi": "Xin hãy đợi một chút."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "待[ま]つ",
+        "dictionaryKana": "まつ",
+        "masu": "待[ま]ちます",
+        "masuKana": "まちます",
+        "te": "待[ま]って",
+        "teKana": "まって",
+        "nai": "待[ま]たない",
+        "naiKana": "またない",
+        "ta": "待[ま]った",
+        "taKana": "まった"
       }
     },
     {
       "id": "mochimasu",
-      "word": "持[も]ちます",
-      "kana": "もちます",
+      "word": "持[も]つ",
+      "kana": "もつ",
       "meaning": {
         "en": "to hold, to carry",
         "vi": "cầm, mang"
@@ -119,12 +197,25 @@
         "translation": {
           "vi": "Tôi mang hành lý giúp bạn nhé?"
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "持[も]つ",
+        "dictionaryKana": "もつ",
+        "masu": "持[も]ちます",
+        "masuKana": "もちます",
+        "te": "持[も]って",
+        "teKana": "もって",
+        "nai": "持[も]たない",
+        "naiKana": "もたない",
+        "ta": "持[も]った",
+        "taKana": "もった"
       }
     },
     {
       "id": "torimasu",
-      "word": "取[と]ります",
-      "kana": "とります",
+      "word": "取[と]る",
+      "kana": "とる",
       "meaning": {
         "en": "to take, to pass (something to someone)",
         "vi": "lấy [đồ vật]"
@@ -136,12 +227,25 @@
         "translation": {
           "vi": "Xin hãy lấy giúp tôi muối."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "取[と]る",
+        "dictionaryKana": "とる",
+        "masu": "取[と]ります",
+        "masuKana": "とります",
+        "te": "取[と]って",
+        "teKana": "とって",
+        "nai": "取[と]らない",
+        "naiKana": "とらない",
+        "ta": "取[と]った",
+        "taKana": "とった"
       }
     },
     {
       "id": "tetsudaimasu",
-      "word": "手伝[てつだ]います",
-      "kana": "てつだいます",
+      "word": "手伝[てつだ]う",
+      "kana": "てつだう",
       "meaning": {
         "en": "to help",
         "vi": "giúp đỡ"
@@ -153,12 +257,25 @@
         "translation": {
           "vi": "Hãy giúp tôi làm việc."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "手伝[てつだ]う",
+        "dictionaryKana": "てつだう",
+        "masu": "手伝[てつだ]います",
+        "masuKana": "てつだいます",
+        "te": "手伝[てつだ]って",
+        "teKana": "てつだって",
+        "nai": "手伝[てつだ]わない",
+        "naiKana": "てつだわない",
+        "ta": "手伝[てつだ]った",
+        "taKana": "てつだった"
       }
     },
     {
       "id": "yobimasu",
-      "word": "呼[よ]びます",
-      "kana": "よびます",
+      "word": "呼[よ]ぶ",
+      "kana": "よぶ",
       "meaning": {
         "en": "to call",
         "vi": "gọi [taxi, tên]"
@@ -170,12 +287,25 @@
         "translation": {
           "vi": "Tôi gọi taxi giúp bạn nhé?"
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "呼[よ]ぶ",
+        "dictionaryKana": "よぶ",
+        "masu": "呼[よ]びます",
+        "masuKana": "よびます",
+        "te": "呼[よ]んで",
+        "teKana": "よんで",
+        "nai": "呼[よ]ばない",
+        "naiKana": "よばない",
+        "ta": "呼[よ]んだ",
+        "taKana": "よんだ"
       }
     },
     {
       "id": "hanashimasu",
-      "word": "話[はな]します",
-      "kana": "はなします",
+      "word": "話[はな]す",
+      "kana": "はなす",
       "meaning": {
         "en": "to speak",
         "vi": "nói chuyện"
@@ -187,12 +317,25 @@
         "translation": {
           "vi": "Xin hãy nói bằng tiếng Anh."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "話[はな]す",
+        "dictionaryKana": "はなす",
+        "masu": "話[はな]します",
+        "masuKana": "はなします",
+        "te": "話[はな]して",
+        "teKana": "はなして",
+        "nai": "話[はな]さない",
+        "naiKana": "はなさない",
+        "ta": "話[はな]した",
+        "taKana": "はなした"
       }
     },
     {
       "id": "tsukaimasu",
-      "word": "使[つか]います",
-      "kana": "つかいます",
+      "word": "使[つか]う",
+      "kana": "つかう",
       "meaning": {
         "en": "to use",
         "vi": "dùng, sử dụng"
@@ -204,12 +347,25 @@
         "translation": {
           "vi": "Xin hãy dùng máy tính này."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "使[つか]う",
+        "dictionaryKana": "つかう",
+        "masu": "使[つか]います",
+        "masuKana": "つかいます",
+        "te": "使[つか]って",
+        "teKana": "つかって",
+        "nai": "使[つか]わない",
+        "naiKana": "つかわない",
+        "ta": "使[つか]った",
+        "taKana": "つかった"
       }
     },
     {
       "id": "tomemasu",
-      "word": "止[と]めます",
-      "kana": "とめます",
+      "word": "止[と]める",
+      "kana": "とめる",
       "meaning": {
         "en": "to stop, to park",
         "vi": "dừng, đỗ [xe]"
@@ -221,12 +377,25 @@
         "translation": {
           "vi": "Xin hãy đỗ xe ở chỗ kia."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "止[と]める",
+        "dictionaryKana": "とめる",
+        "masu": "止[と]めます",
+        "masuKana": "とめます",
+        "te": "止[と]めて",
+        "teKana": "とめて",
+        "nai": "止[と]めない",
+        "naiKana": "とめない",
+        "ta": "止[と]めた",
+        "taKana": "とめた"
       }
     },
     {
       "id": "misemasu",
-      "word": "見[み]せます",
-      "kana": "みせます",
+      "word": "見[み]せる",
+      "kana": "みせる",
       "meaning": {
         "en": "to show",
         "vi": "cho xem"
@@ -238,12 +407,25 @@
         "translation": {
           "vi": "Xin hãy cho tôi xem hộ chiếu."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "見[み]せる",
+        "dictionaryKana": "みせる",
+        "masu": "見[み]せます",
+        "masuKana": "みせます",
+        "te": "見[み]せて",
+        "teKana": "みせて",
+        "nai": "見[み]せない",
+        "naiKana": "みせない",
+        "ta": "見[み]せた",
+        "taKana": "みせた"
       }
     },
     {
       "id": "oshiemasu-direccion",
-      "word": "教[おし]えます[住所[じゅうしょ]を〜]",
-      "kana": "おしえます",
+      "word": "教[おし]える[住所[じゅうしょ]を〜]",
+      "kana": "おしえる",
       "meaning": {
         "en": "to give [an address]",
         "vi": "cho biết, chỉ bảo [địa chỉ]"
@@ -255,12 +437,25 @@
         "translation": {
           "vi": "Xin hãy cho tôi biết địa chỉ."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "教[おし]える[住所[じゅうしょ]を〜]",
+        "dictionaryKana": "おしえる",
+        "masu": "教[おし]えます[住所[じゅうしょ]を〜]",
+        "masuKana": "おしえます",
+        "te": "教[おし]えて[住所[じゅうしょ]を〜]",
+        "teKana": "おしえて",
+        "nai": "教[おし]えない[住所[じゅうしょ]を〜]",
+        "naiKana": "おしえない",
+        "ta": "教[おし]えた[住所[じゅうしょ]を〜]",
+        "taKana": "おしえた"
       }
     },
     {
       "id": "suwarimasu",
-      "word": "座[すわ]ります",
-      "kana": "すわります",
+      "word": "座[すわ]る",
+      "kana": "すわる",
       "meaning": {
         "en": "to sit down",
         "vi": "ngồi [xuống ghế]"
@@ -272,12 +467,25 @@
         "translation": {
           "vi": "Xin hãy ngồi xuống ghế."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "座[すわ]る",
+        "dictionaryKana": "すわる",
+        "masu": "座[すわ]ります",
+        "masuKana": "すわります",
+        "te": "座[すわ]って",
+        "teKana": "すわって",
+        "nai": "座[すわ]らない",
+        "naiKana": "すわらない",
+        "ta": "座[すわ]った",
+        "taKana": "すわった"
       }
     },
     {
       "id": "tachimasu",
-      "word": "立[た]ちます",
-      "kana": "たちます",
+      "word": "立[た]つ",
+      "kana": "たつ",
       "meaning": {
         "en": "to stand up",
         "vi": "đứng lên, đứng dậy"
@@ -289,12 +497,25 @@
         "translation": {
           "vi": "Xin hãy đứng lên."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "立[た]つ",
+        "dictionaryKana": "たつ",
+        "masu": "立[た]ちます",
+        "masuKana": "たちます",
+        "te": "立[た]って",
+        "teKana": "たって",
+        "nai": "立[た]たない",
+        "naiKana": "たたない",
+        "ta": "立[た]った",
+        "taKana": "たった"
       }
     },
     {
       "id": "hairimasu",
-      "word": "入[はい]ります[喫茶店[きっさてん]に〜]",
-      "kana": "はいります",
+      "word": "入[はい]る[喫茶店[きっさてん]に〜]",
+      "kana": "はいる",
       "meaning": {
         "en": "to go into [a café]",
         "vi": "vào, đi vào [quán cà phê]"
@@ -306,12 +527,25 @@
         "translation": {
           "vi": "Chúng ta cùng vào quán cà phê nhé."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "入[はい]る[喫茶店[きっさてん]に〜]",
+        "dictionaryKana": "はいる",
+        "masu": "入[はい]ります[喫茶店[きっさてん]に〜]",
+        "masuKana": "はいります",
+        "te": "入[はい]って[喫茶店[きっさてん]に〜]",
+        "teKana": "はいって",
+        "nai": "入[はい]らない[喫茶店[きっさてん]に〜]",
+        "naiKana": "はいらない",
+        "ta": "入[はい]った[喫茶店[きっさてん]に〜]",
+        "taKana": "はいった"
       }
     },
     {
       "id": "demasu",
-      "word": "出[で]ます[喫茶店[きっさてん]を〜]",
-      "kana": "でます",
+      "word": "出[で]る[喫茶店[きっさてん]を〜]",
+      "kana": "でる",
       "meaning": {
         "en": "to leave [a café]",
         "vi": "ra khỏi, rời [quán cà phê]"
@@ -323,12 +557,25 @@
         "translation": {
           "vi": "Tôi đã rời quán cà phê."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "出[で]る[喫茶店[きっさてん]を〜]",
+        "dictionaryKana": "でる",
+        "masu": "出[で]ます[喫茶店[きっさてん]を〜]",
+        "masuKana": "でます",
+        "te": "出[で]て[喫茶店[きっさてん]を〜]",
+        "teKana": "でて",
+        "nai": "出[で]ない[喫茶店[きっさてん]を〜]",
+        "naiKana": "でない",
+        "ta": "出[で]た[喫茶店[きっさてん]を〜]",
+        "taKana": "でた"
       }
     },
     {
       "id": "furimasu",
-      "word": "降[ふ]ります[雨[あめ]が〜]",
-      "kana": "ふります",
+      "word": "降[ふ]る[雨[あめ]が〜]",
+      "kana": "ふる",
       "meaning": {
         "en": "to rain",
         "vi": "rơi [mưa, tuyết]"
@@ -340,12 +587,25 @@
         "translation": {
           "vi": "Trời đang mưa."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "降[ふ]る[雨[あめ]が〜]",
+        "dictionaryKana": "ふる",
+        "masu": "降[ふ]ります[雨[あめ]が〜]",
+        "masuKana": "ふります",
+        "te": "降[ふ]って[雨[あめ]が〜]",
+        "teKana": "ふって",
+        "nai": "降[ふ]らない[雨[あめ]が〜]",
+        "naiKana": "ふらない",
+        "ta": "降[ふ]った[雨[あめ]が〜]",
+        "taKana": "ふった"
       }
     },
     {
       "id": "kopii-shimasu",
-      "word": "コピーします",
-      "kana": "コピーします",
+      "word": "コピーする",
+      "kana": "コピーする",
       "meaning": {
         "en": "to make photocopies",
         "vi": "sao chép, photocopy"
@@ -357,6 +617,19 @@
         "translation": {
           "vi": "Xin hãy photocopy cái này."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "コピーする",
+        "dictionaryKana": "コピーする",
+        "masu": "コピーします",
+        "masuKana": "コピーします",
+        "te": "コピーして",
+        "teKana": "コピーして",
+        "nai": "コピーしない",
+        "naiKana": "コピーしない",
+        "ta": "コピーした",
+        "taKana": "コピーした"
       }
     },
     {

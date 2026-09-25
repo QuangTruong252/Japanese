@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "kuremasu",
-      "word": "くれます",
-      "kana": "くれます",
+      "word": "くれる",
+      "kana": "くれる",
       "meaning": {
         "en": "to give (to me)",
         "vi": "cho, tặng [tôi / người thân tôi]"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Bạn tôi đã tặng cho tôi một chiếc đồng hồ."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "くれる",
+        "dictionaryKana": "くれる",
+        "masu": "くれます",
+        "masuKana": "くれます",
+        "te": "くれて",
+        "teKana": "くれて",
+        "nai": "くれない",
+        "naiKana": "くれない",
+        "ta": "くれた",
+        "taKana": "くれた"
       }
     },
     {
       "id": "naoshimasu",
-      "word": "直[なお]します",
-      "kana": "なおします",
+      "word": "直[なお]す",
+      "kana": "なおす",
       "meaning": {
         "en": "to repair, to correct",
         "vi": "sửa chữa"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Bố đã sửa xe đạp giúp tôi."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "直[なお]す",
+        "dictionaryKana": "なおす",
+        "masu": "直[なお]します",
+        "masuKana": "なおします",
+        "te": "直[なお]して",
+        "teKana": "なおして",
+        "nai": "直[なお]さない",
+        "naiKana": "なおさない",
+        "ta": "直[なお]した",
+        "taKana": "なおした"
       }
     },
     {
       "id": "tsurete-ikimasu",
-      "word": "連[つ]れて 行[い]きます",
-      "kana": "つれていきます",
+      "word": "連[つ]れて 行[い]く",
+      "kana": "つれていく",
       "meaning": {
         "en": "to take (someone)",
         "vi": "dẫn [ai đó] đi"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Ngày mai tôi sẽ dẫn em gái đi vườn thú."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "連[つ]れて 行[い]く",
+        "dictionaryKana": "つれていく",
+        "masu": "連[つ]れて 行[い]きます",
+        "masuKana": "つれていきます",
+        "te": "連[つ]れて 行[い]って",
+        "teKana": "つれていって",
+        "nai": "連[つ]れて 行[い]かない",
+        "naiKana": "つれていかない",
+        "ta": "連[つ]れて 行[い]った",
+        "taKana": "つれていった"
       }
     },
     {
       "id": "tsurete-kimasu",
-      "word": "連[つ]れて 来[き]ます",
-      "kana": "つれてきます",
+      "word": "連[つ]れて 来[く]る",
+      "kana": "つれてくる",
       "meaning": {
         "en": "to bring (someone)",
         "vi": "dẫn [ai đó] đến"
@@ -68,12 +107,25 @@
         "translation": {
           "vi": "Tôi dẫn bạn đến bữa tiệc có được không?"
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "連[つ]れて 来[く]る",
+        "dictionaryKana": "つれてくる",
+        "masu": "連[つ]れて 来[き]ます",
+        "masuKana": "つれてきます",
+        "te": "連[つ]れて 来[き]て",
+        "teKana": "つれてきて",
+        "nai": "連[つ]れて 来[こ]ない",
+        "naiKana": "つれてこない",
+        "ta": "連[つ]れて 来[き]た",
+        "taKana": "つれてきた"
       }
     },
     {
       "id": "okurimasu-persona",
-      "word": "送[おく]ります[人[ひと]を〜]",
-      "kana": "おくります",
+      "word": "送[おく]る[人[ひと]を〜]",
+      "kana": "おくる",
       "meaning": {
         "en": "to accompany [someone]",
         "vi": "tiễn, đưa [ai đó] về"
@@ -85,12 +137,25 @@
         "translation": {
           "vi": "Tôi sẽ đưa thầy giáo đến ga bằng xe ô tô."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "送[おく]る[人[ひと]を〜]",
+        "dictionaryKana": "おくる",
+        "masu": "送[おく]ります[人[ひと]を〜]",
+        "masuKana": "おくります",
+        "te": "送[おく]って[人[ひと]を〜]",
+        "teKana": "おくって",
+        "nai": "送[おく]らない[人[ひと]を〜]",
+        "naiKana": "おくらない",
+        "ta": "送[おく]った[人[ひと]を〜]",
+        "taKana": "おくった"
       }
     },
     {
       "id": "shoukai-shimasu",
-      "word": "紹介[しょうかい]します",
-      "kana": "しょうかいします",
+      "word": "紹介[しょうかい]する",
+      "kana": "しょうかいする",
       "meaning": {
         "en": "to introduce (someone)",
         "vi": "giới thiệu [ai đó]"
@@ -102,12 +167,25 @@
         "translation": {
           "vi": "Tôi sẽ giới thiệu một người bạn cho bạn."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "紹介[しょうかい]する",
+        "dictionaryKana": "しょうかいする",
+        "masu": "紹介[しょうかい]します",
+        "masuKana": "しょうかいします",
+        "te": "紹介[しょうかい]して",
+        "teKana": "しょうかいして",
+        "nai": "紹介[しょうかい]しない",
+        "naiKana": "しょうかいしない",
+        "ta": "紹介[しょうかい]した",
+        "taKana": "しょうかいした"
       }
     },
     {
       "id": "annai-shimasu",
-      "word": "案内[あんない]します",
-      "kana": "あんないします",
+      "word": "案内[あんない]する",
+      "kana": "あんないする",
       "meaning": {
         "en": "to guide, to give directions",
         "vi": "hướng dẫn, chỉ đường"
@@ -119,12 +197,25 @@
         "translation": {
           "vi": "Tôi sẽ hướng dẫn tham quan Kyoto cho bạn."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "案内[あんない]する",
+        "dictionaryKana": "あんないする",
+        "masu": "案内[あんない]します",
+        "masuKana": "あんないします",
+        "te": "案内[あんない]して",
+        "teKana": "あんないして",
+        "nai": "案内[あんない]しない",
+        "naiKana": "あんないしない",
+        "ta": "案内[あんない]した",
+        "taKana": "あんないした"
       }
     },
     {
       "id": "setsumei-shimasu",
-      "word": "説明[せつめい]します",
-      "kana": "せつめいします",
+      "word": "説明[せつめい]する",
+      "kana": "せつめいする",
       "meaning": {
         "en": "to explain",
         "vi": "giải thích, thuyết minh"
@@ -136,6 +227,19 @@
         "translation": {
           "vi": "Tôi đã được giải thích cách sử dụng của cái máy này."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "説明[せつめい]する",
+        "dictionaryKana": "せつめいする",
+        "masu": "説明[せつめい]します",
+        "masuKana": "せつめいします",
+        "te": "説明[せつめい]して",
+        "teKana": "せつめいして",
+        "nai": "説明[せつめい]しない",
+        "naiKana": "せつめいしない",
+        "ta": "説明[せつめい]した",
+        "taKana": "せつめいした"
       }
     },
     {

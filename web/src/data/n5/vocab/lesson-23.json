@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "kikimasu-preguntar",
-      "word": "聞[き]きます[先生[せんせい]に〜]",
-      "kana": "ききます",
+      "word": "聞[き]く[先生[せんせい]に〜]",
+      "kana": "きく",
       "meaning": {
         "en": "to ask [the teacher]",
         "vi": "hỏi [thầy cô giáo]"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Khi không hiểu, tôi hỏi thầy giáo."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "聞[き]く[先生[せんせい]に〜]",
+        "dictionaryKana": "きく",
+        "masu": "聞[き]きます[先生[せんせい]に〜]",
+        "masuKana": "ききます",
+        "te": "聞[き]いて[先生[せんせい]に〜]",
+        "teKana": "きいて",
+        "nai": "聞[き]かない[先生[せんせい]に〜]",
+        "naiKana": "きかない",
+        "ta": "聞[き]いた[先生[せんせい]に〜]",
+        "taKana": "きいた"
       }
     },
     {
       "id": "mawashimasu",
-      "word": "回[まわ]します",
-      "kana": "まわします",
+      "word": "回[まわ]す",
+      "kana": "まわす",
       "meaning": {
         "en": "to turn",
         "vi": "xoay, vặn [núm điều khiển]"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Hễ vặn núm này thì âm thanh sẽ lớn lên."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "回[まわ]す",
+        "dictionaryKana": "まわす",
+        "masu": "回[まわ]します",
+        "masuKana": "まわします",
+        "te": "回[まわ]して",
+        "teKana": "まわして",
+        "nai": "回[まわ]さない",
+        "naiKana": "まわさない",
+        "ta": "回[まわ]した",
+        "taKana": "まわした"
       }
     },
     {
       "id": "hikimasu-tirar",
-      "word": "引[ひ]きます",
-      "kana": "ひきます",
+      "word": "引[ひ]く",
+      "kana": "ひく",
       "meaning": {
         "en": "to pull",
         "vi": "kéo [cửa, dây]"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Hễ kéo cái này thì nước sẽ chảy ra."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "引[ひ]く",
+        "dictionaryKana": "ひく",
+        "masu": "引[ひ]きます",
+        "masuKana": "ひきます",
+        "te": "引[ひ]いて",
+        "teKana": "ひいて",
+        "nai": "引[ひ]かない",
+        "naiKana": "ひかない",
+        "ta": "引[ひ]いた",
+        "taKana": "ひいた"
       }
     },
     {
       "id": "kaemasu-cambiar",
-      "word": "変[か]えます",
-      "kana": "かえます",
+      "word": "変[か]える",
+      "kana": "かえる",
       "meaning": {
         "en": "to change",
         "vi": "đổi, thay đổi"
@@ -68,12 +107,25 @@
         "translation": {
           "vi": "Tôi muốn thay đổi thời gian cuộc hẹn."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "変[か]える",
+        "dictionaryKana": "かえる",
+        "masu": "変[か]えます",
+        "masuKana": "かえます",
+        "te": "変[か]えて",
+        "teKana": "かえて",
+        "nai": "変[か]えない",
+        "naiKana": "かえない",
+        "ta": "変[か]えた",
+        "taKana": "かえた"
       }
     },
     {
       "id": "sawarimasu",
-      "word": "触[さわ]ります[ドアに〜]",
-      "kana": "さわります",
+      "word": "触[さわ]る[ドアに〜]",
+      "kana": "さわる",
       "meaning": {
         "en": "to knock [on a door]",
         "vi": "chạm vào, sờ vào [nút bấm]"
@@ -85,12 +137,25 @@
         "translation": {
           "vi": "Hễ chạm vào cửa này thì nó sẽ mở."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "触[さわ]る[ドアに〜]",
+        "dictionaryKana": "さわる",
+        "masu": "触[さわ]ります[ドアに〜]",
+        "masuKana": "さわります",
+        "te": "触[さわ]って[ドアに〜]",
+        "teKana": "さわって",
+        "nai": "触[さわ]らない[ドアに〜]",
+        "naiKana": "さわらない",
+        "ta": "触[さわ]った[ドアに〜]",
+        "taKana": "さわった"
       }
     },
     {
       "id": "demasu-cambio",
-      "word": "出[で]ます[お 釣[つ]りが〜]",
-      "kana": "でます",
+      "word": "出[で]る[お 釣[つ]りが〜]",
+      "kana": "でる",
       "meaning": {
         "en": "for change to come out",
         "vi": "chảy ra, chạy ra [tiền thừa]"
@@ -102,12 +167,25 @@
         "translation": {
           "vi": "Hễ bấm nút thì tiền thừa sẽ chạy ra."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "出[で]る[お 釣[つ]りが〜]",
+        "dictionaryKana": "でる",
+        "masu": "出[で]ます[お 釣[つ]りが〜]",
+        "masuKana": "でます",
+        "te": "出[で]て[お 釣[つ]りが〜]",
+        "teKana": "でて",
+        "nai": "出[で]ない[お 釣[つ]りが〜]",
+        "naiKana": "でない",
+        "ta": "出[で]た[お 釣[つ]りが〜]",
+        "taKana": "でた"
       }
     },
     {
       "id": "arukimasu",
-      "word": "歩[ある]きます",
-      "kana": "あるきます",
+      "word": "歩[ある]く",
+      "kana": "あるく",
       "meaning": {
         "en": "to walk",
         "vi": "đi bộ"
@@ -119,12 +197,25 @@
         "translation": {
           "vi": "Khi không có thời gian, tôi đi bộ nhanh."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "歩[ある]く",
+        "dictionaryKana": "あるく",
+        "masu": "歩[ある]きます",
+        "masuKana": "あるきます",
+        "te": "歩[ある]いて",
+        "teKana": "あるいて",
+        "nai": "歩[ある]かない",
+        "naiKana": "あるかない",
+        "ta": "歩[ある]いた",
+        "taKana": "あるいた"
       }
     },
     {
       "id": "watarimasu",
-      "word": "渡[わた]ります[橋[はし]を〜]",
-      "kana": "わたります",
+      "word": "渡[わた]る[橋[はし]を〜]",
+      "kana": "わたる",
       "meaning": {
         "en": "to cross [a bridge]",
         "vi": "băng qua, qua [cầu, đường]"
@@ -136,12 +227,25 @@
         "translation": {
           "vi": "Hễ qua cây cầu kia thì sẽ có nhà ga ở bên trái."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "渡[わた]る[橋[はし]を〜]",
+        "dictionaryKana": "わたる",
+        "masu": "渡[わた]ります[橋[はし]を〜]",
+        "masuKana": "わたります",
+        "te": "渡[わた]って[橋[はし]を〜]",
+        "teKana": "わたって",
+        "nai": "渡[わた]らない[橋[はし]を〜]",
+        "naiKana": "わたらない",
+        "ta": "渡[わた]った[橋[はし]を〜]",
+        "taKana": "わたった"
       }
     },
     {
       "id": "magarimasu",
-      "word": "曲[ま]がります[右[みぎ]へ〜]",
-      "kana": "まがります",
+      "word": "曲[ま]がる[右[みぎ]へ〜]",
+      "kana": "まがる",
       "meaning": {
         "en": "to turn [right]",
         "vi": "rẽ, quẹo [phải]"
@@ -153,6 +257,19 @@
         "translation": {
           "vi": "Xin hãy rẽ phải ở ngã tư."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "曲[ま]がる[右[みぎ]へ〜]",
+        "dictionaryKana": "まがる",
+        "masu": "曲[ま]がります[右[みぎ]へ〜]",
+        "masuKana": "まがります",
+        "te": "曲[ま]がって[右[みぎ]へ〜]",
+        "teKana": "まがって",
+        "nai": "曲[ま]がらない[右[みぎ]へ〜]",
+        "naiKana": "まがらない",
+        "ta": "曲[ま]がった[右[みぎ]へ〜]",
+        "taKana": "まがった"
       }
     },
     {

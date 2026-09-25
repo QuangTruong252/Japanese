@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "okimasu",
-      "word": "起[お]きます",
-      "kana": "おきます",
+      "word": "起[お]きる",
+      "kana": "おきる",
       "meaning": {
         "en": "to get up",
         "vi": "thức dậy, dậy"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Mỗi sáng tôi thức dậy lúc 6 giờ."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "起[お]きる",
+        "dictionaryKana": "おきる",
+        "masu": "起[お]きます",
+        "masuKana": "おきます",
+        "te": "起[お]きて",
+        "teKana": "おきて",
+        "nai": "起[お]きない",
+        "naiKana": "おきない",
+        "ta": "起[お]きた",
+        "taKana": "おきた"
       }
     },
     {
       "id": "nemasu",
-      "word": "寝[ね]ます",
-      "kana": "ねます",
+      "word": "寝[ね]る",
+      "kana": "ねる",
       "meaning": {
         "en": "to go to bed, to sleep",
         "vi": "đi ngủ, ngủ"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Tôi ngủ lúc 10 rưỡi."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "寝[ね]る",
+        "dictionaryKana": "ねる",
+        "masu": "寝[ね]ます",
+        "masuKana": "ねます",
+        "te": "寝[ね]て",
+        "teKana": "ねて",
+        "nai": "寝[ね]ない",
+        "naiKana": "ねない",
+        "ta": "寝[ね]た",
+        "taKana": "ねた"
       }
     },
     {
       "id": "hatarakimasu",
-      "word": "働[はたら]きます",
-      "kana": "はたらきます",
+      "word": "働[はたら]く",
+      "kana": "はたらく",
       "meaning": {
         "en": "to work",
         "vi": "làm việc"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Mỗi ngày tôi đều làm việc."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "働[はたら]く",
+        "dictionaryKana": "はたらく",
+        "masu": "働[はたら]きます",
+        "masuKana": "はたらきます",
+        "te": "働[はたら]いて",
+        "teKana": "はたらいて",
+        "nai": "働[はたら]かない",
+        "naiKana": "はたらかない",
+        "ta": "働[はたら]いた",
+        "taKana": "はたらいた"
       }
     },
     {
       "id": "yasumimasu",
-      "word": "休[やす]みます",
-      "kana": "やすみます",
+      "word": "休[やす]む",
+      "kana": "やすむ",
       "meaning": {
         "en": "to rest, to be on holiday",
         "vi": "nghỉ ngơi, nghỉ phép"
@@ -68,12 +107,25 @@
         "translation": {
           "vi": "Hôm qua tôi đã nghỉ."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "休[やす]む",
+        "dictionaryKana": "やすむ",
+        "masu": "休[やす]みます",
+        "masuKana": "やすみます",
+        "te": "休[やす]んで",
+        "teKana": "やすんで",
+        "nai": "休[やす]まない",
+        "naiKana": "やすまない",
+        "ta": "休[やす]んだ",
+        "taKana": "やすんだ"
       }
     },
     {
       "id": "benkyou-shimasu",
-      "word": "勉強[べんきょう]します",
-      "kana": "べんきょうします",
+      "word": "勉強[べんきょう]する",
+      "kana": "べんきょうする",
       "meaning": {
         "en": "to study",
         "vi": "học, học tập"
@@ -85,12 +137,25 @@
         "translation": {
           "vi": "Mỗi tối tôi đều học bài."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "勉強[べんきょう]する",
+        "dictionaryKana": "べんきょうする",
+        "masu": "勉強[べんきょう]します",
+        "masuKana": "べんきょうします",
+        "te": "勉強[べんきょう]して",
+        "teKana": "べんきょうして",
+        "nai": "勉強[べんきょう]しない",
+        "naiKana": "べんきょうしない",
+        "ta": "勉強[べんきょう]した",
+        "taKana": "べんきょうした"
       }
     },
     {
       "id": "owarimasu",
-      "word": "終[お]わります",
-      "kana": "おわります",
+      "word": "終[お]わる",
+      "kana": "おわる",
       "meaning": {
         "en": "to finish",
         "vi": "kết thúc, xong"
@@ -102,6 +167,19 @@
         "translation": {
           "vi": "Cuộc họp kết thúc lúc 3 giờ."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "終[お]わる",
+        "dictionaryKana": "おわる",
+        "masu": "終[お]わります",
+        "masuKana": "おわります",
+        "te": "終[お]わって",
+        "teKana": "おわって",
+        "nai": "終[お]わらない",
+        "naiKana": "おわらない",
+        "ta": "終[お]わった",
+        "taKana": "おわった"
       }
     },
     {

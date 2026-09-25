@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "kangaemasu",
-      "word": "考[かんが]えます",
-      "kana": "かんがえます",
+      "word": "考[かんが]える",
+      "kana": "かんがえる",
       "meaning": {
         "en": "to think, to consider",
         "vi": "suy nghĩ, nghĩ ngợi"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Tôi sẽ tự mình suy nghĩ kỹ."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "考[かんが]える",
+        "dictionaryKana": "かんがえる",
+        "masu": "考[かんが]えます",
+        "masuKana": "かんがえます",
+        "te": "考[かんが]えて",
+        "teKana": "かんがえて",
+        "nai": "考[かんが]えない",
+        "naiKana": "かんがえない",
+        "ta": "考[かんが]えた",
+        "taKana": "かんがえた"
       }
     },
     {
       "id": "tsukimasu",
-      "word": "着[つ]きます",
-      "kana": "つきます",
+      "word": "着[つ]く",
+      "kana": "つく",
       "meaning": {
         "en": "to arrive",
         "vi": "đến, tới [ga, nơi đến]"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Khi đến nhà ga thì hãy gọi điện cho tôi."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "着[つ]く",
+        "dictionaryKana": "つく",
+        "masu": "着[つ]きます",
+        "masuKana": "つきます",
+        "te": "着[つ]いて",
+        "teKana": "ついて",
+        "nai": "着[つ]かない",
+        "naiKana": "つかない",
+        "ta": "着[つ]いた",
+        "taKana": "ついた"
       }
     },
     {
       "id": "toshi-o-torimasu",
-      "word": "取[と]ります[年[とし]を〜]",
-      "kana": "としをとります",
+      "word": "取[と]る[年[とし]を〜]",
+      "kana": "としをとる",
       "meaning": {
         "en": "to grow old",
         "vi": "thêm tuổi, già đi"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Dù già đi, tôi vẫn muốn làm việc."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "取[と]る[年[とし]を〜]",
+        "dictionaryKana": "としをとる",
+        "masu": "取[と]ります[年[とし]を〜]",
+        "masuKana": "としをとります",
+        "te": "取[と]って[年[とし]を〜]",
+        "teKana": "としをとって",
+        "nai": "取[と]らない[年[とし]を〜]",
+        "naiKana": "としをとらない",
+        "ta": "取[と]った[年[とし]を〜]",
+        "taKana": "としをとった"
       }
     },
     {
       "id": "tarimasu",
-      "word": "足[た]ります",
-      "kana": "たります",
+      "word": "足[た]りる",
+      "kana": "たりる",
       "meaning": {
         "en": "to be enough",
         "vi": "đủ, đầy đủ"
@@ -68,6 +107,19 @@
         "translation": {
           "vi": "Nếu không đủ tiền thì tôi sẽ mượn ở ngân hàng."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "足[た]りる",
+        "dictionaryKana": "たりる",
+        "masu": "足[た]ります",
+        "masuKana": "たります",
+        "te": "足[た]りて",
+        "teKana": "たりて",
+        "nai": "足[た]りない",
+        "naiKana": "たりない",
+        "ta": "足[た]りた",
+        "taKana": "たりた"
       }
     },
     {
@@ -242,8 +294,8 @@
     },
     {
       "id": "ganbarimasu",
-      "word": "頑張[がんば]ります",
-      "kana": "がんばります",
+      "word": "頑張[がんば]る",
+      "kana": "がんばる",
       "meaning": {
         "en": "to do one's best",
         "vi": "tôi sẽ cố gắng hết sức!"
@@ -255,6 +307,19 @@
         "translation": {
           "vi": "Từ ngày mai tôi cũng sẽ cố gắng!"
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "頑張[がんば]る",
+        "dictionaryKana": "がんばる",
+        "masu": "頑張[がんば]ります",
+        "masuKana": "がんばります",
+        "te": "頑張[がんば]って",
+        "teKana": "がんばって",
+        "nai": "頑張[がんば]らない",
+        "naiKana": "がんばらない",
+        "ta": "頑張[がんば]った",
+        "taKana": "がんばった"
       }
     },
     {

@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "omoimasu",
-      "word": "思[おも]います",
-      "kana": "おもいます",
+      "word": "思[おも]う",
+      "kana": "おもう",
       "meaning": {
         "en": "to believe, to think",
         "vi": "nghĩ, cho rằng"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Tôi nghĩ ngày mai trời sẽ mưa."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "思[おも]う",
+        "dictionaryKana": "おもう",
+        "masu": "思[おも]います",
+        "masuKana": "おもいます",
+        "te": "思[おも]って",
+        "teKana": "おもって",
+        "nai": "思[おも]わない",
+        "naiKana": "おもわない",
+        "ta": "思[おも]った",
+        "taKana": "おもった"
       }
     },
     {
       "id": "iimasu",
-      "word": "言[い]います",
-      "kana": "いいます",
+      "word": "言[い]う",
+      "kana": "いう",
       "meaning": {
         "en": "to say",
         "vi": "nói"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Anh ấy đã nói là ngày mai sẽ nghỉ."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "言[い]う",
+        "dictionaryKana": "いう",
+        "masu": "言[い]います",
+        "masuKana": "いいます",
+        "te": "言[い]って",
+        "teKana": "いって",
+        "nai": "言[い]わない",
+        "naiKana": "いわない",
+        "ta": "言[い]った",
+        "taKana": "いった"
       }
     },
     {
       "id": "kachimasu",
-      "word": "勝[か]ちます",
-      "kana": "かちます",
+      "word": "勝[か]つ",
+      "kana": "かつ",
       "meaning": {
         "en": "to win",
         "vi": "thắng, chiến thắng"
@@ -51,12 +77,25 @@
         "translation": {
           "vi": "Đội tuyển Nhật Bản đã chiến thắng."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "勝[か]つ",
+        "dictionaryKana": "かつ",
+        "masu": "勝[か]ちます",
+        "masuKana": "かちます",
+        "te": "勝[か]って",
+        "teKana": "かって",
+        "nai": "勝[か]たない",
+        "naiKana": "かたない",
+        "ta": "勝[か]った",
+        "taKana": "かった"
       }
     },
     {
       "id": "makemasu",
-      "word": "負[ま]けます",
-      "kana": "まけます",
+      "word": "負[ま]ける",
+      "kana": "まける",
       "meaning": {
         "en": "to lose, to be beaten",
         "vi": "thua, thất bại"
@@ -68,12 +107,25 @@
         "translation": {
           "vi": "Tôi đã thua trong trận đấu."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "負[ま]ける",
+        "dictionaryKana": "まける",
+        "masu": "負[ま]けます",
+        "masuKana": "まけます",
+        "te": "負[ま]けて",
+        "teKana": "まけて",
+        "nai": "負[ま]けない",
+        "naiKana": "まけない",
+        "ta": "負[ま]けた",
+        "taKana": "まけた"
       }
     },
     {
       "id": "arimasu-evento",
-      "word": "あります[お 祭[まつ]りが〜]",
-      "kana": "あります",
+      "word": "ある[お 祭[まつ]りが〜]",
+      "kana": "ある",
       "meaning": {
         "en": "to be held [a festival]",
         "vi": "được tổ chức, diễn ra [lễ hội]"
@@ -85,12 +137,24 @@
         "translation": {
           "vi": "Ở Kyoto sẽ diễn ra lễ hội."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "ある[お 祭[まつ]りが〜]",
+        "dictionaryKana": "ある",
+        "masu": "あります[お 祭[まつ]りが〜]",
+        "masuKana": "あります",
+        "te": "あって[お 祭[まつ]りが〜]",
+        "teKana": "あって",
+        "naiKana": "",
+        "ta": "あった[お 祭[まつ]りが〜]",
+        "taKana": "あった"
       }
     },
     {
       "id": "yakuni-tachimasu",
-      "word": "役[やく]に 立[た]ちます",
-      "kana": "やくにたちます",
+      "word": "役[やく]に 立[た]つ",
+      "kana": "やくにたつ",
       "meaning": {
         "en": "to be useful",
         "vi": "có ích, hữu dụng"
@@ -102,12 +166,25 @@
         "translation": {
           "vi": "Cuốn từ điển này rất có ích."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "役[やく]に 立[た]つ",
+        "dictionaryKana": "やくにたつ",
+        "masu": "役[やく]に 立[た]ちます",
+        "masuKana": "やくにたちます",
+        "te": "役[やく]に 立[た]って",
+        "teKana": "やくにたって",
+        "nai": "役[やく]に 立[た]たない",
+        "naiKana": "やくにたたない",
+        "ta": "役[やく]に 立[た]った",
+        "taKana": "やくにたった"
       }
     },
     {
       "id": "ugokimasu",
-      "word": "動[うご]きます",
-      "kana": "うごきます",
+      "word": "動[うご]く",
+      "kana": "うごく",
       "meaning": {
         "en": "to work, to move",
         "vi": "hoạt động, chuyển động [máy móc]"
@@ -119,12 +196,25 @@
         "translation": {
           "vi": "Chiếc đồng hồ này không hoạt động."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "動[うご]く",
+        "dictionaryKana": "うごく",
+        "masu": "動[うご]きます",
+        "masuKana": "うごきます",
+        "te": "動[うご]いて",
+        "teKana": "うごいて",
+        "nai": "動[うご]かない",
+        "naiKana": "うごかない",
+        "ta": "動[うご]いた",
+        "taKana": "うごいた"
       }
     },
     {
       "id": "yamemasu",
-      "word": "やめます[会社[かいしゃ]を〜]",
-      "kana": "やめます",
+      "word": "やめる[会社[かいしゃ]を〜]",
+      "kana": "やめる",
       "meaning": {
         "en": "to quit, to leave [the company]",
         "vi": "bỏ việc, nghỉ việc ở [công ty]"
@@ -136,12 +226,25 @@
         "translation": {
           "vi": "Tôi nghĩ là mình muốn nghỉ việc ở công ty."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "やめる[会社[かいしゃ]を〜]",
+        "dictionaryKana": "やめる",
+        "masu": "やめます[会社[かいしゃ]を〜]",
+        "masuKana": "やめます",
+        "te": "やめて[会社[かいしゃ]を〜]",
+        "teKana": "やめて",
+        "nai": "やめない[会社[かいしゃ]を〜]",
+        "naiKana": "やめない",
+        "ta": "やめた[会社[かいしゃ]を〜]",
+        "taKana": "やめた"
       }
     },
     {
       "id": "kiotsukemasu",
-      "word": "気[き]をつけます",
-      "kana": "きをつけます",
+      "word": "気[き]をつける",
+      "kana": "きをつける",
       "meaning": {
         "en": "to pay attention, to be careful",
         "vi": "chú ý, cẩn thận"
@@ -153,12 +256,25 @@
         "translation": {
           "vi": "Xin hãy chú ý xe ô tô."
         }
+      },
+      "verbGroup": 2,
+      "verbForms": {
+        "dictionary": "気[き]をつける",
+        "dictionaryKana": "きをつける",
+        "masu": "気[き]をつけます",
+        "masuKana": "きをつけます",
+        "te": "気[き]をつけて",
+        "teKana": "きをつけて",
+        "nai": "気[き]をつけない",
+        "naiKana": "きをつけない",
+        "ta": "気[き]をつけた",
+        "taKana": "きをつけた"
       }
     },
     {
       "id": "ryuugaku-shimasu",
-      "word": "留学[りゅうがく]します",
-      "kana": "りゅうがくします",
+      "word": "留学[りゅうがく]する",
+      "kana": "りゅうがくする",
       "meaning": {
         "en": "to study abroad",
         "vi": "du học"
@@ -170,6 +286,19 @@
         "translation": {
           "vi": "Tôi muốn đi du học Anh."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "留学[りゅうがく]する",
+        "dictionaryKana": "りゅうがくする",
+        "masu": "留学[りゅうがく]します",
+        "masuKana": "りゅうがくします",
+        "te": "留学[りゅうがく]して",
+        "teKana": "りゅうがくして",
+        "nai": "留学[りゅうがく]しない",
+        "naiKana": "りゅうがくしない",
+        "ta": "留学[りゅうがく]した",
+        "taKana": "りゅうがくした"
       }
     },
     {

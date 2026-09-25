@@ -4,8 +4,8 @@
   "words": [
     {
       "id": "ikimasu",
-      "word": "行[い]きます",
-      "kana": "いきます",
+      "word": "行[い]く",
+      "kana": "いく",
       "meaning": {
         "en": "to go",
         "vi": "đi"
@@ -17,12 +17,25 @@
         "translation": {
           "vi": "Ngày mai tôi đi đến trường."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "行[い]く",
+        "dictionaryKana": "いく",
+        "masu": "行[い]きます",
+        "masuKana": "いきます",
+        "te": "行[い]って",
+        "teKana": "いって",
+        "nai": "行[い]かない",
+        "naiKana": "いかない",
+        "ta": "行[い]った",
+        "taKana": "いった"
       }
     },
     {
       "id": "kimasu",
-      "word": "来[き]ます",
-      "kana": "きます",
+      "word": "来[く]る",
+      "kana": "くる",
       "meaning": {
         "en": "to come",
         "vi": "đến"
@@ -34,12 +47,25 @@
         "translation": {
           "vi": "Tôi đã đến đây hôm qua."
         }
+      },
+      "verbGroup": 3,
+      "verbForms": {
+        "dictionary": "来[く]る",
+        "dictionaryKana": "くる",
+        "masu": "来[き]ます",
+        "masuKana": "きます",
+        "te": "来[き]て",
+        "teKana": "きて",
+        "nai": "来[こ]ない",
+        "naiKana": "こない",
+        "ta": "来[き]た",
+        "taKana": "きた"
       }
     },
     {
       "id": "kaerimasu",
-      "word": "帰[かえ]ります",
-      "kana": "かえります",
+      "word": "帰[かえ]る",
+      "kana": "かえる",
       "meaning": {
         "en": "to go home",
         "vi": "về, trở về"
@@ -51,6 +77,19 @@
         "translation": {
           "vi": "Hôm nay tôi về nhà."
         }
+      },
+      "verbGroup": 1,
+      "verbForms": {
+        "dictionary": "帰[かえ]る",
+        "dictionaryKana": "かえる",
+        "masu": "帰[かえ]ります",
+        "masuKana": "かえります",
+        "te": "帰[かえ]って",
+        "teKana": "かえって",
+        "nai": "帰[かえ]らない",
+        "naiKana": "かえらない",
+        "ta": "帰[かえ]った",
+        "taKana": "かえった"
       }
     },
     {
