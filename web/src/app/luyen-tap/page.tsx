@@ -31,6 +31,10 @@ const QUESTION_COUNTS = [10, 15, 20, 30];
 
 function PracticeConfigContent() {
   const router = useRouter();
+  // Prefetch sẵn để vào phiên được cả khi mất mạng sau khi trang đã tải.
+  useEffect(() => {
+    router.prefetch('/luyen-tap/phien');
+  }, [router]);
   const searchParams = useSearchParams();
 
   const {

@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Furigana } from '@/components/Furigana';
 import { Button } from '@/components/ui/button';
@@ -34,6 +35,10 @@ export function SessionResult({
   userAnswers?: Record<string, string>;
 }) {
   const router = useRouter();
+  useEffect(() => {
+    router.prefetch('/luyen-tap');
+    router.prefetch('/');
+  }, [router]);
   const percentage = Math.round(session.accuracyRate * 100);
   const isDue = mode === 'due';
 

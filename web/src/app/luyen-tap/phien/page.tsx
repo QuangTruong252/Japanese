@@ -129,7 +129,6 @@ function NewSession() {
 }
 
 function PracticeSessionContent() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const resumeToken = searchParams.get('resume');
 
@@ -144,27 +143,14 @@ function PracticeSessionContent() {
   // đè lên nháp. Chỉ dựng phiên mới khi vừa bấm "Bắt đầu" trong lần tải trang này.
   const startNew = !resumeToken && wasNewSessionRequested() && selectedLessons.length > 0;
 
-  useEffect(() => {
-    if (!mounted || resumeToken || startNew) return;
-    const existingDraft = loadPracticeDraft();
-    if (existingDraft && existingDraft.questions.length > 0) {
-      router.replace(`/luyen-tap/phien?resume=${Date.now()}`);
-    } else {
-      router.replace('/luyen-tap');
-    }
-  }, [mounted, resumeToken, startNew, router]);
-
   if (!mounted) {
     return <PracticeSessionLoading />;
   }
 
-  // 1. Quyết định khôi phục CHỈ bằng query resume
-  if (resumeToken) {
-    return <ResumedSession key={resumeToken} />;
-  }
-
+  // Không phải vừa bấm "Bắt đầu" => khôi phục nháp tại chỗ (ResumedSession tự về /luyen-tap
+  // nếu không có nháp). Token resume đổi => remount runner sạch (làm lại câu sai).
   if (!startNew) {
-    return <PracticeSessionLoading />;
+    return <ResumedSession key={resumeToken ?? 'draft'} />;
   }
 
   return <NewSession />;

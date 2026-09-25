@@ -81,6 +81,10 @@ export function PracticeRunner({
   const currentQuestion = questions[currentIndex];
   // Phiên ôn và phiên luyện dùng chung toàn bộ khung này; chỉ khác nhãn và đường thoát.
   const isDue = config.mode === 'due';
+  // Nút thoát điều hướng về trang trước: prefetch để thoát được cả khi đang mất mạng.
+  useEffect(() => {
+    router.prefetch(isDue ? '/on-tap' : '/luyen-tap');
+  }, [router, isDue]);
 
   const pauseQuestionTimer = useCallback(() => {
     if (lastResumeTimeRef.current !== null) {

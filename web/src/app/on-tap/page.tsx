@@ -70,6 +70,10 @@ function PreviewRow({
 
 export default function ReviewTodayPage() {
   const router = useRouter();
+  // Prefetch sẵn để vào phiên được cả khi mất mạng sau khi trang đã tải.
+  useEffect(() => {
+    router.prefetch('/on-tap/phien');
+  }, [router]);
   const queue = useDueQueue();
   const hasVoice = useJapaneseVoice();
 

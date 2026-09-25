@@ -15,6 +15,11 @@ export function markNewSessionRequested(): void {
   newSessionRequested = true;
 }
 
+/** "Học tiếp" phải khôi phục nháp dù trước đó đã bấm "Bắt đầu" trong cùng lần tải trang. */
+export function clearNewSessionRequest(): void {
+  newSessionRequested = false;
+}
+
 export function wasNewSessionRequested(): boolean {
   return newSessionRequested;
 }

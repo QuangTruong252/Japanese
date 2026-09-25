@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { BookOpen, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
+  clearNewSessionRequest,
   clearPracticeDraft,
   getPracticeDraftSnapshot,
   subscribePracticeDraft,
@@ -30,7 +31,8 @@ export default function PracticeDraftBanner() {
   }
 
   const handleResume = () => {
-    router.push(`/luyen-tap/phien?resume=${Date.now()}`);
+    clearNewSessionRequest();
+    router.push('/luyen-tap/phien');
   };
 
   const handleDiscard = () => {
