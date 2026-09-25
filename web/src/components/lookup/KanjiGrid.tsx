@@ -3,11 +3,12 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Check, FilterX } from 'lucide-react';
+import { Check, FilterX, Search, X } from 'lucide-react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db';
 import type { KanjiData } from '@/types/lookup';
-import { filterKanji, getKanjiLesson } from '@/lib/lookup';
+import { getKanjiLesson } from '@/lib/lookup';
+import { filterKanjiWithQuery } from '@/lib/kanji-filter';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -21,10 +22,12 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
   const searchParams = useSearchParams();
 
   // Đọc params từ URL
+  const paramQuery = searchParams.get('q') ?? '';
   const paramLesson = searchParams.get('bai');
   const paramStrokes = searchParams.get('net');
   const paramOnlyLearned = searchParams.get('da_hoc') === '1';
 
+  const [query, setQuery] = useState<string>(paramQuery);
   const [selectedLesson, setSelectedLesson] = useState<string>(paramLesson ?? 'all');
   const [selectedStrokes, setSelectedStrokes] = useState<string>(paramStrokes ?? 'all');
   const [onlyLearned, setOnlyLearned] = useState<boolean>(paramOnlyLearned);
@@ -48,8 +51,14 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
   }, [kanjiTargetIds, learnedTargetIdSet]);
 
   // Cập nhật URL khi đổi bộ lọc
-  const updateParams = (newLesson: string, newStrokes: string, newLearned: boolean) => {
+  const updateParams = (
+    newQuery: string,
+    newLesson: string,
+    newStrokes: string,
+    newLearned: boolean
+  ) => {
     const params = new URLSearchParams();
+    if (newQuery.trim()) params.set('q', newQuery.trim());
     if (newLesson !== 'all') params.set('bai', newLesson);
     if (newStrokes !== 'all') params.set('net', newStrokes);
     if (newLearned) params.set('da_hoc', '1');
@@ -58,41 +67,48 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
     router.replace(str ? `?${str}` : window.location.pathname, { scroll: false });
   };
 
+  const handleQueryChange = (val: string) => {
+    setQuery(val);
+    updateParams(val, selectedLesson, selectedStrokes, onlyLearned);
+  };
+
   const handleLessonChange = (val: string) => {
     setSelectedLesson(val);
-    updateParams(val, selectedStrokes, onlyLearned);
+    updateParams(query, val, selectedStrokes, onlyLearned);
   };
 
   const handleStrokesChange = (val: string) => {
     setSelectedStrokes(val);
-    updateParams(selectedLesson, val, onlyLearned);
+    updateParams(query, selectedLesson, val, onlyLearned);
   };
 
   const handleLearnedToggle = () => {
     const next = !onlyLearned;
     setOnlyLearned(next);
-    updateParams(selectedLesson, selectedStrokes, next);
+    updateParams(query, selectedLesson, selectedStrokes, next);
   };
 
   const resetFilters = () => {
+    setQuery('');
     setSelectedLesson('all');
     setSelectedStrokes('all');
     setOnlyLearned(false);
-    updateParams('all', 'all', false);
+    updateParams('', 'all', 'all', false);
   };
 
   // Lọc danh sách
   const filteredList = useMemo(() => {
-    return filterKanji(
+    return filterKanjiWithQuery(
       kanjiList,
       {
         lesson: selectedLesson === 'all' ? null : Number(selectedLesson),
         strokes: selectedStrokes === 'all' ? null : Number(selectedStrokes),
         onlyLearned,
+        query,
       },
       learnedKanjiSet
     );
-  }, [kanjiList, selectedLesson, selectedStrokes, onlyLearned, learnedKanjiSet]);
+  }, [kanjiList, selectedLesson, selectedStrokes, onlyLearned, query, learnedKanjiSet]);
 
   // Danh sách các số nét có thật trong 169 chữ
   const availableStrokes = useMemo(() => {
@@ -100,96 +116,123 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
     return Array.from(set).sort((a, b) => a - b);
   }, [kanjiList]);
 
-  const hasActiveFilter = selectedLesson !== 'all' || selectedStrokes !== 'all' || onlyLearned;
+  const hasActiveFilter =
+    query.trim() !== '' || selectedLesson !== 'all' || selectedStrokes !== 'all' || onlyLearned;
 
   return (
     <div className="space-y-6">
-      {/* 1. Thanh Bộ lọc */}
+      {/* 1. Thanh Tìm kiếm & Bộ lọc */}
       <section
-        aria-label="Bộ lọc Kanji"
-        className="flex flex-wrap items-center gap-3 sm:gap-4 p-4 rounded-2xl border border-border/80 bg-card shadow-xs"
+        aria-label="Tìm kiếm và bộ lọc Kanji"
+        className="space-y-4 p-4 rounded-2xl border border-border/80 bg-card shadow-xs"
       >
-        {/* Lọc theo bài */}
-        <div className="flex flex-col gap-1 min-w-[110px]">
-          <label htmlFor="filter-lesson" className="text-xs font-semibold text-muted-foreground">
-            Bài
-          </label>
-          <select
-            id="filter-lesson"
-            value={selectedLesson}
-            onChange={(e) => handleLessonChange(e.target.value)}
-            className="h-9 px-3 rounded-lg border border-border bg-background text-sm font-medium text-foreground focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring"
-          >
-            <option value="all">Tất cả</option>
-            {Array.from({ length: 25 }, (_, i) => i + 1).map((n) => (
-              <option key={n} value={String(n)}>
-                Bài {n}
-              </option>
-            ))}
-          </select>
+        {/* Input Tìm kiếm ≥44px */}
+        <div className="relative">
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground pointer-events-none" />
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => handleQueryChange(e.target.value)}
+            placeholder="Tìm kanji (人, ひと, hito, nhân, người...)"
+            className="w-full h-11 pl-10 pr-9 rounded-xl border border-border bg-background text-sm font-medium text-foreground placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring [&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none"
+          />
+          {query && (
+            <button
+              type="button"
+              onClick={() => handleQueryChange('')}
+              className="absolute right-3 top-1/2 -translate-y-1/2 size-7 flex items-center justify-center text-muted-foreground hover:text-foreground rounded-lg focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring"
+              aria-label="Xóa từ khóa tìm kiếm"
+            >
+              <X className="size-4" />
+            </button>
+          )}
         </div>
 
-        {/* Lọc theo số nét */}
-        <div className="flex flex-col gap-1 min-w-[110px]">
-          <label htmlFor="filter-strokes" className="text-xs font-semibold text-muted-foreground">
-            Số nét
-          </label>
-          <select
-            id="filter-strokes"
-            value={selectedStrokes}
-            onChange={(e) => handleStrokesChange(e.target.value)}
-            className="h-9 px-3 rounded-lg border border-border bg-background text-sm font-medium text-foreground focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring"
-          >
-            <option value="all">Tất cả</option>
-            {availableStrokes.map((s) => (
-              <option key={s} value={String(s)}>
-                {s} nét
-              </option>
-            ))}
-          </select>
-        </div>
+        {/* Các bộ lọc phụ: Bài, Số nét, Đã học, Nút xóa (wrap trong 390px, control ≥44px) */}
+        <div className="flex flex-wrap items-center gap-3 pt-0.5">
+          {/* Lọc theo bài */}
+          <div className="flex items-center gap-2">
+            <label htmlFor="filter-lesson" className="text-xs font-semibold text-muted-foreground shrink-0">
+              Bài:
+            </label>
+            <select
+              id="filter-lesson"
+              value={selectedLesson}
+              onChange={(e) => handleLessonChange(e.target.value)}
+              className="h-11 min-h-11 px-3 rounded-xl border border-border bg-background text-sm font-medium text-foreground focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring"
+            >
+              <option value="all">Tất cả bài</option>
+              {Array.from({ length: 25 }, (_, i) => i + 1).map((n) => (
+                <option key={n} value={String(n)}>
+                  Bài {n}
+                </option>
+              ))}
+            </select>
+          </div>
 
-        {/* Switch Chỉ chữ đã học */}
-        <div className="flex flex-col gap-1">
-          <span className="text-xs font-semibold text-muted-foreground">
-            Chỉ chữ đã học
-          </span>
-          <button
-            type="button"
-            role="switch"
-            aria-checked={onlyLearned}
-            disabled={learnedKanjiSet.size === 0}
-            onClick={handleLearnedToggle}
-            className={cn(
-              'relative inline-flex h-9 w-14 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out',
-              'focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50',
-              onlyLearned ? 'bg-primary' : 'bg-muted'
-            )}
-          >
-            <span
+          {/* Lọc theo số nét */}
+          <div className="flex items-center gap-2">
+            <label htmlFor="filter-strokes" className="text-xs font-semibold text-muted-foreground shrink-0">
+              Nét:
+            </label>
+            <select
+              id="filter-strokes"
+              value={selectedStrokes}
+              onChange={(e) => handleStrokesChange(e.target.value)}
+              className="h-11 min-h-11 px-3 rounded-xl border border-border bg-background text-sm font-medium text-foreground focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring"
+            >
+              <option value="all">Tất cả</option>
+              {availableStrokes.map((s) => (
+                <option key={s} value={String(s)}>
+                  {s} nét
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Switch Chỉ chữ đã học */}
+          <div className="flex items-center gap-2 min-h-11">
+            <button
+              type="button"
+              id="filter-learned-toggle"
+              role="switch"
+              aria-checked={onlyLearned}
+              disabled={learnedKanjiSet.size === 0}
+              onClick={handleLearnedToggle}
               className={cn(
-                'pointer-events-none inline-block size-7 transform rounded-full bg-background shadow-lg ring-0 transition duration-200 ease-in-out mt-0.5',
-                onlyLearned ? 'translate-x-5' : 'translate-x-0.5'
+                'relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out',
+                'focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50',
+                onlyLearned ? 'bg-primary' : 'bg-muted'
               )}
-            />
-          </button>
-        </div>
+            >
+              <span
+                className={cn(
+                  'pointer-events-none inline-block size-6 transform rounded-full bg-background shadow-md ring-0 transition duration-200 ease-in-out',
+                  onlyLearned ? 'translate-x-5' : 'translate-x-0'
+                )}
+              />
+            </button>
+            <label
+              htmlFor="filter-learned-toggle"
+              className="text-xs font-semibold text-muted-foreground cursor-pointer select-none"
+            >
+              Chỉ chữ đã học
+            </label>
+          </div>
 
-        {/* Nút Xóa bộ lọc nếu đang áp dụng */}
-        {hasActiveFilter && (
-          <div className="flex flex-col justify-end self-end">
+          {/* Nút Xóa bộ lọc nếu đang áp dụng */}
+          {hasActiveFilter && (
             <Button
               type="button"
               variant="ghost"
-              size="sm"
               onClick={resetFilters}
-              className="h-9 text-xs text-muted-foreground hover:text-foreground"
+              className="h-11 min-h-11 px-3 text-xs sm:text-sm text-muted-foreground hover:text-foreground"
             >
-              <FilterX className="size-3.5 mr-1" />
+              <FilterX className="size-4 mr-1" />
               Xóa bộ lọc
             </Button>
-          </div>
-        )}
+          )}
+        </div>
       </section>
 
       {/* 2. Lưới ô vuông Kanji */}
@@ -198,7 +241,7 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
           <p className="text-sm font-medium text-muted-foreground">
             Không có chữ nào khớp bộ lọc.
           </p>
-          <Button type="button" variant="secondary" size="sm" onClick={resetFilters}>
+          <Button type="button" variant="secondary" onClick={resetFilters} className="min-h-11 px-4">
             Xóa bộ lọc
           </Button>
         </div>
@@ -214,9 +257,9 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
               <Link
                 key={k.character}
                 href={`/hoc/tra-cuu/kanji/${encodeURIComponent(k.character)}`}
-                aria-label={`${k.character} — ${meaning}, bài ${lesson ?? 'N5'}${isLearned ? ', đã học' : ''}`}
+                aria-label={`${k.character}${k.hanviet ? ` (${k.hanviet})` : ''} — ${meaning}, bài ${lesson ?? 'N5'}${isLearned ? ', đã học' : ''}`}
                 className={cn(
-                  'group relative flex flex-col items-center justify-between min-h-[92px] p-2.5 rounded-2xl',
+                  'group relative flex flex-col items-center justify-between min-h-[104px] sm:min-h-[110px] p-2 sm:p-2.5 rounded-2xl',
                   'border border-border/80 bg-card shadow-2xs transition duration-150',
                   'hover:border-primary/50 hover:shadow-xs hover:translate-y-[-1px]',
                   'active:translate-y-[1px]',
@@ -236,18 +279,28 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
                 {/* Chữ Hán lớn */}
                 <span
                   lang="ja"
-                  className="font-jp text-3xl sm:text-4xl font-medium text-foreground group-hover:text-primary transition-colors mt-1"
+                  className="font-jp text-2xl sm:text-3xl font-medium text-foreground group-hover:text-primary transition-colors mt-0.5"
                 >
                   {k.character}
                 </span>
 
-                {/* Cách đọc chính */}
-                <span className="font-jp text-[11px] text-muted-foreground line-clamp-1 text-center">
+                {/* Âm Hán Việt + nghĩa ngắn tiếng Việt */}
+                {k.hanviet && (
+                  <span className="text-[10px] font-semibold tracking-wide text-primary line-clamp-1 text-center px-0.5">
+                    {k.hanviet}
+                  </span>
+                )}
+                <span className="text-xs font-semibold text-foreground line-clamp-1 text-center capitalize px-0.5">
+                  {meaning}
+                </span>
+
+                {/* Cách đọc chính (âm On / Kun) */}
+                <span className="font-jp text-[11px] text-muted-foreground line-clamp-1 text-center px-0.5">
                   {reading}
                 </span>
 
                 {/* Số bài / Badge */}
-                <div className="mt-1 flex flex-col items-center">
+                <div className="mt-0.5 flex flex-col items-center">
                   {isLearned ? (
                     <span className="text-[10px] font-bold px-1.5 py-0.2 rounded-full bg-primary/10 text-primary">
                       Đã học

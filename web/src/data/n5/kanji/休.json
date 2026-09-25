@@ -23,7 +23,7 @@
       "word": "休[やす]みます",
       "meaning": {
         "en": "to rest",
-        "vi": "bắt đầu"
+        "vi": "nghỉ ngơi, nghỉ phép"
       }
     },
     {
@@ -79,5 +79,6 @@
   "similar": [
     "体",
     "木"
-  ]
+  ],
+  "hanviet": "HƯU"
 }

@@ -64,5 +64,10 @@ export function applyReview(
   };
 }
 
+/** Thẻ chưa từng ôn — dùng khi hoàn tác lượt chấm đầu tiên đã lỡ đồng bộ lên server. */
+export function newCard(now: Date = new Date()): Card {
+  return createEmptyCard(now);
+}
+
 export { Rating };
 export type { Card, Grade };

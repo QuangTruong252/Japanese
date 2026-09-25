@@ -29,12 +29,12 @@ export default async function HocPage() {
 
         <div className="flex items-center gap-2">
           <SearchTrigger className="lg:hidden" />
-          <ThemeToggle className="size-10 rounded-xl" />
+          <ThemeToggle className="size-11 rounded-xl" />
           <Link
             href="/hoc/tra-cuu"
             className={cn(
-              buttonVariants({ variant: 'outline', size: 'default' }),
-              'shrink-0 rounded-xl font-semibold gap-2 border-border/80 hover:border-primary/40 hover:bg-primary/5 transition'
+              buttonVariants({ variant: 'outline' }),
+              'min-h-11 h-11 px-4 shrink-0 rounded-xl font-semibold gap-2 border-border/80 hover:border-primary/40 hover:bg-primary/5 transition'
             )}
           >
             <Search className="size-4 text-primary" />

@@ -35,7 +35,7 @@ export function SearchTrigger({ className, iconOnly = false }: SearchTriggerProp
       type="button"
       onClick={openSearch}
       className={cn(
-        'flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold border border-border/80 bg-card text-muted-foreground',
+        'flex min-h-11 items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold border border-border/80 bg-card text-muted-foreground',
         'hover:text-foreground hover:border-primary/40 hover:bg-primary/5 transition shadow-2xs cursor-pointer',
         'focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring',
         className

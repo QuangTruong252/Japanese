@@ -33,7 +33,7 @@
       "word": "出[だ]します",
       "meaning": {
         "en": "to take out, to send",
-        "vi": "dừng lại, đỗ xe"
+        "vi": "rút [tiền], lấy ra, nộp"
       }
     },
     {
@@ -74,5 +74,6 @@
   ],
   "similar": [
     "山"
-  ]
+  ],
+  "hanviet": "XUẤT"
 }

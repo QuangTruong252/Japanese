@@ -12,7 +12,7 @@ import {
 import { Furigana } from '@/components/Furigana';
 import { SpeakButton } from '@/components/SpeakButton';
 import { buttonVariants } from '@/components/ui/button';
-import { stripFurigana } from '@/lib/japanese';
+import { stripFurigana, toKanaSentence } from '@/lib/japanese';
 import { cn } from '@/lib/utils';
 
 export function generateStaticParams() {
@@ -61,8 +61,8 @@ export default async function KanjiDetailPage({
         <Link
           href="/hoc/tra-cuu/kanji"
           className={cn(
-            buttonVariants({ variant: 'ghost', size: 'sm' }),
-            '-ml-2.5 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors'
+            buttonVariants({ variant: 'ghost' }),
+            'min-h-11 px-3 -ml-3 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors'
           )}
         >
           <ChevronLeft className="size-4 mr-1" />
@@ -91,6 +91,11 @@ export default async function KanjiDetailPage({
             </span>
           </div>
 
+          {kanji.hanviet && (
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+              Hán Việt: {kanji.hanviet}
+            </p>
+          )}
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground capitalize">
             {kanji.meanings.vi[0] ?? ''}
           </h1>
@@ -157,6 +162,7 @@ export default async function KanjiDetailPage({
             {kanji.examples.map((ex, i) => {
               const verified = isExampleVerified(ex);
               const cleanWord = stripFurigana(ex.word);
+              const kana = toKanaSentence(ex.word);
 
               return (
                 <div
@@ -181,7 +187,7 @@ export default async function KanjiDetailPage({
                     </div>
                   </div>
 
-                  <SpeakButton text={cleanWord} label={cleanWord} />
+                  <SpeakButton text={kana} label={`${cleanWord} (${kana})`} />
                 </div>
               );
             })}
@@ -209,6 +215,7 @@ export default async function KanjiDetailPage({
           <div className="divide-y divide-border/60">
             {textbookWords.map((w) => {
               const cleanWord = stripFurigana(w.word);
+              const kana = w.kana || toKanaSentence(w.word);
 
               return (
                 <div
@@ -225,7 +232,7 @@ export default async function KanjiDetailPage({
                     <p className="text-sm text-muted-foreground">{w.meaning.vi}</p>
                   </div>
 
-                  <SpeakButton text={cleanWord} label={cleanWord} />
+                  <SpeakButton text={kana} label={`${cleanWord} (${kana})`} />
                 </div>
               );
             })}

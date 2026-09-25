@@ -14,7 +14,7 @@ export function ProgressBar({ learned, total }: { learned: number; total: number
       className="flex-col items-start gap-1.5"
     >
       <span className="text-xs text-muted-foreground tabular-nums">
-        {learned === 0 ? 'Chưa học' : `Đã học ${learned}/${total}`}
+        {learned === 0 ? 'Chưa bắt đầu' : `Đã vào lịch ôn ${learned}/${total}`}
       </span>
     </Progress>
   );

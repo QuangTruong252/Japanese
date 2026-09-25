@@ -19,6 +19,21 @@ export function QuestionCloze({ question, answered, onAnswer }: QuestionProps) {
         isCorrect,
         elapsedMs: 0,
         usedHint: false,
+        userAnswer: value.trim(),
+      },
+    ]);
+  };
+
+  const handleDontKnow = () => {
+    if (answered) return;
+    onAnswer([
+      {
+        targetId: question.targetId,
+        targetType: targetTypeFromId(question.targetId),
+        isCorrect: false,
+        elapsedMs: 0,
+        usedHint: false,
+        userAnswer: '',
       },
     ]);
   };
@@ -40,14 +55,31 @@ export function QuestionCloze({ question, answered, onAnswer }: QuestionProps) {
         state={state}
       />
       {!answered && (
-        <Button
-          size="quiz"
-          className="w-full"
-          disabled={value.trim().length === 0}
-          onClick={handleSubmit}
-        >
-          Kiểm tra
-        </Button>
+        <div className="flex flex-col gap-2">
+          <Button
+            type="button"
+            size="quiz"
+            className="w-full"
+            disabled={value.trim().length === 0}
+            onClick={handleSubmit}
+          >
+            Kiểm tra
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="quiz"
+            className="w-full text-muted-foreground hover:text-foreground"
+            onClick={handleDontKnow}
+            onKeyDown={(e) => {
+              if (e.key === ' ' || e.code === 'Space') {
+                e.preventDefault();
+              }
+            }}
+          >
+            Chưa biết
+          </Button>
+        </div>
       )}
     </div>
   );

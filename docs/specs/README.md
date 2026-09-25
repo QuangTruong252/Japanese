@@ -27,7 +27,12 @@ chỉ chứng minh phạm vi ở ngày ghi nhận. Khi tiếp tục, kiểm tra 
 | SPEC-15: học từ vựng chủ động theo bài | Có | [Luồng học và theo dõi](../../web/src/components/vocab/VocabLearningFlow.tsx), [route](../../web/src/app/hoc/[so]/tu-vung/page.tsx) | [Handoff 24/09](../handoff/SPEC-15.md), [Handoff 25/09](../handoff/SPEC-VOCAB-VERB-FORMS.md) — lật 3D; 157 động từ N5 đã chuẩn hóa sang thể từ điển làm từ vựng chính, bổ sung khối 4 thể chia (Masu, Te, Nai, Ta) + badge nhóm động từ, đối chiếu Minna qua dòng masu phụ; kiểm thử trình duyệt PASS 100% |
 | F11: N4 | Chưa có spec biên tập | Chưa có dữ liệu N4 | Cần nguồn và biên tập trước khi xây UI |
 
-Bước tiếp theo: kiểm tra sync với Supabase thật (SPEC-08), nghiệm thu SPEC-03 và phần còn lại của SPEC-15.
+**25/09 — user feedback v1 (38 điểm):** sửa dữ liệu nghĩa động từ/kanji, lưu và học tiếp phiên
+luyện tập/flashcard, hoàn tác chấm, UX mobile các màn Học, Luyện tập, Tra cứu, Thống kê, Cài đặt,
+bảng Kana. Chi tiết, kiểm chứng và giới hạn: [Handoff FEEDBACK-V1](../handoff/FEEDBACK-V1.md)
+(nhánh `feedback-v1`, chưa merge).
+
+Bước tiếp theo: duyệt và merge `feedback-v1`, kiểm tra sync với Supabase thật (SPEC-08), nghiệm thu SPEC-03 và phần còn lại của SPEC-15.
 Phạm vi brand/agent riêng theo [handoff MaiPace](../handoff/MAIPACE.md).
 Khi làm xong một phần, cập nhật hàng tương ứng và handoff với ngày, kiểm tra
 đã chạy, giới hạn và bước tiếp theo. Không đổi trạng thái phần chưa được kiểm tra.

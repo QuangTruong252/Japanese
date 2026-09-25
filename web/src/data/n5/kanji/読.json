@@ -22,7 +22,7 @@
       "word": "読[よ]みます",
       "meaning": {
         "en": "to read",
-        "vi": "chạy"
+        "vi": "đọc"
       }
     },
     {
@@ -71,5 +71,6 @@
   "similar": [
     "売",
     "話"
-  ]
+  ],
+  "hanviet": "ĐỘC"
 }

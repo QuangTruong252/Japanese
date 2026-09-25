@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
+  formatOptionalBrackets,
   containsKanji,
   normalizeJapaneseInput,
   parseFurigana,
@@ -77,4 +78,10 @@ test('toTypedKana chuyển romaji khi gõ, giữ phụ âm chưa đủ cặp', (
 test('gõ romaji rồi chấm: chuỗi qua toTypedKana khớp đáp án kana', () => {
   assert.equal(normalizeJapaneseInput(toTypedKana('ha')), normalizeJapaneseInput('は'));
   assert.equal(normalizeJapaneseInput(toTypedKana('ｈａ')), normalizeJapaneseInput('は'));
+});
+
+test('formatOptionalBrackets: chỉ đổi ngoặc tùy chọn, giữ furigana', () => {
+  assert.equal(formatOptionalBrackets('どこ[へ]も 行[い]きません'), 'どこ(へ)も 行[い]きません');
+  assert.equal(formatOptionalBrackets('これから お 世話[せわ]に なります'), 'これから お 世話[せわ]に なります');
+  assert.equal(formatOptionalBrackets('今[いま] −時[じ]−分[ふん]です'), '今[いま] −時[じ]−分[ふん]です');
 });

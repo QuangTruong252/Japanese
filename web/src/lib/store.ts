@@ -45,9 +45,9 @@ export interface UIState {
 
 export const useUIStore = create<UIState>((set) => ({
   // Practice defaults
-  selectedLessons: [1],
-  selectedTypes: ['mc', 'matching', 'cloze', 'reorder', 'listening'],
-  questionCount: 15,
+  selectedLessons: [...DEFAULT_SETTINGS.practicePreset.lessons],
+  selectedTypes: [...DEFAULT_SETTINGS.practicePreset.types],
+  questionCount: DEFAULT_SETTINGS.practicePreset.questionCount,
   currentQuestionIndex: 0,
   setSelectedLessons: (selectedLessons) => set({ selectedLessons }),
   setSelectedTypes: (selectedTypes) => set({ selectedTypes }),

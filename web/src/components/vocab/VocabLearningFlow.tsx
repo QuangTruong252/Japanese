@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import {
   ArrowLeft,
@@ -10,6 +10,7 @@ import {
   CircleHelp,
   RotateCcw,
   Sparkles,
+  Undo2,
   Turtle,
 } from 'lucide-react';
 import { useLiveQuery } from 'dexie-react-hooks';
@@ -21,7 +22,8 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { db } from '@/lib/db';
 import { applyReview, Rating, type Grade } from '@/lib/fsrs';
 import { stripFurigana, toKanaSentence } from '@/lib/japanese';
-import { getVocabLearningTime, getVocabTargetId, saveVocabRecall } from '@/lib/vocab-learning';
+import { getVocabLearningTime, getVocabTargetId, saveVocabRecall, undoVocabRecall, type VocabRecallRecord } from '@/lib/vocab-learning';
+import { parseVocabDraft, readVocabDraftRaw, subscribeVocabDraft, writeVocabDraft } from '@/lib/vocab-draft';
 import { cn } from '@/lib/utils';
 import type { ExampleSentence, ReviewItem, VocabWord } from '@/types';
 
@@ -42,6 +44,7 @@ interface VocabEntry {
 interface RatingOption {
   grade: Grade;
   label: string;
+  hint: string;
   icon: typeof RotateCcw;
   statusClassName: string;
   className: string;
@@ -51,6 +54,7 @@ const RATING_OPTIONS: RatingOption[] = [
   {
     grade: Rating.Again,
     label: 'Quên mất',
+    hint: 'Không nhớ ra nghĩa, hoặc nhớ sai.',
     icon: RotateCcw,
     statusClassName: 'text-destructive',
     className: 'border-destructive/30 bg-destructive/5 hover:bg-destructive/10',
@@ -58,6 +62,7 @@ const RATING_OPTIONS: RatingOption[] = [
   {
     grade: Rating.Hard,
     label: 'Khó nhớ',
+    hint: 'Chỉ nhớ một nửa, hoặc phải nghĩ rất lâu.',
     icon: Turtle,
     statusClassName: 'text-warning',
     className: 'border-warning/30 bg-warning/5 hover:bg-warning/10',
@@ -65,6 +70,7 @@ const RATING_OPTIONS: RatingOption[] = [
   {
     grade: Rating.Good,
     label: 'Nhớ được',
+    hint: 'Nhớ đúng sau một chút suy nghĩ.',
     icon: Check,
     statusClassName: 'text-success',
     className: 'border-success/30 bg-success/5 hover:bg-success/10',
@@ -72,6 +78,7 @@ const RATING_OPTIONS: RatingOption[] = [
   {
     grade: Rating.Easy,
     label: 'Dễ nhớ',
+    hint: 'Nhớ ngay, không phải nghĩ.',
     icon: Sparkles,
     statusClassName: 'text-primary',
     className: 'border-primary/30 bg-accent/40 hover:bg-accent',
@@ -85,6 +92,14 @@ const SWIPE_DISTANCE = 100;
 const SWIPE_VELOCITY = 500;
 
 const EMPTY_RATING_COUNTS: RatingCounts = { again: 0, hard: 0, good: 0, easy: 0 };
+const QUICK_PICK_SIZES = [5, 10] as const;
+const DEFAULT_PICK_SIZE = 10;
+
+interface LastRecall {
+  record: VocabRecallRecord;
+  index: number;
+  grade: Grade;
+}
 
 function ratingKey(grade: Grade): keyof RatingCounts {
   if (grade === Rating.Again) return 'again';
@@ -200,7 +215,7 @@ function MemoryRankings({ entries }: { entries: VocabEntry[] }) {
     <div className="grid gap-8 md:grid-cols-2">
       <MemoryList
         title="Nhớ ổn định"
-        description="Ưu tiên tỷ lệ nhớ đúng, sau đó là độ ổn định FSRS."
+        description="Ưu tiên tỷ lệ nhớ đúng, sau đó là mức độ nhớ lâu."
         icon={CheckCheck}
         entries={mostStable}
         emptyText="Chưa có từ nào được nhớ đúng."
@@ -295,9 +310,14 @@ export function VocabLearningFlow({
     () => entriesWithProgress.filter(({ word }) => Boolean(word.meaning.vi.trim())),
     [entriesWithProgress],
   );
-  const [selectedIds, setSelectedIds] = useState<Set<string>>(
-    () => new Set(entries.filter(({ word }) => Boolean(word.meaning.vi.trim())).map(({ targetId }) => targetId)),
-  );
+  // null = chưa tự chọn: mặc định một lượt ngắn, ưu tiên từ chưa vào lịch ôn.
+  const [pickedIds, setPickedIds] = useState<Set<string> | null>(null);
+  const pickFirst = (size: number) => {
+    const fresh = availableEntries.filter(({ reviewItem }) => !reviewItem);
+    const pool = fresh.length >= Math.min(size, availableEntries.length) ? fresh : availableEntries;
+    return new Set(pool.slice(0, size).map(({ targetId }) => targetId));
+  };
+  const selectedIds = pickedIds ?? pickFirst(DEFAULT_PICK_SIZE);
   const [stage, setStage] = useState<'select' | 'study' | 'complete'>('select');
   const [sessionWords, setSessionWords] = useState<VocabEntry[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -305,6 +325,17 @@ export function VocabLearningFlow({
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [ratingCounts, setRatingCounts] = useState<RatingCounts>(EMPTY_RATING_COUNTS);
+  const [lastRecall, setLastRecall] = useState<LastRecall | null>(null);
+  const [undoError, setUndoError] = useState<string | null>(null);
+  const draftRaw = useSyncExternalStore(
+    subscribeVocabDraft,
+    () => readVocabDraftRaw(lessonNumber),
+    () => null,
+  );
+  const draft = useMemo(
+    () => parseVocabDraft(draftRaw, new Set(availableEntries.map(({ targetId }) => targetId))),
+    [availableEntries, draftRaw],
+  );
   const cardStartedAt = useRef(0);
   const dragX = useMotionValue(0);
   const dragRotate = useTransform(dragX, [-240, 240], [-6, 6]);
@@ -327,24 +358,63 @@ export function VocabLearningFlow({
   }, [activeReviewItem?.fsrsCard, activeWord, revealed]);
 
   const toggleWord = (targetId: string) => {
-    setSelectedIds((current) => {
-      const next = new Set(current);
-      if (next.has(targetId)) next.delete(targetId);
-      else next.add(targetId);
-      return next;
-    });
+    const next = new Set(selectedIds);
+    if (next.has(targetId)) next.delete(targetId);
+    else next.add(targetId);
+    setPickedIds(next);
+  };
+
+  const beginStudy = (chosen: VocabEntry[], startIndex: number) => {
+    setSessionWords(chosen.map(({ targetId, word, example }) => ({ targetId, word, example })));
+    setCurrentIndex(startIndex);
+    setRevealed(false);
+    setRatingCounts({ ...EMPTY_RATING_COUNTS });
+    setSaveError(null);
+    setLastRecall(null);
+    setUndoError(null);
+    cardStartedAt.current = getVocabLearningTime();
+    writeVocabDraft(lessonNumber, { targetIds: chosen.map(({ targetId }) => targetId), currentIndex: startIndex });
+    setStage('study');
   };
 
   const startSession = () => {
     const chosen = availableEntries.filter(({ targetId }) => selectedIds.has(targetId));
     if (chosen.length === 0 || storedReviewItems === undefined) return;
-    setSessionWords(chosen.map(({ targetId, word, example }) => ({ targetId, word, example })));
-    setCurrentIndex(0);
-    setRevealed(false);
-    setRatingCounts({ ...EMPTY_RATING_COUNTS });
-    setSaveError(null);
-    cardStartedAt.current = Date.now();
-    setStage('study');
+    beginStudy(chosen, 0);
+  };
+
+  const resumeDraft = () => {
+    if (!draft || storedReviewItems === undefined) return;
+    const byId = new Map(availableEntries.map((entry) => [entry.targetId, entry]));
+    beginStudy(draft.targetIds.map((id) => byId.get(id)!), draft.currentIndex);
+  };
+
+  const undoLastRecall = async () => {
+    if (!lastRecall || saving) return;
+    setSaving(true);
+    setUndoError(null);
+    try {
+      if (!(await undoVocabRecall(lastRecall.record))) {
+        setUndoError('Không hoàn tác được vì từ này vừa được cập nhật ở lượt khác.');
+        setLastRecall(null);
+        return;
+      }
+      const key = ratingKey(lastRecall.grade);
+      setRatingCounts((counts) => ({ ...counts, [key]: Math.max(0, counts[key] - 1) }));
+      setCurrentIndex(lastRecall.index);
+      setRevealed(true);
+      setStage('study');
+      writeVocabDraft(lessonNumber, {
+        targetIds: sessionWords.map(({ targetId }) => targetId),
+        currentIndex: lastRecall.index,
+      });
+      cardStartedAt.current = getVocabLearningTime();
+      setLastRecall(null);
+    } catch {
+      setUndoError('Chưa hoàn tác được. Hãy thử lại.');
+    } finally {
+      setSaving(false);
+    }
   };
 
   const rateCurrentWord = async (grade: Grade): Promise<boolean> => {
@@ -352,16 +422,23 @@ export function VocabLearningFlow({
     setSaving(true);
     setSaveError(null);
     try {
-      await saveVocabRecall({
+      const record = await saveVocabRecall({
         targetId: activeWord.targetId,
         lesson: lessonNumber,
         grade,
         elapsedMs: getVocabLearningTime() - cardStartedAt.current,
       });
+      setLastRecall({ record, index: currentIndex, grade });
+      setUndoError(null);
       setRatingCounts((counts) => ({ ...counts, [ratingKey(grade)]: counts[ratingKey(grade)] + 1 }));
       if (currentIndex + 1 >= sessionWords.length) {
+        writeVocabDraft(lessonNumber, null);
         setStage('complete');
       } else {
+        writeVocabDraft(lessonNumber, {
+          targetIds: sessionWords.map(({ targetId }) => targetId),
+          currentIndex: currentIndex + 1,
+        });
         setCurrentIndex((index) => index + 1);
         setRevealed(false);
         cardStartedAt.current = getVocabLearningTime();
@@ -432,9 +509,34 @@ export function VocabLearningFlow({
               <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">Học từ vựng bài {lessonNumber}</h1>
               <p className="text-sm text-muted-foreground">{lessonTitle}</p>
               <p className="max-w-prose text-sm leading-relaxed text-muted-foreground">
-                Nhìn từ tiếng Nhật, tự nhớ nghĩa rồi chọn mức độ nhớ. Mỗi lần đánh giá sẽ cập nhật lịch ôn FSRS.
+                Nhìn từ tiếng Nhật, tự nhớ nghĩa rồi chọn mức độ nhớ. Mức bạn chọn quyết định khi nào app nhắc ôn lại từ đó.
               </p>
             </section>
+
+            {draft && storedReviewItems !== undefined && (
+              <section
+                aria-label="Lượt học đang dở"
+                className="flex flex-col gap-3 rounded-xl border border-primary/30 bg-accent/40 p-4 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <p className="text-sm">
+                  Bạn đang học dở: thẻ {draft.currentIndex + 1} / {draft.targetIds.length}.
+                </p>
+                <div className="grid grid-cols-2 gap-2 sm:flex">
+                  <Button type="button" size="quiz" className="px-4 text-sm" onClick={resumeDraft}>
+                    Học tiếp
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="quiz"
+                    className="px-4 text-sm"
+                    onClick={() => writeVocabDraft(lessonNumber, null)}
+                  >
+                    Bỏ lượt dở
+                  </Button>
+                </div>
+              </section>
+            )}
 
             <section className="space-y-4" aria-labelledby="vocab-selection-title">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -444,22 +546,34 @@ export function VocabLearningFlow({
                     Đã chọn {selectedCount} / {availableEntries.length} từ
                   </p>
                 </div>
-                <div className="grid w-full min-w-0 grid-cols-2 gap-2 sm:w-auto">
+                <div className="flex w-full min-w-0 gap-2 sm:w-auto" role="group" aria-label="Chọn nhanh số từ">
+                  {QUICK_PICK_SIZES.filter((size) => size < availableEntries.length).map((size) => (
+                    <Button
+                      key={size}
+                      type="button"
+                      variant="outline"
+                      size="quiz"
+                      className="min-w-0 flex-1 px-2 text-sm"
+                      onClick={() => setPickedIds(pickFirst(size))}
+                    >
+                      {size} từ
+                    </Button>
+                  ))}
                   <Button
                     type="button"
                     variant="outline"
                     size="quiz"
-                    className="w-full min-w-0 px-2 text-sm"
-                    onClick={() => setSelectedIds(new Set(availableEntries.map(({ targetId }) => targetId)))}
+                    className="min-w-0 flex-1 px-2 text-sm"
+                    onClick={() => setPickedIds(new Set(availableEntries.map(({ targetId }) => targetId)))}
                   >
-                    Chọn tất cả
+                    Tất cả
                   </Button>
                   <Button
                     type="button"
                     variant="outline"
                     size="quiz"
-                    className="w-full min-w-0 px-2 text-sm"
-                    onClick={() => setSelectedIds(new Set())}
+                    className="min-w-0 flex-1 px-2 text-sm"
+                    onClick={() => setPickedIds(new Set())}
                   >
                     Bỏ chọn
                   </Button>
@@ -485,7 +599,8 @@ export function VocabLearningFlow({
                       <li key={targetId}>
                         <button
                           type="button"
-                          aria-pressed={selected}
+                          role="checkbox"
+                          aria-checked={selected}
                           disabled={!hasMeaning}
                           aria-label={`${selected ? 'Bỏ chọn' : 'Chọn'} ${stripFurigana(word.word)}`}
                           onClick={() => toggleWord(targetId)}
@@ -517,7 +632,6 @@ export function VocabLearningFlow({
                               {attempts > 0 ? `${progressText} · ôn ${formatDate(reviewItem!.dueAt)}` : progressText}
                             </span>
                           </span>
-                          <ChevronRight className="size-4 shrink-0 text-muted-foreground" aria-hidden="true" />
                         </button>
                       </li>
                     );
@@ -530,7 +644,7 @@ export function VocabLearningFlow({
               <div className="space-y-1">
                 <h2 id="memory-title" className="text-lg font-semibold">Theo dõi khả năng ghi nhớ</h2>
                 <p className="text-sm text-muted-foreground">
-                  Từ được xếp theo kết quả luyện, tự đánh giá và độ ổn định FSRS.
+                  Từ được xếp theo kết quả luyện và tự đánh giá của bạn.
                 </p>
               </div>
               <MemoryRankings entries={entriesWithProgress} />
@@ -543,7 +657,22 @@ export function VocabLearningFlow({
             <div className="space-y-2">
               <div className="flex items-center justify-between text-sm text-muted-foreground">
                 <span>Bài {lessonNumber} · Từ {currentIndex + 1} / {sessionWords.length}</span>
+                {lastRecall && (
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="quiz"
+                    className="-mr-2 px-3 text-sm text-muted-foreground"
+                    disabled={saving}
+                    onClick={undoLastRecall}
+                    aria-label={`Hoàn tác lần chấm ${RATING_OPTIONS.find((o) => o.grade === lastRecall.grade)?.label ?? ''} cho thẻ trước`}
+                  >
+                    <Undo2 aria-hidden="true" />
+                    Hoàn tác
+                  </Button>
+                )}
               </div>
+              {undoError && <p role="alert" className="text-sm text-destructive">{undoError}</p>}
               <div
                 role="progressbar"
                 aria-valuemin={0}
@@ -702,7 +831,7 @@ export function VocabLearningFlow({
                 <section className="w-full max-w-xl" aria-label="Mức độ ghi nhớ">
                   <div className="grid grid-cols-4 gap-2">
                     {ratingPreviews.map(({ grade, label, icon: Icon, statusClassName, className, interval }) => (
-                      <div key={grade} className="flex min-w-0 flex-col items-center gap-1.5">
+                      <div key={grade} className="flex min-w-0 flex-col items-center gap-1">
                         <Button
                           type="button"
                           variant="outline"
@@ -716,9 +845,25 @@ export function VocabLearningFlow({
                           <Icon aria-hidden="true" className="size-6" />
                         </Button>
                         <span className={cn('text-center text-xs leading-tight sm:text-sm', statusClassName)}>{label}</span>
+                        <span className="text-center text-[11px] leading-tight text-muted-foreground">
+                          Ôn lại {interval}
+                        </span>
                       </div>
                     ))}
                   </div>
+                  <details className="mt-3 rounded-xl border border-border px-3 text-left text-sm">
+                    <summary className="flex min-h-11 cursor-pointer items-center text-muted-foreground">
+                      Nên chọn mức nào?
+                    </summary>
+                    <dl className="space-y-1.5 pb-3">
+                      {RATING_OPTIONS.map(({ grade, label, hint, statusClassName }) => (
+                        <div key={grade} className="flex gap-2">
+                          <dt className={cn('w-20 shrink-0 font-medium', statusClassName)}>{label}</dt>
+                          <dd className="text-muted-foreground">{hint}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </details>
                   {saving ? (
                     <p role="status" className="mt-2 text-center text-sm text-muted-foreground">Đang lưu kết quả…</p>
                   ) : (
@@ -739,7 +884,7 @@ export function VocabLearningFlow({
             <div className="space-y-3 text-center">
               <CheckCheck className="mx-auto size-10 text-success" aria-hidden="true" />
               <h1 className="text-2xl font-semibold">Đã học xong {sessionWords.length} từ</h1>
-              <p className="text-sm text-muted-foreground">Kết quả từng từ đã lưu trên thiết bị và đưa vào lịch ôn FSRS.</p>
+              <p className="text-sm text-muted-foreground">Kết quả từng từ đã lưu trên thiết bị và đưa vào lịch ôn.</p>
             </div>
             <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
               {RATING_OPTIONS.map(({ grade, label, icon: Icon, statusClassName }) => (
@@ -752,6 +897,20 @@ export function VocabLearningFlow({
               ))}
             </dl>
             <div className="space-y-2">
+              {lastRecall && (
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="quiz"
+                  className="w-full text-muted-foreground"
+                  disabled={saving}
+                  onClick={undoLastRecall}
+                >
+                  <Undo2 aria-hidden="true" />
+                  Hoàn tác thẻ cuối
+                </Button>
+              )}
+              {undoError && <p role="alert" className="text-center text-sm text-destructive">{undoError}</p>}
               <Button type="button" size="quiz" className="w-full" onClick={() => setStage('select')}>
                 Học thêm từ trong bài
               </Button>

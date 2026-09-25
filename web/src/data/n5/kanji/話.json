@@ -26,7 +26,7 @@
       "word": "話[はな]します",
       "meaning": {
         "en": "to speak",
-        "vi": "mang, cầm, sở hữu"
+        "vi": "nói chuyện"
       }
     },
     {
@@ -68,5 +68,6 @@
   "similar": [
     "言",
     "読"
-  ]
+  ],
+  "hanviet": "THOẠI"
 }

@@ -8,11 +8,22 @@ import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Tra cứu · MaiPace',
-  description: 'Tra cứu Kanji, Động từ và các Bảng tham chiếu Minna no Nihongo N5.',
+  description: 'Tra cứu bảng chữ cái Kana, Kanji, Động từ và các Bảng tham chiếu Minna no Nihongo N5.',
 };
 
 export default function TraCuuHubPage() {
   const categories = [
+    {
+      href: '/hoc/tra-cuu/kana',
+      title: 'Bảng chữ Kana',
+      subtitle: 'Hiragana & Katakana · 46 âm cơ bản',
+      icon: (
+        <div className="flex items-center justify-center font-jp leading-none select-none text-xl font-bold">
+          <span className="text-primary">あ</span>
+          <span className="text-muted-foreground text-sm ml-0.5">ア</span>
+        </div>
+      ),
+    },
     {
       href: '/hoc/tra-cuu/kanji',
       title: 'Kanji',
@@ -50,8 +61,8 @@ export default function TraCuuHubPage() {
         <Link
           href="/hoc"
           className={cn(
-            buttonVariants({ variant: 'ghost', size: 'sm' }),
-            '-ml-2.5 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors'
+            buttonVariants({ variant: 'ghost' }),
+            'min-h-11 px-3 -ml-3 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors'
           )}
         >
           <ChevronLeft className="size-4 mr-1" />

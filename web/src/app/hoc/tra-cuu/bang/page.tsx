@@ -20,8 +20,8 @@ export default function ReferenceTablesIndexPage() {
         <Link
           href="/hoc/tra-cuu"
           className={cn(
-            buttonVariants({ variant: 'ghost', size: 'sm' }),
-            '-ml-2.5 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors'
+            buttonVariants({ variant: 'ghost' }),
+            'min-h-11 px-3 -ml-3 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors'
           )}
         >
           <ChevronLeft className="size-4 mr-1" />

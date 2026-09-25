@@ -25,14 +25,14 @@
       "word": "立[た]ちます",
       "meaning": {
         "en": "to stand up",
-        "vi": "lấy, cầm"
+        "vi": "đứng lên, đứng dậy"
       }
     },
     {
       "word": "役[やく]に 立[た]ちます",
       "meaning": {
         "en": "to be useful",
-        "vi": "mượn [tiền, đồ vật]"
+        "vi": "có ích, hữu dụng"
       }
     },
     {
@@ -70,5 +70,6 @@
         "vi": "tuyệt vời, nguy nga, lộng lẫy"
       }
     }
-  ]
+  ],
+  "hanviet": "LẬP"
 }

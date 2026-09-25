@@ -19,6 +19,8 @@ export interface KanjiData {
   strokes: number;
   examples: KanjiExample[];
   similar?: string[];
+  /** Âm Hán Việt viết hoa, vd "NHÂN" */
+  hanviet?: string;
 }
 
 export interface VerbItem {

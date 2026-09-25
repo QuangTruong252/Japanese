@@ -24,7 +24,7 @@
       "word": "聞[き]きます",
       "meaning": {
         "en": "to listen",
-        "vi": "sống, cư trú [ở đâu]"
+        "vi": "nghe"
       }
     },
     {
@@ -66,5 +66,6 @@
   "similar": [
     "間",
     "開"
-  ]
+  ],
+  "hanviet": "VĂN"
 }

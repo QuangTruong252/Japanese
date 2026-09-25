@@ -1,14 +1,16 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import Dexie from 'dexie';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { Furigana } from '@/components/Furigana';
 import { TARGET_TYPE_LABEL, TargetTypeBadge } from '@/components/review/TargetTypeBadge';
+import { buttonVariants } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { db } from '@/lib/db';
-import { buildTargetLabels } from '@/lib/review-queue';
+import { loadLessonData } from '@/lib/lessons';
+import { buildTargetLabels, lessonFromTargetId } from '@/lib/review-queue';
 import { useQuestionPool } from '@/lib/use-question-pool';
 import { cn } from '@/lib/utils';
 import type { TargetType } from '@/types';
@@ -18,6 +20,20 @@ const FILTERS: (TargetType | 'all')[] = ['all', ...TARGET_TYPES];
 
 const dateText = (value?: string | Date | null): string =>
   value ? new Date(value).toLocaleDateString('vi-VN') : '—';
+
+const TARGET_TYPE_PRACTICE_MAP: Partial<Record<TargetType, string>> = {
+  particle: 'cloze',
+  listening: 'listening',
+};
+
+function getAnchor(targetId: string, map: Map<string, string>): string {
+  if (map.has(targetId)) return map.get(targetId)!;
+  const directVocab = /^vocab-([a-zA-Z_-]+)$/.exec(targetId);
+  if (directVocab) return `#vocab-${directVocab[1]}`;
+  const directGrammar = /^grammar-([a-zA-Z_-]+)$/.exec(targetId);
+  if (directGrammar) return `#grammar-${directGrammar[1]}`;
+  return '';
+}
 
 export default function WeakPointsPage() {
   const [filter, setFilter] = useState<TargetType | 'all'>('all');
@@ -46,8 +62,38 @@ export default function WeakPointsPage() {
   const { questions } = useQuestionPool(lessons);
   const labels = useMemo(() => buildTargetLabels(questions), [questions]);
 
+  // Nạp dữ liệu các bài có điểm yếu để map targetId sang anchor (#vocab-<id> hoặc #grammar-<id>)
+  const [anchorMap, setAnchorMap] = useState<Map<string, string>>(new Map());
+
+  useEffect(() => {
+    if (lessons.length === 0) return;
+    let active = true;
+    Promise.all(lessons.map((n) => loadLessonData(n)))
+      .then((dataList) => {
+        if (!active) return;
+        const map = new Map<string, string>();
+        for (const { lesson, vocab } of dataList) {
+          const lNum = lesson.number;
+          const padL = String(lNum).padStart(2, '0');
+          vocab.forEach((w, idx) => {
+            const targetId = `vocab-${padL}-${String(idx + 1).padStart(2, '0')}`;
+            map.set(targetId, `#vocab-${w.id}`);
+          });
+          lesson.grammar.forEach((g, idx) => {
+            const targetId = `grammar-${padL}-${String(idx + 1).padStart(2, '0')}`;
+            map.set(targetId, `#grammar-${g.id}`);
+          });
+        }
+        setAnchorMap(map);
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, [lessons]);
+
   return (
-    <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6">
+    <main className="mx-auto w-full max-w-3xl space-y-6 px-4 py-6">
       <div className="space-y-4">
         <h1 className="font-heading text-xl font-medium">Ôn tập</h1>
         <div className="flex items-center gap-6 border-b border-border/80 text-sm">
@@ -116,8 +162,11 @@ export default function WeakPointsPage() {
                 <th scope="col" className="py-2 pr-3 font-medium whitespace-nowrap">
                   Sai gần nhất
                 </th>
-                <th scope="col" className="py-2 font-medium whitespace-nowrap">
+                <th scope="col" className="py-2 pr-3 font-medium whitespace-nowrap">
                   Hạn ôn kế
+                </th>
+                <th scope="col" className="py-2 pl-3 font-medium whitespace-nowrap text-right">
+                  Hành động
                 </th>
               </tr>
             </thead>
@@ -125,6 +174,18 @@ export default function WeakPointsPage() {
               {rows.map((item) => {
                 const label = labels.get(item.targetId);
                 const total = item.correctCount + item.incorrectCount;
+                const lessonNum = item.lesson > 0 ? item.lesson : lessonFromTargetId(item.targetId);
+                const practiceType = TARGET_TYPE_PRACTICE_MAP[item.targetType];
+                const practiceHref =
+                  lessonNum > 0
+                    ? practiceType
+                      ? `/luyen-tap?lessons=${lessonNum}&type=${practiceType}`
+                      : `/luyen-tap?lessons=${lessonNum}`
+                    : '/luyen-tap';
+
+                const anchor = getAnchor(item.targetId, anchorMap);
+                const studyHref = lessonNum > 0 ? `/hoc/${lessonNum}${anchor}` : '/hoc';
+
                 return (
                   <tr key={item.targetId} className="border-b border-border/60 align-top">
                     <td className="py-3 pr-3">
@@ -146,8 +207,32 @@ export default function WeakPointsPage() {
                     <td className="py-3 pr-3 whitespace-nowrap text-muted-foreground">
                       {dateText(item.lastFailedAt)}
                     </td>
-                    <td className="py-3 whitespace-nowrap text-muted-foreground">
+                    <td className="py-3 pr-3 whitespace-nowrap text-muted-foreground">
                       {dateText(item.dueAt)}
+                    </td>
+                    <td className="py-2.5 pl-3 whitespace-nowrap text-right">
+                      <div className="flex items-center justify-end gap-2">
+                        <Link
+                          href={practiceHref}
+                          aria-label={`Luyện bài ${lessonNum || ''}`}
+                          className={cn(
+                            buttonVariants({ variant: 'outline', size: 'quiz' }),
+                            'min-h-11 px-3 text-xs sm:text-sm font-medium hover:border-primary/50 hover:bg-accent',
+                          )}
+                        >
+                          Luyện
+                        </Link>
+                        <Link
+                          href={studyHref}
+                          aria-label={`Xem bài ${lessonNum || ''}`}
+                          className={cn(
+                            buttonVariants({ variant: 'ghost', size: 'quiz' }),
+                            'min-h-11 px-2.5 text-xs text-muted-foreground hover:text-foreground',
+                          )}
+                        >
+                          Xem bài
+                        </Link>
+                      </div>
                     </td>
                   </tr>
                 );

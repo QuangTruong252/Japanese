@@ -33,7 +33,7 @@
       "word": "入[い]れます",
       "meaning": {
         "en": "to put in",
-        "vi": "sinh ra, chào đời"
+        "vi": "cho vào, bỏ vào"
       }
     },
     {
@@ -74,5 +74,6 @@
   ],
   "similar": [
     "人"
-  ]
+  ],
+  "hanviet": "NHẬP"
 }

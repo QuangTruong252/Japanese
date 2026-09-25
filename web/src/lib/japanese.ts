@@ -39,6 +39,14 @@ export function stripFurigana(text: string): string {
   return text.replace(KANJI_RUN_WITH_READING, '$1');
 }
 
+/**
+ * Ngoặc vuông không đứng sau chữ Hán không phải furigana mà là phần tùy chọn trong mẫu câu
+ * ("どこ[へ]も" = どこも/どこへも). Đổi sang ngoặc tròn để Furigana không in thô.
+ */
+export function formatOptionalBrackets(text: string): string {
+  return text.replace(/(?<![一-鿿㐀-䶿々〆〇ヶ])\[([^\]]+)\]/g, '($1)');
+}
+
 /** Ký tự Hán — dùng để kiểm câu đã kana hóa hết chưa */
 const KANJI_CHAR = /[一-鿿㐀-䶿々〆ヶ]/;
 

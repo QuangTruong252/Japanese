@@ -17,12 +17,14 @@ export function AnswerOption({
   state,
   index,
   disabled = false,
+  className,
   onClick,
 }: {
   children: React.ReactNode;
   state: AnswerOptionState;
   index?: number;
   disabled?: boolean;
+  className?: string;
   onClick: () => void;
 }) {
   return (
@@ -43,6 +45,7 @@ export function AnswerOption({
         // nếu không thì phản hồi chính là thứ bị mờ đi (SPEC-04 §5, §7).
         disabled && state === 'idle' && 'opacity-50',
         STATE_CLASS[state],
+        className,
       )}
     >
       {index !== undefined && (
