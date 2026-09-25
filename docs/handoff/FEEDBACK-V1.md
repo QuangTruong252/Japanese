@@ -18,19 +18,20 @@ vì worker không khởi động được (lỗi readiness của Orca, 3 lần).
 | 5, 30 | Đã sửa, kiểm chứng | Kết quả: "Câu sai (n)" kèm câu bạn trả lời; "Làm lại câu sai" (chạy được khi offline); bỏ nhóm "đúng nhưng chậm" vì câu mới không có median thời gian | `SessionResult.tsx`, `QuestionMc.tsx` |
 | 6 | Đã sửa, kiểm chứng | Bảng điểm yếu có nút Luyện / Xem bài (anchor) | `on-tap/diem-yeu/page.tsx` |
 | 7–9, 11–15 | Đã sửa, kiểm chứng | /hoc: danh sách lên màn đầu, thống kê 1 dải (bỏ thanh 40% giả), filter 2×2 không cuộn ngang, furigana cho `jpTitle`/grammar; chi tiết bài: thanh nhảy nhanh sticky, nút luyện tập ở đầu, bảng từ vựng mobile; nhãn "Đã vào lịch ôn" | `LessonGrid.tsx`, `hoc/[so]/page.tsx`, `LessonProgress.tsx`, `japanese.ts` (`formatOptionalBrackets`) |
-| 10 | Phần lớn | Control chính ≥44px ở các màn đã sửa. Còn `SearchTrigger` 38px, `ThemeToggle` 40px (component dùng chung, chưa đổi) | — |
+| 10 | Đã sửa, kiểm chứng | Control chính ≥44px ở mọi màn đã sửa, kể cả `SearchTrigger`/`ThemeToggle` (các nơi gọi từng ép 36–40px) | `SearchTrigger.tsx`, `hoc/page.tsx`, `DashboardContent.tsx` |
 | 21–24 | Đã sửa, kiểm chứng | Chọn bài kèm tên; preset luyện tập lưu trong `settings.ts`; "Bắt đầu N câu"; số câu từng dạng, dạng 0 câu bị tắt kèm lý do | `luyen-tap/page.tsx`, `lib/settings.ts`, `lib/store.ts` |
 | 25–27 | Đã sửa, kiểm chứng | Gợi ý trợ từ は/へ/を (không đổi chấm điểm), nút "Chưa biết", tạm dừng đồng hồ + overlay | `practice-draft.ts` (`particleHint`), `QuestionCloze.tsx`, `QuestionListening.tsx`, `PracticeRunner.tsx` |
 | 28, 29 | Đã sửa, kiểm chứng | Đề và đáp án thành một cụm; ghép cặp dạng lưới theo hàng | `PracticeRunner.tsx`, `QuestionMatching.tsx` |
-| 31–33 | Đã sửa (33 một phần) | Động từ mobile dạng thẻ (nghĩa hiện ngay), tìm Kanji theo chữ/âm/kana/romaji/nghĩa (`?q=`), nút nghe từ ghép. Không có giải thích cách đọc; dữ liệu kanji không có âm Hán Việt | `VerbTable.tsx`, `KanjiGrid.tsx`, `lib/kanji-filter.ts`, `kanji/[chu]/page.tsx` |
+| 31–33 | Đã sửa (33 một phần) | Động từ mobile dạng thẻ (nghĩa hiện ngay); tìm Kanji theo chữ/âm Hán Việt/kana/romaji/nghĩa (`?q=`), khớp đúng xếp đầu ("nhân" → 人); âm Hán Việt trên lưới, trang chi tiết, tìm kiếm toàn cục; nút nghe từ ghép. Chưa có phần giải thích khi nào dùng cách đọc nào | `VerbTable.tsx`, `KanjiGrid.tsx`, `lib/kanji-filter.ts`, `kanji/[chu]/page.tsx`, `data/n5/kanji/*.json` (`hanviet`), `lib/search.ts` |
 | 34 | Tối thiểu | Mẫu `manifest.json` (có test với validator) + nút sao chép + các bước tạo gói; không có công cụ tạo gói | `cai-dat/audio/page.tsx`, `lib/audio-manifest-sample.ts` |
 | 35, 36 | Đã sửa, kiểm chứng | Trang `/hoc/tra-cuu/kana` (46+46, âm đục, âm ghép, nghe); Bảng tin người mới có lối vào Kana + khối Học/Luyện/Ôn; Ôn tập giải thích vì sao có mục mới | `tra-cuu/kana/*`, `data/kana.ts`, `DashboardContent.tsx`, `on-tap/page.tsx` |
 | 37, 38 | Đã sửa, kiểm chứng | Chưa đăng nhập: badge "Chỉ lưu trên máy", không còn "Chờ đồng bộ (n)"; SyncBadge chỉ đọc session cục bộ; copy cài đặt bỏ "/on-tap", "TTS", "Xuất file JSON"; khối tài khoản lên đầu | `SyncBadge.tsx`, `cai-dat/page.tsx` |
 
 Quyết định chung: app shell dùng `overflow-x-clip` (thay `hidden`) để `sticky`
 hoạt động. `formatOptionalBrackets` là nơi duy nhất đổi ngoặc tùy chọn như
-`どこ[へ]も`. `build-n5-data.mjs` nhận đối số (`verbs`, `kanji`...) để không ghi
-đè vocab đã làm giàu. Chạy toàn bộ build vẫn ghi đè; tránh chạy không đối số.
+`どこ[へ]も`. `build-n5-data.mjs` bắt buộc chỉ định phần build (`verbs|kanji|reference|all`);
+`vocab`/`lessons` cần `--force` vì sẽ xóa verbForms đã làm giàu. Offline:
+`experimental.useOffline` + `staleTimes.static` 1 ngày + prefetch route phiên học/thoát.
 
 ## Kiểm chứng (2026-09-25, Windows, Chrome headless qua agent-browser)
 - `pnpm check` PASS; `pnpm test` 187/187 PASS; `pnpm build` PASS trên `feedback-v1`.
@@ -43,10 +44,15 @@ hoạt động. `formatOptionalBrackets` là nơi duy nhất đổi ngoặc tùy
 - Production build (`pnpm start`): mất mạng giữa phiên vẫn làm tiếp và ghi Dexie (1 session + 1 pendingSync); "Làm lại câu sai" khi offline chạy được.
 - CHƯA CHẠY: iOS/Android thật, sync Supabase thật sau khi hoàn tác flashcard, desktop 1280px cho toàn bộ màn, trình đọc màn hình.
 
+## Vòng xử lý giới hạn (2026-09-25, sau review đầu)
+- Offline: trên production, đang offline vẫn bấm "Bắt đầu", thoát và lưu, "Học tiếp" từ banner, "Bắt đầu ôn", mở flashcard từ trang bài, và chuyển trang bằng dock (Thống kê, Học, Bảng tin) — PASS. Tải lại toàn trang khi offline vẫn không được (không có service worker, SPEC-14).
+- Hoàn tác từ mới sau khi đã đồng bộ: đặt lại về thẻ chưa ôn (0/0, reps=0) kèm pendingSync mới để thắng LWW (server chỉ upsert). Đã giả lập bằng cách xóa dòng pendingSync — PASS.
+- /hoc ở 390px còn 4.539px (ban đầu ~8.000px): mô tả thẻ ẩn trên mobile, không còn control nào dưới 44px.
+- Âm Hán Việt: 169/169 chữ có `hanviet`, test dữ liệu thật ("nhân"/"nhan" → 人 đầu, "NHẬT" → 日).
+- Script build: không đối số thì in hướng dẫn và thoát 1; `vocab` không kèm `--force` bị từ chối.
+
 ## Còn lại và bước tiếp theo
 - Người dùng duyệt nhánh `feedback-v1` rồi merge vào `master`.
-- Offline: bấm "Bắt đầu"/banner khi đã mất mạng vẫn cần payload route (không có service worker); ngoài phạm vi.
-- #10: nâng `SearchTrigger`/`ThemeToggle` lên 44px nếu muốn đồng bộ.
-- #8: /hoc ở 390px còn khoảng 5.500px (trước ~8.000px); có thể thu gọn thêm thẻ bài.
-- Hoàn tác flashcard với từ mới chỉ hoạt động khi lượt chấm chưa được đẩy lên server.
-- Kanji: bổ sung âm Hán Việt vào dữ liệu nếu muốn tìm "nhân" ra 人.
+- Chưa chạy: iOS/Android thật, Supabase thật (đặc biệt reset thẻ sau hoàn tác), desktop 1280px toàn bộ màn.
+- `experimental.useOffline` và `staleTimes` là tính năng thử nghiệm của Next 16; nếu nâng Next thì kiểm tra lại.
+- #33: giải thích khi nào dùng âm On/Kun cần biên soạn nội dung, chưa làm.
