@@ -8,6 +8,17 @@ import { normalizeJapaneseInput, toKanaSentence } from './japanese.ts';
 export const PRACTICE_DRAFT_KEY = 'jp:practice-draft';
 export const PRACTICE_DRAFT_VERSION = 1;
 
+// Biến module tự về false khi tải lại trang — phân biệt "vừa bấm Bắt đầu" với "trình duyệt reload".
+let newSessionRequested = false;
+
+export function markNewSessionRequested(): void {
+  newSessionRequested = true;
+}
+
+export function wasNewSessionRequested(): boolean {
+  return newSessionRequested;
+}
+
 export interface PracticeDraft {
   version: number;
   questions: QuestionItem[];

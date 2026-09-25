@@ -8,7 +8,7 @@ import { PracticeRunner } from '@/components/practice/PracticeRunner';
 import { buildSession } from '@/lib/practice';
 import { useUIStore } from '@/lib/store';
 import { useJapaneseVoice, useQuestionPool } from '@/lib/use-question-pool';
-import { loadPracticeDraft } from '@/lib/practice-draft';
+import { loadPracticeDraft, wasNewSessionRequested } from '@/lib/practice-draft';
 import type { PracticeConfig } from '@/types';
 
 function PracticeSessionLoading() {
@@ -140,18 +140,19 @@ function PracticeSessionContent() {
   );
 
   const { selectedLessons } = useUIStore();
+  // Tải lại trang (iOS hay tự reload tab) làm store về mặc định: không được dựng phiên mới
+  // đè lên nháp. Chỉ dựng phiên mới khi vừa bấm "Bắt đầu" trong lần tải trang này.
+  const startNew = !resumeToken && wasNewSessionRequested() && selectedLessons.length > 0;
 
-  // Trường hợp reload mất store (không có query resume nhưng selectedLessons rỗng)
   useEffect(() => {
-    if (mounted && !resumeToken && selectedLessons.length === 0) {
-      const existingDraft = loadPracticeDraft();
-      if (existingDraft && existingDraft.questions.length > 0) {
-        router.replace(`/luyen-tap/phien?resume=${Date.now()}`);
-      } else {
-        router.replace('/luyen-tap');
-      }
+    if (!mounted || resumeToken || startNew) return;
+    const existingDraft = loadPracticeDraft();
+    if (existingDraft && existingDraft.questions.length > 0) {
+      router.replace(`/luyen-tap/phien?resume=${Date.now()}`);
+    } else {
+      router.replace('/luyen-tap');
     }
-  }, [mounted, resumeToken, selectedLessons.length, router]);
+  }, [mounted, resumeToken, startNew, router]);
 
   if (!mounted) {
     return <PracticeSessionLoading />;
@@ -162,8 +163,8 @@ function PracticeSessionContent() {
     return <ResumedSession key={resumeToken} />;
   }
 
-  if (selectedLessons.length === 0) {
-    return null;
+  if (!startNew) {
+    return <PracticeSessionLoading />;
   }
 
   return <NewSession />;

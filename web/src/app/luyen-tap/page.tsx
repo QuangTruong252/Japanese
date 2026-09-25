@@ -9,6 +9,7 @@ import { buildSession } from '@/lib/practice';
 import { useUIStore } from '@/lib/store';
 import { useJapaneseVoice, useQuestionPool } from '@/lib/use-question-pool';
 import { cn } from '@/lib/utils';
+import { markNewSessionRequested } from '@/lib/practice-draft';
 import type { ExerciseType, PracticeConfig } from '@/types';
 
 const EXERCISE_TYPES: { type: ExerciseType; label: string }[] = [
@@ -238,7 +239,10 @@ export default function PracticeConfigPage() {
             size="quiz"
             className="w-full"
             disabled={Boolean(blockedReason)}
-            onClick={() => router.push('/luyen-tap/phien')}
+            onClick={() => {
+              markNewSessionRequested();
+              router.push('/luyen-tap/phien');
+            }}
           >
             Bắt đầu
           </Button>

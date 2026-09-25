@@ -21,6 +21,7 @@ export function QuestionMc({ question, answered, onAnswer }: QuestionProps) {
           isCorrect: checkOptionAnswer(option, question),
           elapsedMs: 0,
           usedHint: false,
+          userAnswer: option,
         },
       ]);
     },
