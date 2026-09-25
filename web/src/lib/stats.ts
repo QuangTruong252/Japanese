@@ -65,14 +65,81 @@ export function currentStreak(sessions: PracticeSession[], now: Date): StreakRes
   return { days: count, truncated };
 }
 
-/** Tổng số phút học trong một ngày (làm tròn) */
-export function minutesOnDay(sessions: PracticeSession[], day: Date): number {
+/** Tổng số giây học trong một ngày */
+export function secondsOnDay(sessions: PracticeSession[], day: Date): number {
   const key = localDayKey(day);
-  const seconds = sessions
+  return sessions
     .filter((s) => sessionDayKey(s) === key)
     .reduce((sum, s) => sum + (s.durationSeconds || 0), 0);
-  return Math.round(seconds / 60);
 }
+
+/** Số phiên học trong một ngày */
+export function sessionCountOnDay(sessions: PracticeSession[], day: Date): number {
+  const key = localDayKey(day);
+  return sessions.filter((s) => sessionDayKey(s) === key).length;
+}
+
+/** Kiểm tra đã học trong ngày chưa (ít nhất 1 phiên - Feedback #2) */
+export function hasStudiedOnDay(sessions: PracticeSession[], day: Date): boolean {
+  return sessionCountOnDay(sessions, day) > 0;
+}
+
+/** Tổng số phút học trong một ngày (làm tròn) */
+export function minutesOnDay(sessions: PracticeSession[], day: Date): number {
+  return Math.round(secondsOnDay(sessions, day) / 60);
+}
+
+/**
+ * Định dạng hiển thị thời lượng học hôm nay (Feedback #2).
+ * 0 < giây < 60: "Dưới 1 phút"
+ * giây >= 60 hoặc = 0: "N phút"
+ */
+export function formatStudyTimeToday(seconds: number): string {
+  if (seconds > 0 && seconds < 60) {
+    return 'Dưới 1 phút';
+  }
+  return `${Math.round(seconds / 60)} phút`;
+}
+
+export type SyncBadgeState = 'synced' | 'pending' | 'syncing' | 'offline' | 'unconfigured';
+
+export interface SyncBadgeResolution {
+  state: SyncBadgeState;
+  label: string;
+}
+
+/**
+ * Xác định nhãn và trạng thái cho SyncBadge (SPEC-08, Feedback #37).
+ * Khi CHƯA đăng nhập: luôn dùng "Chỉ lưu trên máy", không dùng "Chờ đồng bộ (n)".
+ * Khi ĐÃ đăng nhập: giữ nguyên ngữ nghĩa đồng bộ hai chiều.
+ */
+export function resolveSyncBadgeState({
+  pendingCount,
+  isLoggedIn,
+  engineState = 'offline',
+}: {
+  pendingCount: number;
+  isLoggedIn: boolean;
+  engineState?: SyncBadgeState;
+}): SyncBadgeResolution {
+  if (!isLoggedIn) {
+    return { state: 'offline', label: 'Chỉ lưu trên máy' };
+  }
+  if (engineState === 'syncing') {
+    return { state: 'syncing', label: 'Đang đồng bộ…' };
+  }
+  if (pendingCount > 0) {
+    return { state: 'pending', label: `Chờ đồng bộ (${pendingCount})` };
+  }
+  if (engineState === 'synced') {
+    return { state: 'synced', label: 'Đã đồng bộ' };
+  }
+  if (engineState === 'unconfigured') {
+    return { state: 'unconfigured', label: 'Đã lưu trên máy' };
+  }
+  return { state: 'offline', label: 'Ngoại tuyến — đã lưu trên máy' };
+}
+
 
 /**
  * Tỷ lệ đúng trong `days` ngày gần nhất, tính theo TỔNG CÂU chứ không phải trung bình cộng

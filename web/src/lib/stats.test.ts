@@ -13,6 +13,11 @@ import {
   activityHeatmap,
   pickActiveLesson,
   secondsPerQuestion,
+  secondsOnDay,
+  sessionCountOnDay,
+  hasStudiedOnDay,
+  formatStudyTimeToday,
+  resolveSyncBadgeState,
 } from './stats.ts';
 import type { PracticeSession, ReviewItem } from '../types/index.ts';
 
@@ -245,3 +250,95 @@ test('secondsPerQuestion lấy trung bình theo tổng câu, bỏ phiên rỗng'
     15,
   );
 });
+
+test('Feedback #2: 0 phiên hôm nay -> chưa học, 0 giây, "0 phút"', () => {
+  const now = new Date(2026, 8, 17, 12, 0);
+  const sessions: PracticeSession[] = [];
+
+  assert.equal(sessionCountOnDay(sessions, now), 0);
+  assert.equal(hasStudiedOnDay(sessions, now), false);
+  assert.equal(secondsOnDay(sessions, now), 0);
+  assert.equal(formatStudyTimeToday(secondsOnDay(sessions, now)), '0 phút');
+});
+
+test('Feedback #2: phiên 29 giây hôm nay -> đã học (studied), "Dưới 1 phút"', () => {
+  const now = new Date(2026, 8, 17, 12, 0);
+  const shortSession = session('2026-09-17T10:00:00', { durationSeconds: 29 });
+  const sessions = [shortSession];
+
+  assert.equal(sessionCountOnDay(sessions, now), 1);
+  assert.equal(hasStudiedOnDay(sessions, now), true);
+  assert.equal(secondsOnDay(sessions, now), 29);
+  assert.equal(formatStudyTimeToday(secondsOnDay(sessions, now)), 'Dưới 1 phút');
+});
+
+test('Feedback #2: phiên 90 giây hôm nay -> đã học, 2 phút theo Math.round(90/60)', () => {
+  const now = new Date(2026, 8, 17, 12, 0);
+  const s90 = session('2026-09-17T10:00:00', { durationSeconds: 90 });
+  const sessions = [s90];
+
+  assert.equal(sessionCountOnDay(sessions, now), 1);
+  assert.equal(hasStudiedOnDay(sessions, now), true);
+  assert.equal(secondsOnDay(sessions, now), 90);
+  assert.equal(minutesOnDay(sessions, now), 2);
+  assert.equal(formatStudyTimeToday(secondsOnDay(sessions, now)), '2 phút');
+});
+
+test('Feedback #37: resolveSyncBadgeState khi CHƯA đăng nhập luôn là "Chỉ lưu trên máy"', () => {
+  // Có bản ghi chờ đồng bộ nhưng chưa đăng nhập -> không dùng "Chờ đồng bộ (3)"
+  const withPending = resolveSyncBadgeState({
+    pendingCount: 3,
+    isLoggedIn: false,
+    engineState: 'offline',
+  });
+  assert.equal(withPending.state, 'offline');
+  assert.equal(withPending.label, 'Chỉ lưu trên máy');
+
+  // Không có bản ghi chờ, chưa đăng nhập
+  const empty = resolveSyncBadgeState({
+    pendingCount: 0,
+    isLoggedIn: false,
+    engineState: 'offline',
+  });
+  assert.equal(empty.state, 'offline');
+  assert.equal(empty.label, 'Chỉ lưu trên máy');
+});
+
+test('Feedback #37: resolveSyncBadgeState khi ĐÃ đăng nhập giữ nguyên ngữ nghĩa', () => {
+  // Có bản ghi chờ đồng bộ
+  const pending = resolveSyncBadgeState({
+    pendingCount: 5,
+    isLoggedIn: true,
+    engineState: 'offline',
+  });
+  assert.equal(pending.state, 'pending');
+  assert.equal(pending.label, 'Chờ đồng bộ (5)');
+
+  // Đang đồng bộ
+  const syncing = resolveSyncBadgeState({
+    pendingCount: 2,
+    isLoggedIn: true,
+    engineState: 'syncing',
+  });
+  assert.equal(syncing.state, 'syncing');
+  assert.equal(syncing.label, 'Đang đồng bộ…');
+
+  // Đã đồng bộ xong
+  const synced = resolveSyncBadgeState({
+    pendingCount: 0,
+    isLoggedIn: true,
+    engineState: 'synced',
+  });
+  assert.equal(synced.state, 'synced');
+  assert.equal(synced.label, 'Đã đồng bộ');
+
+  // Ngoại tuyến
+  const offline = resolveSyncBadgeState({
+    pendingCount: 0,
+    isLoggedIn: true,
+    engineState: 'offline',
+  });
+  assert.equal(offline.state, 'offline');
+  assert.equal(offline.label, 'Ngoại tuyến — đã lưu trên máy');
+});
+
