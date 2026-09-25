@@ -147,3 +147,20 @@ test('executeSearch tuân thủ thứ tự nhóm cố định và giới hạn 5
     assert.ok(countsByKind[item.kind]! <= 5, `Nhóm ${item.kind} vượt quá 5 mục`);
   }
 });
+
+test('executeSearch tìm động từ qua cả thể từ điển và thể masu', async () => {
+  const index = await buildSearchIndex();
+
+  // 1. Tìm bằng thể từ điển: kiru
+  const resKiru = executeSearch(index, 'kiru');
+  assert.ok(resKiru.results.some((r) => r.id === 'vocab-07-kirimasu'));
+
+  // 2. Tìm bằng thể masu: kirimasu
+  const resMasu = executeSearch(index, 'kirimasu');
+  assert.ok(resMasu.results.some((r) => r.id === 'vocab-07-kirimasu'));
+
+  // 3. Tìm bằng kana thể masu: きります
+  const resKanaMasu = executeSearch(index, 'きります');
+  assert.ok(resKanaMasu.results.some((r) => r.id === 'vocab-07-kirimasu'));
+});
+

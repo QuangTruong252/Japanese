@@ -96,21 +96,37 @@ export async function buildSearchIndex(): Promise<SearchEntry[]> {
       const romaji = wanakana.toRomaji(w.kana);
       const viNorm = normalizeSearchText(w.meaning.vi);
 
+      const keys = [
+        plainWord.toLowerCase(),
+        w.kana.toLowerCase(),
+        romaji.toLowerCase(),
+        viNorm,
+        w.meaning.vi.toLowerCase(),
+      ];
+
+      if (w.verbForms) {
+        const plainMasu = stripFurigana(w.verbForms.masu);
+        const masuRomaji = wanakana.toRomaji(w.verbForms.masuKana);
+        keys.push(
+          plainMasu.toLowerCase(),
+          w.verbForms.masuKana.toLowerCase(),
+          masuRomaji.toLowerCase()
+        );
+      }
+
+      const sublabel = w.verbForms
+        ? `${w.meaning.vi} · Masu: ${stripFurigana(w.verbForms.masu)}`
+        : w.meaning.vi;
+
       entries.push({
         id: `vocab-${String(lessonNum).padStart(2, '0')}-${w.id}`,
         kind: 'vocab',
         label: w.word,
-        sublabel: w.meaning.vi,
+        sublabel,
         lesson: lessonNum,
-        badge: `Bài ${lessonNum}`,
+        badge: w.verbGroup ? `Bài ${lessonNum} · Nhóm ${w.verbGroup}` : `Bài ${lessonNum}`,
         href: `/hoc/${lessonNum}#vocab-${w.id}`,
-        keys: [
-          plainWord.toLowerCase(),
-          w.kana.toLowerCase(),
-          romaji.toLowerCase(),
-          viNorm,
-          w.meaning.vi.toLowerCase(),
-        ],
+        keys,
       });
     }
 
