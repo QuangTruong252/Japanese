@@ -16,6 +16,7 @@ import { useUIStore } from '@/lib/store';
 import { useJapaneseVoice, useQuestionPool } from '@/lib/use-question-pool';
 import { cn } from '@/lib/utils';
 import { markNewSessionRequested } from '@/lib/practice-draft';
+import PracticeDraftBanner from '@/components/practice/PracticeDraftBanner';
 import type { ExerciseType, PracticeConfig } from '@/types';
 
 const EXERCISE_TYPES: { type: ExerciseType; label: string }[] = [
@@ -254,7 +255,7 @@ function PracticeConfigContent() {
 
   return (
     <main className="mx-auto max-w-xl space-y-6 px-4 py-6">
-      {/* TODO(W3): <PracticeDraftBanner /> */}
+      <PracticeDraftBanner />
 
       <h1 className="font-heading text-xl font-medium">Luyện tập</h1>
 

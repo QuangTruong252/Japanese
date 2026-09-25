@@ -216,7 +216,7 @@ export default function WeakPointsPage() {
                           href={practiceHref}
                           aria-label={`Luyện bài ${lessonNum || ''}`}
                           className={cn(
-                            buttonVariants({ variant: 'outline', size: 'sm' }),
+                            buttonVariants({ variant: 'outline', size: 'quiz' }),
                             'min-h-11 px-3 text-xs sm:text-sm font-medium hover:border-primary/50 hover:bg-accent',
                           )}
                         >
@@ -226,7 +226,7 @@ export default function WeakPointsPage() {
                           href={studyHref}
                           aria-label={`Xem bài ${lessonNum || ''}`}
                           className={cn(
-                            buttonVariants({ variant: 'ghost', size: 'sm' }),
+                            buttonVariants({ variant: 'ghost', size: 'quiz' }),
                             'min-h-11 px-2.5 text-xs text-muted-foreground hover:text-foreground',
                           )}
                         >
