@@ -133,11 +133,18 @@ export default async function LessonDetailPage({
                     >
                       <td className="py-3 px-4">
                         <div className="flex flex-col items-start gap-1">
-                          <Furigana text={w.word} className="text-lg font-medium text-foreground" />
-                          {group && (
-                            <Badge className={cn('h-auto text-[10px] px-1.5 py-0.2 rounded', group.className)}>
-                              {group.label}
-                            </Badge>
+                          <div className="flex items-center gap-2">
+                            <Furigana text={w.word} className="text-lg font-medium text-foreground" />
+                            {group && (
+                              <Badge className={cn('h-auto text-[10px] px-1.5 py-0.2 rounded', group.className)}>
+                                {group.label}
+                              </Badge>
+                            )}
+                          </div>
+                          {w.verbForms && (
+                            <span className="text-xs text-muted-foreground">
+                              Thể masu: <Furigana text={w.verbForms.masu} />
+                            </span>
                           )}
                         </div>
                       </td>

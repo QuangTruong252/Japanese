@@ -241,4 +241,15 @@ test('toàn bộ động từ N5 có word thể từ điển, verbGroup và verb
   assert.equal(verbCount, 157, `Kỳ vọng 157 động từ, thực tế có ${verbCount}`);
 });
 
+test('loadLessonData bài 7 trả về động từ ở thể từ điển kèm verbForms', async () => {
+  const { vocab } = await loadLessonData(7);
+  const kiru = vocab.find((w) => w.id === 'kirimasu');
+  assert.ok(kiru);
+  assert.equal(kiru.word, '切[き]る');
+  assert.equal(kiru.kana, 'きる');
+  assert.equal(kiru.verbForms?.masu, '切[き]ります');
+  assert.equal(kiru.verbGroup, 1);
+});
+
+
 
