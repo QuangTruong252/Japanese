@@ -7,7 +7,7 @@ import { Furigana } from '@/components/Furigana';
 import { LessonProgress } from '@/components/LessonProgress';
 import { SpeakButton } from '@/components/SpeakButton';
 import { AVAILABLE_N5_LESSONS, loadLessonData, parseLessonNumber } from '@/lib/lessons';
-import { stripFurigana } from '@/lib/japanese';
+import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
 import { Card } from '@/components/ui/card';
 import { ShadowingPlayer } from '@/components/audio/ShadowingPlayer';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
@@ -24,11 +24,6 @@ const VERB_GROUP: Record<string, { label: string; className: string }> = {
   'verb-irregular': { label: 'Nhóm 3', className: 'bg-verb-3 text-primary-foreground font-semibold' },
 };
 
-function formatGrammarText(text: string): string {
-  // Thay thế bracket không phải furigana (không đứng liền sau chữ Hán) thành ngoặc đơn dạng đọc được
-  // Ví dụ: "どこ[へ]も" -> "どこ(へ)も", "địa điểm[へ]も" -> "địa điểm(へ)も"
-  return text.replace(/(?<![一-鿿㐀-䶿々〆〇ヶ])\[([^\]]+)\]/g, '($1)');
-}
 
 export default async function LessonDetailPage({
   params,
@@ -73,7 +68,7 @@ export default async function LessonDetailPage({
           </h1>
           {lesson.jpTitle && (
             <div className="font-jp text-base font-semibold text-primary">
-              <Furigana text={formatGrammarText(lesson.jpTitle)} className="text-base font-semibold text-primary" />
+              <Furigana text={formatOptionalBrackets(lesson.jpTitle)} className="text-base font-semibold text-primary" />
             </div>
           )}
           {lesson.description?.vi && (
@@ -200,7 +195,7 @@ export default async function LessonDetailPage({
                         <div className="flex items-start justify-between gap-2">
                           <div className="flex flex-col items-start gap-1">
                             <div className="flex items-center gap-2 flex-wrap">
-                              <Furigana text={formatGrammarText(w.word)} className="text-lg font-medium text-foreground" />
+                              <Furigana text={formatOptionalBrackets(w.word)} className="text-lg font-medium text-foreground" />
                               {group && (
                                 <Badge className={cn('h-auto text-[10px] px-1.5 py-0.2 rounded', group.className)}>
                                   {group.label}
@@ -209,13 +204,13 @@ export default async function LessonDetailPage({
                             </div>
                             {w.verbForms && (
                               <span className="text-xs text-muted-foreground">
-                                Thể masu: <Furigana text={formatGrammarText(w.verbForms.masu)} />
+                                Thể masu: <Furigana text={formatOptionalBrackets(w.verbForms.masu)} />
                               </span>
                             )}
                           </div>
                           {/* Mobile: nút phát âm gộp trong ô từ */}
                           <div className="md:hidden shrink-0">
-                            <SpeakButton text={w.kana} label={stripFurigana(formatGrammarText(w.word))} />
+                            <SpeakButton text={w.kana} label={stripFurigana(formatOptionalBrackets(w.word))} />
                           </div>
                         </div>
                       </td>
@@ -227,7 +222,7 @@ export default async function LessonDetailPage({
                         )}
                       </td>
                       <td className="hidden md:table-cell py-3 px-4 text-right">
-                        <SpeakButton text={w.kana} label={stripFurigana(formatGrammarText(w.word))} />
+                        <SpeakButton text={w.kana} label={stripFurigana(formatOptionalBrackets(w.word))} />
                       </td>
                     </tr>
                   );
@@ -256,14 +251,14 @@ export default async function LessonDetailPage({
             >
               <div>
                 <h3 className="text-base sm:text-lg font-bold text-foreground">
-                  <Furigana text={formatGrammarText(point.title.vi)} />
+                  <Furigana text={formatOptionalBrackets(point.title.vi)} />
                 </h3>
               </div>
 
               {/* Khối cấu trúc mẫu câu Washi */}
               <div className="grammar-pattern-block rounded-xl bg-muted/60 p-4 border border-border/60">
                 <div className="font-jp text-lg sm:text-xl font-semibold text-primary">
-                  <Furigana text={formatGrammarText(point.pattern.vi)} className="text-lg sm:text-xl font-semibold text-primary" />
+                  <Furigana text={formatOptionalBrackets(point.pattern.vi)} className="text-lg sm:text-xl font-semibold text-primary" />
                 </div>
               </div>
 
@@ -284,14 +279,14 @@ export default async function LessonDetailPage({
                         className="flex items-start justify-between gap-3 p-3 rounded-xl bg-muted/30 border border-border/40 hover:bg-muted/50 transition-colors"
                       >
                         <div className="space-y-1">
-                          <Furigana text={formatGrammarText(ex.jp)} className="text-base sm:text-lg font-medium text-foreground" />
+                          <Furigana text={formatOptionalBrackets(ex.jp)} className="text-base sm:text-lg font-medium text-foreground" />
                           <span className="translation block text-xs sm:text-sm text-muted-foreground">
                             {ex.translation.vi}
                           </span>
                         </div>
                         <SpeakButton
-                          text={stripFurigana(formatGrammarText(ex.jp))}
-                          label={stripFurigana(formatGrammarText(ex.jp))}
+                          text={stripFurigana(formatOptionalBrackets(ex.jp))}
+                          label={stripFurigana(formatOptionalBrackets(ex.jp))}
                         />
                       </li>
                     ))}

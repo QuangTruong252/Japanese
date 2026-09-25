@@ -38,7 +38,7 @@ export default function RootLayout({
       >
         <AppNav />
         <SearchDialog />
-        <div className="flex-1 flex flex-col min-w-0 max-w-full overflow-x-hidden pb-28 sm:pb-32 lg:pb-0 lg:pl-64">
+        <div className="flex-1 flex flex-col min-w-0 max-w-full overflow-x-clip pb-28 sm:pb-32 lg:pb-0 lg:pl-64">
           <PageTransition>{children}</PageTransition>
         </div>
       </body>

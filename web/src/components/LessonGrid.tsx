@@ -20,11 +20,8 @@ import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
 import { LazyMotion, MotionConfig, domMax, m } from 'framer-motion';
 import { Furigana } from '@/components/Furigana';
-import { stripFurigana } from '@/lib/japanese';
+import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
 
-function formatGrammarText(text: string): string {
-  return text.replace(/(?<![一-鿿㐀-䶿々〆〇ヶ])\[([^\]]+)\]/g, '($1)');
-}
 
 // Nền của lựa chọn đang bật trượt sang nút mới (tabs sliding, 250ms smooth-out).
 function FilterPill() {
@@ -107,7 +104,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
         const matchNumber = String(s.number) === query;
         const matchVi = s.title?.vi?.toLowerCase().includes(query);
         const rawJp = s.jpTitle?.toLowerCase() ?? '';
-        const strippedJp = s.jpTitle ? stripFurigana(formatGrammarText(s.jpTitle)).toLowerCase() : '';
+        const strippedJp = s.jpTitle ? stripFurigana(formatOptionalBrackets(s.jpTitle)).toLowerCase() : '';
         const matchJp = rawJp.includes(query) || strippedJp.includes(query);
         const matchDesc = s.description?.vi?.toLowerCase().includes(query);
         if (!matchNumber && !matchVi && !matchJp && !matchDesc) return false;
@@ -138,7 +135,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                   </h4>
                   {activeLesson.jpTitle && (
                     <div className="font-jp text-xs text-muted-foreground truncate">
-                      <Furigana text={formatGrammarText(activeLesson.jpTitle)} zoomable={false} />
+                      <Furigana text={formatOptionalBrackets(activeLesson.jpTitle)} zoomable={false} />
                     </div>
                   )}
                 </div>
@@ -187,7 +184,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                 <span className="font-semibold text-muted-foreground uppercase tracking-wider text-[11px]">
                   Từ vựng đã học
                 </span>
-                <span className="font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.2 rounded text-[11px]">
+                <span className="font-bold text-success bg-success/10 px-1.5 py-0.2 rounded text-[11px]">
                   {Math.round((targetIds.length / lessonStats.totalVocabInN5) * 100)}%
                 </span>
               </div>
@@ -196,7 +193,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
               </div>
               <div className="w-full bg-muted h-2 rounded-full overflow-hidden">
                 <div
-                  className="bg-emerald-600 dark:bg-emerald-500 h-full rounded-full transition-[width] duration-250 ease-smooth-out"
+                  className="bg-success h-full rounded-full transition-[width] duration-250 ease-smooth-out"
                   style={{ width: `${Math.min(100, Math.round((targetIds.length / lessonStats.totalVocabInN5) * 100))}%` }}
                 />
               </div>
@@ -338,7 +335,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                         Bài {s.number}
                       </span>
                       {isCompleted ? (
-                        <span className="text-[11px] font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20 flex items-center gap-1">
+                        <span className="text-[11px] font-bold text-success bg-success/10 px-2 py-0.5 rounded-md border border-success/20 flex items-center gap-1">
                           <CheckCircle2 className="size-3" />
                           Hoàn thành
                         </span>
@@ -362,7 +359,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                     {/* Tiếng Nhật (Furigana) */}
                     {s.jpTitle && (
                       <div className="font-jp text-xs font-medium text-muted-foreground">
-                        <Furigana text={formatGrammarText(s.jpTitle)} zoomable={false} />
+                        <Furigana text={formatOptionalBrackets(s.jpTitle)} zoomable={false} />
                       </div>
                     )}
 
