@@ -135,7 +135,15 @@ function findExampleForWord(word: VocabWord, examples: ExampleSentence[]): Examp
   const surfaceTerms = new Set([surface]);
   const readingTerms = new Set([reading]);
 
-  if (word.type.startsWith('verb-') && reading.endsWith('ます')) {
+  if (word.verbForms) {
+    const { dictionary, masu, te, nai, ta, dictionaryKana, masuKana, teKana, naiKana, taKana } = word.verbForms;
+    for (const form of [dictionary, masu, te, nai, ta]) {
+      if (form) surfaceTerms.add(stripFurigana(form).replace(/[\s　]/gu, '').normalize('NFKC'));
+    }
+    for (const k of [dictionaryKana, masuKana, teKana, naiKana, taKana]) {
+      if (k) readingTerms.add(k.normalize('NFKC'));
+    }
+  } else if (word.type.startsWith('verb-') && reading.endsWith('ます')) {
     const readingStem = reading.slice(0, -2);
     const surfaceStem = surface.endsWith('ます') ? surface.slice(0, -2) : '';
     for (const ending of ['ます', 'ました', 'ません', 'ませんでした', 'ましょう']) {
@@ -496,7 +504,14 @@ export function VocabLearningFlow({
                             {selected && <Check className="size-4" />}
                           </span>
                           <span className="min-w-0 flex-1">
-                            <span className="jp jp-vocab block font-medium"><Furigana text={word.word} /></span>
+                            <span className="jp jp-vocab block font-medium">
+                              <Furigana text={word.word} />
+                              {word.verbForms && (
+                                <span className="ml-2 text-xs font-normal text-muted-foreground">
+                                  (Masu: {stripFurigana(word.verbForms.masu)})
+                                </span>
+                              )}
+                            </span>
                             {!hasMeaning && <span className="block text-sm text-muted-foreground">Chưa có bản dịch tiếng Việt</span>}
                             <span className="mt-1 block text-xs text-muted-foreground">
                               {attempts > 0 ? `${progressText} · ôn ${formatDate(reviewItem!.dueAt)}` : progressText}
@@ -580,6 +595,11 @@ export function VocabLearningFlow({
                       <SpeakButton text={activeWord.word.kana} label={stripFurigana(activeWord.word.word)} />
                     </div>
                     <div className="pointer-events-none flex flex-1 flex-col items-center justify-center gap-1 px-8 py-16 text-center">
+                      {activeWord.word.verbGroup && (
+                        <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 mb-2">
+                          Động từ Nhóm {activeWord.word.verbGroup}
+                        </span>
+                      )}
                       <div className="jp jp-quiz text-4xl font-medium sm:text-5xl">
                         <Furigana text={stripFurigana(activeWord.word.word)} zoomable={false} />
                       </div>
@@ -600,11 +620,43 @@ export function VocabLearningFlow({
                       <SpeakButton text={activeWord.word.kana} label={stripFurigana(activeWord.word.word)} />
                     </div>
                     <div className="flex flex-1 flex-col px-5 pb-5 pt-16 sm:px-7 sm:pb-7">
-                      <div className="flex flex-1 items-center justify-center py-8 text-center">
+                      <div className="flex flex-1 items-center justify-center py-6 text-center">
                         <p className="text-2xl font-semibold leading-relaxed text-foreground sm:text-3xl">
                           {activeWord.word.meaning.vi}
                         </p>
                       </div>
+
+                      {activeWord.word.verbForms && (
+                        <div className="rounded-xl border border-border/70 bg-muted/40 p-3 mb-3 space-y-2">
+                          <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider block">
+                            Các thể chia cơ bản
+                          </span>
+                          <div className="grid grid-cols-2 gap-2 text-xs">
+                            <div className="flex flex-col">
+                              <span className="text-[10px] text-muted-foreground font-medium">Masu (Lịch sự)</span>
+                              <span className="font-semibold text-foreground"><Furigana text={activeWord.word.verbForms.masu} /></span>
+                            </div>
+                            {activeWord.word.verbForms.te && (
+                              <div className="flex flex-col">
+                                <span className="text-[10px] text-muted-foreground font-medium">Te (Nối / Đang làm)</span>
+                                <span className="font-semibold text-foreground"><Furigana text={activeWord.word.verbForms.te} /></span>
+                              </div>
+                            )}
+                            {activeWord.word.verbForms.nai && (
+                              <div className="flex flex-col">
+                                <span className="text-[10px] text-muted-foreground font-medium">Nai (Phủ định)</span>
+                                <span className="font-semibold text-foreground"><Furigana text={activeWord.word.verbForms.nai} /></span>
+                              </div>
+                            )}
+                            {activeWord.word.verbForms.ta && (
+                              <div className="flex flex-col">
+                                <span className="text-[10px] text-muted-foreground font-medium">Ta (Quá khứ)</span>
+                                <span className="font-semibold text-foreground"><Furigana text={activeWord.word.verbForms.ta} /></span>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
 
                       <section className="space-y-3 border-t border-border pt-5" aria-labelledby="example-title">
                         <div className="flex items-center gap-1.5">
