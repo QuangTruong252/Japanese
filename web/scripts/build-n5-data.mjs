@@ -22,8 +22,11 @@ for (const sub of SUBDIRS) {
 
 let totalGenerated = 0;
 
+const targets = process.argv.slice(2);
+const shouldRun = (sub) => targets.length === 0 || targets.includes(sub);
+
 // 1. VERBS (1 file)
-{
+if (shouldRun('verbs')) {
   const srcPath = path.join(SRC_DIR, 'verbs/verbs.json');
   const targetPath = path.join(TARGET_DIR, 'verbs/verbs.json');
   const data = JSON.parse(fs.readFileSync(srcPath, 'utf8'));
@@ -43,7 +46,7 @@ let totalGenerated = 0;
 }
 
 // 2. KANJI (169 files)
-{
+if (shouldRun('kanji')) {
   const kanjiSrcDir = path.join(SRC_DIR, 'kanji');
   const kanjiTargetDir = path.join(TARGET_DIR, 'kanji');
   const files = fs.readdirSync(kanjiSrcDir).filter((f) => f.endsWith('.json')).sort();
@@ -74,7 +77,7 @@ let totalGenerated = 0;
 }
 
 // 3. VOCAB (25 files)
-{
+if (shouldRun('vocab')) {
   const vocabSrcDir = path.join(SRC_DIR, 'vocab');
   const vocabTargetDir = path.join(TARGET_DIR, 'vocab');
   const files = fs.readdirSync(vocabSrcDir).filter((f) => f.endsWith('.json')).sort();
@@ -100,7 +103,7 @@ let totalGenerated = 0;
 }
 
 // 4. LESSONS (25 files)
-{
+if (shouldRun('lessons')) {
   const lessonsSrcDir = path.join(SRC_DIR, 'lessons');
   const lessonsTargetDir = path.join(TARGET_DIR, 'lessons');
   const files = fs.readdirSync(lessonsSrcDir).filter((f) => f.endsWith('.json')).sort();
@@ -164,7 +167,7 @@ let totalGenerated = 0;
 }
 
 // 5. REFERENCE (10 files)
-{
+if (shouldRun('reference')) {
   const refSrcDir = path.join(SRC_DIR, 'reference');
   const refTargetDir = path.join(TARGET_DIR, 'reference');
   const files = fs.readdirSync(refSrcDir).filter((f) => f.endsWith('.json')).sort();
