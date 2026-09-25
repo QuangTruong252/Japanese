@@ -147,6 +147,7 @@ function NumberStepper({
           type="button"
           variant="outline"
           size="icon-sm"
+          className="size-11 sm:size-8 min-h-11 min-w-11 sm:min-h-8 sm:min-w-8"
           aria-label={`Giảm ${step} ${unit}`}
           disabled={value <= min}
           onClick={() => onChange(clamp(value - step))}
@@ -163,12 +164,13 @@ function NumberStepper({
             const val = Number.parseInt(e.target.value, 10);
             if (!Number.isNaN(val)) onChange(clamp(val));
           }}
-          className="h-8 w-16 text-center tabular-nums font-medium"
+          className="h-11 sm:h-8 w-16 text-center tabular-nums font-medium"
         />
         <Button
           type="button"
           variant="outline"
           size="icon-sm"
+          className="size-11 sm:size-8 min-h-11 min-w-11 sm:min-h-8 sm:min-w-8"
           aria-label={`Tăng ${step} ${unit}`}
           disabled={value >= max}
           onClick={() => onChange(clamp(value + step))}
@@ -489,6 +491,148 @@ export default function SettingsPage() {
         </div>
       )}
 
+      {/* TÀI KHOẢN & ĐỒNG BỘ (SPEC-08, Feedback #37) */}
+      <section className="space-y-4 scroll-mt-24" aria-labelledby="heading-account-title" id="heading-account">
+        <h2 id="heading-account-title" className="font-heading text-base font-medium text-foreground">
+          Tài khoản & Đồng bộ
+        </h2>
+
+        <Card>
+          <CardContent className="p-5">
+            {!isSupabaseConfigured() ? (
+              <div className="space-y-2 py-1 text-center sm:text-left">
+                <div className="flex items-center gap-2 text-xs text-muted-foreground border-b border-border/40 pb-2">
+                  <span>Trạng thái:</span>
+                  <span className="font-medium text-foreground">Chỉ lưu trên máy</span>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm font-medium text-foreground">
+                    Chưa thiết lập kết nối Supabase
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    Tiến độ học tập luôn được lưu an toàn trên máy và hoạt động ngoại tuyến đầy đủ.
+                  </p>
+                </div>
+              </div>
+            ) : !currentUser ? (
+              <div className="space-y-3 py-1 text-left">
+                <div className="flex items-center gap-2 text-xs text-muted-foreground border-b border-border/40 pb-2">
+                  <span>Trạng thái:</span>
+                  <span className="font-medium text-foreground">Chỉ lưu trên máy</span>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm font-medium text-foreground">
+                    Đăng nhập để đồng bộ giữa các thiết bị
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    Dữ liệu học của bạn vẫn nằm trên máy và vẫn dùng được khi không đăng nhập.
+                  </p>
+                </div>
+                <div>
+                  <Button
+                    type="button"
+                    variant="secondary"
+                    size="quiz"
+                    className="gap-2.5 w-full sm:w-auto min-h-11"
+                    onClick={handleGoogleSignIn}
+                    disabled={isLoggingIn}
+                  >
+                    <GoogleIcon className="size-4 shrink-0" />
+                    <span>{isLoggingIn ? 'Đang chuyển hướng…' : 'Đăng nhập bằng Google'}</span>
+                  </Button>
+                </div>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    {currentUser.avatarUrl ? (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img
+                        src={currentUser.avatarUrl}
+                        alt={currentUser.displayName || 'Avatar'}
+                        className="size-10 rounded-full border border-border object-cover"
+                      />
+                    ) : (
+                      <div className="size-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-medium">
+                        <User className="size-5" />
+                      </div>
+                    )}
+                    <div className="min-w-0">
+                      <p className="text-sm font-medium text-foreground truncate">
+                        {currentUser.displayName}
+                      </p>
+                      <p className="text-xs text-muted-foreground truncate">
+                        {currentUser.email}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <Button
+                      type="button"
+                      variant="secondary"
+                      size="sm"
+                      className="gap-1.5 min-h-11 h-11 sm:min-h-9 sm:h-9 px-3 flex-1 sm:flex-initial"
+                      onClick={() => triggerSync()}
+                      disabled={syncEngineStatus.state === 'syncing'}
+                    >
+                      <RefreshCw
+                        className={cn(
+                          'size-3.5',
+                          syncEngineStatus.state === 'syncing' && 'animate-spin',
+                        )}
+                      />
+                      <span>
+                        {syncEngineStatus.state === 'syncing' ? 'Đang đồng bộ…' : 'Đồng bộ ngay'}
+                      </span>
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      className="gap-1.5 min-h-11 h-11 sm:min-h-9 sm:h-9 px-3 flex-1 sm:flex-initial"
+                      onClick={() => setLogoutConfirmOpen(true)}
+                    >
+                      <LogOut className="size-3.5" />
+                      <span>Đăng xuất</span>
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 pt-1 text-xs text-muted-foreground border-t border-border/60">
+                  <span>Trạng thái:</span>
+                  {syncEngineStatus.state === 'synced' && (
+                    <span className="text-success font-medium">
+                      Đã đồng bộ{' '}
+                      {syncEngineStatus.lastSyncedAt
+                        ? `· ${syncEngineStatus.lastSyncedAt.toLocaleTimeString('vi-VN', {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                          })}`
+                        : ''}
+                    </span>
+                  )}
+                  {syncEngineStatus.state === 'pending' && (
+                    <span className="text-warning font-medium">
+                      Chờ đồng bộ ({syncEngineStatus.pendingCount} mục)
+                    </span>
+                  )}
+                  {syncEngineStatus.state === 'syncing' && (
+                    <span className="text-warning font-medium">Đang đẩy và kéo dữ liệu…</span>
+                  )}
+                  {syncEngineStatus.state === 'offline' && <span>Ngoại tuyến — đã lưu trên máy</span>}
+                  {syncEngineStatus.state === 'unconfigured' && <span>Đã lưu trên máy</span>}
+                </div>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* CÀI ĐẶT ỨNG DỤNG (SPEC-14) */}
+      <InstallAppCard />
+
       {/* NHÓM 1: HIỂN THỊ */}
       <section className="space-y-4" aria-labelledby="heading-display">
         <h2 id="heading-display" className="font-heading text-base font-medium text-foreground">
@@ -544,6 +688,7 @@ export default function SettingsPage() {
                 aria-labelledby="label-furigana-size"
                 variant="outline"
                 size="sm"
+                className="[&_[data-slot=toggle-group-item]]:min-h-11 sm:[&_[data-slot=toggle-group-item]]:min-h-8 [&_[data-slot=toggle-group-item]]:px-3.5"
                 value={[settings.furiganaSize]}
                 onValueChange={(val: string[]) => {
                   const chosen = val[val.length - 1];
@@ -608,6 +753,7 @@ export default function SettingsPage() {
                 aria-labelledby="label-theme"
                 variant="outline"
                 size="sm"
+                className="[&_[data-slot=toggle-group-item]]:min-h-11 sm:[&_[data-slot=toggle-group-item]]:min-h-8 [&_[data-slot=toggle-group-item]]:px-3.5"
                 value={[settings.theme]}
                 onValueChange={(val: string[]) => {
                   const chosen = val[val.length - 1];
@@ -657,7 +803,7 @@ export default function SettingsPage() {
           <CardContent className="divide-y divide-border p-0">
             <NumberStepper
               label="Số mục mới mỗi ngày"
-              hint="Giới hạn số lượng mục mới nạp vào hàng đợi Ôn tập (/on-tap)"
+              hint="Giới hạn số lượng mục mới mỗi ngày trong Ôn tập"
               unit="mục"
               value={settings.dailyNewLimit}
               min={1}
@@ -702,7 +848,7 @@ export default function SettingsPage() {
                     Âm lượng phát âm
                   </label>
                   <p className="text-xs text-muted-foreground">
-                    Giọng đọc mẫu TTS cho từ vựng và câu ví dụ
+                    Giọng đọc cho từ vựng và câu ví dụ
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
@@ -713,7 +859,7 @@ export default function SettingsPage() {
                     type="button"
                     variant="outline"
                     size="sm"
-                    className="h-7 gap-1 px-2 text-xs"
+                    className="min-h-11 h-11 sm:min-h-8 sm:h-8 gap-1.5 px-3 text-xs"
                     onClick={() => speak('こんにちは', settings.soundVolume)}
                   >
                     <Volume2 className="size-3.5" />
@@ -764,7 +910,7 @@ export default function SettingsPage() {
                   onClick={handleExport}
                 >
                   <Download className="size-4" />
-                  Xuất file JSON
+                  Sao lưu dữ liệu (tải file)
                 </Button>
                 <p className="text-[11px] text-muted-foreground">
                   Gồm tiến độ ôn tập và lịch sử luyện tập. Không gồm audio.
@@ -780,10 +926,10 @@ export default function SettingsPage() {
                   onClick={() => fileInputRef.current?.click()}
                 >
                   <Upload className="size-4" />
-                  Nhập từ file
+                  Khôi phục từ bản sao lưu
                 </Button>
                 <p className="text-[11px] text-muted-foreground">
-                  Khôi phục hoặc gộp tiến độ từ file JSON đã xuất trước đó.
+                  Khôi phục hoặc gộp tiến độ từ bản sao lưu đã xuất trước đó.
                 </p>
                 <input
                   ref={fileInputRef}
@@ -828,137 +974,6 @@ export default function SettingsPage() {
               <FileArchive className="size-4" />
               <span>Quản lý audio đĩa CD</span>
             </Button>
-          </CardContent>
-        </Card>
-      </section>
-
-      <InstallAppCard />
-
-      {/* NHÓM 4: TÀI KHOẢN (SPEC-08) */}
-      <section className="space-y-4" aria-labelledby="heading-account">
-        <h2 id="heading-account" className="font-heading text-base font-medium text-foreground">
-          Tài khoản
-        </h2>
-
-        <Card>
-          <CardContent className="p-5">
-            {!isSupabaseConfigured() ? (
-              <div className="space-y-1 text-center py-2">
-                <p className="text-sm font-medium text-muted-foreground">
-                  Chưa thiết lập kết nối Supabase
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  Tiến độ học tập luôn được lưu an toàn trên máy (IndexedDB) và hoạt động ngoại tuyến đầy đủ.
-                </p>
-              </div>
-            ) : !currentUser ? (
-              <div className="space-y-3 py-1 text-center sm:text-left">
-                <div className="space-y-1">
-                  <p className="text-sm font-medium text-foreground">
-                    Đăng nhập để đồng bộ tiến độ giữa điện thoại và máy tính.
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Dữ liệu học của bạn vẫn nằm trên máy và vẫn dùng được khi không đăng nhập.
-                  </p>
-                </div>
-                <div>
-                  <Button
-                    type="button"
-                    variant="secondary"
-                    size="quiz"
-                    className="gap-2.5 w-full sm:w-auto"
-                    onClick={handleGoogleSignIn}
-                    disabled={isLoggingIn}
-                  >
-                    <GoogleIcon className="size-4 shrink-0" />
-                    <span>{isLoggingIn ? 'Đang chuyển hướng…' : 'Đăng nhập bằng Google'}</span>
-                  </Button>
-                </div>
-              </div>
-            ) : (
-              <div className="space-y-4">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    {currentUser.avatarUrl ? (
-                      /* eslint-disable-next-line @next/next/no-img-element */
-                      <img
-                        src={currentUser.avatarUrl}
-                        alt={currentUser.displayName || 'Avatar'}
-                        className="size-10 rounded-full border border-border object-cover"
-                      />
-                    ) : (
-                      <div className="size-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-medium">
-                        <User className="size-5" />
-                      </div>
-                    )}
-                    <div className="min-w-0">
-                      <p className="text-sm font-medium text-foreground truncate">
-                        {currentUser.displayName}
-                      </p>
-                      <p className="text-xs text-muted-foreground truncate">
-                        {currentUser.email}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <Button
-                      type="button"
-                      variant="secondary"
-                      size="sm"
-                      className="gap-1.5 h-9"
-                      onClick={() => triggerSync()}
-                      disabled={syncEngineStatus.state === 'syncing'}
-                    >
-                      <RefreshCw
-                        className={cn(
-                          'size-3.5',
-                          syncEngineStatus.state === 'syncing' && 'animate-spin',
-                        )}
-                      />
-                      <span>
-                        {syncEngineStatus.state === 'syncing' ? 'Đang đồng bộ…' : 'Đồng bộ ngay'}
-                      </span>
-                    </Button>
-                    <Button
-                      type="button"
-                      variant="outline"
-                      size="sm"
-                      className="gap-1.5 h-9"
-                      onClick={() => setLogoutConfirmOpen(true)}
-                    >
-                      <LogOut className="size-3.5" />
-                      <span>Đăng xuất</span>
-                    </Button>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2 pt-1 text-xs text-muted-foreground border-t border-border/60">
-                  <span>Trạng thái:</span>
-                  {syncEngineStatus.state === 'synced' && (
-                    <span className="text-success font-medium">
-                      Đã đồng bộ{' '}
-                      {syncEngineStatus.lastSyncedAt
-                        ? `· ${syncEngineStatus.lastSyncedAt.toLocaleTimeString('vi-VN', {
-                            hour: '2-digit',
-                            minute: '2-digit',
-                          })}`
-                        : ''}
-                    </span>
-                  )}
-                  {syncEngineStatus.state === 'pending' && (
-                    <span className="text-warning font-medium">
-                      Chờ đồng bộ ({syncEngineStatus.pendingCount} mục)
-                    </span>
-                  )}
-                  {syncEngineStatus.state === 'syncing' && (
-                    <span className="text-warning font-medium">Đang đẩy và kéo dữ liệu…</span>
-                  )}
-                  {syncEngineStatus.state === 'offline' && <span>Ngoại tuyến — đã lưu trên máy</span>}
-                  {syncEngineStatus.state === 'unconfigured' && <span>Đã lưu trên máy</span>}
-                </div>
-              </div>
-            )}
           </CardContent>
         </Card>
       </section>
@@ -1008,7 +1023,7 @@ export default function SettingsPage() {
       >
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>Nhập từ file</DialogTitle>
+            <DialogTitle>Khôi phục từ bản sao lưu</DialogTitle>
             <DialogDescription className="truncate">
               {importPreview?.fileName}
             </DialogDescription>
@@ -1083,7 +1098,7 @@ export default function SettingsPage() {
                       )}
                     </div>
                     <span className="text-xs text-muted-foreground mt-0.5">
-                      Xóa toàn bộ dữ liệu trên máy hiện tại trước khi nạp dữ liệu từ file.
+                      Xóa toàn bộ dữ liệu trên máy hiện tại trước khi nạp dữ liệu từ bản sao lưu.
                     </span>
                   </button>
                 </div>
@@ -1095,6 +1110,7 @@ export default function SettingsPage() {
             <Button
               type="button"
               variant="outline"
+              className="min-h-11 sm:min-h-8"
               onClick={() => setImportPreview(null)}
               disabled={isImporting}
             >
@@ -1102,10 +1118,11 @@ export default function SettingsPage() {
             </Button>
             <Button
               type="button"
+              className="min-h-11 sm:min-h-8"
               onClick={handleProceedImport}
               disabled={isImporting}
             >
-              {isImporting ? 'Đang nhập...' : 'Nhập dữ liệu'}
+              {isImporting ? 'Đang khôi phục...' : 'Khôi phục dữ liệu'}
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -1118,7 +1135,7 @@ export default function SettingsPage() {
             <AlertDialogTitle>Xác nhận thay thế dữ liệu?</AlertDialogTitle>
             <AlertDialogDescription>
               Thao tác này sẽ xóa {reviewCount} mục ôn tập và {sessionCount} phiên hiện có trên
-              máy, thay bằng {importPreview?.reviewItems.length} mục từ file. Hành động này không
+              máy, thay bằng {importPreview?.reviewItems.length} mục từ bản sao lưu. Hành động này không
               thể hoàn tác.
             </AlertDialogDescription>
           </AlertDialogHeader>
