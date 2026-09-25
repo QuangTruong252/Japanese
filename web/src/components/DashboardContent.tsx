@@ -22,6 +22,8 @@ import {
   Settings,
   Sparkles,
   AlertCircle,
+  HelpCircle,
+  ChevronDown,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -70,6 +72,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
   const totalInActive = activeSummary.vocabCount;
   const isNewUser =
     !queue.hasAnyReviewItem && (vocabTargetIds?.length ?? 0) === 0 && learnedThroughLesson === 0;
+  const hasNoProgress = isNewUser && (recentSessions?.length ?? 0) === 0;
 
   // Lời chào và định dạng ngày tháng
   const hour = now.getHours();
@@ -230,25 +233,42 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
             </div>
           )}
 
-          <div>
-            <Link
-              href={`/hoc/${activeLessonNum}`}
-              className={cn(
-                buttonVariants({ size: 'quiz' }),
-                'w-full sm:w-auto font-semibold text-base shadow-sm'
-              )}
-            >
-              <BookOpen className="w-5 h-5 mr-2" />
-              {isNewUser ? 'Bắt đầu bài 1' : `Học tiếp bài ${activeLessonNum}`}
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-            {isNewUser && (
+          <div className="space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
               <Link
-                href="/cai-dat#hoc-den-bai"
-                className="mt-3 inline-flex min-h-12 items-center text-sm font-medium text-primary underline-offset-4 hover:underline sm:mt-0 sm:ml-4"
+                href={`/hoc/${activeLessonNum}`}
+                className={cn(
+                  buttonVariants({ size: 'quiz' }),
+                  'w-full sm:w-auto font-semibold text-base shadow-sm'
+                )}
               >
-                Tôi đã học đến bài…
+                <BookOpen className="w-5 h-5 mr-2" />
+                {isNewUser ? 'Bắt đầu bài 1' : `Học tiếp bài ${activeLessonNum}`}
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
+              {isNewUser && (
+                <Link
+                  href="/cai-dat#hoc-den-bai"
+                  className="inline-flex min-h-11 items-center text-sm font-medium text-primary underline-offset-4 hover:underline"
+                >
+                  Tôi đã học đến bài…
+                </Link>
+              )}
+            </div>
+
+            {hasNoProgress && (
+              <div className="rounded-xl border border-primary/20 bg-accent/30 p-3 sm:p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-sm">
+                <span className="text-foreground">
+                  Chưa đọc được Hiragana/Katakana?
+                </span>
+                <Link
+                  href="/hoc/tra-cuu/kana"
+                  className="font-medium text-primary hover:underline underline-offset-4 inline-flex items-center gap-1 shrink-0 self-start sm:self-auto"
+                >
+                  <span>Xem bảng chữ Kana trước</span>
+                  <ArrowRight className="size-3.5" aria-hidden="true" />
+                </Link>
+              </div>
             )}
           </div>
         </Card>
@@ -285,6 +305,39 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
           </Link>
         </Card>
       )}
+
+      {/* ========================================================
+          4. Hướng dẫn phân biệt Học / Luyện / Ôn (Feedback #36)
+          ======================================================== */}
+      <details className="group rounded-2xl border border-border/80 bg-card p-4 sm:p-5 transition-all">
+        <summary className="flex cursor-pointer list-none items-center justify-between text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground">
+          <span className="flex items-center gap-2">
+            <HelpCircle className="size-4 text-primary shrink-0" aria-hidden="true" />
+            <span>Chưa rõ nên chọn Học bài, Luyện tập hay Ôn tập?</span>
+          </span>
+          <ChevronDown className="size-4 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" />
+        </summary>
+        <div className="mt-3 pt-3 border-t border-border/50 text-xs sm:text-sm text-muted-foreground space-y-2">
+          <p>
+            <strong className="text-foreground font-semibold">Học bài:</strong> gặp từ vựng và mẫu câu mới theo từng bài theo thứ tự giáo trình.
+          </p>
+          <p>
+            <strong className="text-foreground font-semibold">Luyện tập:</strong> chủ động làm bài tập theo những bài bạn tự chọn để củng cố kiến thức.
+          </p>
+          <p>
+            <strong className="text-foreground font-semibold">Ôn tập:</strong> app nhắc lại đúng lúc bạn sắp quên theo lịch ôn thông minh.
+          </p>
+          <div className="pt-1 text-xs text-muted-foreground">
+            <span>Cần xem lại bảng chữ cái? </span>
+            <Link
+              href="/hoc/tra-cuu/kana"
+              className="text-primary font-medium hover:underline underline-offset-2"
+            >
+              Bảng chữ Kana
+            </Link>
+          </div>
+        </div>
+      </details>
     </main>
   );
 }
