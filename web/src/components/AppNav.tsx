@@ -69,7 +69,7 @@ export function AppNav() {
           'bg-background/95 dark:bg-card/95',
           'border border-border/80 dark:border-white/10',
           'shadow-xl shadow-black/5 dark:shadow-black/40 ring-1 ring-black/5 dark:ring-white/5',
-          'lg:hidden select-none [view-transition-name:app-dock]'
+          'lg:hidden select-none'
         )}
       >
         {NAV_ITEMS.map((item) => {
@@ -123,7 +123,7 @@ export function AppNav() {
           ======================================================== */}
       <aside
         aria-label="Điều hướng ứng dụng"
-        className="hidden lg:flex fixed inset-y-0 left-0 w-64 z-40 flex-col justify-between border-r border-border bg-card p-4 select-none [view-transition-name:app-sidebar]"
+        className="hidden lg:flex fixed inset-y-0 left-0 w-64 z-40 flex-col justify-between border-r border-border bg-card p-4 select-none"
       >
         <div>
           {/* Đỉnh: Logo thương hiệu MaiPace */}

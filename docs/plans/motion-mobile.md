@@ -23,6 +23,24 @@ Ngày lập: 2026-09-24. Trạng thái: **G0–G5 đã làm 24/09/2026** (một 
   `view-transition-name` để đứng yên. Back của trình duyệt: Next không chạy view transition
   (đổi tức thì) — chấp nhận, tránh chồng với vuốt lùi của iOS. Bỏ 2.4 (shared morph), để sau.
   Kiểm: agent-browser 390px, `/` → `/hoc` chạy `vt-page-out`/`vt-page-in`, dir 1; `/hoc` → `/hoc/1` dir 1.
+- 25/09/2026 — Sửa lỗi Safari iOS 26.5 (máy thật): trang cũ không mờ ra, đứng nguyên dưới trang
+  mới rồi mất cuối transition (trông như giật). Log trên máy: transition vẫn `ready`/`finished`
+  (~300ms), không lỗi, nên không phải bị bỏ hay do snapshot lớn. Nguyên nhân: enter/exit tạo hai
+  tên (`_t_0_`, `_t_1_`), WebKit coi cả hai có ở hai trạng thái nên trang cũ hòa sang chính nó.
+  Đổi sang `name="page" share="page"` (vẫn `key={pathname}`, nên đổi query không kích hoạt) và
+  `::view-transition-group(page) { animation: none }` để không morph khung. Kiểm: Playwright
+  WebKit 26.6 giả lập iPhone 15 Pro (ảnh giữa transition, opacity old/new) và Chromium 390px.
+  Người dùng thử lại: đỡ hơn nhưng vẫn khựng → bước tiếp theo bên dưới.
+- 25/09/2026 — Bỏ View Transitions, animate DOM thật: `PageTransition` là `<div key={pathname}
+  className="page-enter contents">`, CSS `.page-enter > *` chạy `page-in` 250ms (opacity 0.4→1,
+  trượt 8px theo `--nav-dir`, `backwards`). Đặt lên phần tử gốc của trang chứ không lên wrapper
+  để màn `fixed inset-0` (phiên luyện tập/ôn tập) không bị transform kéo lệch. Không còn hiệu
+  ứng trang cũ ra. Bỏ `view-transition-name` ở `AppNav`. Đo (Chromium, CPU chậm 4x): đổi tab
+  80–160ms, không layout shift; lần đầu vào `/hoc` 922ms do tải ~20 subset Noto Sans JP
+  (~400KB) → `--font-jp` đặt `Hiragino Sans` trước Noto (DESIGN.md §Typography). Chọn qua A/B
+  trên iPhone iOS 26.5 bằng bản production (3 biến thể); người dùng chọn bản cuối, xác nhận
+  mượt. Kiểm: `tsc`, `eslint`, Chromium 390px (hướng, màn fixed phủ đủ 390×844).
+  **Chưa kiểm:** Android thật; iPhone thật không đo được việc Noto có bị tải hay không.
 - 24/09/2026 — G2b PWA theo SPEC-14: `app/manifest.ts`, icon 192/512/maskable từ
   `brand/maipace-app-icon.svg`, `app/apple-icon.png`, `appleWebApp`, overscroll chỉ khi
   standalone, `components/InstallAppCard.tsx` trong `/cai-dat`. Kiểm: `pnpm build` + `next start`,

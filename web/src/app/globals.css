@@ -12,7 +12,9 @@
   /* Không tự tham chiếu var(--font-sans) bên trong @theme inline: giá trị được
      nội tuyến tại điểm dùng nên tham chiếu vòng sẽ hỏng ngầm, không báo lỗi. */
   --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
-  --font-jp: 'Noto Sans JP Variable', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+  /* Hiragino (có sẵn trên iOS/macOS) đứng trước: máy Apple không phải tải ~400KB webfont
+     Noto khi lần đầu gặp chữ Nhật (giật lúc chuyển trang). Máy khác vẫn dùng Noto. */
+  --font-jp: 'Hiragino Sans', 'Noto Sans JP Variable', 'Yu Gothic', sans-serif;
   --font-mono: ui-monospace, 'SFMono-Regular', 'Cascadia Code', monospace;
   --font-heading: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
 
@@ -279,52 +281,18 @@ input[type="search"]::-webkit-search-decoration {
   appearance: none;
   display: none;
 }
-/* Chuyển trang (DESIGN.md §Motion): mới vào 250ms, cũ ra 150ms, trượt 8px theo --nav-dir
-   (1 tiến, -1 lùi, 0 chỉ mờ; đặt bởi PageTransition). Không blur: blur snapshot cả màn hình
-   rất tốn trên điện thoại. Nav giữ nguyên chỗ trong lúc chuyển. */
-::view-transition {
-  pointer-events: none;
-}
-::view-transition-group(app-dock),
-::view-transition-group(app-sidebar) {
-  animation: none;
-  z-index: 100;
-}
-::view-transition-old(app-dock),
-::view-transition-old(app-sidebar) {
-  display: none;
-}
-::view-transition-new(app-dock),
-::view-transition-new(app-sidebar) {
-  animation: none;
-}
-
+/* Chuyển trang (DESIGN.md §Motion): trang mới trượt 8px theo --nav-dir (1 tiến, -1 lùi, 0 chỉ mờ;
+   đặt bởi PageTransition) và mờ vào 250ms, chạy trên DOM thật. Chỉ opacity/translate để GPU
+   tự lo; không blur. `backwards`: hết animation không còn translate giữ lại trên phần tử. */
 @media (prefers-reduced-motion: no-preference) {
-  ::view-transition-old(.page) {
-    animation: 150ms cubic-bezier(0.22, 1, 0.36, 1) both vt-page-out;
-  }
-  ::view-transition-new(.page) {
-    animation: 250ms cubic-bezier(0.22, 1, 0.36, 1) both vt-page-in;
+  .page-enter > * {
+    animation: page-in 250ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(*),
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
-    animation: none !important;
-  }
-}
-
-@keyframes vt-page-in {
+@keyframes page-in {
   from {
-    opacity: 0;
+    opacity: 0.4;
     translate: calc(var(--nav-dir, 0) * 8px) 0;
-  }
-}
-@keyframes vt-page-out {
-  to {
-    opacity: 0;
-    translate: calc(var(--nav-dir, 0) * -8px) 0;
   }
 }

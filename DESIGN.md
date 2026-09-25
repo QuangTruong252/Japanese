@@ -435,6 +435,12 @@ Two families, no serif and no display face anywhere: **Inter Variable** for inte
 Vietnamese and English (`font-sans`); **Noto Sans JP Variable** for all Japanese (`font-jp`);
 `ui-monospace` for tabular figures and hashes (`font-mono`).
 
+On Apple devices `font-jp` resolves to the system **Hiragino Sans** first, which is listed
+ahead of Noto in the stack. The Noto webfont is ~400KB of subsets, and downloading it the
+first time Japanese appears stalled page transitions on iPhone. Everywhere else Noto is
+used as before. Japanese on iOS/macOS therefore looks slightly different; the roles, sizes and
+weights below are unchanged.
+
 ### Latin roles
 
 | Role | Used for |
@@ -648,7 +654,7 @@ Motion explains what just happened; it does not decorate.
 | Card entry/exit, question change | 250ms | ease-in-out |
 | Dragging a phrase token | spring | stiffness 400, damping 30 |
 | Wrong-answer shake | 300ms, 4px, 3 beats | ease-in-out |
-| Route change | 250ms in, 150ms out, 8px slide, no blur | smooth-out |
+| Route change | 250ms in only, opacity 0.4 → 1, 8px slide by direction, no blur | smooth-out |
 | Overlay open / close (dialog, menu, sheet) | open 250ms, close 150ms | smooth-out |
 | Progress fill | 250ms, `scaleX` only | smooth-out |
 
@@ -656,6 +662,13 @@ Motion explains what just happened; it does not decorate.
 Animate only `transform` and `opacity`; never `transition-all`, width/height, or box-shadow
 on the hot path. No `backdrop-filter` on fixed bars: the bottom nav repaints its blur every
 scrolled frame on phones. Closes are faster than opens and are never delayed.
+
+Route changes animate the live DOM of the incoming page (`PageTransition.tsx`, CSS
+`.page-enter > *`). There is no exit animation, and View Transitions are not used. On iPhone,
+Safari snapshots the page at 3x and freezes it for the duration of the transition. With
+separate enter/exit names it also kept the old page visible until the end, so navigation
+stuttered. The page starts at 0.4 opacity rather than 0 so there is never a blank frame
+between the old and new page.
 
 Wrap all animation in `@media (prefers-reduced-motion: no-preference)`. With motion reduced
 the correct/wrong result must still appear in full, only the movement is dropped. Nothing
