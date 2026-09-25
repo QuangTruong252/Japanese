@@ -22,8 +22,30 @@ for (const sub of SUBDIRS) {
 
 let totalGenerated = 0;
 
-const targets = process.argv.slice(2);
-const shouldRun = (sub) => targets.length === 0 || targets.includes(sub);
+// vocab/lessons trong repo đã được làm giàu sau bước build (verbForms, thể từ điển — xem
+// scripts/enrich-vocab-verbs.mjs); build lại từ nguồn sẽ xóa phần đó nên phải --force.
+const SAFE_TARGETS = ['verbs', 'kanji', 'reference'];
+const DESTRUCTIVE_TARGETS = ['vocab', 'lessons'];
+const args = process.argv.slice(2);
+const force = args.includes('--force');
+const requested = args.filter((a) => a !== '--force');
+const targets = requested.includes('all') ? SAFE_TARGETS : requested;
+const unknown = targets.filter((t) => !SAFE_TARGETS.includes(t) && !DESTRUCTIVE_TARGETS.includes(t));
+
+if (targets.length === 0 || unknown.length > 0) {
+  console.error(
+    `Cách dùng: node scripts/build-n5-data.mjs <${[...SAFE_TARGETS, ...DESTRUCTIVE_TARGETS].join('|')}|all> [--force]\n` +
+      `  all = ${SAFE_TARGETS.join(', ')}. vocab/lessons ghi đè dữ liệu đã làm giàu, cần --force.` +
+      (unknown.length ? `\n  Không rõ: ${unknown.join(', ')}` : ''),
+  );
+  process.exit(1);
+}
+const blocked = targets.filter((t) => DESTRUCTIVE_TARGETS.includes(t));
+if (blocked.length > 0 && !force) {
+  console.error(`Từ chối build ${blocked.join(', ')}: sẽ xóa verbForms/thể từ điển đã làm giàu. Thêm --force nếu chắc chắn.`);
+  process.exit(1);
+}
+const shouldRun = (sub) => targets.includes(sub);
 
 // 1. VERBS (1 file)
 if (shouldRun('verbs')) {
@@ -59,6 +81,7 @@ if (shouldRun('kanji')) {
     }
 
     data.meanings.vi = kanjiInfo.meanings;
+    data.hanviet = kanjiInfo.hanviet;
     delete data.meanings.es;
 
     for (const ex of (data.examples || [])) {

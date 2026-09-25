@@ -1,4 +1,4 @@
-import { applyReview, pushElapsedSample, Rating, type Grade } from '@/lib/fsrs';
+import { applyReview, newCard, pushElapsedSample, Rating, type Grade } from '@/lib/fsrs';
 import { db } from '@/lib/db';
 import type { ReviewItem } from '@/types';
 
@@ -66,23 +66,37 @@ export async function saveVocabRecall({
 
 /**
  * Hoàn tác một lần tự chấm. Từ đã có trong lịch ôn: ghi lại bản trước với updatedAt mới
- * để thắng LWW khi đồng bộ. Từ mới: chỉ xóa được khi lượt chấm chưa đẩy lên server.
- * Trả về false nếu không hoàn tác được.
+ * để thắng LWW khi đồng bộ. Từ mới: xóa nếu lượt chấm chưa đẩy lên server, nếu đã đẩy thì
+ * đặt lại về thẻ chưa ôn. Trả về false chỉ khi thẻ đã bị một lượt khác ghi đè.
  */
 export async function undoVocabRecall({ next, previous, syncId }: VocabRecallRecord): Promise<boolean> {
   return db.transaction('rw', db.reviewItems, db.pendingSync, async () => {
     const current = await db.reviewItems.get(next.targetId);
     if (!current || current.updatedAt !== next.updatedAt) return false; // đã bị ghi đè bởi lượt khác
 
-    if (!previous) {
-      if (!(await db.pendingSync.get(syncId))) return false;
+    if (!previous && (await db.pendingSync.get(syncId))) {
+      // Chưa đẩy lên server: xóa như chưa từng chấm.
       await db.pendingSync.delete(syncId);
       await db.reviewItems.delete(next.targetId);
       return true;
     }
 
     const now = new Date(Math.max(Date.now(), Date.parse(next.updatedAt) + 1));
-    const restored: ReviewItem = { ...previous, updatedAt: now.toISOString() };
+    const iso = now.toISOString();
+    // Server chỉ upsert (không xóa được): từ mới đã đồng bộ thì đặt lại về thẻ chưa ôn,
+    // updatedAt mới hơn để thắng LWW ở mọi thiết bị.
+    const restored: ReviewItem = previous
+      ? { ...previous, updatedAt: iso }
+      : {
+          ...next,
+          correctCount: 0,
+          incorrectCount: 0,
+          lastFailedAt: undefined,
+          fsrsCard: newCard(now),
+          dueAt: now,
+          recentElapsedMs: [],
+          updatedAt: iso,
+        };
     await db.reviewItems.put(restored);
     if (await db.pendingSync.get(syncId)) {
       await db.pendingSync.delete(syncId);

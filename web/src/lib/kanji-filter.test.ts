@@ -124,3 +124,13 @@ test('filterKanjiWithQuery kết hợp tìm kiếm và các bộ lọc khác', (
   assert.equal(res5.length, 1);
   assert.equal(res5[0]!.character, '人');
 });
+
+test('Dữ liệu thật: tìm theo âm Hán Việt, khớp đúng âm được xếp đầu', async () => {
+  const { ALL_KANJI } = await import('../data/n5/kanji-index.ts');
+  assert.ok(ALL_KANJI.every((k) => k.hanviet && k.hanviet.length > 0), 'mọi chữ phải có âm Hán Việt');
+  assert.equal(filterKanjiWithQuery(ALL_KANJI, { query: 'nhân' })[0]?.character, '人');
+  const noAccent = filterKanjiWithQuery(ALL_KANJI, { query: 'nhan' });
+  assert.equal(noAccent[0]?.character, '人');
+  assert.ok(noAccent.some((k) => k.character === '早'), 'khớp một phần (nhanh) vẫn còn, chỉ xếp sau');
+  assert.equal(filterKanjiWithQuery(ALL_KANJI, { query: 'NHẬT' })[0]?.character, '日');
+});

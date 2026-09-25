@@ -257,7 +257,7 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
               <Link
                 key={k.character}
                 href={`/hoc/tra-cuu/kanji/${encodeURIComponent(k.character)}`}
-                aria-label={`${k.character} — ${meaning}, bài ${lesson ?? 'N5'}${isLearned ? ', đã học' : ''}`}
+                aria-label={`${k.character}${k.hanviet ? ` (${k.hanviet})` : ''} — ${meaning}, bài ${lesson ?? 'N5'}${isLearned ? ', đã học' : ''}`}
                 className={cn(
                   'group relative flex flex-col items-center justify-between min-h-[104px] sm:min-h-[110px] p-2 sm:p-2.5 rounded-2xl',
                   'border border-border/80 bg-card shadow-2xs transition duration-150',
@@ -284,7 +284,12 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
                   {k.character}
                 </span>
 
-                {/* Nghĩa ngắn tiếng Việt / Hán Việt */}
+                {/* Âm Hán Việt + nghĩa ngắn tiếng Việt */}
+                {k.hanviet && (
+                  <span className="text-[10px] font-semibold tracking-wide text-primary line-clamp-1 text-center px-0.5">
+                    {k.hanviet}
+                  </span>
+                )}
                 <span className="text-xs font-semibold text-foreground line-clamp-1 text-center capitalize px-0.5">
                   {meaning}
                 </span>

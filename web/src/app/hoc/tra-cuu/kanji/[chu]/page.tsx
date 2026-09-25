@@ -91,6 +91,11 @@ export default async function KanjiDetailPage({
             </span>
           </div>
 
+          {kanji.hanviet && (
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+              Hán Việt: {kanji.hanviet}
+            </p>
+          )}
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground capitalize">
             {kanji.meanings.vi[0] ?? ''}
           </h1>

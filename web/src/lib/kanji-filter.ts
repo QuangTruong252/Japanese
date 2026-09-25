@@ -26,9 +26,12 @@ export function matchKanjiQuery(kanji: KanjiData, rawQuery: string): boolean {
     return true;
   }
 
-  // 2. Khớp nghĩa Hán Việt / Tiếng Việt (bỏ dấu, đ->d qua normalizeSearchText)
+  // 2. Khớp âm Hán Việt và nghĩa tiếng Việt (bỏ dấu, đ->d qua normalizeSearchText)
   const normQuery = normalizeSearchText(query);
   if (normQuery) {
+    if (kanji.hanviet && normalizeSearchText(kanji.hanviet).includes(normQuery)) {
+      return true;
+    }
     const meaningMatch = kanji.meanings.vi.some((meaning) => {
       const normMeaning = normalizeSearchText(meaning);
       return normMeaning.includes(normQuery);
@@ -85,6 +88,22 @@ export function matchKanjiQuery(kanji: KanjiData, rawQuery: string): boolean {
 }
 
 /**
+ * Độ khớp để xếp kết quả: 0 = đúng chữ / đúng âm Hán Việt (tính cả dấu) / đúng một nghĩa,
+ * 1 = đúng âm Hán Việt khi bỏ dấu, 2 = còn lại (khớp một phần).
+ * Để "nhân" ra 人 (NHÂN) trước 早 (nghĩa "nhanh").
+ */
+export function kanjiQueryRank(kanji: KanjiData, rawQuery: string): number {
+  const query = rawQuery.trim();
+  const lower = query.toLocaleLowerCase('vi');
+  if (kanji.character === query) return 0;
+  if (kanji.hanviet?.toLocaleLowerCase('vi') === lower) return 0;
+  if (kanji.meanings.vi.some((m) => m.toLocaleLowerCase('vi') === lower)) return 0;
+  const norm = normalizeSearchText(query);
+  if (kanji.hanviet && normalizeSearchText(kanji.hanviet) === norm) return 1;
+  return 2;
+}
+
+/**
  * Lọc danh sách Kanji theo bài học, số nét, trạng thái đã học và từ khóa tìm kiếm.
  */
 export function filterKanjiWithQuery(
@@ -92,7 +111,7 @@ export function filterKanjiWithQuery(
   filters: KanjiFilterOptions,
   learnedCharSet?: Set<string>
 ): KanjiData[] {
-  return list.filter((k) => {
+  const filtered = list.filter((k) => {
     if (filters.lesson) {
       const l = getKanjiLesson(k);
       if (l !== filters.lesson) return false;
@@ -108,4 +127,11 @@ export function filterKanjiWithQuery(
     }
     return true;
   });
+  if (!filters.query?.trim()) return filtered;
+  const query = filters.query;
+  // sort ổn định: cùng hạng thì giữ thứ tự gốc (theo bài)
+  return filtered
+    .map((k) => ({ k, rank: kanjiQueryRank(k, query) }))
+    .sort((a, b) => a.rank - b.rank)
+    .map(({ k }) => k);
 }

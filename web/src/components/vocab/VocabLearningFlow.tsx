@@ -395,7 +395,7 @@ export function VocabLearningFlow({
     setUndoError(null);
     try {
       if (!(await undoVocabRecall(lastRecall.record))) {
-        setUndoError('Không hoàn tác được vì kết quả đã được đồng bộ hoặc thay đổi.');
+        setUndoError('Không hoàn tác được vì từ này vừa được cập nhật ở lượt khác.');
         setLastRecall(null);
         return;
       }
