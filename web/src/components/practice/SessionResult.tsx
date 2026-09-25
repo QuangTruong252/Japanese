@@ -3,7 +3,11 @@
 import { useRouter } from 'next/navigation';
 import { Furigana } from '@/components/Furigana';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2, AlertCircle } from 'lucide-react';
+import { CheckCircle2, AlertCircle, RotateCcw } from 'lucide-react';
+import {
+  savePracticeDraft,
+  PRACTICE_DRAFT_VERSION,
+} from '@/lib/practice-draft';
 import type { PracticeConfig, PracticeSession, QuestionItem } from '@/types';
 
 function formatDuration(seconds: number): string {
@@ -19,6 +23,7 @@ export function SessionResult({
   onRetrySave,
   mode = 'lesson',
   nextReviewLine,
+  userAnswers = {},
 }: {
   session: PracticeSession;
   incorrectQuestions: QuestionItem[];
@@ -26,10 +31,33 @@ export function SessionResult({
   onRetrySave?: () => void;
   mode?: PracticeConfig['mode'];
   nextReviewLine?: string | null;
+  userAnswers?: Record<string, string>;
 }) {
   const router = useRouter();
   const percentage = Math.round(session.accuracyRate * 100);
   const isDue = mode === 'due';
+
+  const handleRetryIncorrect = () => {
+    if (incorrectQuestions.length === 0) return;
+
+    savePracticeDraft({
+      version: PRACTICE_DRAFT_VERSION,
+      questions: incorrectQuestions,
+      currentIndex: 0,
+      results: [],
+      elapsedSec: 0,
+      savedAt: Date.now(),
+      config: {
+        mode: 'lesson',
+        lessons: [...new Set(incorrectQuestions.map((q) => q.lesson))].sort((a, b) => a - b),
+        maxLearnedLesson: Math.max(0, ...incorrectQuestions.map((q) => q.lesson)),
+        selectedTypes: [...new Set(incorrectQuestions.map((q) => q.type))],
+        questionCount: incorrectQuestions.length,
+      },
+    });
+
+    router.push('/luyen-tap/phien?resume=1');
+  };
 
   return (
     <main className="mx-auto max-w-xl space-y-6 px-4 py-8">
@@ -102,11 +130,12 @@ export function SessionResult({
       ) : (
         <div className="space-y-3">
           <h2 className="text-sm font-medium text-foreground">
-            Các câu cần ôn lại ({incorrectQuestions.length})
+            Câu sai ({incorrectQuestions.length})
           </h2>
           <div className="space-y-3">
             {incorrectQuestions.map((q) => {
               const answerText = Array.isArray(q.answer) ? q.answer.join(', ') : q.answer;
+              const userAnswer = userAnswers[q.targetId];
               return (
                 <div
                   key={q.id}
@@ -115,6 +144,18 @@ export function SessionResult({
                   <div className="jp jp-example font-medium">
                     <Furigana text={q.prompt} />
                   </div>
+                  {userAnswer !== undefined && (
+                    <div className="text-sm">
+                      <span className="text-muted-foreground">Bạn trả lời: </span>
+                      {userAnswer.trim().length > 0 ? (
+                        <span className="jp jp-vocab font-medium text-destructive">
+                          {userAnswer}
+                        </span>
+                      ) : (
+                        <span className="italic text-muted-foreground">(Chưa biết)</span>
+                      )}
+                    </div>
+                  )}
                   <div className="text-sm">
                     <span className="text-muted-foreground">Đáp án đúng: </span>
                     <span className="jp jp-vocab font-medium text-foreground">
@@ -134,18 +175,29 @@ export function SessionResult({
       )}
 
       {/* Điều hướng */}
-      <div className="flex flex-col gap-3 pt-2 sm:flex-row motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3 motion-safe:duration-400 motion-safe:ease-in-out motion-safe:fill-mode-both motion-safe:delay-80">
+      <div className="flex flex-col gap-3 pt-2 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3 motion-safe:duration-400 motion-safe:ease-in-out motion-safe:fill-mode-both motion-safe:delay-80">
+        {incorrectQuestions.length > 0 && (
+          <Button
+            size="quiz"
+            className="w-full"
+            onClick={handleRetryIncorrect}
+          >
+            <RotateCcw className="mr-2 size-5" />
+            Làm lại câu sai
+          </Button>
+        )}
         <Button
           size="quiz"
-          className="flex-1"
+          variant={incorrectQuestions.length > 0 ? 'outline' : 'default'}
+          className="w-full"
           onClick={() => router.push(isDue ? '/on-tap' : '/luyen-tap')}
         >
-          {isDue ? 'Về ôn tập' : 'Luyện tiếp'}
+          {isDue ? 'Về ôn tập' : 'Luyện phiên mới'}
         </Button>
         <Button
           size="quiz"
           variant="outline"
-          className="flex-1"
+          className="w-full"
           onClick={() => router.push('/')}
         >
           Về trang chủ
