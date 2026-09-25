@@ -10,6 +10,13 @@ export function getVocabTargetId(lesson: number, wordIndex: number): string {
   return `vocab-${String(lesson).padStart(2, '0')}-${String(wordIndex + 1).padStart(2, '0')}`;
 }
 
+export interface VocabRecallRecord {
+  next: ReviewItem;
+  /** Trạng thái trước lần chấm; undefined nếu từ chưa từng vào lịch ôn. */
+  previous?: ReviewItem;
+  syncId: string;
+}
+
 /** Persist one self-rated vocabulary recall and its sync payload atomically. */
 export async function saveVocabRecall({
   targetId,
@@ -21,7 +28,7 @@ export async function saveVocabRecall({
   lesson: number;
   grade: Grade;
   elapsedMs: number;
-}): Promise<ReviewItem> {
+}): Promise<VocabRecallRecord> {
   return db.transaction('rw', db.reviewItems, db.pendingSync, async () => {
     const previous = await db.reviewItems.get(targetId);
     const previousUpdateMs = previous ? Date.parse(previous.updatedAt) : 0;
@@ -45,13 +52,46 @@ export async function saveVocabRecall({
         : (previous?.recentElapsedMs ?? []),
     };
 
+    const syncId = `sync-vocab-${targetId}-${now.getTime()}-${Math.random().toString(36).slice(2, 8)}`;
     await db.reviewItems.put(next);
     await db.pendingSync.add({
-      id: `sync-vocab-${targetId}-${now.getTime()}-${Math.random().toString(36).slice(2, 8)}`,
+      id: syncId,
       payload: { kind: 'practice', reviewItems: [next] },
       createdAt: now.getTime(),
     });
 
-    return next;
+    return { next, previous, syncId };
+  });
+}
+
+/**
+ * Hoàn tác một lần tự chấm. Từ đã có trong lịch ôn: ghi lại bản trước với updatedAt mới
+ * để thắng LWW khi đồng bộ. Từ mới: chỉ xóa được khi lượt chấm chưa đẩy lên server.
+ * Trả về false nếu không hoàn tác được.
+ */
+export async function undoVocabRecall({ next, previous, syncId }: VocabRecallRecord): Promise<boolean> {
+  return db.transaction('rw', db.reviewItems, db.pendingSync, async () => {
+    const current = await db.reviewItems.get(next.targetId);
+    if (!current || current.updatedAt !== next.updatedAt) return false; // đã bị ghi đè bởi lượt khác
+
+    if (!previous) {
+      if (!(await db.pendingSync.get(syncId))) return false;
+      await db.pendingSync.delete(syncId);
+      await db.reviewItems.delete(next.targetId);
+      return true;
+    }
+
+    const now = new Date(Math.max(Date.now(), Date.parse(next.updatedAt) + 1));
+    const restored: ReviewItem = { ...previous, updatedAt: now.toISOString() };
+    await db.reviewItems.put(restored);
+    if (await db.pendingSync.get(syncId)) {
+      await db.pendingSync.delete(syncId);
+    }
+    await db.pendingSync.add({
+      id: `sync-vocab-${next.targetId}-${now.getTime()}-${Math.random().toString(36).slice(2, 8)}`,
+      payload: { kind: 'practice', reviewItems: [restored] },
+      createdAt: now.getTime(),
+    });
+    return true;
   });
 }
