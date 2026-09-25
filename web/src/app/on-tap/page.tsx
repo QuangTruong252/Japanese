@@ -100,6 +100,7 @@ export default function ReviewTodayPage() {
   const newCount = queue.newTargetIds.length;
   const totalCount = dueCount + newCount;
   const canStart = !loading && totalCount > 0 && preview.eligibleCount > 0;
+  const maxLesson = queue.config.maxLearnedLesson;
 
   const startSession = useCallback(() => {
     if (canStart) router.push('/on-tap/phien');
@@ -298,6 +299,34 @@ export default function ReviewTodayPage() {
           {queue.limitReached && (
             <p className="text-sm text-muted-foreground">
               Đã đủ {queue.dailyNewLimit} mục mới hôm nay — hôm nay không nạp thêm mục mới nữa.
+            </p>
+          )}
+
+          {newCount > 0 && (
+            <p className="text-xs sm:text-sm text-muted-foreground border-t border-border/60 pt-3">
+              Mỗi ngày app thêm tối đa {queue.dailyNewLimit} mục mới (gồm cả từ vựng và ngữ pháp) từ các bài bạn đã học đến{maxLesson > 0 ? ` (bài ${maxLesson})` : ''}. Nếu chưa học bài đó, hãy{' '}
+              {maxLesson > 0 ? (
+                <Link
+                  href={`/hoc/${maxLesson}`}
+                  className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
+                >
+                  học bài {maxLesson} trước
+                </Link>
+              ) : (
+                <Link
+                  href="/hoc"
+                  className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
+                >
+                  học bài trước
+                </Link>
+              )}{' '}
+              hoặc điều chỉnh tại{' '}
+              <Link
+                href="/cai-dat#hoc-den-bai"
+                className="font-medium text-primary underline underline-offset-2 hover:text-primary/80"
+              >
+                cài đặt &quot;đã học đến bài&quot;
+              </Link>.
             </p>
           )}
         </CardContent>
