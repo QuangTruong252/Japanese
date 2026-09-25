@@ -52,8 +52,8 @@ export default async function LessonDetailPage({
             <span>Danh sách bài học N5</span>
           </Link>
           <div className="flex items-center gap-2">
-            <ThemeToggle className="size-10 rounded-xl" />
-            <SearchTrigger iconOnly className="size-10 rounded-xl lg:hidden" />
+            <ThemeToggle className="size-11 rounded-xl" />
+            <SearchTrigger iconOnly className="size-11 rounded-xl lg:hidden" />
           </div>
         </div>
 

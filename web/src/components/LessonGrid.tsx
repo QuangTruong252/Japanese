@@ -292,7 +292,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-4">
           {filteredSummaries.map((s) => {
             const hasTranslation = Boolean(s.title?.vi);
             const learned = learnedByLesson.get(s.number) ?? 0;
@@ -327,8 +327,8 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                 href={`/hoc/${s.number}`}
                 className="group outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-2xl block"
               >
-                <Card className="h-full rounded-2xl border-border/80 bg-card p-3.5 sm:p-4 shadow-sm hover:shadow-md hover:border-primary/40 transition flex flex-col justify-between gap-2.5 relative">
-                  <div className="space-y-1.5">
+                <Card className="h-full rounded-2xl border-border/80 bg-card px-3.5 py-3 sm:p-4 shadow-sm hover:shadow-md hover:border-primary/40 transition flex flex-col justify-between gap-2 relative">
+                  <div className="space-y-1">
                     {/* Header thẻ: 1 nhãn "Bài N" + Badge trạng thái */}
                     <div className="flex items-center justify-between gap-2">
                       <span className="text-xs font-bold text-foreground">
@@ -363,16 +363,16 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                       </div>
                     )}
 
-                    {/* Mô tả: 1 dòng trên mobile */}
+                    {/* Mô tả: chỉ desktop — trên mobile tiêu đề + tiếng Nhật đủ để chọn bài */}
                     {s.description?.vi && (
-                      <p className="text-xs text-muted-foreground line-clamp-1 leading-relaxed">
+                      <p className="hidden sm:block text-xs text-muted-foreground line-clamp-1 leading-relaxed">
                         {s.description.vi}
                       </p>
                     )}
                   </div>
 
                   {/* 1 dòng tiến độ gọn */}
-                  <div className="pt-2 border-t border-border/60">
+                  <div className="pt-1.5 border-t border-border/60">
                     <ProgressBar learned={learned} total={s.vocabCount} />
                   </div>
                 </Card>

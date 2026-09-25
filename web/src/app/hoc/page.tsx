@@ -29,7 +29,7 @@ export default async function HocPage() {
 
         <div className="flex items-center gap-2">
           <SearchTrigger className="lg:hidden" />
-          <ThemeToggle className="size-10 rounded-xl" />
+          <ThemeToggle className="size-11 rounded-xl" />
           <Link
             href="/hoc/tra-cuu"
             className={cn(

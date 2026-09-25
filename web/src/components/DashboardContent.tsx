@@ -102,9 +102,9 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
 
         {/* Lối vào thứ cấp cho Tìm kiếm, Tài khoản, Chủ đề & Cài đặt */}
         <div className="flex items-center gap-2 pt-1">
-          <SearchTrigger iconOnly className="size-9 rounded-xl lg:hidden" />
+          <SearchTrigger iconOnly className="size-11 rounded-xl lg:hidden" />
           <SyncBadge className="h-9 px-2.5 rounded-xl text-xs shadow-2xs lg:hidden" />
-          <ThemeToggle className="size-9 rounded-xl" />
+          <ThemeToggle className="size-11 rounded-xl" />
           <Link
             href="/cai-dat"
             aria-label="Cài đặt và Tài khoản"
