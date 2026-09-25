@@ -62,10 +62,9 @@ export function SyncBadge({
       return;
     }
     try {
+      // Badge có ở mọi trang: chỉ đọc session cục bộ. onAuthStateChange phát INITIAL_SESSION
+      // ngay khi đăng ký, không cần getUser() gọi mạng.
       const supabase = createClient();
-      supabase.auth.getUser().then(({ data: { user } }) => {
-        setInternalLoggedIn(Boolean(user));
-      });
       const {
         data: { subscription },
       } = supabase.auth.onAuthStateChange((_event, session) => {
