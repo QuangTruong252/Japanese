@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AnswerOption, type AnswerOptionState } from './AnswerOption';
 import { Furigana } from '@/components/Furigana';
 import type { QuestionProps } from './types';
@@ -175,48 +175,46 @@ export function QuestionMatching({
       role="group"
       aria-label="Ghép cặp từ vựng và nghĩa tiếng Việt"
     >
-      {/* Cột trái: tiếng Nhật */}
-      <div className="flex flex-col gap-3">
-        {leftItems.map((item) => {
-          const matched = matchedTargetIds.has(item.targetId);
-          return (
+      {Array.from({ length: pairs.length }, (_, i) => {
+        const leftItem = leftItems[i];
+        const rightItem = rightItems[i];
+        if (!leftItem || !rightItem) return null;
+        const matchedLeft = matchedTargetIds.has(leftItem.targetId);
+        const matchedRight = matchedTargetIds.has(rightItem.targetId);
+
+        return (
+          <Fragment key={`pair-row-${leftItem.targetId}-${rightItem.targetId}`}>
+            {/* Ô trái: tiếng Nhật */}
             <div
-              key={item.targetId}
-              className={cn(matched && 'opacity-40 transition-opacity duration-200')}
+              className={cn('h-full flex', matchedLeft && 'opacity-40 transition-opacity duration-200')}
             >
               <AnswerOption
-                state={stateOfLeft(item.targetId)}
-                disabled={matched || answered}
-                onClick={() => handleLeftClick(item.targetId)}
+                state={stateOfLeft(leftItem.targetId)}
+                disabled={matchedLeft || answered}
+                className="h-full"
+                onClick={() => handleLeftClick(leftItem.targetId)}
               >
                 {/* pairs[].jp là notation furigana, không phải chữ đã dựng ruby */}
-                <Furigana text={item.text} zoomable={false} />
+                <Furigana text={leftItem.text} zoomable={false} />
               </AnswerOption>
             </div>
-          );
-        })}
-      </div>
 
-      {/* Cột phải: tiếng Việt */}
-      <div className="flex flex-col gap-3">
-        {rightItems.map((item) => {
-          const matched = matchedTargetIds.has(item.targetId);
-          return (
+            {/* Ô phải: tiếng Việt */}
             <div
-              key={item.targetId}
-              className={cn(matched && 'opacity-40 transition-opacity duration-200')}
+              className={cn('h-full flex', matchedRight && 'opacity-40 transition-opacity duration-200')}
             >
               <AnswerOption
-                state={stateOfRight(item.targetId)}
-                disabled={matched || answered}
-                onClick={() => handleRightClick(item.targetId)}
+                state={stateOfRight(rightItem.targetId)}
+                disabled={matchedRight || answered}
+                className="h-full"
+                onClick={() => handleRightClick(rightItem.targetId)}
               >
-                {item.text}
+                {rightItem.text}
               </AnswerOption>
             </div>
-          );
-        })}
-      </div>
+          </Fragment>
+        );
+      })}
     </div>
   );
 }

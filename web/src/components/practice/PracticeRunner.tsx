@@ -469,11 +469,8 @@ export function PracticeRunner({
         />
       </div>
 
-      {/* VÙNG CÂU HỎI: co được, min-h-0 + overflow-y-auto để chính nó thu nhỏ */}
-      <section
-        key={`prompt-${currentQuestion.id}`}
-        className="relative flex min-h-0 flex-1 flex-col items-center justify-center overflow-y-auto py-4 text-center motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-2 motion-safe:duration-250 motion-safe:ease-in-out"
-      >
+      {/* VÙNG NỘI DUNG CHÍNH (ĐỀ BÀI + THAO TÁC): cuộn mượt khi tràn, gom cụm căn giữa khi vừa màn */}
+      <div className="relative min-h-0 flex-1 overflow-y-auto">
         {/* Lớp phủ khi tạm dừng */}
         {isPaused && !answered && (
           <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-background/95 backdrop-blur-xs p-6 text-center gap-4 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:duration-150">
@@ -494,100 +491,113 @@ export function PracticeRunner({
           </div>
         )}
 
-        {currentQuestion.type !== 'listening' ? (
-          <>
-            {currentQuestion.context && (
-              <p className="mb-2 text-sm text-muted-foreground">
-                {currentQuestion.context}
-              </p>
-            )}
-            <div className="jp jp-quiz">
-              <Furigana text={currentQuestion.prompt} />
-            </div>
-          </>
-        ) : (
-          <p className="text-sm font-medium text-muted-foreground">
-            Nghe và nhập lại câu tiếng Nhật
-          </p>
-        )}
-      </section>
-
-      {/* VÙNG TRẢ LỜI: luôn ở nửa dưới */}
-      <section key={`answer-${currentQuestion.id}`} className="shrink-0 pb-4 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-2 motion-safe:duration-250 motion-safe:ease-in-out">
-        {renderQuestionComponent()}
-
-        {/* VÙNG PHẢN HỒI: hiện sau khi trả lời */}
-        {answered && lastResult && (
-          <div
-            aria-live="polite"
-            className={cn(
-              'mt-4 rounded-xl border p-4 transition-colors duration-150',
-              'motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-2 motion-safe:duration-200 motion-safe:ease-out',
-              lastResult.isCorrect
-                ? 'border-success/30 bg-success/10'
-                : 'border-destructive/30 bg-destructive/10',
-            )}
-          >
-            <div className="flex items-center gap-2 font-medium">
-              {lastResult.isCorrect ? (
+        <div className="flex min-h-full flex-col justify-center py-4">
+          <div className="my-auto flex w-full flex-col gap-5 sm:gap-6">
+            {/* Khối đề bài: đặt ngay sát phía trên khối trả lời */}
+            <section
+              key={`prompt-${currentQuestion.id}`}
+              className="flex flex-col items-center text-center motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-2 motion-safe:duration-250 motion-safe:ease-in-out"
+            >
+              {currentQuestion.type !== 'listening' ? (
                 <>
-                  <Check className="size-5 shrink-0 text-success animate-draw-check" />
-                  <span className="text-success">Chính xác!</span>
+                  {currentQuestion.context && (
+                    <p className="mb-2 text-sm text-muted-foreground">
+                      {currentQuestion.context}
+                    </p>
+                  )}
+                  <div className="jp jp-quiz">
+                    <Furigana text={currentQuestion.prompt} />
+                  </div>
                 </>
               ) : (
-                <>
-                  <X className="size-5 shrink-0 text-destructive" />
-                  <span className="text-destructive">Chưa chính xác</span>
-                </>
+                <p className="text-sm font-medium text-muted-foreground">
+                  Nghe và nhập lại câu tiếng Nhật
+                </p>
               )}
-            </div>
+            </section>
 
-            {!lastResult.isCorrect && (
-              <div className="mt-2 space-y-1 text-sm">
-                {userAnswerText !== undefined && (
-                  <div>
-                    <span className="text-muted-foreground">Bạn trả lời: </span>
-                    {userAnswerText.trim().length > 0 ? (
-                      <span className="jp jp-vocab font-medium text-destructive">
-                        {userAnswerText}
-                      </span>
+            {/* Khối trả lời và phản hồi */}
+            <section
+              key={`answer-${currentQuestion.id}`}
+              className="pb-2 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-2 motion-safe:duration-250 motion-safe:ease-in-out"
+            >
+              {renderQuestionComponent()}
+
+              {/* VÙNG PHẢN HỒI: hiện sau khi trả lời */}
+              {answered && lastResult && (
+                <div
+                  aria-live="polite"
+                  className={cn(
+                    'mt-4 rounded-xl border p-4 transition-colors duration-150',
+                    'motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-2 motion-safe:duration-200 motion-safe:ease-out',
+                    lastResult.isCorrect
+                      ? 'border-success/30 bg-success/10'
+                      : 'border-destructive/30 bg-destructive/10',
+                  )}
+                >
+                  <div className="flex items-center gap-2 font-medium">
+                    {lastResult.isCorrect ? (
+                      <>
+                        <Check className="size-5 shrink-0 text-success animate-draw-check" />
+                        <span className="text-success">Chính xác!</span>
+                      </>
                     ) : (
-                      <span className="italic text-muted-foreground">(Chưa biết)</span>
+                      <>
+                        <X className="size-5 shrink-0 text-destructive" />
+                        <span className="text-destructive">Chưa chính xác</span>
+                      </>
                     )}
                   </div>
-                )}
-                <div>
-                  <span className="text-muted-foreground">Đáp án đúng: </span>
-                  <span className="jp jp-vocab font-medium text-foreground">
-                    {correctAnswerText}
-                  </span>
-                </div>
-                {currentHint && (
-                  <div className="mt-2 rounded-lg border border-warning/40 bg-warning/10 p-2.5 text-xs text-warning-foreground">
-                    💡 {currentHint}
+
+                  {!lastResult.isCorrect && (
+                    <div className="mt-2 space-y-1 text-sm">
+                      {userAnswerText !== undefined && (
+                        <div>
+                          <span className="text-muted-foreground">Bạn trả lời: </span>
+                          {userAnswerText.trim().length > 0 ? (
+                            <span className="jp jp-vocab font-medium text-destructive">
+                              {userAnswerText}
+                            </span>
+                          ) : (
+                            <span className="italic text-muted-foreground">(Chưa biết)</span>
+                          )}
+                        </div>
+                      )}
+                      <div>
+                        <span className="text-muted-foreground">Đáp án đúng: </span>
+                        <span className="jp jp-vocab font-medium text-foreground">
+                          {correctAnswerText}
+                        </span>
+                      </div>
+                      {currentHint && (
+                        <div className="mt-2 rounded-lg border border-warning/40 bg-warning/10 p-2.5 text-xs text-warning-foreground">
+                          💡 {currentHint}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {currentQuestion.explanationVi && (
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {currentQuestion.explanationVi}
+                    </p>
+                  )}
+
+                  <div className="mt-4">
+                    <Button
+                      size="quiz"
+                      className="w-full"
+                      onClick={handleNext}
+                    >
+                      {currentIndex + 1 < questions.length ? 'Tiếp tục' : 'Xem kết quả'}
+                    </Button>
                   </div>
-                )}
-              </div>
-            )}
-
-            {currentQuestion.explanationVi && (
-              <p className="mt-1 text-sm text-muted-foreground">
-                {currentQuestion.explanationVi}
-              </p>
-            )}
-
-            <div className="mt-4">
-              <Button
-                size="quiz"
-                className="w-full"
-                onClick={handleNext}
-              >
-                {currentIndex + 1 < questions.length ? 'Tiếp tục' : 'Xem kết quả'}
-              </Button>
-            </div>
+                </div>
+              )}
+            </section>
           </div>
-        )}
-      </section>
+        </div>
+      </div>
 
       {/* Hộp thoại xác nhận thoát với 3 lựa chọn */}
       <AlertDialog open={exitDialogOpen} onOpenChange={setExitDialogOpen}>
