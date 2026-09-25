@@ -56,7 +56,11 @@ export function SessionResult({
       },
     });
 
-    router.push(`/luyen-tap/phien?resume=${Date.now()}`);
+    const href = `/luyen-tap/phien?resume=${Date.now()}`;
+    // Đang ở trang phiên: đổi query tại chỗ (App Router đồng bộ useSearchParams, không gọi
+    // server) để làm lại câu sai được cả khi mất mạng. Từ trang khác mới cần điều hướng.
+    if (window.location.pathname === '/luyen-tap/phien') window.history.pushState(null, '', href);
+    else router.push(href);
   };
 
   return (
