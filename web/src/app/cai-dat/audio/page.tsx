@@ -6,7 +6,10 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import {
   AlertCircle,
   ArrowLeft,
+  Check,
   CheckCircle2,
+  ChevronDown,
+  Copy,
   FileArchive,
   Info,
   Loader2,
@@ -28,8 +31,134 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { db } from '@/lib/db';
 import { formatStorageSize } from '@/lib/audio-zip';
+import {
+  SAMPLE_MANIFEST_JSON,
+  MANIFEST_FIELD_DOCS,
+} from '@/lib/audio-manifest-sample';
 import { useAudioImport } from '@/hooks/use-audio-import';
 import { cn } from '@/lib/utils';
+
+function AudioPackageGuide() {
+  const [copied, setCopied] = useState(false);
+  const codeRef = useRef<HTMLPreElement>(null);
+
+  const handleCopy = async () => {
+    try {
+      if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(SAMPLE_MANIFEST_JSON);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+        return;
+      }
+      throw new Error('Clipboard API unavailable');
+    } catch {
+      // Fallback: chọn văn bản trong DOM để người dùng dễ dàng bấm Ctrl+C
+      if (codeRef.current) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(codeRef.current);
+        selection?.removeAllRanges();
+        selection?.addRange(range);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      }
+    }
+  };
+
+  return (
+    <Card className="border border-border/70 bg-muted/30">
+      <CardContent className="p-4 space-y-4 text-xs text-muted-foreground">
+        {/* Cách tạo gói: 3 bước ngắn */}
+        <div className="space-y-2">
+          <div className="font-semibold text-foreground text-sm">
+            Cách tạo gói audio (.zip)
+          </div>
+          <ol className="space-y-1.5 list-decimal list-inside text-muted-foreground leading-relaxed">
+            <li>
+              <strong className="text-foreground font-medium">Đặt tên file:</strong> Gom các file MP3 theo từng thư mục bài học (<code className="font-mono text-foreground">L01</code>, <code className="font-mono text-foreground">L02</code>...). Đặt tên file theo chuẩn: <code className="font-mono text-foreground">01_vocab.mp3</code>, <code className="font-mono text-foreground">02_sentence_patterns.mp3</code>, <code className="font-mono text-foreground">03_examples.mp3</code>, <code className="font-mono text-foreground">04_conversation.mp3</code>.
+            </li>
+            <li>
+              <strong className="text-foreground font-medium">Tạo manifest.json:</strong> Đặt file <code className="font-mono text-foreground">manifest.json</code> ở thư mục gốc chứa mã SHA-256 của từng file MP3 để ứng dụng kiểm tra tính toàn vẹn khi giải nén.
+            </li>
+            <li>
+              <strong className="text-foreground font-medium">Nén thành file ZIP:</strong> Chọn các thư mục bài học cùng file <code className="font-mono text-foreground">manifest.json</code> nén thành 1 file ZIP (tối đa 2 GB) rồi nạp vào máy.
+            </li>
+          </ol>
+        </div>
+
+        {/* Cấu trúc cây thư mục */}
+        <div className="space-y-1.5">
+          <div className="font-medium text-foreground text-xs">Cấu trúc thư mục chuẩn:</div>
+          <pre className="p-2.5 rounded-lg bg-card border border-border/60 font-mono text-[11px] leading-relaxed text-foreground overflow-x-auto">
+{`minna-audio/
+├── L01/
+│   ├── 01_vocab.mp3
+│   ├── 02_sentence_patterns.mp3
+│   ├── 03_examples.mp3
+│   └── 04_conversation.mp3
+├── L02/ ...
+└── manifest.json`}
+          </pre>
+        </div>
+
+        {/* Mục gập Mẫu manifest.json */}
+        <details className="group rounded-xl border border-border/80 bg-card p-3 transition-colors">
+          <summary className="flex cursor-pointer items-center justify-between text-xs font-semibold text-foreground select-none list-none outline-none focus-visible:ring-2 focus-visible:ring-ring">
+            <span>Mẫu manifest.json</span>
+            <ChevronDown className="w-4 h-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180" />
+          </summary>
+
+          <div className="mt-3 pt-3 border-t border-border/60 space-y-3">
+            <div className="flex items-center justify-between gap-2">
+              <span className="text-[11px] font-mono text-muted-foreground">manifest.json (1 bài, 2 track mẫu)</span>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={handleCopy}
+                aria-label={copied ? 'Đã sao chép' : 'Sao chép nội dung manifest.json'}
+                className="h-8 px-2.5 text-xs font-medium border-border/80 hover:bg-accent flex items-center gap-1.5"
+              >
+                {copied ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                    <span className="text-emerald-600 dark:text-emerald-400">Đã sao chép</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5 text-muted-foreground" />
+                    <span>Sao chép</span>
+                  </>
+                )}
+              </Button>
+            </div>
+
+            <pre
+              ref={codeRef}
+              tabIndex={0}
+              className="p-2.5 rounded-lg bg-muted/40 border border-border/60 font-mono text-[11px] leading-relaxed text-foreground overflow-x-auto focus:outline-none focus:ring-1 focus:ring-ring"
+            >
+              {SAMPLE_MANIFEST_JSON}
+            </pre>
+
+            {/* Chú thích ngắn từng field */}
+            <div className="space-y-1.5 pt-1 text-[11px] border-t border-border/40">
+              <div className="font-semibold text-foreground">Chú thích các trường:</div>
+              <ul className="space-y-1 text-muted-foreground">
+                {MANIFEST_FIELD_DOCS.map((doc) => (
+                  <li key={doc.name} className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2">
+                    <span className="font-mono text-foreground shrink-0 font-medium">• {doc.name}:</span>
+                    <span>{doc.description}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </details>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function AudioSettingsPage() {
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -274,25 +403,7 @@ export default function AudioSettingsPage() {
 
             {totalTracks === 0 ? (
               <div className="space-y-4">
-                {/* Hướng dẫn cấu trúc thư mục mẫu */}
-                <Card className="border border-border/70 bg-muted/30">
-                  <CardContent className="p-4 space-y-2.5 text-xs text-muted-foreground">
-                    <p>
-                      Bạn tự đóng gói audio từ đĩa CD Minna no Nihongo I mà bạn sở hữu thành một file ZIP theo cấu trúc thư mục bên dưới, kèm file{' '}
-                      <code className="text-foreground font-semibold">manifest.json</code>:
-                    </p>
-                    <pre className="p-2.5 rounded-lg bg-card border border-border/60 font-mono text-[11px] leading-relaxed text-foreground overflow-x-auto">
-{`minna-audio/
-├── L01/
-│   ├── 01_vocab.mp3
-│   ├── 02_sentence_patterns.mp3
-│   ├── 03_examples.mp3
-│   └── 04_conversation.mp3
-├── L02/ ...
-└── manifest.json`}
-                    </pre>
-                  </CardContent>
-                </Card>
+                <AudioPackageGuide />
 
                 <Button
                   onClick={handleTriggerFileInput}
@@ -304,26 +415,39 @@ export default function AudioSettingsPage() {
                 </Button>
               </div>
             ) : (
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button
-                  onClick={handleTriggerFileInput}
-                  variant="outline"
-                  size="quiz"
-                  className="flex-1 font-medium border-border/80 hover:bg-accent"
-                >
-                  <FileArchive className="w-5 h-5 mr-2 text-muted-foreground" />
-                  <span>Nạp lại file ZIP</span>
-                </Button>
+              <div className="space-y-4">
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Button
+                    onClick={handleTriggerFileInput}
+                    variant="outline"
+                    size="quiz"
+                    className="flex-1 font-medium border-border/80 hover:bg-accent"
+                  >
+                    <FileArchive className="w-5 h-5 mr-2 text-muted-foreground" />
+                    <span>Nạp lại file ZIP</span>
+                  </Button>
 
-                <Button
-                  onClick={() => setShowDeleteDialog(true)}
-                  variant="outline"
-                  size="quiz"
-                  className="sm:w-auto font-medium text-destructive border-destructive/30 hover:bg-destructive/10 hover:text-destructive"
-                >
-                  <Trash2 className="w-5 h-5 mr-2" />
-                  <span>Gỡ audio</span>
-                </Button>
+                  <Button
+                    onClick={() => setShowDeleteDialog(true)}
+                    variant="outline"
+                    size="quiz"
+                    className="sm:w-auto font-medium text-destructive border-destructive/30 hover:bg-destructive/10 hover:text-destructive"
+                  >
+                    <Trash2 className="w-5 h-5 mr-2" />
+                    <span>Gỡ audio</span>
+                  </Button>
+                </div>
+
+                {/* Hướng dẫn tạo gói & mẫu manifest khi cần tra cứu lại */}
+                <details className="group rounded-xl border border-border/70 bg-card p-3 transition-colors">
+                  <summary className="flex cursor-pointer items-center justify-between text-xs font-semibold text-muted-foreground hover:text-foreground select-none list-none outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                    <span>Hướng dẫn cấu trúc gói & mẫu manifest.json</span>
+                    <ChevronDown className="w-4 h-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180" />
+                  </summary>
+                  <div className="mt-3 pt-3 border-t border-border/60">
+                    <AudioPackageGuide />
+                  </div>
+                </details>
               </div>
             )}
           </div>
