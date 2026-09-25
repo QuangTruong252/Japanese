@@ -1,3 +1,11 @@
+import type { ExerciseType } from '../types/index.ts';
+
+export interface PracticePreset {
+  lessons: number[];
+  types: ExerciseType[];
+  questionCount: number;
+}
+
 export interface AppSettings {
   furigana: boolean;
   furiganaSize: 'normal' | 'large';
@@ -9,9 +17,27 @@ export interface AppSettings {
   reviewBatchSize: number;
   /** "Đã học đến bài N" do người học khai báo; 0 = chưa khai báo (SPEC-05 §2.1a). */
   learnedThroughLesson: number;
+  /** Cấu hình mặc định/lưu tạm thời của màn Luyện tập. */
+  practicePreset: PracticePreset;
 }
 
 export const SETTINGS_STORAGE_KEY = 'jp:settings';
+
+export const VALID_PRACTICE_EXERCISE_TYPES: ExerciseType[] = [
+  'mc',
+  'matching',
+  'cloze',
+  'reorder',
+  'listening',
+];
+
+export const VALID_PRACTICE_QUESTION_COUNTS = [10, 15, 20, 30] as const;
+
+export const DEFAULT_PRACTICE_PRESET: PracticePreset = {
+  lessons: [1],
+  types: ['mc', 'matching', 'cloze', 'reorder', 'listening'],
+  questionCount: 15,
+};
 
 export const DEFAULT_SETTINGS: AppSettings = {
   furigana: true,
@@ -22,12 +48,52 @@ export const DEFAULT_SETTINGS: AppSettings = {
   dailyNewLimit: 20,
   reviewBatchSize: 20,
   learnedThroughLesson: 0,
+  practicePreset: DEFAULT_PRACTICE_PRESET,
 };
 
 const clampInt = (value: unknown, min: number, max: number, fallback: number): number =>
   typeof value === 'number' && Number.isFinite(value)
     ? Math.max(min, Math.min(max, Math.round(value)))
     : fallback;
+
+export const validatePracticePreset = (raw: unknown): PracticePreset => {
+  if (!raw || typeof raw !== 'object') {
+    return { ...DEFAULT_PRACTICE_PRESET, lessons: [...DEFAULT_PRACTICE_PRESET.lessons], types: [...DEFAULT_PRACTICE_PRESET.types] };
+  }
+  const obj = raw as Record<string, unknown>;
+
+  let lessons: number[] = [...DEFAULT_PRACTICE_PRESET.lessons];
+  if (Array.isArray(obj.lessons)) {
+    const validLessons = obj.lessons.filter(
+      (n): n is number => typeof n === 'number' && Number.isInteger(n) && n >= 1 && n <= 25,
+    );
+    const unique = [...new Set(validLessons)].sort((a, b) => a - b);
+    if (unique.length > 0) {
+      lessons = unique;
+    }
+  }
+
+  let types: ExerciseType[] = [...DEFAULT_PRACTICE_PRESET.types];
+  if (Array.isArray(obj.types)) {
+    const validTypes = obj.types.filter((t): t is ExerciseType =>
+      typeof t === 'string' && VALID_PRACTICE_EXERCISE_TYPES.includes(t as ExerciseType),
+    );
+    const unique = [...new Set(validTypes)];
+    if (unique.length > 0) {
+      types = unique;
+    }
+  }
+
+  let questionCount: number = DEFAULT_PRACTICE_PRESET.questionCount;
+  if (
+    typeof obj.questionCount === 'number' &&
+    VALID_PRACTICE_QUESTION_COUNTS.includes(obj.questionCount as 10 | 15 | 20 | 30)
+  ) {
+    questionCount = obj.questionCount;
+  }
+
+  return { lessons, types, questionCount };
+};
 
 export const loadSettings = (): AppSettings => {
   if (typeof window === 'undefined' || !window.localStorage) {
@@ -58,6 +124,7 @@ export const loadSettings = (): AppSettings => {
           : DEFAULT_SETTINGS.dailyNewLimit,
       reviewBatchSize: clampInt(parsed.reviewBatchSize, 5, 100, DEFAULT_SETTINGS.reviewBatchSize),
       learnedThroughLesson: clampInt(parsed.learnedThroughLesson, 0, 25, 0),
+      practicePreset: validatePracticePreset(parsed.practicePreset),
     };
   } catch {
     return DEFAULT_SETTINGS;
