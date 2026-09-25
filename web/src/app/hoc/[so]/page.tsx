@@ -24,6 +24,12 @@ const VERB_GROUP: Record<string, { label: string; className: string }> = {
   'verb-irregular': { label: 'Nhóm 3', className: 'bg-verb-3 text-primary-foreground font-semibold' },
 };
 
+function formatGrammarText(text: string): string {
+  // Thay thế bracket không phải furigana (không đứng liền sau chữ Hán) thành ngoặc đơn dạng đọc được
+  // Ví dụ: "どこ[へ]も" -> "どこ(へ)も", "địa điểm[へ]も" -> "địa điểm(へ)も"
+  return text.replace(/(?<![一-鿿㐀-䶿々〆〇ヶ])\[([^\]]+)\]/g, '($1)');
+}
+
 export default async function LessonDetailPage({
   params,
 }: {
@@ -43,16 +49,16 @@ export default async function LessonDetailPage({
           <Link
             href="/hoc"
             className={cn(
-              buttonVariants({ variant: 'ghost', size: 'sm' }),
-              '-ml-2.5 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors'
+              buttonVariants({ variant: 'ghost' }),
+              'min-h-11 h-11 px-3 -ml-3 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors font-medium'
             )}
           >
             <ChevronLeft className="size-4 mr-1" />
             <span>Danh sách bài học N5</span>
           </Link>
           <div className="flex items-center gap-2">
-            <ThemeToggle className="size-9 rounded-xl" />
-            <SearchTrigger iconOnly className="size-9 rounded-xl lg:hidden" />
+            <ThemeToggle className="size-10 rounded-xl" />
+            <SearchTrigger iconOnly className="size-10 rounded-xl lg:hidden" />
           </div>
         </div>
 
@@ -66,9 +72,9 @@ export default async function LessonDetailPage({
             Bài {lesson.number} — {lesson.title.vi}
           </h1>
           {lesson.jpTitle && (
-            <p className="jp font-jp text-base font-semibold text-primary">
-              {lesson.jpTitle}
-            </p>
+            <div className="font-jp text-base font-semibold text-primary">
+              <Furigana text={formatGrammarText(lesson.jpTitle)} className="text-base font-semibold text-primary" />
+            </div>
           )}
           {lesson.description?.vi && (
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -89,10 +95,69 @@ export default async function LessonDetailPage({
             <LessonProgress lesson={lessonNum} total={vocab.length} />
           </div>
         </Card>
+
+        {/* Nút Luyện tập bài này gần đầu */}
+        <div className="pt-1">
+          <Link
+            href={`/luyen-tap?lessons=${lessonNum}`}
+            className={cn(
+              buttonVariants({ size: 'quiz' }),
+              'w-full sm:w-auto justify-center font-semibold rounded-xl bg-primary text-primary-foreground shadow-sm shadow-primary/20'
+            )}
+          >
+            <span>Luyện tập bài {lesson.number}</span>
+            <ArrowRight className="size-4" />
+          </Link>
+        </div>
       </header>
 
+      {/* Thanh nhảy nhanh sticky dưới header: Từ vựng / Ngữ pháp / Nghe / Luyện tập */}
+      <nav
+        aria-label="Mục lục bài học"
+        className="sticky top-0 z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-2.5 bg-background/95 backdrop-blur-md border-b border-border/60"
+      >
+        <div className="grid grid-cols-4 gap-1.5 sm:flex sm:items-center sm:gap-2">
+          <a
+            href="#tu-vung"
+            className={cn(
+              buttonVariants({ variant: 'outline', size: 'sm' }),
+              'min-h-11 h-11 w-full sm:w-auto px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold'
+            )}
+          >
+            Từ vựng
+          </a>
+          <a
+            href="#ngu-phap"
+            className={cn(
+              buttonVariants({ variant: 'outline', size: 'sm' }),
+              'min-h-11 h-11 w-full sm:w-auto px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold'
+            )}
+          >
+            Ngữ pháp
+          </a>
+          <a
+            href="#nghe"
+            className={cn(
+              buttonVariants({ variant: 'outline', size: 'sm' }),
+              'min-h-11 h-11 w-full sm:w-auto px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold'
+            )}
+          >
+            Nghe
+          </a>
+          <a
+            href="#luyen-tap"
+            className={cn(
+              buttonVariants({ variant: 'outline', size: 'sm' }),
+              'min-h-11 h-11 w-full sm:w-auto px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold'
+            )}
+          >
+            Luyện tập
+          </a>
+        </div>
+      </nav>
+
       {/* 2. Từ vựng trọng tâm */}
-      <section className="space-y-4">
+      <section id="tu-vung" className="scroll-mt-20 sm:scroll-mt-24 space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <h2 className="text-xl font-bold text-foreground">Từ vựng trọng tâm</h2>
@@ -114,49 +179,55 @@ export default async function LessonDetailPage({
 
         <Card className="rounded-2xl border-border/80 bg-card shadow-sm overflow-hidden">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm">
-              <thead>
+            <table className="w-full text-left text-sm block md:table">
+              <thead className="hidden md:table-header-group">
                 <tr className="border-b border-border/80 bg-muted/30 text-xs font-semibold text-muted-foreground">
                   <th scope="col" className="py-3 px-4">Từ vựng</th>
                   <th scope="col" className="py-3 px-4">Ý nghĩa tiếng Việt</th>
                   <th scope="col" className="py-3 px-4 text-right">Phát âm</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-border/60">
+              <tbody className="divide-y divide-border/60 block md:table-row-group">
                 {vocab.map((w) => {
                   const group = VERB_GROUP[w.type];
                   return (
                     <tr
                       key={w.id}
                       id={`vocab-${w.id}`}
-                      className="scroll-mt-24 hover:bg-muted/30 transition-colors"
+                      className="block p-3.5 sm:p-4 md:table-row md:py-3 md:px-4 scroll-mt-24 hover:bg-muted/30 transition-colors"
                     >
-                      <td className="py-3 px-4">
-                        <div className="flex flex-col items-start gap-1">
-                          <div className="flex items-center gap-2">
-                            <Furigana text={w.word} className="text-lg font-medium text-foreground" />
-                            {group && (
-                              <Badge className={cn('h-auto text-[10px] px-1.5 py-0.2 rounded', group.className)}>
-                                {group.label}
-                              </Badge>
+                      <td className="block md:table-cell p-0 md:py-3 md:px-4">
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="flex flex-col items-start gap-1">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <Furigana text={formatGrammarText(w.word)} className="text-lg font-medium text-foreground" />
+                              {group && (
+                                <Badge className={cn('h-auto text-[10px] px-1.5 py-0.2 rounded', group.className)}>
+                                  {group.label}
+                                </Badge>
+                              )}
+                            </div>
+                            {w.verbForms && (
+                              <span className="text-xs text-muted-foreground">
+                                Thể masu: <Furigana text={formatGrammarText(w.verbForms.masu)} />
+                              </span>
                             )}
                           </div>
-                          {w.verbForms && (
-                            <span className="text-xs text-muted-foreground">
-                              Thể masu: <Furigana text={w.verbForms.masu} />
-                            </span>
-                          )}
+                          {/* Mobile: nút phát âm gộp trong ô từ */}
+                          <div className="md:hidden shrink-0">
+                            <SpeakButton text={w.kana} label={stripFurigana(formatGrammarText(w.word))} />
+                          </div>
                         </div>
                       </td>
-                      <td className="py-3 px-4 text-sm text-foreground/90">
+                      <td className="block md:table-cell p-0 pt-1.5 md:py-3 md:px-4 text-sm text-foreground/90">
                         {w.meaning.vi ? (
                           <span className="translation leading-relaxed">{w.meaning.vi}</span>
                         ) : (
                           <span className="opacity-50 italic">Chưa có bản dịch</span>
                         )}
                       </td>
-                      <td className="py-3 px-4 text-right">
-                        <SpeakButton text={w.kana} label={stripFurigana(w.word)} />
+                      <td className="hidden md:table-cell py-3 px-4 text-right">
+                        <SpeakButton text={w.kana} label={stripFurigana(formatGrammarText(w.word))} />
                       </td>
                     </tr>
                   );
@@ -168,7 +239,7 @@ export default async function LessonDetailPage({
       </section>
 
       {/* 3. Ngữ pháp & Mẫu câu */}
-      <section className="space-y-5">
+      <section id="ngu-phap" className="scroll-mt-20 sm:scroll-mt-24 space-y-5">
         <div className="flex items-center gap-2">
           <h2 className="text-xl font-bold text-foreground">Ngữ pháp & Mẫu câu</h2>
           <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-muted text-muted-foreground">
@@ -181,19 +252,19 @@ export default async function LessonDetailPage({
             <Card
               key={point.id}
               id={`grammar-${point.id}`}
-              className="scroll-mt-24 rounded-2xl border-border/80 bg-card p-6 shadow-sm space-y-4"
+              className="scroll-mt-24 rounded-2xl border-border/80 bg-card p-5 sm:p-6 shadow-sm space-y-4"
             >
               <div>
                 <h3 className="text-base sm:text-lg font-bold text-foreground">
-                  {point.title.vi}
+                  <Furigana text={formatGrammarText(point.title.vi)} />
                 </h3>
               </div>
 
               {/* Khối cấu trúc mẫu câu Washi */}
               <div className="grammar-pattern-block rounded-xl bg-muted/60 p-4 border border-border/60">
-                <p className="jp font-jp text-lg sm:text-xl font-semibold text-primary">
-                  {point.pattern.vi}
-                </p>
+                <div className="font-jp text-lg sm:text-xl font-semibold text-primary">
+                  <Furigana text={formatGrammarText(point.pattern.vi)} className="text-lg sm:text-xl font-semibold text-primary" />
+                </div>
               </div>
 
               <p className="text-sm text-foreground/90 leading-relaxed">
@@ -213,14 +284,14 @@ export default async function LessonDetailPage({
                         className="flex items-start justify-between gap-3 p-3 rounded-xl bg-muted/30 border border-border/40 hover:bg-muted/50 transition-colors"
                       >
                         <div className="space-y-1">
-                          <Furigana text={ex.jp} className="text-base sm:text-lg font-medium text-foreground" />
+                          <Furigana text={formatGrammarText(ex.jp)} className="text-base sm:text-lg font-medium text-foreground" />
                           <span className="translation block text-xs sm:text-sm text-muted-foreground">
                             {ex.translation.vi}
                           </span>
                         </div>
                         <SpeakButton
-                          text={stripFurigana(ex.jp)}
-                          label={stripFurigana(ex.jp)}
+                          text={stripFurigana(formatGrammarText(ex.jp))}
+                          label={stripFurigana(formatGrammarText(ex.jp))}
                         />
                       </li>
                     ))}
@@ -239,7 +310,7 @@ export default async function LessonDetailPage({
       </section>
 
       {/* 4. Khối Audio & Trình phát Shadowing (SPEC-10) */}
-      <section className="space-y-4 pt-6 border-t border-border/80">
+      <section id="nghe" className="scroll-mt-20 sm:scroll-mt-24 space-y-4 pt-6 border-t border-border/80">
         <div className="space-y-1">
           <h2 className="text-xl font-bold text-foreground">Audio & Shadowing</h2>
           <p className="text-sm text-muted-foreground">
@@ -259,8 +330,8 @@ export default async function LessonDetailPage({
         </p>
       )}
 
-      {/* 5. Nút CTA chuyển sang Luyện tập */}
-      <div className="pt-2">
+      {/* 6. Nút CTA chuyển sang Luyện tập */}
+      <section id="luyen-tap" className="scroll-mt-20 sm:scroll-mt-24 pt-2">
         <Link
           href={`/luyen-tap?lessons=${lessonNum}`}
           className={cn(
@@ -271,7 +342,7 @@ export default async function LessonDetailPage({
           <span>Luyện tập bài {lesson.number} ngay</span>
           <ArrowRight className="w-4 h-4" />
         </Link>
-      </div>
+      </section>
     </main>
   );
 }
