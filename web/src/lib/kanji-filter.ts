@@ -1,4 +1,4 @@
-import * as wanakana from 'wanakana';
+import { wanakana } from './japanese.ts';
 import type { KanjiData } from '@/types/lookup';
 import { getKanjiLesson } from './lookup.ts';
 import { normalizeSearchText } from './search.ts';
