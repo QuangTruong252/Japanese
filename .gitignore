@@ -9,3 +9,4 @@ node_modules/
 /.claude/settings.local.json
 /.codex/config.toml
 /.mcp.json
+/bugs/
