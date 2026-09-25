@@ -1,5 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
 import {
   getAllKanji,
   getKanjiByChar,
@@ -176,3 +178,75 @@ test('mọi ví dụ Kanji đều đã có nghĩa tiếng Việt', () => {
   );
   assert.deepEqual(untranslated, []);
 });
+
+test('các động từ quan trọng có nghĩa tiếng Việt chuẩn xác (feedback #1)', () => {
+  const all = getAllVerbs();
+
+  // 泳ぎます="bơi"
+  const oyogi = all.find((v) => v.masu === 'およぎます');
+  assert.ok(oyogi, 'Phải tìm thấy およぎます');
+  assert.equal(oyogi.meaning.vi, 'bơi');
+
+  // 食べます chứa "ăn"
+  const tabe = all.find((v) => v.masu === 'たべます');
+  assert.ok(tabe, 'Phải tìm thấy たべます');
+  assert.ok(tabe.meaning.vi.includes('ăn'), `たべます phải chứa "ăn", hiện tại là: "${tabe.meaning.vi}"`);
+
+  // 書きます chứa "viết"
+  const kaki = all.find((v) => v.masu === 'かきます');
+  assert.ok(kaki, 'Phải tìm thấy かきます');
+  assert.ok(kaki.meaning.vi.includes('viết'), `かきます phải chứa "viết", hiện tại là: "${kaki.meaning.vi}"`);
+
+  // 来ます chứa "đến" (Group 3: 来ます)
+  const kuru = all.find((v) => v.group === 3 && v.masu === 'きます');
+  assert.ok(kuru, 'Phải tìm thấy きます (nhóm 3)');
+  assert.ok(kuru.meaning.vi.includes('đến'), `きます phải chứa "đến", hiện tại là: "${kuru.meaning.vi}"`);
+
+  // filterVerbs với query "bơi" trả về およぎます
+  const searchBoi = filterVerbs(all, { query: 'bơi' });
+  assert.ok(
+    searchBoi.some((v) => v.masu === 'およぎます'),
+    'filterVerbs("bơi") phải chứa およぎます'
+  );
+});
+
+interface VocabWordEntry {
+  id: string;
+  meaning: { en: string; vi: string };
+  verbForms?: { masuKana?: string };
+}
+
+test('mọi động từ có nghĩa tiếng Việt khớp chính xác với vocab tương ứng', () => {
+  const allVerbs = getAllVerbs();
+  assert.equal(allVerbs.length, 156);
+
+  const vocabByLesson = new Map<number, VocabWordEntry[]>();
+  for (let l = 1; l <= 25; l++) {
+    const filePath = path.resolve(process.cwd(), `src/data/n5/vocab/lesson-${String(l).padStart(2, '0')}.json`);
+    const content = fs.readFileSync(filePath, 'utf8');
+    const data = JSON.parse(content);
+    vocabByLesson.set(l, data.words);
+  }
+
+  for (const v of allVerbs) {
+    const words = vocabByLesson.get(v.lesson) ?? [];
+    const matched = words.filter(
+      (w) => w.meaning?.en && w.meaning.en.trim().toLowerCase() === v.meaning.en.trim().toLowerCase()
+    );
+    let target = matched.length === 1 ? matched[0] : null;
+    if (!target) {
+      const fallback = words.filter(
+        (w) => w.verbForms?.masuKana && w.verbForms.masuKana.endsWith(v.masu)
+      );
+      if (fallback.length === 1) target = fallback[0];
+    }
+
+    assert.ok(target, `Không map được verb ${v.id} (${v.masu}, L${v.lesson}, en: "${v.meaning.en}") vào vocab`);
+    assert.equal(
+      v.meaning.vi,
+      target.meaning.vi,
+      `Verb ${v.id} (${v.masu}) vi không khớp: expected "${target.meaning.vi}", got "${v.meaning.vi}"`
+    );
+  }
+});
+

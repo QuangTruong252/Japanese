@@ -70,7 +70,7 @@
       "ta": "あった",
       "meaning": {
         "en": "to be, there is (inanimate things)",
-        "vi": "ở, có [đồ vật vô tri]"
+        "vi": "ở, có (dành cho đồ vật vô tri)"
       },
       "lesson": 10
     },
@@ -159,7 +159,7 @@
       "ta": "いった",
       "meaning": {
         "en": "to need, to require [a visa]",
-        "vi": "cần [visa]"
+        "vi": "cần [thị thực, visa]"
       },
       "lesson": 20
     },
@@ -174,7 +174,7 @@
       "ta": "うごいた",
       "meaning": {
         "en": "to work, to function",
-        "vi": "hoạt động, chạy [máy móc]"
+        "vi": "hoạt động, chuyển động [máy móc]"
       },
       "lesson": 21
     },
@@ -234,7 +234,7 @@
       "ta": "おくった",
       "meaning": {
         "en": "to send",
-        "vi": "gửi [hàng, quà]"
+        "vi": "gửi"
       },
       "lesson": 7
     },
@@ -249,7 +249,7 @@
       "ta": "おくった",
       "meaning": {
         "en": "to accompany, to take [someone]",
-        "vi": "nhớ ra, nghĩ ra"
+        "vi": "tiễn, đưa [ai đó] về"
       },
       "lesson": 24
     },
@@ -264,7 +264,7 @@
       "ta": "おした",
       "meaning": {
         "en": "to press, to push",
-        "vi": "bơi"
+        "vi": "ấn, bấm [nút]"
       },
       "lesson": 16
     },
@@ -279,7 +279,7 @@
       "ta": "おもいだした",
       "meaning": {
         "en": "to remember, to recall",
-        "vi": "hạ xuống, gập xuống [dù]"
+        "vi": "nhớ lại, hồi tưởng"
       },
       "lesson": 15
     },
@@ -294,7 +294,7 @@
       "ta": "おもった",
       "meaning": {
         "en": "to believe",
-        "vi": "kết thúc, xong"
+        "vi": "nghĩ, cho rằng"
       },
       "lesson": 21
     },
@@ -309,7 +309,7 @@
       "ta": "およいだ",
       "meaning": {
         "en": "to swim",
-        "vi": "mua"
+        "vi": "bơi"
       },
       "lesson": 13
     },
@@ -324,7 +324,7 @@
       "ta": "おろした",
       "meaning": {
         "en": "to withdraw, to take out [money from the bank]",
-        "vi": "nuôi [thú cưng]"
+        "vi": "rút [tiền từ ngân hàng]"
       },
       "lesson": 16
     },
@@ -339,7 +339,7 @@
       "ta": "おわった",
       "meaning": {
         "en": "to finish",
-        "vi": "trả lại, hoàn trả"
+        "vi": "kết thúc, xong"
       },
       "lesson": 4
     },
@@ -354,7 +354,7 @@
       "ta": "かった",
       "meaning": {
         "en": "to buy",
-        "vi": "mất, tốn [thời gian, tiền bạc]"
+        "vi": "mua"
       },
       "lesson": 6
     },
@@ -369,7 +369,7 @@
       "ta": "かえした",
       "meaning": {
         "en": "to give back, to return",
-        "vi": "viết, vẽ"
+        "vi": "trả lại, hoàn lại"
       },
       "lesson": 17
     },
@@ -384,7 +384,7 @@
       "ta": "かえった",
       "meaning": {
         "en": "to return, to go home",
-        "vi": "cho mượn, cho vay"
+        "vi": "về, trở về"
       },
       "lesson": 5
     },
@@ -399,7 +399,7 @@
       "ta": "かかった",
       "meaning": {
         "en": "to take (time), to cost (money)",
-        "vi": "chiến thắng, thắng"
+        "vi": "mất, tốn [thời gian, tiền bạc]"
       },
       "lesson": 11
     },
@@ -414,7 +414,7 @@
       "ta": "かいた",
       "meaning": {
         "en": "to write, to draw",
-        "vi": "nghe, hỏi"
+        "vi": "viết, vẽ"
       },
       "lesson": 6
     },
@@ -429,7 +429,7 @@
       "ta": "かした",
       "meaning": {
         "en": "to lend",
-        "vi": "cắt"
+        "vi": "cho mượn, cho vay"
       },
       "lesson": 7
     },
@@ -444,7 +444,7 @@
       "ta": "かった",
       "meaning": {
         "en": "to win",
-        "vi": "tắt [điện, thiết bị]"
+        "vi": "thắng, chiến thắng"
       },
       "lesson": 21
     },
@@ -459,7 +459,7 @@
       "ta": "かぶった",
       "meaning": {
         "en": "to put on (a hat, etc.)",
-        "vi": "chạm, sờ [vào nút bấm]"
+        "vi": "đội [mũ]"
       },
       "lesson": 22
     },
@@ -474,7 +474,7 @@
       "ta": "がんばった",
       "meaning": {
         "en": "to do one's best",
-        "vi": "hút [thuốc lá]"
+        "vi": "tôi sẽ cố gắng hết sức!"
       },
       "lesson": 25
     },
@@ -489,7 +489,7 @@
       "ta": "きいた",
       "meaning": {
         "en": "to hear, to listen",
-        "vi": "sống, cư trú [ở đâu]"
+        "vi": "nghe"
       },
       "lesson": 6
     },
@@ -504,7 +504,7 @@
       "ta": "きいた",
       "meaning": {
         "en": "to ask [the teacher]",
-        "vi": "ngồi [vào ghế]"
+        "vi": "hỏi [thầy cô giáo]"
       },
       "lesson": 23
     },
@@ -519,7 +519,7 @@
       "ta": "きった",
       "meaning": {
         "en": "to cut",
-        "vi": "đưa ra, nộp [báo cáo], gửi [thư]"
+        "vi": "cắt"
       },
       "lesson": 7
     },
@@ -534,7 +534,7 @@
       "ta": "けした",
       "meaning": {
         "en": "to turn off",
-        "vi": "đứng lên, đứng dậy"
+        "vi": "tắt [điện, máy móc]"
       },
       "lesson": 14
     },
@@ -549,7 +549,7 @@
       "ta": "さわった",
       "meaning": {
         "en": "to knock [on a door]",
-        "vi": "dùng, sử dụng"
+        "vi": "chạm vào, sờ vào [nút bấm]"
       },
       "lesson": 23
     },
@@ -564,7 +564,7 @@
       "ta": "しった",
       "meaning": {
         "en": "to find out, to learn",
-        "vi": "đến [nơi chốn, ga]"
+        "vi": "biết"
       },
       "lesson": 15
     },
@@ -579,7 +579,7 @@
       "ta": "すった",
       "meaning": {
         "en": "to smoke",
-        "vi": "làm, chế tạo"
+        "vi": "hút [thuốc lá]"
       },
       "lesson": 6
     },
@@ -594,7 +594,7 @@
       "ta": "すんだ",
       "meaning": {
         "en": "to live, to reside",
-        "vi": "dẫn đi [người khác]"
+        "vi": "sống, cư trú [ở đâu]"
       },
       "lesson": 15
     },
@@ -609,7 +609,7 @@
       "ta": "すわった",
       "meaning": {
         "en": "to sit down",
-        "vi": "giúp đỡ"
+        "vi": "ngồi [xuống ghế]"
       },
       "lesson": 14
     },
@@ -624,7 +624,7 @@
       "ta": "だした",
       "meaning": {
         "en": "to take out (of a bag), to hand in (a report), to send",
-        "vi": "dừng lại, đỗ xe"
+        "vi": "rút [tiền], lấy ra, nộp"
       },
       "lesson": 16
     },
@@ -639,7 +639,7 @@
       "ta": "たった",
       "meaning": {
         "en": "to stand up",
-        "vi": "lấy, cầm"
+        "vi": "đứng lên, đứng dậy"
       },
       "lesson": 14
     },
@@ -654,7 +654,7 @@
       "ta": "つかった",
       "meaning": {
         "en": "to use",
-        "vi": "chụp [ảnh]"
+        "vi": "dùng, sử dụng"
       },
       "lesson": 14
     },
@@ -669,7 +669,7 @@
       "ta": "ついた",
       "meaning": {
         "en": "to arrive",
-        "vi": "thêm, già đi [tuổi]"
+        "vi": "đến, tới [ga, nơi đến]"
       },
       "lesson": 25
     },
@@ -684,7 +684,7 @@
       "ta": "つくった",
       "meaning": {
         "en": "to make, to produce",
-        "vi": "chữa, sửa chữa"
+        "vi": "chế tạo, làm ra"
       },
       "lesson": 15
     },
@@ -699,7 +699,7 @@
       "ta": "つれていった",
       "meaning": {
         "en": "to take (someone)",
-        "vi": "đánh mất [đồ đạc]"
+        "vi": "dẫn [ai đó] đi"
       },
       "lesson": 24
     },
@@ -714,7 +714,7 @@
       "ta": "てつだった",
       "meaning": {
         "en": "to help",
-        "vi": "học, tiếp thu"
+        "vi": "giúp đỡ"
       },
       "lesson": 14
     },
@@ -729,7 +729,7 @@
       "ta": "とまった",
       "meaning": {
         "en": "to stay, to lodge [at a hotel]",
-        "vi": "trở thành, trở nên"
+        "vi": "trọ lại, nghỉ lại [khách sạn]"
       },
       "lesson": 19
     },
@@ -744,7 +744,7 @@
       "ta": "とった",
       "meaning": {
         "en": "to take (in the hand), to pass (something to someone)",
-        "vi": "cởi [quần áo, giày]"
+        "vi": "lấy [đồ vật]"
       },
       "lesson": 14
     },
@@ -759,7 +759,7 @@
       "ta": "とった",
       "meaning": {
         "en": "to take [photos]",
-        "vi": "lên, leo lên [núi]"
+        "vi": "chụp [ảnh]"
       },
       "lesson": 6
     },
@@ -774,7 +774,7 @@
       "ta": "とった",
       "meaning": {
         "en": "to grow old",
-        "vi": "uống"
+        "vi": "thêm tuổi, già đi"
       },
       "lesson": 25
     },
@@ -789,7 +789,7 @@
       "ta": "なおした",
       "meaning": {
         "en": "to repair, to fix, to correct",
-        "vi": "uống [thuốc]"
+        "vi": "sửa chữa"
       },
       "lesson": 24
     },
@@ -804,7 +804,7 @@
       "ta": "なくした",
       "meaning": {
         "en": "to lose",
-        "vi": "lên, đi [tàu, xe buýt]"
+        "vi": "đánh mất, làm mất"
       },
       "lesson": 17
     },
@@ -819,7 +819,7 @@
       "ta": "ならった",
       "meaning": {
         "en": "to learn",
-        "vi": "vào [bồn tắm]"
+        "vi": "học, tập (từ ai đó)"
       },
       "lesson": 7
     },
@@ -834,7 +834,7 @@
       "ta": "なった",
       "meaning": {
         "en": "to become, to come (spring, etc.)",
-        "vi": "vào [phòng, quán]"
+        "vi": "trở thành, trở nên"
       },
       "lesson": 19
     },
@@ -849,7 +849,7 @@
       "ta": "ぬいだ",
       "meaning": {
         "en": "to take off (clothes, footwear, etc.)",
-        "vi": "vào [trường đại học]"
+        "vi": "cởi [quần áo, giày]"
       },
       "lesson": 17
     },
@@ -864,7 +864,7 @@
       "ta": "のぼった",
       "meaning": {
         "en": "to climb",
-        "vi": "dán, dán tem"
+        "vi": "leo, trèo [núi]"
       },
       "lesson": 19
     },
@@ -879,7 +879,7 @@
       "ta": "のんだ",
       "meaning": {
         "en": "to drink",
-        "vi": "làm việc"
+        "vi": "uống"
       },
       "lesson": 6
     },
@@ -894,7 +894,7 @@
       "ta": "のんだ",
       "meaning": {
         "en": "to drink alcohol",
-        "vi": "nói chuyện, trò chuyện"
+        "vi": "uống rượu bia"
       },
       "lesson": 16
     },
@@ -909,7 +909,7 @@
       "ta": "のんだ",
       "meaning": {
         "en": "to take [medicine]",
-        "vi": "trả [tiền]"
+        "vi": "uống [thuốc]"
       },
       "lesson": 17
     },
@@ -924,7 +924,7 @@
       "ta": "のった",
       "meaning": {
         "en": "to get on [the train]",
-        "vi": "kéo, tra [từ điển]"
+        "vi": "lên, đi [tàu, xe buýt]"
       },
       "lesson": 16
     },
@@ -939,7 +939,7 @@
       "ta": "はいった",
       "meaning": {
         "en": "to go into [a café]",
-        "vi": "chơi [đàn piano, nhạc cụ]"
+        "vi": "vào, đi vào [quán cà phê]"
       },
       "lesson": 14
     },
@@ -954,7 +954,7 @@
       "ta": "はいった",
       "meaning": {
         "en": "to enter [a university]",
-        "vi": "rơi, đổ [mưa, tuyết]"
+        "vi": "nhập học, vào [đại học]"
       },
       "lesson": 16
     },
@@ -969,7 +969,7 @@
       "ta": "はいった",
       "meaning": {
         "en": "to have [a bath]",
-        "vi": "uốn, bẻ, gập"
+        "vi": "tắm [bồn nước nóng]"
       },
       "lesson": 17
     },
@@ -984,7 +984,7 @@
       "ta": "はいた",
       "meaning": {
         "en": "to put on (shoes, trousers, etc.)",
-        "vi": "chờ, đợi"
+        "vi": "đi, mang, mặc [giày, tất, quần]"
       },
       "lesson": 22
     },
@@ -999,7 +999,7 @@
       "ta": "はたらいた",
       "meaning": {
         "en": "to work",
-        "vi": "xoay, vặn [núm điều khiển]"
+        "vi": "làm việc"
       },
       "lesson": 4
     },
@@ -1014,7 +1014,7 @@
       "ta": "はなした",
       "meaning": {
         "en": "to speak",
-        "vi": "mang, cầm, sở hữu"
+        "vi": "nói chuyện"
       },
       "lesson": 14
     },
@@ -1029,7 +1029,7 @@
       "ta": "はらった",
       "meaning": {
         "en": "to pay",
-        "vi": "mang đi, mang theo"
+        "vi": "trả tiền, thanh toán"
       },
       "lesson": 17
     },
@@ -1044,7 +1044,7 @@
       "ta": "ひいた",
       "meaning": {
         "en": "to play (string instruments, piano, etc.)",
-        "vi": "nhận lại, nhận lấy"
+        "vi": "chơi [nhạc cụ phím/dây]"
       },
       "lesson": 18
     },
@@ -1059,7 +1059,7 @@
       "ta": "ひいた",
       "meaning": {
         "en": "to pull",
-        "vi": "sửa chữa"
+        "vi": "kéo [cửa, dây]"
       },
       "lesson": 23
     },
@@ -1074,7 +1074,7 @@
       "ta": "ふった",
       "meaning": {
         "en": "to rain",
-        "vi": "gọi [tên, taxi]"
+        "vi": "rơi [mưa, tuyết]"
       },
       "lesson": 14
     },
@@ -1089,7 +1089,7 @@
       "ta": "まがった",
       "meaning": {
         "en": "to turn [right]",
-        "vi": "đọc"
+        "vi": "rẽ, quẹo [phải]"
       },
       "lesson": 23
     },
@@ -1104,7 +1104,7 @@
       "ta": "まった",
       "meaning": {
         "en": "to wait",
-        "vi": "hiểu, biết"
+        "vi": "chờ, đợi"
       },
       "lesson": 14
     },
@@ -1119,7 +1119,7 @@
       "ta": "まわした",
       "meaning": {
         "en": "to turn",
-        "vi": "bấm, ấn [nút]"
+        "vi": "xoay, vặn [núm điều khiển]"
       },
       "lesson": 23
     },
@@ -1134,7 +1134,7 @@
       "ta": "もった",
       "meaning": {
         "en": "to hold something",
-        "vi": "gửi đi"
+        "vi": "cầm, mang"
       },
       "lesson": 14
     },
@@ -1149,7 +1149,7 @@
       "ta": "もっていった",
       "meaning": {
         "en": "to carry (something)",
-        "vi": "vội vàng"
+        "vi": "mang đi"
       },
       "lesson": 17
     },
@@ -1164,7 +1164,7 @@
       "ta": "もらった",
       "meaning": {
         "en": "to receive (gifts, etc.)",
-        "vi": "nghỉ ngơi, nghỉ phép"
+        "vi": "nhận"
       },
       "lesson": 7
     },
@@ -1179,7 +1179,7 @@
       "ta": "やくにたった",
       "meaning": {
         "en": "to be useful",
-        "vi": "mượn [tiền, đồ vật]"
+        "vi": "có ích, hữu dụng"
       },
       "lesson": 21
     },
@@ -1194,7 +1194,7 @@
       "ta": "やすんだ",
       "meaning": {
         "en": "to rest, to be on holiday",
-        "vi": "bắt đầu"
+        "vi": "nghỉ ngơi, nghỉ phép"
       },
       "lesson": 4
     },
@@ -1209,7 +1209,7 @@
       "ta": "やすんだ",
       "meaning": {
         "en": "to be absent, to miss [work]",
-        "vi": "gặp [người khác]"
+        "vi": "nghỉ [làm việc ở công ty]"
       },
       "lesson": 11
     },
@@ -1224,7 +1224,7 @@
       "ta": "よんだ",
       "meaning": {
         "en": "to call",
-        "vi": "bán [hàng]"
+        "vi": "gọi [taxi, tên]"
       },
       "lesson": 14
     },
@@ -1239,7 +1239,7 @@
       "ta": "よんだ",
       "meaning": {
         "en": "to read",
-        "vi": "chạy"
+        "vi": "đọc"
       },
       "lesson": 6
     },
@@ -1254,7 +1254,7 @@
       "ta": "わかった",
       "meaning": {
         "en": "to understand",
-        "vi": "rửa [tay, bát đĩa]"
+        "vi": "hiểu, biết"
       },
       "lesson": 9
     },
@@ -1269,7 +1269,7 @@
       "ta": "わたった",
       "meaning": {
         "en": "to cross [a bridge]",
-        "vi": "chết"
+        "vi": "băng qua, qua [cầu, đường]"
       },
       "lesson": 23
     },
@@ -1299,7 +1299,7 @@
       "ta": "あげた",
       "meaning": {
         "en": "to give",
-        "vi": "cho, tặng [người khác]"
+        "vi": "cho, tặng"
       },
       "lesson": 7
     },
@@ -1314,7 +1314,7 @@
       "ta": "あつめた",
       "meaning": {
         "en": "to collect, to gather",
-        "vi": "tập hợp, thu thập"
+        "vi": "thu thập, sưu tầm"
       },
       "lesson": 18
     },
@@ -1329,7 +1329,7 @@
       "ta": "あびた",
       "meaning": {
         "en": "to have [a shower]",
-        "vi": "ở, có [người, động vật]"
+        "vi": "tắm [vòi sen]"
       },
       "lesson": 16
     },
@@ -1344,7 +1344,7 @@
       "ta": "いた",
       "meaning": {
         "en": "to be, to exist (living things)",
-        "vi": "có [con cái]"
+        "vi": "ở, có (dành cho người và động vật)"
       },
       "lesson": 10
     },
@@ -1359,7 +1359,7 @@
       "ta": "いた",
       "meaning": {
         "en": "to have [children]",
-        "vi": "ở [Nhật Bản]"
+        "vi": "có [con cái]"
       },
       "lesson": 11
     },
@@ -1374,7 +1374,7 @@
       "ta": "いた",
       "meaning": {
         "en": "to stay [in Japan]",
-        "vi": "cho vào, bỏ vào"
+        "vi": "ở [Nhật Bản]"
       },
       "lesson": 11
     },
@@ -1389,7 +1389,7 @@
       "ta": "いれた",
       "meaning": {
         "en": "to put in, to insert",
-        "vi": "sinh ra, chào đời"
+        "vi": "cho vào, bỏ vào"
       },
       "lesson": 16
     },
@@ -1404,7 +1404,7 @@
       "ta": "うまれた",
       "meaning": {
         "en": "to be born",
-        "vi": "thức dậy, dậy"
+        "vi": "sinh ra, chào đời"
       },
       "lesson": 22
     },
@@ -1419,7 +1419,7 @@
       "ta": "おきた",
       "meaning": {
         "en": "to get up",
-        "vi": "dạy, chỉ dẫn, cho biết"
+        "vi": "thức dậy, dậy"
       },
       "lesson": 4
     },
@@ -1434,7 +1434,7 @@
       "ta": "おしえた",
       "meaning": {
         "en": "to teach",
-        "vi": "nhớ, ghi nhớ"
+        "vi": "dạy, chỉ bảo, hướng dẫn"
       },
       "lesson": 7
     },
@@ -1449,7 +1449,7 @@
       "ta": "おしえた",
       "meaning": {
         "en": "to teach, to tell [an address]",
-        "vi": "xuống [xe, tàu, xe buýt]"
+        "vi": "cho biết, chỉ bảo [địa chỉ]"
       },
       "lesson": 14
     },
@@ -1464,7 +1464,7 @@
       "ta": "おぼえた",
       "meaning": {
         "en": "to memorise",
-        "vi": "đổi, thay đổi"
+        "vi": "nhớ, ghi nhớ"
       },
       "lesson": 17
     },
@@ -1479,7 +1479,7 @@
       "ta": "おりた",
       "meaning": {
         "en": "to get off [the train]",
-        "vi": "vay, mượn"
+        "vi": "xuống [tàu, xe buýt]"
       },
       "lesson": 16
     },
@@ -1494,7 +1494,7 @@
       "ta": "かえた",
       "meaning": {
         "en": "to change, to replace",
-        "vi": "tắt, biến mất [điện]"
+        "vi": "đổi, trao đổi, thay đổi"
       },
       "lesson": 18
     },
@@ -1509,7 +1509,7 @@
       "ta": "かえた",
       "meaning": {
         "en": "to change",
-        "vi": "đóng [cửa]"
+        "vi": "đổi, thay đổi"
       },
       "lesson": 23
     },
@@ -1524,7 +1524,7 @@
       "ta": "かけた",
       "meaning": {
         "en": "to make [a phone call]",
-        "vi": "suy nghĩ, nghĩ ngợi"
+        "vi": "gọi [điện thoại]"
       },
       "lesson": 7
     },
@@ -1539,7 +1539,7 @@
       "ta": "かけた",
       "meaning": {
         "en": "to put on [glasses]",
-        "vi": "vứt, ném đi"
+        "vi": "đeo [kính]"
       },
       "lesson": 22
     },
@@ -1554,7 +1554,7 @@
       "ta": "かりた",
       "meaning": {
         "en": "to borrow",
-        "vi": "ăn"
+        "vi": "mượn, vay"
       },
       "lesson": 7
     },
@@ -1569,7 +1569,7 @@
       "ta": "かんがえた",
       "meaning": {
         "en": "to think, to consider",
-        "vi": "mệt mỏi, mệt"
+        "vi": "suy nghĩ, nghĩ ngợi"
       },
       "lesson": 25
     },
@@ -1584,7 +1584,7 @@
       "ta": "きた",
       "meaning": {
         "en": "to put on (a shirt, etc.)",
-        "vi": "bật [điện, máy móc]"
+        "vi": "mặc [áo sơ mi, áo khoác]"
       },
       "lesson": 22
     },
@@ -1599,7 +1599,7 @@
       "ta": "きをつけた",
       "meaning": {
         "en": "to pay attention, to be careful",
-        "vi": "tiếp tục"
+        "vi": "chú ý, cẩn thận"
       },
       "lesson": 21
     },
@@ -1614,7 +1614,7 @@
       "ta": "くれた",
       "meaning": {
         "en": "to give (to me)",
-        "vi": "bỏ, từ bỏ [thuốc lá]"
+        "vi": "cho, tặng [tôi / người thân tôi]"
       },
       "lesson": 24
     },
@@ -1629,7 +1629,7 @@
       "ta": "しめた",
       "meaning": {
         "en": "to close",
-        "vi": "ra khỏi, xuất phát, rời khỏi"
+        "vi": "đóng [cửa]"
       },
       "lesson": 14
     },
@@ -1644,7 +1644,7 @@
       "ta": "しらべた",
       "meaning": {
         "en": "to look into, to check",
-        "vi": "ngừng, tạnh [mưa]"
+        "vi": "tra cứu, tìm hiểu, điều tra"
       },
       "lesson": 20
     },
@@ -1659,7 +1659,7 @@
       "ta": "すてた",
       "meaning": {
         "en": "to throw away",
-        "vi": "ngủ"
+        "vi": "vứt, bỏ đi"
       },
       "lesson": 18
     },
@@ -1674,7 +1674,7 @@
       "ta": "たべた",
       "meaning": {
         "en": "to eat",
-        "vi": "đổi [tàu, xe]"
+        "vi": "ăn"
       },
       "lesson": 6
     },
@@ -1689,7 +1689,7 @@
       "ta": "たりた",
       "meaning": {
         "en": "to be enough",
-        "vi": "bắt đầu"
+        "vi": "đủ, đầy đủ"
       },
       "lesson": 25
     },
@@ -1704,7 +1704,7 @@
       "ta": "つかれた",
       "meaning": {
         "en": "to get tired",
-        "vi": "thua, thất bại"
+        "vi": "mệt mỏi"
       },
       "lesson": 13
     },
@@ -1719,7 +1719,7 @@
       "ta": "つけた",
       "meaning": {
         "en": "to turn on",
-        "vi": "nhìn, xem"
+        "vi": "bật [điện, máy móc]"
       },
       "lesson": 14
     },
@@ -1734,7 +1734,7 @@
       "ta": "でかけた",
       "meaning": {
         "en": "to go out",
-        "vi": "cho xem, cho thấy"
+        "vi": "ra ngoài"
       },
       "lesson": 17
     },
@@ -1749,7 +1749,7 @@
       "ta": "できた",
       "meaning": {
         "en": "can, to be able to",
-        "vi": "quên"
+        "vi": "có thể, biết làm"
       },
       "lesson": 18
     },
@@ -1764,7 +1764,7 @@
       "ta": "でた",
       "meaning": {
         "en": "for change to come out",
-        "vi": "gọi [điện thoại]"
+        "vi": "chảy ra, chạy ra [tiền thừa]"
       },
       "lesson": 23
     },
@@ -1779,7 +1779,7 @@
       "ta": "でた",
       "meaning": {
         "en": "to leave [a café]",
-        "vi": "tắm [vòi sen]"
+        "vi": "ra khỏi, rời [quán cà phê]"
       },
       "lesson": 14
     },
@@ -1794,7 +1794,7 @@
       "ta": "でた",
       "meaning": {
         "en": "to graduate [from a university]",
-        "vi": "đeo [kính]"
+        "vi": "tốt nghiệp, ra khỏi [đại học]"
       },
       "lesson": 16
     },
@@ -1809,7 +1809,7 @@
       "ta": "とめた",
       "meaning": {
         "en": "to stop, to park",
-        "vi": "mặc [áo sơ mi, áo khoác]"
+        "vi": "dừng, đỗ [xe]"
       },
       "lesson": 14
     },
@@ -1824,7 +1824,7 @@
       "ta": "ねた",
       "meaning": {
         "en": "to go to bed, to sleep",
-        "vi": "chú ý, cẩn thận"
+        "vi": "đi ngủ, ngủ"
       },
       "lesson": 4
     },
@@ -1839,7 +1839,7 @@
       "ta": "のりかえた",
       "meaning": {
         "en": "to change (trains, etc.)",
-        "vi": "chuyển [tàu, xe]"
+        "vi": "đổi, chuyển [tàu, xe]"
       },
       "lesson": 16
     },
@@ -1869,7 +1869,7 @@
       "ta": "まけた",
       "meaning": {
         "en": "to lose (a match, etc.), to be beaten",
-        "vi": "thua [trận đấu, đối thủ]"
+        "vi": "thua, thất bại"
       },
       "lesson": 21
     },
@@ -1884,7 +1884,7 @@
       "ta": "みせた",
       "meaning": {
         "en": "to show",
-        "vi": "cho xem, đưa xem"
+        "vi": "cho xem"
       },
       "lesson": 14
     },
@@ -1914,7 +1914,7 @@
       "ta": "むかえた",
       "meaning": {
         "en": "to pick up, to meet (people)",
-        "vi": "đón [người]"
+        "vi": "đón (ai đó)"
       },
       "lesson": 13
     },
@@ -1929,7 +1929,7 @@
       "ta": "やめた",
       "meaning": {
         "en": "to resign, to leave [a company]",
-        "vi": "nghỉ việc, rời [công ty]"
+        "vi": "bỏ việc, nghỉ việc ở [công ty]"
       },
       "lesson": 21
     },
@@ -1944,7 +1944,7 @@
       "ta": "わすれた",
       "meaning": {
         "en": "to forget",
-        "vi": "quên [đồ đạc, việc gì]"
+        "vi": "quên"
       },
       "lesson": 17
     },
@@ -1959,7 +1959,7 @@
       "ta": "あんないした",
       "meaning": {
         "en": "to show around (a city), to give directions",
-        "vi": "hướng dẫn, dẫn đường"
+        "vi": "hướng dẫn, chỉ đường"
       },
       "lesson": 24
     },
@@ -1989,7 +1989,7 @@
       "ta": "かいものした",
       "meaning": {
         "en": "to go shopping",
-        "vi": "đi dạo"
+        "vi": "mua sắm"
       },
       "lesson": 13
     },
@@ -2004,7 +2004,7 @@
       "ta": "きた",
       "meaning": {
         "en": "to come",
-        "vi": "hỏng hóc, trục trặc"
+        "vi": "đến"
       },
       "lesson": 5
     },
@@ -2034,7 +2034,7 @@
       "ta": "けんがくした",
       "meaning": {
         "en": "to visit a place (mainly to study it)",
-        "vi": "đến"
+        "vi": "tham quan học hỏi, kiến tập"
       },
       "lesson": 16
     },
@@ -2049,7 +2049,7 @@
       "ta": "けんきゅうした",
       "meaning": {
         "en": "to research",
-        "vi": "sao chép, photocopy"
+        "vi": "nghiên cứu"
       },
       "lesson": 15
     },
@@ -2064,7 +2064,7 @@
       "ta": "コピーした",
       "meaning": {
         "en": "to make photocopies",
-        "vi": "làm [việc gì đó]"
+        "vi": "sao chép, photocopy"
       },
       "lesson": 14
     },
@@ -2079,7 +2079,7 @@
       "ta": "さんぽした",
       "meaning": {
         "en": "to take a walk [in the park]",
-        "vi": "sửa chữa, bảo trì"
+        "vi": "đi dạo [trong công viên]"
       },
       "lesson": 13
     },
@@ -2094,7 +2094,7 @@
       "ta": "ざんぎょうした",
       "meaning": {
         "en": "to work overtime",
-        "vi": "giới thiệu"
+        "vi": "làm thêm giờ, tăng ca"
       },
       "lesson": 17
     },
@@ -2109,7 +2109,7 @@
       "ta": "した",
       "meaning": {
         "en": "to do, to make",
-        "vi": "dùng bữa, ăn cơm"
+        "vi": "làm, chơi [thể thao, trò chơi]"
       },
       "lesson": 6
     },
@@ -2124,7 +2124,7 @@
       "ta": "した",
       "meaning": {
         "en": "to put on [a tie]",
-        "vi": "thực tập, tu nghiệp"
+        "vi": "thắt [cà vạt]"
       },
       "lesson": 22
     },
@@ -2139,7 +2139,7 @@
       "ta": "しゅうりした",
       "meaning": {
         "en": "to repair",
-        "vi": "xuất hiện, tham gia"
+        "vi": "sửa chữa, bảo trì"
       },
       "lesson": 20
     },
@@ -2154,7 +2154,7 @@
       "ta": "しゅっちょうした",
       "meaning": {
         "en": "to travel for work",
-        "vi": "chuyển nhà"
+        "vi": "đi công tác"
       },
       "lesson": 17
     },
@@ -2169,7 +2169,7 @@
       "ta": "しょうかいした",
       "meaning": {
         "en": "to introduce (someone)",
-        "vi": "học tập"
+        "vi": "giới thiệu [ai đó]"
       },
       "lesson": 24
     },
@@ -2184,7 +2184,7 @@
       "ta": "しょくじした",
       "meaning": {
         "en": "to eat",
-        "vi": "du lịch"
+        "vi": "dùng bữa, ăn cơm"
       },
       "lesson": 13
     },
@@ -2199,7 +2199,7 @@
       "ta": "しんぱいした",
       "meaning": {
         "en": "to worry",
-        "vi": "đặt chỗ, hẹn trước"
+        "vi": "lo lắng"
       },
       "lesson": 17
     },
@@ -2214,7 +2214,7 @@
       "ta": "せつめいした",
       "meaning": {
         "en": "to explain",
-        "vi": "tăng ca, làm thêm giờ"
+        "vi": "giải thích, thuyết minh"
       },
       "lesson": 24
     },
@@ -2244,7 +2244,7 @@
       "ta": "そうじした",
       "meaning": {
         "en": "to clean (a room)",
-        "vi": "dọn dẹp [phòng]"
+        "vi": "dọn dẹp, vệ sinh"
       },
       "lesson": 19
     },
@@ -2304,7 +2304,7 @@
       "ta": "もってきた",
       "meaning": {
         "en": "to bring (something)",
-        "vi": "mang [cái gì] đến"
+        "vi": "mang đến"
       },
       "lesson": 17
     },
@@ -2319,7 +2319,7 @@
       "ta": "よやくした",
       "meaning": {
         "en": "to book, to reserve",
-        "vi": "đặt trước, hẹn trước"
+        "vi": "đặt chỗ, hẹn trước"
       },
       "lesson": 18
     },

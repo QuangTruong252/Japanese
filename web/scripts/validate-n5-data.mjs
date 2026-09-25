@@ -277,4 +277,41 @@ describe('N5 Vietnamese Dataset Validation', () => {
 
     assert.strictEqual(violations.length, 0, `Found suspicious text in Vietnamese fields: ${violations.slice(0, 10).join(', ')}`);
   });
+
+  it('should have verb meanings in verbs.json synchronized with vocab lessons', () => {
+    const verbsFile = path.join(TARGET_DIR, 'verbs/verbs.json');
+    const verbsData = JSON.parse(fs.readFileSync(verbsFile, 'utf8'));
+
+    const vocabByLesson = new Map();
+    for (let l = 1; l <= 25; l++) {
+      const vFile = path.join(TARGET_DIR, `vocab/lesson-${String(l).padStart(2, '0')}.json`);
+      if (fs.existsSync(vFile)) {
+        vocabByLesson.set(l, JSON.parse(fs.readFileSync(vFile, 'utf8')).words);
+      }
+    }
+
+    const mismatches = [];
+    for (const v of verbsData.verbs) {
+      const words = vocabByLesson.get(v.lesson) || [];
+      const matched = words.filter(
+        (w) => w.meaning?.en && w.meaning.en.trim().toLowerCase() === v.meaning.en.trim().toLowerCase()
+      );
+      let target = matched.length === 1 ? matched[0] : null;
+      if (!target) {
+        const fallback = words.filter(
+          (w) => w.verbForms?.masuKana && w.verbForms.masuKana.endsWith(v.masu)
+        );
+        if (fallback.length === 1) target = fallback[0];
+      }
+
+      if (!target) {
+        mismatches.push(`${v.id} (${v.masu}) could not be mapped to vocab L${v.lesson}`);
+      } else if (v.meaning.vi !== target.meaning.vi) {
+        mismatches.push(`${v.id} (${v.masu}) vi mismatch: "${v.meaning.vi}" vs "${target.meaning.vi}"`);
+      }
+    }
+
+    assert.strictEqual(mismatches.length, 0, `Found verb mismatches: ${mismatches.slice(0, 10).join(', ')}`);
+  });
 });
+
