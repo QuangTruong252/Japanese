@@ -8,6 +8,8 @@ import { useDueClock } from '@/lib/use-due-clock';
 import {
   currentStreak,
   minutesOnDay,
+  secondsOnDay,
+  hasStudiedOnDay,
   accuracyOverDays,
   dailyMinutes,
   dailyAccuracy,
@@ -95,6 +97,11 @@ export default function ThongKePage() {
     [sessions, now],
   );
 
+  const todaySeconds = useMemo(
+    () => (sessions ? secondsOnDay(sessions, now) : 0),
+    [sessions, now],
+  );
+
   const todayMinutes = useMemo(
     () => (sessions ? minutesOnDay(sessions, now) : 0),
     [sessions, now],
@@ -131,8 +138,11 @@ export default function ThongKePage() {
     [reviewItems],
   );
 
-  // Kiểm tra hôm nay đã học chưa (để hiện gợi ý giữ chuỗi)
-  const hasStudiedToday = todayMinutes > 0;
+  // Kiểm tra hôm nay đã học chưa (ít nhất 1 phiên, kể cả phiên ngắn < 1 phút - Feedback #2)
+  const hasStudiedToday = useMemo(
+    () => (sessions ? hasStudiedOnDay(sessions, now) : false),
+    [sessions, now],
+  );
 
   // 3. Xử lý trạng thái đang tải (Skeleton)
   if (sessions === undefined || reviewItems === undefined) {
@@ -275,9 +285,15 @@ export default function ThongKePage() {
                 <span className="text-xs font-medium uppercase tracking-wider">Hôm nay</span>
                 <Clock className="size-4 text-[hsl(var(--chart-2))]" />
               </div>
-              <div className="font-heading text-2xl md:text-3xl font-bold tracking-tight text-foreground">
-                {todayMinutes}
-                <span className="text-sm font-normal text-muted-foreground ml-1.5">phút</span>
+              <div className="font-heading text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-foreground">
+                {todaySeconds > 0 && todaySeconds < 60 ? (
+                  'Dưới 1 phút'
+                ) : (
+                  <>
+                    {todayMinutes}
+                    <span className="text-sm font-normal text-muted-foreground ml-1.5">phút</span>
+                  </>
+                )}
               </div>
               <p className="text-xs text-muted-foreground truncate">
                 {hasStudiedToday ? 'Thời lượng luyện tập' : 'Chưa luyện tập hôm nay'}
@@ -313,7 +329,7 @@ export default function ThongKePage() {
                 <span className="text-sm font-normal text-muted-foreground ml-1.5">mục</span>
               </div>
               <p className="text-xs text-muted-foreground truncate">
-                Vào thuật toán FSRS
+                Vào lịch ôn
               </p>
             </CardContent>
           </Card>
@@ -337,7 +353,7 @@ export default function ThongKePage() {
                   <span>Ít</span>
                   <div className="flex items-center gap-1">
                     <span className="size-3 rounded-xs bg-muted/60 border border-border/40" title="0 phút" />
-                    <span className="size-3 rounded-xs bg-[hsl(var(--chart-1)/0.25)]" title="1-10 phút" />
+                    <span className="size-3 rounded-xs bg-[hsl(var(--chart-1)/0.25)]" title="≤ 10 phút" />
                     <span className="size-3 rounded-xs bg-[hsl(var(--chart-1)/0.5)]" title="11-20 phút" />
                     <span className="size-3 rounded-xs bg-[hsl(var(--chart-1)/0.75)]" title="21-35 phút" />
                     <span className="size-3 rounded-xs bg-[hsl(var(--chart-1))]" title="> 35 phút" />
@@ -793,7 +809,9 @@ function HeatmapCell({ day }: { day: HeatmapDay }) {
     4: 'bg-[hsl(var(--chart-1))] text-primary-foreground hover:opacity-90',
   };
 
-  const tooltipText = `${day.label} (${day.dayKey}): ${day.minutes} phút · ${day.sessionCount} phiên`;
+  const displayMins =
+    day.sessionCount > 0 && day.minutes === 0 ? 'Dưới 1 phút' : `${day.minutes} phút`;
+  const tooltipText = `${day.label} (${day.dayKey}): ${displayMins} · ${day.sessionCount} phiên`;
 
   return (
     <Tooltip>
