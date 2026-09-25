@@ -304,7 +304,7 @@ export default function ReviewTodayPage() {
 
           {newCount > 0 && (
             <p className="text-xs sm:text-sm text-muted-foreground border-t border-border/60 pt-3">
-              Mỗi ngày app thêm tối đa {queue.dailyNewLimit} mục mới (gồm cả từ vựng và ngữ pháp) từ các bài bạn đã học đến{maxLesson > 0 ? ` (bài ${maxLesson})` : ''}. Nếu chưa học bài đó, hãy{' '}
+              Khi bạn bắt đầu một bài (dù mới học một từ) hoặc khai báo đã học đến bài đó, các từ và mẫu câu khác của bài được đưa dần vào Ôn tập — tối đa {queue.dailyNewLimit} mục mới mỗi ngày{maxLesson > 0 ? ` (hiện tới bài ${maxLesson})` : ''}. Nếu chưa đọc bài, hãy{' '}
               {maxLesson > 0 ? (
                 <Link
                   href={`/hoc/${maxLesson}`}

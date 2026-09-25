@@ -94,7 +94,7 @@ export const HIRAGANA_BASIC_ROWS: KanaRow[] = [
       { kana: 'み', romaji: 'mi' },
       { kana: 'む', romaji: 'mu' },
       { kana: 'め', romaji: 'me' },
-      { kana: 'mo', romaji: 'mo' },
+      { kana: 'も', romaji: 'mo' },
     ],
   },
   {

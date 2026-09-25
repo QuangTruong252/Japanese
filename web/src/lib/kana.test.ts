@@ -112,3 +112,15 @@ test('Cấu trúc các hàng bảo đảm đúng số cột cho lưới hiển t
     assert.equal(row.cells.length, 3, `Hàng ${row.label} phải có đúng 3 ô`);
   }
 });
+
+test('Mọi ô dùng đúng bảng chữ: Hiragana chỉ chứa ぁ-ゖ, Katakana chỉ chứa ァ-ヶ/ー', () => {
+  const check = (rows: typeof HIRAGANA_BASIC_ROWS, re: RegExp, name: string) => {
+    for (const row of rows) {
+      for (const cell of row.cells) {
+        if (cell) assert.match(cell.kana, re, `${name}: ô "${cell.kana}" (${cell.romaji}) sai bảng chữ`);
+      }
+    }
+  };
+  for (const rows of [HIRAGANA_BASIC_ROWS, HIRAGANA_DAKUON_ROWS, HIRAGANA_YOON_ROWS]) check(rows, /^[ぁ-ゖ]+$/u, 'Hiragana');
+  for (const rows of [KATAKANA_BASIC_ROWS, KATAKANA_DAKUON_ROWS, KATAKANA_YOON_ROWS]) check(rows, /^[ァ-ヶー]+$/u, 'Katakana');
+});
