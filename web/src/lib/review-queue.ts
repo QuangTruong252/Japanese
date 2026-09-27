@@ -78,6 +78,15 @@ export function planReviewBatch<T>(
   };
 }
 
+/**
+ * Mô tả số mục và số lô còn lại (SPEC-20 §3, §5).
+ */
+export function describeRemainingBatches(remainingDue: number, batchSize: number): string {
+  if (remainingDue <= 0) return '';
+  const batches = Math.ceil(remainingDue / batchSize);
+  return `Còn ${remainingDue} mục đến hạn cho ${batches > 1 ? `khoảng ${batches} lô sau` : 'lô tiếp theo'}. Mỗi lô tối đa ${batchSize} mục; tạm chưa nạp mục mới cho tới khi ôn kịp.`;
+}
+
 /** Gộp bài 1…N người học khai báo đã học vào tập bài đã có trong lịch ôn. */
 export function withDeclaredLessons(learnedLessons: number[], learnedThroughLesson: number): number[] {
   const all = new Set(learnedLessons);

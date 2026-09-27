@@ -1,7 +1,7 @@
 # SPEC-02 — Shell điều hướng & trạng thái toàn cục
 
-> **Mã:** SPEC-JPN-F02 · **Ngày:** 16/09/2026 · **Rà soát:** 17/09/2026, 22/09/2026
-> **Trạng thái:** 🟠 *Vỏ điều hướng* — UX duyệt 22/09/2026, thị giác chưa duyệt, code chưa theo.
+> **Mã:** SPEC-JPN-F02 · **Ngày:** 16/09/2026 · **Rà soát:** 17/09/2026, 22/09/2026, 27/09/2026 (SPEC-16)
+> **Trạng thái:** 🟢 *Vỏ điều hướng* — Đã đồng bộ SPEC-16 & DESIGN.md: 5 đích chính (Bảng tin, Học bài, Luyện tập, Ôn tập, Tra cứu); Profile & Thống kê tại `/ca-nhan`.
 > 🟠 *Bảng tin* — **UX duyệt 22/09/2026**, **thị giác chưa duyệt**, code đã có nhưng lệch.
 > Phần lệch của cả hai nằm ở §9; hợp đồng UX Bảng tin ở §3.2; khối lệnh cho công cụ thị giác ở §10.
 > **Đối tượng đọc:** Google Stitch / Claude Design (mục 3–6), lập trình viên (toàn bộ).
@@ -14,8 +14,8 @@ và cơ chế áp cài đặt hiển thị lên toàn trang, cùng hợp đồng
 
 **Trong phạm vi**
 
-- Vỏ điều hướng 5 khu vực chính: Bảng tin · Học bài · Luyện tập · Ôn tập · Thống kê
-- Lối vào thứ cấp (Cài đặt, hồ sơ, trạng thái đồng bộ) — **không** nằm trong nav chính
+- Vỏ điều hướng 5 khu vực chính: Bảng tin · Học bài · Luyện tập · Ôn tập · Tra cứu (SPEC-16)
+- Lối vào thứ cấp (Hồ sơ, Tiến độ, Thống kê, Cài đặt, trạng thái đồng bộ) — tại `/ca-nhan` và `/cai-dat`, **không** chiếm slot nav chính
 - Huy hiệu trạng thái đồng bộ, đặt trong lối vào thứ cấp (§3.1)
 - Áp `settings` lên `<html>` bằng class, chống FOUC (gồm cả `theme`)
 - Bảng tin `/` — hợp đồng UX ở §3.2, khuôn bề rộng `content-wide` (`DESIGN.md` §Layout and containers)
@@ -128,7 +128,9 @@ cách khác: **Bảng tin là một trong năm khu vực chính**, còn Cài đ�
 | 2 | Học bài | `/hoc` | `BookOpen` |
 | 3 | Luyện tập | `/luyen-tap` | `Dumbbell` |
 | 4 | Ôn tập | `/on-tap` | `RotateCcw` |
-| 5 | Thống kê | `/thong-ke` | `BarChart3` |
+| 5 | Tra cứu | `/hoc/tra-cuu` | `Search` |
+
+> **Cập nhật 27/09/2026 (SPEC-16):** Đổi mục thứ năm thành **Tra cứu** (`/hoc/tra-cuu`). Tiến độ và Thống kê được chuyển vào lối thứ cấp **Hồ sơ** (`/ca-nhan`) với hai URL tab Tiến độ & Thống kê. Link cũ `/thong-ke` chuyển hướng tự động sang `/ca-nhan/thong-ke`. Route `/hoc/tra-cuu` và các route con active Tra cứu, không active Học bài.
 
 **Hai vỏ, một mốc chuyển — `lg` (1024px).**
 

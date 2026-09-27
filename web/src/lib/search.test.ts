@@ -16,17 +16,39 @@ test('normalizeSearchText chuẩn hóa chữ thường, khoảng trắng, bỏ d
   assert.equal(normalizeSearchText('私[わたし]は 学生[がくせい]です'), '私は 学生です');
 });
 
-test('buildSearchIndex nạp đủ 6 nhóm dữ liệu tĩnh với href chính xác', async () => {
+test('buildSearchIndex nạp đủ 7 nhóm dữ liệu tĩnh với href chính xác', async () => {
   const index = await buildSearchIndex();
   assert.ok(index.length >= 1400, `Chỉ mục phải có ít nhất 1400 mục, thực tế: ${index.length}`);
 
   const kinds = new Set(index.map((e) => e.kind));
+  assert.ok(kinds.has('feature'));
   assert.ok(kinds.has('vocab'));
   assert.ok(kinds.has('grammar'));
   assert.ok(kinds.has('kanji'));
   assert.ok(kinds.has('verb'));
   assert.ok(kinds.has('table'));
   assert.ok(kinds.has('lesson'));
+
+  // Kiểm tra feature href
+  const featureTraCuu = index.find((e) => e.id === 'feature-tra-cuu');
+  assert.ok(featureTraCuu);
+  assert.equal(featureTraCuu.href, '/hoc/tra-cuu');
+
+  const featureKana = index.find((e) => e.id === 'feature-kana');
+  assert.ok(featureKana);
+  assert.equal(featureKana.href, '/hoc/tra-cuu/kana');
+
+  const featureKanji = index.find((e) => e.id === 'feature-kanji');
+  assert.ok(featureKanji);
+  assert.equal(featureKanji.href, '/hoc/tra-cuu/kanji');
+
+  const featureDongTu = index.find((e) => e.id === 'feature-dong-tu');
+  assert.ok(featureDongTu);
+  assert.equal(featureDongTu.href, '/hoc/tra-cuu/dong-tu');
+
+  const featureThongKe = index.find((e) => e.id === 'feature-thong-ke');
+  assert.ok(featureThongKe);
+  assert.equal(featureThongKe.href, '/thong-ke');
 
   // Kiểm tra neo href
   const gakusei = index.find((e) => e.id === 'vocab-01-gakusei');
@@ -130,8 +152,8 @@ test('executeSearch tuân thủ thứ tự nhóm cố định và giới hạn 5
   assert.ok(res.results.length <= 20);
 
   // Kiểm tra thứ tự nhóm trong kết quả xuất hiện đúng:
-  // vocab -> grammar -> kanji -> verb -> table -> lesson
-  const kindOrder = ['vocab', 'grammar', 'kanji', 'verb', 'table', 'lesson'];
+  // feature -> vocab -> grammar -> kanji -> verb -> table -> lesson
+  const kindOrder = ['feature', 'vocab', 'grammar', 'kanji', 'verb', 'table', 'lesson'];
   let lastKindIndex = -1;
 
   for (const item of res.results) {
@@ -163,4 +185,52 @@ test('executeSearch tìm động từ qua cả thể từ điển và thể masu
   const resKanaMasu = executeSearch(index, 'きります');
   assert.ok(resKanaMasu.results.some((r) => r.id === 'vocab-07-kirimasu'));
 });
+
+test('executeSearch trả về đích tính năng phù hợp cho tra cuu, kana, kanji, dong tu, thong ke (SPEC-17 §9)', async () => {
+  const index = await buildSearchIndex();
+
+  // 1. tra cuu -> trả feature Tra cứu (Tier 1)
+  const resTraCuu = executeSearch(index, 'tra cuu');
+  assert.equal(resTraCuu.results[0]?.id, 'feature-tra-cuu');
+  assert.equal(resTraCuu.results[0]?.kind, 'feature');
+
+  // 2. kana -> trả feature Bảng chữ Kana
+  const resKana = executeSearch(index, 'kana');
+  assert.ok(resKana.results.some((r) => r.id === 'feature-kana' && r.kind === 'feature'));
+
+  // 3. kanji -> trả feature Tra cứu Kanji và không làm mất kết quả nội dung
+  const resKanji = executeSearch(index, 'kanji');
+  assert.ok(resKanji.results.some((r) => r.id === 'feature-kanji' && r.kind === 'feature'));
+  assert.ok(
+    resKanji.results.some((r) => r.kind === 'vocab' || r.kind === 'kanji' || r.kind === 'grammar'),
+    'Không làm mất kết quả nội dung khi tìm kanji'
+  );
+
+  // 4. dong tu -> trả feature Tra cứu Động từ bên cạnh học liệu nội dung
+  const resDongTu = executeSearch(index, 'dong tu');
+  assert.ok(resDongTu.results.some((r) => r.id === 'feature-dong-tu' && r.kind === 'feature'));
+  assert.ok(
+    resDongTu.results.some((r) => r.kind === 'grammar' || r.kind === 'table' || r.kind === 'verb'),
+    'Vẫn trả các nội dung học liệu về động từ'
+  );
+
+  // 5. thong ke -> trả feature Thống kê
+  const resThongKe = executeSearch(index, 'thong ke');
+  assert.equal(resThongKe.results[0]?.id, 'feature-thong-ke');
+  assert.equal(resThongKe.results[0]?.kind, 'feature');
+});
+
+test('executeSearch giới hạn nhóm tính năng tối đa 4 mục, không làm tụt học liệu (SPEC-17)', async () => {
+  const index = await buildSearchIndex();
+
+  const resTraCuu = executeSearch(index, 'tra cuu');
+  const featureCount = resTraCuu.results.filter((r) => r.kind === 'feature').length;
+  assert.ok(featureCount <= 4, `Số lượng tính năng phải <= 4, thực tế: ${featureCount}`);
+
+  // Tìm từ tiếng Nhật gakusei không chứa tính năng nào
+  const resGakusei = executeSearch(index, 'gakusei');
+  assert.equal(resGakusei.results.filter((r) => r.kind === 'feature').length, 0);
+  assert.ok(resGakusei.results.length > 0);
+});
+
 

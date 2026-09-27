@@ -16,7 +16,7 @@ export default function TraCuuHubPage() {
     {
       href: '/hoc/tra-cuu/kana',
       title: 'Bảng chữ Kana',
-      subtitle: 'Hiragana & Katakana · 46 âm cơ bản',
+      subtitle: 'Hiragana & Katakana · 46 âm cơ bản, âm đục và âm ghép',
       icon: (
         <div className="flex items-center justify-center font-jp leading-none select-none text-xl font-bold">
           <span className="text-primary">あ</span>
@@ -27,7 +27,7 @@ export default function TraCuuHubPage() {
     {
       href: '/hoc/tra-cuu/kanji',
       title: 'Kanji',
-      subtitle: '169 chữ N5',
+      subtitle: '169 chữ N5 · Âm On, Kun, số nét và từ ghép',
       icon: (
         <div className="flex flex-col items-center justify-center font-jp leading-none select-none">
           <span className="text-[10px] text-muted-foreground mb-0.5">ひと</span>
@@ -38,7 +38,7 @@ export default function TraCuuHubPage() {
     {
       href: '/hoc/tra-cuu/dong-tu',
       title: 'Động từ',
-      subtitle: '156 động từ · 5 thể',
+      subtitle: '156 động từ · 5 thể chia: ます, て, từ điển, ない, た',
       icon: (
         <div className="flex flex-col items-center justify-center font-jp leading-none select-none">
           <span className="text-[10px] text-muted-foreground mb-0.5">い</span>
@@ -49,7 +49,7 @@ export default function TraCuuHubPage() {
     {
       href: '/hoc/tra-cuu/bang',
       title: 'Bảng tham chiếu',
-      subtitle: '10 bảng',
+      subtitle: '10 bảng tra cứu nhanh chuyên đề ngữ pháp và từ vựng',
       icon: <Table2 className="size-6 text-foreground/80" />,
     },
   ];
@@ -62,7 +62,7 @@ export default function TraCuuHubPage() {
           href="/hoc"
           className={cn(
             buttonVariants({ variant: 'ghost' }),
-            'min-h-11 px-3 -ml-3 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors'
+            'min-h-12 px-3 -ml-3 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors'
           )}
         >
           <ChevronLeft className="size-4 mr-1" />
@@ -75,24 +75,32 @@ export default function TraCuuHubPage() {
               Tra cứu
             </h1>
             <p className="text-sm text-muted-foreground">
-              Chọn nội dung bạn muốn xem lại.
+              Tra cứu nhanh bảng chữ cái, chữ Hán, động từ và các bảng tham chiếu ngữ pháp.
             </p>
           </div>
           <div className="flex items-center gap-2">
             <ThemeToggle className="size-11 sm:size-12 rounded-xl" />
-            <SearchTrigger iconOnly />
           </div>
         </div>
       </header>
 
-      {/* 2. Danh sách các khu vực tra cứu */}
+      {/* 2. Trường tìm kiếm nổi bật ở đầu trang (SPEC-17 §3) */}
+      <section aria-label="Tìm kiếm nhanh">
+        <SearchTrigger
+          variant="bar"
+          placeholder="Tìm từ, chữ, ngữ pháp…"
+          className="w-full"
+        />
+      </section>
+
+      {/* 3. Bốn danh mục tra cứu chính */}
       <nav aria-label="Các mục tra cứu" className="space-y-3.5">
         {categories.map((cat) => (
           <Link
             key={cat.href}
             href={cat.href}
             className={cn(
-              'group flex items-center justify-between p-4 sm:p-5 rounded-2xl',
+              'group flex items-center justify-between min-h-[76px] p-4 sm:p-5 rounded-2xl',
               'border border-border/80 bg-card shadow-xs transition duration-150',
               'hover:border-primary/40 hover:shadow-sm hover:translate-y-[-1px]',
               'active:translate-y-[1px]',

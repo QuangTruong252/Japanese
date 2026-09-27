@@ -19,7 +19,7 @@ Supabase, kéo dữ liệu về khi mở app trên máy mới.
 - `src/lib/sync.ts` — máy đồng bộ: rút hàng đợi, retry, lắng nghe `online`
 - Kéo toàn bộ `review_items` về Dexie sau khi đăng nhập (§6.2 spec gốc)
 - Nối ba trạng thái của huy hiệu đồng bộ (SPEC-02 §5) vào dữ liệu thật
-- Khối "Tài khoản" trong `/cai-dat`
+- Khối "Tài khoản" trong `/cai-dat` và màn Profile `/ca-nhan` (SPEC-16) kèm hộp thoại xác nhận đăng xuất và cảnh báo hàng đợi pending sync
 
 **Ngoài phạm vi**
 

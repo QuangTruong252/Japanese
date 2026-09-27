@@ -12,10 +12,11 @@ phép tính số liệu về **một** module dùng chung cho cả dashboard l�
 
 **Trong phạm vi**
 
-- `/thong-ke` — trang thống kê, khuôn bề rộng `content-wide` (`DESIGN.md` §Layout and containers)
+- `/ca-nhan/thong-ke` (và chuyển hướng từ `/thong-ke`) — trang thống kê trong tab Cá nhân, khuôn bề rộng `content-wide` (`DESIGN.md` §Layout and containers, SPEC-16)
 - `src/lib/stats.ts` — toàn bộ phép tính, hàm thuần, có test
 - Bốn ô số liệu: streak · phút học hôm nay · % đúng 7 ngày · số mục đang theo dõi
 - Ba biểu đồ + một lịch nhiệt, theo luật `DESIGN.md` §Charts
+- `web/src/components/stats/StatisticsContent.tsx` — component dùng chung cho tab Thống kê và trang chuyển hướng
 - Nối lại ô số liệu của dashboard (SPEC-02 §3.2) vào `stats.ts`
 
 **Ngoài phạm vi**

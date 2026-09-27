@@ -7,6 +7,7 @@ import { db } from '@/lib/db';
 import { useDueQueue } from '@/lib/use-due-queue';
 import { countLearnedByLesson, pickActiveLesson, secondsPerQuestion } from '@/lib/stats';
 import { DEFAULT_SETTINGS, getSettingsSnapshot, subscribeSettings } from '@/lib/settings';
+import { useActiveDrafts } from '@/lib/active-drafts';
 import type { LessonSummary } from '@/lib/lessons';
 import { SyncBadge } from '@/components/SyncBadge';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
@@ -19,16 +20,18 @@ import {
   BookOpen,
   ArrowRight,
   CheckCircle2,
-  Settings,
   Sparkles,
   AlertCircle,
   HelpCircle,
   ChevronDown,
+  Clock,
+  User,
+  BarChart2,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) {
-  // Cùng hook với /on-tap để hai màn luôn ra một con số (SPEC-02 §3.2).
+  // Cùng hook với /on-tap để hai màn luôn ra một con số (SPEC-02 §3.2, SPEC-18 §2).
   const queue = useDueQueue();
   const now = queue.now;
   const { learnedThroughLesson } = useSyncExternalStore(
@@ -37,6 +40,9 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
     () => DEFAULT_SETTINGS,
   );
   const batchCount = queue.sessionTargetIds.size;
+
+  // Lắng nghe cả nháp học từ vựng và nháp luyện tập (SPEC-18 §3, §5)
+  const drafts = useActiveDrafts();
 
   // Tiến độ theo bài: danh sách ID từ vựng đã vào lịch ôn
   const vocabTargetIds = useLiveQuery(
@@ -83,11 +89,10 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
     month: 'long',
   });
 
-
   return (
     <main className="mx-auto w-full max-w-5xl px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8">
       {/* ========================================================
-          1. Header: Lời chào + Lối vào Tài khoản & Cài đặt (< lg)
+          1. Header: Lời chào + Lối vào Profile / Tài khoản & Cài đặt
           ======================================================== */}
       <header className="flex items-start justify-between gap-4">
         <div className="space-y-1">
@@ -97,30 +102,96 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
             {greeting}
           </h1>
-
         </div>
 
-        {/* Lối vào thứ cấp cho Tìm kiếm, Tài khoản, Chủ đề & Cài đặt */}
+        {/* Lối vào thứ cấp cho Tìm kiếm, Tài khoản / Profile (/ca-nhan), Chủ đề */}
         <div className="flex items-center gap-2 pt-1">
           <SearchTrigger iconOnly className="size-11 rounded-xl lg:hidden" />
           <SyncBadge className="h-9 px-2.5 rounded-xl text-xs shadow-2xs lg:hidden" />
           <ThemeToggle className="size-11 rounded-xl" />
           <Link
-            href="/cai-dat"
-            aria-label="Cài đặt và Tài khoản"
+            href="/ca-nhan"
+            aria-label="Tiến độ và Tài khoản cá nhân"
             className={cn(
               buttonVariants({ variant: 'outline', size: 'sm' }),
-              'gap-1.5 h-9 px-3 rounded-xl border-border/80 lg:hidden'
+              'gap-1.5 min-h-11 h-11 px-3 rounded-xl border-border/80'
             )}
           >
-            <Settings className="w-4 h-4 text-muted-foreground" />
-            <span className="hidden sm:inline text-xs font-medium">Cài đặt</span>
+            <User className="size-4 text-primary" />
+            <span className="text-xs font-semibold">Tài khoản</span>
           </Link>
         </div>
       </header>
 
       {/* ========================================================
-          2. Khối P0 Hành động chính & Bài đang học (Luật hợp nhất)
+          2. Hàng phụ: Tiếp tục phiên dở dang nếu có nháp (SPEC-18 §3, §5, §6)
+          Không cạnh tranh với CTA primary: nút phụ dùng variant outline
+          ======================================================== */}
+      {(drafts.vocabDraft || drafts.practiceDraft) && (
+        <section aria-label="Tiếp tục phiên dở dang">
+          <Card className="border border-border/80 bg-accent/15 p-4 sm:p-5 rounded-2xl shadow-xs space-y-3">
+            <div className="flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
+              <Clock className="w-3.5 h-3.5" />
+              <span>Tiếp tục phiên</span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {drafts.vocabDraft && (
+                <div className="flex items-center justify-between gap-3 p-3 rounded-xl bg-card border border-border/60">
+                  <div className="space-y-0.5 min-w-0">
+                    <div className="text-xs font-bold text-foreground truncate">
+                      Học từ vựng · Bài {drafts.vocabDraft.lesson}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Đang ở từ {drafts.vocabDraft.currentWordIndex}/{drafts.vocabDraft.totalWords}
+                    </div>
+                  </div>
+                  <Link
+                    href={`/hoc/${drafts.vocabDraft.lesson}/tu-vung`}
+                    className={cn(
+                      buttonVariants({ variant: 'outline', size: 'sm' }),
+                      'min-h-11 h-11 px-3 rounded-xl text-xs font-semibold shrink-0'
+                    )}
+                  >
+                    <span>Tiếp tục</span>
+                    <ArrowRight className="size-3.5 ml-1" />
+                  </Link>
+                </div>
+              )}
+
+              {drafts.practiceDraft && (
+                <div className="flex items-center justify-between gap-3 p-3 rounded-xl bg-card border border-border/60">
+                  <div className="space-y-0.5 min-w-0">
+                    <div className="text-xs font-bold text-foreground truncate">
+                      Luyện tập
+                      {drafts.practiceDraft.selectedLessons && drafts.practiceDraft.selectedLessons.length > 0
+                        ? ` · Bài ${drafts.practiceDraft.selectedLessons.join(', ')}`
+                        : ''}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Đang ở câu {drafts.practiceDraft.currentQuestionIndex}/{drafts.practiceDraft.totalQuestions}
+                    </div>
+                  </div>
+                  <Link
+                    href="/luyen-tap"
+                    className={cn(
+                      buttonVariants({ variant: 'outline', size: 'sm' }),
+                      'min-h-11 h-11 px-3 rounded-xl text-xs font-semibold shrink-0'
+                    )}
+                  >
+                    <span>Tiếp tục</span>
+                    <ArrowRight className="size-3.5 ml-1" />
+                  </Link>
+                </div>
+              )}
+            </div>
+          </Card>
+        </section>
+      )}
+
+      {/* ========================================================
+          3. Khối P0 Hành động chính & Bài đang học (Luật hợp nhất)
+          SPEC-18: Duy nhất 1 CTA primary trên toàn màn hình.
           ======================================================== */}
       {queue.loading ? (
         // Trạng thái chờ tải dữ liệu Dexie: Skeleton nhẹ chống chớp giao diện
@@ -130,7 +201,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
           <div className="h-12 w-48 bg-muted rounded-xl" />
         </Card>
       ) : batchCount > 0 ? (
-        // TH1: Có mục đến hạn -> Ôn tập là P0, Bài đang học là P1 bên dưới
+        // TH1: Có mục đến hạn -> Ôn tập là CTA chính (P0), Bài đang học là P1 bên dưới
         <div className="space-y-4">
           {/* Card P0: Bắt đầu ôn tập */}
           <Card className="border-2 border-primary/30 bg-card shadow-sm p-6 sm:p-8 space-y-5">
@@ -182,7 +253,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
                 href={`/hoc/${activeLessonNum}`}
                 className={cn(
                   buttonVariants({ variant: 'outline' }),
-                  'h-10 px-4 rounded-xl shrink-0 self-start sm:self-auto font-medium'
+                  'min-h-11 h-11 px-4 rounded-xl shrink-0 self-start sm:self-auto font-medium'
                 )}
               >
                 <BookOpen className="w-4 h-4 mr-2" />
@@ -263,7 +334,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
                 </span>
                 <Link
                   href="/hoc/tra-cuu/kana"
-                  className="font-medium text-primary hover:underline underline-offset-4 inline-flex items-center gap-1 shrink-0 self-start sm:self-auto"
+                  className="font-medium text-primary hover:underline underline-offset-4 inline-flex items-center gap-1 shrink-0 self-start sm:self-auto min-h-11"
                 >
                   <span>Xem bảng chữ Kana trước</span>
                   <ArrowRight className="size-3.5" aria-hidden="true" />
@@ -275,7 +346,29 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
       )}
 
       {/* ========================================================
-          3. Khối P1: Cần củng cố (Ẩn hoàn toàn nếu weakCount = 0)
+          4. Hàng phụ: "Xem tiến độ" dẫn /ca-nhan & Lối tắt Kana / Tra cứu (SPEC-18 §3)
+          ======================================================== */}
+      <section aria-label="Lối tắt và tiến độ" className="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <div className="flex flex-wrap items-center gap-2.5">
+          <Link
+            href="/ca-nhan"
+            className="inline-flex min-h-11 items-center gap-1.5 px-3.5 rounded-xl bg-card border border-border/80 font-medium text-xs sm:text-sm text-foreground hover:border-primary/40 hover:text-primary transition shadow-2xs"
+          >
+            <BarChart2 className="size-4 text-primary" />
+            <span>Xem tiến độ trên máy</span>
+          </Link>
+          <Link
+            href="/hoc/tra-cuu/kana"
+            className="inline-flex min-h-11 items-center gap-1.5 px-3.5 rounded-xl bg-card border border-border/80 font-medium text-xs sm:text-sm text-foreground hover:border-primary/40 hover:text-primary transition shadow-2xs"
+          >
+            <BookOpen className="size-4 text-primary" />
+            <span>Bảng chữ Kana</span>
+          </Link>
+        </div>
+      </section>
+
+      {/* ========================================================
+          5. Khối P1: Cần củng cố (Ẩn hoàn toàn nếu weakCount = 0)
           ======================================================== */}
       {weakCount > 0 && (
         <Card className="border border-border/80 bg-card p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
@@ -297,7 +390,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
             href="/on-tap/diem-yeu"
             className={cn(
               buttonVariants({ variant: 'outline', size: 'sm' }),
-              'shrink-0 self-start sm:self-auto rounded-xl font-medium'
+              'min-h-11 h-11 px-3.5 shrink-0 self-start sm:self-auto rounded-xl font-medium'
             )}
           >
             Xem và luyện lại
@@ -307,7 +400,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
       )}
 
       {/* ========================================================
-          4. Hướng dẫn phân biệt Học / Luyện / Ôn (Feedback #36)
+          6. Hướng dẫn phân biệt Học / Luyện / Ôn (SPEC-18 §3)
           ======================================================== */}
       <details className="group rounded-2xl border border-border/80 bg-card p-4 sm:p-5 transition-all">
         <summary className="flex cursor-pointer list-none items-center justify-between text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground">
@@ -325,7 +418,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
             <strong className="text-foreground font-semibold">Luyện tập:</strong> chủ động làm bài tập theo những bài bạn tự chọn để củng cố kiến thức.
           </p>
           <p>
-            <strong className="text-foreground font-semibold">Ôn tập:</strong> app nhắc lại đúng lúc bạn sắp quên theo lịch ôn thông minh.
+            <strong className="text-foreground font-semibold">Ôn tập:</strong> app nhắc lại đúng lúc bạn sắp quên theo lịch ôn FSRS thông minh.
           </p>
           <div className="pt-1 text-xs text-muted-foreground">
             <span>Cần xem lại bảng chữ cái? </span>

@@ -29,13 +29,26 @@ chỉ chứng minh phạm vi ở ngày ghi nhận. Khi tiếp tục, kiểm tra 
 
 **25/09 — user feedback v1 (38 điểm):** sửa dữ liệu nghĩa động từ/kanji, lưu và học tiếp phiên
 luyện tập/flashcard, hoàn tác chấm, UX mobile các màn Học, Luyện tập, Tra cứu, Thống kê, Cài đặt,
-bảng Kana. Chi tiết, kiểm chứng và giới hạn: [Handoff FEEDBACK-V1](../handoff/FEEDBACK-V1.md)
-(nhánh `feedback-v1`, chưa merge).
+bảng Kana. Chi tiết, kiểm chứng và giới hạn: [Handoff FEEDBACK-V1](../handoff/FEEDBACK-V1.md).
 
-Bước tiếp theo: duyệt và merge `feedback-v1`, kiểm tra sync với Supabase thật (SPEC-08), nghiệm thu SPEC-03 và phần còn lại của SPEC-15.
+Bước tiếp theo của các feature hiện có: kiểm tra sync với Supabase thật (SPEC-08), nghiệm thu SPEC-03 và phần còn lại của SPEC-15. Nhánh `feedback-v1` đã merge vào `master` tại `d2b7170` (kiểm tra Git ngày 27/09).
 Phạm vi brand/agent riêng theo [handoff MaiPace](../handoff/MAIPACE.md).
 Khi làm xong một phần, cập nhật hàng tương ứng và handoff với ngày, kiểm tra
 đã chạy, giới hạn và bước tiếp theo. Không đổi trạng thái phần chưa được kiểm tra.
+
+## Kế hoạch UX 27/09/2026 — chưa triển khai
+
+[Kế hoạch tổng](../plans/2026-09-27-ux-redesign.md) dựa trên [quan sát luồng và ảnh minh họa](../research/ux-redesign/2026-09-27-mobile-learning-flows.md). Các spec dưới đây mô tả **thay đổi dự kiến**, không xác nhận tính năng đã có code hoặc nghiệm thu. `DESIGN.md` vẫn mô tả dock hiện tại cho đến khi mốc 1 sửa hợp đồng toàn cục cùng code.
+
+| Mốc | Spec đề xuất | Phạm vi và phụ thuộc |
+| --- | --- | --- |
+| 1 | [SPEC-16 — Điều hướng và Profile](SPEC-16-dieu-huong-profile.md) | Profile/Thống kê hoạt động trước khi đổi mục dock thứ năm sang Tra cứu; đồng bộ DESIGN + SPEC-02/07/08 |
+| 2 | [SPEC-17 — Tra cứu và tìm kiếm](SPEC-17-tra-cuu-tim-kiem.md) | Hub một chạm, đích tính năng trong kết quả tìm kiếm; giữ URL Tra cứu hiện có |
+| 3 | [SPEC-18 — Bảng tin và Học](SPEC-18-bang-tin-va-hoc.md) | Việc tiếp theo, bài học dạng hub, giữ anchor bài và nội dung tham khảo |
+| 4 | [SPEC-19 — Luyện tập nhanh](SPEC-19-luyen-tap-nhanh.md) | Bắt đầu cấu hình hợp lệ trên màn đầu, giữ nháp/preset/5 dạng |
+| 5 | [SPEC-20 — Ôn tập](SPEC-20-on-tap-tiep-noi.md) | Tiếp lô, trạng thái rỗng đúng nghĩa, giữ FSRS và Điểm yếu riêng |
+
+[Handoff kế hoạch](../handoff/UX-REDESIGN-PLAN.md) ghi rõ phần chưa kiểm chứng. Khi triển khai từng mốc, cập nhật spec hiện hành tương ứng và tạo handoff nghiệm thu riêng, không dùng bản kế hoạch thay cho kết quả kiểm thử.
 
 ## Vòng rà soát 17/09/2026 — hợp đồng dữ liệu & offline/sync
 

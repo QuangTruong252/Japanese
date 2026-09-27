@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ChevronLeft, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ArrowRight, FileArchive, Info } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
 import { Furigana } from '@/components/Furigana';
@@ -12,6 +12,7 @@ import { Card } from '@/components/ui/card';
 import { ShadowingPlayer } from '@/components/audio/ShadowingPlayer';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { LessonActionHub } from './LessonActionHub';
 import { cn } from '@/lib/utils';
 
 export function generateStaticParams() {
@@ -23,7 +24,6 @@ const VERB_GROUP: Record<string, { label: string; className: string }> = {
   'verb-ichidan': { label: 'Nhóm 2', className: 'bg-verb-2 text-primary-foreground font-semibold' },
   'verb-irregular': { label: 'Nhóm 3', className: 'bg-verb-3 text-primary-foreground font-semibold' },
 };
-
 
 export default async function LessonDetailPage({
   params,
@@ -37,7 +37,7 @@ export default async function LessonDetailPage({
   const { lesson, vocab } = await loadLessonData(lessonNum);
 
   return (
-    <main className="mx-auto max-w-4xl space-y-8 px-4 sm:px-6 pt-6 sm:pt-10">
+    <main className="mx-auto max-w-4xl space-y-8 px-4 sm:px-6 pt-6 sm:pt-10 pb-16">
       {/* 1. Header bài học & Breadcrumb */}
       <header className="space-y-4">
         <div className="flex items-center justify-between">
@@ -91,19 +91,12 @@ export default async function LessonDetailPage({
           </div>
         </Card>
 
-        {/* Nút Luyện tập bài này gần đầu */}
-        <div className="pt-1">
-          <Link
-            href={`/luyen-tap?lessons=${lessonNum}`}
-            className={cn(
-              buttonVariants({ size: 'quiz' }),
-              'w-full sm:w-auto justify-center font-semibold rounded-xl bg-primary text-primary-foreground shadow-sm shadow-primary/20'
-            )}
-          >
-            <span>Luyện tập bài {lesson.number}</span>
-            <ArrowRight className="size-4" />
-          </Link>
-        </div>
+        {/* Hub hành động bài học: CTA Học từ vựng số 1 + lối tắt tham khảo & luyện tập (SPEC-18 §3) */}
+        <LessonActionHub
+          lessonNum={lessonNum}
+          totalVocab={vocab.length}
+          grammarCount={lesson.grammar.length}
+        />
       </header>
 
       {/* Thanh nhảy nhanh sticky dưới header: Từ vựng / Ngữ pháp / Nghe / Luyện tập */}
@@ -119,7 +112,7 @@ export default async function LessonDetailPage({
               'min-h-11 h-11 w-full sm:w-auto px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold'
             )}
           >
-            Từ vựng
+            Từ vựng ({vocab.length})
           </a>
           <a
             href="#ngu-phap"
@@ -128,7 +121,7 @@ export default async function LessonDetailPage({
               'min-h-11 h-11 w-full sm:w-auto px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold'
             )}
           >
-            Ngữ pháp
+            Ngữ pháp ({lesson.grammar.length})
           </a>
           <a
             href="#nghe"
@@ -151,26 +144,27 @@ export default async function LessonDetailPage({
         </div>
       </nav>
 
-      {/* 2. Từ vựng trọng tâm */}
+      {/* 2. Từ vựng trọng tâm (Tham khảo đầy đủ trên cùng URL - SPEC-18 §3) */}
       <section id="tu-vung" className="scroll-mt-20 sm:scroll-mt-24 space-y-4">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <div className="flex items-center gap-2">
             <h2 className="text-xl font-bold text-foreground">Từ vựng trọng tâm</h2>
             <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-muted text-muted-foreground">
               {vocab.length} từ
             </span>
           </div>
+
+          <Link
+            href={`/hoc/${lessonNum}/tu-vung`}
+            className={cn(
+              buttonVariants({ variant: 'outline', size: 'sm' }),
+              'min-h-11 h-11 px-3.5 rounded-xl font-semibold text-xs gap-1.5 w-full sm:w-auto justify-center border-primary/30 text-primary hover:bg-primary/5'
+            )}
+          >
+            <span>Học từ vựng bài này</span>
+            <ArrowRight className="size-3.5" aria-hidden="true" />
+          </Link>
         </div>
-        <Link
-          href={`/hoc/${lessonNum}/tu-vung`}
-          className={cn(
-            buttonVariants({ variant: 'outline', size: 'quiz' }),
-            'w-full justify-center sm:w-auto',
-          )}
-        >
-          Học và theo dõi từ vựng bài này
-          <ArrowRight className="size-4" aria-hidden="true" />
-        </Link>
 
         <Card className="rounded-2xl border-border/80 bg-card shadow-sm overflow-hidden">
           <div className="overflow-x-auto">
@@ -233,7 +227,7 @@ export default async function LessonDetailPage({
         </Card>
       </section>
 
-      {/* 3. Ngữ pháp & Mẫu câu */}
+      {/* 3. Ngữ pháp & Mẫu câu (Tham khảo đầy đủ trên cùng URL - SPEC-18 §3) */}
       <section id="ngu-phap" className="scroll-mt-20 sm:scroll-mt-24 space-y-5">
         <div className="flex items-center gap-2">
           <h2 className="text-xl font-bold text-foreground">Ngữ pháp & Mẫu câu</h2>
@@ -304,7 +298,7 @@ export default async function LessonDetailPage({
         </div>
       </section>
 
-      {/* 4. Khối Audio & Trình phát Shadowing (SPEC-10) */}
+      {/* 4. Khối Audio & Trình phát Shadowing (SPEC-10, SPEC-18 §3) */}
       <section id="nghe" className="scroll-mt-20 sm:scroll-mt-24 space-y-4 pt-6 border-t border-border/80">
         <div className="space-y-1">
           <h2 className="text-xl font-bold text-foreground">Audio & Shadowing</h2>
@@ -312,29 +306,48 @@ export default async function LessonDetailPage({
             Luyện nghe và nói theo bài học với tính năng lặp đoạn A-B và điều chỉnh tốc độ.
           </p>
         </div>
+
+        {/* Hướng dẫn khi thiếu audio: không khóa Ngữ pháp/Từ vựng, dẫn link nạp có ngữ cảnh quay lại bài (SPEC-18 §3) */}
+        <div className="rounded-xl border border-border/60 bg-muted/30 p-3 sm:p-3.5 flex items-start gap-2.5 text-xs text-muted-foreground">
+          <Info className="size-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
+          <div className="space-y-1">
+            <p>
+              Nội dung audio đọc trực tiếp từ tệp ZIP đĩa CD cá nhân lưu trên máy. Nếu chưa nạp audio cho bài này, bạn vẫn có thể học trọn vẹn Từ vựng và Ngữ pháp ở trên.
+            </p>
+            <Link
+              href={`/cai-dat/audio?returnTo=/hoc/${lessonNum}`}
+              className="text-primary font-medium hover:underline inline-flex items-center gap-1"
+            >
+              <FileArchive className="size-3" aria-hidden="true" />
+              <span>Nạp audio đĩa CD trong Cài đặt</span>
+              <ArrowRight className="size-3" aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+
         <ShadowingPlayer
           lessonNum={lessonNum}
           examples={lesson.grammar.flatMap((g) => g.examples)}
         />
       </section>
 
-      {/* 5. Nguồn */}
+      {/* 5. Nguồn sách tham khảo */}
       {lesson.sourceRef && (
         <p className="pt-4 border-t border-border/80 text-xs text-muted-foreground">
           Tài liệu tham khảo: Giáo trình Minna no Nihongo {lesson.sourceRef.book}, tr. {lesson.sourceRef.pages}
         </p>
       )}
 
-      {/* 6. Nút CTA chuyển sang Luyện tập */}
+      {/* 6. Lối phụ: Chuyển sang Luyện tập bài N ở chân trang (SPEC-18 §3) */}
       <section id="luyen-tap" className="scroll-mt-20 sm:scroll-mt-24 pt-2">
         <Link
           href={`/luyen-tap?lessons=${lessonNum}`}
           className={cn(
-            buttonVariants({ size: 'lg' }),
-            'w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm rounded-xl flex items-center justify-center gap-2 shadow-md shadow-primary/20'
+            buttonVariants({ variant: 'outline', size: 'lg' }),
+            'w-full min-h-12 h-12 font-semibold text-sm rounded-xl flex items-center justify-center gap-2 border-border/80 hover:border-primary/40'
           )}
         >
-          <span>Luyện tập bài {lesson.number} ngay</span>
+          <span>Luyện tập trắc nghiệm & câu hỏi bài {lesson.number}</span>
           <ArrowRight className="w-4 h-4" />
         </Link>
       </section>

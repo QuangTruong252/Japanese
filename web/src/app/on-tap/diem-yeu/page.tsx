@@ -93,7 +93,7 @@ export default function WeakPointsPage() {
   }, [lessons]);
 
   return (
-    <main className="mx-auto w-full max-w-3xl space-y-6 px-4 py-6">
+    <main className="mx-auto w-full max-w-3xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
       <div className="space-y-4">
         <h1 className="font-heading text-xl font-medium">Ôn tập</h1>
         <div className="flex items-center gap-6 border-b border-border/80 text-sm">

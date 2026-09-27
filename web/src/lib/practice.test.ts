@@ -9,6 +9,7 @@ import {
   checkReorderAnswer,
   applyResults,
   summarizeSession,
+  resolveInitialPracticeLessons,
 } from './practice.ts';
 import { ELAPSED_SAMPLE_SIZE } from './fsrs.ts';
 import type {
@@ -293,3 +294,76 @@ test('buildSession ở mode lesson KHÔNG khử trùng lặp mục tiêu', () =>
     2,
   );
 });
+
+test('resolveInitialPracticeLessons: ?lessons=N thắng và chuẩn hóa danh sách', () => {
+  // Đơn lẻ
+  assert.deepEqual(resolveInitialPracticeLessons({ lessonsParam: '5' }), [5]);
+  // Nhiều bài, lọc trùng, sắp xếp tăng dần, bỏ giá trị ngoài 1..25
+  assert.deepEqual(
+    resolveInitialPracticeLessons({
+      lessonsParam: '10, 2, 10, abc, 0, 26, 4',
+      savedPresetLessons: [1],
+      activeLessonNum: 3,
+    }),
+    [2, 4, 10],
+  );
+});
+
+test('resolveInitialPracticeLessons: dùng preset hợp lệ khi không có query param', () => {
+  assert.deepEqual(
+    resolveInitialPracticeLessons({
+      lessonsParam: null,
+      savedPresetLessons: [2, 3],
+      activeLessonNum: 5,
+    }),
+    [2, 3],
+  );
+  // Preset có phần tử không hợp lệ được lọc bỏ
+  assert.deepEqual(
+    resolveInitialPracticeLessons({
+      lessonsParam: '',
+      savedPresetLessons: [7, 99],
+      activeLessonNum: 1,
+    }),
+    [7],
+  );
+});
+
+test('resolveInitialPracticeLessons: dùng bài đang học cục bộ khi chưa có preset hữu ích', () => {
+  assert.deepEqual(
+    resolveInitialPracticeLessons({
+      lessonsParam: null,
+      savedPresetLessons: null,
+      activeLessonNum: 4,
+    }),
+    [4],
+  );
+  assert.deepEqual(
+    resolveInitialPracticeLessons({
+      lessonsParam: null,
+      savedPresetLessons: [],
+      activeLessonNum: 7,
+    }),
+    [7],
+  );
+});
+
+test('resolveInitialPracticeLessons: người mới hoàn toàn fallback về Bài 1', () => {
+  assert.deepEqual(
+    resolveInitialPracticeLessons({
+      lessonsParam: null,
+      savedPresetLessons: null,
+      activeLessonNum: null,
+    }),
+    [1],
+  );
+  assert.deepEqual(
+    resolveInitialPracticeLessons({
+      lessonsParam: 'invalid',
+      savedPresetLessons: [],
+      activeLessonNum: 0,
+    }),
+    [1],
+  );
+});
+

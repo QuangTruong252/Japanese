@@ -25,6 +25,7 @@ export function SessionResult({
   mode = 'lesson',
   nextReviewLine,
   userAnswers = {},
+  config,
 }: {
   session: PracticeSession;
   incorrectQuestions: QuestionItem[];
@@ -33,12 +34,16 @@ export function SessionResult({
   mode?: PracticeConfig['mode'];
   nextReviewLine?: string | null;
   userAnswers?: Record<string, string>;
+  config?: PracticeConfig;
 }) {
   const router = useRouter();
   useEffect(() => {
     router.prefetch('/luyen-tap');
     router.prefetch('/');
-  }, [router]);
+    if (config?.lessons?.[0]) {
+      router.prefetch(`/hoc/${config.lessons[0]}`);
+    }
+  }, [router, config]);
   const percentage = Math.round(session.accuracyRate * 100);
   const isDue = mode === 'due';
 

@@ -2,11 +2,12 @@
 
 import { useState, useEffect, useRef, useMemo, useId } from 'react';
 import { useRouter } from 'next/navigation';
-import { Search, X, CornerDownLeft, ArrowDown, ArrowUp } from 'lucide-react';
+import { Search, X, CornerDownLeft, ArrowDown, ArrowUp, AlertCircle, RotateCw } from 'lucide-react';
 import { useUIStore } from '@/lib/store';
 import {
   buildSearchIndex,
   getCachedSearchIndex,
+  getFeatureEntries,
   executeSearch,
   type SearchEntry,
   type SearchKind,
@@ -15,6 +16,7 @@ import { Furigana } from '@/components/Furigana';
 import { cn } from '@/lib/utils';
 
 const KIND_LABELS: Record<SearchKind, string> = {
+  feature: 'TÍNH NĂNG',
   vocab: 'TỪ VỰNG',
   grammar: 'NGỮ PHÁP',
   kanji: 'KANJI',
@@ -23,7 +25,7 @@ const KIND_LABELS: Record<SearchKind, string> = {
   lesson: 'BÀI HỌC',
 };
 
-const SUGGESTIONS = ['学生', 'がくせい', 'gakusei', 'hoc sinh'];
+const SUGGESTIONS = ['学生', 'がくせい', 'gakusei', 'hoc sinh', 'tra cứu'];
 
 interface SearchModalInnerProps {
   onClose: () => void;
@@ -36,8 +38,9 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
   const cached = getCachedSearchIndex();
   const [query, setQuery] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [entries, setEntries] = useState<SearchEntry[]>(() => cached ?? []);
+  const [entries, setEntries] = useState<SearchEntry[]>(() => cached ?? getFeatureEntries());
   const [isLoadingIndex, setIsLoadingIndex] = useState(() => !cached);
+  const [hasIndexError, setHasIndexError] = useState(false);
 
   const inputRef = useRef<HTMLInputElement | null>(null);
   const listboxRef = useRef<HTMLUListElement | null>(null);
@@ -65,12 +68,31 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
         }
       })
       .catch(() => {
-        if (active) setIsLoadingIndex(false);
+        if (active) {
+          setHasIndexError(true);
+          setEntries(getFeatureEntries());
+          setIsLoadingIndex(false);
+        }
       });
     return () => {
       active = false;
     };
   }, [cached]);
+
+  const handleRetry = () => {
+    setIsLoadingIndex(true);
+    setHasIndexError(false);
+    buildSearchIndex()
+      .then((data) => {
+        setEntries(data);
+        setIsLoadingIndex(false);
+      })
+      .catch(() => {
+        setHasIndexError(true);
+        setEntries(getFeatureEntries());
+        setIsLoadingIndex(false);
+      });
+  };
 
   // 3. Thực thi tìm kiếm
   const { results, totalMatches } = useMemo(() => {
@@ -220,6 +242,57 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
 
         {/* 2. Thân danh sách kết quả / Trạng thái */}
         <div className="flex-1 overflow-y-auto overscroll-contain divide-y divide-border/40">
+          {/* Trạng thái lỗi nạp chỉ mục: thông báo và lối duyệt danh mục (SPEC-17 §5) */}
+          {!isLoadingIndex && hasIndexError && (
+            <div className="p-4 sm:p-5 space-y-4">
+              <div className="flex items-start gap-3 rounded-xl border border-destructive/30 bg-destructive/5 p-3.5 text-xs sm:text-sm">
+                <AlertCircle className="size-5 text-destructive shrink-0 mt-0.5" />
+                <div className="flex-1 space-y-1">
+                  <p className="font-semibold text-foreground">Không thể tải toàn bộ chỉ mục học liệu</p>
+                  <p className="text-muted-foreground">
+                    Đã xảy ra lỗi khi nạp dữ liệu. Bạn vẫn có thể tìm nhanh các tính năng hoặc duyệt danh mục bên dưới.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={handleRetry}
+                    className="inline-flex items-center gap-1.5 mt-2 px-3 py-1 rounded-lg border border-border bg-card text-xs font-medium text-foreground hover:bg-muted cursor-pointer"
+                  >
+                    <RotateCw className="size-3.5" />
+                    <span>Thử lại</span>
+                  </button>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <p className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider px-1">
+                  Duyệt nhanh danh mục
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  {[
+                    { label: 'Hub Tra cứu', href: '/hoc/tra-cuu' },
+                    { label: 'Bảng chữ Kana', href: '/hoc/tra-cuu/kana' },
+                    { label: 'Tra cứu Kanji', href: '/hoc/tra-cuu/kanji' },
+                    { label: 'Tra cứu Động từ', href: '/hoc/tra-cuu/dong-tu' },
+                    { label: 'Bảng tham chiếu', href: '/hoc/tra-cuu/bang' },
+                    { label: 'Học bài', href: '/hoc' },
+                  ].map((item) => (
+                    <button
+                      key={item.href}
+                      type="button"
+                      onClick={() => {
+                        onClose();
+                        router.push(item.href);
+                      }}
+                      className="flex items-center p-2.5 rounded-xl border border-border/70 bg-card text-left text-xs font-semibold text-foreground hover:border-primary/40 hover:bg-muted/40 transition cursor-pointer"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Trạng thái đang nạp chỉ mục lần đầu */}
           {isLoadingIndex && (
             <div className="p-4 space-y-3">
@@ -230,10 +303,10 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
           )}
 
           {/* Trạng thái chưa gõ gì: Gợi ý cách dùng */}
-          {!isLoadingIndex && !query.trim() && (
+          {!isLoadingIndex && !query.trim() && !hasIndexError && (
             <div className="p-5 sm:p-6 space-y-3 text-center sm:text-left">
               <p className="text-xs sm:text-sm text-muted-foreground">
-                Gõ chữ Hán, kana, romaji hoặc tiếng Việt (không dấu).
+                Gõ từ tiếng Nhật, cách đọc (kana, romaji), tiếng Việt hoặc tên tính năng (tra cứu, kanji, thống kê…).
               </p>
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1">
                 {SUGGESTIONS.map((sug) => (
@@ -305,8 +378,12 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
                             <div className="flex items-center gap-2">
                               {entry.label.includes('[') && entry.label.includes(']') ? (
                                 <Furigana text={entry.label} className="font-bold text-sm sm:text-base text-foreground" />
-                              ) : (
+                              ) : entry.kind === 'vocab' || entry.kind === 'kanji' || entry.kind === 'verb' ? (
                                 <span lang="ja" className="font-jp font-bold text-sm sm:text-base text-foreground">
+                                  {entry.label}
+                                </span>
+                              ) : (
+                                <span className="font-bold text-sm sm:text-base text-foreground">
                                   {entry.label}
                                 </span>
                               )}
@@ -317,7 +394,14 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
                           </div>
 
                           {entry.badge && (
-                            <span className="shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-muted border border-border text-muted-foreground">
+                            <span
+                              className={cn(
+                                'shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded-full border',
+                                entry.kind === 'feature'
+                                  ? 'bg-primary/10 border-primary/30 text-primary'
+                                  : 'bg-muted border-border text-muted-foreground'
+                              )}
+                            >
                               {entry.badge}
                             </span>
                           )}

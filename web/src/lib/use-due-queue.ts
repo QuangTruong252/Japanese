@@ -37,6 +37,10 @@ export interface DueQueue {
   learnedLessons: number[];
   questions: QuestionItem[];
   config: PracticeConfig;
+  /** Tổng số mục đến hạn hiện tại trong cơ sở dữ liệu (tất cả các lô). */
+  totalDueCount: number;
+  /** Số bản ghi đang chờ đồng bộ lên máy chủ. */
+  pendingSyncCount: number;
 }
 
 /**
@@ -63,13 +67,18 @@ export function useDueQueue(): DueQueue {
     // index nào) cùng bốn con số khác; một lần đọc rẻ hơn bốn truy vấn. Bảng bị chặn trần bởi
     // dailyNewLimit (mặc định 20 mục/ngày). Quay lại truy vấn index `dueAt` nếu vượt ~10k dòng.
     const all = await db.reviewItems.toArray();
+    const pendingSyncCount = await db.pendingSync.count();
+
+    const allDueItems = all
+      .filter((item) => item.dueAt.getTime() <= now.getTime())
+      .sort((a, b) => a.dueAt.getTime() - b.dueAt.getTime());
 
     return {
       dailyNewLimit,
       reviewBatchSize,
-      allDueItems: all
-        .filter((item) => item.dueAt.getTime() <= now.getTime())
-        .sort((a, b) => a.dueAt.getTime() - b.dueAt.getTime()),
+      allDueItems,
+      totalDueCount: allDueItems.length,
+      pendingSyncCount,
       existingTargetIds: new Set(all.map((item) => item.targetId)),
       newLoadedToday: all.filter((item) => item.createdAt >= startTodayIso).length,
       dueTomorrowCount: all.filter(
@@ -134,5 +143,7 @@ export function useDueQueue(): DueQueue {
     learnedLessons,
     questions,
     config,
+    totalDueCount: snapshot?.totalDueCount ?? 0,
+    pendingSyncCount: snapshot?.pendingSyncCount ?? 0,
   };
 }

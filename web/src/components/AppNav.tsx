@@ -1,21 +1,33 @@
 'use client';
 
+import { useEffect, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db';
 import { useDueClock } from '@/lib/use-due-clock';
-import { SyncBadge } from '@/components/SyncBadge';
+import { resolveSyncBadgeState } from '@/lib/stats';
+import {
+  getSyncStatusSnapshot,
+  getServerSyncStatusSnapshot,
+  subscribeSyncStatus,
+} from '@/lib/sync';
+import { createClient, isSupabaseConfigured } from '@/lib/supabase/client';
 import {
   LayoutDashboard,
   BookOpen,
   Dumbbell,
   RotateCcw,
-  BarChart3,
-  Settings,
   Search,
+  Settings,
+  User,
+  CloudCheck,
+  CloudOff,
+  CloudUpload,
+  RefreshCw,
 } from 'lucide-react';
+import { isNavActive } from '@/lib/nav';
 import { useUIStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
 
@@ -26,12 +38,21 @@ interface NavItem {
   isDueTarget?: boolean;
 }
 
+interface AuthUser {
+  id: string;
+  email?: string;
+  displayName?: string;
+  avatarUrl?: string;
+}
+
+// 5 đích điều hướng chính theo SPEC-16 & DESIGN.md §Navigation:
+// Bảng tin · Học bài · Luyện tập · Ôn tập · Tra cứu
 const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Bảng tin', icon: LayoutDashboard },
   { href: '/hoc', label: 'Học bài', icon: BookOpen },
   { href: '/luyen-tap', label: 'Luyện tập', icon: Dumbbell },
   { href: '/on-tap', label: 'Ôn tập', icon: RotateCcw, isDueTarget: true },
-  { href: '/thong-ke', label: 'Thống kê', icon: BarChart3 },
+  { href: '/hoc/tra-cuu', label: 'Tra cứu', icon: Search },
 ];
 
 export function AppNav() {
@@ -46,6 +67,68 @@ export function AppNav() {
       [now]
     ) ?? 0;
 
+  // Trạng thái tài khoản & sync cho sidebar và header mobile
+  const dexiePendingCount = useLiveQuery(() => db.pendingSync.count(), []) ?? 0;
+  const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
+
+  useEffect(() => {
+    if (!isSupabaseConfigured()) return;
+    try {
+      const supabase = createClient();
+      supabase.auth.getUser().then(({ data: { user } }) => {
+        if (user) {
+          setCurrentUser({
+            id: user.id,
+            email: user.email,
+            displayName:
+              user.user_metadata?.full_name ||
+              user.user_metadata?.name ||
+              user.email?.split('@')[0],
+            avatarUrl: user.user_metadata?.avatar_url,
+          });
+        }
+      }).catch(() => {
+        // Ignore unconfigured
+      });
+
+      const {
+        data: { subscription },
+      } = supabase.auth.onAuthStateChange((_event, session) => {
+        if (session?.user) {
+          setCurrentUser({
+            id: session.user.id,
+            email: session.user.email,
+            displayName:
+              session.user.user_metadata?.full_name ||
+              session.user.user_metadata?.name ||
+              session.user.email?.split('@')[0],
+            avatarUrl: session.user.user_metadata?.avatar_url,
+          });
+        } else {
+          setCurrentUser(null);
+        }
+      });
+
+      return () => subscription.unsubscribe();
+    } catch {
+      // Supabase unconfigured / unavailable
+    }
+  }, []);
+
+  const engineStatus = useSyncExternalStore(
+    subscribeSyncStatus,
+    getSyncStatusSnapshot,
+    getServerSyncStatusSnapshot,
+  );
+
+  const totalPending = Math.max(dexiePendingCount, engineStatus.pendingCount);
+
+  const syncResolution = resolveSyncBadgeState({
+    pendingCount: totalPending,
+    isLoggedIn: Boolean(currentUser),
+    engineState: engineStatus.state,
+  });
+
   // Luồng làm bài và học từ vựng chiếm trọn màn hình, có điều hướng riêng.
   if (
     pathname.startsWith('/luyen-tap/phien') ||
@@ -55,10 +138,77 @@ export function AppNav() {
     return null;
   }
 
+  const isProfileActive = pathname === '/ca-nhan' || pathname.startsWith('/ca-nhan/');
+
   return (
     <>
       {/* ========================================================
+          0. Mobile Top Bar (< 1024px): Header với Nút Tài khoản
+          Mở Profile/Thống kê từ cả năm màn chính ở 390px trong một chạm
+          ======================================================== */}
+      <header
+        className="lg:hidden sticky top-0 z-30 flex items-center justify-between px-4 py-2 bg-background/95 dark:bg-card/95 backdrop-blur-md border-b border-border/70"
+        aria-label="Thanh đầu trang"
+      >
+        <Link
+          href="/"
+          aria-label="Về trang chủ MaiPace"
+          className="flex items-center gap-2 outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-lg py-1"
+        >
+          <div className="w-7 h-7 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden shrink-0">
+            <Image
+              src="/brand/maipace-mark.svg"
+              alt=""
+              width={18}
+              height={18}
+              className="object-contain"
+              priority
+            />
+          </div>
+          <span className="font-bold text-base tracking-tight text-foreground">
+            MaiPace
+          </span>
+        </Link>
+
+        {/* Nút Tài khoản góc phải: tối thiểu 48px vùng chạm */}
+        <Link
+          href="/ca-nhan"
+          aria-label={
+            currentUser?.displayName
+              ? `Tài khoản ${currentUser.displayName}`
+              : 'Tài khoản'
+          }
+          className={cn(
+            'inline-flex items-center gap-2 min-h-[48px] px-3.5 py-1.5 rounded-full text-xs font-medium border transition duration-150 outline-none select-none cursor-pointer',
+            'focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2',
+            isProfileActive
+              ? 'border-primary/50 text-primary bg-primary/10 font-semibold shadow-xs'
+              : 'border-border/80 bg-card text-foreground hover:bg-muted/70'
+          )}
+        >
+          <div className="relative shrink-0 flex items-center justify-center">
+            {currentUser?.avatarUrl ? (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                src={currentUser.avatarUrl}
+                alt=""
+                className="size-6 rounded-full object-cover border border-border/80"
+              />
+            ) : (
+              <div className="size-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-medium">
+                <User className="size-3.5" />
+              </div>
+            )}
+          </div>
+          <span className="truncate max-w-[110px]">
+            {currentUser?.displayName || 'Tài khoản'}
+          </span>
+        </Link>
+      </header>
+
+      {/* ========================================================
           1. Mobile & Tablet Shell (< 1024px): Floating Dock 5 mục
+          Bảng tin · Học · Luyện · Ôn · Tra cứu (thứ năm trỏ /hoc/tra-cuu)
           ======================================================== */}
       <nav
         aria-label="Điều hướng chính"
@@ -74,10 +224,7 @@ export function AppNav() {
       >
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
-          const isActive =
-            item.href === '/'
-              ? pathname === '/'
-              : pathname === item.href || pathname.startsWith(`${item.href}/`);
+          const isActive = isNavActive(item.href, pathname);
           const showBadge = item.isDueTarget && dueCount > 0;
 
           return (
@@ -120,6 +267,7 @@ export function AppNav() {
 
       {/* ========================================================
           2. Desktop Shell (>= 1024px): Left Sidebar cố định w-64
+          5 mục chính + khối cuối sidebar dẫn /ca-nhan (SPEC-16)
           ======================================================== */}
       <aside
         aria-label="Điều hướng ứng dụng"
@@ -179,14 +327,11 @@ export function AppNav() {
             </kbd>
           </button>
 
-          {/* Giữa: 5 tab chính */}
+          {/* Giữa: 5 tab chính (Bảng tin · Học bài · Luyện tập · Ôn tập · Tra cứu) */}
           <nav className="mt-5 space-y-1" aria-label="Menu chính">
             {NAV_ITEMS.map((item) => {
               const Icon = item.icon;
-              const isActive =
-                item.href === '/'
-                  ? pathname === '/'
-                  : pathname === item.href || pathname.startsWith(`${item.href}/`);
+              const isActive = isNavActive(item.href, pathname);
               const showBadge = item.isDueTarget && dueCount > 0;
 
               return (
@@ -218,28 +363,63 @@ export function AppNav() {
           </nav>
         </div>
 
-        {/* Đáy: Khối Tài khoản thứ cấp (SyncBadge + Cài đặt) */}
+        {/* Đáy: Khối Tài khoản dẫn /ca-nhan có trạng thái sync bằng chữ (SPEC-16 §3) */}
         <div className="pt-3 border-t border-border/80 space-y-2">
-          <div className="px-1 space-y-1.5">
-            <div className="flex items-center justify-between px-1">
-              <span className="text-[11px] font-medium text-muted-foreground uppercase tracking-wider">
-                Đồng bộ dữ liệu
+          {/* Lối vào Hồ sơ /ca-nhan */}
+          <Link
+            href="/ca-nhan"
+            aria-current={isProfileActive ? 'page' : undefined}
+            className={cn(
+              'flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition duration-150 outline-none border border-transparent',
+              'focus-visible:ring-2 focus-visible:ring-primary/60',
+              isProfileActive
+                ? 'bg-primary/15 text-primary font-semibold border-primary/20 shadow-xs'
+                : 'text-foreground hover:bg-muted/60'
+            )}
+          >
+            {currentUser?.avatarUrl ? (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                src={currentUser.avatarUrl}
+                alt=""
+                className="size-8 rounded-full border border-border object-cover shrink-0"
+              />
+            ) : (
+              <div className="size-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-medium shrink-0">
+                <User className="size-4" />
+              </div>
+            )}
+            <div className="flex flex-col min-w-0 flex-1 leading-tight">
+              <span className="font-medium text-sm truncate">
+                {currentUser?.displayName || 'Cá nhân & Tiến độ'}
+              </span>
+              <span className="flex items-center gap-1 text-[11px] text-muted-foreground truncate mt-0.5">
+                {syncResolution.state === 'synced' && (
+                  <CloudCheck className="size-3 text-success shrink-0" />
+                )}
+                {(syncResolution.state === 'pending' || syncResolution.state === 'syncing') && (
+                  <CloudUpload className={cn('size-3 text-warning shrink-0', syncResolution.state === 'syncing' && 'animate-spin')} />
+                )}
+                {(syncResolution.state === 'offline' || syncResolution.state === 'unconfigured') && (
+                  <CloudOff className="size-3 text-muted-foreground shrink-0" />
+                )}
+                <span className="truncate">{syncResolution.label}</span>
               </span>
             </div>
-            <SyncBadge className="w-full justify-start px-3 py-1.5 text-xs shadow-2xs" />
-          </div>
+          </Link>
 
+          {/* Lối phụ sang Cài đặt & Dữ liệu */}
           <Link
             href="/cai-dat"
             className={cn(
-              'flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition duration-150 outline-none',
+              'flex items-center gap-3 px-3.5 py-2 rounded-xl text-xs font-medium transition duration-150 outline-none',
               'focus-visible:ring-2 focus-visible:ring-primary/60',
               pathname === '/cai-dat'
                 ? 'bg-primary/15 text-primary font-semibold'
                 : 'text-muted-foreground hover:text-foreground hover:bg-muted/60'
             )}
           >
-            <Settings className="w-5 h-5 shrink-0" />
+            <Settings className="w-4 h-4 shrink-0" />
             <span>Cài đặt & Dữ liệu</span>
           </Link>
         </div>

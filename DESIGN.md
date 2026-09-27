@@ -547,13 +547,12 @@ Every screen is checked at 390px and 1280px, in both schemes, before it is calle
 
 ## Navigation
 
-The app has **five primary destinations**: Home, Learn, Practice, Review, Progress. They are
+The app has **five primary destinations**: Home, Learn, Practice, Review, Lookup. They are
 the learner's whole loop, and they are the only things that earn a slot in primary navigation.
 
-**Settings is not a primary destination.** It is reached from a secondary surface such as a
-profile, an avatar or an overflow menu, because a learner opens it a handful of times, not
-daily. Anything that arrives later (search, lookup, audio import) is secondary by default; a
-new primary destination requires this file to change.
+**Settings and Profile are secondary surfaces.** They are reached from the account area or
+avatar/profile controls, because a learner checks them periodically rather than on every study action.
+Progress and Statistics live behind Profile (`/ca-nhan`), while Settings lives at `/cai-dat`.
 
 | Destination | Route | Vietnamese label |
 |---|---|---|
@@ -561,19 +560,20 @@ new primary destination requires this file to change.
 | Learn | `/hoc` | Học bài |
 | Practice | `/luyen-tap` | Luyện tập |
 | Review | `/on-tap` | Ôn tập |
-| Progress | `/thong-ke` | Thống kê |
+| Lookup | `/hoc/tra-cuu` | Tra cứu |
 
 ### The two shells
 
 | Viewport | Shell |
 |---|---|
 | **< `lg`** | **Bottom navigation.** Anchored to the bottom of the viewport, within thumb reach, respecting the bottom safe-area inset. Every item pairs a 24px icon with a visible `caption` label at **every** width below `lg` — a tablet is still a touch device, and a tooltip is a pointer mechanism |
-| **>= `lg`** | **Left sidebar.** The five destinations run vertically; the account area sits at the bottom of the sidebar |
+| **>= `lg`** | **Left sidebar.** The five destinations run vertically; the account area sits at the bottom of the sidebar leading to `/ca-nhan` with sync state in text |
 
 There is no top bar at any width, and the bottom navigation does not survive into the desktop
 shell. Two shells, one transition point, and it is `lg`.
 
 In both shells the open destination wears `primary` and the rest wear `muted-foreground`.
+Route `/hoc/tra-cuu` and its subroutes activate Lookup (`Tra cứu`), and do not activate Learn (`Học bài`).
 
 Sidebar composition — width, collapsed state, logo placement, how the account area is laid
 out — is **deliberately unspecified here**. It is a visual question, explored in Stitch when
@@ -581,11 +581,13 @@ the Home screen is designed, and recorded in that screen's SPEC once approved.
 
 ### The secondary surface
 
-Settings, profile, sync state, theme and sign-out live behind one **account entry**, not in
-primary navigation:
+Settings, profile, sync state, theme and sign-out live behind **Profile (`/ca-nhan`)** and **Settings (`/cai-dat`)**,
+not in primary navigation:
 
-- Below `lg`: an avatar or profile control in the page header on Home.
-- From `lg`: the account area at the bottom of the sidebar.
+- Below `lg`: An Account button (`AccountButton`) in the page header of the main screens leading to `/ca-nhan`.
+- From `lg`: The account area at the bottom of the left sidebar leading to `/ca-nhan`, showing user name/avatar and text sync status.
+- Profile (`/ca-nhan`) hosts two URL tabs: **Tiến độ** (`/ca-nhan`) and **Thống kê** (`/ca-nhan/thong-ke`).
+- Former `/thong-ke` links redirect seamlessly to `/ca-nhan/thong-ke`, preserving query parameters.
 
 No "More" item is added to the bottom navigation. If the secondary menu ever outgrows one
 entry, that is a decision to revisit here, not a slot to improvise.
@@ -781,7 +783,10 @@ this contract; `missing` means the pattern exists in this file with no shared im
 | Review target type badge | `web/src/components/review/TargetTypeBadge.tsx` | stable | Correct chart-token usage (`bg-chart-n`) |
 | Button, card, dialog, sheet, tabs, tooltip, input, badge, progress and siblings | `web/src/components/ui/*` | stable | shadcn `base-nova` on Base UI; `size="quiz"` is the 48px practice size |
 | Progress indicator | `web/src/components/ui/progress.tsx` plus `web/src/components/LessonProgress.tsx` | needs review | A third, hand-rolled bar exists inline on the dashboard and lesson list |
-| Application shell navigation | `web/src/components/AppNav.tsx` | needs review | Ships six destinations including Settings, and recomposes at 640px through a JS media query |
+| Application shell navigation | `web/src/components/AppNav.tsx` | stable | Năm đích chính (Bảng tin, Học bài, Luyện tập, Ôn tập, Tra cứu); chân sidebar dẫn /ca-nhan; header mobile có AccountButton |
+| Profile & progress view | `web/src/app/ca-nhan/page.tsx` | stable | Màn Cá nhân / Tiến độ với auth Supabase, trạng thái sync, bài đang học và thẻ tiến độ Dexie |
+| Statistics view | `web/src/components/stats/StatisticsContent.tsx` | stable | Tái dùng nội dung Thống kê SPEC-07 cho tab /ca-nhan/thong-ke và chuyển hướng /thong-ke |
+| Account button | `web/src/components/profile/AccountButton.tsx` | stable | Nút Tài khoản cho header mobile và desktop shell (≥48px touch target) |
 | Lesson list and cards | `web/src/components/LessonGrid.tsx` | needs review | Raw palette colors and surface overrides |
 | Daily kanji card | `web/src/components/DailyKanji.tsx` | existing | Not yet audited against this contract |
 | Stat tile | — | missing | Implemented inline on three screens; no shared component |

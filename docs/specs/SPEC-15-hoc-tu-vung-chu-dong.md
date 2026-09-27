@@ -45,7 +45,7 @@ mục mới khác trong bài theo chính sách SPEC-05.
 
 ## 3. Màn hình & bố cục
 
-Lối vào nằm cạnh tiêu đề từ vựng ở `/hoc/[so]`. Luồng học chiếm màn hình để tránh dock
+Lối vào là CTA chính ở đầu trang `/hoc/[so]` (theo SPEC-18) và tiếp tục có lối vào bổ trợ cạnh tiêu đề bảng từ vựng; trên Bảng tin `/` và danh sách `/hoc` cũng hiển thị lối "Tiếp tục học từ vựng" khi có bản nháp dở dang. Luồng học chiếm màn hình để tránh dock
 điều hướng che nút đánh giá, dùng Washi và vùng chạm tối thiểu 48px.
 
 - **Chọn từ:** toàn bộ từ có nghĩa tiếng Việt được chọn sẵn; người học có thể bỏ chọn từng

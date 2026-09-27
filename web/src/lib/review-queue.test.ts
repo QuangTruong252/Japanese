@@ -5,6 +5,7 @@ import {
   collectTargetIds,
   countByTargetType,
   describeNextReviews,
+  describeRemainingBatches,
   lessonFromTargetId,
   overdueDays,
   planReviewBatch,
@@ -144,3 +145,44 @@ test('withDeclaredLessons gộp bài 1..N, không trùng, xếp tăng dần', ()
   assert.deepEqual(withDeclaredLessons([2, 7], 3), [1, 2, 3, 7]);
   assert.deepEqual(withDeclaredLessons([5], 0), [5]);
 });
+
+test('describeRemainingBatches mô tả chính xác số mục và số lô còn lại', () => {
+  assert.equal(describeRemainingBatches(0, 20), '');
+  assert.equal(describeRemainingBatches(-5, 20), '');
+  assert.equal(
+    describeRemainingBatches(15, 20),
+    'Còn 15 mục đến hạn cho lô tiếp theo. Mỗi lô tối đa 20 mục; tạm chưa nạp mục mới cho tới khi ôn kịp.',
+  );
+  assert.equal(
+    describeRemainingBatches(45, 20),
+    'Còn 45 mục đến hạn cho khoảng 3 lô sau. Mỗi lô tối đa 20 mục; tạm chưa nạp mục mới cho tới khi ôn kịp.',
+  );
+});
+
+test('planReviewBatch: chia liên tiếp các lô cho tới khi hết mục đến hạn', () => {
+  // Giả lập 45 mục đến hạn, lô 20 mục
+  const allDue = Array.from({ length: 45 }, (_, i) => `item-${i + 1}`);
+  const pool = ['new-1', 'new-2'];
+  const existing = new Set<string>();
+
+  // Lô 1: lấy 20 mục đầu, còn 25
+  const batch1 = planReviewBatch(allDue, pool, existing, 20, 20);
+  assert.equal(batch1.batchDue.length, 20);
+  assert.equal(batch1.remainingDue, 25);
+  assert.deepEqual(batch1.newTargetIds, []);
+
+  // Lô 2: sau khi lô 1 hoàn thành, còn 25 mục -> lấy 20 mục tiếp, còn 5
+  const remainingAfterBatch1 = allDue.slice(20);
+  const batch2 = planReviewBatch(remainingAfterBatch1, pool, existing, 20, 20);
+  assert.equal(batch2.batchDue.length, 20);
+  assert.equal(batch2.remainingDue, 5);
+  assert.deepEqual(batch2.newTargetIds, []);
+
+  // Lô 3: sau khi lô 2 hoàn thành, còn 5 mục -> lấy 5 mục, lấp 15 mục mới (nếu quota cho phép)
+  const remainingAfterBatch2 = allDue.slice(40);
+  const batch3 = planReviewBatch(remainingAfterBatch2, pool, existing, 20, 20);
+  assert.equal(batch3.batchDue.length, 5);
+  assert.equal(batch3.remainingDue, 0);
+  assert.deepEqual(batch3.newTargetIds, ['new-1', 'new-2']);
+});
+

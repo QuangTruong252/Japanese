@@ -1,15 +1,10 @@
-import Link from 'next/link';
-import { Search } from 'lucide-react';
 import { loadLessonSummaries } from '@/lib/lessons';
 import { LessonGrid } from '@/components/LessonGrid';
-import { buttonVariants } from '@/components/ui/button';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
 import { ThemeToggle } from '@/components/ThemeToggle';
-import { cn } from '@/lib/utils';
 
-// ponytail: loadLessonSummaries() nạp cả 50 file JSON để đếm số từ mỗi bài, nhưng chạy trên
-// server lúc build nên trình duyệt chỉ nhận RSC payload (SPEC-03 §2). Nếu sau này cần nạp
-// runtime, thêm vocabCount vào manifest.json thay vì đọc từng file.
+// loadLessonSummaries() nạp cả 50 file JSON để đếm số từ mỗi bài, nhưng chạy trên
+// server lúc build nên trình duyệt chỉ nhận RSC payload (SPEC-03 §2).
 export default async function HocPage() {
   const summaries = await loadLessonSummaries();
   return (
@@ -30,16 +25,6 @@ export default async function HocPage() {
         <div className="flex items-center gap-2">
           <SearchTrigger className="lg:hidden" />
           <ThemeToggle className="size-11 rounded-xl" />
-          <Link
-            href="/hoc/tra-cuu"
-            className={cn(
-              buttonVariants({ variant: 'outline' }),
-              'min-h-11 h-11 px-4 shrink-0 rounded-xl font-semibold gap-2 border-border/80 hover:border-primary/40 hover:bg-primary/5 transition'
-            )}
-          >
-            <Search className="size-4 text-primary" />
-            <span>Tra cứu</span>
-          </Link>
         </div>
       </div>
 

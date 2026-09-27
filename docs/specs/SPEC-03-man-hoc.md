@@ -1,8 +1,8 @@
 # SPEC-03 — Màn Học (danh sách bài & chi tiết bài)
 
-> **Mã:** SPEC-JPN-F03 · **Trạng thái:** Draft · **Ngày:** 16/09/2026
+> **Mã:** SPEC-JPN-F03 · **Trạng thái:** Đã cập nhật theo SPEC-18 · **Ngày:** 16/09/2026 · **Rà soát:** 27/09/2026 (SPEC-18)
 > **Đối tượng đọc:** Google Stitch / Claude Design (mục 3–6), lập trình viên (toàn bộ).
-> **Phụ thuộc:** SPEC-01 (dữ liệu bài học), SPEC-02 (khung nav).
+> **Phụ thuộc:** SPEC-01 (dữ liệu bài học), SPEC-02 (khung nav), SPEC-15 (học từ vựng), SPEC-18 (hub bài học).
 
 ## 1. Mục tiêu & phạm vi
 
@@ -77,20 +77,25 @@ Lưới thẻ: **1 cột mobile, 2 cột từ `md`**. Mỗi thẻ:
 
 Khuôn bề rộng: `content-narrow` (`DESIGN.md` §Layout and containers) — **`max-w-2xl` (672px)** — giữ độ dài dòng dễ đọc.
 
-Thứ tự khối **cố định**, không đảo: **Từ vựng → Ngữ pháp → Câu ví dụ → Audio**.
+Thứ tự khối theo SPEC-18: **Header & Tiến độ → CTA Học từ vựng → Lối tắt nhanh → Nội dung tham khảo đầy đủ (Từ vựng → Ngữ pháp → Câu ví dụ → Audio) → Luyện tập phụ**.
 
 ```
 [Header: "Bài 5" + title.vi + jpTitle + thanh tiến độ]
+[CTA Chính: "Học từ vựng" / "Tiếp tục học từ vựng" → /hoc/[so]/tu-vung]
+[Lối tắt: "Xem toàn bộ bài", "Ngữ pháp (n)", "Luyện nghe", "Luyện tập bài này"]
 
-[TỪ VỰNG]
+[TỪ VỰNG (#tu-vung, #vocab-*)]
   Bảng: từ (jp-vocab 18px, có furigana) │ nghĩa vi │ [🔊] │ [nhãn nhóm động từ]
 
-[NGỮ PHÁP]  — mỗi điểm là một khối:
+[NGỮ PHÁP (#ngu-phap, #grammar-*)]  — mỗi điểm là một khối:
   H2 title.vi
   [mẫu câu — grammar-pattern-block, nền muted, rounded-lg, p-4]
   explanation.vi
   [danh sách câu ví dụ: jp (jp-example 20px) / translation.vi / [🔊]]
   Small muted-foreground: nguồn sách (sourceRef)
+
+[AUDIO & SHADOWING (#nghe)]
+  Trình phát Shadowing (A-B repeat). Nếu thiếu audio, giải thích và dẫn /cai-dat/audio.
 
 [Nút dưới cùng: "Luyện tập bài này" → /luyen-tap?lessons=5]
 ```
@@ -106,7 +111,8 @@ cả hai luôn `line-height: 2`.
 | Khối mẫu câu | `grammar-pattern-block` |
 | Nhãn nhóm động từ | `verb-badge-group-1` / `-2` / `-3` |
 | Nút phát âm | `button-ghost` cỡ `icon-*`, icon `<Volume2 />` |
-| "Luyện tập bài này" | `button-primary` cỡ `quiz` — nút `default` duy nhất của trang |
+| "Học từ vựng" (CTA chính) | `button-primary` cỡ `quiz` — nút `default` duy nhất ở header bài (SPEC-18) |
+| "Luyện tập bài này" (lối phụ) | `button-outline` / secondary ở header, và ở cuối bài |
 | Quay lại danh sách | `button-ghost`, icon `<ChevronLeft />` |
 
 Render furigana: component `Furigana` đã có (`web/src/components/Furigana.tsx`) — sinh

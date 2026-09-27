@@ -3,7 +3,7 @@ import { stripFurigana } from './japanese.ts';
 import { getAllKanji, getAllVerbs, getAllReferenceDocs } from './lookup.ts';
 import { loadLesson, loadVocab } from './lessons.ts';
 
-export type SearchKind = 'vocab' | 'grammar' | 'kanji' | 'verb' | 'table' | 'lesson';
+export type SearchKind = 'feature' | 'vocab' | 'grammar' | 'kanji' | 'verb' | 'table' | 'lesson';
 
 export interface SearchEntry {
   id: string;
@@ -17,6 +17,7 @@ export interface SearchEntry {
 }
 
 const KIND_ORDER: readonly SearchKind[] = [
+  'feature',
   'vocab',
   'grammar',
   'kanji',
@@ -24,6 +25,16 @@ const KIND_ORDER: readonly SearchKind[] = [
   'table',
   'lesson',
 ];
+
+const MAX_PER_GROUP: Record<SearchKind, number> = {
+  feature: 4,
+  vocab: 5,
+  grammar: 5,
+  kanji: 5,
+  verb: 5,
+  table: 5,
+  lesson: 5,
+};
 
 /**
  * Chuẩn hóa chuỗi tìm kiếm (SPEC-13 §2.2):
@@ -52,7 +63,138 @@ export function getCachedSearchIndex(): SearchEntry[] | null {
 }
 
 /**
- * Xây dựng chỉ mục tìm kiếm tĩnh ~1.500 mục.
+ * Danh sách điểm đến tính năng tĩnh cho hộp tìm kiếm (SPEC-17 §2).
+ * Cung cấp đường vào nhanh cho các phân hệ của app khi người dùng gõ tên hoặc alias.
+ */
+export function getFeatureEntries(): SearchEntry[] {
+  const rawFeatures: Array<{
+    id: string;
+    label: string;
+    sublabel: string;
+    badge: string;
+    href: string;
+    aliases: string[];
+  }> = [
+    {
+      id: 'feature-tra-cuu',
+      label: 'Tra cứu',
+      sublabel: 'Trung tâm tra cứu: Kana, Kanji, Động từ, Bảng tham chiếu',
+      badge: 'Tính năng',
+      href: '/hoc/tra-cuu',
+      aliases: ['tra cuu', 'tra tu', 'lookup', 'hub tra cuu', 'tu dien'],
+    },
+    {
+      id: 'feature-kana',
+      label: 'Bảng chữ Kana',
+      sublabel: 'Bảng chữ cái Hiragana & Katakana · 46 âm cơ bản',
+      badge: 'Tra cứu',
+      href: '/hoc/tra-cuu/kana',
+      aliases: ['kana', 'bang chu kana', 'bang chu cai', 'hiragana', 'katakana', 'chu cai', 'bang kana'],
+    },
+    {
+      id: 'feature-kanji',
+      label: 'Tra cứu Kanji',
+      sublabel: '169 chữ Kanji N5 kèm âm On, Kun, số nét và từ ghép',
+      badge: 'Tra cứu',
+      href: '/hoc/tra-cuu/kanji',
+      aliases: ['kanji', 'tra cuu kanji', 'chu han', 'han tu', 'bang kanji'],
+    },
+    {
+      id: 'feature-dong-tu',
+      label: 'Tra cứu Động từ',
+      sublabel: '156 động từ N5 · 5 thể chia: ます, て, từ điển, ない, た',
+      badge: 'Tra cứu',
+      href: '/hoc/tra-cuu/dong-tu',
+      aliases: ['dong tu', 'tra cuu dong tu', 'bang dong tu', 'verbs', 'the dong tu', 'chia dong tu'],
+    },
+    {
+      id: 'feature-bang',
+      label: 'Bảng tham chiếu',
+      sublabel: '10 bảng tra cứu nhanh chuyên đề ngữ pháp và từ vựng N5',
+      badge: 'Tra cứu',
+      href: '/hoc/tra-cuu/bang',
+      aliases: ['bang tham chieu', 'tham chieu', 'bang tra cuu', 'reference', '10 bang tham chieu'],
+    },
+    {
+      id: 'feature-thong-ke',
+      label: 'Thống kê',
+      sublabel: 'Tiến độ học, tỷ lệ đúng, lịch học và phân bố SRS',
+      badge: 'Tính năng',
+      href: '/thong-ke',
+      aliases: ['thong ke', 'tien do', 'stats', 'statistics', 'bieu do', 'ti le dung'],
+    },
+    {
+      id: 'feature-hoc',
+      label: 'Học bài',
+      sublabel: 'Danh sách 25 bài học Minna no Nihongo N5',
+      badge: 'Tính năng',
+      href: '/hoc',
+      aliases: ['hoc', 'hoc bai', 'bai hoc', 'danh sach bai', 'lessons'],
+    },
+    {
+      id: 'feature-luyen-tap',
+      label: 'Luyện tập',
+      sublabel: 'Luyện tập 5 dạng bài: trắc nghiệm, điền từ, ghép cặp, nghe',
+      badge: 'Tính năng',
+      href: '/luyen-tap',
+      aliases: ['luyen tap', 'bai tap', 'practice', 'lam bai'],
+    },
+    {
+      id: 'feature-on-tap',
+      label: 'Ôn tập',
+      sublabel: 'Ôn tập các mục đến hạn theo thuật toán ngắt quãng FSRS',
+      badge: 'Tính năng',
+      href: '/on-tap',
+      aliases: ['on tap', 'on bai', 'review', 'fsrs', 'den han'],
+    },
+    {
+      id: 'feature-diem-yeu',
+      label: 'Điểm yếu',
+      sublabel: 'Danh sách các mục ghi nhớ kém hoặc hay trả lời sai',
+      badge: 'Tính năng',
+      href: '/on-tap/diem-yeu',
+      aliases: ['diem yeu', 'cau hay sai', 'muc hay sai', 'weak points'],
+    },
+    {
+      id: 'feature-cai-dat',
+      label: 'Cài đặt',
+      sublabel: 'Cài đặt giao diện, âm thanh, sao lưu và đồng bộ dữ liệu',
+      badge: 'Tính năng',
+      href: '/cai-dat',
+      aliases: ['cai dat', 'thiet lap', 'settings', 'sao luu', 'dong bo'],
+    },
+    {
+      id: 'feature-audio',
+      label: 'Audio CD',
+      sublabel: 'Nạp âm thanh bài học từ file ZIP đĩa CD Minna no Nihongo',
+      badge: 'Tính năng',
+      href: '/cai-dat/audio',
+      aliases: ['audio', 'audio cd', 'am thanh', 'audio zip', 'nap audio'],
+    },
+  ];
+
+  return rawFeatures.map((f) => {
+    const keySet = new Set<string>();
+    keySet.add(normalizeSearchText(f.label));
+    keySet.add(f.label.toLowerCase());
+    for (const a of f.aliases) {
+      keySet.add(normalizeSearchText(a));
+      keySet.add(a.toLowerCase());
+    }
+    return {
+      id: f.id,
+      kind: 'feature' as const,
+      label: f.label,
+      sublabel: f.sublabel,
+      badge: f.badge,
+      href: f.href,
+      keys: Array.from(keySet).filter(Boolean),
+    };
+  });
+}
+
+/**
+ * Xây dựng chỉ mục tìm kiếm tĩnh.
  * Nạp bất đồng bộ khi mở hộp thoại lần đầu, lưu cache singleton.
  */
 export async function buildSearchIndex(): Promise<SearchEntry[]> {
@@ -61,6 +203,9 @@ export async function buildSearchIndex(): Promise<SearchEntry[]> {
   }
 
   const entries: SearchEntry[] = [];
+
+  // 0. Nạp danh mục tính năng tĩnh (SPEC-17 §2)
+  entries.push(...getFeatureEntries());
 
   // 1. Nạp 25 bài học và từ vựng
   const lessonPromises = Array.from({ length: 25 }, (_, i) => i + 1).map(async (n) => {
@@ -285,10 +430,12 @@ export function executeSearch(
       }
 
       // Tier 3: Khớp chứa trong chuỗi
+      // Đối với nhóm tính năng, bỏ qua substring matching khi query < 2 ký tự để tránh chiếm chỗ học liệu (SPEC-17)
       else if (
-        (qNorm && key.includes(qNorm)) ||
-        (qKana && key.includes(qKana)) ||
-        key.includes(qRaw)
+        !(entry.kind === 'feature' && trimmed.length < 2) &&
+        ((qNorm && key.includes(qNorm)) ||
+          (qKana && key.includes(qKana)) ||
+          key.includes(qRaw))
       ) {
         if (rank === 0) rank = 3;
       }
@@ -310,7 +457,8 @@ export function executeSearch(
 
   for (const entry of allMatched) {
     const list = grouped.get(entry.kind);
-    if (list && list.length < 5) {
+    const limit = MAX_PER_GROUP[entry.kind] ?? 5;
+    if (list && list.length < limit) {
       list.push(entry);
     }
   }
