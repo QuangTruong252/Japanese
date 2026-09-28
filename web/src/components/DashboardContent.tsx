@@ -8,6 +8,7 @@ import { useDueQueue } from '@/lib/use-due-queue';
 import { countLearnedByLesson, pickActiveLesson, secondsPerQuestion } from '@/lib/stats';
 import { DEFAULT_SETTINGS, getSettingsSnapshot, subscribeSettings } from '@/lib/settings';
 import { useActiveDrafts } from '@/lib/active-drafts';
+import { clearNewSessionRequest } from '@/lib/practice-draft';
 import { resolveDashboardCta } from '@/lib/dashboard-cta';
 import type { LessonSummary } from '@/lib/lessons';
 import { SyncBadge } from '@/components/SyncBadge';
@@ -305,7 +306,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
                     </div>
                   </div>
                   <Link
-                    href={`/hoc/${drafts.vocabDraft.lesson}/tu-vung`}
+                    href={drafts.vocabDraft.resumeHref}
                     className={cn(
                       buttonVariants({ variant: 'outline', size: 'sm' }),
                       'min-h-11 h-11 px-3 rounded-xl text-xs font-semibold shrink-0'
@@ -331,7 +332,8 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
                     </div>
                   </div>
                   <Link
-                    href="/luyen-tap"
+                    href={drafts.practiceDraft.resumeHref}
+                    onClick={clearNewSessionRequest}
                     className={cn(
                       buttonVariants({ variant: 'outline', size: 'sm' }),
                       'min-h-11 h-11 px-3 rounded-xl text-xs font-semibold shrink-0'

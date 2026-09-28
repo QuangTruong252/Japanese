@@ -130,3 +130,37 @@ Ngày: 27/09/2026. Trạng thái: Đã hoàn tất mã nguồn theo đặc tả 
 ### 4. Giới hạn & Phần chưa kiểm chứng
 Chưa nghiệm thu browser — chờ coordinator.
 
+## Đợt 28/09/2026 — sửa lỗi còn mở #4
+
+### 1. Thay đổi đã thực hiện
+1. **Nút "Tiếp tục" nháp luyện tập trên Bảng tin (`DashboardContent.tsx`):**
+   - Cập nhật nút "Tiếp tục" của khối nháp luyện tập từ `/luyen-tap` sang `drafts.practiceDraft.resumeHref` (`/luyen-tap/phien`), loại bỏ thao tác bấm thêm một chạm ở banner trang luyện tập.
+   - Thêm `onClick={clearNewSessionRequest}` (giống `PracticeDraftBanner.tsx`), bảo đảm cờ `wasNewSessionRequested()` luôn là false khi vào phiên qua nút tiếp tục, tránh khởi tạo lại phiên hoặc ghi đè nháp.
+   - Xác nhận qua luồng code của `luyen-tap/phien/page.tsx`: khi `startNew = !resumeToken && wasNewSessionRequested() && selectedLessons.length > 0` là false, trang tự nạp `ResumedSession`, khôi phục `PracticeRunner` tại đúng `initialIndex={draft.currentIndex}` (câu đang dở X); nếu nháp rỗng/hỏng thì tự `router.replace('/luyen-tap')`.
+2. **Kiểm tra nháp từ vựng (`DashboardContent.tsx`):**
+   - Xác nhận nháp học từ vựng đã dẫn thẳng `/hoc/${drafts.vocabDraft.lesson}/tu-vung` (thông qua `drafts.vocabDraft.resumeHref`), `VocabLearningFlow` tự nạp nháp từ localStorage, không cần thao tác trung gian.
+3. **Chuẩn hóa `resumeHref` trong helper (`active-drafts.ts`):**
+   - Bổ sung trường `resumeHref` vào kiểu dữ liệu `ActiveVocabDraft` (`/hoc/${lesson}/tu-vung`) và `ActivePracticeDraftInfo` (`/luyen-tap/phien`).
+   - `getActivePracticeDraftInfo` và `getActiveVocabDraftForLesson` chỉ sinh `resumeHref` khi có nháp hợp lệ; trả về `null` khi không có nháp hoặc nháp đã hoàn tất.
+   - Bổ sung các unit test hồi quy trong `active-drafts.test.ts` kiểm tra ca hợp lệ và các ca không hợp lệ (null, đã xong, âm/hỏng) theo tiêu chí S3.
+4. **Phân cấp và cấu trúc giao diện:**
+   - Giữ nguyên thứ tự: khối nháp là hàng phụ nằm DƯỚI thẻ P0 (commit `d1a3aff`).
+   - Nút nháp giữ nguyên `variant="outline"`, kích thước chuẩn touch target `min-h-11 h-11`.
+
+### 2. Files đã chỉnh sửa
+- `web/src/components/DashboardContent.tsx`
+- `web/src/lib/active-drafts.ts`
+- `web/src/lib/active-drafts.test.ts`
+- `docs/handoff/SPEC-18.md`
+
+### 3. Kết quả kiểm tra thực chạy
+- `pnpm --prefix web check`:
+  - `tsc --noEmit && eslint` exit code 0.
+  - 0 lỗi TypeScript, 0 lỗi ESLint toàn repo.
+- `pnpm --prefix web test`:
+  - `254/254 tests PASS (100%)`, 0 fail, 0 error.
+  - Số test tăng từ 252 lên 254 (+2 unit tests mới kiểm tra `resumeHref` cho nháp luyện tập và từ vựng).
+
+### 4. Giới hạn & Phần chưa kiểm chứng
+Chưa nghiệm thu browser — chờ coordinator.
+
