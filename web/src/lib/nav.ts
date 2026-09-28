@@ -42,3 +42,18 @@ export function shouldHideAppChrome(pathname: string): boolean {
   }
   return false;
 }
+
+/**
+ * Định dạng số hiển thị trên badge điều hướng (SPEC-16 Lỗi #3).
+ * Trả về null nếu count <= 0 hoặc không hợp lệ (không hiển thị badge).
+ * Cắt '99+' nếu count > 99.
+ */
+export function formatNavBadgeCount(count: number): string | null {
+  if (!Number.isFinite(count) || count <= 0) {
+    return null;
+  }
+  if (count > 99) {
+    return '99+';
+  }
+  return String(Math.floor(count));
+}

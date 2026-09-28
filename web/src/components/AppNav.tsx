@@ -26,7 +26,7 @@ import {
   CloudOff,
   CloudUpload,
 } from 'lucide-react';
-import { isNavActive, shouldHideAppChrome } from '@/lib/nav';
+import { formatNavBadgeCount, isNavActive, shouldHideAppChrome } from '@/lib/nav';
 import { AccountButton } from '@/components/profile/AccountButton';
 import { useUIStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
@@ -174,7 +174,8 @@ export function AppNav() {
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           const isActive = isNavActive(item.href, pathname);
-          const showBadge = item.isDueTarget && dueCount > 0;
+          const badgeText = item.isDueTarget ? formatNavBadgeCount(dueCount) : null;
+          const showBadge = badgeText !== null;
 
           return (
             <Link
@@ -195,9 +196,9 @@ export function AppNav() {
                 {showBadge && (
                   <span
                     aria-hidden="true"
-                    className="absolute -top-1.5 -right-2 inline-flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-destructive text-destructive-foreground text-[10px] font-bold leading-none shadow-sm"
+                    className="absolute -top-1.5 -right-2.5 inline-flex items-center justify-center min-w-5 h-4.5 px-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold leading-none shadow-xs"
                   >
-                    {dueCount > 99 ? '99+' : dueCount}
+                    {badgeText}
                   </span>
                 )}
               </div>
@@ -281,13 +282,15 @@ export function AppNav() {
             {NAV_ITEMS.map((item) => {
               const Icon = item.icon;
               const isActive = isNavActive(item.href, pathname);
-              const showBadge = item.isDueTarget && dueCount > 0;
+              const badgeText = item.isDueTarget ? formatNavBadgeCount(dueCount) : null;
+              const showBadge = badgeText !== null;
 
               return (
                 <Link
                   key={item.href}
                   href={item.href}
                   aria-current={isActive ? 'page' : undefined}
+                  aria-label={showBadge ? `${item.label}, ${dueCount} mục đến hạn` : undefined}
                   className={cn(
                     'flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition duration-150 outline-none',
                     'focus-visible:ring-2 focus-visible:ring-primary/60',
@@ -302,8 +305,11 @@ export function AppNav() {
                   </div>
 
                   {showBadge && (
-                    <span className="inline-flex items-center justify-center min-w-5 h-5 px-1.5 rounded-full bg-destructive text-destructive-foreground text-[11px] font-bold">
-                      {dueCount > 99 ? '99+' : dueCount}
+                    <span
+                      aria-hidden="true"
+                      className="inline-flex items-center justify-center min-w-5 h-5 px-1.5 rounded-full bg-primary text-primary-foreground text-[11px] font-bold shadow-xs"
+                    >
+                      {badgeText}
                     </span>
                   )}
                 </Link>
