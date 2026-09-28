@@ -1,10 +1,12 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db';
 import { useDueClock } from '@/lib/use-due-clock';
+import { DEFAULT_SETTINGS, getSettingsSnapshot, subscribeSettings } from '@/lib/settings';
+import { loadLessonSummaries, type LessonSummary } from '@/lib/lessons';
 import {
   currentStreak,
   minutesOnDay,
@@ -15,6 +17,9 @@ import {
   dailyAccuracy,
   targetsByType,
   activityHeatmap,
+  countLearnedByLesson,
+  pickActiveLesson,
+  resolveStatsEmptyState,
   type HeatmapDay,
   type DayValue,
 } from '@/lib/stats';
@@ -36,6 +41,8 @@ import {
   ChevronDown,
   BarChart3,
   BookOpen,
+  RotateCcw,
+  Dumbbell,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { TargetType } from '@/types';
@@ -85,6 +92,41 @@ export function StatisticsContent() {
   // 1. Đọc dữ liệu từ IndexedDB (Dexie) qua useLiveQuery
   const sessions = useLiveQuery(() => db.practiceSessions.orderBy('createdAt').toArray());
   const reviewItems = useLiveQuery(() => db.reviewItems.toArray());
+  const dueCount =
+    useLiveQuery(
+      () => db.reviewItems.where('dueAt').belowOrEqual(now).count(),
+      [now]
+    ) ?? 0;
+
+  // Cấu hình học tập (learnedThroughLesson)
+  const { learnedThroughLesson } = useSyncExternalStore(
+    subscribeSettings,
+    getSettingsSnapshot,
+    () => DEFAULT_SETTINGS,
+  );
+
+  // Danh sách tóm tắt 25 bài N5 để tính bài đang học (pickActiveLesson)
+  const [summaries, setSummaries] = useState<LessonSummary[]>([]);
+  useEffect(() => {
+    let active = true;
+    loadLessonSummaries().then((data) => {
+      if (active) setSummaries(data);
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const learnedByLesson = useMemo(() => {
+    if (!reviewItems) return new Map<number, number>();
+    const targetIds = reviewItems.map((item) => item.targetId);
+    return countLearnedByLesson(targetIds);
+  }, [reviewItems]);
+
+  const activeLessonNum = useMemo(() => {
+    if (summaries.length === 0) return 1;
+    return pickActiveLesson(summaries, learnedByLesson, learnedThroughLesson);
+  }, [summaries, learnedByLesson, learnedThroughLesson]);
 
   // Trạng thái mở chi tiết bảng số liệu
   const [showHeatmapTable, setShowHeatmapTable] = useState(false);
@@ -144,6 +186,18 @@ export function StatisticsContent() {
     [sessions, now],
   );
 
+  // Trạng thái rỗng theo helper thuần có unit test (SPEC-16 Lỗi #5)
+  const emptyState = useMemo(() => {
+    if (!sessions || !reviewItems) return null;
+    return resolveStatsEmptyState({
+      sessionCount: sessions.length,
+      reviewItemCount: reviewItems.length,
+      learnedThroughLesson,
+      dueCount,
+      activeLessonNum,
+    });
+  }, [sessions, reviewItems, learnedThroughLesson, dueCount, activeLessonNum]);
+
   // 3. Xử lý trạng thái đang tải (Skeleton)
   if (sessions === undefined || reviewItems === undefined) {
     return (
@@ -169,8 +223,15 @@ export function StatisticsContent() {
     );
   }
 
-  // 4. Trạng thái rỗng: chưa có phiên học nào (SPEC-16 §5, B16.7)
-  if (sessions.length === 0) {
+  // 4. Trạng thái rỗng theo helper thuần (SPEC-16 Lỗi #5, B16.7)
+  if (emptyState?.isEmpty && emptyState.cta) {
+    const CtaIcon =
+      emptyState.cta.action === 'start_lesson_1'
+        ? BookOpen
+        : emptyState.cta.action === 'review'
+          ? RotateCcw
+          : Dumbbell;
+
     return (
       <Card className="border-dashed py-14 px-6 text-center">
         <CardContent className="max-w-md mx-auto space-y-4 p-0">
@@ -179,17 +240,17 @@ export function StatisticsContent() {
           </div>
           <div className="space-y-1.5">
             <h2 className="text-lg font-semibold text-foreground">
-              Chưa có dữ liệu thống kê
+              {emptyState.title}
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Bắt đầu bài học đầu tiên để theo dõi thời gian học, mức độ ghi nhớ và phân bố kiến thức.
+              {emptyState.description}
             </p>
           </div>
           <div className="pt-2">
-            <Link href="/hoc/1">
+            <Link href={emptyState.cta.href}>
               <Button size="quiz" className="gap-2">
-                <BookOpen className="size-4" />
-                <span>Bắt đầu Bài 1</span>
+                <CtaIcon className="size-4" />
+                <span>{emptyState.cta.label}</span>
               </Button>
             </Link>
           </div>

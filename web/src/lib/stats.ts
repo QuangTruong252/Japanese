@@ -393,3 +393,96 @@ export function activityHeatmap(
 
   return weeks;
 }
+
+export interface StatsEmptyStateInput {
+  sessionCount: number;
+  reviewItemCount: number;
+  learnedThroughLesson?: number;
+  dueCount?: number;
+  activeLessonNum?: number;
+}
+
+export type StatsEmptyStateType = 'none' | 'brand_new' | 'has_progress_no_sessions';
+
+export interface StatsEmptyStateResult {
+  isEmpty: boolean;
+  type: StatsEmptyStateType;
+  title: string;
+  description: string;
+  cta: {
+    label: string;
+    href: string;
+    action: 'start_lesson_1' | 'review' | 'practice';
+  } | null;
+}
+
+/**
+ * Phân biệt trạng thái rỗng của màn Thống kê (SPEC-16 Lỗi #5):
+ * - sessions > 0: không rỗng (isEmpty = false)
+ * - sessions = 0, chưa có reviewItems và chưa khai báo learnedThroughLesson:
+ *   CTA "Bắt đầu Bài 1" -> /hoc/1
+ * - sessions = 0, nhưng đã có reviewItems hoặc learnedThroughLesson > 0:
+ *   copy nêu thống kê tính từ phiên luyện/ôn;
+ *   CTA chính "Ôn tập" nếu có mục đến hạn (dueCount > 0),
+ *   ngược lại "Luyện bài N" (/luyen-tap?lessons=N).
+ */
+export function resolveStatsEmptyState(input: StatsEmptyStateInput): StatsEmptyStateResult {
+  if (input.sessionCount > 0) {
+    return {
+      isEmpty: false,
+      type: 'none',
+      title: '',
+      description: '',
+      cta: null,
+    };
+  }
+
+  const hasProgress =
+    input.reviewItemCount > 0 || (input.learnedThroughLesson ?? 0) > 0;
+
+  if (!hasProgress) {
+    return {
+      isEmpty: true,
+      type: 'brand_new',
+      title: 'Chưa có dữ liệu thống kê',
+      description:
+        'Bắt đầu bài học đầu tiên để theo dõi thời gian học, mức độ ghi nhớ và phân bố kiến thức.',
+      cta: {
+        label: 'Bắt đầu Bài 1',
+        href: '/hoc/1',
+        action: 'start_lesson_1',
+      },
+    };
+  }
+
+  const hasDue = (input.dueCount ?? 0) > 0;
+  if (hasDue) {
+    return {
+      isEmpty: true,
+      type: 'has_progress_no_sessions',
+      title: 'Chưa có dữ liệu phiên học',
+      description:
+        'Thống kê được tính từ các phiên luyện tập và ôn tập. Bạn đang có mục đến hạn trong lịch ôn — hãy bắt đầu để ghi nhận số liệu.',
+      cta: {
+        label: 'Ôn tập',
+        href: '/on-tap',
+        action: 'review',
+      },
+    };
+  }
+
+  const lesson =
+    input.activeLessonNum && input.activeLessonNum > 0 ? input.activeLessonNum : 1;
+  return {
+    isEmpty: true,
+    type: 'has_progress_no_sessions',
+    title: 'Chưa có dữ liệu phiên học',
+    description:
+      'Thống kê được tính từ các phiên luyện tập và ôn tập. Hãy hoàn thành phiên luyện tập để bắt đầu theo dõi thời gian học và tỷ lệ chính xác.',
+    cta: {
+      label: `Luyện bài ${lesson}`,
+      href: `/luyen-tap?lessons=${lesson}`,
+      action: 'practice',
+    },
+  };
+}

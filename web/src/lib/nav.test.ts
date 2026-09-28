@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { isNavActive, shouldHideAppChrome } from './nav.ts';
+import { formatNavBadgeCount, isNavActive, shouldHideAppChrome } from './nav.ts';
 
 test('isNavActive: trang chủ "/" chỉ active khi đúng pathname "/"', () => {
   assert.equal(isNavActive('/', '/'), true);
@@ -64,4 +64,24 @@ test('shouldHideAppChrome: ẩn chrome (header/dock/sidebar) trong các phiên t
   assert.equal(shouldHideAppChrome('/ca-nhan'), false);
   assert.equal(shouldHideAppChrome('/ca-nhan/thong-ke'), false);
   assert.equal(shouldHideAppChrome('/cai-dat'), false);
+});
+
+test('formatNavBadgeCount: định dạng số badge điều hướng (SPEC-16 Lỗi #3)', () => {
+  // Ca không hiển thị (trả về null):
+  assert.equal(formatNavBadgeCount(0), null);
+  assert.equal(formatNavBadgeCount(-1), null);
+  assert.equal(formatNavBadgeCount(-10), null);
+  assert.equal(formatNavBadgeCount(NaN), null);
+  assert.equal(formatNavBadgeCount(Infinity), null);
+
+  // Ca hiển thị số nguyên bình thường:
+  assert.equal(formatNavBadgeCount(1), '1');
+  assert.equal(formatNavBadgeCount(7), '7');
+  assert.equal(formatNavBadgeCount(25), '25');
+  assert.equal(formatNavBadgeCount(99), '99');
+
+  // Ca cắt 99+ khi lớn hơn 99:
+  assert.equal(formatNavBadgeCount(100), '99+');
+  assert.equal(formatNavBadgeCount(150), '99+');
+  assert.equal(formatNavBadgeCount(999), '99+');
 });
