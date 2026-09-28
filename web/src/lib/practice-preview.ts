@@ -2,6 +2,8 @@ import type { ExerciseType } from '../types/index.ts';
 import {
   VALID_PRACTICE_EXERCISE_TYPES,
   VALID_PRACTICE_QUESTION_COUNTS,
+  isDefaultPracticePreset,
+  validatePracticePreset,
   type PracticePreset,
 } from './settings.ts';
 
@@ -40,20 +42,21 @@ export function parseLessonsParam(param?: string | null): number[] {
 export function resolveInitialPracticeConfig(
   options: ResolveInitialPracticeConfigOptions,
 ): PracticeInitialConfig {
+  const rawPreset =
+    options.savedPreset && typeof options.savedPreset === 'object'
+      ? (options.savedPreset as Partial<PracticePreset>)
+      : null;
+  const isDefault = rawPreset ? isDefaultPracticePreset(validatePracticePreset(rawPreset)) : false;
+  const usefulPreset = rawPreset && !isDefault ? rawPreset : null;
+
   // 1. Phân giải danh sách bài học
   let lessons: number[] = [1];
   const fromParam = parseLessonsParam(options.lessonsParam);
 
   if (fromParam.length > 0) {
     lessons = fromParam;
-  } else if (
-    options.savedPreset &&
-    typeof options.savedPreset === 'object' &&
-    Array.isArray((options.savedPreset as Partial<PracticePreset>).lessons)
-  ) {
-    const validPresetLessons = (
-      options.savedPreset as Partial<PracticePreset>
-    ).lessons!.filter(
+  } else if (usefulPreset && Array.isArray(usefulPreset.lessons)) {
+    const validPresetLessons = usefulPreset.lessons.filter(
       (n): n is number => typeof n === 'number' && Number.isInteger(n) && n >= 1 && n <= 25,
     );
     if (validPresetLessons.length > 0) {
@@ -82,14 +85,8 @@ export function resolveInitialPracticeConfig(
     VALID_PRACTICE_EXERCISE_TYPES.includes(options.typeParam as ExerciseType)
   ) {
     types = [options.typeParam as ExerciseType];
-  } else if (
-    options.savedPreset &&
-    typeof options.savedPreset === 'object' &&
-    Array.isArray((options.savedPreset as Partial<PracticePreset>).types)
-  ) {
-    const validPresetTypes = (
-      options.savedPreset as Partial<PracticePreset>
-    ).types!.filter((t): t is ExerciseType =>
+  } else if (usefulPreset && Array.isArray(usefulPreset.types)) {
+    const validPresetTypes = usefulPreset.types.filter((t): t is ExerciseType =>
       typeof t === 'string' && VALID_PRACTICE_EXERCISE_TYPES.includes(t as ExerciseType),
     );
     if (validPresetTypes.length > 0) {
@@ -100,14 +97,13 @@ export function resolveInitialPracticeConfig(
   // 3. Phân giải số lượng câu hỏi
   let questionCount = 15;
   if (
-    options.savedPreset &&
-    typeof options.savedPreset === 'object' &&
-    typeof (options.savedPreset as Partial<PracticePreset>).questionCount === 'number' &&
+    usefulPreset &&
+    typeof usefulPreset.questionCount === 'number' &&
     VALID_PRACTICE_QUESTION_COUNTS.includes(
-      (options.savedPreset as Partial<PracticePreset>).questionCount as 10 | 15 | 20 | 30,
+      usefulPreset.questionCount as 10 | 15 | 20 | 30,
     )
   ) {
-    questionCount = (options.savedPreset as Partial<PracticePreset>).questionCount!;
+    questionCount = usefulPreset.questionCount;
   }
 
   return { lessons, types, questionCount };

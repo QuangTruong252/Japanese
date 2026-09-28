@@ -92,6 +92,53 @@ test('resolveInitialPracticeConfig: typeParam ghi đè loại bài tập từ pr
   assert.deepEqual(result.types, ['reorder']);
 });
 
+test('hồi quy review SPEC-19: settings chỉ có theme + preset mặc định (mô phỏng saveSettings({theme})) -> resolveInitialPracticeConfig dùng activeLessonNum', () => {
+  // Mô phỏng trường hợp saveSettings({ theme: 'dark' }) ghi toàn bộ AppSettings với preset mặc định vào storage
+  const result = resolveInitialPracticeConfig({
+    lessonsParam: null,
+    savedPreset: {
+      lessons: [1],
+      types: ['mc', 'matching', 'cloze', 'reorder', 'listening'],
+      questionCount: 15,
+    },
+    activeLessonNum: 6,
+  });
+  // Phải dùng bài đang học (Bài 6) thay vì bị preset mặc định Bài 1 che
+  assert.deepEqual(result.lessons, [6]);
+  assert.deepEqual(result.types, ['mc', 'matching', 'cloze', 'reorder', 'listening']);
+  assert.equal(result.questionCount, 15);
+});
+
+test('hồi quy review SPEC-19: preset đã chỉnh (ví dụ [3, 5]) vẫn thắng activeLessonNum', () => {
+  const result = resolveInitialPracticeConfig({
+    lessonsParam: null,
+    savedPreset: {
+      lessons: [3, 5],
+      types: ['cloze'],
+      questionCount: 20,
+    },
+    activeLessonNum: 6,
+  });
+  assert.deepEqual(result.lessons, [3, 5]);
+  assert.deepEqual(result.types, ['cloze']);
+  assert.equal(result.questionCount, 20);
+});
+
+test('hồi quy review SPEC-19: ?lessons=N vẫn thắng tất cả (kể cả preset đã chỉnh và activeLessonNum)', () => {
+  const result = resolveInitialPracticeConfig({
+    lessonsParam: '2',
+    savedPreset: {
+      lessons: [3, 5],
+      types: ['cloze'],
+      questionCount: 20,
+    },
+    activeLessonNum: 6,
+  });
+  assert.deepEqual(result.lessons, [2]);
+  assert.deepEqual(result.types, ['cloze']);
+  assert.equal(result.questionCount, 20);
+});
+
 test('computeActualQuestionCount: tính đúng số câu thực tế và giới hạn', () => {
   // Kho có nhiều hơn mức chọn
   assert.equal(computeActualQuestionCount(15, 40), 15);

@@ -34,5 +34,29 @@ Ngày: 2026-09-28. Trạng thái: đã có code, chờ nghiệm thu browser.
 
 Chưa nghiệm thu browser — chờ coordinator.
 
+## Đợt 28/09/2026 — sửa sau review
+
+### Phát hiện và nguyên nhân gốc
+- Khi `saveSettings()` được gọi (ví dụ từ `ThemeToggle.tsx` khi đổi theme hoặc từ `/cai-dat` khi cập nhật "đã học đến bài N"), nó ghi toàn bộ `AppSettings` (bao gồm `practicePreset` mặc định = `{ lessons: [1], types: 5 dạng, questionCount: 15 }`) vào khóa `jp:settings` của `localStorage`.
+- Hệ quả: `loadSavedPracticePreset()` tìm thấy khóa `practicePreset` nên trả về preset Bài 1 dù người học chưa từng cấu hình trong `/luyen-tap`. Cả `resolveInitialPracticeConfig` và effect nạp bài đang học cục bộ trong `luyen-tap/page.tsx` đều bị chặn, khiến người đang học Bài 6 mở dock Luyện vẫn thấy "Bài 1" (trái SPEC-19 §2).
+
+### Quyết định kỹ thuật
+- **Lựa chọn giải pháp (a)**: `loadSavedPracticePreset()` trả về `null` khi preset trong storage trùng với giá trị mặc định `DEFAULT_SETTINGS.practicePreset` (thông qua helper thuần `isDefaultPracticePreset`). Đồng thời, `resolveInitialPracticeConfig` cũng phòng thủ coi preset trùng mặc định là chưa có preset hữu ích, ưu tiên `activeLessonNum`.
+- **Lý do chọn cách (a) thay vì cách (b) thêm cờ lưu**:
+  1. *Diff tối thiểu & zero schema drift*: Không cần thay đổi kiểu `AppSettings`, không thêm trường cờ vào `jp:settings` hay localStorage, đảm bảo tương thích ngược 100% với dữ liệu người dùng hiện hữu.
+  2. *Đúng bản chất SPEC-19 §2*: SPEC-19 §2 quy định *"nếu chưa có preset hữu ích, dùng bài đang học cục bộ"*. Preset trùng mặc định hệ thống (Bài 1, 15 câu, 5 dạng) sinh ra do tác dụng phụ của `saveSettings({ theme })` hoàn toàn không phải là một preset hữu ích có chủ ý của người dùng.
+  3. *Tự động kích hoạt bài đang học*: Khi người học chưa tùy biến ở `/luyen-tap`, bài đang học cục bộ (ví dụ Bài 6) lập tức được hiển thị trên card luyện tập nhanh. Khi người học chủ động chọn bài khác (ví dụ `[3, 5]`), preset được lưu và tiếp tục thắng bài đang học; còn query param `?lessons=N` luôn thắng tất cả.
+
+### File thay đổi
+- `web/src/lib/settings.ts`: Thêm `isDefaultPracticePreset`, cập nhật `loadSavedPracticePreset` trả `null` khi preset trùng mặc định.
+- `web/src/lib/practice-preview.ts`: Cập nhật `resolveInitialPracticeConfig` bỏ qua preset mặc định để dùng `activeLessonNum`.
+- `web/src/lib/settings.test.ts`: Thêm test cho `isDefaultPracticePreset`, kiểm thử `loadSavedPracticePreset` với preset mặc định và ca hồi quy `saveSettings({ theme: 'dark' })`.
+- `web/src/lib/practice-preview.test.ts`: Thêm 3 ca test hồi quy cho `resolveInitialPracticeConfig` (settings chỉ có theme + preset mặc định -> dùng `activeLessonNum`, preset đã chỉnh -> vẫn thắng, `?lessons=N` -> thắng tất cả).
+- `docs/handoff/SPEC-19.md`: Ghi nhận phát hiện, quyết định và kết quả kiểm chứng.
+
+### Kiểm chứng thực tế
+- `pnpm check`: **PASS** (exit 0, 0 lỗi TypeScript, 0 lỗi ESLint).
+- `pnpm test`: **PASS** (227/227 test pass, 0 fail; +5 test hồi quy mới).
+
 ## Còn lại và bước tiếp theo
 - Chờ coordinator nghiệm thu browser cho các tiêu chí B19.1–B19.6 trên viewport 390×844 và 1280×800.
