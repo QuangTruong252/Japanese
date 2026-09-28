@@ -107,7 +107,7 @@ export default function CaNhanPage() {
 
   // 2. Trạng thái Auth & Supabase
   const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
-  const [isCheckingSession, setIsCheckingSession] = useState(true);
+  const [isCheckingSession, setIsCheckingSession] = useState(isSupabaseConfigured);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [logoutConfirmOpen, setLogoutConfirmOpen] = useState(false);
   const [notification, setNotification] = useState<{
@@ -122,53 +122,29 @@ export default function CaNhanPage() {
   );
 
   useEffect(() => {
-    if (!isSupabaseConfigured()) {
+    if (!isSupabaseConfigured()) return;
+    // Chỉ đọc session cục bộ: onAuthStateChange phát INITIAL_SESSION ngay khi đăng ký.
+    const supabase = createClient();
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session?.user) {
+        setCurrentUser({
+          id: session.user.id,
+          email: session.user.email,
+          displayName:
+            session.user.user_metadata?.full_name ||
+            session.user.user_metadata?.name ||
+            session.user.email?.split('@')[0],
+          avatarUrl: session.user.user_metadata?.avatar_url,
+        });
+        triggerSync();
+      } else {
+        setCurrentUser(null);
+      }
       setIsCheckingSession(false);
-      return;
-    }
-    try {
-      const supabase = createClient();
-      supabase.auth.getUser().then(({ data: { user } }) => {
-        if (user) {
-          setCurrentUser({
-            id: user.id,
-            email: user.email,
-            displayName:
-              user.user_metadata?.full_name ||
-              user.user_metadata?.name ||
-              user.email?.split('@')[0],
-            avatarUrl: user.user_metadata?.avatar_url,
-          });
-        }
-        setIsCheckingSession(false);
-      }).catch(() => {
-        setIsCheckingSession(false);
-      });
-
-      const {
-        data: { subscription },
-      } = supabase.auth.onAuthStateChange((_event, session) => {
-        if (session?.user) {
-          setCurrentUser({
-            id: session.user.id,
-            email: session.user.email,
-            displayName:
-              session.user.user_metadata?.full_name ||
-              session.user.user_metadata?.name ||
-              session.user.email?.split('@')[0],
-            avatarUrl: session.user.user_metadata?.avatar_url,
-          });
-          triggerSync();
-        } else {
-          setCurrentUser(null);
-        }
-        setIsCheckingSession(false);
-      });
-
-      return () => subscription.unsubscribe();
-    } catch {
-      setIsCheckingSession(false);
-    }
+    });
+    return () => subscription.unsubscribe();
   }, []);
 
   const handleGoogleSignIn = async () => {
@@ -606,7 +582,7 @@ export default function CaNhanPage() {
               {totalPending > 0 && <TriangleAlert className="size-5 text-warning shrink-0" />}
               <span>Xác nhận đăng xuất</span>
             </AlertDialogTitle>
-            <AlertDialogDescription asChild>
+            <AlertDialogDescription render={<div />}>
               <div className="space-y-3 text-sm text-muted-foreground pt-1">
                 <p>
                   Bạn có chắc chắn muốn đăng xuất khỏi tài khoản <strong>{currentUser?.email}</strong>?

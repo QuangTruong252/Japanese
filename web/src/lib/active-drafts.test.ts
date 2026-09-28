@@ -90,15 +90,15 @@ test('getActivePracticeDraftInfo trả về câu hiện tại và tổng số c�
   const draft: PracticeDraft = {
     version: 1,
     questions: [
-      { id: 'q1', type: 'multiple_choice', prompt: 'a', options: ['a', 'b'], answer: 'a' } as any,
-      { id: 'q2', type: 'multiple_choice', prompt: 'b', options: ['a', 'b'], answer: 'b' } as any,
-      { id: 'q3', type: 'multiple_choice', prompt: 'c', options: ['a', 'b'], answer: 'c' } as any,
+      { id: 'q1', type: 'multiple_choice', prompt: 'a', options: ['a', 'b'], answer: 'a' } as unknown as PracticeDraft['questions'][number],
+      { id: 'q2', type: 'multiple_choice', prompt: 'b', options: ['a', 'b'], answer: 'b' } as unknown as PracticeDraft['questions'][number],
+      { id: 'q3', type: 'multiple_choice', prompt: 'c', options: ['a', 'b'], answer: 'c' } as unknown as PracticeDraft['questions'][number],
     ],
     currentIndex: 1,
     results: [],
     elapsedSec: 10,
     savedAt: Date.now(),
-    config: { selectedLessons: [1, 2], questionTypes: ['multiple_choice'], count: 3 },
+    config: { mode: 'lesson', lessons: [1, 2], maxLearnedLesson: 2, selectedTypes: ['mc'], questionCount: 3 },
   };
 
   const info = getActivePracticeDraftInfo(draft);
@@ -112,7 +112,7 @@ test('getActivePracticeDraftInfo trả về null khi phiên đã hoàn tất', (
   const draft: PracticeDraft = {
     version: 1,
     questions: [
-      { id: 'q1', type: 'multiple_choice', prompt: 'a', options: ['a', 'b'], answer: 'a' } as any,
+      { id: 'q1', type: 'multiple_choice', prompt: 'a', options: ['a', 'b'], answer: 'a' } as unknown as PracticeDraft['questions'][number],
     ],
     currentIndex: 1, // Đã tới câu cuối
     results: [],

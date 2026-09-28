@@ -87,7 +87,7 @@ export function getActivePracticeDraftInfo(
   return {
     currentQuestionIndex: current + 1,
     totalQuestions: total,
-    selectedLessons: draft.config?.selectedLessons,
+    selectedLessons: draft.config?.lessons,
   };
 }
 
