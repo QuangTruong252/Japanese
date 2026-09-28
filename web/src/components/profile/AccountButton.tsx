@@ -7,55 +7,52 @@ import { User } from 'lucide-react';
 import { createClient, isSupabaseConfigured } from '@/lib/supabase/client';
 import { cn } from '@/lib/utils';
 
+export interface AccountButtonUser {
+  id: string;
+  email?: string;
+  displayName?: string;
+  avatarUrl?: string;
+}
+
 interface AccountButtonProps {
   className?: string;
   variant?: 'header' | 'sidebar' | 'pill';
   showLabel?: boolean;
+  user?: AccountButtonUser | null;
 }
 
 export function AccountButton({
   className,
   variant = 'header',
   showLabel = true,
+  user: userProp,
 }: AccountButtonProps) {
   const pathname = usePathname();
-  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
-  const [displayName, setDisplayName] = useState<string | null>(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [internalUser, setInternalUser] = useState<AccountButtonUser | null>(null);
 
   useEffect(() => {
+    // Nếu parent đã truyền user prop (như AppNav), không cần đăng ký thêm listener
+    if (userProp !== undefined) return;
     if (!isSupabaseConfigured()) return;
-    try {
-      const supabase = createClient();
-      supabase.auth.getUser().then(({ data: { user } }) => {
-        if (user) {
-          setIsLoggedIn(true);
-          setAvatarUrl(user.user_metadata?.avatar_url ?? null);
-          setDisplayName(
-            user.user_metadata?.full_name ||
-            user.user_metadata?.name ||
-            user.email?.split('@')[0] ||
-            null
-          );
-        }
-      });
 
+    try {
+      // Chỉ đọc session cục bộ: onAuthStateChange phát INITIAL_SESSION ngay khi đăng ký.
+      const supabase = createClient();
       const {
         data: { subscription },
       } = supabase.auth.onAuthStateChange((_event, session) => {
         if (session?.user) {
-          setIsLoggedIn(true);
-          setAvatarUrl(session.user.user_metadata?.avatar_url ?? null);
-          setDisplayName(
-            session.user.user_metadata?.full_name ||
-            session.user.user_metadata?.name ||
-            session.user.email?.split('@')[0] ||
-            null
-          );
+          setInternalUser({
+            id: session.user.id,
+            email: session.user.email,
+            displayName:
+              session.user.user_metadata?.full_name ||
+              session.user.user_metadata?.name ||
+              session.user.email?.split('@')[0],
+            avatarUrl: session.user.user_metadata?.avatar_url,
+          });
         } else {
-          setIsLoggedIn(false);
-          setAvatarUrl(null);
-          setDisplayName(null);
+          setInternalUser(null);
         }
       });
 
@@ -63,8 +60,14 @@ export function AccountButton({
     } catch {
       // Supabase unconfigured / unavailable
     }
-  }, []);
+  }, [userProp]);
 
+  const activeUser = userProp !== undefined ? userProp : internalUser;
+  const displayName = activeUser?.displayName;
+  const avatarUrl = activeUser?.avatarUrl;
+  const isLoggedIn = Boolean(activeUser);
+
+  // Trên /ca-nhan/**, nút header Tài khoản hiển thị trạng thái active (aria-current="page") (SPEC-16 §3, §7)
   const isActive = pathname === '/ca-nhan' || pathname.startsWith('/ca-nhan/');
 
   return (
@@ -73,15 +76,17 @@ export function AccountButton({
       aria-current={isActive ? 'page' : undefined}
       aria-label={
         isLoggedIn && displayName
-          ? `Tài khoản ${displayName} — Hồ sơ & Tiến độ`
-          : 'Tài khoản & Tiến độ'
+          ? `Tài khoản ${displayName}`
+          : 'Tài khoản'
       }
       className={cn(
-        'inline-flex items-center gap-2 rounded-xl transition duration-150 outline-none select-none cursor-pointer',
+        'inline-flex items-center gap-2 transition duration-150 outline-none select-none cursor-pointer',
         'focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2',
         variant === 'header' && [
-          'min-h-[48px] px-3.5 py-2 text-sm font-medium border border-border/80 bg-card/70 hover:bg-muted/70',
-          isActive ? 'border-primary/50 text-primary bg-primary/10 shadow-xs' : 'text-foreground',
+          'min-h-[48px] px-3.5 py-1.5 rounded-full text-xs font-medium border',
+          isActive
+            ? 'border-primary/50 text-primary bg-primary/10 font-semibold shadow-xs'
+            : 'border-border/80 bg-card text-foreground hover:bg-muted/70',
         ],
         variant === 'pill' && [
           'min-h-[44px] sm:min-h-[48px] px-3 py-1.5 text-xs sm:text-sm font-medium rounded-full border border-border/80 bg-background/95 dark:bg-card/95 shadow-sm hover:bg-muted/80',
@@ -100,17 +105,17 @@ export function AccountButton({
           <img
             src={avatarUrl}
             alt=""
-            className="size-6 sm:size-7 rounded-full object-cover border border-border/80"
+            className="size-6 rounded-full object-cover border border-border/80"
           />
         ) : (
-          <div className="size-6 sm:size-7 rounded-full bg-primary/10 text-primary flex items-center justify-center font-medium">
-            <User className="size-4" />
+          <div className="size-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-medium">
+            <User className="size-3.5" />
           </div>
         )}
       </div>
 
       {showLabel && (
-        <span className="truncate max-w-[120px] sm:max-w-[160px]">
+        <span className="truncate max-w-[110px]">
           {isLoggedIn && displayName ? displayName : 'Tài khoản'}
         </span>
       )}

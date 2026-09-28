@@ -120,7 +120,7 @@ export function getFeatureEntries(): SearchEntry[] {
       label: 'Thống kê',
       sublabel: 'Tiến độ học, tỷ lệ đúng, lịch học và phân bố SRS',
       badge: 'Tính năng',
-      href: '/thong-ke',
+      href: '/ca-nhan/thong-ke',
       aliases: ['thong ke', 'tien do', 'stats', 'statistics', 'bieu do', 'ti le dung'],
     },
     {

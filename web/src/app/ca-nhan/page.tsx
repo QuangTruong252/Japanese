@@ -34,7 +34,6 @@ import {
 import {
   BookOpen,
   CheckCircle2,
-  Clock,
   CloudCheck,
   CloudOff,
   CloudUpload,

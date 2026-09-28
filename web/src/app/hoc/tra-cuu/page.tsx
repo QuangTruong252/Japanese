@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ChevronLeft, ChevronRight, Table2 } from 'lucide-react';
-import { buttonVariants } from '@/components/ui/button';
+import { ChevronRight, Table2 } from 'lucide-react';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { cn } from '@/lib/utils';
@@ -56,19 +55,8 @@ export default function TraCuuHubPage() {
 
   return (
     <main className="mx-auto max-w-2xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24">
-      {/* 1. Header & Điều hướng quay lại */}
+      {/* 1. Header Hub Tra cứu (SPEC-17 §3, B17.1: đích dock cấp một, không có breadcrumb về Học bài) */}
       <header className="space-y-4">
-        <Link
-          href="/hoc"
-          className={cn(
-            buttonVariants({ variant: 'ghost' }),
-            'min-h-12 px-3 -ml-3 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors'
-          )}
-        >
-          <ChevronLeft className="size-4 mr-1" />
-          <span>Học bài</span>
-        </Link>
-
         <div className="flex items-center justify-between">
           <div className="space-y-1">
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
