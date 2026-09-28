@@ -37,13 +37,14 @@ export function SessionResult({
   config?: PracticeConfig;
 }) {
   const router = useRouter();
+  const primaryLesson = config?.lessons?.[0] ?? session.selectedLessons?.[0];
+  const lessonHref = primaryLesson ? `/hoc/${primaryLesson}` : '/hoc';
+
   useEffect(() => {
     router.prefetch('/luyen-tap');
     router.prefetch('/');
-    if (config?.lessons?.[0]) {
-      router.prefetch(`/hoc/${config.lessons[0]}`);
-    }
-  }, [router, config]);
+    router.prefetch(lessonHref);
+  }, [router, lessonHref]);
   const percentage = Math.round(session.accuracyRate * 100);
   const isDue = mode === 'due';
 
@@ -206,8 +207,18 @@ export function SessionResult({
           className="w-full"
           onClick={() => router.push(isDue ? '/on-tap' : '/luyen-tap')}
         >
-          {isDue ? 'Về ôn tập' : 'Luyện phiên mới'}
+          {isDue ? 'Về ôn tập' : 'Luyện tiếp'}
         </Button>
+        {!isDue && (
+          <Button
+            size="quiz"
+            variant="outline"
+            className="w-full"
+            onClick={() => router.push(lessonHref)}
+          >
+            {primaryLesson ? `Về bài ${primaryLesson}` : 'Về bài học'}
+          </Button>
+        )}
         <Button
           size="quiz"
           variant="outline"
