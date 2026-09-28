@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { AlarmClock, AlertCircle, ArrowRight, Play, RotateCcw } from 'lucide-react';
@@ -9,14 +9,29 @@ import { TARGET_TYPE_LABEL, TargetTypeBadge } from '@/components/review/TargetTy
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from '@/components/ui/alert-dialog';
 import { buildSession, targetTypeFromId } from '@/lib/practice';
 import {
   buildTargetLabels,
   countByTargetType,
   describeRemainingBatches,
+  formatDraftOverwriteWarning,
+  hasActiveReviewDraft,
   overdueDays,
+  resolveReviewStartAction,
+  resolveReviewSyncNotice,
   type TargetLabel,
 } from '@/lib/review-queue';
+import { createClient, isSupabaseConfigured } from '@/lib/supabase/client';
 import { useDueQueue } from '@/lib/use-due-queue';
 import { useJapaneseVoice } from '@/lib/use-question-pool';
 import { useReviewDraft } from '@/lib/use-review-draft';
@@ -100,6 +115,27 @@ export default function ReviewTodayPage() {
   const { draft, clearDraft } = useReviewDraft();
   const isOnline = useOnlineStatus();
 
+  // Trạng thái Supabase Auth chỉ đọc session cục bộ (onAuthStateChange), không gọi mạng getUser (SPEC-20, Lỗi #2)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    if (!isSupabaseConfigured()) return;
+    try {
+      const supabase = createClient();
+      const {
+        data: { subscription },
+      } = supabase.auth.onAuthStateChange((_event, session) => {
+        setIsLoggedIn(Boolean(session?.user));
+      });
+      return () => subscription.unsubscribe();
+    } catch {
+      // Supabase unconfigured / unavailable
+    }
+  }, []);
+
+  const hasActiveDraft = hasActiveReviewDraft(draft);
+  const [confirmNewSessionOpen, setConfirmNewSessionOpen] = useState(false);
+  const startAction = resolveReviewStartAction(hasActiveDraft);
+
   const audioKeys = useMemo(() => new Set(hasVoice ? ['tts'] : []), [hasVoice]);
   const labels = useMemo(() => buildTargetLabels(queue.questions), [queue.questions]);
   const breakdown = useMemo(
@@ -127,22 +163,38 @@ export default function ReviewTodayPage() {
   const canStart = !loading && totalCount > 0 && preview.eligibleCount > 0;
   const maxLesson = queue.config.maxLearnedLesson;
 
-  const startSession = useCallback(() => {
-    if (canStart) router.push('/on-tap/phien');
-  }, [canStart, router]);
+  const handleStartClick = useCallback(() => {
+    if (!canStart) return;
+    if (hasActiveDraft) {
+      setConfirmNewSessionOpen(true);
+      return;
+    }
+    router.push('/on-tap/phien');
+  }, [canStart, hasActiveDraft, router, setConfirmNewSessionOpen]);
 
-  // Phím tắt Space (SPEC-05 §6, SPEC-20 §6)
+  const handleConfirmNewSession = useCallback(() => {
+    setConfirmNewSessionOpen(false);
+    clearDraft();
+    router.push('/on-tap/phien');
+  }, [clearDraft, router, setConfirmNewSessionOpen]);
+
+  // Phím tắt Space (SPEC-05 §6, SPEC-20 §6): ưu tiên tiếp tục nháp nếu có
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key !== ' ' && event.code !== 'Space') return;
+      if (confirmNewSessionOpen) return;
       const target = event.target as HTMLElement | null;
       if (target && ['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON', 'A'].includes(target.tagName)) return;
       event.preventDefault();
-      startSession();
+      if (hasActiveDraft) {
+        router.push('/on-tap/phien?resume=1');
+      } else {
+        handleStartClick();
+      }
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [startSession]);
+  }, [confirmNewSessionOpen, hasActiveDraft, handleStartClick, router]);
 
   const headerTabs = (
     <div className="space-y-4">
@@ -166,6 +218,17 @@ export default function ReviewTodayPage() {
     </div>
   );
 
+  const syncNotice = useMemo(
+    () =>
+      resolveReviewSyncNotice({
+        pendingSyncCount: queue.pendingSyncCount,
+        isOnline,
+        isConfigured: isSupabaseConfigured(),
+        isLoggedIn,
+      }),
+    [queue.pendingSyncCount, isOnline, isLoggedIn],
+  );
+
   if (loading) {
     return (
       <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
@@ -181,7 +244,7 @@ export default function ReviewTodayPage() {
     );
   }
 
-  // Khối thông báo ngoại tuyến và pending sync
+  // Khối thông báo ngoại tuyến và pending sync (SPEC-20, Lỗi #2)
   const networkStatusBanner = (
     <>
       {!isOnline && (
@@ -195,16 +258,27 @@ export default function ReviewTodayPage() {
           </span>
         </div>
       )}
-      {queue.pendingSyncCount > 0 && isOnline && (
+      {syncNotice && (
         <p className="text-xs text-muted-foreground">
-          {queue.pendingSyncCount} kết quả ôn đang chờ đồng bộ lên máy chủ.
+          {syncNotice.text}
+          {syncNotice.kind === 'anonymous' && (
+            <>
+              <Link
+                href={syncNotice.actionHref}
+                className="underline underline-offset-2 hover:text-foreground"
+              >
+                {syncNotice.actionText}
+              </Link>
+              .
+            </>
+          )}
         </p>
       )}
     </>
   );
 
-  // Khối phiên đang dở nếu có bản nháp
-  const draftResumeCard = draft && (
+  // Khối phiên đang dở nếu có bản nháp (SPEC-20, Lỗi #6)
+  const draftResumeCard = hasActiveDraft && draft && (
     <Card className="border-primary/40 bg-accent/30">
       <CardContent className="space-y-3 p-4 sm:p-5">
         <div className="flex items-center justify-between gap-2">
@@ -427,7 +501,12 @@ export default function ReviewTodayPage() {
             </span>
           </p>
 
-          <Button size="quiz" className="w-full text-base font-medium" onClick={startSession}>
+          <Button
+            size="quiz"
+            variant={startAction.buttonVariant}
+            className="w-full text-base font-medium"
+            onClick={handleStartClick}
+          >
             Bắt đầu ôn
           </Button>
 
@@ -523,6 +602,35 @@ export default function ReviewTodayPage() {
           <ArrowRight className="size-4" aria-hidden="true" />
         </Link>
       </div>
+
+      {/* Hộp thoại xác nhận ghi đè phiên nháp ôn tập đang dở (SPEC-20, Lỗi #6) */}
+      <AlertDialog
+        open={confirmNewSessionOpen}
+        onOpenChange={setConfirmNewSessionOpen}
+      >
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Bắt đầu phiên ôn tập mới?</AlertDialogTitle>
+            <AlertDialogDescription>
+              {formatDraftOverwriteWarning(
+                draft?.currentIndex ?? 0,
+                draft?.questions.length ?? 0,
+              )}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+            <AlertDialogCancel onClick={() => setConfirmNewSessionOpen(false)}>
+              Hủy
+            </AlertDialogCancel>
+            <AlertDialogAction
+              variant="destructive"
+              onClick={handleConfirmNewSession}
+            >
+              Bắt đầu mới
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </main>
   );
 }
