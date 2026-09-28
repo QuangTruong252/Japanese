@@ -51,6 +51,7 @@ test('getActiveVocabDraftForLesson trả về thông tin nháp từ vựng hợp
   assert.equal(draft.lesson, 5);
   assert.equal(draft.currentWordIndex, 3); // 1-indexed
   assert.equal(draft.totalWords, 4);
+  assert.equal(draft.resumeHref, '/hoc/5/tu-vung');
 });
 
 test('getActiveVocabDraftForLesson trả về null khi nháp đã hoàn tất', () => {
@@ -84,6 +85,7 @@ test('findActiveVocabDraft tìm đúng bài đầu tiên có nháp', () => {
   assert.equal(draft.lesson, 7);
   assert.equal(draft.currentWordIndex, 1);
   assert.equal(draft.totalWords, 2);
+  assert.equal(draft.resumeHref, '/hoc/7/tu-vung');
 });
 
 test('getActivePracticeDraftInfo trả về câu hiện tại và tổng số câu', () => {
@@ -106,6 +108,7 @@ test('getActivePracticeDraftInfo trả về câu hiện tại và tổng số c�
   assert.equal(info.currentQuestionIndex, 2);
   assert.equal(info.totalQuestions, 3);
   assert.deepEqual(info.selectedLessons, [1, 2]);
+  assert.equal(info.resumeHref, '/luyen-tap/phien');
 });
 
 test('getActivePracticeDraftInfo trả về null khi phiên đã hoàn tất', () => {
@@ -210,5 +213,72 @@ test('findActiveVocabDraft bỏ qua toàn bộ bài nếu chỉ có nháp hỏng
   storage.setItem('jp:vocab-draft:3', JSON.stringify({ version: 99, targetIds: ['v1'], currentIndex: 0 })); // Version sai
 
   assert.equal(findActiveVocabDraft(storage), null);
+});
+
+test('getActivePracticeDraftInfo sinh resumeHref chuẩn /luyen-tap/phien cho nháp hợp lệ, không có href khi không có nháp hoặc nháp đã xong', () => {
+  // Ca đúng: nháp luyện hợp lệ -> có resumeHref trỏ thẳng /luyen-tap/phien
+  const validDraft: PracticeDraft = {
+    version: 1,
+    questions: [
+      { id: 'q1', type: 'multiple_choice', prompt: 'a', options: ['a', 'b'], answer: 'a' } as unknown as PracticeDraft['questions'][number],
+      { id: 'q2', type: 'multiple_choice', prompt: 'b', options: ['a', 'b'], answer: 'b' } as unknown as PracticeDraft['questions'][number],
+    ],
+    currentIndex: 0,
+    results: [],
+    elapsedSec: 5,
+    savedAt: Date.now(),
+    config: { mode: 'lesson', lessons: [5], maxLearnedLesson: 5, selectedTypes: ['mc'], questionCount: 2 },
+  };
+  const activeInfo = getActivePracticeDraftInfo(validDraft);
+  assert.ok(activeInfo);
+  assert.equal(activeInfo.resumeHref, '/luyen-tap/phien');
+
+  // Ca sai 1: không có nháp (null) -> null (không có href)
+  assert.equal(getActivePracticeDraftInfo(null), null);
+
+  // Ca sai 2: nháp đã xong (currentIndex >= total) -> null (không có href)
+  const completedDraft: PracticeDraft = {
+    ...validDraft,
+    currentIndex: 2,
+  };
+  assert.equal(getActivePracticeDraftInfo(completedDraft), null);
+
+  // Ca sai 3: nháp hỏng (currentIndex âm) -> null (không có href)
+  const negativeDraft: PracticeDraft = {
+    ...validDraft,
+    currentIndex: -1,
+  };
+  assert.equal(getActivePracticeDraftInfo(negativeDraft), null);
+});
+
+test('getActiveVocabDraftForLesson sinh resumeHref chuẩn /hoc/:lesson/tu-vung cho nháp từ vựng hợp lệ, null khi không có hoặc đã xong', () => {
+  const storage = new MemoryStorage();
+  storage.setItem(
+    'jp:vocab-draft:4',
+    JSON.stringify({
+      version: 1,
+      targetIds: ['vocab-04-01', 'vocab-04-02'],
+      currentIndex: 0,
+    })
+  );
+
+  // Ca đúng: nháp hợp lệ -> resumeHref trỏ thẳng /hoc/4/tu-vung
+  const activeVocab = getActiveVocabDraftForLesson(4, storage);
+  assert.ok(activeVocab);
+  assert.equal(activeVocab.resumeHref, '/hoc/4/tu-vung');
+
+  // Ca sai 1: không có nháp -> null (không có href)
+  assert.equal(getActiveVocabDraftForLesson(8, storage), null);
+
+  // Ca sai 2: nháp đã hoàn tất -> null (không có href)
+  storage.setItem(
+    'jp:vocab-draft:4',
+    JSON.stringify({
+      version: 1,
+      targetIds: ['vocab-04-01', 'vocab-04-02'],
+      currentIndex: 2,
+    })
+  );
+  assert.equal(getActiveVocabDraftForLesson(4, storage), null);
 });
 
