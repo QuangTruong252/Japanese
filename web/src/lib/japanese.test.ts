@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   formatOptionalBrackets,
   containsKanji,
+  containsJapanese,
   normalizeJapaneseInput,
   parseFurigana,
   toTypedKana,
@@ -91,4 +92,13 @@ test('formatOptionalBrackets: chỉ đổi ngoặc tùy chọn, giữ furigana',
   assert.equal(formatOptionalBrackets('どこ[へ]も 行[い]きません'), 'どこ(へ)も 行[い]きません');
   assert.equal(formatOptionalBrackets('これから お 世話[せわ]に なります'), 'これから お 世話[せわ]に なります');
   assert.equal(formatOptionalBrackets('今[いま] −時[じ]−分[ふん]です'), '今[いま] −時[じ]−分[ふん]です');
+});
+
+test('containsJapanese nhận kana/kanji, không nhận tiếng Việt có dấu', () => {
+  assert.equal(containsJapanese('いいえ'), true);
+  assert.equal(containsJapanese('テレビ'), true);
+  assert.equal(containsJapanese('本'), true);
+  assert.equal(containsJapanese('nhân viên công ty'), false);
+  assert.equal(containsJapanese('Tôi đã học'), false);
+  assert.equal(containsJapanese(''), false);
 });

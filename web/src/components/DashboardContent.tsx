@@ -11,10 +11,7 @@ import { useActiveDrafts } from '@/lib/active-drafts';
 import { clearNewSessionRequest } from '@/lib/practice-draft';
 import { resolveDashboardCta } from '@/lib/dashboard-cta';
 import type { LessonSummary } from '@/lib/lessons';
-import { SyncBadge } from '@/components/SyncBadge';
-import { SearchTrigger } from '@/components/search/SearchTrigger';
 import { ProgressBar } from '@/components/LessonProgress';
-import { ThemeToggle } from '@/components/ThemeToggle';
 import { buttonVariants } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import {
@@ -22,14 +19,15 @@ import {
   BookOpen,
   ArrowRight,
   CheckCircle2,
-  Sparkles,
-  AlertCircle,
+  Target,
   HelpCircle,
   ChevronDown,
   Clock,
   BarChart2,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Furigana } from '@/components/Furigana';
+import { formatOptionalBrackets } from '@/lib/japanese';
 
 export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) {
   // Cùng hook với /on-tap để hai màn luôn ra một con số (SPEC-02 §3.2, SPEC-18 §2).
@@ -103,7 +101,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
   });
 
   return (
-    <main className="mx-auto w-full max-w-5xl px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8">
+    <main className="mx-auto w-full max-w-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8">
       {/* ========================================================
           1. Header: Lời chào + Điều khiển phụ (Tìm kiếm, Sync, Theme)
           AppNav là nơi duy nhất giữ lối Tài khoản (SPEC-16/18).
@@ -118,13 +116,6 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
             {greeting}
           </h1>
-        </div>
-
-        {/* Lối vào thứ cấp cho Tìm kiếm, Đồng bộ, Chủ đề (vùng chạm ≥44px) */}
-        <div className="flex items-center gap-2 self-start sm:self-auto sm:pt-1">
-          <SearchTrigger iconOnly className="size-11 rounded-xl lg:hidden" />
-          <SyncBadge className="min-h-11 h-11 px-2.5 rounded-xl text-xs shadow-2xs lg:hidden" />
-          <ThemeToggle className="size-11 rounded-xl" />
         </div>
       </header>
 
@@ -143,13 +134,9 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
         // TH1: Có mục đến hạn -> Ôn tập là CTA chính (P0), Bài đang học là P1 bên dưới
         <div className="space-y-4">
           {/* Card P0: Bắt đầu ôn tập */}
-          <Card className="border-2 border-primary/30 bg-card shadow-sm p-6 sm:p-8 space-y-5">
+          <Card className="border-2 border-primary/30 bg-card p-6 sm:p-8 space-y-5">
             <div className="space-y-1.5">
-              <div className="flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Việc nên làm tiếp theo</span>
-              </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground">
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground">
                 {ctaDecision.heading}
               </h2>
               <p className="text-sm text-muted-foreground max-w-xl">
@@ -164,7 +151,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
                 href={ctaDecision.href}
                 className={cn(
                   buttonVariants({ size: 'quiz' }),
-                  'w-full sm:w-auto font-semibold text-base shadow-sm'
+                  'w-full sm:w-auto font-semibold text-base'
                 )}
               >
                 <RotateCcw className="w-5 h-5 mr-2" />
@@ -177,15 +164,20 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
           <Card className="border border-border/80 bg-card p-5 sm:p-6 space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="space-y-1">
-                <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                  Bài đang học
-                </div>
+                <p className="text-sm text-muted-foreground">Bài đang học</p>
                 <h3 className="text-lg font-bold text-foreground">
                   Bài {activeLessonNum}: {activeSummary.title.vi}
                 </h3>
-                <p className="text-sm text-muted-foreground line-clamp-1">
-                  {activeSummary.description.vi}
-                </p>
+                {activeSummary.jpTitle ? (
+                  <Furigana
+                    text={formatOptionalBrackets(activeSummary.jpTitle)}
+                    className="jp-example text-foreground"
+                  />
+                ) : (
+                  <p className="text-sm text-muted-foreground line-clamp-1">
+                    {activeSummary.description.vi}
+                  </p>
+                )}
               </div>
 
               <Link
@@ -208,15 +200,17 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
         </div>
       ) : (
         // TH2: lô ôn = 0 -> HỢP NHẤT thành một thẻ duy nhất mang nút chính
-        <Card className="border-2 border-primary/20 bg-card shadow-sm p-6 sm:p-8 space-y-5">
+        <Card className="border-2 border-primary/20 bg-card p-6 sm:p-8 space-y-5">
           <div className="space-y-1.5">
-            <div className="flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Việc nên làm tiếp theo</span>
-            </div>
             <h2 className="text-xl sm:text-2xl font-bold text-foreground">
               {ctaDecision.heading}
             </h2>
+            {activeSummary.jpTitle && (
+              <Furigana
+                text={formatOptionalBrackets(activeSummary.jpTitle)}
+                className="jp-quiz pt-1 text-foreground"
+              />
+            )}
             <p className="text-sm text-muted-foreground max-w-xl">
               {isNewUser
                 ? 'Chào mừng bạn đến với MaiPace! Hãy bắt đầu bài học đầu tiên với từ vựng, ngữ pháp và mẫu câu giao tiếp cơ bản.'
@@ -247,7 +241,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
                 href={ctaDecision.href}
                 className={cn(
                   buttonVariants({ size: 'quiz' }),
-                  'w-full sm:w-auto font-semibold text-base shadow-sm'
+                  'w-full sm:w-auto font-semibold text-base'
                 )}
               >
                 <BookOpen className="w-5 h-5 mr-2" />
@@ -288,11 +282,11 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
           ======================================================== */}
       {(drafts.vocabDraft || drafts.practiceDraft) && (
         <section aria-label="Tiếp tục phiên dở dang">
-          <Card className="border border-border/80 bg-accent/15 p-4 sm:p-5 rounded-2xl shadow-xs space-y-3">
-            <div className="flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
-              <Clock className="w-3.5 h-3.5" />
+          <Card className="border border-border/80 bg-accent/15 p-4 sm:p-5 rounded-2xl space-y-3">
+            <h2 className="flex items-center gap-2 text-sm font-semibold text-foreground">
+              <Clock className="size-4 text-primary" aria-hidden="true" />
               <span>Tiếp tục phiên</span>
-            </div>
+            </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {drafts.vocabDraft && (
@@ -356,18 +350,20 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
         <div className="flex flex-wrap items-center gap-2.5">
           <Link
             href="/ca-nhan"
-            className="inline-flex min-h-11 items-center gap-1.5 px-3.5 rounded-xl bg-card border border-border/80 font-medium text-xs sm:text-sm text-foreground hover:border-primary/40 hover:text-primary transition shadow-2xs"
+            className="inline-flex min-h-11 items-center gap-1.5 px-3.5 rounded-xl bg-card border border-border/80 font-medium text-xs sm:text-sm text-foreground hover:border-primary/40 hover:text-primary transition"
           >
             <BarChart2 className="size-4 text-primary" />
             <span>Xem tiến độ trên máy</span>
           </Link>
-          <Link
-            href="/hoc/tra-cuu/kana"
-            className="inline-flex min-h-11 items-center gap-1.5 px-3.5 rounded-xl bg-card border border-border/80 font-medium text-xs sm:text-sm text-foreground hover:border-primary/40 hover:text-primary transition shadow-2xs"
-          >
-            <BookOpen className="size-4 text-primary" />
-            <span>Bảng chữ Kana</span>
-          </Link>
+          {!hasNoProgress && (
+            <Link
+              href="/hoc/tra-cuu/kana"
+              className="inline-flex min-h-11 items-center gap-1.5 px-3.5 rounded-xl bg-card border border-border/80 font-medium text-xs sm:text-sm text-foreground hover:border-primary/40 hover:text-primary transition"
+            >
+              <BookOpen className="size-4 text-primary" />
+              <span>Bảng chữ Kana</span>
+            </Link>
+          )}
         </div>
       </section>
 
@@ -375,10 +371,10 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
           5. Khối P1: Cần củng cố (Ẩn hoàn toàn nếu weakCount = 0)
           ======================================================== */}
       {weakCount > 0 && (
-        <Card className="border border-border/80 bg-card p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+        <Card className="border border-border/80 bg-card p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-destructive/10 text-destructive flex items-center justify-center shrink-0">
-              <AlertCircle className="w-4.5 h-4.5" />
+            <div className="w-9 h-9 rounded-xl bg-muted text-foreground flex items-center justify-center shrink-0">
+              <Target className="w-4.5 h-4.5" aria-hidden="true" />
             </div>
             <div>
               <div className="font-semibold text-sm sm:text-base text-foreground">
@@ -422,17 +418,8 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
             <strong className="text-foreground font-semibold">Luyện tập:</strong> chủ động làm bài tập theo những bài bạn tự chọn để củng cố kiến thức.
           </p>
           <p>
-            <strong className="text-foreground font-semibold">Ôn tập:</strong> app nhắc lại đúng lúc bạn sắp quên theo lịch ôn FSRS thông minh.
+            <strong className="text-foreground font-semibold">Ôn tập:</strong> app nhắc lại đúng lúc bạn sắp quên theo lịch ôn của bạn.
           </p>
-          <div className="pt-1 text-xs text-muted-foreground">
-            <span>Cần xem lại bảng chữ cái? </span>
-            <Link
-              href="/hoc/tra-cuu/kana"
-              className="text-primary font-medium hover:underline underline-offset-2"
-            >
-              Bảng chữ Kana
-            </Link>
-          </div>
         </div>
       </details>
     </main>

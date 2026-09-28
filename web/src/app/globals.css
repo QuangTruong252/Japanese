@@ -185,7 +185,8 @@ ruby {
 }
 
 rt {
-  font-size: calc(min(0.62em, 0.95rem) * var(--furigana-scale));
+  /* Sàn 11px theo token furigana (DESIGN.md), vẫn nhân theo --furigana-scale */
+  font-size: calc(max(11px, min(0.62em, 0.95rem)) * var(--furigana-scale));
   font-weight: 500;
   color: var(--muted-foreground);
   user-select: none;
@@ -294,5 +295,13 @@ input[type="search"]::-webkit-search-decoration {
   from {
     opacity: 0.4;
     translate: calc(var(--nav-dir, 0) * 8px) 0;
+  }
+}
+
+/* Ẩn thanh cuộn nhưng vẫn cuộn được (chạm, con lăn, bàn phím) */
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import {
   AlertCircle,
   CheckCircle2,
+  Lightbulb,
   Pause,
   Play,
   RotateCcw,
@@ -422,7 +423,7 @@ export function ReviewRunner({
     const isPlanLoading = savedSession === null || nextBatchPlan === null;
 
     return (
-      <main className="mx-auto max-w-xl space-y-6 px-4 py-8">
+      <main className="mx-auto w-full max-w-xl space-y-6 px-4 py-8">
         {/* Thông báo tiếp cận cho Screen Reader */}
         <div role="status" className="sr-only">
           Đã hoàn thành lô ôn tập. Tỷ lệ đúng {percentage}%, {displaySession.correctCount} trên{' '}
@@ -500,7 +501,7 @@ export function ReviewRunner({
               </p>
             </div>
           ) : nextBatchPlan?.blockedReason === 'no-audio' ? (
-            <div className="space-y-1 text-warning-foreground">
+            <div className="space-y-1 text-warning">
               <p className="font-semibold">
                 Các mục đến hạn còn lại chỉ có câu dạng nghe, nhưng thiết bị chưa có giọng tiếng Nhật (ja-JP).
               </p>
@@ -616,9 +617,11 @@ export function ReviewRunner({
                     )}
                     <div className="text-sm">
                       <span className="text-muted-foreground">Đáp án đúng: </span>
-                      <span className="jp jp-vocab font-medium text-foreground">
-                        {answerText}
-                      </span>
+                      <Furigana
+                        text={answerText}
+                        zoomable={false}
+                        className="jp-vocab font-medium text-foreground"
+                      />
                     </div>
                     {q.explanationVi && (
                       <p className="text-xs text-muted-foreground">{q.explanationVi}</p>
@@ -789,15 +792,20 @@ export function ReviewRunner({
                     <div className="space-y-1 text-sm">
                       <p className="text-muted-foreground">
                         Đáp án đúng:{' '}
-                        <span className="jp jp-vocab font-medium text-foreground">
-                          {Array.isArray(currentQuestion.answer)
-                            ? currentQuestion.answer.join(', ')
-                            : currentQuestion.answer}
-                        </span>
+                        <Furigana
+                          text={
+                            Array.isArray(currentQuestion.answer)
+                              ? currentQuestion.answer.join(', ')
+                              : currentQuestion.answer
+                          }
+                          zoomable={false}
+                          className="jp-vocab font-medium text-foreground"
+                        />
                       </p>
                       {currentHint && (
-                        <p className="rounded-lg bg-warning/10 p-2.5 text-xs text-warning-foreground border border-warning/20">
-                          <span className="font-semibold">Gợi ý:</span> {currentHint}
+                        <p className="flex items-start gap-2 rounded-lg border border-info/30 bg-info/10 p-2.5 text-xs text-foreground">
+                          <Lightbulb className="mt-px size-3.5 shrink-0 text-info" aria-hidden="true" />
+                          <span><span className="font-semibold">Gợi ý:</span> {currentHint}</span>
                         </p>
                       )}
                     </div>
@@ -834,7 +842,17 @@ export function ReviewRunner({
               Bạn có thể lưu lại tiến độ để ôn tiếp sau, hoặc bỏ phiên để xóa tiến trình dở.
             </AlertDialogDescription>
           </AlertDialogHeader>
+          {/* Bỏ phiên tách khỏi cặp chính: cuối cột trên mobile, sát trái trên desktop */}
           <AlertDialogFooter className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+            <Button
+              type="button"
+              variant="ghost"
+              size="quiz"
+              className="w-full text-destructive hover:bg-destructive/10 hover:text-destructive sm:mr-auto sm:w-auto"
+              onClick={handleDiscardAndExit}
+            >
+              Bỏ phiên
+            </Button>
             <AlertDialogCancel
               size="quiz"
               className="w-full sm:w-auto"
@@ -842,15 +860,6 @@ export function ReviewRunner({
             >
               Tiếp tục làm
             </AlertDialogCancel>
-            <Button
-              type="button"
-              variant="outline"
-              size="quiz"
-              className="w-full text-destructive hover:bg-destructive/10 hover:text-destructive sm:w-auto"
-              onClick={handleDiscardAndExit}
-            >
-              Bỏ phiên
-            </Button>
             <AlertDialogAction
               size="quiz"
               className="w-full sm:w-auto"

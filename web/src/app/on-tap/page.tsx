@@ -250,7 +250,7 @@ export default function ReviewTodayPage() {
       {!isOnline && (
         <div
           role="status"
-          className="flex items-center gap-2 rounded-xl border border-warning/40 bg-warning/10 p-3 text-xs sm:text-sm text-warning-foreground"
+          className="flex items-center gap-2 rounded-xl border border-warning/40 bg-warning/10 p-3 text-xs sm:text-sm text-foreground"
         >
           <AlertCircle className="size-4 shrink-0 text-warning" aria-hidden="true" />
           <span>
@@ -408,7 +408,7 @@ export default function ReviewTodayPage() {
             </p>
 
             {preview.excludedAudioCount > 0 ? (
-              <div role="alert" className="space-y-3 rounded-xl border border-warning/40 bg-warning/10 p-4 text-warning-foreground">
+              <div role="alert" className="space-y-3 rounded-xl border border-warning/40 bg-warning/10 p-4 text-foreground">
                 <p className="text-sm font-medium">
                   Các mục đến hạn chỉ có câu dạng nghe, nhưng trình duyệt hoặc thiết bị chưa có giọng tiếng Nhật (ja-JP).
                 </p>
@@ -513,7 +513,7 @@ export default function ReviewTodayPage() {
           {preview.excludedAudioCount > 0 && (
             <div
               role="status"
-              className="flex items-center gap-2 rounded-xl border border-warning/40 bg-warning/10 p-3 text-xs sm:text-sm text-warning-foreground"
+              className="flex items-center gap-2 rounded-xl border border-warning/40 bg-warning/10 p-3 text-xs sm:text-sm text-foreground"
             >
               <AlertCircle className="size-4 shrink-0 text-warning" aria-hidden="true" />
               <span>

@@ -569,8 +569,9 @@ Progress and Statistics live behind Profile (`/ca-nhan`), while Settings lives a
 | **< `lg`** | **Bottom navigation.** Anchored to the bottom of the viewport, within thumb reach, respecting the bottom safe-area inset. Every item pairs a 24px icon with a visible `caption` label at **every** width below `lg` — a tablet is still a touch device, and a tooltip is a pointer mechanism |
 | **>= `lg`** | **Left sidebar.** The five destinations run vertically; the account area sits at the bottom of the sidebar leading to `/ca-nhan` with sync state in text |
 
-There is no top bar at any width, and the bottom navigation does not survive into the desktop
-shell. Two shells, one transition point, and it is `lg`.
+Below `lg` a thin header sits above the page (logo left, global actions right); it is chrome,
+not navigation. The bottom navigation does not survive into the desktop shell. Two shells, one
+transition point, and it is `lg`.
 
 In both shells the open destination wears `primary` and the rest wear `muted-foreground`.
 Route `/hoc/tra-cuu` and its subroutes activate Lookup (`Tra cứu`), and do not activate Learn (`Học bài`).
@@ -581,11 +582,18 @@ the Home screen is designed, and recorded in that screen's SPEC once approved.
 
 ### The secondary surface
 
-Settings, profile, sync state, theme and sign-out live behind **Profile (`/ca-nhan`)** and **Settings (`/cai-dat`)**,
-not in primary navigation:
+Profile, sync state and sign-out live behind **Profile (`/ca-nhan`)** and **Settings (`/cai-dat`)**,
+not in primary navigation. **Global actions** (search, theme switch, settings, account) are owned
+by the shell (`AppNav`) and appear exactly once; a page never repeats them in its own header.
 
-- Below `lg`: An Account button (`AccountButton`) in the page header of the main screens leading to `/ca-nhan`.
-- From `lg`: The account area at the bottom of the left sidebar leading to `/ca-nhan`, showing user name/avatar and text sync status.
+- Below `lg`: the header carries icon buttons for Search, Theme, Settings (`/cai-dat`) and
+  Account (`AccountButton`, icon only, leading to `/ca-nhan`), each with a 44px target and an
+  accessible name.
+- From `lg`: Search (Ctrl+K) and Theme sit side by side under the sidebar logo; the account area at
+  the bottom of the sidebar leads to `/ca-nhan` with user name/avatar and text sync status, and
+  Settings sits below it.
+- A page may still embed search as content (the Lookup hub's search bar) — that is the page's
+  task, not a global action.
 - Profile (`/ca-nhan`) hosts two URL tabs: **Tiến độ** (`/ca-nhan`) and **Thống kê** (`/ca-nhan/thong-ke`).
 - Former `/thong-ke` links redirect seamlessly to `/ca-nhan/thong-ke`, preserving query parameters.
 

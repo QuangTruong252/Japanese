@@ -24,7 +24,7 @@ export default function KanjiLookupPage() {
   }
 
   return (
-    <main className="mx-auto max-w-5xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24">
+    <main className="mx-auto w-full max-w-5xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24">
       {/* 1. Header & Điều hướng quay lại */}
       <header className="space-y-4">
         <Link

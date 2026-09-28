@@ -138,7 +138,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                     Bài {activeLesson.number}: {activeLesson.title?.vi ?? 'Minna no Nihongo'}
                   </h2>
                   {activeLesson.jpTitle && (
-                    <div className="font-jp text-xs text-muted-foreground truncate">
+                    <div className="jp jp-inline text-foreground truncate">
                       <Furigana text={formatOptionalBrackets(activeLesson.jpTitle)} zoomable={false} />
                     </div>
                   )}
@@ -168,10 +168,10 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
             {/* Tiến độ bài học N5 */}
             <div className="space-y-1.5 pr-1 sm:pr-3">
               <div className="flex items-center justify-between text-xs">
-                <span className="font-semibold text-muted-foreground uppercase tracking-wider text-[11px]">
+                <span className="font-semibold text-muted-foreground uppercase tracking-wider text-xs">
                   Tiến độ bài học
                 </span>
-                <span className="font-bold text-primary bg-primary/10 px-1.5 py-0.2 rounded text-[11px]">
+                <span className="font-bold text-primary bg-primary/10 px-1.5 py-0.2 rounded text-xs">
                   {Math.round((lessonStats.completed / Math.max(1, summaries.length)) * 100)}%
                 </span>
               </div>
@@ -180,8 +180,8 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
               </div>
               <div className="w-full bg-muted h-2 rounded-full overflow-hidden">
                 <div
-                  className="bg-primary h-full rounded-full transition-[width] duration-250 ease-smooth-out"
-                  style={{ width: `${Math.round((lessonStats.completed / Math.max(1, summaries.length)) * 100)}%` }}
+                  className="bg-primary h-full w-full origin-left transition-transform duration-250 ease-smooth-out"
+                  style={{ transform: `scaleX(${lessonStats.completed / Math.max(1, summaries.length)})` }}
                 />
               </div>
             </div>
@@ -189,10 +189,10 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
             {/* Từ vựng đã học */}
             <div className="space-y-1.5 pl-3 sm:pl-6">
               <div className="flex items-center justify-between text-xs">
-                <span className="font-semibold text-muted-foreground uppercase tracking-wider text-[11px]">
+                <span className="font-semibold text-muted-foreground uppercase tracking-wider text-xs">
                   Từ vựng đã học
                 </span>
-                <span className="font-bold text-success bg-success/10 px-1.5 py-0.2 rounded text-[11px]">
+                <span className="font-bold text-success bg-success/10 px-1.5 py-0.2 rounded text-xs">
                   {Math.round((targetIds.length / lessonStats.totalVocabInN5) * 100)}%
                 </span>
               </div>
@@ -201,8 +201,8 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
               </div>
               <div className="w-full bg-muted h-2 rounded-full overflow-hidden">
                 <div
-                  className="bg-success h-full rounded-full transition-[width] duration-250 ease-smooth-out"
-                  style={{ width: `${Math.min(100, Math.round((targetIds.length / lessonStats.totalVocabInN5) * 100))}%` }}
+                  className="bg-success h-full w-full origin-left transition-transform duration-250 ease-smooth-out"
+                  style={{ transform: `scaleX(${Math.min(1, targetIds.length / Math.max(1, lessonStats.totalVocabInN5))})` }}
                 />
               </div>
             </div>
@@ -333,7 +333,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                         <span className="text-xs font-bold text-muted-foreground">
                           Bài {s.number}
                         </span>
-                        <span className="text-[11px] font-bold text-muted-foreground bg-muted px-2 py-0.5 rounded-md">
+                        <span className="text-xs font-bold text-muted-foreground bg-muted px-2 py-0.5 rounded-md">
                           Chưa có bản dịch
                         </span>
                       </div>
@@ -361,17 +361,17 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                           Bài {s.number}
                         </span>
                         {isCompleted ? (
-                          <span className="text-[11px] font-bold text-success bg-success/10 px-2 py-0.5 rounded-md border border-success/20 flex items-center gap-1">
+                          <span className="text-xs font-bold text-success bg-success/10 px-2 py-0.5 rounded-md border border-success/20 flex items-center gap-1">
                             <CheckCircle2 className="size-3" />
                             Hoàn thành
                           </span>
                         ) : isInProgress ? (
-                          <span className="text-[11px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-md border border-primary/20 flex items-center gap-1">
+                          <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-md border border-primary/20 flex items-center gap-1">
                             <Clock className="size-3" />
                             Đang học ({Math.round((learned / s.vocabCount) * 100)}%)
                           </span>
                         ) : (
-                          <span className="text-[11px] font-medium text-muted-foreground bg-muted px-2 py-0.5 rounded-md">
+                          <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-0.5 rounded-md">
                             Chưa bắt đầu
                           </span>
                         )}
@@ -384,7 +384,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
 
                       {/* Tiếng Nhật (Furigana) */}
                       {s.jpTitle && (
-                        <div className="font-jp text-xs font-medium text-muted-foreground">
+                        <div className="jp jp-inline text-foreground">
                           <Furigana text={formatOptionalBrackets(s.jpTitle)} zoomable={false} />
                         </div>
                       )}

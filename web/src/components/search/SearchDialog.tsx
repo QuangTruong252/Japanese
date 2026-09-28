@@ -265,7 +265,7 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
               </div>
 
               <div className="space-y-2">
-                <p className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider px-1">
+                <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider px-1">
                   Duyệt nhanh danh mục
                 </p>
                 <div className="grid grid-cols-2 gap-2">
@@ -350,7 +350,7 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
                   {/* Tiêu đề nhóm */}
                   <div
                     role="presentation"
-                    className="px-4 pt-3 pb-1.5 text-[11px] font-bold tracking-wider text-muted-foreground uppercase select-none"
+                    className="px-4 pt-3 pb-1.5 text-xs font-bold tracking-wider text-muted-foreground uppercase select-none"
                   >
                     {KIND_LABELS[group.kind]}
                   </div>
@@ -397,7 +397,7 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
                           {entry.badge && (
                             <span
                               className={cn(
-                                'shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded-full border',
+                                'shrink-0 text-xs font-semibold px-2 py-0.5 rounded-full border',
                                 entry.kind === 'feature'
                                   ? 'bg-primary/10 border-primary/30 text-primary'
                                   : 'bg-muted border-border text-muted-foreground'
@@ -434,20 +434,20 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
               <span>di chuyển</span>
             </span>
             <span className="inline-flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 rounded border border-border bg-card font-mono text-[10px]">
+              <kbd className="px-1.5 py-0.5 rounded border border-border bg-card font-mono text-xs">
                 <CornerDownLeft className="size-3 inline" />
               </kbd>
               <span>mở</span>
             </span>
             <span className="inline-flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 rounded border border-border bg-card font-mono text-[10px]">
+              <kbd className="px-1.5 py-0.5 rounded border border-border bg-card font-mono text-xs">
                 esc
               </kbd>
               <span>đóng</span>
             </span>
           </div>
 
-          <span className="text-[11px] text-muted-foreground">
+          <span className="text-xs text-muted-foreground">
             {totalMatches > 0 && `${totalMatches} kết quả`}
           </span>
         </div>

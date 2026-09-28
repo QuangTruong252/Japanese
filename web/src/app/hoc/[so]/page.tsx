@@ -10,8 +10,6 @@ import { AVAILABLE_N5_LESSONS, loadLessonData, parseLessonNumber } from '@/lib/l
 import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
 import { Card } from '@/components/ui/card';
 import { ShadowingPlayer } from '@/components/audio/ShadowingPlayer';
-import { SearchTrigger } from '@/components/search/SearchTrigger';
-import { ThemeToggle } from '@/components/ThemeToggle';
 import { LessonActionHub } from './LessonActionHub';
 import { cn } from '@/lib/utils';
 
@@ -37,7 +35,7 @@ export default async function LessonDetailPage({
   const { lesson, vocab } = await loadLessonData(lessonNum);
 
   return (
-    <main className="mx-auto max-w-4xl space-y-8 px-4 sm:px-6 pt-6 sm:pt-10 pb-16">
+    <main className="mx-auto w-full max-w-4xl space-y-8 px-4 sm:px-6 pt-6 sm:pt-10 pb-16">
       {/* 1. Header bài học & Breadcrumb */}
       <header className="space-y-4">
         <div className="flex items-center justify-between">
@@ -51,10 +49,6 @@ export default async function LessonDetailPage({
             <ChevronLeft className="size-4 mr-1" />
             <span>Danh sách bài học N5</span>
           </Link>
-          <div className="flex items-center gap-2">
-            <ThemeToggle className="size-11 rounded-xl" />
-            <SearchTrigger iconOnly className="size-11 rounded-xl lg:hidden" />
-          </div>
         </div>
 
         <div className="space-y-2">
@@ -99,71 +93,13 @@ export default async function LessonDetailPage({
         />
       </header>
 
-      {/* Thanh nhảy nhanh sticky dưới header: Từ vựng / Ngữ pháp / Nghe / Luyện tập */}
-      <nav
-        aria-label="Mục lục bài học"
-        className="sticky top-0 z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-2.5 bg-background/95 backdrop-blur-md border-b border-border/60"
-      >
-        <div className="grid grid-cols-4 gap-1.5 sm:flex sm:items-center sm:gap-2">
-          <a
-            href="#tu-vung"
-            className={cn(
-              buttonVariants({ variant: 'outline', size: 'sm' }),
-              'min-h-11 h-11 w-full sm:w-auto px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold'
-            )}
-          >
-            Từ vựng ({vocab.length})
-          </a>
-          <a
-            href="#ngu-phap"
-            className={cn(
-              buttonVariants({ variant: 'outline', size: 'sm' }),
-              'min-h-11 h-11 w-full sm:w-auto px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold'
-            )}
-          >
-            Ngữ pháp ({lesson.grammar.length})
-          </a>
-          <a
-            href="#nghe"
-            className={cn(
-              buttonVariants({ variant: 'outline', size: 'sm' }),
-              'min-h-11 h-11 w-full sm:w-auto px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold'
-            )}
-          >
-            Nghe
-          </a>
-          <a
-            href="#luyen-tap"
-            className={cn(
-              buttonVariants({ variant: 'outline', size: 'sm' }),
-              'min-h-11 h-11 w-full sm:w-auto px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold'
-            )}
-          >
-            Luyện tập
-          </a>
-        </div>
-      </nav>
-
       {/* 2. Từ vựng trọng tâm (Tham khảo đầy đủ trên cùng URL - SPEC-18 §3) */}
       <section id="tu-vung" className="scroll-mt-20 sm:scroll-mt-24 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <h2 className="text-xl font-bold text-foreground">Từ vựng trọng tâm</h2>
-            <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-muted text-muted-foreground">
-              {vocab.length} từ
-            </span>
-          </div>
-
-          <Link
-            href={`/hoc/${lessonNum}/tu-vung`}
-            className={cn(
-              buttonVariants({ variant: 'outline', size: 'sm' }),
-              'min-h-11 h-11 px-3.5 rounded-xl font-semibold text-xs gap-1.5 w-full sm:w-auto justify-center border-primary/30 text-primary hover:bg-primary/5'
-            )}
-          >
-            <span>Học từ vựng bài này</span>
-            <ArrowRight className="size-3.5" aria-hidden="true" />
-          </Link>
+        <div className="flex items-center gap-2">
+          <h2 className="text-xl font-bold text-foreground">Từ vựng trọng tâm</h2>
+          <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-muted text-muted-foreground">
+            {vocab.length} từ
+          </span>
         </div>
 
         <Card className="rounded-2xl border-border/80 bg-card shadow-sm overflow-hidden">
@@ -191,7 +127,7 @@ export default async function LessonDetailPage({
                             <div className="flex items-center gap-2 flex-wrap">
                               <Furigana text={formatOptionalBrackets(w.word)} className="text-lg font-medium text-foreground" />
                               {group && (
-                                <Badge className={cn('h-auto text-[10px] px-1.5 py-0.2 rounded', group.className)}>
+                                <Badge className={cn('h-auto text-xs px-1.5 py-0.2 rounded', group.className)}>
                                   {group.label}
                                 </Badge>
                               )}

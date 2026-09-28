@@ -286,7 +286,7 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
 
                 {/* Âm Hán Việt + nghĩa ngắn tiếng Việt */}
                 {k.hanviet && (
-                  <span className="text-[10px] font-semibold tracking-wide text-primary line-clamp-1 text-center px-0.5">
+                  <span className="text-xs font-semibold tracking-wide text-primary line-clamp-1 text-center px-0.5">
                     {k.hanviet}
                   </span>
                 )}
@@ -295,18 +295,18 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
                 </span>
 
                 {/* Cách đọc chính (âm On / Kun) */}
-                <span className="font-jp text-[11px] text-muted-foreground line-clamp-1 text-center px-0.5">
+                <span className="font-jp text-xs text-muted-foreground line-clamp-1 text-center px-0.5">
                   {reading}
                 </span>
 
                 {/* Số bài / Badge */}
                 <div className="mt-0.5 flex flex-col items-center">
                   {isLearned ? (
-                    <span className="text-[10px] font-bold px-1.5 py-0.2 rounded-full bg-primary/10 text-primary">
+                    <span className="text-xs font-bold px-1.5 py-0.2 rounded-full bg-primary/10 text-primary">
                       Đã học
                     </span>
                   ) : (
-                    <span className="text-[10px] text-muted-foreground">
+                    <span className="text-xs text-muted-foreground">
                       {lesson ? `Bài ${lesson}` : 'N5'}
                     </span>
                   )}

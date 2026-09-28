@@ -403,7 +403,7 @@ function PracticeConfigContent() {
   };
 
   return (
-    <main className="mx-auto max-w-xl space-y-4 px-4 py-6 pb-28 sm:pb-12">
+    <main className="mx-auto w-full max-w-xl lg:max-w-2xl space-y-4 px-4 py-6 pb-28 sm:pb-12">
       <h1 className="font-heading text-xl font-medium">Luyện tập</h1>
 
       {/* 1. Banner nháp đang dở nếu có (ưu tiên) */}
@@ -674,7 +674,7 @@ export default function PracticeConfigPage() {
   return (
     <Suspense
       fallback={
-        <main className="mx-auto max-w-xl space-y-4 px-4 py-6">
+        <main className="mx-auto w-full max-w-xl lg:max-w-2xl space-y-4 px-4 py-6">
           <Skeleton className="h-8 w-32" />
           <Skeleton className="h-44 w-full rounded-2xl" />
         </main>

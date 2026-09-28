@@ -113,7 +113,7 @@ export function KanaChart() {
                   {group.columns.map((col) => (
                     <div
                       key={col}
-                      className="text-center text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-muted-foreground/80 py-0.5"
+                      className="text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground/80 py-0.5"
                     >
                       {col}
                     </div>
@@ -166,7 +166,7 @@ export function KanaChart() {
                             >
                               {cell.kana}
                             </span>
-                            <span className="text-[10px] sm:text-xs text-muted-foreground font-medium mt-1 leading-none">
+                            <span className="text-xs text-muted-foreground font-medium mt-1 leading-none">
                               {cell.romaji}
                               {cell.altRomaji ? ` (${cell.altRomaji})` : ''}
                             </span>

@@ -2,8 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Settings, TrendingUp, BarChart3 } from 'lucide-react';
-import { buttonVariants } from '@/components/ui/button';
+import { TrendingUp, BarChart3 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export default function CaNhanLayout({
@@ -17,35 +16,12 @@ export default function CaNhanLayout({
   const isTienDo = !isThongKe && (pathname === '/ca-nhan' || pathname.startsWith('/ca-nhan'));
 
   return (
-    <main className="mx-auto w-full max-w-5xl px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8 pb-32 sm:pb-20">
-      {/* 1. Header Trang Cá Nhân */}
-      <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div className="space-y-1">
-          <div className="flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
-            <span>Hồ sơ học tập</span>
-          </div>
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-            Cá nhân
-          </h1>
-          <p className="text-sm text-muted-foreground">
-            Tiến trình học tập, thống kê chi tiết và tài khoản cá nhân.
-          </p>
-        </div>
-
-        {/* Lối phụ sang Cài đặt & Dữ liệu */}
-        <div className="flex items-center gap-2 self-start sm:self-auto">
-          <Link
-            href="/cai-dat"
-            className={cn(
-              buttonVariants({ variant: 'outline', size: 'sm' }),
-              'min-h-[44px] sm:min-h-9 px-3.5 rounded-xl border-border/80 gap-2 text-xs sm:text-sm font-medium hover:border-primary/40'
-            )}
-            aria-label="Đến Cài đặt & Dữ liệu"
-          >
-            <Settings className="size-4 text-muted-foreground" />
-            <span>Cài đặt & Dữ liệu</span>
-          </Link>
-        </div>
+    <main className="mx-auto w-full max-w-5xl px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8">
+      {/* 1. Header Trang Cá Nhân (Cài đặt nằm ở thanh đầu toàn cục) */}
+      <header>
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+          Cá nhân
+        </h1>
       </header>
 
       {/* 2. URL Tabs: Tiến độ vs Thống kê */}

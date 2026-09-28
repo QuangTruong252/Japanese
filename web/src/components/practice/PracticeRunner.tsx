@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Check, Pause, Play, X } from 'lucide-react';
+import { Check, Lightbulb, Pause, Play, X } from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
 import { Button } from '@/components/ui/button';
 import {
@@ -569,14 +569,17 @@ export function PracticeRunner({
                       )}
                       <div>
                         <span className="text-muted-foreground">Đáp án đúng: </span>
-                        <span className="jp jp-vocab font-medium text-foreground">
-                          {correctAnswerText}
-                        </span>
+                        <Furigana
+                          text={correctAnswerText}
+                          zoomable={false}
+                          className="jp-vocab font-medium text-foreground"
+                        />
                       </div>
                       {currentHint && (
-                        <div className="mt-2 rounded-lg border border-warning/40 bg-warning/10 p-2.5 text-xs text-warning-foreground">
-                          💡 {currentHint}
-                        </div>
+                        <p className="mt-2 flex items-start gap-2 rounded-lg border border-info/30 bg-info/10 p-2.5 text-xs text-foreground">
+                          <Lightbulb className="mt-px size-3.5 shrink-0 text-info" aria-hidden="true" />
+                          <span><span className="font-semibold">Gợi ý:</span> {currentHint}</span>
+                        </p>
                       )}
                     </div>
                   )}
@@ -614,7 +617,17 @@ export function PracticeRunner({
               Bạn có thể lưu lại tiến độ để học tiếp sau, hoặc bỏ phiên để xóa dữ liệu làm dở.
             </AlertDialogDescription>
           </AlertDialogHeader>
+          {/* Bỏ phiên tách khỏi cặp chính: cuối cột trên mobile, sát trái trên desktop */}
           <AlertDialogFooter className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+            <Button
+              type="button"
+              variant="ghost"
+              size="quiz"
+              className="w-full text-destructive hover:bg-destructive/10 hover:text-destructive sm:mr-auto sm:w-auto"
+              onClick={handleDiscardAndExit}
+            >
+              Bỏ phiên
+            </Button>
             <AlertDialogCancel
               size="quiz"
               className="w-full sm:w-auto"
@@ -622,15 +635,6 @@ export function PracticeRunner({
             >
               Tiếp tục làm
             </AlertDialogCancel>
-            <Button
-              type="button"
-              variant="outline"
-              size="quiz"
-              className="w-full text-destructive hover:bg-destructive/10 hover:text-destructive sm:w-auto"
-              onClick={handleDiscardAndExit}
-            >
-              Bỏ phiên
-            </Button>
             <AlertDialogAction
               size="quiz"
               className="w-full sm:w-auto"

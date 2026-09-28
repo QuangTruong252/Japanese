@@ -120,23 +120,26 @@ export const generateQuestions = (
       const targetId = `vocab-${pad2(lessonNum)}-${pad2(idx + 1)}`;
       const strippedWord = stripFurigana(word.word);
 
-      // 1.1 MC Reading: prompt = stripped kanji, options = kana
-      const readingDistractors = pickDistractors(
-        { kana: word.kana, type: word.type, stripped: strippedWord },
-        allVocabCandidates,
-        3
-      );
-      questions.push({
-        id: `mc-read-${targetId}`,
-        type: 'mc',
-        lesson: lessonNum,
-        auxiliaryLessons: [lessonNum],
-        targetId,
-        prompt: strippedWord,
-        context: 'Chọn cách đọc đúng của từ',
-        options: [word.kana, ...readingDistractors].sort(),
-        answer: word.kana,
-      });
+      // 1.1 MC Reading: prompt = stripped kanji, options = kana.
+      // Từ không có kanji thì đề bài chính là đáp án, nên bỏ qua.
+      if (containsKanji(strippedWord)) {
+        const readingDistractors = pickDistractors(
+          { kana: word.kana, type: word.type, stripped: strippedWord },
+          allVocabCandidates,
+          3
+        );
+        questions.push({
+          id: `mc-read-${targetId}`,
+          type: 'mc',
+          lesson: lessonNum,
+          auxiliaryLessons: [lessonNum],
+          targetId,
+          prompt: strippedWord,
+          context: 'Chọn cách đọc đúng của từ',
+          options: [word.kana, ...readingDistractors].sort(),
+          answer: word.kana,
+        });
+      }
 
       // 1.2 MC Meaning: prompt = word with furigana, options = meaning.vi
       const otherMeanings = allMeaningCandidates

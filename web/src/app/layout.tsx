@@ -33,12 +33,15 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: getFOUCScriptContent() }} />
       </head>
       <body
-        className="min-h-full flex flex-col bg-background text-foreground font-sans overflow-x-hidden"
+        className="h-dvh flex flex-col bg-background text-foreground font-sans overflow-hidden"
         suppressHydrationWarning
       >
         <AppNav />
         <SearchDialog />
-        <div className="flex-1 flex flex-col min-w-0 max-w-full overflow-x-clip pb-28 sm:pb-32 lg:pb-0 lg:pl-64">
+        <div
+          id="app-scroll-container"
+          className="flex-1 flex flex-col min-w-0 max-w-full overflow-y-auto overflow-x-clip scrollbar-none pb-28 sm:pb-32 lg:pb-0 lg:pl-64 overscroll-y-contain"
+        >
           <PageTransition>{children}</PageTransition>
         </div>
       </body>

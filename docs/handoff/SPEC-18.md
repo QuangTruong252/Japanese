@@ -164,3 +164,30 @@ Chưa nghiệm thu browser — chờ coordinator.
 ### 4. Giới hạn & Phần chưa kiểm chứng
 Chưa nghiệm thu browser — chờ coordinator.
 
+
+---
+
+## 2026-09-28 — Lượt sửa theo critique UI (impeccable, 26/40)
+
+Nguồn: `.impeccable/critique/2026-09-28T07-08-44Z__web-src-app.md`.
+
+### Quyết định
+- Chữ trên nền tint `bg-*/10` dùng `text-foreground`; `*-foreground` chỉ trên nền đặc (DESIGN.md). Gợi ý sau câu sai chuyển sang token `info` + icon `Lightbulb`.
+- Không sinh `mc-read-*` cho từ không có kanji (đề trùng đáp án). Nháp cũ lưu nguyên câu hỏi nên vẫn khôi phục được.
+- "Đáp án đúng" (Luyện, Ôn, màn kết quả) render qua `Furigana`, hết lộ ngoặc `漢字[かんじ]` ở câu ghép cặp/sắp xếp.
+- `/hoc/[so]`: bỏ thanh nhảy nhanh sticky (ngoài SPEC-18 §3, trùng hub, dùng blur) và nút "Học từ vựng bài này" lặp CTA.
+- Hộp thoại thoát: "Bỏ phiên" là ghost, tách khỏi cặp chính (cuối cột mobile, sát trái desktop). Màn kết quả: 2 nút chính + hàng ghost "Về bài / Về trang chủ".
+- Bảng tin: bỏ eyebrow Sparkles và shadow, hiện `jpTitle` bài đang học (`jp-quiz`/`jp-example`), Kana chỉ còn 1 lối vào, "cần củng cố" dùng tông trung tính, `max-w-3xl`. Giữ đồng hồ đếm giây (người dùng chọn).
+- Sàn chữ 12px: 74 chỗ `text-[10|11px]` → `text-xs`. `rt` có sàn 11px nhân `--furigana-scale`. `AnswerOption` chỉ dùng font Nhật khi chuỗi có kana/kanji (`containsJapanese` mới trong `japanese.ts`).
+- Progress fill animate `scaleX` (`ui/progress.tsx`, `LessonGrid`, `ShadowingPlayer`). Bỏ `backdrop-blur` header mobile, màu thô ở `/cai-dat/audio` → token status, bỏ `pb-32` chồng ở `ca-nhan/layout.tsx`.
+
+### Kiểm tra
+- `pnpm check` đạt; `pnpm test` 267/267 (thêm test `mc-read` cho từ kana và `containsJapanese`).
+- Browser (dev 3100, sáng): `/`, `/hoc`, `/hoc/1`, `/luyen-tap` ở 1280 và 390; đo tương phản banner/gợi ý mới (chữ L≈7 trên nền L≈98).
+
+### Chưa kiểm chứng
+- Giao diện tối; banner mất mạng thật; luồng trả lời sai thật (gợi ý, đáp án furigana) và hộp thoại thoát trên thiết bị chạm.
+- Progress `scaleX` qua Base UI Indicator: kiểm tra thanh trên `/ca-nhan`, `/cai-dat/audio` hiển thị đúng tỉ lệ.
+- (Bổ sung cùng ngày) Hành động toàn cục chuyển vào shell `AppNav`, trang không tự đặt lại: mobile header có Tìm kiếm · Giao diện · Cài đặt · Tài khoản (icon, 44px); desktop có Tìm kiếm + Giao diện dưới logo sidebar, Cài đặt ở đáy. Gỡ các nút này khỏi header `/`, `/hoc`, `/hoc/[so]`, `/hoc/tra-cuu`, `/hoc/tra-cuu/kana` (giữ ô tìm kiếm nội dung của Tra cứu). Cập nhật DESIGN.md "The two shells"/"The secondary surface". Kiểm tra: `pnpm check`, ảnh 320/390px và 1280px.
+- (Bổ sung cùng ngày) `/ca-nhan`: bỏ nút Cài đặt (đã có ở header toàn cục), header chỉ còn "Cá nhân". Thẻ tài khoản gộp thành một hàng; nút "Đăng nhập bằng Google" luôn hiện (outline), bị vô hiệu kèm lý do khi thiếu `NEXT_PUBLIC_SUPABASE_*`. Empty state gọn, sửa `<Link><Button>` lồng nhau. Chưa kiểm luồng đăng nhập thật (máy dev không có `.env.local`).
+- (Bổ sung cùng ngày) Lỗi width co theo nội dung: `#app-scroll-container` là flex-col và `PageTransition` là `display: contents`, nên `<main class="mx-auto max-w-*">` thiếu `w-full` bị co. Thêm `w-full` cho 13 `<main>` (Luyện tập, Tra cứu, Bài N, Kết quả, Ôn…); `/luyen-tap` rộng `max-w-2xl` từ `lg`. Đo: 390px → 390, 1280px → 672 ở cả trạng thái mở/ẩn tùy chỉnh.

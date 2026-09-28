@@ -2,6 +2,7 @@
 
 import { Check, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { containsJapanese } from '@/lib/japanese';
 
 export type AnswerOptionState = 'idle' | 'selected' | 'correct' | 'incorrect';
 
@@ -53,7 +54,17 @@ export function AnswerOption({
           {index}
         </span>
       )}
-      <span className="jp jp-vocab flex-1">{children}</span>
+      {/* Đáp án nghĩa tiếng Việt dùng font giao diện; chữ Nhật mới dùng bậc jp-vocab */}
+      <span
+        className={cn(
+          'flex-1',
+          typeof children === 'string' && !containsJapanese(children)
+            ? 'text-lg'
+            : 'jp jp-vocab',
+        )}
+      >
+        {children}
+      </span>
       {state === 'correct' && (
         <>
           <Check className="text-success size-5 shrink-0" />

@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ChevronLeft, Info } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
-import { ThemeToggle } from '@/components/ThemeToggle';
-import { SearchTrigger } from '@/components/search/SearchTrigger';
 import { KanaChart } from './KanaChart';
 import { cn } from '@/lib/utils';
 
@@ -14,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function KanaPage() {
   return (
-    <main className="mx-auto max-w-2xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24">
+    <main className="mx-auto w-full max-w-2xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24">
       {/* 1. Header & Điều hướng quay lại */}
       <header className="space-y-4">
         <Link
@@ -36,11 +34,6 @@ export default function KanaPage() {
             <p className="text-sm text-muted-foreground">
               Hiragana & Katakana cho người mới bắt đầu.
             </p>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <ThemeToggle className="size-11 sm:size-12 rounded-xl" />
-            <SearchTrigger iconOnly />
           </div>
         </div>
       </header>

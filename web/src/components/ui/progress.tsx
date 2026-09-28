@@ -7,18 +7,27 @@ function Progress({
   className,
   children,
   value,
+  min = 0,
+  max = 100,
   ...props
 }: ProgressPrimitive.Root.Props) {
+  // DESIGN.md: progress fill chỉ animate scaleX, không animate width
+  const ratio =
+    value == null || max <= min ? 0 : Math.min(1, Math.max(0, (value - min) / (max - min)))
   return (
     <ProgressPrimitive.Root
       value={value}
+      min={min}
+      max={max}
       data-slot="progress"
       className={cn("flex flex-wrap gap-3", className)}
       {...props}
     >
       {children}
       <ProgressTrack>
-        <ProgressIndicator />
+        <ProgressIndicator
+          style={{ width: "100%", transform: `scaleX(${ratio})` }}
+        />
       </ProgressTrack>
     </ProgressPrimitive.Root>
   )
@@ -44,7 +53,7 @@ function ProgressIndicator({
   return (
     <ProgressPrimitive.Indicator
       data-slot="progress-indicator"
-      className={cn("h-full bg-primary transition-[width] duration-250 ease-smooth-out", className)}
+      className={cn("h-full origin-left bg-primary transition-transform duration-250 ease-smooth-out", className)}
       {...props}
     />
   )

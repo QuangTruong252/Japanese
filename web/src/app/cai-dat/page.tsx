@@ -471,7 +471,7 @@ export default function SettingsPage() {
           className={cn(
             'flex items-center gap-3 rounded-xl border p-4 text-sm transition',
             notification.type === 'success'
-              ? 'border-success/30 bg-success/10 text-success-foreground'
+              ? 'border-success/30 bg-success/10 text-foreground'
               : 'border-destructive/30 bg-destructive/10 text-destructive',
           )}
         >
@@ -912,7 +912,7 @@ export default function SettingsPage() {
                   <Download className="size-4" />
                   Sao lưu dữ liệu (tải file)
                 </Button>
-                <p className="text-[11px] text-muted-foreground">
+                <p className="text-xs text-muted-foreground">
                   Gồm tiến độ ôn tập và lịch sử luyện tập. Không gồm audio.
                 </p>
               </div>
@@ -928,7 +928,7 @@ export default function SettingsPage() {
                   <Upload className="size-4" />
                   Khôi phục từ bản sao lưu
                 </Button>
-                <p className="text-[11px] text-muted-foreground">
+                <p className="text-xs text-muted-foreground">
                   Khôi phục hoặc gộp tiến độ từ bản sao lưu đã xuất trước đó.
                 </p>
                 <input

@@ -14,7 +14,7 @@ export default function ReferenceTablesIndexPage() {
   const docs = getAllReferenceDocs();
 
   return (
-    <main className="mx-auto max-w-3xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24">
+    <main className="mx-auto w-full max-w-3xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24">
       {/* 1. Header & Điều hướng quay lại */}
       <header className="space-y-4">
         <Link

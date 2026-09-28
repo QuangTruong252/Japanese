@@ -248,7 +248,7 @@ export function VerbTable({ verbs }: VerbTableProps) {
                         <Furigana text={mainVerb} className="font-bold text-base text-foreground" />
                         <span
                           className={cn(
-                            'text-[10px] font-bold px-2 py-0.5 rounded-md inline-block',
+                            'text-xs font-bold px-2 py-0.5 rounded-md inline-block',
                             v.group === 1 && 'bg-verb-1/15 text-verb-1',
                             v.group === 2 && 'bg-verb-2/15 text-verb-2',
                             v.group === 3 && 'bg-verb-3/15 text-verb-3'
@@ -277,35 +277,35 @@ export function VerbTable({ verbs }: VerbTableProps) {
                   {/* Dòng 3: 5 thể chia hiện gọn gàng bên dưới theo lưới 2-3 cột nhỏ */}
                   <div className="pt-2 border-t border-border/50 grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
                     <div className="bg-muted/40 p-2 rounded-xl space-y-0.5">
-                      <span className="text-[10px] font-semibold text-muted-foreground block">ます</span>
+                      <span className="text-xs font-semibold text-muted-foreground block">ます</span>
                       <span lang="ja" className="font-jp font-medium text-foreground text-xs sm:text-sm block">
                         {v.masu}
                       </span>
                     </div>
 
                     <div className="bg-muted/40 p-2 rounded-xl space-y-0.5">
-                      <span className="text-[10px] font-semibold text-muted-foreground block">て</span>
+                      <span className="text-xs font-semibold text-muted-foreground block">て</span>
                       <span lang="ja" className="font-jp font-medium text-foreground text-xs sm:text-sm block">
                         {v.te}
                       </span>
                     </div>
 
                     <div className="bg-muted/40 p-2 rounded-xl space-y-0.5">
-                      <span className="text-[10px] font-semibold text-muted-foreground block">Từ điển</span>
+                      <span className="text-xs font-semibold text-muted-foreground block">Từ điển</span>
                       <span lang="ja" className="font-jp font-bold text-foreground text-xs sm:text-sm block">
                         {v.dictionary}
                       </span>
                     </div>
 
                     <div className="bg-muted/40 p-2 rounded-xl space-y-0.5">
-                      <span className="text-[10px] font-semibold text-muted-foreground block">ない</span>
+                      <span className="text-xs font-semibold text-muted-foreground block">ない</span>
                       <span lang="ja" className="font-jp font-medium text-foreground text-xs sm:text-sm block">
                         {v.nai ?? '—'}
                       </span>
                     </div>
 
                     <div className="bg-muted/40 p-2 rounded-xl space-y-0.5 col-span-2 sm:col-span-1">
-                      <span className="text-[10px] font-semibold text-muted-foreground block">た</span>
+                      <span className="text-xs font-semibold text-muted-foreground block">た</span>
                       <span lang="ja" className="font-jp font-medium text-foreground text-xs sm:text-sm block">
                         {v.ta}
                       </span>
@@ -375,14 +375,14 @@ export function VerbTable({ verbs }: VerbTableProps) {
                             <div className="space-y-1">
                               <Furigana text={mainVerb} className="font-bold text-sm sm:text-base text-foreground" />
                               {colocation && (
-                                <span className="text-[11px] text-muted-foreground block font-normal leading-tight">
+                                <span className="text-xs text-muted-foreground block font-normal leading-tight">
                                   （{colocation}）
                                 </span>
                               )}
                               <div>
                                 <span
                                   className={cn(
-                                    'text-[10px] font-bold px-1.5 py-0.2 rounded-md inline-block',
+                                    'text-xs font-bold px-1.5 py-0.2 rounded-md inline-block',
                                     v.group === 1 && 'bg-verb-1/15 text-verb-1',
                                     v.group === 2 && 'bg-verb-2/15 text-verb-2',
                                     v.group === 3 && 'bg-verb-3/15 text-verb-3'

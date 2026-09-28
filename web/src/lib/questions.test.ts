@@ -146,6 +146,33 @@ test('generateQuestions memo hóa kết quả theo tập bài học', () => {
   assert.equal(q3.length, q1.length);
 });
 
+test('không sinh câu hỏi cách đọc cho từ không có kanji (đề bài trùng đáp án)', () => {
+  clearQuestionsCache();
+  const mockLessons: Lesson[] = [
+    { level: 'n5', number: 2, title: { vi: 'Bài 2' }, description: { vi: 'Mô tả' }, grammar: [] },
+  ];
+  const mockVocab = new Map<number, VocabWord[]>([
+    [
+      2,
+      [
+        { id: '02-01', lesson: 2, word: 'いいえ', kana: 'いいえ', meaning: { vi: 'không' }, type: 'expression' },
+        { id: '02-02', lesson: 2, word: 'テレビ', kana: 'テレビ', meaning: { vi: 'ti vi' }, type: 'noun' },
+        { id: '02-03', lesson: 2, word: '本[ほん]', kana: 'ほん', meaning: { vi: 'sách' }, type: 'noun' },
+      ],
+    ],
+  ]);
+  const questions = generateQuestions(mockLessons, mockVocab);
+
+  assert.equal(questions.find((q) => q.id === 'mc-read-vocab-02-01'), undefined);
+  assert.equal(questions.find((q) => q.id === 'mc-read-vocab-02-02'), undefined);
+  // Từ có kanji vẫn có câu cách đọc; từ kana vẫn còn câu nghĩa.
+  assert.ok(questions.find((q) => q.id === 'mc-read-vocab-02-03'));
+  assert.ok(questions.find((q) => q.id === 'mc-mean-vocab-02-01'));
+  for (const q of questions.filter((q) => q.id.startsWith('mc-read-'))) {
+    assert.notEqual(q.prompt, q.answer);
+  }
+});
+
 test('sinh câu hỏi MC Đọc và Nghĩa từ động từ sử dụng thể từ điển và đáp án kana từ điển', () => {
   const mockLessons: Lesson[] = [
     {

@@ -67,6 +67,11 @@ export function containsKanji(text: string): boolean {
   return KANJI_CHAR.test(text);
 }
 
+/** Có kana hoặc chữ Hán: dùng để chọn font Nhật cho chuỗi có thể là tiếng Việt */
+export function containsJapanese(text: string): boolean {
+  return containsKanji(text) || [...text].some((ch) => wanakana.isKana(ch));
+}
+
 /**
  * Chuẩn hóa input câu trả lời người dùng:
  * - Chuyển Romaji sang Hiragana qua wanakana

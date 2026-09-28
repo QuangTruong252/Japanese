@@ -57,7 +57,7 @@ export function SearchTrigger({
             {placeholder}
           </span>
         </div>
-        <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-md border border-border/80 bg-muted/60 text-[11px] font-mono text-muted-foreground">
+        <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-md border border-border/80 bg-muted/60 text-xs font-mono text-muted-foreground">
           <span>Ctrl</span>
           <span>K</span>
         </kbd>

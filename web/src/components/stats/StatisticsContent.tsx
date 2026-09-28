@@ -403,7 +403,7 @@ export function StatisticsContent() {
                 <div className="inline-flex flex-col gap-1.5 min-w-max">
                   {/* Nhãn các thứ trong tuần */}
                   <div className="flex gap-2">
-                    <div className="flex flex-col justify-between text-[10px] text-muted-foreground h-[134px] py-0.5 select-none w-6">
+                    <div className="flex flex-col justify-between text-xs text-muted-foreground h-[134px] py-0.5 select-none w-6">
                       <span>T2</span>
                       <span>T4</span>
                       <span>T6</span>
@@ -495,13 +495,13 @@ export function StatisticsContent() {
                   <line x1="30" y1="140" x2="550" y2="140" stroke="currentColor" className="text-border" strokeWidth="1" />
 
                   {/* Nhãn trục Y */}
-                  <text x="24" y="24" textAnchor="end" className="text-[10px] fill-muted-foreground">
+                  <text x="24" y="24" textAnchor="end" className="text-xs fill-muted-foreground">
                     {maxMinutes}p
                   </text>
-                  <text x="24" y="84" textAnchor="end" className="text-[10px] fill-muted-foreground">
+                  <text x="24" y="84" textAnchor="end" className="text-xs fill-muted-foreground">
                     {Math.round(maxMinutes / 2)}p
                   </text>
-                  <text x="24" y="144" textAnchor="end" className="text-[10px] fill-muted-foreground">
+                  <text x="24" y="144" textAnchor="end" className="text-xs fill-muted-foreground">
                     0
                   </text>
 
@@ -538,7 +538,7 @@ export function StatisticsContent() {
                             x={x + colWidth / 2}
                             y={y - 5}
                             textAnchor="middle"
-                            className="text-[10px] font-bold fill-foreground"
+                            className="text-xs font-bold fill-foreground"
                           >
                             {item.value}p
                           </text>
@@ -549,7 +549,7 @@ export function StatisticsContent() {
                           x={x + colWidth / 2}
                           y="156"
                           textAnchor="middle"
-                          className="text-[10px] fill-muted-foreground"
+                          className="text-xs fill-muted-foreground"
                         >
                           {item.label}
                         </text>
@@ -628,13 +628,13 @@ export function StatisticsContent() {
                     <line x1="34" y1="75" x2="590" y2="75" stroke="currentColor" strokeDasharray="3 3" className="text-border/60" strokeWidth="1" />
                     <line x1="34" y1="130" x2="590" y2="130" stroke="currentColor" className="text-border" strokeWidth="1" />
 
-                    <text x="28" y="24" textAnchor="end" className="text-[10px] fill-muted-foreground">
+                    <text x="28" y="24" textAnchor="end" className="text-xs fill-muted-foreground">
                       100%
                     </text>
-                    <text x="28" y="79" textAnchor="end" className="text-[10px] fill-muted-foreground">
+                    <text x="28" y="79" textAnchor="end" className="text-xs fill-muted-foreground">
                       50%
                     </text>
-                    <text x="28" y="134" textAnchor="end" className="text-[10px] fill-muted-foreground">
+                    <text x="28" y="134" textAnchor="end" className="text-xs fill-muted-foreground">
                       0%
                     </text>
 
@@ -692,7 +692,7 @@ export function StatisticsContent() {
                           x={x}
                           y="152"
                           textAnchor="middle"
-                          className="text-[10px] fill-muted-foreground"
+                          className="text-xs fill-muted-foreground"
                         >
                           {item.label}
                         </text>

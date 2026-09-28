@@ -75,7 +75,7 @@ export function SessionResult({
   };
 
   return (
-    <main className="mx-auto max-w-xl space-y-6 px-4 py-8">
+    <main className="mx-auto w-full max-w-xl space-y-6 px-4 py-8">
       <div className="space-y-1 text-center motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3 motion-safe:duration-400 motion-safe:ease-in-out motion-safe:fill-mode-both">
         <h1 className="font-heading text-xl font-medium">
           {isDue ? 'Kết quả ôn tập' : 'Kết quả luyện tập'}
@@ -173,9 +173,11 @@ export function SessionResult({
                   )}
                   <div className="text-sm">
                     <span className="text-muted-foreground">Đáp án đúng: </span>
-                    <span className="jp jp-vocab font-medium text-foreground">
-                      {answerText}
-                    </span>
+                    <Furigana
+                      text={answerText}
+                      zoomable={false}
+                      className="jp-vocab font-medium text-foreground"
+                    />
                   </div>
                   {q.explanationVi && (
                     <p className="text-xs text-muted-foreground">
@@ -209,24 +211,24 @@ export function SessionResult({
         >
           {isDue ? 'Về ôn tập' : 'Luyện tiếp'}
         </Button>
-        {!isDue && (
+        <div className="flex gap-2">
+          {!isDue && (
+            <Button
+              variant="ghost"
+              className="min-h-12 flex-1"
+              onClick={() => router.push(lessonHref)}
+            >
+              {primaryLesson ? `Về bài ${primaryLesson}` : 'Về bài học'}
+            </Button>
+          )}
           <Button
-            size="quiz"
-            variant="outline"
-            className="w-full"
-            onClick={() => router.push(lessonHref)}
+            variant="ghost"
+            className="min-h-12 flex-1"
+            onClick={() => router.push('/')}
           >
-            {primaryLesson ? `Về bài ${primaryLesson}` : 'Về bài học'}
+            Về trang chủ
           </Button>
-        )}
-        <Button
-          size="quiz"
-          variant="outline"
-          className="w-full"
-          onClick={() => router.push('/')}
-        >
-          Về trang chủ
-        </Button>
+        </div>
       </div>
     </main>
   );

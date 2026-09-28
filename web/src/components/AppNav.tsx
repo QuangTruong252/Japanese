@@ -28,6 +28,8 @@ import {
 } from 'lucide-react';
 import { formatNavBadgeCount, isNavActive, shouldHideAppChrome } from '@/lib/nav';
 import { AccountButton } from '@/components/profile/AccountButton';
+import { SearchTrigger } from '@/components/search/SearchTrigger';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { useUIStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
 
@@ -54,6 +56,11 @@ const NAV_ITEMS: NavItem[] = [
   { href: '/on-tap', label: 'Ôn tập', icon: RotateCcw, isDueTarget: true },
   { href: '/hoc/tra-cuu', label: 'Tra cứu', icon: Search },
 ];
+
+// Nút icon trên thanh đầu mobile: vùng chạm 44px, không viền để nhóm bốn nút không nặng
+const HEADER_ICON = 'size-11 sm:size-11 border-transparent bg-transparent shadow-none';
+const HEADER_ICON_BASE =
+  'rounded-xl flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/60 transition outline-none focus-visible:ring-3 focus-visible:ring-ring';
 
 export function AppNav() {
   const pathname = usePathname();
@@ -120,6 +127,7 @@ export function AppNav() {
   }
 
   const isProfileActive = pathname === '/ca-nhan' || pathname.startsWith('/ca-nhan/');
+  const isSettingsActive = pathname === '/cai-dat' || pathname.startsWith('/cai-dat/');
 
   return (
     <>
@@ -128,7 +136,7 @@ export function AppNav() {
           Mở Profile/Thống kê từ cả năm màn chính ở 390px trong một chạm
           ======================================================== */}
       <header
-        className="lg:hidden sticky top-0 z-30 flex items-center justify-between px-4 py-2 bg-background/95 dark:bg-card/95 backdrop-blur-md border-b border-border/70"
+        className="lg:hidden shrink-0 z-30 flex items-center justify-between px-4 pt-[calc(0.5rem+env(safe-area-inset-top,0px))] pb-2 bg-background/95 dark:bg-card/95 border-b border-border/70"
         aria-label="Thanh đầu trang"
       >
         <Link
@@ -151,8 +159,20 @@ export function AppNav() {
           </span>
         </Link>
 
-        {/* Nút Tài khoản góc phải: tối thiểu 48px vùng chạm, duy nhất cho mobile (SPEC-16 B16.1, B16.2) */}
-        <AccountButton variant="header" user={currentUser} />
+        {/* Hành động toàn cục (mobile): Tìm kiếm · Giao diện · Cài đặt · Tài khoản. Trang không tự đặt lại. */}
+        <div className="flex items-center gap-1">
+          <SearchTrigger iconOnly className={HEADER_ICON} />
+          <ThemeToggle className={HEADER_ICON} />
+          <Link
+            href="/cai-dat"
+            aria-label="Cài đặt"
+            aria-current={isSettingsActive ? 'page' : undefined}
+            className={cn(HEADER_ICON_BASE, HEADER_ICON, isSettingsActive && 'text-primary')}
+          >
+            <Settings className="size-5" aria-hidden="true" />
+          </Link>
+          <AccountButton variant="header" showLabel={false} user={currentUser} className="px-2.5" />
+        </div>
       </header>
 
       {/* ========================================================
@@ -196,7 +216,7 @@ export function AppNav() {
                 {showBadge && (
                   <span
                     aria-hidden="true"
-                    className="absolute -top-1.5 -right-2.5 inline-flex items-center justify-center min-w-5 h-4.5 px-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold leading-none shadow-xs"
+                    className="absolute -top-1.5 -right-2.5 inline-flex items-center justify-center min-w-5 h-4.5 px-1 rounded-full bg-primary text-primary-foreground text-xs font-bold leading-none shadow-xs"
                   >
                     {badgeText}
                   </span>
@@ -204,7 +224,7 @@ export function AppNav() {
               </div>
               <span
                 className={cn(
-                  'text-[10px] mt-0.5 tracking-tight font-medium',
+                  'text-xs mt-0.5 tracking-tight font-medium',
                   isActive ? 'text-primary font-semibold' : 'text-muted-foreground'
                 )}
               >
@@ -250,32 +270,35 @@ export function AppNav() {
                   マイペース
                 </span>
               </div>
-              <span className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
+              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                 Minna no Nihongo N5
               </span>
             </div>
           </Link>
 
-          {/* Nút tìm kiếm nhanh Ctrl+K (SPEC-13) */}
-          <button
-            type="button"
-            onClick={openSearch}
-            className={cn(
-              'mt-5 w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium',
-              'border border-border/80 bg-muted/40 text-muted-foreground transition duration-150',
-              'hover:bg-muted/70 hover:text-foreground hover:border-primary/40',
-              'focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/60 cursor-pointer'
-            )}
-            aria-label="Tìm kiếm nội dung (Ctrl+K)"
-          >
-            <div className="flex items-center gap-2.5">
-              <Search className="w-4 h-4 shrink-0 text-muted-foreground" />
-              <span>Tìm kiếm...</span>
-            </div>
-            <kbd className="font-mono text-[10px] px-1.5 py-0.5 rounded border border-border bg-background text-muted-foreground shadow-2xs">
-              ⌘K
-            </kbd>
-          </button>
+          {/* Hành động toàn cục (desktop): Tìm kiếm Ctrl+K (SPEC-13) + Giao diện; Cài đặt ở đáy sidebar */}
+          <div className="mt-5 flex items-center gap-2">
+            <button
+              type="button"
+              onClick={openSearch}
+              className={cn(
+                'min-w-0 flex-1 flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium',
+                'border border-border/80 bg-muted/40 text-muted-foreground transition duration-150',
+                'hover:bg-muted/70 hover:text-foreground hover:border-primary/40',
+                'focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/60 cursor-pointer'
+              )}
+              aria-label="Tìm kiếm nội dung (Ctrl+K)"
+            >
+              <div className="flex items-center gap-2.5">
+                <Search className="w-4 h-4 shrink-0 text-muted-foreground" />
+                <span>Tìm kiếm...</span>
+              </div>
+              <kbd className="font-mono text-xs px-1.5 py-0.5 rounded border border-border bg-background text-muted-foreground shadow-2xs">
+                ⌘K
+              </kbd>
+            </button>
+            <ThemeToggle className="size-11 shrink-0" />
+          </div>
 
           {/* Giữa: 5 tab chính (Bảng tin · Học bài · Luyện tập · Ôn tập · Tra cứu) */}
           <nav className="mt-5 space-y-1" aria-label="Menu chính">
@@ -307,7 +330,7 @@ export function AppNav() {
                   {showBadge && (
                     <span
                       aria-hidden="true"
-                      className="inline-flex items-center justify-center min-w-5 h-5 px-1.5 rounded-full bg-primary text-primary-foreground text-[11px] font-bold shadow-xs"
+                      className="inline-flex items-center justify-center min-w-5 h-5 px-1.5 rounded-full bg-primary text-primary-foreground text-xs font-bold shadow-xs"
                     >
                       {badgeText}
                     </span>
@@ -348,7 +371,7 @@ export function AppNav() {
               <span className="font-medium text-sm truncate">
                 {currentUser?.displayName || 'Cá nhân & Tiến độ'}
               </span>
-              <span className="flex items-center gap-1 text-[11px] text-muted-foreground truncate mt-0.5">
+              <span className="flex items-center gap-1 text-xs text-muted-foreground truncate mt-0.5">
                 {syncResolution.state === 'synced' && (
                   <CloudCheck className="size-3 text-success shrink-0" />
                 )}

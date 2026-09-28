@@ -757,29 +757,29 @@ export function VocabLearningFlow({
 
                       {activeWord.word.verbForms && (
                         <div className="rounded-xl border border-border/70 bg-muted/40 p-3 mb-3 space-y-2">
-                          <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider block">
+                          <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block">
                             Các thể chia cơ bản
                           </span>
                           <div className="grid grid-cols-2 gap-2 text-xs">
                             <div className="flex flex-col">
-                              <span className="text-[10px] text-muted-foreground font-medium">Masu (Lịch sự)</span>
+                              <span className="text-xs text-muted-foreground font-medium">Masu (Lịch sự)</span>
                               <span className="font-semibold text-foreground"><Furigana text={activeWord.word.verbForms.masu} /></span>
                             </div>
                             {activeWord.word.verbForms.te && (
                               <div className="flex flex-col">
-                                <span className="text-[10px] text-muted-foreground font-medium">Te (Nối / Đang làm)</span>
+                                <span className="text-xs text-muted-foreground font-medium">Te (Nối / Đang làm)</span>
                                 <span className="font-semibold text-foreground"><Furigana text={activeWord.word.verbForms.te} /></span>
                               </div>
                             )}
                             {activeWord.word.verbForms.nai && (
                               <div className="flex flex-col">
-                                <span className="text-[10px] text-muted-foreground font-medium">Nai (Phủ định)</span>
+                                <span className="text-xs text-muted-foreground font-medium">Nai (Phủ định)</span>
                                 <span className="font-semibold text-foreground"><Furigana text={activeWord.word.verbForms.nai} /></span>
                               </div>
                             )}
                             {activeWord.word.verbForms.ta && (
                               <div className="flex flex-col">
-                                <span className="text-[10px] text-muted-foreground font-medium">Ta (Quá khứ)</span>
+                                <span className="text-xs text-muted-foreground font-medium">Ta (Quá khứ)</span>
                                 <span className="font-semibold text-foreground"><Furigana text={activeWord.word.verbForms.ta} /></span>
                               </div>
                             )}
@@ -845,7 +845,7 @@ export function VocabLearningFlow({
                           <Icon aria-hidden="true" className="size-6" />
                         </Button>
                         <span className={cn('text-center text-xs leading-tight sm:text-sm', statusClassName)}>{label}</span>
-                        <span className="text-center text-[11px] leading-tight text-muted-foreground">
+                        <span className="text-center text-xs leading-tight text-muted-foreground">
                           Ôn lại {interval}
                         </span>
                       </div>

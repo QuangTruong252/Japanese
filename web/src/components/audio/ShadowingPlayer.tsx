@@ -417,8 +417,8 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
               )}
               {/* Vạch tiến độ đã phát */}
               <div
-                className="h-full bg-primary transition-[width] duration-75"
-                style={{ width: `${progressPercent}%` }}
+                className="h-full w-full origin-left bg-primary transition-transform duration-75"
+                style={{ transform: `scaleX(${progressPercent / 100})` }}
               />
             </div>
 
@@ -428,7 +428,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
                 className="absolute top-0 -translate-x-1/2 flex flex-col items-center pointer-events-none"
                 style={{ left: `${loopAPercent}%` }}
               >
-                <span className="text-[10px] font-bold text-primary leading-none bg-background px-1 py-0.5 rounded border border-primary/40 shadow-xs">
+                <span className="text-xs font-bold text-primary leading-none bg-background px-1 py-0.5 rounded border border-primary/40 shadow-xs">
                   A
                 </span>
                 <span className="w-0.5 h-2 bg-primary mt-0.5" />
@@ -441,7 +441,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
                 className="absolute top-0 -translate-x-1/2 flex flex-col items-center pointer-events-none"
                 style={{ left: `${loopBPercent}%` }}
               >
-                <span className="text-[10px] font-bold text-primary leading-none bg-background px-1 py-0.5 rounded border border-primary/40 shadow-xs">
+                <span className="text-xs font-bold text-primary leading-none bg-background px-1 py-0.5 rounded border border-primary/40 shadow-xs">
                   B
                 </span>
                 <span className="w-0.5 h-2 bg-primary mt-0.5" />
@@ -473,7 +473,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
             className="size-11 rounded-full text-foreground hover:bg-muted/80 relative"
           >
             <RotateCcw className="size-5" />
-            <span className="text-[10px] font-bold absolute mt-0.5">10</span>
+            <span className="text-xs font-bold absolute mt-0.5">10</span>
           </Button>
 
           <Button
@@ -494,7 +494,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
             className="size-11 rounded-full text-foreground hover:bg-muted/80 relative"
           >
             <RotateCw className="size-5" />
-            <span className="text-[10px] font-bold absolute mt-0.5">10</span>
+            <span className="text-xs font-bold absolute mt-0.5">10</span>
           </Button>
         </div>
 
@@ -529,7 +529,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
             onClick={handleSetLoopA}
             className="h-10 gap-1.5 font-medium text-xs border-border/80"
           >
-            <span className="size-4 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-[10px]">
+            <span className="size-4 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
               A
             </span>
             <span>Đặt A</span>
@@ -542,7 +542,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
             onClick={handleSetLoopB}
             className="h-10 gap-1.5 font-medium text-xs border-border/80"
           >
-            <span className="size-4 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-[10px]">
+            <span className="size-4 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
               B
             </span>
             <span>Đặt B</span>

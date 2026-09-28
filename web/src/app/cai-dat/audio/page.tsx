@@ -89,7 +89,7 @@ function AudioPackageGuide() {
         {/* Cấu trúc cây thư mục */}
         <div className="space-y-1.5">
           <div className="font-medium text-foreground text-xs">Cấu trúc thư mục chuẩn:</div>
-          <pre className="p-2.5 rounded-lg bg-card border border-border/60 font-mono text-[11px] leading-relaxed text-foreground overflow-x-auto">
+          <pre className="p-2.5 rounded-lg bg-card border border-border/60 font-mono text-xs leading-relaxed text-foreground overflow-x-auto">
 {`minna-audio/
 ├── L01/
 │   ├── 01_vocab.mp3
@@ -110,7 +110,7 @@ function AudioPackageGuide() {
 
           <div className="mt-3 pt-3 border-t border-border/60 space-y-3">
             <div className="flex items-center justify-between gap-2">
-              <span className="text-[11px] font-mono text-muted-foreground">manifest.json (1 bài, 2 track mẫu)</span>
+              <span className="text-xs font-mono text-muted-foreground">manifest.json (1 bài, 2 track mẫu)</span>
               <Button
                 type="button"
                 variant="outline"
@@ -121,8 +121,8 @@ function AudioPackageGuide() {
               >
                 {copied ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                    <span className="text-emerald-600 dark:text-emerald-400">Đã sao chép</span>
+                    <Check className="w-3.5 h-3.5 text-success" />
+                    <span className="text-success">Đã sao chép</span>
                   </>
                 ) : (
                   <>
@@ -136,13 +136,13 @@ function AudioPackageGuide() {
             <pre
               ref={codeRef}
               tabIndex={0}
-              className="p-2.5 rounded-lg bg-muted/40 border border-border/60 font-mono text-[11px] leading-relaxed text-foreground overflow-x-auto focus:outline-none focus:ring-1 focus:ring-ring"
+              className="p-2.5 rounded-lg bg-muted/40 border border-border/60 font-mono text-xs leading-relaxed text-foreground overflow-x-auto focus:outline-none focus:ring-1 focus:ring-ring"
             >
               {SAMPLE_MANIFEST_JSON}
             </pre>
 
             {/* Chú thích ngắn từng field */}
-            <div className="space-y-1.5 pt-1 text-[11px] border-t border-border/40">
+            <div className="space-y-1.5 pt-1 text-xs border-t border-border/40">
               <div className="font-semibold text-foreground">Chú thích các trường:</div>
               <ul className="space-y-1 text-muted-foreground">
                 {MANIFEST_FIELD_DOCS.map((doc) => (
@@ -275,11 +275,11 @@ export default function AudioSettingsPage() {
           </h2>
           <div className="flex items-center gap-3 text-xs text-muted-foreground">
             <span className="flex items-center gap-1">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-success" />
               <span>Đầy đủ</span>
             </span>
             <span className="flex items-center gap-1">
-              <span className="inline-block w-3.5 h-3.5 rounded-full border border-amber-500 bg-amber-500/30" />
+              <span className="inline-block w-3.5 h-3.5 rounded-full border border-warning bg-warning/30" />
               <span>Thiếu track</span>
             </span>
           </div>
@@ -300,22 +300,22 @@ export default function AudioSettingsPage() {
                   isFull
                     ? 'border-border/80 bg-card text-foreground'
                     : isPartial
-                    ? 'border-amber-500/40 bg-amber-500/5 text-foreground'
+                    ? 'border-warning/40 bg-warning/5 text-foreground'
                     : 'border-dashed border-border/60 bg-muted/20 text-muted-foreground/70'
                 )}
               >
                 <span className="text-sm font-bold">{lessonNum}</span>
                 <div className="mt-1 h-5 flex items-center justify-center">
                   {isFull && (
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                    <CheckCircle2 className="w-4 h-4 text-success" />
                   )}
                   {isPartial && (
-                    <span className="text-[10px] font-semibold text-amber-600 dark:text-amber-400 leading-tight">
+                    <span className="text-xs font-semibold text-warning leading-tight">
                       {trackCount}/4
                     </span>
                   )}
                   {trackCount === 0 && (
-                    <span className="text-[10px] text-muted-foreground/50">
+                    <span className="text-xs text-muted-foreground/50">
                       0/4
                     </span>
                   )}

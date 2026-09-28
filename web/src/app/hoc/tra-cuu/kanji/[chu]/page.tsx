@@ -55,7 +55,7 @@ export default async function KanjiDetailPage({
   const hasUnverified = kanji.examples.some((ex) => !isExampleVerified(ex));
 
   return (
-    <main className="mx-auto max-w-2xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24">
+    <main className="mx-auto w-full max-w-2xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24">
       {/* 1. Breadcrumb quay lại */}
       <header>
         <Link
@@ -179,7 +179,7 @@ export default async function KanjiDetailPage({
                         <span className="text-muted-foreground">{ex.meaning.vi}</span>
                       ) : (
                         <span className="inline-flex items-center gap-1.5 flex-wrap">
-                          <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300">
+                          <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300">
                             Chưa dịch
                           </span>
                         </span>
@@ -225,7 +225,7 @@ export default async function KanjiDetailPage({
                   <div className="space-y-1 min-w-0">
                     <div className="flex items-center gap-2">
                       <Furigana text={w.word} className="text-base font-bold" />
-                      <span className="text-[10px] font-semibold px-2 py-0.2 rounded-full bg-muted text-muted-foreground border border-border">
+                      <span className="text-xs font-semibold px-2 py-0.2 rounded-full bg-muted text-muted-foreground border border-border">
                         Bài {w.lesson}
                       </span>
                     </div>
@@ -273,7 +273,7 @@ export default async function KanjiDetailPage({
                       <span className="font-jp text-xs font-semibold text-foreground block">
                         {simData?.kunyomi[0] ?? simData?.onyomi[0] ?? ''}
                       </span>
-                      <span className="text-[11px] text-muted-foreground block line-clamp-1">
+                      <span className="text-xs text-muted-foreground block line-clamp-1">
                         {simData?.meanings.vi[0] ?? ''}
                       </span>
                     </div>

@@ -66,7 +66,7 @@ export function DailyKanji() {
             <Sparkles className="w-3.5 h-3.5 text-primary" />
             <span className="uppercase tracking-wider">Kanji hôm nay · N5</span>
           </div>
-          <span className="text-[11px] font-medium text-muted-foreground px-2 py-0.5 rounded-full bg-muted border border-border/60">
+          <span className="text-xs font-medium text-muted-foreground px-2 py-0.5 rounded-full bg-muted border border-border/60">
             {kanji.strokes} nét
           </span>
         </div>
@@ -98,7 +98,7 @@ export function DailyKanji() {
         {/* Ví dụ từ ghép tiêu biểu */}
         {examples.length > 0 && (
           <div className="pt-2 border-t border-border/60 space-y-2">
-            <div className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
+            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
               Từ ghép tiêu biểu
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -110,7 +110,7 @@ export function DailyKanji() {
                   <div className="font-medium">
                     <Furigana text={ex.word} className="text-sm font-semibold" />
                   </div>
-                  <span className="text-[11px] text-muted-foreground mt-0.5 truncate">
+                  <span className="text-xs text-muted-foreground mt-0.5 truncate">
                     {ex.meaning?.vi ?? ''}
                   </span>
                 </div>

@@ -16,6 +16,11 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
 
   useLayoutEffect(() => {
     document.documentElement.style.setProperty('--nav-dir', String(navDirection(prev.current, pathname)));
+    if (prev.current !== pathname) {
+      if (typeof window !== 'undefined' && !window.location.hash) {
+        document.getElementById('app-scroll-container')?.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      }
+    }
     prev.current = pathname;
   }, [pathname]);
 

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ChevronRight, Table2 } from 'lucide-react';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
-import { ThemeToggle } from '@/components/ThemeToggle';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -29,7 +28,7 @@ export default function TraCuuHubPage() {
       subtitle: '169 chữ N5 · Âm On, Kun, số nét và từ ghép',
       icon: (
         <div className="flex flex-col items-center justify-center font-jp leading-none select-none">
-          <span className="text-[10px] text-muted-foreground mb-0.5">ひと</span>
+          <span className="text-xs text-muted-foreground mb-0.5">ひと</span>
           <span className="text-2xl font-bold text-foreground">人</span>
         </div>
       ),
@@ -40,7 +39,7 @@ export default function TraCuuHubPage() {
       subtitle: '156 động từ · 5 thể chia: ます, て, từ điển, ない, た',
       icon: (
         <div className="flex flex-col items-center justify-center font-jp leading-none select-none">
-          <span className="text-[10px] text-muted-foreground mb-0.5">い</span>
+          <span className="text-xs text-muted-foreground mb-0.5">い</span>
           <span className="text-xl font-bold text-foreground">行く</span>
         </div>
       ),
@@ -54,7 +53,7 @@ export default function TraCuuHubPage() {
   ];
 
   return (
-    <main className="mx-auto max-w-2xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24">
+    <main className="mx-auto w-full max-w-2xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24">
       {/* 1. Header Hub Tra cứu (SPEC-17 §3, B17.1: đích dock cấp một, không có breadcrumb về Học bài) */}
       <header className="space-y-4">
         <div className="flex items-center justify-between">
@@ -65,9 +64,6 @@ export default function TraCuuHubPage() {
             <p className="text-sm text-muted-foreground">
               Tra cứu nhanh bảng chữ cái, chữ Hán, động từ và các bảng tham chiếu ngữ pháp.
             </p>
-          </div>
-          <div className="flex items-center gap-2">
-            <ThemeToggle className="size-11 sm:size-12 rounded-xl" />
           </div>
         </div>
       </header>

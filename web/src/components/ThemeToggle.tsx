@@ -78,7 +78,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       )}
     >
       {isDark ? (
-        <Sun className="size-4 text-amber-500 fill-amber-500/20 transition-transform duration-200 hover:rotate-45 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:zoom-in-50 motion-safe:duration-250 motion-safe:ease-in-out" />
+        <Sun className="size-4 text-foreground transition-transform duration-200 hover:rotate-45 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:zoom-in-50 motion-safe:duration-250 motion-safe:ease-in-out" />
       ) : (
         <Moon className="size-4 text-muted-foreground transition-transform duration-200 hover:-rotate-12 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:zoom-in-50 motion-safe:duration-250 motion-safe:ease-in-out" />
       )}

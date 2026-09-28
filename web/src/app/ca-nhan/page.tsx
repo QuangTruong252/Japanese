@@ -17,8 +17,8 @@ import {
   triggerSync,
 } from '@/lib/sync';
 import { createClient, isSupabaseConfigured } from '@/lib/supabase/client';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Skeleton } from '@/components/ui/skeleton';
 import {
@@ -42,7 +42,6 @@ import {
   LogOut,
   RefreshCw,
   RotateCcw,
-  Sparkles,
   TriangleAlert,
   User,
 } from 'lucide-react';
@@ -76,6 +75,18 @@ function GoogleIcon(props: React.SVGProps<SVGSVGElement>) {
       />
     </svg>
   );
+}
+
+function SyncIcon({ state }: { state: string }) {
+  if (state === 'synced') return <CloudCheck className="size-3.5 shrink-0 text-success" aria-hidden="true" />;
+  if (state === 'pending' || state === 'syncing')
+    return (
+      <CloudUpload
+        className={cn('size-3.5 shrink-0 text-warning', state === 'syncing' && 'animate-spin')}
+        aria-hidden="true"
+      />
+    );
+  return <CloudOff className="size-3.5 shrink-0 text-muted-foreground" aria-hidden="true" />;
 }
 
 export default function CaNhanPage() {
@@ -251,7 +262,7 @@ export default function CaNhanPage() {
           className={cn(
             'flex items-center justify-between gap-3 rounded-xl border p-4 text-sm transition',
             notification.type === 'success'
-              ? 'border-success/30 bg-success/10 text-success-foreground'
+              ? 'border-success/30 bg-success/10 text-foreground'
               : 'border-destructive/30 bg-destructive/10 text-destructive',
           )}
         >
@@ -269,99 +280,28 @@ export default function CaNhanPage() {
       {/* ========================================================
           1. THẺ TÀI KHOẢN & ĐỒNG BỘ
           ======================================================== */}
-      <Card className="relative overflow-hidden">
-        <CardHeader className="pb-3">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-            <div>
-              <CardTitle className="font-heading text-lg font-semibold text-foreground">
-                Tài khoản & Đồng bộ
-              </CardTitle>
-              <CardDescription>
-                {currentUser
-                  ? 'Đồng bộ tiến độ an toàn giữa các thiết bị với Supabase.'
-                  : 'Tiến độ học tập luôn được lưu trữ an toàn trên thiết bị này.'}
-              </CardDescription>
-            </div>
-
-            {/* Trạng thái Sync Badge */}
-            <div className="self-start sm:self-auto">
-              <div
-                className={cn(
-                  'inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border select-none',
-                  syncResolution.state === 'synced' && 'bg-success/10 text-success border-success/20',
-                  syncResolution.state === 'pending' && 'bg-warning/10 text-warning border-warning/20',
-                  syncResolution.state === 'syncing' && 'bg-warning/10 text-warning border-warning/20 animate-pulse',
-                  (syncResolution.state === 'offline' || syncResolution.state === 'unconfigured') &&
-                    'bg-muted text-muted-foreground border-border'
-                )}
-              >
-                {syncResolution.state === 'synced' && <CloudCheck className="size-3.5 shrink-0" />}
-                {(syncResolution.state === 'pending' || syncResolution.state === 'syncing') && (
-                  <CloudUpload className={cn('size-3.5 shrink-0', syncResolution.state === 'syncing' && 'animate-spin')} />
-                )}
-                {(syncResolution.state === 'offline' || syncResolution.state === 'unconfigured') && (
-                  <CloudOff className="size-3.5 shrink-0" />
-                )}
-                <span>{syncResolution.label}</span>
-              </div>
-            </div>
-          </div>
-        </CardHeader>
-
-        <CardContent className="space-y-4 pt-1">
+      <Card className="py-0">
+        <CardContent className="space-y-4 p-4 sm:p-5">
           {isCheckingSession ? (
-            <div className="flex items-center gap-3 py-2">
+            <div className="flex items-center gap-3">
               <Skeleton className="size-11 rounded-full" />
               <div className="space-y-1.5 flex-1">
                 <Skeleton className="h-4 w-40" />
                 <Skeleton className="h-3 w-60" />
               </div>
             </div>
-          ) : !isSupabaseConfigured() ? (
-            <div className="rounded-xl bg-muted/40 p-4 border border-border/60 space-y-1">
-              <p className="text-sm font-medium text-foreground">
-                Đồng bộ chưa khả dụng trên bản này
-              </p>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Ứng dụng đang hoạt động ở chế độ lưu máy (offline-first). Toàn bộ dữ liệu bài học, lịch ôn và thống kê vẫn được bảo toàn trọn vẹn trong trình duyệt của bạn.
-              </p>
-            </div>
-          ) : !currentUser ? (
-            <div className="space-y-3">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-xl bg-muted/40 border border-border/60">
-                <div className="space-y-1">
-                  <p className="text-sm font-medium text-foreground">
-                    Tiến độ trên máy này
-                  </p>
-                  <p className="text-xs text-muted-foreground max-w-md leading-relaxed">
-                    Đăng nhập bằng tài khoản Google để đồng bộ tiến độ học sang điện thoại hoặc máy tính khác bất cứ lúc nào.
-                  </p>
-                </div>
-                <Button
-                  type="button"
-                  variant="secondary"
-                  size="quiz"
-                  onClick={handleGoogleSignIn}
-                  disabled={isLoggingIn}
-                  className="gap-2.5 min-h-[48px] px-5 shrink-0 cursor-pointer shadow-xs"
-                >
-                  <GoogleIcon className="size-4 shrink-0" />
-                  <span>{isLoggingIn ? 'Đang kết nối…' : 'Đăng nhập bằng Google'}</span>
-                </Button>
-              </div>
-            </div>
-          ) : (
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-xl bg-muted/30 border border-border/60">
-              <div className="flex items-center gap-3.5">
+          ) : currentUser ? (
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-3.5 min-w-0">
                 {currentUser.avatarUrl ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
                   <img
                     src={currentUser.avatarUrl}
-                    alt={currentUser.displayName || 'Avatar'}
+                    alt=""
                     className="size-11 rounded-full border border-border object-cover shrink-0"
                   />
                 ) : (
-                  <div className="size-11 rounded-full bg-primary/10 text-primary flex items-center justify-center font-medium shrink-0">
+                  <div className="size-11 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
                     <User className="size-5" />
                   </div>
                 )}
@@ -369,26 +309,23 @@ export default function CaNhanPage() {
                   <p className="text-sm font-semibold text-foreground truncate">
                     {currentUser.displayName}
                   </p>
-                  <p className="text-xs text-muted-foreground truncate">
-                    {currentUser.email}
+                  <p className="flex items-center gap-1 text-xs text-muted-foreground truncate">
+                    <SyncIcon state={syncResolution.state} />
+                    <span className="truncate">{syncResolution.label}</span>
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 self-end sm:self-auto">
+              <div className="flex items-center gap-2">
                 <Button
                   type="button"
                   variant="secondary"
-                  size="sm"
-                  className="gap-1.5 min-h-[40px] px-3.5 cursor-pointer"
+                  className="gap-1.5 min-h-11 px-3.5 cursor-pointer"
                   onClick={() => triggerSync()}
                   disabled={syncEngineStatus.state === 'syncing'}
                 >
                   <RefreshCw
-                    className={cn(
-                      'size-3.5',
-                      syncEngineStatus.state === 'syncing' && 'animate-spin',
-                    )}
+                    className={cn('size-3.5', syncEngineStatus.state === 'syncing' && 'animate-spin')}
                   />
                   <span>
                     {syncEngineStatus.state === 'syncing' ? 'Đang đồng bộ…' : 'Đồng bộ ngay'}
@@ -396,15 +333,39 @@ export default function CaNhanPage() {
                 </Button>
                 <Button
                   type="button"
-                  variant="outline"
-                  size="sm"
-                  className="gap-1.5 min-h-[40px] px-3.5 cursor-pointer hover:text-destructive hover:border-destructive/40"
+                  variant="ghost"
+                  className="gap-1.5 min-h-11 px-3.5 cursor-pointer text-muted-foreground hover:text-destructive"
                   onClick={() => setLogoutConfirmOpen(true)}
                 >
                   <LogOut className="size-3.5" />
                   <span>Đăng xuất</span>
                 </Button>
               </div>
+            </div>
+          ) : (
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="space-y-1">
+                <p className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
+                  <SyncIcon state={syncResolution.state} />
+                  <span>Chỉ lưu trên máy này</span>
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {isSupabaseConfigured()
+                    ? 'Đăng nhập để đồng bộ tiến độ sang thiết bị khác.'
+                    : 'Bản này chưa cấu hình đồng bộ (Supabase) nên chưa đăng nhập được. Tiến độ vẫn lưu an toàn trên máy.'}
+                </p>
+              </div>
+              <Button
+                type="button"
+                variant="outline"
+                size="quiz"
+                onClick={handleGoogleSignIn}
+                disabled={isLoggingIn || !isSupabaseConfigured()}
+                className="gap-2.5 px-5 shrink-0 cursor-pointer"
+              >
+                <GoogleIcon className="size-4 shrink-0" />
+                <span>{isLoggingIn ? 'Đang kết nối…' : 'Đăng nhập bằng Google'}</span>
+              </Button>
             </div>
           )}
         </CardContent>
@@ -414,27 +375,23 @@ export default function CaNhanPage() {
           2. TIẾN ĐỘ HỌC TẬP CỤC BỘ TRÊN MÁY
           ======================================================== */}
       {isGuestEmpty ? (
-        <Card className="border-dashed py-12 px-6 text-center">
+        <Card className="py-8 px-6 text-center">
           <CardContent className="max-w-md mx-auto space-y-4 p-0">
-            <div className="size-14 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center">
-              <BookOpen className="size-7" />
-            </div>
             <div className="space-y-1.5">
               <h2 className="text-lg font-semibold text-foreground">
-                Tiến độ bằng 0
+                Chưa có tiến độ
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Bạn chưa bắt đầu bài học nào trên thiết bị này. Bắt đầu ngay với Bài 1 để khám phá từ vựng và ngữ pháp tiếng Nhật cơ bản!
+                Học từ vựng Bài 1 để bắt đầu ghi lại tiến độ trên máy này.
               </p>
             </div>
-            <div className="pt-2">
-              <Link href="/hoc/1">
-                <Button size="quiz" className="gap-2 min-h-[48px] px-6 cursor-pointer">
-                  <Sparkles className="size-4" />
-                  <span>Bắt đầu Bài 1</span>
-                </Button>
-              </Link>
-            </div>
+            <Link
+              href="/hoc/1"
+              className={cn(buttonVariants({ size: 'quiz' }), 'gap-2 px-6')}
+            >
+              <BookOpen className="size-4" aria-hidden="true" />
+              <span>Bắt đầu Bài 1</span>
+            </Link>
           </CardContent>
         </Card>
       ) : (
@@ -587,7 +544,7 @@ export default function CaNhanPage() {
                   Bạn có chắc chắn muốn đăng xuất khỏi tài khoản <strong>{currentUser?.email}</strong>?
                 </p>
                 {totalPending > 0 ? (
-                  <div className="rounded-lg bg-warning/10 border border-warning/20 p-3 text-xs text-warning-foreground space-y-1">
+                  <div className="rounded-lg bg-warning/10 border border-warning/20 p-3 text-xs text-foreground space-y-1">
                     <p className="font-semibold text-warning">
                       Bạn có {totalPending} mục chưa đồng bộ lên máy chủ!
                     </p>
