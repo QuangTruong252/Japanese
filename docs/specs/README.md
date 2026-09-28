@@ -36,17 +36,17 @@ Phạm vi brand/agent riêng theo [handoff MaiPace](../handoff/MAIPACE.md).
 Khi làm xong một phần, cập nhật hàng tương ứng và handoff với ngày, kiểm tra
 đã chạy, giới hạn và bước tiếp theo. Không đổi trạng thái phần chưa được kiểm tra.
 
-## Kế hoạch UX 27/09/2026 — chưa triển khai
+## Kế hoạch UX 27/09/2026 — đã có code, nghiệm thu một phần 28/09
 
-[Kế hoạch tổng](../plans/2026-09-27-ux-redesign.md) dựa trên [quan sát luồng và ảnh minh họa](../research/ux-redesign/2026-09-27-mobile-learning-flows.md). Các spec dưới đây mô tả **thay đổi dự kiến**, không xác nhận tính năng đã có code hoặc nghiệm thu. `DESIGN.md` vẫn mô tả dock hiện tại cho đến khi mốc 1 sửa hợp đồng toàn cục cùng code.
+[Kế hoạch tổng](../plans/2026-09-27-ux-redesign.md) dựa trên [quan sát luồng và ảnh minh họa](../research/ux-redesign/2026-09-27-mobile-learning-flows.md). Code nằm trên branch `ux-redesign` (chưa merge `master`). Kết quả từng mục, lỗi còn mở và phần chưa kiểm chứng: [bộ nghiệm thu](../handoff/UX-REDESIGN-ACCEPTANCE.md) §6.
 
-| Mốc | Spec đề xuất | Phạm vi và phụ thuộc |
+| Mốc | Spec | Trạng thái 28/09/2026 |
 | --- | --- | --- |
-| 1 | [SPEC-16 — Điều hướng và Profile](SPEC-16-dieu-huong-profile.md) | Profile/Thống kê hoạt động trước khi đổi mục dock thứ năm sang Tra cứu; đồng bộ DESIGN + SPEC-02/07/08 |
-| 2 | [SPEC-17 — Tra cứu và tìm kiếm](SPEC-17-tra-cuu-tim-kiem.md) | Hub một chạm, đích tính năng trong kết quả tìm kiếm; giữ URL Tra cứu hiện có |
-| 3 | [SPEC-18 — Bảng tin và Học](SPEC-18-bang-tin-va-hoc.md) | Việc tiếp theo, bài học dạng hub, giữ anchor bài và nội dung tham khảo |
-| 4 | [SPEC-19 — Luyện tập nhanh](SPEC-19-luyen-tap-nhanh.md) | Bắt đầu cấu hình hợp lệ trên màn đầu, giữ nháp/preset/5 dạng |
-| 5 | [SPEC-20 — Ôn tập](SPEC-20-on-tap-tiep-noi.md) | Tiếp lô, trạng thái rỗng đúng nghĩa, giữ FSRS và Điểm yếu riêng |
+| 1 | [SPEC-16 — Điều hướng và Profile](SPEC-16-dieu-huong-profile.md) | Browser PASS trừ đăng nhập/đăng xuất thật (không có Supabase) |
+| 2 | [SPEC-17 — Tra cứu và tìm kiếm](SPEC-17-tra-cuu-tim-kiem.md) | Browser PASS; lỗi cũ: notation thô ở mô tả kết quả ngữ pháp |
+| 3 | [SPEC-18 — Bảng tin và Học](SPEC-18-bang-tin-va-hoc.md) | Browser PASS sau sửa thứ tự nháp; chưa thử bài thiếu audio |
+| 4 | [SPEC-19 — Luyện tập nhanh](SPEC-19-luyen-tap-nhanh.md) | Browser PASS; chưa chạy riêng từng dạng trong 5 dạng |
+| 5 | [SPEC-20 — Ôn tập](SPEC-20-on-tap-tiep-noi.md) | Browser PASS sau sửa nhãn số đến hạn; chưa thử hạn mức, không giọng, Điểm yếu |
 
 [Handoff kế hoạch](../handoff/UX-REDESIGN-PLAN.md) ghi rõ phần chưa kiểm chứng. Khi triển khai từng mốc, cập nhật spec hiện hành tương ứng và tạo handoff nghiệm thu riêng, không dùng bản kế hoạch thay cho kết quả kiểm thử.
 

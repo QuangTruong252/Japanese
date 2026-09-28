@@ -98,3 +98,57 @@ iOS/Android thật. Ghi `unverifiable` với lý do; không suy ra đạt.
 | Đợt | Ngày | Phạm vi | Kết quả | Ghi chú |
 | --- | --- | --- | --- | --- |
 | Baseline | 28/09/2026 | §0 | S1 FAIL, S2 PASS | Quan sát 390/1280 trên `:3100` |
+| Tích hợp | 28/09/2026 | Branch `ux-redesign` (W1–W4 + sửa coordinator, HEAD `d1a3aff`) | S1–S5 PASS | `pnpm check` exit 0, `pnpm test` 252/252, `pnpm build` exit 0 |
+| Browser | 28/09/2026 | Chrome headless (agent-browser), `:3100`, 390×844 + 1280×800, dark + light/reduced-motion; dữ liệu khách tạo bằng luồng thật, `dueAt` chỉnh qua IndexedDB | Xem §6 | Supabase unconfigured |
+
+## 6. Kết quả browser 28/09/2026
+
+PASS = đã chạy và đạt; PARTIAL = đạt phần đã chạy, còn nhánh chưa thử; NOT RUN = chưa chạy.
+
+| Mục | Kết quả | Bằng chứng / ghi chú |
+| --- | --- | --- |
+| B16.1 | PASS | 390: một nút Tài khoản ở header AppNav (Bảng tin, Tra cứu, Luyện, Ôn, Profile); 1280: chỉ ở chân sidebar |
+| B16.2 | PASS | Nút cao 48px, nhãn chữ, `aria-current="page"` trên `/ca-nhan/**` |
+| B16.3 | PASS | Không có header/dock trong `/hoc/1/tu-vung`, `/luyen-tap/phien`, `/on-tap/phien` |
+| B16.4 | PASS | `/hoc/tra-cuu` → Tra cứu active; `/` → Bảng tin; Ôn tập active trên `/on-tap` |
+| B16.5 | PASS | `/thong-ke?x=1` → `/ca-nhan/thong-ke?x=1` |
+| B16.6 | PARTIAL | Khách rỗng và unconfigured đúng; đăng nhập/đăng xuất chưa kiểm vì không có Supabase |
+| B16.7 | PASS | Không nhắc streak; CTA “Bắt đầu Bài 1” |
+| B17.1 | PASS | Hub không còn link “Học bài”; 4 danh mục |
+| B17.2 | PASS | `thong ke`/`tra cuu`/`dong tu` trả nhóm Tính năng trước; `watashi`/`tôi` trả 私 |
+| B17.3 | PASS | Mở bằng nút → Esc trả focus về nút; phím ↓ hoạt động |
+| B17.4 | PASS | `/hoc/tra-cuu/dong-tu?q=taberu`, `/hoc/1#tu-vung` tải đúng |
+| B18.1 | PASS | Người mới: 1 CTA “Bắt đầu bài 1” → `/hoc/1`; lời chào đủ ngang ở 390 |
+| B18.2 | PASS sau sửa | Có mục đến hạn → CTA “Bắt đầu ôn”; nháp Học từ/Luyện hiện đúng bài và vị trí (Bài 1, câu 3/10). Lỗi: khối nháp nằm **trên** P0 → coordinator chuyển xuống dưới (`d1a3aff`) |
+| B18.3 | PASS | CTA “Học từ vựng” 48px; lối Xem toàn bộ/Ngữ pháp/Nghe/Luyện bài 1; anchor `#tu-vung #ngu-phap #nghe`, 41 `#vocab-*`, 6 `#grammar-*` |
+| B18.4 | PARTIAL | Nháp từ vựng hiện “Đang ở từ 1/5”; chưa thử bài thiếu audio |
+| B19.1 | PASS | CTA “Bắt đầu 15 câu” 48px, đáy tại y=286 trên 844 |
+| B19.2 | PASS | `?lessons=3` → “Sẵn sàng luyện Bài 3” |
+| B19.3 | PASS | Tùy chỉnh mở/đóng, `aria-pressed`, đổi 30 câu cập nhật tóm tắt, “Xong” trả focus về nút Tùy chỉnh |
+| B19.4 | PASS | Bỏ hết bài → CTA disabled + lý do (`role=alert`, `aria-describedby`) |
+| B19.5 | PASS | Nháp: banner “Tiếp tục phiên” ưu tiên; tiếp tục đúng câu 3/10 |
+| B19.6 | PARTIAL | Kết quả có “Làm lại câu sai / Luyện tiếp / Về bài 1”; chưa chạy riêng từng dạng trong 5 dạng (Bài 1 không có câu Sắp xếp) |
+| B20.1 | PASS sau sửa | Badge = `/on-tap` = Profile = Bảng tin (lô + còn lại). Lỗi: `/on-tap` ghi số trong lô là “mục đến hạn” → sửa dùng `totalDueCount` (`73c0eb5`) |
+| B20.2 | PASS | Lô 5: “Ôn lô tiếp (5 mục)” → lô mới đúng 1/5 |
+| B20.3 | PARTIAL | Rỗng đúng lý do; chưa thử đạt hạn mức / không giọng |
+| B20.4 | PASS | Lưu nháp ôn câu 1/5 → thẻ “Phiên ôn tập đang dở” → tiếp tục đúng câu 2/5 |
+| B20.5 | NOT RUN | Điểm yếu chỉ kiểm bằng code review |
+| BX.1 | PARTIAL | Focus ring có trên mọi phần tử đã Tab; trên mobile dock đứng trước nội dung chính, chưa có skip link |
+| BX.2 | PASS | `prefers-reduced-motion` được áp dụng, panel Tùy chỉnh dùng `motion-safe:` |
+| BX.3 | PASS | Luyện tập light/dark, Bảng tin/Ôn dark: không màu lệch |
+| BX.4 | PASS | Đệm đáy đủ, dock không che CTA chính |
+| BX.5 | PASS | Không lỗi React/hydration; chỉ cảnh báo tỉ lệ ảnh logo (có từ trước) |
+| J1 | PASS | Bảng tin → Bài 1 → Học từ → Luyện Bài 1 (10 câu) → Ôn (lô 5 + lô tiếp) |
+| J2 | PASS | Có mục đến hạn + nháp → Bảng tin chọn đúng lối; Profile đếm 10 mục đến hạn |
+| J3 | NOT RUN | Tra Kanji giữa phiên |
+| J4 | PARTIAL | Offline trong tab mở: hoàn tất lô ôn, sessions 2→3, pendingSync 2→3; online lại không tăng trùng. Đẩy lên Supabase thật: unverifiable |
+| J5 | PASS | `/thong-ke`, `/hoc/tra-cuu/kanji`, `/hoc/1#tu-vung`, `dong-tu?q=` |
+
+### Lỗi còn mở (không chặn, đề xuất đợt sau)
+
+1. SearchDialog: mô tả kết quả ngữ pháp lộ notation thô `私[わたし]に` (có từ trước redesign, dữ liệu `g.title.vi`).
+2. `/on-tap`: “N kết quả ôn đang chờ đồng bộ lên máy chủ” hiện cả khi Supabase chưa cấu hình.
+3. Sidebar desktop: mục Ôn tập đang active chỉ còn chấm đỏ, mất số.
+4. Nháp luyện trên Bảng tin dẫn `/luyen-tap`, cần thêm một chạm “Tiếp tục phiên”.
+5. Thống kê rỗng dựa trên số phiên; người chỉ học flashcard vẫn thấy “Bắt đầu Bài 1”.
+6. `/on-tap` có cả thẻ “Tiếp tục phiên ôn” và nút “Bắt đầu ôn” cùng mức primary khi có nháp.
