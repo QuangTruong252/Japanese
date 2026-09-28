@@ -1,0 +1,4 @@
+editor_files:
+  agents_md: true
+commit_limit: 500
+embedder: mock

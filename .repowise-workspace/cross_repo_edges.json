@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "generated_at": "2026-09-28T03:25:18.337051+00:00",
+  "co_changes": [],
+  "package_deps": [],
+  "package_diagnostics": [],
+  "repo_summaries": {
+    "japanese": {
+      "cross_repo_edge_count": 0,
+      "package_diagnostics_emitted": 0,
+      "package_diagnostic_codes": []
+    },
+    "noken": {
+      "cross_repo_edge_count": 0,
+      "package_diagnostics_emitted": 0,
+      "package_diagnostic_codes": []
+    }
+  },
+  "total_co_changes": 0,
+  "total_package_diagnostics": 0
+}

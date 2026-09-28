@@ -1,0 +1,259 @@
+{
+  "version": 13,
+  "generated_at": "2026-09-28T03:25:19.670866+00:00",
+  "contracts": [
+    {
+      "repo": "japanese",
+      "contract_id": "http::GET::/status",
+      "contract_type": "http",
+      "role": "consumer",
+      "file_path": ".agents/skills/impeccable/scripts/live-browser.js",
+      "symbol_name": "fetch:GET http://localhost:${PORT}/status?token=${TOKEN}",
+      "confidence": 0.85,
+      "line": 11069,
+      "symbol_id": ".agents/skills/impeccable/scripts/live-browser.js::fetchAgentPollingStatus",
+      "meta": {
+        "method": "GET",
+        "path": "/status",
+        "client": "fetch",
+        "extraction_layer": "index"
+      }
+    },
+    {
+      "repo": "japanese",
+      "contract_id": "http::GET::/design-system.json",
+      "contract_type": "http",
+      "role": "consumer",
+      "file_path": ".agents/skills/impeccable/scripts/live-browser.js",
+      "symbol_name": "fetch:GET http://localhost:${PORT}/design-system.json?token=${TOKEN}",
+      "confidence": 0.85,
+      "line": 12227,
+      "symbol_id": ".agents/skills/impeccable/scripts/live-browser.js::fetchDesignSystem",
+      "meta": {
+        "method": "GET",
+        "path": "/design-system.json",
+        "client": "fetch",
+        "extraction_layer": "index"
+      }
+    },
+    {
+      "repo": "japanese",
+      "contract_id": "http::GET::/design-system/raw",
+      "contract_type": "http",
+      "role": "consumer",
+      "file_path": ".agents/skills/impeccable/scripts/live-browser.js",
+      "symbol_name": "fetch:GET http://localhost:${PORT}/design-system/raw?token=${TOKEN}",
+      "confidence": 0.85,
+      "line": 12228,
+      "symbol_id": ".agents/skills/impeccable/scripts/live-browser.js::fetchDesignSystem",
+      "meta": {
+        "method": "GET",
+        "path": "/design-system/raw",
+        "client": "fetch",
+        "extraction_layer": "index"
+      }
+    },
+    {
+      "repo": "japanese",
+      "contract_id": "http::PUT::/json/new",
+      "contract_type": "http",
+      "role": "consumer",
+      "file_path": "scripts/capture-all-screens.mjs",
+      "symbol_name": "fetch:PUT http://127.0.0.1:9222/json/new?http://localhost:3000",
+      "confidence": 0.85,
+      "line": 117,
+      "meta": {
+        "method": "PUT",
+        "path": "/json/new",
+        "client": "fetch",
+        "host": "127.0.0.1",
+        "extraction_layer": "index"
+      }
+    },
+    {
+      "repo": "japanese",
+      "contract_id": "http::GET::/auth/callback",
+      "contract_type": "http",
+      "role": "provider",
+      "file_path": "web/src/app/auth/callback/route.ts",
+      "symbol_name": "next-app:GET /auth/callback",
+      "confidence": 0.85,
+      "service": "web",
+      "line": 4,
+      "symbol_id": "web/src/app/auth/callback/route.ts::GET",
+      "meta": {
+        "method": "GET",
+        "path": "/auth/callback",
+        "framework": "next-app",
+        "extraction_layer": "regex"
+      }
+    },
+    {
+      "repo": "japanese",
+      "contract_id": "http::GET::/luyen-tap/phien",
+      "contract_type": "http",
+      "role": "consumer",
+      "file_path": "web/src/app/luyen-tap/page.tsx",
+      "symbol_name": "fetch:GET /luyen-tap/phien",
+      "confidence": 0.75,
+      "service": "web",
+      "line": 36,
+      "symbol_id": "web/src/app/luyen-tap/page.tsx::PracticeConfigContent",
+      "meta": {
+        "method": "GET",
+        "path": "/luyen-tap/phien",
+        "client": "fetch",
+        "extraction_layer": "regex"
+      }
+    },
+    {
+      "repo": "japanese",
+      "contract_id": "http::GET::/luyen-tap/phien",
+      "contract_type": "http",
+      "role": "consumer",
+      "file_path": "web/src/app/luyen-tap/page.tsx",
+      "symbol_name": "wrapper:GET /luyen-tap/phien",
+      "confidence": 0.65,
+      "service": "web",
+      "line": 36,
+      "symbol_id": "web/src/app/luyen-tap/page.tsx::PracticeConfigContent",
+      "meta": {
+        "method": "GET",
+        "path": "/luyen-tap/phien",
+        "client": "wrapper",
+        "extraction_layer": "regex"
+      }
+    },
+    {
+      "repo": "japanese",
+      "contract_id": "http::GET::/on-tap/phien",
+      "contract_type": "http",
+      "role": "consumer",
+      "file_path": "web/src/app/on-tap/page.tsx",
+      "symbol_name": "fetch:GET /on-tap/phien",
+      "confidence": 0.75,
+      "service": "web",
+      "line": 75,
+      "symbol_id": "web/src/app/on-tap/page.tsx::ReviewTodayPage",
+      "meta": {
+        "method": "GET",
+        "path": "/on-tap/phien",
+        "client": "fetch",
+        "extraction_layer": "regex"
+      }
+    },
+    {
+      "repo": "japanese",
+      "contract_id": "http::GET::/on-tap/phien",
+      "contract_type": "http",
+      "role": "consumer",
+      "file_path": "web/src/app/on-tap/page.tsx",
+      "symbol_name": "wrapper:GET /on-tap/phien",
+      "confidence": 0.65,
+      "service": "web",
+      "line": 75,
+      "symbol_id": "web/src/app/on-tap/page.tsx::ReviewTodayPage",
+      "meta": {
+        "method": "GET",
+        "path": "/on-tap/phien",
+        "client": "wrapper",
+        "extraction_layer": "regex"
+      }
+    },
+    {
+      "repo": "japanese",
+      "contract_id": "http::GET::/luyen-tap",
+      "contract_type": "http",
+      "role": "consumer",
+      "file_path": "web/src/components/practice/SessionResult.tsx",
+      "symbol_name": "fetch:GET /luyen-tap",
+      "confidence": 0.75,
+      "service": "web",
+      "line": 39,
+      "symbol_id": "web/src/components/practice/SessionResult.tsx::SessionResult",
+      "meta": {
+        "method": "GET",
+        "path": "/luyen-tap",
+        "client": "fetch",
+        "extraction_layer": "regex"
+      }
+    },
+    {
+      "repo": "japanese",
+      "contract_id": "http::GET::/luyen-tap",
+      "contract_type": "http",
+      "role": "consumer",
+      "file_path": "web/src/components/practice/SessionResult.tsx",
+      "symbol_name": "wrapper:GET /luyen-tap",
+      "confidence": 0.65,
+      "service": "web",
+      "line": 39,
+      "symbol_id": "web/src/components/practice/SessionResult.tsx::SessionResult",
+      "meta": {
+        "method": "GET",
+        "path": "/luyen-tap",
+        "client": "wrapper",
+        "extraction_layer": "regex"
+      }
+    },
+    {
+      "repo": "japanese",
+      "contract_id": "data::profiles",
+      "contract_type": "data",
+      "role": "provider",
+      "file_path": "supabase/migrations/0001_init.sql",
+      "symbol_name": "sql-ddl:public.profiles",
+      "confidence": 0.85,
+      "meta": {
+        "table": "profiles",
+        "framework": "sql-ddl",
+        "schema": "create",
+        "extraction_layer": "regex"
+      }
+    },
+    {
+      "repo": "japanese",
+      "contract_id": "data::review_items",
+      "contract_type": "data",
+      "role": "provider",
+      "file_path": "supabase/migrations/0001_init.sql",
+      "symbol_name": "sql-ddl:public.review_items",
+      "confidence": 0.85,
+      "meta": {
+        "table": "review_items",
+        "framework": "sql-ddl",
+        "schema": "create",
+        "extraction_layer": "regex"
+      }
+    }
+  ],
+  "contract_links": [],
+  "extraction_stats": {
+    "japanese": {
+      "files_walked": 374,
+      "walks": 1,
+      "openapi_providers": 0,
+      "code_unpublished_manifest": 1,
+      "code_consumer_imports": 0
+    },
+    "noken": {
+      "files_walked": 286,
+      "walks": 1,
+      "openapi_providers": 0,
+      "code_unpublished_manifest": 1,
+      "code_consumer_imports": 0
+    }
+  },
+  "repo_provenance": {
+    "japanese": {
+      "head": "f780ef0137f8b68a43b4761c8a8963564b4531c1",
+      "extracted_at": "2026-09-28T03:25:19.670866+00:00",
+      "config_fp": "0a7bdab6ba3563c6"
+    },
+    "noken": {
+      "head": "7bce8b226572c503839acecddb0fa50e4051ef7d",
+      "extracted_at": "2026-09-28T03:25:19.670866+00:00",
+      "config_fp": "0a7bdab6ba3563c6"
+    }
+  }
+}
