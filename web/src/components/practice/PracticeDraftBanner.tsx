@@ -10,6 +10,7 @@ import {
   getPracticeDraftSnapshot,
   subscribePracticeDraft,
 } from '@/lib/practice-draft';
+import { getActivePracticeDraftInfo } from '@/lib/active-drafts';
 
 export default function PracticeDraftBanner() {
   const router = useRouter();
@@ -26,13 +27,16 @@ export default function PracticeDraftBanner() {
     () => null,
   );
 
-  if (!mounted || !draft || draft.currentIndex >= draft.questions.length) {
+  // Nháp ôn và nháp luyện dùng chung một khóa lưu: nháp ôn dẫn về phiên ôn.
+  const info = getActivePracticeDraftInfo(draft);
+  if (!mounted || !info) {
     return null;
   }
+  const isReview = info.label === 'Ôn tập';
 
   const handleResume = () => {
     clearNewSessionRequest();
-    router.push('/luyen-tap/phien');
+    router.push(info.resumeHref);
   };
 
   const handleDiscard = () => {
@@ -51,10 +55,12 @@ export default function PracticeDraftBanner() {
         </div>
         <div>
           <p className="text-sm font-semibold text-foreground">
-            Bạn còn phiên dở: câu {draft.currentIndex + 1}/{draft.questions.length}
+            Bạn còn {isReview ? 'phiên ôn tập' : 'phiên'} dở: câu {info.currentQuestionIndex}/{info.totalQuestions}
           </p>
           <p className="text-xs text-muted-foreground">
-            Tiếp tục bài làm hoặc xóa bỏ để bắt đầu mới
+            {isReview
+              ? 'Luyện phiên mới sẽ thay thế phiên ôn này. Hãy ôn xong trước, hoặc bỏ nháp.'
+              : 'Tiếp tục bài làm hoặc xóa bỏ để bắt đầu mới'}
           </p>
         </div>
       </div>
@@ -66,7 +72,7 @@ export default function PracticeDraftBanner() {
           className="flex-1 sm:flex-initial"
           onClick={handleResume}
         >
-          Tiếp tục phiên
+          {isReview ? 'Tiếp tục phiên ôn' : 'Tiếp tục phiên'}
         </Button>
         <Button
           type="button"

@@ -29,3 +29,10 @@ Ngày: 27/09/2026. Trạng thái: **đã có kế hoạch/spec nháp; chưa sử
 - Browser 390/1280 trên dev server MaiPace `:3100` (`:3000` trên máy này là Repowise): kết quả chi tiết, 6 lỗi còn mở và phần chưa chạy ở bộ nghiệm thu §6.
 - Chưa kiểm chứng: Supabase thật (đăng nhập, đẩy pendingSync, đổi tài khoản), iOS/Android thật, J3, B20.5, từng dạng trong 5 dạng, hạn mức mục mới và máy không có giọng ja-JP.
 - Bước tiếp: người dùng review branch `ux-redesign` rồi quyết định merge; sửa 6 lỗi còn mở; thử với người học theo mục 3 ở trên.
+
+## Đợt 28/09/2026 — sửa lỗi còn mở và merge
+
+- Giao W6/W7/W8 (Antigravity) sửa lỗi #2–#6. W5 (#1) hỏng `agent_readiness` hai lần nên coordinator tự sửa. Coordinator sửa thêm: nháp ôn bị gọi là nháp luyện trên Bảng tin và `/luyen-tap` (hai loại nháp dùng chung một khóa lưu).
+- Kiểm browser từng lỗi và cả nhánh “Luyện bài N” của Thống kê rỗng: xem [bộ nghiệm thu](UX-REDESIGN-ACCEPTANCE.md) §6.
+- Gate: `pnpm check` exit 0, `pnpm test` 265/265, `pnpm build` exit 0. Merge `ux-redesign` → `master` (không push).
+- Vẫn chưa kiểm chứng: Supabase thật, iOS/Android thật, J3, B20.5, từng dạng trong 5 dạng, hạn mức mục mới và máy không có giọng ja-JP. Bước tiếp: thử với người học (mục 3 ở trên).

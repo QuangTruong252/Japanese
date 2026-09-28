@@ -648,7 +648,7 @@ function PracticeConfigContent() {
           <AlertDialogHeader>
             <AlertDialogTitle>Bắt đầu phiên luyện tập mới?</AlertDialogTitle>
             <AlertDialogDescription>
-              Bạn đang có một phiên luyện dở dang (câu{' '}
+              Bạn đang có một {draft?.config?.mode === 'due' ? 'phiên ôn tập' : 'phiên luyện'} dở dang (câu{' '}
               {draft ? draft.currentIndex + 1 : 1}/{draft?.questions.length ?? 0}
               ). Bắt đầu mới sẽ thay thế và xóa bỏ bài làm dở này.
             </AlertDialogDescription>

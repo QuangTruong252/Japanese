@@ -36,9 +36,9 @@ Phạm vi brand/agent riêng theo [handoff MaiPace](../handoff/MAIPACE.md).
 Khi làm xong một phần, cập nhật hàng tương ứng và handoff với ngày, kiểm tra
 đã chạy, giới hạn và bước tiếp theo. Không đổi trạng thái phần chưa được kiểm tra.
 
-## Kế hoạch UX 27/09/2026 — đã có code, nghiệm thu một phần 28/09
+## Kế hoạch UX 27/09/2026 — đã merge `master`, nghiệm thu browser 28/09
 
-[Kế hoạch tổng](../plans/2026-09-27-ux-redesign.md) dựa trên [quan sát luồng và ảnh minh họa](../research/ux-redesign/2026-09-27-mobile-learning-flows.md). Code nằm trên branch `ux-redesign` (chưa merge `master`). Kết quả từng mục, lỗi còn mở và phần chưa kiểm chứng: [bộ nghiệm thu](../handoff/UX-REDESIGN-ACCEPTANCE.md) §6.
+[Kế hoạch tổng](../plans/2026-09-27-ux-redesign.md) dựa trên [quan sát luồng và ảnh minh họa](../research/ux-redesign/2026-09-27-mobile-learning-flows.md). Branch `ux-redesign` đã merge vào `master` ngày 28/09/2026; 6 lỗi của đợt nghiệm thu đầu đã sửa và kiểm browser. Kết quả từng mục và phần chưa kiểm chứng: [bộ nghiệm thu](../handoff/UX-REDESIGN-ACCEPTANCE.md) §6.
 
 | Mốc | Spec | Trạng thái 28/09/2026 |
 | --- | --- | --- |

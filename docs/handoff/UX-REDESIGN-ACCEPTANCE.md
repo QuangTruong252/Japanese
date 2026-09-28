@@ -159,7 +159,9 @@ Lỗi thêm tìm thấy khi kiểm #4, đã sửa: nháp ôn (`mode: 'due'`) hi�
 
 Gate sau đợt sửa: `pnpm check` exit 0, `pnpm test` 265/265, `pnpm build` exit 0.
 
-### Lỗi còn mở
+### Hai việc còn lại — đã xong ngày 28/09/2026
 
-1. `/luyen-tap` hiện nháp ôn như nháp luyện (“Bạn còn phiên dở: câu 2/5”) vì hai loại nháp dùng chung một khóa lưu và `PracticeDraftBanner` không lọc `mode`. Lỗi có từ trước trên `master`. Hướng sửa: banner bỏ qua nháp `mode: 'due'` hoặc dẫn sang `/on-tap`. Cần quyết định có tách hai khóa lưu hay không.
-2. Nhánh #5 “Luyện bài N” (có tiến độ nhưng không có mục đến hạn) chỉ có unit test, chưa chạy trên browser.
+1. **Nháp ôn hiện trên `/luyen-tap` như nháp luyện** (lỗi có từ trước trên `master`, hai loại nháp dùng chung một khóa lưu). Không “bỏ qua” nháp ôn, vì như vậy bắt đầu phiên luyện sẽ âm thầm ghi đè nó. `PracticeDraftBanner` dùng chung `getActivePracticeDraftInfo` với Bảng tin. Browser: banner ghi “Bạn còn phiên ôn tập dở: câu 2/5 … Luyện phiên mới sẽ thay thế phiên ôn này”; hộp thoại “Bắt đầu 10 câu” gọi đúng “phiên ôn tập”; “Tiếp tục phiên ôn” vào `/on-tap/phien?resume=1` ở câu 2/5. Chưa tách hai khóa lưu: chỉ làm khi thật sự cần giữ song song một nháp luyện và một nháp ôn.
+2. **Nhánh #5 “Luyện bài N”**: 0 phiên, 10 mục ôn, không mục nào đến hạn → “Chưa có dữ liệu phiên học”, CTA “Luyện bài 1” → `/luyen-tap?lessons=1` → “Sẵn sàng luyện Bài 1”.
+
+Gate cuối: `pnpm check` exit 0, `pnpm test` 265/265, `pnpm build` exit 0.
