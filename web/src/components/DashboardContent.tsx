@@ -128,72 +128,6 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
       </header>
 
       {/* ========================================================
-          2. Hàng phụ: Tiếp tục phiên dở dang nếu có nháp (SPEC-18 §3, §5, §6)
-          Không cạnh tranh với CTA primary: nút phụ dùng variant outline
-          ======================================================== */}
-      {(drafts.vocabDraft || drafts.practiceDraft) && (
-        <section aria-label="Tiếp tục phiên dở dang">
-          <Card className="border border-border/80 bg-accent/15 p-4 sm:p-5 rounded-2xl shadow-xs space-y-3">
-            <div className="flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
-              <Clock className="w-3.5 h-3.5" />
-              <span>Tiếp tục phiên</span>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {drafts.vocabDraft && (
-                <div className="flex items-center justify-between gap-3 p-3 rounded-xl bg-card border border-border/60">
-                  <div className="space-y-0.5 min-w-0">
-                    <div className="text-xs font-bold text-foreground truncate">
-                      Học từ vựng · Bài {drafts.vocabDraft.lesson}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Đang ở từ {drafts.vocabDraft.currentWordIndex}/{drafts.vocabDraft.totalWords}
-                    </div>
-                  </div>
-                  <Link
-                    href={`/hoc/${drafts.vocabDraft.lesson}/tu-vung`}
-                    className={cn(
-                      buttonVariants({ variant: 'outline', size: 'sm' }),
-                      'min-h-11 h-11 px-3 rounded-xl text-xs font-semibold shrink-0'
-                    )}
-                  >
-                    <span>Tiếp tục</span>
-                    <ArrowRight className="size-3.5 ml-1" />
-                  </Link>
-                </div>
-              )}
-
-              {drafts.practiceDraft && (
-                <div className="flex items-center justify-between gap-3 p-3 rounded-xl bg-card border border-border/60">
-                  <div className="space-y-0.5 min-w-0">
-                    <div className="text-xs font-bold text-foreground truncate">
-                      Luyện tập
-                      {drafts.practiceDraft.selectedLessons && drafts.practiceDraft.selectedLessons.length > 0
-                        ? ` · Bài ${drafts.practiceDraft.selectedLessons.join(', ')}`
-                        : ''}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Đang ở câu {drafts.practiceDraft.currentQuestionIndex}/{drafts.practiceDraft.totalQuestions}
-                    </div>
-                  </div>
-                  <Link
-                    href="/luyen-tap"
-                    className={cn(
-                      buttonVariants({ variant: 'outline', size: 'sm' }),
-                      'min-h-11 h-11 px-3 rounded-xl text-xs font-semibold shrink-0'
-                    )}
-                  >
-                    <span>Tiếp tục</span>
-                    <ArrowRight className="size-3.5 ml-1" />
-                  </Link>
-                </div>
-              )}
-            </div>
-          </Card>
-        </section>
-      )}
-
-      {/* ========================================================
           3. Khối P0 Hành động chính & Bài đang học (Luật hợp nhất)
           SPEC-18: Duy nhất 1 CTA primary trên toàn màn hình.
           ======================================================== */}
@@ -345,6 +279,72 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
             )}
           </div>
         </Card>
+      )}
+
+      {/* ========================================================
+          2. Hàng phụ: Tiếp tục phiên dở dang nếu có nháp (SPEC-18 §3, §5, §6)
+          Không cạnh tranh với CTA primary: nút phụ dùng variant outline
+          ======================================================== */}
+      {(drafts.vocabDraft || drafts.practiceDraft) && (
+        <section aria-label="Tiếp tục phiên dở dang">
+          <Card className="border border-border/80 bg-accent/15 p-4 sm:p-5 rounded-2xl shadow-xs space-y-3">
+            <div className="flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
+              <Clock className="w-3.5 h-3.5" />
+              <span>Tiếp tục phiên</span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {drafts.vocabDraft && (
+                <div className="flex items-center justify-between gap-3 p-3 rounded-xl bg-card border border-border/60">
+                  <div className="space-y-0.5 min-w-0">
+                    <div className="text-xs font-bold text-foreground truncate">
+                      Học từ vựng · Bài {drafts.vocabDraft.lesson}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Đang ở từ {drafts.vocabDraft.currentWordIndex}/{drafts.vocabDraft.totalWords}
+                    </div>
+                  </div>
+                  <Link
+                    href={`/hoc/${drafts.vocabDraft.lesson}/tu-vung`}
+                    className={cn(
+                      buttonVariants({ variant: 'outline', size: 'sm' }),
+                      'min-h-11 h-11 px-3 rounded-xl text-xs font-semibold shrink-0'
+                    )}
+                  >
+                    <span>Tiếp tục</span>
+                    <ArrowRight className="size-3.5 ml-1" />
+                  </Link>
+                </div>
+              )}
+
+              {drafts.practiceDraft && (
+                <div className="flex items-center justify-between gap-3 p-3 rounded-xl bg-card border border-border/60">
+                  <div className="space-y-0.5 min-w-0">
+                    <div className="text-xs font-bold text-foreground truncate">
+                      Luyện tập
+                      {drafts.practiceDraft.selectedLessons && drafts.practiceDraft.selectedLessons.length > 0
+                        ? ` · Bài ${drafts.practiceDraft.selectedLessons.join(', ')}`
+                        : ''}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Đang ở câu {drafts.practiceDraft.currentQuestionIndex}/{drafts.practiceDraft.totalQuestions}
+                    </div>
+                  </div>
+                  <Link
+                    href="/luyen-tap"
+                    className={cn(
+                      buttonVariants({ variant: 'outline', size: 'sm' }),
+                      'min-h-11 h-11 px-3 rounded-xl text-xs font-semibold shrink-0'
+                    )}
+                  >
+                    <span>Tiếp tục</span>
+                    <ArrowRight className="size-3.5 ml-1" />
+                  </Link>
+                </div>
+              )}
+            </div>
+          </Card>
+        </section>
       )}
 
       {/* ========================================================
