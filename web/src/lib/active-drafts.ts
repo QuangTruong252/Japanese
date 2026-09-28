@@ -10,12 +10,16 @@ export interface ActiveVocabDraft {
   lesson: number;
   currentWordIndex: number; // 1-based (e.g. từ thứ 3)
   totalWords: number;
+  resumeHref: string;
 }
 
 export interface ActivePracticeDraftInfo {
   currentQuestionIndex: number; // 1-based (e.g. câu thứ 5)
   totalQuestions: number;
   selectedLessons?: number[];
+  resumeHref: string;
+  /** Nháp ôn (`mode: 'due'`) và nháp luyện dùng chung một khóa lưu. */
+  label: 'Luyện tập' | 'Ôn tập';
 }
 
 export interface ActiveDraftsState {
@@ -51,6 +55,7 @@ export function getActiveVocabDraftForLesson(
         lesson,
         currentWordIndex: parsed.currentIndex + 1,
         totalWords: parsed.targetIds.length,
+        resumeHref: `/hoc/${lesson}/tu-vung`,
       };
     }
   } catch {
@@ -87,7 +92,10 @@ export function getActivePracticeDraftInfo(
   return {
     currentQuestionIndex: current + 1,
     totalQuestions: total,
-    selectedLessons: draft.config?.selectedLessons,
+    selectedLessons: draft.config?.lessons,
+    ...(draft.config?.mode === 'due'
+      ? { resumeHref: '/on-tap/phien?resume=1', label: 'Ôn tập' as const }
+      : { resumeHref: '/luyen-tap/phien', label: 'Luyện tập' as const }),
   };
 }
 

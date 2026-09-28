@@ -20,3 +20,19 @@ Ngày: 27/09/2026. Trạng thái: **đã có kế hoạch/spec nháp; chưa sử
 1. Triển khai mốc 1 theo SPEC-16: cập nhật `DESIGN.md`/SPEC-02/07/08 cùng code, giữ Thống kê truy cập được trong suốt chuyển đổi; kiểm browser và ghi handoff SPEC-16.
 2. Tiếp tục các mốc 2–5 theo phụ thuộc/gate của kế hoạch; không đánh dấu spec hoàn tất trước khi có kiểm tra thực.
 3. Thử hành trình toàn vòng với người học để quyết định cuối cùng thứ bậc nháp Luyện và Ôn trên Bảng tin.
+
+## Đợt 28/09/2026 — triển khai song song và nghiệm thu
+
+- Coordinator (Claude Code) dựng [bộ nghiệm thu](UX-REDESIGN-ACCEPTANCE.md), sửa gate tĩnh đỏ ở `afd6b6f` (Base UI `render` thay `asChild`, `config.lessons` thay `selectedLessons`, Profile bỏ `getUser()` mạng), rồi điều phối qua Orca run `run_18c609313661` 4 worker Antigravity `gemini-3.8-flash-high`, mỗi worker một worktree/branch: W1 SPEC-16/17, W2 SPEC-19, W3 SPEC-18, W4 SPEC-20.
+- Review diff tìm ra 1 lỗi hành vi ở W2 (preset mặc định do `saveSettings` ghi toàn bộ settings che bài đang học) → giao W2b sửa kèm test. Coordinator sửa thêm: CTA người mới cố định `/hoc/1`, nhãn “mục đến hạn” ở `/on-tap` dùng `totalDueCount` cho khớp badge, khối nháp Bảng tin xuống dưới thẻ P0.
+- Tất cả merge vào branch `ux-redesign` (HEAD `d1a3aff`), **chưa merge `master`, chưa push**. Gate: `pnpm check` exit 0, `pnpm test` 252/252, `pnpm build` exit 0.
+- Browser 390/1280 trên dev server MaiPace `:3100` (`:3000` trên máy này là Repowise): kết quả chi tiết, 6 lỗi còn mở và phần chưa chạy ở bộ nghiệm thu §6.
+- Chưa kiểm chứng: Supabase thật (đăng nhập, đẩy pendingSync, đổi tài khoản), iOS/Android thật, J3, B20.5, từng dạng trong 5 dạng, hạn mức mục mới và máy không có giọng ja-JP.
+- Bước tiếp: người dùng review branch `ux-redesign` rồi quyết định merge; sửa 6 lỗi còn mở; thử với người học theo mục 3 ở trên.
+
+## Đợt 28/09/2026 — sửa lỗi còn mở và merge
+
+- Giao W6/W7/W8 (Antigravity) sửa lỗi #2–#6. W5 (#1) hỏng `agent_readiness` hai lần nên coordinator tự sửa. Coordinator sửa thêm: nháp ôn bị gọi là nháp luyện trên Bảng tin và `/luyen-tap` (hai loại nháp dùng chung một khóa lưu).
+- Kiểm browser từng lỗi và cả nhánh “Luyện bài N” của Thống kê rỗng: xem [bộ nghiệm thu](UX-REDESIGN-ACCEPTANCE.md) §6.
+- Gate: `pnpm check` exit 0, `pnpm test` 265/265, `pnpm build` exit 0. Merge `ux-redesign` → `master` (không push).
+- Vẫn chưa kiểm chứng: Supabase thật, iOS/Android thật, J3, B20.5, từng dạng trong 5 dạng, hạn mức mục mới và máy không có giọng ja-JP. Bước tiếp: thử với người học (mục 3 ở trên).

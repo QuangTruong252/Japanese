@@ -48,7 +48,7 @@ test('buildSearchIndex nạp đủ 7 nhóm dữ liệu tĩnh với href chính x
 
   const featureThongKe = index.find((e) => e.id === 'feature-thong-ke');
   assert.ok(featureThongKe);
-  assert.equal(featureThongKe.href, '/thong-ke');
+  assert.equal(featureThongKe.href, '/ca-nhan/thong-ke');
 
   // Kiểm tra neo href
   const gakusei = index.find((e) => e.id === 'vocab-01-gakusei');
@@ -186,38 +186,83 @@ test('executeSearch tìm động từ qua cả thể từ điển và thể masu
   assert.ok(resKanaMasu.results.some((r) => r.id === 'vocab-07-kirimasu'));
 });
 
-test('executeSearch trả về đích tính năng phù hợp cho tra cuu, kana, kanji, dong tu, thong ke (SPEC-17 §9)', async () => {
+test('executeSearch trả về đích tính năng phù hợp cho tra cuu, kana, kanji, dong tu, thong ke với đúng href (SPEC-17 §9)', async () => {
   const index = await buildSearchIndex();
 
-  // 1. tra cuu -> trả feature Tra cứu (Tier 1)
+  // 1. tra cuu -> trả feature Tra cứu (Tier 1) với href /hoc/tra-cuu
   const resTraCuu = executeSearch(index, 'tra cuu');
   assert.equal(resTraCuu.results[0]?.id, 'feature-tra-cuu');
   assert.equal(resTraCuu.results[0]?.kind, 'feature');
+  assert.equal(resTraCuu.results[0]?.href, '/hoc/tra-cuu');
 
-  // 2. kana -> trả feature Bảng chữ Kana
+  // 2. kana -> trả feature Bảng chữ Kana với href /hoc/tra-cuu/kana
   const resKana = executeSearch(index, 'kana');
-  assert.ok(resKana.results.some((r) => r.id === 'feature-kana' && r.kind === 'feature'));
+  const featureKana = resKana.results.find((r) => r.id === 'feature-kana');
+  assert.ok(featureKana, 'Phải tìm thấy feature-kana');
+  assert.equal(featureKana?.kind, 'feature');
+  assert.equal(featureKana?.href, '/hoc/tra-cuu/kana');
 
-  // 3. kanji -> trả feature Tra cứu Kanji và không làm mất kết quả nội dung
+  // 3. kanji -> trả feature Tra cứu Kanji với href /hoc/tra-cuu/kanji và không làm mất kết quả nội dung
   const resKanji = executeSearch(index, 'kanji');
-  assert.ok(resKanji.results.some((r) => r.id === 'feature-kanji' && r.kind === 'feature'));
+  const featureKanji = resKanji.results.find((r) => r.id === 'feature-kanji');
+  assert.ok(featureKanji, 'Phải tìm thấy feature-kanji');
+  assert.equal(featureKanji?.kind, 'feature');
+  assert.equal(featureKanji?.href, '/hoc/tra-cuu/kanji');
   assert.ok(
     resKanji.results.some((r) => r.kind === 'vocab' || r.kind === 'kanji' || r.kind === 'grammar'),
     'Không làm mất kết quả nội dung khi tìm kanji'
   );
 
-  // 4. dong tu -> trả feature Tra cứu Động từ bên cạnh học liệu nội dung
+  // 4. dong tu -> trả feature Tra cứu Động từ với href /hoc/tra-cuu/dong-tu bên cạnh học liệu nội dung
   const resDongTu = executeSearch(index, 'dong tu');
-  assert.ok(resDongTu.results.some((r) => r.id === 'feature-dong-tu' && r.kind === 'feature'));
+  const featureDongTu = resDongTu.results.find((r) => r.id === 'feature-dong-tu');
+  assert.ok(featureDongTu, 'Phải tìm thấy feature-dong-tu');
+  assert.equal(featureDongTu?.kind, 'feature');
+  assert.equal(featureDongTu?.href, '/hoc/tra-cuu/dong-tu');
   assert.ok(
     resDongTu.results.some((r) => r.kind === 'grammar' || r.kind === 'table' || r.kind === 'verb'),
     'Vẫn trả các nội dung học liệu về động từ'
   );
 
-  // 5. thong ke -> trả feature Thống kê
+  // 5. thong ke -> trả feature Thống kê với href /ca-nhan/thong-ke
   const resThongKe = executeSearch(index, 'thong ke');
   assert.equal(resThongKe.results[0]?.id, 'feature-thong-ke');
   assert.equal(resThongKe.results[0]?.kind, 'feature');
+  assert.equal(resThongKe.results[0]?.href, '/ca-nhan/thong-ke');
+});
+
+test('executeSearch: watashi và tôi vẫn trả nội dung học liệu, nhóm Tính năng không đẩy nội dung khỏi giới hạn 20 (SPEC-17 §9)', async () => {
+  const index = await buildSearchIndex();
+
+  // 1. Tìm "watashi" trả về nội dung từ vựng (không phải rỗng)
+  const resWatashi = executeSearch(index, 'watashi');
+  assert.ok(resWatashi.results.length > 0, 'watashi phải trả kết quả');
+  assert.ok(
+    resWatashi.results.some((r) => r.kind === 'vocab' && (r.keys.some((k) => k.includes('watashi')) || r.label.includes('私'))),
+    'watashi phải trả từ vựng tương ứng (ví dụ: 私)'
+  );
+
+  // 2. Tìm "tôi" (tiếng Việt có dấu) trả về từ vựng
+  const resToi = executeSearch(index, 'tôi');
+  assert.ok(resToi.results.length > 0, 'tôi phải trả kết quả');
+  assert.ok(
+    resToi.results.some((r) => r.kind === 'vocab' && (r.sublabel.toLowerCase().includes('tôi') || r.keys.some((k) => k.includes('toi')))),
+    'tôi phải trả từ vựng có nghĩa tiếng Việt là tôi'
+  );
+
+  // 3. Nhóm tính năng không đẩy nội dung khỏi giới hạn 20 kết quả
+  // Với từ khóa khớp cả tính năng lẫn nhiều nội dung (như "kanji" hoặc "dong tu")
+  const resKanji = executeSearch(index, 'kanji');
+  assert.ok(resKanji.results.length <= 20, 'Tổng số kết quả không vượt quá 20');
+  const kanjiFeatureCount = resKanji.results.filter((r) => r.kind === 'feature').length;
+  assert.ok(kanjiFeatureCount <= 4, 'Số lượng tính năng tối đa 4');
+  const kanjiContentCount = resKanji.results.filter((r) => r.kind !== 'feature').length;
+  assert.ok(kanjiContentCount > 0, 'Vẫn có chỗ cho các kết quả nội dung học liệu');
+
+  // Với từ khóa thuần nội dung như "watashi", nhóm tính năng = 0, toàn bộ kết quả là nội dung
+  const watashiFeatureCount = resWatashi.results.filter((r) => r.kind === 'feature').length;
+  assert.equal(watashiFeatureCount, 0, 'watashi không có kết quả tính năng nào');
+  assert.ok(resWatashi.results.length <= 20, 'watashi kết quả <= 20');
 });
 
 test('executeSearch giới hạn nhóm tính năng tối đa 4 mục, không làm tụt học liệu (SPEC-17)', async () => {

@@ -67,3 +67,82 @@ Ngày: 2026-09-27. Trạng thái: **Đã triển khai đầy đủ code và unit
    - Theo chỉ thị của giám sát viên, full `pnpm check`, `pnpm build` và kiểm thử browser tương tác trực tiếp được bàn giao cho Codex giám sát chạy đồng bộ nhằm tránh xung đột process giữa 5 worker.
 2. **Môi trường Supabase cloud thật**:
    - Đã kiểm tra qua mock và guard `isSupabaseConfigured()`; kết nối OAuth trực tiếp với Google client ID thật cần môi trường cấu hình `.env.local` của người dùng.
+
+## Đợt 28/09/2026: Làm cứng shell điều hướng và Profile
+
+### Thay đổi và quyết định kỹ thuật
+1. **Loại bỏ `getUser()` khỏi `AppNav.tsx` & `AccountButton.tsx`**:
+   - `AppNav.tsx` chỉ dùng `onAuthStateChange` (INITIAL_SESSION) đọc session cục bộ, không gọi mạng trên mỗi trang; xóa import thừa `RefreshCw`.
+   - `AccountButton.tsx` loại bỏ hoàn toàn `getUser()`, nhận prop `user` từ `AppNav` (hoặc fallback `onAuthStateChange` nếu dùng độc lập).
+2. **Lối Tài khoản duy nhất & Ẩn chrome phiên toàn màn**:
+   - Header mobile (<lg) dùng duy nhất `AccountButton` từ `AppNav`; desktop ≥lg ở chân sidebar.
+   - Thêm hàm thuần `shouldHideAppChrome(pathname)` trong `web/src/lib/nav.ts` (ẩn header mobile, dock và sidebar trên `/luyen-tap/phien`, `/on-tap/phien`, `/hoc/[so]/tu-vung`).
+   - Bổ sung test suite trong `web/src/lib/nav.test.ts` kiểm thử đầy đủ các ca đúng (phải ẩn) và ca sai (không ẩn).
+3. **Trạng thái active nút Tài khoản**:
+   - Khi ở `/ca-nhan/**`, nút header Tài khoản hiển thị trạng thái active (`aria-current="page"`).
+4. **Empty state Thống kê (`StatisticsContent.tsx`)**:
+   - Bỏ nhắc "chuỗi ngày" (đã bỏ theo hợp đồng sản phẩm 24/09).
+   - Khi chưa có bài/phiên nào, CTA chính dẫn `/hoc/1` ("Bắt đầu Bài 1" kèm icon `BookOpen`), không dẫn luyện tập.
+5. **Dọn dẹp code & lint**:
+   - Xóa import `Clock` không sử dụng trong `web/src/app/ca-nhan/page.tsx`.
+   - Cập nhật checklist §9 trong `docs/specs/SPEC-16-dieu-huong-profile.md` về `[ ]` cho các mục cần kiểm thử browser.
+
+### File liên quan
+- `web/src/components/AppNav.tsx`
+- `web/src/components/profile/AccountButton.tsx`
+- `web/src/app/ca-nhan/page.tsx`
+- `web/src/components/stats/StatisticsContent.tsx`
+- `web/src/lib/nav.ts`
+- `web/src/lib/nav.test.ts`
+- `docs/specs/SPEC-16-dieu-huong-profile.md`
+- `docs/handoff/SPEC-16.md`
+
+### Kết quả kiểm chứng thực chạy
+- `pnpm check`: **exit 0** (0 error; 0 warning trong các file thuộc phạm vi task).
+- `pnpm test`: **211/211 PASS** (100%, tăng 2 test so với baseline 209).
+- Kiểm tra `grep "getUser("`: không còn lệnh gọi `getUser(` trong `AppNav.tsx`, `ca-nhan/**` và `profile/**`.
+
+### Giới hạn
+- Chưa nghiệm thu browser — chờ coordinator.
+
+## Đợt 28/09/2026 — sửa lỗi còn mở #3, #5
+
+### Bối cảnh & Mục tiêu
+Sửa 2 lỗi còn mở sau đợt tích hợp theo `docs/handoff/UX-REDESIGN-ACCEPTANCE.md` §6:
+- Lỗi #3: Sidebar desktop khi Ôn tập active bị biến thành chấm đỏ mất số; dock mobile badge bị nhỏ dạng chấm.
+- Lỗi #5: Thống kê rỗng hiện "Bắt đầu Bài 1" dù người học đã có tiến độ từ vựng/khai báo bài đã học.
+
+### Thay đổi và quyết định kỹ thuật
+1. **Lỗi #3 — Badge điều hướng luôn hiện số & đúng tương phản Washi**:
+   - Tách hàm thuần `formatNavBadgeCount(count)` trong `web/src/lib/nav.ts`: trả về `null` khi `count <= 0` hoặc không hợp lệ; trả chuỗi số `1..99`; cắt `99+` khi `> 99`.
+   - Bổ sung unit test trong `web/src/lib/nav.test.ts` với đầy đủ ca đúng/sai/cắt ngưỡng.
+   - Sửa `AppNav.tsx`:
+     - Chuyển màu badge từ `bg-destructive text-destructive-foreground` sang `bg-primary text-primary-foreground`. (Nguyên nhân mất số: biến CSS `--destructive-foreground` chưa được khai báo trong `:root` và `.dark`, dẫn đến khi active link mang `text-primary`, chữ bên trong badge thừa kế màu đỏ đè lên nền đỏ thành chấm đỏ không còn số).
+     - Badge dùng token `bg-primary text-primary-foreground` tương phản cao trên cả nền active (`bg-primary/15`) lẫn inactive (`bg-card`/`bg-muted/60`).
+     - Tăng kích thước vùng chứa badge mobile dock (`min-w-5 h-4.5 px-1`) và sidebar desktop (`min-w-5 h-5 px-1.5`) đảm bảo hiển thị rõ ràng cả số đơn và chuỗi `99+`.
+     - Giữ `aria-label="Ôn tập, N mục đến hạn"` trên link và gắn `aria-hidden="true"` trên span của badge.
+
+2. **Lỗi #5 — Phân biệt trạng thái rỗng Thống kê (`StatisticsContent.tsx`)**:
+   - Tách hàm thuần `resolveStatsEmptyState(input)` trong `web/src/lib/stats.ts`:
+     - Khi `sessionCount > 0`: `isEmpty = false`.
+     - Chưa có gì (0 phiên, 0 reviewItems, `learnedThroughLesson` = 0): giữ CTA "Bắt đầu Bài 1" → `/hoc/1` (icon `BookOpen`).
+     - Đã có reviewItems hoặc `learnedThroughLesson > 0` nhưng 0 phiên: copy giải thích rõ ràng thống kê được tính từ các phiên luyện tập và ôn tập; CTA chính "Ôn tập" (`/on-tap`, icon `RotateCcw`) nếu có mục đến hạn (`dueCount > 0`), ngược lại "Luyện bài N" (`/luyen-tap?lessons=N`, icon `Dumbbell`, N xác định qua `pickActiveLesson`).
+   - Bổ sung unit test toàn diện cho `resolveStatsEmptyState` trong `web/src/lib/stats.test.ts`.
+   - Cập nhật `StatisticsContent.tsx`: đọc `dueCount` qua `useLiveQuery`, `learnedThroughLesson` qua `useSyncExternalStore(subscribeSettings)`, tải danh sách tóm tắt bài N5 để tính `pickActiveLesson`, và áp dụng `resolveStatsEmptyState`.
+
+### File liên quan
+- `web/src/lib/nav.ts`
+- `web/src/lib/nav.test.ts`
+- `web/src/components/AppNav.tsx`
+- `web/src/lib/stats.ts`
+- `web/src/lib/stats.test.ts`
+- `web/src/components/stats/StatisticsContent.tsx`
+- `docs/handoff/SPEC-16.md`
+
+### Kết quả kiểm chứng thực chạy
+- `pnpm check`: **exit 0** (0 error, 0 warning toàn repo).
+- `pnpm test`: **254/254 PASS** (100%, tăng 2 test so với baseline 252).
+- Kiểm tra ranh giới sở hữu: Không sửa bất kỳ file nào ngoài danh sách được giao.
+
+### Giới hạn
+- Chưa nghiệm thu browser — chờ coordinator.

@@ -13,6 +13,7 @@ import {
   type SearchKind,
 } from '@/lib/search';
 import { Furigana } from '@/components/Furigana';
+import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
 import { cn } from '@/lib/utils';
 
 const KIND_LABELS: Record<SearchKind, string> = {
@@ -389,7 +390,7 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
                               )}
                             </div>
                             <span className="text-xs text-muted-foreground line-clamp-1 mt-0.5">
-                              {entry.sublabel}
+                              {formatOptionalBrackets(stripFurigana(entry.sublabel))}
                             </span>
                           </div>
 

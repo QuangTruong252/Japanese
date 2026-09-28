@@ -131,6 +131,52 @@ export const loadSettings = (): AppSettings => {
   }
 };
 
+/**
+ * Kiểm tra xem một practicePreset có trùng với cấu hình mặc định ban đầu hay không.
+ */
+export const isDefaultPracticePreset = (preset: PracticePreset): boolean => {
+  if (preset.questionCount !== DEFAULT_PRACTICE_PRESET.questionCount) {
+    return false;
+  }
+  if (
+    preset.lessons.length !== DEFAULT_PRACTICE_PRESET.lessons.length ||
+    preset.lessons[0] !== DEFAULT_PRACTICE_PRESET.lessons[0]
+  ) {
+    return false;
+  }
+  if (preset.types.length !== DEFAULT_PRACTICE_PRESET.types.length) {
+    return false;
+  }
+  const defaultTypes = new Set(DEFAULT_PRACTICE_PRESET.types);
+  return preset.types.every((t) => defaultTypes.has(t));
+};
+
+/**
+ * Đọc practicePreset đã được lưu thật sự trong localStorage (SPEC-19 §2).
+ * Trả về null nếu người học chưa từng tùy chỉnh hoặc localStorage rỗng,
+ * hoặc preset trùng giá trị mặc định DEFAULT_SETTINGS.practicePreset (chưa có preset hữu ích).
+ */
+export const loadSavedPracticePreset = (): PracticePreset | null => {
+  if (typeof window === 'undefined' || !window.localStorage) {
+    return null;
+  }
+  try {
+    const raw = window.localStorage.getItem(SETTINGS_STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object' || parsed.practicePreset === undefined) {
+      return null;
+    }
+    const validated = validatePracticePreset(parsed.practicePreset);
+    if (isDefaultPracticePreset(validated)) {
+      return null;
+    }
+    return validated;
+  } catch {
+    return null;
+  }
+};
+
 type SettingsListener = () => void;
 const listeners = new Set<SettingsListener>();
 

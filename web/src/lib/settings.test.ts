@@ -2,7 +2,11 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   DEFAULT_SETTINGS,
+  DEFAULT_PRACTICE_PRESET,
+  isDefaultPracticePreset,
   loadSettings,
+  loadSavedPracticePreset,
+  saveSettings,
   getFOUCScriptContent,
 } from './settings.ts';
 
@@ -159,6 +163,116 @@ test('loadSettings loại bỏ bài/type/count không hợp lệ trong practiceP
     assert.deepEqual(s.practicePreset.lessons, [2, 4]);
     assert.deepEqual(s.practicePreset.types, ['mc']);
     assert.equal(s.practicePreset.questionCount, 20);
+  } finally {
+    delete g.window;
+  }
+});
+
+test('isDefaultPracticePreset nhận diện chính xác preset trùng hoặc khác mặc định', () => {
+  assert.equal(isDefaultPracticePreset(DEFAULT_PRACTICE_PRESET), true);
+  assert.equal(
+    isDefaultPracticePreset({
+      lessons: [1],
+      types: ['mc', 'matching', 'cloze', 'reorder', 'listening'],
+      questionCount: 15,
+    }),
+    true,
+  );
+  // Khác bài học
+  assert.equal(
+    isDefaultPracticePreset({
+      lessons: [2],
+      types: ['mc', 'matching', 'cloze', 'reorder', 'listening'],
+      questionCount: 15,
+    }),
+    false,
+  );
+  // Khác dạng bài
+  assert.equal(
+    isDefaultPracticePreset({
+      lessons: [1],
+      types: ['mc'],
+      questionCount: 15,
+    }),
+    false,
+  );
+  // Khác số câu
+  assert.equal(
+    isDefaultPracticePreset({
+      lessons: [1],
+      types: ['mc', 'matching', 'cloze', 'reorder', 'listening'],
+      questionCount: 20,
+    }),
+    false,
+  );
+});
+
+test('loadSavedPracticePreset trả về null khi chưa có hoặc preset không tồn tại, và nạp đúng khi có', () => {
+  const store = new Map<string, string>();
+  const g = globalThis as unknown as { window?: unknown };
+  g.window = {
+    localStorage: {
+      getItem: (k: string) => store.get(k) ?? null,
+      setItem: (k: string, v: string) => store.set(k, v),
+    },
+  };
+  try {
+    // Chưa có settings trong localStorage -> null
+    assert.equal(loadSavedPracticePreset(), null);
+
+    // Settings có nhưng không có trường practicePreset -> null
+    store.set('jp:settings', JSON.stringify({ theme: 'dark' }));
+    assert.equal(loadSavedPracticePreset(), null);
+
+    // Settings có practicePreset nhưng trùng với mặc định -> null (SPEC-19 §2)
+    store.set(
+      'jp:settings',
+      JSON.stringify({
+        practicePreset: DEFAULT_PRACTICE_PRESET,
+      }),
+    );
+    assert.equal(loadSavedPracticePreset(), null);
+
+    // Có practicePreset đã chỉnh -> trả về preset hợp lệ
+    store.set(
+      'jp:settings',
+      JSON.stringify({
+        practicePreset: {
+          lessons: [3, 5],
+          types: ['cloze'],
+          questionCount: 30,
+        },
+      }),
+    );
+    assert.deepEqual(loadSavedPracticePreset(), {
+      lessons: [3, 5],
+      types: ['cloze'],
+      questionCount: 30,
+    });
+  } finally {
+    delete g.window;
+  }
+});
+
+test('hồi quy: saveSettings({theme}) ghi đầy đủ AppSettings nhưng loadSavedPracticePreset trả về null để không che bài đang học', () => {
+  const store = new Map<string, string>();
+  const g = globalThis as unknown as { window?: unknown };
+  g.window = {
+    localStorage: {
+      getItem: (k: string) => store.get(k) ?? null,
+      setItem: (k: string, v: string) => store.set(k, v),
+    },
+  };
+  try {
+    saveSettings({ theme: 'dark' });
+    const raw = store.get('jp:settings');
+    assert.ok(raw, 'jp:settings phải tồn tại sau khi saveSettings');
+    const parsed = JSON.parse(raw);
+    assert.equal(parsed.theme, 'dark');
+    assert.ok(parsed.practicePreset !== undefined, 'saveSettings đã ghi cả practicePreset mặc định');
+
+    // Mặc dù practicePreset có trong storage, loadSavedPracticePreset phải trả về null
+    assert.equal(loadSavedPracticePreset(), null);
   } finally {
     delete g.window;
   }

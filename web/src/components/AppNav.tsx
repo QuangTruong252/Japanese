@@ -25,9 +25,9 @@ import {
   CloudCheck,
   CloudOff,
   CloudUpload,
-  RefreshCw,
 } from 'lucide-react';
-import { isNavActive } from '@/lib/nav';
+import { formatNavBadgeCount, isNavActive, shouldHideAppChrome } from '@/lib/nav';
+import { AccountButton } from '@/components/profile/AccountButton';
 import { useUIStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
 
@@ -74,23 +74,8 @@ export function AppNav() {
   useEffect(() => {
     if (!isSupabaseConfigured()) return;
     try {
+      // Chỉ đọc session cục bộ: onAuthStateChange phát INITIAL_SESSION ngay khi đăng ký, không gọi mạng getUser()
       const supabase = createClient();
-      supabase.auth.getUser().then(({ data: { user } }) => {
-        if (user) {
-          setCurrentUser({
-            id: user.id,
-            email: user.email,
-            displayName:
-              user.user_metadata?.full_name ||
-              user.user_metadata?.name ||
-              user.email?.split('@')[0],
-            avatarUrl: user.user_metadata?.avatar_url,
-          });
-        }
-      }).catch(() => {
-        // Ignore unconfigured
-      });
-
       const {
         data: { subscription },
       } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -129,12 +114,8 @@ export function AppNav() {
     engineState: engineStatus.state,
   });
 
-  // Luồng làm bài và học từ vựng chiếm trọn màn hình, có điều hướng riêng.
-  if (
-    pathname.startsWith('/luyen-tap/phien') ||
-    pathname.startsWith('/on-tap/phien') ||
-    /^\/hoc\/\d+\/tu-vung$/.test(pathname)
-  ) {
+  // Luồng làm bài và học từ vựng chiếm trọn màn hình, có điều hướng riêng (SPEC-16 B16.3).
+  if (shouldHideAppChrome(pathname)) {
     return null;
   }
 
@@ -170,40 +151,8 @@ export function AppNav() {
           </span>
         </Link>
 
-        {/* Nút Tài khoản góc phải: tối thiểu 48px vùng chạm */}
-        <Link
-          href="/ca-nhan"
-          aria-label={
-            currentUser?.displayName
-              ? `Tài khoản ${currentUser.displayName}`
-              : 'Tài khoản'
-          }
-          className={cn(
-            'inline-flex items-center gap-2 min-h-[48px] px-3.5 py-1.5 rounded-full text-xs font-medium border transition duration-150 outline-none select-none cursor-pointer',
-            'focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2',
-            isProfileActive
-              ? 'border-primary/50 text-primary bg-primary/10 font-semibold shadow-xs'
-              : 'border-border/80 bg-card text-foreground hover:bg-muted/70'
-          )}
-        >
-          <div className="relative shrink-0 flex items-center justify-center">
-            {currentUser?.avatarUrl ? (
-              /* eslint-disable-next-line @next/next/no-img-element */
-              <img
-                src={currentUser.avatarUrl}
-                alt=""
-                className="size-6 rounded-full object-cover border border-border/80"
-              />
-            ) : (
-              <div className="size-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-medium">
-                <User className="size-3.5" />
-              </div>
-            )}
-          </div>
-          <span className="truncate max-w-[110px]">
-            {currentUser?.displayName || 'Tài khoản'}
-          </span>
-        </Link>
+        {/* Nút Tài khoản góc phải: tối thiểu 48px vùng chạm, duy nhất cho mobile (SPEC-16 B16.1, B16.2) */}
+        <AccountButton variant="header" user={currentUser} />
       </header>
 
       {/* ========================================================
@@ -225,7 +174,8 @@ export function AppNav() {
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           const isActive = isNavActive(item.href, pathname);
-          const showBadge = item.isDueTarget && dueCount > 0;
+          const badgeText = item.isDueTarget ? formatNavBadgeCount(dueCount) : null;
+          const showBadge = badgeText !== null;
 
           return (
             <Link
@@ -246,9 +196,9 @@ export function AppNav() {
                 {showBadge && (
                   <span
                     aria-hidden="true"
-                    className="absolute -top-1.5 -right-2 inline-flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-destructive text-destructive-foreground text-[10px] font-bold leading-none shadow-sm"
+                    className="absolute -top-1.5 -right-2.5 inline-flex items-center justify-center min-w-5 h-4.5 px-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold leading-none shadow-xs"
                   >
-                    {dueCount > 99 ? '99+' : dueCount}
+                    {badgeText}
                   </span>
                 )}
               </div>
@@ -332,13 +282,15 @@ export function AppNav() {
             {NAV_ITEMS.map((item) => {
               const Icon = item.icon;
               const isActive = isNavActive(item.href, pathname);
-              const showBadge = item.isDueTarget && dueCount > 0;
+              const badgeText = item.isDueTarget ? formatNavBadgeCount(dueCount) : null;
+              const showBadge = badgeText !== null;
 
               return (
                 <Link
                   key={item.href}
                   href={item.href}
                   aria-current={isActive ? 'page' : undefined}
+                  aria-label={showBadge ? `${item.label}, ${dueCount} mục đến hạn` : undefined}
                   className={cn(
                     'flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition duration-150 outline-none',
                     'focus-visible:ring-2 focus-visible:ring-primary/60',
@@ -353,8 +305,11 @@ export function AppNav() {
                   </div>
 
                   {showBadge && (
-                    <span className="inline-flex items-center justify-center min-w-5 h-5 px-1.5 rounded-full bg-destructive text-destructive-foreground text-[11px] font-bold">
-                      {dueCount > 99 ? '99+' : dueCount}
+                    <span
+                      aria-hidden="true"
+                      className="inline-flex items-center justify-center min-w-5 h-5 px-1.5 rounded-full bg-primary text-primary-foreground text-[11px] font-bold shadow-xs"
+                    >
+                      {badgeText}
                     </span>
                   )}
                 </Link>

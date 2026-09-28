@@ -18,6 +18,7 @@ import {
   hasStudiedOnDay,
   formatStudyTimeToday,
   resolveSyncBadgeState,
+  resolveStatsEmptyState,
 } from './stats.ts';
 import type { PracticeSession, ReviewItem } from '../types/index.ts';
 
@@ -340,5 +341,83 @@ test('Feedback #37: resolveSyncBadgeState khi ĐÃ đăng nhập giữ nguyên n
   });
   assert.equal(offline.state, 'offline');
   assert.equal(offline.label, 'Ngoại tuyến — đã lưu trên máy');
+});
+
+test('resolveStatsEmptyState: phân biệt trạng thái rỗng Thống kê (SPEC-16 Lỗi #5)', () => {
+  // Ca không rỗng: đã có phiên
+  const notEmpty = resolveStatsEmptyState({
+    sessionCount: 2,
+    reviewItemCount: 10,
+    learnedThroughLesson: 0,
+    dueCount: 3,
+  });
+  assert.equal(notEmpty.isEmpty, false);
+  assert.equal(notEmpty.type, 'none');
+  assert.equal(notEmpty.cta, null);
+
+  // Ca rỗng hoàn toàn (0 phiên, 0 reviewItems, learnedThroughLesson = 0)
+  const brandNew = resolveStatsEmptyState({
+    sessionCount: 0,
+    reviewItemCount: 0,
+    learnedThroughLesson: 0,
+  });
+  assert.equal(brandNew.isEmpty, true);
+  assert.equal(brandNew.type, 'brand_new');
+  assert.equal(brandNew.cta?.label, 'Bắt đầu Bài 1');
+  assert.equal(brandNew.cta?.href, '/hoc/1');
+  assert.equal(brandNew.cta?.action, 'start_lesson_1');
+
+  // Ca đã có reviewItems nhưng 0 phiên, CÓ mục đến hạn -> CTA Ôn tập
+  const withDue = resolveStatsEmptyState({
+    sessionCount: 0,
+    reviewItemCount: 15,
+    learnedThroughLesson: 0,
+    dueCount: 5,
+    activeLessonNum: 1,
+  });
+  assert.equal(withDue.isEmpty, true);
+  assert.equal(withDue.type, 'has_progress_no_sessions');
+  assert.match(withDue.description, /phiên luyện tập và ôn tập/);
+  assert.equal(withDue.cta?.label, 'Ôn tập');
+  assert.equal(withDue.cta?.href, '/on-tap');
+  assert.equal(withDue.cta?.action, 'review');
+
+  // Ca đã có reviewItems nhưng 0 phiên, KHÔNG có mục đến hạn -> CTA Luyện bài N
+  const noDue = resolveStatsEmptyState({
+    sessionCount: 0,
+    reviewItemCount: 15,
+    learnedThroughLesson: 0,
+    dueCount: 0,
+    activeLessonNum: 3,
+  });
+  assert.equal(noDue.isEmpty, true);
+  assert.equal(noDue.type, 'has_progress_no_sessions');
+  assert.match(noDue.description, /phiên luyện tập và ôn tập/);
+  assert.equal(noDue.cta?.label, 'Luyện bài 3');
+  assert.equal(noDue.cta?.href, '/luyen-tap?lessons=3');
+  assert.equal(noDue.cta?.action, 'practice');
+
+  // Ca chỉ khai báo learnedThroughLesson (0 reviewItems, learnedThroughLesson = 2) -> CTA Luyện bài N
+  const declaredLesson = resolveStatsEmptyState({
+    sessionCount: 0,
+    reviewItemCount: 0,
+    learnedThroughLesson: 2,
+    dueCount: 0,
+    activeLessonNum: 3,
+  });
+  assert.equal(declaredLesson.isEmpty, true);
+  assert.equal(declaredLesson.type, 'has_progress_no_sessions');
+  assert.equal(declaredLesson.cta?.label, 'Luyện bài 3');
+  assert.equal(declaredLesson.cta?.href, '/luyen-tap?lessons=3');
+  assert.equal(declaredLesson.cta?.action, 'practice');
+
+  // Ca fallback activeLessonNum thiếu hoặc không hợp lệ -> mặc định bài 1
+  const fallbackLesson = resolveStatsEmptyState({
+    sessionCount: 0,
+    reviewItemCount: 10,
+    dueCount: 0,
+  });
+  assert.equal(fallbackLesson.cta?.label, 'Luyện bài 1');
+  assert.equal(fallbackLesson.cta?.href, '/luyen-tap?lessons=1');
 });
 

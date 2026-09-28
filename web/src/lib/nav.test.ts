@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { isNavActive } from './nav.ts';
+import { formatNavBadgeCount, isNavActive, shouldHideAppChrome } from './nav.ts';
 
 test('isNavActive: trang chủ "/" chỉ active khi đúng pathname "/"', () => {
   assert.equal(isNavActive('/', '/'), true);
@@ -38,4 +38,50 @@ test('isNavActive: "/luyen-tap" và "/on-tap" active đúng tiền tố', () => 
   assert.equal(isNavActive('/on-tap', '/on-tap'), true);
   assert.equal(isNavActive('/on-tap', '/on-tap/diem-yeu'), true);
   assert.equal(isNavActive('/on-tap', '/hoc'), false);
+});
+
+test('shouldHideAppChrome: ẩn chrome (header/dock/sidebar) trong các phiên toàn màn hình (SPEC-16 B16.3)', () => {
+  // Ca đúng (phải ẩn):
+  assert.equal(shouldHideAppChrome('/luyen-tap/phien'), true);
+  assert.equal(shouldHideAppChrome('/luyen-tap/phien/'), true);
+  assert.equal(shouldHideAppChrome('/luyen-tap/phien/ket-qua'), true);
+  assert.equal(shouldHideAppChrome('/on-tap/phien'), true);
+  assert.equal(shouldHideAppChrome('/on-tap/phien/'), true);
+  assert.equal(shouldHideAppChrome('/hoc/1/tu-vung'), true);
+  assert.equal(shouldHideAppChrome('/hoc/25/tu-vung'), true);
+  assert.equal(shouldHideAppChrome('/hoc/1/tu-vung/'), true);
+
+  // Ca sai (không ẩn, vẫn hiển thị chrome):
+  assert.equal(shouldHideAppChrome('/'), false);
+  assert.equal(shouldHideAppChrome('/hoc'), false);
+  assert.equal(shouldHideAppChrome('/hoc/1'), false);
+  assert.equal(shouldHideAppChrome('/hoc/25'), false);
+  assert.equal(shouldHideAppChrome('/luyen-tap'), false);
+  assert.equal(shouldHideAppChrome('/on-tap'), false);
+  assert.equal(shouldHideAppChrome('/on-tap/diem-yeu'), false);
+  assert.equal(shouldHideAppChrome('/hoc/tra-cuu'), false);
+  assert.equal(shouldHideAppChrome('/hoc/tra-cuu/kanji'), false);
+  assert.equal(shouldHideAppChrome('/ca-nhan'), false);
+  assert.equal(shouldHideAppChrome('/ca-nhan/thong-ke'), false);
+  assert.equal(shouldHideAppChrome('/cai-dat'), false);
+});
+
+test('formatNavBadgeCount: định dạng số badge điều hướng (SPEC-16 Lỗi #3)', () => {
+  // Ca không hiển thị (trả về null):
+  assert.equal(formatNavBadgeCount(0), null);
+  assert.equal(formatNavBadgeCount(-1), null);
+  assert.equal(formatNavBadgeCount(-10), null);
+  assert.equal(formatNavBadgeCount(NaN), null);
+  assert.equal(formatNavBadgeCount(Infinity), null);
+
+  // Ca hiển thị số nguyên bình thường:
+  assert.equal(formatNavBadgeCount(1), '1');
+  assert.equal(formatNavBadgeCount(7), '7');
+  assert.equal(formatNavBadgeCount(25), '25');
+  assert.equal(formatNavBadgeCount(99), '99');
+
+  // Ca cắt 99+ khi lớn hơn 99:
+  assert.equal(formatNavBadgeCount(100), '99+');
+  assert.equal(formatNavBadgeCount(150), '99+');
+  assert.equal(formatNavBadgeCount(999), '99+');
 });
