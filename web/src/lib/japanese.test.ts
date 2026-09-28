@@ -10,6 +10,13 @@ import {
   toKanaSentence,
 } from './japanese.ts';
 
+test('dòng mô tả tìm kiếm: bỏ cách đọc và đổi ngoặc tùy chọn, không còn ngoặc vuông', () => {
+  const plain = (s: string) => formatOptionalBrackets(stripFurigana(s));
+  assert.equal(plain('N1 は 私[わたし]に N2 を くれます'), 'N1 は 私に N2 を くれます');
+  assert.equal(plain('どこ[へ]も 行[い]きません'), 'どこ(へ)も 行きません');
+  assert.equal(plain('Giới thiệu bản thân'), 'Giới thiệu bản thân');
+});
+
 test('parseFurigana tách kanji + ruby và giữ nguyên phần thuần', () => {
   assert.deepEqual(parseFurigana('私[わたし]は 学生[がくせい]です'), [
     { base: '私', ruby: 'わたし' },
