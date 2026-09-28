@@ -87,3 +87,54 @@ Theo quy định không can thiệp vào các file ngoài quyền sở hữu:
 
 *Chưa nghiệm thu browser — chờ coordinator.*
 
+## Đợt 28/09/2026 — sửa lỗi còn mở #2, #6
+
+- **Người thực hiện:** Antigravity worker (Task W6).
+- **Phạm vi sở hữu & thay đổi:**
+  - `web/src/app/on-tap/page.tsx`
+  - `web/src/lib/review-queue.ts` (+ `review-queue.test.ts`)
+  - `docs/handoff/SPEC-20.md`
+
+### 1. Chi tiết sửa lỗi
+
+#### Lỗi #2: Trạng thái copy đồng bộ trên `/on-tap`
+- **Hiện trạng:** Trước đây dòng `pendingSyncCount > 0` luôn hiện `"{N} kết quả ôn đang chờ đồng bộ lên máy chủ"` khi online, kể cả khi Supabase chưa cấu hình (`!isSupabaseConfigured()`) hoặc người học chưa đăng nhập.
+- **Đã sửa:**
+  - Tách hàm thuần `resolveReviewSyncNotice` trong `review-queue.ts` nhận `{ pendingSyncCount, isOnline, isConfigured, isLoggedIn }`.
+  - Quản lý trạng thái đăng nhập trong `on-tap/page.tsx` chỉ qua session cục bộ `supabase.auth.onAuthStateChange` (không gọi mạng `getUser`, an toàn offline).
+  - Các trạng thái copy:
+    1. *Chưa cấu hình Supabase (`!isConfigured`)*: Không hiện dòng chờ đồng bộ (`null`), loại bỏ thông báo gây hiểu lầm trên môi trường máy đơn.
+    2. *Đã cấu hình, chưa đăng nhập (`isConfigured && !isLoggedIn`)*: Hiển thị `"{N} kết quả lưu trên máy; đăng nhập để đồng bộ"` kèm thẻ liên kết `<Link href="/ca-nhan">đăng nhập để đồng bộ</Link>`.
+    3. *Đã cấu hình, đã đăng nhập, online (`isConfigured && isLoggedIn && isOnline`)*: Hiển thị `"{N} kết quả ôn đang chờ đồng bộ lên máy chủ."`.
+    4. *Đang ngoại tuyến (`!isOnline`)*: Giữ nguyên banner ngoại tuyến cảnh báo màu vàng sẵn có; không hiện thêm dòng chờ đồng bộ bên dưới.
+    5. *Không có bản ghi chờ (`pendingSyncCount <= 0`)*: Không hiển thị dòng sync.
+
+#### Lỗi #6: Mức ưu tiên CTA và xác nhận đè nháp trên `/on-tap`
+- **Hiện trạng:** Khi có bản nháp ôn tập (`useReviewDraft`), màn hình `/on-tap` hiển thị đồng thời thẻ "Tiếp tục phiên ôn" và nút "Bắt đầu ôn" đều ở mức primary (default button), vi phạm nguyên tắc ưu tiên nháp theo SPEC-20 và SPEC-19.
+- **Đã sửa:**
+  - Tách helper thuần `hasActiveReviewDraft`, `resolveReviewStartAction` và `formatDraftOverwriteWarning` trong `review-queue.ts`.
+  - Khi có nháp ôn tập hợp lệ (`hasActiveDraft = true`):
+    - "Tiếp tục phiên ôn" trong `draftResumeCard` là primary duy nhất (`variant="default"`).
+    - Nút "Bắt đầu ôn" hạ xuống `variant="outline"`.
+    - Phím tắt Space ưu tiên kích hoạt tiếp tục phiên ôn (`router.push('/on-tap/phien?resume=1')`).
+    - Nhấn "Bắt đầu ôn" sẽ mở `AlertDialog` xác nhận: tiêu đề *"Bắt đầu phiên ôn tập mới?"*, mô tả *"Bạn đang có một phiên ôn dở dang (câu X/Y). Bắt đầu mới sẽ thay thế và xóa bỏ bài làm dở này."*, nút *"Hủy"* và nút *"Bắt đầu mới"* (`variant="destructive"`).
+    - Khi xác nhận "Bắt đầu mới": xóa nháp (`clearDraft()`) và điều hướng tới `/on-tap/phien` để tạo phiên ôn mới.
+  - Khi không có nháp ôn tập (`hasActiveDraft = false`):
+    - Nút "Bắt đầu ôn" giữ mức primary (`variant="default"`), nhấn hoặc bấm Space sẽ bắt đầu phiên ôn trực tiếp không qua AlertDialog.
+
+### 2. Kiểm chứng Gate tĩnh (S) thực chạy
+
+- **`pnpm test` (Node test runner):**
+  - Kết quả: **PASS 259/259 tests** (tăng 7 tests so với baseline 252; thời gian chạy ~1.5s).
+  - Test mới trong `web/src/lib/review-queue.test.ts`:
+    - `resolveReviewSyncNotice`: 4 tests (ca chưa cấu hình trả null, ca chưa đăng nhập có link /ca-nhan, ca đã đăng nhập online báo chờ đồng bộ, ca offline/0 bản ghi/âm).
+    - `hasActiveReviewDraft`: 1 test với cả ca đúng (nháp dở dang) và 3 ca sai (null/undefined, rỗng, đã làm xong).
+    - `resolveReviewStartAction`: 1 test kiểm tra variant outline + confirmation khi có nháp, default khi không có nháp.
+    - `formatDraftOverwriteWarning`: 1 test kiểm tra định dạng chính xác số câu 1-based.
+- **`pnpm check` (tsc --noEmit && eslint):**
+  - Kết quả: **PASS (exit code 0)**, 0 lỗi TypeScript, 0 lỗi ESLint toàn repo.
+- **Checklist §9 của `docs/specs/SPEC-20-on-tap-tiep-noi.md`:** Giữ nguyên trạng thái `[ ]` theo đúng quy ước dành cho coordinator.
+
+*Chưa nghiệm thu browser — chờ coordinator.*
+
+

@@ -322,3 +322,103 @@ export function buildTargetLabels(questions: QuestionItem[]): Map<string, Target
   }
   return labels;
 }
+
+export type ReviewSyncNotice =
+  | {
+      kind: 'anonymous';
+      count: number;
+      text: string;
+      actionText: string;
+      actionHref: string;
+    }
+  | {
+      kind: 'pending';
+      count: number;
+      text: string;
+    };
+
+/**
+ * Xác định nội dung hiển thị dòng trạng thái sync trên trang /on-tap (SPEC-20, Lỗi #2).
+ * - Chưa cấu hình Supabase (!isConfigured): trả về null (không hiện dòng chờ đồng bộ lên máy chủ).
+ * - Đang offline (!isOnline) hoặc không có bản ghi chờ (pendingSyncCount <= 0): trả về null.
+ * - Đã cấu hình nhưng chưa đăng nhập: nhắc lưu trên máy và dẫn link /ca-nhan để đăng nhập.
+ * - Đã cấu hình và đã đăng nhập: báo số kết quả đang chờ đồng bộ lên máy chủ.
+ */
+export function resolveReviewSyncNotice({
+  pendingSyncCount,
+  isOnline,
+  isConfigured,
+  isLoggedIn,
+}: {
+  pendingSyncCount: number;
+  isOnline: boolean;
+  isConfigured: boolean;
+  isLoggedIn: boolean;
+}): ReviewSyncNotice | null {
+  if (!Number.isFinite(pendingSyncCount) || pendingSyncCount <= 0 || !isOnline) {
+    return null;
+  }
+  if (!isConfigured) {
+    return null;
+  }
+  if (!isLoggedIn) {
+    return {
+      kind: 'anonymous',
+      count: pendingSyncCount,
+      text: `${pendingSyncCount} kết quả lưu trên máy; `,
+      actionText: 'đăng nhập để đồng bộ',
+      actionHref: '/ca-nhan',
+    };
+  }
+  return {
+    kind: 'pending',
+    count: pendingSyncCount,
+    text: `${pendingSyncCount} kết quả ôn đang chờ đồng bộ lên máy chủ.`,
+  };
+}
+
+/**
+ * Kiểm tra xem người học có bản nháp ôn tập đang dở dang hay không.
+ */
+export function hasActiveReviewDraft(
+  draft: { currentIndex: number; questions: unknown[] } | null | undefined,
+): boolean {
+  return Boolean(
+    draft &&
+      Array.isArray(draft.questions) &&
+      draft.questions.length > 0 &&
+      draft.currentIndex < draft.questions.length,
+  );
+}
+
+export interface ReviewStartActionConfig {
+  hasActiveDraft: boolean;
+  buttonVariant: 'default' | 'outline';
+  requiresConfirmation: boolean;
+}
+
+/**
+ * Quyết định mức ưu tiên của nút "Bắt đầu ôn" khi có nháp dở dang (SPEC-20, Lỗi #6).
+ * Khi có nháp: "Tiếp tục phiên ôn" là primary duy nhất; "Bắt đầu ôn" hạ xuống outline và cần xác nhận.
+ * Khi không có nháp: "Bắt đầu ôn" giữ mức primary (default) và không cần xác nhận.
+ */
+export function resolveReviewStartAction(hasActiveDraft: boolean): ReviewStartActionConfig {
+  return {
+    hasActiveDraft,
+    buttonVariant: hasActiveDraft ? 'outline' : 'default',
+    requiresConfirmation: hasActiveDraft,
+  };
+}
+
+/**
+ * Lời cảnh báo trong AlertDialog khi người học chọn bắt đầu phiên ôn mới dù đang có nháp dở.
+ */
+export function formatDraftOverwriteWarning(
+  currentIndex: number,
+  totalQuestions: number,
+): string {
+  const current = Math.max(1, currentIndex + 1);
+  const total = Math.max(1, totalQuestions);
+  return `Bạn đang có một phiên ôn dở dang (câu ${current}/${total}). Bắt đầu mới sẽ thay thế và xóa bỏ bài làm dở này.`;
+}
+
