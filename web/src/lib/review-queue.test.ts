@@ -9,10 +9,11 @@ import {
   lessonFromTargetId,
   overdueDays,
   planReviewBatch,
+  resolveNextBatchPlan,
   selectNewTargetIds,
   withDeclaredLessons,
 } from './review-queue.ts';
-import type { QuestionItem } from '../types/index.ts';
+import type { QuestionItem, ReviewItem } from '../types/index.ts';
 
 const q = (over: Partial<QuestionItem>): QuestionItem => ({
   id: 'q',
@@ -22,6 +23,31 @@ const q = (over: Partial<QuestionItem>): QuestionItem => ({
   targetId: 'vocab-01-01',
   prompt: 'p',
   answer: 'a',
+  ...over,
+});
+
+const mockItem = (over: Partial<ReviewItem>): ReviewItem => ({
+  targetId: 'vocab-01-01',
+  targetType: 'vocab',
+  lesson: 1,
+  correctCount: 0,
+  incorrectCount: 0,
+  dueAt: new Date(),
+  createdAt: '2026-09-20T00:00:00.000Z',
+  updatedAt: '2026-09-20T00:00:00.000Z',
+  fsrsCard: {
+    due: new Date(),
+    stability: 1,
+    difficulty: 1,
+    elapsed_days: 0,
+    scheduled_days: 0,
+    reps: 0,
+    lapses: 0,
+    state: 0,
+    last_review: new Date(),
+    learning_steps: 0,
+  },
+  recentElapsedMs: [],
   ...over,
 });
 
@@ -185,4 +211,195 @@ test('planReviewBatch: chia liên tiếp các lô cho tới khi hết mục đ�
   assert.equal(batch3.remainingDue, 0);
   assert.deepEqual(batch3.newTargetIds, ['new-1', 'new-2']);
 });
+
+test('resolveNextBatchPlan: tính chính xác số câu playable cho lô kế tiếp (có cả due và new mục tiêu)', () => {
+  const now = new Date('2026-09-28T08:00:00.000Z');
+  const past = new Date('2026-09-27T08:00:00.000Z');
+
+  const allReviewItems: ReviewItem[] = [
+    mockItem({
+      targetId: 'vocab-01-01',
+      targetType: 'vocab',
+      lesson: 1,
+      correctCount: 1,
+      incorrectCount: 0,
+      dueAt: past,
+    }),
+    mockItem({
+      targetId: 'vocab-01-02',
+      targetType: 'vocab',
+      lesson: 1,
+      correctCount: 2,
+      incorrectCount: 0,
+      dueAt: past,
+    }),
+  ];
+
+  const poolQuestions: QuestionItem[] = [
+    q({ id: 'q1', targetId: 'vocab-01-01', type: 'mc' }),
+    q({ id: 'q2', targetId: 'vocab-01-02', type: 'mc' }),
+    q({ id: 'q3', targetId: 'vocab-01-03', type: 'mc' }),
+  ];
+
+  // Batch size 20, dailyNewLimit 20, newLoadedToday 0.
+  // 2 mục due + 1 mục new (vocab-01-03) -> tổng 3 mục playable
+  const plan = resolveNextBatchPlan({
+    allReviewItems,
+    poolQuestions,
+    dailyNewLimit: 20,
+    reviewBatchSize: 20,
+    now,
+    availableAudioKeys: new Set(['tts']),
+  });
+
+  assert.equal(plan.hasMore, true);
+  assert.equal(plan.playableCount, 3);
+  assert.equal(plan.batchDue.length, 2);
+  assert.deepEqual(plan.newTargetIds, ['vocab-01-03']);
+  assert.equal(plan.remainingDue, 0);
+  assert.equal(plan.totalDueCount, 2);
+});
+
+test('resolveNextBatchPlan: chặn nạp mục mới khi dailyNewLimit đã đạt giới hạn hôm nay', () => {
+  const now = new Date('2026-09-28T08:00:00.000Z');
+  const past = new Date('2026-09-27T08:00:00.000Z');
+
+  const allReviewItems: ReviewItem[] = [
+    mockItem({
+      targetId: 'vocab-01-01',
+      targetType: 'vocab',
+      lesson: 1,
+      correctCount: 1,
+      incorrectCount: 0,
+      dueAt: past,
+      createdAt: '2026-09-28T01:00:00.000Z', // Tạo hôm nay -> tính vào newLoadedToday
+    }),
+  ];
+
+  const poolQuestions: QuestionItem[] = [
+    q({ id: 'q1', targetId: 'vocab-01-01', type: 'mc' }),
+    q({ id: 'q2', targetId: 'vocab-01-02', type: 'mc' }),
+  ];
+
+  // dailyNewLimit = 1, mà đã nạp 1 hôm nay -> remainingNewQuota = 0 -> không nạp vocab-01-02
+  const plan = resolveNextBatchPlan({
+    allReviewItems,
+    poolQuestions,
+    dailyNewLimit: 1,
+    reviewBatchSize: 20,
+    now,
+    availableAudioKeys: new Set(['tts']),
+  });
+
+  assert.equal(plan.hasMore, true);
+  assert.equal(plan.playableCount, 1);
+  assert.deepEqual(plan.newTargetIds, []);
+  assert.equal(plan.totalDueCount, 1);
+});
+
+test('resolveNextBatchPlan: trả về hasMore = false khi không còn mục due lẫn mục new', () => {
+  const now = new Date('2026-09-28T08:00:00.000Z');
+  const future = new Date('2026-09-29T08:00:00.000Z');
+
+  const allReviewItems: ReviewItem[] = [
+    mockItem({
+      targetId: 'vocab-01-01',
+      targetType: 'vocab',
+      lesson: 1,
+      correctCount: 1,
+      incorrectCount: 0,
+      dueAt: future, // Chưa đến hạn
+    }),
+  ];
+
+  // Bể chỉ có đúng mục vocab-01-01 đã có lịch ôn
+  const poolQuestions: QuestionItem[] = [
+    q({ id: 'q1', targetId: 'vocab-01-01', type: 'mc' }),
+  ];
+
+  const plan = resolveNextBatchPlan({
+    allReviewItems,
+    poolQuestions,
+    dailyNewLimit: 20,
+    reviewBatchSize: 20,
+    now,
+    availableAudioKeys: new Set(['tts']),
+  });
+
+  assert.equal(plan.hasMore, false);
+  assert.equal(plan.playableCount, 0);
+  assert.equal(plan.remainingDue, 0);
+  assert.equal(plan.totalDueCount, 0);
+});
+
+test('resolveNextBatchPlan: phát hiện blockedReason = no-audio khi các mục chỉ có câu nghe mà thiếu giọng đọc', () => {
+  const now = new Date('2026-09-28T08:00:00.000Z');
+  const past = new Date('2026-09-27T08:00:00.000Z');
+
+  const allReviewItems: ReviewItem[] = [
+    mockItem({
+      targetId: 'listening-01-01',
+      targetType: 'listening',
+      lesson: 1,
+      correctCount: 1,
+      incorrectCount: 0,
+      dueAt: past,
+    }),
+  ];
+
+  const poolQuestions: QuestionItem[] = [
+    q({ id: 'l1', targetId: 'listening-01-01', type: 'listening' }),
+  ];
+
+  // availableAudioKeys rỗng (không có tts)
+  const plan = resolveNextBatchPlan({
+    allReviewItems,
+    poolQuestions,
+    dailyNewLimit: 20,
+    reviewBatchSize: 20,
+    now,
+    availableAudioKeys: new Set(),
+  });
+
+  assert.equal(plan.hasMore, false);
+  assert.equal(plan.playableCount, 0);
+  assert.equal(plan.blockedReason, 'no-audio');
+  assert.equal(plan.totalDueCount, 1);
+});
+
+test('resolveNextBatchPlan: mỗi targetId chỉ sinh 1 câu trong mode due dù bể câu hỏi có nhiều câu cùng target', () => {
+  const now = new Date('2026-09-28T08:00:00.000Z');
+  const past = new Date('2026-09-27T08:00:00.000Z');
+
+  const allReviewItems: ReviewItem[] = [
+    mockItem({
+      targetId: 'vocab-01-01',
+      targetType: 'vocab',
+      lesson: 1,
+      correctCount: 1,
+      incorrectCount: 0,
+      dueAt: past,
+    }),
+  ];
+
+  // 3 câu hỏi khác nhau cho cùng một targetId vocab-01-01
+  const poolQuestions: QuestionItem[] = [
+    q({ id: 'q1-1', targetId: 'vocab-01-01', type: 'mc' }),
+    q({ id: 'q1-2', targetId: 'vocab-01-01', type: 'cloze' }),
+    q({ id: 'q1-3', targetId: 'vocab-01-01', type: 'reorder' }),
+  ];
+
+  const plan = resolveNextBatchPlan({
+    allReviewItems,
+    poolQuestions,
+    dailyNewLimit: 20,
+    reviewBatchSize: 20,
+    now,
+    availableAudioKeys: new Set(['tts']),
+  });
+
+  // Hợp đồng mode: 'due' đảm bảo 1 câu cho 1 mục tiêu ôn tập
+  assert.equal(plan.playableCount, 1);
+});
+
 

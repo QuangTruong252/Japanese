@@ -36,7 +36,8 @@ import {
   shouldSaveDraftOnAnswer,
 } from '@/lib/practice-draft';
 import { savePracticeSession } from '@/lib/practice-write';
-import { describeNextReviews } from '@/lib/review-queue';
+import { describeNextReviews, resolveNextBatchPlan, type NextBatchPlanResult } from '@/lib/review-queue';
+import { DEFAULT_SETTINGS } from '@/lib/settings';
 import { useUIStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
 import type {
@@ -61,6 +62,9 @@ export interface ReviewRunnerProps {
   initialDuration?: number;
   reviewBatchSize: number;
   onStartNextBatch: () => void;
+  allPoolQuestions?: QuestionItem[];
+  availableAudioKeys?: Set<string>;
+  dailyNewLimit?: number;
 }
 
 export function ReviewRunner({
@@ -71,6 +75,9 @@ export function ReviewRunner({
   initialDuration = 0,
   reviewBatchSize,
   onStartNextBatch,
+  allPoolQuestions,
+  availableAudioKeys,
+  dailyNewLimit,
 }: ReviewRunnerProps) {
   const router = useRouter();
   const { setCurrentQuestionIndex } = useUIStore();
@@ -87,7 +94,10 @@ export function ReviewRunner({
   const [nextReviewLine, setNextReviewLine] = useState<string | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [exitDialogOpen, setExitDialogOpen] = useState(false);
-  const [remainingDueAfterSession, setRemainingDueAfterSession] = useState<number | null>(null);
+  const [nextBatchPlan, setNextBatchPlan] = useState<NextBatchPlanResult | null>(null);
+
+  const isSavingRef = useRef(false);
+  const savedSessionRef = useRef<PracticeSession | null>(null);
 
   // Đo thời gian làm bài của từng câu không tính lúc tạm dừng
   const questionActiveMsRef = useRef<number>(0);
@@ -161,28 +171,47 @@ export function ReviewRunner({
     return map;
   }, [questions]);
 
-  // Ghi kết quả vào Dexie và tính số mục đến hạn còn lại
+  // Ghi kết quả vào Dexie (nguyên tử) và tính toán chính xác lô tiếp theo (hàm thuần)
   const saveResults = useCallback(
     async (resultsToSave: AnswerResult[]) => {
+      if (isSavingRef.current) return;
+      isSavingRef.current = true;
       try {
         setSaveError(null);
-        const { session, reviewItems } = await savePracticeSession({
-          config,
-          results: resultsToSave,
-          lessonByTargetId,
-          durationSeconds: sessionDuration,
-        });
-        setSavedSession(session);
+        let session = savedSessionRef.current;
+        let reviewItems: ReviewItem[] = [];
+
+        if (!session) {
+          const res = await savePracticeSession({
+            config,
+            results: resultsToSave,
+            lessonByTargetId,
+            durationSeconds: sessionDuration,
+          });
+          session = res.session;
+          reviewItems = res.reviewItems;
+          savedSessionRef.current = session;
+          setSavedSession(session);
+        }
 
         const now = new Date();
-        setNextReviewLine(describeNextReviews(reviewItems.map((r: ReviewItem) => r.dueAt), now));
+        if (reviewItems.length > 0) {
+          setNextReviewLine(describeNextReviews(reviewItems.map((r: ReviewItem) => r.dueAt), now));
+        }
 
-        // Kiểm tra số mục đến hạn còn lại sau khi ghi kết quả lô này
-        const remainingCount = await db.reviewItems
-          .where('dueAt')
-          .belowOrEqual(now)
-          .count();
-        setRemainingDueAfterSession(remainingCount);
+        // Tính toán lô tiếp theo bằng resolveNextBatchPlan
+        // (khớp 100% logic useDueQueue/planReviewBatch, tính cả newTargetIds và lọc audio/câu hỏi hợp lệ)
+        const allItems = await db.reviewItems.toArray();
+        const nextPlan = resolveNextBatchPlan({
+          allReviewItems: allItems,
+          poolQuestions: allPoolQuestions ?? questions,
+          dailyNewLimit: dailyNewLimit ?? DEFAULT_SETTINGS.dailyNewLimit,
+          reviewBatchSize,
+          now,
+          availableAudioKeys: availableAudioKeys ?? new Set(['tts']),
+          config,
+        });
+        setNextBatchPlan(nextPlan);
 
         clearPracticeDraft();
       } catch (err) {
@@ -191,9 +220,20 @@ export function ReviewRunner({
             ? err.message
             : 'Không thể lưu kết quả phiên ôn tập vào bộ nhớ máy.',
         );
+      } finally {
+        isSavingRef.current = false;
       }
     },
-    [config, lessonByTargetId, sessionDuration],
+    [
+      config,
+      lessonByTargetId,
+      sessionDuration,
+      allPoolQuestions,
+      questions,
+      dailyNewLimit,
+      reviewBatchSize,
+      availableAudioKeys,
+    ],
   );
 
   const handleAnswer = useCallback(
@@ -376,8 +416,10 @@ export function ReviewRunner({
     const displaySession: PracticeSession =
       savedSession ?? summarizeSession(config, allResults, sessionDuration);
     const percentage = Math.round(displaySession.accuracyRate * 100);
-    const remainingCount = remainingDueAfterSession ?? 0;
-    const hasMoreDue = remainingCount > 0;
+    const hasMore = nextBatchPlan ? nextBatchPlan.hasMore : false;
+    const nextPlayableCount = nextBatchPlan ? nextBatchPlan.playableCount : 0;
+    const totalDueRemaining = nextBatchPlan ? nextBatchPlan.totalDueCount : 0;
+    const isPlanLoading = savedSession === null || nextBatchPlan === null;
 
     return (
       <main className="mx-auto max-w-xl space-y-6 px-4 py-8">
@@ -440,14 +482,36 @@ export function ReviewRunner({
 
         {/* Khối trạng thái tiếp lô hoặc hoàn tất */}
         <div className="rounded-2xl border border-border bg-card p-4 sm:p-5 text-center space-y-3">
-          {hasMoreDue ? (
+          {isPlanLoading ? (
             <div className="space-y-1">
               <p className="font-semibold text-foreground">
-                Còn {remainingCount} mục đến hạn ôn tập
+                Đang lưu và tính toán lô ôn tiếp theo...
+              </p>
+            </div>
+          ) : hasMore ? (
+            <div className="space-y-1">
+              <p className="font-semibold text-foreground">
+                {totalDueRemaining > 0
+                  ? `Còn ${totalDueRemaining} mục đến hạn ôn tập`
+                  : `Có ${nextPlayableCount} mục mới sẵn sàng ôn tập`}
               </p>
               <p className="text-xs sm:text-sm text-muted-foreground">
-                Bạn có thể làm tiếp lô tiếp theo (tối đa {Math.min(reviewBatchSize, remainingCount)} mục)
-                hoặc dừng lại để nghỉ ngơi.
+                Bạn có thể làm tiếp lô tiếp theo ({nextPlayableCount} mục) hoặc dừng lại để nghỉ ngơi.
+              </p>
+            </div>
+          ) : nextBatchPlan?.blockedReason === 'no-audio' ? (
+            <div className="space-y-1 text-warning-foreground">
+              <p className="font-semibold">
+                Các mục đến hạn còn lại chỉ có câu dạng nghe, nhưng thiết bị chưa có giọng tiếng Nhật (ja-JP).
+              </p>
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                Hạn ôn của các mục này được giữ nguyên. Bạn có thể cài đặt giọng đọc để tiếp tục.
+              </p>
+            </div>
+          ) : nextBatchPlan?.blockedReason === 'no-questions' ? (
+            <div className="space-y-1">
+              <p className="font-semibold text-foreground">
+                Không thể tạo câu hỏi cho các mục còn lại. Hạn ôn được giữ nguyên.
               </p>
             </div>
           ) : (
@@ -463,14 +527,14 @@ export function ReviewRunner({
           )}
 
           <div className="flex flex-col gap-2.5 pt-2">
-            {hasMoreDue ? (
+            {!isPlanLoading && hasMore ? (
               <>
                 <Button
                   size="quiz"
                   className="w-full text-base font-medium"
                   onClick={onStartNextBatch}
                 >
-                  Ôn lô tiếp ({Math.min(reviewBatchSize, remainingCount)} mục)
+                  Ôn lô tiếp ({nextPlayableCount} mục)
                 </Button>
                 <Button
                   size="quiz"
@@ -483,6 +547,15 @@ export function ReviewRunner({
               </>
             ) : (
               <>
+                {nextBatchPlan?.blockedReason === 'no-audio' && (
+                  <Button
+                    size="quiz"
+                    className="w-full text-base font-medium"
+                    onClick={() => router.push('/cai-dat/audio')}
+                  >
+                    Cài đặt âm thanh
+                  </Button>
+                )}
                 <Button
                   size="quiz"
                   className="w-full text-base font-medium"
@@ -724,7 +797,7 @@ export function ReviewRunner({
                       </p>
                       {currentHint && (
                         <p className="rounded-lg bg-warning/10 p-2.5 text-xs text-warning-foreground border border-warning/20">
-                          💡 Gợi ý: {currentHint}
+                          <span className="font-semibold">Gợi ý:</span> {currentHint}
                         </p>
                       )}
                     </div>

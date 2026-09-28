@@ -150,6 +150,9 @@ function ReviewSessionContent() {
       initialDuration={session.initialDuration}
       reviewBatchSize={queue.reviewBatchSize}
       onStartNextBatch={handleStartNextBatch}
+      allPoolQuestions={queue.questions}
+      availableAudioKeys={audioKeys}
+      dailyNewLimit={queue.dailyNewLimit}
     />
   );
 }
