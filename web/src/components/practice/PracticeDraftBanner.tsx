@@ -66,7 +66,7 @@ export default function PracticeDraftBanner() {
           className="flex-1 sm:flex-initial"
           onClick={handleResume}
         >
-          Học tiếp
+          Tiếp tục phiên
         </Button>
         <Button
           type="button"
@@ -76,7 +76,7 @@ export default function PracticeDraftBanner() {
           onClick={handleDiscard}
         >
           <Trash2 className="mr-1.5 size-4" />
-          Bỏ
+          Bỏ nháp
         </Button>
       </div>
     </div>

@@ -118,6 +118,8 @@ chỉ có **một** bản ghi `reviewItems`. Nếu trong một phiên cùng `tar
 
 ### 3.1. `/luyen-tap` — Cấu hình phiên
 
+> **Ghi chú UX (28/09/2026):** Theo [SPEC-19](SPEC-19-luyen-tap-nhanh.md), màn hình hiển thị card tóm tắt nhanh và nút CTA "Bắt đầu M câu" ngay trên màn đầu 390×844; danh sách 25 bài, dạng bài và số câu được gom vào khối "Tùy chỉnh" mở rộng.
+
 Bề rộng `max-w-xl` (576px).
 
 ```

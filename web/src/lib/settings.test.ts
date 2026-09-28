@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   DEFAULT_SETTINGS,
   loadSettings,
+  loadSavedPracticePreset,
   getFOUCScriptContent,
 } from './settings.ts';
 
@@ -159,6 +160,44 @@ test('loadSettings loại bỏ bài/type/count không hợp lệ trong practiceP
     assert.deepEqual(s.practicePreset.lessons, [2, 4]);
     assert.deepEqual(s.practicePreset.types, ['mc']);
     assert.equal(s.practicePreset.questionCount, 20);
+  } finally {
+    delete g.window;
+  }
+});
+
+test('loadSavedPracticePreset trả về null khi chưa có hoặc preset không tồn tại, và nạp đúng khi có', () => {
+  const store = new Map<string, string>();
+  const g = globalThis as unknown as { window?: unknown };
+  g.window = {
+    localStorage: {
+      getItem: (k: string) => store.get(k) ?? null,
+      setItem: (k: string, v: string) => store.set(k, v),
+    },
+  };
+  try {
+    // Chưa có settings trong localStorage -> null
+    assert.equal(loadSavedPracticePreset(), null);
+
+    // Settings có nhưng không có trường practicePreset -> null
+    store.set('jp:settings', JSON.stringify({ theme: 'dark' }));
+    assert.equal(loadSavedPracticePreset(), null);
+
+    // Có practicePreset -> trả về preset hợp lệ
+    store.set(
+      'jp:settings',
+      JSON.stringify({
+        practicePreset: {
+          lessons: [3, 5],
+          types: ['cloze'],
+          questionCount: 30,
+        },
+      }),
+    );
+    assert.deepEqual(loadSavedPracticePreset(), {
+      lessons: [3, 5],
+      types: ['cloze'],
+      questionCount: 30,
+    });
   } finally {
     delete g.window;
   }

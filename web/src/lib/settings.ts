@@ -131,6 +131,27 @@ export const loadSettings = (): AppSettings => {
   }
 };
 
+/**
+ * Đọc practicePreset đã được lưu thật sự trong localStorage (SPEC-19 §2).
+ * Trả về null nếu người học chưa từng tùy chỉnh hoặc localStorage rỗng.
+ */
+export const loadSavedPracticePreset = (): PracticePreset | null => {
+  if (typeof window === 'undefined' || !window.localStorage) {
+    return null;
+  }
+  try {
+    const raw = window.localStorage.getItem(SETTINGS_STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object' || parsed.practicePreset === undefined) {
+      return null;
+    }
+    return validatePracticePreset(parsed.practicePreset);
+  } catch {
+    return null;
+  }
+};
+
 type SettingsListener = () => void;
 const listeners = new Set<SettingsListener>();
 
