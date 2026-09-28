@@ -18,6 +18,8 @@ export interface ActivePracticeDraftInfo {
   totalQuestions: number;
   selectedLessons?: number[];
   resumeHref: string;
+  /** Nháp ôn (`mode: 'due'`) và nháp luyện dùng chung một khóa lưu. */
+  label: 'Luyện tập' | 'Ôn tập';
 }
 
 export interface ActiveDraftsState {
@@ -91,7 +93,9 @@ export function getActivePracticeDraftInfo(
     currentQuestionIndex: current + 1,
     totalQuestions: total,
     selectedLessons: draft.config?.lessons,
-    resumeHref: '/luyen-tap/phien',
+    ...(draft.config?.mode === 'due'
+      ? { resumeHref: '/on-tap/phien?resume=1', label: 'Ôn tập' as const }
+      : { resumeHref: '/luyen-tap/phien', label: 'Luyện tập' as const }),
   };
 }
 

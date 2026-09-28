@@ -144,11 +144,22 @@ PASS = đã chạy và đạt; PARTIAL = đạt phần đã chạy, còn nhánh 
 | J4 | PARTIAL | Offline trong tab mở: hoàn tất lô ôn, sessions 2→3, pendingSync 2→3; online lại không tăng trùng. Đẩy lên Supabase thật: unverifiable |
 | J5 | PASS | `/thong-ke`, `/hoc/tra-cuu/kanji`, `/hoc/1#tu-vung`, `dong-tu?q=` |
 
-### Lỗi còn mở (không chặn, đề xuất đợt sau)
+### Lỗi đợt 1 — đã sửa và kiểm browser ngày 28/09/2026
 
-1. SearchDialog: mô tả kết quả ngữ pháp lộ notation thô `私[わたし]に` (có từ trước redesign, dữ liệu `g.title.vi`).
-2. `/on-tap`: “N kết quả ôn đang chờ đồng bộ lên máy chủ” hiện cả khi Supabase chưa cấu hình.
-3. Sidebar desktop: mục Ôn tập đang active chỉ còn chấm đỏ, mất số.
-4. Nháp luyện trên Bảng tin dẫn `/luyen-tap`, cần thêm một chạm “Tiếp tục phiên”.
-5. Thống kê rỗng dựa trên số phiên; người chỉ học flashcard vẫn thấy “Bắt đầu Bài 1”.
-6. `/on-tap` có cả thẻ “Tiếp tục phiên ôn” và nút “Bắt đầu ôn” cùng mức primary khi có nháp.
+| # | Lỗi | Sửa bởi | Bằng chứng browser |
+| --- | --- | --- | --- |
+| 1 | Mô tả kết quả ngữ pháp lộ notation `私[わたし]に` | Coordinator `31c31cc` (W5 hỏng `agent_readiness` 2 lần) | `watashi` → “N1 は 私に N2 を くれます”, không kết quả nào còn `[` |
+| 2 | “Chờ đồng bộ lên máy chủ” khi Supabase chưa cấu hình | W6 | pendingSync = 3, unconfigured → không còn dòng đó |
+| 3 | Badge Ôn tập mất số khi active (token `--destructive-foreground` không tồn tại) | W7 | Sidebar 1280 và dock 390 đều hiện “10” trên mục active |
+| 4 | Nháp luyện trên Bảng tin cần thêm một chạm | W8 + coordinator | “Tiếp tục” → `/luyen-tap/phien` đúng câu 3/10 |
+| 5 | Thống kê rỗng mời “Bắt đầu Bài 1” với người đã học | W7 | 0 phiên + có reviewItems + có mục đến hạn → “Chưa có dữ liệu phiên học”, CTA “Ôn tập” |
+| 6 | Hai nút primary trên `/on-tap` khi có nháp | W6 | “Tiếp tục phiên ôn” primary, “Bắt đầu ôn” outline → hộp thoại “câu 2/5 … sẽ thay thế” |
+
+Lỗi thêm tìm thấy khi kiểm #4, đã sửa: nháp ôn (`mode: 'due'`) hiện trên Bảng tin là “Luyện tập” và dẫn vào phiên luyện. Giờ ghi “Ôn tập”, dẫn `/on-tap/phien?resume=1` và vào đúng câu 2/5; có test hồi quy.
+
+Gate sau đợt sửa: `pnpm check` exit 0, `pnpm test` 265/265, `pnpm build` exit 0.
+
+### Lỗi còn mở
+
+1. `/luyen-tap` hiện nháp ôn như nháp luyện (“Bạn còn phiên dở: câu 2/5”) vì hai loại nháp dùng chung một khóa lưu và `PracticeDraftBanner` không lọc `mode`. Lỗi có từ trước trên `master`. Hướng sửa: banner bỏ qua nháp `mode: 'due'` hoặc dẫn sang `/on-tap`. Cần quyết định có tách hai khóa lưu hay không.
+2. Nhánh #5 “Luyện bài N” (có tiến độ nhưng không có mục đến hạn) chỉ có unit test, chưa chạy trên browser.

@@ -282,3 +282,23 @@ test('getActiveVocabDraftForLesson sinh resumeHref chuẩn /hoc/:lesson/tu-vung 
   assert.equal(getActiveVocabDraftForLesson(4, storage), null);
 });
 
+
+test('getActivePracticeDraftInfo phân biệt nháp ôn (mode due) với nháp luyện dùng chung khóa lưu', () => {
+  const q = { id: 'q1', type: 'mc', prompt: 'a', options: ['a', 'b'], answer: 'a' } as unknown as PracticeDraft['questions'][number];
+  const base: PracticeDraft = {
+    version: 1,
+    questions: [q, q],
+    currentIndex: 1,
+    results: [],
+    elapsedSec: 5,
+    savedAt: Date.now(),
+    config: { mode: 'due', lessons: [1], maxLearnedLesson: 1, selectedTypes: ['mc'], questionCount: 2 },
+  };
+  const review = getActivePracticeDraftInfo(base);
+  assert.equal(review?.label, 'Ôn tập');
+  assert.equal(review?.resumeHref, '/on-tap/phien?resume=1');
+
+  const practice = getActivePracticeDraftInfo({ ...base, config: { ...base.config!, mode: 'lesson' } });
+  assert.equal(practice?.label, 'Luyện tập');
+  assert.equal(practice?.resumeHref, '/luyen-tap/phien');
+});

@@ -322,8 +322,8 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
                 <div className="flex items-center justify-between gap-3 p-3 rounded-xl bg-card border border-border/60">
                   <div className="space-y-0.5 min-w-0">
                     <div className="text-xs font-bold text-foreground truncate">
-                      Luyện tập
-                      {drafts.practiceDraft.selectedLessons && drafts.practiceDraft.selectedLessons.length > 0
+                      {drafts.practiceDraft.label}
+                      {drafts.practiceDraft.label === 'Luyện tập' && drafts.practiceDraft.selectedLessons && drafts.practiceDraft.selectedLessons.length > 0
                         ? ` · Bài ${drafts.practiceDraft.selectedLessons.join(', ')}`
                         : ''}
                     </div>
