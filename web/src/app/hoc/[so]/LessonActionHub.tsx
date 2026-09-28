@@ -56,7 +56,7 @@ export function LessonActionHub({
             'w-full sm:w-auto font-semibold text-base shadow-sm justify-center gap-2'
           )}
         >
-          {vocabDraft ? (
+          {isResuming ? (
             <Sparkles className="size-5 text-primary-foreground" aria-hidden="true" />
           ) : (
             <BookOpen className="size-5 text-primary-foreground" aria-hidden="true" />
