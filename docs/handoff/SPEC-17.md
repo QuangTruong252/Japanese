@@ -58,3 +58,33 @@ Ngày: 27/09/2026. Trạng thái: Đã hoàn tất mã nguồn, component Tra c�
 
 - Supervisor Codex chạy `pnpm check` và `pnpm build` tích hợp trên toàn repo.
 - Thực hiện nghiệm thu giao diện trình duyệt (Mobile 390px, Desktop 1280px, phím tắt Ctrl+K, bộ đọc màn hình ARIA combobox).
+
+## Đợt 28/09/2026: Làm cứng Hub Tra cứu và Tìm kiếm tính năng
+
+### Thay đổi và quyết định kỹ thuật
+1. **Hub Tra cứu ([web/src/app/hoc/tra-cuu/page.tsx](file:///C:/Users/QT/orca/workspaces/Japanese/ux-w1/web/src/app/hoc/tra-cuu/page.tsx))**:
+   - Bỏ liên kết quay về "Học bài" theo SPEC-17 §3 và acceptance B17.1 (Tra cứu là đích dock cấp một, không lồng dưới Học bài).
+   - Giữ nguyên toàn bộ 4 thẻ danh mục và các URL con (`/hoc/tra-cuu/kana`, `/hoc/tra-cuu/kanji`, `/hoc/tra-cuu/dong-tu`, `/hoc/tra-cuu/bang`).
+   - Xóa bỏ import `ChevronLeft` và `buttonVariants` không còn sử dụng.
+2. **Điểm đến Tính năng Thống kê trong Tìm kiếm ([web/src/lib/search.ts](file:///C:/Users/QT/orca/workspaces/Japanese/ux-w1/web/src/lib/search.ts))**:
+   - Cập nhật `href` của mục `feature-thong-ke` từ `/thong-ke` sang `/ca-nhan/thong-ke` để điều hướng trực tiếp vào tab Thống kê mới (SPEC-16 & SPEC-17).
+3. **Mở rộng Unit Tests ([web/src/lib/search.test.ts](file:///C:/Users/QT/orca/workspaces/Japanese/ux-w1/web/src/lib/search.test.ts))**:
+   - Xác nhận bằng test rằng `tra cuu`, `kana`, `kanji`, `dong tu`, `thong ke` trả mục Tính năng đúng `href` (đặc biệt Thống kê → `/ca-nhan/thong-ke`).
+   - Xác nhận `watashi` và `tôi` (có dấu) vẫn trả về kết quả học liệu từ vựng tương ứng (không bị rỗng).
+   - Xác nhận nhóm Tính năng (tối đa 4 mục) không đẩy các kết quả nội dung khỏi giới hạn tối đa 20.
+4. **Cập nhật Spec**:
+   - Đổi checklist §9 trong `docs/specs/SPEC-17-tra-cuu-tim-kiem.md` về `[ ]` cho các mục cần kiểm thử browser.
+
+### File liên quan
+- `web/src/app/hoc/tra-cuu/page.tsx`
+- `web/src/lib/search.ts`
+- `web/src/lib/search.test.ts`
+- `docs/specs/SPEC-17-tra-cuu-tim-kiem.md`
+- `docs/handoff/SPEC-17.md`
+
+### Kết quả kiểm chứng thực chạy
+- `pnpm check`: **exit 0** (0 error; 0 warning trong các file thuộc phạm vi task).
+- `pnpm test`: **211/211 PASS** (10/10 search tests PASS, toàn bộ unit tests repo PASS).
+
+### Giới hạn
+- Chưa nghiệm thu browser — chờ coordinator.

@@ -35,7 +35,7 @@ import {
   ArrowRight,
   ChevronDown,
   BarChart3,
-  Dumbbell,
+  BookOpen,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { TargetType } from '@/types';
@@ -169,7 +169,7 @@ export function StatisticsContent() {
     );
   }
 
-  // 4. Trạng thái rỗng: chưa có phiên học nào
+  // 4. Trạng thái rỗng: chưa có phiên học nào (SPEC-16 §5, B16.7)
   if (sessions.length === 0) {
     return (
       <Card className="border-dashed py-14 px-6 text-center">
@@ -182,14 +182,14 @@ export function StatisticsContent() {
               Chưa có dữ liệu thống kê
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Làm một phiên luyện tập là có ngay số liệu chuỗi ngày, thời gian học và biểu đồ phân tích.
+              Bắt đầu bài học đầu tiên để theo dõi thời gian học, mức độ ghi nhớ và phân bố kiến thức.
             </p>
           </div>
           <div className="pt-2">
-            <Link href="/luyen-tap">
+            <Link href="/hoc/1">
               <Button size="quiz" className="gap-2">
-                <Dumbbell className="size-4" />
-                <span>Bắt đầu luyện tập ngay</span>
+                <BookOpen className="size-4" />
+                <span>Bắt đầu Bài 1</span>
               </Button>
             </Link>
           </div>

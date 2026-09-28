@@ -59,11 +59,11 @@ Không đưa secret/token vào UI hoặc log. Profile hiển thị dữ liệu c
 
 ## 9. Tiêu chí nghiệm thu
 
-- [x] Profile/Thống kê mở từ cả năm màn chính ở 390px trong một chạm; desktop từ chân sidebar. Guest không bị chặn.
-- [x] Dữ liệu Thống kê trước/sau chuyển route khớp; `/thong-ke` cũ đến tab đúng; Back/Forward giữ tab.
-- [x] Sau khi Profile đã hoạt động mới thay mục dock thứ năm; Tra cứu active ở hub và mọi route con, Học active ở bài học.
-- [x] Kiểm guest rỗng/có dữ liệu, logged in, Supabase unconfigured, pending/offline, đổi tài khoản và logout theo SPEC-08.
-- [x] Đã chạy unit tests (209 tests PASS); kiểm tra logic điều hướng mới (nav.test.ts); nghiệm thu browser và full check/build bàn giao cho giám sát viên.
+- [ ] Profile/Thống kê mở từ cả năm màn chính ở 390px trong một chạm; desktop từ chân sidebar. Guest không bị chặn.
+- [ ] Dữ liệu Thống kê trước/sau chuyển route khớp; `/thong-ke` cũ đến tab đúng; Back/Forward giữ tab.
+- [ ] Sau khi Profile đã hoạt động mới thay mục dock thứ năm; Tra cứu active ở hub và mọi route con, Học active ở bài học.
+- [ ] Kiểm guest rỗng/có dữ liệu, logged in, Supabase unconfigured, pending/offline, đổi tài khoản và logout theo SPEC-08.
+- [x] Đã chạy unit tests; kiểm tra logic điều hướng mới (nav.test.ts); nghiệm thu browser và full check/build bàn giao cho giám sát viên.
 
 ## 10. Khối lệnh bàn giao thiết kế
 

@@ -67,3 +67,40 @@ Ngày: 2026-09-27. Trạng thái: **Đã triển khai đầy đủ code và unit
    - Theo chỉ thị của giám sát viên, full `pnpm check`, `pnpm build` và kiểm thử browser tương tác trực tiếp được bàn giao cho Codex giám sát chạy đồng bộ nhằm tránh xung đột process giữa 5 worker.
 2. **Môi trường Supabase cloud thật**:
    - Đã kiểm tra qua mock và guard `isSupabaseConfigured()`; kết nối OAuth trực tiếp với Google client ID thật cần môi trường cấu hình `.env.local` của người dùng.
+
+## Đợt 28/09/2026: Làm cứng shell điều hướng và Profile
+
+### Thay đổi và quyết định kỹ thuật
+1. **Loại bỏ `getUser()` khỏi `AppNav.tsx` & `AccountButton.tsx`**:
+   - `AppNav.tsx` chỉ dùng `onAuthStateChange` (INITIAL_SESSION) đọc session cục bộ, không gọi mạng trên mỗi trang; xóa import thừa `RefreshCw`.
+   - `AccountButton.tsx` loại bỏ hoàn toàn `getUser()`, nhận prop `user` từ `AppNav` (hoặc fallback `onAuthStateChange` nếu dùng độc lập).
+2. **Lối Tài khoản duy nhất & Ẩn chrome phiên toàn màn**:
+   - Header mobile (<lg) dùng duy nhất `AccountButton` từ `AppNav`; desktop ≥lg ở chân sidebar.
+   - Thêm hàm thuần `shouldHideAppChrome(pathname)` trong `web/src/lib/nav.ts` (ẩn header mobile, dock và sidebar trên `/luyen-tap/phien`, `/on-tap/phien`, `/hoc/[so]/tu-vung`).
+   - Bổ sung test suite trong `web/src/lib/nav.test.ts` kiểm thử đầy đủ các ca đúng (phải ẩn) và ca sai (không ẩn).
+3. **Trạng thái active nút Tài khoản**:
+   - Khi ở `/ca-nhan/**`, nút header Tài khoản hiển thị trạng thái active (`aria-current="page"`).
+4. **Empty state Thống kê (`StatisticsContent.tsx`)**:
+   - Bỏ nhắc "chuỗi ngày" (đã bỏ theo hợp đồng sản phẩm 24/09).
+   - Khi chưa có bài/phiên nào, CTA chính dẫn `/hoc/1` ("Bắt đầu Bài 1" kèm icon `BookOpen`), không dẫn luyện tập.
+5. **Dọn dẹp code & lint**:
+   - Xóa import `Clock` không sử dụng trong `web/src/app/ca-nhan/page.tsx`.
+   - Cập nhật checklist §9 trong `docs/specs/SPEC-16-dieu-huong-profile.md` về `[ ]` cho các mục cần kiểm thử browser.
+
+### File liên quan
+- `web/src/components/AppNav.tsx`
+- `web/src/components/profile/AccountButton.tsx`
+- `web/src/app/ca-nhan/page.tsx`
+- `web/src/components/stats/StatisticsContent.tsx`
+- `web/src/lib/nav.ts`
+- `web/src/lib/nav.test.ts`
+- `docs/specs/SPEC-16-dieu-huong-profile.md`
+- `docs/handoff/SPEC-16.md`
+
+### Kết quả kiểm chứng thực chạy
+- `pnpm check`: **exit 0** (0 error; 0 warning trong các file thuộc phạm vi task).
+- `pnpm test`: **211/211 PASS** (100%, tăng 2 test so với baseline 209).
+- Kiểm tra `grep "getUser("`: không còn lệnh gọi `getUser(` trong `AppNav.tsx`, `ca-nhan/**` và `profile/**`.
+
+### Giới hạn
+- Chưa nghiệm thu browser — chờ coordinator.

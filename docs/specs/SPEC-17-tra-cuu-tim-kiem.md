@@ -44,9 +44,9 @@ Tra cứu chỉ đọc chỉ mục nội dung cục bộ; không gửi truy vấ
 
 ## 9. Tiêu chí nghiệm thu
 
-- [x] Từ mỗi màn chính: một chạm đến hub; hai chạm đến Kana/Kanji/Động từ/Bảng. Dock active đúng ở mọi route con.
-- [x] `tra cuu`, `kana`, `kanji`, `dong tu`, `thong ke` trả đích tính năng phù hợp; truy vấn Nhật/romaji/Việt vẫn trả nội dung đúng, không tụt khỏi giới hạn 20 kết quả vì mục điều hướng chiếm hết.
-- [x] Deep link cũ, `?q=` động từ, anchor bài và Back/Forward vẫn hoạt động. Kiểm index lỗi/empty/keyboard/mobile.
+- [ ] Từ mỗi màn chính: một chạm đến hub; hai chạm đến Kana/Kanji/Động từ/Bảng. Dock active đúng ở mọi route con.
+- [ ] `tra cuu`, `kana`, `kanji`, `dong tu`, `thong ke` trả đích tính năng phù hợp; truy vấn Nhật/romaji/Việt vẫn trả nội dung đúng, không tụt khỏi giới hạn 20 kết quả vì mục điều hướng chiếm hết.
+- [ ] Deep link cũ, `?q=` động từ, anchor bài và Back/Forward vẫn hoạt động. Kiểm index lỗi/empty/keyboard/mobile.
 - [x] `pnpm test` cho alias/ranking (9/9 search tests PASS, 201/201 repo tests PASS); bàn giao nghiệm thu trình duyệt và full check/build cho supervisor.
 
 ## 10. Khối lệnh bàn giao thiết kế
