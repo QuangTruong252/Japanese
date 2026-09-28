@@ -8,6 +8,7 @@ import { useDueQueue } from '@/lib/use-due-queue';
 import { countLearnedByLesson, pickActiveLesson, secondsPerQuestion } from '@/lib/stats';
 import { DEFAULT_SETTINGS, getSettingsSnapshot, subscribeSettings } from '@/lib/settings';
 import { useActiveDrafts } from '@/lib/active-drafts';
+import { resolveDashboardCta } from '@/lib/dashboard-cta';
 import type { LessonSummary } from '@/lib/lessons';
 import { SyncBadge } from '@/components/SyncBadge';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
@@ -25,7 +26,6 @@ import {
   HelpCircle,
   ChevronDown,
   Clock,
-  User,
   BarChart2,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -80,6 +80,18 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
     !queue.hasAnyReviewItem && (vocabTargetIds?.length ?? 0) === 0 && learnedThroughLesson === 0;
   const hasNoProgress = isNewUser && (recentSessions?.length ?? 0) === 0;
 
+  // Quyết định CTA chính theo helper thuần (SPEC-18 §3, §6)
+  const ctaDecision = useMemo(
+    () =>
+      resolveDashboardCta({
+        batchCount,
+        isNewUser,
+        activeLessonNum,
+        activeLessonTitle: activeSummary?.title?.vi,
+      }),
+    [batchCount, isNewUser, activeLessonNum, activeSummary]
+  );
+
   // Lời chào và định dạng ngày tháng
   const hour = now.getHours();
   const greeting = hour < 12 ? 'Chào buổi sáng' : hour < 18 ? 'Chào buổi chiều' : 'Chào buổi tối';
@@ -92,9 +104,12 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
   return (
     <main className="mx-auto w-full max-w-5xl px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8">
       {/* ========================================================
-          1. Header: Lời chào + Lối vào Profile / Tài khoản & Cài đặt
+          1. Header: Lời chào + Điều khiển phụ (Tìm kiếm, Sync, Theme)
+          AppNav là nơi duy nhất giữ lối Tài khoản (SPEC-16/18).
+          Trên 390px, lời chào chiếm trọn chiều ngang, không bị co hẹp.
+          Nút phụ xuống hàng hoặc thu gọn bên phải trên sm, vùng chạm ≥44px.
           ======================================================== */}
-      <header className="flex items-start justify-between gap-4">
+      <header className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
         <div className="space-y-1">
           <p className="text-xs sm:text-sm font-medium text-muted-foreground capitalize">
             {dateFormatted}
@@ -104,22 +119,11 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
           </h1>
         </div>
 
-        {/* Lối vào thứ cấp cho Tìm kiếm, Tài khoản / Profile (/ca-nhan), Chủ đề */}
-        <div className="flex items-center gap-2 pt-1">
+        {/* Lối vào thứ cấp cho Tìm kiếm, Đồng bộ, Chủ đề (vùng chạm ≥44px) */}
+        <div className="flex items-center gap-2 self-start sm:self-auto sm:pt-1">
           <SearchTrigger iconOnly className="size-11 rounded-xl lg:hidden" />
-          <SyncBadge className="h-9 px-2.5 rounded-xl text-xs shadow-2xs lg:hidden" />
+          <SyncBadge className="min-h-11 h-11 px-2.5 rounded-xl text-xs shadow-2xs lg:hidden" />
           <ThemeToggle className="size-11 rounded-xl" />
-          <Link
-            href="/ca-nhan"
-            aria-label="Tiến độ và Tài khoản cá nhân"
-            className={cn(
-              buttonVariants({ variant: 'outline', size: 'sm' }),
-              'gap-1.5 min-h-11 h-11 px-3 rounded-xl border-border/80'
-            )}
-          >
-            <User className="size-4 text-primary" />
-            <span className="text-xs font-semibold">Tài khoản</span>
-          </Link>
         </div>
       </header>
 
@@ -200,7 +204,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
           <div className="h-8 w-64 bg-muted rounded" />
           <div className="h-12 w-48 bg-muted rounded-xl" />
         </Card>
-      ) : batchCount > 0 ? (
+      ) : ctaDecision.isPrimaryReview ? (
         // TH1: Có mục đến hạn -> Ôn tập là CTA chính (P0), Bài đang học là P1 bên dưới
         <div className="space-y-4">
           {/* Card P0: Bắt đầu ôn tập */}
@@ -211,7 +215,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
                 <span>Việc nên làm tiếp theo</span>
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-foreground">
-                Ôn tập
+                {ctaDecision.heading}
               </h2>
               <p className="text-sm text-muted-foreground max-w-xl">
                 <strong className="text-foreground font-semibold">{batchCount} mục</strong>
@@ -222,14 +226,14 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
 
             <div>
               <Link
-                href="/on-tap"
+                href={ctaDecision.href}
                 className={cn(
                   buttonVariants({ size: 'quiz' }),
                   'w-full sm:w-auto font-semibold text-base shadow-sm'
                 )}
               >
                 <RotateCcw className="w-5 h-5 mr-2" />
-                Bắt đầu ôn
+                {ctaDecision.ctaText}
               </Link>
             </div>
           </Card>
@@ -276,9 +280,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
               <span>Việc nên làm tiếp theo</span>
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-foreground">
-              {isNewUser
-                ? 'Bắt đầu bài 1: Giới thiệu bản thân'
-                : `Bài đang học: Bài ${activeLessonNum} — ${activeSummary.title.vi}`}
+              {ctaDecision.heading}
             </h2>
             <p className="text-sm text-muted-foreground max-w-xl">
               {isNewUser
@@ -307,14 +309,14 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
           <div className="space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
               <Link
-                href={`/hoc/${activeLessonNum}`}
+                href={ctaDecision.href}
                 className={cn(
                   buttonVariants({ size: 'quiz' }),
                   'w-full sm:w-auto font-semibold text-base shadow-sm'
                 )}
               >
                 <BookOpen className="w-5 h-5 mr-2" />
-                {isNewUser ? 'Bắt đầu bài 1' : `Học tiếp bài ${activeLessonNum}`}
+                {ctaDecision.ctaText}
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
               {isNewUser && (

@@ -1,6 +1,6 @@
 # SPEC-18 — Bảng tin dẫn việc tiếp theo và hub bài học
 
-Ngày: 27/09/2026. Trạng thái: **Đã triển khai code; unit tests PASS; chờ nghiệm thu trình duyệt toàn luồng từ supervisor**. Mốc 3 của [kế hoạch UX](../plans/2026-09-27-ux-redesign.md); đọc SPEC-02/03/15 và phần Nghe của SPEC-09/10.
+Ngày: 28/09/2026. Trạng thái: **Đã làm cứng theo phản hồi 28/09/2026; unit tests 219/219 PASS; chờ nghiệm thu trình duyệt từ coordinator**. Mốc 3 của [kế hoạch UX](../plans/2026-09-27-ux-redesign.md); đọc SPEC-02/03/15 và phần Nghe của SPEC-09/10.
 
 ## 1. Mục tiêu & phạm vi
 
@@ -49,11 +49,11 @@ Một `h1`/màn, heading theo thứ bậc, tên nút nói hành động, Nhật/
 
 ## 9. Tiêu chí nghiệm thu
 
-- [x] Guest mới: `Bảng tin → Bài 1 → Học từ` rõ, không cần đi qua Luyện hoặc tạo account.
-- [x] Có mục đến hạn/không đến hạn/nháp: CTA chính đúng, nháp vẫn tiếp tục đúng vị trí; “Xem tiến độ” tới Profile (`/ca-nhan`).
-- [x] Bài N lần đầu ưu tiên Học từ; Ngữ pháp/Nghe/tham khảo/Luyện đều tìm thấy; anchor từ SearchDialog và bookmark cũ còn tới đúng nội dung.
-- [x] Thiếu audio dẫn đúng trang nạp và quay lại bài; học/lưu được khi tab đã mở rồi mất mạng. Browser 390/1280, keyboard, furigana, dark/reduced motion.
-- [x] `pnpm test` 209 tests PASS; handoff ghi trạng thái SPEC-03 và SPEC-18 chi tiết.
+- [ ] Guest mới: `Bảng tin → Bài 1 → Học từ` rõ, không cần đi qua Luyện hoặc tạo account (chờ browser nghiệm thu).
+- [ ] Có mục đến hạn/không đến hạn/nháp: CTA chính đúng, nháp vẫn tiếp tục đúng vị trí; “Xem tiến độ” tới Profile (`/ca-nhan`) (chờ browser nghiệm thu).
+- [ ] Bài N lần đầu ưu tiên Học từ; Ngữ pháp/Nghe/tham khảo/Luyện đều tìm thấy; anchor từ SearchDialog và bookmark cũ còn tới đúng nội dung (chờ browser nghiệm thu).
+- [ ] Thiếu audio dẫn đúng trang nạp và quay lại bài; học/lưu được khi tab đã mở rồi mất mạng. Browser 390/1280, keyboard, furigana, dark/reduced motion (chờ browser nghiệm thu).
+- [x] `pnpm test` 219 tests PASS (unit tests cho Dashboard CTA, active drafts hỏng/hết hạn); handoff ghi trạng thái SPEC-03 và SPEC-18 chi tiết.
 
 ## 10. Khối lệnh bàn giao thiết kế
 

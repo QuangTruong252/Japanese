@@ -123,3 +123,92 @@ test('getActivePracticeDraftInfo trả về null khi phiên đã hoàn tất', (
   const info = getActivePracticeDraftInfo(draft);
   assert.equal(info, null);
 });
+
+test('getActiveVocabDraftForLesson loại bỏ nháp hỏng (JSON lỗi, version lệch, targetIds rỗng/sai kiểu, currentIndex âm)', () => {
+  const storage = new MemoryStorage();
+
+  // JSON lỗi cú pháp
+  storage.setItem('jp:vocab-draft:1', '{malformed-json');
+  assert.equal(getActiveVocabDraftForLesson(1, storage), null);
+
+  // version khác 1
+  storage.setItem('jp:vocab-draft:2', JSON.stringify({ version: 2, targetIds: ['v1'], currentIndex: 0 }));
+  assert.equal(getActiveVocabDraftForLesson(2, storage), null);
+
+  // targetIds rỗng hoặc không phải array
+  storage.setItem('jp:vocab-draft:3', JSON.stringify({ version: 1, targetIds: [], currentIndex: 0 }));
+  assert.equal(getActiveVocabDraftForLesson(3, storage), null);
+
+  storage.setItem('jp:vocab-draft:4', JSON.stringify({ version: 1, targetIds: 'not-an-array', currentIndex: 0 }));
+  assert.equal(getActiveVocabDraftForLesson(4, storage), null);
+
+  // currentIndex âm hoặc số thực
+  storage.setItem('jp:vocab-draft:5', JSON.stringify({ version: 1, targetIds: ['v1'], currentIndex: -1 }));
+  assert.equal(getActiveVocabDraftForLesson(5, storage), null);
+
+  storage.setItem('jp:vocab-draft:6', JSON.stringify({ version: 1, targetIds: ['v1', 'v2'], currentIndex: 1.5 }));
+  assert.equal(getActiveVocabDraftForLesson(6, storage), null);
+});
+
+test('getActiveVocabDraftForLesson loại bỏ nháp đã hết hạn / hoàn tất vượt quá giới hạn', () => {
+  const storage = new MemoryStorage();
+
+  // currentIndex = length (hoàn tất)
+  storage.setItem('jp:vocab-draft:1', JSON.stringify({ version: 1, targetIds: ['v1', 'v2'], currentIndex: 2 }));
+  assert.equal(getActiveVocabDraftForLesson(1, storage), null);
+
+  // currentIndex > length (vượt quá / hết hạn)
+  storage.setItem('jp:vocab-draft:2', JSON.stringify({ version: 1, targetIds: ['v1'], currentIndex: 99 }));
+  assert.equal(getActiveVocabDraftForLesson(2, storage), null);
+});
+
+test('getActivePracticeDraftInfo loại bỏ nháp hỏng (null, questions rỗng, currentIndex âm)', () => {
+  assert.equal(getActivePracticeDraftInfo(null), null);
+
+  const emptyQuestionsDraft = {
+    version: 1,
+    questions: [],
+    currentIndex: 0,
+    results: [],
+    elapsedSec: 0,
+    savedAt: Date.now(),
+  } as unknown as PracticeDraft;
+  assert.equal(getActivePracticeDraftInfo(emptyQuestionsDraft), null);
+
+  const negativeIndexDraft = {
+    version: 1,
+    questions: [
+      { id: 'q1', type: 'multiple_choice', prompt: 'a', options: ['a', 'b'], answer: 'a' } as unknown as PracticeDraft['questions'][number],
+    ],
+    currentIndex: -1,
+    results: [],
+    elapsedSec: 0,
+    savedAt: Date.now(),
+  } as PracticeDraft;
+  assert.equal(getActivePracticeDraftInfo(negativeIndexDraft), null);
+});
+
+test('getActivePracticeDraftInfo loại bỏ nháp luyện tập đã hết hạn hoặc vượt quá tổng số câu', () => {
+  const expiredDraft = {
+    version: 1,
+    questions: [
+      { id: 'q1', type: 'multiple_choice', prompt: 'a', options: ['a', 'b'], answer: 'a' } as unknown as PracticeDraft['questions'][number],
+    ],
+    currentIndex: 10, // Vượt xa số câu
+    results: [],
+    elapsedSec: 25,
+    savedAt: Date.now(),
+  } as PracticeDraft;
+
+  assert.equal(getActivePracticeDraftInfo(expiredDraft), null);
+});
+
+test('findActiveVocabDraft bỏ qua toàn bộ bài nếu chỉ có nháp hỏng hoặc nháp đã hoàn tất', () => {
+  const storage = new MemoryStorage();
+  storage.setItem('jp:vocab-draft:1', '{bad json');
+  storage.setItem('jp:vocab-draft:2', JSON.stringify({ version: 1, targetIds: ['v1'], currentIndex: 1 })); // Đã xong
+  storage.setItem('jp:vocab-draft:3', JSON.stringify({ version: 99, targetIds: ['v1'], currentIndex: 0 })); // Version sai
+
+  assert.equal(findActiveVocabDraft(storage), null);
+});
+

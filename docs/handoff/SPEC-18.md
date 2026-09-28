@@ -84,3 +84,49 @@ Ngày: 27/09/2026. Trạng thái: Đã hoàn tất mã nguồn theo đặc tả 
 
 - Supervisor Codex chạy `pnpm check` và `pnpm build` tích hợp trên toàn repo.
 - Nghiệm thu trình duyệt đối với luồng: Khách mới từ Bảng tin → Bài 1 → Học từ vựng; luồng tiếp tục phiên khi có nháp; kiểm tra neo cuộn `#vocab-*` và `#grammar-*` khi bấm từ SearchDialog.
+
+## Đợt 28/09/2026 — Làm cứng theo quan sát browser
+
+### 1. Thay đổi đã thực hiện
+1. **Header Bảng tin (`DashboardContent.tsx`):**
+   - Loại bỏ nút "Tài khoản" thừa trong header `DashboardContent` (AppNav mobile header và desktop sidebar là nơi duy nhất quản lý profile theo SPEC-16/18).
+   - Bảo toàn lối tắt "Xem tiến độ trên máy" dẫn tới `/ca-nhan` trong section lối tắt.
+   - Sắp xếp lại bố cục header: Sử dụng `flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4`. Ở màn hình 390px, lời chào và ngày tháng chiếm trọn chiều ngang, không còn bị ép thành cột hẹp ("Chào / buổi / sáng").
+   - Hàng nút phụ (Tìm kiếm, Sync, Theme) xuống dòng trên mobile hoặc nằm bên phải ở màn hình lớn hơn (`sm:`), vùng chạm đạt chuẩn tối thiểu ≥44px (`size-11` = 44px, `min-h-11 h-11` = 44px).
+2. **Luật CTA Bảng tin (`dashboard-cta.ts` + test):**
+   - Tách helper thuần `resolveDashboardCta` (`web/src/lib/dashboard-cta.ts`) đóng băng luật CTA theo SPEC-18 §3, §6:
+     - `batchCount > 0`: Luôn chọn "Bắt đầu ôn" (`/on-tap`) làm CTA chính duy nhất (P0); nháp dở dang luôn ở hàng phụ, bài đang học ở card P1.
+     - `batchCount === 0`: Hợp nhất thẻ; nếu `isNewUser` thì CTA là "Bắt đầu bài 1" (`/hoc/1`), nếu người quay lại thì CTA là "Học tiếp bài N" (`/hoc/N`).
+   - Xây dựng 5 unit tests độc lập (`dashboard-cta.test.ts`) kiểm tra ca chuẩn, ca có nháp + ôn, ca người mới, ca quay lại, và ca dữ liệu biên/sai (batchCount < 0, lessonNum <= 0, NaN).
+3. **Nháp dở dang (`active-drafts.ts` & `DashboardContent.tsx`):**
+   - Xác nhận `active-drafts.ts` và `DashboardContent.tsx` hiển thị đúng bài của nháp luyện (`config.lessons`) và đúng vị trí câu/từ (`currentQuestionIndex/totalQuestions`, `currentWordIndex/totalWords`).
+   - Bổ sung 5 unit tests mới trong `active-drafts.test.ts` kiểm tra toàn diện: nháp hỏng (JSON lỗi cú pháp, version sai, targetIds không hợp lệ, currentIndex âm/số thực, thiếu questions) và nháp hết hạn/hoàn tất (`currentIndex >= length` hoặc vượt quá giới hạn).
+4. **Hub bài học (`LessonActionHub.tsx`):**
+   - Khắc phục cảnh báo ESLint: sử dụng `isResuming` để hiển thị biểu tượng `Sparkles` khi đang học dở/nháp dở dang (hoặc `BookOpen` khi bắt đầu học mới), giải quyết triệt để unused variable warning.
+   - Giữ nguyên `LessonGrid.tsx` ổn định, không refactor rộng.
+5. **Anchor deep-link trên `/hoc/[so]`:**
+   - Bảo toàn đầy đủ tất cả các anchor `#tu-vung`, `#ngu-phap`, `#nghe`, `#luyen-tap` và id `#vocab-*`, `#grammar-*` với khoảng cách cuộn `scroll-mt-20 sm:scroll-mt-24`.
+6. **Đồng bộ đặc tả:**
+   - Cập nhật `docs/specs/SPEC-18-bang-tin-va-hoc.md`: chuyển các tiêu chí cần browser ở §9 về `[ ]`, cập nhật trạng thái ngày 28/09/2026.
+
+### 2. Files đã chỉnh sửa
+- `web/src/components/DashboardContent.tsx`
+- `web/src/lib/dashboard-cta.ts` (mới)
+- `web/src/lib/dashboard-cta.test.ts` (mới)
+- `web/src/lib/active-drafts.test.ts`
+- `web/src/app/hoc/[so]/LessonActionHub.tsx`
+- `docs/specs/SPEC-18-bang-tin-va-hoc.md`
+- `docs/handoff/SPEC-18.md`
+
+### 3. Kết quả kiểm tra thực chạy
+- `pnpm --prefix web check`:
+  - `tsc --noEmit && eslint` exit code 0.
+  - 0 lỗi TypeScript, 0 lỗi ESLint.
+  - 0 warnings trong toàn bộ file thuộc quyền sở hữu (cảnh báo `isResuming` trong `LessonActionHub.tsx` đã được giải quyết).
+- `pnpm --prefix web test`:
+  - `219/219 tests PASS (100%)`, 0 fail, 0 error.
+  - Số test tăng từ 209 lên 219 (+10 tests: 5 tests mới cho `dashboard-cta.test.ts`, 5 tests mới cho `active-drafts.test.ts`).
+
+### 4. Giới hạn & Phần chưa kiểm chứng
+Chưa nghiệm thu browser — chờ coordinator.
+
