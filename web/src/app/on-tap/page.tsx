@@ -268,7 +268,7 @@ export default function ReviewTodayPage() {
     );
   }
 
-  // Trạng thái 2: Đã ôn xong hôm nay
+  // Trạng thái 2: Đã ôn xong hôm nay hoặc đã chạm hạn mức dailyNewLimit
   if (totalCount === 0) {
     return (
       <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
@@ -277,16 +277,22 @@ export default function ReviewTodayPage() {
         {draftResumeCard}
         <Card>
           <CardContent className="space-y-4 p-6 text-center">
-            <h2 className="text-lg font-semibold">Đã ôn xong hôm nay</h2>
-            <p className="text-sm text-muted-foreground">
-              {queue.dueTomorrowCount > 0
-                ? `Ngày mai có ${queue.dueTomorrowCount} mục đến hạn ôn tập.`
-                : 'Ngày mai chưa có mục nào đến hạn ôn tập.'}
-            </p>
-            {queue.limitReached && (
-              <p className="text-sm text-muted-foreground">
-                Đã đủ {queue.dailyNewLimit} mục mới hôm nay.
-              </p>
+            {queue.limitReached ? (
+              <>
+                <h2 className="text-lg font-semibold">Đã đạt hạn mức mục mới hôm nay</h2>
+                <p className="text-sm text-muted-foreground">
+                  Bạn đã hoàn thành các mục đến hạn và đạt hạn mức {queue.dailyNewLimit} mục mới hôm nay. Hãy quay lại vào ngày mai hoặc học thêm bài mới.
+                </p>
+              </>
+            ) : (
+              <>
+                <h2 className="text-lg font-semibold">Đã ôn xong hôm nay</h2>
+                <p className="text-sm text-muted-foreground">
+                  {queue.dueTomorrowCount > 0
+                    ? `Ngày mai có ${queue.dueTomorrowCount} mục đến hạn ôn tập.`
+                    : 'Ngày mai chưa có mục nào đến hạn ôn tập.'}
+                </p>
+              </>
             )}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
               <Link href="/hoc" className={cn(buttonVariants({ size: 'quiz' }), 'w-full sm:w-auto')}>
@@ -348,19 +354,31 @@ export default function ReviewTodayPage() {
                   >
                     Học bài khác
                   </Link>
+                  <Link
+                    href="/"
+                    className={cn(buttonVariants({ variant: 'ghost', size: 'quiz' }), 'w-full sm:w-auto')}
+                  >
+                    Về Bảng tin
+                  </Link>
                 </div>
               </div>
             ) : (
               <div role="alert" className="space-y-3 rounded-xl border border-destructive/30 bg-destructive/10 p-4 text-destructive">
                 <p className="text-sm font-medium">
-                  Không có câu hỏi nào hợp lệ cho các mục đang đến hạn. Hạn ôn được giữ nguyên.
+                  Không có câu hỏi nào hợp lệ cho các mục đang đến hạn. Hạn ôn của chúng được giữ nguyên.
                 </p>
-                <div className="pt-1">
+                <div className="flex flex-wrap gap-2 pt-1">
                   <Link
                     href="/hoc"
                     className={cn(buttonVariants({ size: 'quiz' }), 'w-full sm:w-auto')}
                   >
                     Xem danh sách bài học
+                  </Link>
+                  <Link
+                    href="/"
+                    className={cn(buttonVariants({ variant: 'outline', size: 'quiz' }), 'w-full sm:w-auto')}
+                  >
+                    Về Bảng tin
                   </Link>
                 </div>
               </div>
@@ -412,6 +430,21 @@ export default function ReviewTodayPage() {
           <Button size="quiz" className="w-full text-base font-medium" onClick={startSession}>
             Bắt đầu ôn
           </Button>
+
+          {preview.excludedAudioCount > 0 && (
+            <div
+              role="status"
+              className="flex items-center gap-2 rounded-xl border border-warning/40 bg-warning/10 p-3 text-xs sm:text-sm text-warning-foreground"
+            >
+              <AlertCircle className="size-4 shrink-0 text-warning" aria-hidden="true" />
+              <span>
+                Tạm thời bỏ qua {preview.excludedAudioCount} câu nghe do thiết bị chưa có giọng tiếng Nhật (ja-JP). Hạn ôn của các câu này được giữ nguyên.{' '}
+                <Link href="/cai-dat/audio" className="font-semibold underline underline-offset-2 hover:text-foreground">
+                  Cài đặt âm thanh
+                </Link>
+              </span>
+            </div>
+          )}
 
           {queue.remainingDue > 0 && (
             <p className="text-sm text-muted-foreground">

@@ -1,5 +1,5 @@
-import type { QuestionItem, TargetType } from '../types/index.ts';
-import { targetTypeFromId } from './practice.ts';
+import type { PracticeConfig, QuestionItem, ReviewItem, TargetType } from '../types/index.ts';
+import { buildSession, targetTypeFromId } from './practice.ts';
 import { startOfLocalDay } from './stats.ts';
 
 /** Nội dung hiển thị của một mục tiêu ôn tập. */
@@ -75,6 +75,130 @@ export function planReviewBatch<T>(
     batchDue,
     newTargetIds: selectNewTargetIds(poolTargetIds, existingTargetIds, room),
     remainingDue: dueItems.length - batchDue.length,
+  };
+}
+
+export interface NextBatchPlanResult {
+  /** Các mục đến hạn trong lô này */
+  batchDue: ReviewItem[];
+  /** Các targetId mục mới được bổ sung vào lô này */
+  newTargetIds: string[];
+  /** Toàn bộ targetId trong phiên ôn = batchDue + newTargetIds */
+  sessionTargetIds: Set<string>;
+  /** Số lượng câu hỏi thực tế có thể chơi được trong lô này (khớp chính xác buildSession) */
+  playableCount: number;
+  /** Số mục đến hạn còn lại sau lô này */
+  remainingDue: number;
+  /** Tổng số mục đến hạn hiện tại trong toàn bộ hàng đợi */
+  totalDueCount: number;
+  /** Có phiên ôn tiếp theo khả dụng hay không (playableCount > 0) */
+  hasMore: boolean;
+  /** Lý do nếu còn mục tiêu nhưng không tạo được câu nào */
+  blockedReason?: 'no-audio' | 'no-questions';
+}
+
+/**
+ * Tính toán kế hoạch lô ôn tập tiếp theo (SPEC-20).
+ * Hàm thuần kết hợp planReviewBatch với buildSession:
+ * - Tôn trọng hạn mức mục mới còn lại trong ngày (dailyNewLimit - newLoadedToday);
+ * - Chỉ nạp mục mới khi batch còn chỗ trống (ưu tiên mục đến hạn trước);
+ * - Kiểm tra câu hỏi thực tế tạo được qua buildSession (loại bỏ trường hợp thiếu giọng ja-JP hoặc thiếu câu hỏi);
+ * - Đảm bảo số N hiển thị trên nút "Ôn lô tiếp (N mục)" luôn khớp 100% với số câu hỏi của phiên được tạo.
+ */
+export function resolveNextBatchPlan({
+  allReviewItems,
+  poolQuestions,
+  dailyNewLimit,
+  reviewBatchSize,
+  now,
+  availableAudioKeys,
+  config,
+}: {
+  allReviewItems: ReviewItem[];
+  poolQuestions: QuestionItem[];
+  dailyNewLimit: number;
+  reviewBatchSize: number;
+  now: Date;
+  availableAudioKeys: Set<string>;
+  config?: PracticeConfig;
+}): NextBatchPlanResult {
+  const startTodayIso = startOfLocalDay(now).toISOString();
+  const newLoadedToday = allReviewItems.filter((item) => item.createdAt >= startTodayIso).length;
+  const remainingNewQuota = Math.max(0, dailyNewLimit - newLoadedToday);
+
+  const allDueItems = allReviewItems
+    .filter((item) => item.dueAt.getTime() <= now.getTime())
+    .sort((a, b) => a.dueAt.getTime() - b.dueAt.getTime());
+
+  const existingTargetIds = new Set(allReviewItems.map((item) => item.targetId));
+  const poolTargetIds = collectTargetIds(poolQuestions);
+
+  const plan = planReviewBatch(
+    allDueItems,
+    poolTargetIds,
+    existingTargetIds,
+    remainingNewQuota,
+    reviewBatchSize,
+  );
+
+  const sessionTargetIds = new Set([
+    ...plan.batchDue.map((item) => item.targetId),
+    ...plan.newTargetIds,
+  ]);
+
+  if (sessionTargetIds.size === 0) {
+    return {
+      batchDue: [],
+      newTargetIds: [],
+      sessionTargetIds,
+      playableCount: 0,
+      remainingDue: 0,
+      totalDueCount: 0,
+      hasMore: false,
+    };
+  }
+
+  const computedMaxLesson =
+    config?.maxLearnedLesson && config.maxLearnedLesson > 0
+      ? config.maxLearnedLesson
+      : Math.max(0, ...poolQuestions.map((item) => item.lesson), ...(config?.lessons ?? []));
+
+  const sessionConfig: PracticeConfig = {
+    mode: 'due',
+    lessons:
+      config?.lessons && config.lessons.length > 0
+        ? config.lessons
+        : [...new Set(poolQuestions.map((item) => item.lesson))],
+    maxLearnedLesson: computedMaxLesson,
+    selectedTypes: config?.selectedTypes ?? ['mc', 'matching', 'cloze', 'reorder', 'listening'],
+    questionCount: sessionTargetIds.size,
+  };
+
+  const { questions: playableQuestions, excludedAudioCount } = buildSession(
+    poolQuestions,
+    sessionConfig,
+    availableAudioKeys,
+    sessionTargetIds,
+  );
+
+  let blockedReason: 'no-audio' | 'no-questions' | undefined;
+  if (playableQuestions.length === 0) {
+    if (excludedAudioCount > 0 && availableAudioKeys.size === 0) {
+      blockedReason = 'no-audio';
+    } else {
+      blockedReason = 'no-questions';
+    }
+  }
+
+  return {
+    batchDue: plan.batchDue,
+    newTargetIds: plan.newTargetIds,
+    sessionTargetIds,
+    playableCount: playableQuestions.length,
+    remainingDue: plan.remainingDue,
+    totalDueCount: allDueItems.length,
+    hasMore: playableQuestions.length > 0,
+    blockedReason,
   };
 }
 
