@@ -52,7 +52,7 @@ export function resolveDashboardCta({
   if (isNewUser) {
     return {
       kind: 'start_first_lesson',
-      href: `/hoc/${safeLessonNum}`,
+      href: '/hoc/1',
       ctaText: 'Bắt đầu bài 1',
       heading: 'Bắt đầu bài 1: Giới thiệu bản thân',
       isPrimaryReview: false,
