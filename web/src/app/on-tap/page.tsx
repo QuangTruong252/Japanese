@@ -330,7 +330,7 @@ export default function ReviewTodayPage() {
         <Card>
           <CardContent className="space-y-4 p-6">
             <p className="text-lg font-semibold text-foreground">
-              {dueCount} mục đến hạn · {newCount} mục mới
+              {queue.totalDueCount} mục đến hạn · {newCount} mục mới
             </p>
 
             {preview.excludedAudioCount > 0 ? (
@@ -420,10 +420,10 @@ export default function ReviewTodayPage() {
         <CardContent className="space-y-4 p-6">
           <p className="text-lg font-semibold text-foreground">
             <span aria-hidden="true">
-              {dueCount} mục đến hạn · {newCount} mục mới
+              {queue.totalDueCount} mục đến hạn · {newCount} mục mới
             </span>
             <span className="sr-only">
-              Hôm nay có {dueCount} mục đến hạn ôn tập và {newCount} mục mới.
+              Hôm nay có {queue.totalDueCount} mục đến hạn ôn tập và {newCount} mục mới.
             </span>
           </p>
 
