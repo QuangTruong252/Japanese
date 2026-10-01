@@ -18,7 +18,7 @@ Ngày: 28/09/2026. Trạng thái: **Đã làm cứng theo phản hồi 28/09/202
 
 | Màn | Thứ tự đọc và hành động |
 | --- | --- |
-| Bảng tin `/` | Lời chào ngắn → một CTA chính: có mục đến hạn thì “Bắt đầu ôn”; không có thì “Tiếp tục học Bài N” hoặc “Bắt đầu Bài 1”. Hàng phụ “Tiếp tục phiên” nếu có nháp, bài đang học, Tra cứu/Kana và “Xem tiến độ” dẫn `/ca-nhan`. Giải thích ngắn Học/Luyện/Ôn cho người mới, không thêm KPI dày ở đây. |
+| Bảng tin `/` | Lời chào ngắn → một CTA chính: có mục đến hạn thì “Bắt đầu ôn”; không có mà có nháp thì “Tiếp tục” nháp đó (Luyện/Ôn trước, từ vựng sau); còn lại “Tiếp tục học Bài N” hoặc “Bắt đầu Bài 1”. Hàng phụ “Tiếp tục phiên” (nháp còn lại) đặt ngay dưới CTA chính, trên bài đang học; Tra cứu/Kana và “Xem tiến độ” dẫn `/ca-nhan`. Số ôn ghi “N mục đến hạn · M mục mới” như `/on-tap` để khớp badge dock. Giải thích ngắn Học/Luyện/Ôn cho người mới, không thêm KPI dày ở đây. |
 | Học `/hoc` | Bài đang học/tiếp tục ở đầu; danh sách 25 bài lọc được với nhãn “Lọc bài học”; trạng thái bài và học từ là thông tin chính, không kéo mục Tra cứu vào sâu trong đây. |
 | Bài `/hoc/[so]` | Header bài và tiến độ → CTA “Học từ vựng”/“Tiếp tục học từ vựng” → lối Ngữ pháp, Nghe, “Xem toàn bộ bài” → Luyện Bài N phụ. Nội dung tham khảo đầy đủ tiếp tục bên dưới, trên cùng URL. |
 | Tham khảo trong bài | Giữ các phần Từ vựng, Ngữ pháp, Nghe, audio/shadowing; “Xem toàn bộ bài” cuộn tới phần này. Deep link `#vocab-*`, `#grammar-*`, `#tu-vung`, `#ngu-phap`, `#nghe` tiếp tục tới đúng mục. |
@@ -35,7 +35,8 @@ Người mới không có dữ liệu; bài đang học chưa xong; có nháp t�
 
 ## 6. Tương tác & chuyển động
 
-- Bảng tin chỉ có một CTA primary. Khi nháp và mục ôn cùng có, Ôn giữ CTA chính, nháp là hàng phụ rõ; đây là giả thuyết cần quan sát ở mốc nghiệm thu toàn hành trình.
+- Bảng tin chỉ có một CTA primary. Khi nháp và mục ôn cùng có, Ôn giữ CTA chính, nháp là hàng phụ ngay bên dưới. Nghiên cứu giả lập 01/10/2026 ([báo cáo](../research/ux-mobile-2026-10/2026-10-01-playwright-mobile-study.md)) thấy nháp bị dock che khi nằm sau bài đang học, nên đã chuyển lên; cần xác nhận lại bằng nhật ký trên điện thoại thật.
+- Lối tiếp tục vào thẳng nơi dừng: nháp từ vựng dùng `/hoc/[so]/tu-vung?tiep-tuc=1` (mở thẳng thẻ dở). “Bắt đầu ôn” vào thẳng `/on-tap/phien` khi không có nháp Luyện/Ôn; có nháp thì qua `/on-tap` để hộp xác nhận bảo vệ nháp (hai loại dùng chung khóa lưu).
 - “Học từ vựng” tới `/hoc/[so]/tu-vung`; Luyện truyền `?lessons=N`; “Xem toàn bộ bài” là link anchor, không route mới.
 - Browser Back và search deep link giữ vị trí/anchor. Dùng cuộn chuẩn và scroll margin để header/dock không che mục tiêu. Giữ reduced motion.
 

@@ -23,7 +23,7 @@ import { db } from '@/lib/db';
 import { applyReview, Rating, type Grade } from '@/lib/fsrs';
 import { stripFurigana, toKanaSentence } from '@/lib/japanese';
 import { getVocabLearningTime, getVocabTargetId, saveVocabRecall, undoVocabRecall, type VocabRecallRecord } from '@/lib/vocab-learning';
-import { parseVocabDraft, readVocabDraftRaw, subscribeVocabDraft, writeVocabDraft } from '@/lib/vocab-draft';
+import { type RatingCounts, parseVocabDraft, readVocabDraftRaw, subscribeVocabDraft, writeVocabDraft } from '@/lib/vocab-draft';
 import { cn } from '@/lib/utils';
 import type { ExampleSentence, ReviewItem, VocabWord } from '@/types';
 
@@ -85,7 +85,6 @@ const RATING_OPTIONS: RatingOption[] = [
   },
 ];
 
-type RatingCounts = Record<'again' | 'hard' | 'good' | 'easy', number>;
 
 // Vuốt thẻ đã lật: phải = Nhớ được, trái = Quên mất. Là lối tắt, bốn nút vẫn giữ nguyên.
 const SWIPE_DISTANCE = 100;
@@ -364,16 +363,16 @@ export function VocabLearningFlow({
     setPickedIds(next);
   };
 
-  const beginStudy = (chosen: VocabEntry[], startIndex: number) => {
+  const beginStudy = (chosen: VocabEntry[], startIndex: number, counts: RatingCounts = EMPTY_RATING_COUNTS) => {
     setSessionWords(chosen.map(({ targetId, word, example }) => ({ targetId, word, example })));
     setCurrentIndex(startIndex);
     setRevealed(false);
-    setRatingCounts({ ...EMPTY_RATING_COUNTS });
+    setRatingCounts({ ...counts });
     setSaveError(null);
     setLastRecall(null);
     setUndoError(null);
     cardStartedAt.current = getVocabLearningTime();
-    writeVocabDraft(lessonNumber, { targetIds: chosen.map(({ targetId }) => targetId), currentIndex: startIndex });
+    writeVocabDraft(lessonNumber, { targetIds: chosen.map(({ targetId }) => targetId), currentIndex: startIndex, counts });
     setStage('study');
   };
 
@@ -386,8 +385,21 @@ export function VocabLearningFlow({
   const resumeDraft = () => {
     if (!draft || storedReviewItems === undefined) return;
     const byId = new Map(availableEntries.map((entry) => [entry.targetId, entry]));
-    beginStudy(draft.targetIds.map((id) => byId.get(id)!), draft.currentIndex);
+    beginStudy(draft.targetIds.map((id) => byId.get(id)!), draft.currentIndex, draft.counts);
   };
+
+  // Lối "Tiếp tục" từ Bảng tin (?tiep-tuc=1) vào thẳng thẻ đang dở, không dừng ở màn chọn từ.
+  // Đọc URL ở client thay vì useSearchParams để trang vẫn prerender tĩnh.
+  const autoResumeDone = useRef(false);
+  useEffect(() => {
+    if (autoResumeDone.current || stage !== 'select' || !draft || storedReviewItems === undefined) return;
+    if (new URLSearchParams(window.location.search).get('tiep-tuc') !== '1') return;
+    autoResumeDone.current = true;
+    window.history.replaceState(null, '', window.location.pathname);
+    // Đồng bộ một lần với URL sau khi Dexie tải xong (ref chặn lặp): chỉ thêm đúng một lần render.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    resumeDraft();
+  });
 
   const undoLastRecall = async () => {
     if (!lastRecall || saving) return;
@@ -400,13 +412,15 @@ export function VocabLearningFlow({
         return;
       }
       const key = ratingKey(lastRecall.grade);
-      setRatingCounts((counts) => ({ ...counts, [key]: Math.max(0, counts[key] - 1) }));
+      const counts = { ...ratingCounts, [key]: Math.max(0, ratingCounts[key] - 1) };
+      setRatingCounts(counts);
       setCurrentIndex(lastRecall.index);
       setRevealed(true);
       setStage('study');
       writeVocabDraft(lessonNumber, {
         targetIds: sessionWords.map(({ targetId }) => targetId),
         currentIndex: lastRecall.index,
+        counts,
       });
       cardStartedAt.current = getVocabLearningTime();
       setLastRecall(null);
@@ -430,7 +444,8 @@ export function VocabLearningFlow({
       });
       setLastRecall({ record, index: currentIndex, grade });
       setUndoError(null);
-      setRatingCounts((counts) => ({ ...counts, [ratingKey(grade)]: counts[ratingKey(grade)] + 1 }));
+      const counts = { ...ratingCounts, [ratingKey(grade)]: ratingCounts[ratingKey(grade)] + 1 };
+      setRatingCounts(counts);
       if (currentIndex + 1 >= sessionWords.length) {
         writeVocabDraft(lessonNumber, null);
         setStage('complete');
@@ -438,6 +453,7 @@ export function VocabLearningFlow({
         writeVocabDraft(lessonNumber, {
           targetIds: sessionWords.map(({ targetId }) => targetId),
           currentIndex: currentIndex + 1,
+          counts,
         });
         setCurrentIndex((index) => index + 1);
         setRevealed(false);

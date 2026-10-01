@@ -22,7 +22,7 @@ import { QuestionMc } from './QuestionMc';
 import { QuestionReorder } from './QuestionReorder';
 import { SessionResult } from './SessionResult';
 import { savePracticeSession } from '@/lib/practice-write';
-import { summarizeSession } from '@/lib/practice';
+import { summarizeIncorrect, summarizeSession } from '@/lib/practice';
 import { describeNextReviews } from '@/lib/review-queue';
 import {
   clearPracticeDraft,
@@ -161,7 +161,10 @@ export function PracticeRunner({
       if (answered) return;
       pauseQuestionTimer();
       const elapsedMs = getQuestionElapsedMs();
-      const measured = results.length === 1 ? [{ ...results[0]!, elapsedMs }] : results;
+      const questionId = questions[currentIndex]?.id;
+      const measured = (results.length === 1 ? [{ ...results[0]!, elapsedMs }] : results).map(
+        (r) => ({ ...r, questionId }),
+      );
 
       const nextResults = [...allResults, ...measured];
       setAllResults(nextResults);
@@ -266,29 +269,11 @@ export function PracticeRunner({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [answered, handleNext, isPaused, pauseQuestionTimer]);
 
-  // Danh sách các câu hỏi bị trả lời sai
-  const incorrectQuestions = useMemo(() => {
-    const wrongTargetIds = new Set(
-      allResults.filter((r) => !r.isCorrect).map((r) => r.targetId),
-    );
-    return questions.filter((q) => {
-      if (q.pairs && q.pairs.length > 0) {
-        return q.pairs.some((p) => wrongTargetIds.has(p.targetId));
-      }
-      return wrongTargetIds.has(q.targetId);
-    });
-  }, [questions, allResults]);
-
-  // Gom câu trả lời của người dùng theo targetId để hiển thị ở màn kết quả
-  const userAnswers = useMemo(() => {
-    const map: Record<string, string> = {};
-    for (const r of allResults) {
-      if (r.userAnswer !== undefined) {
-        map[r.targetId] = r.userAnswer ?? '';
-      }
-    }
-    return map;
-  }, [allResults]);
+  // Câu sai và câu trả lời theo từng câu (một từ có thể nằm ở nhiều câu)
+  const { incorrectQuestions, userAnswers } = useMemo(
+    () => summarizeIncorrect(questions, allResults),
+    [questions, allResults],
+  );
 
   // Tính đáp án đúng để hiển thị trong vùng phản hồi
   const correctAnswerText = useMemo(() => {

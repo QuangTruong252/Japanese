@@ -51,7 +51,7 @@ test('getActiveVocabDraftForLesson trả về thông tin nháp từ vựng hợp
   assert.equal(draft.lesson, 5);
   assert.equal(draft.currentWordIndex, 3); // 1-indexed
   assert.equal(draft.totalWords, 4);
-  assert.equal(draft.resumeHref, '/hoc/5/tu-vung');
+  assert.equal(draft.resumeHref, '/hoc/5/tu-vung?tiep-tuc=1');
 });
 
 test('getActiveVocabDraftForLesson trả về null khi nháp đã hoàn tất', () => {
@@ -85,7 +85,7 @@ test('findActiveVocabDraft tìm đúng bài đầu tiên có nháp', () => {
   assert.equal(draft.lesson, 7);
   assert.equal(draft.currentWordIndex, 1);
   assert.equal(draft.totalWords, 2);
-  assert.equal(draft.resumeHref, '/hoc/7/tu-vung');
+  assert.equal(draft.resumeHref, '/hoc/7/tu-vung?tiep-tuc=1');
 });
 
 test('getActivePracticeDraftInfo trả về câu hiện tại và tổng số câu', () => {
@@ -251,7 +251,7 @@ test('getActivePracticeDraftInfo sinh resumeHref chuẩn /luyen-tap/phien cho nh
   assert.equal(getActivePracticeDraftInfo(negativeDraft), null);
 });
 
-test('getActiveVocabDraftForLesson sinh resumeHref chuẩn /hoc/:lesson/tu-vung cho nháp từ vựng hợp lệ, null khi không có hoặc đã xong', () => {
+test('getActiveVocabDraftForLesson sinh resumeHref /hoc/:lesson/tu-vung?tiep-tuc=1 (vào thẳng thẻ dở) cho nháp từ vựng hợp lệ, null khi không có hoặc đã xong', () => {
   const storage = new MemoryStorage();
   storage.setItem(
     'jp:vocab-draft:4',
@@ -265,7 +265,7 @@ test('getActiveVocabDraftForLesson sinh resumeHref chuẩn /hoc/:lesson/tu-vung 
   // Ca đúng: nháp hợp lệ -> resumeHref trỏ thẳng /hoc/4/tu-vung
   const activeVocab = getActiveVocabDraftForLesson(4, storage);
   assert.ok(activeVocab);
-  assert.equal(activeVocab.resumeHref, '/hoc/4/tu-vung');
+  assert.equal(activeVocab.resumeHref, '/hoc/4/tu-vung?tiep-tuc=1');
 
   // Ca sai 1: không có nháp -> null (không có href)
   assert.equal(getActiveVocabDraftForLesson(8, storage), null);

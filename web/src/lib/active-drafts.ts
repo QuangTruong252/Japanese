@@ -55,7 +55,7 @@ export function getActiveVocabDraftForLesson(
         lesson,
         currentWordIndex: parsed.currentIndex + 1,
         totalWords: parsed.targetIds.length,
-        resumeHref: `/hoc/${lesson}/tu-vung`,
+        resumeHref: `/hoc/${lesson}/tu-vung?tiep-tuc=1`,
       };
     }
   } catch {

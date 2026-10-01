@@ -191,3 +191,23 @@ Nguồn: `.impeccable/critique/2026-09-28T07-08-44Z__web-src-app.md`.
 - (Bổ sung cùng ngày) Hành động toàn cục chuyển vào shell `AppNav`, trang không tự đặt lại: mobile header có Tìm kiếm · Giao diện · Cài đặt · Tài khoản (icon, 44px); desktop có Tìm kiếm + Giao diện dưới logo sidebar, Cài đặt ở đáy. Gỡ các nút này khỏi header `/`, `/hoc`, `/hoc/[so]`, `/hoc/tra-cuu`, `/hoc/tra-cuu/kana` (giữ ô tìm kiếm nội dung của Tra cứu). Cập nhật DESIGN.md "The two shells"/"The secondary surface". Kiểm tra: `pnpm check`, ảnh 320/390px và 1280px.
 - (Bổ sung cùng ngày) `/ca-nhan`: bỏ nút Cài đặt (đã có ở header toàn cục), header chỉ còn "Cá nhân". Thẻ tài khoản gộp thành một hàng; nút "Đăng nhập bằng Google" luôn hiện (outline), bị vô hiệu kèm lý do khi thiếu `NEXT_PUBLIC_SUPABASE_*`. Empty state gọn, sửa `<Link><Button>` lồng nhau. Chưa kiểm luồng đăng nhập thật (máy dev không có `.env.local`).
 - (Bổ sung cùng ngày) Lỗi width co theo nội dung: `#app-scroll-container` là flex-col và `PageTransition` là `display: contents`, nên `<main class="mx-auto max-w-*">` thiếu `w-full` bị co. Thêm `w-full` cho 13 `<main>` (Luyện tập, Tra cứu, Bài N, Kết quả, Ôn…); `/luyen-tap` rộng `max-w-2xl` từ `lg`. Đo: 390px → 390, 1280px → 672 ở cả trạng thái mở/ẩn tùy chỉnh.
+
+## 2026-10-01 — Nguyên mẫu sau nghiên cứu UX mobile (giả lập Playwright)
+
+Căn cứ: [báo cáo nghiên cứu](../research/ux-mobile-2026-10/2026-10-01-playwright-mobile-study.md) §5.
+
+### Thay đổi và quyết định
+- Bảng tin (`DashboardContent.tsx`, `dashboard-cta.ts`): khi không có mục đến hạn mà có nháp, CTA chính là "Tiếp tục" nháp đó (Luyện/Ôn trước, từ vựng sau). Hàng "Tiếp tục phiên" chuyển lên ngay dưới CTA, trên "Bài đang học". Số ôn ghi "N mục đến hạn · M mục mới", khớp dock và `/on-tap`.
+- "Bắt đầu ôn" vào thẳng `/on-tap/phien` khi không có nháp Luyện/Ôn; có nháp thì vẫn qua `/on-tap` để hộp xác nhận bảo vệ nháp (hai loại dùng chung khóa).
+- Nháp từ vựng: `resumeHref` thành `/hoc/[so]/tu-vung?tiep-tuc=1`, `VocabLearningFlow` mở thẳng thẻ dở. URL được đọc một lần ở client để trang vẫn prerender tĩnh; dòng gọi `resumeDraft()` trong effect tắt rule `react-hooks/set-state-in-effect`, có ghi lý do.
+- Tổng kết từ vựng: số đếm theo mức lưu trong nháp (`vocab-draft.ts`, trường `counts` tùy chọn, nháp cũ vẫn đọc được). Trước đây tải lại giữa lượt làm tổng kết chỉ còn 5/10.
+- Màn kết quả Luyện/Ôn: câu sai và "Bạn trả lời" gom theo câu (`summarizeIncorrect`, `userAnswerFor` trong `practice.ts`; `AnswerResult.questionId` chỉ để hiển thị, không ghi Dexie/sync). Trước đây gom theo `targetId` nên gán nhầm câu trả lời giữa câu đọc/câu nghĩa của cùng một từ.
+
+### Kiểm chứng
+- `pnpm check` đạt; `pnpm test` 272/272, thêm hồi quy cho `summarizeIncorrect`, nháp có `counts`, CTA tiếp tục nháp và "Bắt đầu ôn" qua hub khi có nháp.
+- Playwright 360×780, hồ sơ mới, dev `:3100` (`D:/tmp/maipace-ux/retest.mjs`): PASS từ Bảng tin vào thẳng thẻ 1/10 bằng 1 chạm; PASS tổng kết 10/10 sau khi tải lại ở thẻ 6; PASS nháp luyện 8/15 + mục ôn → hàng tiếp tục trong màn đầu, 1 chạm tới câu 9/15; PASS danh sách câu sai khớp từng câu; PASS số đến hạn Bảng tin = dock (23/23).
+
+### Còn lại
+- Chưa thử trên điện thoại thật và chưa có nhật ký người học. Thứ bậc "Ôn trước nháp" vẫn là giả thuyết.
+- "Số câu đúng 10/23" (mỗi cặp ghép tính riêng) giữ nguyên vì `totalQuestions` là định nghĩa thống kê của SPEC-07.
+- Nhãn dock "Luyện tập" xuống 2 dòng ở 360px (có từ trước).

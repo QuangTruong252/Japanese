@@ -44,9 +44,9 @@ Khi làm xong một phần, cập nhật hàng tương ứng và handoff với n
 | --- | --- | --- |
 | 1 | [SPEC-16 — Điều hướng và Profile](SPEC-16-dieu-huong-profile.md) | Browser PASS trừ đăng nhập/đăng xuất thật (không có Supabase) |
 | 2 | [SPEC-17 — Tra cứu và tìm kiếm](SPEC-17-tra-cuu-tim-kiem.md) | Browser PASS; lỗi cũ: notation thô ở mô tả kết quả ngữ pháp |
-| 3 | [SPEC-18 — Bảng tin và Học](SPEC-18-bang-tin-va-hoc.md) | Browser PASS sau sửa thứ tự nháp; chưa thử bài thiếu audio |
+| 3 | [SPEC-18 — Bảng tin và Học](SPEC-18-bang-tin-va-hoc.md) | Browser PASS sau sửa thứ tự nháp; chưa thử bài thiếu audio. **01/10:** nháp lên CTA/ngay dưới CTA, vào thẳng thẻ dở, số ôn khớp dock (Playwright 360px, [handoff](../handoff/SPEC-18.md)) |
 | 4 | [SPEC-19 — Luyện tập nhanh](SPEC-19-luyen-tap-nhanh.md) | Browser PASS; chưa chạy riêng từng dạng trong 5 dạng |
-| 5 | [SPEC-20 — Ôn tập](SPEC-20-on-tap-tiep-noi.md) | Browser PASS sau sửa nhãn số đến hạn; chưa thử hạn mức, không giọng, Điểm yếu |
+| 5 | [SPEC-20 — Ôn tập](SPEC-20-on-tap-tiep-noi.md) | Browser PASS sau sửa nhãn số đến hạn; chưa thử hạn mức, không giọng, Điểm yếu. **01/10:** sửa lỗi phiên Ôn không hiện đề (có từ 28/09) và câu sai gom theo câu ([handoff](../handoff/SPEC-20.md)) |
 
 [Handoff kế hoạch](../handoff/UX-REDESIGN-PLAN.md) ghi rõ phần chưa kiểm chứng. Khi triển khai từng mốc, cập nhật spec hiện hành tương ứng và tạo handoff nghiệm thu riêng, không dùng bản kế hoạch thay cho kết quả kiểm thử.
 

@@ -11,7 +11,7 @@ test('resolveDashboardCta ưu tiên Ôn tập khi có mục đến hạn (batchC
   });
 
   assert.equal(result.kind, 'review');
-  assert.equal(result.href, '/on-tap');
+  assert.equal(result.href, '/on-tap/phien');
   assert.equal(result.ctaText, 'Bắt đầu ôn');
   assert.equal(result.heading, 'Ôn tập');
   assert.equal(result.isPrimaryReview, true);
@@ -25,7 +25,7 @@ test('resolveDashboardCta vẫn ưu tiên Ôn tập khi batchCount > 0 kể cả
   });
 
   assert.equal(result.kind, 'review');
-  assert.equal(result.href, '/on-tap');
+  assert.equal(result.href, '/on-tap/phien');
   assert.equal(result.ctaText, 'Bắt đầu ôn');
   assert.equal(result.isPrimaryReview, true);
 });
@@ -83,4 +83,25 @@ test('resolveDashboardCta xử lý an toàn dữ liệu biên (batchCount âm ho
   assert.equal(resultNaN.kind, 'continue_lesson');
   assert.equal(resultNaN.href, '/hoc/5');
   assert.equal(resultNaN.ctaText, 'Học tiếp bài 5');
+});
+
+test('resolveDashboardCta: có nháp và không có mục đến hạn -> CTA chính là tiếp tục nháp (kể cả người mới)', () => {
+  const resumeDraft = { href: '/hoc/1/tu-vung?tiep-tuc=1', heading: 'Học từ vựng · Bài 1' };
+  const result = resolveDashboardCta({ batchCount: 0, isNewUser: true, activeLessonNum: 1, resumeDraft });
+  assert.equal(result.kind, 'resume_draft');
+  assert.equal(result.href, '/hoc/1/tu-vung?tiep-tuc=1');
+  assert.equal(result.heading, 'Học từ vựng · Bài 1');
+  assert.equal(result.isPrimaryReview, false);
+});
+
+test('resolveDashboardCta: mục đến hạn vẫn thắng nháp; có nháp Luyện/Ôn thì "Bắt đầu ôn" qua hub để xác nhận', () => {
+  const result = resolveDashboardCta({
+    batchCount: 9,
+    isNewUser: false,
+    activeLessonNum: 1,
+    resumeDraft: { href: '/luyen-tap/phien', heading: 'Luyện tập · Bài 1' },
+    hasPracticeDraft: true,
+  });
+  assert.equal(result.kind, 'review');
+  assert.equal(result.href, '/on-tap');
 });
