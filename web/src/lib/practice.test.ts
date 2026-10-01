@@ -10,6 +10,8 @@ import {
   applyResults,
   summarizeSession,
   resolveInitialPracticeLessons,
+  summarizeIncorrect,
+  userAnswerFor,
 } from './practice.ts';
 import { ELAPSED_SAMPLE_SIZE } from './fsrs.ts';
 import type {
@@ -367,3 +369,33 @@ test('resolveInitialPracticeLessons: người mới hoàn toàn fallback về B�
   );
 });
 
+
+test('summarizeIncorrect: cùng một từ ở hai câu không gán nhầm câu trả lời', () => {
+  const reading = q({ id: 'read', targetId: 'vocab-01-01', prompt: '私', answer: 'わたし' });
+  const meaning = q({ id: 'mean', targetId: 'vocab-01-01', prompt: '私', answer: 'tôi' });
+  const match = q({ id: 'm', type: 'matching', targetId: 'vocab-01-02',
+    pairs: [{ targetId: 'vocab-01-02', jp: '大学', vi: 'trường đại học' }] });
+  const res = (questionId: string, targetId: string, isCorrect: boolean, userAnswer?: string): AnswerResult => (
+    { questionId, targetId, targetType: 'vocab', isCorrect, elapsedMs: 1, usedHint: false, userAnswer });
+  const out = summarizeIncorrect([reading, meaning, match], [
+    res('read', 'vocab-01-01', false, 'あなた'),
+    res('mean', 'vocab-01-01', true, 'tôi'),
+    res('m', 'vocab-01-02', true),
+  ]);
+  // Đúng: chỉ câu đọc sai, câu trả lời là của chính câu đó
+  assert.deepEqual(out.incorrectQuestions.map((x) => x.id), ['read']);
+  assert.equal(userAnswerFor(out.userAnswers, reading), 'あなた');
+  // Sai trước đây: câu nghĩa trả lời đúng không được liệt kê, câu ghép đúng không bị kéo theo
+  assert.equal(userAnswerFor(out.userAnswers, meaning), 'tôi');
+});
+
+test('summarizeIncorrect: kết quả nháp cũ không có questionId vẫn khớp theo targetId', () => {
+  const a = q({ id: 'a', targetId: 'vocab-01-01' });
+  const b = q({ id: 'b', targetId: 'vocab-01-02' });
+  const out = summarizeIncorrect([a, b], [
+    { targetId: 'vocab-01-02', targetType: 'vocab', isCorrect: false, elapsedMs: 1, usedHint: false, userAnswer: 'x' },
+  ]);
+  assert.deepEqual(out.incorrectQuestions.map((x) => x.id), ['b']);
+  assert.equal(userAnswerFor(out.userAnswers, b), 'x');
+  assert.equal(userAnswerFor(out.userAnswers, a), undefined);
+});

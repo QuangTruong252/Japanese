@@ -1,0 +1,1186 @@
+[03:30:33] === NGÀY 1 · baseline người mới, 390x844 ===
+[03:30:36] shot d1-fresh-dash.png
+[03:30:36] MEASURE fresh /: 1 màn (844px), 15 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:30:36]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Chưa rõ nên chọn Học bài, Luyện tập hay " 324x16
+[03:30:36] ARIA dash fresh:
+- banner "Thanh đầu trang":
+  - link "Về trang chủ MaiPace":
+    - /url: /
+    - text: MaiPace
+  - button "Tìm kiếm nội dung (Ctrl+K)"
+  - button "Chuyển sang giao diện tối"
+  - link "Cài đặt":
+    - /url: /cai-dat
+  - link "Tài khoản":
+    - /url: /ca-nhan
+- navigation "Điều hướng chính":
+  - link "Bảng tin":
+    - /url: /
+  - link "Học bài":
+    - /url: /hoc
+  - link "Luyện tập":
+    - /url: /luyen-tap
+  - link "Ôn tập":
+    - /url: /on-tap
+  - link "Tra cứu":
+    - /url: /hoc/tra-cuu
+- main:
+  - paragraph: Thứ Năm, 1 tháng 10
+  - heading "Chào buổi sáng" [level=1]
+  - 'heading "Bắt đầu bài 1: Giới thiệu bản thân" [level=2]'
+  - text: はじめまして
+  - paragraph: Chào mừng bạn đến với MaiPace! Hãy bắt đầu bài học đầu tiên với từ vựng, ngữ pháp và mẫu câu giao tiếp cơ bản.
+  - link "Bắt đầu bài 1":
+    - /url: /hoc/1
+  - link "Tôi đã học đến bài…":
+    - /url: /cai-dat#hoc-den-bai
+  - text: Chưa đọc được Hiragana/Katakana?
+  - link "Xem bảng chữ Kana trước":
+    - /url: /hoc/tra-cuu/kana
+  - region "Lối tắt và tiến độ":
+    - link "Xem tiến độ trên máy":
+      - /url: /ca-nhan
+  - group: Chưa rõ nên chọn Học bài, Luyện tập hay Ôn tập?
+- alert
+[03:30:38] shot d1-fresh-hoc.png
+[03:30:38] MEASURE fresh /hoc: 1 màn (844px), 41 phần tử tương tác, tràn ngang=false, <44px: 1
+[03:30:38]   nhỏ: "Về trang chủ MaiPace" 100x36
+[03:30:39] shot d1-fresh-luyen.png
+[03:30:39] MEASURE fresh /luyen-tap: 1 màn (844px), 12 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:30:39]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Tùy chỉnh bài, dạng và số câu" 248x36
+[03:30:41] shot d1-fresh-on.png
+[03:30:41] MEASURE fresh /on-tap: 1 màn (844px), 12 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:30:41]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Điểm yếu của tôi" 111x30
+[03:30:42] shot d1-fresh-tracuu.png
+[03:30:42] MEASURE fresh /hoc/tra-cuu: 1 màn (844px), 15 phần tử tương tác, tràn ngang=false, <44px: 1
+[03:30:42]   nhỏ: "Về trang chủ MaiPace" 100x36
+[03:30:44] shot d1-fresh-canhan.png
+[03:30:44] MEASURE fresh /ca-nhan: 1 màn (844px), 14 phần tử tương tác, tràn ngang=false, <44px: 1
+[03:30:44]   nhỏ: "Về trang chủ MaiPace" 100x36
+[03:31:09] shot d1-hoc1.png
+[03:31:09] MEASURE /hoc/1: 10 màn (8433px), 19 phần tử tương tác, tràn ngang=false, <44px: 3
+[03:31:09]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Nạp audio đĩa CD trong Cài đặt" 209x16 | "Nạp audio đĩa CD" 142x28
+[03:31:09] ARIA /hoc/1:
+- banner "Thanh đầu trang":
+  - link "Về trang chủ MaiPace":
+    - /url: /
+    - text: MaiPace
+  - button "Tìm kiếm nội dung (Ctrl+K)"
+  - button "Chuyển sang giao diện tối"
+  - link "Cài đặt":
+    - /url: /cai-dat
+  - link "Tài khoản":
+    - /url: /ca-nhan
+- navigation "Điều hướng chính":
+  - link "Bảng tin":
+    - /url: /
+  - link "Học bài":
+    - /url: /hoc
+  - link "Luyện tập":
+    - /url: /luyen-tap
+  - link "Ôn tập":
+    - /url: /on-tap
+  - link "Tra cứu":
+    - /url: /hoc/tra-cuu
+- main:
+  - link "Danh sách bài học N5":
+    - /url: /hoc
+  - text: Minna no Nihongo · Bài 1
+  - heading "Bài 1 — Giới thiệu bản thân" [level=1]
+  - text: はじめまして
+  - paragraph: Làm quen với cấu trúc câu khẳng định, phủ định, câu hỏi với です, trợ từ は, も, の và cách giới thiệu bản thân cơ bản.
+  - text: Tiến trình hoàn thành từ vựng 41 từ vựng
+  - progressbar: Chưa bắt đầu x
+  - link "Học từ vựng":
+    - /url: /hoc/1/tu-vung
+  - link "Xem toàn bộ bài":
+    - /url: "#tu-vung"
+  - link "Ngữ pháp (6)":
+    - /url: "#ngu-phap"
+  - link "Luyện nghe":
+    - /url: "#nghe"
+  - link "Luyện tập bài 1":
+    - /url: /luyen-tap?lessons=1
+  - heading "Từ vựng trọng tâm" [level=2]
+  - text: 41 từ
+  - table:
+    - rowgroup:
+      - row "私 わたし tôi":
+        - cell "私 わたし"
+        - cell "tôi"
+      - row "あなた bạn, anh, chị (ngôi thứ hai)":
+        - cell "あなた"
+        - cell "bạn, anh, chị (ngôi thứ hai)"
+      - row "あの 人 ひと người kia, người đó":
+        - cell "あの 人 ひと"
+        - cell "người kia, người đó"
+      - row "あの 方 かた vị kia (cách nói lịch sự của 'người kia')":
+        - cell "あの 方 かた"
+        - cell "vị kia (cách nói lịch sự của 'người kia')"
+      - row "〜さん anh, chị, ông, bà (hậu tố xưng hô lịch sự)":
+        - cell "〜さん"
+        - cell "anh, chị, ông, bà (hậu tố xưng hô lịch sự)"
+      - row "〜ちゃん bé (hậu tố thân mật gọi trẻ em hoặc bạn bè thân)":
+        - cell "〜ちゃん"
+        - cell "bé (hậu tố thân mật gọi trẻ em hoặc bạn bè thân)"
+      - 'row "〜 人 じん người (hậu tố quốc tịch, ví dụ: người Nhật)"':
+        - cell "〜 人 じん"
+        - 'cell "người (hậu tố quốc tịch, ví dụ: người Nhật)"'
+      - row "先生 せんせい thầy, cô giáo, bác sĩ (dùng để xưng hô người khác)":
+        - cell "先生 せんせい"
+        - cell "thầy, cô giáo, bác sĩ (dùng để xưng hô người khác)"
+      - row "教師 きょうし giáo viên (nghề nghiệp, tự xưng)":
+        - cell "教師 きょうし"
+        - cell "giáo viên (nghề nghiệp, tự xưng)"
+      - row "学生 がくせい học sinh, sinh viên":
+        - cell "学生 がくせい"
+        - cell "học sinh, sinh viên"
+      - row "会社員 かいしゃいん nhân viên công ty":
+        - cell "会社員 かいしゃいん"
+        - cell "nhân viên công ty"
+      - row "社員 しゃいん nhân viên của công ty...":
+        - cell "社員 しゃいん"
+        - cell "nhân viên của công ty..."
+      - row "銀行員 ぎんこういん nhân viên ngân hàng":
+        - cell "銀行員 ぎんこういん"
+        - cell "nhân viên ngân hàng"
+      - row "医者 いしゃ bác sĩ":
+        - cell "医者 いしゃ"
+        - cell "bác sĩ"
+      - row "研究者 けんきゅうしゃ nhà nghiên cứu":
+        - cell "研究者 けんきゅうしゃ"
+        - cell "nhà nghiên cứu"
+      - row "大学 だいがく trường đại học":
+        - cell "大学 だいがく"
+        - cell "trường đại học"
+      - row "病院 びょういん bệnh viện":
+        - cell "病院 びょういん"
+        - cell "bệnh viện"
+      - row "誰 だれ ai":
+        - cell "誰 だれ"
+        - cell "ai"
+      - row "どなた vị nào (cách nói lịch sự của 'ai')":
+        - cell "どなた"
+        - cell "vị nào (cách nói lịch sự của 'ai')"
+      - row "〜 歳 さい tuổi":
+        - cell "〜 歳 さい"
+        - cell "tuổi"
+      - row "何歳 なんさい mấy tuổi":
+        - cell "何歳 なんさい"
+        - cell "mấy tuổi"
+      - row "おいくつ bao nhiêu tuổi (cách hỏi lịch sự)":
+        - cell "おいくつ"
+        - cell "bao nhiêu tuổi (cách hỏi lịch sự)"
+      - row "はい vâng, dạ, đúng":
+        - cell "はい"
+        - cell "vâng, dạ, đúng"
+      - row "いいえ không, không phải":
+        - cell "いいえ"
+        - cell "không, không phải"
+      - row "失礼 しつれい ですが Xin lỗi (khi làm phiền hoặc hỏi việc riêng)...":
+        - cell "失礼 しつれい ですが"
+        - cell "Xin lỗi (khi làm phiền hoặc hỏi việc riêng)..."
+      - row "お 名前 なまえ は？ tên của bạn là gì?":
+[03:31:11] shot d1-tuvung-start.png
+[03:31:11] MEASURE /hoc/1/tu-vung: 4.9 màn (4101px), 47 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:31:11] ARIA tu-vung:
+- main:
+  - link "Về bài 1":
+    - /url: /hoc/1
+  - text: Bài 1
+  - heading "Học từ vựng bài 1" [level=1]
+  - paragraph: Giới thiệu bản thân
+  - paragraph: Nhìn từ tiếng Nhật, tự nhớ nghĩa rồi chọn mức độ nhớ. Mức bạn chọn quyết định khi nào app nhắc ôn lại từ đó.
+  - region "Chọn từ muốn học":
+    - heading "Chọn từ muốn học" [level=2]
+    - paragraph: Đã chọn 10 / 41 từ
+    - group "Chọn nhanh số từ":
+      - button "5 từ"
+      - button "10 từ"
+      - button "Tất cả"
+      - button "Bỏ chọn"
+    - list:
+      - listitem:
+        - checkbox "Bỏ chọn 私" [checked]: 私 わたし Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn あなた" [checked]: あなた Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn あの 人" [checked]: あの 人 ひと Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn あの 方" [checked]: あの 方 かた Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn 〜さん" [checked]: 〜さん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn 〜ちゃん" [checked]: 〜ちゃん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn 〜人" [checked]: 〜 人 じん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn 先生" [checked]: 先生 せんせい Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn 教師" [checked]: 教師 きょうし Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn 学生" [checked]: 学生 がくせい Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 会社員": 会社員 かいしゃいん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 社員": 社員 しゃいん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 銀行員": 銀行員 ぎんこういん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 医者": 医者 いしゃ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 研究者": 研究者 けんきゅうしゃ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 大学": 大学 だいがく Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 病院": 病院 びょういん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 誰": 誰 だれ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn どなた": どなた Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 〜歳": 〜 歳 さい Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 何歳": 何歳 なんさい Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn おいくつ": おいくつ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn はい": はい Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn いいえ": いいえ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 失礼ですが": 失礼 しつれい ですが Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn お 名前は？": お 名前 なまえ は？ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn はじめまして": はじめまして Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn どうぞよろしくお 願いします": どうぞよろしくお 願 ねが いします Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn こちらは〜さんです": こちらは〜さんです Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 〜から 来ました": 〜から 来 き ました Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn アメリカ": アメリカ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn イギリス": イギリス Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn インド": インド Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn インドネシア": インドネシア Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 韓国": 韓国 かんこく Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn タイ": タイ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 中国": 中国 ちゅうごく Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn ドイツ": ドイツ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 日本": 日本 にほん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn フランス": フランス Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn ブラジル": ブラジル Chưa có lượt luyện hoặc ôn
+  - region "Theo dõi khả năng ghi nhớ":
+    - heading "Theo dõi khả năng ghi nhớ" [level=2]
+    - paragraph: Từ được xếp theo kết quả luyện và tự đánh giá của bạn.
+    - paragraph: Chưa có lượt luyện hoặc ôn. Kết quả sẽ hiện ở đây sau khi bạn học từ đầu tiên.
+  - button "Học 10 từ"
+- alert
+[03:31:24] shot d2-card-front.png
+[03:31:24] MEASURE card front: 1 màn (844px), 2 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:31:24] ARIA card front:
+- main:
+  - button "Thoát lượt học, kết quả từng thẻ đã được lưu": Thoát
+  - text: Bài 1 Bài 1 · Từ 1 / 10
+  - progressbar "Đã đánh giá 0 trên 10 từ"
+  - article:
+    - button "Lật thẻ xem đáp án của 私"
+    - text: 私 わたし
+  - paragraph: Chạm thẻ để xem đáp án.
+- alert
+[03:31:31] shot d2-tuvung-reenter.png
+[03:31:31] ARIA reenter:
+- main:
+  - link "Về bài 1":
+    - /url: /hoc/1
+  - text: Bài 1
+  - heading "Học từ vựng bài 1" [level=1]
+  - paragraph: Giới thiệu bản thân
+  - paragraph: Nhìn từ tiếng Nhật, tự nhớ nghĩa rồi chọn mức độ nhớ. Mức bạn chọn quyết định khi nào app nhắc ôn lại từ đó.
+  - region "Lượt học đang dở":
+    - paragraph: "Bạn đang học dở: thẻ 1 / 10."
+    - button "Học tiếp"
+    - button "Bỏ lượt dở"
+  - region "Chọn từ muốn học":
+    - heading "Chọn từ muốn học" [level=2]
+    - paragraph: Đã chọn 10 / 41 từ
+    - group "Chọn nhanh số từ":
+      - button "5 từ"
+      - button "10 từ"
+      - button "Tất cả"
+      - button "Bỏ chọn"
+    - list:
+      - listitem:
+        - checkbox "Bỏ chọn 私" [checked]: 私 わたし Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn あなた" [checked]: あなた Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn あの 人" [checked]: あの 人 ひと Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn あの 方" [checked]: あの 方 かた Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn 〜さん" [checked]: 〜さん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn 〜ちゃん" [checked]: 〜ちゃん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn 〜人" [checked]: 〜 人 じん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn 先生" [checked]: 先生 せんせい Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn 教師" [checked]: 教師 きょうし Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Bỏ chọn 学生" [checked]: 学生 がくせい Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 会社員": 会社員 かいしゃいん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 社員": 社員 しゃいん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 銀行員": 銀行員 ぎんこういん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 医者": 医者 いしゃ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 研究者": 研究者 けんきゅうしゃ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 大学": 大学 だいがく Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 病院": 病院 びょういん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 誰": 誰 だれ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn どなた": どなた Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 〜歳": 〜 歳 さい Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 何歳": 何歳 なんさい Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn おいくつ": おいくつ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn はい": はい Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn いいえ": いいえ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 失礼ですが": 失礼 しつれい ですが Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn お 名前は？": お 名前 なまえ は？ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn はじめまして": はじめまして Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn どうぞよろしくお 願いします": どうぞよろしくお 願 ねが いします Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn こちらは〜さんです": こちらは〜さんです Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 〜から 来ました": 〜から 来 き ました Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn アメリカ": アメリカ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn イギリス": イギリス Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn インド": インド Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn インドネシア": インドネシア Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 韓国": 韓国 かんこく Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn タイ": タイ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 中国": 中国 ちゅうごく Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn ドイツ": ドイツ Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn 日本": 日本 にほん Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn フランス": フランス Chưa có lượt luyện hoặc ôn
+      - listitem:
+        - checkbox "Chọn ブラジル": ブラジル Chưa có lượt luyện hoặc ôn
+  - region "Theo dõi khả năng ghi nhớ":
+    - heading "Theo dõi khả năng ghi nhớ" [level=2]
+    - paragraph: Từ được xếp theo kết quả luyện và tự đánh giá của bạn.
+    - paragraph: Chưa có lượt luyện hoặc ôn. Kết quả sẽ hiện ở đây sau khi bạn học từ đầu tiên.
+  - button "Học 10 từ"
+- alert
+[03:31:41] shot d2-card-back.png
+[03:31:41] MEASURE card back: 1 màn (844px), 7 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:31:41] ARIA card back:
+- main:
+  - button "Thoát lượt học, kết quả từng thẻ đã được lưu": Thoát
+  - text: Bài 1 Bài 1 · Từ 1 / 10
+  - progressbar "Đã đánh giá 0 trên 10 từ"
+  - article:
+    - paragraph: tôi
+    - region "Câu ví dụ":
+      - heading "Câu ví dụ" [level=2]
+      - text: 私 わたし は 学生 がくせい です。
+      - paragraph: わたしは がくせいです。
+      - paragraph: Tôi là học sinh.
+  - region "Mức độ ghi nhớ":
+    - button "Quên mất, ôn lại trong vài phút"
+    - text: Quên mất Ôn lại trong vài phút
+    - button "Khó nhớ, ôn lại trong vài phút"
+    - text: Khó nhớ Ôn lại trong vài phút
+    - button "Nhớ được, ôn lại trong vài phút"
+    - text: Nhớ được Ôn lại trong vài phút
+    - button "Dễ nhớ, ôn lại trong 6 ngày"
+    - text: Dễ nhớ Ôn lại trong 6 ngày
+    - group: Nên chọn mức nào?
+    - paragraph: "Vuốt thẻ sang phải: Nhớ được · sang trái: Quên mất"
+- alert
+[03:32:05] === PHIÊN A · T1 "Bạn có 5 phút. Hãy tiếp tục việc học gần nhất." (có nháp từ vựng 1/10) ===
+[03:32:06] shot A-T1-dash-vocabdraft.png
+[03:32:06] MEASURE dash w/ vocab draft: 1.2 màn (1036px), 16 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:32:06]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Chưa rõ nên chọn Học bài, Luyện tập hay " 324x16
+[03:32:06] ARIA dash vocab draft:
+- banner "Thanh đầu trang":
+  - link "Về trang chủ MaiPace":
+    - /url: /
+    - text: MaiPace
+  - button "Tìm kiếm nội dung (Ctrl+K)"
+  - button "Chuyển sang giao diện tối"
+  - link "Cài đặt":
+    - /url: /cai-dat
+  - link "Tài khoản":
+    - /url: /ca-nhan
+- navigation "Điều hướng chính":
+  - link "Bảng tin":
+    - /url: /
+  - link "Học bài":
+    - /url: /hoc
+  - link "Luyện tập":
+    - /url: /luyen-tap
+  - link "Ôn tập":
+    - /url: /on-tap
+  - link "Tra cứu":
+    - /url: /hoc/tra-cuu
+- main:
+  - paragraph: Thứ Năm, 1 tháng 10
+  - heading "Chào buổi sáng" [level=1]
+  - 'heading "Bắt đầu bài 1: Giới thiệu bản thân" [level=2]'
+  - text: はじめまして
+  - paragraph: Chào mừng bạn đến với MaiPace! Hãy bắt đầu bài học đầu tiên với từ vựng, ngữ pháp và mẫu câu giao tiếp cơ bản.
+  - link "Bắt đầu bài 1":
+    - /url: /hoc/1
+  - link "Tôi đã học đến bài…":
+    - /url: /cai-dat#hoc-den-bai
+  - text: Chưa đọc được Hiragana/Katakana?
+  - link "Xem bảng chữ Kana trước":
+    - /url: /hoc/tra-cuu/kana
+  - region "Tiếp tục phiên dở dang":
+    - heading "Tiếp tục phiên" [level=2]
+    - text: Học từ vựng · Bài 1 Đang ở từ 1/10
+    - link "Tiếp tục":
+      - /url: /hoc/1/tu-vung
+  - region "Lối tắt và tiến độ":
+    - link "Xem tiến độ trên máy":
+      - /url: /ca-nhan
+  - group: Chưa rõ nên chọn Học bài, Luyện tập hay Ôn tập?
+- alert
+[03:32:06] Thấy ở màn đầu (trên dock): ["Bắt đầu bài 1","Tôi đã học đến bài…","Xem bảng chữ Kana trước"]
+[03:32:20] shot A-T1-hoc1-via-primary.png
+[03:32:20] T1: sau nút chính → /hoc/1, màn đầu: ["Danh sách bài học N5","Tiếp tục học từ vựng (từ 1/10)","Xem toàn bộ bài","Ngữ pháp (6)","Luyện nghe","Luyện tập bài 1"]
+[03:32:21] T1: URL http://localhost:3100/hoc/1/tu-vung
+[03:32:21] T1 KẾT QUẢ: 3 chạm từ Bảng tin tới thẻ học; 3.211s máy; trạng thái: Thoát / Bài 1 / Bài 1 · Từ 1 / 10 / 私
+[03:32:22] shot A-T1-resumed.png
+[03:32:42] === PHIÊN A · T2 "Học thêm một nhóm từ trong bài đang học" + T3 chuyển app ===
+[03:32:44] T2 vùng nút chấm: y=556–747 / 844 (vùng ngón cái ~ nửa dưới)
+[03:32:44] T2 thẻ 1: Nhớ được
+[03:32:46] T2 thẻ 2: Quên mất
+[03:32:47] T2 thẻ 3: Nhớ được
+[03:32:49] T2 thẻ 4: Khó nhớ
+[03:32:51] T2 thẻ 5: thử vuốt phải (chuột mô phỏng)
+[03:32:51] T3: đang ở thẻ 5 → chuyển app (ẩn trang 60s mô phỏng bằng tab khác)
+[03:32:54] T3 (không reload): Thoát / Bài 1 / Bài 1 · Từ 6 / 10
+[03:32:56] shot A-T3-after-discard-reload.png
+[03:32:56] T3 (tab bị thu hồi → reload): Về bài 1 / Bài 1 / Học từ vựng bài 1 /  / Giới thiệu bản thân / 
+[03:32:57] T3: cần bấm "Học tiếp" → Thoát / Bài 1 / Bài 1 · Từ 6 / 10
+[03:32:57] T2 thẻ 6: Dễ nhớ
+[03:32:59] T2 thẻ 7: Nhớ được
+[03:33:00] T2 thẻ 8: Quên mất
+[03:33:02] T2 thẻ 9: Nhớ được
+[03:33:03] T2 thẻ 10: Khó nhớ
+[03:33:05] shot A-T2-summary.png
+[03:33:05] MEASURE vocab summary: 1 màn (844px), 4 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:33:05] ARIA vocab summary:
+- main:
+  - link "Về bài 1":
+    - /url: /hoc/1
+  - text: Bài 1
+  - heading "Đã học xong 10 từ" [level=1]
+  - paragraph: Kết quả từng từ đã lưu trên thiết bị và đưa vào lịch ôn.
+  - term: Quên mất
+  - definition: "1"
+  - term: Khó nhớ
+  - definition: "1"
+  - term: Nhớ được
+  - definition: "2"
+  - term: Dễ nhớ
+  - definition: "1"
+  - button "Hoàn tác thẻ cuối"
+  - button "Học thêm từ trong bài"
+  - link "Về nội dung bài 1":
+    - /url: /hoc/1
+- alert
+[03:33:18] DB: reviewItems=10, practiceSessions=0, pendingSync=10
+[03:33:33] === PHIÊN A · T4 "Củng cố bài vừa học bằng vài câu hỏi" ===
+[03:33:35] shot A-T4-dash-after-vocab.png
+[03:33:35] T4 Bảng tin sau khi học xong 10 từ, màn đầu: ["Bắt đầu ôn","Vào bài học","Xem tiến độ trên máy","Bảng chữ Kana"]
+[03:33:36] shot A-T4-luyen.png
+[03:33:36] MEASURE /luyen-tap: 1 màn (844px), 12 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:33:36]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Tùy chỉnh bài, dạng và số câu" 248x36
+[03:33:36] ARIA /luyen-tap:
+- banner "Thanh đầu trang":
+  - link "Về trang chủ MaiPace":
+    - /url: /
+    - text: MaiPace
+  - button "Tìm kiếm nội dung (Ctrl+K)"
+  - button "Chuyển sang giao diện tối"
+  - link "Cài đặt":
+    - /url: /cai-dat
+  - link "Tài khoản":
+    - /url: /ca-nhan
+- navigation "Điều hướng chính":
+  - link "Bảng tin":
+    - /url: /
+  - link "Học bài":
+    - /url: /hoc
+  - link "Luyện tập":
+    - /url: /luyen-tap
+  - link "Ôn tập":
+    - /url: /on-tap
+  - link "Tra cứu":
+    - /url: /hoc/tra-cuu
+- main:
+  - heading "Luyện tập" [level=1]
+  - region "Cấu hình luyện tập nhanh":
+    - text: Sẵn sàng luyện tập
+    - heading "Sẵn sàng luyện Bài 1 · 15 câu · 5 dạng" [level=2]
+    - paragraph: Kho có 75 câu phù hợp · 8 câu nghe bị loại (thiếu giọng tiếng Nhật)
+    - button "Bắt đầu 15 câu"
+    - button "Tùy chỉnh bài, dạng và số câu"
+- alert
+[03:33:58] shot A-T4-q1.png
+[03:33:58] MEASURE q1: 1 màn (844px), 8 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:33:58] ARIA q1:
+- main:
+  - button "Thoát phiên"
+  - text: 1/15
+  - button "Tạm dừng bấm giờ": 00:00
+  - paragraph: Nghe và nhập lại câu tiếng Nhật
+  - button "Phát lại"
+  - button "0.8×"
+  - button "1.0×" [pressed]
+  - text: Đáp án nghe và nhập
+  - textbox "Đáp án nghe và nhập"
+  - paragraph: Gõ romaji, chữ tự chuyển sang hiragana
+  - button "Kiểm tra" [disabled]
+  - button "Chưa biết"
+- alert
+[03:34:17] Luyện tập SẴN SÀNG LUYỆN TẬP Sẵn sàng luyện Bài 1 · 15 câu · 5 dạng Kho có 75 câu phù hợp · 8 câu nghe bị loại (thiếu giọng tiếng Nhật) Bắt 
+[03:34:17] luyen-tap có lối tiếp tục? 0
+[03:34:17] ARIA luyen with draft:
+- banner "Thanh đầu trang":
+  - link "Về trang chủ MaiPace":
+    - /url: /
+    - text: MaiPace
+  - button "Tìm kiếm nội dung (Ctrl+K)"
+  - button "Chuyển sang giao diện tối"
+  - link "Cài đặt":
+    - /url: /cai-dat
+  - link "Tài khoản":
+    - /url: /ca-nhan
+- navigation "Điều hướng chính":
+  - link "Bảng tin":
+    - /url: /
+  - link "Học bài":
+    - /url: /hoc
+  - link "Luyện tập":
+    - /url: /luyen-tap
+  - link "Ôn tập, 2 mục đến hạn":
+    - /url: /on-tap
+    - text: Ôn tập
+  - link "Tra cứu":
+    - /url: /hoc/tra-cuu
+- main:
+  - heading "Luyện tập" [level=1]
+  - region "Cấu hình luyện tập nhanh":
+    - text: Sẵn sàng luyện tập
+    - heading "Sẵn sàng luyện Bài 1 · 15 câu · 5 dạng" [level=2]
+    - paragraph: Kho có 75 câu phù hợp · 8 câu nghe bị loại (thiếu giọng tiếng Nhật)
+    - button "Bắt đầu 15 câu"
+    - button "Tùy chỉnh bài, dạng và số câu"
+- alert
+[03:34:31] === PHIÊN A · T4 tiếp: làm vài câu luyện ===
+[03:34:34] T4 câu 1: [1/15 00:00 Chọn cách đọc đúng của từ どうぞよろしくお 願いします からきました さん じん どうぞよろしくおねがいします] → chọn "からきました" trong 4 | phản hồi: Chưa chính xác Bạn trả lời: からきました Đáp án đúng: どうぞよろしくおねがいします Tiếp tục 
+[03:34:35] shot A-T4-q1-feedback.png
+[03:34:35] MEASURE q feedback: 1 màn (844px), 7 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:34:36] T4 câu 2: [2/15 00:00 Chọn nghĩa tiếng Việt chính xác イギリス Rất mong nhận được sự giúp đỡ của bạn bạn,] → chọn "nước Indonesia" trong 4 | phản hồi: Chưa chính xác Bạn trả lời: nước Indonesia Đáp án đúng: nước Anh Tiếp tục 
+[03:34:38] T4 câu 3: [3/15 00:00 Chọn nghĩa tiếng Việt chính xác 〜から 来き ました Rất mong nhận được sự giúp đỡ của bạ] → chọn "bao nhiêu tuổi (cách hỏi " trong 4 | phản hồi: Chưa chính xác Bạn trả lời: bao nhiêu tuổi (cách hỏi lịch sự) Đáp án đúng: Tôi đến từ... Tiếp tục 
+[03:35:09] T4 câu 4: [4/15 00:00 Ghép từ tiếng Nhật với nghĩa tiếng Việt tương ứng どなた tuổi 〜 歳さい vị nào (cách n] → chọn "tuổi" trong 10 | phản hồi: 
+[03:35:09]   không thấy nút sang câu tiếp; thử lại
+[03:35:10] shot A-T4-stuck-3.png
+[03:35:41]   {"prompt":"","how":"chọn \"誰だれ\" trong 10","fb":""}
+[03:36:12] T4 câu 5: [4/15 01:02 Ghép từ tiếng Nhật với nghĩa tiếng Việt tương ứng どなた tuổi 〜 歳さい vị nào (cách n] → chọn "誰だれ" trong 10 | phản hồi: 
+[03:36:12]   không thấy nút sang câu tiếp; thử lại
+[03:36:12] shot A-T4-stuck-4.png
+[03:36:43]   {"prompt":"","how":"chọn \"bệnh viện\" trong 10","fb":""}
+[03:37:14] T4 câu 6: [4/15 02:05 Ghép từ tiếng Nhật với nghĩa tiếng Việt tương ứng どなた tuổi 〜 歳さい vị nào (cách n] → chọn "bệnh viện" trong 10 | phản hồi: 
+[03:37:14]   không thấy nút sang câu tiếp; thử lại
+[03:37:14] shot A-T4-stuck-5.png
+[03:37:45]   {"prompt":"","how":"chọn \"〜 歳さい\" trong 10","fb":""}
+[03:37:45] shot A-T4-q7.png
+[03:37:45] === PHIÊN A · T5 "Tra nghĩa hoặc cách chia một từ rồi quay lại hoạt động trước" ===
+[03:37:45] T5 đang ở: 4/15 03:07 Ghép từ tiếng Nhật với nghĩa tiếng Việt tương ứng どなた tuổi 〜 歳さい vị nào (cách nói lịch sự
+[03:37:45] ARIA session chrome (lối tra cứu?):
+- main:
+  - button "Thoát phiên"
+  - text: 4/15
+  - button "Tạm dừng bấm giờ": 03:07
+  - text: Ghép từ tiếng Nhật với nghĩa tiếng Việt tương ứng
+  - group "Ghép cặp từ vựng và nghĩa tiếng Việt":
+    - button "どなた"
+    - button "tuổi"
+    - button "〜 歳 さい"
+    - button "vị nào (cách nói lịch sự của 'ai')"
+    - button "大学 だいがく"
+    - button "bệnh viện"
+    - button "病院 びょういん"
+    - button "ai"
+    - button "誰 だれ"
+    - button "trường đại học"
+- alert
+[03:38:32] ghép cặp: số lần ghép sai = 0
+[03:38:32] shot A-T4-matching-after.png
+[03:38:54] T4 câu 5: [5/15 00:04 Chọn cách đọc đúng của từ 何歳 あのひと だいがく だれ なんさい] → chọn "あのひと" trong 4 | phản hồi: Chưa chính xác Bạn trả lời: あのひと Đáp án đúng: なんさい Tiếp tục 
+[03:38:55] T4 câu 6: [6/15 00:05 Chọn nghĩa tiếng Việt chính xác 日本にほん Rất vui được gặp bạn (lần đầu gặp mặt) nư] → chọn "tuổi" trong 4 | phản hồi: Chưa chính xác Bạn trả lời: tuổi Đáp án đúng: nước Nhật Bản Tiếp tục 
+[03:38:57] T4 câu 7: [7/15 00:05 Chọn cách đọc đúng của từ あの 方 あのかた あのひと なんさい わたし] → chọn "なんさい" trong 4 | phản hồi: Chưa chính xác Bạn trả lời: なんさい Đáp án đúng: あのかた Tiếp tục 
+[03:38:58] shot A-T5-before-lookup.png
+[03:38:58] === PHIÊN A · T5 "Tra nghĩa hoặc cách chia một từ rồi quay lại" ===
+[03:38:58] T5 đang ở: 8/15 00:05 Chọn nghĩa tiếng Việt chính xác 大学だいがく Rất mong nhận được sự giúp đỡ của bạn người kia, n
+[03:38:58] T5 điều khiển đầu màn phiên: ["Thoát phiên","Tạm dừng bấm giờ"] → không có lối Tìm kiếm/Tra cứu trong phiên
+[03:38:59] shot A-T5-exit-dialog.png
+[03:38:59] T5 sau "Thoát phiên": 8/15 00:06 Chọn nghĩa tiếng Việt chính xác 大学だいがく Rất mong nhận được sự giúp đỡ của bạn người kia, người đó trường đại học vâng, dạ, đúng Tạm dừng hoặc thoát phiên luyện tập? Bạn có thể lưu lại tiến độ để học tiếp sau, hoặc bỏ phiên để xóa dữ liệu là
+[03:38:59] ARIA exit:
+- alertdialog "Tạm dừng hoặc thoát phiên luyện tập?":
+  - heading "Tạm dừng hoặc thoát phiên luyện tập?" [level=2]
+  - paragraph: Bạn có thể lưu lại tiến độ để học tiếp sau, hoặc bỏ phiên để xóa dữ liệu làm dở.
+  - button "Bỏ phiên"
+  - button "Tiếp tục làm"
+  - button "Lưu và học tiếp sau"
+[03:39:19] T5 mở lại /luyen-tap/phien: 8/15 00:05 Chọn nghĩa tiếng Việt chính xác 大学だいがく Rất mong n
+[03:39:20] T5 sau "Lưu và học tiếp sau" → http://localhost:3100/luyen-tap
+[03:39:20] shot A-T5-after-save.png
+[03:39:22] shot A-T5-search-keyboard.png
+[03:39:22] T5 tìm "daigaku" khi bàn phím ảo che (viewport cao 520): 3 kết quả thấy được: ["大学だいがく trường đại học Bài 1","入はい ります[だいがくに〜] はいります · nhập học, vào (đại học) Nh","出で ます[だいがくを〜] でます · tốt nghiệp, ra khỏi (đại học) "]
+[03:39:22] T5 kết quả đầu: 大学だいがく trường đại học Bài 1
+[03:39:23] T5 mở kết quả → http://localhost:3100/hoc/1#vocab-daigaku
+[03:39:23] shot A-T5-lookup-result.png
+[03:39:24] T5 Back liên tiếp: /luyen-tap
+[03:39:24] shot A-T5-after-back.png
+[03:39:24] T5 màn sau Back: Luyện tập Bạn còn phiên dở: câu 8/15 Tiếp tục bài làm hoặc xóa bỏ để bắt đầu mới Tiếp tục phiên Bỏ nháp SẴN SÀNG LUYỆN TẬP Sẵn sàng luyện Bài 1 · 15 câu · 5 dạng Kho có 83 câu phù hợp Bắt đầu 15 câu T
+[03:39:24] T5 lối tiếp tục trên màn này: ["Tiếp tục phiên"]
+[03:39:24] ARIA after back:
+- banner "Thanh đầu trang":
+  - link "Về trang chủ MaiPace":
+    - /url: /
+    - text: MaiPace
+  - button "Tìm kiếm nội dung (Ctrl+K)"
+  - button "Chuyển sang giao diện tối"
+  - link "Cài đặt":
+    - /url: /cai-dat
+  - link "Tài khoản":
+    - /url: /ca-nhan
+- navigation "Điều hướng chính":
+  - link "Bảng tin":
+    - /url: /
+  - link "Học bài":
+    - /url: /hoc
+  - link "Luyện tập":
+    - /url: /luyen-tap
+  - link "Ôn tập, 4 mục đến hạn":
+    - /url: /on-tap
+    - text: Ôn tập
+  - link "Tra cứu":
+    - /url: /hoc/tra-cuu
+- main:
+  - heading "Luyện tập" [level=1]
+  - region "Phiên học dở":
+    - paragraph: "Bạn còn phiên dở: câu 8/15"
+    - paragraph: Tiếp tục bài làm hoặc xóa bỏ để bắt đầu mới
+    - button "Tiếp tục phiên"
+    - button "Bỏ nháp"
+  - region "Cấu hình luyện tập nhanh":
+    - text: Sẵn sàng luyện tập
+    - heading "Sẵn sàng luyện Bài 1 · 15 câu · 5 dạng" [level=2]
+    - paragraph: Kho có 83 câu phù hợp
+    - button "Bắt đầu 15 câu"
+    - button "Tùy chỉnh bài, dạng và số câu"
+- alert: MaiPace — Tự học tiếng Nhật
+[03:39:54] Mô phỏng thời gian: lùi dueAt 24h cho 10 mục
+[03:39:55] === PHIÊN B (hôm sau) · T1 lặp lại: "5 phút, tiếp tục việc học gần nhất" — có nháp luyện 8/15 + mục ôn đến hạn ===
+[03:39:56] shot B-T1-dash-draft-and-due.png
+[03:39:56] shot B-T1-dash-draft-and-due-full.png
+[03:39:56] B-T1 màn đầu: ["Ôn tập","Bắt đầu ôn","Vào bài học","Tiếp tục phiên","Tiếp tục"]
+[03:39:56] B-T1 hàng "Tiếp tục phiên": y=651 (màn 844, dock bắt đầu ~734) → trong màn đầu; nội dung: Tiếp tục phiên Luyện tập · Bài 1 Đang ở câu 8/15 Tiếp tục
+[03:39:56] B-T1 số ôn: Bảng tin "19 mục" | dock "Ôn tập, 9 mục đến hạn"
+[03:39:56] ARIA dash B:
+- banner "Thanh đầu trang":
+  - link "Về trang chủ MaiPace":
+    - /url: /
+    - text: MaiPace
+  - button "Tìm kiếm nội dung (Ctrl+K)"
+  - button "Chuyển sang giao diện tối"
+  - link "Cài đặt":
+    - /url: /cai-dat
+  - link "Tài khoản":
+    - /url: /ca-nhan
+- navigation "Điều hướng chính":
+  - link "Bảng tin":
+    - /url: /
+  - link "Học bài":
+    - /url: /hoc
+  - link "Luyện tập":
+    - /url: /luyen-tap
+  - link "Ôn tập, 9 mục đến hạn":
+    - /url: /on-tap
+    - text: Ôn tập
+  - link "Tra cứu":
+    - /url: /hoc/tra-cuu
+- main:
+  - paragraph: Thứ Năm, 1 tháng 10
+  - heading "Chào buổi sáng" [level=1]
+  - heading "Ôn tập" [level=2]
+  - paragraph:
+    - strong: 19 mục
+  - link "Bắt đầu ôn":
+    - /url: /on-tap
+  - paragraph: Bài đang học
+  - 'heading "Bài 1: Giới thiệu bản thân" [level=3]'
+  - text: はじめまして
+  - link "Vào bài học":
+    - /url: /hoc/1
+  - progressbar: Đã vào lịch ôn 10/41 x
+  - region "Tiếp tục phiên dở dang":
+    - heading "Tiếp tục phiên" [level=2]
+    - text: Luyện tập · Bài 1 Đang ở câu 8/15
+    - link "Tiếp tục":
+      - /url: /luyen-tap/phien
+  - region "Lối tắt và tiến độ":
+    - link "Xem tiến độ trên máy":
+      - /url: /ca-nhan
+    - link "Bảng chữ Kana":
+      - /url: /hoc/tra-cuu/kana
+  - text: 2 nội dung cần củng cố
+  - paragraph: Các từ vựng hoặc điểm ngữ pháp bạn từng trả lời sai trong các phiên trước.
+  - link "Xem và luyện lại":
+    - /url: /on-tap/diem-yeu
+  - group: Chưa rõ nên chọn Học bài, Luyện tập hay Ôn tập?
+- alert
+[03:39:58] B-T1 /on-tap: Ôn tập Ôn tập ngắt quãng FSRS theo lịch và củng cố điểm yếu Hôm nay Điểm yếu của tôi 9 mục đến hạn · 10 mục mới Hôm nay có 9 mục đến hạn ôn tập và 10 mục mới. Bắt đầu ôn Tạm thời bỏ qua 8 câu nghe do thiết bị chưa có giọng tiếng Nhật (ja-JP). Hạn ôn 
+[03:39:58] shot B-on-tap.png
+[03:40:28] B-T1: 1 chạm "Tiếp tục" → /luyen-tap/phien · 8/15 00:06 Chọn nghĩa tiếng Việt chính xác 大学だいがく 
+[03:40:29] luyện câu: [8/15 00:06 Chọn nghĩa tiếng Việt chính xác 大学だいがく Rất mong nhận được s] → chọn "người kia, người đó" trong 4 | Chưa chính xác Bạn trả lời: người kia, người đó Đáp án đúng:
+[03:40:30] luyện câu: [9/15 00:06 Chọn cách đọc đúng của từ 医者 いしゃ しゃいん だいがく にほん] → chọn "いしゃ" trong 4 | Chính xác! Tiếp tục 
+[03:40:32] luyện câu: [10/15 00:06 Chọn nghĩa tiếng Việt chính xác どうぞよろしくお 願ねが いします Rất mong] → chọn "Đây là anh/chị/vị..." trong 4 | Chưa chính xác Bạn trả lời: Đây là anh/chị/vị... Đáp án đúng
+[03:40:39] luyện câu: [11/15 00:06 Ghép từ tiếng Nhật với nghĩa tiếng Việt tương ứng 教師きょうし n] → ghép cặp (sai 2) | Chưa chính xác Đáp án đúng: 〜ちゃん ↔ bé (hậu tố thân mật gọi t
+[03:40:40] luyện câu: [12/15 00:11 Chọn nghĩa tiếng Việt chính xác あの 方かた ai nước Pháp tôi vị] → chọn "nước Pháp" trong 4 | Chưa chính xác Bạn trả lời: nước Pháp Đáp án đúng: vị kia (c
+[03:40:42] luyện câu: [13/15 00:11 Chọn nghĩa tiếng Việt chính xác 銀行員ぎんこういん nhà nghiên cứu n] → chọn "nhà nghiên cứu" trong 4 | Chưa chính xác Bạn trả lời: nhà nghiên cứu Đáp án đúng: nhân
+[03:40:43] luyện câu: [14/15 00:11 Chọn nghĩa tiếng Việt chính xác インド bạn, anh, chị (ngôi th] → chọn "nước Ấn Độ" trong 4 | Chính xác! Tiếp tục 
+[03:40:45] luyện câu: [15/15 00:11 Chọn nghĩa tiếng Việt chính xác 〜 歳さい người (hậu tố quốc t] → chọn "nước Ấn Độ" trong 4 | Chưa chính xác Bạn trả lời: nước Ấn Độ Đáp án đúng: tuổi Xem
+[03:40:47] shot B-practice-summary.png
+[03:40:47] shot B-practice-summary-full.png
+[03:40:47] MEASURE practice summary: 3.9 màn (3293px), 4 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:40:47] ARIA practice summary:
+- main:
+  - heading "Kết quả luyện tập" [level=1]
+  - paragraph: Đã hoàn thành phiên luyện tập tiếng Nhật
+  - text: Tỷ lệ đúng
+  - paragraph: 43%
+  - text: Số câu đúng
+  - paragraph: 10/23
+  - text: Thời lượng
+  - paragraph: 00:11
+  - heading "Câu sai (13)" [level=2]
+  - text: "どうぞよろしくお 願いします Bạn trả lời: Đây là anh/chị/vị... Đáp án đúng: どうぞよろしくおねがいします イギリス Bạn trả lời: nước Indonesia Đáp án đúng: nước Anh 〜から 来 き ました Bạn trả lời: bao nhiêu tuổi (cách hỏi lịch sự) Đáp án đúng: Tôi đến từ... Ghép từ tiếng Nhật với nghĩa tiếng Việt tương ứng Bạn trả lời: người kia, người đó Đáp án đúng: trường đại học, bệnh viện, ai, vị nào (cách nói lịch sự của 'ai'), tuổi 何歳 Bạn trả lời: あのひと Đáp án đúng: なんさい 日本 にほん Bạn trả lời: tuổi Đáp án đúng: nước Nhật Bản あの 方 Bạn trả lời: nước Pháp Đáp án đúng: あのかた 大学 だいがく Bạn trả lời: người kia, người đó Đáp án đúng: trường đại học どうぞよろしくお 願 ねが いします Bạn trả lời: Đây là anh/chị/vị... Đáp án đúng: Rất mong nhận được sự giúp đỡ của bạn Ghép từ tiếng Nhật với nghĩa tiếng Việt tương ứng Đáp án đúng: bé (hậu tố thân mật gọi trẻ em hoặc bạn bè thân), người (hậu tố quốc tịch, ví dụ: người Nhật), thầy, cô giáo, bác sĩ (dùng để xưng hô người khác), giáo viên (nghề nghiệp, tự xưng), học sinh, sinh viên あの 方 かた Bạn trả lời: nước Pháp Đáp án đúng: vị kia (cách nói lịch sự của 'người kia') 銀行員 ぎんこういん Bạn trả lời: nhà nghiên cứu Đáp án đúng: nhân viên ngân hàng 〜 歳 さい Bạn trả lời: nước Ấn Độ Đáp án đúng: tuổi"
+  - button "Làm lại câu sai"
+  - button "Luyện tiếp"
+  - button "Về bài 1"
+  - button "Về trang chủ"
+- alert
+[03:41:42] === PHIÊN B · T6 "Hoàn thành một lô ôn rồi chọn việc tiếp theo" + mất mạng giữa phiên ===
+[03:41:44] T6 sau "Bắt đầu ôn" → /on-tap · Ôn tập Ôn tập ngắt quãng FSRS theo lịch và củng cố điểm yếu Hôm nay Điểm yếu của
+[03:41:45] shot B-T6-review-q1.png
+[03:41:45] MEASURE review q1: 1.4 màn (1180px), 13 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:41:45]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Điểm yếu của tôi" 111x30
+[03:41:45] ARIA review q1:
+- banner "Thanh đầu trang":
+  - link "Về trang chủ MaiPace":
+    - /url: /
+    - text: MaiPace
+  - button "Tìm kiếm nội dung (Ctrl+K)"
+  - button "Chuyển sang giao diện tối"
+  - link "Cài đặt":
+    - /url: /cai-dat
+  - link "Tài khoản":
+    - /url: /ca-nhan
+- navigation "Điều hướng chính":
+  - link "Bảng tin":
+    - /url: /
+  - link "Học bài":
+    - /url: /hoc
+  - link "Luyện tập":
+    - /url: /luyen-tap
+  - link "Ôn tập, 4 mục đến hạn":
+    - /url: /on-tap
+    - text: Ôn tập
+  - link "Tra cứu":
+    - /url: /hoc/tra-cuu
+- main:
+  - heading "Ôn tập" [level=1]
+  - paragraph: Ôn tập ngắt quãng FSRS theo lịch và củng cố điểm yếu
+  - text: Hôm nay
+  - link "Điểm yếu của tôi":
+    - /url: /on-tap/diem-yeu
+  - paragraph: Hôm nay có 4 mục đến hạn ôn tập và 0 mục mới.
+  - button "Bắt đầu ôn"
+  - paragraph: Đã đủ 20 mục mới hôm nay — tạm không nạp thêm mục mới nữa.
+  - paragraph: 4 từ vựng
+  - region "Xem trước các mục ôn tập":
+    - heading "Xem trước danh sách mục ôn tập trong lô" [level=2]
+    - list:
+      - listitem:
+        - text: あなた
+        - paragraph: bạn, anh, chị (ngôi thứ hai)
+        - text: Từ vựng trễ 1 ngày
+      - listitem:
+        - text: 私 わたし
+        - paragraph: tôi
+        - text: Từ vựng trễ 1 ngày
+      - listitem:
+        - text: あの 人 ひと
+        - paragraph: người kia, người đó
+        - text: Từ vựng trễ 1 ngày
+      - listitem:
+        - text: 〜さん
+        - paragraph: anh, chị, ông, bà (hậu tố xưng hô lịch sự)
+        - text: Từ vựng trễ 1 ngày
+  - link "Điểm yếu của tôi":
+    - /url: /on-tap/diem-yeu
+- alert: Ôn tập
+[03:41:46] shot B-T6-review-summary.png
+[03:41:46] shot B-T6-review-summary-full.png
+[03:41:46] MEASURE review summary: 2.8 màn (2354px), 13 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:41:46]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Điểm yếu của tôi" 111x30
+[03:41:46] ARIA review summary:
+- banner "Thanh đầu trang":
+  - link "Về trang chủ MaiPace":
+    - /url: /
+    - text: MaiPace
+  - button "Tìm kiếm nội dung (Ctrl+K)"
+  - button "Chuyển sang giao diện tối"
+  - link "Cài đặt":
+    - /url: /cai-dat
+  - link "Tài khoản":
+    - /url: /ca-nhan
+- navigation "Điều hướng chính":
+  - link "Bảng tin":
+    - /url: /
+  - link "Học bài":
+    - /url: /hoc
+  - link "Luyện tập":
+    - /url: /luyen-tap
+  - link "Ôn tập, 14 mục đến hạn":
+    - /url: /on-tap
+    - text: Ôn tập
+  - link "Tra cứu":
+    - /url: /hoc/tra-cuu
+- main:
+  - heading "Ôn tập" [level=1]
+  - paragraph: Ôn tập ngắt quãng FSRS theo lịch và củng cố điểm yếu
+  - text: Hôm nay
+  - link "Điểm yếu của tôi":
+    - /url: /on-tap/diem-yeu
+  - paragraph: Hôm nay có 14 mục đến hạn ôn tập và 0 mục mới.
+  - button "Bắt đầu ôn"
+  - paragraph: Đã đủ 20 mục mới hôm nay — tạm không nạp thêm mục mới nữa.
+  - paragraph: 14 từ vựng
+  - region "Xem trước các mục ôn tập":
+    - heading "Xem trước danh sách mục ôn tập trong lô" [level=2]
+    - list:
+      - listitem:
+        - text: あなた
+        - paragraph: bạn, anh, chị (ngôi thứ hai)
+        - text: Từ vựng trễ 1 ngày
+      - listitem:
+        - text: 私 わたし
+        - paragraph: tôi
+        - text: Từ vựng trễ 1 ngày
+      - listitem:
+        - text: あの 人 ひと
+        - paragraph: người kia, người đó
+        - text: Từ vựng trễ 1 ngày
+      - listitem:
+        - text: 〜さん
+        - paragraph: anh, chị, ông, bà (hậu tố xưng hô lịch sự)
+        - text: Từ vựng trễ 1 ngày
+      - listitem:
+        - text: あの 方 かた
+        - paragraph: vị kia (cách nói lịch sự của 'người kia')
+        - text: Từ vựng Đến hạn hôm nay
+      - listitem:
+        - text: 教師 きょうし
+        - paragraph: giáo viên (nghề nghiệp, tự xưng)
+        - text: Từ vựng Đến hạn hôm nay
+      - listitem:
+        - text: 銀行員 ぎんこういん
+        - paragraph: nhân viên ngân hàng
+        - text: Từ vựng Đến hạn hôm nay
+      - listitem:
+        - text: 大学 だいがく
+        - paragraph: trường đại học
+        - text: Từ vựng Đến hạn hôm nay
+      - listitem:
+        - text: 〜 歳 さい
+        - paragraph: tuổi
+        - text: Từ vựng Đến hạn hôm nay
+      - listitem:
+        - text: 何歳 なんさい
+        - paragraph: mấy tuổi
+        - text: Từ vựng Đến hạn hôm nay
+      - listitem:
+        - text: どうぞよろしくお 願 ねが いします
+        - paragraph: Rất mong nhận được sự giúp đỡ của bạn
+        - text: Từ vựng Đến hạn hôm nay
+      - listitem:
+        - text: 〜から 来 き ました
+        - paragraph: Tôi đến từ...
+        - text: Từ vựng Đến hạn hôm nay
+      - listitem:
+        - text: イギリス
+        - paragraph: nước Anh
+        - text: Từ vựng Đến hạn hôm nay
+      - listitem:
+        - text: 日本 にほん
+        - paragraph: nước Nhật Bản
+        - text: Từ vựng Đến hạn hôm nay
+  - link "Điểm yếu của tôi":
+    - /url: /on-tap/diem-yeu
+- alert: Ôn tập
+[03:41:58] === PHIÊN B · T6 "Hoàn thành một lô ôn rồi chọn việc tiếp theo" + mất mạng giữa phiên ===
+[03:42:00] T6 sau "Bắt đầu ôn" → /on-tap · Ôn tập Ôn tập ngắt quãng FSRS theo lịch và củng cố điểm yếu Hôm nay Điểm yếu của
+[03:42:01] shot B-T6-hub.png
+[03:42:01] T6 chạm thứ 2 → /on-tap/phien
+[03:42:02] shot B-T6-review-q1.png
+[03:42:02] MEASURE review q1: 1 màn (844px), 6 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:42:02] ARIA review q1:
+- main:
+  - button "Tạm dừng hoặc thoát phiên ôn tập"
+  - text: Ôn tập theo lịch Câu 1 / 14
+  - button "Tạm dừng bấm giờ"
+  - progressbar
+  - region "Nội dung câu hỏi":
+    - group:
+      - button "Rất vui được gặp bạn (lần đầu gặp mặt)"
+      - button "Tôi đến từ..."
+      - button "nhân viên của công ty..."
+      - button "vị kia (cách nói lịch sự của 'người kia')"
+- alert
+[03:42:03] ôn: [Ôn tập theo lịch Câu 1 / 14 Rất vui được gặp bạn (lần đầu gặp mặt) Tôi đến từ...] → chọn "Rất vui được gặp bạn (lần" trong 4 | Chưa chính xác Đáp án đúng: Tôi đến từ... Tiếp tục
+[03:42:04] ôn: [Ôn tập theo lịch Câu 2 / 14 いいえ じん どうぞよろしくおねがいします はじめまして] → chọn "はじめまして" trong 4 | Chưa chính xác Đáp án đúng: どうぞよろしくおねがいします Tiếp tụ
+[03:42:06] ôn: [Ôn tập theo lịch Câu 3 / 14 bạn, anh, chị (ngôi thứ hai) giáo viên (nghề nghiệp,] → chọn "người kia, người đó" trong 4 | Chưa chính xác Đáp án đúng: bạn, anh, chị (ngôi th
+[03:42:07] T6 >>> MẤT MẠNG tại câu 4
+[03:42:07] CONSOLE Failed to load resource: net::ERR_INTERNET_DISCONNECTED
+[03:42:07] CONSOLE Failed to load resource: net::ERR_INTERNET_DISCONNECTED
+[03:42:07] shot B-T6-offline.png
+[03:42:08] CONSOLE Failed to load resource: net::ERR_INTERNET_DISCONNECTED
+[03:42:08] ôn: [Ôn tập theo lịch Câu 4 / 14 Rất vui được gặp bạn (lần đầu gặp mặt) Xin lỗi (khi ] → chọn "Xin lỗi (khi làm phiền ho" trong 4 | Chưa chính xác Đáp án đúng: nước Nhật Bản Tiếp tục
+[03:42:10] ôn: [Ôn tập theo lịch Câu 5 / 14 きょうし だいがく だれ なんさい] → chọn "きょうし" trong 4 | Chưa chính xác Đáp án đúng: なんさい Tiếp tục 
+[03:42:10] CONSOLE Failed to load resource: net::ERR_INTERNET_DISCONNECTED
+[03:42:11] ôn: [Ôn tập theo lịch Câu 6 / 14 mấy tuổi nhân viên ngân hàng thầy, cô giáo, bác sĩ (] → chọn "vị kia (cách nói lịch sự " trong 4 | Chính xác! Tiếp tục 
+[03:42:13] ôn: [Ôn tập theo lịch Câu 7 / 14 anh, chị, ông, bà (hậu tố xưng hô lịch sự) mấy tuổi ] → chọn "người kia, người đó" trong 4 | Chưa chính xác Đáp án đúng: anh, chị, ông, bà (hậu
+[03:42:13] CONSOLE Failed to load resource: net::ERR_INTERNET_DISCONNECTED
+[03:42:14] T6 >>> CÓ MẠNG LẠI tại câu 8
+[03:42:16] shot B-T6-online.png
+[03:42:16] ôn: [Ôn tập theo lịch Câu 8 / 14 あなた あのかた あのひと わたし] → chọn "あのかた" trong 4 | Chưa chính xác Đáp án đúng: わたし Tiếp tục 
+[03:42:18] ôn: [Ôn tập theo lịch Câu 9 / 14 きょうし しゃいん せんせい だいがく] → chọn "きょうし" trong 4 | Chưa chính xác Đáp án đúng: だいがく Tiếp tục 
+[03:42:20] ôn: [Ôn tập theo lịch Câu 10 / 14 さい じん だれ にほん] → chọn "にほん" trong 4 | Chưa chính xác Đáp án đúng: さい Tiếp tục 
+[03:42:21] ôn: [Ôn tập theo lịch Câu 11 / 14 bác sĩ giáo viên (nghề nghiệp, tự xưng) không, khôn] → chọn "không, không phải" trong 4 | Chưa chính xác Đáp án đúng: giáo viên (nghề nghiệp
+[03:42:23] ôn: [Ôn tập theo lịch Câu 12 / 14 かいしゃいん ぎんこういん けんきゅうしゃ ちゅうごく] → chọn "ぎんこういん" trong 4 | Chính xác! Tiếp tục 
+[03:42:24] ôn: [Ôn tập theo lịch Câu 13 / 14 あのかた あのひと だいがく わたし] → chọn "あのかた" trong 4 | Chưa chính xác Đáp án đúng: あのひと Tiếp tục 
+[03:42:26] ôn: [Ôn tập theo lịch Câu 14 / 14 Rất mong nhận được sự giúp đỡ của bạn nước Anh nước] → chọn "nước Ấn Độ" trong 4 | Chưa chính xác Đáp án đúng: nước Anh Xem kết quả 
+[03:42:28] shot B-T6-review-summary.png
+[03:42:28] shot B-T6-review-summary-full.png
+[03:42:28] MEASURE review summary: 3.6 màn (3057px), 4 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:42:28] ARIA review summary:
+- main:
+  - status: Đã hoàn thành lô ôn tập. Tỷ lệ đúng 14%, 2 trên 14 câu.
+  - heading "Kết quả ôn tập" [level=1]
+  - paragraph: Đã hoàn thành lô ôn tập theo lịch (14 mục)
+  - text: Tỷ lệ đúng
+  - paragraph: 14%
+  - text: Số câu đúng
+  - paragraph: 2/14
+  - text: Thời lượng
+  - paragraph: 00:04
+  - paragraph: "Lần ôn kế tiếp: 13 mục hôm nay, 1 mục ngày mai"
+  - text: Đã ôn hết các mục đến hạn hôm nay!
+  - paragraph: Không còn mục nào cần ôn tập lúc này. Nhịp học của bạn đang rất tốt.
+  - button "Về Bảng tin"
+  - button "Xem điểm yếu của tôi"
+  - button "Về trang ôn tập"
+  - heading "Câu sai cần chú ý (12)" [level=2]
+  - text: "〜から 来 き ました Bạn trả lời: Rất vui được gặp bạn (lần đầu gặp mặt) Đáp án đúng: Tôi đến từ... どうぞよろしくお 願いします Bạn trả lời: はじめまして Đáp án đúng: どうぞよろしくおねがいします あなた Bạn trả lời: người kia, người đó Đáp án đúng: bạn, anh, chị (ngôi thứ hai) 日本 にほん Bạn trả lời: Xin lỗi (khi làm phiền hoặc hỏi việc riêng)... Đáp án đúng: nước Nhật Bản 何歳 Bạn trả lời: きょうし Đáp án đúng: なんさい 〜さん Bạn trả lời: người kia, người đó Đáp án đúng: anh, chị, ông, bà (hậu tố xưng hô lịch sự) 私 Bạn trả lời: あのかた Đáp án đúng: わたし 大学 Bạn trả lời: きょうし Đáp án đúng: だいがく 〜歳 Bạn trả lời: にほん Đáp án đúng: さい 教師 きょうし Bạn trả lời: không, không phải Đáp án đúng: giáo viên (nghề nghiệp, tự xưng) あの 人 Bạn trả lời: あのかた Đáp án đúng: あのひと イギリス Bạn trả lời: nước Ấn Độ Đáp án đúng: nước Anh"
+  - button "Luyện lại 12 câu sai"
+- alert
+[03:43:50] T6 về Bảng tin sau lô ôn: Thứ Năm, 1 Tháng 10 Chào buổi sáng Ôn tập 12 mục · khoảng 1 phút Bắt đầu ôn Bài đang học Bài 1: Giới thiệu bản thân はじめまして Vào bài học Đã vào lịch ôn 23/41 x Xem tiến độ trên máy Bảng chữ Kana 16 nội dung cần củng cố Các
+[03:43:51] shot B-T6-dash-after-review.png
+[03:43:51] === Ma trận bố cục ===
+[03:43:53] shot M-360-dash.png
+[03:43:53] MEASURE 360 /: 1.3 màn (1026px), 16 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:43:53]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Chưa rõ nên chọn Học bài, Luyện tập hay " 294x32
+[03:43:54] shot M-360-luyen.png
+[03:43:54] MEASURE 360 /luyen-tap: 1 màn (780px), 12 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:43:54]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Tùy chỉnh bài, dạng và số câu" 248x36
+[03:43:56] shot M-360-on.png
+[03:43:56] MEASURE 360 /on-tap: 2.7 màn (2118px), 13 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:43:56]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Điểm yếu của tôi" 111x30
+[03:43:58] shot M-360-hoc1.png
+[03:43:58] MEASURE 360 /hoc/1: 11.7 màn (9140px), 68 phần tử tương tác, tràn ngang=false, <44px: 3
+[03:43:58]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Nạp audio đĩa CD trong Cài đặt" 209x16 | "Nạp audio đĩa CD" 142x28
+[03:43:59] shot M-360-ss.png
+[03:43:59] MEASURE 360 /ca-nhan: 1.4 màn (1085px), 16 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:43:59]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Ôn tập ngay →" 83x15
+[03:44:01] shot M-360-review-q.png
+[03:44:03] shot M-430-dash.png
+[03:44:03] MEASURE 430 /: 1.1 màn (1010px), 16 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:44:03]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Chưa rõ nên chọn Học bài, Luyện tập hay " 364x16
+[03:44:05] shot M-430-luyen.png
+[03:44:05] MEASURE 430 /luyen-tap: 1 màn (932px), 12 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:44:05]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Tùy chỉnh bài, dạng và số câu" 248x36
+[03:44:06] shot M-430-on.png
+[03:44:06] MEASURE 430 /on-tap: 2.2 màn (2062px), 13 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:44:06]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Điểm yếu của tôi" 111x30
+[03:44:08] shot M-430-hoc1.png
+[03:44:08] MEASURE 430 /hoc/1: 9.4 màn (8802px), 68 phần tử tương tác, tràn ngang=false, <44px: 3
+[03:44:08]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Nạp audio đĩa CD trong Cài đặt" 209x16 | "Nạp audio đĩa CD" 142x28
+[03:44:10] shot M-430-ss.png
+[03:44:10] MEASURE 430 /ca-nhan: 1.1 màn (1049px), 16 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:44:10]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Ôn tập ngay →" 83x15
+[03:44:11] shot M-430-review-q.png
+[03:44:13] shot M-390-dark-dash.png
+[03:44:13] MEASURE 390-dark /: 1.2 màn (1010px), 16 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:44:13]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Chưa rõ nên chọn Học bài, Luyện tập hay " 324x16
+[03:44:14] shot M-390-dark-luyen.png
+[03:44:14] MEASURE 390-dark /luyen-tap: 1 màn (844px), 12 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:44:14]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Tùy chỉnh bài, dạng và số câu" 248x36
+[03:44:16] shot M-390-dark-on.png
+[03:44:16] MEASURE 390-dark /on-tap: 2.5 màn (2118px), 13 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:44:16]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Điểm yếu của tôi" 111x30
+[03:44:18] shot M-390-dark-hoc1.png
+[03:44:18] MEASURE 390-dark /hoc/1: 10.6 màn (8941px), 68 phần tử tương tác, tràn ngang=false, <44px: 3
+[03:44:18]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Nạp audio đĩa CD trong Cài đặt" 209x16 | "Nạp audio đĩa CD" 142x28
+[03:44:19] shot M-390-dark-ss.png
+[03:44:19] MEASURE 390-dark /ca-nhan: 1.2 màn (1049px), 16 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:44:19]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Ôn tập ngay →" 83x15
+[03:44:21] shot M-390-dark-review-q.png
+[03:44:23] shot M-text150-dash.png
+[03:44:23] MEASURE chữ 150% /: 1.7 màn (1711px), 16 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:44:25] shot M-text150-luyen.png
+[03:44:25] MEASURE chữ 150% /luyen-tap: 1 màn (992px), 12 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:44:26] shot M-text150-tuvung.png
+[03:44:26] MEASURE chữ 150% /hoc/1/tu-vung: 9.9 màn (8385px), 47 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:44:28] shot M-text200-dash.png
+[03:44:28] MEASURE chữ 200% /: 2 màn (2638px), 16 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:44:30] shot M-text200-luyen.png
+[03:44:30] MEASURE chữ 200% /luyen-tap: 1 màn (1321px), 12 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:44:32] shot M-text200-tuvung.png
+[03:44:32] MEASURE chữ 200% /hoc/1/tu-vung: 16.6 màn (14032px), 47 phần tử tương tác, tràn ngang=false, <44px: 0
+[03:45:07] DARK hệ thống, chưa từng lưu cài đặt: {"dark":false,"toggle":"Chuyển sang giao diện sáng","settings":null}
+[03:45:07]   sau chạm nút theme lần 1: {"dark":false,"toggle":"Chuyển sang giao diện tối","settings":"{\"furigana\":true,\"furiganaSize\":\"normal\",\"hideTranslations\":false,\"theme\":\"light\",\"soundVolume\":1,\"dailyNewLimit\":20,\"reviewBatchSize\":20,\"learnedThroughLesson\":0,\"practicePreset\":{\"lessons\":[1],\"types\":[\"mc\",\"matching\",\"cloze\",\"reorder\",\"listening\"],\"questionCount\":15}}"}
+[03:45:07]   sau chạm lần 2: {"dark":true,"toggle":"Chuyển sang giao diện sáng","settings":"{\"furigana\":true,\"furiganaSize\":\"normal\",\"hideTranslations\":false,\"theme\":\"dark\",\"soundVolume\":1,\"dailyNewLimit\":20,\"reviewBatchSize\":20,\"learnedThroughLesson\":0,\"practicePreset\":{\"lessons\":[1],\"types\":[\"mc\",\"matching\",\"cloze\",\"reorder\",\"listening\"],\"questionCount\":15}}"}
+[03:45:08] shot M-dark-after-2-taps.png
+[03:45:24] === WebKit (giả lập iPhone 390x844) + reduced motion, hồ sơ mới ===
+[03:45:26] shot W-dash.png
+[03:45:26] MEASURE webkit /: 1 màn (860px), 15 phần tử tương tác, tràn ngang=false, <44px: 2
+[03:45:26]   nhỏ: "Về trang chủ MaiPace" 100x36 | "Chưa rõ nên chọn Học bài, Luyện tập hay " 324x16
+[03:45:28] WebKit reduced-motion sau lật thẻ: animations=[] transitions=[]
+[03:45:29] shot W-card-back.png
+[03:45:31] WebKit /hoc/1 vùng cuộn: {"docScrolls":false,"inner":["DIV.flex-1 flex flex-col min-w-0 max-w-full overflow-y"]}
+[03:45:40] DB: reviewItems=23, practiceSessions=2, pendingSync=12
+[04:07:32] === NGÀY 7 · THỬ LẠI (360x780, hồ sơ mới) ===
+[04:07:35] shot R-1-dash-vocabdraft.png
+[04:07:35] R1 màn đầu: ["Tiếp tục","Xem tiến độ trên máy"]
+[04:07:37] PASS R1 1 chạm từ Bảng tin vào thẳng thẻ 1/10 → Thoát Bài 1 Bài 1 · Từ 1 / 10 私 わたし Chạm thẻ để xe · URL /hoc/1/tu-vung
+[04:07:45] R2 tải lại ở thẻ 6 → Thoát Bài 1 Bài 1 · Từ 6 / 10 〜ちゃん ちゃん C
+[04:07:52] shot R-2-vocab-summary.png
+[04:07:52] PASS R2 tổng kết sau tải lại: các mức [2,2,5,1] = 10/10
+[04:08:15] shot R-3-dash-practicedraft.png
+[04:08:15] R ca 2/3 (nháp luyện, chưa có mục ôn?) màn đầu: ["Bắt đầu ôn","Tiếp tục","Vào bài học"]
+[04:08:17]   sau 1 chạm: 9/15 00:08 Chọn nghĩa tiếng Việt chính x
+[04:08:38] shot R-3-practice-summary.png
+[04:08:38] R3 câu trả lời sai đã ghi trong phiên: ["さん","zzz","わたし","mấy tuổi","(ghép)","nhân viên công ty","nhân viên công ty","nước Mỹ, Hoa Kỳ","zzz","Tôi đến từ...","(ghép)","tôi","せんせい"]
+[04:08:38] R3 câu trả lời trong danh sách câu sai: ["さん","さん","zzz","zzz","わたし","わたし","mấy tuổi","mấy tuổi","nhân viên công ty","nhân viên công ty","nhân viên công ty","nhân viên công ty","nước Mỹ, Hoa Kỳ","nước Mỹ, Hoa Kỳ","zzz","zzz","Tôi đến từ...","Tôi đến từ...","tôi","tôi","せんせい","せんせい"]
+[04:08:38] FAIL R3 danh sách câu sai khớp từng câu, đúng thứ tự
+[04:08:39] shot R-4-dash-due.png
+[04:08:39] R4 màn đầu: ["Bắt đầu ôn","Vào bài học"]
+[04:08:39] R4 số ôn: Bảng tin "22 mục đến hạn" | dock "Ôn tập, 22 mục đến hạn"
+[04:08:39] PASS R4 số mục đến hạn Bảng tin = dock (22 / 22)
+[04:08:40] R4 "Bắt đầu ôn" href=/on-tap/phien → /on-tap/phien
+[04:08:41] shot R-4-review-q1.png
+[04:09:12] FAIL R4 câu ôn có đề: 18/20
+[04:09:13] shot R-4-review-summary.png
+[04:09:13] R4 kết quả ôn: Đã hoàn thành lô ôn tập. Tỷ lệ đúng 25%, 5 trên 20 câu. Kết quả ôn tập Đã hoàn thành lô ôn tập theo lịch (20 mục) Tỷ lệ đúng 25% Số câu đúng 5/20 Thời lượng 00:01 Lần ôn kế tiếp: 19 mục hôm nay, 1 mục sau 4 ngày Còn 2 mục đến hạn ôn tập Bạn có thể làm tiếp lô 
+[04:09:35] ôn câu 1: đề="日本にほん" | Chọn nghĩa tiếng Việt chính xác 日本にほん bạn, anh, chị (ngôi thứ hai) nước Hàn Quốc nước Nhật
+[04:09:36] ôn câu 2: đề="こちらは〜さんです" | Chọn nghĩa tiếng Việt chính xác こちらは〜さんです Rất mong nhận được sự giúp đỡ của bạn Rất vui đư
+[04:09:51] ôn câu 1: đề="あの 人ひと" | Chọn nghĩa tiếng Việt chính xác あの 人ひと bạn, anh, chị (ngôi thứ hai) người kia, người đó nư
+[04:09:53] ôn câu 2: đề="〜人じん" | Chọn nghĩa tiếng Việt chính xác 〜 人じん ai bạn, anh, chị (ngôi thứ hai) người (hậu tố quốc t
+[04:09:54] ôn câu 3: đề="社員" | Chọn cách đọc đúng của từ 社員 かんこく がくせい しゃいん せんせい
+[04:09:56] ôn câu 4: đề="〜から 来きました" | Chọn nghĩa tiếng Việt chính xác 〜から 来き ました Tôi đến từ... học sinh, sinh viên nhân viên của
+[04:09:57] ôn câu 5: đề="あの 方" | Chọn cách đọc đúng của từ あの 方 あのかた あのひと なんさい わたし
+[04:09:59] ôn câu 6: đề="あなた" | Chọn nghĩa tiếng Việt chính xác あなた bạn, anh, chị (ngôi thứ hai) người kia, người đó nước 
+[04:10:01] ôn câu 7: đề="どうぞよろしくお 願ねがいします" | Chọn nghĩa tiếng Việt chính xác どうぞよろしくお 願ねが いします Rất mong nhận được sự giúp đỡ của bạn họ
+[04:10:02] ôn câu 8: đề="先生せんせい" | Chọn nghĩa tiếng Việt chính xác 先生せんせい Rất vui được gặp bạn (lần đầu gặp mặt) nước Thái La
+[04:10:04] ôn câu 9: đề="フランス" | Chọn nghĩa tiếng Việt chính xác フランス Rất mong nhận được sự giúp đỡ của bạn mấy tuổi nước M
+[04:10:05] ôn câu 10: đề="教師" | Chọn cách đọc đúng của từ 教師 がくせい きょうし せんせい だいがく
+[04:10:07] ôn câu 11: đề="お 名前は？" | Chọn cách đọc đúng của từ お 名前は？ おなまえは じん ちゅうごく びょういん
+[04:10:09] ôn câu 12: đề="病院びょういん" | Chọn nghĩa tiếng Việt chính xác 病院びょういん Rất mong nhận được sự giúp đỡ của bạn bệnh viện mấ
+[04:10:10] ôn câu 13: đề="〜歳さい" | Chọn nghĩa tiếng Việt chính xác 〜 歳さい bao nhiêu tuổi (cách hỏi lịch sự) trường đại học tuổ
+[04:10:12] ôn câu 14: đề="〜ちゃん" | Chọn nghĩa tiếng Việt chính xác 〜ちゃん Rất mong nhận được sự giúp đỡ của bạn anh, chị, ông, 
+[04:10:13] ôn câu 15: đề="私わたし＿＿＿ 会社員かいしゃいんです。" | Tôi là nhân viên công ty. 私わたし ＿＿＿ 会社員かいしゃいん です。 Đáp án điền từ Gõ romaji, chữ tự chuyển s
+[04:10:15] ôn câu 16: đề="ドイツ" | Chọn nghĩa tiếng Việt chính xác ドイツ nhà nghiên cứu nhân viên ngân hàng nước Đức vị nào (cá
+[04:10:16] ôn câu 17: đề="日本にほん" | Chọn nghĩa tiếng Việt chính xác 日本にほん bạn, anh, chị (ngôi thứ hai) học sinh, sinh viên khô
+[04:10:18] ôn câu 18: đề="はじめまして" | Chọn nghĩa tiếng Việt chính xác はじめまして Rất vui được gặp bạn (lần đầu gặp mặt) mấy tuổi nướ
+[04:10:46] === NGÀY 7 · THỬ LẠI (360x780, hồ sơ mới) ===
+[04:10:49] shot R-1-dash-vocabdraft.png
+[04:10:49] R1 màn đầu: ["Tiếp tục","Xem tiến độ trên máy"]
+[04:10:51] PASS R1 1 chạm từ Bảng tin vào thẳng thẻ 1/10 → Thoát Bài 1 Bài 1 · Từ 1 / 10 私 わたし Chạm thẻ để xe · URL /hoc/1/tu-vung
+[04:10:59] R2 tải lại ở thẻ 6 → Thoát Bài 1 Bài 1 · Từ 6 / 10 〜ちゃん ちゃん C
+[04:11:06] shot R-2-vocab-summary.png
+[04:11:06] PASS R2 tổng kết sau tải lại: các mức [2,2,5,1] = 10/10
+[04:11:23] shot R-3-dash-practicedraft.png
+[04:11:23] R ca 2/3 (nháp luyện, chưa có mục ôn?) màn đầu: ["Bắt đầu ôn","Tiếp tục","Vào bài học"]
+[04:11:24]   sau 1 chạm: 9/15 00:01 Chọn nghĩa tiếng Việt chính x
+[04:11:44] shot R-3-practice-summary.png
+[04:11:44] R3 câu trả lời sai đã ghi trong phiên: ["おなまえは","せんせい","nước Hàn Quốc","わたし","nhân viên công ty","わたし","わたし","vị nào (cách nói lịch sự của 'ai')","(ghép)"]
+[04:11:44] R3 câu trả lời trong danh sách câu sai: ["おなまえは","せんせい","nước Hàn Quốc","わたし","nhân viên công ty","わたし","わたし","vị nào (cách nói lịch sự của 'ai')"]
+[04:11:44] PASS R3 danh sách câu sai khớp từng câu, đúng thứ tự
+[04:11:45] shot R-4-dash-due.png
+[04:11:45] R4 màn đầu: ["Bắt đầu ôn","Vào bài học"]
+[04:11:45] R4 số ôn: Bảng tin "23 mục đến hạn" | dock "Ôn tập, 23 mục đến hạn"
+[04:11:45] PASS R4 số mục đến hạn Bảng tin = dock (23 / 23)
+[04:11:46] R4 "Bắt đầu ôn" href=/on-tap/phien → /on-tap/phien
+[04:11:47] shot R-4-review-q1.png
+[04:12:18] PASS R4 câu ôn có đề: 20/20
+[04:12:19] shot R-4-review-summary.png
+[04:12:19] R4 kết quả ôn: Đã hoàn thành lô ôn tập. Tỷ lệ đúng 5%, 1 trên 20 câu. Kết quả ôn tập Đã hoàn thành lô ôn tập theo lịch (20 mục) Tỷ lệ đúng 5% Số câu đúng 1/20 Thời lượng 00:01 Lần ôn kế tiếp: 20 mục hôm nay Còn 3 mục đến hạn ôn tập Bạn có thể làm tiếp lô tiếp theo (3 mục) ho
+[04:12:39] shot R-5-review-done.png
+[04:12:39] R5 kết quả lô cuối: Đã hoàn thành lô ôn tập. Tỷ lệ đúng 33%, 1 trên 3 câu. Kết quả ôn tập Đã hoàn thành lô ôn tập theo lịch (3 mục) Tỷ lệ đúng 33% Số câu đúng 1/3 Thời lượng 00:01 Lần ôn kế tiếp: 2 mục hôm nay, 1 mục sau 2 ngày Đã xong các mục đến hạn lúc này Các mục vừa ôn sẽ quay lại theo lịch ở trên. Về Bảng tin Xem

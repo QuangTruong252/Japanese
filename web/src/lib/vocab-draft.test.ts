@@ -18,3 +18,11 @@ test('vocab draft rejects corrupt or stale data', () => {
   assert.equal(parseVocabDraft(serializeVocabDraft({ targetIds: ['vocab-01-01'], currentIndex: 1 }), known), null);
   assert.equal(parseVocabDraft(serializeVocabDraft({ targetIds: [], currentIndex: 0 }), known), null);
 });
+
+test('vocab draft keeps rating counts; drops corrupt counts but keeps the draft', () => {
+  const counts = { again: 1, hard: 1, good: 2, easy: 1 };
+  const raw = serializeVocabDraft({ targetIds: ['vocab-01-01', 'vocab-01-02'], currentIndex: 1, counts });
+  assert.deepEqual(parseVocabDraft(raw, known)?.counts, counts);
+  const bad = JSON.stringify({ version: 1, targetIds: ['vocab-01-01'], currentIndex: 0, counts: { again: -1 } });
+  assert.deepEqual(parseVocabDraft(bad, known), { targetIds: ['vocab-01-01'], currentIndex: 0 });
+});

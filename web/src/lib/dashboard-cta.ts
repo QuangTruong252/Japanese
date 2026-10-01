@@ -3,23 +3,32 @@
  *
  * Luật CTA:
  * 1. Nếu có mục đến hạn (batchCount > 0):
- *    - CTA chính duy nhất (P0) là "Bắt đầu ôn" (/on-tap).
- *    - Bài đang học hiển thị ở card P1 bên dưới với hành động phụ "Vào bài học".
- *    - Nháp dở dang (nếu có) hiển thị ở hàng phụ riêng biệt, không cạnh tranh phân cấp với P0.
+ *    - CTA chính duy nhất (P0) là "Bắt đầu ôn": vào thẳng /on-tap/phien; khi đang có nháp
+ *      Luyện/Ôn thì qua /on-tap để hộp xác nhận ở đó bảo vệ nháp (hai loại dùng chung khóa).
+ *    - Nháp dở dang (nếu có) ở hàng phụ ngay dưới P0, trên card "Bài đang học".
  * 2. Nếu không có mục đến hạn (batchCount === 0):
- *    - Hợp nhất thành 1 card P0 duy nhất.
- *    - Nếu là người mới (chưa có reviewItems, chưa học bài nào): CTA là "Bắt đầu bài 1" (/hoc/1).
- *    - Nếu đã học: CTA là "Học tiếp bài {activeLessonNum}" (/hoc/{activeLessonNum}).
- *    - Nháp dở dang (nếu có) vẫn ở hàng phụ "Tiếp tục phiên".
+ *    - Có nháp dở dang: CTA chính là tiếp tục nháp đó (nghiên cứu UX 01/10/2026: người học
+ *      quay lại để làm tiếp việc dở, hàng phụ bên dưới dễ bị dock che).
+ *    - Người mới (chưa có reviewItems, chưa học bài nào): CTA là "Bắt đầu bài 1" (/hoc/1).
+ *    - Đã học: CTA là "Học tiếp bài {activeLessonNum}" (/hoc/{activeLessonNum}).
  */
 
-export type DashboardCtaKind = 'review' | 'start_first_lesson' | 'continue_lesson';
+export type DashboardCtaKind = 'review' | 'resume_draft' | 'start_first_lesson' | 'continue_lesson';
+
+export interface DashboardResumeDraft {
+  href: string;
+  heading: string;
+}
 
 export interface DashboardCtaInput {
   batchCount: number;
   isNewUser: boolean;
   activeLessonNum: number;
   activeLessonTitle?: string;
+  /** Nháp sẽ được tiếp tục bằng CTA chính khi không có mục đến hạn. */
+  resumeDraft?: DashboardResumeDraft | null;
+  /** Có nháp Luyện/Ôn (chung khóa lưu) — "Bắt đầu ôn" phải qua hub để xác nhận. */
+  hasPracticeDraft?: boolean;
 }
 
 export interface DashboardCtaDecision {
@@ -35,6 +44,8 @@ export function resolveDashboardCta({
   isNewUser,
   activeLessonNum,
   activeLessonTitle,
+  resumeDraft,
+  hasPracticeDraft = false,
 }: DashboardCtaInput): DashboardCtaDecision {
   const normalizedBatchCount = Number.isFinite(batchCount) ? Math.max(0, Math.floor(batchCount)) : 0;
   const safeLessonNum = Number.isFinite(activeLessonNum) && activeLessonNum > 0 ? Math.floor(activeLessonNum) : 1;
@@ -42,10 +53,20 @@ export function resolveDashboardCta({
   if (normalizedBatchCount > 0) {
     return {
       kind: 'review',
-      href: '/on-tap',
+      href: hasPracticeDraft ? '/on-tap' : '/on-tap/phien',
       ctaText: 'Bắt đầu ôn',
       heading: 'Ôn tập',
       isPrimaryReview: true,
+    };
+  }
+
+  if (resumeDraft) {
+    return {
+      kind: 'resume_draft',
+      href: resumeDraft.href,
+      ctaText: 'Tiếp tục',
+      heading: resumeDraft.heading,
+      isPrimaryReview: false,
     };
   }
 

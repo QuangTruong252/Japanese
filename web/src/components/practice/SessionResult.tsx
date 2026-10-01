@@ -9,6 +9,7 @@ import {
   savePracticeDraft,
   PRACTICE_DRAFT_VERSION,
 } from '@/lib/practice-draft';
+import { userAnswerFor } from '@/lib/practice';
 import type { PracticeConfig, PracticeSession, QuestionItem } from '@/types';
 
 function formatDuration(seconds: number): string {
@@ -150,7 +151,7 @@ export function SessionResult({
           <div className="space-y-3">
             {incorrectQuestions.map((q) => {
               const answerText = Array.isArray(q.answer) ? q.answer.join(', ') : q.answer;
-              const userAnswer = userAnswers[q.targetId];
+              const userAnswer = userAnswerFor(userAnswers, q);
               return (
                 <div
                   key={q.id}

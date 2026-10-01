@@ -106,6 +106,8 @@ export interface AnswerResult {
   usedHint: boolean;
   /** Chỉ để hiển thị vùng phản hồi/kết quả, không lưu Dexie/sync */
   userAnswer?: string;
+  /** Câu sinh ra kết quả; cùng một từ có thể xuất hiện ở nhiều câu trong một phiên. Chỉ để hiển thị. */
+  questionId?: string;
 }
 
 export interface PracticeConfig {

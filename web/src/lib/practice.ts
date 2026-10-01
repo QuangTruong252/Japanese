@@ -173,6 +173,39 @@ export function summarizeSession(
 }
 
 /**
+ * Câu sai và câu trả lời của người học cho màn kết quả, gom theo từng câu: một từ có thể vừa
+ * hỏi cách đọc vừa hỏi nghĩa trong cùng phiên, gom theo targetId sẽ gán nhầm câu trả lời.
+ * Kết quả cũ (nháp trước khi có questionId) vẫn khớp theo targetId.
+ */
+export function summarizeIncorrect(
+  questions: QuestionItem[],
+  results: AnswerResult[],
+): { incorrectQuestions: QuestionItem[]; userAnswers: Record<string, string> } {
+  const wrongQuestionIds = new Set<string>();
+  const legacyWrongTargetIds = new Set<string>();
+  const userAnswers: Record<string, string> = {};
+  for (const r of results) {
+    if (!r.isCorrect) {
+      if (r.questionId) wrongQuestionIds.add(r.questionId);
+      else legacyWrongTargetIds.add(r.targetId);
+    }
+    if (r.userAnswer !== undefined) userAnswers[r.questionId ?? r.targetId] = r.userAnswer;
+  }
+  const incorrectQuestions = questions.filter((q) =>
+    wrongQuestionIds.has(q.id) ||
+    (q.pairs && q.pairs.length > 0
+      ? q.pairs.some((p) => legacyWrongTargetIds.has(p.targetId))
+      : legacyWrongTargetIds.has(q.targetId)),
+  );
+  return { incorrectQuestions, userAnswers };
+}
+
+/** Câu trả lời đã gõ/chọn cho một câu ở màn kết quả (khóa mới theo câu, khóa cũ theo từ). */
+export function userAnswerFor(userAnswers: Record<string, string>, q: QuestionItem): string | undefined {
+  return userAnswers[q.id] ?? userAnswers[q.targetId];
+}
+
+/**
  * Xác định danh sách bài học ban đầu cho màn Luyện tập (SPEC-19 §2):
  * - Nếu đến từ Bài N, `?lessons=N` thắng;
  * - Nếu mở dock hoặc không có param, dùng preset hợp lệ gần nhất nếu đã từng lưu hữu ích;

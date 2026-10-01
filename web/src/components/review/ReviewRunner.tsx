@@ -28,7 +28,7 @@ import { QuestionListening } from '@/components/practice/QuestionListening';
 import { QuestionMc } from '@/components/practice/QuestionMc';
 import { QuestionReorder } from '@/components/practice/QuestionReorder';
 import { db } from '@/lib/db';
-import { summarizeSession } from '@/lib/practice';
+import { summarizeIncorrect, summarizeSession, userAnswerFor } from '@/lib/practice';
 import {
   clearPracticeDraft,
   particleHint,
@@ -243,7 +243,10 @@ export function ReviewRunner({
       pauseQuestionTimer();
 
       const elapsedMs = getQuestionElapsedMs();
-      const measured = results.length === 1 ? [{ ...results[0]!, elapsedMs }] : results;
+      const questionId = questions[currentIndex]?.id;
+      const measured = (results.length === 1 ? [{ ...results[0]!, elapsedMs }] : results).map(
+        (r) => ({ ...r, questionId }),
+      );
 
       const nextResults = [...allResults, ...measured];
       setAllResults(nextResults);
@@ -331,27 +334,11 @@ export function ReviewRunner({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [answered, isPaused, pauseQuestionTimer, handleNext]);
 
-  const incorrectQuestions = useMemo(() => {
-    const wrongTargetIds = new Set(
-      allResults.filter((r) => !r.isCorrect).map((r) => r.targetId),
-    );
-    return questions.filter((q) => {
-      if (q.pairs && q.pairs.length > 0) {
-        return q.pairs.some((p) => wrongTargetIds.has(p.targetId));
-      }
-      return wrongTargetIds.has(q.targetId);
-    });
-  }, [questions, allResults]);
-
-  const userAnswerByTargetId = useMemo(() => {
-    const map: Record<string, string> = {};
-    for (const r of allResults) {
-      if (r.userAnswer !== undefined) {
-        map[r.targetId] = r.userAnswer ?? '';
-      }
-    }
-    return map;
-  }, [allResults]);
+  // Câu sai và câu trả lời theo từng câu (một từ có thể nằm ở nhiều câu)
+  const { incorrectQuestions, userAnswers } = useMemo(
+    () => summarizeIncorrect(questions, allResults),
+    [questions, allResults],
+  );
 
   const currentHint = useMemo(() => {
     if (!lastResult || lastResult.isCorrect || !currentQuestion) return null;
@@ -519,10 +506,12 @@ export function ReviewRunner({
             <div className="space-y-1 text-success">
               <div className="flex items-center justify-center gap-1.5 font-semibold">
                 <CheckCircle2 className="size-5 shrink-0" />
-                <span>Đã ôn hết các mục đến hạn hôm nay!</span>
+                <span>Đã xong các mục đến hạn lúc này</span>
               </div>
               <p className="text-xs sm:text-sm text-muted-foreground">
-                Không còn mục nào cần ôn tập lúc này. Nhịp học của bạn đang rất tốt.
+                {nextReviewLine
+                  ? 'Các mục vừa ôn sẽ quay lại theo lịch ở trên.'
+                  : 'Chưa có mục nào khác đến hạn.'}
               </p>
             </div>
           )}
@@ -594,7 +583,7 @@ export function ReviewRunner({
             <div className="space-y-3">
               {incorrectQuestions.map((q) => {
                 const answerText = Array.isArray(q.answer) ? q.answer.join(', ') : q.answer;
-                const userAnswer = userAnswerByTargetId[q.targetId];
+                const userAnswer = userAnswerFor(userAnswers, q);
                 return (
                   <div
                     key={q.id}
@@ -757,7 +746,24 @@ export function ReviewRunner({
             </div>
           ) : (
             <div className="space-y-6">
-              <section aria-label="Nội dung câu hỏi">
+              <section aria-label="Nội dung câu hỏi" className="space-y-5">
+                {/* Đề bài như ở Luyện tập: dạng nghe chỉ có lời dặn, đề là âm thanh */}
+                <div key={`prompt-${currentQuestion.id}`} className="flex flex-col items-center text-center">
+                  {currentQuestion.type === 'listening' ? (
+                    <p className="text-sm font-medium text-muted-foreground">
+                      Nghe và nhập lại câu tiếng Nhật
+                    </p>
+                  ) : (
+                    <>
+                      {currentQuestion.context && (
+                        <p className="mb-2 text-sm text-muted-foreground">{currentQuestion.context}</p>
+                      )}
+                      <div className="jp jp-quiz">
+                        <Furigana text={currentQuestion.prompt} />
+                      </div>
+                    </>
+                  )}
+                </div>
                 {renderQuestionComponent()}
               </section>
 

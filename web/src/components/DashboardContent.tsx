@@ -79,17 +79,41 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
     !queue.hasAnyReviewItem && (vocabTargetIds?.length ?? 0) === 0 && learnedThroughLesson === 0;
   const hasNoProgress = isNewUser && (recentSessions?.length ?? 0) === 0;
 
+  // Nháp dở dang dạng hàng hiển thị; nháp Luyện/Ôn đứng trước vì đang dở giữa một phiên câu hỏi
+  const draftRows = [
+    drafts.practiceDraft && {
+      key: 'practice',
+      title:
+        drafts.practiceDraft.label +
+        (drafts.practiceDraft.label === 'Luyện tập' && drafts.practiceDraft.selectedLessons?.length
+          ? ` · Bài ${drafts.practiceDraft.selectedLessons.join(', ')}`
+          : ''),
+      detail: `Đang ở câu ${drafts.practiceDraft.currentQuestionIndex}/${drafts.practiceDraft.totalQuestions}`,
+      href: drafts.practiceDraft.resumeHref,
+      onClick: clearNewSessionRequest,
+    },
+    drafts.vocabDraft && {
+      key: 'vocab',
+      title: `Học từ vựng · Bài ${drafts.vocabDraft.lesson}`,
+      detail: `Đang ở từ ${drafts.vocabDraft.currentWordIndex}/${drafts.vocabDraft.totalWords}`,
+      href: drafts.vocabDraft.resumeHref,
+      onClick: undefined,
+    },
+  ].filter((row) => !!row);
+  const primaryDraft = draftRows[0] ?? null;
+
   // Quyết định CTA chính theo helper thuần (SPEC-18 §3, §6)
-  const ctaDecision = useMemo(
-    () =>
-      resolveDashboardCta({
-        batchCount,
-        isNewUser,
-        activeLessonNum,
-        activeLessonTitle: activeSummary?.title?.vi,
-      }),
-    [batchCount, isNewUser, activeLessonNum, activeSummary]
-  );
+  const ctaDecision = resolveDashboardCta({
+    batchCount,
+    isNewUser,
+    activeLessonNum,
+    activeLessonTitle: activeSummary?.title?.vi,
+    resumeDraft: primaryDraft && { href: primaryDraft.href, heading: primaryDraft.title },
+    hasPracticeDraft: drafts.practiceDraft !== null,
+  });
+  const isResume = ctaDecision.kind === 'resume_draft';
+  const secondaryDrafts = isResume ? draftRows.slice(1) : draftRows;
+  const newCount = queue.newTargetIds.length;
 
   // Lời chào và định dạng ngày tháng
   const hour = now.getHours();
@@ -99,6 +123,42 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
     day: 'numeric',
     month: 'long',
   });
+
+  // Hàng phụ "Tiếp tục phiên" (SPEC-18 §3, §5, §6): ngay dưới CTA chính để không bị dock che
+  const draftSection = secondaryDrafts.length > 0 && (
+    <section aria-label="Tiếp tục phiên dở dang">
+      <Card className="border border-border/80 bg-accent/15 p-4 sm:p-5 rounded-2xl space-y-3">
+        <h2 className="flex items-center gap-2 text-sm font-semibold text-foreground">
+          <Clock className="size-4 text-primary" aria-hidden="true" />
+          <span>Tiếp tục phiên</span>
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {secondaryDrafts.map((row) => (
+            <div
+              key={row.key}
+              className="flex items-center justify-between gap-3 p-3 rounded-xl bg-card border border-border/60"
+            >
+              <div className="space-y-0.5 min-w-0">
+                <div className="text-xs font-bold text-foreground truncate">{row.title}</div>
+                <div className="text-xs text-muted-foreground">{row.detail}</div>
+              </div>
+              <Link
+                href={row.href}
+                onClick={row.onClick}
+                className={cn(
+                  buttonVariants({ variant: 'outline', size: 'sm' }),
+                  'min-h-11 h-11 px-3 rounded-xl text-xs font-semibold shrink-0'
+                )}
+              >
+                <span>Tiếp tục</span>
+                <ArrowRight className="size-3.5 ml-1" />
+              </Link>
+            </div>
+          ))}
+        </div>
+      </Card>
+    </section>
+  );
 
   return (
     <main className="mx-auto w-full max-w-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8">
@@ -140,7 +200,12 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
                 {ctaDecision.heading}
               </h2>
               <p className="text-sm text-muted-foreground max-w-xl">
-                <strong className="text-foreground font-semibold">{batchCount} mục</strong>
+                <strong className="text-foreground font-semibold">
+                  {[
+                    queue.totalDueCount > 0 && `${queue.totalDueCount} mục đến hạn`,
+                    newCount > 0 && `${newCount} mục mới`,
+                  ].filter(Boolean).join(' · ')}
+                </strong>
                 {minutesEstimate !== null && <> · khoảng {minutesEstimate} phút</>}
                 {queue.remainingDue > 0 && <> · còn {queue.remainingDue} mục đến hạn cho lô sau</>}
               </p>
@@ -159,6 +224,8 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
               </Link>
             </div>
           </Card>
+
+          {draftSection}
 
           {/* Card P1: Bài đang học */}
           <Card className="border border-border/80 bg-card p-5 sm:p-6 space-y-4">
@@ -205,17 +272,25 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
             <h2 className="text-xl sm:text-2xl font-bold text-foreground">
               {ctaDecision.heading}
             </h2>
-            {activeSummary.jpTitle && (
-              <Furigana
-                text={formatOptionalBrackets(activeSummary.jpTitle)}
-                className="jp-quiz pt-1 text-foreground"
-              />
+            {isResume && primaryDraft ? (
+              <p className="text-sm text-muted-foreground max-w-xl">
+                {primaryDraft.detail} — tiếp tục đúng chỗ bạn dừng.
+              </p>
+            ) : (
+              <>
+                {activeSummary.jpTitle && (
+                  <Furigana
+                    text={formatOptionalBrackets(activeSummary.jpTitle)}
+                    className="jp-quiz pt-1 text-foreground"
+                  />
+                )}
+                <p className="text-sm text-muted-foreground max-w-xl">
+                  {isNewUser
+                    ? 'Chào mừng bạn đến với MaiPace! Hãy bắt đầu bài học đầu tiên với từ vựng, ngữ pháp và mẫu câu giao tiếp cơ bản.'
+                    : activeSummary.description.vi}
+                </p>
+              </>
             )}
-            <p className="text-sm text-muted-foreground max-w-xl">
-              {isNewUser
-                ? 'Chào mừng bạn đến với MaiPace! Hãy bắt đầu bài học đầu tiên với từ vựng, ngữ pháp và mẫu câu giao tiếp cơ bản.'
-                : activeSummary.description.vi}
-            </p>
             {queue.hasAnyReviewItem && (
               <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
                 <CheckCircle2 className="w-4 h-4 text-success shrink-0" aria-hidden="true" />
@@ -239,6 +314,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
               <Link
                 href={ctaDecision.href}
+                onClick={isResume ? primaryDraft?.onClick : undefined}
                 className={cn(
                   buttonVariants({ size: 'quiz' }),
                   'w-full sm:w-auto font-semibold text-base'
@@ -248,7 +324,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
                 {ctaDecision.ctaText}
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
-              {isNewUser && (
+              {isNewUser && !isResume && (
                 <Link
                   href="/cai-dat#hoc-den-bai"
                   className="inline-flex min-h-11 items-center text-sm font-medium text-primary underline-offset-4 hover:underline"
@@ -258,7 +334,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
               )}
             </div>
 
-            {hasNoProgress && (
+            {hasNoProgress && !isResume && (
               <div className="rounded-xl border border-primary/20 bg-accent/30 p-3 sm:p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-sm">
                 <span className="text-foreground">
                   Chưa đọc được Hiragana/Katakana?
@@ -276,72 +352,7 @@ export function DashboardContent({ summaries }: { summaries: LessonSummary[] }) 
         </Card>
       )}
 
-      {/* ========================================================
-          2. Hàng phụ: Tiếp tục phiên dở dang nếu có nháp (SPEC-18 §3, §5, §6)
-          Không cạnh tranh với CTA primary: nút phụ dùng variant outline
-          ======================================================== */}
-      {(drafts.vocabDraft || drafts.practiceDraft) && (
-        <section aria-label="Tiếp tục phiên dở dang">
-          <Card className="border border-border/80 bg-accent/15 p-4 sm:p-5 rounded-2xl space-y-3">
-            <h2 className="flex items-center gap-2 text-sm font-semibold text-foreground">
-              <Clock className="size-4 text-primary" aria-hidden="true" />
-              <span>Tiếp tục phiên</span>
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {drafts.vocabDraft && (
-                <div className="flex items-center justify-between gap-3 p-3 rounded-xl bg-card border border-border/60">
-                  <div className="space-y-0.5 min-w-0">
-                    <div className="text-xs font-bold text-foreground truncate">
-                      Học từ vựng · Bài {drafts.vocabDraft.lesson}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Đang ở từ {drafts.vocabDraft.currentWordIndex}/{drafts.vocabDraft.totalWords}
-                    </div>
-                  </div>
-                  <Link
-                    href={drafts.vocabDraft.resumeHref}
-                    className={cn(
-                      buttonVariants({ variant: 'outline', size: 'sm' }),
-                      'min-h-11 h-11 px-3 rounded-xl text-xs font-semibold shrink-0'
-                    )}
-                  >
-                    <span>Tiếp tục</span>
-                    <ArrowRight className="size-3.5 ml-1" />
-                  </Link>
-                </div>
-              )}
-
-              {drafts.practiceDraft && (
-                <div className="flex items-center justify-between gap-3 p-3 rounded-xl bg-card border border-border/60">
-                  <div className="space-y-0.5 min-w-0">
-                    <div className="text-xs font-bold text-foreground truncate">
-                      {drafts.practiceDraft.label}
-                      {drafts.practiceDraft.label === 'Luyện tập' && drafts.practiceDraft.selectedLessons && drafts.practiceDraft.selectedLessons.length > 0
-                        ? ` · Bài ${drafts.practiceDraft.selectedLessons.join(', ')}`
-                        : ''}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Đang ở câu {drafts.practiceDraft.currentQuestionIndex}/{drafts.practiceDraft.totalQuestions}
-                    </div>
-                  </div>
-                  <Link
-                    href={drafts.practiceDraft.resumeHref}
-                    onClick={clearNewSessionRequest}
-                    className={cn(
-                      buttonVariants({ variant: 'outline', size: 'sm' }),
-                      'min-h-11 h-11 px-3 rounded-xl text-xs font-semibold shrink-0'
-                    )}
-                  >
-                    <span>Tiếp tục</span>
-                    <ArrowRight className="size-3.5 ml-1" />
-                  </Link>
-                </div>
-              )}
-            </div>
-          </Card>
-        </section>
-      )}
+      {!ctaDecision.isPrimaryReview && draftSection}
 
       {/* ========================================================
           4. Hàng phụ: "Xem tiến độ" dẫn /ca-nhan & Lối tắt Kana / Tra cứu (SPEC-18 §3)

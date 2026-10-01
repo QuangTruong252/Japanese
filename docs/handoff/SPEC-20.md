@@ -138,3 +138,10 @@ Theo quy định không can thiệp vào các file ngoài quyền sở hữu:
 *Chưa nghiệm thu browser — chờ coordinator.*
 
 
+
+## 2026-10-01 — Sửa đề câu hỏi trong phiên Ôn và câu chữ kết quả
+
+- **Lỗi:** `ReviewRunner` (thêm ngày 28/09, `afd6b6f`) không vẽ `prompt`, nên câu trắc nghiệm trong Ôn chỉ còn 4 đáp án, không có đề. Đã vẽ đề và `context` như `PracticeRunner`; dạng nghe có lời dặn "Nghe và nhập lại câu tiếng Nhật".
+- Kết quả ôn: "Đã ôn hết các mục đến hạn hôm nay! … Nhịp học của bạn đang rất tốt" đổi thành "Đã xong các mục đến hạn lúc này" kèm câu theo lịch. Câu cũ sai khi các mục vừa ôn sai còn quay lại ngay trong ngày (ví dụ kết quả 14% có dòng "13 mục hôm nay").
+- Câu sai và câu trả lời gom theo câu (xem handoff SPEC-18 cùng ngày).
+- Kiểm chứng: Playwright 360×780, 2 lô ôn 20 + 18 câu, 38/38 câu có đề; lô cuối hiện câu chữ mới. Chưa thử dạng nghe khi có giọng `ja-JP` thật.
