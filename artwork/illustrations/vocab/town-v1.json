@@ -1,0 +1,72 @@
+{
+  "createdAt": "2026-10-05T09:03:31.884Z",
+  "source": "image_gen",
+  "sourceAtlas": "artwork/illustrations/atlases/lesson-08-objects-v1.png",
+  "sourceImage": "artwork/illustrations/atlases/lesson-08-objects-v1.png",
+  "prompt": "Use case: precise-object-edit. Edit the attached eight-cutout source atlas. Preserve the SAME 8 subjects, meanings, order, watercolor/gouache and pencil style, colors and details. ONLY FIX EXPORT LAYOUT: scale down EACH whole subject/group uniformly to 60% of its present size, then center it in its own cell of a precise four-column two-row grid. Treat shoes with their bag, sun with hot person, snow with cold person and meal with woman as complete groups. Each complete group must fit inside the central60% of its cell, leave at least20% cell width/height of PURE EMPTY transparent space on all four sides. Keep every subject fully inside canvas. Remove ALL stray isolated white paper flecks, grain, dust or paint speckles OUTSIDE the intended silhouettes; preserve white paint INSIDE shirts, rice, blossoms and snow. Each silhouette must be surrounded by genuine zero-alpha pixels. TRUE native RGBA transparency for background and holes; no fake checkerboard, paper rectangle, visible grid, labels, writing, numerals or logos. Do not change colors, identities, expressions or relative sizes within a group. Maintain broad completely transparent horizontal and vertical gutters so eight independent rectangular crops can be exported without cutting any painted subject.",
+  "referenceImages": [
+    "artwork/illustrations/atlases/lesson-08-objects-layout-source-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/town-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Một góc thị trấn với những ngôi nhà và con phố nhỏ."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+    "id": "machi",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/town-v1.png",
+    "width": 445,
+    "height": 440,
+    "format": "png",
+    "hasAlpha": true,
+    "crop": {
+      "left": 885,
+      "top": 447,
+      "width": 445,
+      "height": 440
+    }
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "contain",
+    "innerSize": {
+      "width": 448,
+      "height": 448
+    },
+    "padding": 32,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 41210,
+    "sha256": "a620260378d62ecf50dc0408f7daaaefe65dc596d96d49f8425351fd70a522f3",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 180080,
+      "partial": 82035,
+      "opaque": 29
+    }
+  },
+  "originalPrompt": "Use case: illustration-story. Asset type: MaiPace vocabulary SOURCE ATLAS, eight separate cutouts to export independently. Input Image1 is ONLY the authoritative Phố giấy STYLE and CHARACTER REFERENCE. Image2 is only native-alpha cutout pigment/edge finish reference. Generate a landscape 2:1 PNG, four columns and two rows, eight equal cells in reading order. Watercolor and gouache with delicate dark pencil, soft natural shapes, subtle paper grain INSIDE painted shapes. Ivory/sand/charcoal/sage/brick-red palette, but semantic color subjects must use their specified true white/black/red/BLUE. TRUE native transparent RGBA throughout all blank spaces and open holes; no paper ground, floor, cast shadow or fake checkerboard. No visible grid, borders, panels, labels, writing, letters, numbers, Japanese glyphs, logos, watermark, UI or arrows anywhere. Each cell contains ONLY its specified complete subject, independently centered, about65% of cell long dimension with broad entirely transparent gutters on all sides. No overlap or touching cell borders, similar brush detail and scales. Painted local vignettes may include only the specifically described contextual objects. Not photos, glossy3D, flatvector or cartoon stickers.\nReading order TOP LEFT TO RIGHT cells1-4, BOTTOM LEFT TO RIGHT cells5-8:\n1. a single WHITE cotton shirt with short sleeves and a collar; white pigment clearly visible, no skin or mannequin\n2. a pair of BLACK leather shoes, clearly charcoal-black throughout, no feet\n3. one distinctly RED flower blossom with stem and two sage leaves; red petals dominate\n4. one distinctly BLUE compact car, blue paint rather than sage or gray, complete wheels and body, no badges or writing\n5. one cherry branch with several pale pink five-petaled blossoms, recognizable yellow centers and buds\n6. one recognizable complete mountain silhouette with a snowy peak, sage foothill base, isolated small landscape vignette\n7. one miniature town vignette with three sand-colored small buildings, a narrow street and a sage tree, blank storefronts\n8. one Japanese meal tray containing a bowl of rice, cooked fish on a plate, vegetables and soup, food recognizably edible, no person\nMake all eight meanings visually distinct and preserve empty transparent gutters. Do not include text or clinical UI. Source master only; image dimensions may vary, preserve full subjects.",
+  "styleReferenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png",
+    "artwork/illustrations/vocab/book-v1.png"
+  ],
+  "editHistory": [
+    {
+      "prompt": "Use case: precise-object-edit. Edit the attached eight-cutout source atlas. Preserve the SAME 8 subjects, meanings, order, watercolor/gouache and pencil style, colors and details. ONLY FIX EXPORT LAYOUT: scale down EACH whole subject/group uniformly to 60% of its present size, then center it in its own cell of a precise four-column two-row grid. Treat shoes with their bag, sun with hot person, snow with cold person and meal with woman as complete groups. Each complete group must fit inside the central60% of its cell, leave at least20% cell width/height of PURE EMPTY transparent space on all four sides. Keep every subject fully inside canvas. Remove ALL stray isolated white paper flecks, grain, dust or paint speckles OUTSIDE the intended silhouettes; preserve white paint INSIDE shirts, rice, blossoms and snow. Each silhouette must be surrounded by genuine zero-alpha pixels. TRUE native RGBA transparency for background and holes; no fake checkerboard, paper rectangle, visible grid, labels, writing, numerals or logos. Do not change colors, identities, expressions or relative sizes within a group. Maintain broad completely transparent horizontal and vertical gutters so eight independent rectangular crops can be exported without cutting any painted subject.",
+      "sourceImage": "artwork/illustrations/atlases/lesson-08-objects-layout-source-v1.png",
+      "generationMs": 47714
+    }
+  ]
+}

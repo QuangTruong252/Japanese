@@ -1,0 +1,36 @@
+{
+  "createdAt": "2026-10-05T04:31:03.904Z",
+  "source": "image_gen",
+  "prompt": "Use case: illustration-story. Image 1 is the STYLE AND CHARACTER REFERENCE ONLY for MaiPace's Phố giấy assets, not an edit target. Create one new standalone illustration. Match its watercolor/gouache pigment, fine dark pencil lines, natural paper grain, softened flat shapes, near-white warm paper, sage/olive foliage, sand/cream architecture, charcoal outlines and restrained brick-red accents. Keep the friendly youthful adult tone and recognizable faces, hair, clothing and body proportions of the reference people; no chibi, glossy 3D or photorealism. NO text, letters, numerals, Japanese writing, speech bubbles, written signage, logo, watermark, UI, buttons, panels, labels, borders or checkerboard. Blank shop awnings and notebook covers. No tourist landmarks. Opaque quiet near-white paper background. Asset type: lesson 1 cover scene \"Self introduction\", target 800x600, landscape 4:3 aspect ratio. The two reference adults are the unmistakable main subject in the center, fully visible head to toe, politely introducing themselves with slight bows and friendly eye contact. Male on left: short tousled dark hair, ivory long-sleeve sweater, charcoal trousers, simple dark backpack, black shoes. Female on right: chin-length straight dark bob, cream cardigan over a muted brick-red shirt, charcoal skirt, small brown shoulder bag, holding a plain closed notebook, black shoes. Natural hands and anatomy. Make them larger and easy to understand at thumbnail size. Background only lightly suggests the reference neighborhood: one faint storefront edge with blank pale awning, a few potted plants, low soft distant rooftops and a simple pale path. Reduce background detail and flower density greatly; keep warm paper negative space around the pair and all important limbs away from edges. No study formula or answer depicted. Same reference palette, hand-painted paper brushwork and recognizable characters. Render ONE finished scene, exact 4:3 canvas.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/scenes/self-introduction-v1.webp",
+  "width": 800,
+  "height": 600,
+  "role": "lesson-cover",
+  "suggestedAlt": {
+    "vi": "Hai người trẻ cúi chào nhẹ khi giới thiệu bản thân trên một con phố Nhật."
+  },
+  "master": {
+    "path": "artwork/illustrations/scenes/self-introduction-v1.png",
+    "width": 1448,
+    "height": 1086,
+    "format": "png"
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "cover",
+    "position": "centre",
+    "quality": 82,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 82502,
+    "sha256": "2b2594f755a50ee38b4782fe2d711d5fe06bbc2d40577cfa1109ff65e6979283",
+    "hasAlpha": false,
+    "decoded": true
+  }
+}

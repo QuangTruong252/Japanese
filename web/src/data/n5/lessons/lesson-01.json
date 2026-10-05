@@ -169,5 +169,13 @@
     "greetings",
     "particles"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/self-introduction-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Hai người trẻ cúi chào nhẹ khi giới thiệu bản thân trên một con phố Nhật."
+    }
+  }
 }

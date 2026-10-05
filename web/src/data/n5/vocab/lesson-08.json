@@ -187,6 +187,14 @@
         "translation": {
           "vi": "Chiếc xe này to."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/large-bag-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc vali lớn màu đỏ gạch."
+        }
       }
     },
     {
@@ -203,6 +211,14 @@
         "kana": "わたしの へやは ちいさいです。",
         "translation": {
           "vi": "Phòng của tôi nhỏ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/small-bag-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc túi nhỏ bên cạnh đôi giày để so sánh kích thước."
         }
       }
     },
@@ -221,6 +237,14 @@
         "translation": {
           "vi": "Tôi đã mua máy tính mới."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/new-laptop-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một máy tính mới đang được mở khỏi hộp trống."
+        }
       }
     },
     {
@@ -237,6 +261,14 @@
         "kana": "この とけいは ふるいです。",
         "translation": {
           "vi": "Cái đồng hồ này cũ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/old-clock-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc đồng hồ gỗ cũ với lớp sơn đã mòn."
         }
       }
     },
@@ -289,6 +321,14 @@
         "translation": {
           "vi": "Hôm nay trời nóng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hot-weather-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một người đang quạt và lau mồ hôi dưới nắng nóng."
+        }
       }
     },
     {
@@ -306,6 +346,14 @@
         "translation": {
           "vi": "Nhật Bản thì lạnh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cold-weather-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một người mặc áo khoác và khăn quàng, co người vì trời lạnh."
+        }
       }
     },
     {
@@ -322,6 +370,14 @@
         "kana": "つめたい みずを のみます。",
         "translation": {
           "vi": "Tôi uống nước lạnh."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cold-water-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một cốc nước lạnh có đá và giọt nước đọng ngoài cốc."
         }
       }
     },
@@ -442,6 +498,14 @@
         "translation": {
           "vi": "Đồ ăn Nhật Bản ngon."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/delicious-food-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một người mỉm cười khi thưởng thức bát thức ăn."
+        }
       }
     },
     {
@@ -493,6 +557,14 @@
         "translation": {
           "vi": "Tôi đã mua áo sơ mi trắng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/white-shirt-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc áo sơ mi trắng."
+        }
       }
     },
     {
@@ -509,6 +581,14 @@
         "kana": "くろい くつですね。",
         "translation": {
           "vi": "Đôi giày màu đen nhỉ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/black-shoes-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một đôi giày màu đen."
         }
       }
     },
@@ -527,6 +607,14 @@
         "translation": {
           "vi": "Tôi tặng hoa màu đỏ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/red-flower-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một bông hoa màu đỏ."
+        }
       }
     },
     {
@@ -543,6 +631,14 @@
         "kana": "あの あおい くるまは わたしのです。",
         "translation": {
           "vi": "Chiếc xe màu xanh kia là của tôi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/blue-car-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc ô tô màu xanh lam."
         }
       }
     },
@@ -561,6 +657,14 @@
         "translation": {
           "vi": "Hoa anh đào đẹp."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cherry-blossom-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một cành hoa anh đào hồng nhạt."
+        }
       }
     },
     {
@@ -577,6 +681,14 @@
         "kana": "ふじさんは たかい やまです。",
         "translation": {
           "vi": "Phú Sĩ là ngọn núi cao."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/mountain-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một ngọn núi với đỉnh phủ tuyết."
         }
       }
     },
@@ -595,6 +707,14 @@
         "translation": {
           "vi": "Hà Nội là thành phố nhộn nhịp."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/town-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một góc thị trấn với những ngôi nhà và con phố nhỏ."
+        }
       }
     },
     {
@@ -611,6 +731,14 @@
         "kana": "たべものを かいます。",
         "translation": {
           "vi": "Tôi mua thức ăn."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/food-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một khay thức ăn gồm cơm, cá và rau."
         }
       }
     },

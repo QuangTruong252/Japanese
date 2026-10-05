@@ -1,0 +1,52 @@
+{
+  "createdAt": "2026-10-05T05:35:29.130Z",
+  "source": "image_gen",
+  "prompt": "Use case: illustration-story. Image 1 is a STYLE REFERENCE ONLY from MaiPace Phố giấy; do not reproduce its whole scene. Match watercolor/gouache pigment, fine expressive dark pencil outlines, softened flat shapes, subtle natural paper grain INSIDE painted shapes, restrained ivory/sand/charcoal/sage palette and occasional muted brick-red. Friendly hand-painted editorial illustration. Not glossy 3D, photorealism, flat vector icon, thick cartoon stroke or anime mascot. No text, letters, numerals, kana/kanji, watermark, logo, labels, UI, borders, circles, panels or multiple images. Produce ONE finished asset. Asset type: reusable vocabulary cutout, square 1:1 canvas, exported at 512x512. TRUE transparent RGBA background outside the object; no opaque paper rectangle, scene, room, people, ground plane, decorative plants, checkerboard drawing or backdrop. Natural paper grain only within colored object surfaces. One single fully visible object centered, occupying approximately 70-75% of the canvas long dimension, generous equal safe margins, crisp readable silhouette at 128px. Soft shading only on the object; no external cast shadow. Subject: one OPEN spiral-bound school notebook with muted sage cover edges and ivory blank ruled pages, slight three-quarter view. Clearly show central charcoal wire spiral binding and thin horizontal pencil-gray ruling on both pages, NO actual writing or marks. Distinguishable from a closed hardcover reading book or electronic device. The whole notebook lies open as ONE object, no pen or extra objects. Fine hand-painted paper texture matching the reference.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/notebook-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Một quyển vở mở có gáy xoắn và các dòng kẻ trống."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+    "id": "nooto",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/notebook-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "hasAlpha": true
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "contain",
+    "innerSize": {
+      "width": 448,
+      "height": 448
+    },
+    "padding": 32,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 25420,
+    "sha256": "9f99157d5053c4e9161d4d38ca6c8a9e2ea505dceb45df5831d8b6aac7de088b",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 167299,
+      "partial": 94031,
+      "opaque": 814
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "createdAt": "2026-10-05T08:16:16.737Z",
+  "source": "image_gen",
+  "prompt": "Use case: illustration-story. Image 1 is MaiPace Phố giấy STYLE REFERENCE ONLY; match watercolor/gouache pigment, fine expressive dark pencil outlines, softly shaded hand-painted shapes, subtle natural paper grain INSIDE paint, restrained ivory/sand/charcoal/sage palette with occasional muted brick-red. Image 2 is existing vocabulary book asset ONLY to match cutout finish and edge detail, do not reproduce book. Produce ONE finished vocabulary cutout on square 1:1 canvas. TRUE native transparent RGBA outside the object; no opaque paper rectangle, backdrop, room, floor, external cast shadow, decorative plants, checkerboard drawing, text, letters, numbers, kanji/kana, watermark, brand logo, labels, UI, panels or multiple images. Natural grain only within painted surfaces. Full object visible centered, roughly 70-75% canvas longest dimension with generous equal safe margins, readable silhouette at 128px. Keep reference's delicate pencil marks and soft pigment. Not glossy 3D, photorealism, flat vector icon, thick cartoon or anime mascot. Subject: One simple wood STUDY DESK in warm sand-colored wood, rectangular empty tabletop, one small drawer with plain knob, four clearly visible sturdy legs correctly placed under tabletop. Gentle three-quarter view. No chair, books, stationery, plants, computer or other objects. Full furniture silhouette visible.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png",
+    "artwork/illustrations/vocab/book-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/desk-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Một chiếc bàn học gỗ sáng với ngăn kéo và bốn chân."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+    "id": "tsukue",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/desk-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "hasAlpha": true
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "contain",
+    "innerSize": {
+      "width": 448,
+      "height": 448
+    },
+    "padding": 32,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 33636,
+    "sha256": "7542d4612ed69b9dc2629ec31fa3c122777ec3315daf67c2d39d79ae80608937",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 191048,
+      "partial": 69768,
+      "opaque": 1328
+    }
+  }
+}

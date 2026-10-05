@@ -1,5 +1,7 @@
 'use client';
 
+import { Illustration } from '@/components/Illustration';
+
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Furigana } from '@/components/Furigana';
@@ -78,6 +80,10 @@ export function SessionResult({
   return (
     <main className="mx-auto w-full max-w-xl space-y-6 px-4 py-8">
       <div className="space-y-1 text-center motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3 motion-safe:duration-400 motion-safe:ease-in-out motion-safe:fill-mode-both">
+        <Illustration
+          asset={{ src: '/assets/illustrations/ui/states/review-complete-v1.webp', width: 512, height: 512, alt: { vi: '' } }}
+          sizes="128px" className="mx-auto mb-4 size-32 object-contain"
+        />
         <h1 className="font-heading text-xl font-medium">
           {isDue ? 'Kết quả ôn tập' : 'Kết quả luyện tập'}
         </h1>

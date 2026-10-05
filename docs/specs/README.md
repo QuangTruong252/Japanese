@@ -50,6 +50,27 @@ Khi làm xong một phần, cập nhật hàng tương ứng và handoff với n
 
 [Handoff kế hoạch](../handoff/UX-REDESIGN-PLAN.md) ghi rõ phần chưa kiểm chứng. Khi triển khai từng mốc, cập nhật spec hiện hành tương ứng và tạo handoff nghiệm thu riêng, không dùng bản kế hoạch thay cho kết quả kiểm thử.
 
+## Minh họa Phố giấy 05/10/2026 — đã tích hợp pilot
+
+**Cập nhật theo phản hồi UI chưa giống `new-ui`:** đã dựng lại panorama, bố cục Bảng tin hai cột, hub bài, chữ Nhật, nền giấy và navigation sát mép/gạch chân; củng cố hiện hai mục lịch sử thật. Shell có scroll-padding và xử lý hash tới nội dung stream để navigation không che mục/nút. Trình bày luyện/flashcard/kết quả dùng cùng hướng; logic CTA/FSRS/sync giữ nguyên. Xem phần **Redesign theo concept** trong handoff SPEC-21 để biết kiểm tra và ảnh mới, không dùng ảnh concept làm bằng chứng runtime.
+
+[SPEC-21 — asset minh họa](SPEC-21-illustration-assets.md) chốt tên file có phiên bản,
+thư mục production `web/public/assets/illustrations/`, nguồn ngoài `public` và cách JSON
+tham chiếu URL. Đã tạo mẫu phong cách và xuất **9 WebP pilot: banner, scene, 5 từ vựng Bài 2,
+grammar これ／それ／あれ và trạng thái đã ôn xong**. Đã bổ sung types/tham chiếu JSON,
+renderer `next/image`, fallback và cache có version; kiểm browser mobile/desktop,
+dark/furigana/reduced motion và chấm thẻ khi ảnh lỗi/mất mạng trong tab đang mở.
+[Handoff SPEC-21](../handoff/SPEC-21.md) ghi kiểm tra thực chạy, giới hạn (gồm lỗi header cũ khi stress font) và bước tiếp theo; chưa nghiệm thu deployment thật hoặc toàn bộ luồng học.
+
+**Mở rộng assets trong cùng ngày 05/10:** thêm **18 ảnh từ vựng Phố giấy** cho Bài 1–2,
+nâng kho lên **27 WebP** và **25 tham chiếu nội dung**. Nguồn PNG/JSON ngoài `public`,
+WebP 512 × 512 có alpha thật; giữ nguyên 9 pilot và ID/nội dung học cũ.
+`pnpm check`, `pnpm test` (274/274), `pnpm build` đạt; đã kiểm browser mobile/desktop,
+sáng/tối/furigana lớn/reduced motion và chấm thẻ khi ảnh lỗi offline trong tab đang mở.
+Chi tiết và giới hạn ở mục **Mở rộng từ vựng Bài 1–2** trong handoff SPEC-21.
+
+**Bài 8, 05/10/2026:** đã thêm 16 minh họa từ vựng + cover theo Phố giấy; tổng kho **44 WebP / 42 tham chiếu nội dung**. Giữ nguyên 53 mục từ Bài 8 và hash 27 ảnh cũ. Check, 274 test, build và browser mobile/desktop đã đạt trong phạm vi mục **Assets Bài 8** ở [handoff SPEC-21](../handoff/SPEC-21.md); chưa nghiệm thu toàn feature hoặc thiết bị/host thật.
+
 ## Vòng rà soát 17/09/2026 — hợp đồng dữ liệu & offline/sync
 
 Toàn bộ spec đã được sửa theo một vòng đối chiếu với code thật. Những thay đổi **bắt buộc đọc

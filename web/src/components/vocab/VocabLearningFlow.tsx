@@ -1,5 +1,7 @@
 'use client';
 
+import { Illustration } from '@/components/Illustration';
+
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import {
@@ -745,7 +747,7 @@ export function VocabLearningFlow({
                           Động từ Nhóm {activeWord.word.verbGroup}
                         </span>
                       )}
-                      <div className="jp jp-quiz text-4xl font-medium sm:text-5xl">
+                      <div className="jp text-5xl font-bold sm:text-6xl">
                         <Furigana text={stripFurigana(activeWord.word.word)} zoomable={false} />
                       </div>
                       <span className="jp jp-example text-sm text-muted-foreground">{activeWord.word.kana}</span>
@@ -765,7 +767,14 @@ export function VocabLearningFlow({
                       <SpeakButton text={activeWord.word.kana} label={stripFurigana(activeWord.word.word)} />
                     </div>
                     <div className="flex flex-1 flex-col px-5 pb-5 pt-16 sm:px-7 sm:pb-7">
-                      <div className="flex flex-1 items-center justify-center py-6 text-center">
+                      <div className="flex flex-1 flex-col items-center justify-center gap-3 py-4 text-center">
+                        {revealed && activeWord.word.illustration && (
+                          <Illustration
+                            asset={activeWord.word.illustration}
+                            sizes="(min-width: 640px) 112px, 96px"
+                            className="size-24 object-contain sm:size-28"
+                          />
+                        )}
                         <p className="text-2xl font-semibold leading-relaxed text-foreground sm:text-3xl">
                           {activeWord.word.meaning.vi}
                         </p>

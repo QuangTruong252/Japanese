@@ -16,6 +16,8 @@ Ngày: 28/09/2026. Trạng thái: **Đã làm cứng theo phản hồi 28/09/202
 
 ## 3. Màn hình & bố cục
 
+**Redesign Phố giấy 05/10/2026 theo yêu cầu đối chiếu `new-ui`:** thay bố cục một cột nhiều thẻ bằng panorama mở ra mép trang, nội dung/hành động chính trực tiếp trên nền giấy; desktop chia cột việc tiếp theo và cột củng cố/Kana/tiến độ. Củng cố hiện hai mục thật bằng helper nhãn của màn Điểm yếu; ẩn khi không có lịch sử sai. Container Bảng tin tối đa 1440px trong vùng bên cạnh sidebar, vì cảnh và hai cột cần rộng hơn container đọc. Bài 1 dùng tiêu đề giữa, chữ Nhật lớn, cảnh chào hỏi; hub bên dưới ở mobile/bên phải ở desktop, các lối Ngữ pháp/Nghe/tham khảo là hàng có chevron. Preview từ đầu bài chỉ là nội dung học bên cạnh CTA, không ghi tiến độ. Giữ CTA/ưu tiên nháp, tiến độ và anchor; phần vocab/grammar pilot theo [SPEC-21](SPEC-21-illustration-assets.md). Luật nền/navigation/type được cập nhật có chủ đích ở `DESIGN.md`. Bằng chứng ở handoff SPEC-21; không thay nghiệm thu toàn feature.
+
 | Màn | Thứ tự đọc và hành động |
 | --- | --- |
 | Bảng tin `/` | Lời chào ngắn → một CTA chính: có mục đến hạn thì “Bắt đầu ôn”; không có mà có nháp thì “Tiếp tục” nháp đó (Luyện/Ôn trước, từ vựng sau); còn lại “Tiếp tục học Bài N” hoặc “Bắt đầu Bài 1”. Hàng phụ “Tiếp tục phiên” (nháp còn lại) đặt ngay dưới CTA chính, trên bài đang học; Tra cứu/Kana và “Xem tiến độ” dẫn `/ca-nhan`. Số ôn ghi “N mục đến hạn · M mục mới” như `/on-tap` để khớp badge dock. Giải thích ngắn Học/Luyện/Ôn cho người mới, không thêm KPI dày ở đây. |

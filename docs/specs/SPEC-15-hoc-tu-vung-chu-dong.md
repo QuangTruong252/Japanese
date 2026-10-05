@@ -5,6 +5,8 @@
 
 ## 1. Mục tiêu & phạm vi
 
+**05/10/2026 — Phố giấy:** mặt trước dùng chữ Nhật 48–60px, giữ nghĩa và ảnh gợi nghĩa ẩn; mặt sau tiếp tục dùng pilot minh họa SPEC-21 và ví dụ/rating thật. Thay presentation, không đổi phiên/FSRS/hoàn tác. Kiểm browser theo phạm vi ở handoff SPEC-21.
+
 Giúp người học chủ động gọi nghĩa của từng từ trong một bài, tự đánh giá mức độ nhớ,
 đưa kết quả vào lịch FSRS và xem từ nào thường nhớ tốt hoặc cần củng cố.
 
@@ -14,6 +16,7 @@ Giúp người học chủ động gọi nghĩa của từng từ trong một b�
 - Thẻ nhớ chủ động: hiện từ tiếng Nhật trước, chỉ hiện nghĩa sau khi người học chạm thẻ.
 - Flashcard hai mặt: mặt trước nghe từ; mặt sau có nghĩa, ưu tiên ví dụ gắn với từ rồi mới dò
   ví dụ ngữ pháp trong bài, cùng nút nghe từ và nút nghe câu riêng biệt.
+- **Pilot minh họa 05/10/2026:** optional `VocabWord.illustration` theo [SPEC-21](SPEC-21-illustration-assets.md); chỉ mount ở mặt nghĩa khi đã reveal. Ảnh tải lỗi không chặn chấm; đã kiểm lật/chấm khi mất mạng và review + pendingSync được lưu. Phạm vi browser ở handoff SPEC-21, không thay nghiệm thu toàn luồng.
 - Bốn mức tự đánh giá: Quên mất / Khó nhớ / Nhớ được / Dễ nhớ.
 - Ghi tiến độ từng từ vào `reviewItems` và `pendingSync` trong cùng transaction Dexie.
 - Xếp hạng từ nhớ ổn định và từ cần củng cố từ lịch sử kết quả và trường FSRS sẵn có.

@@ -14,6 +14,8 @@ Người học biết còn bao nhiêu mục đến hạn, bắt đầu lô hiệ
 
 ## 3. Màn hình & bố cục
 
+**Pilot 05/10/2026:** ảnh trang trí `review-complete-v1.webp` theo [SPEC-21](SPEC-21-illustration-assets.md) trong nhánh không còn mục đến hạn/mới; alt rỗng cạnh thông báo thật. Nhánh đã đạt hạn mức giữ thông báo hạn mức, không đổi thành “Đã ôn xong”. Đã xem nhánh hạn mức với ảnh trong dark mobile; không đổi FSRS/queue.
+
 - `/on-tap`: tiêu đề, số mục đến hạn/mới và preview lô ngắn, một CTA “Bắt đầu ôn”. Giải thích nếu còn các lô sau; link “Điểm yếu của tôi” nằm phụ nhưng thấy được.
 - Chưa có lịch: nêu lý do thực (chưa bắt đầu bài, đã ôn xong, đạt hạn mục mới, thiếu câu/giọng Nhật) và một đích phù hợp, không nói sai “đã ôn xong” nếu queue bị chặn.
 - `/on-tap/phien`: giữ màn tập trung, rating và tiến độ phiên hiện có. Sau lô, nếu còn mục hợp lệ, “Ôn lô tiếp” là hành động rõ; nếu hết, “Về Bảng tin”. Không tự mở lô tiếp nếu người học muốn dừng.

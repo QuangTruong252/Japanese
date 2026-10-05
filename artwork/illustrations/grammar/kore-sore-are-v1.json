@@ -1,0 +1,52 @@
+{
+  "createdAt": "2026-10-05T05:40:25.454Z",
+  "source": "image_gen",
+  "prompt": "Use case: illustration-story. Image 1 is a STYLE REFERENCE ONLY from MaiPace Phố giấy; do not reproduce its whole scene. Match watercolor/gouache pigment, fine expressive dark pencil outlines, softened flat shapes, subtle natural paper grain INSIDE painted shapes, restrained ivory/sand/charcoal/sage palette and occasional muted brick-red. Friendly hand-painted editorial illustration. Not glossy 3D, photorealism, flat vector icon, thick cartoon stroke or anime mascot. No text, letters, numerals, kana/kanji, watermark, logo, labels, UI, borders, circles, panels or multiple images. Produce ONE finished asset. Asset type: grammar teaching scene for demonstrative pronouns kore/sore/are, landscape 4:3, target 800x600. Image 1 is also CHARACTER REFERENCE for the two young adults. Opaque very pale warm paper background, simple neighborhood courtyard suggestion, no elaborate foliage. Clear high slightly elevated view establishing spatial distance: foreground LEFT male SPEAKER (reference short dark hair, ivory shirt, charcoal trousers, black backpack) speaking with gently open mouth and gesturing with one natural hand; a CLOSED brick-red book rests on a small plain low stool immediately beside him. Foreground RIGHT female LISTENER (reference dark bob, cream cardigan, brick-red top, charcoal skirt, brown shoulder bag) looking at him, listening, mouth closed; an OPEN sage umbrella sits immediately beside her to the right. They face each other, full bodies visible; the two near objects are visually well separated. A brown rectangular school satchel is at the BACK CENTER on a distant low bench beyond a broad open path, clearly far away from BOTH people. Book near speaker, umbrella near listener, satchel far from both: these 3 spatial relationships MUST be obvious. Use perspective and ample empty space between the far bag and people. No arrows, text, speech bubbles, labels, formula, dotted lines, symbols or numerals. No additional books/umbrellas/satchels or extra people. Keep all objects inside canvas safe margins. The scene supports HTML captions rendered separately; do not draw any labels. Gentle reference paper watercolor look with a much simpler background, clear object silhouettes.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/grammar/kore-sore-are-v1.webp",
+  "width": 800,
+  "height": 600,
+  "role": "grammar-scene",
+  "suggestedAlt": {
+    "vi": "Người nói ở trái có sách sát bên; người nghe ở phải có ô sát bên; một chiếc cặp nằm ở xa cả hai."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/lessons/lesson-02.json",
+    "id": "kore-sore-are",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/grammar/kore-sore-are-v1.png",
+    "width": 1448,
+    "height": 1086,
+    "format": "png",
+    "hasAlpha": false
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "contain",
+    "innerSize": {
+      "width": 800,
+      "height": 600
+    },
+    "padding": 0,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 110604,
+    "sha256": "8ca43b13037bf189a62da48eed54af3cb976e06e9af35769565bae818ad99254",
+    "hasAlpha": false,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 0,
+      "partial": 0,
+      "opaque": 480000
+    }
+  }
+}

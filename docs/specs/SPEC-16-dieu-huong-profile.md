@@ -16,6 +16,8 @@ Ngày: 27/09/2026. Trạng thái: **hoàn tất triển khai (Mốc 1 UX)**. Đ�
 
 ## 3. Màn hình & bố cục
 
+**05/10/2026 — Phố giấy:** mobile dùng thanh điều hướng sát mép dưới, nền opaque/viền trên, không pill hay bóng; năm mục và badge giữ nguyên, active có gạch chân. Desktop sidebar nền giấy, logo/chữ lớn và active gạch chân. Header vẫn giữ tìm kiếm/theme/cài đặt/tài khoản, dùng kích thước nút utility 44px và account 48px để không tràn ở 360px với font gốc 20px. Shell chừa padding và scroll-padding phía dưới để cuộn/focus không nằm dưới thanh. Hide chrome trong các phiên giữ nguyên. Kiểm chứng theo phạm vi ở handoff SPEC-21.
+
 | Bề mặt | Bố cục/hành động |
 | --- | --- |
 | Dock `< lg` | Năm mục có icon + nhãn, thứ tự `Bảng tin · Học · Luyện · Ôn · Tra cứu`; thứ năm trỏ `/hoc/tra-cuu`. Route Tra cứu và con của nó active Tra cứu, không active Học. Badge mục đến hạn ở Ôn. |

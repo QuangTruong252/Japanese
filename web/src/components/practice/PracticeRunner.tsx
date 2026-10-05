@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Check, Lightbulb, Pause, Play, X } from 'lucide-react';
+import { Check, Lightbulb, LogOut, Pause, Play, X } from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
 import { Button } from '@/components/ui/button';
 import {
@@ -32,6 +32,7 @@ import {
 } from '@/lib/practice-draft';
 import { useUIStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
+import { stripFurigana } from '@/lib/japanese';
 import type {
   AnswerResult,
   PracticeConfig,
@@ -406,24 +407,25 @@ export function PracticeRunner({
   const userAnswerText = lastResult?.userAnswer;
 
   return (
-    <main className="fixed inset-0 z-40 mx-auto flex w-full max-w-xl flex-col bg-background overflow-hidden px-4">
+    <main className="fixed inset-0 z-40 mx-auto flex w-full max-w-xl flex-col bg-background overflow-hidden px-5 pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] sm:px-8">
       {/* Thanh điều hướng và thông tin phiên */}
-      <header className="flex h-14 shrink-0 items-center justify-between">
+      <header className="flex min-h-16 shrink-0 items-center justify-between gap-2">
         <Button
           type="button"
           variant="ghost"
           size="quiz"
-          className="size-11 p-0 text-muted-foreground hover:text-foreground"
+          className="min-h-12 gap-2 px-0 text-muted-foreground hover:text-foreground"
           onClick={() => {
             if (!answered && !isPaused) pauseQuestionTimer();
             setExitDialogOpen(true);
           }}
           aria-label="Thoát phiên"
         >
-          <X className="size-6" />
+          <LogOut aria-hidden="true" />
+          <span className="text-sm">Thoát phiên</span>
         </Button>
 
-        <span className="text-sm font-medium text-muted-foreground">
+        <span className="text-base font-semibold tabular-nums">
           {isDue
             ? `Ôn tập · ${currentIndex + 1}/${questions.length}`
             : `${currentIndex + 1}/${questions.length}`}
@@ -451,7 +453,7 @@ export function PracticeRunner({
       </header>
 
       {/* Tiến độ phiên: scaleX để chỉ chạy trên compositor */}
-      <div className="h-1 shrink-0 overflow-hidden rounded-full bg-muted" aria-hidden>
+      <div className="h-2 shrink-0 overflow-hidden rounded-full bg-muted" aria-hidden>
         <div
           className="h-full origin-left bg-primary transition-transform duration-250 ease-smooth-out"
           style={{ transform: `scaleX(${(currentIndex + (answered ? 1 : 0)) / questions.length})` }}
@@ -480,8 +482,8 @@ export function PracticeRunner({
           </div>
         )}
 
-        <div className="flex min-h-full flex-col justify-center py-4">
-          <div className="my-auto flex w-full flex-col gap-5 sm:gap-6">
+        <div className="flex min-h-full flex-col justify-center py-6">
+          <div className="my-auto flex w-full flex-col gap-7 sm:gap-8">
             {/* Khối đề bài: đặt ngay sát phía trên khối trả lời */}
             <section
               key={`prompt-${currentQuestion.id}`}
@@ -494,9 +496,11 @@ export function PracticeRunner({
                       {currentQuestion.context}
                     </p>
                   )}
-                  <div className="jp jp-quiz">
-                    <Furigana text={currentQuestion.prompt} />
-                  </div>
+                  <Furigana text={currentQuestion.prompt} className={cn(
+                    'font-semibold',
+                    currentQuestion.type === 'mc' && stripFurigana(currentQuestion.prompt).length <= 12
+                      ? 'text-6xl sm:text-7xl' : 'jp-quiz',
+                  )} />
                 </>
               ) : (
                 <p className="text-sm font-medium text-muted-foreground">

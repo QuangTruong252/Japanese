@@ -535,3 +535,118 @@ Related pages refreshed on 61 pages
   ✓ VS Code extension recommended (D:\Projects\Lab\Japanese\.vscode\extensions.json)
 
 Workspace update complete: 1 with docs regenerated (14.4s)
+
+--- post-commit hook fired at Mon, Sep 28, 2026  4:27:29 PM for HEAD e90e5b3781873a7f2b555d7e8ae760023762b936 ---
+[workspace] update across 1 repos in Japanese
+  (cwd is the workspace root)
+repowise update — workspace: Japanese
+
+  japanese             1 new commit(s)
+
+  Updating japanese (docs)...
+repowise update · Japanese
+d72c243b..e90e5b37
+13 changed · 13 modified
+    modified  .claude/CLAUDE.md
+    modified  .repowise-workspace.yaml
+    modified  .repowise/.update.log
+    modified  .repowise/commit_window_cache.json
+    modified  .repowise/duplication_cache.pkl
+    modified  .repowise/duplication_pairs.pkl
+    modified  .repowise/episodes/episodes.db
+    modified  .repowise/knowledge-graph.json
+    modified  .repowise/parse_cache.pkl
+    modified  .repowise/state.json
+  +3 more (use -v to list all)
+Dynamic hint edges added: 1
+Pages from an older renderer: 4
+Reconciling stale structural pages: 1
+Pages to regenerate: 18
+Health analysis (partial): 13 changed, 3 performance-affected, 0 findings
+Dead code findings: 193
+Doc drift findings: 49
+Knowledge graph refreshed: 8 layers, 12 tour steps
+  ✓ Re-rendered 5 wiki pages from structure
+Related pages refreshed on 4 pages
+
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── {^ ^}  repowise index-only update complete ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                                                                                                                                                                                                                                                                                                                                              │
+│   Files changed           13                                                                                                                                                                                                                                                                                                                                                                                 │
+│   Graph                   2,776 nodes · 5,820 edges                                                                                                                                                                                                                                                                                                                                                          │
+│   Dead code               0 unreachable · 0 unused exports                                                                                                                                                                                                                                                                                                                                                   │
+│   Wiki pages              5 re-rendered from structure                                                                                                                                                                                                                                                                                                                                                       │
+│   Elapsed                 12.2s                                                                                                                                                                                                                                                                                                                                                                              │
+│                                                                                                                                                                                                                                                                                                                                                                                                              │
+│   What's next:                                                                                                                                                                                                                                                                                                                                                                                               │
+│   repowise serve              browse the index at localhost:3000                                                                                                                                                                                                                                                                                                                                             │
+│   repowise generate           upgrade the wiki to model-written prose (needs a key)                                                                                                                                                                                                                                                                                                                          │
+│                                                                                                                                                                                                                                                                                                                                                                                                              │
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+  ✓ AGENTS.md updated
+  ✓ VS Code MCP configured (D:\Projects\Lab\Japanese\.vscode\mcp.json)
+  ✓ VS Code extension recommended (D:\Projects\Lab\Japanese\.vscode\extensions.json)
+  ✓ AGENTS.md updated
+  ✓ VS Code MCP configured (D:\Projects\Lab\Japanese\.vscode\mcp.json)
+  ✓ VS Code extension recommended (D:\Projects\Lab\Japanese\.vscode\extensions.json)
+
+Workspace update complete: 1 with docs regenerated (14.0s)
+
+--- post-commit hook fired at Thu, Oct  1, 2026 11:15:55 AM for HEAD d5e7d69b3a611cace77fd8805a0e3505f3760b0e ---
+[workspace] update across 1 repos in Japanese
+  (cwd is the workspace root)
+repowise update — workspace: Japane[workspace] update across 1 repos in Japanese
+  (cwd is the workspace root)
+rrepowise update · Japanese
+e90e5b37..e7d4254b
+87 changed · 18 modified, 69 added
+    modified  docs/handoff/SPEC-18.md
+    modified  docs/handoff/SPEC-20.md
+       added  docs/research/ux-mobile-2026-10/2026-10-01-playwright-mobile-study.md
+       added  docs/research/ux-mobile-2026-10/log.txt
+       added  docs/research/ux-mobile-2026-10/shots/A-T1-dash-vocabdraft.png
+       added  docs/research/ux-mobile-2026-10/shots/A-T1-hoc1-via-primary.png
+       added  docs/research/ux-mobile-2026-10/shots/A-T1-resumed.png
+       added  docs/research/ux-mobile-2026-10/shots/A-T2-summary.png
+       added  docs/research/ux-mobile-2026-10/shots/A-T3-after-discard-reload.png
+       added  docs/research/ux-mobile-2026-10/shots/A-T4-dash-after-vocab.png
+  +77 more (use -v to list all)
+Dynamic hint edges added: 1
+Pages from an older renderer: 15
+Reconciling stale structural pages: 1
+
+⚠ Cascade budget of 50 pages was reached. 99 dependent pages were skipped and marked stale.
+  Pass `--cascade-budget 149` to regenerate them all.
+
+Pages to regenerate: 54
+Pages to decay: 118
+Health analysis (partial): 87 changed, 113 performance-affected, 81 findings
+Dead code findings: 193
+Doc drift findings: 49
+Knowledge graph refreshed: 8 layers, 12 tour steps
+  ✓ Re-rendered 78 wiki pages from structure
+Related pages refreshed on 60 pages
+
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── {^ ^}  repowise index-only update complete ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                                                                                                                                                                                                                                                                                                                                              │
+│   Files changed           87                                                                                                                                                                                                                                                                                                                                                                                 │
+│   Graph                   2,782 nodes · 5,850 edges                                                                                                                                                                                                                                                                                                                                                          │
+│   Dead code               0 unreachable · 1 unused exports                                                                                                                                                                                                                                                                                                                                                   │
+│   Wiki pages              78 re-rendered from structure                                                                                                                                                                                                                                                                                                                                                      │
+│   Git history             14 files refreshed                                                                                                                                                                                                                                                                                                                                                                 │
+│   Elapsed                 27.2s                                                                                                                                                                                                                                                                                                                                                                              │
+│                                                                                                                                                                                                                                                                                                                                                                                                              │
+│   What's next:                                                                                                                                                                                                                                                                                                                                                                                               │
+│   repowise serve              browse the index at localhost:3000                                                                                                                                                                                                                                                                                                                                             │
+│   repowise generate           upgrade the wiki to model-written prose (needs a key)                                                                                                                                                                                                                                                                                                                          │
+│                                                                                                                                                                                                                                                                                                                                                                                                              │
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+  ✓ AGENTS.md updated
+  ✓ VS Code MCP configured (D:\Projects\Lab\Japanese\.vscode\mcp.json)
+  ✓ VS Code extension recommended (D:\Projects\Lab\Japanese\.vscode\extensions.json)
+  ✓ AGENTS.md updated
+  ✓ VS Code MCP configured (D:\Projects\Lab\Japanese\.vscode\mcp.json)
+  ✓ VS Code extension recommended (D:\Projects\Lab\Japanese\.vscode\extensions.json)
+
+Workspace update complete: 1 with docs regenerated (28.1s)

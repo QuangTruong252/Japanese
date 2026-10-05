@@ -2,6 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   allowedDevOrigins: ['10.106.20.*'],
+  async headers() {
+    return [{
+      source: '/assets/illustrations/:path*/:file([a-z0-9-]+-v[1-9][0-9]*\\.webp)',
+      headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+    }];
+  },
   experimental: {
     // Không có service worker: điều hướng khi mất mạng giữ ở trạng thái chờ và tự chạy lại
     // khi có mạng, thay vì rơi về trang lỗi của trình duyệt.

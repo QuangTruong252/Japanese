@@ -1,0 +1,159 @@
+{
+  "createdAt": "2026-10-05T08:53:52.133Z",
+  "source": "image_gen",
+  "prompt": "Use case: precise-object-edit. Edit the attached eight-cutout source atlas. Preserve the SAME 8 subjects, meanings, order, watercolor/gouache and pencil style, colors and details. ONLY FIX EXPORT LAYOUT: scale down EACH whole subject/group uniformly to 60% of its present size, then center it in its own cell of a precise four-column two-row grid. Treat shoes with their bag, sun with hot person, snow with cold person and meal with woman as complete groups. Each complete group must fit inside the central60% of its cell, leave at least20% cell width/height of PURE EMPTY transparent space on all four sides. Keep every subject fully inside canvas. Remove ALL stray isolated white paper flecks, grain, dust or paint speckles OUTSIDE the intended silhouettes; preserve white paint INSIDE shirts, rice, blossoms and snow. Each silhouette must be surrounded by genuine zero-alpha pixels. TRUE native RGBA transparency for background and holes; no fake checkerboard, paper rectangle, visible grid, labels, writing, numerals or logos. Do not change colors, identities, expressions or relative sizes within a group. Maintain broad completely transparent horizontal and vertical gutters so eight independent rectangular crops can be exported without cutting any painted subject.",
+  "referenceImages": [
+    "artwork/illustrations/atlases/lesson-08-adjectives-layout-source-v1.png"
+  ],
+  "master": "artwork/illustrations/atlases/lesson-08-adjectives-v1.png",
+  "columns": 4,
+  "rows": 2,
+  "assets": [
+    {
+      "stem": "large-bag-v1",
+      "id": "ookii",
+      "row": 0,
+      "column": 0,
+      "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+      "suggestedAlt": {
+        "vi": "Một chiếc vali lớn màu đỏ gạch."
+      },
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 443,
+        "height": 445
+      }
+    },
+    {
+      "stem": "small-bag-v1",
+      "id": "chiisai",
+      "row": 0,
+      "column": 1,
+      "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+      "suggestedAlt": {
+        "vi": "Một chiếc túi nhỏ bên cạnh đôi giày để so sánh kích thước."
+      },
+      "crop": {
+        "left": 443,
+        "top": 0,
+        "width": 444,
+        "height": 445
+      }
+    },
+    {
+      "stem": "new-laptop-v1",
+      "id": "atarashii",
+      "row": 0,
+      "column": 2,
+      "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+      "suggestedAlt": {
+        "vi": "Một máy tính mới đang được mở khỏi hộp trống."
+      },
+      "crop": {
+        "left": 887,
+        "top": 0,
+        "width": 443,
+        "height": 445
+      }
+    },
+    {
+      "stem": "old-clock-v1",
+      "id": "furui",
+      "row": 0,
+      "column": 3,
+      "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+      "suggestedAlt": {
+        "vi": "Một chiếc đồng hồ gỗ cũ với lớp sơn đã mòn."
+      },
+      "crop": {
+        "left": 1330,
+        "top": 0,
+        "width": 444,
+        "height": 445
+      }
+    },
+    {
+      "stem": "hot-weather-v1",
+      "id": "atsui",
+      "row": 1,
+      "column": 0,
+      "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+      "suggestedAlt": {
+        "vi": "Một người đang quạt và lau mồ hôi dưới nắng nóng."
+      },
+      "crop": {
+        "left": 0,
+        "top": 445,
+        "width": 443,
+        "height": 442
+      }
+    },
+    {
+      "stem": "cold-weather-v1",
+      "id": "samui",
+      "row": 1,
+      "column": 1,
+      "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+      "suggestedAlt": {
+        "vi": "Một người mặc áo khoác và khăn quàng, co người vì trời lạnh."
+      },
+      "crop": {
+        "left": 443,
+        "top": 445,
+        "width": 444,
+        "height": 442
+      }
+    },
+    {
+      "stem": "cold-water-v1",
+      "id": "tsumetai",
+      "row": 1,
+      "column": 2,
+      "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+      "suggestedAlt": {
+        "vi": "Một cốc nước lạnh có đá và giọt nước đọng ngoài cốc."
+      },
+      "crop": {
+        "left": 887,
+        "top": 445,
+        "width": 443,
+        "height": 442
+      }
+    },
+    {
+      "stem": "delicious-food-v1",
+      "id": "oishii",
+      "row": 1,
+      "column": 3,
+      "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+      "suggestedAlt": {
+        "vi": "Một người mỉm cười khi thưởng thức bát thức ăn."
+      },
+      "crop": {
+        "left": 1330,
+        "top": 445,
+        "width": 444,
+        "height": 442
+      }
+    }
+  ],
+  "originalPrompt": "Use case: illustration-story. Asset type: MaiPace vocabulary SOURCE ATLAS, eight separate cutouts to export independently. Input Image1 is ONLY the authoritative Phố giấy STYLE and CHARACTER REFERENCE. Image2 is only native-alpha cutout pigment/edge finish reference. Generate a landscape 2:1 PNG, four columns and two rows, eight equal cells in reading order. Watercolor and gouache with delicate dark pencil, soft natural shapes, subtle paper grain INSIDE painted shapes. Ivory/sand/charcoal/sage/brick-red palette, but semantic color subjects must use their specified true white/black/red/BLUE. TRUE native transparent RGBA throughout all blank spaces and open holes; no paper ground, floor, cast shadow or fake checkerboard. No visible grid, borders, panels, labels, writing, letters, numbers, Japanese glyphs, logos, watermark, UI or arrows anywhere. Each cell contains ONLY its specified complete subject, independently centered, about65% of cell long dimension with broad entirely transparent gutters on all sides. No overlap or touching cell borders, similar brush detail and scales. Painted local vignettes may include only the specifically described contextual objects. Not photos, glossy3D, flatvector or cartoon stickers.\nReading order TOP LEFT TO RIGHT cells1-4, BOTTOM LEFT TO RIGHT cells5-8:\n1. one enormously LARGE brick-red travel bag standing beside a pair of normal adult charcoal shoes for scale; bag is four times the shoes' length, complete bag and shoes\n2. one very SMALL brick-red purse standing beside a pair of normal adult charcoal shoes for scale; purse is less than half the shoes' length, same shoes finish as previous cell, complete purse and shoes\n3. one pristine NEW silver laptop partly lifted from an opened plain ivory shipping box; perfectly intact clean surfaces, blank screen, unlettered keyboard, no print or logos\n4. one clearly OLD wooden mantel clock: worn scratched wood, faded surface and small chipped paint; complete clock silhouette, unnumbered tick marks; no person, no writing\n5. one compact vignette of the reference male student in hot summer weather, ivory short sleeve shirt and charcoal trousers, sweating and fanning himself, a small painted warm sun above; complete figure; depicts hot WEATHER not a hot object\n6. one compact vignette of the SAME male student in cold winter weather, charcoal winter coat, brick-red scarf, hands tucked in, shoulders shivering, two small snowflakes above; complete figure; depicts cold WEATHER\n7. one glass of COLD water with clearly visible ice cubes, cool pale blue transparent water and condensation droplets on its outside; no snow, no winter person; cold to touch\n8. one compact vignette of the reference woman with dark bob, ivory cardigan and brick-red top, enjoying a bite of food from a bowl with chopsticks, eyes warmly closed and clear contented smile; upper body and both hands complete; pleasure in taste not merely showing food\nMake all eight meanings visually distinct and preserve empty transparent gutters. Do not include text or clinical UI. Source master only; image dimensions may vary, preserve full subjects.",
+  "styleReferenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png",
+    "artwork/illustrations/vocab/book-v1.png"
+  ],
+  "editHistory": [
+    {
+      "prompt": "Use case: precise-object-edit. Edit the attached eight-cutout source atlas. Preserve the SAME 8 subjects, meanings, order, watercolor/gouache and pencil style, colors and details. ONLY FIX EXPORT LAYOUT: scale down EACH whole subject/group uniformly to 60% of its present size, then center it in its own cell of a precise four-column two-row grid. Treat shoes with their bag, sun with hot person, snow with cold person and meal with woman as complete groups. Each complete group must fit inside the central60% of its cell, leave at least20% cell width/height of PURE EMPTY transparent space on all four sides. Keep every subject fully inside canvas. Remove ALL stray isolated white paper flecks, grain, dust or paint speckles OUTSIDE the intended silhouettes; preserve white paint INSIDE shirts, rice, blossoms and snow. Each silhouette must be surrounded by genuine zero-alpha pixels. TRUE native RGBA transparency for background and holes; no fake checkerboard, paper rectangle, visible grid, labels, writing, numerals or logos. Do not change colors, identities, expressions or relative sizes within a group. Maintain broad completely transparent horizontal and vertical gutters so eight independent rectangular crops can be exported without cutting any painted subject.",
+      "sourceImage": "artwork/illustrations/atlases/lesson-08-adjectives-layout-source-v1.png",
+      "generationMs": 79535
+    }
+  ],
+  "actualWidth": 1774,
+  "actualHeight": 887,
+  "performance": {
+    "generationMs": 105603
+  },
+  "cropPolicy": "Explicit frames selected on adjacent fully transparent row/column gutters near the requested 4x2 layout; preserve all ink, no chroma-key."
+}

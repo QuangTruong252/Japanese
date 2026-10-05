@@ -1,0 +1,156 @@
+{
+  "createdAt": "2026-10-05T08:26:42.533Z",
+  "source": "image_gen",
+  "prompt": "Use case: illustration-story. Produce ONE production SOURCE ATLAS containing 8 isolated vocabulary cutouts for MaiPace. Image 1 is the Phố giấy STYLE REFERENCE: watercolor/gouache pigment, delicate dark pencil marks, subtle paper grain INSIDE painted shapes, softened natural shapes, ivory/sand/charcoal/sage and muted brick-red. Image 2 is ONLY cutout finish reference; do not reproduce book. Canvas precisely 2048 x 1024 pixels, landscape 2:1, laid out as FOUR equal columns and TWO equal rows, 8 equal 512x512 cells. TRUE native transparent RGBA background THROUGHOUT all blank spaces and within open holes; no paper background, scene, floor, cast shadow or drawn checkerboard. No visible grid, panels, border, labels, writing, letters, numerals, kanji/kana, symbols, logos, watermark or UI anywhere, including product surfaces. One complete object centered in EACH exact cell, occupying 65-70% of that cell long dimension, generous identical margins of at least 64px, nothing touches/crosses cell boundaries. Keep all 8 fully contained and independent with similar pigment detail. Not photographs, glossy3D, flatvector or thickcartoon. Reading order fixed left-to-right: TOP ROW cells 1 through 4; BOTTOM ROW cells 5 through 8. Subjects:\n1. a single silver compact disc, round with central open transparent hole, softly iridescent surface, no case, no writing\n2. a single charcoal flat-screen television on simple low stand, blank softly gray screen, three-quarter front view, no remote or writing\n3. a single portable ivory and charcoal radio, clearly visible speaker grille and two round knobs, simple unnumbered tuner strip, short aerial, no writing\n4. a single open charcoal and warm silver laptop, blank ivory screen, keyboard painted as small unlettered key shapes, three-quarter view, no writing\n5. a single muted brick-red compact car, complete front and side three-quarter view, all body and visible wheels intact, blank plates and no writing\n6. a single brown chocolate bar with recognizable chocolate squares, half inside plain ivory and muted brick-red wrapper, no writing or logos\n7. a single small closed personal planner, sand-brown leather cover, charcoal elastic closure and one brick-red ribbon bookmark, ivory page edge, not spiral binding, no writing\n8. a single thin soft-cover magazine, slightly open showing thin flexible paper, cover has one simple sage botanical illustration and blank sand field, no spine thickness, no text or glyphs\nImportant: one object per cell with silhouette and identity unmistakable; do not combine neighboring objects or add decorative extras. This is an export master to be split into independent transparent files; accurate equal grid placement and EMPTY TRANSPARENT GUTTERS are essential.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png",
+    "artwork/illustrations/vocab/book-v1.png"
+  ],
+  "master": "artwork/illustrations/atlases/everyday-objects-v1.png",
+  "columns": 4,
+  "rows": 2,
+  "requestedWidth": 2048,
+  "requestedHeight": 1024,
+  "assets": [
+    {
+      "stem": "compact-disc-v1",
+      "row": 0,
+      "column": 0,
+      "id": "cd",
+      "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+      "suggestedAlt": {
+        "vi": "Một đĩa CD màu bạc có lỗ tròn ở giữa."
+      },
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 443,
+        "height": 453
+      }
+    },
+    {
+      "stem": "television-v1",
+      "row": 0,
+      "column": 1,
+      "id": "terebi",
+      "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+      "suggestedAlt": {
+        "vi": "Một chiếc ti vi màn hình phẳng màu than trên chân đế."
+      },
+      "crop": {
+        "left": 443,
+        "top": 0,
+        "width": 444,
+        "height": 453
+      }
+    },
+    {
+      "stem": "radio-v1",
+      "row": 0,
+      "column": 2,
+      "id": "rajio",
+      "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+      "suggestedAlt": {
+        "vi": "Một chiếc radio màu kem với loa, núm vặn và ăng ten."
+      },
+      "crop": {
+        "left": 887,
+        "top": 0,
+        "width": 443,
+        "height": 453
+      }
+    },
+    {
+      "stem": "laptop-v1",
+      "row": 0,
+      "column": 3,
+      "id": "konpyuutaa",
+      "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+      "suggestedAlt": {
+        "vi": "Một máy tính xách tay đang mở với màn hình trống."
+      },
+      "crop": {
+        "left": 1330,
+        "top": 0,
+        "width": 444,
+        "height": 453
+      }
+    },
+    {
+      "stem": "car-v1",
+      "row": 1,
+      "column": 0,
+      "id": "kuruma",
+      "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+      "suggestedAlt": {
+        "vi": "Một chiếc ô tô nhỏ màu đỏ gạch với bốn bánh."
+      },
+      "crop": {
+        "left": 0,
+        "top": 453,
+        "width": 500,
+        "height": 434
+      }
+    },
+    {
+      "stem": "chocolate-bar-v1",
+      "row": 1,
+      "column": 1,
+      "id": "chokoreeto",
+      "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+      "suggestedAlt": {
+        "vi": "Một thanh sô-cô-la nâu, một phần còn trong giấy gói trống."
+      },
+      "crop": {
+        "left": 500,
+        "top": 453,
+        "width": 400,
+        "height": 434
+      }
+    },
+    {
+      "stem": "planner-v1",
+      "row": 1,
+      "column": 2,
+      "id": "techou",
+      "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+      "suggestedAlt": {
+        "vi": "Một sổ tay cá nhân nhỏ bìa da nâu với dây giữ và dấu trang."
+      },
+      "crop": {
+        "left": 900,
+        "top": 453,
+        "width": 430,
+        "height": 434
+      }
+    },
+    {
+      "stem": "magazine-v1",
+      "row": 1,
+      "column": 3,
+      "id": "zasshi",
+      "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+      "suggestedAlt": {
+        "vi": "Một cuốn tạp chí mỏng bìa mềm có tranh lá cây và không có chữ."
+      },
+      "crop": {
+        "left": 1330,
+        "top": 453,
+        "width": 444,
+        "height": 434
+      }
+    }
+  ],
+  "performance": {
+    "individualEightStartedAt": "2026-10-05T08:08:24Z",
+    "individualEightFinishedAt": "2026-10-05T08:17:24Z",
+    "individualEightApproxSeconds": 540,
+    "note": "Prior batch timestamps are rounded from orchestration and tool completion, generation only; atlas timing will use measured call duration.",
+    "atlasGenerationMs": 46539,
+    "atlasExportMs": 30980,
+    "scope": "Source generation and file export only; excludes orchestration, script correction, visual review, integration and app verification. Different subject batches, not a controlled benchmark."
+  },
+  "actualWidth": 1774,
+  "actualHeight": 887,
+  "cropPolicy": "Explicit pixel frames between verified transparent gutters, including adjacent fully transparent border columns. No ink removed or chroma-key used."
+}

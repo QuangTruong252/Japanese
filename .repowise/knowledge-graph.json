@@ -4,7 +4,7 @@
   "project": {
     "name": "Japanese",
     "is_monorepo": false,
-    "total_files": 686,
+    "total_files": 687,
     "entry_points": [
       "web/src/lib/supabase/server.ts"
     ],
@@ -32,8 +32,8 @@
       "symbolCount": 0,
       "lineCount": 12,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 13,
+      "pagerank": 0.001078,
+      "communityId": 12,
       "tags": [],
       "summary": "Documentation: project.md."
     },
@@ -45,8 +45,8 @@
       "symbolCount": 0,
       "lineCount": 291,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 14,
+      "pagerank": 0.001078,
+      "communityId": 13,
       "tags": [],
       "summary": "Documentation: SKILL.md."
     },
@@ -58,8 +58,8 @@
       "symbolCount": 0,
       "lineCount": 182,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 15,
+      "pagerank": 0.001078,
+      "communityId": 14,
       "tags": [
         "config"
       ],
@@ -73,8 +73,8 @@
       "symbolCount": 0,
       "lineCount": 80,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 16,
+      "pagerank": 0.001078,
+      "communityId": 15,
       "tags": [
         "config"
       ],
@@ -88,8 +88,8 @@
       "symbolCount": 0,
       "lineCount": 382,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 17,
+      "pagerank": 0.001078,
+      "communityId": 16,
       "tags": [
         "config"
       ],
@@ -103,8 +103,8 @@
       "symbolCount": 0,
       "lineCount": 175,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 18,
+      "pagerank": 0.001078,
+      "communityId": 17,
       "tags": [
         "config"
       ],
@@ -118,8 +118,8 @@
       "symbolCount": 0,
       "lineCount": 5,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 19,
+      "pagerank": 0.001078,
+      "communityId": 18,
       "tags": [
         "config"
       ],
@@ -133,8 +133,8 @@
       "symbolCount": 0,
       "lineCount": 257,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 20,
+      "pagerank": 0.001078,
+      "communityId": 19,
       "tags": [],
       "summary": "Documentation: adapt.md."
     },
@@ -146,8 +146,8 @@
       "symbolCount": 0,
       "lineCount": 97,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 21,
+      "pagerank": 0.001078,
+      "communityId": 20,
       "tags": [],
       "summary": "Documentation: adapt.native.md."
     },
@@ -159,8 +159,8 @@
       "symbolCount": 0,
       "lineCount": 102,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 22,
+      "pagerank": 0.001078,
+      "communityId": 21,
       "tags": [],
       "summary": "Documentation: android.md."
     },
@@ -172,8 +172,8 @@
       "symbolCount": 0,
       "lineCount": 130,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 23,
+      "pagerank": 0.001078,
+      "communityId": 22,
       "tags": [],
       "summary": "Documentation: animate.md."
     },
@@ -185,8 +185,8 @@
       "symbolCount": 0,
       "lineCount": 196,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 24,
+      "pagerank": 0.001078,
+      "communityId": 23,
       "tags": [],
       "summary": "Documentation: audit.md."
     },
@@ -198,8 +198,8 @@
       "symbolCount": 0,
       "lineCount": 209,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 25,
+      "pagerank": 0.001078,
+      "communityId": 24,
       "tags": [],
       "summary": "Documentation: audit.native.md."
     },
@@ -211,8 +211,8 @@
       "symbolCount": 0,
       "lineCount": 89,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 26,
+      "pagerank": 0.001078,
+      "communityId": 25,
       "tags": [],
       "summary": "Documentation: bolder.md."
     },
@@ -224,8 +224,8 @@
       "symbolCount": 0,
       "lineCount": 114,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 27,
+      "pagerank": 0.001078,
+      "communityId": 26,
       "tags": [],
       "summary": "Documentation: clarify.md."
     },
@@ -237,8 +237,8 @@
       "symbolCount": 0,
       "lineCount": 113,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 28,
+      "pagerank": 0.001078,
+      "communityId": 27,
       "tags": [],
       "summary": "Documentation: colorize.md."
     },
@@ -250,8 +250,8 @@
       "symbolCount": 0,
       "lineCount": 137,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 29,
+      "pagerank": 0.001078,
+      "communityId": 28,
       "tags": [],
       "summary": "Documentation: craft-floor.md."
     },
@@ -263,8 +263,8 @@
       "symbolCount": 0,
       "lineCount": 13,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 30,
+      "pagerank": 0.001078,
+      "communityId": 29,
       "tags": [],
       "summary": "Documentation: craft.md."
     },
@@ -276,8 +276,8 @@
       "symbolCount": 0,
       "lineCount": 1148,
       "complexity": "complex",
-      "pagerank": 0.00108,
-      "communityId": 31,
+      "pagerank": 0.001078,
+      "communityId": 30,
       "tags": [],
       "summary": "Documentation: critique.md."
     },
@@ -289,8 +289,8 @@
       "symbolCount": 0,
       "lineCount": 186,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 32,
+      "pagerank": 0.001078,
+      "communityId": 31,
       "tags": [],
       "summary": "Documentation: asset-producer.md."
     },
@@ -302,8 +302,8 @@
       "symbolCount": 0,
       "lineCount": 83,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 33,
+      "pagerank": 0.001078,
+      "communityId": 32,
       "tags": [],
       "summary": "Documentation: documenter.md."
     },
@@ -315,8 +315,8 @@
       "symbolCount": 0,
       "lineCount": 384,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 34,
+      "pagerank": 0.001078,
+      "communityId": 33,
       "tags": [],
       "summary": "Documentation: finish-reviewer.md."
     },
@@ -328,8 +328,8 @@
       "symbolCount": 0,
       "lineCount": 179,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 35,
+      "pagerank": 0.001078,
+      "communityId": 34,
       "tags": [],
       "summary": "Documentation: manual-edit-applier.md."
     },
@@ -341,8 +341,8 @@
       "symbolCount": 0,
       "lineCount": 92,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 36,
+      "pagerank": 0.001078,
+      "communityId": 35,
       "tags": [],
       "summary": "Documentation: delight.md."
     },
@@ -354,8 +354,8 @@
       "symbolCount": 0,
       "lineCount": 142,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 37,
+      "pagerank": 0.001078,
+      "communityId": 36,
       "tags": [],
       "summary": "Documentation: distill.md."
     },
@@ -367,8 +367,8 @@
       "symbolCount": 0,
       "lineCount": 137,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 38,
+      "pagerank": 0.001078,
+      "communityId": 37,
       "tags": [],
       "summary": "Documentation: doctor.md."
     },
@@ -380,8 +380,8 @@
       "symbolCount": 0,
       "lineCount": 688,
       "complexity": "complex",
-      "pagerank": 0.00108,
-      "communityId": 39,
+      "pagerank": 0.001078,
+      "communityId": 38,
       "tags": [],
       "summary": "Documentation: document.md."
     },
@@ -393,8 +393,8 @@
       "symbolCount": 0,
       "lineCount": 85,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 40,
+      "pagerank": 0.001078,
+      "communityId": 39,
       "tags": [],
       "summary": "Documentation: extract.md."
     },
@@ -406,8 +406,8 @@
       "symbolCount": 0,
       "lineCount": 213,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 41,
+      "pagerank": 0.001078,
+      "communityId": 40,
       "tags": [],
       "summary": "Documentation: harden.md."
     },
@@ -419,8 +419,8 @@
       "symbolCount": 0,
       "lineCount": 332,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 42,
+      "pagerank": 0.001078,
+      "communityId": 41,
       "tags": [],
       "summary": "Documentation: hooks.md."
     },
@@ -432,8 +432,8 @@
       "symbolCount": 0,
       "lineCount": 288,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 43,
+      "pagerank": 0.001078,
+      "communityId": 42,
       "tags": [],
       "summary": "Documentation: init.md."
     },
@@ -445,8 +445,8 @@
       "symbolCount": 0,
       "lineCount": 95,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 44,
+      "pagerank": 0.001078,
+      "communityId": 43,
       "tags": [],
       "summary": "Documentation: ios.md."
     },
@@ -458,8 +458,8 @@
       "symbolCount": 0,
       "lineCount": 129,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 45,
+      "pagerank": 0.001078,
+      "communityId": 44,
       "tags": [],
       "summary": "Documentation: layout.md."
     },
@@ -471,8 +471,8 @@
       "symbolCount": 0,
       "lineCount": 204,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 46,
+      "pagerank": 0.001078,
+      "communityId": 45,
       "tags": [],
       "summary": "Documentation: live-setup.md."
     },
@@ -484,8 +484,8 @@
       "symbolCount": 0,
       "lineCount": 912,
       "complexity": "complex",
-      "pagerank": 0.00108,
-      "communityId": 47,
+      "pagerank": 0.001078,
+      "communityId": 46,
       "tags": [],
       "summary": "Documentation: live.md."
     },
@@ -497,8 +497,8 @@
       "symbolCount": 0,
       "lineCount": 1319,
       "complexity": "complex",
-      "pagerank": 0.00108,
-      "communityId": 48,
+      "pagerank": 0.001078,
+      "communityId": 47,
       "tags": [],
       "summary": "Documentation: new-work.md."
     },
@@ -510,8 +510,8 @@
       "symbolCount": 0,
       "lineCount": 193,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 49,
+      "pagerank": 0.001078,
+      "communityId": 48,
       "tags": [],
       "summary": "Documentation: onboard.md."
     },
@@ -523,8 +523,8 @@
       "symbolCount": 0,
       "lineCount": 103,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 50,
+      "pagerank": 0.001078,
+      "communityId": 49,
       "tags": [],
       "summary": "Documentation: operate.md."
     },
@@ -536,8 +536,8 @@
       "symbolCount": 0,
       "lineCount": 190,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 51,
+      "pagerank": 0.001078,
+      "communityId": 50,
       "tags": [],
       "summary": "Documentation: optimize.md."
     },
@@ -549,8 +549,8 @@
       "symbolCount": 0,
       "lineCount": 229,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 52,
+      "pagerank": 0.001078,
+      "communityId": 51,
       "tags": [],
       "summary": "Documentation: overdrive.md."
     },
@@ -562,8 +562,8 @@
       "symbolCount": 0,
       "lineCount": 166,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 53,
+      "pagerank": 0.001078,
+      "communityId": 52,
       "tags": [],
       "summary": "Documentation: polish.md."
     },
@@ -575,8 +575,8 @@
       "symbolCount": 0,
       "lineCount": 123,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 54,
+      "pagerank": 0.001078,
+      "communityId": 53,
       "tags": [],
       "summary": "Documentation: quieter.md."
     },
@@ -588,8 +588,8 @@
       "symbolCount": 0,
       "lineCount": 81,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 55,
+      "pagerank": 0.001078,
+      "communityId": 54,
       "tags": [],
       "summary": "Documentation: routing.md."
     },
@@ -601,8 +601,8 @@
       "symbolCount": 0,
       "lineCount": 88,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 56,
+      "pagerank": 0.001078,
+      "communityId": 55,
       "tags": [],
       "summary": "Documentation: shape.md."
     },
@@ -614,8 +614,8 @@
       "symbolCount": 0,
       "lineCount": 131,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 57,
+      "pagerank": 0.001078,
+      "communityId": 56,
       "tags": [],
       "summary": "Documentation: typeset.md."
     },
@@ -627,8 +627,8 @@
       "symbolCount": 0,
       "lineCount": 293,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 58,
+      "pagerank": 0.001078,
+      "communityId": 57,
       "tags": [],
       "summary": "Documentation: visualize.md."
     },
@@ -640,8 +640,8 @@
       "symbolCount": 0,
       "lineCount": 198,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 59,
+      "pagerank": 0.001078,
+      "communityId": 58,
       "tags": [
         "config"
       ],
@@ -655,8 +655,8 @@
       "symbolCount": 0,
       "lineCount": 60,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 60,
+      "pagerank": 0.001078,
+      "communityId": 59,
       "tags": [
         "config"
       ],
@@ -670,8 +670,8 @@
       "symbolCount": 1,
       "lineCount": 122,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 61,
+      "pagerank": 0.001078,
+      "communityId": 60,
       "tags": [],
       "summary": "Config module live-browser-dom defining createLiveBrowserDomHelpers."
     },
@@ -683,8 +683,8 @@
       "symbolCount": 6,
       "lineCount": 258,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 62,
+      "pagerank": 0.001078,
+      "communityId": 61,
       "tags": [],
       "summary": "Config module live-browser-ignores defining normalizeIgnoreRule, normalizeIgnoreValue, globToRegex."
     },
@@ -696,8 +696,8 @@
       "symbolCount": 1,
       "lineCount": 102,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 63,
+      "pagerank": 0.001078,
+      "communityId": 62,
       "tags": [],
       "summary": "Config module live-browser-session defining createLiveBrowserSessionState."
     },
@@ -709,8 +709,8 @@
       "symbolCount": 542,
       "lineCount": 13071,
       "complexity": "complex",
-      "pagerank": 0.00108,
-      "communityId": 64,
+      "pagerank": 0.001078,
+      "communityId": 63,
       "tags": [],
       "summary": "Config module live-browser defining shouldAdvancePhase, writeScrollY, readScrollY."
     },
@@ -722,8 +722,8 @@
       "symbolCount": 94,
       "lineCount": 732,
       "complexity": "complex",
-      "pagerank": 0.00108,
-      "communityId": 65,
+      "pagerank": 0.001078,
+      "communityId": 64,
       "tags": [],
       "summary": "Config module modern-screenshot.umd defining v, q, P."
     },
@@ -735,8 +735,8 @@
       "symbolCount": 0,
       "lineCount": 2706,
       "complexity": "complex",
-      "pagerank": 0.00108,
-      "communityId": 66,
+      "pagerank": 0.001078,
+      "communityId": 65,
       "tags": [],
       "summary": "Documentation: AGENTS.md."
     },
@@ -748,8 +748,8 @@
       "symbolCount": 0,
       "lineCount": 84,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 67,
+      "pagerank": 0.001078,
+      "communityId": 66,
       "tags": [],
       "summary": "Project overview and entry point for new readers."
     },
@@ -761,8 +761,8 @@
       "symbolCount": 0,
       "lineCount": 181,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 68,
+      "pagerank": 0.001078,
+      "communityId": 67,
       "tags": [],
       "summary": "Documentation: SKILL.md."
     },
@@ -774,8 +774,8 @@
       "symbolCount": 0,
       "lineCount": 23,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 69,
+      "pagerank": 0.001078,
+      "communityId": 68,
       "tags": [
         "config"
       ],
@@ -789,8 +789,8 @@
       "symbolCount": 0,
       "lineCount": 38,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 70,
+      "pagerank": 0.001078,
+      "communityId": 69,
       "tags": [],
       "summary": "Documentation: _sections.md."
     },
@@ -802,8 +802,8 @@
       "symbolCount": 0,
       "lineCount": 15,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 71,
+      "pagerank": 0.001078,
+      "communityId": 70,
       "tags": [],
       "summary": "Documentation: _template.md."
     },
@@ -815,8 +815,8 @@
       "symbolCount": 0,
       "lineCount": 45,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 72,
+      "pagerank": 0.001078,
+      "communityId": 71,
       "tags": [],
       "summary": "Documentation: advanced-effect-event-deps.md."
     },
@@ -828,8 +828,8 @@
       "symbolCount": 0,
       "lineCount": 37,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 73,
+      "pagerank": 0.001078,
+      "communityId": 72,
       "tags": [],
       "summary": "Documentation: advanced-event-handler-refs.md."
     },
@@ -841,8 +841,8 @@
       "symbolCount": 0,
       "lineCount": 23,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 74,
+      "pagerank": 0.001078,
+      "communityId": 73,
       "tags": [],
       "summary": "Documentation: advanced-init-once.md."
     },
@@ -854,8 +854,8 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 75,
+      "pagerank": 0.001078,
+      "communityId": 74,
       "tags": [],
       "summary": "Documentation: advanced-use-latest.md."
     },
@@ -867,8 +867,8 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 76,
+      "pagerank": 0.001078,
+      "communityId": 75,
       "tags": [],
       "summary": "Documentation: async-api-routes.md."
     },
@@ -880,8 +880,8 @@
       "symbolCount": 0,
       "lineCount": 30,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 77,
+      "pagerank": 0.001078,
+      "communityId": 76,
       "tags": [],
       "summary": "Documentation: async-cheap-condition-before-await.md."
     },
@@ -893,8 +893,8 @@
       "symbolCount": 0,
       "lineCount": 55,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 78,
+      "pagerank": 0.001078,
+      "communityId": 77,
       "tags": [],
       "summary": "Documentation: async-defer-await.md."
     },
@@ -906,8 +906,8 @@
       "symbolCount": 0,
       "lineCount": 32,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 79,
+      "pagerank": 0.001078,
+      "communityId": 78,
       "tags": [],
       "summary": "Documentation: async-dependencies.md."
     },
@@ -919,8 +919,8 @@
       "symbolCount": 0,
       "lineCount": 16,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 80,
+      "pagerank": 0.001078,
+      "communityId": 79,
       "tags": [],
       "summary": "Documentation: async-parallel.md."
     },
@@ -932,8 +932,8 @@
       "symbolCount": 0,
       "lineCount": 62,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 81,
+      "pagerank": 0.001078,
+      "communityId": 80,
       "tags": [],
       "summary": "Documentation: async-suspense-boundaries.md."
     },
@@ -945,8 +945,8 @@
       "symbolCount": 0,
       "lineCount": 59,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 82,
+      "pagerank": 0.001078,
+      "communityId": 81,
       "tags": [],
       "summary": "Documentation: bundle-analyzable-paths.md."
     },
@@ -958,8 +958,8 @@
       "symbolCount": 0,
       "lineCount": 69,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 83,
+      "pagerank": 0.001078,
+      "communityId": 82,
       "tags": [],
       "summary": "Documentation: bundle-barrel-imports.md."
     },
@@ -971,8 +971,8 @@
       "symbolCount": 0,
       "lineCount": 23,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 84,
+      "pagerank": 0.001078,
+      "communityId": 83,
       "tags": [],
       "summary": "Documentation: bundle-conditional.md."
     },
@@ -984,8 +984,8 @@
       "symbolCount": 0,
       "lineCount": 23,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 85,
+      "pagerank": 0.001078,
+      "communityId": 84,
       "tags": [],
       "summary": "Documentation: bundle-defer-third-party.md."
     },
@@ -997,8 +997,8 @@
       "symbolCount": 0,
       "lineCount": 19,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 86,
+      "pagerank": 0.001078,
+      "communityId": 85,
       "tags": [],
       "summary": "Documentation: bundle-dynamic-imports.md."
     },
@@ -1010,8 +1010,8 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 87,
+      "pagerank": 0.001078,
+      "communityId": 86,
       "tags": [],
       "summary": "Documentation: bundle-preload.md."
     },
@@ -1023,8 +1023,8 @@
       "symbolCount": 0,
       "lineCount": 49,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 88,
+      "pagerank": 0.001078,
+      "communityId": 87,
       "tags": [],
       "summary": "Documentation: client-event-listeners.md."
     },
@@ -1036,8 +1036,8 @@
       "symbolCount": 0,
       "lineCount": 48,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 89,
+      "pagerank": 0.001078,
+      "communityId": 88,
       "tags": [],
       "summary": "Documentation: client-localstorage-schema.md."
     },
@@ -1049,8 +1049,8 @@
       "symbolCount": 0,
       "lineCount": 41,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 90,
+      "pagerank": 0.001078,
+      "communityId": 89,
       "tags": [],
       "summary": "Documentation: client-passive-event-listeners.md."
     },
@@ -1062,8 +1062,8 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 91,
+      "pagerank": 0.001078,
+      "communityId": 90,
       "tags": [],
       "summary": "Documentation: client-swr-dedup.md."
     },
@@ -1075,8 +1075,8 @@
       "symbolCount": 0,
       "lineCount": 81,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 92,
+      "pagerank": 0.001078,
+      "communityId": 91,
       "tags": [],
       "summary": "Documentation: js-batch-dom-css.md."
     },
@@ -1088,8 +1088,8 @@
       "symbolCount": 0,
       "lineCount": 48,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 93,
+      "pagerank": 0.001078,
+      "communityId": 92,
       "tags": [],
       "summary": "Documentation: js-cache-function-results.md."
     },
@@ -1101,8 +1101,8 @@
       "symbolCount": 0,
       "lineCount": 13,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 94,
+      "pagerank": 0.001078,
+      "communityId": 93,
       "tags": [],
       "summary": "Documentation: js-cache-property-access.md."
     },
@@ -1114,8 +1114,8 @@
       "symbolCount": 0,
       "lineCount": 41,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 95,
+      "pagerank": 0.001078,
+      "communityId": 94,
       "tags": [],
       "summary": "Documentation: js-cache-storage.md."
     },
@@ -1127,8 +1127,8 @@
       "symbolCount": 0,
       "lineCount": 18,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 96,
+      "pagerank": 0.001078,
+      "communityId": 95,
       "tags": [],
       "summary": "Documentation: js-combine-iterations.md."
     },
@@ -1140,8 +1140,8 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 97,
+      "pagerank": 0.001078,
+      "communityId": 96,
       "tags": [],
       "summary": "Documentation: js-early-exit.md."
     },
@@ -1153,8 +1153,8 @@
       "symbolCount": 0,
       "lineCount": 35,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 98,
+      "pagerank": 0.001078,
+      "communityId": 97,
       "tags": [],
       "summary": "Documentation: js-flatmap-filter.md."
     },
@@ -1166,8 +1166,8 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 99,
+      "pagerank": 0.001078,
+      "communityId": 98,
       "tags": [],
       "summary": "Documentation: js-hoist-regexp.md."
     },
@@ -1179,8 +1179,8 @@
       "symbolCount": 0,
       "lineCount": 20,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 100,
+      "pagerank": 0.001078,
+      "communityId": 99,
       "tags": [],
       "summary": "Documentation: js-index-maps.md."
     },
@@ -1192,8 +1192,8 @@
       "symbolCount": 0,
       "lineCount": 43,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 101,
+      "pagerank": 0.001078,
+      "communityId": 100,
       "tags": [],
       "summary": "Documentation: js-length-check-first.md."
     },
@@ -1205,8 +1205,8 @@
       "symbolCount": 0,
       "lineCount": 57,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 102,
+      "pagerank": 0.001078,
+      "communityId": 101,
       "tags": [],
       "summary": "Documentation: js-min-max-loop.md."
     },
@@ -1218,8 +1218,8 @@
       "symbolCount": 0,
       "lineCount": 66,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 103,
+      "pagerank": 0.001078,
+      "communityId": 102,
       "tags": [],
       "summary": "Documentation: js-request-idle-callback.md."
     },
@@ -1231,8 +1231,8 @@
       "symbolCount": 0,
       "lineCount": 13,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 104,
+      "pagerank": 0.001078,
+      "communityId": 103,
       "tags": [],
       "summary": "Documentation: js-set-map-lookups.md."
     },
@@ -1244,8 +1244,8 @@
       "symbolCount": 0,
       "lineCount": 44,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 105,
+      "pagerank": 0.001078,
+      "communityId": 104,
       "tags": [],
       "summary": "Documentation: js-tosorted-immutable.md."
     },
@@ -1257,8 +1257,8 @@
       "symbolCount": 0,
       "lineCount": 14,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 106,
+      "pagerank": 0.001078,
+      "communityId": 105,
       "tags": [],
       "summary": "Documentation: rendering-activity.md."
     },
@@ -1270,8 +1270,8 @@
       "symbolCount": 0,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 107,
+      "pagerank": 0.001078,
+      "communityId": 106,
       "tags": [],
       "summary": "Documentation: rendering-animate-svg-wrapper.md."
     },
@@ -1283,8 +1283,8 @@
       "symbolCount": 0,
       "lineCount": 24,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 108,
+      "pagerank": 0.001078,
+      "communityId": 107,
       "tags": [],
       "summary": "Documentation: rendering-conditional-render.md."
     },
@@ -1296,8 +1296,8 @@
       "symbolCount": 0,
       "lineCount": 20,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 109,
+      "pagerank": 0.001078,
+      "communityId": 108,
       "tags": [],
       "summary": "Documentation: rendering-content-visibility.md."
     },
@@ -1309,8 +1309,8 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 110,
+      "pagerank": 0.001078,
+      "communityId": 109,
       "tags": [],
       "summary": "Documentation: rendering-hoist-jsx.md."
     },
@@ -1322,8 +1322,8 @@
       "symbolCount": 0,
       "lineCount": 57,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 111,
+      "pagerank": 0.001078,
+      "communityId": 110,
       "tags": [],
       "summary": "Documentation: rendering-hydration-no-flicker.md."
     },
@@ -1335,8 +1335,8 @@
       "symbolCount": 0,
       "lineCount": 21,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 112,
+      "pagerank": 0.001078,
+      "communityId": 111,
       "tags": [],
       "summary": "Documentation: rendering-hydration-suppress-warning.md."
     },
@@ -1348,8 +1348,8 @@
       "symbolCount": 0,
       "lineCount": 63,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 113,
+      "pagerank": 0.001078,
+      "communityId": 112,
       "tags": [],
       "summary": "Documentation: rendering-resource-hints.md."
     },
@@ -1361,8 +1361,8 @@
       "symbolCount": 0,
       "lineCount": 46,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 114,
+      "pagerank": 0.001078,
+      "communityId": 113,
       "tags": [],
       "summary": "Documentation: rendering-script-defer-async.md."
     },
@@ -1374,8 +1374,8 @@
       "symbolCount": 0,
       "lineCount": 14,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 115,
+      "pagerank": 0.001078,
+      "communityId": 114,
       "tags": [],
       "summary": "Documentation: rendering-svg-precision.md."
     },
@@ -1387,8 +1387,8 @@
       "symbolCount": 0,
       "lineCount": 51,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 116,
+      "pagerank": 0.001078,
+      "communityId": 115,
       "tags": [],
       "summary": "Documentation: rendering-usetransition-loading.md."
     },
@@ -1400,8 +1400,8 @@
       "symbolCount": 0,
       "lineCount": 24,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 117,
+      "pagerank": 0.001078,
+      "communityId": 116,
       "tags": [],
       "summary": "Documentation: rerender-defer-reads.md."
     },
@@ -1413,8 +1413,8 @@
       "symbolCount": 0,
       "lineCount": 20,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 118,
+      "pagerank": 0.001078,
+      "communityId": 117,
       "tags": [],
       "summary": "Documentation: rerender-dependencies.md."
     },
@@ -1426,8 +1426,8 @@
       "symbolCount": 0,
       "lineCount": 30,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 119,
+      "pagerank": 0.001078,
+      "communityId": 118,
       "tags": [],
       "summary": "Documentation: rerender-derived-state-no-effect.md."
     },
@@ -1439,8 +1439,8 @@
       "symbolCount": 0,
       "lineCount": 18,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 120,
+      "pagerank": 0.001078,
+      "communityId": 119,
       "tags": [],
       "summary": "Documentation: rerender-derived-state.md."
     },
@@ -1452,8 +1452,8 @@
       "symbolCount": 0,
       "lineCount": 74,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 121,
+      "pagerank": 0.001078,
+      "communityId": 120,
       "tags": [],
       "summary": "Documentation: rerender-functional-setstate.md."
     },
@@ -1465,8 +1465,8 @@
       "symbolCount": 0,
       "lineCount": 50,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 122,
+      "pagerank": 0.001078,
+      "communityId": 121,
       "tags": [],
       "summary": "Documentation: rerender-lazy-state-init.md."
     },
@@ -1478,8 +1478,8 @@
       "symbolCount": 0,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 123,
+      "pagerank": 0.001078,
+      "communityId": 122,
       "tags": [],
       "summary": "Documentation: rerender-memo-with-default-value.md."
     },
@@ -1491,8 +1491,8 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 124,
+      "pagerank": 0.001078,
+      "communityId": 123,
       "tags": [],
       "summary": "Documentation: rerender-memo.md."
     },
@@ -1504,8 +1504,8 @@
       "symbolCount": 0,
       "lineCount": 31,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 125,
+      "pagerank": 0.001078,
+      "communityId": 124,
       "tags": [],
       "summary": "Documentation: rerender-move-effect-to-event.md."
     },
@@ -1517,8 +1517,8 @@
       "symbolCount": 0,
       "lineCount": 53,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 126,
+      "pagerank": 0.001078,
+      "communityId": 125,
       "tags": [],
       "summary": "Documentation: rerender-no-inline-components.md."
     },
@@ -1530,8 +1530,8 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 127,
+      "pagerank": 0.001078,
+      "communityId": 126,
       "tags": [],
       "summary": "Documentation: rerender-simple-expression-in-memo.md."
     },
@@ -1543,8 +1543,8 @@
       "symbolCount": 0,
       "lineCount": 46,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 128,
+      "pagerank": 0.001078,
+      "communityId": 127,
       "tags": [],
       "summary": "Documentation: rerender-split-combined-hooks.md."
     },
@@ -1556,8 +1556,8 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 129,
+      "pagerank": 0.001078,
+      "communityId": 128,
       "tags": [],
       "summary": "Documentation: rerender-transitions.md."
     },
@@ -1569,8 +1569,8 @@
       "symbolCount": 0,
       "lineCount": 46,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 130,
+      "pagerank": 0.001078,
+      "communityId": 129,
       "tags": [],
       "summary": "Documentation: rerender-use-deferred-value.md."
     },
@@ -1582,8 +1582,8 @@
       "symbolCount": 0,
       "lineCount": 43,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 131,
+      "pagerank": 0.001078,
+      "communityId": 130,
       "tags": [],
       "summary": "Documentation: rerender-use-ref-transient-values.md."
     },
@@ -1595,8 +1595,8 @@
       "symbolCount": 0,
       "lineCount": 50,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 132,
+      "pagerank": 0.001078,
+      "communityId": 131,
       "tags": [],
       "summary": "Documentation: server-after-nonblocking.md."
     },
@@ -1608,8 +1608,8 @@
       "symbolCount": 0,
       "lineCount": 66,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 133,
+      "pagerank": 0.001078,
+      "communityId": 132,
       "tags": [],
       "summary": "Documentation: server-auth-actions.md."
     },
@@ -1621,8 +1621,8 @@
       "symbolCount": 0,
       "lineCount": 33,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 134,
+      "pagerank": 0.001078,
+      "communityId": 133,
       "tags": [],
       "summary": "Documentation: server-cache-lru.md."
     },
@@ -1634,8 +1634,8 @@
       "symbolCount": 0,
       "lineCount": 55,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 135,
+      "pagerank": 0.001078,
+      "communityId": 134,
       "tags": [],
       "summary": "Documentation: server-cache-react.md."
     },
@@ -1647,8 +1647,8 @@
       "symbolCount": 0,
       "lineCount": 51,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 136,
+      "pagerank": 0.001078,
+      "communityId": 135,
       "tags": [],
       "summary": "Documentation: server-dedup-props.md."
     },
@@ -1660,8 +1660,8 @@
       "symbolCount": 0,
       "lineCount": 110,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 137,
+      "pagerank": 0.001078,
+      "communityId": 136,
       "tags": [],
       "summary": "Documentation: server-hoist-static-io.md."
     },
@@ -1673,8 +1673,8 @@
       "symbolCount": 0,
       "lineCount": 44,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 138,
+      "pagerank": 0.001078,
+      "communityId": 137,
       "tags": [],
       "summary": "Documentation: server-no-shared-module-state.md."
     },
@@ -1686,8 +1686,8 @@
       "symbolCount": 0,
       "lineCount": 38,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 139,
+      "pagerank": 0.001078,
+      "communityId": 138,
       "tags": [],
       "summary": "Documentation: server-parallel-fetching.md."
     },
@@ -1699,8 +1699,8 @@
       "symbolCount": 0,
       "lineCount": 24,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 140,
+      "pagerank": 0.001078,
+      "communityId": 139,
       "tags": [],
       "summary": "Documentation: server-parallel-nested-fetching.md."
     },
@@ -1712,8 +1712,8 @@
       "symbolCount": 0,
       "lineCount": 24,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 141,
+      "pagerank": 0.001078,
+      "communityId": 140,
       "tags": [],
       "summary": "Documentation: server-serialization.md."
     },
@@ -1725,8 +1725,8 @@
       "symbolCount": 0,
       "lineCount": 500,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 142,
+      "pagerank": 0.001078,
+      "communityId": 141,
       "tags": [],
       "summary": "Documentation: SKILL.md."
     },
@@ -1738,8 +1738,8 @@
       "symbolCount": 0,
       "lineCount": 6,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 143,
+      "pagerank": 0.001078,
+      "communityId": 142,
       "tags": [
         "config"
       ],
@@ -1753,8 +1753,8 @@
       "symbolCount": 0,
       "lineCount": 439,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 144,
+      "pagerank": 0.001078,
+      "communityId": 143,
       "tags": [],
       "summary": "Documentation: cli.md."
     },
@@ -1766,8 +1766,8 @@
       "symbolCount": 0,
       "lineCount": 157,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 145,
+      "pagerank": 0.001078,
+      "communityId": 144,
       "tags": [],
       "summary": "Documentation: customization.md."
     },
@@ -1779,8 +1779,8 @@
       "symbolCount": 0,
       "lineCount": 160,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 146,
+      "pagerank": 0.001078,
+      "communityId": 145,
       "tags": [
         "config"
       ],
@@ -1794,8 +1794,8 @@
       "symbolCount": 0,
       "lineCount": 90,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 147,
+      "pagerank": 0.001078,
+      "communityId": 146,
       "tags": [],
       "summary": "Documentation: mcp.md."
     },
@@ -1807,8 +1807,8 @@
       "symbolCount": 0,
       "lineCount": 227,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 148,
+      "pagerank": 0.001078,
+      "communityId": 147,
       "tags": [],
       "summary": "Documentation: registry.md."
     },
@@ -1820,8 +1820,8 @@
       "symbolCount": 0,
       "lineCount": 181,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 149,
+      "pagerank": 0.001078,
+      "communityId": 148,
       "tags": [],
       "summary": "Documentation: base-vs-radix.md."
     },
@@ -1833,8 +1833,8 @@
       "symbolCount": 0,
       "lineCount": 206,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 150,
+      "pagerank": 0.001078,
+      "communityId": 149,
       "tags": [],
       "summary": "Documentation: chat.md."
     },
@@ -1846,8 +1846,8 @@
       "symbolCount": 0,
       "lineCount": 127,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 151,
+      "pagerank": 0.001078,
+      "communityId": 150,
       "tags": [],
       "summary": "Documentation: composition.md."
     },
@@ -1859,8 +1859,8 @@
       "symbolCount": 0,
       "lineCount": 126,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 152,
+      "pagerank": 0.001078,
+      "communityId": 151,
       "tags": [],
       "summary": "Documentation: forms.md."
     },
@@ -1872,8 +1872,8 @@
       "symbolCount": 0,
       "lineCount": 51,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 153,
+      "pagerank": 0.001078,
+      "communityId": 152,
       "tags": [],
       "summary": "Documentation: icons.md."
     },
@@ -1885,8 +1885,8 @@
       "symbolCount": 0,
       "lineCount": 121,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 154,
+      "pagerank": 0.001078,
+      "communityId": 153,
       "tags": [],
       "summary": "Documentation: styling.md."
     },
@@ -1898,8 +1898,8 @@
       "symbolCount": 0,
       "lineCount": 42,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 155,
+      "pagerank": 0.001078,
+      "communityId": 154,
       "tags": [],
       "summary": "Documentation: 01-card-resize.md."
     },
@@ -1911,8 +1911,8 @@
       "symbolCount": 0,
       "lineCount": 96,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 156,
+      "pagerank": 0.001078,
+      "communityId": 155,
       "tags": [],
       "summary": "Documentation: 02-number-pop-in.md."
     },
@@ -1924,8 +1924,8 @@
       "symbolCount": 0,
       "lineCount": 102,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 157,
+      "pagerank": 0.001078,
+      "communityId": 156,
       "tags": [],
       "summary": "Documentation: 03-notification-badge.md."
     },
@@ -1937,8 +1937,8 @@
       "symbolCount": 0,
       "lineCount": 79,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 158,
+      "pagerank": 0.001078,
+      "communityId": 157,
       "tags": [],
       "summary": "Documentation: 04-text-states-swap.md."
     },
@@ -1950,8 +1950,8 @@
       "symbolCount": 0,
       "lineCount": 90,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 159,
+      "pagerank": 0.001078,
+      "communityId": 158,
       "tags": [],
       "summary": "Documentation: 05-menu-dropdown.md."
     },
@@ -1963,8 +1963,8 @@
       "symbolCount": 0,
       "lineCount": 72,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 160,
+      "pagerank": 0.001078,
+      "communityId": 159,
       "tags": [],
       "summary": "Documentation: 06-modal.md."
     },
@@ -1976,8 +1976,8 @@
       "symbolCount": 0,
       "lineCount": 70,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 161,
+      "pagerank": 0.001078,
+      "communityId": 160,
       "tags": [],
       "summary": "Documentation: 07-panel-reveal.md."
     },
@@ -1989,8 +1989,8 @@
       "symbolCount": 0,
       "lineCount": 86,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 162,
+      "pagerank": 0.001078,
+      "communityId": 161,
       "tags": [],
       "summary": "Documentation: 08-page-side-by-side.md."
     },
@@ -2002,8 +2002,8 @@
       "symbolCount": 0,
       "lineCount": 62,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 163,
+      "pagerank": 0.001078,
+      "communityId": 162,
       "tags": [],
       "summary": "Documentation: 09-icon-swap.md."
     },
@@ -2015,8 +2015,8 @@
       "symbolCount": 0,
       "lineCount": 182,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 164,
+      "pagerank": 0.001078,
+      "communityId": 163,
       "tags": [],
       "summary": "Documentation: 10-success-check.md."
     },
@@ -2028,8 +2028,8 @@
       "symbolCount": 0,
       "lineCount": 189,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 165,
+      "pagerank": 0.001078,
+      "communityId": 164,
       "tags": [],
       "summary": "Documentation: 11-avatar-group-hover.md."
     },
@@ -2041,8 +2041,8 @@
       "symbolCount": 0,
       "lineCount": 218,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 166,
+      "pagerank": 0.001078,
+      "communityId": 165,
       "tags": [],
       "summary": "Documentation: 12-error-state-shake.md."
     },
@@ -2054,8 +2054,8 @@
       "symbolCount": 0,
       "lineCount": 273,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 167,
+      "pagerank": 0.001078,
+      "communityId": 166,
       "tags": [],
       "summary": "Documentation: 13-input-clear-dissolve.md."
     },
@@ -2067,8 +2067,8 @@
       "symbolCount": 0,
       "lineCount": 121,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 168,
+      "pagerank": 0.001078,
+      "communityId": 167,
       "tags": [],
       "summary": "Documentation: 14-skeleton-reveal.md."
     },
@@ -2080,8 +2080,8 @@
       "symbolCount": 0,
       "lineCount": 80,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 169,
+      "pagerank": 0.001078,
+      "communityId": 168,
       "tags": [],
       "summary": "Documentation: 15-shimmer-text.md."
     },
@@ -2093,8 +2093,8 @@
       "symbolCount": 0,
       "lineCount": 118,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 170,
+      "pagerank": 0.001078,
+      "communityId": 169,
       "tags": [],
       "summary": "Documentation: 16-tabs-sliding.md."
     },
@@ -2106,8 +2106,8 @@
       "symbolCount": 0,
       "lineCount": 158,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 171,
+      "pagerank": 0.001078,
+      "communityId": 170,
       "tags": [],
       "summary": "Documentation: 17-tooltip.md."
     },
@@ -2119,8 +2119,8 @@
       "symbolCount": 0,
       "lineCount": 90,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 172,
+      "pagerank": 0.001078,
+      "communityId": 171,
       "tags": [],
       "summary": "Documentation: 18-texts-reveal.md."
     },
@@ -2132,8 +2132,8 @@
       "symbolCount": 0,
       "lineCount": 194,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 173,
+      "pagerank": 0.001078,
+      "communityId": 172,
       "tags": [],
       "summary": "Documentation: 19-card-tilt.md."
     },
@@ -2145,8 +2145,8 @@
       "symbolCount": 0,
       "lineCount": 165,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 174,
+      "pagerank": 0.001078,
+      "communityId": 173,
       "tags": [],
       "summary": "Documentation: 20-plus-menu-morph.md."
     },
@@ -2158,8 +2158,8 @@
       "symbolCount": 0,
       "lineCount": 133,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 175,
+      "pagerank": 0.001078,
+      "communityId": 174,
       "tags": [],
       "summary": "Documentation: 21-accordion.md."
     },
@@ -2171,8 +2171,8 @@
       "symbolCount": 0,
       "lineCount": 71,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 176,
+      "pagerank": 0.001078,
+      "communityId": 175,
       "tags": [],
       "summary": "Documentation: 22-toast.md."
     },
@@ -2184,8 +2184,8 @@
       "symbolCount": 0,
       "lineCount": 110,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 177,
+      "pagerank": 0.001078,
+      "communityId": 176,
       "tags": [],
       "summary": "Documentation: 23-like-button.md."
     },
@@ -2197,8 +2197,8 @@
       "symbolCount": 0,
       "lineCount": 71,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 178,
+      "pagerank": 0.001078,
+      "communityId": 177,
       "tags": [],
       "summary": "Documentation: 24-learn-more-hover.md."
     },
@@ -2210,8 +2210,8 @@
       "symbolCount": 0,
       "lineCount": 68,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 179,
+      "pagerank": 0.001078,
+      "communityId": 178,
       "tags": [],
       "summary": "Documentation: 25-checkbox-check.md."
     },
@@ -2223,8 +2223,8 @@
       "symbolCount": 0,
       "lineCount": 81,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 180,
+      "pagerank": 0.001078,
+      "communityId": 179,
       "tags": [],
       "summary": "Documentation: 26-spinning-counter.md."
     },
@@ -2236,8 +2236,8 @@
       "symbolCount": 0,
       "lineCount": 78,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 181,
+      "pagerank": 0.001078,
+      "communityId": 180,
       "tags": [],
       "summary": "Documentation: 27-toggle.md."
     },
@@ -2249,8 +2249,8 @@
       "symbolCount": 0,
       "lineCount": 162,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 182,
+      "pagerank": 0.001078,
+      "communityId": 181,
       "tags": [],
       "summary": "Documentation: 28-thinking-states.md."
     },
@@ -2262,8 +2262,8 @@
       "symbolCount": 0,
       "lineCount": 117,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 183,
+      "pagerank": 0.001078,
+      "communityId": 182,
       "tags": [],
       "summary": "Documentation: 29-reasoning-stream.md."
     },
@@ -2275,8 +2275,8 @@
       "symbolCount": 0,
       "lineCount": 83,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 184,
+      "pagerank": 0.001078,
+      "communityId": 183,
       "tags": [],
       "summary": "Documentation: 30-streaming-text.md."
     },
@@ -2288,8 +2288,8 @@
       "symbolCount": 0,
       "lineCount": 107,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 185,
+      "pagerank": 0.001078,
+      "communityId": 184,
       "tags": [],
       "summary": "Documentation: 31-matrix-loader.md."
     },
@@ -2301,8 +2301,8 @@
       "symbolCount": 0,
       "lineCount": 196,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 186,
+      "pagerank": 0.001078,
+      "communityId": 185,
       "tags": [],
       "summary": "Documentation: 32-banner-stacking.md."
     },
@@ -2314,8 +2314,8 @@
       "symbolCount": 0,
       "lineCount": 626,
       "complexity": "complex",
-      "pagerank": 0.00108,
-      "communityId": 187,
+      "pagerank": 0.001078,
+      "communityId": 186,
       "tags": [],
       "summary": "Documentation: SKILL.md."
     },
@@ -2327,8 +2327,8 @@
       "symbolCount": 0,
       "lineCount": 322,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 188,
+      "pagerank": 0.001078,
+      "communityId": 187,
       "tags": [],
       "summary": "Documentation: SKILL.md."
     },
@@ -2340,8 +2340,8 @@
       "symbolCount": 0,
       "lineCount": 45,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 189,
+      "pagerank": 0.001078,
+      "communityId": 188,
       "tags": [],
       "summary": "Documentation: _refine-rules.md."
     },
@@ -2353,8 +2353,8 @@
       "symbolCount": 0,
       "lineCount": 30,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 190,
+      "pagerank": 0.001078,
+      "communityId": 189,
       "tags": [],
       "summary": "Documentation: SKILL.md."
     },
@@ -2366,8 +2366,8 @@
       "symbolCount": 0,
       "lineCount": 211,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 191,
+      "pagerank": 0.001078,
+      "communityId": 190,
       "tags": [],
       "summary": "Repository instructions and context for AI coding agents."
     },
@@ -2379,8 +2379,8 @@
       "symbolCount": 0,
       "lineCount": 177,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 192,
+      "pagerank": 0.001078,
+      "communityId": 191,
       "tags": [],
       "summary": "Documentation: impeccable-asset-producer.md."
     },
@@ -2392,8 +2392,8 @@
       "symbolCount": 0,
       "lineCount": 78,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 193,
+      "pagerank": 0.001078,
+      "communityId": 192,
       "tags": [],
       "summary": "Documentation: impeccable-documenter.md."
     },
@@ -2405,8 +2405,8 @@
       "symbolCount": 0,
       "lineCount": 380,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 194,
+      "pagerank": 0.001078,
+      "communityId": 193,
       "tags": [],
       "summary": "Documentation: impeccable-finish-reviewer.md."
     },
@@ -2418,8 +2418,8 @@
       "symbolCount": 0,
       "lineCount": 174,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 195,
+      "pagerank": 0.001078,
+      "communityId": 194,
       "tags": [],
       "summary": "Documentation: impeccable-manual-edit-applier.md."
     },
@@ -2431,8 +2431,8 @@
       "symbolCount": 0,
       "lineCount": 1,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 196,
+      "pagerank": 0.001078,
+      "communityId": 195,
       "tags": [
         "config"
       ],
@@ -2446,8 +2446,8 @@
       "symbolCount": 0,
       "lineCount": 51,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 197,
+      "pagerank": 0.001078,
+      "communityId": 196,
       "tags": [
         "config"
       ],
@@ -2461,8 +2461,8 @@
       "symbolCount": 0,
       "lineCount": 0,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 198,
+      "pagerank": 0.001078,
+      "communityId": 197,
       "tags": [
         "config"
       ],
@@ -2476,8 +2476,8 @@
       "symbolCount": 0,
       "lineCount": 42,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 199,
+      "pagerank": 0.001078,
+      "communityId": 198,
       "tags": [],
       "summary": "Documentation: 2026-09-28T07-08-44Z__web-src-app.md."
     },
@@ -2489,8 +2489,8 @@
       "symbolCount": 0,
       "lineCount": 5,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 200,
+      "pagerank": 0.001078,
+      "communityId": 199,
       "tags": [
         "config"
       ],
@@ -2504,8 +2504,8 @@
       "symbolCount": 0,
       "lineCount": 6,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 201,
+      "pagerank": 0.001078,
+      "communityId": 200,
       "tags": [
         "config"
       ],
@@ -2519,8 +2519,8 @@
       "symbolCount": 0,
       "lineCount": 5,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 202,
+      "pagerank": 0.001078,
+      "communityId": 201,
       "tags": [
         "config"
       ],
@@ -2534,8 +2534,8 @@
       "symbolCount": 0,
       "lineCount": 200,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 203,
+      "pagerank": 0.001078,
+      "communityId": 202,
       "tags": [
         "config"
       ],
@@ -2549,8 +2549,8 @@
       "symbolCount": 0,
       "lineCount": 12,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 204,
+      "pagerank": 0.001078,
+      "communityId": 203,
       "tags": [
         "config"
       ],
@@ -2564,8 +2564,8 @@
       "symbolCount": 0,
       "lineCount": 162,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 205,
+      "pagerank": 0.001078,
+      "communityId": 204,
       "tags": [
         "config"
       ],
@@ -2579,8 +2579,8 @@
       "symbolCount": 0,
       "lineCount": 92,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 206,
+      "pagerank": 0.001078,
+      "communityId": 205,
       "tags": [],
       "summary": "Documentation: timeline.md."
     },
@@ -2592,8 +2592,8 @@
       "symbolCount": 0,
       "lineCount": 444,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 207,
+      "pagerank": 0.001078,
+      "communityId": 206,
       "tags": [],
       "summary": "Documentation: AGENTS.md."
     },
@@ -2605,8 +2605,8 @@
       "symbolCount": 0,
       "lineCount": 0,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 208,
+      "pagerank": 0.001078,
+      "communityId": 207,
       "tags": [],
       "summary": "Repository instructions and context for AI coding agents."
     },
@@ -2618,8 +2618,8 @@
       "symbolCount": 0,
       "lineCount": 1048,
       "complexity": "complex",
-      "pagerank": 0.00108,
-      "communityId": 209,
+      "pagerank": 0.001078,
+      "communityId": 208,
       "tags": [],
       "summary": "Documentation: DESIGN.md."
     },
@@ -2631,8 +2631,8 @@
       "symbolCount": 0,
       "lineCount": 184,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 210,
+      "pagerank": 0.001078,
+      "communityId": 209,
       "tags": [],
       "summary": "Documentation: PRODUCT.md."
     },
@@ -2644,8 +2644,8 @@
       "symbolCount": 0,
       "lineCount": 47,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 211,
+      "pagerank": 0.001078,
+      "communityId": 210,
       "tags": [],
       "summary": "Project overview and entry point for new readers."
     },
@@ -2657,8 +2657,8 @@
       "symbolCount": 0,
       "lineCount": 251,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 212,
+      "pagerank": 0.001078,
+      "communityId": 211,
       "tags": [],
       "summary": "Documentation: agent-tooling.md."
     },
@@ -2670,8 +2670,8 @@
       "symbolCount": 0,
       "lineCount": 131,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 213,
+      "pagerank": 0.001078,
+      "communityId": 212,
       "tags": [],
       "summary": "Documentation: design-system.md."
     },
@@ -2683,8 +2683,8 @@
       "symbolCount": 0,
       "lineCount": 199,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 214,
+      "pagerank": 0.001078,
+      "communityId": 213,
       "tags": [],
       "summary": "Documentation: FEEDBACK-V1.md."
     },
@@ -2696,8 +2696,8 @@
       "symbolCount": 0,
       "lineCount": 45,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 215,
+      "pagerank": 0.001078,
+      "communityId": 214,
       "tags": [],
       "summary": "Documentation: MAIPACE.md."
     },
@@ -2709,8 +2709,8 @@
       "symbolCount": 0,
       "lineCount": 106,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 216,
+      "pagerank": 0.001078,
+      "communityId": 215,
       "tags": [],
       "summary": "Documentation: PROMPT-phien-moi.md."
     },
@@ -2722,8 +2722,8 @@
       "symbolCount": 0,
       "lineCount": 195,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 217,
+      "pagerank": 0.001078,
+      "communityId": 216,
       "tags": [],
       "summary": "Documentation: SPEC-02.md."
     },
@@ -2735,8 +2735,8 @@
       "symbolCount": 0,
       "lineCount": 216,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 218,
+      "pagerank": 0.001078,
+      "communityId": 217,
       "tags": [],
       "summary": "Documentation: SPEC-04.md."
     },
@@ -2748,8 +2748,8 @@
       "symbolCount": 0,
       "lineCount": 95,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 219,
+      "pagerank": 0.001078,
+      "communityId": 218,
       "tags": [],
       "summary": "Documentation: SPEC-05.md."
     },
@@ -2761,8 +2761,8 @@
       "symbolCount": 0,
       "lineCount": 116,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 220,
+      "pagerank": 0.001078,
+      "communityId": 219,
       "tags": [],
       "summary": "Documentation: SPEC-06.md."
     },
@@ -2774,8 +2774,8 @@
       "symbolCount": 0,
       "lineCount": 122,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 221,
+      "pagerank": 0.001078,
+      "communityId": 220,
       "tags": [],
       "summary": "Documentation: SPEC-07.md."
     },
@@ -2787,8 +2787,8 @@
       "symbolCount": 0,
       "lineCount": 148,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 222,
+      "pagerank": 0.001078,
+      "communityId": 221,
       "tags": [],
       "summary": "Documentation: SPEC-08.md."
     },
@@ -2800,8 +2800,8 @@
       "symbolCount": 0,
       "lineCount": 122,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 223,
+      "pagerank": 0.001078,
+      "communityId": 222,
       "tags": [],
       "summary": "Documentation: SPEC-09.md."
     },
@@ -2813,8 +2813,8 @@
       "symbolCount": 0,
       "lineCount": 104,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 224,
+      "pagerank": 0.001078,
+      "communityId": 223,
       "tags": [],
       "summary": "Documentation: SPEC-10.md."
     },
@@ -2826,8 +2826,8 @@
       "symbolCount": 0,
       "lineCount": 172,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 225,
+      "pagerank": 0.001078,
+      "communityId": 224,
       "tags": [],
       "summary": "Documentation: SPEC-12.md."
     },
@@ -2839,8 +2839,8 @@
       "symbolCount": 0,
       "lineCount": 180,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 226,
+      "pagerank": 0.001078,
+      "communityId": 225,
       "tags": [],
       "summary": "Documentation: SPEC-13.md."
     },
@@ -2852,8 +2852,8 @@
       "symbolCount": 0,
       "lineCount": 43,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 227,
+      "pagerank": 0.001078,
+      "communityId": 226,
       "tags": [],
       "summary": "Documentation: SPEC-14.md."
     },
@@ -2865,8 +2865,8 @@
       "symbolCount": 0,
       "lineCount": 125,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 228,
+      "pagerank": 0.001078,
+      "communityId": 227,
       "tags": [],
       "summary": "Documentation: SPEC-15.md."
     },
@@ -2878,8 +2878,8 @@
       "symbolCount": 0,
       "lineCount": 316,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 229,
+      "pagerank": 0.001078,
+      "communityId": 228,
       "tags": [],
       "summary": "Documentation: SPEC-16.md."
     },
@@ -2891,8 +2891,8 @@
       "symbolCount": 0,
       "lineCount": 221,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 230,
+      "pagerank": 0.001078,
+      "communityId": 229,
       "tags": [],
       "summary": "Documentation: SPEC-17.md."
     },
@@ -2902,10 +2902,10 @@
       "filePath": "docs/handoff/SPEC-18.md",
       "language": "markdown",
       "symbolCount": 0,
-      "lineCount": 506,
+      "lineCount": 572,
       "complexity": "complex",
-      "pagerank": 0.00108,
-      "communityId": 231,
+      "pagerank": 0.001078,
+      "communityId": 230,
       "tags": [],
       "summary": "Documentation: SPEC-18.md."
     },
@@ -2917,8 +2917,8 @@
       "symbolCount": 0,
       "lineCount": 200,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 232,
+      "pagerank": 0.001078,
+      "communityId": 231,
       "tags": [],
       "summary": "Documentation: SPEC-19.md."
     },
@@ -2928,10 +2928,10 @@
       "filePath": "docs/handoff/SPEC-20.md",
       "language": "markdown",
       "symbolCount": 0,
-      "lineCount": 388,
+      "lineCount": 412,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 233,
+      "pagerank": 0.001078,
+      "communityId": 232,
       "tags": [],
       "summary": "Documentation: SPEC-20.md."
     },
@@ -2943,8 +2943,8 @@
       "symbolCount": 0,
       "lineCount": 112,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 234,
+      "pagerank": 0.001078,
+      "communityId": 233,
       "tags": [],
       "summary": "Documentation: SPEC-VOCAB-VERB-FORMS.md."
     },
@@ -2956,8 +2956,8 @@
       "symbolCount": 0,
       "lineCount": 387,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 235,
+      "pagerank": 0.001078,
+      "communityId": 234,
       "tags": [],
       "summary": "Documentation: UX-REDESIGN-ACCEPTANCE.md."
     },
@@ -2969,8 +2969,8 @@
       "symbolCount": 0,
       "lineCount": 122,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 236,
+      "pagerank": 0.001078,
+      "communityId": 235,
       "tags": [],
       "summary": "Documentation: UX-REDESIGN-PLAN.md."
     },
@@ -2982,8 +2982,8 @@
       "symbolCount": 0,
       "lineCount": 219,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 237,
+      "pagerank": 0.001078,
+      "communityId": 236,
       "tags": [],
       "summary": "Documentation: n5-data-editorial-guide.md."
     },
@@ -2995,8 +2995,8 @@
       "symbolCount": 0,
       "lineCount": 147,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 238,
+      "pagerank": 0.001078,
+      "communityId": 237,
       "tags": [],
       "summary": "Documentation: n5-manifest.md."
     },
@@ -3008,8 +3008,8 @@
       "symbolCount": 0,
       "lineCount": 290,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 239,
+      "pagerank": 0.001078,
+      "communityId": 238,
       "tags": [],
       "summary": "Documentation: 2026-09-27-ux-redesign.md."
     },
@@ -3021,8 +3021,8 @@
       "symbolCount": 0,
       "lineCount": 474,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 240,
+      "pagerank": 0.001078,
+      "communityId": 239,
       "tags": [],
       "summary": "Documentation: motion-mobile.md."
     },
@@ -3034,8 +3034,8 @@
       "symbolCount": 0,
       "lineCount": 473,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 241,
+      "pagerank": 0.001078,
+      "communityId": 240,
       "tags": [],
       "summary": "Documentation: project-brief-noken.md."
     },
@@ -3047,8 +3047,8 @@
       "symbolCount": 0,
       "lineCount": 889,
       "complexity": "complex",
-      "pagerank": 0.00108,
-      "communityId": 242,
+      "pagerank": 0.001078,
+      "communityId": 241,
       "tags": [],
       "summary": "Documentation: project-design-spec.md."
     },
@@ -3060,8 +3060,8 @@
       "symbolCount": 0,
       "lineCount": 154,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 243,
+      "pagerank": 0.001078,
+      "communityId": 242,
       "tags": [],
       "summary": "Project overview and entry point for new readers."
     },
@@ -3073,8 +3073,8 @@
       "symbolCount": 0,
       "lineCount": 251,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 244,
+      "pagerank": 0.001078,
+      "communityId": 243,
       "tags": [],
       "summary": "Documentation: duolingo.md."
     },
@@ -3086,8 +3086,8 @@
       "symbolCount": 0,
       "lineCount": 189,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 245,
+      "pagerank": 0.001078,
+      "communityId": 244,
       "tags": [],
       "summary": "Documentation: lingodeer.md."
     },
@@ -3099,10 +3099,23 @@
       "symbolCount": 0,
       "lineCount": 192,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 246,
+      "pagerank": 0.001078,
+      "communityId": 245,
       "tags": [],
       "summary": "Documentation: renshuu-wanikani-bunpro.md."
+    },
+    {
+      "id": "file:docs/research/ux-mobile-2026-10/2026-10-01-playwright-mobile-study.md",
+      "type": "document",
+      "filePath": "docs/research/ux-mobile-2026-10/2026-10-01-playwright-mobile-study.md",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 403,
+      "complexity": "moderate",
+      "pagerank": 0.001078,
+      "communityId": 246,
+      "tags": [],
+      "summary": "Documentation: 2026-10-01-playwright-mobile-study.md."
     },
     {
       "id": "file:docs/research/ux-redesign/2026-09-27-mobile-learning-flows.md",
@@ -3112,7 +3125,7 @@
       "symbolCount": 0,
       "lineCount": 305,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 247,
       "tags": [],
       "summary": "Documentation: 2026-09-27-mobile-learning-flows.md."
@@ -3123,9 +3136,9 @@
       "filePath": "docs/specs/README.md",
       "language": "markdown",
       "symbolCount": 0,
-      "lineCount": 440,
+      "lineCount": 447,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 248,
       "tags": [],
       "summary": "Project overview and entry point for new readers."
@@ -3138,7 +3151,7 @@
       "symbolCount": 0,
       "lineCount": 461,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 249,
       "tags": [],
       "summary": "Documentation: SPEC-01-du-lieu-va-sinh-cau-hoi.md."
@@ -3151,7 +3164,7 @@
       "symbolCount": 0,
       "lineCount": 1329,
       "complexity": "complex",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 250,
       "tags": [],
       "summary": "Documentation: SPEC-02-shell-dieu-huong.md."
@@ -3164,7 +3177,7 @@
       "symbolCount": 0,
       "lineCount": 364,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 251,
       "tags": [],
       "summary": "Documentation: SPEC-03-man-hoc.md."
@@ -3177,7 +3190,7 @@
       "symbolCount": 0,
       "lineCount": 626,
       "complexity": "complex",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 252,
       "tags": [],
       "summary": "Documentation: SPEC-04-luyen-tap.md."
@@ -3190,7 +3203,7 @@
       "symbolCount": 0,
       "lineCount": 412,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 253,
       "tags": [],
       "summary": "Documentation: SPEC-05-on-tap.md."
@@ -3203,7 +3216,7 @@
       "symbolCount": 0,
       "lineCount": 500,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 254,
       "tags": [],
       "summary": "Documentation: SPEC-06-cai-dat-va-du-lieu.md."
@@ -3216,7 +3229,7 @@
       "symbolCount": 0,
       "lineCount": 458,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 255,
       "tags": [],
       "summary": "Documentation: SPEC-07-thong-ke.md."
@@ -3229,7 +3242,7 @@
       "symbolCount": 0,
       "lineCount": 657,
       "complexity": "complex",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 256,
       "tags": [],
       "summary": "Documentation: SPEC-08-dong-bo-supabase.md."
@@ -3242,7 +3255,7 @@
       "symbolCount": 0,
       "lineCount": 514,
       "complexity": "complex",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 257,
       "tags": [],
       "summary": "Documentation: SPEC-09-audio-zip.md."
@@ -3255,7 +3268,7 @@
       "symbolCount": 0,
       "lineCount": 422,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 258,
       "tags": [],
       "summary": "Documentation: SPEC-10-shadowing-player.md."
@@ -3268,7 +3281,7 @@
       "symbolCount": 0,
       "lineCount": 430,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 259,
       "tags": [],
       "summary": "Documentation: SPEC-12-tra-cuu.md."
@@ -3281,7 +3294,7 @@
       "symbolCount": 0,
       "lineCount": 430,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 260,
       "tags": [],
       "summary": "Documentation: SPEC-13-tim-kiem.md."
@@ -3294,7 +3307,7 @@
       "symbolCount": 0,
       "lineCount": 203,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 261,
       "tags": [],
       "summary": "Documentation: SPEC-14-pwa-cai-dat.md."
@@ -3307,7 +3320,7 @@
       "symbolCount": 0,
       "lineCount": 269,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 262,
       "tags": [],
       "summary": "Documentation: SPEC-15-hoc-tu-vung-chu-dong.md."
@@ -3320,7 +3333,7 @@
       "symbolCount": 0,
       "lineCount": 171,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 263,
       "tags": [],
       "summary": "Documentation: SPEC-16-dieu-huong-profile.md."
@@ -3333,7 +3346,7 @@
       "symbolCount": 0,
       "lineCount": 122,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 264,
       "tags": [],
       "summary": "Documentation: SPEC-17-tra-cuu-tim-kiem.md."
@@ -3344,9 +3357,9 @@
       "filePath": "docs/specs/SPEC-18-bang-tin-va-hoc.md",
       "language": "markdown",
       "symbolCount": 0,
-      "lineCount": 155,
+      "lineCount": 174,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 265,
       "tags": [],
       "summary": "Documentation: SPEC-18-bang-tin-va-hoc.md."
@@ -3359,7 +3372,7 @@
       "symbolCount": 0,
       "lineCount": 128,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 266,
       "tags": [],
       "summary": "Documentation: SPEC-19-luyen-tap-nhanh.md."
@@ -3372,7 +3385,7 @@
       "symbolCount": 0,
       "lineCount": 113,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 267,
       "tags": [],
       "summary": "Documentation: SPEC-20-on-tap-tiep-noi.md."
@@ -3385,7 +3398,7 @@
       "symbolCount": 0,
       "lineCount": 175,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 268,
       "tags": [],
       "summary": "Documentation: 2026-09-16-n5-vietnamese-dataset.md."
@@ -3398,7 +3411,7 @@
       "symbolCount": 0,
       "lineCount": 792,
       "complexity": "complex",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 269,
       "tags": [],
       "summary": "Documentation: 2026-09-17-spec-01-questions-and-filter.md."
@@ -3411,7 +3424,7 @@
       "symbolCount": 0,
       "lineCount": 887,
       "complexity": "complex",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 270,
       "tags": [],
       "summary": "Documentation: 2026-09-17-spec-02-shell-and-dashboard.md."
@@ -3424,7 +3437,7 @@
       "symbolCount": 0,
       "lineCount": 620,
       "complexity": "complex",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 271,
       "tags": [],
       "summary": "Documentation: 2026-09-17-spec-03-man-hoc.md."
@@ -3437,7 +3450,7 @@
       "symbolCount": 0,
       "lineCount": 1494,
       "complexity": "complex",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 272,
       "tags": [],
       "summary": "Documentation: 2026-09-17-spec-04-luyen-tap.md."
@@ -3450,7 +3463,7 @@
       "symbolCount": 0,
       "lineCount": 1622,
       "complexity": "complex",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 273,
       "tags": [],
       "summary": "Documentation: 2026-09-17-spec-05-on-tap.md."
@@ -3463,7 +3476,7 @@
       "symbolCount": 0,
       "lineCount": 206,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 274,
       "tags": [],
       "summary": "Documentation: 2026-09-18-stitch-washi-redesign.md."
@@ -3476,7 +3489,7 @@
       "symbolCount": 0,
       "lineCount": 227,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 275,
       "tags": [],
       "summary": "Documentation: 2026-09-23-spec-02-shell-dashboard.md."
@@ -3489,7 +3502,7 @@
       "symbolCount": 0,
       "lineCount": 328,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 276,
       "tags": [],
       "summary": "Documentation: 2026-09-23-spec-09-audio-zip.md."
@@ -3502,7 +3515,7 @@
       "symbolCount": 0,
       "lineCount": 209,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 277,
       "tags": [],
       "summary": "Documentation: 2026-09-23-spec-10-shadowing-player.md."
@@ -3515,7 +3528,7 @@
       "symbolCount": 0,
       "lineCount": 373,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 278,
       "tags": [],
       "summary": "Documentation: 2026-09-23-spec-12-tra-cuu.md."
@@ -3528,7 +3541,7 @@
       "symbolCount": 0,
       "lineCount": 223,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 279,
       "tags": [],
       "summary": "Documentation: 2026-09-23-spec-13-tim-kiem.md."
@@ -3541,7 +3554,7 @@
       "symbolCount": 0,
       "lineCount": 542,
       "complexity": "complex",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 280,
       "tags": [],
       "summary": "Documentation: 2026-09-25-dictionary-form-verbs.md."
@@ -3554,7 +3567,7 @@
       "symbolCount": 0,
       "lineCount": 234,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 281,
       "tags": [],
       "summary": "Documentation: 2026-09-16-n5-vietnamese-dataset-design.md."
@@ -3567,7 +3580,7 @@
       "symbolCount": 0,
       "lineCount": 294,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 282,
       "tags": [],
       "summary": "Documentation: 2026-09-18-stitch-washi-redesign.md."
@@ -3580,7 +3593,7 @@
       "symbolCount": 0,
       "lineCount": 148,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 283,
       "tags": [],
       "summary": "Documentation: 2026-09-23-spec-02-shell-dashboard-design.md."
@@ -3593,7 +3606,7 @@
       "symbolCount": 0,
       "lineCount": 246,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 284,
       "tags": [],
       "summary": "Documentation: 2026-09-23-spec-09-audio-zip-design.md."
@@ -3606,7 +3619,7 @@
       "symbolCount": 0,
       "lineCount": 189,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 285,
       "tags": [],
       "summary": "Documentation: 2026-09-23-spec-10-shadowing-player-design.md."
@@ -3619,7 +3632,7 @@
       "symbolCount": 0,
       "lineCount": 215,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 286,
       "tags": [],
       "summary": "Documentation: 2026-09-23-spec-12-tra-cuu-design.md."
@@ -3632,7 +3645,7 @@
       "symbolCount": 0,
       "lineCount": 170,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 287,
       "tags": [],
       "summary": "Documentation: 2026-09-23-spec-13-tim-kiem-design.md."
@@ -3645,7 +3658,7 @@
       "symbolCount": 0,
       "lineCount": 282,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 288,
       "tags": [],
       "summary": "Documentation: 2026-09-25-dictionary-form-verbs-design.md."
@@ -3658,7 +3671,7 @@
       "symbolCount": 0,
       "lineCount": 46,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 289,
       "tags": [],
       "summary": "Documentation: GALLERY.md."
@@ -3671,7 +3684,7 @@
       "symbolCount": 0,
       "lineCount": 452,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 290,
       "tags": [],
       "summary": "Project overview and entry point for new readers."
@@ -3684,7 +3697,7 @@
       "symbolCount": 12,
       "lineCount": 479,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 6,
       "tags": [],
       "summary": "Docs & Tooling module capture-all-screens defining CDPClient, constructor, send."
@@ -3697,8 +3710,8 @@
       "symbolCount": 9,
       "lineCount": 158,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 11,
+      "pagerank": 0.001078,
+      "communityId": 10,
       "tags": [],
       "summary": "Docs & Tooling module enrich-vocab-verbs defining splitVerbAndContext."
     },
@@ -3710,7 +3723,7 @@
       "symbolCount": 7,
       "lineCount": 29,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 6,
       "tags": [],
       "summary": "Docs & Tooling module generate-kanji-index (7 symbols)."
@@ -3723,7 +3736,7 @@
       "symbolCount": 7,
       "lineCount": 106,
       "complexity": "moderate",
-      "pagerank": 0.001233,
+      "pagerank": 0.001231,
       "communityId": 6,
       "tags": [],
       "summary": "Docs & Tooling module setup defining pnpmCommand, mcpServer, tomlServer."
@@ -3736,7 +3749,7 @@
       "symbolCount": 0,
       "lineCount": 74,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 6,
       "tags": [
         "test"
@@ -3751,7 +3764,7 @@
       "symbolCount": 0,
       "lineCount": 91,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 291,
       "tags": [
         "config"
@@ -3766,7 +3779,7 @@
       "symbolCount": 2,
       "lineCount": 208,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 292,
       "tags": [
         "data"
@@ -3781,7 +3794,7 @@
       "symbolCount": 0,
       "lineCount": 317,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 293,
       "tags": [],
       "summary": "Documentation: fb_v1.md."
@@ -3794,7 +3807,7 @@
       "symbolCount": 0,
       "lineCount": 16,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 294,
       "tags": [],
       "summary": "Documentation: AGENTS.md."
@@ -3807,7 +3820,7 @@
       "symbolCount": 0,
       "lineCount": 0,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 295,
       "tags": [],
       "summary": "Repository instructions and context for AI coding agents."
@@ -3820,7 +3833,7 @@
       "symbolCount": 0,
       "lineCount": 36,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 296,
       "tags": [],
       "summary": "Project overview and entry point for new readers."
@@ -3833,7 +3846,7 @@
       "symbolCount": 0,
       "lineCount": 13,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 297,
       "tags": [
         "config"
@@ -3848,8 +3861,8 @@
       "symbolCount": 1,
       "lineCount": 12,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 10,
+      "pagerank": 0.001078,
+      "communityId": 9,
       "tags": [],
       "summary": "Application module eslint.config (1 symbols)."
     },
@@ -3861,8 +3874,8 @@
       "symbolCount": 1,
       "lineCount": 15,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 3,
+      "pagerank": 0.001078,
+      "communityId": 5,
       "tags": [],
       "summary": "Application module next.config (1 symbols)."
     },
@@ -3874,7 +3887,7 @@
       "symbolCount": 0,
       "lineCount": 33,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 298,
       "tags": [
         "config"
@@ -3889,7 +3902,7 @@
       "symbolCount": 0,
       "lineCount": 1,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 299,
       "tags": [
         "config"
@@ -3904,7 +3917,7 @@
       "symbolCount": 1,
       "lineCount": 2,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 300,
       "tags": [],
       "summary": "Application module postcss.config (1 symbols)."
@@ -3917,7 +3930,7 @@
       "symbolCount": 13,
       "lineCount": 208,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 6,
       "tags": [],
       "summary": "Docs & Tooling module build-n5-data defining shouldRun, walk."
@@ -3930,7 +3943,7 @@
       "symbolCount": 1,
       "lineCount": 417,
       "complexity": "moderate",
-      "pagerank": 0.001194,
+      "pagerank": 0.001193,
       "communityId": 6,
       "tags": [],
       "summary": "Docs & Tooling module n5-kanji-dict (1 symbols)."
@@ -3943,7 +3956,7 @@
       "symbolCount": 1,
       "lineCount": 2123,
       "complexity": "complex",
-      "pagerank": 0.001194,
+      "pagerank": 0.001193,
       "communityId": 6,
       "tags": [],
       "summary": "Docs & Tooling module n5-kanji-examples-dict (1 symbols)."
@@ -3956,7 +3969,7 @@
       "symbolCount": 2,
       "lineCount": 2457,
       "complexity": "complex",
-      "pagerank": 0.001194,
+      "pagerank": 0.001193,
       "communityId": 6,
       "tags": [],
       "summary": "Docs & Tooling module n5-lessons-dict (2 symbols)."
@@ -3969,7 +3982,7 @@
       "symbolCount": 1,
       "lineCount": 720,
       "complexity": "complex",
-      "pagerank": 0.001194,
+      "pagerank": 0.001193,
       "communityId": 6,
       "tags": [],
       "summary": "Docs & Tooling module n5-reference-dict (1 symbols)."
@@ -3982,7 +3995,7 @@
       "symbolCount": 1,
       "lineCount": 152,
       "complexity": "moderate",
-      "pagerank": 0.001194,
+      "pagerank": 0.001193,
       "communityId": 6,
       "tags": [],
       "summary": "Docs & Tooling module n5-verbs-dict (1 symbols)."
@@ -3995,7 +4008,7 @@
       "symbolCount": 1,
       "lineCount": 1358,
       "complexity": "complex",
-      "pagerank": 0.001194,
+      "pagerank": 0.001193,
       "communityId": 6,
       "tags": [],
       "summary": "Docs & Tooling module n5-vocab-dict (1 symbols)."
@@ -4008,7 +4021,7 @@
       "symbolCount": 5,
       "lineCount": 338,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 6,
       "tags": [],
       "summary": "Docs & Tooling module validate-n5-data defining getFilesRecursively."
@@ -4021,8 +4034,8 @@
       "symbolCount": 1,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 9,
+      "pagerank": 0.001078,
+      "communityId": 7,
       "tags": [],
       "summary": "Application module route defining GET."
     },
@@ -4034,8 +4047,8 @@
       "symbolCount": 1,
       "lineCount": 67,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 3,
+      "pagerank": 0.001078,
+      "communityId": 5,
       "tags": [],
       "summary": "Application module layout defining CaNhanLayout."
     },
@@ -4047,8 +4060,8 @@
       "symbolCount": 4,
       "lineCount": 608,
       "complexity": "complex",
-      "pagerank": 0.00108,
-      "communityId": 2,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [],
       "summary": "Application module page defining AuthUser, GoogleIcon, CaNhanPage."
     },
@@ -4060,8 +4073,8 @@
       "symbolCount": 2,
       "lineCount": 10,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 2,
+      "pagerank": 0.001078,
+      "communityId": 5,
       "tags": [],
       "summary": "Application module page defining CaNhanThongKePage."
     },
@@ -4073,8 +4086,8 @@
       "symbolCount": 2,
       "lineCount": 514,
       "complexity": "complex",
-      "pagerank": 0.00108,
-      "communityId": 2,
+      "pagerank": 0.001078,
+      "communityId": 8,
       "tags": [],
       "summary": "Application module page defining AudioPackageGuide, AudioSettingsPage."
     },
@@ -4086,8 +4099,8 @@
       "symbolCount": 4,
       "lineCount": 1165,
       "complexity": "complex",
-      "pagerank": 0.00108,
-      "communityId": 2,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [],
       "summary": "Application module page defining AuthUser, GoogleIcon, NumberStepper."
     },
@@ -4099,8 +4112,8 @@
       "symbolCount": 2,
       "lineCount": 101,
       "complexity": "moderate",
-      "pagerank": 0.001145,
-      "communityId": 3,
+      "pagerank": 0.001144,
+      "communityId": 1,
       "tags": [],
       "summary": "Application module LessonActionHub defining LessonActionHubProps, LessonActionHub."
     },
@@ -4112,8 +4125,8 @@
       "symbolCount": 1,
       "lineCount": 14,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 3,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [],
       "summary": "Application module not-found defining LessonNotFound."
     },
@@ -4125,8 +4138,8 @@
       "symbolCount": 3,
       "lineCount": 348,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 3,
+      "pagerank": 0.001078,
+      "communityId": 5,
       "tags": [],
       "summary": "Application module page defining generateStaticParams, LessonDetailPage."
     },
@@ -4138,8 +4151,8 @@
       "symbolCount": 2,
       "lineCount": 23,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 7,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [],
       "summary": "Application module page defining generateStaticParams, LessonVocabularyPage."
     },
@@ -4151,7 +4164,7 @@
       "symbolCount": 1,
       "lineCount": 30,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 0,
       "tags": [],
       "summary": "Application module page defining HocPage."
@@ -4164,8 +4177,8 @@
       "symbolCount": 4,
       "lineCount": 160,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 3,
+      "pagerank": 0.001078,
+      "communityId": 2,
       "tags": [],
       "summary": "Application module page defining generateStaticParams, generateMetadata, RenderCellContent."
     },
@@ -4177,8 +4190,8 @@
       "symbolCount": 2,
       "lineCount": 87,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 3,
+      "pagerank": 0.001078,
+      "communityId": 5,
       "tags": [],
       "summary": "Application module page defining ReferenceTablesIndexPage."
     },
@@ -4190,8 +4203,8 @@
       "symbolCount": 2,
       "lineCount": 43,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 3,
+      "pagerank": 0.001078,
+      "communityId": 2,
       "tags": [],
       "summary": "Application module page defining VerbsLookupPage."
     },
@@ -4203,8 +4216,8 @@
       "symbolCount": 1,
       "lineCount": 190,
       "complexity": "moderate",
-      "pagerank": 0.001233,
-      "communityId": 3,
+      "pagerank": 0.001231,
+      "communityId": 5,
       "tags": [],
       "summary": "Application module KanaChart defining KanaChart."
     },
@@ -4216,8 +4229,8 @@
       "symbolCount": 2,
       "lineCount": 72,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 3,
+      "pagerank": 0.001078,
+      "communityId": 5,
       "tags": [],
       "summary": "Application module page defining KanaPage."
     },
@@ -4229,8 +4242,8 @@
       "symbolCount": 3,
       "lineCount": 298,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 3,
+      "pagerank": 0.001078,
+      "communityId": 5,
       "tags": [],
       "summary": "Application module page defining generateStaticParams, generateMetadata, KanjiDetailPage."
     },
@@ -4242,8 +4255,8 @@
       "symbolCount": 2,
       "lineCount": 52,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 3,
+      "pagerank": 0.001078,
+      "communityId": 5,
       "tags": [],
       "summary": "Application module page defining KanjiLookupPage."
     },
@@ -4255,8 +4268,8 @@
       "symbolCount": 2,
       "lineCount": 116,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 3,
+      "pagerank": 0.001078,
+      "communityId": 5,
       "tags": [],
       "summary": "Application module page defining TraCuuHubPage."
     },
@@ -4268,8 +4281,8 @@
       "symbolCount": 3,
       "lineCount": 42,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 2,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [],
       "summary": "Application module layout defining RootLayout."
     },
@@ -4281,7 +4294,7 @@
       "symbolCount": 4,
       "lineCount": 606,
       "complexity": "complex",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 1,
       "tags": [],
       "summary": "Application module page defining PracticeConfigContent, PracticeConfigPage."
@@ -4294,8 +4307,8 @@
       "symbolCount": 5,
       "lineCount": 141,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 1,
+      "pagerank": 0.001078,
+      "communityId": 2,
       "tags": [],
       "summary": "Application module page defining PracticeSessionLoading, ResumedSession, NewSession."
     },
@@ -4307,8 +4320,8 @@
       "symbolCount": 1,
       "lineCount": 20,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 3,
+      "pagerank": 0.001078,
+      "communityId": 5,
       "tags": [],
       "summary": "Application module manifest defining manifest."
     },
@@ -4320,7 +4333,7 @@
       "symbolCount": 6,
       "lineCount": 261,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 1,
       "tags": [],
       "summary": "Application module page defining dateText, getAnchor, WeakPointsPage."
@@ -4333,7 +4346,7 @@
       "symbolCount": 7,
       "lineCount": 605,
       "complexity": "complex",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 1,
       "tags": [],
       "summary": "Application module page defining PreviewRow, ReviewTodayPage."
@@ -4346,8 +4359,8 @@
       "symbolCount": 2,
       "lineCount": 164,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 1,
+      "pagerank": 0.001078,
+      "communityId": 2,
       "tags": [],
       "summary": "Application module page defining ReviewSessionPage."
     },
@@ -4359,7 +4372,7 @@
       "symbolCount": 1,
       "lineCount": 6,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 0,
       "tags": [],
       "summary": "Application module page defining DashboardPage."
@@ -4372,8 +4385,8 @@
       "symbolCount": 2,
       "lineCount": 17,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 1,
+      "pagerank": 0.001078,
+      "communityId": 2,
       "tags": [],
       "summary": "Application module page defining ThongKePage, HeatmapCell."
     },
@@ -4385,8 +4398,8 @@
       "symbolCount": 6,
       "lineCount": 443,
       "complexity": "moderate",
-      "pagerank": 0.001263,
-      "communityId": 2,
+      "pagerank": 0.001262,
+      "communityId": 1,
       "tags": [],
       "summary": "UI module AppNav defining NavItem, AppNav."
     },
@@ -4398,8 +4411,8 @@
       "symbolCount": 2,
       "lineCount": 136,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 4,
+      "pagerank": 0.001078,
+      "communityId": 3,
       "tags": [],
       "summary": "UI module DailyKanji defining DailyKanji."
     },
@@ -4409,12 +4422,13 @@
       "filePath": "web/src/components/DashboardContent.tsx",
       "language": "typescript",
       "symbolCount": 1,
-      "lineCount": 492,
-      "complexity": "moderate",
-      "pagerank": 0.001538,
-      "communityId": 2,
+      "lineCount": 505,
+      "complexity": "complex",
+      "pagerank": 0.001537,
+      "communityId": 1,
       "tags": [],
-      "summary": "UI module DashboardContent defining DashboardContent."
+      "summary": "UI module DashboardContent defining DashboardContent.",
+      "primaryOwner": "TruongTNQ"
     },
     {
       "id": "file:web/src/components/Furigana.tsx",
@@ -4424,8 +4438,8 @@
       "symbolCount": 2,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.002592,
-      "communityId": 1,
+      "pagerank": 0.002571,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module Furigana defining FuriganaProps, Furigana."
     },
@@ -4437,8 +4451,8 @@
       "symbolCount": 4,
       "lineCount": 62,
       "complexity": "moderate",
-      "pagerank": 0.001125,
-      "communityId": 2,
+      "pagerank": 0.001124,
+      "communityId": 5,
       "tags": [],
       "summary": "UI module InstallAppCard defining noop, isStandalone, isIOS."
     },
@@ -4450,8 +4464,8 @@
       "symbolCount": 3,
       "lineCount": 509,
       "complexity": "complex",
-      "pagerank": 0.001538,
-      "communityId": 2,
+      "pagerank": 0.001537,
+      "communityId": 1,
       "tags": [],
       "summary": "UI module LessonGrid defining FilterPill, LessonGrid."
     },
@@ -4463,8 +4477,8 @@
       "symbolCount": 2,
       "lineCount": 30,
       "complexity": "simple",
-      "pagerank": 0.0013,
-      "communityId": 2,
+      "pagerank": 0.001298,
+      "communityId": 1,
       "tags": [],
       "summary": "UI module LessonProgress defining ProgressBar, LessonProgress."
     },
@@ -4476,8 +4490,8 @@
       "symbolCount": 1,
       "lineCount": 37,
       "complexity": "simple",
-      "pagerank": 0.001263,
-      "communityId": 1,
+      "pagerank": 0.001262,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module PageTransition defining PageTransition."
     },
@@ -4489,8 +4503,8 @@
       "symbolCount": 1,
       "lineCount": 44,
       "complexity": "simple",
-      "pagerank": 0.00138,
-      "communityId": 3,
+      "pagerank": 0.001378,
+      "communityId": 5,
       "tags": [],
       "summary": "UI module SpeakButton defining SpeakButton."
     },
@@ -4502,8 +4516,8 @@
       "symbolCount": 0,
       "lineCount": 33,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 2,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [
         "test"
       ],
@@ -4517,8 +4531,8 @@
       "symbolCount": 3,
       "lineCount": 109,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 2,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [],
       "summary": "UI module SyncBadge defining SyncBadgeProps, SyncBadge."
     },
@@ -4530,8 +4544,8 @@
       "symbolCount": 2,
       "lineCount": 74,
       "complexity": "simple",
-      "pagerank": 0.001143,
-      "communityId": 2,
+      "pagerank": 0.001141,
+      "communityId": 1,
       "tags": [],
       "summary": "UI module ThemeToggle defining ThemeToggleProps, ThemeToggle."
     },
@@ -4543,8 +4557,8 @@
       "symbolCount": 4,
       "lineCount": 542,
       "complexity": "complex",
-      "pagerank": 0.001145,
-      "communityId": 3,
+      "pagerank": 0.001144,
+      "communityId": 5,
       "tags": [],
       "summary": "UI module ShadowingPlayer defining ShadowingPlayerProps, ShadowingPlayer."
     },
@@ -4556,8 +4570,8 @@
       "symbolCount": 2,
       "lineCount": 328,
       "complexity": "moderate",
-      "pagerank": 0.001194,
-      "communityId": 3,
+      "pagerank": 0.001193,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module KanjiGrid defining KanjiGridProps, KanjiGrid."
     },
@@ -4569,8 +4583,8 @@
       "symbolCount": 2,
       "lineCount": 508,
       "complexity": "complex",
-      "pagerank": 0.001194,
-      "communityId": 3,
+      "pagerank": 0.001193,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module VerbTable defining VerbTableProps, VerbTable."
     },
@@ -4582,8 +4596,8 @@
       "symbolCount": 3,
       "lineCount": 69,
       "complexity": "simple",
-      "pagerank": 0.001469,
-      "communityId": 3,
+      "pagerank": 0.001467,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module AnswerOption defining AnswerOption."
     },
@@ -4595,8 +4609,8 @@
       "symbolCount": 1,
       "lineCount": 41,
       "complexity": "simple",
-      "pagerank": 0.001393,
-      "communityId": 1,
+      "pagerank": 0.001391,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module JpInput defining JpInput."
     },
@@ -4608,8 +4622,8 @@
       "symbolCount": 2,
       "lineCount": 37,
       "complexity": "simple",
-      "pagerank": 0.001205,
-      "communityId": 7,
+      "pagerank": 0.001204,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module PhraseToken defining PhraseToken."
     },
@@ -4621,8 +4635,8 @@
       "symbolCount": 1,
       "lineCount": 72,
       "complexity": "simple",
-      "pagerank": 0.001125,
-      "communityId": 1,
+      "pagerank": 0.001124,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module PracticeDraftBanner defining PracticeDraftBanner."
     },
@@ -4632,12 +4646,13 @@
       "filePath": "web/src/components/practice/PracticeRunner.tsx",
       "language": "typescript",
       "symbolCount": 2,
-      "lineCount": 613,
+      "lineCount": 586,
       "complexity": "complex",
-      "pagerank": 0.001171,
-      "communityId": 1,
+      "pagerank": 0.00117,
+      "communityId": 2,
       "tags": [],
-      "summary": "UI module PracticeRunner defining formatDuration, PracticeRunner."
+      "summary": "UI module PracticeRunner defining formatDuration, PracticeRunner.",
+      "primaryOwner": "TruongTNQ"
     },
     {
       "id": "file:web/src/components/practice/QuestionCloze.tsx",
@@ -4647,8 +4662,8 @@
       "symbolCount": 1,
       "lineCount": 57,
       "complexity": "simple",
-      "pagerank": 0.001184,
-      "communityId": 1,
+      "pagerank": 0.001183,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module QuestionCloze defining QuestionCloze."
     },
@@ -4660,8 +4675,8 @@
       "symbolCount": 1,
       "lineCount": 144,
       "complexity": "moderate",
-      "pagerank": 0.001184,
-      "communityId": 1,
+      "pagerank": 0.001183,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module QuestionListening defining QuestionListening."
     },
@@ -4673,8 +4688,8 @@
       "symbolCount": 1,
       "lineCount": 180,
       "complexity": "moderate",
-      "pagerank": 0.001132,
-      "communityId": 1,
+      "pagerank": 0.001131,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module QuestionMatching defining QuestionMatching."
     },
@@ -4686,8 +4701,8 @@
       "symbolCount": 1,
       "lineCount": 56,
       "complexity": "simple",
-      "pagerank": 0.001184,
-      "communityId": 1,
+      "pagerank": 0.001183,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module QuestionMc defining QuestionMc."
     },
@@ -4699,8 +4714,8 @@
       "symbolCount": 1,
       "lineCount": 117,
       "complexity": "moderate",
-      "pagerank": 0.001184,
-      "communityId": 1,
+      "pagerank": 0.001183,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module QuestionReorder defining QuestionReorder."
     },
@@ -4710,12 +4725,13 @@
       "filePath": "web/src/components/practice/SessionResult.tsx",
       "language": "typescript",
       "symbolCount": 2,
-      "lineCount": 226,
+      "lineCount": 228,
       "complexity": "moderate",
-      "pagerank": 0.001132,
-      "communityId": 1,
+      "pagerank": 0.001131,
+      "communityId": 2,
       "tags": [],
-      "summary": "UI module SessionResult defining formatDuration, SessionResult."
+      "summary": "UI module SessionResult defining formatDuration, SessionResult.",
+      "primaryOwner": "TruongTNQ"
     },
     {
       "id": "file:web/src/components/practice/types.ts",
@@ -4725,8 +4741,8 @@
       "symbolCount": 1,
       "lineCount": 9,
       "complexity": "simple",
-      "pagerank": 0.001908,
-      "communityId": 1,
+      "pagerank": 0.001906,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module types defining QuestionProps."
     },
@@ -4738,8 +4754,8 @@
       "symbolCount": 3,
       "lineCount": 110,
       "complexity": "moderate",
-      "pagerank": 0.001143,
-      "communityId": 3,
+      "pagerank": 0.001141,
+      "communityId": 1,
       "tags": [],
       "summary": "UI module AccountButton defining AccountButtonProps, AccountButton."
     },
@@ -4749,12 +4765,13 @@
       "filePath": "web/src/components/review/ReviewRunner.tsx",
       "language": "typescript",
       "symbolCount": 3,
-      "lineCount": 784,
+      "lineCount": 802,
       "complexity": "complex",
-      "pagerank": 0.001171,
-      "communityId": 1,
+      "pagerank": 0.00117,
+      "communityId": 2,
       "tags": [],
-      "summary": "UI module ReviewRunner defining formatDuration, ReviewRunnerProps, ReviewRunner."
+      "summary": "UI module ReviewRunner defining formatDuration, ReviewRunnerProps, ReviewRunner.",
+      "primaryOwner": "TruongTNQ"
     },
     {
       "id": "file:web/src/components/review/TargetTypeBadge.tsx",
@@ -4764,7 +4781,7 @@
       "symbolCount": 3,
       "lineCount": 31,
       "complexity": "simple",
-      "pagerank": 0.001196,
+      "pagerank": 0.001195,
       "communityId": 1,
       "tags": [],
       "summary": "UI module TargetTypeBadge defining TargetTypeBadge."
@@ -4777,8 +4794,8 @@
       "symbolCount": 5,
       "lineCount": 484,
       "complexity": "moderate",
-      "pagerank": 0.001263,
-      "communityId": 8,
+      "pagerank": 0.001262,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module SearchDialog defining SearchModalInnerProps, SearchModalInner, SearchDialog."
     },
@@ -4790,8 +4807,8 @@
       "symbolCount": 2,
       "lineCount": 72,
       "complexity": "simple",
-      "pagerank": 0.001326,
-      "communityId": 3,
+      "pagerank": 0.001325,
+      "communityId": 5,
       "tags": [],
       "summary": "UI module SearchTrigger defining SearchTriggerProps, SearchTrigger."
     },
@@ -4803,8 +4820,8 @@
       "symbolCount": 4,
       "lineCount": 901,
       "complexity": "complex",
-      "pagerank": 0.001538,
-      "communityId": 2,
+      "pagerank": 0.001537,
+      "communityId": 1,
       "tags": [],
       "summary": "UI module StatisticsContent defining StatisticsContent, HeatmapCell."
     },
@@ -4816,8 +4833,8 @@
       "symbolCount": 12,
       "lineCount": 138,
       "complexity": "moderate",
-      "pagerank": 0.001452,
-      "communityId": 1,
+      "pagerank": 0.00145,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module alert-dialog defining AlertDialog, AlertDialogTrigger, AlertDialogPortal."
     },
@@ -4829,8 +4846,8 @@
       "symbolCount": 2,
       "lineCount": 47,
       "complexity": "simple",
-      "pagerank": 0.001484,
-      "communityId": 5,
+      "pagerank": 0.001482,
+      "communityId": 4,
       "tags": [],
       "summary": "UI module badge defining Badge."
     },
@@ -4842,8 +4859,8 @@
       "symbolCount": 2,
       "lineCount": 90,
       "complexity": "simple",
-      "pagerank": 0.005334,
-      "communityId": 3,
+      "pagerank": 0.00531,
+      "communityId": 2,
       "tags": [],
       "summary": "UI module button defining Button."
     },
@@ -4855,8 +4872,8 @@
       "symbolCount": 7,
       "lineCount": 65,
       "complexity": "moderate",
-      "pagerank": 0.012488,
-      "communityId": 2,
+      "pagerank": 0.012494,
+      "communityId": 1,
       "tags": [],
       "summary": "UI module card defining Card, CardHeader, CardTitle."
     },
@@ -4868,8 +4885,8 @@
       "symbolCount": 10,
       "lineCount": 107,
       "complexity": "moderate",
-      "pagerank": 0.001125,
-      "communityId": 5,
+      "pagerank": 0.001124,
+      "communityId": 4,
       "tags": [],
       "summary": "UI module dialog defining Dialog, DialogTrigger, DialogPortal."
     },
@@ -4881,8 +4898,8 @@
       "symbolCount": 15,
       "lineCount": 226,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 5,
+      "pagerank": 0.001078,
+      "communityId": 4,
       "tags": [],
       "summary": "UI module dropdown-menu defining DropdownMenu, DropdownMenuPortal, DropdownMenuTrigger."
     },
@@ -4894,8 +4911,8 @@
       "symbolCount": 1,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.001125,
-      "communityId": 5,
+      "pagerank": 0.001124,
+      "communityId": 4,
       "tags": [],
       "summary": "UI module input defining Input."
     },
@@ -4907,8 +4924,8 @@
       "symbolCount": 5,
       "lineCount": 54,
       "complexity": "moderate",
-      "pagerank": 0.001572,
-      "communityId": 2,
+      "pagerank": 0.00157,
+      "communityId": 1,
       "tags": [],
       "summary": "UI module progress defining Progress, ProgressTrack, ProgressIndicator."
     },
@@ -4920,8 +4937,8 @@
       "symbolCount": 1,
       "lineCount": 13,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 5,
+      "pagerank": 0.001078,
+      "communityId": 4,
       "tags": [],
       "summary": "UI module separator defining Separator."
     },
@@ -4933,8 +4950,8 @@
       "symbolCount": 10,
       "lineCount": 111,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 5,
+      "pagerank": 0.001078,
+      "communityId": 4,
       "tags": [],
       "summary": "UI module sheet defining Sheet, SheetTrigger, SheetClose."
     },
@@ -4946,7 +4963,7 @@
       "symbolCount": 1,
       "lineCount": 6,
       "complexity": "simple",
-      "pagerank": 0.00164,
+      "pagerank": 0.001638,
       "communityId": 1,
       "tags": [],
       "summary": "UI module skeleton defining Skeleton."
@@ -4959,8 +4976,8 @@
       "symbolCount": 5,
       "lineCount": 87,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 5,
+      "pagerank": 0.001078,
+      "communityId": 4,
       "tags": [],
       "summary": "UI module tabs defining Tabs, TabsList, TabsTrigger."
     },
@@ -4972,8 +4989,8 @@
       "symbolCount": 3,
       "lineCount": 79,
       "complexity": "simple",
-      "pagerank": 0.001125,
-      "communityId": 5,
+      "pagerank": 0.001124,
+      "communityId": 4,
       "tags": [],
       "summary": "UI module toggle-group defining ToggleGroup, ToggleGroupItem."
     },
@@ -4985,8 +5002,8 @@
       "symbolCount": 2,
       "lineCount": 43,
       "complexity": "simple",
-      "pagerank": 0.001239,
-      "communityId": 5,
+      "pagerank": 0.001238,
+      "communityId": 4,
       "tags": [],
       "summary": "UI module toggle defining Toggle."
     },
@@ -4998,8 +5015,8 @@
       "symbolCount": 4,
       "lineCount": 70,
       "complexity": "moderate",
-      "pagerank": 0.001167,
-      "communityId": 5,
+      "pagerank": 0.001165,
+      "communityId": 4,
       "tags": [],
       "summary": "UI module tooltip defining TooltipProvider, Tooltip, TooltipTrigger."
     },
@@ -5008,13 +5025,14 @@
       "type": "file",
       "filePath": "web/src/components/vocab/VocabLearningFlow.tsx",
       "language": "typescript",
-      "symbolCount": 20,
-      "lineCount": 1065,
+      "symbolCount": 19,
+      "lineCount": 1111,
       "complexity": "complex",
-      "pagerank": 0.001386,
-      "communityId": 7,
+      "pagerank": 0.001384,
+      "communityId": 1,
       "tags": [],
-      "summary": "UI module VocabLearningFlow defining VocabLearningFlowProps, VocabEntry, RatingOption."
+      "summary": "UI module VocabLearningFlow defining VocabLearningFlowProps, VocabEntry, RatingOption.",
+      "primaryOwner": "TruongTNQ"
     },
     {
       "id": "file:web/src/data/kana.ts",
@@ -5024,8 +5042,8 @@
       "symbolCount": 16,
       "lineCount": 410,
       "complexity": "complex",
-      "pagerank": 0.001595,
-      "communityId": 3,
+      "pagerank": 0.001593,
+      "communityId": 5,
       "tags": [],
       "summary": "Data module kana defining KanaCell, KanaRow, flattenKanaRows."
     },
@@ -5037,7 +5055,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 301,
       "tags": [
         "config"
@@ -5052,7 +5070,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 302,
       "tags": [
         "config"
@@ -5067,7 +5085,7 @@
       "symbolCount": 0,
       "lineCount": 32,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 303,
       "tags": [
         "config"
@@ -5082,7 +5100,7 @@
       "symbolCount": 0,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 304,
       "tags": [
         "config"
@@ -5097,7 +5115,7 @@
       "symbolCount": 0,
       "lineCount": 37,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 305,
       "tags": [
         "config"
@@ -5112,7 +5130,7 @@
       "symbolCount": 0,
       "lineCount": 38,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 306,
       "tags": [
         "config"
@@ -5127,8 +5145,8 @@
       "symbolCount": 0,
       "lineCount": 32,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -5142,7 +5160,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 307,
       "tags": [
         "config"
@@ -5157,7 +5175,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 308,
       "tags": [
         "config"
@@ -5172,7 +5190,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 309,
       "tags": [
         "config"
@@ -5187,7 +5205,7 @@
       "symbolCount": 0,
       "lineCount": 31,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 310,
       "tags": [
         "config"
@@ -5202,8 +5220,8 @@
       "symbolCount": 0,
       "lineCount": 30,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -5217,8 +5235,8 @@
       "symbolCount": 0,
       "lineCount": 30,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -5232,7 +5250,7 @@
       "symbolCount": 0,
       "lineCount": 19,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 311,
       "tags": [
         "config"
@@ -5247,7 +5265,7 @@
       "symbolCount": 0,
       "lineCount": 40,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 312,
       "tags": [
         "config"
@@ -5262,7 +5280,7 @@
       "symbolCount": 0,
       "lineCount": 35,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 313,
       "tags": [
         "config"
@@ -5277,7 +5295,7 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 314,
       "tags": [
         "config"
@@ -5292,8 +5310,8 @@
       "symbolCount": 0,
       "lineCount": 18,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -5307,7 +5325,7 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 315,
       "tags": [
         "config"
@@ -5322,7 +5340,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 316,
       "tags": [
         "config"
@@ -5337,7 +5355,7 @@
       "symbolCount": 0,
       "lineCount": 23,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 317,
       "tags": [
         "config"
@@ -5352,7 +5370,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 318,
       "tags": [
         "config"
@@ -5367,8 +5385,8 @@
       "symbolCount": 0,
       "lineCount": 32,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -5382,7 +5400,7 @@
       "symbolCount": 0,
       "lineCount": 35,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 319,
       "tags": [
         "config"
@@ -5397,7 +5415,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 320,
       "tags": [
         "config"
@@ -5412,7 +5430,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 321,
       "tags": [
         "config"
@@ -5427,7 +5445,7 @@
       "symbolCount": 0,
       "lineCount": 30,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 322,
       "tags": [
         "config"
@@ -5442,7 +5460,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 323,
       "tags": [
         "config"
@@ -5457,7 +5475,7 @@
       "symbolCount": 0,
       "lineCount": 36,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 324,
       "tags": [
         "config"
@@ -5472,8 +5490,8 @@
       "symbolCount": 0,
       "lineCount": 36,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -5487,8 +5505,8 @@
       "symbolCount": 0,
       "lineCount": 32,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -5502,7 +5520,7 @@
       "symbolCount": 0,
       "lineCount": 31,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 325,
       "tags": [
         "config"
@@ -5517,7 +5535,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 326,
       "tags": [
         "config"
@@ -5532,7 +5550,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 327,
       "tags": [
         "config"
@@ -5547,7 +5565,7 @@
       "symbolCount": 0,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 328,
       "tags": [
         "config"
@@ -5562,7 +5580,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 329,
       "tags": [
         "config"
@@ -5577,7 +5595,7 @@
       "symbolCount": 0,
       "lineCount": 19,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 330,
       "tags": [
         "config"
@@ -5592,7 +5610,7 @@
       "symbolCount": 0,
       "lineCount": 33,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 331,
       "tags": [
         "config"
@@ -5607,7 +5625,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 332,
       "tags": [
         "config"
@@ -5622,7 +5640,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 333,
       "tags": [
         "config"
@@ -5637,7 +5655,7 @@
       "symbolCount": 0,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 334,
       "tags": [
         "config"
@@ -5652,7 +5670,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 335,
       "tags": [
         "config"
@@ -5667,7 +5685,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 336,
       "tags": [
         "config"
@@ -5682,7 +5700,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 337,
       "tags": [
         "config"
@@ -5697,7 +5715,7 @@
       "symbolCount": 0,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 338,
       "tags": [
         "config"
@@ -5712,7 +5730,7 @@
       "symbolCount": 0,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 339,
       "tags": [
         "config"
@@ -5727,8 +5745,8 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -5742,7 +5760,7 @@
       "symbolCount": 0,
       "lineCount": 24,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 340,
       "tags": [
         "config"
@@ -5757,7 +5775,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 341,
       "tags": [
         "config"
@@ -5772,7 +5790,7 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 342,
       "tags": [
         "config"
@@ -5787,7 +5805,7 @@
       "symbolCount": 0,
       "lineCount": 24,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 343,
       "tags": [
         "config"
@@ -5802,7 +5820,7 @@
       "symbolCount": 0,
       "lineCount": 36,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 344,
       "tags": [
         "config"
@@ -5817,7 +5835,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 345,
       "tags": [
         "config"
@@ -5832,7 +5850,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 346,
       "tags": [
         "config"
@@ -5847,8 +5865,8 @@
       "symbolCount": 0,
       "lineCount": 31,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -5862,7 +5880,7 @@
       "symbolCount": 0,
       "lineCount": 14,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 347,
       "tags": [
         "config"
@@ -5877,7 +5895,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 348,
       "tags": [
         "config"
@@ -5892,7 +5910,7 @@
       "symbolCount": 0,
       "lineCount": 33,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 349,
       "tags": [
         "config"
@@ -5907,7 +5925,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 350,
       "tags": [
         "config"
@@ -5922,7 +5940,7 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 351,
       "tags": [
         "config"
@@ -5937,7 +5955,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 352,
       "tags": [
         "config"
@@ -5952,7 +5970,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 353,
       "tags": [
         "config"
@@ -5967,7 +5985,7 @@
       "symbolCount": 0,
       "lineCount": 33,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 354,
       "tags": [
         "config"
@@ -5982,7 +6000,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 355,
       "tags": [
         "config"
@@ -5997,8 +6015,8 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6012,7 +6030,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 356,
       "tags": [
         "config"
@@ -6027,7 +6045,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 357,
       "tags": [
         "config"
@@ -6042,7 +6060,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 358,
       "tags": [
         "config"
@@ -6057,8 +6075,8 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6072,7 +6090,7 @@
       "symbolCount": 0,
       "lineCount": 31,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 359,
       "tags": [
         "config"
@@ -6087,8 +6105,8 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6102,8 +6120,8 @@
       "symbolCount": 0,
       "lineCount": 24,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6117,7 +6135,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 360,
       "tags": [
         "config"
@@ -6132,7 +6150,7 @@
       "symbolCount": 0,
       "lineCount": 34,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 361,
       "tags": [
         "config"
@@ -6147,7 +6165,7 @@
       "symbolCount": 0,
       "lineCount": 32,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 362,
       "tags": [
         "config"
@@ -6162,7 +6180,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 363,
       "tags": [
         "config"
@@ -6177,7 +6195,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 364,
       "tags": [
         "config"
@@ -6192,7 +6210,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 365,
       "tags": [
         "config"
@@ -6207,7 +6225,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 366,
       "tags": [
         "config"
@@ -6222,7 +6240,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 367,
       "tags": [
         "config"
@@ -6237,7 +6255,7 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 368,
       "tags": [
         "config"
@@ -6252,8 +6270,8 @@
       "symbolCount": 0,
       "lineCount": 34,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6267,7 +6285,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 369,
       "tags": [
         "config"
@@ -6282,7 +6300,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 370,
       "tags": [
         "config"
@@ -6297,7 +6315,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 371,
       "tags": [
         "config"
@@ -6312,7 +6330,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 372,
       "tags": [
         "config"
@@ -6327,7 +6345,7 @@
       "symbolCount": 0,
       "lineCount": 32,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 373,
       "tags": [
         "config"
@@ -6342,7 +6360,7 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 374,
       "tags": [
         "config"
@@ -6357,7 +6375,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 375,
       "tags": [
         "config"
@@ -6372,7 +6390,7 @@
       "symbolCount": 0,
       "lineCount": 37,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 376,
       "tags": [
         "config"
@@ -6387,7 +6405,7 @@
       "symbolCount": 0,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 377,
       "tags": [
         "config"
@@ -6402,7 +6420,7 @@
       "symbolCount": 0,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 378,
       "tags": [
         "config"
@@ -6417,8 +6435,8 @@
       "symbolCount": 0,
       "lineCount": 32,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6432,7 +6450,7 @@
       "symbolCount": 0,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 379,
       "tags": [
         "config"
@@ -6447,7 +6465,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 380,
       "tags": [
         "config"
@@ -6462,7 +6480,7 @@
       "symbolCount": 0,
       "lineCount": 24,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 381,
       "tags": [
         "config"
@@ -6477,7 +6495,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 382,
       "tags": [
         "config"
@@ -6492,8 +6510,8 @@
       "symbolCount": 0,
       "lineCount": 31,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6507,7 +6525,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 383,
       "tags": [
         "config"
@@ -6522,7 +6540,7 @@
       "symbolCount": 0,
       "lineCount": 32,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 384,
       "tags": [
         "config"
@@ -6537,8 +6555,8 @@
       "symbolCount": 0,
       "lineCount": 30,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6552,7 +6570,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 385,
       "tags": [
         "config"
@@ -6567,8 +6585,8 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6582,8 +6600,8 @@
       "symbolCount": 0,
       "lineCount": 31,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6597,8 +6615,8 @@
       "symbolCount": 0,
       "lineCount": 32,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6612,7 +6630,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 386,
       "tags": [
         "config"
@@ -6627,8 +6645,8 @@
       "symbolCount": 0,
       "lineCount": 31,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6642,7 +6660,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 387,
       "tags": [
         "config"
@@ -6657,7 +6675,7 @@
       "symbolCount": 0,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 388,
       "tags": [
         "config"
@@ -6672,7 +6690,7 @@
       "symbolCount": 0,
       "lineCount": 19,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 389,
       "tags": [
         "config"
@@ -6687,7 +6705,7 @@
       "symbolCount": 0,
       "lineCount": 31,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 390,
       "tags": [
         "config"
@@ -6702,8 +6720,8 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6717,8 +6735,8 @@
       "symbolCount": 0,
       "lineCount": 23,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6732,7 +6750,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 391,
       "tags": [
         "config"
@@ -6747,7 +6765,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 392,
       "tags": [
         "config"
@@ -6762,7 +6780,7 @@
       "symbolCount": 0,
       "lineCount": 13,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 393,
       "tags": [
         "config"
@@ -6777,8 +6795,8 @@
       "symbolCount": 0,
       "lineCount": 34,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -6792,7 +6810,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 394,
       "tags": [
         "config"
@@ -6807,7 +6825,7 @@
       "symbolCount": 0,
       "lineCount": 34,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 395,
       "tags": [
         "config"
@@ -6822,7 +6840,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 396,
       "tags": [
         "config"
@@ -6837,7 +6855,7 @@
       "symbolCount": 0,
       "lineCount": 31,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 397,
       "tags": [
         "config"
@@ -6852,7 +6870,7 @@
       "symbolCount": 0,
       "lineCount": 30,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 398,
       "tags": [
         "config"
@@ -6867,7 +6885,7 @@
       "symbolCount": 0,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 399,
       "tags": [
         "config"
@@ -6882,7 +6900,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 400,
       "tags": [
         "config"
@@ -6897,7 +6915,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 401,
       "tags": [
         "config"
@@ -6912,7 +6930,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 402,
       "tags": [
         "config"
@@ -6927,7 +6945,7 @@
       "symbolCount": 0,
       "lineCount": 31,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 403,
       "tags": [
         "config"
@@ -6942,7 +6960,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 404,
       "tags": [
         "config"
@@ -6957,7 +6975,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 405,
       "tags": [
         "config"
@@ -6972,7 +6990,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 406,
       "tags": [
         "config"
@@ -6987,7 +7005,7 @@
       "symbolCount": 0,
       "lineCount": 36,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 407,
       "tags": [
         "config"
@@ -7002,7 +7020,7 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 408,
       "tags": [
         "config"
@@ -7017,7 +7035,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 409,
       "tags": [
         "config"
@@ -7032,7 +7050,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 410,
       "tags": [
         "config"
@@ -7047,7 +7065,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 411,
       "tags": [
         "config"
@@ -7062,7 +7080,7 @@
       "symbolCount": 0,
       "lineCount": 31,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 412,
       "tags": [
         "config"
@@ -7077,7 +7095,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 413,
       "tags": [
         "config"
@@ -7092,7 +7110,7 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 414,
       "tags": [
         "config"
@@ -7107,7 +7125,7 @@
       "symbolCount": 0,
       "lineCount": 24,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 415,
       "tags": [
         "config"
@@ -7122,8 +7140,8 @@
       "symbolCount": 0,
       "lineCount": 35,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -7137,7 +7155,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 416,
       "tags": [
         "config"
@@ -7152,8 +7170,8 @@
       "symbolCount": 0,
       "lineCount": 35,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -7167,7 +7185,7 @@
       "symbolCount": 0,
       "lineCount": 31,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 417,
       "tags": [
         "config"
@@ -7182,8 +7200,8 @@
       "symbolCount": 0,
       "lineCount": 33,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -7197,7 +7215,7 @@
       "symbolCount": 0,
       "lineCount": 33,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 418,
       "tags": [
         "config"
@@ -7212,7 +7230,7 @@
       "symbolCount": 0,
       "lineCount": 34,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 419,
       "tags": [
         "config"
@@ -7227,7 +7245,7 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 420,
       "tags": [
         "config"
@@ -7242,7 +7260,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 421,
       "tags": [
         "config"
@@ -7257,7 +7275,7 @@
       "symbolCount": 0,
       "lineCount": 30,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 422,
       "tags": [
         "config"
@@ -7272,8 +7290,8 @@
       "symbolCount": 0,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -7287,7 +7305,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 423,
       "tags": [
         "config"
@@ -7302,7 +7320,7 @@
       "symbolCount": 0,
       "lineCount": 17,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 424,
       "tags": [
         "config"
@@ -7317,7 +7335,7 @@
       "symbolCount": 0,
       "lineCount": 34,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 425,
       "tags": [
         "config"
@@ -7332,7 +7350,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 426,
       "tags": [
         "config"
@@ -7347,7 +7365,7 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 427,
       "tags": [
         "config"
@@ -7362,8 +7380,8 @@
       "symbolCount": 0,
       "lineCount": 30,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -7377,7 +7395,7 @@
       "symbolCount": 0,
       "lineCount": 18,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 428,
       "tags": [
         "config"
@@ -7392,7 +7410,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 429,
       "tags": [
         "config"
@@ -7407,7 +7425,7 @@
       "symbolCount": 0,
       "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 430,
       "tags": [
         "config"
@@ -7422,7 +7440,7 @@
       "symbolCount": 0,
       "lineCount": 32,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 431,
       "tags": [
         "config"
@@ -7437,7 +7455,7 @@
       "symbolCount": 0,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 432,
       "tags": [
         "config"
@@ -7452,7 +7470,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 433,
       "tags": [
         "config"
@@ -7467,7 +7485,7 @@
       "symbolCount": 0,
       "lineCount": 26,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 434,
       "tags": [
         "config"
@@ -7482,8 +7500,8 @@
       "symbolCount": 0,
       "lineCount": 30,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -7497,8 +7515,8 @@
       "symbolCount": 0,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.001106,
-      "communityId": 4,
+      "pagerank": 0.001104,
+      "communityId": 3,
       "tags": [
         "config"
       ],
@@ -7512,7 +7530,7 @@
       "symbolCount": 0,
       "lineCount": 13,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 435,
       "tags": [
         "config"
@@ -7527,7 +7545,7 @@
       "symbolCount": 0,
       "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 436,
       "tags": [
         "config"
@@ -7542,7 +7560,7 @@
       "symbolCount": 0,
       "lineCount": 10,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 437,
       "tags": [
         "config"
@@ -7557,7 +7575,7 @@
       "symbolCount": 0,
       "lineCount": 13,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 438,
       "tags": [
         "config"
@@ -7572,7 +7590,7 @@
       "symbolCount": 0,
       "lineCount": 173,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7587,7 +7605,7 @@
       "symbolCount": 0,
       "lineCount": 245,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7602,7 +7620,7 @@
       "symbolCount": 0,
       "lineCount": 187,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7617,7 +7635,7 @@
       "symbolCount": 0,
       "lineCount": 192,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7632,7 +7650,7 @@
       "symbolCount": 0,
       "lineCount": 215,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7647,7 +7665,7 @@
       "symbolCount": 0,
       "lineCount": 226,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7662,7 +7680,7 @@
       "symbolCount": 0,
       "lineCount": 188,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7677,7 +7695,7 @@
       "symbolCount": 0,
       "lineCount": 256,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7692,7 +7710,7 @@
       "symbolCount": 0,
       "lineCount": 182,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7707,7 +7725,7 @@
       "symbolCount": 0,
       "lineCount": 194,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7722,7 +7740,7 @@
       "symbolCount": 0,
       "lineCount": 150,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7737,7 +7755,7 @@
       "symbolCount": 0,
       "lineCount": 191,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7752,7 +7770,7 @@
       "symbolCount": 0,
       "lineCount": 172,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7767,7 +7785,7 @@
       "symbolCount": 0,
       "lineCount": 214,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7782,7 +7800,7 @@
       "symbolCount": 0,
       "lineCount": 139,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7797,7 +7815,7 @@
       "symbolCount": 0,
       "lineCount": 195,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7812,7 +7830,7 @@
       "symbolCount": 0,
       "lineCount": 180,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7827,7 +7845,7 @@
       "symbolCount": 0,
       "lineCount": 202,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7842,7 +7860,7 @@
       "symbolCount": 0,
       "lineCount": 141,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7857,7 +7875,7 @@
       "symbolCount": 0,
       "lineCount": 120,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7872,7 +7890,7 @@
       "symbolCount": 0,
       "lineCount": 201,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7887,7 +7905,7 @@
       "symbolCount": 0,
       "lineCount": 112,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7902,7 +7920,7 @@
       "symbolCount": 0,
       "lineCount": 177,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7917,7 +7935,7 @@
       "symbolCount": 0,
       "lineCount": 155,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7932,7 +7950,7 @@
       "symbolCount": 0,
       "lineCount": 169,
       "complexity": "moderate",
-      "pagerank": 0.001142,
+      "pagerank": 0.001141,
       "communityId": 0,
       "tags": [
         "config"
@@ -7947,7 +7965,7 @@
       "symbolCount": 0,
       "lineCount": 63,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 439,
       "tags": [
         "config"
@@ -7962,7 +7980,7 @@
       "symbolCount": 0,
       "lineCount": 175,
       "complexity": "moderate",
-      "pagerank": 0.001141,
+      "pagerank": 0.00114,
       "communityId": 0,
       "tags": [
         "config"
@@ -7977,7 +7995,7 @@
       "symbolCount": 0,
       "lineCount": 401,
       "complexity": "moderate",
-      "pagerank": 0.001141,
+      "pagerank": 0.00114,
       "communityId": 0,
       "tags": [
         "config"
@@ -7992,7 +8010,7 @@
       "symbolCount": 0,
       "lineCount": 309,
       "complexity": "moderate",
-      "pagerank": 0.001141,
+      "pagerank": 0.00114,
       "communityId": 0,
       "tags": [
         "config"
@@ -8007,7 +8025,7 @@
       "symbolCount": 0,
       "lineCount": 84,
       "complexity": "simple",
-      "pagerank": 0.001141,
+      "pagerank": 0.00114,
       "communityId": 0,
       "tags": [
         "config"
@@ -8022,7 +8040,7 @@
       "symbolCount": 0,
       "lineCount": 109,
       "complexity": "moderate",
-      "pagerank": 0.001141,
+      "pagerank": 0.00114,
       "communityId": 0,
       "tags": [
         "config"
@@ -8037,7 +8055,7 @@
       "symbolCount": 0,
       "lineCount": 181,
       "complexity": "moderate",
-      "pagerank": 0.001141,
+      "pagerank": 0.00114,
       "communityId": 0,
       "tags": [
         "config"
@@ -8052,7 +8070,7 @@
       "symbolCount": 0,
       "lineCount": 217,
       "complexity": "moderate",
-      "pagerank": 0.001141,
+      "pagerank": 0.00114,
       "communityId": 0,
       "tags": [
         "config"
@@ -8067,7 +8085,7 @@
       "symbolCount": 0,
       "lineCount": 215,
       "complexity": "moderate",
-      "pagerank": 0.001141,
+      "pagerank": 0.00114,
       "communityId": 0,
       "tags": [
         "config"
@@ -8082,7 +8100,7 @@
       "symbolCount": 0,
       "lineCount": 169,
       "complexity": "moderate",
-      "pagerank": 0.001141,
+      "pagerank": 0.00114,
       "communityId": 0,
       "tags": [
         "config"
@@ -8097,7 +8115,7 @@
       "symbolCount": 0,
       "lineCount": 202,
       "complexity": "moderate",
-      "pagerank": 0.001141,
+      "pagerank": 0.00114,
       "communityId": 0,
       "tags": [
         "config"
@@ -8112,7 +8130,7 @@
       "symbolCount": 0,
       "lineCount": 1484,
       "complexity": "complex",
-      "pagerank": 0.001141,
+      "pagerank": 0.00114,
       "communityId": 0,
       "tags": [
         "config"
@@ -8127,7 +8145,7 @@
       "symbolCount": 0,
       "lineCount": 491,
       "complexity": "moderate",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8142,7 +8160,7 @@
       "symbolCount": 0,
       "lineCount": 503,
       "complexity": "complex",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8157,7 +8175,7 @@
       "symbolCount": 0,
       "lineCount": 480,
       "complexity": "moderate",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8172,7 +8190,7 @@
       "symbolCount": 0,
       "lineCount": 657,
       "complexity": "complex",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8187,7 +8205,7 @@
       "symbolCount": 0,
       "lineCount": 709,
       "complexity": "complex",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8202,7 +8220,7 @@
       "symbolCount": 0,
       "lineCount": 652,
       "complexity": "complex",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8217,7 +8235,7 @@
       "symbolCount": 0,
       "lineCount": 642,
       "complexity": "complex",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8232,7 +8250,7 @@
       "symbolCount": 0,
       "lineCount": 613,
       "complexity": "complex",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8247,7 +8265,7 @@
       "symbolCount": 0,
       "lineCount": 622,
       "complexity": "complex",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8262,7 +8280,7 @@
       "symbolCount": 0,
       "lineCount": 566,
       "complexity": "complex",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8277,7 +8295,7 @@
       "symbolCount": 0,
       "lineCount": 775,
       "complexity": "complex",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8292,7 +8310,7 @@
       "symbolCount": 0,
       "lineCount": 590,
       "complexity": "complex",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8307,7 +8325,7 @@
       "symbolCount": 0,
       "lineCount": 484,
       "complexity": "moderate",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8322,7 +8340,7 @@
       "symbolCount": 0,
       "lineCount": 754,
       "complexity": "complex",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8337,7 +8355,7 @@
       "symbolCount": 0,
       "lineCount": 378,
       "complexity": "moderate",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8352,7 +8370,7 @@
       "symbolCount": 0,
       "lineCount": 786,
       "complexity": "complex",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8367,7 +8385,7 @@
       "symbolCount": 0,
       "lineCount": 592,
       "complexity": "complex",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8382,7 +8400,7 @@
       "symbolCount": 0,
       "lineCount": 451,
       "complexity": "moderate",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8397,7 +8415,7 @@
       "symbolCount": 0,
       "lineCount": 384,
       "complexity": "moderate",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8412,7 +8430,7 @@
       "symbolCount": 0,
       "lineCount": 317,
       "complexity": "moderate",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8427,7 +8445,7 @@
       "symbolCount": 0,
       "lineCount": 618,
       "complexity": "complex",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8442,7 +8460,7 @@
       "symbolCount": 0,
       "lineCount": 446,
       "complexity": "moderate",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8457,7 +8475,7 @@
       "symbolCount": 0,
       "lineCount": 438,
       "complexity": "moderate",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8472,7 +8490,7 @@
       "symbolCount": 0,
       "lineCount": 349,
       "complexity": "moderate",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8487,7 +8505,7 @@
       "symbolCount": 0,
       "lineCount": 282,
       "complexity": "moderate",
-      "pagerank": 0.001204,
+      "pagerank": 0.001202,
       "communityId": 0,
       "tags": [
         "config"
@@ -8502,8 +8520,8 @@
       "symbolCount": 2,
       "lineCount": 133,
       "complexity": "moderate",
-      "pagerank": 0.00115,
-      "communityId": 2,
+      "pagerank": 0.001149,
+      "communityId": 8,
       "tags": [],
       "summary": "Application module use-audio-import defining ImportProgress, useAudioImport."
     },
@@ -8513,14 +8531,15 @@
       "filePath": "web/src/lib/active-drafts.test.ts",
       "language": "typescript",
       "symbolCount": 7,
-      "lineCount": 285,
+      "lineCount": 279,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 1,
       "tags": [
         "test"
       ],
-      "summary": "Tests for active-drafts."
+      "summary": "Tests for active-drafts.",
+      "primaryOwner": "TruongTNQ"
     },
     {
       "id": "file:web/src/lib/active-drafts.ts",
@@ -8528,12 +8547,13 @@
       "filePath": "web/src/lib/active-drafts.ts",
       "language": "typescript",
       "symbolCount": 11,
-      "lineCount": 110,
+      "lineCount": 107,
       "complexity": "moderate",
-      "pagerank": 0.001745,
+      "pagerank": 0.001742,
       "communityId": 1,
       "tags": [],
-      "summary": "Service module active-drafts defining ActiveVocabDraft, ActivePracticeDraftInfo, ActiveDraftsState."
+      "summary": "Service module active-drafts defining ActiveVocabDraft, ActivePracticeDraftInfo, ActiveDraftsState.",
+      "primaryOwner": "TruongTNQ"
     },
     {
       "id": "file:web/src/lib/audio-manifest-sample.test.ts",
@@ -8543,8 +8563,8 @@
       "symbolCount": 0,
       "lineCount": 36,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 2,
+      "pagerank": 0.001078,
+      "communityId": 6,
       "tags": [
         "test"
       ],
@@ -8558,8 +8578,8 @@
       "symbolCount": 4,
       "lineCount": 28,
       "complexity": "moderate",
-      "pagerank": 0.00138,
-      "communityId": 2,
+      "pagerank": 0.001378,
+      "communityId": 8,
       "tags": [],
       "summary": "Service module audio-manifest-sample defining ManifestFieldDoc."
     },
@@ -8571,7 +8591,7 @@
       "symbolCount": 0,
       "lineCount": 119,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 6,
       "tags": [
         "test"
@@ -8586,8 +8606,8 @@
       "symbolCount": 13,
       "lineCount": 124,
       "complexity": "moderate",
-      "pagerank": 0.002423,
-      "communityId": 2,
+      "pagerank": 0.00242,
+      "communityId": 8,
       "tags": [],
       "summary": "Service module audio-zip defining ParsedTrackPath, parseAudioTrackPath, ZipLimitsInput."
     },
@@ -8599,8 +8619,8 @@
       "symbolCount": 2,
       "lineCount": 143,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 6,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [
         "test"
       ],
@@ -8614,8 +8634,8 @@
       "symbolCount": 14,
       "lineCount": 264,
       "complexity": "moderate",
-      "pagerank": 0.001355,
-      "communityId": 2,
+      "pagerank": 0.001353,
+      "communityId": 1,
       "tags": [],
       "summary": "Service module backup defining ExportFile, ParsedImportData, isValidIsoDate."
     },
@@ -8625,27 +8645,29 @@
       "filePath": "web/src/lib/dashboard-cta.test.ts",
       "language": "typescript",
       "symbolCount": 0,
-      "lineCount": 76,
-      "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 6,
+      "lineCount": 102,
+      "complexity": "moderate",
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [
         "test"
       ],
-      "summary": "Tests for dashboard-cta."
+      "summary": "Tests for dashboard-cta.",
+      "primaryOwner": "TruongTNQ"
     },
     {
       "id": "file:web/src/lib/dashboard-cta.ts",
       "type": "file",
       "filePath": "web/src/lib/dashboard-cta.ts",
       "language": "typescript",
-      "symbolCount": 4,
-      "lineCount": 61,
+      "symbolCount": 5,
+      "lineCount": 80,
       "complexity": "moderate",
-      "pagerank": 0.001458,
-      "communityId": 2,
+      "pagerank": 0.001456,
+      "communityId": 1,
       "tags": [],
-      "summary": "Service module dashboard-cta defining DashboardCtaInput, DashboardCtaDecision, resolveDashboardCta."
+      "summary": "Service module dashboard-cta defining DashboardCtaInput, DashboardCtaDecision, resolveDashboardCta.",
+      "primaryOwner": "TruongTNQ"
     },
     {
       "id": "file:web/src/lib/db.ts",
@@ -8655,8 +8677,8 @@
       "symbolCount": 3,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.004589,
-      "communityId": 2,
+      "pagerank": 0.004583,
+      "communityId": 1,
       "tags": [],
       "summary": "Service module db defining AppDatabase, constructor."
     },
@@ -8668,7 +8690,7 @@
       "symbolCount": 0,
       "lineCount": 68,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 6,
       "tags": [
         "test"
@@ -8683,8 +8705,8 @@
       "symbolCount": 6,
       "lineCount": 35,
       "complexity": "moderate",
-      "pagerank": 0.001874,
-      "communityId": 8,
+      "pagerank": 0.001872,
+      "communityId": 1,
       "tags": [],
       "summary": "Service module distractors defining DistractorCandidate, okuriganaTail, lengthScore."
     },
@@ -8696,7 +8718,7 @@
       "symbolCount": 1,
       "lineCount": 94,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 1,
       "tags": [
         "test"
@@ -8711,7 +8733,7 @@
       "symbolCount": 2,
       "lineCount": 44,
       "complexity": "simple",
-      "pagerank": 0.002052,
+      "pagerank": 0.002075,
       "communityId": 1,
       "tags": [],
       "summary": "Service module filter defining FilterResult, filterExercises."
@@ -8724,7 +8746,7 @@
       "symbolCount": 0,
       "lineCount": 43,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 1,
       "tags": [
         "test"
@@ -8739,8 +8761,8 @@
       "symbolCount": 7,
       "lineCount": 62,
       "complexity": "moderate",
-      "pagerank": 0.002666,
-      "communityId": 7,
+      "pagerank": 0.002689,
+      "communityId": 1,
       "tags": [],
       "summary": "Service module fsrs defining medianElapsedMs, pushElapsedSample, rateAnswer."
     },
@@ -8752,8 +8774,8 @@
       "symbolCount": 0,
       "lineCount": 125,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 2,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [
         "test"
       ],
@@ -8767,8 +8789,8 @@
       "symbolCount": 9,
       "lineCount": 108,
       "complexity": "moderate",
-      "pagerank": 0.007721,
-      "communityId": 8,
+      "pagerank": 0.007723,
+      "communityId": 2,
       "tags": [],
       "summary": "Service module japanese defining FuriganaSegment, parseFurigana, stripFurigana."
     },
@@ -8780,7 +8802,7 @@
       "symbolCount": 0,
       "lineCount": 127,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 6,
       "tags": [
         "test"
@@ -8795,8 +8817,8 @@
       "symbolCount": 1,
       "lineCount": 136,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 3,
+      "pagerank": 0.001078,
+      "communityId": 2,
       "tags": [
         "test"
       ],
@@ -8810,8 +8832,8 @@
       "symbolCount": 4,
       "lineCount": 120,
       "complexity": "moderate",
-      "pagerank": 0.001401,
-      "communityId": 8,
+      "pagerank": 0.0014,
+      "communityId": 2,
       "tags": [],
       "summary": "Service module kanji-filter defining KanjiFilterOptions, matchKanjiQuery, kanjiQueryRank."
     },
@@ -8823,7 +8845,7 @@
       "symbolCount": 0,
       "lineCount": 36,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 6,
       "tags": [
         "test"
@@ -8838,8 +8860,8 @@
       "symbolCount": 1,
       "lineCount": 24,
       "complexity": "simple",
-      "pagerank": 0.001507,
-      "communityId": 3,
+      "pagerank": 0.001505,
+      "communityId": 1,
       "tags": [],
       "summary": "Service module lesson-cta defining resolveLessonCtaText."
     },
@@ -8851,8 +8873,8 @@
       "symbolCount": 2,
       "lineCount": 248,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 3,
+      "pagerank": 0.001078,
+      "communityId": 5,
       "tags": [
         "test"
       ],
@@ -8866,7 +8888,7 @@
       "symbolCount": 16,
       "lineCount": 215,
       "complexity": "complex",
-      "pagerank": 0.003762,
+      "pagerank": 0.003757,
       "communityId": 0,
       "tags": [],
       "summary": "Service module lessons defining LessonSummary, VocabFile, loadLesson."
@@ -8879,7 +8901,7 @@
       "symbolCount": 1,
       "lineCount": 237,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 6,
       "tags": [
         "test"
@@ -8894,7 +8916,7 @@
       "symbolCount": 17,
       "lineCount": 236,
       "complexity": "complex",
-      "pagerank": 0.002742,
+      "pagerank": 0.002739,
       "communityId": 0,
       "tags": [],
       "summary": "Service module lookup defining pad2, getAllKanji, getKanjiByChar."
@@ -8907,7 +8929,7 @@
       "symbolCount": 0,
       "lineCount": 23,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 6,
       "tags": [
         "test"
@@ -8922,8 +8944,8 @@
       "symbolCount": 3,
       "lineCount": 18,
       "complexity": "simple",
-      "pagerank": 0.001743,
-      "communityId": 1,
+      "pagerank": 0.001741,
+      "communityId": 2,
       "tags": [],
       "summary": "Service module nav-direction defining tabIndex, navDirection."
     },
@@ -8935,8 +8957,8 @@
       "symbolCount": 0,
       "lineCount": 110,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 2,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [
         "test"
       ],
@@ -8950,8 +8972,8 @@
       "symbolCount": 3,
       "lineCount": 56,
       "complexity": "simple",
-      "pagerank": 0.001449,
-      "communityId": 2,
+      "pagerank": 0.001447,
+      "communityId": 1,
       "tags": [],
       "summary": "Service module nav defining isNavActive."
     },
@@ -8963,8 +8985,8 @@
       "symbolCount": 8,
       "lineCount": 298,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 1,
+      "pagerank": 0.001078,
+      "communityId": 2,
       "tags": [
         "test"
       ],
@@ -8978,8 +9000,8 @@
       "symbolCount": 22,
       "lineCount": 237,
       "complexity": "complex",
-      "pagerank": 0.003426,
-      "communityId": 1,
+      "pagerank": 0.003404,
+      "communityId": 2,
       "tags": [],
       "summary": "Service module practice-draft defining markNewSessionRequested, clearNewSessionRequest, wasNewSessionRequested."
     },
@@ -8991,8 +9013,8 @@
       "symbolCount": 0,
       "lineCount": 208,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 6,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [
         "test"
       ],
@@ -9006,7 +9028,7 @@
       "symbolCount": 8,
       "lineCount": 161,
       "complexity": "moderate",
-      "pagerank": 0.001431,
+      "pagerank": 0.00143,
       "communityId": 1,
       "tags": [],
       "summary": "Service module practice-preview defining ResolveInitialPracticeConfigOptions, PracticeInitialConfig, parseLessonsParam."
@@ -9019,8 +9041,8 @@
       "symbolCount": 1,
       "lineCount": 50,
       "complexity": "simple",
-      "pagerank": 0.001184,
-      "communityId": 1,
+      "pagerank": 0.001183,
+      "communityId": 2,
       "tags": [],
       "summary": "Service module practice-write defining savePracticeSession."
     },
@@ -9030,27 +9052,29 @@
       "filePath": "web/src/lib/practice.test.ts",
       "language": "typescript",
       "symbolCount": 3,
-      "lineCount": 351,
+      "lineCount": 400,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 1,
       "tags": [
         "test"
       ],
-      "summary": "Tests for practice."
+      "summary": "Tests for practice.",
+      "primaryOwner": "TruongTNQ"
     },
     {
       "id": "file:web/src/lib/practice.ts",
       "type": "file",
       "filePath": "web/src/lib/practice.ts",
       "language": "typescript",
-      "symbolCount": 12,
-      "lineCount": 204,
+      "symbolCount": 14,
+      "lineCount": 242,
       "complexity": "moderate",
-      "pagerank": 0.00328,
-      "communityId": 1,
+      "pagerank": 0.003397,
+      "communityId": 2,
       "tags": [],
-      "summary": "Service module practice defining targetTypeFromId, shuffle, oneQuestionPerTarget."
+      "summary": "Service module practice defining targetTypeFromId, shuffle, oneQuestionPerTarget.",
+      "primaryOwner": "TruongTNQ"
     },
     {
       "id": "file:web/src/lib/questions.integration.test.ts",
@@ -9060,8 +9084,8 @@
       "symbolCount": 3,
       "lineCount": 122,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 6,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [
         "test"
       ],
@@ -9075,8 +9099,8 @@
       "symbolCount": 0,
       "lineCount": 198,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 2,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [
         "test"
       ],
@@ -9090,8 +9114,8 @@
       "symbolCount": 11,
       "lineCount": 253,
       "complexity": "moderate",
-      "pagerank": 0.001725,
-      "communityId": 8,
+      "pagerank": 0.001723,
+      "communityId": 1,
       "tags": [],
       "summary": "Service module questions defining buildAuxiliaryIndex, extractAuxiliaryLessons, pad2."
     },
@@ -9103,7 +9127,7 @@
       "symbolCount": 2,
       "lineCount": 459,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 1,
       "tags": [
         "test"
@@ -9118,7 +9142,7 @@
       "symbolCount": 20,
       "lineCount": 385,
       "complexity": "complex",
-      "pagerank": 0.001653,
+      "pagerank": 0.001651,
       "communityId": 1,
       "tags": [],
       "summary": "Service module review-queue defining TargetLabel, lessonFromTargetId, collectTargetIds."
@@ -9131,8 +9155,8 @@
       "symbolCount": 0,
       "lineCount": 322,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 2,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [
         "test"
       ],
@@ -9146,8 +9170,8 @@
       "symbolCount": 10,
       "lineCount": 372,
       "complexity": "moderate",
-      "pagerank": 0.001818,
-      "communityId": 8,
+      "pagerank": 0.001815,
+      "communityId": 2,
       "tags": [],
       "summary": "Service module search defining SearchEntry, normalizeSearchText, getCachedSearchIndex."
     },
@@ -9159,7 +9183,7 @@
       "symbolCount": 0,
       "lineCount": 218,
       "complexity": "moderate",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 1,
       "tags": [
         "test"
@@ -9174,8 +9198,8 @@
       "symbolCount": 21,
       "lineCount": 229,
       "complexity": "complex",
-      "pagerank": 0.004223,
-      "communityId": 2,
+      "pagerank": 0.004218,
+      "communityId": 1,
       "tags": [],
       "summary": "Service module settings defining PracticePreset, AppSettings, clampInt."
     },
@@ -9187,7 +9211,7 @@
       "symbolCount": 0,
       "lineCount": 61,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 6,
       "tags": [
         "test"
@@ -9202,8 +9226,8 @@
       "symbolCount": 4,
       "lineCount": 52,
       "complexity": "moderate",
-      "pagerank": 0.001455,
-      "communityId": 3,
+      "pagerank": 0.001453,
+      "communityId": 5,
       "tags": [],
       "summary": "Service module shadowing defining formatTime, LoopPoints, normalizeLoopPoints."
     },
@@ -9215,8 +9239,8 @@
       "symbolCount": 1,
       "lineCount": 396,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 2,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [
         "test"
       ],
@@ -9230,8 +9254,8 @@
       "symbolCount": 29,
       "lineCount": 418,
       "complexity": "complex",
-      "pagerank": 0.002712,
-      "communityId": 2,
+      "pagerank": 0.002709,
+      "communityId": 1,
       "tags": [],
       "summary": "Service module stats defining startOfLocalDay, localDayKey, formatDayShort."
     },
@@ -9243,7 +9267,7 @@
       "symbolCount": 2,
       "lineCount": 82,
       "complexity": "simple",
-      "pagerank": 0.002205,
+      "pagerank": 0.002202,
       "communityId": 1,
       "tags": [],
       "summary": "Service module store defining UIState."
@@ -9256,8 +9280,8 @@
       "symbolCount": 2,
       "lineCount": 19,
       "complexity": "simple",
-      "pagerank": 0.001838,
-      "communityId": 2,
+      "pagerank": 0.001836,
+      "communityId": 1,
       "tags": [],
       "summary": "Service module client defining isSupabaseConfigured, createClient."
     },
@@ -9269,8 +9293,8 @@
       "symbolCount": 1,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.001538,
-      "communityId": 9,
+      "pagerank": 0.001537,
+      "communityId": 7,
       "tags": [
         "entry_point"
       ],
@@ -9284,8 +9308,8 @@
       "symbolCount": 0,
       "lineCount": 43,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 2,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [
         "test"
       ],
@@ -9299,8 +9323,8 @@
       "symbolCount": 26,
       "lineCount": 321,
       "complexity": "complex",
-      "pagerank": 0.001651,
-      "communityId": 2,
+      "pagerank": 0.001648,
+      "communityId": 1,
       "tags": [],
       "summary": "Service module sync defining SupabaseReviewRow, SupabaseSessionRow, SyncEngineStatus."
     },
@@ -9312,7 +9336,7 @@
       "symbolCount": 0,
       "lineCount": 18,
       "complexity": "simple",
-      "pagerank": 0.00108,
+      "pagerank": 0.001078,
       "communityId": 6,
       "tags": [
         "test"
@@ -9327,8 +9351,8 @@
       "symbolCount": 2,
       "lineCount": 38,
       "complexity": "simple",
-      "pagerank": 0.002251,
-      "communityId": 3,
+      "pagerank": 0.002248,
+      "communityId": 5,
       "tags": [],
       "summary": "Service module tts defining hasJapaneseVoice, speak."
     },
@@ -9340,8 +9364,8 @@
       "symbolCount": 1,
       "lineCount": 54,
       "complexity": "simple",
-      "pagerank": 0.001406,
-      "communityId": 2,
+      "pagerank": 0.001405,
+      "communityId": 1,
       "tags": [],
       "summary": "Service module use-due-clock defining useDueClock."
     },
@@ -9353,8 +9377,8 @@
       "symbolCount": 3,
       "lineCount": 164,
       "complexity": "moderate",
-      "pagerank": 0.001295,
-      "communityId": 2,
+      "pagerank": 0.001293,
+      "communityId": 1,
       "tags": [],
       "summary": "Service module use-due-queue defining DueQueue, useDueQueue."
     },
@@ -9366,7 +9390,7 @@
       "symbolCount": 4,
       "lineCount": 54,
       "complexity": "moderate",
-      "pagerank": 0.001548,
+      "pagerank": 0.001546,
       "communityId": 1,
       "tags": [],
       "summary": "Service module use-question-pool defining Pool, useQuestionPool, useJapaneseVoice."
@@ -9379,8 +9403,8 @@
       "symbolCount": 4,
       "lineCount": 143,
       "complexity": "moderate",
-      "pagerank": 0.00108,
-      "communityId": 1,
+      "pagerank": 0.001078,
+      "communityId": 2,
       "tags": [
         "test"
       ],
@@ -9394,8 +9418,8 @@
       "symbolCount": 5,
       "lineCount": 56,
       "complexity": "moderate",
-      "pagerank": 0.001406,
-      "communityId": 1,
+      "pagerank": 0.001404,
+      "communityId": 2,
       "tags": [],
       "summary": "Service module use-review-draft defining useReviewDraft."
     },
@@ -9407,8 +9431,8 @@
       "symbolCount": 0,
       "lineCount": 0,
       "complexity": "simple",
-      "pagerank": 0.006963,
-      "communityId": 3,
+      "pagerank": 0.006955,
+      "communityId": 5,
       "tags": [],
       "summary": "Service module utils."
     },
@@ -9418,27 +9442,29 @@
       "filePath": "web/src/lib/vocab-draft.test.ts",
       "language": "typescript",
       "symbolCount": 1,
-      "lineCount": 29,
+      "lineCount": 43,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 6,
+      "pagerank": 0.001078,
+      "communityId": 1,
       "tags": [
         "test"
       ],
-      "summary": "Tests for vocab-draft."
+      "summary": "Tests for vocab-draft.",
+      "primaryOwner": "TruongTNQ"
     },
     {
       "id": "file:web/src/lib/vocab-draft.ts",
       "type": "file",
       "filePath": "web/src/lib/vocab-draft.ts",
       "language": "typescript",
-      "symbolCount": 9,
-      "lineCount": 61,
+      "symbolCount": 11,
+      "lineCount": 82,
       "complexity": "moderate",
-      "pagerank": 0.001953,
-      "communityId": 7,
+      "pagerank": 0.001951,
+      "communityId": 1,
       "tags": [],
-      "summary": "Service module vocab-draft defining VocabDraft, vocabDraftKey, parseVocabDraft."
+      "summary": "Service module vocab-draft defining VocabDraft, vocabDraftKey, parseVocabDraft.",
+      "primaryOwner": "TruongTNQ"
     },
     {
       "id": "file:web/src/lib/vocab-learning.ts",
@@ -9448,8 +9474,8 @@
       "symbolCount": 5,
       "lineCount": 109,
       "complexity": "moderate",
-      "pagerank": 0.001153,
-      "communityId": 7,
+      "pagerank": 0.001152,
+      "communityId": 1,
       "tags": [],
       "summary": "Service module vocab-learning defining getVocabLearningTime, getVocabTargetId, VocabRecallRecord."
     },
@@ -9461,8 +9487,8 @@
       "symbolCount": 2,
       "lineCount": 32,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 9,
+      "pagerank": 0.001078,
+      "communityId": 7,
       "tags": [],
       "summary": "Application module middleware defining middleware."
     },
@@ -9472,12 +9498,13 @@
       "filePath": "web/src/types/index.ts",
       "language": "typescript",
       "symbolCount": 16,
-      "lineCount": 105,
+      "lineCount": 109,
       "complexity": "complex",
-      "pagerank": 0.021975,
+      "pagerank": 0.02197,
       "communityId": 1,
       "tags": [],
-      "summary": "Types module index defining LocalizedText, ExampleSentence, GrammarPoint."
+      "summary": "Types module index defining LocalizedText, ExampleSentence, GrammarPoint.",
+      "primaryOwner": "TruongTNQ"
     },
     {
       "id": "file:web/src/types/lookup.ts",
@@ -9487,8 +9514,8 @@
       "symbolCount": 8,
       "lineCount": 37,
       "complexity": "moderate",
-      "pagerank": 0.001989,
-      "communityId": 3,
+      "pagerank": 0.001987,
+      "communityId": 2,
       "tags": [],
       "summary": "Types module lookup defining KanjiExample, KanjiData, VerbItem."
     },
@@ -9500,8 +9527,8 @@
       "symbolCount": 11,
       "lineCount": 194,
       "complexity": "moderate",
-      "pagerank": 0.001275,
-      "communityId": 2,
+      "pagerank": 0.001274,
+      "communityId": 8,
       "tags": [],
       "summary": "Application module audio-import.worker defining WorkerStartMessage, WorkerCancelMessage, ExtractedTrack."
     },
@@ -9513,8 +9540,8 @@
       "symbolCount": 0,
       "lineCount": 20,
       "complexity": "simple",
-      "pagerank": 0.00108,
-      "communityId": 12,
+      "pagerank": 0.001078,
+      "communityId": 11,
       "tags": [
         "config"
       ],
@@ -11051,6 +11078,15 @@
       "summary": ""
     },
     {
+      "id": "function:web/src/lib/practice.ts:summarizeIncorrect",
+      "type": "function",
+      "filePath": "web/src/lib/practice.ts",
+      "name": "summarizeIncorrect",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
       "id": "function:web/src/lib/practice.ts:summarizeSession",
       "type": "function",
       "filePath": "web/src/lib/practice.ts",
@@ -11064,6 +11100,15 @@
       "type": "function",
       "filePath": "web/src/lib/practice.ts",
       "name": "targetTypeFromId",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:web/src/lib/practice.ts:userAnswerFor",
+      "type": "function",
+      "filePath": "web/src/lib/practice.ts",
+      "name": "userAnswerFor",
       "language": "typescript",
       "tags": [],
       "summary": ""
@@ -11856,6 +11901,15 @@
       "type": "function",
       "filePath": "web/src/lib/use-review-draft.ts",
       "name": "validateReviewDraft",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:web/src/lib/vocab-draft.ts:parseCounts",
+      "type": "function",
+      "filePath": "web/src/lib/vocab-draft.ts",
+      "name": "parseCounts",
       "language": "typescript",
       "tags": [],
       "summary": ""
@@ -15474,6 +15528,13 @@
     },
     {
       "source": "file:web/src/components/practice/SessionResult.tsx",
+      "target": "file:web/src/lib/practice.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:web/src/components/practice/SessionResult.tsx",
       "target": "file:web/src/types/index.ts",
       "type": "imports",
       "direction": "forward",
@@ -18694,6 +18755,13 @@
     },
     {
       "source": "file:web/src/lib/practice.ts",
+      "target": "function:web/src/lib/practice.ts:summarizeIncorrect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:web/src/lib/practice.ts",
       "target": "function:web/src/lib/practice.ts:summarizeSession",
       "type": "contains",
       "direction": "forward",
@@ -18702,6 +18770,13 @@
     {
       "source": "file:web/src/lib/practice.ts",
       "target": "function:web/src/lib/practice.ts:targetTypeFromId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:web/src/lib/practice.ts",
+      "target": "function:web/src/lib/practice.ts:userAnswerFor",
       "type": "contains",
       "direction": "forward",
       "weight": 1.0
@@ -19907,6 +19982,13 @@
       "source": "file:web/src/lib/vocab-draft.test.ts",
       "target": "file:web/src/lib/vocab-draft.ts",
       "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:web/src/lib/vocab-draft.ts",
+      "target": "function:web/src/lib/vocab-draft.ts:parseCounts",
+      "type": "contains",
       "direction": "forward",
       "weight": 1.0
     },
@@ -21271,6 +21353,7 @@
         "file:docs/research/ux-benchmark/duolingo.md",
         "file:docs/research/ux-benchmark/lingodeer.md",
         "file:docs/research/ux-benchmark/renshuu-wanikani-bunpro.md",
+        "file:docs/research/ux-mobile-2026-10/2026-10-01-playwright-mobile-study.md",
         "file:docs/research/ux-redesign/2026-09-27-mobile-learning-flows.md",
         "file:docs/specs/README.md",
         "file:docs/specs/SPEC-01-du-lieu-va-sinh-cau-hoi.md",
@@ -21368,6 +21451,7 @@
             "file:docs/research/ux-benchmark/duolingo.md",
             "file:docs/research/ux-benchmark/lingodeer.md",
             "file:docs/research/ux-benchmark/renshuu-wanikani-bunpro.md",
+            "file:docs/research/ux-mobile-2026-10/2026-10-01-playwright-mobile-study.md",
             "file:docs/research/ux-redesign/2026-09-27-mobile-learning-flows.md",
             "file:docs/specs/README.md",
             "file:docs/specs/SPEC-01-du-lieu-va-sinh-cau-hoi.md",
@@ -22318,6 +22402,7 @@
         "file:docs/research/ux-benchmark/duolingo.md",
         "file:docs/research/ux-benchmark/lingodeer.md",
         "file:docs/research/ux-benchmark/renshuu-wanikani-bunpro.md",
+        "file:docs/research/ux-mobile-2026-10/2026-10-01-playwright-mobile-study.md",
         "file:docs/research/ux-redesign/2026-09-27-mobile-learning-flows.md",
         "file:docs/specs/README.md",
         "file:docs/specs/SPEC-01-du-lieu-va-sinh-cau-hoi.md",

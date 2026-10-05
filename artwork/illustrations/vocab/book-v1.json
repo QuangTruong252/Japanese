@@ -1,0 +1,52 @@
+{
+  "createdAt": "2026-10-05T05:35:27.291Z",
+  "source": "image_gen",
+  "prompt": "Use case: illustration-story. Image 1 is a STYLE REFERENCE ONLY from MaiPace Phố giấy; do not reproduce its whole scene. Match watercolor/gouache pigment, fine expressive dark pencil outlines, softened flat shapes, subtle natural paper grain INSIDE painted shapes, restrained ivory/sand/charcoal/sage palette and occasional muted brick-red. Friendly hand-painted editorial illustration. Not glossy 3D, photorealism, flat vector icon, thick cartoon stroke or anime mascot. No text, letters, numerals, kana/kanji, watermark, logo, labels, UI, borders, circles, panels or multiple images. Produce ONE finished asset. Asset type: reusable vocabulary cutout, square 1:1 canvas, exported at 512x512. TRUE transparent RGBA background outside the object; no opaque paper rectangle, scene, room, people, ground plane, decorative plants, checkerboard drawing or backdrop. Natural paper grain only within colored object surfaces. One single fully visible object centered, occupying approximately 70-75% of the canvas long dimension, generous equal safe margins, crisp readable silhouette at 128px. Soft shading only on the object; no external cast shadow. Subject: one CLOSED substantial hardcover book in muted brick-red, slight three-quarter view showing a stitched/bound solid spine and many ivory pages along the fore-edge. Clearly a reading book, not a spiral notebook, diary or stack. Entire book visible. Plain cover, no title, writing, symbols, bookmark or other objects. Simple worn cloth cover rendered with the reference pigment and delicate pencil marks.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/book-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Một quyển sách bìa cứng đỏ gạch với gáy đóng và các trang giấy màu ngà."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+    "id": "hon",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/book-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "hasAlpha": true
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "contain",
+    "innerSize": {
+      "width": 448,
+      "height": 448
+    },
+    "padding": 32,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 31808,
+    "sha256": "4a5a0d9a1824b818480f55e28b5c3889dbe83b1ccd8db789d84170d00e70c33f",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 173696,
+      "partial": 87714,
+      "opaque": 734
+    }
+  }
+}

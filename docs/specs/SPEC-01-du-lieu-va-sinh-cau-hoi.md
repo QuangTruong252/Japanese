@@ -52,6 +52,14 @@ bundle nên **đã offline sẵn** — không cần bảng cache nào.
 Kiểu dữ liệu: dùng nguyên `Lesson`, `GrammarPoint`, `ExampleSentence`, `VocabWord`,
 `QuestionItem`, `PracticeConfig` trong `web/src/types/index.ts`. Không định nghĩa lại.
 
+### 2.1. Tham chiếu minh họa — định hướng 05/10/2026
+
+Tên file, thư mục và hợp đồng optional fields cho ảnh được chốt tại
+[SPEC-21](SPEC-21-illustration-assets.md) §5. `Lesson.cover`, `VocabWord.illustration` và
+`GrammarPoint.illustration` **chưa được triển khai trong types/code/dữ liệu hiện tại**.
+Khi thêm sau này, giữ nguyên ID học tập; chỉ tham chiếu file production thật bằng URL
+`/assets/illustrations/...`, không thêm bảng cache Dexie hoặc ghi ảnh vào sync.
+
 ## 3. Quy tắc chuyển đổi từ noken
 
 | Trường nguồn | Xử lý |

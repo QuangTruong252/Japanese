@@ -157,6 +157,12 @@
     },
     {
       "id": "gakusei",
+      "illustration": {
+        "src": "/assets/illustrations/vocab/student-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": { "vi": "Một sinh viên mang ba lô và ôm sách bìa đỏ." }
+      },
       "word": "学生[がくせい]",
       "kana": "がくせい",
       "meaning": {
@@ -225,6 +231,12 @@
     },
     {
       "id": "isha",
+      "illustration": {
+        "src": "/assets/illustrations/vocab/doctor-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": { "vi": "Một bác sĩ mặc áo blouse, đeo ống nghe và cầm hồ sơ." }
+      },
       "word": "医者[いしゃ]",
       "kana": "いしゃ",
       "meaning": {

@@ -1,5 +1,7 @@
 'use client';
 
+import { Illustration } from '@/components/Illustration';
+
 import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -351,6 +353,16 @@ export default function ReviewTodayPage() {
         {draftResumeCard}
         <Card>
           <CardContent className="space-y-4 p-6 text-center">
+            <Illustration
+              asset={{
+                src: '/assets/illustrations/ui/states/review-complete-v1.webp',
+                width: 512,
+                height: 512,
+                alt: { vi: '' },
+              }}
+              sizes="144px"
+              className="mx-auto size-36 object-contain"
+            />
             {queue.limitReached ? (
               <>
                 <h2 className="text-lg font-semibold">Đã đạt hạn mức mục mới hôm nay</h2>

@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-05",
+  "files": [
+    {
+      "file": "01-pho-giay-mobile.png",
+      "width": 1475,
+      "height": 1067,
+      "bytes": 1744292,
+      "sha256": "1e018b909239571d87aa3caa04ccc8e19e4feeedd95cfc11a059bafc71ee2bc0",
+      "inspected": true,
+      "promptEmbedded": true
+    },
+    {
+      "file": "02-chuyen-tau-mobile.png",
+      "width": 1474,
+      "height": 1067,
+      "bytes": 1598147,
+      "sha256": "ef50cc23073520f6600fa2f47c88926a50af801a80f668bc6aa4472f778a5038",
+      "inspected": true,
+      "promptEmbedded": true
+    },
+    {
+      "file": "03-ban-hoc-mobile.png",
+      "width": 1476,
+      "height": 1066,
+      "bytes": 1593850,
+      "sha256": "b3dbdb5daf2bf05d2ef04c7d73252ee9ed5db12d7e20e755fe8ee8b63300b3a8",
+      "inspected": true,
+      "promptEmbedded": true
+    },
+    {
+      "file": "04-pho-giay-desktop.png",
+      "width": 1505,
+      "height": 1045,
+      "bytes": 1961996,
+      "sha256": "b765f86b3765361ba5f12dac6200c6a6f82a42ea6477608cd847634f747811b4",
+      "inspected": true,
+      "promptEmbedded": true
+    }
+  ],
+  "applicationSourceChanged": false,
+  "browserAcceptance": "not run; design exploration",
+  "pnpmCheck": {
+    "command": "pnpm check",
+    "cwd": "web",
+    "result": "PASS",
+    "exitCode": 0,
+    "date": "2026-10-05"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "createdAt": "2026-10-05T04:31:03.300Z",
+  "source": "image_gen",
+  "prompt": "Use case: illustration-story. Image 1 is the STYLE AND CHARACTER REFERENCE ONLY for MaiPace's Phố giấy assets, not an edit target. Create one new standalone illustration. Match its watercolor/gouache pigment, fine dark pencil lines, natural paper grain, softened flat shapes, near-white warm paper, sage/olive foliage, sand/cream architecture, charcoal outlines and restrained brick-red accents. Keep the friendly youthful adult tone and recognizable faces, hair, clothing and body proportions of the reference people; no chibi, glossy 3D or photorealism. NO text, letters, numerals, Japanese writing, speech bubbles, written signage, logo, watermark, UI, buttons, panels, labels, borders or checkerboard. Blank shop awnings and notebook covers. No tourist landmarks. Opaque quiet near-white paper background. Asset type: reusable dashboard neighborhood banner, target 1200x400, panoramic 3:1 aspect ratio. Compose for this very wide shallow canvas from the outset; do not squeeze a portrait scene into it. A pleasant everyday Japanese street, a small wood-and-cream storefront with blank awning on the left, a parked bicycle and a few potted plants, low rooftops and foliage extending toward the right. Place the reference two adults greeting one another, full bodies visible but small, within the central third of the canvas so the pair remains intact in a centered narrower crop. Male: short dark hair, ivory sweater, charcoal trousers, black backpack. Female: straight dark bob, cream cardigan, muted brick-red shirt, charcoal skirt, brown shoulder bag, plain closed notebook. Mild polite bow. Simplify architectural details and foliage considerably compared with the reference; roomy composition, subtle paper space above and below, no objects clipped, no dense ornamental flowers. This is a decorative strip sitting above real UI content, no blank text box needed. Preserve same painted brushwork and palette; the street feels welcoming and calm. Render ONE wide finished production illustration, exact 3:1 canvas.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/ui/banners/paper-town-v1.webp",
+  "width": 1200,
+  "height": 400,
+  "role": "decorative-dashboard-banner",
+  "suggestedAlt": {
+    "vi": ""
+  },
+  "master": {
+    "path": "artwork/illustrations/ui/banners/paper-town-v1.png",
+    "width": 2172,
+    "height": 724,
+    "format": "png"
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "cover",
+    "position": "centre",
+    "quality": 82,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 133158,
+    "sha256": "c18d9d6554fccb803573e37af8f973715654fa4845627c85183d2cee55c872c6",
+    "hasAlpha": false,
+    "decoded": true
+  }
+}

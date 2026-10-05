@@ -9,6 +9,13 @@ export interface LocalizedText {
   en?: string;
 }
 
+export interface IllustrationAsset {
+  src: string;
+  width: number;
+  height: number;
+  alt: LocalizedText;
+}
+
 export interface ExampleSentence {
   jp: string; // Furigana bracket notation: "私[わたし]は 学生[がくせい]です"
   kana?: string; // Cách đọc câu để phát âm và hiển thị dưới ví dụ
@@ -24,6 +31,8 @@ export interface GrammarPoint {
   explanation: LocalizedText;
   sourceRef?: string;
   examples: ExampleSentence[];
+  illustration?: IllustrationAsset;
+  illustrationCaption?: LocalizedText;
 }
 
 export interface VerbForms {
@@ -56,6 +65,7 @@ export interface VocabWord {
   kanjiIds?: string[];
   audioKey?: string;
   notes?: LocalizedText;
+  illustration?: IllustrationAsset;
 }
 
 export interface Lesson {
@@ -70,6 +80,7 @@ export interface Lesson {
   verification?: 'verified' | 'unverified';
   grammar: GrammarPoint[];
   references?: string[];
+  cover?: IllustrationAsset;
 }
 
 /** Một cặp của dạng `matching`. Mỗi cặp có lịch ôn riêng (SPEC-01 §4.2). */

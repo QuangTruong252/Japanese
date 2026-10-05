@@ -22,6 +22,31 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
       }
     }
     prev.current = pathname;
+
+    // Hash từ URL/search có thể đến trước phần bài được stream. Shell cuộn riêng,
+    // nên không dựa vào scroll của window; đợi đúng mục rồi cuộn một lần.
+    const scrollToHash = () => {
+      if (!window.location.hash) return true;
+      let id = window.location.hash.slice(1);
+      try { id = decodeURIComponent(id); } catch { /* Giữ nguyên hash malformed. */ }
+      const target = document.getElementById(id);
+      if (!target) return false;
+      target.scrollIntoView({ block: 'start', behavior: 'instant' });
+      return true;
+    };
+    const container = document.getElementById('app-scroll-container');
+    let observer: MutationObserver | undefined;
+    if (window.location.hash && container && !scrollToHash()) {
+      observer = new MutationObserver(() => {
+        if (scrollToHash()) observer?.disconnect();
+      });
+      observer.observe(container, { childList: true, subtree: true });
+    }
+    window.addEventListener('hashchange', scrollToHash);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('hashchange', scrollToHash);
+    };
   }, [pathname]);
 
   return (

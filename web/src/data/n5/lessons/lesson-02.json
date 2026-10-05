@@ -46,7 +46,18 @@
             "vi": "Kia là chiếc cặp của tôi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/kore-sore-are-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Người nói ở trái có sách sát bên; người nghe ở phải có ô sát bên; một chiếc cặp nằm ở xa cả hai."
+        }
+      },
+      "illustrationCaption": {
+        "vi": "Trong hình, người nói ở bên trái: これ là quyển sách cạnh người nói; それ là chiếc ô cạnh người nghe ở bên phải; あれ là chiếc cặp trên ghế ở xa cả hai."
+      }
     },
     {
       "id": "kono-sono-ano",

@@ -228,5 +228,13 @@
   "references": [
     "adjectives"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/adjective-town-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Hai người học đi qua một thị trấn có hoa anh đào và ngọn núi phủ tuyết ở xa."
+    }
+  }
 }

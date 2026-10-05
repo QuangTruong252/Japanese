@@ -3,9 +3,9 @@ version: alpha
 name: Washi
 description: Design system for a personal Japanese self-study web app (Minna no Nihongo N5 & N4). Warm washi paper surfaces, a single torii-red accent, and Japanese text treated as the primary content. Built on Tailwind CSS v4 + shadcn/ui.
 colors:
-  background: oklch(0.99 0.002 90)
+  background: oklch(0.98 0.009 85)
   foreground: oklch(0.2 0.01 285)
-  card: oklch(1 0 0)
+  card: oklch(0.99 0.005 85)
   card-foreground: oklch(0.2 0.01 285)
   popover: oklch(1 0 0)
   popover-foreground: oklch(0.2 0.01 285)
@@ -326,6 +326,25 @@ Two known limits of the format, neither of which is a defect to fix:
 
 ## Principles
 
+### Phố giấy visual direction — approved 05/10/2026
+
+The user selected the illustrated Phố giấy concepts in `new-ui/01-pho-giay-mobile.png`
+and `new-ui/04-pho-giay-desktop.png`, then requested that the real interface match their
+composition. This replaces the former card-dominated presentation of Home and the lesson
+hub. Washi remains the token system and the existing brand assets remain authoritative.
+
+Warm ivory page surfaces, full-width watercolor scenes, strong Japanese lettering and
+hairline-separated content define this expression. Main actions sit directly on the page;
+supporting panels use a quiet `muted` fill. Do not put a border, radius or outer card around
+the panorama. `.paper-panorama` and `.paper-scene` fade only their edge into the page;
+the scene is never a screenshot containing controls. Compact viewports reduce scene height
+before shrinking content. Dark mode uses its existing ink/surface tokens.
+
+Home's action title uses 24px on mobile, 32px on tablet and 48px on wide desktop. Japanese
+lesson titles use 32–36px; short multiple-choice prompts use 60–72px, while long questions
+keep `jp-quiz`. These are display exceptions for this learning flow, not UI label sizes.
+Furigana remains native ruby. Answer grading, saved drafts and FSRS are unchanged.
+
 Five rules settle every disagreement:
 
 1. **Japanese text is the hero.** Kanji and furigana are the largest, highest-contrast
@@ -445,7 +464,7 @@ weights below are unchanged.
 
 | Role | Used for |
 |---|---|
-| `display` | Dashboard hero figures: streak, accuracy |
+| `display` | Prominent learning headings or figures; no streak presentation |
 | `h1` | Page titles |
 | `h2` | Section titles, grammar point names |
 | `h3` | Card titles |
@@ -631,14 +650,14 @@ component belongs to exactly one:
 | **Default card** | The workhorse container: content blocks, answer options, list rows, stat tiles | `xl` | 1px `border` | none | none |
 | **Elevated** | Menus, popovers, dropdowns: attached to a trigger, dismissible | `xl` | 1px `border` | `shadow-md` | none |
 | **Overlay** | Dialogs, sheets, the hovered furigana zoom: blocking, above everything | `xl` | 1px `border` | `shadow-lg` | scrim only, from `sm` up |
-| **Floating navigation** | The persistent shell surface that hovers over scrolling content | `full` or `xl` | 1px `border` | `shadow-md` | none below `lg`; a near-opaque fill instead |
+| **Edge navigation** | The persistent mobile shell attached to the bottom edge | none at the outside edge | 1px top `border` | none | none; opaque page fill |
 
 Rules that follow from the table:
 
 - A default card gets **no shadow**. If two surfaces need separating, a 1px rule does it.
 - Blur is not a texture, and on phones it is a cost: a `backdrop-filter` on a fixed bar is
-  recomputed on every scrolled frame. The bottom navigation therefore uses a near-opaque fill
-  (`bg-card/95`) instead of blur; overlay scrims blur only from `sm` up. Never blur a card in
+  recomputed on every scrolled frame. The bottom navigation therefore uses an opaque
+  `bg-background` fill instead of blur; overlay scrims blur only from `sm` up. Never blur a card in
   the page flow. The desktop sidebar is not floating — content sits beside it, not under it, so
   it is an ordinary surface separated by a 1px rule.
 - **Radius comes from the scale**: `sm` for badges and small chips, `md` for inputs and small
@@ -646,8 +665,8 @@ Rules that follow from the table:
   `full` for avatars, circular controls and speed chips. A radius outside the approved surface
   system, including Tailwind steps this scale does not define, is not applied on a whim; if a
   surface needs a step the system lacks, add it here and in the stylesheet first.
-- Nothing in this system is square-cornered, and nothing is a pill except what the table lists
-  as `full`.
+- Content cards use the radius scale. Edge navigation attaches to the viewport without outer
+  rounded corners; pills are reserved for avatars and circular controls.
 
 Border **thickness** is the second depth channel: an answer option's border goes from 1px to
 **2px** when selected or when a result is revealed, so state survives without relying on fill
@@ -792,6 +811,9 @@ this contract; `missing` means the pattern exists in this file with no shared im
 | Button, card, dialog, sheet, tabs, tooltip, input, badge, progress and siblings | `web/src/components/ui/*` | stable | shadcn `base-nova` on Base UI; `size="quiz"` is the 48px practice size |
 | Progress indicator | `web/src/components/ui/progress.tsx` plus `web/src/components/LessonProgress.tsx` | needs review | A third, hand-rolled bar exists inline on the dashboard and lesson list |
 | Application shell navigation | `web/src/components/AppNav.tsx` | stable | Năm đích chính (Bảng tin, Học bài, Luyện tập, Ôn tập, Tra cứu); chân sidebar dẫn /ca-nhan; header mobile có AccountButton |
+| Illustrated Home composition | `web/src/components/DashboardContent.tsx` | existing | Phố giấy panorama, direct primary action, desktop supporting column; real CTA helper |
+| Reinforcement preview | `web/src/components/DashboardReinforcement.tsx` | existing | Two real review targets; `buildTargetLabels` and `useQuestionPool` shared with Weak Points |
+| Illustration | `web/src/components/Illustration.tsx` | existing | `next/image`, responsive sizes, lazy/eager, hide failed image while preserving text |
 | Profile & progress view | `web/src/app/ca-nhan/page.tsx` | stable | Màn Cá nhân / Tiến độ với auth Supabase, trạng thái sync, bài đang học và thẻ tiến độ Dexie |
 | Statistics view | `web/src/components/stats/StatisticsContent.tsx` | stable | Tái dùng nội dung Thống kê SPEC-07 cho tab /ca-nhan/thong-ke và chuyển hướng /thong-ke |
 | Account button | `web/src/components/profile/AccountButton.tsx` | stable | Nút Tài khoản cho header mobile và desktop shell (≥48px touch target) |
@@ -802,6 +824,18 @@ this contract; `missing` means the pattern exists in this file with no shared im
 
 Introducing a new shared component, or a variant of an existing one, means adding it to this
 table in the same change.
+
+## Illustration asset references
+
+Illustration filenames, storage, versioning and content references are governed by
+[SPEC-21](docs/specs/SPEC-21-illustration-assets.md). Production images live under
+`web/public/assets/illustrations/`; source artwork and generation provenance live outside
+`public`, under `artwork/illustrations/`. This is an asset organization convention, not a
+change to asset lookup behavior. Optional content references and the
+shared `Illustration` renderer now support the Phố giấy pilot. Raster colors belong to the
+illustrated subject; surrounding UI continues to use Washi tokens. Keep Japanese text and
+actions readable without the image, decorative alt empty, and meaning illustrations off
+flashcard fronts. Screen placement and dated verification live in SPEC-21 and its handoff.
 
 ## Global contract vs screen contract
 

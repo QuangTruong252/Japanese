@@ -1,0 +1,53 @@
+{
+  "createdAt": "2026-10-05T08:14:57.286Z",
+  "source": "image_gen",
+  "prompt": "Use case: illustration-story. Image 1 is MaiPace Phố giấy STYLE REFERENCE ONLY; match watercolor/gouache pigment, fine expressive dark pencil outlines, softly shaded hand-painted shapes, subtle natural paper grain INSIDE paint, restrained ivory/sand/charcoal/sage palette with occasional muted brick-red. Image 2 is existing vocabulary book asset ONLY to match cutout finish and edge detail, do not reproduce book. Produce ONE finished vocabulary cutout on square 1:1 canvas. TRUE native transparent RGBA outside the object; no opaque paper rectangle, backdrop, room, floor, external cast shadow, decorative plants, checkerboard drawing, text, letters, numbers, kanji/kana, watermark, brand logo, labels, UI, panels or multiple images. Natural grain only within painted surfaces. Full object visible centered, roughly 70-75% canvas longest dimension with generous equal safe margins, readable silhouette at 128px. Keep reference's delicate pencil marks and soft pigment. Not glossy 3D, photorealism, flat vector icon, thick cartoon or anime mascot. Subject: One vintage COMPACT CAMERA, charcoal painted body and lightly brushed silver top, simple large round front lens with gentle blue-gray glass reflection, small shutter button, three-quarter view showing front and side. No brands/text/digits/film, no strap or other objects.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png",
+    "artwork/illustrations/vocab/book-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/camera-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Một máy ảnh compact màu than và bạc, có ống kính phía trước."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+    "id": "kamera",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/camera-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "hasAlpha": true
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "contain",
+    "innerSize": {
+      "width": 448,
+      "height": 448
+    },
+    "padding": 32,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 41552,
+    "sha256": "a61d71cca0e5a9e8d0f862ead750d6a80036d7a6cdb5181f3bf3f4e046f7591b",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 163875,
+      "partial": 97442,
+      "opaque": 827
+    }
+  }
+}

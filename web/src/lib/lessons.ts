@@ -1,4 +1,5 @@
 import type { Lesson, LocalizedText, VocabWord } from '../types/index.ts';
+import { validateIllustrationAsset } from './illustrations.ts';
 
 export interface LessonSummary {
   number: number;
@@ -94,7 +95,17 @@ export function loadLesson(lessonNum: number): Promise<Lesson> {
 
   let cached = lessonCache.get(lessonNum);
   if (!cached) {
-    cached = loader().then((mod) => mod.default as Lesson);
+    cached = loader().then((mod) => {
+      const lesson = mod.default as Lesson;
+      if (lesson.cover !== undefined) validateIllustrationAsset(lesson.cover);
+      for (const point of lesson.grammar) {
+        if (point.illustration !== undefined) validateIllustrationAsset(point.illustration);
+        if (point.illustrationCaption !== undefined && typeof point.illustrationCaption?.vi !== 'string') {
+          throw new Error('Chú thích ảnh ngữ pháp không hợp lệ.');
+        }
+      }
+      return lesson;
+    });
     lessonCache.set(lessonNum, cached);
   }
 
@@ -114,7 +125,13 @@ export function loadVocab(lessonNum: number): Promise<VocabWord[]> {
 
   let cached = vocabCache.get(lessonNum);
   if (!cached) {
-    cached = loader().then((mod) => (mod.default as VocabFile).words);
+    cached = loader().then((mod) => {
+      const words = (mod.default as VocabFile).words;
+      for (const word of words) {
+        if (word.illustration !== undefined) validateIllustrationAsset(word.illustration);
+      }
+      return words;
+    });
     vocabCache.set(lessonNum, cached);
   }
 

@@ -7,6 +7,8 @@
 
 ## 1. Mục tiêu & phạm vi
 
+**05/10/2026 — presentation Phố giấy:** câu trắc nghiệm ngắn dùng chữ Nhật 60–72px; câu dài giữ bậc `jp-quiz`. Nền giấy, option nền muted, thanh tiến độ rõ hơn, safe area ở khung phiên và minh họa nhỏ ở kết quả. Giữ chấm ngay khi chọn, feedback success/destructive và save/resume hiện có; không thêm bước “Kiểm tra” chỉ vì ảnh concept vẽ nút đó. Handoff SPEC-21 ghi smoke test trắc nghiệm 10 câu; không phải tái nghiệm thu cả 5 dạng.
+
 Trục chính của app: chọn phạm vi luyện → làm một loạt câu hỏi → chấm tự động → ghi kết quả
 vào Dexie theo lịch FSRS. Một wrapper quản lý lượt làm bài dùng chung cho **cả 5 dạng**;
 mỗi dạng chỉ là một component cắm vào.

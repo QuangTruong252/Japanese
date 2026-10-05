@@ -1,0 +1,52 @@
+{
+  "createdAt": "2026-10-05T05:40:23.424Z",
+  "source": "image_gen",
+  "prompt": "Use case: illustration-story. Image 1 is a STYLE REFERENCE ONLY from MaiPace Phố giấy; do not reproduce its whole scene. Match watercolor/gouache pigment, fine expressive dark pencil outlines, softened flat shapes, subtle natural paper grain INSIDE painted shapes, restrained ivory/sand/charcoal/sage palette and occasional muted brick-red. Friendly hand-painted editorial illustration. Not glossy 3D, photorealism, flat vector icon, thick cartoon stroke or anime mascot. No text, letters, numerals, kana/kanji, watermark, logo, labels, UI, borders, circles, panels or multiple images. Produce ONE finished asset. Asset type: reusable vocabulary cutout, square 1:1 canvas, exported at 512x512. TRUE transparent RGBA background outside the object; no opaque paper rectangle, scene, room, people, ground plane, decorative plants, checkerboard drawing or backdrop. Natural paper grain only within colored object surfaces. One single fully visible object centered, occupying approximately 70-75% of the canvas long dimension, generous equal safe margins, crisp readable silhouette at 128px. Soft shading only on the object; no external cast shadow. Subject: ONE ordinary warm sand/brown rectangular school satchel, slightly three-quarter view, short top carrying handle, two plain charcoal buckles on front flap, single relaxed shoulder strap curved closely beside the bag. All straps and handle fully visible. Clearly a school/shoulder bag, not suitcase or shopping bag. Blank surface with simple stitched seams, no letters, logo, books poking out, charms or other objects. Same muted warm cloth/leather pigment and fine outlines as the reference.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/school-bag-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Một chiếc cặp sách màu nâu có quai xách và dây đeo."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+    "id": "kaban",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/school-bag-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "hasAlpha": true
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "contain",
+    "innerSize": {
+      "width": 448,
+      "height": 448
+    },
+    "padding": 32,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 32548,
+    "sha256": "d4d4c1860eac39d93fe465a0802b576c605a2cd8984845aeec2fe092be3900dd",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 156388,
+      "partial": 104552,
+      "opaque": 1204
+    }
+  }
+}

@@ -7,7 +7,7 @@ import { containsJapanese } from '@/lib/japanese';
 export type AnswerOptionState = 'idle' | 'selected' | 'correct' | 'incorrect';
 
 const STATE_CLASS: Record<AnswerOptionState, string> = {
-  idle: 'bg-card border-border hover:bg-accent',
+  idle: 'bg-muted/60 border-border hover:bg-accent',
   selected: 'bg-accent border-primary',
   correct: 'bg-success/10 border-success',
   incorrect: 'bg-destructive/10 border-destructive motion-safe:animate-jp-shake',
@@ -37,7 +37,7 @@ export function AnswerOption({
       onClick={disabled ? undefined : onClick}
       aria-pressed={state === 'selected'}
       className={cn(
-        'flex min-h-12 w-full items-center gap-3 rounded-xl border-2 p-4 text-left',
+        'flex min-h-14 w-full items-center gap-3 rounded-xl border-2 p-4 text-left',
         'transition-colors duration-150 ease-out',
         'outline-none focus-visible:ring-3 focus-visible:ring-ring/50',
         'active:translate-y-px',

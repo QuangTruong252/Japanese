@@ -119,6 +119,14 @@
         "translation": {
           "vi": "Đây là sách."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/book-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một quyển sách bìa cứng đỏ gạch với gáy đóng và các trang giấy màu ngà."
+        }
       }
     },
     {
@@ -152,6 +160,14 @@
         "kana": "これは なんの ざっしですか。",
         "translation": {
           "vi": "Đây là tạp chí gì?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/magazine-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một cuốn tạp chí mỏng bìa mềm có tranh lá cây và không có chữ."
         }
       }
     },
@@ -187,6 +203,14 @@
         "translation": {
           "vi": "Đây là vở của tôi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/notebook-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một quyển vở mở có gáy xoắn và các dòng kẻ trống."
+        }
       }
     },
     {
@@ -203,6 +227,14 @@
         "kana": "その てちょうは せんせいのです。",
         "translation": {
           "vi": "Cuốn sổ tay đó là của giáo viên."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/planner-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một sổ tay cá nhân nhỏ bìa da nâu với dây giữ và dấu trang."
         }
       }
     },
@@ -255,10 +287,26 @@
         "translation": {
           "vi": "Cây bút chì này là của ai?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/pencil-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một cây bút chì gỗ đã gọt nhọn, có đầu than chì."
+        }
       }
     },
     {
       "id": "boorupen",
+      "illustration": {
+        "src": "/assets/illustrations/vocab/ballpoint-pen-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một bút bi bấm thân xanh sage, có clip và đầu bi kim loại."
+        }
+      },
       "word": "ボールペン",
       "kana": "ボールペン",
       "meaning": {
@@ -276,6 +324,14 @@
     },
     {
       "id": "shaapupenshiru",
+      "illustration": {
+        "src": "/assets/illustrations/vocab/mechanical-pencil-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một bút chì kim thân màu than, đầu kim loại mảnh và ngòi chì."
+        }
+      },
       "word": "シャープペンシル",
       "kana": "シャープペンシル",
       "meaning": {
@@ -293,6 +349,14 @@
     },
     {
       "id": "kagi",
+      "illustration": {
+        "src": "/assets/illustrations/vocab/key-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chìa khóa kim loại với đầu tròn và răng khóa."
+        }
+      },
       "word": "かぎ",
       "kana": "かぎ",
       "meaning": {
@@ -310,6 +374,14 @@
     },
     {
       "id": "tokei",
+      "illustration": {
+        "src": "/assets/illustrations/vocab/wristwatch-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một đồng hồ đeo tay mặt tròn màu ngà, dây da nâu."
+        }
+      },
       "word": "時計[とけい]",
       "kana": "とけい",
       "meaning": {
@@ -340,6 +412,14 @@
         "translation": {
           "vi": "Cái ô này là của tôi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/umbrella-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc ô mở màu xanh sage với cán cong."
+        }
       }
     },
     {
@@ -356,6 +436,14 @@
         "kana": "あの かばんは ミラーさんのです。",
         "translation": {
           "vi": "Cái cặp kia là của anh Miller."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/school-bag-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc cặp sách màu nâu có quai xách và dây đeo."
         }
       }
     },
@@ -374,6 +462,14 @@
         "translation": {
           "vi": "Đây là đĩa CD tiếng Anh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/compact-disc-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một đĩa CD màu bạc có lỗ tròn ở giữa."
+        }
       }
     },
     {
@@ -390,6 +486,14 @@
         "kana": "あれは テレビです。",
         "translation": {
           "vi": "Kia là tivi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/television-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc ti vi màn hình phẳng màu than trên chân đế."
         }
       }
     },
@@ -408,10 +512,26 @@
         "translation": {
           "vi": "Đây là đài radio phải không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/radio-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc radio màu kem với loa, núm vặn và ăng ten."
+        }
       }
     },
     {
       "id": "kamera",
+      "illustration": {
+        "src": "/assets/illustrations/vocab/camera-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một máy ảnh compact màu than và bạc, có ống kính phía trước."
+        }
+      },
       "word": "カメラ",
       "kana": "カメラ",
       "meaning": {
@@ -442,6 +562,14 @@
         "translation": {
           "vi": "Kia là máy vi tính."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/laptop-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một máy tính xách tay đang mở với màn hình trống."
+        }
       }
     },
     {
@@ -459,10 +587,26 @@
         "translation": {
           "vi": "Đây là tạp chí ô tô."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/car-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc ô tô nhỏ màu đỏ gạch với bốn bánh."
+        }
       }
     },
     {
       "id": "tsukue",
+      "illustration": {
+        "src": "/assets/illustrations/vocab/desk-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc bàn học gỗ sáng với ngăn kéo và bốn chân."
+        }
+      },
       "word": "机[つくえ]",
       "kana": "つくえ",
       "meaning": {
@@ -480,6 +624,14 @@
     },
     {
       "id": "isu",
+      "illustration": {
+        "src": "/assets/illustrations/vocab/chair-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc ghế gỗ màu xanh sage có tựa lưng và bốn chân."
+        }
+      },
       "word": "いす",
       "kana": "いす",
       "meaning": {
@@ -510,10 +662,26 @@
         "translation": {
           "vi": "Đây là sô cô la."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/chocolate-bar-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một thanh sô-cô-la nâu, một phần còn trong giấy gói trống."
+        }
       }
     },
     {
       "id": "koohii",
+      "illustration": {
+        "src": "/assets/illustrations/vocab/coffee-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một tách cà phê trong cốc sứ màu ngà có quai."
+        }
+      },
       "word": "コーヒー",
       "kana": "コーヒー",
       "meaning": {

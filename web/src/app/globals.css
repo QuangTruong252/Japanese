@@ -65,9 +65,9 @@
 }
 
 :root {
-  --background: oklch(0.99 0.002 90);
+  --background: oklch(0.98 0.009 85);
   --foreground: oklch(0.2 0.01 285);
-  --card: oklch(1 0 0);
+  --card: oklch(0.99 0.005 85);
   --card-foreground: oklch(0.2 0.01 285);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0.01 285);
@@ -159,6 +159,10 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
   /* App đã cài (SPEC-14): kéo quá không lộ nền, không kéo-để-tải-lại giữa phiên học. */
   @media (display-mode: standalone) {
     html,
@@ -172,6 +176,18 @@
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
   }
+}
+
+/* Phố giấy: cảnh minh họa mở vào trang giấy, không đóng trong một thẻ UI. */
+.paper-panorama {
+  mask-image: linear-gradient(to bottom, black 85%, transparent);
+}
+.paper-scene {
+  mask-image: linear-gradient(to bottom, black 88%, transparent);
+}
+@media (max-height: 700px) and (max-width: 639px) {
+  .paper-panorama { max-height: 8rem; }
+  .paper-scene { max-height: 9rem; }
 }
 
 /* Japanese typography & Furigana rules */

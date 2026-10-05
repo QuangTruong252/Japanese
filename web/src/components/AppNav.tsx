@@ -15,10 +15,10 @@ import {
 } from '@/lib/sync';
 import { createClient, isSupabaseConfigured } from '@/lib/supabase/client';
 import {
-  LayoutDashboard,
+  House,
   BookOpen,
-  Dumbbell,
-  RotateCcw,
+  PencilLine,
+  CalendarDays,
   Search,
   Settings,
   User,
@@ -50,15 +50,15 @@ interface AuthUser {
 // 5 đích điều hướng chính theo SPEC-16 & DESIGN.md §Navigation:
 // Bảng tin · Học bài · Luyện tập · Ôn tập · Tra cứu
 const NAV_ITEMS: NavItem[] = [
-  { href: '/', label: 'Bảng tin', icon: LayoutDashboard },
+  { href: '/', label: 'Bảng tin', icon: House },
   { href: '/hoc', label: 'Học bài', icon: BookOpen },
-  { href: '/luyen-tap', label: 'Luyện tập', icon: Dumbbell },
-  { href: '/on-tap', label: 'Ôn tập', icon: RotateCcw, isDueTarget: true },
+  { href: '/luyen-tap', label: 'Luyện tập', icon: PencilLine },
+  { href: '/on-tap', label: 'Ôn tập', icon: CalendarDays, isDueTarget: true },
   { href: '/hoc/tra-cuu', label: 'Tra cứu', icon: Search },
 ];
 
 // Nút icon trên thanh đầu mobile: vùng chạm 44px, không viền để nhóm bốn nút không nặng
-const HEADER_ICON = 'size-11 sm:size-11 border-transparent bg-transparent shadow-none';
+const HEADER_ICON = 'h-[44px] w-[44px] shrink-0 border-transparent bg-transparent shadow-none';
 const HEADER_ICON_BASE =
   'rounded-xl flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/60 transition outline-none focus-visible:ring-3 focus-visible:ring-ring';
 
@@ -136,31 +136,31 @@ export function AppNav() {
           Mở Profile/Thống kê từ cả năm màn chính ở 390px trong một chạm
           ======================================================== */}
       <header
-        className="lg:hidden shrink-0 z-30 flex items-center justify-between px-4 pt-[calc(0.5rem+env(safe-area-inset-top,0px))] pb-2 bg-background/95 dark:bg-card/95 border-b border-border/70"
+        className="lg:hidden shrink-0 z-30 flex items-center justify-between gap-1 px-4 pt-[calc(0.5rem+env(safe-area-inset-top,0px))] pb-2 bg-background"
         aria-label="Thanh đầu trang"
       >
         <Link
           href="/"
           aria-label="Về trang chủ MaiPace"
-          className="flex items-center gap-2 outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-lg py-1"
+          className="flex min-w-0 items-center gap-2 outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-lg py-1"
         >
-          <div className="w-7 h-7 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden shrink-0">
+          <div className="flex size-8 shrink-0 items-center justify-center">
             <Image
               src="/brand/maipace-mark.svg"
               alt=""
-              width={18}
-              height={18}
+              width={24}
+              height={24}
               className="object-contain"
               priority
             />
           </div>
-          <span className="font-bold text-base tracking-tight text-foreground">
+          <span className="font-bold text-xl tracking-tight text-foreground max-[380px]:text-lg">
             MaiPace
           </span>
         </Link>
 
         {/* Hành động toàn cục (mobile): Tìm kiếm · Giao diện · Cài đặt · Tài khoản. Trang không tự đặt lại. */}
-        <div className="flex items-center gap-1">
+        <div className="flex shrink-0 items-center">
           <SearchTrigger iconOnly className={HEADER_ICON} />
           <ThemeToggle className={HEADER_ICON} />
           <Link
@@ -171,7 +171,7 @@ export function AppNav() {
           >
             <Settings className="size-5" aria-hidden="true" />
           </Link>
-          <AccountButton variant="header" showLabel={false} user={currentUser} className="px-2.5" />
+          <AccountButton variant="header" showLabel={false} user={currentUser} className="h-[48px] w-[48px] min-h-0 justify-center border-transparent bg-transparent p-0" />
         </div>
       </header>
 
@@ -182,12 +182,9 @@ export function AppNav() {
       <nav
         aria-label="Điều hướng chính"
         className={cn(
-          'fixed bottom-[calc(0.75rem+env(safe-area-inset-bottom))] inset-x-4 mx-auto z-50',
-          'flex items-center justify-between gap-1 px-2.5 py-1.5',
-          'rounded-full max-w-md w-auto',
-          'bg-background/95 dark:bg-card/95',
-          'border border-border/80 dark:border-white/10',
-          'shadow-xl shadow-black/5 dark:shadow-black/40 ring-1 ring-black/5 dark:ring-white/5',
+          'fixed bottom-0 inset-x-0 z-50',
+          'flex items-center justify-around gap-1 px-3 pt-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))]',
+          'bg-background border-t border-border',
           'lg:hidden select-none'
         )}
       >
@@ -204,15 +201,15 @@ export function AppNav() {
               aria-current={isActive ? 'page' : undefined}
               aria-label={showBadge ? `${item.label}, ${dueCount} mục đến hạn` : item.label}
               className={cn(
-                'flex-1 flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-2xl transition duration-150 outline-none',
+                'relative flex-1 flex flex-col items-center justify-center min-h-[48px] gap-1 pt-1 pb-2 px-1 rounded-lg transition duration-150 outline-none',
                 'focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2',
                 isActive
-                  ? 'text-primary font-semibold'
+                  ? 'text-primary font-semibold after:absolute after:bottom-0 after:h-0.5 after:w-7 after:rounded-full after:bg-primary'
                   : 'text-muted-foreground hover:text-foreground'
               )}
             >
               <div className="relative flex items-center justify-center">
-                <Icon className="w-5 h-5 shrink-0" />
+                <Icon className="size-6 shrink-0" aria-hidden="true" />
                 {showBadge && (
                   <span
                     aria-hidden="true"
@@ -241,7 +238,7 @@ export function AppNav() {
           ======================================================== */}
       <aside
         aria-label="Điều hướng ứng dụng"
-        className="hidden lg:flex fixed inset-y-0 left-0 w-64 z-40 flex-col justify-between border-r border-border bg-card p-4 select-none"
+        className="hidden lg:flex fixed inset-y-0 left-0 w-64 z-40 flex-col justify-between border-r border-border bg-background px-6 py-8 select-none"
       >
         <div>
           {/* Đỉnh: Logo thương hiệu MaiPace */}
@@ -250,12 +247,12 @@ export function AppNav() {
             aria-label="Về trang chủ MaiPace"
             className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-muted/50 transition-colors group outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
           >
-            <div className="w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden shrink-0">
+            <div className="flex size-9 items-center justify-center shrink-0">
               <Image
                 src="/brand/maipace-mark.svg"
                 alt=""
-                width={24}
-                height={24}
+                width={28}
+                height={28}
                 style={{ width: 'auto', height: 'auto' }}
                 className="object-contain"
                 priority
@@ -263,27 +260,21 @@ export function AppNav() {
             </div>
             <div className="flex flex-col leading-tight">
               <div className="flex items-center gap-1.5">
-                <span className="font-bold text-base text-foreground tracking-tight">
+                <span className="font-bold text-3xl text-foreground tracking-tight">
                   MaiPace
                 </span>
-                <span className="font-jp text-xs text-primary font-medium">
-                  マイペース
-                </span>
               </div>
-              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                Minna no Nihongo N5
-              </span>
             </div>
           </Link>
 
           {/* Hành động toàn cục (desktop): Tìm kiếm Ctrl+K (SPEC-13) + Giao diện; Cài đặt ở đáy sidebar */}
-          <div className="mt-5 flex items-center gap-2">
+          <div className="mt-8 flex items-center gap-2">
             <button
               type="button"
               onClick={openSearch}
               className={cn(
-                'min-w-0 flex-1 flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium',
-                'border border-border/80 bg-muted/40 text-muted-foreground transition duration-150',
+                'min-w-0 flex-1 flex items-center justify-between px-2 py-2.5 rounded-xl text-sm font-medium',
+                'text-muted-foreground transition duration-150',
                 'hover:bg-muted/70 hover:text-foreground hover:border-primary/40',
                 'focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/60 cursor-pointer'
               )}
@@ -291,17 +282,14 @@ export function AppNav() {
             >
               <div className="flex items-center gap-2.5">
                 <Search className="w-4 h-4 shrink-0 text-muted-foreground" />
-                <span>Tìm kiếm...</span>
+                <span className="whitespace-nowrap">Tìm kiếm</span>
               </div>
-              <kbd className="font-mono text-xs px-1.5 py-0.5 rounded border border-border bg-background text-muted-foreground shadow-2xs">
-                ⌘K
-              </kbd>
             </button>
             <ThemeToggle className="size-11 shrink-0" />
           </div>
 
           {/* Giữa: 5 tab chính (Bảng tin · Học bài · Luyện tập · Ôn tập · Tra cứu) */}
-          <nav className="mt-5 space-y-1" aria-label="Menu chính">
+          <nav className="mt-6 space-y-3" aria-label="Menu chính">
             {NAV_ITEMS.map((item) => {
               const Icon = item.icon;
               const isActive = isNavActive(item.href, pathname);
@@ -315,15 +303,15 @@ export function AppNav() {
                   aria-current={isActive ? 'page' : undefined}
                   aria-label={showBadge ? `${item.label}, ${dueCount} mục đến hạn` : undefined}
                   className={cn(
-                    'flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition duration-150 outline-none',
+                    'flex min-h-14 items-center justify-between px-2 py-3 border-b-2 border-transparent text-base font-medium transition duration-150 outline-none',
                     'focus-visible:ring-2 focus-visible:ring-primary/60',
                     isActive
-                      ? 'bg-primary/15 text-primary font-semibold shadow-sm'
+                      ? 'border-primary text-primary font-semibold'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted/60'
                   )}
                 >
                   <div className="flex items-center gap-3">
-                    <Icon className="w-5 h-5 shrink-0" />
+                    <Icon className="size-6 shrink-0" aria-hidden="true" />
                     <span>{item.label}</span>
                   </div>
 
