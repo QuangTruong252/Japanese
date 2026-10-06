@@ -18,29 +18,34 @@ Ngày: 28/09/2026. Trạng thái: **Đã làm cứng theo phản hồi 28/09/202
 
 **Redesign Phố giấy 05/10/2026 theo yêu cầu đối chiếu `new-ui`:** thay bố cục một cột nhiều thẻ bằng panorama mở ra mép trang, nội dung/hành động chính trực tiếp trên nền giấy; desktop chia cột việc tiếp theo và cột củng cố/Kana/tiến độ. Củng cố hiện hai mục thật bằng helper nhãn của màn Điểm yếu; ẩn khi không có lịch sử sai. Container Bảng tin tối đa 1440px trong vùng bên cạnh sidebar, vì cảnh và hai cột cần rộng hơn container đọc. Bài 1 dùng tiêu đề giữa, chữ Nhật lớn, cảnh chào hỏi; hub bên dưới ở mobile/bên phải ở desktop, các lối Ngữ pháp/Nghe/tham khảo là hàng có chevron. Preview từ đầu bài chỉ là nội dung học bên cạnh CTA, không ghi tiến độ. Giữ CTA/ưu tiên nháp, tiến độ và anchor; phần vocab/grammar pilot theo [SPEC-21](SPEC-21-illustration-assets.md). Luật nền/navigation/type được cập nhật có chủ đích ở `DESIGN.md`. Bằng chứng ở handoff SPEC-21; không thay nghiệm thu toàn feature.
 
-### Thành phần Bảng tin — người dùng chốt 06/10/2026, **chưa triển khai**
+### Thành phần Bảng tin — người dùng chốt 06/10/2026 (bản 2), **chưa triển khai**
 
-Chốt nội dung trước khi thiết kế lại (khám phá giao diện trong Open Design). Khi khác với
-bảng thứ tự bên dưới, mục này thắng; code hiện tại vẫn theo bố cục 05/10 cho tới khi triển khai.
+Bảng tin là **trang tóm tắt**: vào là nắm được mình đang ở đâu và việc gì đang chờ; mỗi khối
+chỉ có một link dẫn đi. Hướng dẫn, lối tắt và cấu hình chuyển sang màn onboarding (chưa có
+spec, làm sau). Khi khác với bảng thứ tự bên dưới, mục này thắng; code hiện tại vẫn theo bố
+cục 05/10 cho tới khi triển khai.
 
-| # | Thành phần | Khi hiện | Nguồn |
-| --- | --- | --- | --- |
-| 1 | Một CTA chính, ưu tiên: ôn đến hạn → nháp → học tiếp Bài N → Bắt đầu Bài 1 | Luôn | `resolveDashboardCta` |
-| 2 | Một dòng ngữ cảnh của CTA (“12 mục đến hạn · khoảng 3 phút”, “Bài 3 · từ 4/10”) | Luôn | dữ liệu hiện có |
-| 3 | Lời chào theo buổi, một dòng | Luôn | hiện có |
-| 4 | Cảnh minh họa của bài đang học | Luôn | SPEC-21 |
-| 5 | **Câu hôm nay**: nhân vật trong cảnh “nói” một câu của bài đang học trong bong bóng HTML (Furigana + nghĩa tiếng Việt + nút nghe) | Luôn khi bài có câu phù hợp | mới — câu lấy từ `grammar[].examples` (có `jp` notation + `translation.vi`) của bài đang học, cố định trong ngày; nghe qua `SpeakButton`; vị trí bong bóng theo sidecar cảnh, thiếu thì đặt dưới cảnh |
-| 6 | Hàng “Tiếp tục phiên” (nháp còn lại) ngay dưới CTA | Khi có nháp | hiện có |
-| 7 | Một hàng “Bài đang học” (tên + tiến độ) dẫn sang lộ trình `/hoc` | Khi đã bắt đầu | rút gọn từ hiện có |
-| 8 | Lối “Tôi đã học đến bài…” | Chỉ người mới | hiện có |
+| Khối | Nắm được gì | Link | Khi hiện | Nguồn |
+| --- | --- | --- | --- | --- |
+| Bài đang học | Bài N, tên bài, tiến độ từ vựng | → Bài N | Khi đã bắt đầu | `pickActiveLesson`, `countLearnedByLesson` |
+| Ôn tập | Số mục đến hạn + ước lượng thời gian; hết thì “Hôm nay đã ôn xong” | → Ôn tập | Luôn khi đã có dữ liệu ôn | `use-due-queue.ts` (khớp badge dock) |
+| Phiên dở dang | Phiên đang dở, ví dụ “Luyện tập Bài 2 · câu 6/15” | → Tiếp tục | Khi có nháp | `useActiveDrafts` |
+| Câu hôm nay | Nhân vật trong cảnh “nói” một câu của bài đang học (bong bóng HTML: Furigana + nghĩa tiếng Việt + nút nghe); điểm nhấn của màn | — | Khi bài có câu | `grammar[].examples` của bài đang học, cố định trong ngày; `SpeakButton`; vị trí bong bóng theo sidecar cảnh, thiếu thì đặt dưới cảnh |
 
-Bỏ khỏi Bảng tin: “Nội dung cần củng cố” (chuyển hẳn sang Ôn tập / Điểm yếu), lối Bảng chữ
-Kana và “Xem tiến độ” (đã có qua Tra cứu và Tài khoản), KPI, lộ trình 25 bài, đoạn văn mô tả.
-Giải thích Học/Luyện/Ôn cho người mới giữ ở dạng thu gọn một dòng.
+Kèm theo: lời chào theo buổi một dòng và cảnh minh họa của bài đang học (SPEC-21).
+Khối cần làm gấp nhất được nhấn mạnh (ôn đến hạn → phiên dở → bài đang học) và là điểm
+`primary` duy nhất của màn; các khối còn lại là link thường.
+
+Người mới chưa có dữ liệu: tạm thay phần tóm tắt bằng một khối “Bắt đầu Bài 1” cho tới khi có
+màn onboarding.
+
+Không có trên Bảng tin: “Tôi đã học đến bài…”, giải thích Học/Luyện/Ôn, lối Kana, “Xem tiến
+độ”, cấu hình (→ onboarding sau này); “Nội dung cần củng cố” (→ Ôn tập / Điểm yếu); nhịp tuần,
+KPI, biểu đồ (→ Cá nhân / Thống kê); lộ trình 25 bài (→ Học bài); đoạn văn mô tả.
 
 Luật chữ: tiêu đề tối đa ~6 từ, mỗi khối tối đa một dòng phụ; không đoạn văn kể chuyện.
-Trạng thái phải thiết kế: mới, có mục đến hạn, có nháp, đang học không có mục ôn, đã ôn xong
-hôm nay, đang tải, lỗi.
+Trạng thái phải thiết kế: người mới, có mục đến hạn, có phiên dở, đang học không có mục ôn,
+đã ôn xong hôm nay, đang tải, lỗi.
 
 **Học `/hoc`:** danh sách bài chuyển thành **lộ trình dạng bước** 25 bài (đã học / đang học /
 chưa học), dùng cảnh của từng bài; bài chưa học hiển thị cảnh làm mất màu bằng CSS, không vẽ
