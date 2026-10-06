@@ -165,5 +165,13 @@
     "family",
     "particles"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/gift-giving-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Chàng trai tặng quà cho cô gái trong phòng khách."
+    }
+  }
 }

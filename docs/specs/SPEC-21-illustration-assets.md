@@ -1,6 +1,6 @@
 # SPEC-21 — Tên file, thư mục và tham chiếu minh họa
 
-Ngày: **05/10/2026**. Trạng thái: **Đã có 44 WebP (9 pilot + 35 asset mở rộng), 42 tham chiếu nội dung JSON, renderer và cache có version; đã kiểm browser trong phạm vi ghi tại handoff, còn giới hạn nghiệm thu**.
+Ngày: **06/10/2026**. Trạng thái: **Đã có 228 WebP (9 pilot + 219 asset mở rộng), 233 tham chiếu nội dung JSON, workflow batch tự động, renderer và cache có version; đã kiểm browser trong phạm vi ghi tại handoff, còn giới hạn nghiệm thu**.
 
 ## 1. Phạm vi và nguồn sự thật
 
@@ -33,7 +33,7 @@ artwork/illustrations/                # bản gốc, prompt; không public
 
 Thư mục production phân theo **vai trò của ảnh**, không theo từng bài. Một ảnh có thể được nhiều bài hoặc nhiều từ tham chiếu. Ảnh có tình huống riêng vẫn nằm trong nhóm phù hợp với tên đủ rõ; không tạo bản sao theo số bài.
 
-`README.md` và `.gitkeep` giữ hướng dẫn/khung thư mục; đã có 44 WebP ở các nhóm có nhu cầu. Không thêm bản gốc độ phân giải cao, prompt, JSON provenance, ZIP, ảnh thử hoặc contact sheet vào `public`.
+`README.md` và `.gitkeep` giữ hướng dẫn/khung thư mục; đã có 90 WebP ở các nhóm có nhu cầu. Không thêm bản gốc độ phân giải cao, prompt, JSON provenance, ZIP, ảnh thử hoặc contact sheet vào `public`.
 
 ## 3. Quy tắc tên file
 
@@ -84,7 +84,7 @@ Các file dưới đây **đã tồn tại**; xem [kho nguồn](../../artwork/il
 | `web/public/assets/illustrations/vocab/planner-v1.webp` | `/assets/illustrations/vocab/planner-v1.webp` |
 | `web/public/assets/illustrations/vocab/magazine-v1.webp` | `/assets/illustrations/vocab/magazine-v1.webp` |
 
-Bài 8 bổ sung 16 từ vựng và cover `scenes/adjective-town-v1.webp`; danh sách PNG/JSON/WebP và mapping thật ở [kho nguồn](../../artwork/illustrations/README.md).
+Bài 8 bổ sung 16 từ vựng và cover `scenes/adjective-town-v1.webp`; ngày 06/10 thêm 42 cutout Bài 2/3/4/8, cover Bài 2/3/4 và grammar `koko-soko-asoko-v1`. Batch `lesson-05` thêm 16 từ Bài 5 và cover `scenes/station-platform-v1.webp`. Danh sách PNG/JSON/WebP và mapping thật ở [kho nguồn](../../artwork/illustrations/README.md).
 
 ## 4. Khuôn xuất ảnh
 
@@ -121,7 +121,7 @@ interface IllustrationAsset {
 
 Các trường optional; không có ảnh thì giữ nguyên trải nghiệm chữ. Không thêm string rỗng hoặc ảnh placeholder để làm đầy dữ liệu. Không tự suy URL từ `word.id`, kana, nghĩa hoặc số bài, và không đổi ID đang dùng cho FSRS/tiến độ để khớp tên ảnh.
 
-Tham chiếu thật hiện tại: cover Bài 1 và Bài 8, 2 từ nghề nghiệp Bài 1 (`gakusei`, `isha`), 21 đồ vật và grammar `kore-sore-are` Bài 2, 16 từ vựng Bài 8; tổng 42 tham chiếu. Caption của grammar là nội dung trong JSON, dựng bằng HTML/Furigana; mô tả rõ vai trò người nói/nghe và ba khoảng cách. `lessons.ts` kiểm metadata optional tại biên nạp bằng `validateIllustrationAsset`; test nội dung kiểm tồn tại file/case/dimensions. Nội dung bài lấy từ bundled JSON, Dexie lưu tiến độ/audio nên không cần migration ảnh.
+Tham chiếu thật hiện tại: cover Bài 1/2/3/4/8; Bài 1: 2 từ (`gakusei`, `isha`); Bài 2: 26 từ + grammar `kore-sore-are`; Bài 3: 19 từ + grammar `koko-soko-asoko`; Bài 4: 16 từ; Bài 5: 16 từ + cover; Bài 6: 34 từ + cover; Bài 7: 32 từ + cover; Bài 8: 35 từ; Bài 9: 16 từ + cover; Bài 10: 25 từ + cover. Tổng 233 tham chiếu, trong đó `kutsu`, `kaigi`, `pasokon`, `hana`, `shatsu`, `otousan`, `okaasan` dùng lại ảnh có sẵn đúng nghĩa. Caption của grammar là nội dung trong JSON, dựng bằng HTML/Furigana; mô tả rõ vai trò người nói/nghe và ba khoảng cách. `lessons.ts` kiểm metadata optional tại biên nạp bằng `validateIllustrationAsset`; test nội dung kiểm tồn tại file/case/dimensions, và kiểm mọi sidecar `added-to-learning-data` vẫn còn được tham chiếu. Nội dung bài lấy từ bundled JSON, Dexie lưu tiến độ/audio nên không cần migration ảnh.
 
 Ví dụ cấu trúc phần ảnh của `gakusei`, nay đã có file và tham chiếu thật:
 
@@ -156,7 +156,7 @@ Sidecar JSON tối thiểu lưu `createdAt`, `source` (ví dụ `image_gen`), `p
 
 Lưu ảnh tham chiếu phong cách được chọn cùng bản gốc và dùng lại khi tạo các nhóm tiếp theo. Không lấy toàn bộ screenshot UI làm ảnh hiển thị trong app; tạo cảnh/cutout riêng. Giữ chữ, logo, icon và nút ngoài raster.
 
-Để tăng tốc các đồ vật đơn giản cùng phong cách, có thể tạo một atlas 4 × 2 rồi tách thành 8 PNG/WebP độc lập. Atlas và manifest chỉ nằm trong `artwork/illustrations/atlases/`; app tiếp tục dùng từng URL như trước. Dùng kích thước nguồn thực, không suy từ kích thước yêu cầu trong prompt. Manifest ghi crop từng chủ thể; kiểm cả bốn biên crop có alpha 0 trước khi xuất, không xóa nét hoặc chroma-key nền giả. Sidecar từng ảnh ghi `sourceImage` và crop để truy nguồn. Xuất vẫn theo khuôn §4 bằng [export-atlas.mjs](../../artwork/illustrations/tools/export-atlas.mjs); kiểm ảnh sau encode trước khi gắn dữ liệu. Cảnh ngữ pháp và nhân vật phức tạp cần kiểm riêng, không mặc định đưa vào atlas.
+Để tăng tốc các đồ vật đơn giản cùng phong cách, có thể tạo một atlas (mặc định 2 × 2; 4 × 2 cho vật gọn) rồi tách thành các PNG/WebP độc lập. Atlas và manifest chỉ nằm trong `artwork/illustrations/atlases/`; app tiếp tục dùng từng URL như trước. Dùng kích thước nguồn thực, không suy từ kích thước yêu cầu trong prompt. Crop từng chủ thể được tính tự động; cả bốn biên crop phải có alpha 0 trước khi xuất. Không xóa nét, không chroma-key nền giả. Sidecar từng ảnh ghi `sourceImage` và crop để truy nguồn. Xuất theo khuôn §4 bằng [batch.mjs](../../artwork/illustrations/tools/batch.mjs) (quy trình ở [kho nguồn](../../artwork/illustrations/README.md)); kiểm ảnh sau encode trước khi gắn dữ liệu. Cảnh ngữ pháp và nhân vật phức tạp cần kiểm riêng, không mặc định đưa vào atlas.
 
 Mẫu hiện tại: [paper-town-style-v1.png](../../artwork/illustrations/reference/paper-town-style-v1.png); [brief sản xuất](../../artwork/illustrations/STYLE.md) và prompt sidecar ở cùng kho nguồn. Mẫu này lấy phong cách từ concept desktop Phố giấy; banner và scene mới cùng tham chiếu trực tiếp mẫu này.
 
@@ -164,8 +164,8 @@ Mẫu hiện tại: [paper-town-style-v1.png](../../artwork/illustrations/refere
 
 1. Kiểm tra có ảnh dùng lại đúng nghĩa/tình huống chưa. Chọn nhóm và tên subject trước khi generate.
 2. Tạo/sửa bản gốc với cùng ảnh mẫu phong cách; lưu provenance ngoài `public`.
-3. Xuất WebP theo khuôn, kiểm nét/alpha/crop và dung lượng. Đặt file production trước khi thêm tham chiếu.
-4. Cùng một thay đổi: bổ sung hoặc cập nhật `cover`/`illustration` trong JSON sau khi schema được triển khai; dùng đúng width/height của file, viết alt theo ngữ cảnh. Giữ nguyên ID học tập.
+3. Xuất WebP theo khuôn bằng `batch.mjs check/export`, kiểm nét/alpha/crop và dung lượng. Đặt file production trước khi thêm tham chiếu.
+4. Cùng một thay đổi: bổ sung hoặc cập nhật `cover`/`illustration` trong JSON (`batch.mjs link`) sau khi schema được triển khai; dùng đúng width/height của file, viết alt theo ngữ cảnh. Giữ nguyên ID học tập.
 5. Khi đổi ảnh đã dùng: thêm `vN+1`, tìm tất cả tham chiếu `src` cũ trong `web/src` và cập nhật nơi cần thay. Không bắt buộc đổi mọi nơi nếu vẫn cần cả hai phiên bản.
 6. Giữ bản cũ khi còn dữ liệu hoặc deployment đang tham chiếu. Chỉ dọn sau khi kiểm tra toàn bộ phạm vi dữ liệu và các deployment cũ cần hỗ trợ; không suy từ search local không có hit thành đã an toàn xóa trên CDN.
 7. Chạy kiểm tra theo phạm vi. Khi bắt đầu triển khai schema/renderer, thêm kiểm tra biên dữ liệu: đường dẫn hợp lệ, tồn tại file với đúng hoa/thường, kích thước/format khớp, alt.vi hợp lệ. Bản Windows phải kiểm tra chính xác case để không hỏng trên host Linux.
@@ -194,6 +194,10 @@ Vị trí pilot: banner dưới lời chào Bảng tin; cover bên cạnh header
 - [x] Mở rộng thêm 10 từ Bài 1–2, giữ bytes của 9 pilot; tổng 19 WebP/17 tham chiếu nội dung. Nguồn PNG có alpha thật, cùng mẫu v1 và book chỉ làm tham khảo chất nét; xuất 512 × 512, 15.008–41.552 bytes/ảnh. Check/test/build và browser theo handoff.
 - [x] Tăng tốc bằng atlas 8 đồ vật, xuất riêng và tích hợp Bài 2; tổng 27 WebP/25 tham chiếu. Thời gian tạo nguồn đo được 46.539 ms; xuất 8 file 30.980 ms, chưa tính review/tích hợp. Check/test/build và browser theo handoff.
 - [x] Tạo và tích hợp 16 minh họa từ vựng + cover Bài 8; tổng 44 WebP/42 tham chiếu. Kiểm alpha/crop/hash, bảo toàn 53 mục từ và 27 ảnh cũ; check/test/build/browser theo handoff.
+- [x] 06/10: thêm 42 cutout Bài 2/3/4/8 (atlas ChatGPT web có alpha thật, crop trên đường alpha 0, không sửa pixel), cover Bài 2/3/4 và grammar Bài 3 (Antigravity, nền đục); tổng 90 WebP/90 tham chiếu. Bảo toàn 191 mục từ; check, 274 test và browser 390/1440px theo handoff.
+- [x] 06/10: workflow batch (`batch.mjs` prompts/check/export/sheet/link, `detect-crops.mjs`, test suy từ sidecar). Batch Bài 5 thêm 16 từ + cover, tổng 107 WebP/107 tham chiếu; check và 274 test theo handoff. Chưa kiểm browser cho Bài 5.
+- [x] 06/10: batch Bài 6–10 và 6 cutout lỗi cũ (Bài 8): 121 WebP mới, tổng 228 WebP/233 tham chiếu. Check, 274 test, build, browser `/hoc/6`–`/hoc/10` ở 390px và flashcard Bài 6 theo handoff.
+- [x] ~~Tạo lại riêng 6 cutout lỗi rãnh alpha~~ (đã làm trong batch Bài 8) (`restaurant`, `dormitory`, `quiet-library`, `lively-street`, `busy-worker`, `having-fun`) rồi gắn dữ liệu; chạy lại review độc lập (worker trước bị gián đoạn khi Orca dừng).
 - [x] Tích hợp renderer, cache có version và fallback; kiểm response headers production local.
 - [x] Browser 390/1440px, keyboard focus, caption Nhật/Việt, dark/furigana lớn/reduced motion và ảnh lỗi/mất mạng khi lật/chấm trong tab đang mở — phạm vi chi tiết ở handoff.
 - [ ] Kiểm deployment thật/cache, thiết bị thật và toàn bộ các trường hợp ngoài pilot; stress 360px với font gốc 20px còn lỗi tràn header AppNav có sẵn (không do ảnh).

@@ -93,6 +93,14 @@
         "translation": {
           "vi": "Ở đằng kia có người đàn ông."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/man-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một người đàn ông."
+        }
       }
     },
     {
@@ -109,6 +117,14 @@
         "kana": "あの おんなの ひとは だれですか。",
         "translation": {
           "vi": "Người phụ nữ kia là ai?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/woman-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một người phụ nữ."
         }
       }
     },
@@ -127,6 +143,14 @@
         "translation": {
           "vi": "Có một cậu bé."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/boy-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một cậu bé đội mũ."
+        }
       }
     },
     {
@@ -143,6 +167,14 @@
         "kana": "おんなの こが こうえんに います。",
         "translation": {
           "vi": "Có bé gái ở công viên."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/girl-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một cô bé buộc tóc hai bên."
         }
       }
     },
@@ -161,6 +193,14 @@
         "translation": {
           "vi": "Có con chó ở bên ngoài."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/dog-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chú chó shiba ngồi."
+        }
       }
     },
     {
@@ -177,6 +217,14 @@
         "kana": "ねこは はこの なかに います。",
         "translation": {
           "vi": "Con mèo ở trong hộp."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cat-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Con mèo mướp ngồi."
         }
       }
     },
@@ -195,6 +243,14 @@
         "translation": {
           "vi": "Ở sở thú có gấu trúc."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/panda-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Gấu trúc đang ăn tre."
+        }
       }
     },
     {
@@ -212,6 +268,14 @@
         "translation": {
           "vi": "Con voi to."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/elephant-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Con voi."
+        }
       }
     },
     {
@@ -228,6 +292,14 @@
         "kana": "にわに きが あります。",
         "translation": {
           "vi": "Trong vườn có cái cây."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tree-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một cái cây."
         }
       }
     },
@@ -263,6 +335,14 @@
         "translation": {
           "vi": "Không có pin cho điều khiển từ xa."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/batteries-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mấy cục pin."
+        }
       }
     },
     {
@@ -279,6 +359,14 @@
         "kana": "はこの なかに なにが ありますか。",
         "translation": {
           "vi": "Trong hộp có cái gì?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/box-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc hộp các-tông."
         }
       }
     },
@@ -297,6 +385,14 @@
         "translation": {
           "vi": "Công tắc điện ở đâu?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/light-switch-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ngón tay bấm công tắc đèn."
+        }
       }
     },
     {
@@ -313,6 +409,14 @@
         "kana": "れいぞうこに くだものが あります。",
         "translation": {
           "vi": "Trong tủ lạnh có hoa quả."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/refrigerator-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc tủ lạnh."
         }
       }
     },
@@ -331,6 +435,14 @@
         "translation": {
           "vi": "Trên bàn ăn có cuốn sách."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/dining-table-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn ăn tròn và hai chiếc ghế."
+        }
       }
     },
     {
@@ -347,6 +459,14 @@
         "kana": "ベッドの したに ねこが います。",
         "translation": {
           "vi": "Dưới giường có con mèo."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bed-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc giường có chăn gối."
         }
       }
     },
@@ -365,6 +485,14 @@
         "translation": {
           "vi": "Trên giá sách có bức ảnh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/shelf-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Kệ gỗ có sách và chậu cây."
+        }
       }
     },
     {
@@ -381,6 +509,14 @@
         "kana": "ドアの まえに ひとが います。",
         "translation": {
           "vi": "Trước cửa có người."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/door-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cánh cửa gỗ."
         }
       }
     },
@@ -399,6 +535,14 @@
         "translation": {
           "vi": "Gần cửa sổ có cái bàn."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/window-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cửa sổ có rèm và chậu cây."
+        }
       }
     },
     {
@@ -415,6 +559,14 @@
         "kana": "えきの まえに ポストが あります。",
         "translation": {
           "vi": "Trước nhà ga có hộp thư bưu điện."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/post-box-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hòm thư màu đỏ."
         }
       }
     },
@@ -433,6 +585,14 @@
         "translation": {
           "vi": "Đằng kia có tòa nhà cao tầng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tall-building-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tòa nhà cao tầng."
+        }
       }
     },
     {
@@ -449,6 +609,14 @@
         "kana": "コンビニの なかに ATMが あります。",
         "translation": {
           "vi": "Trong cửa hàng tiện lợi có máy ATM."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/atm-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Máy rút tiền ATM."
         }
       }
     },
@@ -467,6 +635,14 @@
         "translation": {
           "vi": "Cửa hàng tiện lợi ở đâu?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/convenience-store-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cửa hàng tiện lợi."
+        }
       }
     },
     {
@@ -484,6 +660,14 @@
         "translation": {
           "vi": "Trong công viên có trẻ em."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/park-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Công viên nhỏ có ghế, cầu trượt và đài phun nước."
+        }
       }
     },
     {
@@ -500,6 +684,14 @@
         "kana": "きっさてんで コーヒーを のみます。",
         "translation": {
           "vi": "Tôi uống cà phê ở quán cà phê."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/coffee-shop-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Quán cà phê nhỏ có mái hiên sọc."
         }
       }
     },
@@ -534,6 +726,14 @@
         "kana": "タクシーのりばは あそこです。",
         "translation": {
           "vi": "Bến đón taxi ở đằng kia."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bus-stop-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Điểm chờ xe buýt có mái che và ghế."
         }
       }
     },

@@ -177,5 +177,13 @@
     "calendar",
     "verbs"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/daily-routine-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Hai người học đi bộ trên con phố thị trấn vào buổi sáng, bên phải có chiếc đồng hồ tròn treo tường mặt trống không số."
+    }
+  }
 }

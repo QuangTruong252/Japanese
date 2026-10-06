@@ -121,3 +121,103 @@ Ngày: **05/10/2026**. Trạng thái: **đã tích hợp 44 asset (9 pilot + 35 
 - Chưa tạo ảnh cho 37 mục từ còn lại hoặc ảnh grammar riêng Bài 8. Không dùng hình mơ hồ chỉ để phủ đủ mọi từ.
 - Chưa nghiệm thu thiết bị/host/CDN thật, toàn bộ phiên luyện/ôn Bài 8, audio import, ảnh chưa cache khi offline hoặc Supabase sync/retry. Giữ giới hạn trước đó; không có service worker/reload offline.
 - Nhóm tiếp theo tái sử dụng mẫu v1, PNG/provenance ngoài public, kiểm rãnh trước xuất và tăng version khi thay bytes đã tham chiếu. Không commit/push trong lượt này.
+
+## Bài 2/3/4/8 — 06/10/2026
+
+### Thay đổi và quyết định
+
+- Yêu cầu: hoàn thiện Bài 8, tạo ảnh cho Bài 2/3/4, điều phối agent qua Orca. Run `run_93c71c2537cc`.
+- Antigravity (`gemini-3.8-flash-high`) thử lại vẫn trả JPEG nền caro giả, không có alpha (probe trong phiên). Người dùng chọn hướng kết hợp. 6 worker Codex không khởi động được (màn hình duyệt hooks, sau đó Codex hết quota), nên **người dùng tạo 6 atlas trên ChatGPT web** theo prompt có sẵn. Antigravity làm 3 cover và 1 grammar nền đục.
+- Orca runtime khởi động lại giữa phiên. 6 worker xử lý atlas mất trước khi có output, 2 worker scene đã ghi xong file/báo cáo nhưng chưa gửi `worker_done`. Coordinator xem lại, đóng 8 task bằng `task-update completed` có ghi lý do, release terminal theo `nextAction`.
+- Crop do coordinator tính bằng script: tìm khe có alpha ≥ 8 bằng 0 gần các đường chia 1/4, 1/2, 3/4; bbox chủ thể theo alpha ≥ 8 + lề 16 px; biên crop phải là đường alpha 0 tuyệt đối (đúng điều kiện của `export-atlas.mjs`). Pixel alpha 1–7 nằm ngoài crop bị bỏ theo crop, không sửa pixel nào trong master. **42/48 ô** xuất được. 6 ô dính dải alpha mờ sang ô bên cạnh nên chờ tạo lại riêng ([prompt](../../artwork/illustrations/vocab/CHATGPT-PROMPTS-SINGLES-2026-10-06.md)).
+- Gắn 46 tham chiếu mới (42 cutout + 3 cover + 1 grammar có caption ここ/そこ/あそこ). Thêm 2 tham chiếu dùng lại ảnh có sẵn: `kutsu` → `black-shoes-v1`, `kaigi` → `meeting-room-v1`. Tổng **90 WebP / 90 tham chiếu**. Mapping và bytes ở [kho nguồn](../../artwork/illustrations/README.md). Không đổi component, schema, FSRS, sync.
+- Sự cố trong phiên: script tạo manifest bị PowerShell ghi lại sai encoding, làm alt tiếng Việt của 18 ảnh (3 atlas) bị mojibake trong manifest, sidecar và dữ liệu. Phát hiện khi kiểm browser. Đã sửa bằng chuyển ngược cp1252→UTF-8 có kiểm tra; grep toàn bộ JSON liên quan không còn chuỗi lỗi, và browser báo 0 alt lỗi.
+
+### Kiểm chứng thực chạy (06/10/2026, Windows)
+
+- `pnpm check` **PASS**; `pnpm test` **274/274 PASS** (sau khi sửa mojibake). Test metadata kiểm **90 tham chiếu** (URL/case/format/kích thước/alt), danh sách ID có ảnh theo đúng thứ tự cho Bài 1/2/3/4/8, cover Bài 2/3/4 và caption ここ/そこ/あそこ.
+- So với bản chụp trước tích hợp: bỏ `illustration`/`cover`/`illustrationCaption` thì **7 file** (vocab 2/3/4/8 với 191 mục từ, lessons 2/3/4) giống hệt bản cũ. `git status` không có file tracked nào khác ngoài 7 file dữ liệu và test; ảnh/sidecar cũ không bị đụng.
+- `export-atlas.mjs` exit 0 cho 6 atlas (kiểm biên alpha 0, có nét, nhúng prompt). Contact sheet 42 cutout ghép trên nền ngà và nền tối: không viền màu, không chữ/số/logo, đúng nghĩa. 4 scene xem trực tiếp: đạt, đồng hồ trên phố không có số.
+- Browser Chromium session `maipace-assets-1006`, dev server đúng project `web/` ở `http://localhost:3100` (title MaiPace). `/hoc/2`, `/3`, `/4`, `/8` ở 390 × 844 và 1440 × 1000: không tràn ngang. Sau khi cuộn đúng container của shell, **87/87 ảnh** (28/21/17/21) tải và decode được; 0 alt mojibake. Lần đo đầu chỉ cuộn `window` nên ảnh lazy cuối trang chưa tải; đó là lỗi của cách đo, không phải lỗi ảnh. Ảnh chụp: [Bài 3 mobile](../../artwork/illustrations/reports/lesson-03-mobile.png), [Bài 4 desktop](../../artwork/illustrations/reports/lesson-04-desktop.png).
+- `pnpm build` **PASS** (252 trang static) sau tích hợp.
+- Review độc lập: đã giao worker Antigravity (task `task_0178eb778af9`). Worker đã xem ảnh và kiểm kỹ thuật được khoảng 30 phút thì Orca runtime dừng lần thứ hai, trước khi báo cáo được ghi. **Chưa có báo cáo review độc lập**; kiểm tra ở trên là của coordinator. Một cảnh báo chính coordinator ghi nhận: `energetic-person-v1` có chân sau bị khung vignette cắt nhẹ ngay trong atlas gốc, không phải do crop, và vẫn đọc được nghĩa.
+
+### Còn lại
+
+- Chạy lại review độc lập khi Orca ổn định (spec giữ ở task trên).
+- Tạo lại 6 cutout (`resutoran`, `ryou`, `shizuka`, `nigiyaka`, `isogashii`, `tanoshii`), xuất bằng `export-vocab.mjs`, gắn dữ liệu, rồi tăng số tham chiếu trong test.
+- Chưa kiểm flashcard/offline riêng cho ảnh mới (renderer dùng lại, đã kiểm ở các đợt trước). Chưa nghiệm thu thiết bị/host/CDN thật. Không commit/push.
+
+## Pilot đo workflow tạo ảnh — 06/10/2026
+
+- Mục tiêu: chọn cách tạo ảnh cho workflow tự động. Orca run `run_263f3b04604b`: 1 worker Codex (`gpt-6-luna` low, built-in `image_gen`, gói Plus) và 1 worker Antigravity. Codex qua được màn hình "Hooks need review" sau khi trust 6 hook do người dùng cấu hình (Orca status, impeccable, repowise).
+- Kết quả ở [báo cáo pilot](../../artwork/illustrations/reports/pilot-2026-10-06.md): 6 lần gọi tốn khoảng 1% hạn mức 5 giờ (số nguyên, mẫu nhỏ). Atlas 2×2: 4/4 ô dùng được, crop khoảng 590px nên không phải phóng to. Atlas 4×2: 6/8. Ảnh đơn: 4/4 có alpha, 2 ảnh chạm biên. Cover Antigravity có khung viền giấy.
+- Thêm [detect-crops.mjs](../../artwork/illustrations/tools/detect-crops.mjs) (chỉ đọc, gán theo thành phần liên thông). Trên 9 atlas cũ cho 66/72 ô đạt, trùng kết quả lịch sử.
+- Nguồn mới chưa xuất WebP, chưa gắn dữ liệu, chưa có trong test: 2 atlas Bài 5, 4 ảnh đơn trong `vocab/`, cover `scenes/station-platform-v1.jpg`. Không chạy `pnpm`, vì không đổi code app.
+- Tiếp theo: giai đoạn 1 của workflow (batch file, bộ ghép prompt, export có chuẩn hóa kích thước chủ thể và hồ sơ theo nhóm, `source` lấy từ manifest, script gắn dữ liệu, test suy từ sidecar). Làm lại máy bay/tàu thủy, `going-home`, `friends` và cover theo template mới.
+
+## Workflow batch giai đoạn 1 + batch Bài 5 — 06/10/2026
+
+### Thay đổi và quyết định
+
+- [batch.mjs](../../artwork/illustrations/tools/batch.mjs) có các lệnh `prompts`, `check`, `export`, `sheet`, `link`. Batch file trong `artwork/illustrations/batches/` là nguồn sự thật của mỗi đợt; template prompt nằm ở một chỗ trong script. Cách dùng ở [README kho nguồn](../../artwork/illustrations/README.md#workflow-tự-động-theo-batch-từ-06102026).
+- [detect-crops.mjs](../../artwork/illustrations/tools/detect-crops.mjs) thành module dùng chung. Xóa `export-atlas.mjs` và `export-vocab.mjs`; bản cũ còn trong git. Không xuất lại asset cũ.
+- Chuẩn hóa cutout mới: bbox chủ thể (alpha ≥ 8) vừa khung 416 px trong 512, lề 48. Gate: chặn khi chủ thể chạm mép canvas, phóng to quá 1,3 lần, ảnh nền đục lệch tỷ lệ quá 2% hoặc nhỏ hơn khuôn. Dung lượng chỉ cảnh báo. `source` lấy từ batch; lỗi 42 sidecar ChatGPT web ghi `image_gen` vẫn còn ở các sidecar cũ (chưa sửa).
+- `link` ghi JSON học bằng Node, giữ CRLF/LF, từ chối file không đúng định dạng 2 dấu cách và từ chối thay ảnh khác. `illustrations.test.ts` bỏ số 90 và danh sách ID ghi cứng, thay bằng kiểm tra mọi sidecar `added-to-learning-data` vẫn còn tham chiếu.
+- Batch [lesson-05](../../artwork/illustrations/batches/lesson-05.json), Orca run `run_263f3b04604b`:
+  - Codex `gpt-6-luna` low tạo 4 ảnh đơn thay ảnh hỏng/ô bị skip; Antigravity tạo lại cover full-bleed.
+  - Bỏ 3 bản nháp chưa phát hành (`going-home`, `friends` chạm mép; cover có khung).
+  - Gắn 16 từ + cover Bài 5. Tổng **107 WebP / 107 tham chiếu**, batch 746.374 bytes.
+
+### Kiểm chứng thực chạy (06/10/2026, Windows)
+
+- `batch.mjs check` cho 17/17 ảnh `ready`. Cảnh báo dung lượng: `bicycle` 69.688 B, `train-station` 56.892 B, `going-home` 63.002 B. Chạy lại `export`/`link` là no-op (trạng thái `exported`, không ghi file).
+- `detect-crops` trên 9 atlas cũ cho 66/72 ô đạt, trùng kết quả lịch sử.
+- Test hồi quy: bỏ `illustration` của `jisho` thì test fail với "dictionary-v1.json is not linked"; đã khôi phục file và so khớp byte.
+- Diff dữ liệu Bài 5 chỉ thêm trường ảnh: vocab +128 dòng, lesson +9/−1, giữ CRLF.
+- `pnpm check` **PASS**; `pnpm test` **274/274 PASS**.
+- Contact sheet [lesson-05-sheet.png](../../artwork/illustrations/reports/lesson-05-sheet.png) trên nền ngà và nền tối: cùng phong cách và kích thước chủ thể, không chữ/số, không viền sáng; coordinator xem bằng vision.
+- Browser `agent-browser`, dev server `web/` ở `localhost:3100` (title MaiPace), `/hoc/5` ở 390 × 844 và 1440 × 1000: **17/17 ảnh** tải và decode được, alt tiếng Việt đúng, không tràn ngang. Ảnh chụp: [mobile](../../artwork/illustrations/reports/lesson-05-mobile.png), [desktop](../../artwork/illustrations/reports/lesson-05-desktop.png).
+
+### Chưa kiểm và bước tiếp theo
+
+- Chưa chạy `pnpm build`, chưa kiểm flashcard Bài 5 (ảnh chỉ hiện sau khi lật thẻ) hoặc chế độ mất mạng; renderer không đổi.
+- Người dùng chưa duyệt contact sheet (duyệt lần 2); có thể yêu cầu thay ảnh trước khi commit.
+- Ngoài phạm vi: tiêu đề tiếng Nhật dài của Bài 5 xuống dòng giữa 行 và きますか ở desktop/mobile.
+- Tiếp theo: đưa 6 cutout lỗi cũ (`restaurant`…`having-fun`) vào một batch; chạy batch cho Bài 6+; cân nhắc sửa `source` của 42 sidecar ChatGPT web.
+
+## Batch Bài 6–10 — 06/10/2026
+
+### Thay đổi và quyết định
+
+- 5 batch [lesson-06](../../artwork/illustrations/batches/lesson-06.json)…[lesson-10](../../artwork/illustrations/batches/lesson-10.json), Orca run `run_a5b3de34c2db`. Kết quả: 121 WebP mới (5.336.054 bytes), cover Bài 6/7/9/10. Batch Bài 8 gồm luôn 6 cutout lỗi cũ (`resutoran`, `ryou`, `shizuka`, `nigiyaka`, `isogashii`, `tanoshii`). Tổng kho **228 WebP / 233 tham chiếu**. Bảng độ phủ ở [README kho nguồn](../../artwork/illustrations/README.md).
+- `batch.mjs` thêm hai thứ:
+  - Job `reuse`: gắn ảnh có sẵn, dùng cho 5 mục Bài 7.
+  - Lệnh `collect`: lấy ảnh Codex từ `~/.codex/generated_images`, khớp theo subject ghi trong rollout.
+- Sửa `source` của 42 sidecar ChatGPT web (`image_gen` → `chatgpt-web-image`, thêm `generation` lấy từ manifest atlas). Chỉ đổi JSON trong `artwork`, không đổi bytes ảnh.
+- Sự cố khi chạy:
+  - 3/5 worker Codex gọi `image_gen` thành công nhưng không tự chép được file: không thấy đường dẫn, hoặc vượt giới hạn command line trên Windows.
+  - Worker Bài 10 còn tạo atlas động vật 3 lần.
+  - Cách sửa: worker chỉ generate, coordinator chạy `collect`. Ba worker chạy theo spec mới đều đạt. Từ nay dùng spec này.
+- Gate đã chặn 4 ảnh, tạo lại thành ảnh đơn cùng stem:
+  - `shop`, `garden`: crop lẫn sang ô bên cạnh;
+  - `children`: dải alpha mờ;
+  - `lively-street`: chạm mép canvas.
+
+  Bản nháp chưa phát hành được chuyển khỏi repo.
+- Hạn mức Codex (Plus):
+  - Đầu đợt khoảng 28% (5 giờ) / 23% (tuần), cuối đợt 29% / 23%, cho 50 lần gọi `image_gen`. Số nguyên phần trăm, chỉ là ước lượng.
+  - Mức 7% → 27% trước đó (02:36–02:47Z) là một phiên Codex riêng của người dùng, không thuộc batch.
+
+### Kiểm chứng thực chạy (06/10/2026, Windows)
+
+- `batch.mjs check`: 121/121 `ready` sau khi tạo lại 4 ảnh. Cảnh báo dung lượng ở một số ảnh cảnh/đồ ăn (tối đa 80.920 B, `garden`).
+- Coordinator xem 5 contact sheet [`lesson-06-sheet.png`](../../artwork/illustrations/reports/lesson-06-sheet.png)…`lesson-10-sheet.png` bằng vision trên nền ngà và nền tối: đúng nghĩa, cùng phong cách, không chữ/số, cover tràn viền.
+- `pnpm check` **PASS**; `pnpm test` **274/274 PASS**; `pnpm build` **PASS**.
+- Browser `agent-browser`, dev server `localhost:3100` (title MaiPace), 390 × 844: `/hoc/6` 35/35, `/hoc/7` 33/33, `/hoc/8` 36/36, `/hoc/9` 17/17, `/hoc/10` 26/26 ảnh tải và decode được; không tràn ngang; 0 alt lỗi font.
+- `/hoc/6/tu-vung`, học 10 từ: mặt trước **0 ảnh / 0 request**; lật thẻ `食べる` thì tải `eating-v1` ([ảnh chụp](../../artwork/illustrations/reports/lesson-06-flashcard-mobile.png)).
+
+### Chưa kiểm và bước tiếp theo
+
+- Chưa kiểm desktop cho Bài 6–10, chưa kiểm offline và thiết bị thật. Người dùng chưa duyệt contact sheet. Chưa commit.
+- Tiếp theo: Bài 11–25 theo cùng quy trình (lập batch → worker chỉ generate → `collect` → `check` → `export` → `sheet` → duyệt → `link`); grammar illustration cho các mẫu vị trí của Bài 10 (上/下/前/後ろ).

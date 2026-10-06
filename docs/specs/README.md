@@ -71,6 +71,12 @@ Chi tiết và giới hạn ở mục **Mở rộng từ vựng Bài 1–2** tro
 
 **Bài 8, 05/10/2026:** đã thêm 16 minh họa từ vựng + cover theo Phố giấy; tổng kho **44 WebP / 42 tham chiếu nội dung**. Giữ nguyên 53 mục từ Bài 8 và hash 27 ảnh cũ. Check, 274 test, build và browser mobile/desktop đã đạt trong phạm vi mục **Assets Bài 8** ở [handoff SPEC-21](../handoff/SPEC-21.md); chưa nghiệm thu toàn feature hoặc thiết bị/host thật.
 
+**Bài 2/3/4/8, 06/10/2026:** thêm 42 cutout từ vựng (atlas tạo thủ công trên ChatGPT web, có alpha thật), cover Bài 2/3/4 và grammar `koko-soko-asoko` (Antigravity, nền đục); tổng kho **90 WebP / 90 tham chiếu nội dung**. Bỏ trường ảnh thì 191 mục từ và lesson JSON giữ nguyên. Check, 274 test và build đạt; browser 390/1440px tải đủ 87 ảnh của 4 bài; chi tiết ở mục **Bài 2/3/4/8** trong [handoff SPEC-21](../handoff/SPEC-21.md). Còn 6 cutout cần tạo lại riêng và review độc lập chưa hoàn tất; chưa nghiệm thu thiết bị/host thật.
+
+**Workflow batch + Bài 5, 06/10/2026:** `batch.mjs` (prompts/check/export/sheet/link) và test suy từ sidecar; batch Bài 5 thêm 16 từ + cover, tổng kho **107 WebP / 107 tham chiếu**. Check, 274 test và browser `/hoc/5` 390/1440px (17/17 ảnh) đạt; chưa chạy build, chưa kiểm flashcard/offline Bài 5. Chi tiết ở mục **Workflow batch giai đoạn 1** trong [handoff SPEC-21](../handoff/SPEC-21.md).
+
+**Bài 6–10, 06/10/2026:** 5 batch + 6 cutout lỗi cũ của Bài 8; 121 WebP mới, kho **228 WebP / 233 tham chiếu**. Check, 274 test, build; browser `/hoc/6`–`/hoc/10` ở 390px tải đủ 137/137 ảnh, flashcard Bài 6 chỉ tải ảnh sau khi lật. Chi tiết ở mục **Batch Bài 6–10** trong [handoff SPEC-21](../handoff/SPEC-21.md).
+
 ## Vòng rà soát 17/09/2026 — hợp đồng dữ liệu & offline/sync
 
 Toàn bộ spec đã được sửa theo một vòng đối chiếu với code thật. Những thay đổi **bắt buộc đọc

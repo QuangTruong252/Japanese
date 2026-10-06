@@ -4,7 +4,7 @@ Quy ước có thẩm quyền: [SPEC-21](../../docs/specs/SPEC-21-illustration-a
 
 Nơi lưu bản gốc và prompt/provenance khi tạo asset production. Dùng nhóm và stem tên giống `web/public/assets/illustrations/`; PNG gốc và JSON sidecar ở đây, WebP phục vụ web ở `public`.
 
-Hiện có **44 asset production** (tổng dung lượng **1.595.524 bytes**), gồm 9 asset pilot lịch sử (**485.258 bytes**), 10 asset mở rộng đơn lẻ (**273.088 bytes**) 8 asset trích xuất từ atlas Bài 2 (**230.636 bytes**) và 17 asset Bài 8 (**606.542 bytes**). Toàn bộ asset đều dùng trực tiếp [ảnh mẫu v1](reference/paper-town-style-v1.png) làm style reference; các nhóm cutout mở rộng ban đầu dùng thêm [book-v1.png](vocab/book-v1.png) chỉ làm finish reference phụ để đồng nhất độ chi tiết, hạt giấy và viền cutout.
+Hiện có **228 asset production** (tổng dung lượng **9.775.602 bytes**), gồm 121 asset batch Bài 6–10 và 17 asset batch Bài 5 ngày 06/10 (hai mục cuối), 9 asset pilot lịch sử (**485.258 bytes**), 10 asset mở rộng đơn lẻ (**273.088 bytes**) 8 asset trích xuất từ atlas Bài 2 (**230.636 bytes**), 17 asset Bài 8 (**606.542 bytes**) và 46 asset đợt Bài 2/3/4/8 ngày 06/10 (**2.097.650 bytes**, mục cuối). Toàn bộ asset đều dùng [ảnh mẫu v1](reference/paper-town-style-v1.png) làm style reference (đính kèm trực tiếp, trừ 4 scene Antigravity chỉ mô tả bằng prompt); các nhóm cutout mở rộng ban đầu dùng thêm [book-v1.png](vocab/book-v1.png) chỉ làm finish reference phụ để đồng nhất độ chi tiết, hạt giấy và viền cutout.
 
 ## Bộ pilot ban đầu (9 asset, 05/10/2026)
 
@@ -61,20 +61,58 @@ Atlas master nguồn và mô tả bố cục: [PNG](atlases/everyday-objects-v1.
 
 Các WebP xuất trực tiếp từ master PNG bằng Sharp có sẵn trong dependency Next.js, quality 82, effort 6. Banner/scene/grammar giữ tỷ lệ nguồn khớp khuôn; toàn bộ 39 cutout từ vựng resize `contain` vào 448 × 448 rồi thêm 32 px trong suốt mỗi phía để cùng khuôn 512 × 512, không cắt/méo chủ thể. Alpha gốc được giữ nguyên, encode alphaQuality 100. Prompt nhúng vào master PNG (chunk `tEXt` `impeccable:prompt`) và lưu đầy đủ trong JSON sidecar, không nhúng vào WebP public. Thư mục `web/public/assets/illustrations/` sạch hoàn toàn, không chứa file PNG hay JSON nào. Sidecar ghi kích thước nguồn/xuất, cấu hình encode và SHA-256.
 
-Dự án cung cấp hai công cụ xuất chuyên dụng tại `artwork/illustrations/tools/`:
-1. **Xuất đơn lẻ**: `artwork/illustrations/tools/export-vocab.mjs`
-   ```sh
-   node artwork/illustrations/tools/export-vocab.mjs <stem>
-   ```
-2. **Xuất từ Atlas**: `artwork/illustrations/tools/export-atlas.mjs`
-   ```sh
-   node artwork/illustrations/tools/export-atlas.mjs [path-to-atlas-json]
-   ```
-Cả hai script kiểm alpha, đếm pixels, tính SHA-256 và từ chối ghi đè WebP đã có. Riêng `export-atlas.mjs` kiểm trước toàn bộ đường dẫn master/sidecar/output, tọa độ crop và biên rãnh trong suốt; tách PNG, nhúng prompt rồi xuất. `export-vocab.mjs` nhận PNG đã nhúng prompt và sidecar có sẵn. Với atlas mới, ghi kích thước nguồn thực và crop trong manifest trước khi chạy; không giả định kích thước từ prompt được bảo đảm.
+Đoạn trên mô tả các asset làm trước batch Bài 5. Hai script cũ `export-vocab.mjs` và `export-atlas.mjs` đã được thay bằng workflow batch bên dưới; bản cũ vẫn còn trong lịch sử git. Không xuất lại ảnh cũ vì URL đã dùng là bất biến.
+
+## Workflow tự động theo batch (từ 06/10/2026)
+
+Mỗi đợt ảnh có một file `batches/<tên>.json` làm nguồn sự thật. File ghi nhóm, stem, chủ thể, nguồn tạo ảnh, ảnh tham chiếu, đích trong dữ liệu học (`target`) và `alt.vi`. Ví dụ đầy đủ: [lesson-05.json](batches/lesson-05.json). Chạy từ root repo:
+
+```sh
+node artwork/illustrations/tools/batch.mjs prompts artwork/illustrations/batches/<tên>.json   # → <tên>.prompts.md
+node artwork/illustrations/tools/batch.mjs collect artwork/illustrations/batches/<tên>.json   # chép ảnh Codex image_gen về đúng đích
+node artwork/illustrations/tools/batch.mjs check   artwork/illustrations/batches/<tên>.json [stem ...]
+node artwork/illustrations/tools/batch.mjs export  artwork/illustrations/batches/<tên>.json [stem ...]
+node artwork/illustrations/tools/batch.mjs sheet   artwork/illustrations/batches/<tên>.json   # → reports/<tên>-sheet.png
+node artwork/illustrations/tools/batch.mjs link    artwork/illustrations/batches/<tên>.json [stem ...]
+```
+
+Thêm `--disable-warning=MODULE_TYPELESS_PACKAGE_JSON` sau `node` để tắt cảnh báo khi script nạp validator TypeScript của app.
+
+1. **Lập batch.** Chỉ chọn từ có nghĩa cụ thể; bỏ số, ngày, đại từ và câu giao tiếp. Chọn cách tạo:
+   - đồ vật và địa điểm: atlas 2×2 (`"columns": 2, "rows": 2`);
+   - vật gọn, cùng tỷ lệ: atlas 4×2;
+   - người, hành động, vật dài: ảnh đơn;
+   - cover, grammar, banner: dùng `group` tương ứng, nền đục;
+   - đã có ảnh đúng nghĩa: job `{"reuse": "vocab/laptop-v1", "target": …, "alt": …}`. Không tạo file mới; chỉ `link` xử lý job này.
+
+   **Duyệt lần 1:** người dùng chốt danh sách.
+2. **Tạo ảnh.** Chạy `prompts` để sinh file prompt từ template chung trong `batch.mjs` (không sửa tay file đó). Worker Codex **chỉ gọi `image_gen`**, không tự chép file: chép file từ worker từng thất bại (không tìm được đường dẫn, vượt giới hạn command line trên Windows). Sau đó coordinator chạy `collect` để lấy ảnh từ `~/.codex/generated_images/<thread>/<id>.png`, khớp theo các dòng subject trong prompt mà Codex ghi ở rollout.
+   - Cutout: Codex `image_gen` có sẵn, dùng `gpt-6-luna` effort low, đính kèm [mẫu v1](reference/paper-town-style-v1.png). Mỗi mục là một lần gọi; mỗi đợt dùng một thread ngắn.
+   - Nền đục: Antigravity `generate_image` (không nhận ảnh mẫu).
+   - Có thể dán prompt vào ChatGPT web.
+   - Lưu đúng đường dẫn và giữ nguyên bytes.
+3. **`check`.** Lệnh này không ghi file.
+   - Crop atlas tự động bằng [detect-crops.mjs](tools/detect-crops.mjs): biên phải là alpha 0 và không được lẫn chủ thể của ô khác.
+   - Cutout bị chặn khi chủ thể chạm mép canvas hoặc phải phóng to quá 1,3 lần.
+   - Ảnh nền đục bị chặn khi lệch tỷ lệ khuôn quá 2% (cần đặt `crop`) hoặc nhỏ hơn khuôn.
+   - Vượt ngân sách dung lượng chỉ là cảnh báo.
+   - Ô atlas hỏng: đánh dấu `skip` kèm lý do, rồi thêm job ảnh đơn.
+4. **`export`.** Ghi master PNG (vùng crop của atlas, hoặc bản re-encode lossless của JPEG), nhúng prompt, xuất WebP và sidecar.
+   - Sidecar ghi `source`, `generation`, `batch`, crop, thông số chuẩn hóa và SHA-256.
+   - Cutout: bbox chủ thể (alpha ≥ 8) được đặt vừa khung 416 px, căn giữa trong 512, lề 48. Mọi ảnh mới vì vậy có cùng kích thước chủ thể; ảnh cũ dao động 265–436 px.
+   - Không ghi đè file. Chạy lại sẽ bỏ qua ảnh đã xuất có hash khớp.
+5. **`sheet`.** Ghép ảnh mẫu và các WebP trên nền ngà và nền tối. Agent xem bằng vision, sau đó **duyệt lần 2:** người dùng xem sheet.
+6. **`link`.** Ghi `illustration`, `cover` hoặc `illustrationCaption` vào JSON học bằng Node.
+   - Giữ UTF-8 và CRLF/LF như file gốc. Từ chối file không đúng JSON thụt 2 dấu cách.
+   - Từ chối thay một ảnh khác đang được tham chiếu.
+   - Đặt sidecar thành `added-to-learning-data`. [illustrations.test.ts](../../web/src/lib/illustrations.test.ts) kiểm mọi sidecar ở trạng thái này vẫn còn tham chiếu, nên không phải sửa test sau mỗi đợt.
+7. Chạy `pnpm check` và `pnpm test`. Kiểm browser khi đổi luồng UI.
+
+Worker chỉ làm bước tạo ảnh. Crop, xuất, QA và gắn dữ liệu là script tất định do coordinator chạy. Số đo hạn mức và chất lượng ở [báo cáo pilot](reports/pilot-2026-10-06.md).
 
 ## Ánh xạ nội dung học (Content Mapping)
 
-Hiện có tổng cộng **42 content references** được tích hợp trong dữ liệu học:
+Hiện có tổng cộng **90 content references** trong dữ liệu học (88 file khác nhau vì `kutsu` và `kaigi` dùng lại ảnh có sẵn). Danh sách dưới đây là mapping trước ngày 06/10; phần thêm của Bài 2/3/4/8 xem mục cuối file.
 - **Bài 1**: cover tham chiếu scene `self-introduction-v1`, cùng 2 từ vựng `gakusei` (`student-v1`) và `isha` (`doctor-v1`).
 - **Bài 2**: 21 từ vựng và 1 grammar:
   - 5 từ vựng pilot: `hon`, `nooto`, `enpitsu`, `kasa`, `kaban`.
@@ -111,3 +149,50 @@ Hai atlas [đồ vật/màu](atlases/lesson-08-objects-v1.png) ([manifest](atlas
 | Cover Bài 8 | [PNG](scenes/adjective-town-v1.png) | [JSON](scenes/adjective-town-v1.json) | [WebP](../../web/public/assets/illustrations/scenes/adjective-town-v1.webp) | 146.816 bytes |
 
 16 WebP từ vựng: **459.726 bytes**, 512 × 512 có alpha thật. Cover: 800 × 600, nền giấy đục. Có ảnh cho 16/53 mục từ Bài 8; các mục khác tiếp tục dùng chữ. Ảnh chỉ hỗ trợ nghĩa sau khi lật thẻ. `ookii` dùng vali lớn độc lập; `chiisai` có giày so sánh kích thước, không dùng ảnh thay nội dung nghĩa. Báo cáo [export](reports/lesson-08-export.md), [review](reports/lesson-08-visual-review.md), nghiệm thu trong [handoff SPEC-21](../../docs/handoff/SPEC-21.md).
+
+## Bài 2/3/4/8 — 42 cutout + 4 scene (06/10/2026)
+
+Nguồn và cách tạo khác các đợt trước:
+
+- **Cutout từ vựng**: 6 atlas 4×2 do người dùng tạo thủ công trên ChatGPT web (đính kèm mẫu v1), prompt ở [CHATGPT-PROMPTS-2026-10-05.md](atlases/CHATGPT-PROMPTS-2026-10-05.md). PNG có alpha thật, nguồn thực 1774 × 887; tên file gốc do ChatGPT đặt được ghi ở `generation.originalFilename` trong manifest. Crop tính bằng script từ đường alpha 0 tuyệt đối giữa chủ thể (ngưỡng alpha ≥ 8 chỉ dùng để tìm chủ thể), rồi xuất bằng `export-atlas.mjs`; không sửa pixel. Sidecar ghi `source: chatgpt-web-image`.
+- **6 ô không xuất được** vì dải alpha rất mờ (1–7) nối sang ô bên cạnh, không có đường cắt alpha 0: `restaurant`, `dormitory` (atlas places), `quiet-library`, `lively-street`, `busy-worker`, `having-fun` (atlas adjectives-2). Theo fallback STYLE.md, cần tạo lại từng ảnh riêng theo [prompt đơn](vocab/CHATGPT-PROMPTS-SINGLES-2026-10-06.md), đưa vào một batch rồi xuất bằng `batch.mjs`. Các từ `resutoran`, `ryou`, `shizuka`, `nigiyaka`, `isogashii`, `tanoshii` tạm giữ chữ.
+- **4 scene nền đục**: Antigravity `generate_image` (Gemini 3.8 Flash High) trả JPEG 1200 × 896; master PNG là bản re-encode lossless, WebP 800 × 600. Công cụ này không nhận ảnh tham chiếu nên phong cách được mô tả bằng prompt; không dùng nó cho cutout vì không có alpha thật (nền caro chỉ là vẽ giả).
+
+| Atlas / nhóm | Stem → ID | WebP |
+| --- | --- | --- |
+| [lesson-02-03-objects-v1](atlases/lesson-02-03-objects-v1.json) | `dictionary` jisho, `newspaper` shinbun, `business-card` meishi, `plastic-card` kaado, `souvenir-box` omiyage (Bài 2); `necktie` nekutai, `wine-bottle` wain, `telephone` denwa (Bài 3) | 8 ảnh, 231.914 bytes |
+| [lesson-03-rooms-v1](atlases/lesson-03-rooms-v1.json) | `classroom` kyoushitsu, `cafeteria` shokudou, `office` jimusho, `meeting-room` kaigishitsu, `reception-desk` uketsuke, `lobby` robii, `room` heya, `toilet` toire | 8 ảnh, 353.520 bytes |
+| [lesson-03-buildings-v1](atlases/lesson-03-buildings-v1.json) | `stairs` kaidan, `elevator` erebeetaa, `escalator` esukareetaa, `vending-machine` jidouhanbaiki, `company-building` kaisha, `house` uchi, `sales-counter` uriba (Bài 3); `department-store` depaato (Bài 4) | 8 ảnh, 342.968 bytes |
+| [lesson-04-places-v1](atlases/lesson-04-places-v1.json) | `bank` ginkou, `post-office` yuubinkyoku, `library` toshokan, `art-museum` bijutsukan, `exam` shiken, `movie` eiga | 6 ảnh, 258.094 bytes |
+| [lesson-04-daily-v1](atlases/lesson-04-daily-v1.json) | `wake-up` okimasu, `sleep` nemasu, `work` hatarakimasu, `rest` yasumimasu, `study` benkyou-shimasu, `morning` asa, `noon` hiru, `night` ban | 8 ảnh, 380.348 bytes |
+| [lesson-08-adjectives-2-v1](atlases/lesson-08-adjectives-2-v1.json) | `handsome-man` hansamu, `energetic-person` genki, `tall-tower` takai, `low-stool` hikui | 4 ảnh, 215.500 bytes |
+| Scene/grammar ([báo cáo L2–3](reports/lesson-02-03-covers.md), [L4 + grammar](reports/lesson-04-cover-l3-grammar.md)) | cover `scenes/everyday-things-v1` (Bài 2), `scenes/department-store-v1` (Bài 3), `scenes/daily-routine-v1` (Bài 4); `grammar/koko-soko-asoko-v1` (Bài 3, có caption) | 4 ảnh, 315.306 bytes |
+
+Dùng lại có chủ đích, không tạo file mới: `kutsu` (Bài 3) → `black-shoes-v1`, `kaigi` (Bài 4) → `meeting-room-v1`. `takai` minh họa nghĩa "cao", không phải "đắt". Các từ trừu tượng, đại từ chỉ định, số, giờ, ngày/thứ và câu giao tiếp tiếp tục chỉ dùng chữ. Độ phủ ảnh hiện tại: Bài 2 26/45, Bài 3 19/42, Bài 4 16/51, Bài 8 20/53. Nghiệm thu ở [handoff SPEC-21](../../docs/handoff/SPEC-21.md).
+
+## Bài 5 — batch `lesson-05` (06/10/2026)
+
+Đợt đầu tiên chạy theo workflow batch. Nguồn: [batch](batches/lesson-05.json), [prompt](batches/lesson-05.prompts.md), [contact sheet](reports/lesson-05-sheet.png), [pilot](reports/pilot-2026-10-06.md). Codex built-in `image_gen` (`gpt-6-luna` low) tạo 2 atlas và 6 ảnh đơn; Antigravity tạo cover. Tổng **17 WebP, 746.374 bytes**.
+
+| Nguồn | Stem → ID |
+| --- | --- |
+| [Atlas 4×2 phương tiện](atlases/lesson-05-vehicles-v1.png) | `commuter-train` densha, `subway` chikatetsu, `bullet-train` shinkansen, `bus` basu, `taxi` takushii, `bicycle` jitensha. Ô máy bay và tàu thủy có bbox chồng nhau nên `skip` |
+| [Atlas 2×2 địa điểm](atlases/lesson-05-places-v1.png) | `school` gakkou, `supermarket` suupaa, `train-station` eki, `birthday-cake` tanjoubi |
+| Ảnh đơn | `walking` aruite, `family` kazoku, `going-home` kaerimasu, `friends` tomodachi, `aeroplane` hikouki, `ferry-boat` fune |
+| Cover (nền đục) | `scenes/station-platform-v1`, Bài 5 |
+
+`going-home` và `friends` được tạo lại vì bản đầu có chủ thể chạm mép canvas; bản nháp chưa phát hành được bỏ. Cover đầu tiên có khung viền giấy nên được tạo lại với yêu cầu full-bleed. Độ phủ ảnh Bài 5: 16/59 mục từ; các mục về ngày, tháng, năm, đại từ và câu giao tiếp tiếp tục chỉ dùng chữ.
+
+## Bài 6–10 — 5 batch (06/10/2026)
+
+Batch: [lesson-06](batches/lesson-06.json), [lesson-07](batches/lesson-07.json), [lesson-08](batches/lesson-08.json), [lesson-09](batches/lesson-09.json), [lesson-10](batches/lesson-10.json). Mỗi batch có contact sheet `reports/lesson-NN-sheet.png`. Orca run `run_a5b3de34c2db`: 5 worker Codex (`gpt-6-luna` low) chạy song song, 1 worker Antigravity làm 4 cover, sau đó thêm 3 worker "chỉ generate" để làm bù.
+
+| Bài | Ảnh mới | Bytes | Ghi chú |
+| --- | --- | --- | --- |
+| 6 | 35 (8 atlas 2×2, 4 ảnh đơn, cover `eating-together`) | 1.697.256 | Ô `shop` và `garden` lẫn sang ô bên cạnh → tạo lại thành ảnh đơn |
+| 7 | 28 (6 atlas, 3 ảnh đơn, cover `gift-giving`) | 928.628 | `reuse` 5 mục: `pasokon` → laptop, `hana` → red-flower, `shatsu` → white-shirt, `otousan`/`okaasan` → father/mother |
+| 8 | 15 (2 atlas, 7 ảnh đơn) | 719.914 | Gồm 6 cutout lỗi cũ: `resutoran`, `ryou`, `shizuka`, `nigiyaka`, `isogashii`, `tanoshii`. `lively-street` tạo lại vì chạm mép |
+| 9 | 17 (4 atlas, 1 ảnh đơn, cover `weekend-hobbies`) | 819.858 | Ô `children` có dải alpha mờ → ảnh đơn |
+| 10 | 26 (6 atlas, 1 ảnh đơn, cover `cozy-room`) | 1.170.398 | |
+
+Tổng **121 WebP mới, 5.336.054 bytes**, kho **228 WebP / 233 tham chiếu**. Độ phủ: Bài 6 34/51, Bài 7 32/47, Bài 8 35/53, Bài 9 16/52, Bài 10 25/47 mục từ, cộng cover Bài 6/7/9/10. Từ trừu tượng, thời gian, đại từ, câu giao tiếp và chữ viết (kanji/hiragana…) tiếp tục chỉ dùng chữ.

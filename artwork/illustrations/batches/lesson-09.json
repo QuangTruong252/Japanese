@@ -1,0 +1,262 @@
+{
+  "name": "lesson-09",
+  "description": "Bài 9 — sở thích, âm nhạc, thể thao.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-09-leisure-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "drinks-v1",
+          "subject": "an assortment of drinks: a blank soda can, a cup of coffee, a glass of juice and a water bottle without label",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "nomimono"
+          },
+          "alt": {
+            "vi": "Nhiều loại đồ uống."
+          }
+        },
+        {
+          "stem": "baseball-v1",
+          "subject": "a baseball bat, a leather glove and a baseball",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "yakyuu"
+          },
+          "alt": {
+            "vi": "Gậy, găng tay và quả bóng chày."
+          }
+        },
+        {
+          "stem": "travel-v1",
+          "subject": "a suitcase with a folded map, a camera and a sun hat",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "ryokou"
+          },
+          "alt": {
+            "vi": "Vali, bản đồ, máy ảnh và mũ du lịch."
+          }
+        },
+        {
+          "stem": "concert-tickets-v1",
+          "subject": "two concert tickets with blank decorative printing",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "chiketto"
+          },
+          "alt": {
+            "vi": "Hai tấm vé xem hòa nhạc."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-09-arts-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "violin-v1",
+          "subject": "a violin with its bow beside a music stand holding a blank sheet",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "kurashikku"
+          },
+          "alt": {
+            "vi": "Cây vĩ cầm và giá nhạc."
+          }
+        },
+        {
+          "stem": "saxophone-v1",
+          "subject": "a brass saxophone",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "jazu"
+          },
+          "alt": {
+            "vi": "Chiếc kèn saxophone."
+          }
+        },
+        {
+          "stem": "painting-v1",
+          "subject": "a landscape painting on a wooden easel with a paint palette",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "e"
+          },
+          "alt": {
+            "vi": "Bức tranh phong cảnh trên giá vẽ."
+          }
+        },
+        {
+          "stem": "coins-v1",
+          "subject": "a small pile of coins of different sizes, with no numbers",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "komakai-okane"
+          },
+          "alt": {
+            "vi": "Một nắm tiền xu lẻ."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-09-people-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "dancing-v1",
+          "subject": "the reference male student and woman dancing happily together",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "dansu"
+          },
+          "alt": {
+            "vi": "Hai bạn trẻ đang khiêu vũ."
+          }
+        },
+        {
+          "stem": "singing-v1",
+          "subject": "the reference woman singing with a few musical note symbols floating around her",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "uta"
+          },
+          "alt": {
+            "vi": "Cô gái đang hát."
+          }
+        },
+        {
+          "stem": "karaoke-v1",
+          "subject": "two friends singing karaoke with microphones while sitting on a small sofa",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "karaoke"
+          },
+          "alt": {
+            "vi": "Hai người bạn hát karaoke."
+          }
+        },
+        {
+          "subject": "two small children, a boy and a girl, playing together with a ball",
+          "skip": "dải alpha mờ nối sang ô bên cạnh; tạo lại thành ảnh đơn cùng stem"
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-09-activities-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "cooking-v1",
+          "subject": "the reference woman cooking at a small stove, stirring a pot",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "ryouri"
+          },
+          "alt": {
+            "vi": "Cô gái đang nấu ăn."
+          }
+        },
+        {
+          "stem": "sports-v1",
+          "subject": "assorted sports equipment: a basketball, a soccer ball, a tennis racket and running shoes",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "supootsu"
+          },
+          "alt": {
+            "vi": "Bóng rổ, bóng đá, vợt tennis và giày chạy."
+          }
+        },
+        {
+          "stem": "concert-v1",
+          "subject": "a small stage where a pianist and a violinist perform under spotlights",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "konsaato"
+          },
+          "alt": {
+            "vi": "Buổi hòa nhạc có nghệ sĩ piano và vĩ cầm."
+          }
+        },
+        {
+          "stem": "kabuki-v1",
+          "subject": "a kabuki actor in dramatic red-and-white makeup and a colourful costume striking a pose",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+            "id": "kabuki"
+          },
+          "alt": {
+            "vi": "Diễn viên kịch Kabuki trong trang phục sặc sỡ."
+          }
+        }
+      ]
+    },
+    {
+      "group": "scenes",
+      "stem": "weekend-hobbies-v1",
+      "file": "artwork/illustrations/scenes/weekend-hobbies-v1.jpg",
+      "source": "antigravity-generate_image",
+      "generation": {
+        "tool": "Antigravity generate_image",
+        "model": "gemini-3.8-flash-high",
+        "note": "Không nhận ảnh tham chiếu; phong cách mô tả bằng prompt."
+      },
+      "referenceImages": [],
+      "subject": "a sunny weekend room where the woman paints at an easel and the male student plays an acoustic guitar; a shelf with records and a tennis racket in the corner.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-09.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Hai bạn trẻ vẽ tranh và chơi đàn vào cuối tuần."
+      }
+    },
+    {
+      "stem": "children-v1",
+      "subject": "two small children, a boy and a girl, playing together with a ball",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "kodomo"
+      },
+      "alt": {
+        "vi": "Hai đứa trẻ chơi bóng cùng nhau."
+      }
+    }
+  ]
+}

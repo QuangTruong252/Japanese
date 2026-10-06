@@ -170,5 +170,13 @@
   "references": [
     "particles"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/cozy-room-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Căn phòng có mèo nằm trên giường và chó dưới gầm bàn."
+    }
+  }
 }

@@ -30,6 +30,14 @@
         "naiKana": "きらない",
         "ta": "切[き]った",
         "taKana": "きった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cutting-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tay đang cắt giấy bằng kéo."
+        }
       }
     },
     {
@@ -60,6 +68,14 @@
         "naiKana": "おくらない",
         "ta": "送[おく]った",
         "taKana": "おくった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sending-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái bỏ thư vào hòm thư."
+        }
       }
     },
     {
@@ -90,6 +106,14 @@
         "naiKana": "あげない",
         "ta": "あげた",
         "taKana": "あげた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/giving-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai tặng quà cho cô gái."
+        }
       }
     },
     {
@@ -210,6 +234,14 @@
         "naiKana": "おしえない",
         "ta": "教[おし]えた",
         "taKana": "おしえた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/teaching-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Giáo viên đang giảng bài bên bảng."
+        }
       }
     },
     {
@@ -240,6 +272,14 @@
         "naiKana": "ならわない",
         "ta": "習[なら]った",
         "taKana": "ならった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/learning-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái học đàn piano với giáo viên."
+        }
       }
     },
     {
@@ -270,6 +310,14 @@
         "naiKana": "かけない",
         "ta": "かけた",
         "taKana": "かけた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/phone-call-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Sinh viên đang gọi điện thoại."
+        }
       }
     },
     {
@@ -286,6 +334,14 @@
         "kana": "てを あらいます。",
         "translation": {
           "vi": "Tôi rửa tay."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hand-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn tay."
         }
       }
     },
@@ -304,6 +360,14 @@
         "translation": {
           "vi": "Tôi ăn cơm bằng đũa."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/chopsticks-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đôi đũa gỗ đặt trên gác đũa."
+        }
       }
     },
     {
@@ -320,6 +384,14 @@
         "kana": "スプーンで カレーを たべます。",
         "translation": {
           "vi": "Tôi ăn cà ri bằng thìa."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/spoon-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc thìa."
         }
       }
     },
@@ -338,6 +410,14 @@
         "translation": {
           "vi": "Tôi cắt bánh mì bằng dao."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/knife-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Con dao ăn."
+        }
       }
     },
     {
@@ -354,6 +434,14 @@
         "kana": "フォークで パスタを たべます。",
         "translation": {
           "vi": "Tôi ăn mì Ý bằng nĩa."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/fork-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc nĩa."
         }
       }
     },
@@ -372,6 +460,14 @@
         "translation": {
           "vi": "Tôi cắt giấy bằng kéo."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/scissors-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc kéo."
+        }
       }
     },
     {
@@ -388,6 +484,14 @@
         "kana": "パソコンで メールを かきます。",
         "translation": {
           "vi": "Tôi viết email trên máy tính."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/laptop-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Máy tính xách tay đang mở."
         }
       }
     },
@@ -406,6 +510,14 @@
         "translation": {
           "vi": "Tôi gọi cho mẹ bằng điện thoại di động."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/mobile-phone-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc điện thoại di động."
+        }
       }
     },
     {
@@ -422,6 +534,14 @@
         "kana": "ともだちに メールを おくります。",
         "translation": {
           "vi": "Tôi gửi email cho bạn."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/email-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Điện thoại hiện biểu tượng phong bì thư."
         }
       }
     },
@@ -440,6 +560,14 @@
         "translation": {
           "vi": "Tôi gửi thiệp chúc mừng năm mới cho bạn."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/new-year-card-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tấm thiệp chúc mừng năm mới."
+        }
       }
     },
     {
@@ -456,6 +584,14 @@
         "kana": "パンチで かみに あなを あけます。",
         "translation": {
           "vi": "Tôi đục lỗ trên giấy bằng dụng cụ đục lỗ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hole-punch-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cái đục lỗ giấy."
         }
       }
     },
@@ -474,6 +610,14 @@
         "translation": {
           "vi": "Tôi dập ghim giấy bằng cái dập ghim."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/stapler-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cái dập ghim."
+        }
       }
     },
     {
@@ -490,6 +634,14 @@
         "kana": "セロテープで しゃしんを はります。",
         "translation": {
           "vi": "Tôi dán ảnh bằng băng dính trong."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tape-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuộn băng dính trong."
         }
       }
     },
@@ -508,6 +660,14 @@
         "translation": {
           "vi": "Tôi xóa chữ bằng cục tẩy."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/eraser-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cục tẩy."
+        }
       }
     },
     {
@@ -524,6 +684,14 @@
         "kana": "かみに なまえを かきます。",
         "translation": {
           "vi": "Tôi viết tên lên giấy."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/paper-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Xấp giấy trắng."
         }
       }
     },
@@ -542,6 +710,14 @@
         "translation": {
           "vi": "Tôi tặng hoa cho mẹ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/red-flower-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bông hoa màu đỏ."
+        }
       }
     },
     {
@@ -558,6 +734,14 @@
         "kana": "その シャツは すてきですね。",
         "translation": {
           "vi": "Chiếc áo sơ mi đó đẹp quá nhỉ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/white-shirt-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc áo sơ mi trắng."
         }
       }
     },
@@ -576,6 +760,14 @@
         "translation": {
           "vi": "Tôi tặng quà cho bố."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/present-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hộp quà gói giấy có nơ đỏ."
+        }
       }
     },
     {
@@ -592,6 +784,14 @@
         "kana": "にもつを おくります。",
         "translation": {
           "vi": "Tôi gửi hành lý."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/luggage-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bưu kiện và vali hành lý."
         }
       }
     },
@@ -610,6 +810,14 @@
         "translation": {
           "vi": "Tôi mượn tiền của mẹ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/money-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tiền xu và tiền giấy."
+        }
       }
     },
     {
@@ -626,6 +834,14 @@
         "kana": "えきで きっぷを かいます。",
         "translation": {
           "vi": "Tôi mua vé ở ga."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/ticket-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tấm vé tàu."
         }
       }
     },
@@ -644,6 +860,14 @@
         "translation": {
           "vi": "Tôi tặng quà vào dịp Giáng sinh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/christmas-tree-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cây thông Noel và quà."
+        }
       }
     },
     {
@@ -660,6 +884,14 @@
         "kana": "ちちに シャツを あげます。",
         "translation": {
           "vi": "Tôi tặng bố một chiếc áo sơ mi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/father-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một người bố trung niên mặc áo len."
         }
       }
     },
@@ -678,6 +910,14 @@
         "translation": {
           "vi": "Tôi tặng hoa cho mẹ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/mother-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một người mẹ trung niên đeo tạp dề."
+        }
       }
     },
     {
@@ -695,6 +935,14 @@
         "translation": {
           "vi": "Bố của anh Tanaka là giáo viên."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/father-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một người bố trung niên mặc áo len."
+        }
       }
     },
     {
@@ -711,6 +959,14 @@
         "kana": "たなかさんの おかあさんは せんせいです。",
         "translation": {
           "vi": "Mẹ của anh Tanaka là giáo viên."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/mother-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một người mẹ trung niên đeo tạp dề."
         }
       }
     },

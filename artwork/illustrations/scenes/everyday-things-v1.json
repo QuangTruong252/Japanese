@@ -1,0 +1,45 @@
+{
+  "createdAt": "2026-10-05T09:52:47.000Z",
+  "source": "antigravity-generate_image",
+  "model": "gemini-3.8-flash-high",
+  "prompt": "Generate one 4:3 landscape image.\nStyle reference: artwork/illustrations/reference/paper-town-style-v1.png (MaiPace \"Phố giấy\" style).\nStyle description: Traditional watercolor and gouache painting on warm pale ivory paper, fine expressive dark pencil outlines, softened hand-painted shapes, subtle natural paper grain texture INSIDE painted shapes. Restrained color palette of warm ivory, sand, beige, charcoal gray/black, sage/olive green, and occasional muted brick-red. Friendly, warm editorial storybook illustration, peaceful Japanese everyday aesthetic. NOT glossy 3D, NOT photorealistic, NOT flat vector icon, NOT thick cartoon anime lines, NOT digital gradients.\n\nCharacters:\n- Young woman (on the right): dark bob haircut with straight bangs, wearing a cream/ivory cardigan over a brick-red top, charcoal skirt, brown shoulder bag.\n- Male student (on the left): short slightly messy dark hair, wearing an ivory long-sleeved shirt, charcoal trousers, dark backpack.\nBoth characters have natural human anatomy, well-drawn hands and faces with gentle, curious expressions.\n\nScene content:\n- Inside a cozy, bright Japanese room or stationery / book shop corner with light wood furnishings and warm ivory paper background.\n- The two young characters are centrally placed and clearly legible even at small thumbnail size.\n- The woman holds an open blank book in her hands and points toward it curiously (asking what it is).\n- The male student holds a small blank notebook in one hand and looks toward the book, listening or explaining.\n- Nearby on a low wooden table or bench and floor: a thick closed dictionary with a completely blank cover/spine, a closed sage umbrella resting against the wall, a leather-strapped camera resting on the shelf, and a dark student bag.\n- Opaque warm ivory paper background filling the frame.\n\nStrict Negative Constraints:\n- Absolutely NO text, NO letters, NO numbers, NO digits, NO Japanese characters (no kana, no kanji), NO shop signs with text, NO book titles, NO labels, NO logos, NO watermarks, NO UI elements, NO speech bubbles. All book covers, notebook pages, and signs must be completely blank.\n- Absolutely NO fake checkerboard transparency pattern. Background must be solid opaque warm ivory paper.\n- Aspect ratio: 4:3 (landscape).",
+  "referenceImages": [],
+  "referenceImagesNote": "Tool does not accept multimodal image file inputs; passed artwork/illustrations/reference/paper-town-style-v1.png by path in prompt and described style and characters in full textual detail.",
+  "output": "web/public/assets/illustrations/scenes/everyday-things-v1.webp",
+  "width": 800,
+  "height": 600,
+  "role": "lesson-cover",
+  "suggestedAlt": {
+    "vi": "Một nữ sinh viên và nam sinh viên đang trao đổi về cuốn sách và cuốn sổ tay trong góc phòng sáng với máy ảnh, chiếc ô và cặp sách xung quanh."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/lessons/lesson-02.json",
+    "field": "cover",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "performance": {
+    "generationMs": 57000
+  },
+  "master": {
+    "path": "artwork/illustrations/scenes/everyday-things-v1.png",
+    "width": 1200,
+    "height": 896,
+    "format": "png",
+    "hasAlpha": false,
+    "generatedFormat": "jpeg"
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "resize",
+    "quality": 82,
+    "effort": 6
+  },
+  "outputVerification": {
+    "bytes": 64458,
+    "sha256": "f988c28a23b37bd5de8b44928fe18843177fd0729e0723a461038864db33f78f",
+    "format": "webp",
+    "hasAlpha": false,
+    "decoded": true
+  }
+}

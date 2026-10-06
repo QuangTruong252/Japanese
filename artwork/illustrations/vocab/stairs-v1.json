@@ -1,0 +1,65 @@
+{
+  "createdAt": "2026-10-06T00:41:17.440Z",
+  "source": "chatgpt-web-image",
+  "sourceAtlas": "artwork/illustrations/atlases/lesson-03-buildings-v1.png",
+  "sourceImage": "artwork/illustrations/atlases/lesson-03-buildings-v1.png",
+  "prompt": "Create ONE wide 2:1 image (landscape) that is a sprite atlas of 8 separate illustrations arranged in a precise grid of 4 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires, e.g. red wine, blue night sky). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\n\nCELLS (row-major):\n1. (row 1, column 1) an indoor staircase with handrail going up\n2. (row 1, column 2) elevator with doors half open, call buttons as plain circles, NO floor numbers\n3. (row 1, column 3) an escalator rising diagonally, side view\n4. (row 1, column 4) a Japanese drink vending machine with rows of colorful bottles/cans, plain buttons, no text, no prices\n5. (row 2, column 1) a mid-rise company office building with many windows, no sign\n6. (row 2, column 2) a small cozy Japanese family house with tiled roof, small garden and gate\n7. (row 2, column 3) a store sales section: display counter with bags/shoes on shelves, a clerk woman, no signs\n8. (row 2, column 4) a multi-storey department store building with awnings and big display windows, no sign or logo\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames, no floor shadows outside the subject, no stray paint specks between cells.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, price tags, logos, brand marks, signs with writing, labels, captions, watermark or UI anywhere. Books, papers, signs and screens stay blank.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/stairs-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Một cầu thang bộ có tay vịn."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+    "id": "kaidan",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/stairs-v1.png",
+    "width": 343,
+    "height": 402,
+    "format": "png",
+    "hasAlpha": true,
+    "crop": {
+      "left": 75,
+      "top": 25,
+      "width": 343,
+      "height": 402
+    }
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "contain",
+    "innerSize": {
+      "width": 448,
+      "height": 448
+    },
+    "padding": 32,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 33558,
+    "sha256": "e5610809bfd944dcde435163385f4bd13368beaabf9c3f2d2629a24248241ea8",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 142411,
+      "partial": 119597,
+      "opaque": 136
+    }
+  },
+  "generation": {
+    "tool": "ChatGPT web image generation (manual, by the user)",
+    "originalFilename": "Watercolor Shop and Building Sticker Sheet.png",
+    "promptFile": "artwork/illustrations/atlases/CHATGPT-PROMPTS-2026-10-05.md"
+  }
+}

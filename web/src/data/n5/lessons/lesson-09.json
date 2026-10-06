@@ -157,5 +157,13 @@
     "adjectives",
     "particles"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/weekend-hobbies-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Hai bạn trẻ vẽ tranh và chơi đàn vào cuối tuần."
+    }
+  }
 }

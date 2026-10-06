@@ -246,5 +246,13 @@
     "demonstratives",
     "particles"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/everyday-things-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Một nữ sinh viên và nam sinh viên đang trao đổi về cuốn sách và cuốn sổ tay trong góc phòng sáng với máy ảnh, chiếc ô và cặp sách xung quanh."
+    }
+  }
 }

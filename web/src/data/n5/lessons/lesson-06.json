@@ -223,5 +223,13 @@
     "particles",
     "verbs"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/eating-together-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Hai bạn trẻ cùng ăn trưa ở quán ăn nhỏ."
+    }
+  }
 }

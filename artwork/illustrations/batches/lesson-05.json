@@ -1,0 +1,279 @@
+{
+  "name": "lesson-05",
+  "description": "Bài 5 — phương tiện, địa điểm, đi lại. Pilot 06/10/2026: xem reports/pilot-2026-10-06.md.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-05-vehicles-v1.png",
+      "columns": 4,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)",
+        "orcaRun": "run_263f3b04604b"
+      },
+      "prompt": "Create ONE wide 2:1 image (landscape) that is a sprite atlas of 8 separate illustrations arranged in a precise grid of 4 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nCELLS (row-major):\n1. (row 1, column 1) a passenger aeroplane in flight, side three-quarter view, plain livery\n2. (row 1, column 2) a small white passenger ferry boat on a little patch of painted water\n3. (row 1, column 3) a commuter electric train car (sage stripe) on a short piece of track with overhead pantograph\n4. (row 1, column 4) a subway train emerging from a tunnel mouth with steps down to an underground entrance\n5. (row 2, column 1) a white Shinkansen bullet train with long pointed nose, blue stripe, on a short track\n6. (row 2, column 2) a city bus, ivory and sage, side three-quarter view, blank destination board\n7. (row 2, column 3) a taxi sedan with a small blank roof lamp, charcoal and cream\n8. (row 2, column 4) a city bicycle with front basket\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY transparent margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames.",
+      "cells": [
+        {
+          "subject": "a passenger aeroplane in flight, side three-quarter view, plain livery",
+          "skip": "bbox overlaps the ferry cell; regenerated as single aeroplane-v1"
+        },
+        {
+          "subject": "a small white passenger ferry boat on a little patch of painted water",
+          "skip": "bbox overlaps the aeroplane cell; regenerated as single ferry-boat-v1"
+        },
+        {
+          "stem": "commuter-train-v1",
+          "subject": "a commuter electric train car (sage stripe) on a short piece of track with overhead pantograph",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "densha"
+          },
+          "alt": {
+            "vi": "Toa tàu điện màu kem có sọc xanh trên đường ray."
+          }
+        },
+        {
+          "stem": "subway-v1",
+          "subject": "a subway train emerging from a tunnel mouth with steps down to an underground entrance",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "chikatetsu"
+          },
+          "alt": {
+            "vi": "Tàu điện ngầm chạy ra từ đường hầm, cạnh lối xuống ga ngầm."
+          }
+        },
+        {
+          "stem": "bullet-train-v1",
+          "subject": "a white Shinkansen bullet train with long pointed nose, blue stripe, on a short track",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "shinkansen"
+          },
+          "alt": {
+            "vi": "Tàu Shinkansen màu trắng có mũi dài và sọc xanh."
+          }
+        },
+        {
+          "stem": "bus-v1",
+          "subject": "a city bus, ivory and sage, side three-quarter view, blank destination board",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "basu"
+          },
+          "alt": {
+            "vi": "Xe buýt thành phố màu kem và xanh."
+          }
+        },
+        {
+          "stem": "taxi-v1",
+          "subject": "a taxi sedan with a small blank roof lamp, charcoal and cream",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "takushii"
+          },
+          "alt": {
+            "vi": "Xe taxi có đèn nhỏ trên nóc."
+          }
+        },
+        {
+          "stem": "bicycle-v1",
+          "subject": "a city bicycle with front basket",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "jitensha"
+          },
+          "alt": {
+            "vi": "Xe đạp có giỏ phía trước."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-05-places-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)",
+        "orcaRun": "run_263f3b04604b"
+      },
+      "prompt": "Create ONE square 1:1 image that is a sprite atlas of 4 separate illustrations arranged in a precise grid of 2 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nCELLS (row-major):\n1. (row 1, column 1) a small Japanese school building with a clock tower whose face is blank (no numbers), a gate and a cherry tree\n2. (row 1, column 2) a neighborhood supermarket storefront with glass doors, shopping carts and fruit crates, blank sign\n3. (row 2, column 1) a small train station building with a platform roof and a blank station sign\n4. (row 2, column 2) a birthday cake with lit candles and a small wrapped gift box\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY transparent margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames.",
+      "cells": [
+        {
+          "stem": "school-v1",
+          "subject": "a small Japanese school building with a clock tower whose face is blank (no numbers), a gate and a cherry tree",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "gakkou"
+          },
+          "alt": {
+            "vi": "Tòa nhà trường học có tháp đồng hồ, cổng và cây anh đào."
+          }
+        },
+        {
+          "stem": "supermarket-v1",
+          "subject": "a neighborhood supermarket storefront with glass doors, shopping carts and fruit crates, blank sign",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "suupaa"
+          },
+          "alt": {
+            "vi": "Siêu thị có cửa kính, xe đẩy và thùng trái cây."
+          }
+        },
+        {
+          "stem": "train-station-v1",
+          "subject": "a small train station building with a platform roof and a blank station sign",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "eki"
+          },
+          "alt": {
+            "vi": "Nhà ga nhỏ có mái che sân ga và đường ray."
+          }
+        },
+        {
+          "stem": "birthday-cake-v1",
+          "subject": "a birthday cake with lit candles and a small wrapped gift box",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "tanjoubi"
+          },
+          "alt": {
+            "vi": "Bánh sinh nhật cắm nến cạnh một hộp quà."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "walking-v1",
+      "subject": "the reference male student walking on foot along a short stretch of pavement, mid-stride, relaxed",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)",
+        "orcaRun": "run_263f3b04604b"
+      },
+      "prompt": "Create ONE square 1:1 illustration for a Japanese-learning app's vocabulary card.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nLAYOUT: a single standalone cutout vignette centered, occupying about 70% of the canvas, with wide EMPTY transparent margins on all four sides; nothing touches the canvas edge.\nSUBJECT: the reference male student walking on foot along a short stretch of pavement, mid-stride, relaxed",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "aruite"
+      },
+      "alt": {
+        "vi": "Một sinh viên đang đi bộ trên vỉa hè."
+      }
+    },
+    {
+      "stem": "family-v1",
+      "subject": "a small family of four (parents, a child and a grandmother) standing together, smiling, everyday clothes",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)",
+        "orcaRun": "run_263f3b04604b"
+      },
+      "prompt": "Create ONE square 1:1 illustration for a Japanese-learning app's vocabulary card.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nLAYOUT: a single standalone cutout vignette centered, occupying about 70% of the canvas, with wide EMPTY transparent margins on all four sides; nothing touches the canvas edge.\nSUBJECT: a small family of four (parents, a child and a grandmother) standing together, smiling, everyday clothes",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "kazoku"
+      },
+      "alt": {
+        "vi": "Gia đình bốn người gồm bố mẹ, con và bà."
+      }
+    },
+    {
+      "stem": "going-home-v1",
+      "subject": "the reference woman arriving home in the evening: stepping through the open front door of a small house with warm light inside, seen from the doorstep; her whole figure including shoes and the small porch are visible",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)",
+        "orcaRun": "run_263f3b04604b"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "kaerimasu"
+      },
+      "alt": {
+        "vi": "Cô gái về đến nhà, bước qua cửa vào buổi tối."
+      }
+    },
+    {
+      "stem": "friends-v1",
+      "subject": "the reference male student and the woman standing side by side as friends, laughing together, one waving; full figures from head to shoes",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)",
+        "orcaRun": "run_263f3b04604b"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "tomodachi"
+      },
+      "alt": {
+        "vi": "Hai người bạn đứng cạnh nhau, cười và vẫy tay."
+      }
+    },
+    {
+      "stem": "aeroplane-v1",
+      "subject": "a passenger aeroplane in flight, side three-quarter view, plain ivory livery with a sage tail, no markings",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)",
+        "orcaRun": "run_263f3b04604b"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "hikouki"
+      },
+      "alt": {
+        "vi": "Máy bay chở khách đang bay."
+      }
+    },
+    {
+      "stem": "ferry-boat-v1",
+      "subject": "a small white passenger ferry boat on a small oval patch of painted water that fades out well inside the canvas",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)",
+        "orcaRun": "run_263f3b04604b"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "fune"
+      },
+      "alt": {
+        "vi": "Con tàu chở khách màu trắng trên mặt nước."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "station-platform-v1",
+      "file": "artwork/illustrations/scenes/station-platform-v1.jpg",
+      "source": "antigravity-generate_image",
+      "generation": {
+        "tool": "Antigravity generate_image",
+        "model": "gemini-3.8-flash-high",
+        "note": "Không nhận ảnh tham chiếu; phong cách mô tả bằng prompt."
+      },
+      "referenceImages": [],
+      "subject": "two young people, the male student and the woman, waiting on a small Japanese train station platform on a calm morning while a sage-and-ivory local train arrives. Setting: platform roof with timber posts, a bench, potted plants, low town roofs and a bicycle parked beyond the fence; a hanging round clock with hands only and a blank face.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-05.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Hai bạn trẻ chờ tàu trên sân ga nhỏ vào buổi sáng."
+      }
+    }
+  ]
+}

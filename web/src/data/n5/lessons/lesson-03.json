@@ -39,7 +39,18 @@
             "vi": "Nhà vệ sinh ở đằng kia."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/koko-soko-asoko-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong sảnh, cô gái bên trái chỉ xuống sàn ngay cạnh chân mình, chàng trai đứng giữa gần ghế sofa, cuối hành lang xa là thang máy."
+        }
+      },
+      "illustrationCaption": {
+        "vi": "Trong hình, người nói là cô gái bên trái: ここ là chỗ cô đang đứng; そこ là chỗ người nghe đứng cạnh ghế sofa; あそこ là thang máy ở xa cả hai người."
+      }
     },
     {
       "id": "wa-lugar-desu",
@@ -177,5 +188,13 @@
     "numbers",
     "counters"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/department-store-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Một nhân viên hướng dẫn hai bạn học viên tại tầng thương mại bách hóa Nhật Bản với thang cuốn và quầy trưng bày."
+    }
+  }
 }

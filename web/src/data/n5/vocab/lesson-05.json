@@ -90,6 +90,14 @@
         "naiKana": "かえらない",
         "ta": "帰[かえ]った",
         "taKana": "かえった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/going-home-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái về đến nhà, bước qua cửa vào buổi tối."
+        }
       }
     },
     {
@@ -106,6 +114,14 @@
         "kana": "あした がっこうへ いきます。",
         "translation": {
           "vi": "Ngày mai tôi đi đến trường."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/school-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tòa nhà trường học có tháp đồng hồ, cổng và cây anh đào."
         }
       }
     },
@@ -124,6 +140,14 @@
         "translation": {
           "vi": "Tôi đi đến siêu thị."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/supermarket-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Siêu thị có cửa kính, xe đẩy và thùng trái cây."
+        }
       }
     },
     {
@@ -140,6 +164,14 @@
         "kana": "えきは どこですか。",
         "translation": {
           "vi": "Nhà ga ở đâu?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/train-station-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhà ga nhỏ có mái che sân ga và đường ray."
         }
       }
     },
@@ -158,6 +190,14 @@
         "translation": {
           "vi": "Tôi đi Mỹ bằng máy bay."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/aeroplane-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Máy bay chở khách đang bay."
+        }
       }
     },
     {
@@ -174,6 +214,14 @@
         "kana": "ふねで かえります。",
         "translation": {
           "vi": "Tôi về bằng tàu thủy."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/ferry-boat-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Con tàu chở khách màu trắng trên mặt nước."
         }
       }
     },
@@ -192,6 +240,14 @@
         "translation": {
           "vi": "Tôi đi đến công ty bằng tàu điện."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/commuter-train-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Toa tàu điện màu kem có sọc xanh trên đường ray."
+        }
       }
     },
     {
@@ -208,6 +264,14 @@
         "kana": "ちかてつで いきます。",
         "translation": {
           "vi": "Tôi đi bằng tàu điện ngầm."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/subway-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tàu điện ngầm chạy ra từ đường hầm, cạnh lối xuống ga ngầm."
         }
       }
     },
@@ -226,6 +290,14 @@
         "translation": {
           "vi": "Tôi đã đến bằng tàu shinkansen."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bullet-train-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tàu Shinkansen màu trắng có mũi dài và sọc xanh."
+        }
       }
     },
     {
@@ -242,6 +314,14 @@
         "kana": "バスで がっこうへ いきます。",
         "translation": {
           "vi": "Tôi đi đến trường bằng xe buýt."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bus-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Xe buýt thành phố màu kem và xanh."
         }
       }
     },
@@ -260,6 +340,14 @@
         "translation": {
           "vi": "Tôi về bằng taxi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/taxi-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Xe taxi có đèn nhỏ trên nóc."
+        }
       }
     },
     {
@@ -277,6 +365,14 @@
         "translation": {
           "vi": "Tôi đi đến siêu thị bằng xe đạp."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bicycle-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Xe đạp có giỏ phía trước."
+        }
       }
     },
     {
@@ -293,6 +389,14 @@
         "kana": "あるいて かいしゃへ いきます。",
         "translation": {
           "vi": "Tôi đi bộ đến công ty."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/walking-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một sinh viên đang đi bộ trên vỉa hè."
         }
       }
     },
@@ -327,6 +431,14 @@
         "kana": "ともだちと にほんへ いきます。",
         "translation": {
           "vi": "Tôi đi Nhật với bạn."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/friends-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai người bạn đứng cạnh nhau, cười và vẫy tay."
         }
       }
     },
@@ -378,6 +490,14 @@
         "kana": "かぞくと にほんへ きました。",
         "translation": {
           "vi": "Tôi đã đến Nhật cùng gia đình."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/family-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Gia đình bốn người gồm bố mẹ, con và bà."
         }
       }
     },
@@ -905,6 +1025,14 @@
         "kana": "たんじょうびは いつですか。",
         "translation": {
           "vi": "Sinh nhật bạn là khi nào?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/birthday-cake-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bánh sinh nhật cắm nến cạnh một hộp quà."
         }
       }
     },

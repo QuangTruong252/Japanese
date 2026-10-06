@@ -1,0 +1,65 @@
+{
+  "createdAt": "2026-10-06T00:42:20.622Z",
+  "source": "chatgpt-web-image",
+  "sourceAtlas": "artwork/illustrations/atlases/lesson-04-daily-v1.png",
+  "sourceImage": "artwork/illustrations/atlases/lesson-04-daily-v1.png",
+  "prompt": "Create ONE wide 2:1 image (landscape) that is a sprite atlas of 8 separate illustrations arranged in a precise grid of 4 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires, e.g. red wine, blue night sky). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\n\nCELLS (row-major):\n1. (row 1, column 1) the reference male student sitting up in bed stretching, morning sun through window\n2. (row 1, column 2) the reference male student asleep in bed under a blanket, crescent moon at window\n3. (row 1, column 3) the reference woman working at an office desk with a laptop and documents\n4. (row 1, column 4) the reference woman relaxing on a sofa with a cup of tea, eyes closed, content\n5. (row 2, column 1) the reference male student studying at a desk with an open book and notebook, writing\n6. (row 2, column 2) sunrise over small town rooftops, soft orange sky\n7. (row 2, column 3) bright midday: high sun over a town street with short shadows\n8. (row 2, column 4) night: crescent moon and stars over houses with lit windows, deep blue sky\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames, no floor shadows outside the subject, no stray paint specks between cells.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, price tags, logos, brand marks, signs with writing, labels, captions, watermark or UI anywhere. Books, papers, signs and screens stay blank.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/noon-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Mặt trời giữa trưa trên con phố."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+    "id": "hiru",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/noon-v1.png",
+    "width": 436,
+    "height": 387,
+    "format": "png",
+    "hasAlpha": true,
+    "crop": {
+      "left": 895,
+      "top": 466,
+      "width": 436,
+      "height": 387
+    }
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "contain",
+    "innerSize": {
+      "width": 448,
+      "height": 448
+    },
+    "padding": 32,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 58296,
+    "sha256": "910d320322d50dabc0c10f8adfe5cbe270c16ffe353845c151ef72f3c293063f",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 126979,
+      "partial": 135084,
+      "opaque": 81
+    }
+  },
+  "generation": {
+    "tool": "ChatGPT web image generation (manual, by the user)",
+    "originalFilename": "Watercolor Daily Life Sticker Sheet.png",
+    "promptFile": "artwork/illustrations/atlases/CHATGPT-PROMPTS-2026-10-05.md"
+  }
+}

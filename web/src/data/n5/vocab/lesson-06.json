@@ -30,6 +30,14 @@
         "naiKana": "たべない",
         "ta": "食[た]べた",
         "taKana": "たべた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/eating-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Sinh viên đang ăn mì bằng đũa."
+        }
       }
     },
     {
@@ -60,6 +68,14 @@
         "naiKana": "のまない",
         "ta": "飲[の]んだ",
         "taKana": "のんだ"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/drinking-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đang uống nước."
+        }
       }
     },
     {
@@ -120,6 +136,14 @@
         "naiKana": "みない",
         "ta": "見[み]た",
         "taKana": "みた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/watching-tv-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Sinh viên đang xem ti vi."
+        }
       }
     },
     {
@@ -150,6 +174,14 @@
         "naiKana": "きかない",
         "ta": "聞[き]いた",
         "taKana": "きいた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/listening-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đeo tai nghe nghe nhạc."
+        }
       }
     },
     {
@@ -180,6 +212,14 @@
         "naiKana": "よまない",
         "ta": "読[よ]んだ",
         "taKana": "よんだ"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/reading-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái ngồi đọc sách."
+        }
       }
     },
     {
@@ -210,6 +250,14 @@
         "naiKana": "かかない",
         "ta": "書[か]いた",
         "taKana": "かいた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/writing-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Sinh viên đang viết vào vở."
+        }
       }
     },
     {
@@ -240,6 +288,14 @@
         "naiKana": "かわない",
         "ta": "買[か]った",
         "taKana": "かった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/buying-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái trả tiền mua đồ ở quầy."
+        }
       }
     },
     {
@@ -270,6 +326,14 @@
         "naiKana": "とらない",
         "ta": "撮[と]った",
         "taKana": "とった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/taking-photo-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Sinh viên đang chụp ảnh bằng máy ảnh."
+        }
       }
     },
     {
@@ -330,6 +394,14 @@
         "naiKana": "あわない",
         "ta": "会[あ]った",
         "taKana": "あった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/meeting-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai người bạn gặp nhau và vẫy tay chào."
+        }
       }
     },
     {
@@ -346,6 +418,14 @@
         "kana": "ごはんを たべます。",
         "translation": {
           "vi": "Tôi ăn cơm."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/rice-bowl-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bát cơm trắng nóng và đôi đũa."
         }
       }
     },
@@ -364,6 +444,14 @@
         "translation": {
           "vi": "Tôi không ăn sáng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/breakfast-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Khay bữa sáng có bánh mì nướng, trứng ốp và cà phê."
+        }
       }
     },
     {
@@ -380,6 +468,14 @@
         "kana": "ひるごはんを たべました。",
         "translation": {
           "vi": "Tôi đã ăn trưa."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/lunch-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hộp cơm bento cho bữa trưa."
         }
       }
     },
@@ -398,6 +494,14 @@
         "translation": {
           "vi": "Tôi ăn tối."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/dinner-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn ăn tối có nồi lẩu và các món ăn kèm."
+        }
       }
     },
     {
@@ -414,6 +518,14 @@
         "kana": "あさ パンを たべます。",
         "translation": {
           "vi": "Buổi sáng tôi ăn bánh mì."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bread-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ổ bánh mì và mấy chiếc bánh mì tròn."
         }
       }
     },
@@ -432,6 +544,14 @@
         "translation": {
           "vi": "Tôi đã mua trứng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/eggs-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mấy quả trứng trong bát nhỏ."
+        }
       }
     },
     {
@@ -448,6 +568,14 @@
         "kana": "にくを たべます。",
         "translation": {
           "vi": "Tôi ăn thịt."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/meat-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Miếng thịt bò và thịt heo thái lát."
         }
       }
     },
@@ -466,6 +594,14 @@
         "translation": {
           "vi": "Tôi mua cá."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/fish-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một con cá tươi trên đĩa."
+        }
       }
     },
     {
@@ -482,6 +618,14 @@
         "kana": "やさいを たべます。",
         "translation": {
           "vi": "Tôi ăn rau."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/vegetables-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Giỏ rau gồm bắp cải, cà rốt, củ cải và hành."
         }
       }
     },
@@ -500,6 +644,14 @@
         "translation": {
           "vi": "Tôi đã mua hoa quả."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/fruit-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bát trái cây gồm táo, cam, chuối và nho."
+        }
       }
     },
     {
@@ -516,6 +668,14 @@
         "kana": "みずを のみます。",
         "translation": {
           "vi": "Tôi uống nước."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/water-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cốc nước lọc có đá và chai nước."
         }
       }
     },
@@ -534,6 +694,14 @@
         "translation": {
           "vi": "Anh/chị có muốn cùng uống trà không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/green-tea-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ấm trà và chén trà xanh."
+        }
       }
     },
     {
@@ -550,6 +718,14 @@
         "kana": "こうちゃを のみます。",
         "translation": {
           "vi": "Tôi uống trà đen."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/black-tea-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tách trà đen có lát chanh."
         }
       }
     },
@@ -568,6 +744,14 @@
         "translation": {
           "vi": "Bạn có uống sữa bò không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/milk-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hộp sữa và một cốc sữa."
+        }
       }
     },
     {
@@ -584,6 +768,14 @@
         "kana": "ジュースを のみます。",
         "translation": {
           "vi": "Tôi uống nước ép."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/juice-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cốc nước cam có ống hút."
         }
       }
     },
@@ -602,6 +794,14 @@
         "translation": {
           "vi": "Cùng uống bia thôi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/beer-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cốc bia có bọt cạnh chai bia."
+        }
       }
     },
     {
@@ -618,6 +818,14 @@
         "kana": "おさけを のみません。",
         "translation": {
           "vi": "Tôi không uống rượu."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sake-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bình rượu sake và hai chén nhỏ."
         }
       }
     },
@@ -653,6 +861,14 @@
         "translation": {
           "vi": "Tôi viết thư."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/letter-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Lá thư và phong bì."
+        }
       }
     },
     {
@@ -686,6 +902,14 @@
         "kana": "しゃしんを とりました。",
         "translation": {
           "vi": "Tôi đã chụp ảnh."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/photos-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mấy tấm ảnh in và một khung ảnh."
         }
       }
     },
@@ -721,6 +945,14 @@
         "translation": {
           "vi": "Tôi đã mua ở cửa hàng kia."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/shop-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cửa tiệm nhỏ có rèm noren trước cửa."
+        }
       }
     },
     {
@@ -737,6 +969,14 @@
         "kana": "にわで しゃしんを とります。",
         "translation": {
           "vi": "Tôi chụp ảnh ở sân vườn."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/garden-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Khu vườn Nhật có ao, đèn đá và cây thông."
         }
       }
     },
@@ -755,6 +995,14 @@
         "translation": {
           "vi": "Tôi làm bài tập về nhà."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/homework-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Vở bài tập, bút chì và cục tẩy."
+        }
       }
     },
     {
@@ -771,6 +1019,14 @@
         "kana": "テニスを しましょう。",
         "translation": {
           "vi": "Cùng chơi tennis thôi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tennis-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Vợt tennis và quả bóng."
         }
       }
     },
@@ -789,6 +1045,14 @@
         "translation": {
           "vi": "Tôi không chơi bóng đá."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/soccer-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Quả bóng đá trên cỏ trước khung thành."
+        }
       }
     },
     {
@@ -805,6 +1069,14 @@
         "kana": "お はなみを します。",
         "translation": {
           "vi": "Tôi đi ngắm hoa anh đào."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/flower-viewing-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mọi người ngồi ngắm hoa anh đào dưới gốc cây."
         }
       }
     },

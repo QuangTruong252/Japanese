@@ -1,0 +1,146 @@
+{
+  "createdAt": "2026-10-06T00:40:19.195Z",
+  "source": "chatgpt-web-image",
+  "generation": {
+    "tool": "ChatGPT web image generation (manual, by the user)",
+    "originalFilename": "Watercolor Daily Life Sticker Sheet.png",
+    "promptFile": "artwork/illustrations/atlases/CHATGPT-PROMPTS-2026-10-05.md"
+  },
+  "prompt": "Create ONE wide 2:1 image (landscape) that is a sprite atlas of 8 separate illustrations arranged in a precise grid of 4 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires, e.g. red wine, blue night sky). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\n\nCELLS (row-major):\n1. (row 1, column 1) the reference male student sitting up in bed stretching, morning sun through window\n2. (row 1, column 2) the reference male student asleep in bed under a blanket, crescent moon at window\n3. (row 1, column 3) the reference woman working at an office desk with a laptop and documents\n4. (row 1, column 4) the reference woman relaxing on a sofa with a cup of tea, eyes closed, content\n5. (row 2, column 1) the reference male student studying at a desk with an open book and notebook, writing\n6. (row 2, column 2) sunrise over small town rooftops, soft orange sky\n7. (row 2, column 3) bright midday: high sun over a town street with short shadows\n8. (row 2, column 4) night: crescent moon and stars over houses with lit windows, deep blue sky\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames, no floor shadows outside the subject, no stray paint specks between cells.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, price tags, logos, brand marks, signs with writing, labels, captions, watermark or UI anywhere. Books, papers, signs and screens stay blank.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "master": "artwork/illustrations/atlases/lesson-04-daily-v1.png",
+  "columns": 4,
+  "rows": 2,
+  "assets": [
+    {
+      "stem": "wake-up-v1",
+      "id": "okimasu",
+      "row": 0,
+      "column": 0,
+      "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+      "suggestedAlt": {
+        "vi": "Chàng trai vươn vai thức dậy trên giường, nắng sớm ngoài cửa sổ."
+      },
+      "crop": {
+        "left": 16,
+        "top": 46,
+        "width": 439,
+        "height": 391
+      }
+    },
+    {
+      "stem": "sleep-v1",
+      "id": "nemasu",
+      "row": 0,
+      "column": 1,
+      "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+      "suggestedAlt": {
+        "vi": "Chàng trai đang ngủ trên giường, trăng ngoài cửa sổ."
+      },
+      "crop": {
+        "left": 465,
+        "top": 49,
+        "width": 409,
+        "height": 385
+      }
+    },
+    {
+      "stem": "work-v1",
+      "id": "hatarakimasu",
+      "row": 0,
+      "column": 2,
+      "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+      "suggestedAlt": {
+        "vi": "Cô gái làm việc với máy tính xách tay."
+      },
+      "crop": {
+        "left": 887,
+        "top": 70,
+        "width": 443,
+        "height": 380
+      }
+    },
+    {
+      "stem": "rest-v1",
+      "id": "yasumimasu",
+      "row": 0,
+      "column": 3,
+      "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+      "suggestedAlt": {
+        "vi": "Cô gái nghỉ ngơi trên ghế sofa với tách trà."
+      },
+      "crop": {
+        "left": 1333,
+        "top": 73,
+        "width": 429,
+        "height": 368
+      }
+    },
+    {
+      "stem": "study-v1",
+      "id": "benkyou-shimasu",
+      "row": 1,
+      "column": 0,
+      "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+      "suggestedAlt": {
+        "vi": "Chàng trai ngồi học và viết vào sổ."
+      },
+      "crop": {
+        "left": 1,
+        "top": 483,
+        "width": 443,
+        "height": 363
+      }
+    },
+    {
+      "stem": "morning-v1",
+      "id": "asa",
+      "row": 1,
+      "column": 1,
+      "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+      "suggestedAlt": {
+        "vi": "Mặt trời mọc trên thị trấn buổi sáng."
+      },
+      "crop": {
+        "left": 448,
+        "top": 467,
+        "width": 441,
+        "height": 382
+      }
+    },
+    {
+      "stem": "noon-v1",
+      "id": "hiru",
+      "row": 1,
+      "column": 2,
+      "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+      "suggestedAlt": {
+        "vi": "Mặt trời giữa trưa trên con phố."
+      },
+      "crop": {
+        "left": 895,
+        "top": 466,
+        "width": 436,
+        "height": 387
+      }
+    },
+    {
+      "stem": "night-v1",
+      "id": "ban",
+      "row": 1,
+      "column": 3,
+      "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+      "suggestedAlt": {
+        "vi": "Trăng và sao trên thị trấn ban đêm."
+      },
+      "crop": {
+        "left": 1337,
+        "top": 464,
+        "width": 431,
+        "height": 398
+      }
+    }
+  ]
+}

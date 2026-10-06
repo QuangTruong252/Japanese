@@ -153,6 +153,14 @@
         "translation": {
           "vi": "Chỗ này là phòng học."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/classroom-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bảng đen và hai bộ bàn ghế học sinh."
+        }
       }
     },
     {
@@ -169,6 +177,14 @@
         "kana": "そこは しょくどうですか。",
         "translation": {
           "vi": "Chỗ đó là nhà ăn phải không?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cafeteria-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn ăn có hai khay cơm và ghế đẩu."
         }
       }
     },
@@ -187,6 +203,14 @@
         "translation": {
           "vi": "Văn phòng ở phía nào?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/office-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn làm việc có máy tính, ghế xoay và kệ hồ sơ."
+        }
       }
     },
     {
@@ -203,6 +227,14 @@
         "kana": "かいぎしつは どこですか。",
         "translation": {
           "vi": "Phòng họp ở đâu?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/meeting-room-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai người đang họp bên bàn tròn cạnh bảng trắng."
         }
       }
     },
@@ -221,6 +253,14 @@
         "translation": {
           "vi": "Quầy lễ tân ở đằng kia."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/reception-desk-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên lễ tân mỉm cười sau quầy có chuông."
+        }
       }
     },
     {
@@ -237,6 +277,14 @@
         "kana": "ロビーは ここです。",
         "translation": {
           "vi": "Sảnh ở đây."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/lobby-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Sảnh chờ có ghế sofa, bàn thấp và chậu cây."
         }
       }
     },
@@ -255,6 +303,14 @@
         "translation": {
           "vi": "Phía đó là căn phòng phải không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/room-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một căn phòng nhỏ có giường, cửa sổ và bàn học."
+        }
       }
     },
     {
@@ -271,6 +327,14 @@
         "kana": "すみません、トイレは どこですか。",
         "translation": {
           "vi": "Xin lỗi, nhà vệ sinh ở đâu?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/toilet-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhà vệ sinh có bồn cầu và bồn rửa tay."
         }
       }
     },
@@ -289,6 +353,14 @@
         "translation": {
           "vi": "Cầu thang ở phía kia."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/stairs-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một cầu thang bộ có tay vịn."
+        }
       }
     },
     {
@@ -305,6 +377,14 @@
         "kana": "エレベーターは どちらですか。",
         "translation": {
           "vi": "Thang máy ở phía nào?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/elevator-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Thang máy đang mở cửa."
         }
       }
     },
@@ -323,6 +403,14 @@
         "translation": {
           "vi": "Thang cuốn ở đằng kia."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/escalator-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một thang cuốn."
+        }
       }
     },
     {
@@ -340,6 +428,14 @@
         "translation": {
           "vi": "Máy bán hàng tự động ở đằng kia."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/vending-machine-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Máy bán nước tự động màu đỏ."
+        }
       }
     },
     {
@@ -356,6 +452,14 @@
         "kana": "でんわは あそこです。",
         "translation": {
           "vi": "Điện thoại ở đằng kia."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/telephone-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc điện thoại bàn."
         }
       }
     },
@@ -391,6 +495,14 @@
         "translation": {
           "vi": "Anh/chị làm ở công ty nào?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/company-building-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tòa nhà văn phòng công ty."
+        }
       }
     },
     {
@@ -407,6 +519,14 @@
         "kana": "うちは どこですか。",
         "translation": {
           "vi": "Nhà ở đâu?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/house-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một ngôi nhà kiểu Nhật có cổng và vườn nhỏ."
         }
       }
     },
@@ -425,6 +545,14 @@
         "translation": {
           "vi": "Đôi giày này là của ai?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/black-shoes-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một đôi giày."
+        }
       }
     },
     {
@@ -441,6 +569,14 @@
         "kana": "その ネクタイは イタリアのです。",
         "translation": {
           "vi": "Cái cà vạt đó là của Ý."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/necktie-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc cà vạt sọc màu xanh đậm."
         }
       }
     },
@@ -459,6 +595,14 @@
         "translation": {
           "vi": "Đây là rượu vang Pháp."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/wine-bottle-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chai rượu vang và ly rượu vang đỏ."
+        }
       }
     },
     {
@@ -475,6 +619,14 @@
         "kana": "ワイン うり ばは どこですか。",
         "translation": {
           "vi": "Quầy bán rượu vang ở đâu?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sales-counter-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên giới thiệu túi xách và giày ở quầy bán hàng."
         }
       }
     },

@@ -1,0 +1,48 @@
+{
+  "createdAt": "2026-10-05T09:58:50.206Z",
+  "source": "antigravity-generate_image",
+  "model": "gemini-3.8-flash-high",
+  "prompt": "Editorial watercolor and gouache illustration with delicate fine dark pencil outlines in the exact artistic style of the reference images. High slightly elevated perspective looking down into the spacious, calm lobby of a Japanese minimalist building with warm sand and ivory walls, warm wood architectural trim, smooth stone tiled floor, and lush potted green plants. Three distinct spatial distances are staged across the open floor: In the foreground left, a young woman with a chin-length dark bob haircut and bangs, wearing an ivory cream cardigan over a muted brick-red top, charcoal skirt, white socks, dark loafers, and a small brown shoulder bag, stands and gestures down toward the floor right beside her feet. In the middle ground center, a male student with messy dark hair, wearing an oversized ivory long-sleeved shirt, relaxed charcoal trousers, black backpack, and sneakers, stands attentively near a low lobby sofa couch. In the far background center-right down the wide open lobby corridor, an elevator entrance with closed doors framed in timber is clearly visible. The open stone floor clearly separates foreground, middle ground, and background. Hand-painted 'Phố giấy' aesthetic on opaque warm ivory paper texture, soft gouache wash, organic pencil contours. Strict requirement: completely clean surfaces with NO text, NO letters, NO numbers or floor indicators, NO arrows, NO labels, NO speech bubbles anywhere.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png",
+    "artwork/illustrations/grammar/kore-sore-are-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/grammar/koko-soko-asoko-v1.webp",
+  "width": 800,
+  "height": 600,
+  "role": "grammar",
+  "suggestedAlt": {
+    "vi": "Trong sảnh lớn, người phụ nữ bên trái chỉ xuống vị trí gần chân mình (koko), nam sinh đứng gần ghế sô pha ở giữa (soko), và phía xa hành lang là thang máy (asoko)."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/lessons/lesson-03.json",
+    "id": "koko-soko-asoko",
+    "field": "illustration",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "performance": {
+    "generationMs": 25000
+  },
+  "master": {
+    "path": "artwork/illustrations/grammar/koko-soko-asoko-v1.png",
+    "width": 1200,
+    "height": 896,
+    "format": "png",
+    "hasAlpha": false,
+    "generatedFormat": "jpeg"
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "cover",
+    "quality": 82,
+    "effort": 6
+  },
+  "outputVerification": {
+    "bytes": 74014,
+    "sha256": "4bcb1df7142026db7fccce4924f1cb024c59221190fcf8eabe54ecdbd0c91a10",
+    "format": "webp",
+    "hasAlpha": false,
+    "decoded": true
+  }
+}

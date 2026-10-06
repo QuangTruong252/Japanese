@@ -1,0 +1,65 @@
+{
+  "createdAt": "2026-10-06T00:42:36.104Z",
+  "source": "chatgpt-web-image",
+  "sourceAtlas": "artwork/illustrations/atlases/lesson-08-adjectives-2-v1.png",
+  "sourceImage": "artwork/illustrations/atlases/lesson-08-adjectives-2-v1.png",
+  "prompt": "Create ONE wide 2:1 image (landscape) that is a sprite atlas of 8 separate illustrations arranged in a precise grid of 4 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires, e.g. red wine, blue night sky). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\n\nCELLS (row-major):\n1. (row 1, column 1) a handsome, neatly dressed young man in a jacket, confident smile (NOT the reference student)\n2. (row 1, column 2) quiet: the reference woman reading alone in a calm room by a window, peaceful, empty around\n3. (row 1, column 3) lively: a busy festival street with many small people, lanterns (blank), stalls, bustling\n4. (row 1, column 4) healthy/energetic: the reference male student jogging cheerfully, bright face\n5. (row 2, column 1) busy: an office worker juggling a phone, a stack of papers and a laptop, hurried\n6. (row 2, column 2) fun: the two reference characters laughing together at a picnic\n7. (row 2, column 3) tall: a very tall slender tower next to a tiny house for comparison (meaning high/tall, not price)\n8. (row 2, column 4) low: a very low wooden stool next to a normal-height chair for comparison\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames, no floor shadows outside the subject, no stray paint specks between cells.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, price tags, logos, brand marks, signs with writing, labels, captions, watermark or UI anywhere. Books, papers, signs and screens stay blank.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/energetic-person-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Chàng trai chạy bộ đầy sức sống."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+    "id": "genki",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/energetic-person-v1.png",
+    "width": 389,
+    "height": 426,
+    "format": "png",
+    "hasAlpha": true,
+    "crop": {
+      "left": 1357,
+      "top": 17,
+      "width": 389,
+      "height": 426
+    }
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "contain",
+    "innerSize": {
+      "width": 448,
+      "height": 448
+    },
+    "padding": 32,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 67428,
+    "sha256": "885ae3f4ddfb877a90f456e4f5e660f206a5ede57ea3f863a0d2724a45fd7ebf",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 130829,
+      "partial": 131289,
+      "opaque": 26
+    }
+  },
+  "generation": {
+    "tool": "ChatGPT web image generation (manual, by the user)",
+    "originalFilename": "Watercolor Sticker Sheet_ Everyday Moments.png",
+    "promptFile": "artwork/illustrations/atlases/CHATGPT-PROMPTS-2026-10-05.md"
+  }
+}

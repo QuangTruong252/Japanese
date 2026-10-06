@@ -1,0 +1,146 @@
+{
+  "createdAt": "2026-10-06T00:39:44.521Z",
+  "source": "chatgpt-web-image",
+  "generation": {
+    "tool": "ChatGPT web image generation (manual, by the user)",
+    "originalFilename": "Watercolor Interior Sticker Scene Collection.png",
+    "promptFile": "artwork/illustrations/atlases/CHATGPT-PROMPTS-2026-10-05.md"
+  },
+  "prompt": "Create ONE wide 2:1 image (landscape) that is a sprite atlas of 8 separate illustrations arranged in a precise grid of 4 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires, e.g. red wine, blue night sky). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\n\nCELLS (row-major):\n1. (row 1, column 1) small interior vignette: two school desks with chairs facing a BLANK green blackboard\n2. (row 1, column 2) vignette: canteen table with two food trays (rice, soup, side dish) and stools\n3. (row 1, column 3) vignette: office desk with blank monitor, document trays, shelf of binders with blank spines, office chair\n4. (row 1, column 4) vignette: oval meeting table, several chairs, blank whiteboard; two people seated talking (can also illustrate a meeting)\n5. (row 2, column 1) vignette: reception counter with small bell and a receptionist woman smiling behind it, blank sign\n6. (row 2, column 2) vignette: hotel/office lobby with sofa, low table, potted plant, rug\n7. (row 2, column 3) vignette: cozy small room seen as a cutaway corner: bed, window, small desk, lamp\n8. (row 2, column 4) vignette: clean restroom corner with western toilet and small washbasin, no pictogram signs\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames, no floor shadows outside the subject, no stray paint specks between cells.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, price tags, logos, brand marks, signs with writing, labels, captions, watermark or UI anywhere. Books, papers, signs and screens stay blank.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "master": "artwork/illustrations/atlases/lesson-03-rooms-v1.png",
+  "columns": 4,
+  "rows": 2,
+  "assets": [
+    {
+      "stem": "classroom-v1",
+      "id": "kyoushitsu",
+      "row": 0,
+      "column": 0,
+      "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+      "suggestedAlt": {
+        "vi": "Bảng đen và hai bộ bàn ghế học sinh."
+      },
+      "crop": {
+        "left": 44,
+        "top": 78,
+        "width": 368,
+        "height": 359
+      }
+    },
+    {
+      "stem": "cafeteria-v1",
+      "id": "shokudou",
+      "row": 0,
+      "column": 1,
+      "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+      "suggestedAlt": {
+        "vi": "Bàn ăn có hai khay cơm và ghế đẩu."
+      },
+      "crop": {
+        "left": 451,
+        "top": 132,
+        "width": 420,
+        "height": 285
+      }
+    },
+    {
+      "stem": "office-v1",
+      "id": "jimusho",
+      "row": 0,
+      "column": 2,
+      "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+      "suggestedAlt": {
+        "vi": "Bàn làm việc có máy tính, ghế xoay và kệ hồ sơ."
+      },
+      "crop": {
+        "left": 895,
+        "top": 29,
+        "width": 424,
+        "height": 426
+      }
+    },
+    {
+      "stem": "meeting-room-v1",
+      "id": "kaigishitsu",
+      "row": 0,
+      "column": 3,
+      "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+      "suggestedAlt": {
+        "vi": "Hai người đang họp bên bàn tròn cạnh bảng trắng."
+      },
+      "crop": {
+        "left": 1333,
+        "top": 70,
+        "width": 431,
+        "height": 389
+      }
+    },
+    {
+      "stem": "reception-desk-v1",
+      "id": "uketsuke",
+      "row": 1,
+      "column": 0,
+      "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+      "suggestedAlt": {
+        "vi": "Nhân viên lễ tân mỉm cười sau quầy có chuông."
+      },
+      "crop": {
+        "left": 37,
+        "top": 490,
+        "width": 399,
+        "height": 334
+      }
+    },
+    {
+      "stem": "lobby-v1",
+      "id": "robii",
+      "row": 1,
+      "column": 1,
+      "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+      "suggestedAlt": {
+        "vi": "Sảnh chờ có ghế sofa, bàn thấp và chậu cây."
+      },
+      "crop": {
+        "left": 462,
+        "top": 497,
+        "width": 423,
+        "height": 341
+      }
+    },
+    {
+      "stem": "room-v1",
+      "id": "heya",
+      "row": 1,
+      "column": 2,
+      "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+      "suggestedAlt": {
+        "vi": "Một căn phòng nhỏ có giường, cửa sổ và bàn học."
+      },
+      "crop": {
+        "left": 909,
+        "top": 463,
+        "width": 404,
+        "height": 388
+      }
+    },
+    {
+      "stem": "toilet-v1",
+      "id": "toire",
+      "row": 1,
+      "column": 3,
+      "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+      "suggestedAlt": {
+        "vi": "Nhà vệ sinh có bồn cầu và bồn rửa tay."
+      },
+      "crop": {
+        "left": 1367,
+        "top": 465,
+        "width": 371,
+        "height": 394
+      }
+    }
+  ]
+}

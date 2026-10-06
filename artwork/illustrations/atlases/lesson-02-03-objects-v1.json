@@ -1,0 +1,146 @@
+{
+  "createdAt": "2026-10-06T00:39:44.431Z",
+  "source": "chatgpt-web-image",
+  "generation": {
+    "tool": "ChatGPT web image generation (manual, by the user)",
+    "originalFilename": "Watercolor Stationery and Gift Collection.png",
+    "promptFile": "artwork/illustrations/atlases/CHATGPT-PROMPTS-2026-10-05.md"
+  },
+  "prompt": "Create ONE wide 2:1 image (landscape) that is a sprite atlas of 8 separate illustrations arranged in a precise grid of 4 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires, e.g. red wine, blue night sky). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\n\nCELLS (row-major):\n1. (row 1, column 1) a thick closed dictionary with blank spine/cover and a ribbon bookmark\n2. (row 1, column 2) a folded newspaper, columns shown only as grey pencil hatch lines, no letters\n3. (row 1, column 3) a small stack of blank ivory business cards with one card held up, no writing\n4. (row 1, column 4) a plain rounded plastic card (like an IC/credit card) in sage with a small gold chip, no numbers\n5. (row 2, column 1) a wrapped souvenir gift box with brick-red furoshiki-style cloth and a paper bag, no logos\n6. (row 2, column 2) a single navy/charcoal necktie with subtle stripes, laid in an S curve\n7. (row 2, column 3) a dark green wine bottle with a blank cream label and one glass of red wine\n8. (row 2, column 4) a desk telephone with handset and cord, ivory and charcoal\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames, no floor shadows outside the subject, no stray paint specks between cells.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, price tags, logos, brand marks, signs with writing, labels, captions, watermark or UI anywhere. Books, papers, signs and screens stay blank.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "master": "artwork/illustrations/atlases/lesson-02-03-objects-v1.png",
+  "columns": 4,
+  "rows": 2,
+  "assets": [
+    {
+      "stem": "dictionary-v1",
+      "id": "jisho",
+      "row": 0,
+      "column": 0,
+      "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+      "suggestedAlt": {
+        "vi": "Một quyển từ điển dày bìa xanh có dây đánh dấu."
+      },
+      "crop": {
+        "left": 32,
+        "top": 36,
+        "width": 411,
+        "height": 378
+      }
+    },
+    {
+      "stem": "newspaper-v1",
+      "id": "shinbun",
+      "row": 0,
+      "column": 1,
+      "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+      "suggestedAlt": {
+        "vi": "Một tờ báo gấp đôi."
+      },
+      "crop": {
+        "left": 463,
+        "top": 54,
+        "width": 467,
+        "height": 329
+      }
+    },
+    {
+      "stem": "business-card-v1",
+      "id": "meishi",
+      "row": 0,
+      "column": 2,
+      "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+      "suggestedAlt": {
+        "vi": "Một xấp danh thiếp trắng."
+      },
+      "crop": {
+        "left": 935,
+        "top": 71,
+        "width": 403,
+        "height": 313
+      }
+    },
+    {
+      "stem": "plastic-card-v1",
+      "id": "kaado",
+      "row": 0,
+      "column": 3,
+      "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+      "suggestedAlt": {
+        "vi": "Một chiếc thẻ nhựa có chip."
+      },
+      "crop": {
+        "left": 1373,
+        "top": 92,
+        "width": 377,
+        "height": 289
+      }
+    },
+    {
+      "stem": "souvenir-box-v1",
+      "id": "omiyage",
+      "row": 1,
+      "column": 0,
+      "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+      "suggestedAlt": {
+        "vi": "Hộp quà gói vải đỏ cạnh túi giấy."
+      },
+      "crop": {
+        "left": 17,
+        "top": 435,
+        "width": 370,
+        "height": 427
+      }
+    },
+    {
+      "stem": "necktie-v1",
+      "id": "nekutai",
+      "row": 1,
+      "column": 1,
+      "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+      "suggestedAlt": {
+        "vi": "Một chiếc cà vạt sọc màu xanh đậm."
+      },
+      "crop": {
+        "left": 527,
+        "top": 449,
+        "width": 340,
+        "height": 411
+      }
+    },
+    {
+      "stem": "wine-bottle-v1",
+      "id": "wain",
+      "row": 1,
+      "column": 2,
+      "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+      "suggestedAlt": {
+        "vi": "Chai rượu vang và ly rượu vang đỏ."
+      },
+      "crop": {
+        "left": 996,
+        "top": 413,
+        "width": 275,
+        "height": 438
+      }
+    },
+    {
+      "stem": "telephone-v1",
+      "id": "denwa",
+      "row": 1,
+      "column": 3,
+      "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+      "suggestedAlt": {
+        "vi": "Một chiếc điện thoại bàn."
+      },
+      "crop": {
+        "left": 1332,
+        "top": 502,
+        "width": 434,
+        "height": 334
+      }
+    }
+  ]
+}

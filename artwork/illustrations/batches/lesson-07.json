@@ -1,0 +1,463 @@
+{
+  "name": "lesson-07",
+  "description": "Bài 7 — dụng cụ, cho và nhận, gia đình.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-07-cutlery-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "chopsticks-v1",
+          "subject": "a pair of wooden chopsticks on a small chopstick rest",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "hashi"
+          },
+          "alt": {
+            "vi": "Đôi đũa gỗ đặt trên gác đũa."
+          }
+        },
+        {
+          "stem": "spoon-v1",
+          "subject": "a metal spoon",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "supuun"
+          },
+          "alt": {
+            "vi": "Chiếc thìa."
+          }
+        },
+        {
+          "stem": "knife-v1",
+          "subject": "a table knife",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "naifu"
+          },
+          "alt": {
+            "vi": "Con dao ăn."
+          }
+        },
+        {
+          "stem": "fork-v1",
+          "subject": "a table fork",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "fooku"
+          },
+          "alt": {
+            "vi": "Chiếc nĩa."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-07-stationery-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "scissors-v1",
+          "subject": "a pair of scissors with sage handles",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "hasami"
+          },
+          "alt": {
+            "vi": "Chiếc kéo."
+          }
+        },
+        {
+          "stem": "hole-punch-v1",
+          "subject": "a two-hole paper punch",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "panchi"
+          },
+          "alt": {
+            "vi": "Cái đục lỗ giấy."
+          }
+        },
+        {
+          "stem": "stapler-v1",
+          "subject": "a stapler",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "hocchikisu"
+          },
+          "alt": {
+            "vi": "Cái dập ghim."
+          }
+        },
+        {
+          "stem": "tape-v1",
+          "subject": "a roll of clear adhesive tape in a dispenser",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "seroteepu"
+          },
+          "alt": {
+            "vi": "Cuộn băng dính trong."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-07-items-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "eraser-v1",
+          "subject": "an eraser with a blank paper sleeve",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "keshigomu"
+          },
+          "alt": {
+            "vi": "Cục tẩy."
+          }
+        },
+        {
+          "stem": "paper-v1",
+          "subject": "a small stack of blank white paper sheets",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "kami"
+          },
+          "alt": {
+            "vi": "Xấp giấy trắng."
+          }
+        },
+        {
+          "stem": "mobile-phone-v1",
+          "subject": "a smartphone with a blank dark screen",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "keetai"
+          },
+          "alt": {
+            "vi": "Chiếc điện thoại di động."
+          }
+        },
+        {
+          "stem": "new-year-card-v1",
+          "subject": "a New Year greeting postcard decorated with a painted pine branch and a red sun, no writing",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "nengajou"
+          },
+          "alt": {
+            "vi": "Tấm thiệp chúc mừng năm mới."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-07-gifts-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "present-v1",
+          "subject": "a gift box wrapped in sage paper with a red ribbon bow",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "purezento"
+          },
+          "alt": {
+            "vi": "Hộp quà gói giấy có nơ đỏ."
+          }
+        },
+        {
+          "stem": "luggage-v1",
+          "subject": "a taped cardboard parcel next to a small suitcase",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "nimotsu"
+          },
+          "alt": {
+            "vi": "Bưu kiện và vali hành lý."
+          }
+        },
+        {
+          "stem": "ticket-v1",
+          "subject": "a small train ticket with blank printing",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "kippu"
+          },
+          "alt": {
+            "vi": "Tấm vé tàu."
+          }
+        },
+        {
+          "stem": "money-v1",
+          "subject": "a few coins and folded banknotes, all blank without numbers or portraits",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "okane"
+          },
+          "alt": {
+            "vi": "Tiền xu và tiền giấy."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-07-misc-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "christmas-tree-v1",
+          "subject": "a decorated Christmas tree with presents underneath",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "kurisumasu"
+          },
+          "alt": {
+            "vi": "Cây thông Noel và quà."
+          }
+        },
+        {
+          "stem": "hand-v1",
+          "subject": "an open human hand, palm facing forward",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "te"
+          },
+          "alt": {
+            "vi": "Bàn tay."
+          }
+        },
+        {
+          "stem": "email-v1",
+          "subject": "a smartphone whose blank screen shows a simple envelope icon, no text",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "meeru"
+          },
+          "alt": {
+            "vi": "Điện thoại hiện biểu tượng phong bì thư."
+          }
+        },
+        {
+          "stem": "phone-call-v1",
+          "subject": "the reference male student making a phone call with a smartphone",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "kakemasu"
+          },
+          "alt": {
+            "vi": "Sinh viên đang gọi điện thoại."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-07-actions-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "cutting-v1",
+          "subject": "two hands cutting a sheet of paper with scissors",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "kirimasu"
+          },
+          "alt": {
+            "vi": "Tay đang cắt giấy bằng kéo."
+          }
+        },
+        {
+          "stem": "sending-v1",
+          "subject": "the reference woman putting a letter into a red post box",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "okurimasu"
+          },
+          "alt": {
+            "vi": "Cô gái bỏ thư vào hòm thư."
+          }
+        },
+        {
+          "stem": "teaching-v1",
+          "subject": "a teacher pointing at a blank blackboard while explaining",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "oshiemasu"
+          },
+          "alt": {
+            "vi": "Giáo viên đang giảng bài bên bảng."
+          }
+        },
+        {
+          "stem": "learning-v1",
+          "subject": "the reference woman learning piano while a teacher beside her shows the keys",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+            "id": "naraimasu"
+          },
+          "alt": {
+            "vi": "Cô gái học đàn piano với giáo viên."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "father-v1",
+      "subject": "a friendly middle-aged father in a cardigan and slacks, smiling",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "chichi"
+      },
+      "alt": {
+        "vi": "Một người bố trung niên mặc áo len."
+      }
+    },
+    {
+      "stem": "mother-v1",
+      "subject": "a friendly middle-aged mother wearing an apron, smiling",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "haha"
+      },
+      "alt": {
+        "vi": "Một người mẹ trung niên đeo tạp dề."
+      }
+    },
+    {
+      "stem": "giving-v1",
+      "subject": "the reference male student giving a wrapped present to the reference woman, who smiles",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "agemasu"
+      },
+      "alt": {
+        "vi": "Chàng trai tặng quà cho cô gái."
+      }
+    },
+    {
+      "reuse": "vocab/laptop-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "pasokon"
+      },
+      "alt": {
+        "vi": "Máy tính xách tay đang mở."
+      }
+    },
+    {
+      "reuse": "vocab/red-flower-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "hana"
+      },
+      "alt": {
+        "vi": "Bông hoa màu đỏ."
+      }
+    },
+    {
+      "reuse": "vocab/white-shirt-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "shatsu"
+      },
+      "alt": {
+        "vi": "Chiếc áo sơ mi trắng."
+      }
+    },
+    {
+      "reuse": "vocab/father-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "otousan"
+      },
+      "alt": {
+        "vi": "Một người bố trung niên mặc áo len."
+      }
+    },
+    {
+      "reuse": "vocab/mother-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "okaasan"
+      },
+      "alt": {
+        "vi": "Một người mẹ trung niên đeo tạp dề."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "gift-giving-v1",
+      "file": "artwork/illustrations/scenes/gift-giving-v1.jpg",
+      "source": "antigravity-generate_image",
+      "generation": {
+        "tool": "Antigravity generate_image",
+        "model": "gemini-3.8-flash-high",
+        "note": "Không nhận ảnh tham chiếu; phong cách mô tả bằng prompt."
+      },
+      "referenceImages": [],
+      "subject": "in a cozy home living room, the male student gives a wrapped present to the woman across a low table with tea cups; scissors, wrapping paper and a vase of flowers nearby.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-07.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Chàng trai tặng quà cho cô gái trong phòng khách."
+      }
+    }
+  ]
+}

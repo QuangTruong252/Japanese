@@ -1,0 +1,69 @@
+{
+  "createdAt": "2026-10-06T02:39:38.032Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)",
+    "orcaRun": "run_263f3b04604b"
+  },
+  "batch": "artwork/illustrations/batches/lesson-05.json",
+  "prompt": "Create ONE square 1:1 image that is a sprite atlas of 4 separate illustrations arranged in a precise grid of 2 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nCELLS (row-major):\n1. (row 1, column 1) a small Japanese school building with a clock tower whose face is blank (no numbers), a gate and a cherry tree\n2. (row 1, column 2) a neighborhood supermarket storefront with glass doors, shopping carts and fruit crates, blank sign\n3. (row 2, column 1) a small train station building with a platform roof and a blank station sign\n4. (row 2, column 2) a birthday cake with lit candles and a small wrapped gift box\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY transparent margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/birthday-cake-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Bánh sinh nhật cắm nến cạnh một hộp quà."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+    "id": "tanjoubi",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/birthday-cake-v1.png",
+    "width": 573,
+    "height": 434,
+    "format": "png",
+    "hasAlpha": true,
+    "sourceImage": "artwork/illustrations/atlases/lesson-05-places-v1.png",
+    "crop": {
+      "left": 657,
+      "top": 689,
+      "width": 573,
+      "height": 434
+    }
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 14,
+      "top": 20,
+      "width": 544,
+      "height": 398
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.765,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 41324,
+    "sha256": "d84df621344fa97ec3dbf585a45f3139d8ddf15a5958cb5a863cdd2c35945307",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 183766,
+      "partial": 77878,
+      "opaque": 500
+    }
+  }
+}

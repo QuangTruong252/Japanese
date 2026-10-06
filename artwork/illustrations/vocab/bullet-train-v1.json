@@ -1,0 +1,69 @@
+{
+  "createdAt": "2026-10-06T02:39:37.845Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)",
+    "orcaRun": "run_263f3b04604b"
+  },
+  "batch": "artwork/illustrations/batches/lesson-05.json",
+  "prompt": "Create ONE wide 2:1 image (landscape) that is a sprite atlas of 8 separate illustrations arranged in a precise grid of 4 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nCELLS (row-major):\n1. (row 1, column 1) a passenger aeroplane in flight, side three-quarter view, plain livery\n2. (row 1, column 2) a small white passenger ferry boat on a little patch of painted water\n3. (row 1, column 3) a commuter electric train car (sage stripe) on a short piece of track with overhead pantograph\n4. (row 1, column 4) a subway train emerging from a tunnel mouth with steps down to an underground entrance\n5. (row 2, column 1) a white Shinkansen bullet train with long pointed nose, blue stripe, on a short track\n6. (row 2, column 2) a city bus, ivory and sage, side three-quarter view, blank destination board\n7. (row 2, column 3) a taxi sedan with a small blank roof lamp, charcoal and cream\n8. (row 2, column 4) a city bicycle with front basket\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY transparent margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/bullet-train-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Tàu Shinkansen màu trắng có mũi dài và sọc xanh."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+    "id": "shinkansen",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/bullet-train-v1.png",
+    "width": 450,
+    "height": 242,
+    "format": "png",
+    "hasAlpha": true,
+    "sourceImage": "artwork/illustrations/atlases/lesson-05-vehicles-v1.png",
+    "crop": {
+      "left": 8,
+      "top": 565,
+      "width": 450,
+      "height": 242
+    }
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 16,
+      "top": 16,
+      "width": 418,
+      "height": 210
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.995,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 23600,
+    "sha256": "7503b3ef2fc6363beb169d5aea3e2b6bb78e7e94519716b9affaf04ff2589329",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 205034,
+      "partial": 57015,
+      "opaque": 95
+    }
+  }
+}

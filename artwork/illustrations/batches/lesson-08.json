@@ -1,0 +1,233 @@
+{
+  "name": "lesson-08",
+  "description": "Bài 8 — tính từ còn lại và 6 cutout tạo lại sau lỗi rãnh alpha ngày 06/10.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-08-people-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "kind-v1",
+          "subject": "the reference male student kindly helping an elderly woman carry a heavy shopping bag",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+            "id": "shinsetsu"
+          },
+          "alt": {
+            "vi": "Chàng trai tốt bụng xách giúp túi đồ cho bà cụ."
+          }
+        },
+        {
+          "stem": "free-time-v1",
+          "subject": "a young man lying relaxed on a sofa with nothing to do, yawning",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+            "id": "hima"
+          },
+          "alt": {
+            "vi": "Chàng trai nằm dài trên ghế sofa rảnh rỗi."
+          }
+        },
+        {
+          "stem": "difficult-v1",
+          "subject": "the reference male student frowning and scratching his head over a hard textbook full of grey scribbles",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+            "id": "muzukashii"
+          },
+          "alt": {
+            "vi": "Sinh viên nhăn mặt vì bài khó."
+          }
+        },
+        {
+          "stem": "easy-v1",
+          "subject": "a happy child easily stacking big colourful building blocks",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+            "id": "yasashii"
+          },
+          "alt": {
+            "vi": "Em bé xếp khối gỗ thật dễ dàng."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-08-things-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "clean-room-v1",
+          "subject": "a spotless, tidy room corner with a vase of flowers on a shelf and a polished floor that sparkles",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+            "id": "kirei"
+          },
+          "alt": {
+            "vi": "Góc phòng sạch đẹp có bình hoa."
+          }
+        },
+        {
+          "stem": "famous-mountain-v1",
+          "subject": "Mount Fuji with a few tourists taking photos in front of it",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+            "id": "yuumei"
+          },
+          "alt": {
+            "vi": "Núi Phú Sĩ nổi tiếng và du khách chụp ảnh."
+          }
+        },
+        {
+          "stem": "handy-tool-v1",
+          "subject": "an opened pocket multi-tool showing a knife, scissors, a screwdriver and a bottle opener",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+            "id": "benri"
+          },
+          "alt": {
+            "vi": "Dụng cụ đa năng bỏ túi tiện lợi."
+          }
+        },
+        {
+          "stem": "cheap-v1",
+          "subject": "a fruit stall with apples in a basket and blank red discount tags, a hand paying with one small coin",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+            "id": "yasui"
+          },
+          "alt": {
+            "vi": "Sạp trái cây có thẻ giảm giá."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "interesting-book-v1",
+      "subject": "the reference woman laughing out loud while reading a book",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "omoshiroi"
+      },
+      "alt": {
+        "vi": "Cô gái bật cười khi đọc một cuốn sách thú vị."
+      }
+    },
+    {
+      "stem": "restaurant-v1",
+      "subject": "restaurant: a dining table with a white tablecloth, two plates, wine glasses, a lit candle and a small vase, with two red upholstered chairs",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "resutoran"
+      },
+      "alt": {
+        "vi": "Bàn ăn nhà hàng trải khăn trắng, có nến và ly rượu."
+      }
+    },
+    {
+      "stem": "dormitory-v1",
+      "subject": "student dormitory: a two-storey building with rows of identical windows and balconies with laundry hanging, a few shrubs, no sign",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "ryou"
+      },
+      "alt": {
+        "vi": "Tòa ký túc xá hai tầng có ban công phơi đồ."
+      }
+    },
+    {
+      "stem": "quiet-library-v1",
+      "subject": "quiet: the reference woman reading a book alone in an armchair by a window with a plant and a cup, calm and peaceful, nobody else around",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "shizuka"
+      },
+      "alt": {
+        "vi": "Cô gái đọc sách một mình bên cửa sổ yên tĩnh."
+      }
+    },
+    {
+      "stem": "lively-street-v1",
+      "subject": "lively/bustling: a compact festival street vignette with a crowd of small people, a row of blank paper lanterns and two food stalls with striped awnings; the whole scene sits well inside the canvas with wide empty margins",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "nigiyaka"
+      },
+      "alt": {
+        "vi": "Con phố lễ hội nhộn nhịp với đèn lồng và quầy hàng."
+      }
+    },
+    {
+      "stem": "busy-worker-v1",
+      "subject": "busy: an office worker in shirt and tie talking on a phone while holding a pile of papers, a laptop and scattered documents on the desk, hurried expression",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "isogashii"
+      },
+      "alt": {
+        "vi": "Nhân viên vừa nghe điện thoại vừa ôm đống giấy tờ."
+      }
+    },
+    {
+      "stem": "having-fun-v1",
+      "subject": "fun: the reference student and woman laughing together on a checkered picnic blanket with cups and a food basket under a tree",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "tanoshii"
+      },
+      "alt": {
+        "vi": "Hai bạn trẻ cười vui vẻ trong buổi dã ngoại."
+      }
+    }
+  ]
+}

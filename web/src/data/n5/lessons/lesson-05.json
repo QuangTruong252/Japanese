@@ -202,5 +202,13 @@
     "calendar",
     "particles"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/station-platform-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Hai bạn trẻ chờ tàu trên sân ga nhỏ vào buổi sáng."
+    }
+  }
 }

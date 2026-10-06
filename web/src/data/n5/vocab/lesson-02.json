@@ -144,6 +144,14 @@
         "translation": {
           "vi": "Đó là từ điển tiếng Anh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/dictionary-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một quyển từ điển dày bìa xanh có dây đánh dấu."
+        }
       }
     },
     {
@@ -185,6 +193,14 @@
         "kana": "それは しんぶんですか。",
         "translation": {
           "vi": "Đó là tờ báo phải không?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/newspaper-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một tờ báo gấp đôi."
         }
       }
     },
@@ -253,6 +269,14 @@
         "translation": {
           "vi": "Đây là danh thiếp của tôi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/business-card-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một xấp danh thiếp trắng."
+        }
       }
     },
     {
@@ -269,6 +293,14 @@
         "kana": "それは カードですか。",
         "translation": {
           "vi": "Đó là thẻ phải không?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/plastic-card-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc thẻ nhựa có chip."
         }
       }
     },
@@ -711,6 +743,14 @@
         "kana": "これは おみやげです。",
         "translation": {
           "vi": "Đây là quà lưu niệm."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/souvenir-box-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hộp quà gói vải đỏ cạnh túi giấy."
         }
       }
     },

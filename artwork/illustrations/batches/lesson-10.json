@@ -1,0 +1,381 @@
+{
+  "name": "lesson-10",
+  "description": "Bài 10 — người, động vật, đồ vật trong nhà, địa điểm.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-10-animals-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "dog-v1",
+          "subject": "a friendly shiba inu dog sitting",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "inu"
+          },
+          "alt": {
+            "vi": "Chú chó shiba ngồi."
+          }
+        },
+        {
+          "stem": "cat-v1",
+          "subject": "a tabby cat sitting",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "neko"
+          },
+          "alt": {
+            "vi": "Con mèo mướp ngồi."
+          }
+        },
+        {
+          "stem": "panda-v1",
+          "subject": "a giant panda eating bamboo",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "panda"
+          },
+          "alt": {
+            "vi": "Gấu trúc đang ăn tre."
+          }
+        },
+        {
+          "stem": "elephant-v1",
+          "subject": "an elephant standing",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "zou"
+          },
+          "alt": {
+            "vi": "Con voi."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-10-people-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "man-v1",
+          "subject": "an adult man in casual clothes standing",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "otokonohito"
+          },
+          "alt": {
+            "vi": "Một người đàn ông."
+          }
+        },
+        {
+          "stem": "woman-v1",
+          "subject": "an adult woman in casual clothes standing",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "onnanohito"
+          },
+          "alt": {
+            "vi": "Một người phụ nữ."
+          }
+        },
+        {
+          "stem": "boy-v1",
+          "subject": "a little boy in a cap and shorts",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "otokonoko"
+          },
+          "alt": {
+            "vi": "Một cậu bé đội mũ."
+          }
+        },
+        {
+          "stem": "girl-v1",
+          "subject": "a little girl with pigtails in a dress",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "onnanoko"
+          },
+          "alt": {
+            "vi": "Một cô bé buộc tóc hai bên."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-10-furniture-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "refrigerator-v1",
+          "subject": "an ivory two-door refrigerator",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "reizouko"
+          },
+          "alt": {
+            "vi": "Chiếc tủ lạnh."
+          }
+        },
+        {
+          "stem": "dining-table-v1",
+          "subject": "a round dining table with two chairs",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "teeburu"
+          },
+          "alt": {
+            "vi": "Bàn ăn tròn và hai chiếc ghế."
+          }
+        },
+        {
+          "stem": "bed-v1",
+          "subject": "a single bed with a blanket and pillow",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "beddo"
+          },
+          "alt": {
+            "vi": "Chiếc giường có chăn gối."
+          }
+        },
+        {
+          "stem": "shelf-v1",
+          "subject": "a wooden shelf with blank-spined books and small plants",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "tana"
+          },
+          "alt": {
+            "vi": "Kệ gỗ có sách và chậu cây."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-10-house-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "door-v1",
+          "subject": "a wooden front door with a round doorknob",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "doa"
+          },
+          "alt": {
+            "vi": "Cánh cửa gỗ."
+          }
+        },
+        {
+          "stem": "window-v1",
+          "subject": "a window with curtains and a small plant on the sill",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "mado"
+          },
+          "alt": {
+            "vi": "Cửa sổ có rèm và chậu cây."
+          }
+        },
+        {
+          "stem": "light-switch-v1",
+          "subject": "a wall light switch plate with a finger pressing it",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "suicchi"
+          },
+          "alt": {
+            "vi": "Ngón tay bấm công tắc đèn."
+          }
+        },
+        {
+          "stem": "batteries-v1",
+          "subject": "a few cylindrical batteries without labels",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "denchi"
+          },
+          "alt": {
+            "vi": "Mấy cục pin."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-10-objects-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "box-v1",
+          "subject": "an open cardboard box",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "hako"
+          },
+          "alt": {
+            "vi": "Chiếc hộp các-tông."
+          }
+        },
+        {
+          "stem": "tree-v1",
+          "subject": "a leafy green tree",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "ki"
+          },
+          "alt": {
+            "vi": "Một cái cây."
+          }
+        },
+        {
+          "stem": "post-box-v1",
+          "subject": "a red cylindrical Japanese post box with no symbols or text",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "posuto"
+          },
+          "alt": {
+            "vi": "Hòm thư màu đỏ."
+          }
+        },
+        {
+          "stem": "atm-v1",
+          "subject": "an ATM machine with a blank screen and blank keypad buttons",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "atm"
+          },
+          "alt": {
+            "vi": "Máy rút tiền ATM."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-10-places-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "tall-building-v1",
+          "subject": "a tall modern office building with many windows",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "biru"
+          },
+          "alt": {
+            "vi": "Tòa nhà cao tầng."
+          }
+        },
+        {
+          "stem": "convenience-store-v1",
+          "subject": "a convenience store front with glass windows and a blank sign stripe",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "konbini"
+          },
+          "alt": {
+            "vi": "Cửa hàng tiện lợi."
+          }
+        },
+        {
+          "stem": "park-v1",
+          "subject": "a small park with a bench, a tree, a slide and a little fountain",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "kouen"
+          },
+          "alt": {
+            "vi": "Công viên nhỏ có ghế, cầu trượt và đài phun nước."
+          }
+        },
+        {
+          "stem": "coffee-shop-v1",
+          "subject": "a cozy retro coffee shop front with a striped awning and a blank sign",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+            "id": "kissaten"
+          },
+          "alt": {
+            "vi": "Quán cà phê nhỏ có mái hiên sọc."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "bus-stop-v1",
+      "subject": "a bus stop with a small shelter, a bench and a blank sign pole",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "noriba"
+      },
+      "alt": {
+        "vi": "Điểm chờ xe buýt có mái che và ghế."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "cozy-room-v1",
+      "file": "artwork/illustrations/scenes/cozy-room-v1.jpg",
+      "source": "antigravity-generate_image",
+      "generation": {
+        "tool": "Antigravity generate_image",
+        "model": "gemini-3.8-flash-high",
+        "note": "Không nhận ảnh tham chiếu; phong cách mô tả bằng prompt."
+      },
+      "referenceImages": [],
+      "subject": "a cozy small apartment room with a bed, a shelf, a window and a table with a box on it; a cat sleeping on the bed and a dog under the table, making on/under/next-to relationships clear; the woman stands by the window.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-10.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Căn phòng có mèo nằm trên giường và chó dưới gầm bàn."
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "createdAt": "2026-10-05T09:58:49.982Z",
+  "source": "antigravity-generate_image",
+  "model": "gemini-3.8-flash-high",
+  "prompt": "Editorial watercolor and gouache illustration matching the exact visual style, character designs, and aesthetic of the reference image. Delicate dark pencil contours, soft organic painted washes, subtle paper texture, warm ivory paper background, hand-painted editorial book illustration feel. Warm morning palette: cream, warm sand, charcoal gray, muted sage green, warm natural timber wood, terracotta, and muted brick-red accents.\n\nSubject: The two characters from the reference image walking together along a Japanese small-town street on a peaceful morning.\n- Young male student: slightly messy short dark hair, oversized cream long-sleeved shirt, relaxed charcoal trousers, black backpack.\n- Young woman: chin-length dark bob haircut with bangs, cream cardigan over muted brick-red top, charcoal skirt, small brown shoulder bag.\nThey are walking down the stone-paved street, bathed in soft warm morning light casting gentle diagonal shadows.\n\nSetting: Quaint Japanese town street with traditional and modest mid-century storefront facades representing daily town institutions like a neighborhood bank and post office, featuring dark charcoal tile roofs, warm wood posts and beams, and cream plaster walls. Potted plants and small leafy green trees in ceramic pots along the stone pavement. An outdoor round analog street clock mounted on a pole or facade showing morning time with simple clock hands, with a completely blank dial or minimal tick marks, NO numbers or digits on the clock face.\n\nSTRICT REQUIREMENTS:\n- Absolutely NO text, letters, kanji, kana, or words anywhere on any signs, banners, awnings, or buildings. All signs and awnings must be completely blank.\n- The round clock face must have NO digits, NO numbers, and NO Roman numerals (completely blank face with just hands).\n- Hand-painted watercolor gouache look, NOT 3D, NOT CGI, NOT glossy vector.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/scenes/daily-routine-v1.webp",
+  "width": 800,
+  "height": 600,
+  "role": "lesson-cover",
+  "suggestedAlt": {
+    "vi": "Hai người học đi bộ trên con phố thị trấn vào buổi sáng, bên phải có chiếc đồng hồ tròn treo tường mặt trống không số."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/lessons/lesson-04.json",
+    "field": "cover",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "performance": {
+    "generationMs": 17000
+  },
+  "master": {
+    "path": "artwork/illustrations/scenes/daily-routine-v1.png",
+    "width": 1200,
+    "height": 896,
+    "format": "png",
+    "hasAlpha": false,
+    "generatedFormat": "jpeg"
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "cover",
+    "quality": 82,
+    "effort": 6
+  },
+  "outputVerification": {
+    "bytes": 102782,
+    "sha256": "f86a8e1e8fa5d68e4a6480f458e331f5247be3beef647dac3107720f48a66f31",
+    "format": "webp",
+    "hasAlpha": false,
+    "decoded": true
+  }
+}

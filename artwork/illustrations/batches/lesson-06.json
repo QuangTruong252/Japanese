@@ -1,0 +1,527 @@
+{
+  "name": "lesson-06",
+  "description": "Bài 6 — ăn uống, đồ uống, hoạt động hằng ngày.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-06-food-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "bread-v1",
+          "subject": "a loaf of Japanese milk bread and a few bread rolls on a small wooden board",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "pan"
+          },
+          "alt": {
+            "vi": "Ổ bánh mì và mấy chiếc bánh mì tròn."
+          }
+        },
+        {
+          "stem": "eggs-v1",
+          "subject": "three eggs in a small bowl and one egg beside it",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "tamago"
+          },
+          "alt": {
+            "vi": "Mấy quả trứng trong bát nhỏ."
+          }
+        },
+        {
+          "stem": "meat-v1",
+          "subject": "a raw beef steak and sliced pork on butcher paper",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "niku"
+          },
+          "alt": {
+            "vi": "Miếng thịt bò và thịt heo thái lát."
+          }
+        },
+        {
+          "stem": "fish-v1",
+          "subject": "a whole fresh mackerel on an oval plate",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "sakana"
+          },
+          "alt": {
+            "vi": "Một con cá tươi trên đĩa."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-06-produce-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "vegetables-v1",
+          "subject": "a basket of vegetables: cabbage, carrots, daikon radish and green onion",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "yasai"
+          },
+          "alt": {
+            "vi": "Giỏ rau gồm bắp cải, cà rốt, củ cải và hành."
+          }
+        },
+        {
+          "stem": "fruit-v1",
+          "subject": "a bowl of fruit: apples, oranges, bananas and grapes",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "kudamono"
+          },
+          "alt": {
+            "vi": "Bát trái cây gồm táo, cam, chuối và nho."
+          }
+        },
+        {
+          "stem": "milk-v1",
+          "subject": "a plain milk carton without any print and a glass of milk",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "gyuunyuu"
+          },
+          "alt": {
+            "vi": "Hộp sữa và một cốc sữa."
+          }
+        },
+        {
+          "stem": "juice-v1",
+          "subject": "a glass of orange juice with a straw and half an orange",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "juusu"
+          },
+          "alt": {
+            "vi": "Cốc nước cam có ống hút."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-06-drinks-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "green-tea-v1",
+          "subject": "a Japanese clay teapot and a cup of green tea",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "ocha"
+          },
+          "alt": {
+            "vi": "Ấm trà và chén trà xanh."
+          }
+        },
+        {
+          "stem": "black-tea-v1",
+          "subject": "a cup of black tea on a saucer with a slice of lemon",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "koucha"
+          },
+          "alt": {
+            "vi": "Tách trà đen có lát chanh."
+          }
+        },
+        {
+          "stem": "beer-v1",
+          "subject": "a mug of beer with foam beside a plain brown bottle without a label",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "biiru"
+          },
+          "alt": {
+            "vi": "Cốc bia có bọt cạnh chai bia."
+          }
+        },
+        {
+          "stem": "sake-v1",
+          "subject": "a ceramic sake bottle (tokkuri) and two small sake cups",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "osake"
+          },
+          "alt": {
+            "vi": "Bình rượu sake và hai chén nhỏ."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-06-meals-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "rice-bowl-v1",
+          "subject": "a bowl of steaming white rice with chopsticks resting on it",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "gohan"
+          },
+          "alt": {
+            "vi": "Bát cơm trắng nóng và đôi đũa."
+          }
+        },
+        {
+          "stem": "breakfast-v1",
+          "subject": "a breakfast tray: toast, a fried egg, a small salad and a cup of coffee",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "asagohan"
+          },
+          "alt": {
+            "vi": "Khay bữa sáng có bánh mì nướng, trứng ốp và cà phê."
+          }
+        },
+        {
+          "stem": "lunch-v1",
+          "subject": "an open bento lunch box with rice, fried chicken and vegetables",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "hirugohan"
+          },
+          "alt": {
+            "vi": "Hộp cơm bento cho bữa trưa."
+          }
+        },
+        {
+          "stem": "dinner-v1",
+          "subject": "a dinner table with a steaming hot pot, bowls of rice and side dishes",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "bangohan"
+          },
+          "alt": {
+            "vi": "Bàn ăn tối có nồi lẩu và các món ăn kèm."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-06-things-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "water-v1",
+          "subject": "a clear glass of water with ice cubes and a plain water bottle without a label",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "mizu"
+          },
+          "alt": {
+            "vi": "Cốc nước lọc có đá và chai nước."
+          }
+        },
+        {
+          "stem": "letter-v1",
+          "subject": "a folded letter of blank paper and an envelope with a blank stamp",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "tegami"
+          },
+          "alt": {
+            "vi": "Lá thư và phong bì."
+          }
+        },
+        {
+          "stem": "photos-v1",
+          "subject": "a few printed landscape photographs, one standing in a small frame",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "shashin"
+          },
+          "alt": {
+            "vi": "Mấy tấm ảnh in và một khung ảnh."
+          }
+        },
+        {
+          "stem": "homework-v1",
+          "subject": "an open workbook with grey lines only, a pencil and an eraser",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "shukudai"
+          },
+          "alt": {
+            "vi": "Vở bài tập, bút chì và cục tẩy."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-06-places-sports-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "subject": "a small Japanese shop front with a blank noren curtain and goods on display",
+          "skip": "bbox chồng sang ô bên cạnh; tạo lại thành ảnh đơn cùng stem"
+        },
+        {
+          "subject": "a small Japanese garden with stones, a little pond, a stone lantern and a pine tree",
+          "skip": "bbox chồng sang ô bên cạnh; tạo lại thành ảnh đơn cùng stem"
+        },
+        {
+          "stem": "tennis-v1",
+          "subject": "a tennis racket and two tennis balls",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "tenisu"
+          },
+          "alt": {
+            "vi": "Vợt tennis và quả bóng."
+          }
+        },
+        {
+          "stem": "soccer-v1",
+          "subject": "a soccer ball on a small patch of grass in front of a small goal net",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "sakkaa"
+          },
+          "alt": {
+            "vi": "Quả bóng đá trên cỏ trước khung thành."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-06-actions-1-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "eating-v1",
+          "subject": "the reference male student seated at a small table eating noodles with chopsticks",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "tabemasu"
+          },
+          "alt": {
+            "vi": "Sinh viên đang ăn mì bằng đũa."
+          }
+        },
+        {
+          "stem": "drinking-v1",
+          "subject": "the reference woman standing and drinking from a glass of water",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "nomimasu"
+          },
+          "alt": {
+            "vi": "Cô gái đang uống nước."
+          }
+        },
+        {
+          "stem": "watching-tv-v1",
+          "subject": "the reference male student sitting on a floor cushion watching a small television with a blank glowing screen",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "mimasu"
+          },
+          "alt": {
+            "vi": "Sinh viên đang xem ti vi."
+          }
+        },
+        {
+          "stem": "listening-v1",
+          "subject": "the reference woman listening to music with headphones, eyes closed, smiling",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "kikimasu"
+          },
+          "alt": {
+            "vi": "Cô gái đeo tai nghe nghe nhạc."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-06-actions-2-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "reading-v1",
+          "subject": "the reference woman sitting on a chair reading a book with blank pages",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "yomimasu"
+          },
+          "alt": {
+            "vi": "Cô gái ngồi đọc sách."
+          }
+        },
+        {
+          "stem": "writing-v1",
+          "subject": "the reference male student writing in a notebook at a small desk",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "kakimasu"
+          },
+          "alt": {
+            "vi": "Sinh viên đang viết vào vở."
+          }
+        },
+        {
+          "stem": "buying-v1",
+          "subject": "the reference woman paying a shopkeeper at a small shop counter, holding a shopping bag",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "kaimasu"
+          },
+          "alt": {
+            "vi": "Cô gái trả tiền mua đồ ở quầy."
+          }
+        },
+        {
+          "stem": "taking-photo-v1",
+          "subject": "the reference male student taking a photo with a camera",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+            "id": "torimasu"
+          },
+          "alt": {
+            "vi": "Sinh viên đang chụp ảnh bằng máy ảnh."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "meeting-v1",
+      "subject": "the reference male student and the woman meeting outdoors and waving hello to each other",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "aimasu"
+      },
+      "alt": {
+        "vi": "Hai người bạn gặp nhau và vẫy tay chào."
+      }
+    },
+    {
+      "stem": "flower-viewing-v1",
+      "subject": "friends having a picnic on a blue sheet under a blooming cherry tree, with a lunch box and drinks",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "ohanami"
+      },
+      "alt": {
+        "vi": "Mọi người ngồi ngắm hoa anh đào dưới gốc cây."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "eating-together-v1",
+      "file": "artwork/illustrations/scenes/eating-together-v1.jpg",
+      "source": "antigravity-generate_image",
+      "generation": {
+        "tool": "Antigravity generate_image",
+        "model": "gemini-3.8-flash-high",
+        "note": "Không nhận ảnh tham chiếu; phong cách mô tả bằng prompt."
+      },
+      "referenceImages": [],
+      "subject": "the male student and the woman eating lunch together at a cozy neighborhood restaurant table with bowls of rice, miso soup and grilled fish, warm daylight from the window; she raises her cup as if inviting him.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-06.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Hai bạn trẻ cùng ăn trưa ở quán ăn nhỏ."
+      }
+    },
+    {
+      "stem": "shop-v1",
+      "subject": "a small Japanese shop front with a blank noren curtain and goods on display",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "mise"
+      },
+      "alt": {
+        "vi": "Cửa tiệm nhỏ có rèm noren trước cửa."
+      }
+    },
+    {
+      "stem": "garden-v1",
+      "subject": "a small Japanese garden with stones, a little pond, a stone lantern and a pine tree",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "niwa"
+      },
+      "alt": {
+        "vi": "Khu vườn Nhật có ao, đèn đá và cây thông."
+      }
+    }
+  ]
+}

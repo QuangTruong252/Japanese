@@ -144,6 +144,14 @@
         "translation": {
           "vi": "Tôi mua đồ uống."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/drinks-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhiều loại đồ uống."
+        }
       }
     },
     {
@@ -160,6 +168,14 @@
         "kana": "にほんの りょうりは おいしいです。",
         "translation": {
           "vi": "Món ăn Nhật Bản rất ngon."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cooking-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đang nấu ăn."
         }
       }
     },
@@ -178,6 +194,14 @@
         "translation": {
           "vi": "Bạn có thích thể thao không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sports-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bóng rổ, bóng đá, vợt tennis và giày chạy."
+        }
       }
     },
     {
@@ -194,6 +218,14 @@
         "kana": "やきゅうが すきです。",
         "translation": {
           "vi": "Tôi thích bóng chày."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/baseball-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Gậy, găng tay và quả bóng chày."
         }
       }
     },
@@ -212,6 +244,14 @@
         "translation": {
           "vi": "Tôi nhảy kém."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/dancing-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai bạn trẻ đang khiêu vũ."
+        }
       }
     },
     {
@@ -228,6 +268,14 @@
         "kana": "りょこうが すきです。",
         "translation": {
           "vi": "Tôi thích đi du lịch."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/travel-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Vali, bản đồ, máy ảnh và mũ du lịch."
         }
       }
     },
@@ -263,6 +311,14 @@
         "translation": {
           "vi": "Tôi thích bài hát Nhật Bản."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/singing-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đang hát."
+        }
       }
     },
     {
@@ -279,6 +335,14 @@
         "kana": "クラシックを ききます。",
         "translation": {
           "vi": "Tôi nghe nhạc cổ điển."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/violin-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cây vĩ cầm và giá nhạc."
         }
       }
     },
@@ -297,6 +361,14 @@
         "translation": {
           "vi": "Tôi thích nhạc jazz."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/saxophone-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc kèn saxophone."
+        }
       }
     },
     {
@@ -313,6 +385,14 @@
         "kana": "あした コンサートに いきます。",
         "translation": {
           "vi": "Ngày mai tôi sẽ đi buổi hòa nhạc."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/concert-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Buổi hòa nhạc có nghệ sĩ piano và vĩ cầm."
         }
       }
     },
@@ -331,6 +411,14 @@
         "translation": {
           "vi": "Tôi đi karaoke với bạn bè."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/karaoke-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai người bạn hát karaoke."
+        }
       }
     },
     {
@@ -348,6 +436,14 @@
         "translation": {
           "vi": "Bạn có thích kịch Kabuki không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kabuki-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Diễn viên kịch Kabuki trong trang phục sặc sỡ."
+        }
       }
     },
     {
@@ -364,6 +460,14 @@
         "kana": "こどもは えが じょうずです。",
         "translation": {
           "vi": "Đứa trẻ vẽ tranh giỏi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/painting-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bức tranh phong cảnh trên giá vẽ."
         }
       }
     },
@@ -467,6 +571,14 @@
         "translation": {
           "vi": "Tôi không có tiền lẻ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/coins-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một nắm tiền xu lẻ."
+        }
       }
     },
     {
@@ -483,6 +595,14 @@
         "kana": "えいがの チケットが あります。",
         "translation": {
           "vi": "Tôi có vé xem phim."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/concert-tickets-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai tấm vé xem hòa nhạc."
         }
       }
     },
@@ -636,6 +756,14 @@
         "kana": "こどもは やさいが きらいです。",
         "translation": {
           "vi": "Trẻ con không thích rau."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/children-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai đứa trẻ chơi bóng cùng nhau."
         }
       }
     },
