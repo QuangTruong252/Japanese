@@ -1,8 +1,0 @@
-version: 1
-default_repo: japanese
-repos:
-- path: .
-  alias: japanese
-  is_primary: true
-  indexed_at: '2026-09-28T03:24:52.503630+00:00'
-  last_commit_at_index: e7d4254b4b17d003579020da6325b4bea38779eb
