@@ -1,41 +1,41 @@
 ---
 version: alpha
 name: Washi
-description: Design system for a personal Japanese self-study web app (Minna no Nihongo N5 & N4). Warm washi paper surfaces, a single torii-red accent, and Japanese text treated as the primary content. Built on Tailwind CSS v4 + shadcn/ui.
+description: Design system for a personal Japanese self-study web app (Minna no Nihongo N5 & N4). Warm washi paper surfaces, warm sumi ink, a single son (vermilion) accent, and Japanese text treated as the primary content. Built on Tailwind CSS v4 + shadcn/ui.
 colors:
-  background: oklch(0.98 0.009 85)
-  foreground: oklch(0.2 0.01 285)
-  card: oklch(0.99 0.005 85)
-  card-foreground: oklch(0.2 0.01 285)
-  popover: oklch(1 0 0)
-  popover-foreground: oklch(0.2 0.01 285)
-  primary: oklch(0.55 0.2 25)
-  primary-foreground: oklch(0.98 0.005 90)
-  secondary: oklch(0.96 0.006 90)
-  secondary-foreground: oklch(0.25 0.01 285)
-  muted: oklch(0.96 0.006 90)
-  muted-foreground: oklch(0.5 0.012 285)
-  accent: oklch(0.95 0.02 25)
-  accent-foreground: oklch(0.35 0.1 25)
-  border: oklch(0.91 0.006 90)
-  input: oklch(0.91 0.006 90)
-  ring: oklch(0.55 0.2 25)
-  success: oklch(0.52 0.15 155)
-  success-foreground: oklch(0.99 0.01 155)
-  destructive: oklch(0.58 0.24 27)
-  destructive-foreground: oklch(0.99 0.01 27)
-  warning: oklch(0.56 0.14 70)
-  warning-foreground: oklch(0.99 0.01 70)
-  info: oklch(0.52 0.14 250)
-  info-foreground: oklch(0.99 0.01 250)
-  verb-1: oklch(0.53 0.19 25)
-  verb-2: oklch(0.48 0.15 250)
-  verb-3: oklch(0.48 0.12 155)
-  chart-1: "#2a78d6"
-  chart-2: "#eb6834"
-  chart-3: "#1baf7a"
-  chart-4: "#eda100"
-  chart-5: "#e87ba4"
+  background: oklch(0.975 0.014 85)
+  foreground: oklch(0.26 0.014 65)
+  card: oklch(0.99 0.007 85)
+  card-foreground: oklch(0.26 0.014 65)
+  popover: oklch(0.99 0.007 85)
+  popover-foreground: oklch(0.26 0.014 65)
+  primary: oklch(0.55 0.165 32)
+  primary-foreground: oklch(0.99 0.007 85)
+  secondary: oklch(0.945 0.02 82)
+  secondary-foreground: oklch(0.26 0.014 65)
+  muted: oklch(0.945 0.02 82)
+  muted-foreground: oklch(0.5 0.02 70)
+  accent: oklch(0.945 0.028 32)
+  accent-foreground: oklch(0.42 0.11 32)
+  border: oklch(0.885 0.024 80)
+  input: oklch(0.885 0.024 80)
+  ring: oklch(0.55 0.165 32)
+  success: oklch(0.5 0.1 140)
+  success-foreground: oklch(0.99 0.007 85)
+  destructive: oklch(0.52 0.18 22)
+  destructive-foreground: oklch(0.99 0.007 85)
+  warning: oklch(0.55 0.11 65)
+  warning-foreground: oklch(0.99 0.007 85)
+  info: oklch(0.5 0.09 245)
+  info-foreground: oklch(0.99 0.007 85)
+  verb-1: oklch(0.53 0.15 32)
+  verb-2: oklch(0.48 0.09 245)
+  verb-3: oklch(0.48 0.09 135)
+  chart-1: "#3275b4"
+  chart-2: "#934319"
+  chart-3: "#6e9441"
+  chart-4: "#8d3d67"
+  chart-5: "#ac7d1b"
 typography:
   display:
     fontFamily: Inter Variable
@@ -340,6 +340,16 @@ the panorama. `.paper-panorama` and `.paper-scene` fade only their edge into the
 the scene is never a screenshot containing controls. Compact viewports reduce scene height
 before shrinking content. Dark mode uses its existing ink/surface tokens.
 
+### Phố giấy palette — approved 06/10/2026
+
+UI colors are sampled from the illustrations themselves (24 images measured; numbers in
+`docs/research/open-design/README.md`). Neutrals sit on the paper's sand hue and ink is a
+warm sumi, never a cool gray; `primary` is the brick-vermilion **son**, rare in the art and
+rare in the UI; status hues are moss (`success`), wood (`warning`) and indigo (`info`); chart
+slots are earthy (indigo, persimmon, moss, plum, ochre). No UI color exceeds the illustrations'
+muted chroma except where a 4.5:1 contrast floor requires it. The logo SVGs keep their own
+fixed red; components never copy it.
+
 Home's action title uses 24px on mobile, 32px on tablet and 48px on wide desktop. Japanese
 lesson titles use 32–36px; short multiple-choice prompts use 60–72px, while long questions
 keep `jp-quiz`. These are display exceptions for this learning flow, not UI label sizes.
@@ -424,8 +434,8 @@ particle -> chart-4    listening -> chart-5
 3. **A legend whenever two or more series are present.** A single series is named by the title.
 4. **Text wears ink tokens**, not series colors. Only the swatch beside a label carries the
    series color.
-5. **Light mode requires direct labels.** Slots 3 to 5 fall below 3:1 on a white card, so a
-   light-mode chart must carry visible value labels or a companion data table.
+5. **Keep values reachable without color.** All five slots clear 3:1 on the card in both
+   schemes; a chart still carries visible value labels or a companion data table.
 6. **Continuous scales use one hue** stepped light to dark. The streak heatmap steps
    `chart-1`, never a rainbow.
 7. **Status tokens are never a series color**, and series colors are never a status.
@@ -724,7 +734,7 @@ screen reader can read the result.
 
 ### Patterns
 
-`button-primary` is the one filled torii-red action per screen; `button-secondary` carries
+`button-primary` is the one filled son-red action per screen; `button-secondary` carries
 supporting actions; `button-ghost` handles icon buttons and row-level actions. `button-quiz`
 is the mandatory size for **anything inside the practice flow** (48px tall, `xl` radius,
 `body` type) because the library's own sizes top out at 36px.
@@ -817,7 +827,7 @@ this contract; `missing` means the pattern exists in this file with no shared im
 | Profile & progress view | `web/src/app/ca-nhan/page.tsx` | stable | Màn Cá nhân / Tiến độ với auth Supabase, trạng thái sync, bài đang học và thẻ tiến độ Dexie |
 | Statistics view | `web/src/components/stats/StatisticsContent.tsx` | stable | Tái dùng nội dung Thống kê SPEC-07 cho tab /ca-nhan/thong-ke và chuyển hướng /thong-ke |
 | Account button | `web/src/components/profile/AccountButton.tsx` | stable | Nút Tài khoản cho header mobile và desktop shell (≥48px touch target) |
-| Lesson list and cards | `web/src/components/LessonGrid.tsx` | needs review | Raw palette colors and surface overrides |
+| Lesson list and cards | `web/src/components/LessonGrid.tsx` | needs review | No raw palette colors left (checked 06/10/2026); surface overrides still to review |
 | Stat tile | — | missing | Implemented inline on three screens; no shared component |
 | Audio player / Shadowing | — | missing | SPEC-10, not implemented |
 
