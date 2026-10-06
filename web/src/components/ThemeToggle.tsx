@@ -8,7 +8,6 @@ import {
   saveSettings,
   subscribeSettings,
 } from '@/lib/settings';
-import { useUIStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
 
 interface ThemeToggleProps {
@@ -49,7 +48,6 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
   const toggleTheme = () => {
     const nextTheme = isDark ? 'light' : 'dark';
     saveSettings({ theme: nextTheme });
-    useUIStore.getState().setTheme(nextTheme);
   };
 
   if (!mounted) {

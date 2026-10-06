@@ -1,9 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  getBasicKana,
-  getDakuonKana,
-  getYoonKana,
   HIRAGANA_BASIC_ROWS,
   KATAKANA_BASIC_ROWS,
   HIRAGANA_DAKUON_ROWS,
@@ -11,6 +8,12 @@ import {
   HIRAGANA_YOON_ROWS,
   KATAKANA_YOON_ROWS,
 } from '../data/kana.ts';
+import type { KanaCell, KanaRow, KanaType } from '../data/kana.ts';
+
+const flat = (rows: KanaRow[]): KanaCell[] => rows.flatMap((r) => r.cells.filter((c): c is KanaCell => c !== null));
+const getBasicKana = (t: KanaType) => flat(t === 'hiragana' ? HIRAGANA_BASIC_ROWS : KATAKANA_BASIC_ROWS);
+const getDakuonKana = (t: KanaType) => flat(t === 'hiragana' ? HIRAGANA_DAKUON_ROWS : KATAKANA_DAKUON_ROWS);
+const getYoonKana = (t: KanaType) => flat(t === 'hiragana' ? HIRAGANA_YOON_ROWS : KATAKANA_YOON_ROWS);
 
 test('Bảng Hiragana cơ bản chứa chính xác 46 âm và không bị trùng lặp', () => {
   const items = getBasicKana('hiragana');

@@ -30,7 +30,6 @@ import {
   particleHint,
   PRACTICE_DRAFT_VERSION,
 } from '@/lib/practice-draft';
-import { useUIStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
 import { stripFurigana } from '@/lib/japanese';
 import type {
@@ -60,7 +59,6 @@ export function PracticeRunner({
   initialDuration?: number;
 }) {
   const router = useRouter();
-  const { setCurrentQuestionIndex } = useUIStore();
 
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [allResults, setAllResults] = useState<AnswerResult[]>(initialResults);
@@ -111,10 +109,8 @@ export function PracticeRunner({
     return Math.max(1, Math.round(total));
   }, []);
 
-  // Đặt lại con trỏ câu trong store khi mount và ghi nhận mốc thời gian bắt đầu (chỉ chạy khi mount)
-  const initialIndexRef = useRef(initialIndex);
+  // Ghi nhận mốc thời gian bắt đầu câu đầu tiên (chỉ chạy khi mount)
   useEffect(() => {
-    setCurrentQuestionIndex(initialIndexRef.current);
     startQuestionTimer();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -219,7 +215,6 @@ export function PracticeRunner({
     if (currentIndex + 1 < questions.length) {
       const next = currentIndex + 1;
       setCurrentIndex(next);
-      setCurrentQuestionIndex(next);
       setAnswered(false);
       setLastResult(null);
       setIsPaused(false);
@@ -239,7 +234,7 @@ export function PracticeRunner({
       setIsFinished(true);
       void saveResults(allResults);
     }
-  }, [currentIndex, questions, setCurrentQuestionIndex, startQuestionTimer, allResults, sessionDuration, config, saveResults]);
+  }, [currentIndex, questions, startQuestionTimer, allResults, sessionDuration, config, saveResults]);
 
   // Phím tắt: Escape mở dialog thoát, Space sang câu tiếp khi đã trả lời
   useEffect(() => {

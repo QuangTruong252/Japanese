@@ -171,7 +171,7 @@ export function AppNav() {
           >
             <Settings className="size-5" aria-hidden="true" />
           </Link>
-          <AccountButton variant="header" showLabel={false} user={currentUser} className="h-[48px] w-[48px] min-h-0 justify-center border-transparent bg-transparent p-0" />
+          <AccountButton user={currentUser}className="h-[48px] w-[48px] min-h-0 justify-center border-transparent bg-transparent p-0" />
         </div>
       </header>
 

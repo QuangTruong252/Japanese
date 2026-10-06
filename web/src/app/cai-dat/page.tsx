@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useId, useRef, useState, useSyncExternalStore } from 'react';
+import { useEffect, useId, useRef, useState, useSyncExternalStore } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLiveQuery } from 'dexie-react-hooks';
 import {
@@ -65,9 +65,7 @@ import {
   loadSettings,
   saveSettings,
   subscribeSettings,
-  type AppSettings,
 } from '@/lib/settings';
-import { useUIStore } from '@/lib/store';
 import {
   getSyncStatusSnapshot,
   getServerSyncStatusSnapshot,
@@ -198,13 +196,6 @@ export default function SettingsPage() {
     () => false,
   );
 
-  const {
-    setFurigana: storeSetFurigana,
-    setFuriganaSize: storeSetFuriganaSize,
-    setHideTranslations: storeSetHideTranslations,
-    setTheme: storeSetTheme,
-  } = useUIStore();
-
   useEffect(() => {
     applySettingsToDOM(settings);
   }, [settings]);
@@ -222,18 +213,6 @@ export default function SettingsPage() {
     media.addEventListener('change', onChange);
     return () => media.removeEventListener('change', onChange);
   }, []);
-
-  const updateSettings = useCallback(
-    (patch: Partial<AppSettings>) => {
-      saveSettings(patch);
-
-      if (patch.furigana !== undefined) storeSetFurigana(patch.furigana);
-      if (patch.furiganaSize !== undefined) storeSetFuriganaSize(patch.furiganaSize);
-      if (patch.hideTranslations !== undefined) storeSetHideTranslations(patch.hideTranslations);
-      if (patch.theme !== undefined) storeSetTheme(patch.theme);
-    },
-    [storeSetFurigana, storeSetFuriganaSize, storeSetHideTranslations, storeSetTheme],
-  );
 
   // 2. Đọc thống kê dữ liệu hiện có trên máy
   const reviewCount = useLiveQuery(() => db.reviewItems.count(), []) ?? 0;
@@ -405,7 +384,7 @@ export default function SettingsPage() {
 
       // Cập nhật cài đặt nếu file có chứa settings
       if (importPreview.settings) {
-        updateSettings(importPreview.settings);
+        saveSettings(importPreview.settings);
       }
 
       setNotification({
@@ -659,7 +638,7 @@ export default function SettingsPage() {
                 type="button"
                 role="switch"
                 aria-checked={settings.furigana}
-                onClick={() => updateSettings({ furigana: !settings.furigana })}
+                onClick={() => saveSettings({ furigana: !settings.furigana })}
                 className={cn(
                   'relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-150 ease-out focus-visible:ring-3 focus-visible:ring-ring/50 outline-none',
                   settings.furigana ? 'bg-primary' : 'bg-muted',
@@ -693,7 +672,7 @@ export default function SettingsPage() {
                 onValueChange={(val: string[]) => {
                   const chosen = val[val.length - 1];
                   if (chosen === 'normal' || chosen === 'large') {
-                    updateSettings({ furiganaSize: chosen });
+                    saveSettings({ furiganaSize: chosen });
                   }
                 }}
               >
@@ -724,7 +703,7 @@ export default function SettingsPage() {
                 type="button"
                 role="switch"
                 aria-checked={settings.hideTranslations}
-                onClick={() => updateSettings({ hideTranslations: !settings.hideTranslations })}
+                onClick={() => saveSettings({ hideTranslations: !settings.hideTranslations })}
                 className={cn(
                   'relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-150 ease-out focus-visible:ring-3 focus-visible:ring-ring/50 outline-none',
                   settings.hideTranslations ? 'bg-primary' : 'bg-muted',
@@ -758,7 +737,7 @@ export default function SettingsPage() {
                 onValueChange={(val: string[]) => {
                   const chosen = val[val.length - 1];
                   if (chosen === 'light' || chosen === 'dark' || chosen === 'system') {
-                    updateSettings({ theme: chosen });
+                    saveSettings({ theme: chosen });
                   }
                 }}
               >
@@ -809,7 +788,7 @@ export default function SettingsPage() {
               min={1}
               max={100}
               step={5}
-              onChange={(dailyNewLimit) => updateSettings({ dailyNewLimit })}
+              onChange={(dailyNewLimit) => saveSettings({ dailyNewLimit })}
             />
             <NumberStepper
               label="Số mục mỗi lô ôn"
@@ -819,7 +798,7 @@ export default function SettingsPage() {
               min={5}
               max={100}
               step={5}
-              onChange={(reviewBatchSize) => updateSettings({ reviewBatchSize })}
+              onChange={(reviewBatchSize) => saveSettings({ reviewBatchSize })}
             />
             <NumberStepper
               id="hoc-den-bai"
@@ -834,7 +813,7 @@ export default function SettingsPage() {
               min={0}
               max={25}
               step={1}
-              onChange={(learnedThroughLesson) => updateSettings({ learnedThroughLesson })}
+              onChange={(learnedThroughLesson) => saveSettings({ learnedThroughLesson })}
             />
 
             {/* Âm lượng phát âm */}
@@ -876,7 +855,7 @@ export default function SettingsPage() {
                 step="0.05"
                 value={settings.soundVolume}
                 onChange={(e) =>
-                  updateSettings({ soundVolume: Number.parseFloat(e.target.value) })
+                  saveSettings({ soundVolume: Number.parseFloat(e.target.value) })
                 }
                 className="w-full accent-primary h-2 cursor-pointer rounded-lg bg-muted"
               />

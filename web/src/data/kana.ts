@@ -600,42 +600,6 @@ export const KATAKANA_YOON_ROWS: KanaRow[] = [
 // ============================================================================
 
 /**
- * Trích xuất danh sách phẳng các ô Kana hợp lệ (bỏ qua các vị trí null) từ danh sách hàng.
- */
-export function flattenKanaRows(rows: KanaRow[]): KanaCell[] {
-  const result: KanaCell[] = [];
-  for (const r of rows) {
-    for (const cell of r.cells) {
-      if (cell !== null) {
-        result.push(cell);
-      }
-    }
-  }
-  return result;
-}
-
-/**
- * Lấy danh sách 46 âm cơ bản dạng mảng phẳng theo loại Kana.
- */
-export function getBasicKana(type: KanaType): KanaCell[] {
-  return flattenKanaRows(type === 'hiragana' ? HIRAGANA_BASIC_ROWS : KATAKANA_BASIC_ROWS);
-}
-
-/**
- * Lấy danh sách 25 âm đục/bán đục dạng mảng phẳng theo loại Kana.
- */
-export function getDakuonKana(type: KanaType): KanaCell[] {
-  return flattenKanaRows(type === 'hiragana' ? HIRAGANA_DAKUON_ROWS : KATAKANA_DAKUON_ROWS);
-}
-
-/**
- * Lấy danh sách 33 âm ghép dạng mảng phẳng theo loại Kana.
- */
-export function getYoonKana(type: KanaType): KanaCell[] {
-  return flattenKanaRows(type === 'hiragana' ? HIRAGANA_YOON_ROWS : KATAKANA_YOON_ROWS);
-}
-
-/**
  * Lấy cấu trúc bảng hoàn chỉnh gồm 3 nhóm (Cơ bản, Âm đục, Âm ghép) theo loại Kana.
  */
 export function getKanaGroups(type: KanaType) {
