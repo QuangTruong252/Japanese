@@ -1,0 +1,68 @@
+{
+  "createdAt": "2026-10-06T05:36:04.602Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/lesson-11.json",
+  "prompt": "Create ONE square 1:1 image that is a sprite atlas of 4 separate illustrations arranged in a precise grid of 2 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nCELLS (row-major):\n1. (row 1, column 1) a single shiny red apple with a leaf on the stem\n2. (row 1, column 2) two small mandarin oranges, one partly peeled\n3. (row 2, column 1) a triangle sandwich cut in half showing egg, lettuce and ham\n4. (row 2, column 2) a vanilla ice cream cone with two scoops\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY transparent margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/apple-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Quả táo đỏ."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+    "id": "ringo",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/apple-v1.png",
+    "width": 507,
+    "height": 506,
+    "format": "png",
+    "hasAlpha": true,
+    "sourceImage": "artwork/illustrations/atlases/lesson-11-food-v1.png",
+    "crop": {
+      "left": 92,
+      "top": 67,
+      "width": 507,
+      "height": 506
+    }
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 16,
+      "top": 16,
+      "width": 475,
+      "height": 474
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.876,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 56148,
+    "sha256": "feddb751f72b8e15f4bdc48f7200a2425b27be454d6af993c7860cb9b8b65848",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 136314,
+      "partial": 125518,
+      "opaque": 312
+    }
+  }
+}

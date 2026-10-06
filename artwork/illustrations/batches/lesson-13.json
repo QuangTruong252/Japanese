@@ -1,0 +1,331 @@
+{
+  "name": "lesson-13",
+  "description": "Bài 13 — vui chơi, địa điểm, món ăn, trạng thái cơ thể và mong muốn.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-13-places-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "swimming-pool-v1",
+          "subject": "an outdoor swimming pool with clear blue water, lane ropes and a small ladder",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+            "id": "puuru"
+          },
+          "alt": {
+            "vi": "Bể bơi ngoài trời nước trong xanh."
+          }
+        },
+        {
+          "stem": "river-v1",
+          "subject": "a gentle river winding between grassy banks with a few stones",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+            "id": "kawa"
+          },
+          "alt": {
+            "vi": "Con sông uốn lượn giữa hai bờ cỏ."
+          }
+        },
+        {
+          "stem": "spacious-room-v1",
+          "subject": "a large airy living room with lots of open floor space, a small sofa and a big window",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+            "id": "hiroi"
+          },
+          "alt": {
+            "vi": "Căn phòng rộng rãi, thoáng đãng."
+          }
+        },
+        {
+          "stem": "cramped-room-v1",
+          "subject": "a tiny cramped room crowded with a bed, a desk and stacked boxes leaving almost no floor space",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+            "id": "semai"
+          },
+          "alt": {
+            "vi": "Căn phòng chật hẹp, đồ đạc chất kín."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-13-meals-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "set-meal-v1",
+          "subject": "a Japanese set meal on a tray: a bowl of rice, miso soup, grilled fish and small side dishes",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+            "id": "teishoku"
+          },
+          "alt": {
+            "vi": "Suất cơm phần có cơm, canh miso và cá nướng."
+          }
+        },
+        {
+          "stem": "beef-bowl-v1",
+          "subject": "a bowl of gyudon: rice topped with thin simmered beef and onions",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+            "id": "gyuudon"
+          },
+          "alt": {
+            "vi": "Bát cơm thịt bò gyudon."
+          }
+        },
+        {
+          "stem": "new-year-food-v1",
+          "subject": "a lacquered tiered box of Japanese New Year osechi food beside a small kagami mochi topped with a mandarin",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+            "id": "oshougatsu"
+          },
+          "alt": {
+            "vi": "Hộp món ăn Tết osechi và bánh dày kagami mochi."
+          }
+        },
+        {
+          "stem": "fishing-rod-v1",
+          "subject": "a bamboo fishing rod with a freshly caught fish hanging from the line",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+            "id": "tsuri"
+          },
+          "alt": {
+            "vi": "Cần câu có con cá vừa câu được."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "playing-v1",
+      "subject": "two children happily playing catch with a ball on a grassy lawn",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "asobimasu"
+      },
+      "alt": {
+        "vi": "Hai đứa trẻ đang chơi ném bóng trên bãi cỏ."
+      }
+    },
+    {
+      "stem": "swimming-v1",
+      "subject": "a person swimming front crawl in blue water, splashing lightly",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "oyogimasu"
+      },
+      "alt": {
+        "vi": "Một người đang bơi sải."
+      }
+    },
+    {
+      "stem": "picking-up-v1",
+      "subject": "at an airport arrivals gate, the reference woman waves to welcome the reference male student, who is arriving pulling a suitcase",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "mukaemasu"
+      },
+      "alt": {
+        "vi": "Cô gái vẫy tay đón chàng trai kéo vali ở sân bay."
+      }
+    },
+    {
+      "stem": "tired-v1",
+      "subject": "the reference male student slumped exhausted over a desk piled with papers, eyes half closed",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "tsukaremasu"
+      },
+      "alt": {
+        "vi": "Chàng trai mệt mỏi gục xuống bàn đầy giấy tờ."
+      }
+    },
+    {
+      "stem": "wedding-v1",
+      "subject": "a happy bride in a white dress and a groom in a dark suit holding hands with a small bouquet",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "kekkon-shimasu"
+      },
+      "alt": {
+        "vi": "Cô dâu và chú rể nắm tay nhau trong ngày cưới."
+      }
+    },
+    {
+      "stem": "shopping-v1",
+      "subject": "the reference woman walking cheerfully carrying several shopping bags in both hands",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "kaimono-shimasu"
+      },
+      "alt": {
+        "vi": "Cô gái vui vẻ xách nhiều túi đồ đi mua sắm."
+      }
+    },
+    {
+      "stem": "strolling-v1",
+      "subject": "the reference woman taking a leisurely stroll along a tree-lined park path",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "sanpo-shimasu"
+      },
+      "alt": {
+        "vi": "Cô gái thong thả đi dạo trên lối đi trong công viên."
+      }
+    },
+    {
+      "stem": "skiing-v1",
+      "subject": "a skier in a winter jacket and goggles gliding down a snowy slope with poles",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "sukii"
+      },
+      "alt": {
+        "vi": "Người trượt tuyết lao xuống dốc tuyết."
+      }
+    },
+    {
+      "stem": "thirsty-v1",
+      "subject": "the reference male student sweating under a hot sun, reaching eagerly for a bottle of water",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "nodo-ga-kawakimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai đổ mồ hôi, khát nước và với lấy chai nước."
+      }
+    },
+    {
+      "stem": "hungry-v1",
+      "subject": "the reference male student holding his stomach and looking longingly at an empty bowl",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "onaka-ga-sukimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai ôm bụng đói nhìn chiếc bát trống."
+      }
+    },
+    {
+      "stem": "having-a-meal-v1",
+      "subject": "the two recurring characters sitting at a small table having a meal together: rice bowls, miso soup and a side dish, both holding chopsticks",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "shokuji-shimasu"
+      },
+      "alt": {
+        "vi": "Hai người ngồi cùng bàn dùng bữa với cơm, súp miso và món phụ."
+      }
+    },
+    {
+      "stem": "fine-arts-v1",
+      "subject": "fine arts still life: an artist palette with brushes, a small marble bust sculpture and a framed landscape painting leaning together",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "bijutsu"
+      },
+      "alt": {
+        "vi": "Bảng màu, cọ vẽ, tượng bán thân và bức tranh đóng khung."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "lunch-diner-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)",
+        "note": "Antigravity hết quota (429) ở lượt này; chuyển sang Codex."
+      },
+      "subject": "a cozy lunchtime Japanese set-meal diner; the male student and the woman sit side by side at the wooden counter looking hungry and eager while a waitress in an apron brings a set-meal tray and a bowl of gyudon; blank menu boards on the wall and a plain noren curtain at the entrance.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-13.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Hai bạn trẻ ngồi ở quầy quán cơm trưa, nhân viên mang suất cơm và bát gyudon ra."
+      }
+    }
+  ]
+}

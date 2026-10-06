@@ -1,0 +1,228 @@
+{
+  "name": "lesson-24",
+  "description": "Bài 24 — cho và nhận hành động: くれます, 〜てあげます, 〜てもらいます, 〜てくれます; người lớn tuổi, chuyển nhà và giúp đỡ.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "stem": "gift-for-me-v1",
+      "subject": "first-person view: the reference woman smiling and holding a wrapped present out directly toward the viewer, the gift coming toward the viewer as if being given to them",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "kuremasu"
+      },
+      "alt": {
+        "vi": "Cô gái chìa hộp quà về phía tôi."
+      }
+    },
+    {
+      "reuse": "vocab/repairing-bicycle-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "naoshimasu"
+      },
+      "alt": {
+        "vi": "Người bố đang sửa xe đạp bằng cờ lê."
+      }
+    },
+    {
+      "stem": "taking-child-along-v1",
+      "subject": "seen from behind: the reference woman holding a little girl by the hand, both walking away from the viewer toward a zoo entrance gate with a giraffe visible beyond the fence, blank gate sign",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "tsurete-ikimasu"
+      },
+      "alt": {
+        "vi": "Cô gái nắm tay em gái dắt đi về phía cổng sở thú."
+      }
+    },
+    {
+      "stem": "bringing-friend-v1",
+      "subject": "at the open front door of a home party, the reference male student arriving and walking toward the viewer, leading a shy friend in by the arm, balloons and a party table in the foreground",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "tsurete-kimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai dẫn bạn đến bữa tiệc, bước vào cửa."
+      }
+    },
+    {
+      "stem": "seeing-off-v1",
+      "subject": "the reference male student standing beside his parked small car at a train station drop-off, waving goodbye as an older teacher in a suit with a briefcase walks toward the station entrance",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "okurimasu-persona"
+      },
+      "alt": {
+        "vi": "Chàng trai đưa thầy giáo ra ga bằng ô tô và vẫy tay tạm biệt."
+      }
+    },
+    {
+      "stem": "introducing-v1",
+      "subject": "the reference woman standing between two people, gesturing with an open palm toward the reference male student as she introduces him to an older businessman, who bows slightly",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "shoukai-shimasu"
+      },
+      "alt": {
+        "vi": "Cô gái giới thiệu chàng trai với một người đàn ông lớn tuổi."
+      }
+    },
+    {
+      "stem": "guiding-tourist-v1",
+      "subject": "the reference woman showing a foreign tourist with a camera around an old Kyoto street, pointing ahead toward a wooden temple gate",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "annai-shimasu"
+      },
+      "alt": {
+        "vi": "Cô gái dẫn khách du lịch tham quan phố cổ Kyoto."
+      }
+    },
+    {
+      "stem": "explaining-machine-v1",
+      "subject": "a friendly shop clerk in an apron explaining to the reference male student how to use a coffee machine, pointing at its plain unlabeled buttons while he listens and nods",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "setsumei-shimasu"
+      },
+      "alt": {
+        "vi": "Nhân viên giải thích cho chàng trai cách dùng máy pha cà phê."
+      }
+    },
+    {
+      "stem": "elderly-man-v1",
+      "subject": "a kind elderly man with white hair and glasses, wearing a cardigan, smiling and leaning on a wooden walking cane",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "ojiisan"
+      },
+      "alt": {
+        "vi": "Cụ ông tóc bạc chống gậy, mỉm cười hiền hậu."
+      }
+    },
+    {
+      "stem": "elderly-woman-v1",
+      "subject": "a gentle elderly woman with grey hair in a bun, wearing a simple apron over a kimono-style top, smiling with hands folded",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "obaasan"
+      },
+      "alt": {
+        "vi": "Cụ bà tóc bạc búi gọn, mỉm cười hiền từ."
+      }
+    },
+    {
+      "stem": "moving-house-v1",
+      "subject": "a small moving truck with its back open, stacked cardboard boxes, a rolled rug, a chair and a potted plant being loaded in front of an apartment building, blank truck sides, compact composition with plenty of empty space around it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "hikkoshi"
+      },
+      "alt": {
+        "vi": "Xe tải nhỏ chở thùng các-tông và đồ đạc khi chuyển nhà."
+      }
+    },
+    {
+      "stem": "sweets-v1",
+      "subject": "a compact assortment of sweets: a small open box of chocolates, a few wrapped candies, cookies and a Japanese daifuku on a small plate",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "okashi"
+      },
+      "alt": {
+        "vi": "Hộp sô-cô-la, kẹo, bánh quy và bánh daifuku."
+      }
+    },
+    {
+      "stem": "homestay-v1",
+      "subject": "the reference male student with a suitcase being warmly welcomed at the doorway of a Japanese house by a smiling host family: a mother, a father and a child",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "hoomusutei"
+      },
+      "alt": {
+        "vi": "Gia đình Nhật vui vẻ đón chàng trai đến ở homestay."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "moving-day-help-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "moving day in a bright new apartment: the male student carries a large cardboard box through the doorway to help, while the woman unpacks dishes from an open box beside a low table; stacked boxes, a potted plant and a lamp waiting to be placed; all boxes plain and unlabeled.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-24.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Chàng trai bê thùng đồ giúp cô gái chuyển đến căn hộ mới."
+      }
+    }
+  ]
+}

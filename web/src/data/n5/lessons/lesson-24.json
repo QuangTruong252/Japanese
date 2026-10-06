@@ -130,5 +130,13 @@
   "references": [
     "family"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/moving-day-help-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Chàng trai bê thùng đồ giúp cô gái chuyển đến căn hộ mới."
+    }
+  }
 }

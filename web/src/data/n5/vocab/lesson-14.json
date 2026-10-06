@@ -30,6 +30,14 @@
         "naiKana": "つけない",
         "ta": "つけた",
         "taKana": "つけた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/turning-on-light-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người bấm công tắc bật đèn sáng lên."
+        }
       }
     },
     {
@@ -60,6 +68,14 @@
         "naiKana": "けさない",
         "ta": "消[け]した",
         "taKana": "けした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/turning-off-lamp-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người tắt chiếc đèn bàn."
+        }
       }
     },
     {
@@ -90,6 +106,14 @@
         "naiKana": "あけない",
         "ta": "開[あ]けた",
         "taKana": "あけた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/opening-window-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người đang mở cửa sổ."
+        }
       }
     },
     {
@@ -120,6 +144,14 @@
         "naiKana": "しめない",
         "ta": "閉[し]めた",
         "taKana": "しめた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/closing-door-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người đang đóng cánh cửa."
+        }
       }
     },
     {
@@ -150,6 +182,14 @@
         "naiKana": "いそがない",
         "ta": "急[いそ]いだ",
         "taKana": "いそいだ"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hurrying-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai vừa chạy vội vừa nhìn đồng hồ."
+        }
       }
     },
     {
@@ -180,6 +220,14 @@
         "naiKana": "またない",
         "ta": "待[ま]った",
         "taKana": "まった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/waiting-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đứng chờ bên đường."
+        }
       }
     },
     {
@@ -210,6 +258,14 @@
         "naiKana": "もたない",
         "ta": "持[も]った",
         "taKana": "もった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/carrying-bags-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người xách hai túi đồ nặng."
+        }
       }
     },
     {
@@ -240,6 +296,14 @@
         "naiKana": "とらない",
         "ta": "取[と]った",
         "taKana": "とった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/taking-salt-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn tay với lấy lọ muối trên bàn ăn."
+        }
       }
     },
     {
@@ -270,6 +334,14 @@
         "naiKana": "てつだわない",
         "ta": "手伝[てつだ]った",
         "taKana": "てつだった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/helping-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai người cùng khiêng thùng các-tông lớn."
+        }
       }
     },
     {
@@ -300,6 +372,14 @@
         "naiKana": "よばない",
         "ta": "呼[よ]んだ",
         "taKana": "よんだ"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hailing-taxi-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người giơ tay gọi taxi bên đường."
+        }
       }
     },
     {
@@ -330,6 +410,14 @@
         "naiKana": "はなさない",
         "ta": "話[はな]した",
         "taKana": "はなした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/talking-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai người đang trò chuyện."
+        }
       }
     },
     {
@@ -390,6 +478,14 @@
         "naiKana": "とめない",
         "ta": "止[と]めた",
         "taKana": "とめた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/parking-car-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai lùi xe ô tô vào ô đỗ."
+        }
       }
     },
     {
@@ -420,6 +516,14 @@
         "naiKana": "みせない",
         "ta": "見[み]せた",
         "taKana": "みせた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/showing-passport-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hành khách đưa hộ chiếu cho nhân viên xem."
+        }
       }
     },
     {
@@ -480,6 +584,14 @@
         "naiKana": "すわらない",
         "ta": "座[すわ]った",
         "taKana": "すわった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sitting-down-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người đang ngồi xuống ghế."
+        }
       }
     },
     {
@@ -510,6 +622,14 @@
         "naiKana": "たたない",
         "ta": "立[た]った",
         "taKana": "たった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/standing-up-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người đang đứng dậy khỏi ghế."
+        }
       }
     },
     {
@@ -540,6 +660,14 @@
         "naiKana": "はいらない",
         "ta": "入[はい]った[喫茶店[きっさてん]に〜]",
         "taKana": "はいった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/entering-cafe-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai bước vào quán cà phê, quay lưng về phía người xem."
+        }
       }
     },
     {
@@ -570,6 +698,14 @@
         "naiKana": "でない",
         "ta": "出[で]た[喫茶店[きっさてん]を〜]",
         "taKana": "でた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/leaving-cafe-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai bước ra khỏi quán cà phê và khép cửa lại."
+        }
       }
     },
     {
@@ -600,6 +736,14 @@
         "naiKana": "ふらない",
         "ta": "降[ふ]った[雨[あめ]が〜]",
         "taKana": "ふった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/raining-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Trời đang mưa, người che ô."
+        }
       }
     },
     {
@@ -630,6 +774,14 @@
         "naiKana": "コピーしない",
         "ta": "コピーした",
         "taKana": "コピーした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/photocopying-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người đang photocopy tài liệu."
+        }
       }
     },
     {
@@ -646,6 +798,14 @@
         "kana": "でんきを つけてください。",
         "translation": {
           "vi": "Hãy bật đèn lên."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/ceiling-light-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc đèn trần đang sáng."
         }
       }
     },
@@ -664,6 +824,14 @@
         "translation": {
           "vi": "Hãy tắt máy điều hòa."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/air-conditioner-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Máy điều hòa treo tường đang thổi gió mát."
+        }
       }
     },
     {
@@ -680,6 +848,14 @@
         "kana": "パスポートを みせてください。",
         "translation": {
           "vi": "Xin hãy cho tôi xem hộ chiếu."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/passport-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuốn hộ chiếu bìa đỏ có hình dập nổi."
         }
       }
     },
@@ -732,6 +908,14 @@
         "translation": {
           "vi": "Tôi vẽ bản đồ giúp bạn nhé?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/map-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tấm bản đồ đường phố mở ra."
+        }
       }
     },
     {
@@ -749,6 +933,14 @@
         "translation": {
           "vi": "Xin hãy lấy giúp tôi muối."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/salt-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Lọ muối và một ít muối trắng."
+        }
       }
     },
     {
@@ -765,6 +957,14 @@
         "kana": "コーヒーに さとうを いれますか。",
         "translation": {
           "vi": "Bạn có cho đường vào cà phê không?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sugar-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hũ đường có viên đường và thìa nhỏ."
         }
       }
     },
@@ -1037,6 +1237,14 @@
         "kana": "おつりは さんびゃくえんです。",
         "translation": {
           "vi": "Tiền thối lại là 300 yên."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/change-money-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người thu ngân trả lại tiền thừa."
         }
       }
     }

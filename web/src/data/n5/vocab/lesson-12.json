@@ -17,6 +17,14 @@
         "translation": {
           "vi": "Bài kiểm tra này đã rất dễ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/easy-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Em bé xếp khối gỗ thật dễ dàng."
+        }
       }
     },
     {
@@ -68,6 +76,14 @@
         "translation": {
           "vi": "Tàu Shinkansen thì nhanh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/fast-hare-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chú thỏ đang chạy rất nhanh."
+        }
       }
     },
     {
@@ -84,6 +100,14 @@
         "kana": "バスは おそかったです。",
         "translation": {
           "vi": "Xe buýt đã rất chậm."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/slow-tortoise-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Con rùa bò chậm rãi."
         }
       }
     },
@@ -102,6 +126,14 @@
         "translation": {
           "vi": "Chủ nhật thì đông người."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/crowd-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đường phố đông nghịt người."
+        }
       }
     },
     {
@@ -118,6 +150,14 @@
         "kana": "きょうは がくせいが すくないです。",
         "translation": {
           "vi": "Hôm nay thì ít học sinh."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/few-students-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Lớp học vắng, chỉ có hai học sinh."
         }
       }
     },
@@ -136,6 +176,14 @@
         "translation": {
           "vi": "Mùa xuân thì ấm áp."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/warm-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái cầm cốc trà nóng dưới nắng xuân ấm áp."
+        }
       }
     },
     {
@@ -152,6 +200,14 @@
         "kana": "あきは すずしいです。",
         "translation": {
           "vi": "Mùa thu thì mát mẻ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cool-breeze-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đón làn gió mát dưới tán cây."
         }
       }
     },
@@ -170,6 +226,14 @@
         "translation": {
           "vi": "Cái bánh này ngọt."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sweet-cake-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bánh kem dâu và hũ mật ong ngọt ngào."
+        }
       }
     },
     {
@@ -186,6 +250,14 @@
         "kana": "タイの りょうりは からいです。",
         "translation": {
           "vi": "Món ăn Thái Lan thì cay."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/spicy-food-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bát cà ri đỏ cay và mấy quả ớt."
         }
       }
     },
@@ -204,6 +276,14 @@
         "translation": {
           "vi": "Cái cặp này nặng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/heavy-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai gắng sức nâng thùng đồ nặng."
+        }
       }
     },
     {
@@ -220,6 +300,14 @@
         "kana": "この パソコンは かるいです。",
         "translation": {
           "vi": "Cái máy tính này nhẹ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/light-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái nhấc chiếc máy tính mỏng nhẹ bằng một tay."
         }
       }
     },
@@ -272,6 +360,14 @@
         "translation": {
           "vi": "Tôi thích mùa xuân."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/spring-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cây nở hoa hồng và hoa tulip mùa xuân."
+        }
       }
     },
     {
@@ -288,6 +384,14 @@
         "kana": "なつは あついです。",
         "translation": {
           "vi": "Mùa hè thì nóng."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/summer-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cây xanh tốt, mặt trời và hoa hướng dương mùa hè."
         }
       }
     },
@@ -306,6 +410,14 @@
         "translation": {
           "vi": "Mùa thu thì mát mẻ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/autumn-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cây lá vàng cam rụng mùa thu."
+        }
       }
     },
     {
@@ -322,6 +434,14 @@
         "kana": "ふゆは さむいです。",
         "translation": {
           "vi": "Mùa đông thì lạnh."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/winter-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cây trụi lá phủ tuyết và người tuyết mùa đông."
         }
       }
     },
@@ -340,6 +460,14 @@
         "translation": {
           "vi": "Hôm qua thời tiết đã rất đẹp."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/weather-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chong chóng gió trên mái nhà giữa mây, nắng và gió nhẹ."
+        }
       }
     },
     {
@@ -356,6 +484,14 @@
         "kana": "きのうは あめでした。",
         "translation": {
           "vi": "Hôm qua trời đã mưa."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/rain-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đám mây xám đang đổ mưa."
         }
       }
     },
@@ -374,6 +510,14 @@
         "translation": {
           "vi": "Tuyết đẹp."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/snow-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tuyết rơi từ đám mây xuống."
+        }
       }
     },
     {
@@ -390,6 +534,14 @@
         "kana": "きょうは くもりです。",
         "translation": {
           "vi": "Hôm nay trời nhiều mây."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cloudy-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mây xám dày che kín mặt trời."
         }
       }
     },
@@ -408,6 +560,14 @@
         "translation": {
           "vi": "Khách sạn này đã rất sạch đẹp."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hotel-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tòa khách sạn có mái che ở lối vào."
+        }
       }
     },
     {
@@ -424,6 +584,14 @@
         "kana": "くうこうは とおいです。",
         "translation": {
           "vi": "Sân bay thì xa."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/airport-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhà ga sân bay, tháp điều khiển và máy bay."
         }
       }
     },
@@ -442,6 +610,14 @@
         "translation": {
           "vi": "Mùa hè tôi đi biển."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sea-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Biển xanh với sóng vỗ vào bờ cát."
+        }
       }
     },
     {
@@ -458,6 +634,14 @@
         "kana": "せかいの なかで どこが いちばん すきですか。",
         "translation": {
           "vi": "Trên thế giới, bạn thích nơi nào nhất?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/globe-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Quả địa cầu trên giá gỗ."
         }
       }
     },
@@ -476,6 +660,14 @@
         "translation": {
           "vi": "Hôm qua tôi đã tổ chức tiệc."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/party-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhóm bạn nâng ly bên bàn tiệc có bánh và bóng bay."
+        }
       }
     },
     {
@@ -492,6 +684,14 @@
         "kana": "おまつりは にぎやかでした。",
         "translation": {
           "vi": "Lễ hội đã rất nhộn nhịp."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/festival-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhóm người mặc áo happi khiêng kiệu mikoshi dưới hàng đèn lồng."
         }
       }
     },
@@ -510,6 +710,14 @@
         "translation": {
           "vi": "Lẩu Sukiyaki thì ngon."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sukiyaki-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nồi lẩu sukiyaki có thịt bò, đậu phụ và hành."
+        }
       }
     },
     {
@@ -526,6 +734,14 @@
         "kana": "さしみを たべます。",
         "translation": {
           "vi": "Tôi ăn Sashimi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sashimi-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đĩa sashimi cá ngừ và cá hồi."
         }
       }
     },
@@ -544,6 +760,14 @@
         "translation": {
           "vi": "Trong các món ăn Nhật Bản, tôi thích sushi nhất."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sushi-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Khay gỗ bày các miếng sushi."
+        }
       }
     },
     {
@@ -560,6 +784,14 @@
         "kana": "てんぷらを たべました。",
         "translation": {
           "vi": "Tôi đã ăn Tempura."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tempura-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tôm và rau chiên tempura trên rổ tre."
         }
       }
     },
@@ -578,6 +810,14 @@
         "translation": {
           "vi": "Thịt lợn và thịt bò, bạn thích loại nào hơn?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/pork-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Những lát thịt ba chỉ heo sống."
+        }
       }
     },
     {
@@ -594,6 +834,14 @@
         "kana": "とりにくが すきです。",
         "translation": {
           "vi": "Tôi thích thịt gà."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/chicken-meat-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đùi gà sống trên giấy gói."
         }
       }
     },
@@ -612,6 +860,14 @@
         "translation": {
           "vi": "Thịt bò thì đắt."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/beef-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Miếng thịt bò vân mỡ."
+        }
       }
     },
     {
@@ -628,6 +884,14 @@
         "kana": "レモンは すっぱいです。",
         "translation": {
           "vi": "Chanh thì chua."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/lemon-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Quả chanh vàng và nửa quả bổ đôi."
         }
       }
     },
@@ -646,6 +910,14 @@
         "translation": {
           "vi": "Tôi học cắm hoa Ikebana."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/ikebana-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bình cắm hoa ikebana."
+        }
       }
     },
     {
@@ -662,6 +934,14 @@
         "kana": "もみじが きれいです。",
         "translation": {
           "vi": "Lá phong đỏ rất đẹp."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/maple-leaves-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cành lá phong đỏ mùa thu."
         }
       }
     },

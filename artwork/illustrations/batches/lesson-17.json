@@ -1,0 +1,355 @@
+{
+  "name": "lesson-17",
+  "description": "Bài 17 — thể ない: đừng làm, phải làm; ốm đau, thuốc men, tắm bồn và đi công tác.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-17-objects-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "medicine-v1",
+          "subject": "a compact small paper medicine packet with a few white tablets, a capsule and a blister strip beside it",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+            "id": "kusuri"
+          },
+          "alt": {
+            "vi": "Gói thuốc với vài viên thuốc."
+          }
+        },
+        {
+          "stem": "jacket-v1",
+          "subject": "a compact casual beige zip-up jacket hanging on a wooden hanger",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+            "id": "uwagi"
+          },
+          "alt": {
+            "vi": "Chiếc áo khoác treo trên móc."
+          }
+        },
+        {
+          "stem": "underwear-v1",
+          "subject": "a compact neat stack of folded white underwear: an undershirt and briefs",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+            "id": "shitagi"
+          },
+          "alt": {
+            "vi": "Chồng quần áo lót trắng gấp gọn."
+          }
+        },
+        {
+          "stem": "no-smoking-v1",
+          "subject": "a compact round no-smoking pictogram plaque: a grey cigarette crossed by a red circle with a diagonal slash, no text",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+            "id": "kinen"
+          },
+          "alt": {
+            "vi": "Biển hình cấm hút thuốc."
+          },
+          "skip": "Người dùng bỏ mục yếu khi duyệt danh sách (06/10/2026)."
+        }
+      ]
+    },
+    {
+      "stem": "forgotten-umbrella-v1",
+      "subject": "an umbrella left leaning against an empty cafe chair while its owner walks out of the door in the background without it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "wasuremasu"
+      },
+      "alt": {
+        "vi": "Chiếc ô bị bỏ quên bên ghế quán cà phê."
+      }
+    },
+    {
+      "stem": "losing-passport-v1",
+      "subject": "a passport with a plain red cover slipping out of the open pocket of a walking traveler's bag and falling to the ground unnoticed",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "nakushimasu"
+      },
+      "alt": {
+        "vi": "Hộ chiếu rơi khỏi túi mà người đi không biết."
+      }
+    },
+    {
+      "stem": "paying-v1",
+      "subject": "a customer handing banknotes across a shop counter to a smiling cashier, no numbers on the money",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "haraimasu"
+      },
+      "alt": {
+        "vi": "Khách hàng đưa tiền trả cho thu ngân."
+      }
+    },
+    {
+      "stem": "returning-book-v1",
+      "subject": "a student handing a book back across a library counter to a librarian",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "kaeshimasu"
+      },
+      "alt": {
+        "vi": "Sinh viên trả sách ở quầy thư viện."
+      }
+    },
+    {
+      "stem": "going-out-v1",
+      "subject": "the reference woman stepping out of her front door with her bag on a sunny day, waving goodbye",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "dekakemasu"
+      },
+      "alt": {
+        "vi": "Cô gái bước ra khỏi nhà để đi ra ngoài."
+      }
+    },
+    {
+      "stem": "taking-off-shoes-v1",
+      "subject": "a person at a Japanese entrance genkan pulling off one shoe, the other shoe already placed neatly on the floor",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "nugimasu"
+      },
+      "alt": {
+        "vi": "Người đang cởi giày ở lối vào nhà."
+      }
+    },
+    {
+      "stem": "worrying-v1",
+      "subject": "the reference woman with a worried frown, hands clasped at her chest, anxiously looking at a phone with a blank screen",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "shinpai-shimasu"
+      },
+      "alt": {
+        "vi": "Cô gái lo lắng nhìn điện thoại."
+      }
+    },
+    {
+      "stem": "working-late-v1",
+      "subject": "an office worker still typing at a desk in an empty office at night, only a desk lamp on and a dark night sky in the window",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "zangyou-shimasu"
+      },
+      "alt": {
+        "vi": "Nhân viên ở lại văn phòng làm việc đến tối."
+      }
+    },
+    {
+      "stem": "business-trip-v1",
+      "subject": "a businessman in a suit pulling a small rolling suitcase and holding a briefcase on a station platform beside a bullet train",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "shucchou-shimasu"
+      },
+      "alt": {
+        "vi": "Người đàn ông mặc vest kéo vali đi công tác."
+      }
+    },
+    {
+      "stem": "taking-medicine-v1",
+      "subject": "a person putting a white pill into their mouth while holding a glass of water",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "nomimasu-kusuri"
+      },
+      "alt": {
+        "vi": "Người đang uống thuốc với cốc nước."
+      }
+    },
+    {
+      "stem": "taking-bath-v1",
+      "subject": "a person relaxing up to the shoulders in a steaming Japanese wooden bathtub, a small towel on the head",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "hairimasu-ofuro"
+      },
+      "alt": {
+        "vi": "Người đang ngâm mình trong bồn tắm nước nóng."
+      }
+    },
+    {
+      "stem": "bathtub-v1",
+      "subject": "an unoccupied square Japanese wooden bathtub filled with steaming water, a wooden bucket and stool beside it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "ofuro"
+      },
+      "alt": {
+        "vi": "Bồn tắm gỗ đầy nước nóng bốc hơi."
+      }
+    },
+    {
+      "stem": "dangerous-road-v1",
+      "subject": "a small child about to run into the road after a ball as a car approaches, an adult reaching out to stop them",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "abunai"
+      },
+      "alt": {
+        "vi": "Em bé suýt chạy ra đường khi xe đang tới."
+      }
+    },
+    {
+      "stem": "fever-v1",
+      "subject": "the reference male student sitting with flushed red cheeks and a sweaty forehead, looking at a glass thermometer, a cold towel on his forehead",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "netsu"
+      },
+      "alt": {
+        "vi": "Chàng trai bị sốt, má đỏ và đắp khăn lạnh."
+      }
+    },
+    {
+      "stem": "catching-cold-v1",
+      "subject": "the reference male student in a scarf sneezing into a tissue, a box of tissues beside him",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "kaze"
+      },
+      "alt": {
+        "vi": "Chàng trai bị cảm, hắt hơi vào khăn giấy."
+      }
+    },
+    {
+      "stem": "sore-throat-v1",
+      "subject": "the reference woman gently touching the front of her throat with her fingertips, wincing slightly",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "nodo"
+      },
+      "alt": {
+        "vi": "Cô gái chạm tay lên cổ họng vì đau."
+      }
+    },
+    {
+      "stem": "headache-v1",
+      "subject": "a young person holding their head with both hands and wincing in pain",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "itai"
+      },
+      "alt": {
+        "vi": "Người ôm đầu vì đau đầu."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "clinic-visit-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "a small neighbourhood clinic examination room: the male student in a scarf sits on the patient stool while a kind doctor in a white coat listens to his chest with a stethoscope; the woman sits beside him holding his jacket; a paper medicine packet and a glass of water on the desk; posters on the wall are blank.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-17.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Bác sĩ khám cho chàng trai bị cảm, cô gái ngồi bên cạnh."
+      }
+    }
+  ]
+}

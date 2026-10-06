@@ -1,0 +1,202 @@
+{
+  "name": "lesson-19",
+  "description": "Bài 19 — thể た, kinh nghiệm (〜たことがあります), 〜たり〜たり và 〜くなります/〜になります.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "stem": "climbing-mountain-v1",
+      "subject": "a hiker with a backpack and trekking poles climbing up a steep rocky mountain trail toward the peak",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "noborimasu"
+      },
+      "alt": {
+        "vi": "Người leo núi đang trèo lên con đường dốc."
+      }
+    },
+    {
+      "stem": "hotel-stay-v1",
+      "subject": "the reference male student sitting on a neatly made hotel bed beside his suitcase, a bedside lamp and a blank key card on the nightstand",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "tomarimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai ngồi trên giường khách sạn cạnh vali."
+      }
+    },
+    {
+      "stem": "cleaning-v1",
+      "subject": "the reference woman vacuuming a living room floor with an upright vacuum cleaner",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "souji-shimasu"
+      },
+      "alt": {
+        "vi": "Cô gái đang hút bụi dọn phòng."
+      }
+    },
+    {
+      "stem": "doing-laundry-v1",
+      "subject": "the reference woman putting a pile of clothes into a front-loading washing machine, a laundry basket at her feet; the machine panel is blank",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "sentaku-shimasu"
+      },
+      "alt": {
+        "vi": "Cô gái cho quần áo vào máy giặt."
+      }
+    },
+    {
+      "stem": "sleepy-v1",
+      "subject": "the reference male student yawning widely and rubbing one eye while sitting at a desk at night under a desk lamp",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "nemui"
+      },
+      "alt": {
+        "vi": "Chàng trai ngáp dài, dụi mắt vì buồn ngủ."
+      }
+    },
+    {
+      "stem": "strong-v1",
+      "subject": "a muscular man easily lifting a heavy barbell high above his head with a confident smile",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "tsuyoi"
+      },
+      "alt": {
+        "vi": "Người đàn ông khỏe mạnh nâng tạ nặng qua đầu."
+      }
+    },
+    {
+      "stem": "weak-v1",
+      "subject": "a thin frail man straining and trembling, unable to lift even a small light dumbbell off the floor",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "yowai"
+      },
+      "alt": {
+        "vi": "Người đàn ông yếu ớt không nhấc nổi quả tạ nhỏ."
+      }
+    },
+    {
+      "stem": "golf-v1",
+      "subject": "a golfer in mid-swing hitting a golf ball off a tee on green grass",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "gorufu"
+      },
+      "alt": {
+        "vi": "Người chơi golf đang vung gậy đánh bóng."
+      }
+    },
+    {
+      "stem": "sumo-v1",
+      "subject": "two sumo wrestlers in mawashi belts pushing against each other inside a round clay ring",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "sumou"
+      },
+      "alt": {
+        "vi": "Hai đô vật sumo đang đẩy nhau trên võ đài."
+      }
+    },
+    {
+      "stem": "tea-ceremony-v1",
+      "subject": "a woman in a plain kimono kneeling on tatami, whisking green matcha in a tea bowl with a bamboo whisk, a small tea caddy beside her",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "ocha-ceremonia"
+      },
+      "alt": {
+        "vi": "Người phụ nữ mặc kimono đánh trà matcha trong buổi trà đạo."
+      }
+    },
+    {
+      "stem": "diet-v1",
+      "subject": "a bathroom scale with a blank dial, a measuring tape coiled on top and a small bowl of green salad beside it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "daietto"
+      },
+      "alt": {
+        "vi": "Cân sức khỏe, thước dây và bát salad."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "mountain-summit-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "a bright morning at a mountain summit; the male student and the woman, both with small backpacks, raise their arms in joy above a sea of clouds; a blank wooden trail post and a few rocks in the foreground.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-19.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Hai bạn trẻ đeo ba lô vui mừng giơ tay trên đỉnh núi."
+      }
+    }
+  ]
+}

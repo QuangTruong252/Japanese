@@ -184,5 +184,13 @@
   "references": [
     "verbs"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/taxi-ride-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Ngày mưa, cô gái giơ tay gọi taxi, chàng trai xách vali."
+    }
+  }
 }

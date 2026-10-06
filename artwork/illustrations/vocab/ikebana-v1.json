@@ -1,0 +1,68 @@
+{
+  "createdAt": "2026-10-06T05:50:38.939Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/lesson-12.json",
+  "prompt": "Create ONE square 1:1 image that is a sprite atlas of 4 separate illustrations arranged in a precise grid of 2 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nCELLS (row-major):\n1. (row 1, column 1) a slice of strawberry shortcake with cream beside a jar of honey\n2. (row 1, column 2) a bowl of bright red spicy curry with red chili peppers beside it\n3. (row 2, column 1) an ikebana flower arrangement in a low ceramic vase with a few branches and flowers\n4. (row 2, column 2) a branch of bright red Japanese maple leaves\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY transparent margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/ikebana-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Bình cắm hoa ikebana."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+    "id": "ikebana",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/ikebana-v1.png",
+    "width": 596,
+    "height": 559,
+    "format": "png",
+    "hasAlpha": true,
+    "sourceImage": "artwork/illustrations/atlases/lesson-12-still-life-v1.png",
+    "crop": {
+      "left": 54,
+      "top": 637,
+      "width": 596,
+      "height": 559
+    }
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 21,
+      "top": 16,
+      "width": 560,
+      "height": 530
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.743,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 73768,
+    "sha256": "d5377335ca0319439e42ec4233080095af5c38fe8426fe49a2dfb2e3855e248b",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 178286,
+      "partial": 83599,
+      "opaque": 259
+    }
+  }
+}

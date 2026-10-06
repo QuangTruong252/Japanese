@@ -115,5 +115,13 @@
     "verbs",
     "adjectives"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/mountain-summit-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Hai bạn trẻ đeo ba lô vui mừng giơ tay trên đỉnh núi."
+    }
+  }
 }

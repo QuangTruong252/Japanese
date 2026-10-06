@@ -118,7 +118,18 @@
             "vi": "Trong hộp có những lá thư cũ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/positions-desk-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chiếc bàn ở giữa phòng: trên bàn có hộp đựng quả táo, dưới gầm có con mèo ngủ, phía trước là ghế, phía sau là cửa sổ, bên trái là chậu cây và bên phải là giá sách."
+        }
+      },
+      "illustrationCaption": {
+        "vi": "Trong hình: hộp ở 上[うえ] (trên) bàn, quả táo ở 中[なか] (trong) hộp, con mèo ở 下[した] (dưới) bàn, ghế ở 前[まえ] (trước) bàn, cửa sổ ở 後[うし]ろ (sau) bàn; chậu cây ở 左[ひだり] (bên trái), giá sách ở 右[みぎ] (bên phải), nên bàn ở 間[あいだ] (giữa) chậu cây và giá sách."
+      }
     },
     {
       "id": "ya-nado",

@@ -1,0 +1,188 @@
+{
+  "name": "lesson-21",
+  "description": "Bài 21 — bày tỏ ý kiến và trích dẫn: suy nghĩ, thắng thua, trận đấu, tin tức, giao thông, Trái Đất và Mặt Trăng.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-21-objects-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "manga-v1",
+          "subject": "a compact small stack of three Japanese manga comic books with the top one open showing wordless drawn panels and empty speech balloons, no text",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+            "id": "manga"
+          },
+          "alt": {
+            "vi": "Chồng truyện tranh manga, cuốn trên cùng mở ra."
+          }
+        },
+        {
+          "stem": "tv-news-v1",
+          "subject": "a compact television set showing a news presenter in a suit sitting at a news desk, no captions, text or logos on screen",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+            "id": "nyuusu"
+          },
+          "alt": {
+            "vi": "Màn hình tivi đang chiếu bản tin thời sự."
+          }
+        },
+        {
+          "stem": "planet-earth-v1",
+          "subject": "the compact round planet Earth floating on its own, blue oceans, green and sand continents and soft white swirling clouds, no stand or base",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+            "id": "chikyuu"
+          },
+          "alt": {
+            "vi": "Trái Đất với đại dương xanh và mây trắng."
+          }
+        },
+        {
+          "stem": "moon-v1",
+          "subject": "a compact pale grey-cream full moon with soft craters and gentle shading, no stars around it",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+            "id": "tsuki"
+          },
+          "alt": {
+            "vi": "Mặt Trăng tròn với những miệng hố nhỏ."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "thinking-v1",
+      "subject": "the reference woman standing with one hand on her chin and eyes looking upward, deep in thought",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "omoimasu"
+      },
+      "alt": {
+        "vi": "Cô gái chống tay lên cằm, đang suy nghĩ."
+      }
+    },
+    {
+      "stem": "winning-v1",
+      "subject": "a young athlete in a sports jersey jumping for joy with both arms raised high, holding up a gold trophy, beaming",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "kachimasu"
+      },
+      "alt": {
+        "vi": "Vận động viên nhảy lên giơ cao cúp vô địch."
+      }
+    },
+    {
+      "stem": "losing-v1",
+      "subject": "a young athlete in a sports jersey kneeling on the ground after a defeat, head bowed and shoulders slumped, empty-handed with a ball lying still beside him",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "makemasu"
+      },
+      "alt": {
+        "vi": "Vận động viên quỳ gục đầu buồn bã sau khi thua."
+      }
+    },
+    {
+      "stem": "quitting-job-v1",
+      "subject": "an office worker in a suit walking away from an office doorway carrying a cardboard box filled with his desk belongings: a small potted plant, a mug and folders",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "yamemasu"
+      },
+      "alt": {
+        "vi": "Nhân viên ôm thùng đồ cá nhân rời công ty sau khi nghỉ việc."
+      }
+    },
+    {
+      "reuse": "vocab/car-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "jidousha"
+      },
+      "alt": {
+        "vi": "Một chiếc ô tô nhỏ màu đỏ gạch với bốn bánh."
+      }
+    },
+    {
+      "stem": "street-traffic-v1",
+      "subject": "a busy city intersection with cars, a bus and bicycles moving along the roads, a traffic light and a striped crosswalk, blank signs",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "koutsuu"
+      },
+      "alt": {
+        "vi": "Ngã tư đông xe ô tô, xe buýt và xe đạp qua lại."
+      }
+    },
+    {
+      "stem": "sports-match-v1",
+      "subject": "a soccer match in progress: two players in clearly different coloured jerseys racing for the ball while a referee watches, a small crowd in the stands behind, blank scoreboard",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "shiai"
+      },
+      "alt": {
+        "vi": "Trận đấu bóng đá giữa hai đội có trọng tài và khán giả."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "sharing-opinions-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "a cozy café in the evening; the male student and the woman sit at a small wooden table with coffee cups, talking about a soccer match playing on a wall-mounted TV; the woman raises one finger as she shares her opinion while the male student nods thoughtfully with a hand on his chin; the TV scoreboard and menu boards are blank.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-21.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Hai bạn trẻ ngồi quán cà phê bàn luận về trận bóng trên tivi, mỗi người nêu ý kiến."
+      }
+    }
+  ]
+}

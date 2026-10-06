@@ -60,6 +60,14 @@
         "naiKana": "しらべない",
         "ta": "調[しら]べた",
         "taKana": "しらべた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/looking-up-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai dò từng dòng trong cuốn sách dày để tra cứu."
+        }
       }
     },
     {
@@ -90,6 +98,14 @@
         "naiKana": "しゅうりしない",
         "ta": "修理[しゅうり]した",
         "taKana": "しゅうりした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/repairing-bicycle-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người thợ dùng cờ lê sửa bánh xe đạp."
+        }
       }
     },
     {
@@ -209,6 +225,14 @@
         "translation": {
           "vi": "Tôi muốn mua áo Kimono."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kimono-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái mặc kimono hoa văn và thắt obi."
+        }
       }
     },
     {
@@ -225,6 +249,14 @@
         "kana": "アメリカの ビザを もらいました。",
         "translation": {
           "vi": "Tôi đã nhận được visa Mỹ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/visa-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuốn hộ chiếu mở ra, trang trong có dán thị thực."
         }
       }
     },
@@ -378,6 +410,14 @@
         "kana": "たくさん たべましたから、おなかがいっぱいです。",
         "translation": {
           "vi": "Vì tôi đã ăn nhiều nên no bụng rồi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/full-stomach-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai ngả người xoa bụng no bên chồng đĩa đã ăn hết."
         }
       }
     },

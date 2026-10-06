@@ -1,0 +1,35 @@
+{
+  "name": "lesson-10-grammar",
+  "description": "Bài 10 — minh họa ngữ pháp từ chỉ vị trí (上／下／中／前／後ろ／右／左／間).",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "group": "grammar",
+      "stem": "positions-desk-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "a straight-on front view of one simple wooden desk standing in the middle of a calm, uncluttered room, placed so every position relation reads at a glance: an open cardboard box sits ON TOP of the desk with one red apple visible INSIDE the box; a tabby cat sleeps UNDER the desk; a wooden chair stands IN FRONT of the desk, turned slightly so the desk stays visible; a window on the wall BEHIND the desk; a tall potted plant stands to the LEFT of the desk and a low bookshelf to the RIGHT, so the desk is clearly BETWEEN the plant and the bookshelf. No people. Plain floor and wall, generous space between the objects, nothing overlapping. Keep every object inside the central 4:3 area of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-10.json",
+        "id": "posiciones",
+        "caption": {
+          "vi": "Trong hình: hộp ở 上[うえ] (trên) bàn, quả táo ở 中[なか] (trong) hộp, con mèo ở 下[した] (dưới) bàn, ghế ở 前[まえ] (trước) bàn, cửa sổ ở 後[うし]ろ (sau) bàn; chậu cây ở 左[ひだり] (bên trái), giá sách ở 右[みぎ] (bên phải), nên bàn ở 間[あいだ] (giữa) chậu cây và giá sách."
+        }
+      },
+      "alt": {
+        "vi": "Chiếc bàn ở giữa phòng: trên bàn có hộp đựng quả táo, dưới gầm có con mèo ngủ, phía trước là ghế, phía sau là cửa sổ, bên trái là chậu cây và bên phải là giá sách."
+      },
+      "crop": {
+        "left": 85,
+        "top": 0,
+        "width": 1365,
+        "height": 1024
+      }
+    }
+  ]
+}

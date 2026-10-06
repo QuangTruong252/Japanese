@@ -30,6 +30,14 @@
         "naiKana": "あそばない",
         "ta": "遊[あそ]んだ",
         "taKana": "あそんだ"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/playing-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai đứa trẻ đang chơi ném bóng trên bãi cỏ."
+        }
       }
     },
     {
@@ -60,6 +68,14 @@
         "naiKana": "およがない",
         "ta": "泳[およ]いだ",
         "taKana": "およいだ"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/swimming-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một người đang bơi sải."
+        }
       }
     },
     {
@@ -90,6 +106,14 @@
         "naiKana": "むかえない",
         "ta": "迎[むか]えた",
         "taKana": "むかえた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/picking-up-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái vẫy tay đón chàng trai kéo vali ở sân bay."
+        }
       }
     },
     {
@@ -120,6 +144,14 @@
         "naiKana": "つかれない",
         "ta": "疲[つか]れた",
         "taKana": "つかれた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tired-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai mệt mỏi gục xuống bàn đầy giấy tờ."
+        }
       }
     },
     {
@@ -150,6 +182,14 @@
         "naiKana": "けっこんしない",
         "ta": "結婚[けっこん]した",
         "taKana": "けっこんした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/wedding-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô dâu và chú rể nắm tay nhau trong ngày cưới."
+        }
       }
     },
     {
@@ -180,6 +220,14 @@
         "naiKana": "かいものしない",
         "ta": "買[か]い 物[もの]した",
         "taKana": "かいものした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/shopping-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái vui vẻ xách nhiều túi đồ đi mua sắm."
+        }
       }
     },
     {
@@ -210,6 +258,14 @@
         "naiKana": "しょくじしない",
         "ta": "食事[しょくじ]した",
         "taKana": "しょくじした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/having-a-meal-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai người ngồi cùng bàn dùng bữa với cơm, súp miso và món phụ."
+        }
       }
     },
     {
@@ -240,6 +296,14 @@
         "naiKana": "さんぽしない",
         "ta": "散歩[さんぽ]した[公園[こうえん]を〜]",
         "taKana": "さんぽした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/strolling-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái thong thả đi dạo trên lối đi trong công viên."
+        }
       }
     },
     {
@@ -291,6 +355,14 @@
         "translation": {
           "vi": "Phòng của tôi rộng rãi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/spacious-room-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Căn phòng rộng rãi, thoáng đãng."
+        }
       }
     },
     {
@@ -307,6 +379,14 @@
         "kana": "この へやは せまいです。",
         "translation": {
           "vi": "Căn phòng này chật hẹp."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cramped-room-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Căn phòng chật hẹp, đồ đạc chất kín."
         }
       }
     },
@@ -325,6 +405,14 @@
         "translation": {
           "vi": "Tôi muốn đi bể bơi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/swimming-pool-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bể bơi ngoài trời nước trong xanh."
+        }
       }
     },
     {
@@ -341,6 +429,14 @@
         "kana": "かわへ つりに いきます。",
         "translation": {
           "vi": "Tôi đi câu cá ở con sông."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/river-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Con sông uốn lượn giữa hai bờ cỏ."
         }
       }
     },
@@ -359,6 +455,14 @@
         "translation": {
           "vi": "Tôi học mỹ thuật."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/fine-arts-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bảng màu, cọ vẽ, tượng bán thân và bức tranh đóng khung."
+        }
       }
     },
     {
@@ -376,6 +480,14 @@
         "translation": {
           "vi": "Ngày mai tôi sẽ câu cá."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/fishing-rod-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cần câu có con cá vừa câu được."
+        }
       }
     },
     {
@@ -392,6 +504,14 @@
         "kana": "ふゆ スキーに いきたいです。",
         "translation": {
           "vi": "Mùa đông tôi muốn đi trượt tuyết."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/skiing-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người trượt tuyết lao xuống dốc tuyết."
         }
       }
     },
@@ -426,6 +546,14 @@
         "kana": "おしょうがつは やすみです。",
         "translation": {
           "vi": "Tết thì được nghỉ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/new-year-food-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hộp món ăn Tết osechi và bánh dày kagami mochi."
         }
       }
     },
@@ -495,6 +623,14 @@
         "translation": {
           "vi": "Mùa hè thì khát nước."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/thirsty-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đổ mồ hôi, khát nước và với lấy chai nước."
+        }
       }
     },
     {
@@ -511,6 +647,14 @@
         "kana": "あさ おなかが すきます。",
         "translation": {
           "vi": "Buổi sáng thì đói bụng."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hungry-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai ôm bụng đói nhìn chiếc bát trống."
         }
       }
     },
@@ -563,6 +707,14 @@
         "translation": {
           "vi": "Cho tôi 2 suất ăn cơm phần."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/set-meal-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Suất cơm phần có cơm, canh miso và cá nướng."
+        }
       }
     },
     {
@@ -579,6 +731,14 @@
         "kana": "ぎゅうどんを たべたいです。",
         "translation": {
           "vi": "Tôi muốn ăn cơm bát thịt bò."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/beef-bowl-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bát cơm thịt bò gyudon."
         }
       }
     },

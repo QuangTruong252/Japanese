@@ -147,5 +147,13 @@
   "references": [
     "particles"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/lunch-diner-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Hai bạn trẻ ngồi ở quầy quán cơm trưa, nhân viên mang suất cơm và bát gyudon ra."
+    }
+  }
 }

@@ -60,6 +60,14 @@
         "naiKana": "つかない",
         "ta": "着[つ]いた",
         "taKana": "ついた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/arriving-station-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai kéo vali bước xuống tàu, vừa đến ga."
+        }
       }
     },
     {
@@ -90,6 +98,14 @@
         "naiKana": "としをとらない",
         "ta": "取[と]った[年[とし]を〜]",
         "taKana": "としをとった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/growing-older-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cùng một người đàn ông từ lúc trẻ đến khi già đi."
+        }
       }
     },
     {
@@ -136,6 +152,14 @@
         "kana": "やすみに なったら、いなかへ かえります。",
         "translation": {
           "vi": "Nếu được nghỉ thì tôi sẽ về quê."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/countryside-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Vùng quê yên bình với ruộng lúa và nhà nông thôn."
         }
       }
     },
@@ -272,6 +296,14 @@
         "kana": "ひまだったら、あそびに きて ください。",
         "translation": {
           "vi": "Nếu rảnh thì xin hãy đến chơi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/free-time-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai nằm dài trên ghế sofa lúc rảnh rỗi."
         }
       }
     },

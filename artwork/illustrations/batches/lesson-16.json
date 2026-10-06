@@ -1,0 +1,532 @@
+{
+  "name": "lesson-16",
+  "description": "Bài 16 — nối hành động bằng thể て, lên xuống tàu, rút tiền, bộ phận cơ thể và miêu tả ngoại hình.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-16-face-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "eye-v1",
+          "subject": "a single compact friendly human eye with eyelashes and a dark iris, gently open",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+            "id": "me"
+          },
+          "alt": {
+            "vi": "Một con mắt đang mở."
+          }
+        },
+        {
+          "stem": "ear-v1",
+          "subject": "a single compact human ear seen from the side",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+            "id": "mimi"
+          },
+          "alt": {
+            "vi": "Một chiếc tai người."
+          }
+        },
+        {
+          "stem": "nose-v1",
+          "subject": "a single compact human nose seen in three-quarter view",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+            "id": "hana-nariz"
+          },
+          "alt": {
+            "vi": "Chiếc mũi người."
+          }
+        },
+        {
+          "stem": "mouth-v1",
+          "subject": "a single compact smiling human mouth with soft pink lips, lips closed",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+            "id": "kuchi"
+          },
+          "alt": {
+            "vi": "Khuôn miệng đang mỉm cười."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-16-objects-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "tooth-v1",
+          "subject": "a single compact clean white human molar tooth with two roots, friendly and simple",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+            "id": "ha"
+          },
+          "alt": {
+            "vi": "Một chiếc răng trắng sạch."
+          }
+        },
+        {
+          "stem": "shower-head-v1",
+          "subject": "a compact chrome shower head on a short curved pipe spraying a fan of water drops",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+            "id": "shawaa"
+          },
+          "alt": {
+            "vi": "Vòi hoa sen đang phun nước."
+          }
+        },
+        {
+          "stem": "cash-card-v1",
+          "subject": "a compact plain blue bank cash card with a gold chip and a dark magnetic stripe, no text or numbers",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+            "id": "kyasshukaado"
+          },
+          "alt": {
+            "vi": "Chiếc thẻ ATM màu xanh có chip."
+          }
+        },
+        {
+          "stem": "push-button-v1",
+          "subject": "a compact round red push button set in a small square grey metal panel, no symbols",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+            "id": "botan"
+          },
+          "alt": {
+            "vi": "Nút bấm tròn màu đỏ."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "boarding-train-v1",
+      "subject": "a person seen from behind stepping up from the platform through the open doors into a train carriage",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "norimasu"
+      },
+      "alt": {
+        "vi": "Người bước từ sân ga lên toa tàu."
+      }
+    },
+    {
+      "stem": "getting-off-train-v1",
+      "subject": "a person facing the viewer stepping down out of the open doors of a train onto the platform, the carriage behind them",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "orimasu"
+      },
+      "alt": {
+        "vi": "Người bước xuống tàu ra sân ga."
+      }
+    },
+    {
+      "stem": "changing-trains-v1",
+      "subject": "a person with a backpack walking across a station platform from a stopped green train toward a waiting red train with open doors on the other side",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "norikaemasu"
+      },
+      "alt": {
+        "vi": "Người đi qua sân ga để đổi sang chuyến tàu khác."
+      }
+    },
+    {
+      "stem": "taking-shower-v1",
+      "subject": "a tiled shower corner with no person: a chrome showerhead spraying water onto the tiled floor, light steam, a folded towel on a hook and a small wooden stool with a soap bottle",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "abimasu"
+      },
+      "alt": {
+        "vi": "Góc tắm có vòi sen đang chảy nước, khăn tắm treo trên móc."
+      }
+    },
+    {
+      "stem": "adding-sugar-v1",
+      "subject": "a hand dropping a sugar cube into a cup of coffee with a small splash",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "iremasu"
+      },
+      "alt": {
+        "vi": "Bàn tay cho viên đường vào tách cà phê."
+      }
+    },
+    {
+      "stem": "withdrawing-cash-v1",
+      "subject": "a person taking banknotes out of the cash slot of a bank ATM with a blank screen, no numbers on the money",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "oroshimasu"
+      },
+      "alt": {
+        "vi": "Người rút tiền từ máy ATM."
+      }
+    },
+    {
+      "stem": "graduation-v1",
+      "subject": "a happy university graduate in a dark gown and square cap holding a rolled diploma tied with a ribbon",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "demasu-uni"
+      },
+      "alt": {
+        "vi": "Sinh viên tốt nghiệp cầm bằng trong lễ tốt nghiệp."
+      }
+    },
+    {
+      "stem": "pressing-button-v1",
+      "subject": "a finger pressing a round elevator call button on a plain wall panel, the button glowing",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "oshimasu"
+      },
+      "alt": {
+        "vi": "Ngón tay bấm nút gọi thang máy."
+      }
+    },
+    {
+      "stem": "drinking-with-friends-v1",
+      "subject": "two friends at a small wooden izakaya table clinking mugs of beer and laughing",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "nomimasu-alcohol"
+      },
+      "alt": {
+        "vi": "Hai người bạn cụng ly bia ở quán nhậu."
+      }
+    },
+    {
+      "reuse": "vocab/phone-call-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "denwa-shimasu"
+      },
+      "alt": {
+        "vi": "Sinh viên đang gọi điện thoại."
+      }
+    },
+    {
+      "stem": "long-hair-v1",
+      "subject": "the reference woman with very long straight dark hair reaching her waist, seen in three-quarter back view",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "nagai"
+      },
+      "alt": {
+        "vi": "Cô gái có mái tóc dài đến thắt lưng."
+      }
+    },
+    {
+      "stem": "short-hair-v1",
+      "subject": "the reference male student with very short neatly cropped dark hair, shown from the chest up, smiling",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "mijikai"
+      },
+      "alt": {
+        "vi": "Chàng trai có mái tóc cắt ngắn."
+      }
+    },
+    {
+      "stem": "bright-room-v1",
+      "subject": "a bright sunny room with a big open window, sunlight pouring onto the floor, a plant and a small table",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "akarui"
+      },
+      "alt": {
+        "vi": "Căn phòng sáng sủa tràn ánh nắng."
+      }
+    },
+    {
+      "stem": "dark-room-v1",
+      "subject": "a dim dark room at dusk with curtains drawn, the lamp switched off and deep shadows over a small table and plant",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "kurai"
+      },
+      "alt": {
+        "vi": "Căn phòng tối, rèm kéo kín và đèn tắt."
+      }
+    },
+    {
+      "stem": "hair-v1",
+      "subject": "the reference woman brushing her shoulder-length dark hair with a wooden hairbrush, the hair as the focus",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "kami"
+      },
+      "alt": {
+        "vi": "Cô gái đang chải tóc."
+      }
+    },
+    {
+      "stem": "face-v1",
+      "subject": "a friendly young person's face seen from the front, smiling, head and neck only",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "kao"
+      },
+      "alt": {
+        "vi": "Khuôn mặt tươi cười nhìn thẳng."
+      }
+    },
+    {
+      "stem": "head-v1",
+      "subject": "a smiling young person cheerfully pointing with one finger to the top of their own head",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "atama"
+      },
+      "alt": {
+        "vi": "Người trẻ vui vẻ chỉ tay lên đầu mình."
+      }
+    },
+    {
+      "stem": "belly-v1",
+      "subject": "a smiling young person in a T-shirt resting both hands on their belly",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "onaka"
+      },
+      "alt": {
+        "vi": "Người trẻ đặt hai tay lên bụng."
+      }
+    },
+    {
+      "stem": "feet-v1",
+      "subject": "the lower legs and bare feet of a person standing on a tatami mat, seen from the knees down",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "ashi"
+      },
+      "alt": {
+        "vi": "Đôi chân trần đứng trên chiếu tatami."
+      }
+    },
+    {
+      "stem": "measuring-height-v1",
+      "subject": "a child standing straight against a wall while a parent marks the child's height with a pencil line above the head, no numbers",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "se"
+      },
+      "alt": {
+        "vi": "Bố mẹ đánh dấu chiều cao của em bé lên tường."
+      }
+    },
+    {
+      "stem": "jogging-v1",
+      "subject": "a young person in a T-shirt and running shoes jogging along a riverside path in the morning",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "jogingu"
+      },
+      "alt": {
+        "vi": "Người đang chạy bộ buổi sáng ven sông."
+      }
+    },
+    {
+      "stem": "green-town-v1",
+      "subject": "a quiet town street lined with lush green trees, hedges and potted plants in front of small houses",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "midori"
+      },
+      "alt": {
+        "vi": "Con phố nhỏ rợp cây xanh."
+      }
+    },
+    {
+      "stem": "buddhist-temple-v1",
+      "subject": "a Japanese Buddhist temple: a wooden main hall with a sweeping grey tiled roof, a five-story pagoda behind it and a bronze incense burner in front, no torii gate",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "otera"
+      },
+      "alt": {
+        "vi": "Ngôi chùa Nhật có chính điện và tháp năm tầng."
+      }
+    },
+    {
+      "stem": "shinto-shrine-v1",
+      "subject": "a Shinto shrine: a bright vermilion torii gate in front of a small wooden shrine with a thick twisted straw rope and white paper streamers, no pagoda",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "jinja"
+      },
+      "alt": {
+        "vi": "Đền Thần đạo với cổng torii đỏ."
+      }
+    },
+    {
+      "stem": "snow-festival-v1",
+      "subject": "a snow festival in winter: large white snow sculptures of a castle and an animal, visitors in warm coats walking past, gentle snowfall",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "yukimatsuri"
+      },
+      "alt": {
+        "vi": "Lễ hội tuyết với các tượng tuyết lớn."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "town-errands-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "a bright morning in a small Japanese town: the male student steps down from a bus at the stop while the woman takes cash from a bank ATM with a blank screen beside it; behind them a tree-lined path leads to a vermilion shrine torii among green trees; signs and awnings are blank.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-16.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Chàng trai xuống xe buýt, cô gái rút tiền ở ATM, phía sau là lối vào đền."
+      }
+    }
+  ]
+}

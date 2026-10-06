@@ -1,0 +1,253 @@
+{
+  "name": "lesson-11",
+  "description": "Bài 11 — đồ ăn, bưu phẩm, gia đình và anh chị em, lớp học.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-11-food-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "apple-v1",
+          "subject": "a single shiny red apple with a leaf on the stem",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "ringo"
+          },
+          "alt": {
+            "vi": "Quả táo đỏ."
+          }
+        },
+        {
+          "stem": "mandarin-orange-v1",
+          "subject": "two small mandarin oranges, one partly peeled",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "mikan"
+          },
+          "alt": {
+            "vi": "Hai quả quýt, một quả đã bóc vỏ."
+          }
+        },
+        {
+          "stem": "sandwich-v1",
+          "subject": "a triangle sandwich cut in half showing egg, lettuce and ham",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "sandoicchi"
+          },
+          "alt": {
+            "vi": "Bánh mì kẹp cắt đôi."
+          }
+        },
+        {
+          "stem": "ice-cream-v1",
+          "subject": "a vanilla ice cream cone with two scoops",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "aisukuriimu"
+          },
+          "alt": {
+            "vi": "Cây kem ốc quế hai viên."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "curry-rice-v1",
+      "subject": "a plate of Japanese curry rice with a spoon beside it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "karee"
+      },
+      "alt": {
+        "vi": "Đĩa cơm cà ri kèm thìa."
+      }
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-11-mail-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "stamps-v1",
+          "subject": "a small sheet of four postage stamps with simple flower pictures and no numbers or text",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "kitte"
+          },
+          "alt": {
+            "vi": "Tờ tem thư có hình hoa."
+          }
+        },
+        {
+          "stem": "postcard-v1",
+          "subject": "a picture postcard showing a small landscape on the front, back side blank",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "hagaki"
+          },
+          "alt": {
+            "vi": "Tấm bưu thiếp có hình phong cảnh."
+          }
+        },
+        {
+          "stem": "envelope-v1",
+          "subject": "a closed plain cream paper envelope with no writing",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "fuutou"
+          },
+          "alt": {
+            "vi": "Chiếc phong bì giấy."
+          }
+        },
+        {
+          "stem": "airmail-v1",
+          "subject": "an airmail envelope with a red-and-blue striped border and a small passenger airplane flying above it, no text",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "koukuubin"
+          },
+          "alt": {
+            "vi": "Phong bì thư hàng không và chiếc máy bay."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "sea-mail-v1",
+      "subject": "a small cargo ship sailing on gentle waves with cardboard parcels stacked on its deck, no text or labels",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "funabin"
+      },
+      "alt": {
+        "vi": "Tàu chở các gói bưu phẩm trên biển."
+      }
+    },
+    {
+      "stem": "parents-v1",
+      "subject": "a middle-aged father and mother standing side by side, smiling warmly",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "ryoushin"
+      },
+      "alt": {
+        "vi": "Bố và mẹ đứng cạnh nhau."
+      }
+    },
+    {
+      "stem": "siblings-v1",
+      "subject": "three siblings of different ages standing in a row from tallest to smallest: a teenage boy, a girl and a little boy",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "kyoudai"
+      },
+      "alt": {
+        "vi": "Ba anh chị em đứng xếp theo chiều cao."
+      }
+    },
+    {
+      "stem": "international-student-v1",
+      "subject": "a young international student with a backpack pulling a suitcase, holding a blank folded map",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "ryuugakusei"
+      },
+      "alt": {
+        "vi": "Du học sinh kéo vali và đeo ba lô."
+      }
+    },
+    {
+      "stem": "school-class-v1",
+      "subject": "a small class of students seen from behind sitting at desks, facing a teacher at a blank blackboard",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "kurasu"
+      },
+      "alt": {
+        "vi": "Một lớp học có học sinh và giáo viên."
+      }
+    },
+    {
+      "stem": "day-off-work-v1",
+      "subject": "the young woman in casual clothes relaxing at home on a weekday morning, her office bag and folded work jacket hung by the door, holding a cup of tea",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "yasumimasu-kaisha"
+      },
+      "alt": {
+        "vi": "Cô gái nghỉ làm ở nhà, uống trà, túi công sở treo cạnh cửa."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "post-office-counter-v1",
+      "file": "artwork/illustrations/scenes/post-office-counter-v1.jpg",
+      "source": "antigravity-generate_image",
+      "generation": {
+        "tool": "Antigravity generate_image",
+        "model": "gemini-3.8-flash-high",
+        "note": "Không nhận ảnh tham chiếu; phong cách mô tả bằng prompt."
+      },
+      "referenceImages": [],
+      "subject": "inside a small neighborhood post office, the woman stands at the counter handing a cardboard parcel with a blank label to a smiling clerk who places it on a scale; a sheet of stamps, three envelopes and two postcards lie on the counter; the man waits behind her holding a paper bag of mandarin oranges. All signs and posters are blank.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-11.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Cô gái gửi bưu kiện ở quầy bưu điện, chàng trai xách túi quýt đứng chờ."
+      }
+    }
+  ]
+}

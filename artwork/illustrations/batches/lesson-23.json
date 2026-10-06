@@ -1,0 +1,276 @@
+{
+  "name": "lesson-23",
+  "description": "Bài 23 — とき và と: thao tác máy móc, cảm xúc, đường phố và cách chỉ đường.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "stem": "asking-teacher-v1",
+      "subject": "the reference male student holding an open notebook and asking a question to a teacher at her desk, the teacher listening and pointing at the page",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "kikimasu-preguntar"
+      },
+      "alt": {
+        "vi": "Chàng trai cầm vở đến hỏi cô giáo."
+      }
+    },
+    {
+      "stem": "turning-knob-v1",
+      "subject": "close-up of a hand turning the large round volume knob of an old wooden radio, with a curved motion line around the knob",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "mawashimasu"
+      },
+      "alt": {
+        "vi": "Bàn tay đang vặn núm âm lượng của chiếc radio."
+      }
+    },
+    {
+      "stem": "pulling-door-v1",
+      "subject": "the reference woman gripping a door handle and pulling a wooden door toward herself, leaning back slightly as the door swings open toward her",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "hikimasu-tirar"
+      },
+      "alt": {
+        "vi": "Cô gái nắm tay nắm và kéo cánh cửa về phía mình."
+      }
+    },
+    {
+      "stem": "change-coming-out-v1",
+      "subject": "close-up of the lower part of a vending machine where coins drop out of the change return slot into an open hand",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "demasu-cambio"
+      },
+      "alt": {
+        "vi": "Tiền thừa rơi ra từ khe trả tiền của máy bán hàng."
+      }
+    },
+    {
+      "reuse": "vocab/walking-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "arukimasu"
+      },
+      "alt": {
+        "vi": "Một sinh viên đang đi bộ trên vỉa hè."
+      }
+    },
+    {
+      "stem": "crossing-road-v1",
+      "subject": "the reference woman walking across a zebra crosswalk in the middle of a quiet street, halfway to the other side",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "watarimasu"
+      },
+      "alt": {
+        "vi": "Cô gái đang băng qua đường trên vạch kẻ."
+      }
+    },
+    {
+      "stem": "turning-right-v1",
+      "subject": "seen from behind, the reference male student at a street corner turning to the right: his body and step angled clearly toward the right side of the picture, the street continuing to the right",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "magarimasu"
+      },
+      "alt": {
+        "vi": "Nhìn từ phía sau, chàng trai rẽ sang phải ở góc phố."
+      }
+    },
+    {
+      "stem": "lonely-v1",
+      "subject": "the reference male student sitting alone on a park bench at dusk, shoulders slumped, looking down at his phone with a lonely expression, empty space around him",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "sabishii"
+      },
+      "alt": {
+        "vi": "Chàng trai ngồi một mình trên ghế đá lúc chiều tối, trông cô đơn."
+      }
+    },
+    {
+      "stem": "hot-water-v1",
+      "subject": "a kettle pouring steaming hot water into a white mug, with visible wisps of steam",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "oyu"
+      },
+      "alt": {
+        "vi": "Ấm đun rót nước nóng bốc hơi vào cốc."
+      }
+    },
+    {
+      "stem": "road-v1",
+      "subject": "a quiet paved road winding gently through a small town, with low houses and trees on both sides",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "michi"
+      },
+      "alt": {
+        "vi": "Con đường nhỏ uốn quanh thị trấn."
+      }
+    },
+    {
+      "stem": "intersection-v1",
+      "subject": "a town crossroads seen from slightly above: two streets crossing at right angles with zebra crosswalks on every side",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "kousaten"
+      },
+      "alt": {
+        "vi": "Ngã tư có vạch qua đường ở cả bốn phía."
+      }
+    },
+    {
+      "stem": "traffic-light-v1",
+      "subject": "a traffic signal on a gray pole with three round lamps, the red lamp lit",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "shingou"
+      },
+      "alt": {
+        "vi": "Cột đèn giao thông đang bật đèn đỏ."
+      }
+    },
+    {
+      "stem": "street-corner-v1",
+      "subject": "the corner of a city block where two sidewalks meet at a right angle, a small corner shop with a plain blank awning on the corner",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "kado"
+      },
+      "alt": {
+        "vi": "Góc phố có một cửa hàng nhỏ ở ngay góc."
+      }
+    },
+    {
+      "stem": "bridge-v1",
+      "subject": "a long stone arch bridge spanning a calm river, with railings along both sides",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "hashi-puente"
+      },
+      "alt": {
+        "vi": "Cây cầu đá dài bắc qua dòng sông."
+      }
+    },
+    {
+      "stem": "parking-lot-v1",
+      "subject": "a small outdoor parking lot with a few cars parked in painted spaces, a blank sign on a post at the entrance",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "chuushajou"
+      },
+      "alt": {
+        "vi": "Bãi đỗ xe ngoài trời với vài chiếc ô tô."
+      }
+    },
+    {
+      "stem": "white-building-v1",
+      "subject": "a plain white four-story building with rows of windows and a glass entrance, no signs",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "tatemono"
+      },
+      "alt": {
+        "vi": "Một tòa nhà màu trắng bốn tầng."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "giving-directions-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "a sunny town street at a crossroads; the woman points ahead and to the right, explaining the way to the male student who holds a blank map; behind them a traffic light at the corner, a zebra crosswalk, a white building and a small stone bridge over a river further down the road; all signs blank.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-23.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Cô gái chỉ đường cho chàng trai cầm bản đồ ở ngã tư có đèn giao thông."
+      }
+    }
+  ]
+}

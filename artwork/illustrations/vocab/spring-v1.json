@@ -1,0 +1,68 @@
+{
+  "createdAt": "2026-10-06T05:50:38.603Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/lesson-12.json",
+  "prompt": "Create ONE square 1:1 image that is a sprite atlas of 4 separate illustrations arranged in a precise grid of 2 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nCELLS (row-major):\n1. (row 1, column 1) a small tree on a grassy mound in full pink blossom with tulips at its base\n2. (row 1, column 2) a lush green tree on a grassy mound under a bright sun with sunflowers\n3. (row 2, column 1) a small tree on a mound with golden-orange leaves falling into a pile of leaves\n4. (row 2, column 2) a bare tree with snow on its branches on a snowy mound beside a little snowman\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY transparent margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/spring-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Cây nở hoa hồng và hoa tulip mùa xuân."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+    "id": "haru",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/spring-v1.png",
+    "width": 530,
+    "height": 562,
+    "format": "png",
+    "hasAlpha": true,
+    "sourceImage": "artwork/illustrations/atlases/lesson-12-seasons-v1.png",
+    "crop": {
+      "left": 74,
+      "top": 64,
+      "width": 530,
+      "height": 562
+    }
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 16,
+      "top": 16,
+      "width": 501,
+      "height": 526
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.791,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 97038,
+    "sha256": "e93445dbc175d7138176ca324d5322db55dd3560b94200681829b14725ef6760",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 143528,
+      "partial": 118451,
+      "opaque": 165
+    }
+  }
+}

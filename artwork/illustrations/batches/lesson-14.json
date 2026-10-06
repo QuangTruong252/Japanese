@@ -1,0 +1,454 @@
+{
+  "name": "lesson-14",
+  "description": "Bài 14 — thể て: nhờ vả, hành động đang diễn ra, đồ vật quanh nhà và khi đi taxi.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-14-objects-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "passport-v1",
+          "subject": "a closed passport with a plain dark red cover and no emblem or text",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+            "id": "pasupooto"
+          },
+          "alt": {
+            "vi": "Cuốn hộ chiếu bìa đỏ."
+          },
+          "skip": "Người dùng yêu cầu tạo lại rõ nghĩa hơn khi duyệt sheet (06/10/2026)."
+        },
+        {
+          "stem": "map-v1",
+          "subject": "a partly unfolded paper street map with roads and green park areas, no text or symbols",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+            "id": "chizu"
+          },
+          "alt": {
+            "vi": "Tấm bản đồ đường phố mở ra."
+          }
+        },
+        {
+          "stem": "salt-v1",
+          "subject": "a glass salt shaker with a metal cap beside a small pile of white salt",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+            "id": "shio"
+          },
+          "alt": {
+            "vi": "Lọ muối và một ít muối trắng."
+          }
+        },
+        {
+          "stem": "sugar-v1",
+          "subject": "a small ceramic sugar bowl with sugar cubes and a teaspoon",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+            "id": "satou"
+          },
+          "alt": {
+            "vi": "Hũ đường có viên đường và thìa nhỏ."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "ceiling-light-v1",
+      "subject": "a glowing pendant ceiling lamp with a warm light bulb hanging from a cord",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "denki"
+      },
+      "alt": {
+        "vi": "Chiếc đèn trần đang sáng."
+      }
+    },
+    {
+      "stem": "air-conditioner-v1",
+      "subject": "a white wall-mounted air conditioner unit blowing a soft cool breeze, blank front panel",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "eakon"
+      },
+      "alt": {
+        "vi": "Máy điều hòa treo tường đang thổi gió mát."
+      }
+    },
+    {
+      "stem": "change-money-v1",
+      "subject": "a cashier's hand giving a few coins and a folded banknote back into a customer's open palm, no numbers on the money",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "otsuri"
+      },
+      "alt": {
+        "vi": "Người thu ngân trả lại tiền thừa."
+      }
+    },
+    {
+      "stem": "turning-on-light-v1",
+      "subject": "a young person pressing a wall switch as a ceiling lamp lights up a dim room",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "tsukemasu"
+      },
+      "alt": {
+        "vi": "Người bấm công tắc bật đèn sáng lên."
+      }
+    },
+    {
+      "stem": "turning-off-lamp-v1",
+      "subject": "a young person switching off a desk lamp in the evening, the lamp now dark",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "keshimasu"
+      },
+      "alt": {
+        "vi": "Người tắt chiếc đèn bàn."
+      }
+    },
+    {
+      "stem": "opening-window-v1",
+      "subject": "a young person sliding a window open, a breeze moving the curtain",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "akemasu"
+      },
+      "alt": {
+        "vi": "Người đang mở cửa sổ."
+      }
+    },
+    {
+      "stem": "closing-door-v1",
+      "subject": "a young person pushing a wooden door closed by its handle",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "shimemasu"
+      },
+      "alt": {
+        "vi": "Người đang đóng cánh cửa."
+      }
+    },
+    {
+      "stem": "hurrying-v1",
+      "subject": "a young man with a backpack running hurriedly while glancing at his wristwatch",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "isogimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai vừa chạy vội vừa nhìn đồng hồ."
+      }
+    },
+    {
+      "stem": "waiting-v1",
+      "subject": "a young woman standing patiently beside a blank sign pole, holding her bag and looking down the street",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "machimasu"
+      },
+      "alt": {
+        "vi": "Cô gái đứng chờ bên đường."
+      }
+    },
+    {
+      "stem": "carrying-bags-v1",
+      "subject": "a person carrying a heavy shopping bag in each hand",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "mochimasu"
+      },
+      "alt": {
+        "vi": "Người xách hai túi đồ nặng."
+      }
+    },
+    {
+      "stem": "taking-salt-v1",
+      "subject": "a hand reaching across a dining table to pick up a salt shaker",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "torimasu"
+      },
+      "alt": {
+        "vi": "Bàn tay với lấy lọ muối trên bàn ăn."
+      }
+    },
+    {
+      "stem": "helping-v1",
+      "subject": "one person helping another lift and carry a large cardboard box together",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "tetsudaimasu"
+      },
+      "alt": {
+        "vi": "Hai người cùng khiêng thùng các-tông lớn."
+      }
+    },
+    {
+      "stem": "hailing-taxi-v1",
+      "subject": "a person at the curb raising one hand to call an approaching taxi with a blank roof sign",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "yobimasu"
+      },
+      "alt": {
+        "vi": "Người giơ tay gọi taxi bên đường."
+      }
+    },
+    {
+      "stem": "talking-v1",
+      "subject": "two young people standing face to face chatting with friendly gestures",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "hanashimasu"
+      },
+      "alt": {
+        "vi": "Hai người đang trò chuyện."
+      }
+    },
+    {
+      "stem": "parking-car-v1",
+      "subject": "a small white car being reversed into a marked parking space between two painted lines, the male student visible at the wheel looking over his shoulder, reversing lights on; bird-eye-ish three-quarter view of the parking slot",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "tomemasu"
+      },
+      "alt": {
+        "vi": "Chàng trai lùi xe ô tô vào ô đỗ."
+      }
+    },
+    {
+      "stem": "showing-passport-v1",
+      "subject": "a traveler holding out an open passport to an officer at a counter, blank pages",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "misemasu"
+      },
+      "alt": {
+        "vi": "Hành khách đưa hộ chiếu cho nhân viên xem."
+      }
+    },
+    {
+      "stem": "sitting-down-v1",
+      "subject": "a young person lowering themselves to sit down on a wooden chair",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "suwarimasu"
+      },
+      "alt": {
+        "vi": "Người đang ngồi xuống ghế."
+      }
+    },
+    {
+      "stem": "standing-up-v1",
+      "subject": "a young person rising up from a wooden chair, hands pushing on the knees",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "tachimasu"
+      },
+      "alt": {
+        "vi": "Người đang đứng dậy khỏi ghế."
+      }
+    },
+    {
+      "stem": "entering-cafe-v1",
+      "subject": "the male student seen FROM BEHIND, stepping INTO a small cafe through an open door: his back faces the viewer, one foot over the threshold, warm light inside, street side outside; the sense of going in is clear",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "hairimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai bước vào quán cà phê, quay lưng về phía người xem."
+      }
+    },
+    {
+      "stem": "leaving-cafe-v1",
+      "subject": "the male student FACING the viewer, stepping OUT of a small cafe onto the street, closing the door behind him with one hand, the cafe interior behind him; the sense of coming out is clear",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "demasu"
+      },
+      "alt": {
+        "vi": "Chàng trai bước ra khỏi quán cà phê và khép cửa lại."
+      }
+    },
+    {
+      "stem": "raining-v1",
+      "subject": "rain falling from a grey cloud onto a person holding an umbrella, puddles on the ground",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "furimasu"
+      },
+      "alt": {
+        "vi": "Trời đang mưa, người che ô."
+      }
+    },
+    {
+      "stem": "photocopying-v1",
+      "subject": "a person placing a sheet of paper on an office photocopier with a blank screen, copies coming out",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "kopii-shimasu"
+      },
+      "alt": {
+        "vi": "Người đang photocopy tài liệu."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "taxi-ride-v1",
+      "file": "artwork/illustrations/scenes/taxi-ride-v1.jpg",
+      "source": "antigravity-generate_image",
+      "generation": {
+        "tool": "Antigravity generate_image",
+        "model": "gemini-3.8-flash-high",
+        "note": "Không nhận ảnh tham chiếu; phong cách mô tả bằng prompt."
+      },
+      "referenceImages": [],
+      "subject": "a rainy town street seen from the sidewalk: the woman holds an umbrella and raises her hand to call a taxi with a blank roof sign that is pulling over; the man stands beside her carrying a suitcase and points down the street toward a traffic light; light rain is falling and shop awnings are blank.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-14.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Ngày mưa, cô gái giơ tay gọi taxi, chàng trai xách vali."
+      }
+    },
+    {
+      "stem": "passport-v1",
+      "subject": "a closed passport booklet with a dark red cover and a plain blind-embossed round emblem (no text), lying slightly open to show a blank photo page, compact single object",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "pasupooto"
+      },
+      "alt": {
+        "vi": "Cuốn hộ chiếu bìa đỏ có hình dập nổi."
+      }
+    }
+  ]
+}

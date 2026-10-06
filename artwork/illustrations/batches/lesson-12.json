@@ -1,0 +1,654 @@
+{
+  "name": "lesson-12",
+  "description": "Bài 12 — mùa, thời tiết, món Nhật, du lịch và tính từ so sánh.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-12-seasons-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "spring-v1",
+          "subject": "a small tree on a grassy mound in full pink blossom with tulips at its base",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "haru"
+          },
+          "alt": {
+            "vi": "Cây nở hoa hồng và hoa tulip mùa xuân."
+          }
+        },
+        {
+          "stem": "summer-v1",
+          "subject": "a lush green tree on a grassy mound under a bright sun with sunflowers",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "natsu"
+          },
+          "alt": {
+            "vi": "Cây xanh tốt, mặt trời và hoa hướng dương mùa hè."
+          }
+        },
+        {
+          "stem": "autumn-v1",
+          "subject": "a small tree on a mound with golden-orange leaves falling into a pile of leaves",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "aki"
+          },
+          "alt": {
+            "vi": "Cây lá vàng cam rụng mùa thu."
+          }
+        },
+        {
+          "stem": "winter-v1",
+          "subject": "a bare tree with snow on its branches on a snowy mound beside a little snowman",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "fuyu"
+          },
+          "alt": {
+            "vi": "Cây trụi lá phủ tuyết và người tuyết mùa đông."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-12-weather-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "weather-v1",
+          "subject": "a mixed weather vignette: a sun half behind a white cloud with a few raindrops and a small rainbow",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "tenki"
+          },
+          "alt": {
+            "vi": "Mặt trời, mây, mưa và cầu vồng."
+          },
+          "skip": "Người dùng yêu cầu tạo lại rõ nghĩa hơn khi duyệt sheet (06/10/2026)."
+        },
+        {
+          "stem": "rain-v1",
+          "subject": "a grey cloud with rain falling into small puddles",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "ame"
+          },
+          "alt": {
+            "vi": "Đám mây xám đang đổ mưa."
+          },
+          "skip": "Ô atlas lẫn sang ô bên cạnh (vũng nước tràn); tạo lại ảnh đơn."
+        },
+        {
+          "stem": "snow-v1",
+          "subject": "a pale cloud with big snowflakes falling onto a white snowdrift",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "yuki"
+          },
+          "alt": {
+            "vi": "Tuyết rơi từ đám mây xuống."
+          }
+        },
+        {
+          "stem": "cloudy-v1",
+          "subject": "thick layered grey clouds completely hiding the sun",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "kumori"
+          },
+          "alt": {
+            "vi": "Mây xám dày che kín mặt trời."
+          },
+          "skip": "Ô atlas có dải alpha mờ và lẫn ô bên cạnh; tạo lại ảnh đơn."
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-12-japanese-food-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "sukiyaki-v1",
+          "subject": "a shallow cast-iron sukiyaki pot simmering thin beef slices, tofu, leeks and mushrooms",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "sukiyaki"
+          },
+          "alt": {
+            "vi": "Nồi lẩu sukiyaki có thịt bò, đậu phụ và hành."
+          },
+          "skip": "Atlas vẽ chủ thể quá to, mọi ô lẫn sang ô bên cạnh; tạo lại ảnh đơn."
+        },
+        {
+          "stem": "sashimi-v1",
+          "subject": "a plate of sliced raw tuna and salmon sashimi with a shiso leaf and wasabi",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "sashimi"
+          },
+          "alt": {
+            "vi": "Đĩa sashimi cá ngừ và cá hồi."
+          },
+          "skip": "Atlas vẽ chủ thể quá to, mọi ô lẫn sang ô bên cạnh; tạo lại ảnh đơn."
+        },
+        {
+          "stem": "sushi-v1",
+          "subject": "a wooden board of assorted nigiri sushi and a few maki rolls",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "osushi"
+          },
+          "alt": {
+            "vi": "Khay gỗ bày các miếng sushi."
+          },
+          "skip": "Atlas vẽ chủ thể quá to, mọi ô lẫn sang ô bên cạnh; tạo lại ảnh đơn."
+        },
+        {
+          "stem": "tempura-v1",
+          "subject": "shrimp and vegetable tempura on a small bamboo basket lined with plain paper",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "tenpura"
+          },
+          "alt": {
+            "vi": "Tôm và rau chiên tempura trên rổ tre."
+          },
+          "skip": "Atlas vẽ chủ thể quá to, mọi ô lẫn sang ô bên cạnh; tạo lại ảnh đơn."
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-12-ingredients-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "pork-v1",
+          "subject": "thin slices of raw pork belly laid out on a small tray",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "butaniku"
+          },
+          "alt": {
+            "vi": "Những lát thịt ba chỉ heo sống."
+          }
+        },
+        {
+          "stem": "chicken-meat-v1",
+          "subject": "raw chicken thighs and a drumstick on butcher paper",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "toriniku"
+          },
+          "alt": {
+            "vi": "Đùi gà sống trên giấy gói."
+          }
+        },
+        {
+          "stem": "beef-v1",
+          "subject": "a thick marbled raw beef steak on a wooden board",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "gyuuniku"
+          },
+          "alt": {
+            "vi": "Miếng thịt bò vân mỡ."
+          }
+        },
+        {
+          "stem": "lemon-v1",
+          "subject": "a whole yellow lemon with a leaf next to a cut half",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "remon"
+          },
+          "alt": {
+            "vi": "Quả chanh vàng và nửa quả bổ đôi."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-12-travel-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "hotel-v1",
+          "subject": "a mid-size hotel building with a canopy over the entrance and a blank sign",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "hoteru"
+          },
+          "alt": {
+            "vi": "Tòa khách sạn có mái che ở lối vào."
+          }
+        },
+        {
+          "stem": "airport-v1",
+          "subject": "an airport terminal with a control tower and a parked aeroplane without markings",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "kuukou"
+          },
+          "alt": {
+            "vi": "Nhà ga sân bay, tháp điều khiển và máy bay."
+          }
+        },
+        {
+          "stem": "sea-v1",
+          "subject": "a calm blue sea with gentle waves meeting a sandy beach",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "umi"
+          },
+          "alt": {
+            "vi": "Biển xanh với sóng vỗ vào bờ cát."
+          }
+        },
+        {
+          "stem": "globe-v1",
+          "subject": "a desk globe on a wooden stand showing oceans and continents",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "sekai"
+          },
+          "alt": {
+            "vi": "Quả địa cầu trên giá gỗ."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-12-still-life-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "sweet-cake-v1",
+          "subject": "a slice of strawberry shortcake with cream beside a jar of honey",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "amai"
+          },
+          "alt": {
+            "vi": "Bánh kem dâu và hũ mật ong ngọt ngào."
+          }
+        },
+        {
+          "stem": "spicy-food-v1",
+          "subject": "a bowl of bright red spicy curry with red chili peppers beside it",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "karai"
+          },
+          "alt": {
+            "vi": "Bát cà ri đỏ cay và mấy quả ớt."
+          }
+        },
+        {
+          "stem": "ikebana-v1",
+          "subject": "an ikebana flower arrangement in a low ceramic vase with a few branches and flowers",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "ikebana"
+          },
+          "alt": {
+            "vi": "Bình cắm hoa ikebana."
+          }
+        },
+        {
+          "stem": "maple-leaves-v1",
+          "subject": "a branch of bright red Japanese maple leaves",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+            "id": "momiji"
+          },
+          "alt": {
+            "vi": "Cành lá phong đỏ mùa thu."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "fast-hare-v1",
+      "subject": "a hare dashing forward at full speed, ears back, with a few motion streaks",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "hayai"
+      },
+      "alt": {
+        "vi": "Chú thỏ đang chạy rất nhanh."
+      }
+    },
+    {
+      "stem": "slow-tortoise-v1",
+      "subject": "a tortoise plodding slowly along with a small snail beside it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "osoi"
+      },
+      "alt": {
+        "vi": "Con rùa bò chậm rãi."
+      }
+    },
+    {
+      "stem": "crowd-v1",
+      "subject": "a compact crowd of about eight small full-figure people walking together across a pedestrian crossing, everyone fully visible",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "ooi"
+      },
+      "alt": {
+        "vi": "Đường phố đông nghịt người."
+      }
+    },
+    {
+      "stem": "few-students-v1",
+      "subject": "a nearly empty classroom with only two students sitting among many empty desks",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "sukunai"
+      },
+      "alt": {
+        "vi": "Lớp học vắng, chỉ có hai học sinh."
+      }
+    },
+    {
+      "stem": "warm-v1",
+      "subject": "a young woman smiling in soft spring sunshine, holding a steaming mug with both hands",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "atatakai"
+      },
+      "alt": {
+        "vi": "Cô gái cầm cốc trà nóng dưới nắng xuân ấm áp."
+      }
+    },
+    {
+      "stem": "cool-breeze-v1",
+      "subject": "a young man under an autumn tree enjoying a cool breeze, hair and leaves gently blown",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "suzushii"
+      },
+      "alt": {
+        "vi": "Chàng trai đón làn gió mát dưới tán cây."
+      }
+    },
+    {
+      "stem": "heavy-v1",
+      "subject": "a young man straining to lift a big heavy cardboard box with both hands",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "omoi"
+      },
+      "alt": {
+        "vi": "Chàng trai gắng sức nâng thùng đồ nặng."
+      }
+    },
+    {
+      "stem": "light-v1",
+      "subject": "a young woman easily lifting a thin laptop with one hand, smiling",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "karui"
+      },
+      "alt": {
+        "vi": "Cô gái nhấc chiếc máy tính mỏng nhẹ bằng một tay."
+      }
+    },
+    {
+      "stem": "party-v1",
+      "subject": "a party table with a cake, drinks, snacks and balloons, a few friends raising glasses around it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "paatii"
+      },
+      "alt": {
+        "vi": "Nhóm bạn nâng ly bên bàn tiệc có bánh và bóng bay."
+      }
+    },
+    {
+      "reuse": "vocab/easy-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "kantan"
+      },
+      "alt": {
+        "vi": "Em bé xếp khối gỗ thật dễ dàng."
+      }
+    },
+    {
+      "stem": "festival-v1",
+      "subject": "a small Japanese summer festival: a group of people in happi coats carrying a portable mikoshi shrine, with paper lanterns overhead",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "omatsuri"
+      },
+      "alt": {
+        "vi": "Nhóm người mặc áo happi khiêng kiệu mikoshi dưới hàng đèn lồng."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "seasons-compare-v1",
+      "file": "artwork/illustrations/scenes/seasons-compare-v1.jpg",
+      "source": "antigravity-generate_image",
+      "generation": {
+        "tool": "Antigravity generate_image",
+        "model": "gemini-3.8-flash-high",
+        "note": "Không nhận ảnh tham chiếu; phong cách mô tả bằng prompt."
+      },
+      "referenceImages": [],
+      "subject": "a park path split down the middle into two seasons: summer on the left with green trees and a bright sun, winter on the right with snowy trees and falling snow; the woman stands in the center pointing happily toward summer while the man points toward winter, comparing which season they like better.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-12.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Hai bạn đứng giữa cảnh mùa hè và mùa đông, so sánh mùa mình thích hơn."
+      }
+    },
+    {
+      "stem": "rain-v1",
+      "subject": "a grey cloud with rain falling into small puddles, as a single vignette with plenty of empty space around it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "ame"
+      },
+      "alt": {
+        "vi": "Đám mây xám đang đổ mưa."
+      }
+    },
+    {
+      "stem": "cloudy-v1",
+      "subject": "an overcast sky over a small house with a tiled roof: soft thick grey clouds cover the whole sky and hide the sun, dry calm weather with absolutely no rain, no drops and no umbrella, as a single vignette with plenty of empty space around it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "kumori"
+      },
+      "alt": {
+        "vi": "Mây xám dày che kín mặt trời."
+      }
+    },
+    {
+      "stem": "sukiyaki-v1",
+      "subject": "a shallow cast-iron sukiyaki pot simmering thin beef slices, tofu, leeks and mushrooms, as a single vignette with plenty of empty space around it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "sukiyaki"
+      },
+      "alt": {
+        "vi": "Nồi lẩu sukiyaki có thịt bò, đậu phụ và hành."
+      }
+    },
+    {
+      "stem": "sashimi-v1",
+      "subject": "a plate of sliced raw tuna and salmon sashimi with a shiso leaf and wasabi, as a single vignette with plenty of empty space around it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "sashimi"
+      },
+      "alt": {
+        "vi": "Đĩa sashimi cá ngừ và cá hồi."
+      }
+    },
+    {
+      "stem": "sushi-v1",
+      "subject": "a wooden board of assorted nigiri sushi and a few maki rolls, as a single vignette with plenty of empty space around it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "osushi"
+      },
+      "alt": {
+        "vi": "Khay gỗ bày các miếng sushi."
+      }
+    },
+    {
+      "stem": "tempura-v1",
+      "subject": "shrimp and vegetable tempura on a small bamboo basket lined with plain paper, as a single vignette with plenty of empty space around it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "tenpura"
+      },
+      "alt": {
+        "vi": "Tôm và rau chiên tempura trên rổ tre."
+      }
+    },
+    {
+      "stem": "weather-v1",
+      "subject": "a paper-town weather vignette: a small weather vane on a rooftop with a few soft painted clouds, a patch of sun and a light breeze bending a little tree, hand-painted watercolor, not an icon, not clip-art",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "tenki"
+      },
+      "alt": {
+        "vi": "Chong chóng gió trên mái nhà giữa mây, nắng và gió nhẹ."
+      }
+    }
+  ]
+}

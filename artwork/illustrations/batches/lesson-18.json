@@ -1,0 +1,236 @@
+{
+  "name": "lesson-18",
+  "description": "Bài 18 — thể từ điển, khả năng (〜ことができます), sở thích và 〜まえに.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-18-hobbies-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "upright-piano-v1",
+          "subject": "a compact wooden upright piano with its lid open and a small padded bench, no sheet music text",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+            "id": "piano"
+          },
+          "alt": {
+            "vi": "Cây đàn piano đứng bằng gỗ."
+          }
+        },
+        {
+          "stem": "cash-wallet-v1",
+          "subject": "a compact open brown leather wallet with a few blank banknotes sticking out and three coins beside it, no numbers or portraits",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+            "id": "genkin"
+          },
+          "alt": {
+            "vi": "Chiếc ví da đầy tiền mặt."
+          }
+        },
+        {
+          "stem": "diary-v1",
+          "subject": "a compact open hardcover diary with a ribbon bookmark and a pen resting on it, pages with faint blank handwriting lines and no readable text",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+            "id": "nikki"
+          },
+          "alt": {
+            "vi": "Cuốn nhật ký mở và cây bút."
+          }
+        },
+        {
+          "stem": "stamp-collection-v1",
+          "subject": "a compact open stamp album showing neat rows of small colourful collected stamps with plain pictures and no text, a pair of tweezers beside it",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+            "id": "atsumemasu"
+          },
+          "alt": {
+            "vi": "Album tem sưu tầm xếp ngay ngắn."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "washing-hands-v1",
+      "subject": "two hands washing under a running tap at a small sink, covered in soap bubbles",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "araimasu"
+      },
+      "alt": {
+        "vi": "Đôi tay đang rửa dưới vòi nước với xà phòng."
+      }
+    },
+    {
+      "stem": "playing-piano-v1",
+      "subject": "the reference woman sitting at an upright piano, playing it with both hands on the keys",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "hikimasu"
+      },
+      "alt": {
+        "vi": "Cô gái đang ngồi đánh đàn piano."
+      }
+    },
+    {
+      "reuse": "vocab/singing-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "utaimasu"
+      },
+      "alt": {
+        "vi": "Cô gái đang hát, xung quanh có nốt nhạc."
+      }
+    },
+    {
+      "stem": "throwing-away-v1",
+      "subject": "the reference male student dropping a crumpled ball of paper into a small trash bin",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "sutemasu"
+      },
+      "alt": {
+        "vi": "Chàng trai vứt tờ giấy vo tròn vào thùng rác."
+      }
+    },
+    {
+      "stem": "currency-exchange-v1",
+      "subject": "at a bank exchange counter, a customer slides one stack of banknotes across while the teller hands back a stack of differently coloured banknotes, all blank without numbers or portraits; the counter sign is blank",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "kaemasu"
+      },
+      "alt": {
+        "vi": "Khách đổi tiền ở quầy ngân hàng."
+      }
+    },
+    {
+      "stem": "driving-v1",
+      "subject": "the reference male student driving a small car, seen from the side through the open window, both hands on the steering wheel",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "unten-shimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai đang lái xe ô tô."
+      }
+    },
+    {
+      "stem": "praying-v1",
+      "subject": "a person kneeling by a bed at night with eyes closed and hands clasped in quiet prayer, a small bedside lamp glowing",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "oinori"
+      },
+      "alt": {
+        "vi": "Một người quỳ bên giường, chắp tay cầu nguyện."
+      }
+    },
+    {
+      "stem": "animals-v1",
+      "subject": "a friendly group of different animals together: a rabbit, a small dog, a cat, a duck and a goat",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "doubutsu"
+      },
+      "alt": {
+        "vi": "Một nhóm các con vật: thỏ, chó, mèo, vịt và dê."
+      }
+    },
+    {
+      "stem": "horse-v1",
+      "subject": "a brown horse standing calmly in profile",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "uma"
+      },
+      "alt": {
+        "vi": "Con ngựa nâu đang đứng."
+      }
+    },
+    {
+      "stem": "hometown-v1",
+      "subject": "a peaceful countryside home village: a few farmhouses with dark tiled roofs among green rice fields, gentle mountains behind",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "furusato"
+      },
+      "alt": {
+        "vi": "Làng quê yên bình với nhà mái ngói giữa đồng lúa."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "hobby-room-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "a cozy community hobby room in the afternoon; the woman plays an upright piano while the male student stands beside her singing from a songbook with blank pages; a side table holds an open stamp album and a diary; a window with soft light and a potted plant.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-18.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Cô gái đánh đàn piano, chàng trai đứng hát bên cạnh trong phòng sinh hoạt sở thích."
+      }
+    }
+  ]
+}

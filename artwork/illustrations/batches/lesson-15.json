@@ -1,0 +1,213 @@
+{
+  "name": "lesson-15",
+  "description": "Bài 15 — tài liệu, nghề nghiệp, nơi chốn, hành động; cảnh xin phép.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-15-documents-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "documents-v1",
+          "subject": "a neat stack of printed documents held by a black binder clip, pages showing only blank grey lines",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+            "id": "shiryou"
+          },
+          "alt": {
+            "vi": "Xấp tài liệu kẹp gọn."
+          }
+        },
+        {
+          "stem": "catalogue-v1",
+          "subject": "an open glossy product catalogue showing pictures of cameras on its pages, no text",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+            "id": "katarogu"
+          },
+          "alt": {
+            "vi": "Cuốn catalogue mở ra có hình máy ảnh."
+          }
+        },
+        {
+          "stem": "timetable-v1",
+          "subject": "a folded train timetable leaflet with a blank grid of empty rows and a small train picture at the top, no numbers",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+            "id": "jikokuhyou"
+          },
+          "alt": {
+            "vi": "Tờ bảng giờ tàu gấp đôi."
+          }
+        },
+        {
+          "stem": "electronic-dictionary-v1",
+          "subject": "an open clamshell electronic dictionary with a blank screen and blank keyboard keys",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+            "id": "denshijisho"
+          },
+          "alt": {
+            "vi": "Chiếc từ điển điện tử mở nắp."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "placing-v1",
+      "subject": "the reference male student placing his backpack down on a low wooden bench, bending slightly; full figure from head to shoes",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "okimasu-poner"
+      },
+      "alt": {
+        "vi": "Cậu sinh viên đặt ba lô lên ghế."
+      }
+    },
+    {
+      "stem": "making-v1",
+      "subject": "the reference woman making rice balls with her hands at a small table with a bowl of rice and a plate of finished rice balls",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "tsukurimasu"
+      },
+      "alt": {
+        "vi": "Cô gái đang nặn cơm nắm."
+      }
+    },
+    {
+      "stem": "selling-v1",
+      "subject": "a smiling baker behind a small bread stall holding out a paper bag of bread to sell, loaves displayed on the counter",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "urimasu"
+      },
+      "alt": {
+        "vi": "Người bán hàng đưa túi bánh mì cho khách."
+      }
+    },
+    {
+      "stem": "research-v1",
+      "subject": "a researcher in a white lab coat looking into a microscope at a lab bench with glass flasks",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "kenkyuu-shimasu"
+      },
+      "alt": {
+        "vi": "Nhà nghiên cứu nhìn vào kính hiển vi."
+      }
+    },
+    {
+      "stem": "clothes-v1",
+      "subject": "a small clothes rack with a shirt, a sweater and a pair of trousers hanging on wooden hangers",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "fuku"
+      },
+      "alt": {
+        "vi": "Giá treo quần áo."
+      }
+    },
+    {
+      "stem": "city-hall-v1",
+      "subject": "a wide, low civic city hall building with a broad stone entrance stairway, a flagpole with a plain blank flag and a small clock tower whose face has no numerals; no people at all; compact composition: the building and its trees stay well inside the canvas, never reaching any edge",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "shiyakusho"
+      },
+      "alt": {
+        "vi": "Tòa nhà ủy ban thành phố."
+      }
+    },
+    {
+      "stem": "high-school-v1",
+      "subject": "two Japanese high-school students in classic school uniforms (not the recurring characters): a boy in a black gakuran jacket and a girl in a navy sailor-collar uniform with a red neckerchief, walking side by side through a school gate under cherry blossom trees, a small school building behind them; full figures",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "koukou"
+      },
+      "alt": {
+        "vi": "Trường cấp ba có hai học sinh mặc đồng phục."
+      }
+    },
+    {
+      "stem": "dentist-v1",
+      "subject": "a friendly dentist in a white coat holding a small dental mirror, standing beside a dental chair",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "haisha"
+      },
+      "alt": {
+        "vi": "Nha sĩ đứng cạnh ghế khám răng."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "asking-permission-v1",
+      "file": "artwork/illustrations/scenes/asking-permission-v1.jpg",
+      "source": "antigravity-generate_image",
+      "generation": {
+        "tool": "Antigravity generate_image",
+        "model": "gemini-3.8-flash-high",
+        "note": "Không nhận ảnh tham chiếu; phong cách mô tả bằng prompt."
+      },
+      "referenceImages": [],
+      "subject": "a quiet library reading room: the male student politely points to an empty chair and asks a librarian at the desk for permission, and the librarian answers with an open palm gesture meaning go ahead; the woman already sits at the table reading with an electronic dictionary; tall bookshelves with blank spines, a window with soft daylight.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-15.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Trong thư viện, cậu sinh viên xin phép ngồi vào ghế trống."
+      }
+    }
+  ]
+}

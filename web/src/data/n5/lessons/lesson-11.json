@@ -127,5 +127,13 @@
     "numbers",
     "time"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/post-office-counter-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Cô gái gửi bưu kiện ở quầy bưu điện, chàng trai xách túi quýt đứng chờ."
+    }
+  }
 }

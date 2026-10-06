@@ -96,5 +96,13 @@
     "demonstratives",
     "greetings"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/casual-chat-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Hai bạn trẻ ngồi ghế đá công viên trò chuyện thân mật, chàng trai rủ cô gái đi chơi."
+    }
+  }
 }

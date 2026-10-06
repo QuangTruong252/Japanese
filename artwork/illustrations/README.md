@@ -196,3 +196,18 @@ Batch: [lesson-06](batches/lesson-06.json), [lesson-07](batches/lesson-07.json),
 | 10 | 26 (6 atlas, 1 ảnh đơn, cover `cozy-room`) | 1.170.398 | |
 
 Tổng **121 WebP mới, 5.336.054 bytes**, kho **228 WebP / 233 tham chiếu**. Độ phủ: Bài 6 34/51, Bài 7 32/47, Bài 8 35/53, Bài 9 16/52, Bài 10 25/47 mục từ, cộng cover Bài 6/7/9/10. Từ trừu tượng, thời gian, đại từ, câu giao tiếp và chữ viết (kanji/hiragana…) tiếp tục chỉ dùng chữ.
+
+## Bài 10 ngữ pháp + Bài 11–15 (06/10/2026)
+
+| Bài | Ảnh mới | Bytes | Ghi chú |
+| --- | --- | --- | --- |
+| 10 | 1 ảnh ngữ pháp `positions-desk-v1` | 85.354 | Gắn vào mẫu `posiciones`, có caption furigana |
+| 11 | 16 (cover + từ vựng) | 684.016 | Bỏ atlas anh chị em |
+| 12 | 35 | 2.037.220 | Ô đồ ăn Nhật, `rain`, `cloudy`, `crowd`, `weather` tạo lại thành ảnh đơn |
+| 13 | 21 | 1.143.704 | Cover `lunch-diner` chuyển sang Codex vì Antigravity hết quota |
+| 14 | 27 | 995.180 | `passport`, `entering-cafe`/`leaving-cafe`, `parking-car` tạo lại |
+| 15 | 13 | 576.442 | `city-hall`, `high-school` tạo lại |
+
+Tổng **113 WebP mới, 5.521.916 bytes**. Độ phủ từ vựng: Bài 11 15/61, Bài 12 35/51, Bài 13 20/31, Bài 14 26/45, Bài 15 12/22, cộng cover Bài 11–15.
+
+Bài 16–25 đang làm dở. Bài 19/20/22/24/25 đã link 55 tham chiếu (thiếu `moving-house` và reuse `thinking-v1`). Phần còn lại chờ hạn mức tạo ảnh của Codex reset (07/10/2026). Xem handoff SPEC-21.

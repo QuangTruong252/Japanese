@@ -115,5 +115,13 @@
   "references": [
     "verbs"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/asking-permission-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Trong thư viện, cậu sinh viên xin phép ngồi vào ghế trống."
+    }
+  }
 }

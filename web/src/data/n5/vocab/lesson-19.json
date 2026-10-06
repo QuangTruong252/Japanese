@@ -30,6 +30,14 @@
         "naiKana": "のぼらない",
         "ta": "登[のぼ]った",
         "taKana": "のぼった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/climbing-mountain-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người leo núi đang trèo lên con đường dốc."
+        }
       }
     },
     {
@@ -60,6 +68,14 @@
         "naiKana": "とまらない",
         "ta": "泊[と]まった[ホテルに〜]",
         "taKana": "とまった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hotel-stay-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai ngồi trên giường khách sạn cạnh vali."
+        }
       }
     },
     {
@@ -90,6 +106,14 @@
         "naiKana": "そうじしない",
         "ta": "掃除[そうじ]した",
         "taKana": "そうじした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cleaning-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đang hút bụi dọn phòng."
+        }
       }
     },
     {
@@ -120,6 +144,14 @@
         "naiKana": "せんたくしない",
         "ta": "洗濯[せんたく]した",
         "taKana": "せんたくした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/doing-laundry-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái cho quần áo vào máy giặt."
+        }
       }
     },
     {
@@ -167,6 +199,14 @@
         "translation": {
           "vi": "Tôi buồn ngủ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sleepy-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai ngáp dài, dụi mắt vì buồn ngủ."
+        }
       }
     },
     {
@@ -184,6 +224,14 @@
         "translation": {
           "vi": "Anh ấy rất mạnh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/strong-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người đàn ông khỏe mạnh nâng tạ nặng qua đầu."
+        }
       }
     },
     {
@@ -200,6 +248,14 @@
         "kana": "わたしは おさけが よわいです。",
         "translation": {
           "vi": "Tôi tửu lượng kém (uống rượu yếu)."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/weak-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người đàn ông yếu ớt không nhấc nổi quả tạ nhỏ."
         }
       }
     },
@@ -235,6 +291,14 @@
         "translation": {
           "vi": "Tôi muốn chơi golf."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/golf-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người chơi golf đang vung gậy đánh bóng."
+        }
       }
     },
     {
@@ -252,6 +316,14 @@
         "translation": {
           "vi": "Bạn đã từng xem đấu vật Sumo chưa?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sumo-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai đô vật sumo đang đẩy nhau trên võ đài."
+        }
       }
     },
     {
@@ -268,6 +340,14 @@
         "kana": "おちゃを ならった ことが あります。",
         "translation": {
           "vi": "Tôi đã từng học trà đạo."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tea-ceremony-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người phụ nữ mặc kimono đánh trà matcha trong buổi trà đạo."
         }
       }
     },
@@ -438,6 +518,14 @@
         "kana": "あしたから ダイエットを します。",
         "translation": {
           "vi": "Tôi sẽ ăn kiêng từ ngày mai."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/diet-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cân sức khỏe, thước dây và bát salad."
         }
       }
     },

@@ -93,5 +93,13 @@
   "references": [
     "verbs"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/apartment-hunting-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Hai bạn trẻ xem sơ đồ căn hộ cùng nhân viên môi giới đeo kính, thắt cà vạt."
+    }
+  }
 }

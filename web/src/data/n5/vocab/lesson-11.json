@@ -120,6 +120,14 @@
         "naiKana": "やすまない",
         "ta": "休[やす]んだ[会社[かいしゃ]を〜]",
         "taKana": "やすんだ"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/day-off-work-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái nghỉ làm ở nhà, uống trà, túi công sở treo cạnh cửa."
+        }
       }
     },
     {
@@ -426,6 +434,14 @@
         "translation": {
           "vi": "Tôi ăn táo."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/apple-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Quả táo đỏ."
+        }
       }
     },
     {
@@ -442,6 +458,14 @@
         "kana": "みかんが あります。",
         "translation": {
           "vi": "Có quýt."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/mandarin-orange-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai quả quýt, một quả đã bóc vỏ."
         }
       }
     },
@@ -460,6 +484,14 @@
         "translation": {
           "vi": "Tôi làm bánh sandwich."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sandwich-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bánh mì kẹp cắt đôi."
+        }
       }
     },
     {
@@ -476,6 +508,14 @@
         "kana": "カレーライスが すきです。",
         "translation": {
           "vi": "Tôi thích cơm cà ri."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/curry-rice-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đĩa cơm cà ri kèm thìa."
         }
       }
     },
@@ -494,6 +534,14 @@
         "translation": {
           "vi": "Tôi mua kem."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/ice-cream-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cây kem ốc quế hai viên."
+        }
       }
     },
     {
@@ -510,6 +558,14 @@
         "kana": "ゆうびんきょくで きってを かいました。",
         "translation": {
           "vi": "Tôi đã mua tem ở bưu điện."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/stamps-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ tem thư có hình hoa."
         }
       }
     },
@@ -528,6 +584,14 @@
         "translation": {
           "vi": "Tôi gửi bưu thiếp."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/postcard-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tấm bưu thiếp có hình phong cảnh."
+        }
       }
     },
     {
@@ -544,6 +608,14 @@
         "kana": "ふうとうに てがみを いれます。",
         "translation": {
           "vi": "Tôi cho thư vào phong bì."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/envelope-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc phong bì giấy."
         }
       }
     },
@@ -562,6 +634,14 @@
         "translation": {
           "vi": "Bố mẹ tôi ở Nhật Bản."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/parents-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bố và mẹ đứng cạnh nhau."
+        }
       }
     },
     {
@@ -578,6 +658,14 @@
         "kana": "きょうだいが さんにん います。",
         "translation": {
           "vi": "Tôi có 3 anh chị em."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/siblings-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ba anh chị em đứng xếp theo chiều cao."
         }
       }
     },
@@ -749,6 +837,14 @@
         "translation": {
           "vi": "Tôi là du học sinh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/international-student-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Du học sinh kéo vali và đeo ba lô."
+        }
       }
     },
     {
@@ -765,6 +861,14 @@
         "kana": "わたしの クラスに がくせいが にじゅうにん います。",
         "translation": {
           "vi": "Trong lớp học của tôi có 20 học sinh."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/school-class-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một lớp học có học sinh và giáo viên."
         }
       }
     },
@@ -1038,6 +1142,14 @@
         "translation": {
           "vi": "Tôi gửi bằng đường biển."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sea-mail-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tàu chở các gói bưu phẩm trên biển."
+        }
       }
     },
     {
@@ -1054,6 +1166,14 @@
         "kana": "こうくうびんで おねがいします。",
         "translation": {
           "vi": "Cho tôi gửi bằng đường hàng không."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/airmail-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Phong bì thư hàng không và chiếc máy bay."
         }
       }
     },

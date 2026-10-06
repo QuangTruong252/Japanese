@@ -77,6 +77,8 @@ Chi tiết và giới hạn ở mục **Mở rộng từ vựng Bài 1–2** tro
 
 **Bài 6–10, 06/10/2026:** 5 batch + 6 cutout lỗi cũ của Bài 8; 121 WebP mới, kho **228 WebP / 233 tham chiếu**. Check, 274 test, build; browser `/hoc/6`–`/hoc/10` ở 390px tải đủ 137/137 ảnh, flashcard Bài 6 chỉ tải ảnh sau khi lật. Chi tiết ở mục **Batch Bài 6–10** trong [handoff SPEC-21](../handoff/SPEC-21.md).
 
+**Bài 10 ngữ pháp + Bài 11–15, 06/10/2026:** 113 WebP mới đã link. Check và 261 test đạt. Browser `/hoc/10`–`/hoc/15` ở 390px tải đủ 140/140 ảnh. Chưa chạy build, chưa kiểm desktop/flashcard. Bài 16–25 đang làm dở. Bài 19/20/22/24/25 đã link 55 tham chiếu, browser đủ 55/55 ảnh. Phần còn lại chờ quota ảnh Codex. Chi tiết ở mục **Batch Bài 10 (ngữ pháp) + Bài 11–15** trong [handoff SPEC-21](../handoff/SPEC-21.md).
+
 ## Vòng rà soát 17/09/2026 — hợp đồng dữ liệu & offline/sync
 
 Toàn bộ spec đã được sửa theo một vòng đối chiếu với code thật. Những thay đổi **bắt buộc đọc

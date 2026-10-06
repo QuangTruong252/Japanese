@@ -1,0 +1,292 @@
+{
+  "name": "lesson-22",
+  "description": "Bài 22 — mệnh đề bổ nghĩa cho danh từ: quần áo và cách mặc, đồ vật, phòng ở khi tìm nhà.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "master": "artwork/illustrations/atlases/lesson-22-wearables-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "coat-v1",
+          "subject": "a compact long winter overcoat in camel brown hanging on a wooden hanger, buttons closed",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+            "id": "kooto"
+          },
+          "alt": {
+            "vi": "Chiếc áo khoác dài treo trên mắc."
+          }
+        },
+        {
+          "stem": "sweater-v1",
+          "subject": "a compact neatly folded knitted wool sweater in sage green with a visible cable-knit pattern",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+            "id": "seetaa"
+          },
+          "alt": {
+            "vi": "Chiếc áo len dệt kim gấp gọn."
+          }
+        },
+        {
+          "stem": "suit-v1",
+          "subject": "a compact dark charcoal business suit, jacket and trousers together on one hanger, over a white shirt",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+            "id": "suutsu"
+          },
+          "alt": {
+            "vi": "Bộ com-lê màu than treo trên mắc."
+          }
+        },
+        {
+          "stem": "hat-v1",
+          "subject": "a compact black felt hat with a round brim and a plain band, no logo",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+            "id": "boushi"
+          },
+          "alt": {
+            "vi": "Chiếc mũ phớt màu đen."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-22-things-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "glasses-v1",
+          "subject": "a compact pair of folded eyeglasses with round dark frames, seen at a slight angle",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+            "id": "megane"
+          },
+          "alt": {
+            "vi": "Chiếc kính mắt gọng tròn gấp lại."
+          }
+        },
+        {
+          "stem": "strawberry-cake-v1",
+          "subject": "a compact homemade round strawberry shortcake with white cream and fresh strawberries on top, on a small plate",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+            "id": "keeki"
+          },
+          "alt": {
+            "vi": "Chiếc bánh kem dâu nhà làm."
+          }
+        },
+        {
+          "stem": "robot-v1",
+          "subject": "a compact friendly small toy robot with a boxy silver body, round eyes and jointed arms, standing upright",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+            "id": "robotto"
+          },
+          "alt": {
+            "vi": "Một chú người máy đồ chơi nhỏ."
+          }
+        },
+        {
+          "stem": "futon-v1",
+          "subject": "a compact stack of a neatly folded Japanese futon mattress and quilt with a small pillow on top",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+            "id": "futon"
+          },
+          "alt": {
+            "vi": "Bộ chăn đệm futon gấp gọn, có gối ở trên."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "putting-on-jacket-v1",
+      "subject": "the reference male student in the middle of putting on a jacket: one arm already through a sleeve, pulling the jacket over his shoulder",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "kimasu-ropa"
+      },
+      "alt": {
+        "vi": "Chàng trai đang xỏ tay mặc áo khoác."
+      }
+    },
+    {
+      "stem": "putting-on-shoes-v1",
+      "subject": "the reference woman sitting on a step at a home entrance, pulling a sneaker onto her foot, the other shoe already on",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "hakimasu"
+      },
+      "alt": {
+        "vi": "Cô gái ngồi ở bậc cửa đang xỏ giày."
+      }
+    },
+    {
+      "stem": "putting-on-hat-v1",
+      "subject": "the reference woman lifting a wide-brim straw hat with both hands and placing it onto her head",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "kaburimasu"
+      },
+      "alt": {
+        "vi": "Cô gái đang đội chiếc mũ rơm lên đầu."
+      }
+    },
+    {
+      "stem": "putting-on-glasses-v1",
+      "subject": "an older man with gray hair holding eyeglasses by both temples and sliding them onto his face",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "kakemasu-gafas"
+      },
+      "alt": {
+        "vi": "Người đàn ông lớn tuổi đang đeo kính."
+      }
+    },
+    {
+      "stem": "tying-necktie-v1",
+      "subject": "a young man in a white dress shirt tying a dark red necktie around his collar, hands at the knot",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "shimasu-corbata"
+      },
+      "alt": {
+        "vi": "Chàng trai đang thắt cà vạt."
+      }
+    },
+    {
+      "stem": "newborn-baby-v1",
+      "subject": "a tiny newborn baby sleeping peacefully, swaddled in a soft cream blanket and cradled in a mother's arms",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "umaremasu"
+      },
+      "alt": {
+        "vi": "Em bé sơ sinh say ngủ trong vòng tay mẹ."
+      }
+    },
+    {
+      "stem": "japanese-style-room-v1",
+      "subject": "a traditional Japanese-style room with tatami mats, sliding paper shoji screens, a low wooden table and floor cushions",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "washitsu"
+      },
+      "alt": {
+        "vi": "Căn phòng kiểu Nhật trải chiếu tatami, có cửa giấy shoji."
+      }
+    },
+    {
+      "stem": "dining-kitchen-v1",
+      "subject": "a small bright open dining kitchen: a kitchen counter with sink and stove beside a dining table with two chairs in the same room",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "dainingu-kicchin"
+      },
+      "alt": {
+        "vi": "Phòng bếp liền phòng ăn, có bàn ăn cạnh quầy bếp."
+      }
+    },
+    {
+      "stem": "oshiire-closet-v1",
+      "subject": "a built-in Japanese oshiire closet with its sliding fusuma doors open, an upper shelf holding folded bedding and a lower shelf with storage boxes",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "oshiire"
+      },
+      "alt": {
+        "vi": "Tủ âm tường oshiire mở cửa, bên trong có chăn đệm và hộp đồ."
+      }
+    },
+    {
+      "reuse": "vocab/lunch-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "obentou"
+      },
+      "alt": {
+        "vi": "Hộp cơm bento."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "apartment-hunting-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "a small cozy real estate office; the male student and the woman sit at a desk looking at a blank apartment floor plan, while a friendly agent wearing glasses and a necktie points at it; on the wall, blank photo cards of rooms (a tatami room, a dining kitchen); a hat and coat hang on a stand by the door.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-22.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Hai bạn trẻ xem sơ đồ căn hộ cùng nhân viên môi giới đeo kính, thắt cà vạt."
+      }
+    }
+  ]
+}

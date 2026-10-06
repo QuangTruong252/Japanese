@@ -30,6 +30,14 @@
         "naiKana": "おかない",
         "ta": "置[お]いた",
         "taKana": "おいた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/placing-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cậu sinh viên đặt ba lô lên ghế."
+        }
       }
     },
     {
@@ -60,6 +68,14 @@
         "naiKana": "つくらない",
         "ta": "作[つく]った",
         "taKana": "つくった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/making-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đang nặn cơm nắm."
+        }
       }
     },
     {
@@ -90,6 +106,14 @@
         "naiKana": "うらない",
         "ta": "売[う]った",
         "taKana": "うった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/selling-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người bán hàng đưa túi bánh mì cho khách."
+        }
       }
     },
     {
@@ -180,6 +204,14 @@
         "naiKana": "けんきゅうしない",
         "ta": "研究[けんきゅう]した",
         "taKana": "けんきゅうした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/research-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhà nghiên cứu nhìn vào kính hiển vi."
+        }
       }
     },
     {
@@ -196,6 +228,14 @@
         "kana": "この しりょうを みても いいですか。",
         "translation": {
           "vi": "Tôi xem tài liệu này có được không?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/documents-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Xấp tài liệu kẹp gọn."
         }
       }
     },
@@ -214,6 +254,14 @@
         "translation": {
           "vi": "Tôi nhận cuốn danh mục máy ảnh có được không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/catalogue-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuốn catalogue mở ra có hình máy ảnh."
+        }
       }
     },
     {
@@ -231,6 +279,14 @@
         "translation": {
           "vi": "Tôi đã nhận bảng giờ tàu chạy ở nhà ga."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timetable-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ bảng giờ tàu gấp đôi."
+        }
       }
     },
     {
@@ -247,6 +303,14 @@
         "kana": "デパートで ふくを かいました。",
         "translation": {
           "vi": "Tôi đã mua quần áo ở trung tâm thương mại."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/clothes-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Giá treo quần áo."
         }
       }
     },
@@ -299,6 +363,14 @@
         "translation": {
           "vi": "Tôi dùng từ điển điện tử có được không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/electronic-dictionary-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc từ điển điện tử mở nắp."
+        }
       }
     },
     {
@@ -333,6 +405,14 @@
         "translation": {
           "vi": "Bạn có biết số điện thoại của ủy ban thành phố không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/city-hall-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tòa nhà ủy ban thành phố."
+        }
       }
     },
     {
@@ -350,6 +430,14 @@
         "translation": {
           "vi": "Tôi đang dạy tiếng Anh ở trường cấp ba."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/high-school-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Trường cấp ba có hai học sinh mặc đồng phục."
+        }
       }
     },
     {
@@ -366,6 +454,14 @@
         "kana": "あした はいしゃへ いきます。",
         "translation": {
           "vi": "Ngày mai tôi sẽ đi nha sĩ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/dentist-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nha sĩ đứng cạnh ghế khám răng."
         }
       }
     },

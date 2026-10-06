@@ -221,3 +221,130 @@ Ngày: **05/10/2026**. Trạng thái: **đã tích hợp 44 asset (9 pilot + 35 
 
 - Chưa kiểm desktop cho Bài 6–10, chưa kiểm offline và thiết bị thật. Người dùng chưa duyệt contact sheet. Chưa commit.
 - Tiếp theo: Bài 11–25 theo cùng quy trình (lập batch → worker chỉ generate → `collect` → `check` → `export` → `sheet` → duyệt → `link`); grammar illustration cho các mẫu vị trí của Bài 10 (上/下/前/後ろ).
+
+## Batch Bài 10 (ngữ pháp) + Bài 11–15, khởi động Bài 16–25 — 06/10/2026
+
+### Thay đổi và quyết định
+
+- Orca run `run_ee9410ff981b`.
+  - Batch [lesson-10-grammar](../../artwork/illustrations/batches/lesson-10-grammar.json): ảnh ngữ pháp vị trí `positions-desk-v1` có caption furigana, gắn vào mẫu `posiciones`.
+  - Batch [lesson-11](../../artwork/illustrations/batches/lesson-11.json)…[lesson-15](../../artwork/illustrations/batches/lesson-15.json).
+  - Kết quả: **113 WebP mới, 5.521.916 bytes**, đã `link` vào `lessons/lesson-10..15.json` và `vocab/lesson-11..15.json`. Kho hiện có 393 WebP (gồm cả phần Bài 19–25 đã export nhưng chưa link).
+- Quyết định của người dùng:
+  - Bỏ atlas anh chị em Bài 11.
+  - Tạo ảnh mới thay vì dùng lại ảnh gần nghĩa (`yasumimasu` công ty, `omatsuri`, `shokuji-shimasu`, `bijutsu`).
+  - Giữ hết động từ Bài 14.
+  - Bài 16–25: cắt mục yếu trước khi chạy.
+  - Link ngay phần đã đạt.
+  - Tạo lại ảnh yếu với subject rõ hơn.
+- Ảnh tạo lại thành ảnh đơn cùng stem; subject được viết khác để `collect` không lấy nhầm ảnh cũ:
+  - Bài 12, crop lẫn sang ô bên cạnh: các ô atlas đồ ăn Nhật, `rain`, `cloudy`.
+  - Bài 12, chạm mép: `crowd`.
+  - Bài 12, sai nghĩa: `cloudy` có mưa; `weather` trông như clip-art.
+  - Bài 14: `passport`; `entering-cafe`/`leaving-cafe` quá giống nhau (bản mới: một ảnh quay lưng, một ảnh quay mặt); `parking-car`.
+  - Bài 15: `city-hall` chạm mép, `high-school`.
+
+  Bản nháp chưa phát hành nằm ở `D:\tmp\illustration-drafts-2026-10-06\`, ngoài repo.
+- Antigravity hết quota (429), nên cover `lunch-diner` (Bài 13) và mọi cover Bài 16–25 chuyển sang Codex.
+- Bài 16–25:
+  - 10 batch đã lập, 128 lượt gọi.
+  - Mục đã cắt: `kengaku-shimasu`, `motte-ikimasu`/`motte-kimasu`, ô `kinen`, `kiotsukemasu`, `koshou`, `sawarimasu`, `ganbarimasu`.
+  - Mục trùng chuyển sang `reuse`: `naoshimasu` → `repairing-bicycle-v1` (Bài 20), `kangaemasu` → `thinking-v1` (Bài 21). Phải link Bài 20/21 trước Bài 24/25.
+  - Đổi subject: `taking-shower` (bị bộ lọc an toàn chặn 2 lần) thành góc tắm không người; `moving-house` (chạm mép) thêm yêu cầu bố cục gọn.
+- Công cụ tạo ảnh Codex hết hạn mức riêng: HTTP 429 `usage_limit_reached`, reset **2026-10-07 02:05Z**. Hạn mức chat vẫn còn: 3% (5 giờ) / 24% (tuần).
+- Sự cố Orca:
+  - Một worker thoát sau 2 lượt gọi.
+  - Một worker báo `worker_done` bằng handle của coordinator nên bị từ chối.
+  - Một dispatch tái dùng terminal bị kẹt ở bước dán prompt (`[Pasted Content]` chưa submit).
+  - Cách xử lý: `worker-abandon`, rồi `worker-start --retry-of` trên terminal mới. Ưu tiên terminal mới hơn tái dùng terminal.
+
+### Kiểm chứng thực chạy (06/10/2026, Windows)
+
+- `batch.mjs check`:
+  - Bài 10–15: toàn bộ `ready` sau khi tạo lại.
+  - Bài 19/20/22/25: toàn bộ `ready`.
+  - Bài 24: 12/13 `ready` (`moving-house` chờ tạo lại).
+  - Cảnh báo dung lượng ở một số ảnh, ví dụ `weather` 87.210 B.
+- Coordinator xem contact sheet bằng vision: Bài 10-grammar, 11–15 (12/14/15 làm lại sau khi tạo lại ảnh), 19, 20, 22, 24, 25. Đúng nghĩa, cùng phong cách, cover tỉ lệ 4:3.
+- `pnpm check` **PASS**; `pnpm test` **261/261 PASS**.
+- Browser `agent-browser`, dev server `localhost:3000` (title MaiPace), 390 × 844:
+  - `/hoc/10` 27/27, `/hoc/11` 16/16, `/hoc/12` 36/36, `/hoc/13` 21/21, `/hoc/14` 27/27, `/hoc/15` 13/13 ảnh tải được.
+  - 0 ảnh thiếu alt, không tràn ngang.
+  - Lưu ý: script `scroll` dài làm CDP timeout. Thay bằng đặt `loading=eager` rồi đếm.
+
+### Chưa kiểm và bước tiếp theo
+
+- Chưa kiểm desktop, flashcard và offline cho Bài 11–15. Chưa chạy `pnpm build`. Người dùng chưa duyệt contact sheet Bài 16–25. Chưa commit.
+- Bài 19/20/22/24/25: người dùng duyệt, **đã link 55 tham chiếu** (06/10/2026).
+  - Còn thiếu `moving-house` (Bài 24) và reuse `kangaemasu` → `thinking-v1` (Bài 25, chờ Bài 21 có ảnh).
+  - `pnpm check` PASS, `pnpm test` 261/261.
+  - Browser 390 × 844: `/hoc/19` 12/12, `/hoc/20` 6/6, `/hoc/22` 19/19, `/hoc/24` 13/13, `/hoc/25` 5/5; 0 thiếu alt, không tràn ngang.
+- Còn phải tạo sau khi quota reset:
+  - Bài 16: 14 mục;
+  - Bài 17: 13;
+  - Bài 18: 9;
+  - Bài 21: 5;
+  - Bài 23: 7, gồm cover `bridge-v1`;
+  - Bài 24: `moving-house`.
+
+  File `.prompts.md` đã sinh lại, chỉ chứa mục còn thiếu. Sau đó làm tiếp: `collect` → `check` → `export` → `sheet` → duyệt → `link`, rồi kiểm tra trình duyệt `/hoc/16`–`/hoc/25`.
+
+## Bàn giao phiên 07/10/2026 — tạo nốt ảnh Bài 16–25
+
+Trạng thái: đã link Bài 10–15, 19, 20, 22, 24, 25. Bài 16, 17, 18, 21, 23 còn thiếu ảnh.
+
+Chờ đến khi hạn mức `image_gen` của Codex reset lúc **2026-10-07 02:05Z (09:05 giờ VN)**.
+
+### Việc còn thiếu
+
+File `.prompts.md` đã sinh lại và chỉ chứa mục chưa có ảnh:
+
+| Batch | Số mục | Ghi chú |
+| --- | --- | --- |
+| [lesson-16](../../artwork/illustrations/batches/lesson-16.json) | 14 | `taking-shower-v1` đã đổi subject (góc tắm không người) |
+| [lesson-17](../../artwork/illustrations/batches/lesson-17.json) | 13 | |
+| [lesson-18](../../artwork/illustrations/batches/lesson-18.json) | 9 | |
+| [lesson-21](../../artwork/illustrations/batches/lesson-21.json) | 5 | Có `thinking-v1`, nguồn reuse cho `kangaemasu` Bài 25 |
+| [lesson-23](../../artwork/illustrations/batches/lesson-23.json) | 7 | Gồm cover `bridge-v1` |
+| [lesson-24](../../artwork/illustrations/batches/lesson-24.json) | 1 | `moving-house-v1`, đã thêm yêu cầu bố cục gọn |
+
+Tổng **49 lượt gọi**. Hạn mức ảnh khoảng 100–120 lượt/ngày (Plus), nên chạy hết trong một đợt được.
+
+Ảnh master đã `collect` nhưng chưa export của Bài 16, 17, 18, 21, 23 đã nằm sẵn trong `artwork/illustrations/`. `collect` không ghi đè các file này.
+
+### Prompt giao việc
+
+```text
+Làm việc trên MaiPace theo quy ước chung của repo.
+Mục tiêu: tạo nốt ảnh SPEC-21 cho Bài 16, 17, 18, 21, 23 và moving-house-v1 (Bài 24), rồi link toàn bộ Bài 16–25.
+Chế độ: triển khai.
+Phạm vi: artwork/illustrations/, web/public/assets/illustrations/, web/src/data/n5/{lessons,vocab}/lesson-16..25.json, docs SPEC-21. Không sửa code app.
+Tiêu chí xong:
+- `batch.mjs check` ready cho mọi job không skip của Bài 16–25.
+- Contact sheet được xem bằng vision và người dùng duyệt.
+- `link` xong. Link Bài 21 trước, rồi link reuse `thinking-v1` của Bài 25 (`link lesson-25.json thinking-v1`).
+- `pnpm check` và `pnpm test` PASS.
+- Browser localhost:3000 (title MaiPace), 390×844, `/hoc/16`–`/hoc/25`: ảnh tải đủ, 0 thiếu alt, không tràn ngang.
+Bàn giao trước: docs/handoff/SPEC-21.md, mục "Batch Bài 10 (ngữ pháp) + Bài 11–15" và mục này.
+```
+
+### Quy trình đã kiểm chứng
+
+Chạy từ root với `node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON artwork/illustrations/tools/batch.mjs <lệnh> <batch.json> [stem…]`.
+
+1. Codex worker qua Orca (`worker-start --agent codex --model gpt-6-luna --effort low --worktree current`), luôn mở **terminal mới**.
+   - Spec ghi rõ: "GENERATE-ONLY, không ghi file". Mỗi section gọi một lần `image_gen`, dùng nguyên văn khối `text`, đính kèm `reference/paper-town-style-v1.png`.
+   - Gặp 429 hai lần thì dừng và báo kèm thời điểm reset.
+2. `collect` → `check`. Ảnh lỗi gate (lẫn ô, chạm mép) xử lý như sau:
+   - Chuyển bản nháp ra `D:\tmp\illustration-drafts-2026-10-06\`.
+   - Ảnh atlas lỗi: đánh `skip` ô đó và thêm ảnh đơn cùng stem, subject viết khác đi. Ảnh đơn lỗi: chỉ sửa subject.
+   - **Sau đó** mới chạy `prompts`.
+3. `export`: truyền danh sách stem khi còn ảnh lỗi. Tiếp theo `sheet` → xem bằng vision → người dùng duyệt → `link`.
+4. Cover phải đúng tỉ lệ 4:3. Nếu Codex trả 3:2, thêm `crop`.
+
+### Bẫy đã gặp
+
+- Dispatch tái dùng terminal có thể kẹt ở `[Pasted Content]`. Xem bằng `orca terminal read`, xử lý bằng `worker-abandon` rồi `worker-start --retry-of` trên terminal mới.
+- Worker phải gửi `worker_done` bằng handle của chính nó. Gửi bằng handle coordinator sẽ bị từ chối.
+- `agent-browser`: không scroll async dài trong `eval` vì CDP sẽ timeout. Đặt `loading=eager`, chờ, rồi mới đếm. Daemon treo thì `taskkill //F //IM agent-browser.exe`.
+- Antigravity hết quota. Nếu dùng lại thì chỉ cho cảnh opaque (JPG), không dùng cho cutout.

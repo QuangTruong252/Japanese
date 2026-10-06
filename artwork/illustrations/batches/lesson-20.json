@@ -1,0 +1,106 @@
+{
+  "name": "lesson-20",
+  "description": "Bài 20 — thể thông thường khi nói chuyện thân mật: tra cứu, sửa chữa, kimono, visa và no bụng.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "stem": "looking-up-v1",
+      "subject": "the reference male student at a desk looking something up, running his finger down a page of a thick open reference book, a laptop open beside it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "shirabemasu"
+      },
+      "alt": {
+        "vi": "Chàng trai dò từng dòng trong cuốn sách dày để tra cứu."
+      }
+    },
+    {
+      "stem": "repairing-bicycle-v1",
+      "subject": "a mechanic in work overalls crouching beside an upturned bicycle, tightening the wheel with a wrench, a small toolbox on the ground",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "shuuri-shimasu"
+      },
+      "alt": {
+        "vi": "Người thợ dùng cờ lê sửa bánh xe đạp."
+      }
+    },
+    {
+      "stem": "kimono-v1",
+      "subject": "a young woman standing gracefully in a traditional Japanese kimono with a soft floral pattern and a wide obi sash, full figure",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "kimono"
+      },
+      "alt": {
+        "vi": "Cô gái mặc kimono hoa văn và thắt obi."
+      }
+    },
+    {
+      "stem": "visa-v1",
+      "subject": "an open passport showing one inside page covered by a large blank visa sticker with a small portrait photo area and a plain decorative ink stamp, no text, letters or numbers anywhere",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "biza"
+      },
+      "alt": {
+        "vi": "Cuốn hộ chiếu mở ra, trang trong có dán thị thực."
+      }
+    },
+    {
+      "stem": "full-stomach-v1",
+      "subject": "the reference male student leaning back in his chair with a satisfied smile, patting his round full belly, chopsticks laid across a tall stack of empty plates and bowls in front of him",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "onaka-ippai"
+      },
+      "alt": {
+        "vi": "Chàng trai ngả người xoa bụng no bên chồng đĩa đã ăn hết."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "casual-chat-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "a relaxed afternoon in a small neighbourhood park; the male student and the woman sit side by side on a wooden bench chatting casually like close friends, each holding a canned drink; the male student points cheerfully down the path as if inviting her to go somewhere together, and she laughs and nods; trees, a low wall and a plain blank signboard in the background.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-20.json",
+        "field": "cover"
+      },
+      "alt": {
+        "vi": "Hai bạn trẻ ngồi ghế đá công viên trò chuyện thân mật, chàng trai rủ cô gái đi chơi."
+      }
+    }
+  ]
+}

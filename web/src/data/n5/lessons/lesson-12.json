@@ -168,5 +168,13 @@
     "adjectives",
     "question-words"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/seasons-compare-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Hai bạn đứng giữa cảnh mùa hè và mùa đông, so sánh mùa mình thích hơn."
+    }
+  }
 }

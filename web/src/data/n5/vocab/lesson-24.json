@@ -30,6 +30,14 @@
         "naiKana": "くれない",
         "ta": "くれた",
         "taKana": "くれた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/gift-for-me-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái chìa hộp quà về phía tôi."
+        }
       }
     },
     {
@@ -60,6 +68,14 @@
         "naiKana": "なおさない",
         "ta": "直[なお]した",
         "taKana": "なおした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/repairing-bicycle-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người bố đang sửa xe đạp bằng cờ lê."
+        }
       }
     },
     {
@@ -90,6 +106,14 @@
         "naiKana": "つれていかない",
         "ta": "連[つ]れて 行[い]った",
         "taKana": "つれていった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/taking-child-along-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái nắm tay em gái dắt đi về phía cổng sở thú."
+        }
       }
     },
     {
@@ -120,6 +144,14 @@
         "naiKana": "つれてこない",
         "ta": "連[つ]れて 来[き]た",
         "taKana": "つれてきた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bringing-friend-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai dẫn bạn đến bữa tiệc, bước vào cửa."
+        }
       }
     },
     {
@@ -150,6 +182,14 @@
         "naiKana": "おくらない",
         "ta": "送[おく]った[人[ひと]を〜]",
         "taKana": "おくった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/seeing-off-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đưa thầy giáo ra ga bằng ô tô và vẫy tay tạm biệt."
+        }
       }
     },
     {
@@ -180,6 +220,14 @@
         "naiKana": "しょうかいしない",
         "ta": "紹介[しょうかい]した",
         "taKana": "しょうかいした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/introducing-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái giới thiệu chàng trai với một người đàn ông lớn tuổi."
+        }
       }
     },
     {
@@ -210,6 +258,14 @@
         "naiKana": "あんないしない",
         "ta": "案内[あんない]した",
         "taKana": "あんないした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/guiding-tourist-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái dẫn khách du lịch tham quan phố cổ Kyoto."
+        }
       }
     },
     {
@@ -240,6 +296,14 @@
         "naiKana": "せつめいしない",
         "ta": "説明[せつめい]した",
         "taKana": "せつめいした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/explaining-machine-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên giải thích cho chàng trai cách dùng máy pha cà phê."
+        }
       }
     },
     {
@@ -257,6 +321,14 @@
         "translation": {
           "vi": "Tôi đã chỉ đường giúp cho cụ ông kia."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/elderly-man-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cụ ông tóc bạc chống gậy, mỉm cười hiền hậu."
+        }
       }
     },
     {
@@ -273,6 +345,14 @@
         "kana": "おばあさんは まいにち こうえんを さんぽします。",
         "translation": {
           "vi": "Cụ bà đi dạo công viên mỗi ngày."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/elderly-woman-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cụ bà tóc bạc búi gọn, mỉm cười hiền từ."
         }
       }
     },
@@ -325,6 +405,14 @@
         "translation": {
           "vi": "Mẹ đã cho tôi bánh kẹo ngon."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sweets-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hộp sô-cô-la, kẹo, bánh quy và bánh daifuku."
+        }
       }
     },
     {
@@ -341,6 +429,14 @@
         "kana": "にほんで ホームステイを した ことが あります。",
         "translation": {
           "vi": "Tôi đã từng ở homestay tại Nhật Bản."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/homestay-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Gia đình Nhật vui vẻ đón chàng trai đến ở homestay."
         }
       }
     },
