@@ -11,7 +11,7 @@ test('navDirection: vào sâu là tiến, ra ngoài là lùi', () => {
 
 test('navDirection: đổi tab theo thứ tự nav', () => {
   assert.equal(navDirection('/', '/hoc'), 1);
-  assert.equal(navDirection('/thong-ke', '/luyen-tap'), -1);
+  assert.equal(navDirection('/cai-dat', '/luyen-tap'), -1);
   assert.equal(navDirection('/on-tap/diem-yeu', '/cai-dat'), 1);
   assert.equal(navDirection('/hoc', '/'), -1);
 });

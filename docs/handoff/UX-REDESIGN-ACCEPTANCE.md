@@ -1,6 +1,6 @@
 # Bộ nghiệm thu — UX redesign (SPEC-16 → 20)
 
-Ngày lập: 28/09/2026. Áp dụng cho [kế hoạch UX](../plans/2026-09-27-ux-redesign.md).
+Ngày lập: 28/09/2026. Áp dụng cho kế hoạch UX. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 Một mục chỉ được tích `[x]` khi có bằng chứng **thực chạy** ghi ngày, route, viewport.
 Worker không được tự tích mục loại **B** (browser) hay **J** (hành trình); các mục đó do
 coordinator chạy trên một server tích hợp duy nhất.

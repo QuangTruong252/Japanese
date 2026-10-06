@@ -3,7 +3,7 @@
 Ngày: 23/09/2026  
 Mã: SPEC-JPN-F10  
 Trạng thái: Approved design doc  
-Nguồn tham chiếu: [SPEC-10](file:///d:/Projects/Lab/Japanese/docs/specs/SPEC-10-shadowing-player.md), [DESIGN.md](file:///d:/Projects/Lab/Japanese/DESIGN.md), [mock/21-shadowing.png](file:///d:/Projects/Lab/Japanese/mock/21-shadowing.png).
+Nguồn tham chiếu: [SPEC-10](file:///d:/Projects/Lab/Japanese/docs/specs/SPEC-10-shadowing-player.md), [DESIGN.md](file:///d:/Projects/Lab/Japanese/DESIGN.md), mock/21-shadowing.png. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 
 ---
 

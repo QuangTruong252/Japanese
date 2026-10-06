@@ -38,7 +38,7 @@ Ngày: **05/10/2026**. Trạng thái: **đã tích hợp 44 asset (9 pilot + 35 
 - Kiểm keyboard Tab có focus-visible/ring. Dark + furigana lớn + reduced-motion ở 390px không tràn; ảnh không thêm animation. Nhánh hết mục/hạn mức `/on-tap` có state art + alt rỗng, thông báo hạn mức giữ nguyên (fixture session riêng: đã học 1 từ, hạn mức 1).
 - Production local `next start --port 3201`: banner trả **200** + `public, max-age=31536000, immutable`; README ảnh/logo ngoài pattern vẫn `max-age=0`. Next optimizer `book` w=128,q=75 trả **200 WebP, 2.752 bytes**, cache `max-age=31536000, must-revalidate`. Đây là request mẫu local, không phải benchmark LCP; còn kiểm host thật.
 - Kiểm cuối: **155 liên kết local trong 8 tài liệu, không có link thiếu**; hash/bytes của 9 WebP và ảnh mẫu khớp sidecar. So sánh 3 JSON với HEAD sau khi bỏ các trường ảnh mới: toàn bộ nội dung cũ, ID và thứ tự giữ nguyên. Sáu sidecar nội dung đã cập nhật trạng thái tham chiếu sang `added-to-learning-data`. `git diff --check`: PASS.
-- Ảnh chụp UI thật: [Bảng tin mobile](../../new-ui/browser/2026-10-05/dashboard-mobile.png), [desktop](../../new-ui/browser/2026-10-05/dashboard-desktop.png), [Bài 1 mobile](../../new-ui/browser/2026-10-05/lesson-mobile.png), [desktop](../../new-ui/browser/2026-10-05/lesson-desktop.png), [thẻ mặt nghĩa](../../new-ui/browser/2026-10-05/vocab-mobile.png), [grammar sáng](../../new-ui/browser/2026-10-05/grammar-mobile.png), [grammar tối](../../new-ui/browser/2026-10-05/grammar-dark-mobile.png), [state tối](../../new-ui/browser/2026-10-05/review-dark-mobile.png). Đây là dữ liệu giả lập trong browser riêng, không phải tiến độ người dùng.
+- Ảnh chụp UI thật: Bảng tin mobile, desktop, Bài 1 mobile, desktop, thẻ mặt nghĩa, grammar sáng, grammar tối, state tối. Đây là dữ liệu giả lập trong browser riêng, không phải tiến độ người dùng. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 
 ## Còn lại và bước tiếp theo
 
@@ -68,7 +68,7 @@ Ngày: **05/10/2026**. Trạng thái: **đã tích hợp 44 asset (9 pilot + 35 
 - Trắc nghiệm Bài 1, 10 câu: chọn sai thấy icon/đáp án/phản hồi; mất mạng trong tab đã mở vẫn chấm và chuyển câu. Lưu và học tiếp sau → nháp index=2/results=2; Bảng tin primary Tiếp tục → mở đúng **3/10**, chrome ẩn. Hoàn tất **8/10**, kết quả/câu sai/lối luyện lại xuất hiện, nháp được xóa. Đây là smoke test MC, chưa tái chạy riêng cả 5 dạng.
 - Tab có focus-visible/ring; mở Tùy chỉnh và click Xong được sau scroll-padding. `get_errors` Next DevTools trả configErrors/sessionErrors rỗng.
 - Flashcard Bài 2 chọn riêng 本: front **0 ảnh**, font tính được **48px**, không tràn; sau lật có hình sách/nghĩa/ví dụ/bốn mức chấm, giữ cơ chế recall. Minh họa completion/result 128px đã xem trong màn kết quả thật.
-- Ảnh đối chiếu mới ở [thư mục browser redesign](../../new-ui/browser/2026-10-05-redesign/README.md); bộ chụp lần chỉ tích hợp ảnh trong `2026-10-05/` giữ nguyên để thấy khác biệt.
+- Ảnh đối chiếu mới ở thư mục browser redesign; bộ chụp lần chỉ tích hợp ảnh trong `2026-10-05/` giữ nguyên để thấy khác biệt. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 
 ### Giới hạn
 

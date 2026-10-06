@@ -5,7 +5,7 @@
 > `718013b`, còn trong lịch sử Git). Bản này **chỉ giữ phần cài đặt**; service worker và
 > offline reload vẫn nằm ngoài lộ trình.
 > **Phụ thuộc:** SPEC-02 (shell, nav đáy, safe-area), SPEC-06 (màn Cài đặt), SPEC-08 (sync).
-> Liên quan: [plan hoạt ảnh](../plans/motion-mobile.md) giai đoạn G2b.
+> Liên quan: plan hoạt ảnh giai đoạn G2b. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 
 ## 1. Mục tiêu & phạm vi
 

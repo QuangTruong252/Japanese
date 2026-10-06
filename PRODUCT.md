@@ -81,7 +81,8 @@ Tài sản nằm trong [web/public/brand/](web/public/brand/):
 | `maipace-mark-reversed.svg` | Biểu tượng sáng, trên nền tối hoặc nền đỏ |
 | `maipace-mark-monochrome.svg` | Bản một màu trên nền sáng |
 | `maipace-app-icon.svg` | Biểu tượng trên nền đỏ cho ứng dụng |
-| `logo.png` | Bản phác/tham khảo; không dùng làm ảnh giao diện |
+
+Bản phác tham khảo `logo.png` nằm ở `artwork/brand/`, ngoài `public`; không dùng làm ảnh giao diện.
 
 Giữ nguyên tỷ lệ, đường nét và màu các SVG. Chừa khoảng trống ngoài hình tối
 thiểu bằng 1/4 chiều cao biểu tượng; biểu tượng trong UI tối thiểu 24px cao.

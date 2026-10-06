@@ -1,6 +1,6 @@
 // Hướng trượt khi chuyển trang: 1 = tiến (vào sâu / tab bên phải), -1 = lùi, 0 = chỉ mờ dần.
 // Thứ tự tab khớp NAV_ITEMS trong AppNav, thêm /cai-dat ở cuối như sidebar desktop.
-const TAB_ORDER = ['/', '/hoc', '/luyen-tap', '/on-tap', '/thong-ke', '/cai-dat'];
+const TAB_ORDER = ['/', '/hoc', '/luyen-tap', '/on-tap', '/cai-dat'];
 
 function tabIndex(path: string): number {
   const top = '/' + (path.split('/')[1] ?? '');

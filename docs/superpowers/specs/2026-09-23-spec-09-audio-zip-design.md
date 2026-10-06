@@ -3,7 +3,7 @@
 Ngày: 23/09/2026  
 Mã: SPEC-JPN-F09  
 Trạng thái: Approved design doc  
-Nguồn tham chiếu: [SPEC-09](file:///d:/Projects/Lab/Japanese/docs/specs/SPEC-09-audio-zip.md), [DESIGN.md](file:///d:/Projects/Lab/Japanese/DESIGN.md), [mock/20-audio-zip.png](file:///d:/Projects/Lab/Japanese/mock/20-audio-zip.png).
+Nguồn tham chiếu: [SPEC-09](file:///d:/Projects/Lab/Japanese/docs/specs/SPEC-09-audio-zip.md), [DESIGN.md](file:///d:/Projects/Lab/Japanese/DESIGN.md), mock/20-audio-zip.png. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 
 ---
 

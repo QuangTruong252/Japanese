@@ -39,7 +39,6 @@ import {
 import { savePracticeSession } from '@/lib/practice-write';
 import { describeNextReviews, resolveNextBatchPlan, type NextBatchPlanResult } from '@/lib/review-queue';
 import { DEFAULT_SETTINGS } from '@/lib/settings';
-import { useUIStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
 import type {
   AnswerResult,
@@ -81,7 +80,6 @@ export function ReviewRunner({
   dailyNewLimit,
 }: ReviewRunnerProps) {
   const router = useRouter();
-  const { setCurrentQuestionIndex } = useUIStore();
 
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [allResults, setAllResults] = useState<AnswerResult[]>(initialResults);
@@ -136,11 +134,9 @@ export function ReviewRunner({
     return Math.max(1, Math.round(total));
   }, []);
 
-  const initialIndexRef = useRef(initialIndex);
   useEffect(() => {
-    setCurrentQuestionIndex(initialIndexRef.current);
     startQuestionTimer();
-  }, [setCurrentQuestionIndex, startQuestionTimer]);
+  }, [startQuestionTimer]);
 
   // Đồng hồ tổng phiên
   useEffect(() => {
@@ -288,7 +284,6 @@ export function ReviewRunner({
     if (currentIndex + 1 < questions.length) {
       const nextIdx = currentIndex + 1;
       setCurrentIndex(nextIdx);
-      setCurrentQuestionIndex(nextIdx);
       setAnswered(false);
       setLastResult(null);
       startQuestionTimer();
@@ -301,7 +296,6 @@ export function ReviewRunner({
     isFinished,
     currentIndex,
     questions.length,
-    setCurrentQuestionIndex,
     startQuestionTimer,
     saveResults,
     allResults,

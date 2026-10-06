@@ -10,7 +10,6 @@ import {
   getReferenceDocBySlug,
   isExampleVerified,
   buildKanjiVocabIndex,
-  filterKanji,
   filterVerbs,
   getKanjiVocabIndex,
   getKanjiLesson,
@@ -129,23 +128,6 @@ test('getKanjiVocabIndex trên 25 bài thật trích xuất đúng từ chứa c
   const hitoWords = index.get('人') ?? [];
   assert.ok(hitoWords.length > 0);
   assert.ok(hitoWords.some((w) => w.word.includes('人')));
-});
-
-test('filterKanji lọc theo bài, số nét và trạng thái đã học', () => {
-  const all = getAllKanji();
-
-  const lesson1 = filterKanji(all, { lesson: 1 });
-  assert.ok(lesson1.length > 0);
-  assert.ok(lesson1.every((k) => getKanjiLesson(k) === 1));
-
-  const strokes2 = filterKanji(all, { strokes: 2 });
-  assert.ok(strokes2.length > 0);
-  assert.ok(strokes2.every((k) => k.strokes === 2));
-
-  const learnedSet = new Set(['人', '日']);
-  const learnedOnly = filterKanji(all, { onlyLearned: true }, learnedSet);
-  assert.equal(learnedOnly.length, 2);
-  assert.ok(learnedOnly.every((k) => learnedSet.has(k.character)));
 });
 
 test('filterVerbs lọc theo nhóm, bài và tìm kiếm q', () => {

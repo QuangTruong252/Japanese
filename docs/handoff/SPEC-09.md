@@ -19,7 +19,7 @@ Ngày: 23/09/2026. Trạng thái: Đã hoàn tất mã nguồn, Web Worker, Hook
   - Nhận batch `ArrayBuffer` chuyển thành `Blob` (`audio/mpeg`) và lưu vào IndexedDB bằng `db.audioFiles.bulkPut` theo từng transaction độc lập (ngoại lệ atomic có chủ đích của SPEC-09 §2.3).
   - Lắng nghe sự kiện `beforeunload` khi đang nạp để tránh người dùng vô tình đóng tab.
 - **Màn hình Cài đặt Audio ([web/src/app/cai-dat/audio/page.tsx](file:///d:/Projects/Lab/Japanese/web/src/app/cai-dat/audio/page.tsx)):**
-  - Tuân thủ thiết kế thị giác theo [mock/20-audio-zip.png](file:///d:/Projects/Lab/Japanese/mock/20-audio-zip.png):
+  - Tuân thủ thiết kế thị giác theo mock/20-audio-zip.png: _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
     - Header có nút quay lại `< Cài đặt`, H1 `Audio đĩa CD`, phụ đề.
     - Card Thư viện hiện tại: hiển thị tổng số track, dung lượng MB và dòng trạng thái trung thực *"Đã kiểm toàn vẹn gói · chưa xác minh ấn bản"*. Khi chưa có audio, hiển thị dung lượng bộ nhớ trống từ `navigator.storage.estimate()`.
     - Lưới 5×5 bài học (1..25): thể hiện trực quan bằng số bài, icon tròn xanh lá nếu đủ 4 track, icon hổ phách kèm nhãn `"Thiếu track"` (`x/4`) nếu thiếu track, và `"0/4"` nếu chưa có audio.

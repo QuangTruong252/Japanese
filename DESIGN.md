@@ -806,7 +806,7 @@ this contract; `missing` means the pattern exists in this file with no shared im
 | Question types | `web/src/components/practice/Question{Mc,Cloze,Matching,Reorder,Listening}.tsx` | stable | One per exercise type |
 | Session result | `web/src/components/practice/SessionResult.tsx` | stable | End-of-session summary |
 | Pronunciation button | `web/src/components/SpeakButton.tsx` | stable | Web Speech through `tts.ts` |
-| Sync badge | `web/src/components/SyncBadge.tsx` | stable | Three states, icon plus label |
+| Sync badge | `web/src/components/AppNav.tsx`, `web/src/app/ca-nhan/page.tsx` (trạng thái từ `resolveSyncBadgeState` trong `web/src/lib/stats.ts`) | stable | Three states, icon plus label |
 | Review target type badge | `web/src/components/review/TargetTypeBadge.tsx` | stable | Correct chart-token usage (`bg-chart-n`) |
 | Button, card, dialog, sheet, tabs, tooltip, input, badge, progress and siblings | `web/src/components/ui/*` | stable | shadcn `base-nova` on Base UI; `size="quiz"` is the 48px practice size |
 | Progress indicator | `web/src/components/ui/progress.tsx` plus `web/src/components/LessonProgress.tsx` | needs review | A third, hand-rolled bar exists inline on the dashboard and lesson list |
@@ -818,7 +818,6 @@ this contract; `missing` means the pattern exists in this file with no shared im
 | Statistics view | `web/src/components/stats/StatisticsContent.tsx` | stable | Tái dùng nội dung Thống kê SPEC-07 cho tab /ca-nhan/thong-ke và chuyển hướng /thong-ke |
 | Account button | `web/src/components/profile/AccountButton.tsx` | stable | Nút Tài khoản cho header mobile và desktop shell (≥48px touch target) |
 | Lesson list and cards | `web/src/components/LessonGrid.tsx` | needs review | Raw palette colors and surface overrides |
-| Daily kanji card | `web/src/components/DailyKanji.tsx` | existing | Not yet audited against this contract |
 | Stat tile | — | missing | Implemented inline on three screens; no shared component |
 | Audio player / Shadowing | — | missing | SPEC-10, not implemented |
 

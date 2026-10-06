@@ -196,33 +196,6 @@ export function getKanjiLesson(kanji: KanjiData): number | undefined {
 }
 
 /**
- * Lọc danh sách Kanji theo bài học, số nét và trạng thái "đã học".
- */
-export function filterKanji(
-  list: KanjiData[],
-  filters: {
-    lesson?: number | null;
-    strokes?: number | null;
-    onlyLearned?: boolean;
-  },
-  learnedCharSet?: Set<string>
-): KanjiData[] {
-  return list.filter((k) => {
-    if (filters.lesson) {
-      const l = getKanjiLesson(k);
-      if (l !== filters.lesson) return false;
-    }
-    if (filters.strokes && k.strokes !== filters.strokes) {
-      return false;
-    }
-    if (filters.onlyLearned && (!learnedCharSet || !learnedCharSet.has(k.character))) {
-      return false;
-    }
-    return true;
-  });
-}
-
-/**
  * Lọc danh sách Động từ theo nhóm, bài học và từ khóa tìm kiếm q.
  */
 export function filterVerbs(
