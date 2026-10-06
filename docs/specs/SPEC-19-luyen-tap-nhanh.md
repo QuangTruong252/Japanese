@@ -1,6 +1,6 @@
 # SPEC-19 — Luyện tập nhanh với cấu hình mở rộng
 
-Ngày: 28/09/2026. Trạng thái: **đã có code, chờ nghiệm thu browser**. Mốc 4 của [kế hoạch UX](../plans/2026-09-27-ux-redesign.md); đọc SPEC-04 và handoff phiên nháp.
+Ngày: 28/09/2026. Trạng thái: **đã có code, chờ nghiệm thu browser**. Mốc 4 của kế hoạch UX; đọc SPEC-04 và handoff phiên nháp. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 
 ## 1. Mục tiêu & phạm vi
 

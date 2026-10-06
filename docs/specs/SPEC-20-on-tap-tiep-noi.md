@@ -1,6 +1,6 @@
 # SPEC-20 — Ôn tập theo lịch và tiếp lô rõ ràng
 
-Ngày: 27/09/2026. Trạng thái: **đã có code** (Antigravity worker, 27/09/2026), chờ supervisor nghiệm thu trình duyệt. Mốc 5 của [kế hoạch UX](../plans/2026-09-27-ux-redesign.md); đọc SPEC-05 và hợp đồng FSRS trong repo. Handoff: [SPEC-20](../handoff/SPEC-20.md).
+Ngày: 27/09/2026. Trạng thái: **đã có code** (Antigravity worker, 27/09/2026), chờ supervisor nghiệm thu trình duyệt. Mốc 5 của kế hoạch UX; đọc SPEC-05 và hợp đồng FSRS trong repo. Handoff: [SPEC-20](../handoff/SPEC-20.md). _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 
 ## 1. Mục tiêu & phạm vi
 

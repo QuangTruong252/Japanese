@@ -12,15 +12,15 @@ Ngày: 23/09/2026. Trạng thái: Đã hoàn tất toàn bộ mã nguồn, các 
   - Hàm `filterKanji` (lọc theo bài, số nét, chỉ chữ đã học) và `filterVerbs` (lọc theo nhóm 1/2/3, theo bài, tìm kiếm `?q=` trên cả dạng ます, từ điển và nghĩa).
   - Bộ unit test ([web/src/lib/lookup.test.ts](file:///d:/Projects/Lab/Japanese/web/src/lib/lookup.test.ts)) bao phủ 9 test suite kiểm thử đơn vị.
 - **Hub Tra cứu ([web/src/app/hoc/tra-cuu/page.tsx](file:///d:/Projects/Lab/Japanese/web/src/app/hoc/tra-cuu/page.tsx)):**
-  - Giao diện trung tâm theo sát [mock/22-tra-cuu.png](file:///d:/Projects/Lab/Japanese/mock/22-tra-cuu.png): 3 card lớn dẫn tới Kanji (169 chữ N5), Động từ (156 động từ · 5 thể), Bảng tham chiếu (10 bảng).
+  - Giao diện trung tâm theo sát mock/22-tra-cuu.png: 3 card lớn dẫn tới Kanji (169 chữ N5), Động từ (156 động từ · 5 thể), Bảng tham chiếu (10 bảng). _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
   - Bổ sung nút bấm điều hướng "Tra cứu (Kanji, Động từ)" trên đầu trang danh sách bài học `/hoc`.
 - **Màn Lưới Kanji & Chi tiết Kanji ([web/src/app/hoc/tra-cuu/kanji/page.tsx](file:///d:/Projects/Lab/Japanese/web/src/app/hoc/tra-cuu/kanji/page.tsx), [web/src/app/hoc/tra-cuu/kanji/[chu]/page.tsx](file:///d:/Projects/Lab/Japanese/web/src/app/hoc/tra-cuu/kanji/[chu]/page.tsx)):**
-  - Component [web/src/components/lookup/KanjiGrid.tsx](file:///d:/Projects/Lab/Japanese/web/src/components/lookup/KanjiGrid.tsx) theo sát [mock/23-kanji.png](file:///d:/Projects/Lab/Japanese/mock/23-kanji.png):
+  - Component [web/src/components/lookup/KanjiGrid.tsx](file:///d:/Projects/Lab/Japanese/web/src/components/lookup/KanjiGrid.tsx) theo sát mock/23-kanji.png: _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
     - Lưới ô vuông responsive (4 cột ở mobile 390px, 8 cột ở desktop), ô tối thiểu 48×48px.
     - Bộ lọc bài (1–25), số nét, switch "Chỉ chữ đã học" kết nối reactive với `db.reviewItems` qua `useLiveQuery`.
     - Chữ đã học hiển thị badge checkmark ở góc và nhãn "Đã học" trong `aria-label`.
     - Trạng thái rỗng hiển thị thông báo kèm nút "Xóa bộ lọc".
-  - Trang chi tiết chữ Hán theo sát [mock/24-chi-tiet-kanji.png](file:///d:/Projects/Lab/Japanese/mock/24-chi-tiet-kanji.png):
+  - Trang chi tiết chữ Hán theo sát mock/24-chi-tiet-kanji.png: _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
     - SSG sinh tĩnh cho 169 chữ Kanji (`generateStaticParams`).
     - Hero card: chữ Hán cỡ lớn 64px (`font-jp`, `lang="ja"`), badge số bài, số nét, nghĩa tiếng Việt in đậm.
     - Khối cách đọc: âm On, âm Kun kèm nút phát âm `SpeakButton`.
@@ -28,13 +28,13 @@ Ngày: 23/09/2026. Trạng thái: Đã hoàn tất toàn bộ mã nguồn, các 
     - Khối từ vựng trong bài học: hiển thị các từ trong 25 bài học có chứa chữ Hán này lấy từ chỉ mục tra ngược runtime.
     - Khối chữ dễ nhầm: các chữ tương tự bấm được dẫn sang trang chi tiết chữ đó.
 - **Bảng Động từ 5 thể ([web/src/app/hoc/tra-cuu/dong-tu/page.tsx](file:///d:/Projects/Lab/Japanese/web/src/app/hoc/tra-cuu/dong-tu/page.tsx)):**
-  - Component [web/src/components/lookup/VerbTable.tsx](file:///d:/Projects/Lab/Japanese/web/src/components/lookup/VerbTable.tsx) theo sát [mock/25-dong-tu.png](file:///d:/Projects/Lab/Japanese/mock/25-dong-tu.png):
+  - Component [web/src/components/lookup/VerbTable.tsx](file:///d:/Projects/Lab/Japanese/web/src/components/lookup/VerbTable.tsx) theo sát mock/25-dong-tu.png: _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
     - Ô tìm kiếm tự do `?q=` tìm trên cả thể từ điển, thể ます và nghĩa tiếng Việt, tự động cuộn tới dòng khớp đầu tiên và highlight `bg-primary/10`.
     - Hàng chip lọc nhóm động từ sử dụng token màu `--verb-1`, `--verb-2`, `--verb-3` luôn kèm nhãn chữ "Nhóm 1", "Nhóm 2", "Nhóm 3".
     - Bảng HTML semantic `<table>` 7 cột, cột đầu tiên "Động từ" ghim cố định (`sticky left-0 bg-card z-10`), khung cuộn ngang có `tabIndex={0}` cho bàn phím và chỉ dẫn mobile.
 - **10 Bảng Tham Chiếu ([web/src/app/hoc/tra-cuu/bang/page.tsx](file:///d:/Projects/Lab/Japanese/web/src/app/hoc/tra-cuu/bang/page.tsx), [web/src/app/hoc/tra-cuu/bang/[slug]/page.tsx](file:///d:/Projects/Lab/Japanese/web/src/app/hoc/tra-cuu/bang/[slug]/page.tsx)):**
   - Trang danh mục liệt kê 10 bảng chuyên đề.
-  - Trang chi tiết render đúng cấu trúc semantic `<table>` cho 10 bảng (Tính từ, Lịch, Lượng từ, Đại từ, Gia đình, Chào hỏi, Số đếm, Trợ từ, Từ để hỏi, Giờ giấc) theo sát [mock/26-bang-tham-chieu.png](file:///d:/Projects/Lab/Japanese/mock/26-bang-tham-chieu.png).
+  - Trang chi tiết render đúng cấu trúc semantic `<table>` cho 10 bảng (Tính từ, Lịch, Lượng từ, Đại từ, Gia đình, Chào hỏi, Số đếm, Trợ từ, Từ để hỏi, Giờ giấc) theo sát mock/26-bang-tham-chieu.png. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
   - Bảo toàn tuyệt đối 8 ô header rỗng có chủ đích (`vi: ""`), không lấp bằng ký tự giả làm méo hình dáng lưới.
   - Khối chú thích `note` hiển thị thông tin bổ trợ ở cuối bảng.
 

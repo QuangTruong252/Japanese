@@ -1,6 +1,6 @@
 # SPEC-17 — Tra cứu dễ thấy và tìm kiếm đích tính năng
 
-Ngày: 27/09/2026. Trạng thái: **Đã triển khai** (Code và unit tests PASS 100%). Mốc 2 của [kế hoạch UX](../plans/2026-09-27-ux-redesign.md); đọc thêm SPEC-12/13.
+Ngày: 27/09/2026. Trạng thái: **Đã triển khai** (Code và unit tests PASS 100%). Mốc 2 của kế hoạch UX; đọc thêm SPEC-12/13. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 
 ## 1. Mục tiêu & phạm vi
 

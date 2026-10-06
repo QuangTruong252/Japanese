@@ -3,7 +3,7 @@
 Ngày: 23/09/2026  
 Mã: SPEC-JPN-F12  
 Trạng thái: Approved design doc  
-Nguồn tham chiếu: [SPEC-12](file:///d:/Projects/Lab/Japanese/docs/specs/SPEC-12-tra-cuu.md), [DESIGN.md](file:///d:/Projects/Lab/Japanese/DESIGN.md), [mock/22-tra-cuu.png](file:///d:/Projects/Lab/Japanese/mock/22-tra-cuu.png) đến [mock/26-bang-tham-chieu.png](file:///d:/Projects/Lab/Japanese/mock/26-bang-tham-chieu.png).
+Nguồn tham chiếu: [SPEC-12](file:///d:/Projects/Lab/Japanese/docs/specs/SPEC-12-tra-cuu.md), [DESIGN.md](file:///d:/Projects/Lab/Japanese/DESIGN.md), mock/22-tra-cuu.png đến mock/26-bang-tham-chieu.png. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 
 ---
 

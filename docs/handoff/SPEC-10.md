@@ -10,7 +10,7 @@ Ngày: 23/09/2026. Trạng thái: Đã hoàn tất mã nguồn, component Shadow
   - Hàm `isTypingTarget(target)` phát hiện người dùng đang thao tác trong `input`, `textarea`, `select` hoặc `contenteditable` để tránh cướp phím tắt.
   - Bộ unit test ([web/src/lib/shadowing.test.ts](file:///d:/Projects/Lab/Japanese/web/src/lib/shadowing.test.ts)) bao phủ 100%.
 - **Component Trình phát Shadowing ([web/src/components/audio/ShadowingPlayer.tsx](file:///d:/Projects/Lab/Japanese/web/src/components/audio/ShadowingPlayer.tsx)):**
-  - Thiết kế theo sát [mock/21-shadowing.png](file:///d:/Projects/Lab/Japanese/mock/21-shadowing.png):
+  - Thiết kế theo sát mock/21-shadowing.png: _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
     - 4 tab track (`Từ vựng`, `Mẫu câu`, `Câu ví dụ`, `Hội thoại`) với đường gạch chân đỏ thương hiệu Washi (`border-primary`). Chỉ hiển thị những track có thật trong bài học.
     - Thanh scrubber tùy chỉnh: vạch tiến trình màu `primary`, mốc đánh dấu trực quan `A` và `B`, dải lặp tô nhẹ `primary/25`, thời gian hiện tại / tổng thời lượng.
     - Nút Play/Pause tròn 56px (`bg-primary`), hai nút tua nhanh ±10 giây (`⟲ 10` và `10 ⟳`) 44px hai bên.

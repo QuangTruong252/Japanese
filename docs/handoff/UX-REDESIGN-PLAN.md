@@ -4,7 +4,7 @@ Ngày: 27/09/2026. Trạng thái: **đã có kế hoạch/spec nháp; chưa sử
 
 ## Thay đổi và quyết định
 
-- Đã tạo [kế hoạch tổng](../plans/2026-09-27-ux-redesign.md) và [SPEC-16–20](../specs/README.md#kế-hoạch-ux-27092026--chưa-triển-khai) cho năm mốc độc lập. Căn cứ gồm PRODUCT, DESIGN, code `master` và [đề xuất/ảnh concept](../research/ux-redesign/2026-09-27-mobile-learning-flows.md).
+- Đã tạo kế hoạch tổng và [SPEC-16–20](../specs/README.md#kế-hoạch-ux-27092026--chưa-triển-khai) cho năm mốc độc lập. Căn cứ gồm PRODUCT, DESIGN, code `master` và đề xuất/ảnh concept. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 - Quyết định thứ tự: Profile/Thống kê hoạt động trước khi đổi dock; giữ `/hoc/tra-cuu` và route con; `/thong-ke` cũ dẫn sang tab Profile; trang bài giữ deep link nội dung trên URL hiện tại. Bảng tin ưu tiên mục đến hạn khi cùng lúc có nháp, cần thử với người học.
 - File/API có thể dùng lại: `AppNav`, `DashboardContent`, `LessonGrid`, `SearchDialog`, `search.ts`, `stats.ts`, `SyncBadge`, `use-due-queue.ts`, `PracticeDraftBanner`, `fsrs.ts`, route và helper hiện có. Không sửa code, `DESIGN.md`, Dexie, sync hay test trong đợt viết plan.
 - Chỉ mục `docs/specs/README.md` có mục spec nháp riêng; sửa ghi chú Git cũ bằng merge `d2b7170` đã quan sát ngày 27/09.

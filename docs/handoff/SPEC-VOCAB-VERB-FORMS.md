@@ -2,7 +2,7 @@
 
 Ngày: 25/09/2026. Trạng thái: Đã có code & đã nghiệm thu trình duyệt.  
 Tài liệu thiết kế: [2026-09-25-dictionary-form-verbs-design.md](../superpowers/specs/2026-09-25-dictionary-form-verbs-design.md)  
-Kế hoạch thực thi: [2026-09-25-dictionary-form-verbs.md](../superpowers/plans/2026-09-25-dictionary-form-verbs.md)
+Kế hoạch thực thi: 2026-09-25-dictionary-form-verbs.md _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 
 ---
 

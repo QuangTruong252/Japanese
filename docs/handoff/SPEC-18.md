@@ -194,7 +194,7 @@ Nguồn: `.impeccable/critique/2026-09-28T07-08-44Z__web-src-app.md`.
 
 ## 2026-10-01 — Nguyên mẫu sau nghiên cứu UX mobile (giả lập Playwright)
 
-Căn cứ: [báo cáo nghiên cứu](../research/ux-mobile-2026-10/2026-10-01-playwright-mobile-study.md) §5.
+Căn cứ: báo cáo nghiên cứu §5. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 
 ### Thay đổi và quyết định
 - Bảng tin (`DashboardContent.tsx`, `dashboard-cta.ts`): khi không có mục đến hạn mà có nháp, CTA chính là "Tiếp tục" nháp đó (Luyện/Ôn trước, từ vựng sau). Hàng "Tiếp tục phiên" chuyển lên ngay dưới CTA, trên "Bài đang học". Số ôn ghi "N mục đến hạn · M mục mới", khớp dock và `/on-tap`.

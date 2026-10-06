@@ -1,6 +1,6 @@
 # SPEC-18 — Bảng tin dẫn việc tiếp theo và hub bài học
 
-Ngày: 28/09/2026. Trạng thái: **Đã làm cứng theo phản hồi 28/09/2026; unit tests 219/219 PASS; chờ nghiệm thu trình duyệt từ coordinator**. Mốc 3 của [kế hoạch UX](../plans/2026-09-27-ux-redesign.md); đọc SPEC-02/03/15 và phần Nghe của SPEC-09/10.
+Ngày: 28/09/2026. Trạng thái: **Đã làm cứng theo phản hồi 28/09/2026; unit tests 219/219 PASS; chờ nghiệm thu trình duyệt từ coordinator**. Mốc 3 của kế hoạch UX; đọc SPEC-02/03/15 và phần Nghe của SPEC-09/10. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 
 ## 1. Mục tiêu & phạm vi
 
@@ -37,7 +37,7 @@ Người mới không có dữ liệu; bài đang học chưa xong; có nháp t�
 
 ## 6. Tương tác & chuyển động
 
-- Bảng tin chỉ có một CTA primary. Khi nháp và mục ôn cùng có, Ôn giữ CTA chính, nháp là hàng phụ ngay bên dưới. Nghiên cứu giả lập 01/10/2026 ([báo cáo](../research/ux-mobile-2026-10/2026-10-01-playwright-mobile-study.md)) thấy nháp bị dock che khi nằm sau bài đang học, nên đã chuyển lên; cần xác nhận lại bằng nhật ký trên điện thoại thật.
+- Bảng tin chỉ có một CTA primary. Khi nháp và mục ôn cùng có, Ôn giữ CTA chính, nháp là hàng phụ ngay bên dưới. Nghiên cứu giả lập 01/10/2026 (báo cáo) thấy nháp bị dock che khi nằm sau bài đang học, nên đã chuyển lên; cần xác nhận lại bằng nhật ký trên điện thoại thật. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 - Lối tiếp tục vào thẳng nơi dừng: nháp từ vựng dùng `/hoc/[so]/tu-vung?tiep-tuc=1` (mở thẳng thẻ dở). “Bắt đầu ôn” vào thẳng `/on-tap/phien` khi không có nháp Luyện/Ôn; có nháp thì qua `/on-tap` để hộp xác nhận bảo vệ nháp (hai loại dùng chung khóa lưu).
 - “Học từ vựng” tới `/hoc/[so]/tu-vung`; Luyện truyền `?lessons=N`; “Xem toàn bộ bài” là link anchor, không route mới.
 - Browser Back và search deep link giữ vị trí/anchor. Dùng cuộn chuẩn và scroll margin để header/dock không che mục tiêu. Giữ reduced motion.

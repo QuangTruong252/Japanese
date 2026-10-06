@@ -38,7 +38,7 @@ Khi làm xong một phần, cập nhật hàng tương ứng và handoff với n
 
 ## Kế hoạch UX 27/09/2026 — đã merge `master`, nghiệm thu browser 28/09
 
-[Kế hoạch tổng](../plans/2026-09-27-ux-redesign.md) dựa trên [quan sát luồng và ảnh minh họa](../research/ux-redesign/2026-09-27-mobile-learning-flows.md). Branch `ux-redesign` đã merge vào `master` ngày 28/09/2026; 6 lỗi của đợt nghiệm thu đầu đã sửa và kiểm browser. Kết quả từng mục và phần chưa kiểm chứng: [bộ nghiệm thu](../handoff/UX-REDESIGN-ACCEPTANCE.md) §6.
+Kế hoạch tổng dựa trên quan sát luồng và ảnh minh họa. Branch `ux-redesign` đã merge vào `master` ngày 28/09/2026; 6 lỗi của đợt nghiệm thu đầu đã sửa và kiểm browser. Kết quả từng mục và phần chưa kiểm chứng: [bộ nghiệm thu](../handoff/UX-REDESIGN-ACCEPTANCE.md) §6. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 
 | Mốc | Spec | Trạng thái 28/09/2026 |
 | --- | --- | --- |

@@ -3,7 +3,7 @@
 Ngày: 23/09/2026  
 Mã: SPEC-JPN-F13  
 Trạng thái: Approved design doc  
-Nguồn tham chiếu: [SPEC-13](file:///d:/Projects/Lab/Japanese/docs/specs/SPEC-13-tim-kiem.md), [DESIGN.md](file:///d:/Projects/Lab/Japanese/DESIGN.md), [mock/27-tim-kiem.png](file:///d:/Projects/Lab/Japanese/mock/27-tim-kiem.png).
+Nguồn tham chiếu: [SPEC-13](file:///d:/Projects/Lab/Japanese/docs/specs/SPEC-13-tim-kiem.md), [DESIGN.md](file:///d:/Projects/Lab/Japanese/DESIGN.md), mock/27-tim-kiem.png. _(đã gỡ khỏi repo ngày 06/10/2026; bản cũ ở tag `pre-cleanup`)_
 
 ---
 
