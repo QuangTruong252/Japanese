@@ -64,8 +64,21 @@ foreground `#ece7de`, muted-foreground `#aba498` (7.5), primary `#e6715b` (6.0),
 success `#85bc79`, warning `#ebb16c`, info `#83b4de`, destructive `#ea6a6a`; biểu đồ
 `#5497d9` `#a6552d` `#7aa14e` `#ae5a84` `#b8892d` (validator PASS trên card tối).
 
-Thêm nhóm `scene-*` (giấy, kem, gỗ, olive, gạch, sakura, trời, mực) chỉ để tham chiếu và tô
-nền vùng minh họa; không dùng cho chữ, trạng thái hay nút.
+Màu tham chiếu của tranh (giấy, kem, gỗ, olive, gạch, sakura, trời, mực) nằm ở bảng đo phía
+trên; không đưa vào file dán vì không dùng cho chữ, trạng thái hay nút.
+
+### Cách Open Design đọc file dán (đối chiếu mã nguồn `nexu-io/open-design`, 06/10/2026)
+
+`apps/daemon/src/brands/design-md-input.ts` gom **mọi mã hex** trong front matter rồi trong
+phần thân, theo thứ tự xuất hiện, và gán vai trò bằng regex tên khóa:
+
+- màu chính (`colorPrimary`) = khóa đầu tiên khớp `accent|brand|cta|tertiary|interactive|button|link`.
+  `primary` **không** khớp; vì vậy file có khóa `brand` đặt trước `accent` (sakura).
+- `borderRadius` = giá trị đầu tiên trong `rounded`, nên `DEFAULT: 10px` đứng đầu.
+- Hex trong phần văn bản cũng bị gom, nên phần thân không chứa mã hex.
+
+Lần dán đầu (06/10) cho `colorPrimary #2b2520` (màu nền tối trong đoạn văn) và
+`borderRadius 6`; đã sửa ba điểm trên.
 
 ## Đã chốt
 

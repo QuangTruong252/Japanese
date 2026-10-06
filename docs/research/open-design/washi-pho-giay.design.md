@@ -10,6 +10,7 @@ description: >-
 colors:
   background: "#fbf6ec"
   foreground: "#29231d"
+  brand: "#bf412c"
   card: "#fefbf7"
   card-foreground: "#29231d"
   popover: "#fefbf7"
@@ -41,14 +42,6 @@ colors:
   chart-3: "#6e9441"
   chart-4: "#8d3d67"
   chart-5: "#ac7d1b"
-  scene-paper: "#faf5e7"
-  scene-kem: "#eddbc1"
-  scene-wood: "#c89664"
-  scene-olive: "#a9a568"
-  scene-brick: "#bc6951"
-  scene-sakura: "#fab8ab"
-  scene-sky: "#9abcd8"
-  scene-sumi: "#443b34"
 typography:
   display:
     fontFamily: Inter Variable
@@ -113,6 +106,7 @@ typography:
     fontWeight: "500"
     lineHeight: 1
 rounded:
+  DEFAULT: 10px
   sm: 6px
   md: 8px
   lg: 10px
@@ -273,7 +267,7 @@ the illustrations carry the color.
 | `border` / `input` | Sand hairline |
 | `foreground` | Warm sumi ink |
 | `muted-foreground` | Faded ink for labels and secondary text (5.6:1 on paper) |
-| `primary` | Son (vermilion) — the one filled action, active nav, selection |
+| `brand` / `primary` | Son (vermilion) — the one filled action, active nav, selection |
 | `accent` | Sakura wash for hover and selection |
 | `success` | Moss green — correct, synced |
 | `warning` | Wood ochre — pending, overdue |
@@ -281,18 +275,16 @@ the illustrations carry the color.
 | `destructive` | Crimson — wrong, delete |
 | `verb-1/2/3` | Godan / ichidan / irregular identity; always with label "Nhóm 1/2/3" |
 | `chart-1..5` | vocab=ai, grammar=kaki, kanji=moss, particle=plum, listening=ochre |
-| `scene-*` | Illustration reference colors only, for decorative fills inside illustrated areas (empty-state wash, scene fade). Never for text, status or controls |
 
 Every status color ships with an icon and a text label; color never carries meaning alone.
 All status, verb and primary colors clear 4.5:1 on `background` and `card`.
 
 ### Dark scheme ("phố đêm")
 
-A selected warm night scheme, not an inversion: background `#18130e`, card `#211c17`, muted
-`#2b2520`, border `#352f2a`, foreground `#ece7de`, muted-foreground `#aba498`, primary
-`#e6715b` (dark ink on it), success `#85bc79`, warning `#ebb16c`, info `#83b4de`,
-destructive `#ea6a6a`. Illustrations keep their paper colors and sit on a slightly lighter
-card so they do not glow.
+A selected warm night scheme, not an inversion: warm near-black paper, warm off-white ink,
+a lighter son red for the primary action with dark ink on it, and lighter moss, wood,
+indigo and crimson for status. Illustrations keep their paper colors and sit on a slightly
+lighter card so they do not glow.
 
 ## Typography
 
