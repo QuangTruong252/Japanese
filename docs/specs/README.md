@@ -50,6 +50,10 @@ Kế hoạch tổng dựa trên quan sát luồng và ảnh minh họa. Branch `
 
 [Handoff kế hoạch](../handoff/UX-REDESIGN-PLAN.md) ghi rõ phần chưa kiểm chứng. Khi triển khai từng mốc, cập nhật spec hiện hành tương ứng và tạo handoff nghiệm thu riêng, không dùng bản kế hoạch thay cho kết quả kiểm thử.
 
+## Redesign UI v2 07/10/2026 — đã merge `master`
+
+Áp luật **Stage + paper slip** (DESIGN.md) cho 8 màn: Bảng tin theo SPEC-18 bản 2, lộ trình 25 bài ở `/hoc`, Chi tiết bài, phiên luyện tập, Kết quả (luyện và ôn), Ôn tập, Luyện tập, Tra cứu. Antigravity triển khai, Codex review (28 findings, đã sửa P0/P1), coordinator nghiệm thu browser 390/1280 sáng/tối. Sau merge: check, 268 test, build đạt. Chưa kiểm: khung câu hỏi phiên Ôn (vẫn khung cũ), reduced motion lúc chạy, 320px, đủ 5 dạng bằng bàn phím, thiết bị thật. Chi tiết: [handoff UI v2](../handoff/UI-REDESIGN-V2.md), [review Codex](../handoff/UI-REDESIGN-V2-REVIEW.md).
+
 ## Minh họa Phố giấy 05/10/2026 — đã tích hợp pilot
 
 **Cập nhật theo phản hồi UI chưa giống `new-ui`:** đã dựng lại panorama, bố cục Bảng tin hai cột, hub bài, chữ Nhật, nền giấy và navigation sát mép/gạch chân; củng cố hiện hai mục lịch sử thật. Shell có scroll-padding và xử lý hash tới nội dung stream để navigation không che mục/nút. Trình bày luyện/flashcard/kết quả dùng cùng hướng; logic CTA/FSRS/sync giữ nguyên. Xem phần **Redesign theo concept** trong handoff SPEC-21 để biết kiểm tra và ảnh mới, không dùng ảnh concept làm bằng chứng runtime.

@@ -1,7 +1,6 @@
 # Handoff — redesign UI v2 "Sân khấu và mảnh giấy"
 
-Ngày: 2026-10-07. Trạng thái: **đã có code và đã kiểm browser một phần trên branch
-`ui-redesign-v2`; chưa merge `master`, chưa push.** Plan:
+Ngày: 2026-10-07. Trạng thái: **đã merge `master` (07/10, merge `b010c58`) và push; đã kiểm browser một phần.** Plan:
 [2026-10-07-ui-redesign-v2.md](../plans/2026-10-07-ui-redesign-v2.md). Review Codex:
 [UI-REDESIGN-V2-REVIEW.md](UI-REDESIGN-V2-REVIEW.md).
 
@@ -40,7 +39,5 @@ Ngày: 2026-10-07. Trạng thái: **đã có code và đã kiểm browser một 
   chung `AnswerOption` nên gần giống, nhưng nên đồng bộ ở đợt sau.
 - Chưa kiểm: reduced motion lúc chạy, 320px/zoom 200%, đủ năm dạng bằng bàn phím (đã thử MC
   và nghe), trạng thái quota/blocked/error bằng browser, nháp Ôn tập trên `/on-tap`, iOS/Android.
-- Bài 16, 17, 18, 21, 23: cover nằm trong thay đổi chưa commit trên `master`; branch dùng
-  ảnh dự phòng ở `/hoc`. Sau khi dữ liệu đó vào `master` có thể bỏ `FALLBACK_SCENE_COVER`.
-- Khi merge: `docs/specs/README.md` trên `master` đang có thay đổi chưa commit — cập nhật
-  hàng trạng thái SPEC-18 và mục UX sau khi merge, không trước.
+- Sau merge, `master` có đủ cover Bài 1–25; `FALLBACK_SCENE_COVER` trong `LessonGrid.tsx` chỉ còn là dự phòng.
+- Sau merge trên `master`: check, 268 test và build đạt (07/10).
