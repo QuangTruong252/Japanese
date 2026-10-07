@@ -1,17 +1,25 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ChevronLeft, ArrowRight, FileArchive, Info } from 'lucide-react';
+import {
+  ChevronLeft,
+  ArrowRight,
+  FileArchive,
+  Info,
+  BookOpen,
+  Headphones,
+  ScrollText,
+  PencilLine,
+} from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { buttonVariants } from '@/components/ui/button';
 import { Furigana } from '@/components/Furigana';
 import { SpeakButton } from '@/components/SpeakButton';
 import { AVAILABLE_N5_LESSONS, loadLessonData, parseLessonNumber } from '@/lib/lessons';
 import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
-import { Card } from '@/components/ui/card';
 import { ShadowingPlayer } from '@/components/audio/ShadowingPlayer';
-import { LessonActionHub } from './LessonActionHub';
-import { cn } from '@/lib/utils';
+import { Stage, LinkRow } from '@/components/PaperStage';
 import { Illustration } from '@/components/Illustration';
+import { LessonHeroSlip } from './_parts';
+import { cn } from '@/lib/utils';
 
 export function generateStaticParams() {
   return AVAILABLE_N5_LESSONS.map((n) => ({ so: String(n) }));
@@ -35,251 +43,324 @@ export default async function LessonDetailPage({
   const { lesson, vocab } = await loadLessonData(lessonNum);
 
   return (
-    <main className="mx-auto w-full max-w-4xl space-y-8 px-4 sm:px-6 pt-3 sm:pt-6 pb-16">
-      <header className="flex flex-col gap-3">
-        <Link href="/hoc" className={cn(buttonVariants({ variant: 'ghost' }), 'min-h-11 w-fit gap-1 -ml-3 text-muted-foreground')}>
-          <ChevronLeft aria-hidden="true" /><span>Danh sách bài học N5</span>
-        </Link>
-        <div className="grid gap-4 md:grid-cols-2 md:items-center md:gap-8">
-          <div className="text-center">
-            <h1 className="text-xl font-bold tracking-tight sm:text-2xl">
-              <span className="mb-1 block text-sm font-medium text-muted-foreground">Bài {String(lesson.number).padStart(2, '0')}</span>
-              {lesson.title.vi}
-            </h1>
-            {lesson.jpTitle && (
-              <Furigana text={formatOptionalBrackets(lesson.jpTitle)} className="mt-2 justify-center text-3xl font-bold sm:text-4xl" />
-            )}
-            {lesson.cover ? (
-              <Illustration asset={lesson.cover}
-                sizes="(min-width: 896px) 416px, (min-width: 768px) calc((100vw - 80px) / 2), (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"
-                className="paper-scene mt-1 h-56 w-full object-cover object-center sm:h-64 md:h-72" eager />
-            ) : lesson.description?.vi && (
-              <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground">{lesson.description.vi}</p>
-            )}
-          </div>
-          <LessonActionHub lessonNum={lessonNum} totalVocab={vocab.length} grammarCount={lesson.grammar.length}
-            introWord={vocab[0]?.word} introMeaning={vocab[0]?.meaning.vi} />
-        </div>
-      </header>
-
-      {/* 2. Từ vựng trọng tâm (Tham khảo đầy đủ trên cùng URL - SPEC-18 §3) */}
-      <section id="tu-vung" className="scroll-mt-20 sm:scroll-mt-24 space-y-4">
-        <div className="flex items-center gap-2">
-          <h2 className="text-xl font-bold text-foreground">Từ vựng trọng tâm</h2>
-          <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-muted text-muted-foreground">
-            {vocab.length} từ
-          </span>
-        </div>
-
-        <Card className="rounded-2xl border-border/80 bg-card shadow-sm overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm block md:table">
-              <thead className="hidden md:table-header-group">
-                <tr className="border-b border-border/80 bg-muted/30 text-xs font-semibold text-muted-foreground">
-                  <th scope="col" className="py-3 px-4">Từ vựng</th>
-                  <th scope="col" className="py-3 px-4">Ý nghĩa tiếng Việt</th>
-                  <th scope="col" className="py-3 px-4 text-right">Phát âm</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border/60 block md:table-row-group">
-                {vocab.map((w) => {
-                  const group = VERB_GROUP[w.type];
-                  return (
-                    <tr
-                      key={w.id}
-                      id={`vocab-${w.id}`}
-                      className="block p-3.5 sm:p-4 md:table-row md:py-3 md:px-4 scroll-mt-24 hover:bg-muted/30 transition-colors"
-                    >
-                      <td className="block md:table-cell p-0 md:py-3 md:px-4">
-                        <div className="flex items-start justify-between gap-2">
-                          <div className="flex flex-col items-start gap-1">
-                            <div className="flex items-center gap-2 flex-wrap">
-                              <Furigana text={formatOptionalBrackets(w.word)} className="text-lg font-medium text-foreground" />
-                              {group && (
-                                <Badge className={cn('h-auto text-xs px-1.5 py-0.2 rounded', group.className)}>
-                                  {group.label}
-                                </Badge>
-                              )}
-                            </div>
-                            {w.verbForms && (
-                              <span className="text-xs text-muted-foreground">
-                                Thể masu: <Furigana text={formatOptionalBrackets(w.verbForms.masu)} />
-                              </span>
-                            )}
-                          </div>
-                          {/* Mobile: nút phát âm gộp trong ô từ */}
-                          <div className="md:hidden shrink-0">
-                            <SpeakButton text={w.kana} label={stripFurigana(formatOptionalBrackets(w.word))} />
-                          </div>
-                        </div>
-                      </td>
-                      <td className="block md:table-cell p-0 pt-1.5 md:py-3 md:px-4 text-sm text-foreground/90">
-                        <div className="flex items-center gap-3">
-                          {w.illustration && (
-                            <Illustration
-                              asset={w.illustration}
-                              sizes="64px"
-                              className="size-16 shrink-0 object-contain"
-                            />
-                          )}
-                          {w.meaning.vi ? (
-                            <span className="translation leading-relaxed">{w.meaning.vi}</span>
-                          ) : (
-                            <span className="opacity-50 italic">Chưa có bản dịch</span>
-                          )}
-                        </div>
-                      </td>
-                      <td className="hidden md:table-cell py-3 px-4 text-right">
-                        <SpeakButton text={w.kana} label={stripFurigana(formatOptionalBrackets(w.word))} />
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        </Card>
-      </section>
-
-      {/* 3. Ngữ pháp & Mẫu câu (Tham khảo đầy đủ trên cùng URL - SPEC-18 §3) */}
-      <section id="ngu-phap" className="scroll-mt-20 sm:scroll-mt-24 space-y-5">
-        <div className="flex items-center gap-2">
-          <h2 className="text-xl font-bold text-foreground">Ngữ pháp & Mẫu câu</h2>
-          <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-muted text-muted-foreground">
-            {lesson.grammar.length} mẫu
-          </span>
-        </div>
-
-        <div className="space-y-6">
-          {lesson.grammar.map((point) => (
-            <Card
-              key={point.id}
-              id={`grammar-${point.id}`}
-              className="scroll-mt-24 rounded-2xl border-border/80 bg-card p-5 sm:p-6 shadow-sm space-y-4"
-            >
-              <div>
-                <h3 className="text-base sm:text-lg font-bold text-foreground">
-                  <Furigana text={formatOptionalBrackets(point.title.vi)} />
-                </h3>
+    <main className="mx-auto w-full max-w-2xl px-4 sm:px-6 pb-20 pt-2 sm:pt-4">
+      {/* 1. Sân khấu: cảnh bài học, nút quay lại, tiêu đề Nhật lớn nhất, tiêu đề Việt */}
+      <header className="relative">
+        {lesson.cover ? (
+          <Stage
+            asset={lesson.cover}
+            sizes="(min-width: 672px) 672px, 100vw"
+            eager
+            imageClassName="h-60 sm:h-72 w-full object-cover"
+            className="overflow-hidden -mx-4 sm:mx-0 sm:rounded-2xl"
+          >
+            <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-5 bg-gradient-to-t from-background/95 via-background/40 to-background/20 pointer-events-none">
+              <div className="pointer-events-auto">
+                <Link
+                  href="/hoc"
+                  className="inline-flex min-h-9 items-center gap-1.5 rounded-full bg-background/85 px-3 py-1.5 text-xs sm:text-sm font-medium text-foreground backdrop-blur-xs transition-colors hover:bg-background focus-visible:ring-3 focus-visible:ring-ring"
+                >
+                  <ChevronLeft className="size-4" aria-hidden="true" />
+                  <span>Học bài</span>
+                </Link>
               </div>
-
-              {/* Khối cấu trúc mẫu câu Washi */}
-              <div className="grammar-pattern-block rounded-xl bg-muted/60 p-4 border border-border/60">
-                <div className="font-jp text-lg sm:text-xl font-semibold text-primary">
-                  <Furigana text={formatOptionalBrackets(point.pattern.vi)} className="text-lg sm:text-xl font-semibold text-primary" />
-                </div>
-              </div>
-
-              <p className="text-sm text-foreground/90 leading-relaxed">
-                {point.explanation.vi}
-              </p>
-
-              {point.illustration && (
-                <figure className="flex flex-col gap-3">
-                  <Illustration
-                    asset={point.illustration}
-                    sizes="(max-width: 640px) calc(100vw - 72px), 576px"
-                    className="mx-auto h-auto w-full max-w-xl rounded-xl"
-                  />
-                  {point.illustrationCaption && (
-                    <figcaption className="text-sm leading-relaxed text-muted-foreground">
-                      <Furigana text={point.illustrationCaption.vi} />
-                    </figcaption>
-                  )}
-                </figure>
-              )}
-
-              {/* Các câu ví dụ */}
-              {point.examples.length > 0 && (
-                <div className="space-y-3 pt-2 border-t border-border/60">
-                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                    Ví dụ minh họa
+              <div className="pointer-events-auto pb-8 space-y-1">
+                <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                  Bài {lesson.number}
+                </p>
+                {lesson.jpTitle && (
+                  <div className="jp">
+                    <Furigana
+                      text={formatOptionalBrackets(lesson.jpTitle)}
+                      className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground"
+                    />
                   </div>
-                  <ul className="space-y-3">
-                    {point.examples.map((ex, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start justify-between gap-3 p-3 rounded-xl bg-muted/30 border border-border/40 hover:bg-muted/50 transition-colors"
-                      >
-                        <div className="space-y-1">
-                          <Furigana text={formatOptionalBrackets(ex.jp)} className="text-base sm:text-lg font-medium text-foreground" />
-                          <span className="translation block text-xs sm:text-sm text-muted-foreground">
-                            {ex.translation.vi}
-                          </span>
-                        </div>
-                        <SpeakButton
-                          text={stripFurigana(formatOptionalBrackets(ex.jp))}
-                          label={stripFurigana(formatOptionalBrackets(ex.jp))}
-                        />
-                      </li>
-                    ))}
-                  </ul>
+                )}
+                <h1 className="text-lg sm:text-xl font-bold tracking-tight text-foreground">
+                  {lesson.title.vi}
+                </h1>
+                {lesson.description?.vi && (
+                  <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">
+                    {lesson.description.vi}
+                  </p>
+                )}
+              </div>
+            </div>
+          </Stage>
+        ) : (
+          <div className="relative rounded-2xl bg-muted/40 p-5 sm:p-6 pb-12 space-y-4">
+            <div>
+              <Link
+                href="/hoc"
+                className="inline-flex min-h-9 items-center gap-1.5 rounded-full bg-background/85 px-3 py-1.5 text-xs sm:text-sm font-medium text-foreground transition-colors hover:bg-background focus-visible:ring-3 focus-visible:ring-ring"
+              >
+                <ChevronLeft className="size-4" aria-hidden="true" />
+                <span>Học bài</span>
+              </Link>
+            </div>
+            <div className="space-y-1">
+              <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                Bài {lesson.number}
+              </p>
+              {lesson.jpTitle && (
+                <div className="jp">
+                  <Furigana
+                    text={formatOptionalBrackets(lesson.jpTitle)}
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground"
+                  />
                 </div>
               )}
-
-              {point.sourceRef && (
-                <p className="text-xs text-muted-foreground/80 pt-1">
-                  Nguồn: {point.sourceRef}
+              <h1 className="text-lg sm:text-xl font-bold tracking-tight text-foreground">
+                {lesson.title.vi}
+              </h1>
+              {lesson.description?.vi && (
+                <p className="text-xs sm:text-sm text-muted-foreground">
+                  {lesson.description.vi}
                 </p>
               )}
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. Khối Audio & Trình phát Shadowing (SPEC-10, SPEC-18 §3) */}
-      <section id="nghe" className="scroll-mt-20 sm:scroll-mt-24 space-y-4 pt-6 border-t border-border/80">
-        <div className="space-y-1">
-          <h2 className="text-xl font-bold text-foreground">Audio & Shadowing</h2>
-          <p className="text-sm text-muted-foreground">
-            Luyện nghe và nói theo bài học với tính năng lặp đoạn A-B và điều chỉnh tốc độ.
-          </p>
-        </div>
-
-        {/* Hướng dẫn khi thiếu audio: không khóa Ngữ pháp/Từ vựng, dẫn link nạp có ngữ cảnh quay lại bài (SPEC-18 §3) */}
-        <div className="rounded-xl border border-border/60 bg-muted/30 p-3 sm:p-3.5 flex items-start gap-2.5 text-xs text-muted-foreground">
-          <Info className="size-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
-          <div className="space-y-1">
-            <p>
-              Nội dung audio đọc trực tiếp từ tệp ZIP đĩa CD cá nhân lưu trên máy. Nếu chưa nạp audio cho bài này, bạn vẫn có thể học trọn vẹn Từ vựng và Ngữ pháp ở trên.
-            </p>
-            <Link
-              href={`/cai-dat/audio?returnTo=/hoc/${lessonNum}`}
-              className="text-primary font-medium hover:underline inline-flex items-center gap-1"
-            >
-              <FileArchive className="size-3" aria-hidden="true" />
-              <span>Nạp audio đĩa CD trong Cài đặt</span>
-              <ArrowRight className="size-3" aria-hidden="true" />
-            </Link>
+            </div>
           </div>
-        </div>
+        )}
 
-        <ShadowingPlayer
-          lessonNum={lessonNum}
-          examples={lesson.grammar.flatMap((g) => g.examples)}
+        {/* 2. Mảnh giấy đè lên mép cảnh: tiến độ + nút son duy nhất */}
+        <LessonHeroSlip lessonNum={lessonNum} totalVocab={vocab.length} />
+      </header>
+
+      {/* 3. Ba dòng lối tắt */}
+      <section aria-label="Lối tắt nội dung bài học" className="mt-4 divide-y divide-border">
+        <LinkRow
+          href="#ngu-phap"
+          icon={<BookOpen className="size-5" aria-hidden="true" />}
+          title={`Ngữ pháp · ${lesson.grammar.length} mẫu`}
+          detail="Các mẫu câu và cấu trúc ngữ pháp trọng tâm"
+        />
+        <LinkRow
+          href="#nghe"
+          icon={<Headphones className="size-5" aria-hidden="true" />}
+          title="Luyện nghe"
+          detail="Audio bài học và luyện nói shadowing"
+        />
+        <LinkRow
+          href="#tu-vung"
+          icon={<ScrollText className="size-5" aria-hidden="true" />}
+          title="Xem toàn bộ bài"
+          detail={`Danh sách ${vocab.length} từ vựng và chi tiết tham khảo`}
         />
       </section>
 
-      {/* 5. Nguồn sách tham khảo */}
-      {lesson.sourceRef && (
-        <p className="pt-4 border-t border-border/80 text-xs text-muted-foreground">
-          Tài liệu tham khảo: Giáo trình Minna no Nihongo {lesson.sourceRef.book}, tr. {lesson.sourceRef.pages}
-        </p>
-      )}
+      {/* 4. Nội dung tham khảo đầy đủ */}
+      <div className="mt-8 space-y-10">
+        {/* Từ vựng */}
+        <section id="tu-vung" className="scroll-mt-20 sm:scroll-mt-24 space-y-3 pt-6 border-t border-border">
+          <div className="flex items-center justify-between">
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              Từ vựng
+            </h2>
+            <span className="text-xs text-muted-foreground">
+              {vocab.length} từ
+            </span>
+          </div>
 
-      {/* 6. Lối phụ: Chuyển sang Luyện tập bài N ở chân trang (SPEC-18 §3) */}
-      <section id="luyen-tap" className="scroll-mt-20 sm:scroll-mt-24 pt-2">
-        <Link
-          href={`/luyen-tap?lessons=${lessonNum}`}
-          className={cn(
-            buttonVariants({ variant: 'outline', size: 'lg' }),
-            'w-full min-h-12 h-12 font-semibold text-sm rounded-xl flex items-center justify-center gap-2 border-border/80 hover:border-primary/40'
-          )}
-        >
-          <span>Luyện tập trắc nghiệm & câu hỏi bài {lesson.number}</span>
-          <ArrowRight className="w-4 h-4" />
-        </Link>
-      </section>
+          <div className="divide-y divide-border">
+            {vocab.map((w) => {
+              const group = VERB_GROUP[w.type];
+              return (
+                <div
+                  key={w.id}
+                  id={`vocab-${w.id}`}
+                  className="flex items-center justify-between gap-3 py-3 sm:py-3.5 scroll-mt-20 sm:scroll-mt-24"
+                >
+                  <div className="flex items-start gap-3 min-w-0 flex-1">
+                    {w.illustration && (
+                      <Illustration
+                        asset={w.illustration}
+                        sizes="48px"
+                        className="size-12 shrink-0 object-contain rounded-md"
+                      />
+                    )}
+                    <div className="min-w-0 flex-1 space-y-0.5">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="jp text-[18px] font-medium leading-loose text-foreground">
+                          <Furigana text={formatOptionalBrackets(w.word)} />
+                        </span>
+                        {group && (
+                          <Badge className={cn('h-auto text-xs px-1.5 py-0.5 rounded', group.className)}>
+                            {group.label}
+                          </Badge>
+                        )}
+                      </div>
+                      {w.verbForms && (
+                        <p className="text-xs text-muted-foreground">
+                          Thể masu: <Furigana text={formatOptionalBrackets(w.verbForms.masu)} />
+                        </p>
+                      )}
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {w.meaning.vi ? (
+                          <span className="translation">{w.meaning.vi}</span>
+                        ) : (
+                          <span className="italic opacity-50">Chưa có bản dịch</span>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="shrink-0">
+                    <SpeakButton
+                      text={w.kana}
+                      label={stripFurigana(formatOptionalBrackets(w.word))}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Ngữ pháp */}
+        <section id="ngu-phap" className="scroll-mt-20 sm:scroll-mt-24 space-y-4 pt-6 border-t border-border">
+          <div className="flex items-center justify-between">
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              Ngữ pháp
+            </h2>
+            <span className="text-xs text-muted-foreground">
+              {lesson.grammar.length} mẫu
+            </span>
+          </div>
+
+          <div className="space-y-6">
+            {lesson.grammar.map((point) => (
+              <div
+                key={point.id}
+                id={`grammar-${point.id}`}
+                className="scroll-mt-20 sm:scroll-mt-24 space-y-3 pt-4 first:pt-0 border-t border-border/60 first:border-t-0"
+              >
+                <h3 className="text-base sm:text-lg font-bold text-foreground">
+                  <Furigana text={formatOptionalBrackets(point.title.vi)} />
+                </h3>
+
+                {/* Khối cấu trúc mẫu câu Washi */}
+                <div className="grammar-pattern-block rounded-xl bg-muted/70 p-3.5 sm:p-4 border border-border/60">
+                  <div className="jp text-base sm:text-lg font-semibold text-primary">
+                    <Furigana text={formatOptionalBrackets(point.pattern.vi)} />
+                  </div>
+                </div>
+
+                <p className="text-sm text-foreground/90 leading-relaxed">
+                  {point.explanation.vi}
+                </p>
+
+                {point.illustration && (
+                  <figure className="flex flex-col gap-2">
+                    <Illustration
+                      asset={point.illustration}
+                      sizes="(max-width: 672px) calc(100vw - 32px), 672px"
+                      className="mx-auto h-auto w-full max-w-xl rounded-xl"
+                    />
+                    {point.illustrationCaption && (
+                      <figcaption className="text-xs text-muted-foreground">
+                        <Furigana text={point.illustrationCaption.vi} />
+                      </figcaption>
+                    )}
+                  </figure>
+                )}
+
+                {/* Các câu ví dụ */}
+                {point.examples.length > 0 && (
+                  <div className="space-y-2 pt-1">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      Ví dụ
+                    </p>
+                    <div className="divide-y divide-border/60 rounded-xl bg-card border border-border/60 px-3.5">
+                      {point.examples.map((ex, i) => (
+                        <div
+                          key={i}
+                          className="flex items-start justify-between gap-3 py-3 first:pt-3.5 last:pb-3.5"
+                        >
+                          <div className="min-w-0 flex-1 space-y-0.5">
+                            <div className="jp text-base sm:text-[20px] font-medium leading-loose text-foreground">
+                              <Furigana text={formatOptionalBrackets(ex.jp)} />
+                            </div>
+                            <p className="translation text-sm text-muted-foreground leading-relaxed">
+                              {ex.translation.vi}
+                            </p>
+                          </div>
+                          <div className="shrink-0 pt-1">
+                            <SpeakButton
+                              text={stripFurigana(formatOptionalBrackets(ex.jp))}
+                              label={stripFurigana(formatOptionalBrackets(ex.jp))}
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {point.sourceRef && (
+                  <p className="text-xs text-muted-foreground/80 pt-1">
+                    Nguồn: {point.sourceRef}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Nghe */}
+        <section id="nghe" className="scroll-mt-20 sm:scroll-mt-24 space-y-4 pt-6 border-t border-border">
+          <div className="space-y-1">
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              Luyện nghe & Shadowing
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Luyện nghe và nói theo bài học với tính năng lặp đoạn A-B và điều chỉnh tốc độ.
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-border/60 bg-muted/30 p-3.5 flex items-start gap-2.5 text-xs text-muted-foreground">
+            <Info className="size-4 text-primary shrink-0 mt-0.5" aria-hidden="true" />
+            <div className="space-y-1 flex-1">
+              <p>
+                Nội dung audio đọc từ tệp ZIP đĩa CD cá nhân lưu trên máy. Nếu chưa có audio bài này, bạn vẫn có thể học trọn vẹn từ vựng và ngữ pháp ở trên.
+              </p>
+              <Link
+                href={`/cai-dat/audio?returnTo=/hoc/${lessonNum}`}
+                className="text-primary font-medium hover:underline inline-flex items-center gap-1"
+              >
+                <FileArchive className="size-3.5" aria-hidden="true" />
+                <span>Thêm audio trong Cài đặt</span>
+                <ArrowRight className="size-3" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+
+          <ShadowingPlayer
+            lessonNum={lessonNum}
+            examples={lesson.grammar.flatMap((g) => g.examples)}
+          />
+        </section>
+
+        {/* Nguồn sách tham khảo */}
+        {lesson.sourceRef && (
+          <p className="pt-4 border-t border-border text-xs text-muted-foreground">
+            Tài liệu tham khảo: Giáo trình Minna no Nihongo {lesson.sourceRef.book}, tr. {lesson.sourceRef.pages}
+          </p>
+        )}
+        {lesson.verification === 'unverified' && (
+          <p className="text-xs text-muted-foreground">
+            Nội dung bài này chưa được đối chiếu với bản in
+          </p>
+        )}
+
+        {/* 5. Lối phụ: Chuyển sang Luyện tập bài N ở chân trang */}
+        <section id="luyen-tap" className="scroll-mt-20 sm:scroll-mt-24 pt-4 border-t border-border">
+          <LinkRow
+            href={`/luyen-tap?lessons=${lessonNum}`}
+            icon={<PencilLine className="size-5" aria-hidden="true" />}
+            title={`Luyện tập bài ${lesson.number}`}
+            detail="Luyện tập trắc nghiệm & câu hỏi theo bài"
+          />
+        </section>
+      </div>
     </main>
   );
 }
