@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ChevronRight, Table2 } from 'lucide-react';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
 import { cn } from '@/lib/utils';
 
@@ -9,106 +8,92 @@ export const metadata: Metadata = {
   description: 'Tra cứu bảng chữ cái Kana, Kanji, Động từ và các Bảng tham chiếu Minna no Nihongo N5.',
 };
 
-export default function TraCuuHubPage() {
-  const categories = [
-    {
-      href: '/hoc/tra-cuu/kana',
-      title: 'Bảng chữ Kana',
-      subtitle: 'Hiragana & Katakana · 46 âm cơ bản, âm đục và âm ghép',
-      icon: (
-        <div className="flex items-center justify-center font-jp leading-none select-none text-xl font-bold">
-          <span className="text-primary">あ</span>
-          <span className="text-muted-foreground text-sm ml-0.5">ア</span>
-        </div>
-      ),
-    },
-    {
-      href: '/hoc/tra-cuu/kanji',
-      title: 'Kanji',
-      subtitle: '169 chữ N5 · Âm On, Kun, số nét và từ ghép',
-      icon: (
-        <div className="flex flex-col items-center justify-center font-jp leading-none select-none">
-          <span className="text-xs text-muted-foreground mb-0.5">ひと</span>
-          <span className="text-2xl font-bold text-foreground">人</span>
-        </div>
-      ),
-    },
-    {
-      href: '/hoc/tra-cuu/dong-tu',
-      title: 'Động từ',
-      subtitle: '156 động từ · 5 thể chia: ます, て, từ điển, ない, た',
-      icon: (
-        <div className="flex flex-col items-center justify-center font-jp leading-none select-none">
-          <span className="text-xs text-muted-foreground mb-0.5">い</span>
-          <span className="text-xl font-bold text-foreground">行く</span>
-        </div>
-      ),
-    },
-    {
-      href: '/hoc/tra-cuu/bang',
-      title: 'Bảng tham chiếu',
-      subtitle: '10 bảng tra cứu nhanh chuyên đề ngữ pháp và từ vựng',
-      icon: <Table2 className="size-6 text-foreground/80" />,
-    },
-  ];
+interface LookupCategory {
+  glyph: string;
+  title: string;
+  description: string;
+  href: string;
+}
 
+const CATEGORIES: LookupCategory[] = [
+  {
+    glyph: 'あ',
+    title: 'Kana',
+    description: 'Bảng chữ cái và cách viết',
+    href: '/hoc/tra-cuu/kana',
+  },
+  {
+    glyph: '字',
+    title: 'Kanji',
+    description: 'Chữ Hán N5',
+    href: '/hoc/tra-cuu/kanji',
+  },
+  {
+    glyph: '行く',
+    title: 'Động từ',
+    description: 'Chia theo nhóm',
+    href: '/hoc/tra-cuu/dong-tu',
+  },
+  {
+    glyph: '表',
+    title: 'Bảng tham chiếu',
+    description: 'Số đếm, thời gian, trợ từ',
+    href: '/hoc/tra-cuu/bang',
+  },
+];
+
+export default function TraCuuHubPage() {
   return (
-    <main className="mx-auto w-full max-w-2xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24">
-      {/* 1. Header Hub Tra cứu (SPEC-17 §3, B17.1: đích dock cấp một, không có breadcrumb về Học bài) */}
-      <header className="space-y-4">
-        <div className="flex items-center justify-between">
-          <div className="space-y-1">
-            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-              Tra cứu
-            </h1>
-            <p className="text-sm text-muted-foreground">
-              Tra cứu nhanh bảng chữ cái, chữ Hán, động từ và các bảng tham chiếu ngữ pháp.
-            </p>
-          </div>
-        </div>
+    <main className="mx-auto w-full max-w-2xl xl:max-w-5xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24 lg:pb-12">
+      {/* 1. Header Hub Tra cứu (h1 "Tra cứu") */}
+      <header className="space-y-1">
+        <h1 className="text-2xl font-semibold tracking-tight text-foreground">
+          Tra cứu
+        </h1>
+        <p className="text-sm text-muted-foreground">
+          Tra cứu bảng chữ cái, chữ Hán, động từ và các bảng tham chiếu.
+        </p>
       </header>
 
-      {/* 2. Trường tìm kiếm nổi bật ở đầu trang (SPEC-17 §3) */}
-      <section aria-label="Tìm kiếm nhanh">
+      {/* 2. Trường tìm kiếm nổi bật ở đầu trang (48px, search icon, mở search dialog) */}
+      <section aria-label="Tìm kiếm nội dung">
         <SearchTrigger
           variant="bar"
           placeholder="Tìm từ, chữ, ngữ pháp…"
-          className="w-full"
+          className="rounded-xl"
         />
       </section>
 
-      {/* 3. Bốn danh mục tra cứu chính */}
-      <nav aria-label="Các mục tra cứu" className="space-y-3.5">
-        {categories.map((cat) => (
+      {/* 3. Bốn danh mục tra cứu chính: 2×2 trên mobile/tablet, 1 hàng tại 1280px */}
+      <nav aria-label="Các mục tra cứu" className="grid grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4">
+        {CATEGORIES.map((cat) => (
           <Link
             key={cat.href}
             href={cat.href}
             className={cn(
-              'group flex items-center justify-between min-h-[76px] p-4 sm:p-5 rounded-2xl',
-              'border border-border/80 bg-card shadow-xs transition duration-150',
-              'hover:border-primary/40 hover:shadow-sm hover:translate-y-[-1px]',
-              'active:translate-y-[1px]',
-              'focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring'
+              'group flex flex-col justify-between rounded-xl border border-border bg-card p-4 sm:p-5 min-h-[136px]',
+              'transition-colors duration-150 hover:bg-muted/60 hover:border-border/80',
+              'active:translate-y-px outline-none focus-visible:ring-3 focus-visible:ring-ring'
             )}
           >
-            <div className="flex items-center gap-4">
-              <div className="size-13 rounded-xl bg-muted/60 border border-border/40 flex items-center justify-center shrink-0 group-hover:bg-primary/10 group-hover:border-primary/20 transition-colors">
-                {cat.icon}
-              </div>
-              <div className="space-y-0.5">
-                <h2 className="text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                  {cat.title}
-                </h2>
-                <p className="text-xs sm:text-sm text-muted-foreground">
-                  {cat.subtitle}
-                </p>
-              </div>
+            <div
+              className="font-jp text-[40px] leading-tight text-foreground select-none"
+              aria-hidden="true"
+            >
+              {cat.glyph}
             </div>
-
-            <ChevronRight className="size-5 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 transition" />
+            <div className="mt-3 space-y-0.5">
+              <h2 className="text-base font-medium text-foreground group-hover:text-primary transition-colors">
+                {cat.title}
+              </h2>
+              <p className="text-xs sm:text-sm text-muted-foreground line-clamp-1">
+                {cat.description}
+              </p>
+            </div>
           </Link>
         ))}
       </nav>
     </main>
   );
 }
+
