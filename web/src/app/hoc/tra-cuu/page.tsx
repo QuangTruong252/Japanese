@@ -19,7 +19,7 @@ const CATEGORIES: LookupCategory[] = [
   {
     glyph: 'あ',
     title: 'Kana',
-    description: 'Bảng chữ cái và cách viết',
+    description: 'Bảng chữ và cách viết',
     href: '/hoc/tra-cuu/kana',
   },
   {
@@ -86,7 +86,7 @@ export default function TraCuuHubPage() {
               <h2 className="text-base font-medium text-foreground group-hover:text-primary transition-colors">
                 {cat.title}
               </h2>
-              <p className="text-xs sm:text-sm text-muted-foreground line-clamp-1">
+              <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">
                 {cat.description}
               </p>
             </div>

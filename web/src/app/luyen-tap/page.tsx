@@ -77,6 +77,7 @@ function PracticeConfigContent() {
   const [summaries, setSummaries] = useState<{ number: number; vocabCount: number }[]>([]);
   const [lessonTitles, setLessonTitles] = useState<Record<number, string>>({});
   const [confirmNewSessionOpen, setConfirmNewSessionOpen] = useState(false);
+  const [confirmDiscardDraftOpen, setConfirmDiscardDraftOpen] = useState(false);
 
   const initializedRef = useRef(false);
   const userInteractedRef = useRef(false);
@@ -394,6 +395,11 @@ function PracticeConfigContent() {
   };
 
   const handleDiscardDraft = () => {
+    setConfirmDiscardDraftOpen(true);
+  };
+
+  const handleConfirmDiscardDraft = () => {
+    setConfirmDiscardDraftOpen(false);
     clearPracticeDraft();
   };
 
@@ -408,94 +414,135 @@ function PracticeConfigContent() {
         </p>
       </header>
 
-      {/* 1. PaperSlip phiên dở dang nếu có (sở hữu nút son 'Tiếp tục') */}
-      {hasActiveDraft && draftInfo && (
-        <PaperSlip className="mt-0 space-y-4 border-primary/30">
+      {/* 1 & 2. Phiên dở dang và Cấu hình luyện tập (Finding 23 & Finding 25: một slip duy nhất, giữ scale Latin 24/14/12px) */}
+      {hasActiveDraft && draftInfo ? (
+        <>
+          <PaperSlip className="mt-0 space-y-3 border-primary/30">
+            <div className="space-y-1">
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary">
+                Phiên dở dang
+              </span>
+              <h2 className="text-2xl font-bold tracking-tight text-foreground">
+                Phiên dở · {draftLabel} · câu {draftInfo.currentQuestionIndex}/{draftInfo.totalQuestions}
+              </h2>
+              <p className="text-xs text-muted-foreground">
+                {draftInfo.label === 'Ôn tập'
+                  ? 'Luyện phiên mới sẽ thay thế phiên ôn này. Hãy ôn xong trước, hoặc bỏ nháp.'
+                  : 'Tiếp tục bài làm dở dang hoặc chọn cấu hình mới bên dưới.'}
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-2 pt-1">
+              <Button
+                type="button"
+                size="quiz"
+                className="w-full sm:flex-1 text-sm font-semibold"
+                onClick={handleResumeDraft}
+              >
+                {draftInfo.label === 'Ôn tập' ? 'Tiếp tục phiên ôn' : 'Tiếp tục'}
+              </Button>
+              <Button
+                type="button"
+                variant="ghost"
+                size="quiz"
+                className="w-full sm:w-auto text-xs text-muted-foreground hover:text-destructive"
+                onClick={handleDiscardDraft}
+              >
+                <Trash2 className="mr-1.5 size-4" />
+                Bỏ nháp
+              </Button>
+            </div>
+          </PaperSlip>
+
+          <section aria-label="Cấu hình phiên mới" className="border-t border-border py-4 space-y-3">
+            <div className="space-y-1">
+              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                Cấu hình phiên mới
+              </span>
+              <h3 className="text-base font-semibold text-foreground">
+                {summaryTitle}
+              </h3>
+              <p className="text-xs text-muted-foreground">
+                {selectedTypeLabels}
+              </p>
+            </div>
+
+            {blockedReason && (
+              <div
+                id="practice-blocked-reason"
+                className="rounded-xl border border-destructive/20 bg-destructive/10 p-3 text-xs text-destructive"
+                role="alert"
+              >
+                <p className="font-medium">{blockedReason}</p>
+                {sessionPreview.eligibleCount === 0 &&
+                  selectedLessons.length > 0 &&
+                  selectedTypes.length > 0 && (
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      Gợi ý: Chọn thêm bài học hoặc bỏ dạng Nghe nếu máy chưa có giọng Nhật.
+                    </p>
+                  )}
+              </div>
+            )}
+
+            <Button
+              size="quiz"
+              variant="outline"
+              className="w-full text-sm font-semibold"
+              disabled={Boolean(blockedReason) || loading}
+              aria-describedby={blockedReason ? 'practice-blocked-reason' : undefined}
+              onClick={handleStartClick}
+            >
+              {loading ? 'Đang chuẩn bị câu hỏi…' : startButtonText}
+            </Button>
+          </section>
+        </>
+      ) : (
+        <PaperSlip className="mt-0 space-y-4">
           <div className="space-y-1">
-            <span className="text-xs font-semibold uppercase tracking-wider text-primary">
-              Phiên dở dang
+            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              Cấu hình luyện tập
             </span>
-            <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
-              Phiên dở · {draftLabel} · câu {draftInfo.currentQuestionIndex}/{draftInfo.totalQuestions}
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">
+              {summaryTitle}
             </h2>
-            <p className="text-xs sm:text-sm text-muted-foreground">
-              {draftInfo.label === 'Ôn tập'
-                ? 'Luyện phiên mới sẽ thay thế phiên ôn này. Hãy ôn xong trước, hoặc bỏ nháp.'
-                : 'Tiếp tục bài làm dở dang hoặc chọn cấu hình mới bên dưới.'}
+            <p className="text-xs text-muted-foreground">
+              {selectedTypeLabels}
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-2 pt-1">
-            <Button
-              type="button"
-              size="quiz"
-              className="w-full sm:flex-1 text-base font-semibold"
-              onClick={handleResumeDraft}
+          {blockedReason && (
+            <div
+              id="practice-blocked-reason"
+              className="rounded-xl border border-destructive/20 bg-destructive/10 p-3 text-xs text-destructive"
+              role="alert"
             >
-              {draftInfo.label === 'Ôn tập' ? 'Tiếp tục phiên ôn' : 'Tiếp tục'}
-            </Button>
-            <Button
-              type="button"
-              variant="outline"
-              size="quiz"
-              className="w-full sm:w-auto text-muted-foreground hover:text-foreground"
-              onClick={handleDiscardDraft}
-            >
-              <Trash2 className="mr-1.5 size-4" />
-              Bỏ nháp
-            </Button>
-          </div>
+              <p className="font-medium">{blockedReason}</p>
+              {sessionPreview.eligibleCount === 0 &&
+                selectedLessons.length > 0 &&
+                selectedTypes.length > 0 && (
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    Gợi ý: Chọn thêm bài học hoặc bỏ dạng Nghe nếu máy chưa có giọng Nhật.
+                  </p>
+                )}
+            </div>
+          )}
+
+          <Button
+            size="quiz"
+            variant="default"
+            className="w-full text-sm font-semibold"
+            disabled={Boolean(blockedReason) || loading}
+            aria-describedby={blockedReason ? 'practice-blocked-reason' : undefined}
+            onClick={handleStartClick}
+          >
+            {loading ? 'Đang chuẩn bị câu hỏi…' : startButtonText}
+          </Button>
         </PaperSlip>
       )}
 
-      {/* 2. PaperSlip cấu hình phiên mới: tóm tắt lớn nhất, dạng bài nhỏ, nút bắt đầu */}
-      <PaperSlip className="mt-0 space-y-4">
-        <div className="space-y-1">
-          <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Cấu hình luyện tập
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-            {summaryTitle}
-          </h2>
-          <p className="text-xs sm:text-sm text-muted-foreground">
-            {selectedTypeLabels}
-          </p>
-        </div>
-
-        {/* Thông báo lý do bị chặn / hướng dẫn sửa nếu rỗng */}
-        {blockedReason && (
-          <div
-            id="practice-blocked-reason"
-            className="rounded-xl border border-destructive/20 bg-destructive/10 p-3 text-xs sm:text-sm text-destructive"
-            role="alert"
-          >
-            <p className="font-medium">{blockedReason}</p>
-            {sessionPreview.eligibleCount === 0 &&
-              selectedLessons.length > 0 &&
-              selectedTypes.length > 0 && (
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Gợi ý: Chọn thêm bài học hoặc bỏ dạng Nghe nếu máy chưa có giọng Nhật.
-                </p>
-              )}
-          </div>
-        )}
-
-        {/* Nút Bắt đầu: khi có nháp -> variant='outline', khi không có nháp -> variant='default' (nút son duy nhất) */}
-        <Button
-          size="quiz"
-          variant={hasActiveDraft ? 'outline' : 'default'}
-          className="w-full text-base font-semibold"
-          disabled={Boolean(blockedReason) || loading}
-          aria-describedby={blockedReason ? 'practice-blocked-reason' : undefined}
-          onClick={handleStartClick}
-        >
-          {loading ? 'Đang chuẩn bị câu hỏi…' : startButtonText}
-        </Button>
-      </PaperSlip>
-
-      {/* 3. Collapsible Tùy chỉnh (mặc định đóng, native <details>) */}
-      <details className="group rounded-xl border border-border bg-card">
-        <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground outline-none focus-visible:ring-3 focus-visible:ring-ring rounded-xl">
+      {/* 3. Collapsible Tùy chỉnh (dòng hairline không khung) */}
+      <details className="group border-t border-border">
+        <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between py-3 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground outline-none focus-visible:ring-3 focus-visible:ring-ring">
           <div className="flex items-center gap-2">
             <SlidersHorizontal className="size-4" />
             <span>Tùy chỉnh bài, dạng và số câu</span>
@@ -503,7 +550,7 @@ function PracticeConfigContent() {
           <ChevronDown className="size-4 transition-transform duration-200 group-open:rotate-180" />
         </summary>
 
-        <div className="space-y-6 border-t border-border p-4 sm:p-5">
+        <div className="space-y-6 pt-2 pb-4">
           {/* Chọn bài 1–25 theo hàng 5 cột */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
@@ -512,8 +559,7 @@ function PracticeConfigContent() {
                 <Button
                   type="button"
                   variant="ghost"
-                  size="sm"
-                  className="h-8 text-xs text-muted-foreground hover:text-foreground"
+                  className="h-12 min-h-12 px-2.5 text-xs text-muted-foreground hover:text-foreground"
                   onClick={selectAllLessons}
                 >
                   Chọn tất cả
@@ -521,8 +567,7 @@ function PracticeConfigContent() {
                 <Button
                   type="button"
                   variant="ghost"
-                  size="sm"
-                  className="h-8 text-xs text-muted-foreground hover:text-foreground"
+                  className="h-12 min-h-12 px-2.5 text-xs text-muted-foreground hover:text-foreground"
                   onClick={clearAllLessons}
                 >
                   Bỏ chọn
@@ -542,7 +587,7 @@ function PracticeConfigContent() {
                     aria-label={`Bài ${num}${title ? `: ${title}` : ''}`}
                     onClick={() => toggleLesson(num)}
                     className={cn(
-                      'flex min-h-11 items-center justify-center gap-1 rounded-xl text-sm font-medium transition-colors duration-150 ease-out outline-none focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px',
+                      'flex min-h-12 items-center justify-center gap-1 rounded-xl text-sm font-medium transition-colors duration-150 ease-out outline-none focus-visible:ring-3 focus-visible:ring-ring active:translate-y-px',
                       selected
                         ? 'border-2 border-primary bg-accent text-accent-foreground font-semibold'
                         : 'border border-border bg-card text-muted-foreground hover:bg-muted/60 hover:text-foreground',
@@ -558,7 +603,7 @@ function PracticeConfigContent() {
             </div>
           </div>
 
-          {/* Chọn dạng bài: 5 chips */}
+          {/* Chọn dạng bài: 5 chips (Finding 26: min-h-12 cho 48px touch target) */}
           <div className="space-y-3">
             <span className="text-sm font-medium text-foreground">Dạng bài</span>
             <div className="flex flex-wrap gap-2">
@@ -579,7 +624,7 @@ function PracticeConfigContent() {
                     title={reason}
                     onClick={() => toggleType(type)}
                     className={cn(
-                      'flex min-h-11 items-center justify-center gap-1.5 rounded-xl px-3.5 py-2 text-sm font-medium transition-colors duration-150 ease-out outline-none focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px',
+                      'flex min-h-12 items-center justify-center gap-1.5 rounded-xl px-3.5 py-2 text-sm font-medium transition-colors duration-150 ease-out outline-none focus-visible:ring-3 focus-visible:ring-ring active:translate-y-px',
                       isDisabled
                         ? 'cursor-not-allowed border border-border/60 bg-muted/40 text-muted-foreground/60'
                         : selected
@@ -600,36 +645,42 @@ function PracticeConfigContent() {
             </div>
           </div>
 
-          {/* Chọn số câu: segmented control 10 / 15 / 20 / 30 */}
-          <div className="space-y-3">
-            <span className="text-sm font-medium text-foreground">Số câu</span>
-            <div
-              role="radiogroup"
-              aria-label="Số lượng câu hỏi"
-              className="inline-flex w-full rounded-xl border border-border bg-muted/40 p-1 gap-1"
-            >
+          {/* Chọn số câu: radio group với native inputs và labels 48px (Finding 24 & Finding 26) */}
+          <fieldset className="space-y-2">
+            <legend className="text-sm font-medium text-foreground">Số câu</legend>
+            <div className="grid grid-cols-4 gap-1.5 rounded-xl border border-border bg-muted/40 p-1">
               {QUESTION_COUNTS.map((count) => {
                 const selected = questionCount === count;
+                const inputId = `question-count-${count}`;
                 return (
-                  <button
+                  <label
                     key={count}
-                    type="button"
-                    role="radio"
-                    aria-checked={selected}
-                    onClick={() => handleSetQuestionCount(count)}
+                    htmlFor={inputId}
                     className={cn(
-                      'flex min-h-11 flex-1 items-center justify-center rounded-lg text-sm font-medium transition-colors duration-150 ease-out outline-none focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px',
+                      'relative flex min-h-12 cursor-pointer select-none items-center justify-center rounded-lg text-sm font-medium transition-colors duration-150 ease-out outline-none',
+                      'has-focus-visible:ring-3 has-focus-visible:ring-ring',
                       selected
                         ? 'border border-border/60 bg-card font-semibold text-foreground shadow-xs'
-                        : 'text-muted-foreground hover:text-foreground',
+                        : 'text-muted-foreground hover:bg-muted/60 hover:text-foreground',
                     )}
                   >
-                    {count}
-                  </button>
+                    <input
+                      type="radio"
+                      id={inputId}
+                      name="question-count"
+                      value={count}
+                      checked={selected}
+                      onChange={() => handleSetQuestionCount(count)}
+                      className="peer sr-only"
+                    />
+                    <span className="flex size-full items-center justify-center rounded-lg peer-focus-visible:ring-3 peer-focus-visible:ring-ring">
+                      {count}
+                    </span>
+                  </label>
                 );
               })}
             </div>
-          </div>
+          </fieldset>
 
           {/* Dòng availability */}
           <div className="border-t border-border pt-4">
@@ -646,7 +697,35 @@ function PracticeConfigContent() {
         </div>
       </details>
 
-      {/* 4. Hộp thoại xác nhận ghi đè phiên nháp đang dở */}
+      {/* 4. Hộp thoại xác nhận bỏ phiên nháp đang dở (Finding 23) */}
+      <AlertDialog
+        open={confirmDiscardDraftOpen}
+        onOpenChange={setConfirmDiscardDraftOpen}
+      >
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>
+              Bỏ phiên dở câu {draftInfo ? `${draftInfo.currentQuestionIndex}/${draftInfo.totalQuestions}` : ''}?
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              Tiến độ bài làm hiện tại sẽ bị xóa hoàn toàn và không thể khôi phục.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+            <AlertDialogCancel onClick={() => setConfirmDiscardDraftOpen(false)}>
+              Hủy
+            </AlertDialogCancel>
+            <AlertDialogAction
+              variant="destructive"
+              onClick={handleConfirmDiscardDraft}
+            >
+              Bỏ phiên
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      {/* 5. Hộp thoại xác nhận ghi đè phiên nháp đang dở */}
       <AlertDialog
         open={confirmNewSessionOpen}
         onOpenChange={setConfirmNewSessionOpen}
