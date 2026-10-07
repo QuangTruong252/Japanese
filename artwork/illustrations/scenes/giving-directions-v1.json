@@ -1,0 +1,54 @@
+{
+  "createdAt": "2026-10-07T05:00:31.279Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Antigravity generate_image (JPEG 1200x896, converted losslessly to PNG)",
+    "orchestrator": "gemini-3.8-flash-high"
+  },
+  "batch": "artwork/illustrations/batches/lesson-23.json",
+  "prompt": "Editorial watercolor and gouache illustration, hand-painted Japanese book-illustration feel: delicate dark pencil contours, soft organic painted washes, subtle paper texture, warm ivory paper tones. Palette: cream, warm sand, charcoal gray, muted sage green, warm timber wood, muted brick-red accents. Landscape 4:3 composition, FULL-BLEED: the painting fills the whole canvas edge to edge, with NO frame, NO border line, NO mat and NO paper margin around it.\nCharacters, when present: young male student = slightly messy short dark hair, cream long-sleeved shirt, charcoal trousers, black backpack; young woman = chin-length dark bob with bangs, cream cardigan over muted brick-red top, charcoal skirt, small brown shoulder bag.\n\nSubject: a sunny town street at a crossroads; the woman points ahead and to the right, explaining the way to the male student who holds a blank map; behind them a traffic light at the corner, a zebra crosswalk, a white building and a small stone bridge over a river further down the road; all signs blank.\nKeep the main subject in the central area so the image survives cropping to a thumbnail.\n\nSTRICT REQUIREMENTS:\n- Absolutely NO text, letters, kanji, kana, numbers or words anywhere: signs, boards, labels and screens stay completely blank.\n- Clock faces have NO digits and NO Roman numerals.\n- Hand-painted watercolor gouache look, NOT 3D, NOT CGI, NOT glossy vector, NOT photo.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/scenes/giving-directions-v1.webp",
+  "width": 800,
+  "height": 600,
+  "role": "scene",
+  "suggestedAlt": {
+    "vi": "Cô gái chỉ đường cho chàng trai cầm bản đồ ở ngã tư có đèn giao thông."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/lessons/lesson-23.json",
+    "field": "cover",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/scenes/giving-directions-v1.png",
+    "width": 1200,
+    "height": 896,
+    "format": "png",
+    "hasAlpha": false
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "cover",
+    "width": 800,
+    "height": 600,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 79274,
+    "sha256": "ff4c1a93ad15e5908623d0f6207dd66943199d5c58cdb73fa9b4e6ed0ecab479",
+    "hasAlpha": false,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 0,
+      "partial": 0,
+      "opaque": 480000
+    }
+  }
+}

@@ -60,6 +60,14 @@
         "naiKana": "わすれない",
         "ta": "忘[わす]れた",
         "taKana": "わすれた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/forgotten-umbrella-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc ô bị bỏ quên bên ghế quán cà phê."
+        }
       }
     },
     {
@@ -90,6 +98,14 @@
         "naiKana": "なくさない",
         "ta": "なくした",
         "taKana": "なくした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/losing-passport-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hộ chiếu rơi khỏi túi mà người đi không biết."
+        }
       }
     },
     {
@@ -120,6 +136,14 @@
         "naiKana": "はらわない",
         "ta": "払[はら]った",
         "taKana": "はらった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/paying-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Khách hàng đưa tiền trả cho thu ngân."
+        }
       }
     },
     {
@@ -150,6 +174,14 @@
         "naiKana": "かえさない",
         "ta": "返[かえ]した",
         "taKana": "かえした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/returning-book-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Sinh viên trả sách ở quầy thư viện."
+        }
       }
     },
     {
@@ -180,6 +212,14 @@
         "naiKana": "でかけない",
         "ta": "出[で]かけた",
         "taKana": "でかけた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/going-out-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái bước ra khỏi nhà để đi ra ngoài."
+        }
       }
     },
     {
@@ -210,6 +250,14 @@
         "naiKana": "ぬがない",
         "ta": "脱[ぬ]いだ",
         "taKana": "ぬいだ"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/taking-off-shoes-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người đang cởi giày ở lối vào nhà."
+        }
       }
     },
     {
@@ -300,6 +348,14 @@
         "naiKana": "しんぱいしない",
         "ta": "心配[しんぱい]した",
         "taKana": "しんぱいした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/worrying-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái lo lắng nhìn điện thoại."
+        }
       }
     },
     {
@@ -330,6 +386,14 @@
         "naiKana": "ざんぎょうしない",
         "ta": "残業[ざんぎょう]した",
         "taKana": "ざんぎょうした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/working-late-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên ở lại văn phòng làm việc đến tối."
+        }
       }
     },
     {
@@ -360,6 +424,14 @@
         "naiKana": "しゅっちょうしない",
         "ta": "出張[しゅっちょう]した",
         "taKana": "しゅっちょうした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/business-trip-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người đàn ông mặc vest kéo vali đi công tác."
+        }
       }
     },
     {
@@ -390,6 +462,14 @@
         "naiKana": "のまない",
         "ta": "飲[の]んだ[薬[くすり]を〜]",
         "taKana": "のんだ"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/taking-medicine-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người đang uống thuốc với cốc nước."
+        }
       }
     },
     {
@@ -420,6 +500,14 @@
         "naiKana": "はいらない",
         "ta": "入[はい]った[おふろに〜]",
         "taKana": "はいった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/taking-bath-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người đang ngâm mình trong bồn tắm nước nóng."
+        }
       }
     },
     {
@@ -470,6 +558,14 @@
         "kana": "そこは あぶないです。",
         "translation": {
           "vi": "Chỗ đó nguy hiểm."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/dangerous-road-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Em bé suýt chạy ra đường khi xe đang tới."
         }
       }
     },
@@ -522,6 +618,14 @@
         "translation": {
           "vi": "Tôi bị sốt."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/fever-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhiệt kế, chậu khăn lạnh và tách trà bên gối của người bị sốt."
+        }
       }
     },
     {
@@ -556,6 +660,14 @@
         "translation": {
           "vi": "Xin hãy uống thuốc."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/medicine-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Gói thuốc với vài viên thuốc."
+        }
       }
     },
     {
@@ -572,6 +684,14 @@
         "kana": "まいにち おふろに はいります。",
         "translation": {
           "vi": "Hàng ngày tôi đều tắm bồn."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bathtub-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bồn tắm gỗ đầy nước nóng bốc hơi."
         }
       }
     },
@@ -590,6 +710,14 @@
         "translation": {
           "vi": "Tôi cởi áo khoác ngoài ra có được không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/jacket-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc áo khoác treo trên móc."
+        }
       }
     },
     {
@@ -606,6 +734,14 @@
         "kana": "デパートで したぎを かいました。",
         "translation": {
           "vi": "Tôi đã mua quần áo lót ở trung tâm thương mại."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/underwear-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chồng quần áo lót trắng gấp gọn."
         }
       }
     },
@@ -709,6 +845,14 @@
         "translation": {
           "vi": "Tôi bị đau cổ họng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sore-throat-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái chạm tay lên cổ họng vì đau."
+        }
       }
     },
     {
@@ -726,6 +870,14 @@
         "translation": {
           "vi": "Tôi bị đau đầu."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/headache-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người ôm đầu vì đau đầu."
+        }
       }
     },
     {
@@ -742,6 +894,14 @@
         "kana": "かぜですから、やすみます。",
         "translation": {
           "vi": "Vì tôi bị cảm nên tôi sẽ nghỉ ngơi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/catching-cold-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai bị cảm, hắt hơi vào khăn giấy."
         }
       }
     },

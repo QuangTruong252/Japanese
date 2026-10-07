@@ -30,6 +30,14 @@
         "naiKana": "おもわない",
         "ta": "思[おも]った",
         "taKana": "おもった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/thinking-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái chống tay lên cằm, đang suy nghĩ."
+        }
       }
     },
     {
@@ -90,6 +98,14 @@
         "naiKana": "かたない",
         "ta": "勝[か]った",
         "taKana": "かった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/winning-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Vận động viên nhảy lên giơ cao cúp vô địch."
+        }
       }
     },
     {
@@ -120,6 +136,14 @@
         "naiKana": "まけない",
         "ta": "負[ま]けた",
         "taKana": "まけた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/losing-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Vận động viên quỳ gục đầu buồn bã sau khi thua."
+        }
       }
     },
     {
@@ -239,6 +263,14 @@
         "naiKana": "やめない",
         "ta": "やめた[会社[かいしゃ]を〜]",
         "taKana": "やめた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/quitting-job-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên ôm thùng đồ cá nhân rời công ty sau khi nghỉ việc."
+        }
       }
     },
     {
@@ -401,6 +433,14 @@
         "translation": {
           "vi": "Tôi muốn làm việc ở công ty ô tô."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/car-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc ô tô nhỏ màu đỏ gạch với bốn bánh."
+        }
       }
     },
     {
@@ -417,6 +457,14 @@
         "kana": "とうきょうは こうつうが べんりです。",
         "translation": {
           "vi": "Giao thông ở Tokyo rất tiện lợi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/street-traffic-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ngã tư đông xe ô tô, xe buýt và xe đạp qua lại."
         }
       }
     },
@@ -469,6 +517,14 @@
         "translation": {
           "vi": "Tôi xem tin tức mỗi tối."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tv-news-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Màn hình tivi đang chiếu bản tin thời sự."
+        }
       }
     },
     {
@@ -502,6 +558,14 @@
         "kana": "やすみの ひは マンガを よみます。",
         "translation": {
           "vi": "Ngày nghỉ tôi đọc truyện tranh Manga."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/manga-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chồng truyện tranh manga, cuốn trên cùng mở ra."
         }
       }
     },
@@ -571,6 +635,14 @@
         "translation": {
           "vi": "Tôi đi xem trận đấu bóng đá."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sports-match-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Trận đấu bóng đá giữa hai đội có trọng tài và khán giả."
+        }
       }
     },
     {
@@ -622,6 +694,14 @@
         "translation": {
           "vi": "Tôi nghĩ Trái Đất có màu xanh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/planet-earth-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Trái Đất với đại dương xanh và mây trắng."
+        }
       }
     },
     {
@@ -638,6 +718,14 @@
         "kana": "こんばんは つきが きれいですね。",
         "translation": {
           "vi": "Tối nay Mặt Trăng đẹp quá nhỉ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/moon-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mặt Trăng tròn với những miệng hố nhỏ."
         }
       }
     },

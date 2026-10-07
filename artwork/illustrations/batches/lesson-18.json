@@ -220,8 +220,8 @@
       "stem": "hobby-room-v1",
       "source": "image_gen",
       "generation": {
-        "tool": "Codex built-in image_gen",
-        "orchestrator": "gpt-6-luna (effort low)"
+        "tool": "Antigravity generate_image (JPEG 1200x896, converted losslessly to PNG)",
+        "orchestrator": "gemini-3.8-flash-high"
       },
       "subject": "a cozy community hobby room in the afternoon; the woman plays an upright piano while the male student stands beside her singing from a songbook with blank pages; a side table holds an open stamp album and a diary; a window with soft light and a potted plant.",
       "target": {
@@ -230,6 +230,12 @@
       },
       "alt": {
         "vi": "Cô gái đánh đàn piano, chàng trai đứng hát bên cạnh trong phòng sinh hoạt sở thích."
+      },
+      "crop": {
+        "left": 48,
+        "top": 48,
+        "width": 1104,
+        "height": 828
       }
     }
   ]

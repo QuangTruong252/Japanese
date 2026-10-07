@@ -1,0 +1,54 @@
+{
+  "createdAt": "2026-10-07T05:00:30.245Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Antigravity generate_image (JPEG 1200x896, converted losslessly to PNG)",
+    "orchestrator": "gemini-3.8-flash-high"
+  },
+  "batch": "artwork/illustrations/batches/lesson-16.json",
+  "prompt": "Editorial watercolor and gouache illustration, hand-painted Japanese book-illustration feel: delicate dark pencil contours, soft organic painted washes, subtle paper texture, warm ivory paper tones. Palette: cream, warm sand, charcoal gray, muted sage green, warm timber wood, muted brick-red accents. Landscape 4:3 composition, FULL-BLEED: the painting fills the whole canvas edge to edge, with NO frame, NO border line, NO mat and NO paper margin around it.\nCharacters, when present: young male student = slightly messy short dark hair, cream long-sleeved shirt, charcoal trousers, black backpack; young woman = chin-length dark bob with bangs, cream cardigan over muted brick-red top, charcoal skirt, small brown shoulder bag.\n\nSubject: a bright morning in a small Japanese town: the male student steps down from a bus at the stop while the woman takes cash from a bank ATM with a blank screen beside it; behind them a tree-lined path leads to a vermilion shrine torii among green trees; signs and awnings are blank.\nKeep the main subject in the central area so the image survives cropping to a thumbnail.\n\nSTRICT REQUIREMENTS:\n- Absolutely NO text, letters, kanji, kana, numbers or words anywhere: signs, boards, labels and screens stay completely blank.\n- Clock faces have NO digits and NO Roman numerals.\n- Hand-painted watercolor gouache look, NOT 3D, NOT CGI, NOT glossy vector, NOT photo.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/scenes/town-errands-v1.webp",
+  "width": 800,
+  "height": 600,
+  "role": "scene",
+  "suggestedAlt": {
+    "vi": "Chàng trai xuống xe buýt, cô gái rút tiền ở ATM, phía sau là lối vào đền."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/lessons/lesson-16.json",
+    "field": "cover",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/scenes/town-errands-v1.png",
+    "width": 1200,
+    "height": 896,
+    "format": "png",
+    "hasAlpha": false
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "cover",
+    "width": 800,
+    "height": 600,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 80098,
+    "sha256": "1c7c8886617e96cbe50392ab71bac1a98f4f36c40e8e8bafc4399837eddcfe63",
+    "hasAlpha": false,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 0,
+      "partial": 0,
+      "opaque": 480000
+    }
+  }
+}

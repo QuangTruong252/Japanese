@@ -165,5 +165,13 @@
   "references": [
     "verbs"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/hobby-room-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Cô gái đánh đàn piano, chàng trai đứng hát bên cạnh trong phòng sinh hoạt sở thích."
+    }
+  }
 }

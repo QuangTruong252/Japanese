@@ -272,7 +272,7 @@
     },
     {
       "stem": "fever-v1",
-      "subject": "the reference male student sitting with flushed red cheeks and a sweaty forehead, looking at a glass thermometer, a cold towel on his forehead",
+      "subject": "a sick-day bedside still life: a glass thermometer, a folded damp towel in a small basin of water, a cup of tea and a pill box on a small wooden tray beside a pillow, no person",
       "source": "image_gen",
       "generation": {
         "tool": "Codex built-in image_gen",
@@ -283,7 +283,7 @@
         "id": "netsu"
       },
       "alt": {
-        "vi": "Chàng trai bị sốt, má đỏ và đắp khăn lạnh."
+        "vi": "Nhiệt kế, chậu khăn lạnh và tách trà bên gối của người bị sốt."
       }
     },
     {
@@ -339,8 +339,8 @@
       "stem": "clinic-visit-v1",
       "source": "image_gen",
       "generation": {
-        "tool": "Codex built-in image_gen",
-        "orchestrator": "gpt-6-luna (effort low)"
+        "tool": "Antigravity generate_image (JPEG 1200x896, converted losslessly to PNG)",
+        "orchestrator": "gemini-3.8-flash-high"
       },
       "subject": "a small neighbourhood clinic examination room: the male student in a scarf sits on the patient stool while a kind doctor in a white coat listens to his chest with a stethoscope; the woman sits beside him holding his jacket; a paper medicine packet and a glass of water on the desk; posters on the wall are blank.",
       "target": {

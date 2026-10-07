@@ -158,5 +158,13 @@
     "verbs",
     "time"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/clinic-visit-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Bác sĩ khám cho chàng trai bị cảm, cô gái ngồi bên cạnh."
+    }
+  }
 }

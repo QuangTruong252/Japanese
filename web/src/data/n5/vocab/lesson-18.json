@@ -60,6 +60,14 @@
         "naiKana": "あらわない",
         "ta": "洗[あら]った",
         "taKana": "あらった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/washing-hands-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đôi tay đang rửa dưới vòi nước với xà phòng."
+        }
       }
     },
     {
@@ -90,6 +98,14 @@
         "naiKana": "ひかない",
         "ta": "弾[ひ]いた",
         "taKana": "ひいた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/playing-piano-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đang ngồi đánh đàn piano."
+        }
       }
     },
     {
@@ -120,6 +136,14 @@
         "naiKana": "うたわない",
         "ta": "歌[うた]った",
         "taKana": "うたった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/singing-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đang hát, xung quanh có nốt nhạc."
+        }
       }
     },
     {
@@ -150,6 +174,14 @@
         "naiKana": "あつめない",
         "ta": "集[あつ]めた",
         "taKana": "あつめた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/stamp-collection-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Album tem sưu tầm xếp ngay ngắn."
+        }
       }
     },
     {
@@ -180,6 +212,14 @@
         "naiKana": "すてない",
         "ta": "捨[す]てた",
         "taKana": "すてた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/throwing-away-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai vứt tờ giấy vo tròn vào thùng rác."
+        }
       }
     },
     {
@@ -210,6 +250,14 @@
         "naiKana": "かえない",
         "ta": "換[か]えた",
         "taKana": "かえた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/currency-exchange-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Khách đổi tiền ở quầy ngân hàng."
+        }
       }
     },
     {
@@ -240,6 +288,14 @@
         "naiKana": "うんてんしない",
         "ta": "運転[うんてん]した",
         "taKana": "うんてんした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/driving-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đang lái xe ô tô."
+        }
       }
     },
     {
@@ -287,6 +343,14 @@
         "translation": {
           "vi": "Sở thích của tôi là chơi đàn piano."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/upright-piano-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cây đàn piano đứng bằng gỗ."
+        }
       }
     },
     {
@@ -320,6 +384,14 @@
         "kana": "げんきんで はらわなければ なりません。",
         "translation": {
           "vi": "Phải trả bằng tiền mặt."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cash-wallet-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc ví da đầy tiền mặt."
         }
       }
     },
@@ -355,6 +427,14 @@
         "translation": {
           "vi": "Trước khi ngủ, tôi viết nhật ký."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/diary-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuốn nhật ký mở và cây bút."
+        }
       }
     },
     {
@@ -371,6 +451,14 @@
         "kana": "ねる まえに、おいのりを します。",
         "translation": {
           "vi": "Trước khi ngủ, tôi cầu nguyện."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/praying-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một người quỳ bên giường, chắp tay cầu nguyện."
         }
       }
     },
@@ -440,6 +528,14 @@
         "translation": {
           "vi": "Tôi thích động vật."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/animals-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một nhóm các con vật: thỏ, chó, mèo, vịt và dê."
+        }
       }
     },
     {
@@ -456,6 +552,14 @@
         "kana": "うまに のる ことが できますか。",
         "translation": {
           "vi": "Bạn có biết cưỡi ngựa không?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/horse-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Con ngựa nâu đang đứng."
         }
       }
     },
@@ -592,6 +696,14 @@
         "kana": "ふるさとの うたを うたいます。",
         "translation": {
           "vi": "Tôi hát bài hát của quê hương."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hometown-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Làng quê yên bình với nhà mái ngói giữa đồng lúa."
         }
       }
     }

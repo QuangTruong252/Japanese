@@ -388,6 +388,14 @@
         "translation": {
           "vi": "Tôi đã được bạn bè giúp đỡ việc chuyển nhà."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/moving-house-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Xe tải nhỏ chở thùng các-tông và đồ đạc khi chuyển nhà."
+        }
       }
     },
     {

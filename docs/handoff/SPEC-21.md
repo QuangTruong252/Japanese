@@ -348,3 +348,31 @@ Chạy từ root với `node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON artw
 - Worker phải gửi `worker_done` bằng handle của chính nó. Gửi bằng handle coordinator sẽ bị từ chối.
 - `agent-browser`: không scroll async dài trong `eval` vì CDP sẽ timeout. Đặt `loading=eager`, chờ, rồi mới đếm. Daemon treo thì `taskkill //F //IM agent-browser.exe`.
 - Antigravity hết quota. Nếu dùng lại thì chỉ cho cảnh opaque (JPG), không dùng cho cutout.
+
+## Hoàn tất Bài 16–25 — 07/10/2026
+
+### Thay đổi và quyết định
+
+- Điều phối qua Orca (run `run_99e40a8bb3dd`, khoảng 35 phút). 2 worker Codex (`gpt-6-luna`, effort low, chỉ tạo ảnh) làm 44 cutout. 1 worker Antigravity (`gemini-3.8-flash-high`) làm 5 cảnh đục: `town-errands`, `clinic-visit`, `hobby-room`, `sharing-opinions`, `giving-directions`. Antigravity trả JPEG 1200×896; coordinator chuyển sang PNG master, trường `generation` trong batch ghi đúng nguồn này. 2 worker Codex nhỏ bù ảnh thiếu.
+- `fever-v1` (Bài 17) bị moderation chặn vì có người bệnh. Subject đổi thành tĩnh vật bên gối (nhiệt kế, chậu khăn, trà), không có người; alt sửa theo.
+- `shinto-shrine-v1`: worker tự viết lại prompt nên `collect` không khớp. Ảnh được chép tay từ `~/.codex/generated_images`. Sidecar ghi prompt của batch, không phải bản worker đã viết lại.
+- `hobby-room-v1` có viền giấy ngà → thêm `crop` 48 px mỗi phía (1104×828, đúng 4:3).
+- Export 96 WebP mới: 49 ảnh mới tạo và các ô atlas đã collect từ phiên trước. Kho hiện có **489 WebP**. Đã link Bài 16, 17, 18, 21, 23, 24, sau đó link reuse `thinking-v1` cho Bài 25.
+- Nhiều cutout cảnh vượt mục tiêu 50 KB (tối đa khoảng 74 KB, cảnh đục tối đa khoảng 95 KB). Đây chỉ là cảnh báo; theo SPEC-21, ngân sách là mục tiêu, chưa benchmark.
+
+### Kiểm chứng thực chạy (07/10/2026, Windows)
+
+- `batch.mjs check`: mọi job không skip của Bài 16–24 đều ready. Contact sheet `reports/lesson-{16,17,18,21,23,24}-sheet.png` đã xem bằng vision; người dùng duyệt 07/10.
+- `pnpm check` PASS; `pnpm test` 261/261 PASS.
+- Browser `localhost:3100` (title MaiPace), 390×844, ảnh tải đủ:
+
+  | Bài | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Ảnh | 34/34 | 21/21 | 15/15 | 12/12 | 6/6 | 12/12 | 19/19 | 17/17 | 14/14 | 6/6 |
+
+  Cả 10 trang: 0 ảnh thiếu alt, không tràn ngang.
+
+### Chưa kiểm và bước tiếp theo
+
+- Chưa chạy `pnpm build`, chưa kiểm desktop 1440 px và flashcard Bài 16–25.
+- Chưa có review độc lập từng ảnh ở kích thước thật trong app; contact sheet chỉ là ảnh thu nhỏ.

@@ -30,6 +30,14 @@
         "naiKana": "のらない",
         "ta": "乗[の]った[電車[でんしゃ]に〜]",
         "taKana": "のった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/boarding-train-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người bước từ sân ga lên toa tàu."
+        }
       }
     },
     {
@@ -60,6 +68,14 @@
         "naiKana": "おりない",
         "ta": "降[お]りた[電車[でんしゃ]を〜]",
         "taKana": "おりた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/getting-off-train-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người bước xuống tàu ra sân ga."
+        }
       }
     },
     {
@@ -90,6 +106,14 @@
         "naiKana": "のりかえない",
         "ta": "乗[の]り 換[か]えた",
         "taKana": "のりかえた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/changing-trains-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người đi qua sân ga để đổi sang chuyến tàu khác."
+        }
       }
     },
     {
@@ -120,6 +144,14 @@
         "naiKana": "あびない",
         "ta": "浴[あ]びた[シャワーを〜]",
         "taKana": "あびた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/taking-shower-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Góc tắm có vòi sen đang chảy nước, khăn tắm treo trên móc."
+        }
       }
     },
     {
@@ -150,6 +182,14 @@
         "naiKana": "いれない",
         "ta": "入[い]れた",
         "taKana": "いれた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/adding-sugar-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn tay cho viên đường vào tách cà phê."
+        }
       }
     },
     {
@@ -210,6 +250,14 @@
         "naiKana": "おろさない",
         "ta": "下[お]ろした[お 金[かね]を〜]",
         "taKana": "おろした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/withdrawing-cash-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người rút tiền từ máy ATM."
+        }
       }
     },
     {
@@ -270,6 +318,14 @@
         "naiKana": "でない",
         "ta": "出[で]た[大学[だいがく]を〜]",
         "taKana": "でた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/graduation-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Sinh viên tốt nghiệp cầm bằng trong lễ tốt nghiệp."
+        }
       }
     },
     {
@@ -300,6 +356,14 @@
         "naiKana": "おさない",
         "ta": "押[お]した",
         "taKana": "おした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/pressing-button-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ngón tay bấm nút gọi thang máy."
+        }
       }
     },
     {
@@ -330,6 +394,14 @@
         "naiKana": "のまない",
         "ta": "飲[の]んだ",
         "taKana": "のんだ"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/drinking-with-friends-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai người bạn cụng ly bia ở quán nhậu."
+        }
       }
     },
     {
@@ -420,6 +492,14 @@
         "naiKana": "でんわしない",
         "ta": "電話[でんわ]した",
         "taKana": "でんわした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/phone-call-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Sinh viên đang gọi điện thoại."
+        }
       }
     },
     {
@@ -454,6 +534,14 @@
         "translation": {
           "vi": "Anh Miller có mái tóc dài."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/long-hair-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái có mái tóc dài đến thắt lưng."
+        }
       }
     },
     {
@@ -470,6 +558,14 @@
         "kana": "わたしは かみが みじかいです。",
         "translation": {
           "vi": "Tôi có mái tóc ngắn."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/short-hair-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai có mái tóc cắt ngắn."
         }
       }
     },
@@ -488,6 +584,14 @@
         "translation": {
           "vi": "Căn phòng này sáng sủa."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bright-room-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Căn phòng sáng sủa tràn ánh nắng."
+        }
       }
     },
     {
@@ -504,6 +608,14 @@
         "kana": "この へやは くらいです。",
         "translation": {
           "vi": "Căn phòng này tối."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/dark-room-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Căn phòng tối, rèm kéo kín và đèn tắt."
         }
       }
     },
@@ -539,6 +651,14 @@
         "translation": {
           "vi": "Chị Maria rất thông minh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/head-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người trẻ vui vẻ chỉ tay lên đầu mình."
+        }
       }
     },
     {
@@ -555,6 +675,14 @@
         "kana": "かみが ながいです。",
         "translation": {
           "vi": "Tóc dài."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hair-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đang chải tóc."
         }
       }
     },
@@ -573,6 +701,14 @@
         "translation": {
           "vi": "Cô ấy có khuôn mặt nhỏ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/face-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Khuôn mặt tươi cười nhìn thẳng."
+        }
       }
     },
     {
@@ -589,6 +725,14 @@
         "kana": "サントスさんは めが くろいです。",
         "translation": {
           "vi": "Anh Santos có đôi mắt màu đen."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/eye-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một con mắt đang mở."
         }
       }
     },
@@ -607,6 +751,14 @@
         "translation": {
           "vi": "Con chó có đôi tai lớn."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/ear-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc tai người."
+        }
       }
     },
     {
@@ -623,6 +775,14 @@
         "kana": "かのじょは はなが たかいです。",
         "translation": {
           "vi": "Cô ấy có cái mũi cao."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/nose-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc mũi người."
         }
       }
     },
@@ -641,6 +801,14 @@
         "translation": {
           "vi": "Cái miệng to."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/mouth-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Khuôn miệng đang mỉm cười."
+        }
       }
     },
     {
@@ -657,6 +825,14 @@
         "kana": "はが しろいです。",
         "translation": {
           "vi": "Răng trắng."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tooth-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một chiếc răng trắng sạch."
         }
       }
     },
@@ -675,6 +851,14 @@
         "translation": {
           "vi": "Tôi đã đói bụng rồi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/belly-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người trẻ đặt hai tay lên bụng."
+        }
       }
     },
     {
@@ -692,6 +876,14 @@
         "translation": {
           "vi": "Anh ấy có đôi chân dài."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/feet-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đôi chân trần đứng trên chiếu tatami."
+        }
       }
     },
     {
@@ -708,6 +900,14 @@
         "kana": "かれは せが たかいです。",
         "translation": {
           "vi": "Anh ấy cao."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/measuring-height-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bố mẹ đánh dấu chiều cao của em bé lên tường."
         }
       }
     },
@@ -743,6 +943,14 @@
         "translation": {
           "vi": "Hàng ngày tôi đều chạy bộ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/jogging-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người đang chạy bộ buổi sáng ven sông."
+        }
       }
     },
     {
@@ -759,6 +967,14 @@
         "kana": "シャワーを あびます。",
         "translation": {
           "vi": "Tôi tắm vòi sen."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/shower-head-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Vòi hoa sen đang phun nước."
         }
       }
     },
@@ -777,6 +993,14 @@
         "translation": {
           "vi": "Thị trấn này có nhiều cây xanh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/green-town-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Con phố nhỏ rợp cây xanh."
+        }
       }
     },
     {
@@ -794,6 +1018,14 @@
         "translation": {
           "vi": "Tôi đã thấy chùa ở Kyoto."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/buddhist-temple-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ngôi chùa Nhật có chính điện và tháp năm tầng."
+        }
       }
     },
     {
@@ -810,6 +1042,14 @@
         "kana": "じんじゃへ いきました。",
         "translation": {
           "vi": "Tôi đã đi đến đền thờ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/shinto-shrine-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đền Thần đạo với cổng torii đỏ."
         }
       }
     },
@@ -981,6 +1221,14 @@
         "translation": {
           "vi": "Xin hãy cho thẻ ATM vào."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cash-card-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc thẻ ATM màu xanh có chip."
+        }
       }
     },
     {
@@ -1049,6 +1297,14 @@
         "translation": {
           "vi": "Xin hãy bấm nút này."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/push-button-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nút bấm tròn màu đỏ."
+        }
       }
     },
     {
@@ -1065,6 +1321,14 @@
         "kana": "ゆきまつりへ いきたいです。",
         "translation": {
           "vi": "Tôi muốn đi Lễ hội tuyết."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/snow-festival-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Lễ hội tuyết với các tượng tuyết lớn."
         }
       }
     }

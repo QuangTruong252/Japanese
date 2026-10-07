@@ -79,6 +79,8 @@ Chi tiết và giới hạn ở mục **Mở rộng từ vựng Bài 1–2** tro
 
 **Bài 10 ngữ pháp + Bài 11–15, 06/10/2026:** 113 WebP mới đã link. Check và 261 test đạt. Browser `/hoc/10`–`/hoc/15` ở 390px tải đủ 140/140 ảnh. Chưa chạy build, chưa kiểm desktop/flashcard. Bài 16–25 đang làm dở. Bài 19/20/22/24/25 đã link 55 tham chiếu, browser đủ 55/55 ảnh. Phần còn lại chờ quota ảnh Codex. Chi tiết ở mục **Batch Bài 10 (ngữ pháp) + Bài 11–15** trong [handoff SPEC-21](../handoff/SPEC-21.md).
 
+**Bài 16–25 hoàn tất, 07/10/2026:** tạo nốt 49 ảnh (Codex cutout + Antigravity 5 cảnh), export 96 WebP, kho **489 WebP**; link đủ Bài 16–25. Check, 261 test, browser 390px `/hoc/16`–`/hoc/25` tải đủ 156/156 ảnh. Chưa build, chưa kiểm desktop/flashcard. Chi tiết ở mục **Hoàn tất Bài 16–25** trong [handoff SPEC-21](../handoff/SPEC-21.md).
+
 ## Vòng rà soát 17/09/2026 — hợp đồng dữ liệu & offline/sync
 
 Toàn bộ spec đã được sửa theo một vòng đối chiếu với code thật. Những thay đổi **bắt buộc đọc

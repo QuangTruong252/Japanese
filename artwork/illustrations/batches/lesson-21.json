@@ -172,8 +172,8 @@
       "stem": "sharing-opinions-v1",
       "source": "image_gen",
       "generation": {
-        "tool": "Codex built-in image_gen",
-        "orchestrator": "gpt-6-luna (effort low)"
+        "tool": "Antigravity generate_image (JPEG 1200x896, converted losslessly to PNG)",
+        "orchestrator": "gemini-3.8-flash-high"
       },
       "subject": "a cozy café in the evening; the male student and the woman sit at a small wooden table with coffee cups, talking about a soccer match playing on a wall-mounted TV; the woman raises one finger as she shares her opinion while the male student nods thoughtfully with a hand on his chin; the TV scoreboard and menu boards are blank.",
       "target": {

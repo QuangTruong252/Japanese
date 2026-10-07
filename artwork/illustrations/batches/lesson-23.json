@@ -260,8 +260,8 @@
       "stem": "giving-directions-v1",
       "source": "image_gen",
       "generation": {
-        "tool": "Codex built-in image_gen",
-        "orchestrator": "gpt-6-luna (effort low)"
+        "tool": "Antigravity generate_image (JPEG 1200x896, converted losslessly to PNG)",
+        "orchestrator": "gemini-3.8-flash-high"
       },
       "subject": "a sunny town street at a crossroads; the woman points ahead and to the right, explaining the way to the male student who holds a blank map; behind them a traffic light at the corner, a zebra crosswalk, a white building and a small stone bridge over a river further down the road; all signs blank.",
       "target": {

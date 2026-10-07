@@ -162,5 +162,13 @@
     "question-words",
     "verbs"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/town-errands-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Chàng trai xuống xe buýt, cô gái rút tiền ở ATM, phía sau là lối vào đền."
+    }
+  }
 }

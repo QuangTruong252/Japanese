@@ -30,6 +30,14 @@
         "naiKana": "きかない",
         "ta": "聞[き]いた[先生[せんせい]に〜]",
         "taKana": "きいた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-teacher-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cầm vở đến hỏi cô giáo."
+        }
       }
     },
     {
@@ -60,6 +68,14 @@
         "naiKana": "まわさない",
         "ta": "回[まわ]した",
         "taKana": "まわした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/turning-knob-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn tay đang vặn núm âm lượng của chiếc radio."
+        }
       }
     },
     {
@@ -90,6 +106,14 @@
         "naiKana": "ひかない",
         "ta": "引[ひ]いた",
         "taKana": "ひいた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/pulling-door-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái nắm tay nắm và kéo cánh cửa về phía mình."
+        }
       }
     },
     {
@@ -180,6 +204,14 @@
         "naiKana": "でない",
         "ta": "出[で]た[お 釣[つ]りが〜]",
         "taKana": "でた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/change-coming-out-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tiền thừa rơi ra từ khe trả tiền của máy bán hàng."
+        }
       }
     },
     {
@@ -210,6 +242,14 @@
         "naiKana": "あるかない",
         "ta": "歩[ある]いた",
         "taKana": "あるいた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/walking-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một sinh viên đang đi bộ trên vỉa hè."
+        }
       }
     },
     {
@@ -240,6 +280,14 @@
         "naiKana": "わたらない",
         "ta": "渡[わた]った[橋[はし]を〜]",
         "taKana": "わたった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/crossing-road-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đang băng qua đường trên vạch kẻ."
+        }
       }
     },
     {
@@ -270,6 +318,14 @@
         "naiKana": "まがらない",
         "ta": "曲[ま]がった[右[みぎ]へ〜]",
         "taKana": "まがった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/turning-right-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhìn từ phía sau, chàng trai rẽ sang phải ở góc phố."
+        }
       }
     },
     {
@@ -287,6 +343,14 @@
         "translation": {
           "vi": "Khi buồn, tôi gọi điện cho gia đình."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/lonely-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai ngồi một mình trên ghế đá lúc chiều tối, trông cô đơn."
+        }
       }
     },
     {
@@ -303,6 +367,14 @@
         "kana": "お ゆを のむと、げんきに なります。",
         "translation": {
           "vi": "Hễ uống nước nóng thì sẽ khỏe lại."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hot-water-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ấm đun rót nước nóng bốc hơi vào cốc."
         }
       }
     },
@@ -372,6 +444,14 @@
         "translation": {
           "vi": "Khi sang đường, tôi chú ý xe ô tô."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/road-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Con đường nhỏ uốn quanh thị trấn."
+        }
       }
     },
     {
@@ -388,6 +468,14 @@
         "kana": "つぎの こうさてんを ひだりへ まがります。",
         "translation": {
           "vi": "Tôi rẽ trái ở ngã tư tiếp theo."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/intersection-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ngã tư có vạch qua đường ở cả bốn phía."
         }
       }
     },
@@ -406,6 +494,14 @@
         "translation": {
           "vi": "Khi đèn tín hiệu màu đỏ, không băng qua đường."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/traffic-light-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cột đèn giao thông đang bật đèn đỏ."
+        }
       }
     },
     {
@@ -422,6 +518,14 @@
         "kana": "その かどを みぎへ まがると、ぎんこうが あります。",
         "translation": {
           "vi": "Hễ rẽ phải ở góc đường đó thì sẽ có ngân hàng."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/street-corner-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Góc phố có một cửa hàng nhỏ ở ngay góc."
         }
       }
     },
@@ -440,6 +544,14 @@
         "translation": {
           "vi": "Tôi băng qua cây cầu dài."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bridge-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cây cầu đá dài bắc qua dòng sông."
+        }
       }
     },
     {
@@ -457,6 +569,14 @@
         "translation": {
           "vi": "Tôi đỗ xe ô tô vào bãi đỗ xe."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/parking-lot-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bãi đỗ xe ngoài trời với vài chiếc ô tô."
+        }
       }
     },
     {
@@ -473,6 +593,14 @@
         "kana": "あの しろい たてものは びょういんです。",
         "translation": {
           "vi": "Tòa nhà màu trắng kia là bệnh viện."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/white-building-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một tòa nhà màu trắng bốn tầng."
         }
       }
     },

@@ -30,6 +30,14 @@
         "naiKana": "かんがえない",
         "ta": "考[かんが]えた",
         "taKana": "かんがえた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/thinking-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái chống cằm suy nghĩ bên cuốn sổ."
+        }
       }
     },
     {

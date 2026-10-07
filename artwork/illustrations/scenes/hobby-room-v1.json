@@ -1,0 +1,60 @@
+{
+  "createdAt": "2026-10-07T05:00:24.093Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Antigravity generate_image (JPEG 1200x896, converted losslessly to PNG)",
+    "orchestrator": "gemini-3.8-flash-high"
+  },
+  "batch": "artwork/illustrations/batches/lesson-18.json",
+  "prompt": "Editorial watercolor and gouache illustration, hand-painted Japanese book-illustration feel: delicate dark pencil contours, soft organic painted washes, subtle paper texture, warm ivory paper tones. Palette: cream, warm sand, charcoal gray, muted sage green, warm timber wood, muted brick-red accents. Landscape 4:3 composition, FULL-BLEED: the painting fills the whole canvas edge to edge, with NO frame, NO border line, NO mat and NO paper margin around it.\nCharacters, when present: young male student = slightly messy short dark hair, cream long-sleeved shirt, charcoal trousers, black backpack; young woman = chin-length dark bob with bangs, cream cardigan over muted brick-red top, charcoal skirt, small brown shoulder bag.\n\nSubject: a cozy community hobby room in the afternoon; the woman plays an upright piano while the male student stands beside her singing from a songbook with blank pages; a side table holds an open stamp album and a diary; a window with soft light and a potted plant.\nKeep the main subject in the central area so the image survives cropping to a thumbnail.\n\nSTRICT REQUIREMENTS:\n- Absolutely NO text, letters, kanji, kana, numbers or words anywhere: signs, boards, labels and screens stay completely blank.\n- Clock faces have NO digits and NO Roman numerals.\n- Hand-painted watercolor gouache look, NOT 3D, NOT CGI, NOT glossy vector, NOT photo.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/scenes/hobby-room-v1.webp",
+  "width": 800,
+  "height": 600,
+  "role": "scene",
+  "suggestedAlt": {
+    "vi": "Cô gái đánh đàn piano, chàng trai đứng hát bên cạnh trong phòng sinh hoạt sở thích."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/lessons/lesson-18.json",
+    "field": "cover",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/scenes/hobby-room-v1.png",
+    "width": 1200,
+    "height": 896,
+    "format": "png",
+    "hasAlpha": false,
+    "crop": {
+      "left": 48,
+      "top": 48,
+      "width": 1104,
+      "height": 828
+    }
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "cover",
+    "width": 800,
+    "height": 600,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 80466,
+    "sha256": "c5e82ec58f5f1c4bb443237d28d6ffef04f8feb69d4c09a637da9243dd947f48",
+    "hasAlpha": false,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 0,
+      "partial": 0,
+      "opaque": 480000
+    }
+  }
+}

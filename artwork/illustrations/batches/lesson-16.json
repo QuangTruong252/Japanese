@@ -516,8 +516,8 @@
       "stem": "town-errands-v1",
       "source": "image_gen",
       "generation": {
-        "tool": "Codex built-in image_gen",
-        "orchestrator": "gpt-6-luna (effort low)"
+        "tool": "Antigravity generate_image (JPEG 1200x896, converted losslessly to PNG)",
+        "orchestrator": "gemini-3.8-flash-high"
       },
       "subject": "a bright morning in a small Japanese town: the male student steps down from a bus at the stop while the woman takes cash from a bank ATM with a blank screen beside it; behind them a tree-lined path leads to a vermilion shrine torii among green trees; signs and awnings are blank.",
       "target": {

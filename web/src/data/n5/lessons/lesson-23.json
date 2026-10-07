@@ -148,5 +148,13 @@
     "question-words",
     "verbs"
   ],
-  "verification": "unverified"
+  "verification": "unverified",
+  "cover": {
+    "src": "/assets/illustrations/scenes/giving-directions-v1.webp",
+    "width": 800,
+    "height": 600,
+    "alt": {
+      "vi": "Cô gái chỉ đường cho chàng trai cầm bản đồ ở ngã tư có đèn giao thông."
+    }
+  }
 }
