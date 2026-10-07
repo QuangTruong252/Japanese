@@ -14,6 +14,7 @@ import type { LessonSummary } from '@/lib/lessons';
 import { Stage, PaperSlip, LinkRow } from '@/components/PaperStage';
 import { buttonVariants } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Progress } from '@/components/ui/progress';
 import { Play, BookOpen, Clock, CheckCircle2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Furigana } from '@/components/Furigana';
@@ -131,9 +132,9 @@ export function DashboardContent({
         <header className="mb-3 sm:mb-4">
           <Skeleton className="h-5 w-32" />
         </header>
-        <div className="grid grid-cols-1 items-start gap-6 xl:grid-cols-12 xl:gap-8">
+        <div className="grid grid-cols-1 items-start gap-y-0 xl:grid-cols-12 xl:gap-8">
           <div className="xl:col-span-7">
-            <Skeleton className="h-48 w-full rounded-xl sm:h-56 md:h-64 lg:h-72" />
+            <Skeleton className="h-56 w-full rounded-xl sm:h-64 md:h-72" />
           </div>
           <div className="flex flex-col gap-4 xl:col-span-5">
             <Skeleton className="h-32 w-full rounded-xl" />
@@ -146,6 +147,14 @@ export function DashboardContent({
       </main>
     );
   }
+
+  // Tổng hợp mục đến hạn và mục mới cho khối ôn tập (Finding 12 / D1)
+  const dueSummaryText = [
+    queue.totalDueCount > 0 ? `${queue.totalDueCount} mục đến hạn` : null,
+    queue.newTargetIds.length > 0 ? `${queue.newTargetIds.length} mục mới` : null,
+  ]
+    .filter(Boolean)
+    .join(' · ');
 
   // Quyết định các dòng LinkRow phụ hiển thị dưới PaperSlip
   const showDraftRows = ctaDecision.kind === 'review' ? draftRows : secondaryDrafts;
@@ -161,63 +170,62 @@ export function DashboardContent({
       </header>
 
       {/* Bố cục: mobile xếp dọc; 1280px chia 7/12 (stage) và 5/12 (slip + rows) */}
-      <div className="grid grid-cols-1 items-start gap-6 xl:grid-cols-12 xl:gap-8">
+      <div className="grid grid-cols-1 items-start gap-y-0 xl:grid-cols-12 xl:gap-8">
         {/* Sân khấu bên trái ở 1280px (7/12) */}
         <div className="xl:col-span-7">
           <Stage
             asset={coverAsset}
             sizes="(min-width: 1280px) 672px, 100vw"
             eager
-            imageClassName="h-48 sm:h-56 md:h-64 lg:h-72 max-h-[35vh] w-full object-cover"
-            className="w-full overflow-visible"
-          >
-            {/* 3. "Câu hôm nay": bong bóng thoại HTML đè lên cảnh */}
-            {todaySentence && (
-              <div className="absolute inset-x-3 top-3 z-20 sm:inset-x-4 sm:top-4">
-                <div className="relative rounded-xl border border-border bg-card p-3 shadow-xs sm:p-4">
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="min-w-0 flex-1">
-                      <Furigana
-                        text={todaySentence.jp}
-                        className="text-xl font-bold tracking-tight text-foreground sm:text-2xl"
-                      />
-                      <p className="mt-1 line-clamp-2 text-xs text-muted-foreground sm:text-sm">
-                        {todaySentence.vi}
-                      </p>
-                    </div>
-                    <div className="shrink-0">
-                      <SpeakButton
-                        text={todaySentence.kana || toKanaSentence(todaySentence.jp)}
-                        label={stripFurigana(todaySentence.jp)}
-                        iconClassName="size-4"
-                      />
-                    </div>
-                  </div>
-                  {/* Đuôi bong bóng thoại hướng xuống nhân vật */}
-                  <div
-                    className="absolute -bottom-1.5 left-8 size-3 rotate-45 border-b border-r border-border bg-card"
-                    aria-hidden="true"
+            imageClassName="h-56 sm:h-64 md:h-72 w-full object-cover object-top"
+            className="w-full"
+          />
+          {/* 3. "Câu hôm nay": bong bóng thoại trong normal flow trực tiếp dưới cảnh */}
+          {todaySentence && (
+            <div className="relative mt-2 rounded-xl border border-border bg-card p-3 sm:p-4">
+              {/* Đuôi bong bóng thoại hướng lên nhân vật trên cảnh */}
+              <div
+                className="absolute -top-1.5 left-8 size-3 rotate-45 border-l border-t border-border bg-card"
+                aria-hidden="true"
+              />
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0 flex-1">
+                  <Furigana
+                    text={todaySentence.jp}
+                    className="text-xl font-bold tracking-tight text-foreground sm:text-2xl"
+                  />
+                  <p className="mt-1 line-clamp-2 text-xs text-muted-foreground sm:text-sm">
+                    {todaySentence.vi}
+                  </p>
+                </div>
+                <div className="shrink-0">
+                  <SpeakButton
+                    text={todaySentence.kana || toKanaSentence(todaySentence.jp)}
+                    label={stripFurigana(todaySentence.jp)}
+                    iconClassName="size-4"
                   />
                 </div>
               </div>
-            )}
-          </Stage>
+            </div>
+          )}
         </div>
 
         {/* Mảnh giấy và các dòng liên kết bên phải ở 1280px (5/12) */}
         <div className="flex flex-col gap-4 xl:col-span-5">
           {/* 4. Mảnh giấy chỉ chứa khối khẩn cấp nhất + một nút son duy nhất */}
-          <PaperSlip className="xl:mt-0">
+          <PaperSlip className={cn(todaySentence ? 'mt-3 xl:mt-0' : 'xl:mt-0')}>
             {ctaDecision.kind === 'review' ? (
               <div className="flex flex-col gap-3">
-                <p className="text-base font-semibold">
-                  {[
-                    queue.totalDueCount > 0 ? `${queue.totalDueCount} mục đến hạn` : null,
-                    minutesEstimate !== null ? `khoảng ${minutesEstimate} phút` : null,
-                  ]
-                    .filter(Boolean)
-                    .join(' · ')}
-                </p>
+                <div className="space-y-0.5">
+                  <p className="text-base font-semibold">
+                    {dueSummaryText || (batchCount > 0 ? `${batchCount} mục ôn tập` : 'Ôn tập')}
+                  </p>
+                  {minutesEstimate !== null && (
+                    <p className="text-sm text-muted-foreground">
+                      khoảng {minutesEstimate} phút
+                    </p>
+                  )}
+                </div>
                 <Link
                   href={ctaDecision.href}
                   className={cn(buttonVariants({ size: 'quiz' }), 'w-full gap-2 text-base font-semibold')}
@@ -258,22 +266,13 @@ export function DashboardContent({
                 <p className="text-base font-semibold">
                   Bài {activeLessonNum} · {activeSummary.title.vi} · {learnedInActive}/{totalInActive} từ
                 </p>
-                <div
-                  role="progressbar"
-                  aria-valuenow={learnedInActive}
-                  aria-valuemin={0}
-                  aria-valuemax={totalInActive}
+                <Progress
+                  value={learnedInActive}
+                  max={Math.max(1, totalInActive)}
+                  aria-label={`Tiến độ từ vựng Bài ${activeLessonNum}`}
                   aria-valuetext={`${learnedInActive} trên ${totalInActive} từ đã vào lịch ôn`}
-                  className="relative h-1.5 w-full overflow-hidden rounded-full bg-muted"
-                >
-                  <div
-                    className="h-full origin-left bg-primary transition-transform duration-250 ease-smooth-out"
-                    style={{
-                      width: '100%',
-                      transform: `scaleX(${totalInActive > 0 ? Math.min(1, learnedInActive / totalInActive) : 0})`,
-                    }}
-                  />
-                </div>
+                  className="w-full"
+                />
                 <Link
                   href={ctaDecision.href}
                   className={cn(buttonVariants({ size: 'quiz' }), 'w-full gap-2 text-base font-semibold')}
@@ -307,22 +306,13 @@ export function DashboardContent({
                   title={`Bài ${activeLessonNum} · ${activeSummary.title.vi} · ${learnedInActive}/${totalInActive} từ`}
                 >
                   <div className="mt-2">
-                    <div
-                      role="progressbar"
-                      aria-valuenow={learnedInActive}
-                      aria-valuemin={0}
-                      aria-valuemax={totalInActive}
+                    <Progress
+                      value={learnedInActive}
+                      max={Math.max(1, totalInActive)}
+                      aria-label={`Tiến độ từ vựng Bài ${activeLessonNum}`}
                       aria-valuetext={`${learnedInActive} trên ${totalInActive} từ đã vào lịch ôn`}
-                      className="relative h-1.5 w-full overflow-hidden rounded-full bg-muted"
-                    >
-                      <div
-                        className="h-full origin-left bg-primary transition-transform duration-250 ease-smooth-out"
-                        style={{
-                          width: '100%',
-                          transform: `scaleX(${totalInActive > 0 ? Math.min(1, learnedInActive / totalInActive) : 0})`,
-                        }}
-                      />
-                    </div>
+                      className="w-full"
+                    />
                   </div>
                 </LinkRow>
               )}
@@ -335,7 +325,7 @@ export function DashboardContent({
                   title={
                     queue.dueTomorrowCount > 0
                       ? `Hôm nay đã ôn xong · lượt tiếp theo ngày mai (${queue.dueTomorrowCount} mục)`
-                      : 'Hôm nay đã ôn xong · lượt tiếp theo ngày mai'
+                      : 'Hôm nay đã ôn xong · ngày mai chưa có mục nào'
                   }
                 />
               )}
