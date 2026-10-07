@@ -44,83 +44,45 @@ export default async function LessonDetailPage({
 
   return (
     <main className="mx-auto w-full max-w-2xl px-4 sm:px-6 pb-20 pt-2 sm:pt-4">
-      {/* 1. Sân khấu: cảnh bài học, nút quay lại, tiêu đề Nhật lớn nhất, tiêu đề Việt */}
-      <header className="relative">
-        {lesson.cover ? (
+      {/* Nút quay lại ở normal flow phía trên cảnh */}
+      <div className="mb-2">
+        <Link
+          href="/hoc"
+          className="inline-flex min-h-12 items-center gap-1.5 -ml-2 px-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring rounded-md"
+        >
+          <ChevronLeft className="size-4" aria-hidden="true" />
+          <span>Học bài</span>
+        </Link>
+      </div>
+
+      {/* 1. Sân khấu & Tiêu đề: dùng chung cho có/không cover */}
+      <header className="space-y-4">
+        {lesson.cover && (
           <Stage
             asset={lesson.cover}
             sizes="(min-width: 672px) 672px, 100vw"
             eager
-            imageClassName="h-60 sm:h-72 w-full object-cover"
-            className="overflow-hidden -mx-4 sm:mx-0 sm:rounded-2xl"
-          >
-            <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-5 bg-gradient-to-t from-background/95 via-background/40 to-background/20 pointer-events-none">
-              <div className="pointer-events-auto">
-                <Link
-                  href="/hoc"
-                  className="inline-flex min-h-9 items-center gap-1.5 rounded-full bg-background/85 px-3 py-1.5 text-xs sm:text-sm font-medium text-foreground backdrop-blur-xs transition-colors hover:bg-background focus-visible:ring-3 focus-visible:ring-ring"
-                >
-                  <ChevronLeft className="size-4" aria-hidden="true" />
-                  <span>Học bài</span>
-                </Link>
-              </div>
-              <div className="pointer-events-auto pb-8 space-y-1">
-                <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                  Bài {lesson.number}
-                </p>
-                {lesson.jpTitle && (
-                  <div className="jp">
-                    <Furigana
-                      text={formatOptionalBrackets(lesson.jpTitle)}
-                      className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground"
-                    />
-                  </div>
-                )}
-                <h1 className="text-lg sm:text-xl font-bold tracking-tight text-foreground">
-                  {lesson.title.vi}
-                </h1>
-                {lesson.description?.vi && (
-                  <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">
-                    {lesson.description.vi}
-                  </p>
-                )}
-              </div>
-            </div>
-          </Stage>
-        ) : (
-          <div className="relative rounded-2xl bg-muted/40 p-5 sm:p-6 pb-12 space-y-4">
-            <div>
-              <Link
-                href="/hoc"
-                className="inline-flex min-h-9 items-center gap-1.5 rounded-full bg-background/85 px-3 py-1.5 text-xs sm:text-sm font-medium text-foreground transition-colors hover:bg-background focus-visible:ring-3 focus-visible:ring-ring"
-              >
-                <ChevronLeft className="size-4" aria-hidden="true" />
-                <span>Học bài</span>
-              </Link>
-            </div>
-            <div className="space-y-1">
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                Bài {lesson.number}
-              </p>
-              {lesson.jpTitle && (
-                <div className="jp">
-                  <Furigana
-                    text={formatOptionalBrackets(lesson.jpTitle)}
-                    className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground"
-                  />
-                </div>
-              )}
-              <h1 className="text-lg sm:text-xl font-bold tracking-tight text-foreground">
-                {lesson.title.vi}
-              </h1>
-              {lesson.description?.vi && (
-                <p className="text-xs sm:text-sm text-muted-foreground">
-                  {lesson.description.vi}
-                </p>
-              )}
-            </div>
-          </div>
+            imageClassName="h-44 sm:h-56 w-full object-cover"
+            className="-mx-4 sm:mx-0"
+          />
         )}
+
+        <div className="space-y-1">
+          <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+            Bài {lesson.number}
+          </p>
+          {lesson.jpTitle && (
+            <div className="jp">
+              <Furigana
+                text={formatOptionalBrackets(lesson.jpTitle)}
+                className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground"
+              />
+            </div>
+          )}
+          <h1 className="text-lg sm:text-xl font-bold tracking-tight text-foreground">
+            {lesson.title.vi}
+          </h1>
+        </div>
 
         {/* 2. Mảnh giấy đè lên mép cảnh: tiến độ + nút son duy nhất */}
         <LessonHeroSlip lessonNum={lessonNum} totalVocab={vocab.length} />
@@ -132,24 +94,26 @@ export default async function LessonDetailPage({
           href="#ngu-phap"
           icon={<BookOpen className="size-5" aria-hidden="true" />}
           title={`Ngữ pháp · ${lesson.grammar.length} mẫu`}
-          detail="Các mẫu câu và cấu trúc ngữ pháp trọng tâm"
         />
         <LinkRow
           href="#nghe"
           icon={<Headphones className="size-5" aria-hidden="true" />}
           title="Luyện nghe"
-          detail="Audio bài học và luyện nói shadowing"
         />
         <LinkRow
           href="#tu-vung"
           icon={<ScrollText className="size-5" aria-hidden="true" />}
-          title="Xem toàn bộ bài"
-          detail={`Danh sách ${vocab.length} từ vựng và chi tiết tham khảo`}
+          title={`Xem toàn bộ bài · ${vocab.length} từ`}
         />
       </section>
 
       {/* 4. Nội dung tham khảo đầy đủ */}
       <div className="mt-8 space-y-10">
+        {lesson.description?.vi && (
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {lesson.description.vi}
+          </p>
+        )}
         {/* Từ vựng */}
         <section id="tu-vung" className="scroll-mt-20 sm:scroll-mt-24 space-y-3 pt-6 border-t border-border">
           <div className="flex items-center justify-between">
@@ -238,8 +202,8 @@ export default async function LessonDetailPage({
                 </h3>
 
                 {/* Khối cấu trúc mẫu câu Washi */}
-                <div className="grammar-pattern-block rounded-xl bg-muted/70 p-3.5 sm:p-4 border border-border/60">
-                  <div className="jp text-base sm:text-lg font-semibold text-primary">
+                <div className="grammar-pattern-block rounded-lg bg-muted p-4">
+                  <div className="jp jp-example font-medium text-foreground leading-loose">
                     <Furigana text={formatOptionalBrackets(point.pattern.vi)} />
                   </div>
                 </div>
@@ -276,7 +240,7 @@ export default async function LessonDetailPage({
                           className="flex items-start justify-between gap-3 py-3 first:pt-3.5 last:pb-3.5"
                         >
                           <div className="min-w-0 flex-1 space-y-0.5">
-                            <div className="jp text-base sm:text-[20px] font-medium leading-loose text-foreground">
+                            <div className="jp jp-example font-medium leading-loose text-foreground">
                               <Furigana text={formatOptionalBrackets(ex.jp)} />
                             </div>
                             <p className="translation text-sm text-muted-foreground leading-relaxed">

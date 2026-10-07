@@ -14,9 +14,11 @@ import { cn } from '@/lib/utils';
 export function LessonHeroSlip({
   lessonNum,
   totalVocab,
+  className,
 }: {
   lessonNum: number;
   totalVocab: number;
+  className?: string;
 }) {
   const drafts = useActiveDrafts();
   const vocabDraft = drafts.vocabDraft?.lesson === lessonNum ? drafts.vocabDraft : null;
@@ -37,7 +39,7 @@ export function LessonHeroSlip({
   const href = vocabDraft?.resumeHref ?? `/hoc/${lessonNum}/tu-vung`;
 
   return (
-    <PaperSlip className="space-y-3 shadow-xs">
+    <PaperSlip className={cn('mt-4 space-y-3', className)}>
       <LessonProgress lesson={lessonNum} total={totalVocab} />
       <Link
         href={href}
