@@ -74,8 +74,8 @@ export function resolveDashboardCta({
     return {
       kind: 'start_first_lesson',
       href: '/hoc/1',
-      ctaText: 'Bắt đầu bài 1',
-      heading: 'Bắt đầu bài 1: Giới thiệu bản thân',
+      ctaText: 'Bắt đầu Bài 1',
+      heading: 'Bắt đầu Bài 1: Giới thiệu bản thân',
       isPrimaryReview: false,
     };
   }
@@ -85,7 +85,7 @@ export function resolveDashboardCta({
   return {
     kind: 'continue_lesson',
     href: `/hoc/${safeLessonNum}`,
-    ctaText: `Học tiếp bài ${safeLessonNum}`,
+    ctaText: `Tiếp tục Bài ${safeLessonNum}`,
     heading: `Bài đang học: Bài ${safeLessonNum}${titleSuffix}`,
     isPrimaryReview: false,
   };
