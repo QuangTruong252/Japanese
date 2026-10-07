@@ -270,9 +270,11 @@ export function SessionResult({
                   <div className="flex items-center gap-2 text-sm text-destructive">
                     <X className="size-4 shrink-0" aria-hidden="true" />
                     <span className="text-xs text-muted-foreground">Bạn trả lời:</span>
-                    <span className="jp font-medium line-through">
-                      {userAnswer && userAnswer.trim().length > 0 ? userAnswer : '(Chưa biết)'}
-                    </span>
+                    {userAnswer && userAnswer.trim().length > 0 ? (
+                      <span className="jp font-medium line-through">{userAnswer}</span>
+                    ) : (
+                      <span className="italic text-muted-foreground">Chưa biết</span>
+                    )}
                   </div>
 
                   {/* Đáp án đúng màu success kèm icon Check */}
