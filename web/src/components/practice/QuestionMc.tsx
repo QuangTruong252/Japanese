@@ -30,7 +30,12 @@ export function QuestionMc({ question, answered, onAnswer }: QuestionProps) {
 
   const stateOf = (option: string): AnswerOptionState => {
     if (!answered) return chosen === option ? 'selected' : 'idle';
-    if (checkOptionAnswer(option, question)) return 'correct';
+    const isThisCorrect = checkOptionAnswer(option, question);
+    const wasChosenCorrect = chosen !== null && checkOptionAnswer(chosen, question);
+
+    if (isThisCorrect) {
+      return wasChosenCorrect ? 'correct' : 'revealed-correct';
+    }
     return chosen === option ? 'incorrect' : 'idle';
   };
 
@@ -52,7 +57,7 @@ export function QuestionMc({ question, answered, onAnswer }: QuestionProps) {
   }, [answered, options, pick]);
 
   return (
-    <div className="flex flex-col gap-3" role="group">
+    <div className="flex flex-col gap-2" role="group" aria-label="Các lựa chọn đáp án">
       {options.map((option, i) => (
         <AnswerOption
           key={option}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { LazyMotion, MotionConfig, domMax } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { PhraseToken } from './PhraseToken';
@@ -50,7 +50,7 @@ export function QuestionReorder({
     (id) => tokens.find((token) => token.id === id)!,
   );
 
-  const handleSubmit = () => {
+  const handleSubmit = useCallback(() => {
     if (answered || chosenIds.length !== tokens.length) return;
     const chosenWords = chosenTokens.map((t) => t.text);
     const isCorrect = checkReorderAnswer(chosenWords, question);
@@ -64,7 +64,24 @@ export function QuestionReorder({
         usedHint: false,
       },
     ]);
-  };
+  }, [answered, chosenIds.length, tokens.length, chosenTokens, question, onAnswer]);
+
+  useEffect(() => {
+    if (answered) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target?.tagName === 'INPUT' || target?.tagName === 'TEXTAREA') return;
+
+      if (e.key === 'Enter') {
+        if (chosenIds.length === tokens.length) {
+          e.preventDefault();
+          handleSubmit();
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [answered, chosenIds.length, tokens.length, handleSubmit]);
 
   const isCorrect = answered
     ? checkReorderAnswer(
