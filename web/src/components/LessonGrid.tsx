@@ -158,33 +158,38 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
           </p>
         </div>
 
-        <div className="relative w-full sm:w-64">
-          <label htmlFor="lesson-filter" className="sr-only">
+        <div className="w-full sm:w-64 space-y-1.5">
+          <label
+            htmlFor="lesson-filter"
+            className="block text-xs font-semibold text-muted-foreground"
+          >
             Lọc bài học
           </label>
-          <Search
-            className="size-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
-            aria-hidden="true"
-          />
-          <input
-            id="lesson-filter"
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Lọc bài học..."
-            aria-label="Lọc bài học"
-            className="w-full h-10 pl-9 pr-8 bg-card border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring"
-          />
-          {searchQuery && (
-            <button
-              type="button"
-              onClick={() => setSearchQuery('')}
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-muted-foreground hover:text-foreground rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              aria-label="Xóa bộ lọc"
-            >
-              <X className="size-3.5" aria-hidden="true" />
-            </button>
-          )}
+          <div className="relative">
+            <Search
+              className="size-4 text-muted-foreground absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
+              aria-hidden="true"
+            />
+            <input
+              id="lesson-filter"
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Lọc bài học..."
+              aria-label="Lọc bài học"
+              className="w-full h-12 pl-10 pr-12 bg-card border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring"
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery('')}
+                className="size-12 inline-flex items-center justify-center absolute right-0 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground rounded-r-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                aria-label="Xóa bộ lọc"
+              >
+                <X className="size-4" aria-hidden="true" />
+              </button>
+            )}
+          </div>
         </div>
       </header>
 
@@ -198,8 +203,8 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
           <Stage
             asset={stageCover}
             sizes="(min-width: 1280px) 40vw, 100vw"
-            imageClassName="h-48 sm:h-56 xl:h-64 rounded-xl"
-            className="rounded-xl overflow-hidden"
+            imageClassName="h-48 sm:h-56 xl:h-64"
+            className="-mx-4 sm:mx-0"
           />
           <PaperSlip>
             <p className="text-sm font-medium text-muted-foreground">
@@ -384,18 +389,24 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                                 )}
                               </div>
 
-                              <span className="block text-sm sm:text-base font-semibold text-foreground truncate mt-0.5">
-                                {s.title.vi}
-                              </span>
-
-                              {s.jpTitle && (
-                                <span className="jp jp-inline block text-xs sm:text-sm text-muted-foreground truncate">
+                              {s.jpTitle ? (
+                                <div className="jp jp-example font-medium text-foreground truncate mt-0.5">
                                   <Furigana
                                     text={formatOptionalBrackets(s.jpTitle)}
                                     zoomable={false}
                                   />
+                                </div>
+                              ) : (
+                                <span className="block text-base font-semibold text-foreground truncate mt-0.5">
+                                  {s.title.vi}
                                 </span>
                               )}
+
+                              {s.jpTitle ? (
+                                <span className="block text-sm font-normal text-muted-foreground truncate">
+                                  {s.title.vi}
+                                </span>
+                              ) : null}
                             </div>
 
                             {/* Chevron */}
