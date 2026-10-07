@@ -743,6 +743,14 @@ The library's remaining variants keep their conventional jobs: `outline` for pee
 inside one group, `destructive` for anything that deletes study data, `link` for inline
 navigation. Outside the practice flow, `lg` is the main action and `default` is chrome.
 
+**Stage + paper slip** (approved 07/10/2026 for the UI redesign v2) is the composition of
+illustrated screens. The stage is a lesson scene, full width, fading into the page through
+`.paper-scene`, never boxed. A paper slip (`card` fill, 1px `border`, `xl` radius) overlaps
+the stage's bottom edge by 32px and holds the single `button-primary` of the screen, phrased
+as a sentence with numbers. Every other block is a **link row**: the whole row is the link,
+hairline separators, chevron at right, no button and no card frame. Cap the stage height so
+the slip is fully inside the first viewport at 390px.
+
 `card` is the workhorse container: `card` fill, 1px `border`, `xl` radius, one interior
 padding step, no shadow. Structure runs title (`h3`), content, right-aligned action row.
 `popover` is the same material one level up.
@@ -822,6 +830,7 @@ this contract; `missing` means the pattern exists in this file with no shared im
 | Progress indicator | `web/src/components/ui/progress.tsx` plus `web/src/components/LessonProgress.tsx` | needs review | A third, hand-rolled bar exists inline on the dashboard and lesson list |
 | Application shell navigation | `web/src/components/AppNav.tsx` | stable | Năm đích chính (Bảng tin, Học bài, Luyện tập, Ôn tập, Tra cứu); chân sidebar dẫn /ca-nhan; header mobile có AccountButton |
 | Illustrated Home composition | `web/src/components/DashboardContent.tsx` | existing | Phố giấy panorama, direct primary action, desktop supporting column; real CTA helper |
+| Stage, paper slip, link row | `web/src/components/PaperStage.tsx` | existing | Stage + paper slip composition (07/10/2026); screens place their own overlays |
 | Reinforcement preview | `web/src/components/DashboardReinforcement.tsx` | existing | Two real review targets; `buildTargetLabels` and `useQuestionPool` shared with Weak Points |
 | Illustration | `web/src/components/Illustration.tsx` | existing | `next/image`, responsive sizes, lazy/eager, hide failed image while preserving text |
 | Profile & progress view | `web/src/app/ca-nhan/page.tsx` | stable | Màn Cá nhân / Tiến độ với auth Supabase, trạng thái sync, bài đang học và thẻ tiến độ Dexie |
