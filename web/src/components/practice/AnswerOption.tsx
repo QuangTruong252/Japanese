@@ -4,13 +4,14 @@ import { Check, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { containsJapanese } from '@/lib/japanese';
 
-export type AnswerOptionState = 'idle' | 'selected' | 'correct' | 'incorrect';
+export type AnswerOptionState = 'idle' | 'selected' | 'correct' | 'incorrect' | 'revealed-correct';
 
 const STATE_CLASS: Record<AnswerOptionState, string> = {
-  idle: 'bg-muted/60 border-border hover:bg-accent',
-  selected: 'bg-accent border-primary',
-  correct: 'bg-success/10 border-success',
-  incorrect: 'bg-destructive/10 border-destructive motion-safe:animate-jp-shake',
+  idle: 'bg-card border-border hover:bg-accent text-foreground',
+  selected: 'bg-accent border-primary border-2 text-foreground',
+  correct: 'bg-success/10 border-success border-2 text-foreground',
+  incorrect: 'bg-destructive/10 border-destructive border-2 text-foreground motion-safe:animate-jp-shake',
+  'revealed-correct': 'bg-card border-success border-2 text-foreground',
 };
 
 export function AnswerOption({
@@ -19,6 +20,7 @@ export function AnswerOption({
   index,
   disabled = false,
   className,
+  feedbackLabel,
   onClick,
 }: {
   children: React.ReactNode;
@@ -26,6 +28,7 @@ export function AnswerOption({
   index?: number;
   disabled?: boolean;
   className?: string;
+  feedbackLabel?: string;
   onClick: () => void;
 }) {
   return (
@@ -37,7 +40,7 @@ export function AnswerOption({
       onClick={disabled ? undefined : onClick}
       aria-pressed={state === 'selected'}
       className={cn(
-        'flex min-h-14 w-full items-center gap-3 rounded-xl border-2 p-4 text-left',
+        'flex min-h-14 w-full items-center gap-3 rounded-xl border p-4 text-left',
         'transition-colors duration-150 ease-out',
         'outline-none focus-visible:ring-3 focus-visible:ring-ring/50',
         'active:translate-y-px',
@@ -50,7 +53,7 @@ export function AnswerOption({
       )}
     >
       {index !== undefined && (
-        <span className="text-muted-foreground hidden size-6 shrink-0 items-center justify-center rounded-md border text-xs md:flex">
+        <span className="hidden size-6 shrink-0 items-center justify-center rounded-md border border-border text-xs text-muted-foreground md:flex">
           {index}
         </span>
       )}
@@ -59,23 +62,29 @@ export function AnswerOption({
         className={cn(
           'flex-1',
           typeof children === 'string' && !containsJapanese(children)
-            ? 'text-lg'
+            ? 'text-base font-normal'
             : 'jp jp-vocab',
         )}
       >
         {children}
       </span>
       {state === 'correct' && (
-        <>
-          <Check className="text-success size-5 shrink-0" />
+        <div className="flex shrink-0 items-center gap-1.5 text-success">
+          <Check className="size-5 shrink-0" aria-hidden="true" />
           <span className="sr-only">Đúng</span>
-        </>
+        </div>
       )}
       {state === 'incorrect' && (
-        <>
-          <X className="text-destructive size-5 shrink-0" />
-          <span className="sr-only">Sai</span>
-        </>
+        <div className="flex shrink-0 items-center gap-1.5 text-destructive">
+          <X className="size-5 shrink-0" aria-hidden="true" />
+          <span className="text-xs font-semibold">{feedbackLabel ?? 'Chưa đúng'}</span>
+        </div>
+      )}
+      {state === 'revealed-correct' && (
+        <div className="flex shrink-0 items-center gap-1.5 text-success">
+          <Check className="size-5 shrink-0" aria-hidden="true" />
+          <span className="text-xs font-semibold">{feedbackLabel ?? 'Đáp án đúng'}</span>
+        </div>
       )}
     </button>
   );

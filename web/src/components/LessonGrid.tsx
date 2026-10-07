@@ -3,54 +3,59 @@
 import { useState, useMemo, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { Card } from '@/components/ui/card';
-import { ProgressBar } from '@/components/LessonProgress';
 import { db } from '@/lib/db';
 import { countLearnedByLesson, pickActiveLesson } from '@/lib/stats';
 import { DEFAULT_SETTINGS, getSettingsSnapshot, subscribeSettings } from '@/lib/settings';
 import { useActiveDrafts } from '@/lib/active-drafts';
 import type { LessonSummary } from '@/lib/lessons';
+import type { IllustrationAsset } from '@/types';
 import {
   Search,
-  BookOpen,
-  CheckCircle2,
+  Check,
   Clock,
+  Circle,
+  ChevronRight,
   ArrowRight,
+  X,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
-import { LazyMotion, MotionConfig, domMax, m } from 'framer-motion';
+import { Progress } from '@/components/ui/progress';
 import { Furigana } from '@/components/Furigana';
+import { Illustration } from '@/components/Illustration';
+import { Stage, PaperSlip } from '@/components/PaperStage';
 import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
 
-// Nền của lựa chọn đang bật trượt sang nút mới (tabs sliding, 250ms smooth-out).
-function FilterPill() {
-  return (
-    <m.span
-      layoutId="lesson-filter-pill"
-      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-      className="absolute inset-0 -z-10 rounded-xl bg-primary shadow-sm"
-      aria-hidden
-    />
-  );
-}
+const FALLBACK_SCENE_COVER: IllustrationAsset = {
+  src: '/assets/illustrations/scenes/self-introduction-v1.webp',
+  width: 800,
+  height: 600,
+  alt: {
+    vi: 'Cảnh minh họa bài học Minna no Nihongo',
+  },
+};
 
-type FilterType = 'all' | 'completed' | 'in-progress' | 'not-started';
+const LESSON_GROUPS = [
+  { label: 'Bài 1–5', min: 1, max: 5 },
+  { label: 'Bài 6–10', min: 6, max: 10 },
+  { label: 'Bài 11–15', min: 11, max: 15 },
+  { label: 'Bài 16–20', min: 16, max: 20 },
+  { label: 'Bài 21–25', min: 21, max: 25 },
+] as const;
 
 export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
-  const [filter, setFilter] = useState<FilterType>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
   // Lắng nghe các nháp dở dang
   const drafts = useActiveDrafts();
 
-  // 1 query cho cả lưới
+  // 1 query cho cả danh sách: danh sách targetId từ vựng đã vào lịch ôn
   const targetIds = useLiveQuery(
     () => db.reviewItems.where('targetId').startsWith('vocab-').primaryKeys(),
     [],
     [] as string[]
   );
-  const learnedByLesson = useMemo(() => countLearnedByLesson(targetIds), [targetIds]);
+  const learnedByLesson = useMemo(() => countLearnedByLesson(targetIds ?? []), [targetIds]);
   const { learnedThroughLesson } = useSyncExternalStore(
     subscribeSettings,
     getSettingsSnapshot,
@@ -62,14 +67,12 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
     let completed = 0;
     let inProgress = 0;
     let notStarted = 0;
-    let totalVocabInN5 = 0;
-    let totalGrammarInN5 = 0;
 
     for (const s of summaries) {
-      totalVocabInN5 += s.vocabCount;
-      totalGrammarInN5 += s.grammarCount;
       const learned = learnedByLesson.get(s.number) ?? 0;
-      if (s.vocabCount > 0 && learned >= s.vocabCount) {
+      const isDone =
+        (s.vocabCount > 0 && learned >= s.vocabCount) || s.number <= learnedThroughLesson;
+      if (isDone) {
         completed++;
       } else if (learned > 0) {
         inProgress++;
@@ -78,336 +81,350 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
       }
     }
 
+    const activeNum = pickActiveLesson(summaries, learnedByLesson, learnedThroughLesson);
+
     return {
       completed,
       inProgress,
       notStarted,
-      activeLessonNum: pickActiveLesson(summaries, learnedByLesson, learnedThroughLesson),
-      totalVocabInN5: totalVocabInN5 || 650,
-      totalGrammarInN5: totalGrammarInN5 || 98,
+      activeLessonNum: activeNum,
     };
   }, [summaries, learnedByLesson, learnedThroughLesson]);
 
-  // Lọc và tìm kiếm bài học
+  const isAllLearned = summaries.length > 0 && lessonStats.completed >= summaries.length;
+  const isNewLearner =
+    lessonStats.completed === 0 &&
+    lessonStats.inProgress === 0 &&
+    learnedThroughLesson === 0 &&
+    (targetIds?.length ?? 0) === 0;
+
+  // Bài học hiện tại trên Stage: nếu đã học hết tất cả 25 bài thì hiển thị bài cuối cùng (Bài 25)
+  const activeLessonNum = isAllLearned
+    ? (summaries[summaries.length - 1]?.number ?? 25)
+    : lessonStats.activeLessonNum;
+  const activeSummary = summaries.find((s) => s.number === activeLessonNum) ?? summaries[0];
+  const learnedInActive = learnedByLesson.get(activeLessonNum) ?? 0;
+  const totalInActive = activeSummary?.vocabCount ?? 0;
+  const activeVocabDraft =
+    drafts.vocabDraft?.lesson === activeLessonNum ? drafts.vocabDraft : null;
+
+  // Lọc bài học theo tìm kiếm văn bản
   const filteredSummaries = useMemo(() => {
+    const q = searchQuery.toLowerCase().trim();
+    if (!q) return summaries;
+
     return summaries.filter((s) => {
-      const learned = learnedByLesson.get(s.number) ?? 0;
-      const isCompleted = s.vocabCount > 0 && learned >= s.vocabCount;
-      const isInProgress = learned > 0 && !isCompleted;
-      const isNotStarted = learned === 0;
-
-      // Filter theo tab
-      if (filter === 'completed' && !isCompleted) return false;
-      if (filter === 'in-progress' && !isInProgress) return false;
-      if (filter === 'not-started' && !isNotStarted) return false;
-
-      // Filter theo ô tìm kiếm
-      if (searchQuery.trim()) {
-        const query = searchQuery.toLowerCase().trim();
-        const matchNumber = String(s.number) === query;
-        const matchVi = s.title?.vi?.toLowerCase().includes(query);
-        const rawJp = s.jpTitle?.toLowerCase() ?? '';
-        const strippedJp = s.jpTitle ? stripFurigana(formatOptionalBrackets(s.jpTitle)).toLowerCase() : '';
-        const matchJp = rawJp.includes(query) || strippedJp.includes(query);
-        const matchDesc = s.description?.vi?.toLowerCase().includes(query);
-        if (!matchNumber && !matchVi && !matchJp && !matchDesc) return false;
-      }
-
-      return true;
+      const matchNumber = String(s.number) === q || `bài ${s.number}`.includes(q);
+      const matchVi = s.title?.vi?.toLowerCase().includes(q);
+      const rawJp = s.jpTitle?.toLowerCase() ?? '';
+      const strippedJp = s.jpTitle
+        ? stripFurigana(formatOptionalBrackets(s.jpTitle)).toLowerCase()
+        : '';
+      const matchJp = rawJp.includes(q) || strippedJp.includes(q);
+      const matchDesc = s.description?.vi?.toLowerCase().includes(q);
+      return matchNumber || matchVi || matchJp || matchDesc;
     });
-  }, [summaries, learnedByLesson, filter, searchQuery]);
+  }, [summaries, searchQuery]);
+
+  let ctaText: string;
+  let ctaHref: string;
+
+  if (isAllLearned) {
+    ctaText = `Ôn lại Bài ${activeLessonNum}`;
+    ctaHref = `/hoc/${activeLessonNum}`;
+  } else if (activeVocabDraft) {
+    ctaText = `Tiếp tục từ vựng (${activeVocabDraft.currentWordIndex}/${activeVocabDraft.totalWords})`;
+    ctaHref = activeVocabDraft.resumeHref;
+  } else if (isNewLearner) {
+    ctaText = 'Bắt đầu Bài 1';
+    ctaHref = '/hoc/1';
+  } else {
+    ctaText = `Tiếp tục Bài ${activeLessonNum}`;
+    ctaHref = `/hoc/${activeLessonNum}`;
+  }
+
+  const stageCover = activeSummary?.cover ?? FALLBACK_SCENE_COVER;
 
   return (
-    <div className="space-y-6">
-      {/* 1. Thẻ học tiếp trên cùng + Dải thống kê thu gọn (SPEC-18 §3) */}
-      <section aria-label="Bài đang học và tiến độ tổng quan" className="space-y-3">
-        {/* Thẻ "học tiếp" 1 hàng gọn dùng tiêu đề bài thật */}
-        {(() => {
-          const activeLesson = summaries.find((s) => s.number === lessonStats.activeLessonNum);
-          if (!activeLesson) return null;
-          const activeVocabDraft = drafts.vocabDraft?.lesson === activeLesson.number ? drafts.vocabDraft : null;
-          return (
-            <Card className="rounded-2xl border border-primary/30 bg-primary/5 p-3 sm:p-4 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div className="flex items-center gap-2.5 min-w-0">
-                <span className="shrink-0 size-2.5 rounded-full bg-primary" />
-                <span className="shrink-0 text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-md">
-                  {activeVocabDraft ? 'Đang học dở' : 'Học tiếp'}
-                </span>
-                <div className="min-w-0">
-                  <h2 className="font-bold text-sm sm:text-base text-foreground truncate">
-                    Bài {activeLesson.number}: {activeLesson.title?.vi ?? 'Minna no Nihongo'}
-                  </h2>
-                  {activeLesson.jpTitle && (
-                    <div className="jp jp-inline text-foreground truncate">
-                      <Furigana text={formatOptionalBrackets(activeLesson.jpTitle)} zoomable={false} />
-                    </div>
-                  )}
-                </div>
-              </div>
-              <Link
-                href={activeVocabDraft ? `/hoc/${activeLesson.number}/tu-vung` : `/hoc/${activeLesson.number}`}
-                className={cn(
-                  buttonVariants({ size: 'default' }),
-                  'min-h-11 h-11 shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-semibold rounded-xl flex items-center justify-center gap-1.5 px-4 shadow-sm'
-                )}
+    <div className="space-y-6 sm:space-y-8">
+      {/* 1. Header: h1 "Học bài" + "25 bài · đã học N" + small "Lọc bài học" text field */}
+      <header className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pb-4 border-b border-border">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+            Học bài
+          </h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {summaries.length} bài · đã học {lessonStats.completed}
+          </p>
+        </div>
+
+        <div className="w-full sm:w-64 space-y-1.5">
+          <label
+            htmlFor="lesson-filter"
+            className="block text-xs font-semibold text-muted-foreground"
+          >
+            Lọc bài học
+          </label>
+          <div className="relative">
+            <Search
+              className="size-4 text-muted-foreground absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
+              aria-hidden="true"
+            />
+            <input
+              id="lesson-filter"
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Lọc bài học..."
+              aria-label="Lọc bài học"
+              className="w-full h-12 pl-10 pr-12 bg-card border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring"
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery('')}
+                className="size-12 inline-flex items-center justify-center absolute right-0 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground rounded-r-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                aria-label="Xóa bộ lọc"
               >
-                <span>
-                  {activeVocabDraft
-                    ? `Tiếp tục từ vựng (${activeVocabDraft.currentWordIndex}/${activeVocabDraft.totalWords})`
-                    : 'Học tiếp ngay'}
-                </span>
-                <ArrowRight className="size-4" />
-              </Link>
-            </Card>
-          );
-        })()}
-
-        {/* Dải thống kê thu gọn: tiến độ bài + từ vựng */}
-        <Card className="rounded-2xl border-border/80 bg-card p-3 sm:p-4 shadow-sm">
-          <div className="grid grid-cols-2 gap-3 sm:gap-6 divide-x divide-border/60">
-            {/* Tiến độ bài học N5 */}
-            <div className="space-y-1.5 pr-1 sm:pr-3">
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-semibold text-muted-foreground uppercase tracking-wider text-xs">
-                  Tiến độ bài học
-                </span>
-                <span className="font-bold text-primary bg-primary/10 px-1.5 py-0.2 rounded text-xs">
-                  {Math.round((lessonStats.completed / Math.max(1, summaries.length)) * 100)}%
-                </span>
-              </div>
-              <div className="text-base sm:text-xl font-bold text-foreground">
-                {lessonStats.completed} <span className="text-xs font-normal text-muted-foreground">/ {summaries.length} bài</span>
-              </div>
-              <div className="w-full bg-muted h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-primary h-full w-full origin-left transition-transform duration-250 ease-smooth-out"
-                  style={{ transform: `scaleX(${lessonStats.completed / Math.max(1, summaries.length)})` }}
-                />
-              </div>
-            </div>
-
-            {/* Từ vựng đã học */}
-            <div className="space-y-1.5 pl-3 sm:pl-6">
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-semibold text-muted-foreground uppercase tracking-wider text-xs">
-                  Từ vựng đã học
-                </span>
-                <span className="font-bold text-success bg-success/10 px-1.5 py-0.2 rounded text-xs">
-                  {Math.round((targetIds.length / lessonStats.totalVocabInN5) * 100)}%
-                </span>
-              </div>
-              <div className="text-base sm:text-xl font-bold text-foreground">
-                {targetIds.length} <span className="text-xs font-normal text-muted-foreground">/ {lessonStats.totalVocabInN5} từ</span>
-              </div>
-              <div className="w-full bg-muted h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-success h-full w-full origin-left transition-transform duration-250 ease-smooth-out"
-                  style={{ transform: `scaleX(${Math.min(1, targetIds.length / Math.max(1, lessonStats.totalVocabInN5))})` }}
-                />
-              </div>
-            </div>
-          </div>
-        </Card>
-      </section>
-
-      {/* 2. Thanh công cụ Lọc & Tìm kiếm bài học (SPEC-18 §3: nhãn “Lọc bài học”) */}
-      <section aria-label="Bộ lọc và tìm kiếm bài học" className="space-y-2 pt-2 border-t border-border/80">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
-          {/* Segmented Filter Buttons có nhãn rõ ràng */}
-          <div className="space-y-1.5">
-            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider block">
-              Lọc bài học
-            </span>
-            <LazyMotion features={domMax} strict>
-              <MotionConfig reducedMotion="user">
-                <div
-                  role="group"
-                  aria-label="Lọc bài học"
-                  className="grid grid-cols-2 gap-1.5 sm:flex sm:items-center bg-card p-1.5 rounded-2xl border border-border/80 shadow-sm"
-                >
-                  <button
-                    type="button"
-                    onClick={() => setFilter('all')}
-                    className={cn(
-                      'relative isolate min-h-11 h-11 px-3 rounded-xl text-xs font-medium transition-colors flex items-center justify-center text-center',
-                      filter === 'all'
-                        ? 'text-primary-foreground font-semibold'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
-                    )}
-                  >
-                    {filter === 'all' && <FilterPill />}
-                    Tất cả ({summaries.length})
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setFilter('completed')}
-                    className={cn(
-                      'relative isolate min-h-11 h-11 px-3 rounded-xl text-xs font-medium transition-colors flex items-center justify-center text-center',
-                      filter === 'completed'
-                        ? 'text-primary-foreground font-semibold'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
-                    )}
-                  >
-                    {filter === 'completed' && <FilterPill />}
-                    Đã hoàn thành ({lessonStats.completed})
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setFilter('in-progress')}
-                    className={cn(
-                      'relative isolate min-h-11 h-11 px-3 rounded-xl text-xs font-medium transition-colors flex items-center justify-center text-center',
-                      filter === 'in-progress'
-                        ? 'text-primary-foreground font-semibold'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
-                    )}
-                  >
-                    {filter === 'in-progress' && <FilterPill />}
-                    Đang học ({lessonStats.inProgress})
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setFilter('not-started')}
-                    className={cn(
-                      'relative isolate min-h-11 h-11 px-3 rounded-xl text-xs font-medium transition-colors flex items-center justify-center text-center',
-                      filter === 'not-started'
-                        ? 'text-primary-foreground font-semibold'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
-                    )}
-                  >
-                    {filter === 'not-started' && <FilterPill />}
-                    Chưa bắt đầu ({lessonStats.notStarted})
-                  </button>
-                </div>
-              </MotionConfig>
-            </LazyMotion>
-          </div>
-
-          {/* Ô tìm kiếm bài học */}
-          <div className="space-y-1.5 self-end w-full lg:w-auto">
-            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider hidden lg:block">
-              Tìm kiếm
-            </span>
-            <div className="flex items-center gap-2">
-              <div className="relative flex-1 lg:w-72">
-                <Search className="size-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Tìm bài học, chủ đề tiếng Nhật..."
-                  aria-label="Tìm bài học"
-                  className="w-full min-h-11 h-11 pl-9 pr-4 bg-card border border-border/80 rounded-xl text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-sm"
-                />
-              </div>
-              <div className="hidden sm:flex items-center text-xs text-muted-foreground px-3 min-h-11 h-11 bg-card rounded-xl border border-border/80 shadow-sm">
-                <span>{filteredSummaries.length}/{summaries.length}</span>
-              </div>
-            </div>
+                <X className="size-4" aria-hidden="true" />
+              </button>
+            )}
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* 3. Lưới Thẻ Bài Học Washi */}
-      <section aria-label="Danh sách bài học">
-        {filteredSummaries.length === 0 ? (
-          <div className="p-8 text-center rounded-2xl border border-border/80 bg-card space-y-2">
-            <BookOpen className="size-8 text-muted-foreground mx-auto" />
-            <h3 className="text-sm font-semibold text-foreground">Không tìm thấy bài học phù hợp</h3>
-            <p className="text-xs text-muted-foreground">
-              Thử thay đổi từ khóa tìm kiếm hoặc chọn tab bộ lọc khác.
+      {/* 2. Main content: At 1280px (xl:), stage sticky in left 5/12 column, route in right 7/12 column */}
+      <div className="xl:grid xl:grid-cols-12 xl:gap-10 xl:items-start">
+        {/* Left 5/12 column: Stage + PaperSlip */}
+        <section
+          aria-label="Bài đang học"
+          className="xl:col-span-5 xl:sticky xl:top-6"
+        >
+          <Stage
+            asset={stageCover}
+            sizes="(min-width: 1280px) 40vw, 100vw"
+            imageClassName="h-48 sm:h-56 xl:h-64"
+            className="-mx-4 sm:mx-0"
+          />
+          <PaperSlip>
+            <p className="text-sm font-medium text-muted-foreground">
+              Bài {activeLessonNum} · {activeSummary?.title?.vi ?? 'Minna no Nihongo'}
             </p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-4">
-            {filteredSummaries.map((s) => {
-              const hasTranslation = Boolean(s.title?.vi);
-              const learned = learnedByLesson.get(s.number) ?? 0;
-              const isCompleted = s.vocabCount > 0 && learned >= s.vocabCount;
-              const isInProgress = learned > 0 && !isCompleted;
+            {activeSummary?.jpTitle && (
+              <div className="jp text-2xl sm:text-3xl font-bold text-foreground mt-1">
+                <Furigana
+                  text={formatOptionalBrackets(activeSummary.jpTitle)}
+                  zoomable={false}
+                />
+              </div>
+            )}
+            <div className="mt-3 space-y-1.5">
+              <div className="flex items-center justify-between text-xs text-muted-foreground">
+                <span>
+                  {learnedInActive}/{totalInActive} từ
+                </span>
+                {totalInActive > 0 && (
+                  <span className="tabular-nums">
+                    {Math.round((learnedInActive / totalInActive) * 100)}%
+                  </span>
+                )}
+              </div>
+              <Progress
+                value={learnedInActive}
+                max={Math.max(1, totalInActive)}
+                className="w-full"
+              />
+            </div>
 
-              if (!hasTranslation) {
+            <Link
+              href={ctaHref}
+              className={cn(
+                buttonVariants({
+                  variant: isAllLearned ? 'secondary' : 'default',
+                  size: 'quiz',
+                }),
+                'mt-4 w-full justify-center',
+              )}
+            >
+              <span>{ctaText}</span>
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </Link>
+          </PaperSlip>
+        </section>
+
+        {/* Right 7/12 column: Stepped Route of 25 lessons */}
+        <section
+          aria-label="Lộ trình bài học"
+          className="mt-8 xl:mt-0 xl:col-span-7"
+        >
+          {filteredSummaries.length === 0 ? (
+            <div className="py-12 px-4 text-center rounded-xl border border-dashed border-border bg-card/50">
+              <p className="text-base font-semibold text-foreground">
+                Không có bài khớp
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Không tìm thấy bài học nào phù hợp với từ khóa &ldquo;{searchQuery}&rdquo;.
+              </p>
+              <button
+                type="button"
+                onClick={() => setSearchQuery('')}
+                className={cn(
+                  buttonVariants({ variant: 'secondary', size: 'default' }),
+                  'mt-4 rounded-xl text-xs font-medium',
+                )}
+              >
+                Xóa bộ lọc
+              </button>
+            </div>
+          ) : (
+            <div className="space-y-8">
+              {LESSON_GROUPS.map((group) => {
+                const groupLessons = filteredSummaries.filter(
+                  (s) => s.number >= group.min && s.number <= group.max,
+                );
+                if (groupLessons.length === 0) return null;
+
                 return (
-                  <div key={s.number} className="rounded-2xl opacity-50 cursor-not-allowed">
-                    <Card className="h-full rounded-2xl border-border/80 bg-card p-3.5 sm:p-4 space-y-2">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold text-muted-foreground">
-                          Bài {s.number}
-                        </span>
-                        <span className="text-xs font-bold text-muted-foreground bg-muted px-2 py-0.5 rounded-md">
-                          Chưa có bản dịch
-                        </span>
-                      </div>
-                      <div>
-                        <p className="text-xs text-muted-foreground">
-                          {s.vocabCount} từ · {s.grammarCount} mẫu ngữ pháp
-                        </p>
-                      </div>
-                    </Card>
+                  <div key={group.label} className="space-y-1">
+                    {/* Section label */}
+                    <div className="flex items-center gap-2 pl-9 py-1">
+                      <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                        {group.label}
+                      </span>
+                    </div>
+
+                    {/* Stepped Route stations */}
+                    <div className="flex flex-col divide-y divide-border">
+                      {groupLessons.map((s) => {
+                        const learned = learnedByLesson.get(s.number) ?? 0;
+                        const isLearned =
+                          (s.vocabCount > 0 && learned >= s.vocabCount) ||
+                          s.number <= learnedThroughLesson;
+                        const isCurrent =
+                          !isAllLearned && s.number === activeLessonNum;
+                        const isNotStarted = !isLearned && !isCurrent;
+
+                        // Xác định xem đường mực nối lên/nối xuống:
+                        const isFirstInFiltered = s.number === filteredSummaries[0]?.number;
+                        const isLastInFiltered =
+                          s.number ===
+                          filteredSummaries[filteredSummaries.length - 1]?.number;
+
+                        return (
+                          <Link
+                            key={s.number}
+                            href={`/hoc/${s.number}`}
+                            className="group flex items-center gap-3 sm:gap-4 py-3 sm:py-3.5 px-2 -mx-2 rounded-xl transition-colors hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring"
+                          >
+                            {/* Station node column with ink line */}
+                            <div className="relative flex flex-col items-center justify-center shrink-0 w-6 self-stretch">
+                              <span
+                                className={cn(
+                                  'absolute w-px bg-border -z-0',
+                                  isFirstInFiltered && !isLastInFiltered
+                                    ? 'top-1/2 bottom-0'
+                                    : isLastInFiltered && !isFirstInFiltered
+                                      ? 'top-0 bottom-1/2'
+                                      : isFirstInFiltered && isLastInFiltered
+                                        ? 'hidden'
+                                        : 'top-0 bottom-0',
+                                )}
+                                aria-hidden="true"
+                              />
+                              {isLearned ? (
+                                <span className="relative z-10 size-4 rounded-full bg-success text-success-foreground flex items-center justify-center ring-4 ring-background">
+                                  <Check
+                                    className="size-2.5 stroke-[3]"
+                                    aria-hidden="true"
+                                  />
+                                </span>
+                              ) : isCurrent ? (
+                                <span className="relative z-10 size-4 rounded-full border-2 border-primary bg-background ring-4 ring-background flex items-center justify-center">
+                                  <span className="size-1.5 rounded-full bg-primary" />
+                                </span>
+                              ) : (
+                                <span className="relative z-10 size-3 rounded-full border-2 border-muted-foreground/40 bg-background ring-4 ring-background" />
+                              )}
+                            </div>
+
+                            {/* 64px scene thumbnail */}
+                            <div className="size-16 shrink-0 rounded-lg overflow-hidden bg-muted relative">
+                              <Illustration
+                                asset={s.cover ?? FALLBACK_SCENE_COVER}
+                                sizes="64px"
+                                className={cn(
+                                  'size-16 object-cover',
+                                  isNotStarted && 'grayscale opacity-60',
+                                )}
+                              />
+                            </div>
+
+                            {/* Lesson details */}
+                            <div className="min-w-0 flex-1">
+                              <div className="flex items-center gap-2 flex-wrap">
+                                <span className="text-xs font-semibold text-muted-foreground">
+                                  Bài {s.number}
+                                </span>
+                                {isLearned ? (
+                                  <span className="inline-flex items-center gap-1 text-xs font-medium text-success">
+                                    <Check
+                                      className="size-3 stroke-[2.5]"
+                                      aria-hidden="true"
+                                    />
+                                    Đã học
+                                  </span>
+                                ) : isCurrent ? (
+                                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary">
+                                    <Clock className="size-3" aria-hidden="true" />
+                                    Đang học {learned}/{s.vocabCount}
+                                  </span>
+                                ) : (
+                                  <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+                                    <Circle
+                                      className="size-2.5"
+                                      aria-hidden="true"
+                                    />
+                                    Chưa học
+                                  </span>
+                                )}
+                              </div>
+
+                              {s.jpTitle ? (
+                                <div className="jp jp-example font-medium text-foreground truncate mt-0.5">
+                                  <Furigana
+                                    text={formatOptionalBrackets(s.jpTitle)}
+                                    zoomable={false}
+                                  />
+                                </div>
+                              ) : (
+                                <span className="block text-base font-semibold text-foreground truncate mt-0.5">
+                                  {s.title.vi}
+                                </span>
+                              )}
+
+                              {s.jpTitle ? (
+                                <span className="block text-sm font-normal text-muted-foreground truncate">
+                                  {s.title.vi}
+                                </span>
+                              ) : null}
+                            </div>
+
+                            {/* Chevron */}
+                            <ChevronRight
+                              className="size-5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5"
+                              aria-hidden="true"
+                            />
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
                 );
-              }
-
-              return (
-                <Link
-                  key={s.number}
-                  href={`/hoc/${s.number}`}
-                  className="group outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-2xl block"
-                >
-                  <Card className="h-full rounded-2xl border-border/80 bg-card px-3.5 py-3 sm:p-4 shadow-sm hover:shadow-md hover:border-primary/40 transition flex flex-col justify-between gap-2 relative">
-                    <div className="space-y-1">
-                      {/* Header thẻ: 1 nhãn "Bài N" + Badge trạng thái */}
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="text-xs font-bold text-foreground">
-                          Bài {s.number}
-                        </span>
-                        {isCompleted ? (
-                          <span className="text-xs font-bold text-success bg-success/10 px-2 py-0.5 rounded-md border border-success/20 flex items-center gap-1">
-                            <CheckCircle2 className="size-3" />
-                            Hoàn thành
-                          </span>
-                        ) : isInProgress ? (
-                          <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-md border border-primary/20 flex items-center gap-1">
-                            <Clock className="size-3" />
-                            Đang học ({Math.round((learned / s.vocabCount) * 100)}%)
-                          </span>
-                        ) : (
-                          <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-0.5 rounded-md">
-                            Chưa bắt đầu
-                          </span>
-                        )}
-                      </div>
-
-                      {/* Tiêu đề tiếng Việt */}
-                      <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-primary transition-colors line-clamp-1">
-                        {s.title.vi}
-                      </h3>
-
-                      {/* Tiếng Nhật (Furigana) */}
-                      {s.jpTitle && (
-                        <div className="jp jp-inline text-foreground">
-                          <Furigana text={formatOptionalBrackets(s.jpTitle)} zoomable={false} />
-                        </div>
-                      )}
-
-                      {/* Mô tả: chỉ desktop — trên mobile tiêu đề + tiếng Nhật đủ để chọn bài */}
-                      {s.description?.vi && (
-                        <p className="hidden sm:block text-xs text-muted-foreground line-clamp-1 leading-relaxed">
-                          {s.description.vi}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* 1 dòng tiến độ gọn */}
-                    <div className="pt-1.5 border-t border-border/60">
-                      <ProgressBar learned={learned} total={s.vocabCount} />
-                    </div>
-                  </Card>
-                </Link>
-              );
-            })}
-          </div>
-        )}
-      </section>
+              })}
+            </div>
+          )}
+        </section>
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import type { Lesson, LocalizedText, VocabWord } from '../types/index.ts';
+import type { IllustrationAsset, Lesson, LocalizedText, VocabWord } from '../types/index.ts';
 import { validateIllustrationAsset } from './illustrations.ts';
 
 export interface LessonSummary {
@@ -10,6 +10,8 @@ export interface LessonSummary {
   verification: 'verified' | 'unverified';
   vocabCount: number;
   grammarCount: number;
+  /** Cảnh của bài (SPEC-21), dùng cho sân khấu Bảng tin và lộ trình /hoc. */
+  cover?: IllustrationAsset;
 }
 
 interface VocabFile {
@@ -184,6 +186,7 @@ export async function loadLessonSummary(lessonNum: number): Promise<LessonSummar
     verification: lesson.verification ?? 'unverified',
     vocabCount: vocab.length,
     grammarCount: lesson.grammar.length,
+    cover: lesson.cover,
   };
 }
 
