@@ -144,6 +144,8 @@ Tham chiếu đặt ngay trong JSON bài/từ hiện có. Không thêm asset reg
 
 ## 6. Bản gốc và provenance
 
+> **07/10/2026:** bản gốc PNG, atlas và sidecar hiện có đã xóa khỏi HEAD để repo gọn; lấy lại từ tag `pre-cleanup-2`. Asset mới vẫn theo quy ước dưới đây.
+
 Bản gốc theo cùng đường dẫn nhóm và cùng stem tên với file production. Ví dụ:
 
 ```text

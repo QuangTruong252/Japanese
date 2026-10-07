@@ -50,7 +50,7 @@ Ngày: 23/09/2026. Trạng thái: Đã cập nhật code theo hợp đồng UX 2
 
 ## Cập nhật 24/09/2026 — Bảng tin theo benchmark UI/UX (kèm SPEC-05 §2.1a)
 
-Quyết định người dùng duyệt ngày 24/09/2026, nguồn: [benchmark](../research/ux-benchmark/README.md).
+Quyết định người dùng duyệt ngày 24/09/2026, nguồn: benchmark `docs/research/ux-benchmark/` (đã xóa 07/10, xem tag `pre-cleanup-2`).
 Hợp đồng đã sửa ở SPEC-02 §3.2 và SPEC-05 §2.1a.
 
 **Thay đổi**

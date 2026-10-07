@@ -1,6 +1,5 @@
 # MaiPace
 
-<!-- impeccable:product-schema 1 -->
 
 ## Platform
 

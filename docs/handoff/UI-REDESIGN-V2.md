@@ -1,7 +1,7 @@
 # Handoff — redesign UI v2 "Sân khấu và mảnh giấy"
 
 Ngày: 2026-10-07. Trạng thái: **đã merge `master` (07/10, merge `b010c58`) và push; đã kiểm browser một phần.** Plan:
-[2026-10-07-ui-redesign-v2.md](../plans/2026-10-07-ui-redesign-v2.md). Review Codex:
+`docs/plans/2026-10-07-ui-redesign-v2.md` (đã xóa 07/10, xem tag `pre-cleanup-2`). Review Codex:
 [UI-REDESIGN-V2-REVIEW.md](UI-REDESIGN-V2-REVIEW.md).
 
 ## Thay đổi và quyết định

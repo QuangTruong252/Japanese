@@ -109,7 +109,7 @@ nằm trong `docs/specs/README.md`. Trả lời người dùng bằng tiếng Vi
   từ root để cài dependency, tạo liên kết skills và MCP config của máy hiện tại.
   Nguồn cấu hình MCP là script setup; không commit file cấu hình được sinh ra.
 - `vercel-react-best-practices`: React/Next; `shadcn`: component;
-  `web-design-guidelines`: review UI/accessibility; `impeccable`: thiết kế/UI.
+  `web-design-guidelines`: review UI/accessibility.
   Plugin riêng của một agent không phải điều kiện bắt buộc cho agent khác.
   Nếu thiếu công cụ, dùng tài liệu chung và ghi rõ giới hạn. Quy ước riêng của repo
   được ưu tiên hơn ví dụ chung; không tự thêm SWR hoặc đổi design system.

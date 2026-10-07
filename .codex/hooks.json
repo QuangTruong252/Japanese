@@ -2,18 +2,6 @@
   "hooks": {
     "PostToolUse": [
       {
-        "matcher": "Edit|Write|apply_patch",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "[ ! -f \".agents/skills/impeccable/scripts/impeccable\" ] || \".agents/skills/impeccable/scripts/impeccable\" hook",
-            "commandWindows": "if exist \".agents/skills/impeccable/scripts/impeccable.cmd\" (\".agents/skills/impeccable/scripts/impeccable.cmd\" hook & exit /b)",
-            "timeout": 5,
-            "statusMessage": "Checking UI changes"
-          }
-        ]
-      },
-      {
         "matcher": "Bash|shell_command",
         "hooks": [
           {
@@ -32,19 +20,6 @@
             "command": "repowise-augment --client codex",
             "timeout": 10,
             "statusMessage": "Checking repowise freshness..."
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "[ ! -f \".agents/skills/impeccable/scripts/impeccable\" ] || \".agents/skills/impeccable/scripts/impeccable\" hook",
-            "commandWindows": "if exist \".agents/skills/impeccable/scripts/impeccable.cmd\" (\".agents/skills/impeccable/scripts/impeccable.cmd\" hook & exit /b)",
-            "timeout": 30,
-            "statusMessage": "Design deep pass"
           }
         ]
       }

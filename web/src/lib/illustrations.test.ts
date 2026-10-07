@@ -5,12 +5,6 @@ import { createRequire } from 'node:module';
 import { validateIllustrationAsset } from './illustrations.ts';
 import { AVAILABLE_N5_LESSONS, loadLessonData } from './lessons.ts';
 
-type LinkedData = {
-  cover?: { src: string };
-  grammar?: { id: string; illustration?: { src: string } }[];
-  words?: { id: string; illustration?: { src: string } }[];
-};
-
 const validAsset = {
   src: '/assets/illustrations/vocab/book-v1.webp',
   width: 512,
@@ -63,33 +57,6 @@ test('bundled references exist with exact case and match decoded image dimension
     }
   }
   assert.ok(references > 0);
-  // Every sidecar that batch.mjs marked as linked must still be referenced where it says, so
-  // dropping an image from the learning JSON fails here without hand-kept ID lists or counts.
-  const repo = new URL('../../../', import.meta.url);
-  const data = new Map<string, LinkedData>();
-  let linked = 0;
-  const walk = async (dir: URL): Promise<void> => {
-    for (const entry of await readdir(dir, { withFileTypes: true })) {
-      if (entry.isDirectory()) {
-        if (!['atlases', 'batches', 'reference', 'reports', 'tools'].includes(entry.name)) await walk(new URL(`${entry.name}/`, dir));
-        continue;
-      }
-      if (!entry.name.endsWith('.json')) continue;
-      const sidecar = JSON.parse(await readFile(new URL(entry.name, dir), 'utf8'));
-      const target = sidecar.intendedContent;
-      if (target?.referenceStatus !== 'added-to-learning-data') continue;
-      if (!data.has(target.dataFile)) data.set(target.dataFile, JSON.parse(await readFile(new URL(target.dataFile, repo), 'utf8')));
-      const json = data.get(target.dataFile)!;
-      const linkedAsset = target.field === 'cover' ? json.cover
-        : target.dataFile.includes('/lessons/') ? json.grammar?.find(g => g.id === target.id)?.illustration
-        : json.words?.find(w => w.id === target.id)?.illustration;
-      assert.equal(linkedAsset?.src, sidecar.output.replace('web/public', ''),
-        `${entry.name} is not linked at ${target.dataFile} ${target.id ?? target.field}`);
-      linked++;
-    }
-  };
-  await walk(new URL('artwork/illustrations/', repo));
-  assert.ok(linked > 0);
   const { lesson } = await loadLessonData(2);
   const caption = lesson.grammar.find(p => p.id === 'kore-sore-are')?.illustrationCaption?.vi;
   for (const text of ['これ', 'それ', 'あれ', 'người nói', 'người nghe']) {
