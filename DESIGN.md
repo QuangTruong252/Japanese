@@ -749,7 +749,10 @@ illustrated screens. The stage is a lesson scene, full width, fading into the pa
 the stage's bottom edge by 32px and holds the single `button-primary` of the screen, phrased
 as a sentence with numbers. Every other block is a **link row**: the whole row is the link,
 hairline separators, chevron at right, no button and no card frame. Cap the stage height so
-the slip is fully inside the first viewport at 390px.
+the slip is fully inside the first viewport at 390px. Screens whose main action is typing or
+choosing a destination (the Tra cứu hub) may use a small grid of equal tiles led by a large
+Japanese glyph instead of rows; they carry no primary button. Calm screens (Ôn tập due, Luyện
+tập config) may show the slip without a scene.
 
 `card` is the workhorse container: `card` fill, 1px `border`, `xl` radius, one interior
 padding step, no shadow. Structure runs title (`h3`), content, right-aligned action row.
