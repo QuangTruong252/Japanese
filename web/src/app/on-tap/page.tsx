@@ -99,6 +99,7 @@ export default function ReviewTodayPage() {
 
   const hasActiveDraft = hasActiveReviewDraft(draft);
   const [confirmNewSessionOpen, setConfirmNewSessionOpen] = useState(false);
+  const [confirmDiscardOpen, setConfirmDiscardOpen] = useState(false);
   const startAction = resolveReviewStartAction(hasActiveDraft);
 
   const audioKeys = useMemo(() => new Set(hasVoice ? ['tts'] : []), [hasVoice]);
@@ -128,8 +129,8 @@ export default function ReviewTodayPage() {
   );
   const batchCount = queue.sessionTargetIds.size;
   const minutesEstimate = useMemo(() => {
-    const spq = secondsPerQuestion(recentSessions ?? []) ?? 15;
-    return Math.max(1, Math.round((batchCount * spq) / 60));
+    const spq = secondsPerQuestion(recentSessions ?? []);
+    return spq === null ? null : Math.max(1, Math.round((batchCount * spq) / 60));
   }, [recentSessions, batchCount]);
 
   // Đếm số mục cần củng cố (từng sai ít nhất 1 lần)
@@ -143,6 +144,10 @@ export default function ReviewTodayPage() {
   const newCount = queue.newTargetIds.length;
   const totalCount = dueCount + newCount;
   const canStart = !loading && totalCount > 0 && preview.eligibleCount > 0;
+  const dueSummaryText = [
+    queue.totalDueCount > 0 ? `${queue.totalDueCount} mục đến hạn` : null,
+    newCount > 0 ? `${newCount} mục mới` : null,
+  ].filter(Boolean).join(' · ') || `${totalCount} mục ôn tập`;
 
   const handleStartClick = useCallback(() => {
     if (!canStart) return;
@@ -159,11 +164,16 @@ export default function ReviewTodayPage() {
     router.push('/on-tap/phien');
   }, [clearDraft, router, setConfirmNewSessionOpen]);
 
+  const handleConfirmDiscard = useCallback(() => {
+    setConfirmDiscardOpen(false);
+    clearDraft();
+  }, [clearDraft, setConfirmDiscardOpen]);
+
   // Phím tắt Space (SPEC-05 §6, SPEC-20 §6): ưu tiên tiếp tục nháp nếu có
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key !== ' ' && event.code !== 'Space') return;
-      if (confirmNewSessionOpen) return;
+      if (confirmNewSessionOpen || confirmDiscardOpen) return;
       const target = event.target as HTMLElement | null;
       if (target && ['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON', 'A'].includes(target.tagName)) return;
       event.preventDefault();
@@ -175,7 +185,7 @@ export default function ReviewTodayPage() {
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [confirmNewSessionOpen, hasActiveDraft, handleStartClick, router]);
+  }, [confirmNewSessionOpen, confirmDiscardOpen, hasActiveDraft, handleStartClick, router]);
 
   const syncNotice = useMemo(
     () =>
@@ -222,36 +232,68 @@ export default function ReviewTodayPage() {
     </>
   );
 
-  // Khối phiên đang dở nếu có bản nháp
-  const draftResumeCard = hasActiveDraft && draft && (
-    <div className="flex flex-col gap-3 rounded-xl border border-primary/30 bg-accent/20 p-4 sm:flex-row sm:items-center sm:justify-between">
-      <div className="space-y-0.5">
+  // Mảnh giấy phiên đang dở nếu có bản nháp (Finding 27, kích thước quiz 48px, câu có số)
+  const draftResumeSlip = hasActiveDraft && draft && (
+    <PaperSlip className="mt-0 space-y-4 border-primary/30">
+      <div className="space-y-1">
         <span className="text-xs font-semibold uppercase tracking-wider text-primary">
-          Phiên ôn tập đang dở
+          Phiên dở dang
         </span>
-        <p className="text-sm font-medium text-foreground">
-          Đã trả lời {draft.currentIndex} trên {draft.questions.length} câu
+        <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
+          Phiên dở · câu {Math.min(draft.currentIndex + 1, draft.questions.length)}/{draft.questions.length}
+        </h2>
+        <p className="text-xs sm:text-sm text-muted-foreground">
+          Đã trả lời {draft.currentIndex} trên {draft.questions.length} câu. Tiếp tục để hoàn thành phiên ôn này.
         </p>
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex flex-col sm:flex-row items-center gap-2 pt-1">
         <Button
-          size="sm"
-          variant="default"
+          size="quiz"
+          className="w-full sm:flex-1 text-base font-semibold"
           onClick={() => router.push('/on-tap/phien?resume=1')}
         >
-          <Play className="mr-1.5 size-3.5" aria-hidden="true" />
-          Tiếp tục
+          <Play className="mr-1.5 size-4" aria-hidden="true" />
+          Tiếp tục phiên ôn
         </Button>
         <Button
-          size="sm"
-          variant="ghost"
-          onClick={clearDraft}
+          variant="outline"
+          size="quiz"
+          className="w-full sm:w-auto text-muted-foreground hover:text-foreground"
+          onClick={() => setConfirmDiscardOpen(true)}
         >
-          <RotateCcw className="mr-1.5 size-3.5" aria-hidden="true" />
-          Bỏ qua
+          <RotateCcw className="mr-1.5 size-4" aria-hidden="true" />
+          Bỏ nháp
         </Button>
       </div>
-    </div>
+    </PaperSlip>
+  );
+
+  // Hộp thoại xác nhận hủy bỏ phiên nháp ôn tập (Finding 27)
+  const discardDraftDialog = (
+    <AlertDialog
+      open={confirmDiscardOpen}
+      onOpenChange={setConfirmDiscardOpen}
+    >
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Bỏ phiên ôn tập đang dở?</AlertDialogTitle>
+          <AlertDialogDescription>
+            Tiến độ phiên ôn tập hiện tại (đã làm câu {draft ? Math.min(draft.currentIndex + 1, draft.questions.length) : 0}/{draft?.questions?.length ?? 0}) sẽ bị hủy và không thể khôi phục.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+          <AlertDialogCancel onClick={() => setConfirmDiscardOpen(false)}>
+            Hủy
+          </AlertDialogCancel>
+          <AlertDialogAction
+            variant="destructive"
+            onClick={handleConfirmDiscard}
+          >
+            Bỏ nháp
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
   );
 
   // Khối "Cần củng cố" dùng chung cho các màn
@@ -292,7 +334,8 @@ export default function ReviewTodayPage() {
       <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
         <h1 className="font-heading text-2xl font-semibold text-foreground">Ôn tập hôm nay</h1>
         {networkStatusBanner}
-        {draftResumeCard}
+        {draftResumeSlip}
+        {discardDraftDialog}
         <div className="rounded-xl border border-border bg-card p-6 text-center space-y-2">
           <h2 className="text-lg font-semibold text-foreground">Chưa có gì để ôn</h2>
           <p className="text-sm text-muted-foreground">
@@ -316,7 +359,8 @@ export default function ReviewTodayPage() {
       <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
         <h1 className="font-heading text-2xl font-semibold text-foreground">Ôn tập hôm nay</h1>
         {networkStatusBanner}
-        {draftResumeCard}
+        {draftResumeSlip}
+        {discardDraftDialog}
         <div className="rounded-xl border border-border bg-card p-6 space-y-3">
           <div className="flex items-center gap-3">
             <Info className="size-6 shrink-0 text-info" aria-hidden="true" />
@@ -354,7 +398,8 @@ export default function ReviewTodayPage() {
       <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
         <h1 className="font-heading text-2xl font-semibold text-foreground">Ôn tập hôm nay</h1>
         {networkStatusBanner}
-        {draftResumeCard}
+        {draftResumeSlip}
+        {discardDraftDialog}
         <div className="space-y-4">
           <Stage
             asset={REVIEW_COMPLETE_ASSET}
@@ -386,28 +431,33 @@ export default function ReviewTodayPage() {
     );
   }
 
-  // Trạng thái: Bị chặn (thiếu giọng Nhật hoặc thiếu câu hỏi hợp lệ)
+  // Trạng thái: Bị chặn (thiếu giọng Nhật hoặc thiếu câu hỏi hợp lệ) (Decision D2: plain block, no nested card)
   if (!canStart) {
     return (
       <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
         <h1 className="font-heading text-2xl font-semibold text-foreground">Ôn tập hôm nay</h1>
         {networkStatusBanner}
-        {draftResumeCard}
-        <div className="rounded-xl border border-border bg-card p-6 space-y-4">
+        {draftResumeSlip}
+        {discardDraftDialog}
+        <div className="space-y-3">
           <p className="text-xl font-semibold text-foreground">
-            {queue.totalDueCount} mục đến hạn · {newCount} mục mới
+            {dueSummaryText}
           </p>
           {preview.excludedAudioCount > 0 ? (
-            <div role="alert" className="space-y-2 rounded-xl border border-warning/40 bg-warning/10 p-4 text-foreground">
-              <p className="text-sm font-medium">
-                Các mục đến hạn chỉ có câu dạng nghe, nhưng thiết bị chưa có giọng tiếng Nhật (ja-JP).
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Chưa tạo được phiên ôn cho các câu nghe; hạn ôn của các mục này được giữ nguyên.
-              </p>
+            <div role="alert" className="flex items-start gap-3 rounded-xl border border-warning/40 bg-warning/10 p-4 text-foreground">
+              <AlertCircle className="mt-0.5 size-5 shrink-0 text-warning" aria-hidden="true" />
+              <div className="space-y-1">
+                <p className="text-sm font-medium">
+                  Các mục đến hạn chỉ có câu dạng nghe, nhưng thiết bị chưa có giọng tiếng Nhật (ja-JP).
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Chưa tạo được phiên ôn cho các câu nghe; hạn ôn của các mục này được giữ nguyên.
+                </p>
+              </div>
             </div>
           ) : (
-            <div role="alert" className="space-y-2 rounded-xl border border-destructive/30 bg-destructive/10 p-4 text-destructive">
+            <div role="alert" className="flex items-start gap-3 rounded-xl border border-destructive/30 bg-destructive/10 p-4 text-destructive">
+              <AlertCircle className="mt-0.5 size-5 shrink-0 text-destructive" aria-hidden="true" />
               <p className="text-sm font-medium">
                 Không có câu hỏi nào hợp lệ cho các mục đang đến hạn. Hạn ôn của chúng được giữ nguyên.
               </p>
@@ -451,16 +501,12 @@ export default function ReviewTodayPage() {
   const previewRows = batchItems.slice(0, 5);
   const remainingInBatch = Math.max(0, batchItems.length - 5);
 
-  const dueSummaryText = [
-    queue.totalDueCount > 0 ? `${queue.totalDueCount} mục đến hạn` : null,
-    newCount > 0 ? `${newCount} mục mới` : null,
-  ].filter(Boolean).join(' · ') || `${totalCount} mục ôn tập`;
-
   return (
     <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
       <h1 className="font-heading text-2xl font-semibold text-foreground">Ôn tập hôm nay</h1>
       {networkStatusBanner}
-      {draftResumeCard}
+      {draftResumeSlip}
+      {discardDraftDialog}
 
       {/* 1. Mảnh giấy điều khiển: không cảnh nền, yên tĩnh */}
       <PaperSlip className="mt-0 space-y-4">
@@ -471,7 +517,9 @@ export default function ReviewTodayPage() {
               Hôm nay có {queue.totalDueCount} mục đến hạn ôn tập và {newCount} mục mới.
             </span>
           </p>
-          <p className="text-sm text-muted-foreground">khoảng {minutesEstimate} phút</p>
+          {minutesEstimate !== null && (
+            <p className="text-sm text-muted-foreground">khoảng {minutesEstimate} phút</p>
+          )}
         </div>
 
         <Button
@@ -523,7 +571,7 @@ export default function ReviewTodayPage() {
             return (
               <li
                 key={row.targetId}
-                className="flex items-center justify-between gap-3 py-3"
+                className="flex flex-col items-start gap-1.5 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3"
               >
                 <div className="min-w-0 flex-1 space-y-0.5">
                   <div className="jp jp-vocab text-lg font-medium text-foreground">
@@ -534,14 +582,14 @@ export default function ReviewTodayPage() {
                     )}
                   </div>
                   {label?.vi && (
-                    <p className="text-sm text-muted-foreground truncate">{label.vi}</p>
+                    <p className="text-sm text-muted-foreground line-clamp-2">{label.vi}</p>
                   )}
                 </div>
-                <div className="flex shrink-0 items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2 sm:shrink-0">
                   {late > 0 && (
                     <span className="inline-flex items-center gap-1 rounded-sm bg-warning/15 px-2 py-0.5 text-xs font-medium text-warning">
                       <AlarmClock className="size-3" aria-hidden="true" />
-                      <span>Quá hạn</span>
+                      <span>Quá hạn {late} ngày</span>
                     </span>
                   )}
                   <TargetTypeBadge type={targetTypeFromId(row.targetId)} />
