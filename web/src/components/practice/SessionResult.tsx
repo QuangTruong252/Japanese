@@ -1,24 +1,25 @@
 'use client';
 
-import { Illustration } from '@/components/Illustration';
-
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import {
+  AlertCircle,
+  BookOpen,
+  Check,
+  CheckCircle2,
+  Home,
+  RotateCcw,
+  X,
+} from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2, AlertCircle, RotateCcw } from 'lucide-react';
+import { LinkRow, PaperSlip, Stage } from '@/components/PaperStage';
 import {
   savePracticeDraft,
   PRACTICE_DRAFT_VERSION,
 } from '@/lib/practice-draft';
 import { userAnswerFor } from '@/lib/practice';
 import type { PracticeConfig, PracticeSession, QuestionItem } from '@/types';
-
-function formatDuration(seconds: number): string {
-  const m = Math.floor(seconds / 60);
-  const s = seconds % 60;
-  return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-}
 
 export function SessionResult({
   session,
@@ -29,6 +30,8 @@ export function SessionResult({
   nextReviewLine,
   userAnswers = {},
   config,
+  hasMoreDue = false,
+  onContinueReview,
 }: {
   session: PracticeSession;
   incorrectQuestions: QuestionItem[];
@@ -38,18 +41,20 @@ export function SessionResult({
   nextReviewLine?: string | null;
   userAnswers?: Record<string, string>;
   config?: PracticeConfig;
+  hasMoreDue?: boolean;
+  onContinueReview?: () => void;
 }) {
   const router = useRouter();
   const primaryLesson = config?.lessons?.[0] ?? session.selectedLessons?.[0];
   const lessonHref = primaryLesson ? `/hoc/${primaryLesson}` : '/hoc';
+  const isDue = mode === 'due';
 
   useEffect(() => {
     router.prefetch('/luyen-tap');
+    router.prefetch('/on-tap');
     router.prefetch('/');
     router.prefetch(lessonHref);
   }, [router, lessonHref]);
-  const percentage = Math.round(session.accuracyRate * 100);
-  const isDue = mode === 'due';
 
   const handleRetryIncorrect = () => {
     if (incorrectQuestions.length === 0) return;
@@ -71,30 +76,89 @@ export function SessionResult({
     });
 
     const href = `/luyen-tap/phien?resume=${Date.now()}`;
-    // Đang ở trang phiên: đổi query tại chỗ (App Router đồng bộ useSearchParams, không gọi
-    // server) để làm lại câu sai được cả khi mất mạng. Từ trang khác mới cần điều hướng.
-    if (window.location.pathname === '/luyen-tap/phien') window.history.pushState(null, '', href);
-    else router.push(href);
+    if (window.location.pathname === '/luyen-tap/phien') {
+      window.history.pushState(null, '', href);
+    } else {
+      router.push(href);
+    }
   };
 
+  const minutes = Math.max(1, Math.round(session.durationSeconds / 60));
+  const durationText = `${minutes} phút`;
+  const lessonsLabel = primaryLesson ? `Bài ${primaryLesson}` : 'Luyện tập';
+
   return (
-    <main className="mx-auto w-full max-w-xl space-y-6 px-4 py-8">
-      <div className="space-y-1 text-center motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3 motion-safe:duration-400 motion-safe:ease-in-out motion-safe:fill-mode-both">
-        <Illustration
-          asset={{ src: '/assets/illustrations/ui/states/review-complete-v1.webp', width: 512, height: 512, alt: { vi: '' } }}
-          sizes="128px" className="mx-auto mb-4 size-32 object-contain"
-        />
-        <h1 className="font-heading text-xl font-medium">
-          {isDue ? 'Kết quả ôn tập' : 'Kết quả luyện tập'}
-        </h1>
-        <p className="text-sm text-muted-foreground">
-          {isDue
-            ? 'Đã hoàn thành phiên ôn tập theo lịch'
-            : 'Đã hoàn thành phiên luyện tập tiếng Nhật'}
-        </p>
+    <main className="mx-auto w-full max-w-xl space-y-6 px-4 py-6 sm:py-8">
+      {/* Thông báo tiếp cận cho Screen Reader */}
+      <div role="status" className="sr-only">
+        {isDue
+          ? `Đã hoàn thành phiên ôn tập. Đã ôn ${session.totalQuestions} mục, ${session.correctCount} câu đúng.`
+          : `Đã hoàn thành phiên luyện tập. ${session.correctCount} trên ${session.totalQuestions} câu đúng.`}
       </div>
 
-      {/* Thông báo lỗi ghi Dexie nếu có */}
+      {/* Sân khấu nhỏ (160px tall, mờ vào giấy) */}
+      <Stage
+        asset={{
+          src: '/assets/illustrations/scenes/eating-together-v1.webp',
+          width: 1200,
+          height: 600,
+          alt: { vi: '' },
+        }}
+        sizes="(max-width: 640px) 100vw, 576px"
+        imageClassName="h-40 w-full object-cover"
+      />
+
+      {/* Mảnh giấy lấn lên mép dưới cảnh, chứa tiêu đề số liệu và nút son duy nhất */}
+      <PaperSlip className="-mt-8 space-y-4">
+        {isDue ? (
+          <div>
+            <h1 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Đã ôn {session.totalQuestions} mục
+            </h1>
+            {nextReviewLine ? (
+              <p className="mt-1 text-sm text-muted-foreground">
+                Lần ôn kế tiếp: {nextReviewLine}
+              </p>
+            ) : (
+              <p className="mt-1 text-sm text-muted-foreground">
+                {durationText} · Ôn tập
+              </p>
+            )}
+          </div>
+        ) : (
+          <div>
+            <h1 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              {session.correctCount}/{session.totalQuestions} câu đúng
+            </h1>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {durationText} · {lessonsLabel}
+            </p>
+          </div>
+        )}
+
+        {/* Nút son duy nhất */}
+        {isDue ? (
+          hasMoreDue && (
+            <Button
+              size="quiz"
+              className="w-full"
+              onClick={onContinueReview ?? (() => router.push('/on-tap'))}
+            >
+              Ôn lô tiếp
+            </Button>
+          )
+        ) : (
+          <Button
+            size="quiz"
+            className="w-full"
+            onClick={() => router.push(primaryLesson ? `/luyen-tap?lessons=${primaryLesson}` : '/luyen-tap')}
+          >
+            Luyện tiếp
+          </Button>
+        )}
+      </PaperSlip>
+
+      {/* Lỗi lưu bộ nhớ máy nếu có */}
       {saveError && (
         <div
           role="alert"
@@ -115,79 +179,50 @@ export function SessionResult({
         </div>
       )}
 
-      {/* Thẻ tóm tắt kết quả */}
-      <div className="grid grid-cols-3 gap-3 rounded-2xl border border-border bg-card p-4 text-center motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3 motion-safe:duration-400 motion-safe:ease-in-out motion-safe:fill-mode-both motion-safe:delay-40">
-        <div className="space-y-1">
-          <span className="text-xs text-muted-foreground">Tỷ lệ đúng</span>
-          <p className="text-2xl font-bold tracking-tight text-primary">
-            {percentage}%
-          </p>
-        </div>
-        <div className="space-y-1 border-x border-border">
-          <span className="text-xs text-muted-foreground">Số câu đúng</span>
-          <p className="text-2xl font-bold tracking-tight text-foreground">
-            {session.correctCount}/{session.totalQuestions}
-          </p>
-        </div>
-        <div className="space-y-1">
-          <span className="text-xs text-muted-foreground">Thời lượng</span>
-          <p className="text-2xl font-bold tracking-tight text-foreground tabular-nums">
-            {formatDuration(session.durationSeconds)}
-          </p>
-        </div>
-      </div>
-
-      {isDue && nextReviewLine && (
-        <p className="text-center text-sm text-muted-foreground">
-          Lần ôn kế tiếp: {nextReviewLine}
-        </p>
-      )}
-
-      {/* Danh sách câu sai hoặc lời khen */}
+      {/* Danh sách câu cần xem lại hoặc trạng thái hoàn hảo */}
       {incorrectQuestions.length === 0 ? (
-        <div className="flex items-center justify-center gap-2 rounded-xl border border-success/30 bg-success/10 p-4 text-center text-sm font-medium text-success">
+        <div className="flex items-center gap-2.5 rounded-xl border border-success/30 bg-success/10 p-4 text-sm font-medium text-success">
           <CheckCircle2 className="size-5 shrink-0" />
           <span>Hoàn hảo! Bạn đã trả lời đúng tất cả các câu hỏi.</span>
         </div>
       ) : (
-        <div className="space-y-3">
+        <section className="space-y-3">
           <h2 className="text-sm font-medium text-foreground">
-            Câu sai ({incorrectQuestions.length})
+            Câu cần xem lại ({incorrectQuestions.length})
           </h2>
-          <div className="space-y-3">
+          <div className="divide-y divide-border rounded-xl border border-border bg-card">
             {incorrectQuestions.map((q) => {
               const answerText = Array.isArray(q.answer) ? q.answer.join(', ') : q.answer;
               const userAnswer = userAnswerFor(userAnswers, q);
+
               return (
-                <div
-                  key={q.id}
-                  className="space-y-2 rounded-xl border border-border bg-card p-4"
-                >
-                  <div className="jp jp-example font-medium">
+                <div key={q.id} className="space-y-2 p-4">
+                  {/* Prompt tiếng Nhật */}
+                  <div className="jp text-base font-medium text-foreground">
                     <Furigana text={q.prompt} />
                   </div>
-                  {userAnswer !== undefined && (
-                    <div className="text-sm">
-                      <span className="text-muted-foreground">Bạn trả lời: </span>
-                      {userAnswer.trim().length > 0 ? (
-                        <span className="jp jp-vocab font-medium text-destructive">
-                          {userAnswer}
-                        </span>
-                      ) : (
-                        <span className="italic text-muted-foreground">(Chưa biết)</span>
-                      )}
-                    </div>
-                  )}
-                  <div className="text-sm">
-                    <span className="text-muted-foreground">Đáp án đúng: </span>
-                    <Furigana
-                      text={answerText}
-                      zoomable={false}
-                      className="jp-vocab font-medium text-foreground"
-                    />
+
+                  {/* Câu trả lời của người học bị gạch ngang màu destructive kèm icon X */}
+                  <div className="flex items-center gap-2 text-sm text-destructive">
+                    <X className="size-4 shrink-0" aria-hidden="true" />
+                    <span className="text-xs text-muted-foreground">Bạn trả lời:</span>
+                    <span className="jp font-medium line-through">
+                      {userAnswer && userAnswer.trim().length > 0 ? userAnswer : '(Chưa biết)'}
+                    </span>
                   </div>
+
+                  {/* Đáp án đúng màu success kèm icon Check */}
+                  <div className="flex items-center gap-2 text-sm text-success">
+                    <Check className="size-4 shrink-0" aria-hidden="true" />
+                    <span className="text-xs text-muted-foreground">Đáp án đúng:</span>
+                    <span className="jp font-medium">
+                      <Furigana text={answerText} zoomable={false} />
+                    </span>
+                  </div>
+
+                  {/* Giải thích tiếng Việt nếu có */}
                   {q.explanationVi && (
-                    <p className="text-xs text-muted-foreground">
+                    <p className="pt-1 text-xs text-muted-foreground">
                       {q.explanationVi}
                     </p>
                   )}
@@ -195,47 +230,32 @@ export function SessionResult({
               );
             })}
           </div>
-        </div>
+        </section>
       )}
 
-      {/* Điều hướng */}
-      <div className="flex flex-col gap-3 pt-2 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3 motion-safe:duration-400 motion-safe:ease-in-out motion-safe:fill-mode-both motion-safe:delay-80">
+      {/* Các dòng lối tắt: LinkRow có đường mảnh và chevron */}
+      <div className="divide-y divide-border rounded-xl border border-border bg-card px-2">
         {incorrectQuestions.length > 0 && (
-          <Button
-            size="quiz"
-            className="w-full"
+          <LinkRow
+            href="#"
             onClick={handleRetryIncorrect}
-          >
-            <RotateCcw className="mr-2 size-5" />
-            Làm lại câu sai
-          </Button>
+            icon={<RotateCcw className="size-5" />}
+            title="Làm lại câu sai"
+            detail={`Luyện lại ${incorrectQuestions.length} câu chưa đúng`}
+          />
         )}
-        <Button
-          size="quiz"
-          variant={incorrectQuestions.length > 0 ? 'outline' : 'default'}
-          className="w-full"
-          onClick={() => router.push(isDue ? '/on-tap' : '/luyen-tap')}
-        >
-          {isDue ? 'Về ôn tập' : 'Luyện tiếp'}
-        </Button>
-        <div className="flex gap-2">
-          {!isDue && (
-            <Button
-              variant="ghost"
-              className="min-h-12 flex-1"
-              onClick={() => router.push(lessonHref)}
-            >
-              {primaryLesson ? `Về bài ${primaryLesson}` : 'Về bài học'}
-            </Button>
-          )}
-          <Button
-            variant="ghost"
-            className="min-h-12 flex-1"
-            onClick={() => router.push('/')}
-          >
-            Về trang chủ
-          </Button>
-        </div>
+        {primaryLesson && !isDue && (
+          <LinkRow
+            href={lessonHref}
+            icon={<BookOpen className="size-5" />}
+            title={`Về Bài ${primaryLesson}`}
+          />
+        )}
+        <LinkRow
+          href="/"
+          icon={<Home className="size-5" />}
+          title="Về Bảng tin"
+        />
       </div>
     </main>
   );
