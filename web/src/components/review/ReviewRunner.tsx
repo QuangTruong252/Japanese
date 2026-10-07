@@ -8,7 +8,6 @@ import {
   Lightbulb,
   Pause,
   Play,
-  RotateCcw,
   X,
 } from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
@@ -27,8 +26,9 @@ import { QuestionCloze } from '@/components/practice/QuestionCloze';
 import { QuestionListening } from '@/components/practice/QuestionListening';
 import { QuestionMc } from '@/components/practice/QuestionMc';
 import { QuestionReorder } from '@/components/practice/QuestionReorder';
+import { SessionResult } from '@/components/practice/SessionResult';
 import { db } from '@/lib/db';
-import { summarizeIncorrect, summarizeSession, userAnswerFor } from '@/lib/practice';
+import { summarizeIncorrect, summarizeSession } from '@/lib/practice';
 import {
   clearPracticeDraft,
   particleHint,
@@ -47,12 +47,6 @@ import type {
   QuestionItem,
   ReviewItem,
 } from '@/types';
-
-function formatDuration(seconds: number): string {
-  const m = Math.floor(seconds / 60);
-  const s = seconds % 60;
-  return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-}
 
 export interface ReviewRunnerProps {
   questions: QuestionItem[];
@@ -373,258 +367,28 @@ export function ReviewRunner({
     }
   };
 
-  const handleRetryIncorrect = () => {
-    if (incorrectQuestions.length === 0) return;
-    savePracticeDraft({
-      version: PRACTICE_DRAFT_VERSION,
-      questions: incorrectQuestions,
-      currentIndex: 0,
-      results: [],
-      elapsedSec: 0,
-      savedAt: Date.now(),
-      config: {
-        mode: 'lesson',
-        lessons: [...new Set(incorrectQuestions.map((q) => q.lesson))].sort((a, b) => a - b),
-        maxLearnedLesson: Math.max(0, ...incorrectQuestions.map((q) => q.lesson)),
-        selectedTypes: [...new Set(incorrectQuestions.map((q) => q.type))],
-        questionCount: incorrectQuestions.length,
-      },
-    });
-    router.push(`/luyen-tap/phien?resume=${Date.now()}`);
-  };
-
-  // Màn hình kết quả sau khi hoàn thành lô ôn
+  // Màn hình kết quả sau khi hoàn thành lô ôn (Finding 7)
   if (isFinished) {
     const displaySession: PracticeSession =
       savedSession ?? summarizeSession(config, allResults, sessionDuration);
-    const percentage = Math.round(displaySession.accuracyRate * 100);
     const hasMore = nextBatchPlan ? nextBatchPlan.hasMore : false;
-    const nextPlayableCount = nextBatchPlan ? nextBatchPlan.playableCount : 0;
-    const totalDueRemaining = nextBatchPlan ? nextBatchPlan.totalDueCount : 0;
     const isPlanLoading = savedSession === null || nextBatchPlan === null;
 
     return (
-      <main className="mx-auto w-full max-w-xl space-y-6 px-4 py-8">
-        {/* Thông báo tiếp cận cho Screen Reader */}
-        <div role="status" className="sr-only">
-          Đã hoàn thành lô ôn tập. Tỷ lệ đúng {percentage}%, {displaySession.correctCount} trên{' '}
-          {displaySession.totalQuestions} câu.
-        </div>
-
-        <div className="space-y-1 text-center motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3 motion-safe:duration-400 motion-safe:ease-in-out motion-safe:fill-mode-both">
-          <h1 className="font-heading text-xl font-medium">Kết quả ôn tập</h1>
-          <p className="text-sm text-muted-foreground">
-            Đã hoàn thành lô ôn tập theo lịch ({displaySession.totalQuestions} mục)
-          </p>
-        </div>
-
-        {saveError && (
-          <div
-            role="alert"
-            className="flex flex-col gap-2 rounded-xl border border-destructive/50 bg-destructive/10 p-4 text-destructive"
-          >
-            <div className="flex items-center gap-2 font-medium">
-              <AlertCircle className="size-5 shrink-0" />
-              <span>Lỗi lưu kết quả vào bộ nhớ máy</span>
-            </div>
-            <p className="text-sm">{saveError}</p>
-            <div className="pt-1">
-              <Button size="sm" variant="destructive" onClick={() => void saveResults(allResults)}>
-                Thử lại
-              </Button>
-            </div>
-          </div>
-        )}
-
-        {/* Thẻ thống kê */}
-        <div className="grid grid-cols-3 gap-3 rounded-2xl border border-border bg-card p-4 text-center motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3 motion-safe:duration-400 motion-safe:ease-in-out motion-safe:fill-mode-both motion-safe:delay-40">
-          <div className="space-y-1">
-            <span className="text-xs text-muted-foreground">Tỷ lệ đúng</span>
-            <p className="text-2xl font-bold tracking-tight text-primary">{percentage}%</p>
-          </div>
-          <div className="space-y-1 border-x border-border">
-            <span className="text-xs text-muted-foreground">Số câu đúng</span>
-            <p className="text-2xl font-bold tracking-tight text-foreground">
-              {displaySession.correctCount}/{displaySession.totalQuestions}
-            </p>
-          </div>
-          <div className="space-y-1">
-            <span className="text-xs text-muted-foreground">Thời lượng</span>
-            <p className="text-2xl font-bold tracking-tight text-foreground tabular-nums">
-              {formatDuration(displaySession.durationSeconds)}
-            </p>
-          </div>
-        </div>
-
-        {nextReviewLine && (
-          <p className="text-center text-sm text-muted-foreground">
-            Lần ôn kế tiếp: {nextReviewLine}
-          </p>
-        )}
-
-        {/* Khối trạng thái tiếp lô hoặc hoàn tất */}
-        <div className="rounded-2xl border border-border bg-card p-4 sm:p-5 text-center space-y-3">
-          {isPlanLoading ? (
-            <div className="space-y-1">
-              <p className="font-semibold text-foreground">
-                Đang lưu và tính toán lô ôn tiếp theo...
-              </p>
-            </div>
-          ) : hasMore ? (
-            <div className="space-y-1">
-              <p className="font-semibold text-foreground">
-                {totalDueRemaining > 0
-                  ? `Còn ${totalDueRemaining} mục đến hạn ôn tập`
-                  : `Có ${nextPlayableCount} mục mới sẵn sàng ôn tập`}
-              </p>
-              <p className="text-xs sm:text-sm text-muted-foreground">
-                Bạn có thể làm tiếp lô tiếp theo ({nextPlayableCount} mục) hoặc dừng lại để nghỉ ngơi.
-              </p>
-            </div>
-          ) : nextBatchPlan?.blockedReason === 'no-audio' ? (
-            <div className="space-y-1 text-warning">
-              <p className="font-semibold">
-                Các mục đến hạn còn lại chỉ có câu dạng nghe, nhưng thiết bị chưa có giọng tiếng Nhật (ja-JP).
-              </p>
-              <p className="text-xs sm:text-sm text-muted-foreground">
-                Hạn ôn của các mục này được giữ nguyên. Bạn có thể cài đặt giọng đọc để tiếp tục.
-              </p>
-            </div>
-          ) : nextBatchPlan?.blockedReason === 'no-questions' ? (
-            <div className="space-y-1">
-              <p className="font-semibold text-foreground">
-                Không thể tạo câu hỏi cho các mục còn lại. Hạn ôn được giữ nguyên.
-              </p>
-            </div>
-          ) : (
-            <div className="space-y-1 text-success">
-              <div className="flex items-center justify-center gap-1.5 font-semibold">
-                <CheckCircle2 className="size-5 shrink-0" />
-                <span>Đã xong các mục đến hạn lúc này</span>
-              </div>
-              <p className="text-xs sm:text-sm text-muted-foreground">
-                {nextReviewLine
-                  ? 'Các mục vừa ôn sẽ quay lại theo lịch ở trên.'
-                  : 'Chưa có mục nào khác đến hạn.'}
-              </p>
-            </div>
-          )}
-
-          <div className="flex flex-col gap-2.5 pt-2">
-            {!isPlanLoading && hasMore ? (
-              <>
-                <Button
-                  size="quiz"
-                  className="w-full text-base font-medium"
-                  onClick={onStartNextBatch}
-                >
-                  Ôn lô tiếp ({nextPlayableCount} mục)
-                </Button>
-                <Button
-                  size="quiz"
-                  variant="outline"
-                  className="w-full"
-                  onClick={() => router.push('/')}
-                >
-                  Về Bảng tin
-                </Button>
-              </>
-            ) : (
-              <>
-                {nextBatchPlan?.blockedReason === 'no-audio' && (
-                  <Button
-                    size="quiz"
-                    className="w-full text-base font-medium"
-                    onClick={() => router.push('/cai-dat/audio')}
-                  >
-                    Cài đặt âm thanh
-                  </Button>
-                )}
-                <Button
-                  size="quiz"
-                  className="w-full text-base font-medium"
-                  onClick={() => router.push('/')}
-                >
-                  Về Bảng tin
-                </Button>
-                <Button
-                  size="quiz"
-                  variant="outline"
-                  className="w-full"
-                  onClick={() => router.push('/on-tap/diem-yeu')}
-                >
-                  Xem điểm yếu của tôi
-                </Button>
-              </>
-            )}
-            <Button
-              size="quiz"
-              variant="ghost"
-              className="w-full text-muted-foreground hover:text-foreground"
-              onClick={() => router.push('/on-tap')}
-            >
-              Về trang ôn tập
-            </Button>
-          </div>
-        </div>
-
-        {/* Danh sách câu sai nếu có */}
-        {incorrectQuestions.length > 0 && (
-          <div className="space-y-3">
-            <h2 className="text-sm font-medium text-foreground">
-              Câu sai cần chú ý ({incorrectQuestions.length})
-            </h2>
-            <div className="space-y-3">
-              {incorrectQuestions.map((q) => {
-                const answerText = Array.isArray(q.answer) ? q.answer.join(', ') : q.answer;
-                const userAnswer = userAnswerFor(userAnswers, q);
-                return (
-                  <div
-                    key={q.id}
-                    className="space-y-2 rounded-xl border border-border bg-card p-4"
-                  >
-                    <div className="jp jp-example font-medium">
-                      <Furigana text={q.prompt} />
-                    </div>
-                    {userAnswer !== undefined && (
-                      <div className="text-sm">
-                        <span className="text-muted-foreground">Bạn trả lời: </span>
-                        {userAnswer.trim().length > 0 ? (
-                          <span className="jp jp-vocab font-medium text-destructive">
-                            {userAnswer}
-                          </span>
-                        ) : (
-                          <span className="italic text-muted-foreground">(Chưa biết)</span>
-                        )}
-                      </div>
-                    )}
-                    <div className="text-sm">
-                      <span className="text-muted-foreground">Đáp án đúng: </span>
-                      <Furigana
-                        text={answerText}
-                        zoomable={false}
-                        className="jp-vocab font-medium text-foreground"
-                      />
-                    </div>
-                    {q.explanationVi && (
-                      <p className="text-xs text-muted-foreground">{q.explanationVi}</p>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-            <Button
-              size="quiz"
-              variant="outline"
-              className="w-full"
-              onClick={handleRetryIncorrect}
-            >
-              <RotateCcw className="mr-2 size-5" />
-              Luyện lại {incorrectQuestions.length} câu sai
-            </Button>
-          </div>
-        )}
-      </main>
+      <SessionResult
+        session={displaySession}
+        incorrectQuestions={incorrectQuestions}
+        saveError={saveError}
+        onRetrySave={() => void saveResults(allResults)}
+        mode="due"
+        nextReviewLine={nextReviewLine}
+        userAnswers={userAnswers}
+        config={config}
+        hasMoreDue={!isPlanLoading && hasMore}
+        onContinueReview={onStartNextBatch}
+        isPlanLoading={isPlanLoading}
+        blockedReason={nextBatchPlan?.blockedReason}
+      />
     );
   }
 

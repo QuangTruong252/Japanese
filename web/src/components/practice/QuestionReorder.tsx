@@ -69,14 +69,25 @@ export function QuestionReorder({
   useEffect(() => {
     if (answered) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      const target = e.target as HTMLElement | null;
-      if (target?.tagName === 'INPUT' || target?.tagName === 'TEXTAREA') return;
+      if (e.defaultPrevented) return;
+      if (e.key !== 'Enter') return;
 
-      if (e.key === 'Enter') {
-        if (chosenIds.length === tokens.length) {
-          e.preventDefault();
-          handleSubmit();
-        }
+      // Bỏ qua nếu có dialog/modal đang mở
+      if (document.querySelector('[role="dialog"], [role="alertdialog"]')) return;
+
+      const target = e.target as HTMLElement | null;
+      // Ưu tiên hành vi control đang focus: bỏ qua mọi control tương tác
+      if (
+        target?.closest(
+          'button, a, input, textarea, select, [contenteditable="true"], [role="button"]',
+        )
+      ) {
+        return;
+      }
+
+      if (chosenIds.length === tokens.length) {
+        e.preventDefault();
+        handleSubmit();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
