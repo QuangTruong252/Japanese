@@ -65,9 +65,14 @@ export function DashboardReinforcement({
                   </span>
                 )}
               </div>
-              <p className="mt-0.5 text-sm text-muted-foreground truncate">
-                {label?.vi ? `${label.vi} · ` : ''}sai {row.incorrectCount} lần
-              </p>
+              <div className="mt-0.5 flex items-baseline gap-2 text-muted-foreground">
+                {label?.vi && (
+                  <span className="min-w-0 truncate text-sm">{label.vi}</span>
+                )}
+                <span className="shrink-0 text-xs">
+                  {label?.vi ? '· ' : ''}sai {row.incorrectCount} lần
+                </span>
+              </div>
             </div>
             <ChevronRight className="size-5 shrink-0 text-muted-foreground" aria-hidden="true" />
           </Link>
