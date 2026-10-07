@@ -2,6 +2,7 @@
 
 Ngày: **07/10/2026**. Coordinator: Claude Code. Triển khai: Antigravity (Orca). Review UI/UX:
 Codex (Orca). Branch tích hợp `ui-redesign-v2` (worktree `../Japanese-ui`), chưa merge `master`.
+**07/10: đã làm xong đợt 1–3; kết quả và giới hạn ở [handoff](../handoff/UI-REDESIGN-V2.md).**
 
 ## Mục tiêu
 
