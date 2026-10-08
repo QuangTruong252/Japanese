@@ -11,12 +11,12 @@ import { useActiveDrafts } from '@/lib/active-drafts';
 import { clearNewSessionRequest } from '@/lib/practice-draft';
 import { resolveDashboardCta } from '@/lib/dashboard-cta';
 import type { LessonSummary } from '@/lib/lessons';
-import { Stage, PaperSlip, LinkRow } from '@/components/PaperStage';
+import { Stage, LinkRow } from '@/components/PaperStage';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
 import { buttonVariants } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Progress } from '@/components/ui/progress';
-import { Play, BookOpen, Clock, CheckCircle2 } from 'lucide-react';
+import { BookOpen, CalendarDays, CheckCircle2, Clock, Play } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Furigana } from '@/components/Furigana';
 import { SpeakButton } from '@/components/SpeakButton';
@@ -30,7 +30,6 @@ export function DashboardContent({
   summaries: LessonSummary[];
   lessonExamples?: Record<number, TodaySentenceItem[]>;
 }) {
-  // Cùng hook với /on-tap để hai màn luôn ra một con số.
   const queue = useDueQueue();
   const now = queue.now;
   const { learnedThroughLesson } = useSyncExternalStore(
@@ -39,11 +38,8 @@ export function DashboardContent({
     () => DEFAULT_SETTINGS,
   );
   const batchCount = queue.sessionTargetIds.size;
-
-  // Lắng nghe cả nháp học từ vựng và nháp luyện tập.
   const drafts = useActiveDrafts();
 
-  // Tiến độ theo bài: danh sách ID từ vựng đã vào lịch ôn.
   const vocabTargetIds = useLiveQuery(
     () => db.reviewItems.where('targetId').startsWith('vocab-').primaryKeys(),
     [],
@@ -54,7 +50,6 @@ export function DashboardContent({
     [vocabTargetIds],
   );
 
-  // Thời gian thật mỗi câu từ các phiên gần đây, dùng để ước lượng lô ôn.
   const recentSessions = useLiveQuery(
     () => db.practiceSessions.orderBy('createdAt').reverse().limit(20).toArray(),
     [],
@@ -64,7 +59,6 @@ export function DashboardContent({
     return spq === null ? null : Math.max(1, Math.round((batchCount * spq) / 60));
   }, [recentSessions, batchCount]);
 
-  // Bài đang học — cùng logic với /hoc.
   const activeLessonNum = pickActiveLesson(summaries, learnedByLesson, learnedThroughLesson);
   const activeSummary = summaries.find((s) => s.number === activeLessonNum) ?? summaries[0];
   const learnedInActive = learnedByLesson.get(activeLessonNum) ?? 0;
@@ -74,7 +68,6 @@ export function DashboardContent({
     (vocabTargetIds?.length ?? 0) === 0 &&
     learnedThroughLesson === 0;
 
-  // Nháp Luyện/Ôn đứng trước vì người học đang dở giữa một phiên câu hỏi.
   const draftRows = [
     drafts.practiceDraft && {
       key: 'practice',
@@ -98,7 +91,6 @@ export function DashboardContent({
   ].filter((row) => !!row);
   const primaryDraft = draftRows[0] ?? null;
 
-  // Quyết định CTA chính theo helper thuần; giữ nguyên logic business hiện có.
   const ctaDecision = resolveDashboardCta({
     batchCount,
     isNewUser,
@@ -107,14 +99,11 @@ export function DashboardContent({
     resumeDraft: primaryDraft && { href: primaryDraft.href, heading: primaryDraft.title },
     hasPracticeDraft: drafts.practiceDraft !== null,
   });
-  const isResume = ctaDecision.kind === 'resume_draft';
-  const secondaryDrafts = isResume ? draftRows.slice(1) : draftRows;
 
   const hour = now.getHours();
   const greeting =
     hour < 12 ? 'Chào buổi sáng' : hour < 18 ? 'Chào buổi chiều' : 'Chào buổi tối';
 
-  // Cảnh bài đang học. Ảnh chỉ cung cấp ngữ cảnh; nội dung học và CTA vẫn là HTML thật.
   const coverAsset =
     activeSummary?.cover ??
     summaries[0]?.cover ?? {
@@ -124,39 +113,12 @@ export function DashboardContent({
       alt: { vi: '' },
     };
 
-  // Câu học cố định trong ngày; fallback về jpTitle khi bài không có ví dụ phù hợp.
   const todaySentence = useMemo(
     () => pickTodaySentence(lessonExamples[activeLessonNum], now, activeLessonNum),
     [lessonExamples, now, activeLessonNum],
   );
   const heroJapanese = todaySentence?.jp ?? activeSummary?.jpTitle ?? '';
   const heroTranslation = todaySentence?.vi ?? activeSummary?.title?.vi ?? '';
-
-  if (queue.loading) {
-    return (
-      <main className="mx-auto w-full max-w-5xl px-4 pb-12 pt-3 sm:px-6 lg:px-8">
-        <header className="mb-5 space-y-2">
-          <Skeleton className="h-4 w-28" />
-          <Skeleton className="h-8 w-24" />
-        </header>
-
-        <div className="grid grid-cols-1 items-start xl:grid-cols-12 xl:gap-8">
-          <div className="xl:col-span-7">
-            <Skeleton className="h-44 w-full rounded-xl sm:h-56 md:h-64 xl:h-72" />
-          </div>
-          <div className="-mt-8 flex flex-col gap-4 xl:col-span-5 xl:mt-0">
-            <Skeleton className="h-72 w-full rounded-xl" />
-            <Skeleton className="h-14 w-full" />
-          </div>
-        </div>
-
-        <div className="mt-8 border-t border-border pt-5">
-          <Skeleton className="h-5 w-28" />
-          <Skeleton className="mt-3 h-12 w-full rounded-xl" />
-        </div>
-      </main>
-    );
-  }
 
   const dueSummaryText = [
     queue.totalDueCount > 0 ? `${queue.totalDueCount} mục đến hạn` : null,
@@ -165,232 +127,257 @@ export function DashboardContent({
     .filter(Boolean)
     .join(' · ');
 
-  const showDraftRows = ctaDecision.kind === 'review' ? draftRows : secondaryDrafts;
-  const showLessonRow =
-    !isNewUser && (ctaDecision.kind === 'review' || ctaDecision.kind === 'resume_draft');
-  const showDoneTodayRow =
-    !isNewUser && queue.hasAnyReviewItem && ctaDecision.kind !== 'review';
+  const isReviewPrimary = ctaDecision.kind === 'review';
+  const primaryIsLesson =
+    ctaDecision.kind === 'start_first_lesson' || ctaDecision.kind === 'continue_lesson';
+  const primaryIsDraft = ctaDecision.kind === 'resume_draft';
+
+  if (queue.loading) {
+    return (
+      <main className="mx-auto w-full max-w-5xl px-4 pb-12 pt-3 sm:px-6 lg:px-8">
+        <div className="space-y-2">
+          <Skeleton className="h-4 w-28" />
+          <Skeleton className="h-9 w-32" />
+        </div>
+
+        <Skeleton className="mt-5 h-48 w-full rounded-none sm:h-60 lg:h-72" />
+
+        <div className="mt-5 grid gap-6 xl:grid-cols-[minmax(0,1.2fr)_minmax(21rem,0.8fr)]">
+          <div className="space-y-3">
+            <Skeleton className="h-6 w-28" />
+            <Skeleton className="h-60 w-full rounded-xl" />
+          </div>
+          <div className="space-y-3">
+            <Skeleton className="h-6 w-36" />
+            <Skeleton className="h-32 w-full rounded-xl" />
+          </div>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="mx-auto w-full max-w-5xl px-4 pb-12 pt-3 sm:px-6 lg:px-8">
-      <header className="mb-5">
-        <p className="text-sm font-medium text-muted-foreground">{greeting}</p>
-        <h1 className="mt-1 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+      <header className="mb-4">
+        <p className="text-sm text-muted-foreground">{greeting},</p>
+        <h1 className="mt-0.5 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           Hôm nay
         </h1>
       </header>
 
-      <div className="grid grid-cols-1 items-start xl:grid-cols-12 xl:gap-8">
-        {/* Scene → Language: cảnh tạo ngữ cảnh, không chứa text/control baked vào ảnh. */}
-        <div className="xl:col-span-7">
-          <Stage
-            asset={coverAsset}
-            sizes="(min-width: 1280px) 672px, 100vw"
-            eager
-            imageClassName="h-44 w-full object-cover object-top sm:h-56 md:h-64 xl:h-72"
-            className="w-full"
-          />
-        </div>
+      <Stage
+        asset={coverAsset}
+        sizes="(min-width: 1024px) 768px, 100vw"
+        eager
+        imageClassName="h-48 w-full object-cover object-center sm:h-60 lg:h-72"
+        className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full"
+      />
 
-        {/* Editorial + action: content co giãn theo dữ liệu, không fixed-height. */}
-        <div className="flex flex-col gap-4 xl:col-span-5">
-          <PaperSlip className="xl:mt-0">
-            <div className="space-y-4">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
-                  N5 · Bài {activeLessonNum}
-                </p>
-                <p className="mt-1 text-base font-semibold text-foreground">
-                  {activeSummary.title.vi}
-                </p>
+      <div className="mt-4 grid gap-7 xl:grid-cols-[minmax(0,1.2fr)_minmax(21rem,0.8fr)] xl:gap-8">
+        <div className="min-w-0 space-y-7">
+          <section aria-labelledby="home-today-heading">
+            <div className="mb-3 flex items-center justify-between gap-3">
+              <div className="flex min-w-0 items-center gap-2">
+                <CalendarDays className="size-4.5 shrink-0 text-primary" aria-hidden="true" />
+                <h2
+                  id="home-today-heading"
+                  className="font-serif text-xl font-semibold tracking-tight text-foreground"
+                >
+                  Hôm nay
+                </h2>
+              </div>
+              <Link
+                href={`/hoc/${activeLessonNum}`}
+                className="shrink-0 text-sm font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+              >
+                Xem bài
+              </Link>
+            </div>
 
-                {heroJapanese && (
-                  <div className="mt-4 flex items-start justify-between gap-3">
-                    <Furigana
-                      text={heroJapanese}
-                      className="min-w-0 flex-1 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
-                    />
-                    {todaySentence && (
-                      <div className="shrink-0 pt-1">
+            <div className="rounded-xl border border-border bg-card p-4 sm:p-5">
+              <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+                <div className="min-w-0">
+                  <p className="text-sm font-medium text-muted-foreground">
+                    Bài {activeLessonNum} · {activeSummary.title.vi}
+                  </p>
+
+                  {heroJapanese && (
+                    <div className="mt-3 flex items-start gap-2">
+                      <Furigana
+                        text={heroJapanese}
+                        className="min-w-0 flex-1 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
+                      />
+                      {todaySentence && (
                         <SpeakButton
                           text={todaySentence.kana || toKanaSentence(todaySentence.jp)}
                           label={stripFurigana(todaySentence.jp)}
                           iconClassName="size-4"
                         />
-                      </div>
-                    )}
-                  </div>
-                )}
+                      )}
+                    </div>
+                  )}
 
-                {heroTranslation && (
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                    {heroTranslation}
-                  </p>
-                )}
+                  {heroTranslation && (
+                    <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
+                      {heroTranslation}
+                    </p>
+                  )}
+                </div>
               </div>
 
-              <div className="border-t border-border pt-4">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
-                  Việc tiếp theo
-                </p>
+              {!isNewUser && (
+                <div className="mt-4">
+                  <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
+                    <span className="font-medium text-foreground">Tiến độ từ vựng</span>
+                    <span className="tabular-nums text-muted-foreground">
+                      {learnedInActive}/{totalInActive}
+                    </span>
+                  </div>
+                  <Progress
+                    value={learnedInActive}
+                    max={Math.max(1, totalInActive)}
+                    aria-label={`Tiến độ từ vựng Bài ${activeLessonNum}`}
+                    aria-valuetext={`${learnedInActive} trên ${totalInActive} từ đã vào lịch ôn`}
+                    className="mt-2 w-full"
+                  />
+                </div>
+              )}
 
-                {ctaDecision.kind === 'review' ? (
-                  <div className="flex flex-col gap-3">
-                    <div>
-                      <p className="text-lg font-semibold text-foreground">
-                        {dueSummaryText ||
-                          (batchCount > 0 ? `${batchCount} mục ôn tập` : 'Ôn tập')}
-                      </p>
-                      {minutesEstimate !== null && (
-                        <p className="mt-1 text-sm text-muted-foreground">
-                          Khoảng {minutesEstimate} phút
-                        </p>
-                      )}
-                    </div>
-                    <Link
-                      href={ctaDecision.href}
-                      className={cn(
-                        buttonVariants({ size: 'quiz' }),
-                        'w-full gap-2 text-base font-semibold',
-                      )}
-                    >
-                      <Play className="size-5 fill-current" aria-hidden="true" />
-                      {ctaDecision.ctaText}
-                    </Link>
-                  </div>
-                ) : ctaDecision.kind === 'resume_draft' && primaryDraft ? (
-                  <div className="flex flex-col gap-3">
-                    <div>
-                      <p className="text-lg font-semibold text-foreground">
-                        {primaryDraft.title}
-                      </p>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        {primaryDraft.detail}
-                      </p>
-                    </div>
-                    <Link
-                      href={primaryDraft.href}
-                      onClick={primaryDraft.onClick}
-                      className={cn(
-                        buttonVariants({ size: 'quiz' }),
-                        'w-full gap-2 text-base font-semibold',
-                      )}
-                    >
-                      <Play className="size-5 fill-current" aria-hidden="true" />
-                      {ctaDecision.ctaText}
-                    </Link>
-                  </div>
-                ) : ctaDecision.kind === 'start_first_lesson' ? (
+              {(primaryIsLesson || primaryIsDraft) && (
+                <div className="mt-4 border-t border-border pt-4">
+                  {primaryIsDraft && primaryDraft && (
+                    <p className="mb-3 text-sm text-muted-foreground">
+                      {primaryDraft.title} · {primaryDraft.detail}
+                    </p>
+                  )}
                   <Link
-                    href="/hoc/1"
+                    href={primaryIsDraft && primaryDraft ? primaryDraft.href : ctaDecision.href}
+                    onClick={primaryIsDraft && primaryDraft ? primaryDraft.onClick : undefined}
                     className={cn(
                       buttonVariants({ size: 'quiz' }),
                       'w-full gap-2 text-base font-semibold',
                     )}
                   >
-                    <BookOpen className="size-5" aria-hidden="true" />
+                    {primaryIsDraft ? (
+                      <Play className="size-5 fill-current" aria-hidden="true" />
+                    ) : (
+                      <BookOpen className="size-5" aria-hidden="true" />
+                    )}
                     {ctaDecision.ctaText}
                   </Link>
-                ) : (
-                  <div className="flex flex-col gap-3">
-                    <div>
-                      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                        <p className="text-sm font-medium text-foreground">Tiến độ từ vựng</p>
-                        <p className="text-sm tabular-nums text-muted-foreground">
-                          {learnedInActive}/{totalInActive}
-                        </p>
-                      </div>
-                      <Progress
-                        value={learnedInActive}
-                        max={Math.max(1, totalInActive)}
-                        aria-label={`Tiến độ từ vựng Bài ${activeLessonNum}`}
-                        aria-valuetext={`${learnedInActive} trên ${totalInActive} từ đã vào lịch ôn`}
-                        className="mt-2 w-full"
-                      />
-                    </div>
-                    <Link
-                      href={ctaDecision.href}
-                      className={cn(
-                        buttonVariants({ size: 'quiz' }),
-                        'w-full gap-2 text-base font-semibold',
-                      )}
-                    >
-                      <BookOpen className="size-5" aria-hidden="true" />
-                      {ctaDecision.ctaText}
-                    </Link>
-                  </div>
-                )}
-              </div>
-            </div>
-          </PaperSlip>
-
-          {(showDraftRows.length > 0 || showLessonRow || showDoneTodayRow) && (
-            <div className="divide-y divide-border border-b border-border">
-              {showDraftRows.map((row) => (
-                <LinkRow
-                  key={row.key}
-                  href={row.href}
-                  onClick={row.onClick}
-                  icon={<Clock />}
-                  title={`Phiên dở · ${row.title}`}
-                  detail={row.detail}
-                />
-              ))}
-
-              {showLessonRow && (
-                <LinkRow
-                  href={`/hoc/${activeLessonNum}`}
-                  icon={<BookOpen />}
-                  title={`Bài ${activeLessonNum} · ${activeSummary.title.vi}`}
-                  detail={`${learnedInActive}/${totalInActive} từ đã vào lịch ôn`}
-                >
-                  <div className="mt-2">
-                    <Progress
-                      value={learnedInActive}
-                      max={Math.max(1, totalInActive)}
-                      aria-label={`Tiến độ từ vựng Bài ${activeLessonNum}`}
-                      aria-valuetext={`${learnedInActive} trên ${totalInActive} từ đã vào lịch ôn`}
-                      className="w-full"
-                    />
-                  </div>
-                </LinkRow>
+                </div>
               )}
+            </div>
 
-              {showDoneTodayRow && (
+            {isReviewPrimary && (
+              <LinkRow
+                href={`/hoc/${activeLessonNum}`}
+                icon={<BookOpen />}
+                title={`Bài ${activeLessonNum} · ${activeSummary.title.vi}`}
+                detail={`${learnedInActive}/${totalInActive} từ đã vào lịch ôn`}
+                className="mt-1 border-b border-border"
+              />
+            )}
+
+            {draftRows.length > 0 && !primaryIsDraft && (
+              <div className="mt-1 divide-y divide-border border-b border-border">
+                {draftRows.map((row) => (
+                  <LinkRow
+                    key={row.key}
+                    href={row.href}
+                    onClick={row.onClick}
+                    icon={<Clock />}
+                    title={`Phiên dở · ${row.title}`}
+                    detail={row.detail}
+                  />
+                ))}
+              </div>
+            )}
+          </section>
+
+          {(isReviewPrimary || (!isNewUser && queue.hasAnyReviewItem)) && (
+            <section aria-labelledby="home-review-heading">
+              <div className="mb-3 flex items-center gap-2">
+                {isReviewPrimary ? (
+                  <CalendarDays className="size-4.5 shrink-0 text-primary" aria-hidden="true" />
+                ) : (
+                  <CheckCircle2 className="size-4.5 shrink-0 text-success" aria-hidden="true" />
+                )}
+                <h2
+                  id="home-review-heading"
+                  className="font-serif text-xl font-semibold tracking-tight text-foreground"
+                >
+                  Ôn tập đến hạn
+                </h2>
+              </div>
+
+              {isReviewPrimary ? (
+                <div className="rounded-xl border border-border bg-card p-4 sm:p-5">
+                  <div className="flex flex-wrap items-start justify-between gap-4">
+                    <div>
+                      <p className="text-lg font-semibold text-foreground">
+                        {dueSummaryText || `${batchCount} mục ôn tập`}
+                      </p>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {minutesEstimate !== null
+                          ? `Khoảng ${minutesEstimate} phút`
+                          : 'Ưu tiên các mục đang đến hạn'}
+                      </p>
+                    </div>
+                    {queue.remainingDue > 0 && (
+                      <span className="rounded-md bg-muted px-2 py-1 text-xs font-medium text-muted-foreground">
+                        +{queue.remainingDue} lượt sau
+                      </span>
+                    )}
+                  </div>
+
+                  <Link
+                    href={ctaDecision.href}
+                    className={cn(
+                      buttonVariants({ size: 'quiz' }),
+                      'mt-4 w-full gap-2 text-base font-semibold',
+                    )}
+                  >
+                    <Play className="size-5 fill-current" aria-hidden="true" />
+                    {ctaDecision.ctaText}
+                  </Link>
+                </div>
+              ) : (
                 <LinkRow
                   href="/on-tap"
                   icon={<CheckCircle2 className="text-success" />}
-                  title="Ôn tập · Hôm nay đã xong"
+                  title="Hôm nay đã ôn xong"
                   detail={
                     queue.dueTomorrowCount > 0
                       ? `Lượt tiếp theo ngày mai: ${queue.dueTomorrowCount} mục`
                       : 'Ngày mai chưa có mục nào đến hạn'
                   }
+                  className="border-y border-border"
                 />
               )}
-            </div>
+            </section>
           )}
         </div>
-      </div>
 
-      {/* Một lối tra cứu chức năng, không biến Home thành lưới shortcut. */}
-      <section className="mt-8 border-t border-border pt-5" aria-labelledby="home-quick-search">
-        <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_minmax(20rem,0.9fr)] md:items-center md:gap-6">
-          <div>
-            <h2 id="home-quick-search" className="text-base font-semibold text-foreground">
+        <aside className="min-w-0">
+          <section aria-labelledby="home-quick-search" className="xl:sticky xl:top-6">
+            <h2
+              id="home-quick-search"
+              className="font-serif text-xl font-semibold tracking-tight text-foreground"
+            >
               Tra cứu nhanh
             </h2>
             <p className="mt-1 text-sm text-muted-foreground">
               Tìm từ vựng, ngữ pháp hoặc kanji.
             </p>
-          </div>
-          <SearchTrigger
-            variant="bar"
-            placeholder="Tìm từ, ngữ pháp, kanji…"
-            className="rounded-xl shadow-none"
-          />
-        </div>
-      </section>
+            <SearchTrigger
+              variant="bar"
+              placeholder="Tìm từ vựng, ngữ pháp, kanji…"
+              className="mt-3 rounded-xl shadow-none"
+            />
+          </section>
+        </aside>
+      </div>
     </main>
   );
 }
