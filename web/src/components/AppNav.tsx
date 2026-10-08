@@ -16,9 +16,6 @@ import {
 import { createClient, isSupabaseConfigured } from '@/lib/supabase/client';
 import {
   House,
-  BookOpen,
-  PencilLine,
-  CalendarDays,
   Search,
   Settings,
   User,
@@ -32,6 +29,7 @@ import { SearchTrigger } from '@/components/search/SearchTrigger';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useUIStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
+import { FeatureIcon, type FeatureIconName } from '@/components/FeatureIcon';
 
 interface NavItem {
   href: string;
@@ -47,14 +45,19 @@ interface AuthUser {
   avatarUrl?: string;
 }
 
+const featureIcon = (name: FeatureIconName) =>
+  function NavFeatureIcon({ className }: { className?: string }) {
+    return <FeatureIcon name={name} className={className} />;
+  };
+
 // 5 đích điều hướng chính theo SPEC-16 & DESIGN.md §Navigation:
 // Bảng tin · Học bài · Luyện tập · Ôn tập · Tra cứu
 const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Bảng tin', icon: House },
-  { href: '/hoc', label: 'Học bài', icon: BookOpen },
-  { href: '/luyen-tap', label: 'Luyện tập', icon: PencilLine },
-  { href: '/on-tap', label: 'Ôn tập', icon: CalendarDays, isDueTarget: true },
-  { href: '/hoc/tra-cuu', label: 'Tra cứu', icon: Search },
+  { href: '/hoc', label: 'Học bài', icon: featureIcon('lesson') },
+  { href: '/luyen-tap', label: 'Luyện tập', icon: featureIcon('practice') },
+  { href: '/on-tap', label: 'Ôn tập', icon: featureIcon('review'), isDueTarget: true },
+  { href: '/hoc/tra-cuu', label: 'Tra cứu', icon: featureIcon('lookup') },
 ];
 
 // Nút icon trên thanh đầu mobile: vùng chạm 44px, không viền để nhóm bốn nút không nặng

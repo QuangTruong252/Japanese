@@ -3,7 +3,7 @@
 import { useMemo, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { ArrowRight, BookOpen, CalendarDays, Clock, Dumbbell, TableProperties } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock, TableProperties } from 'lucide-react';
 import { db } from '@/lib/db';
 import { useDueQueue } from '@/lib/use-due-queue';
 import { countLearnedByLesson, pickActiveLesson } from '@/lib/stats';
@@ -15,6 +15,7 @@ import type { LessonSummary } from '@/lib/lessons';
 import type { IllustrationAsset } from '@/types';
 import { SoftScene, PaperCloud, TornCard, SectionHeader, ListRow, PartRow } from '@/components/PaperKit';
 import { Illustration } from '@/components/Illustration';
+import { FeatureIcon } from '@/components/FeatureIcon';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
 import { buttonVariants } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -217,7 +218,7 @@ export function DashboardContent({
               {batchCount > 0 && (
                 <ListRow
                   href={cta.reviewHref}
-                  icon={<CalendarDays />}
+                  icon={<FeatureIcon name="review" />}
                   title="Ôn tập đến hạn"
                   detail={dueSummaryText || `${batchCount} mục`}
                 />
@@ -229,7 +230,7 @@ export function DashboardContent({
                 </div>
               )}
               {isDoneToday && (
-                <ListRow href="/luyen-tap" icon={<Dumbbell />} title="Luyện tập tự chọn" />
+                <ListRow href="/luyen-tap" icon={<FeatureIcon name="practice" />} title="Luyện tập tự chọn" />
               )}
             </div>
           </section>
@@ -243,21 +244,21 @@ export function DashboardContent({
             <div className="space-y-2">
               <PartRow
                 href={`/hoc/${activeLessonNum}/tu-vung`}
-                index={1}
+                icon={<FeatureIcon name="vocab" />}
                 title="Từ vựng"
                 detail={`${activeSummary.vocabCount} từ`}
                 image={activeSummary.vocabThumb ?? SECTION_THUMB.vocab}
               />
               <PartRow
                 href={`/hoc/${activeLessonNum}#ngu-phap`}
-                index={2}
+                icon={<FeatureIcon name="grammar" />}
                 title="Ngữ pháp"
                 detail={`${activeSummary.grammarCount} mẫu`}
                 image={activeSummary.grammarThumb ?? SECTION_THUMB.grammar}
               />
               <PartRow
                 href={`/hoc/${activeLessonNum}#nghe`}
-                index={3}
+                icon={<FeatureIcon name="listening" />}
                 title="Luyện nghe"
                 image={SECTION_THUMB.listening}
               />

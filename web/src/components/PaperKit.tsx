@@ -111,7 +111,7 @@ export function ListRow({
     >
       {icon && (
         <span
-          className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground [&_svg]:size-5"
+          className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground [&_svg]:size-6"
           aria-hidden="true"
         >
           {icon}
@@ -126,46 +126,37 @@ export function ListRow({
   );
 }
 
-/** Hàng phần bài: số thứ tự, tiêu đề, số liệu, ảnh nhỏ thật (hoặc icon). */
+/** Hàng phần bài: icon thành phần, tiêu đề + số liệu cùng hàng, ảnh nhỏ thật. */
 export function PartRow({
   href,
-  index,
+  icon,
   title,
   detail,
   image,
-  icon,
 }: {
   href: string;
-  index: number;
+  icon: ReactNode;
   title: string;
   detail?: string;
   image?: IllustrationAsset;
-  icon?: ReactNode;
 }) {
   return (
     <Link
       href={href}
-      className={cn(
-        'flex min-h-16 gap-3 rounded-xl border border-border bg-card p-3 outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring',
-        // Không có dòng phụ thì canh giữa, tránh khoảng trống dưới tiêu đề.
-        detail ? 'items-start' : 'items-center',
-      )}
+      className="flex min-h-16 items-center gap-3 rounded-xl border border-border bg-card p-3 outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring"
     >
-      <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-accent text-sm font-bold tabular-nums text-accent-foreground">
-        {index}
+      <span
+        className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground [&_svg]:size-7"
+        aria-hidden="true"
+      >
+        {icon}
       </span>
-      <span className="min-w-0 flex-1">
-        <span className="block font-medium text-foreground">{title}</span>
-        {detail && <span className="block text-sm text-muted-foreground">{detail}</span>}
+      <span className="flex min-w-0 flex-1 flex-wrap items-baseline gap-x-2">
+        <span className="font-medium text-foreground">{title}</span>
+        {detail && <span className="text-sm text-muted-foreground/80">{detail}</span>}
       </span>
-      {image ? (
+      {image && (
         <Illustration asset={image} sizes="48px" className="size-12 shrink-0 rounded-lg bg-secondary object-cover" />
-      ) : (
-        icon && (
-          <span className="flex size-12 shrink-0 items-center justify-center text-muted-foreground [&_svg]:size-6" aria-hidden="true">
-            {icon}
-          </span>
-        )
       )}
     </Link>
   );

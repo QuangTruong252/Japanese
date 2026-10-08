@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
 import { cn } from '@/lib/utils';
+import { FeatureIcon, type FeatureIconName } from '@/components/FeatureIcon';
 
 export const metadata: Metadata = {
   title: 'Tra cứu · MaiPace',
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 interface LookupCategory {
-  glyph: string;
+  icon: FeatureIconName;
   title: string;
   description: string;
   href: string;
@@ -17,25 +18,25 @@ interface LookupCategory {
 
 const CATEGORIES: LookupCategory[] = [
   {
-    glyph: 'あ',
+    icon: 'kana',
     title: 'Kana',
     description: 'Bảng chữ và cách viết',
     href: '/hoc/tra-cuu/kana',
   },
   {
-    glyph: '字',
+    icon: 'kanji',
     title: 'Kanji',
     description: 'Chữ Hán N5',
     href: '/hoc/tra-cuu/kanji',
   },
   {
-    glyph: '行く',
+    icon: 'verbs',
     title: 'Động từ',
     description: 'Chia theo nhóm',
     href: '/hoc/tra-cuu/dong-tu',
   },
   {
-    glyph: '表',
+    icon: 'lookup',
     title: 'Bảng tham chiếu',
     description: 'Số đếm, thời gian, trợ từ',
     href: '/hoc/tra-cuu/bang',
@@ -76,12 +77,7 @@ export default function TraCuuHubPage() {
               'active:translate-y-px outline-none focus-visible:ring-3 focus-visible:ring-ring'
             )}
           >
-            <div
-              className="font-jp text-[40px] leading-tight text-foreground select-none"
-              aria-hidden="true"
-            >
-              {cat.glyph}
-            </div>
+            <FeatureIcon name={cat.icon} className="size-10 text-primary" />
             <div className="mt-3 space-y-0.5">
               <h2 className="text-base font-medium text-foreground group-hover:text-primary transition-colors">
                 {cat.title}
