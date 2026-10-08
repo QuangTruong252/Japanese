@@ -8,7 +8,9 @@ const sharp = require('sharp');
 
 const NAMES = ['vocab', 'grammar', 'listening', 'reading', 'kanji', 'kana', 'verbs', 'lesson', 'review', 'practice', 'lookup', 'weak-points'];
 const COLS = 4, ROWS = 3;
-const BOX = 240, INNER = 210; // like Lucide: icon fills ~88% of the viewBox
+const BOX = 240, INNER = 222; // ~92% of the viewBox, same optical size as Lucide (20/24 + round caps)
+// Nét gốc chỉ ~7/240 (~0,7px ở 24px). Làm dày bằng blur + ngưỡng cao trước khi trace, đích ~Lucide 2px.
+const BOLD_SIGMA = Number(process.env.BOLD_SIGMA ?? 4), BOLD_THRESHOLD = Number(process.env.BOLD_THRESHOLD ?? 248);
 const OUT_DIR = path.join(__dirname, 'out');
 const TSX = path.join(__dirname, '..', '..', 'web', 'src', 'components', 'FeatureIcon.tsx');
 
@@ -34,10 +36,11 @@ const trace = (buf) =>
     if (x1 < 0) throw new Error(`${name}: empty cell`);
     return { x0, y0, w: x1 - x0 + 1, h: y1 - y0 + 1 };
   });
-  // One scale for the whole set keeps stroke weight identical across icons.
-  const scale = INNER / Math.max(...boxes.map((b) => Math.max(b.w, b.h)));
+  // Mỗi icon phóng cho cạnh lớn nhất = INNER (như Lucide). Độ lệch nét gốc do tỉ lệ khác nhau
+  // được san bớt vì bước làm dày cộng thêm một lượng cố định sau khi phóng.
   for (let i = 0; i < NAMES.length; i++) {
     const { x0, y0, w, h } = boxes[i];
+    const scale = INNER / Math.max(w, h);
     const sw = Math.round(w * scale), sh = Math.round(h * scale);
     const left = Math.floor((BOX - sw) / 2), top = Math.floor((BOX - sh) / 2);
     const png = await sharp(atlas)
@@ -47,7 +50,8 @@ const trace = (buf) =>
       .extend({ top, bottom: BOX - sh - top, left, right: BOX - sw - left, background: '#fff' })
       .flatten({ background: '#fff' })
       .png()
-      .toBuffer();
+      .toBuffer()
+      .then((b) => sharp(b).blur(BOLD_SIGMA).threshold(BOLD_THRESHOLD).png().toBuffer());
     fs.writeFileSync(path.join(OUT_DIR, `${NAMES[i]}.png`), png);
     const raw = await trace(png);
     const svg = optimize(raw, {
