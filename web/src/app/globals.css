@@ -238,7 +238,11 @@
   filter: drop-shadow(0 8px 18px color-mix(in oklch, var(--foreground) 12%, transparent));
 }
 .torn-card {
-  background: var(--card);
+  position: relative;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 80% 20%, color-mix(in oklch, var(--accent) 15%, transparent), transparent 60%),
+    var(--card);
   color: var(--card-foreground);
   clip-path: polygon(
     0% 1.2%, 3% 0.2%, 7% 1.1%, 12% 0.3%, 18% 1%, 25% 0.1%, 32% 1.1%, 40% 0.4%, 48% 1.2%, 56% 0.2%, 64% 0.9%, 72% 0.1%, 80% 1%, 88% 0.3%, 95% 1.2%, 100% 0.4%,

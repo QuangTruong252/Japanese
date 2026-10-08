@@ -15,11 +15,13 @@ export function SpeakButton({
   label,
   visibleLabel,
   iconClassName,
+  className,
 }: {
   text: string;
   label: string;
   visibleLabel?: string;
   iconClassName?: string;
+  className?: string;
 }) {
   const [hasVoice, setHasVoice] = useState(false);
   const [speaking, setSpeaking] = useState(false);
@@ -50,7 +52,7 @@ export function SpeakButton({
       type="button"
       variant="ghost"
       size="quiz"
-      className={cn('w-12 px-0', visibleLabel && 'w-auto gap-2 px-3')}
+      className={cn('w-12 px-0', visibleLabel && 'w-auto gap-2 px-3', className)}
       aria-label={visibleLabel ? `${visibleLabel}: ${label}` : `Phát âm ${label}`}
       onClick={handleClick}
     >

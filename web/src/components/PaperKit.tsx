@@ -147,7 +147,7 @@ export function PartRow({
       href={href}
       className="flex min-h-16 items-start gap-3 rounded-xl border border-border bg-card p-3 outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring"
     >
-      <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold tabular-nums text-accent-foreground">
+      <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-md bg-accent text-sm font-bold tabular-nums text-accent-foreground">
         {index}
       </span>
       <span className="min-w-0 flex-1 pt-0.5">

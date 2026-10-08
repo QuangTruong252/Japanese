@@ -3,7 +3,7 @@
 import { useMemo, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { ArrowRight, CalendarDays, Clock, Dumbbell, Headphones, TableProperties } from 'lucide-react';
+import { ArrowRight, BookOpen, CalendarDays, Clock, Dumbbell, Headphones, TableProperties } from 'lucide-react';
 import { db } from '@/lib/db';
 import { useDueQueue } from '@/lib/use-due-queue';
 import { countLearnedByLesson, pickActiveLesson } from '@/lib/stats';
@@ -151,33 +151,35 @@ export function DashboardContent({
       <div className="mt-6 grid gap-8 xl:grid-cols-[minmax(0,1.2fr)_minmax(21rem,0.8fr)]">
         <div className="min-w-0 space-y-8">
           <section aria-labelledby="home-today-heading">
-            <SectionHeader
-              id="home-today-heading"
-              title="Hôm nay"
-              href={`/hoc/${activeLessonNum}`}
-              linkLabel="Xem bài"
-            />
             <TornCard>
-              <p className="text-sm font-medium text-muted-foreground">
+              <p
+                id="home-today-heading"
+                className="font-serif text-sm font-bold tracking-wide text-primary"
+              >
+                / Hôm nay /
+              </p>
+              <p className="mt-1.5 flex items-start gap-1.5 text-sm font-medium text-muted-foreground">
+                <BookOpen className="mt-0.5 size-3.5 shrink-0" aria-hidden="true" />
                 Bài {activeLessonNum} · {activeSummary.title.vi}
               </p>
               {heroJapanese && (
                 <div className="mt-3 flex items-start gap-2">
                   <Furigana
                     text={heroJapanese}
-                    className="jp-display min-w-0 flex-1 text-2xl font-semibold text-foreground sm:text-3xl"
+                    className="jp-display min-w-0 flex-1 text-2xl font-bold text-foreground sm:text-3xl"
                   />
                   {todaySentence && (
                     <SpeakButton
                       text={todaySentence.kana || toKanaSentence(todaySentence.jp)}
                       label={stripFurigana(todaySentence.jp)}
                       iconClassName="size-4"
+                      className="size-11 w-11 rounded-full border border-border bg-secondary text-primary hover:bg-accent"
                     />
                   )}
                 </div>
               )}
               {heroTranslation && (
-                <p className="mt-1 text-sm leading-6 text-muted-foreground">{heroTranslation}</p>
+                <p className="mt-1 text-sm italic leading-6 text-muted-foreground">{heroTranslation}</p>
               )}
               <Link
                 href={cta.href}
@@ -220,7 +222,11 @@ export function DashboardContent({
           </section>
 
           <section aria-labelledby="home-parts-heading">
-            <SectionHeader id="home-parts-heading" title="Các phần trong bài" />
+            <SectionHeader
+              id="home-parts-heading"
+              title="Các phần trong bài"
+              href={`/hoc/${activeLessonNum}`}
+            />
             <div className="space-y-2">
               <PartRow
                 href={`/hoc/${activeLessonNum}/tu-vung`}
