@@ -33,6 +33,25 @@ export function parseFurigana(text: string): FuriganaSegment[] {
 }
 
 /**
+ * Gom segment thành cụm theo dấu cách (thường hoặc toàn góc) có sẵn trong dữ liệu. Mỗi cụm
+ * render không ngắt dòng, nên câu chỉ xuống dòng giữa các cụm (spec v3 §2.3).
+ */
+export function groupFuriganaWords(text: string): FuriganaSegment[][] {
+  const words: FuriganaSegment[][] = [[]];
+  for (const segment of parseFurigana(text)) {
+    if (segment.ruby) {
+      words[words.length - 1].push(segment);
+      continue;
+    }
+    segment.base.split(/[ 　]+/).forEach((part, i) => {
+      if (i > 0) words.push([]);
+      if (part) words[words.length - 1].push({ base: part });
+    });
+  }
+  return words.filter((word) => word.length > 0);
+}
+
+/**
  * Xóa bỏ furigana để lấy văn bản thuần (dùng cho tiêu đề, accessibility, câu hỏi trắc nghiệm đọc)
  */
 export function stripFurigana(text: string): string {

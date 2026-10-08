@@ -9,6 +9,7 @@ import {
   toTypedKana,
   stripFurigana,
   toKanaSentence,
+  groupFuriganaWords,
 } from './japanese.ts';
 
 test('dòng mô tả tìm kiếm: bỏ cách đọc và đổi ngoặc tùy chọn, không còn ngoặc vuông', () => {
@@ -101,4 +102,18 @@ test('containsJapanese nhận kana/kanji, không nhận tiếng Việt có dấu
   assert.equal(containsJapanese('nhân viên công ty'), false);
   assert.equal(containsJapanese('Tôi đã học'), false);
   assert.equal(containsJapanese(''), false);
+});
+
+test('groupFuriganaWords gom segment theo dấu cách của dữ liệu (luật ngắt dòng v3)', () => {
+  assert.deepEqual(groupFuriganaWords('電車[でんしゃ]で 会社[かいしゃ]へ 行[い]きます。'), [
+    [{ base: '電車', ruby: 'でんしゃ' }, { base: 'で' }],
+    [{ base: '会社', ruby: 'かいしゃ' }, { base: 'へ' }],
+    [{ base: '行', ruby: 'い' }, { base: 'きます。' }],
+  ]);
+  // Sai trước đây: "行き / ます。" bị tách; nay 行[い]きます。 luôn là một cụm.
+  assert.equal(groupFuriganaWords('行[い]きます。').length, 1);
+  assert.deepEqual(groupFuriganaWords('食[た]べます'), [[{ base: '食', ruby: 'た' }, { base: 'べます' }]]);
+  assert.deepEqual(groupFuriganaWords('  はい  そうです '), [[{ base: 'はい' }], [{ base: 'そうです' }]]);
+  assert.deepEqual(groupFuriganaWords('わたし　は'), [[{ base: 'わたし' }], [{ base: 'は' }]]);
+  assert.deepEqual(groupFuriganaWords(''), []);
 });
