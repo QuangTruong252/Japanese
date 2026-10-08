@@ -10,11 +10,7 @@ node_modules/
 /.codex/config.toml
 /.mcp.json
 /bugs/
-# Ảnh chụp do scripts/capture-all-screens.mjs tạo.
-/evidences/
 
-# Index và cache cục bộ của Repowise; chỉ track cấu hình.
-/.repowise/*
-!/.repowise/config.yaml
-/.repowise-workspace/
-/.repowise-workspace.yaml
+# Ảnh review tạm do `batch.mjs sheet` / scripts/ui-qa tạo; không commit.
+/artwork/illustrations/reports/
+/.ui-qa/

@@ -1,5 +1,0 @@
-editor_files:
-  agents_md: true
-  claude_md: false
-commit_limit: 500
-embedder: mock

@@ -68,10 +68,9 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
 
-  /* Chuyển động (DESIGN.md §Motion). Sinh utility `ease-smooth-out`, `animate-jp-shake`. */
+  /* Chuyển động. Sinh utility `ease-smooth-out`, `animate-jp-shake`. */
   --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
   --animate-jp-shake: jp-shake 300ms ease-in-out;
-  --animate-draw-check: draw-check 300ms 80ms ease-out both;
 }
 
 :root {
@@ -191,15 +190,11 @@
   }
 }
 
-/* Phố giấy: cảnh minh họa mở vào trang giấy, không đóng trong một thẻ UI. */
-.paper-panorama {
-  mask-image: linear-gradient(to bottom, black 85%, transparent);
-}
+/* Cảnh minh họa mở vào trang giấy (màn chưa chuyển v3). */
 .paper-scene {
   mask-image: linear-gradient(to bottom, black 88%, transparent);
 }
 @media (max-height: 700px) and (max-width: 639px) {
-  .paper-panorama { max-height: 8rem; }
   .paper-scene { max-height: 9rem; }
 }
 
@@ -328,26 +323,6 @@ html.hide-translations .translation:active {
 .jp-vocab {
   font-size: 1.125rem;
   font-weight: 400;
-}
-
-.jp-inline {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-/* Nét dấu tích khi đáp đúng (transitions.dev success check, chỉ phần vẽ nét). Path của
-   lucide Check dài ~23 đơn vị. Giảm chuyển động: hiện nét đầy đủ ngay. */
-@keyframes draw-check {
-  from { stroke-dashoffset: 24; }
-  to { stroke-dashoffset: 0; }
-}
-.animate-draw-check path {
-  stroke-dasharray: 24;
-}
-@media (prefers-reduced-motion: reduce) {
-  .animate-draw-check {
-    animation: none;
-  }
 }
 
 /* Rung báo sai: 300ms, biên độ 4px, 3 nhịp (SPEC-04 §6). Dùng `motion-safe:animate-jp-shake`. */

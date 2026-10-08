@@ -6,7 +6,7 @@
 //   sheet    review sheet (reference + exported WebPs on ivory and dark) in reports/
 //   link     add exported assets to the learning JSON and mark their sidecars
 // One batch file is the source of truth for a set of assets (SPEC-21). Optional stems limit the run.
-import { readFile, writeFile, access, readdir, stat } from 'node:fs/promises';
+import { readFile, writeFile, access, readdir, stat, mkdir } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
@@ -286,6 +286,7 @@ async function sheet(batch, assets) {
   // Review-only artefact: ivory and near-black stand in for the app's light/dark surfaces.
   const [light, dark] = await Promise.all([panel({ r: 245, g: 239, b: 226, alpha: 1 }), panel({ r: 32, g: 30, b: 28, alpha: 1 })]);
   const file = `artwork/illustrations/reports/${batch.name}-sheet.png`;
+  await mkdir(path.dirname(abs(file)), { recursive: true });
   await sharp({ create: { width: cols * tile, height: rows * tile * 2, channels: 4, background: CLEAR } })
     .composite([{ input: light, left: 0, top: 0 }, { input: dark, left: 0, top: rows * tile }]).png().toFile(abs(file));
   console.log(`Wrote ${file} (${files.length - 1} assets + reference, first tile)`);
