@@ -145,17 +145,21 @@ export function PartRow({
   return (
     <Link
       href={href}
-      className="flex min-h-16 items-start gap-3 rounded-xl border border-border bg-card p-3 outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring"
+      className={cn(
+        'flex min-h-16 gap-3 rounded-xl border border-border bg-card p-3 outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring',
+        // Không có dòng phụ thì canh giữa, tránh khoảng trống dưới tiêu đề.
+        detail ? 'items-start' : 'items-center',
+      )}
     >
-      <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-md bg-accent text-sm font-bold tabular-nums text-accent-foreground">
+      <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-accent text-sm font-bold tabular-nums text-accent-foreground">
         {index}
       </span>
-      <span className="min-w-0 flex-1 pt-0.5">
+      <span className="min-w-0 flex-1">
         <span className="block font-medium text-foreground">{title}</span>
         {detail && <span className="block text-sm text-muted-foreground">{detail}</span>}
       </span>
       {image ? (
-        <Illustration asset={image} sizes="48px" className="size-12 shrink-0 rounded-lg object-contain" />
+        <Illustration asset={image} sizes="48px" className="size-12 shrink-0 rounded-lg bg-secondary object-cover" />
       ) : (
         icon && (
           <span className="flex size-12 shrink-0 items-center justify-center text-muted-foreground [&_svg]:size-6" aria-hidden="true">

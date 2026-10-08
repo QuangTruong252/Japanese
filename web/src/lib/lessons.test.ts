@@ -261,5 +261,14 @@ test('loadLessonSummary kèm ảnh nhỏ thật cho phần Từ vựng/Ngữ ph�
   assert.deepEqual(s.grammarThumb, lesson.grammar.find((g) => g.illustration)?.illustration);
 });
 
+test('vocabThumb tránh ảnh người đứng hẹp: Bài 1 không có ảnh, Bài 10 dùng ảnh chọn sẵn', async () => {
+  assert.equal((await loadLessonSummary(1)).vocabThumb, undefined);
+  const s10 = await loadLessonSummary(10);
+  assert.match(s10.vocabThumb?.src ?? '', /\/panda-v1\.webp$/);
+  for (const n of [21, 22, 24, 25]) {
+    assert.ok((await loadLessonSummary(n)).vocabThumb, `Bài ${n} có ảnh nhỏ`);
+  }
+});
+
 
 

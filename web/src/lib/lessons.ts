@@ -12,7 +12,7 @@ export interface LessonSummary {
   grammarCount: number;
   /** Cảnh của bài (SPEC-21), dùng cho sân khấu Bảng tin và lộ trình /hoc. */
   cover?: IllustrationAsset;
-  /** Ảnh nhỏ cho hàng "Từ vựng" ở Bảng tin v3: minh họa của từ đầu tiên có ảnh. */
+  /** Ảnh nhỏ cho hàng "Từ vựng" ở Bảng tin v3: minh họa của từ đầu tiên có ảnh (xem VOCAB_THUMB). */
   vocabThumb?: IllustrationAsset;
   /** Ảnh nhỏ cho hàng "Ngữ pháp": minh họa của mẫu đầu tiên có ảnh. */
   grammarThumb?: IllustrationAsset;
@@ -177,6 +177,29 @@ export async function loadVocabMap(
 }
 
 /**
+ * Ảnh nhỏ Từ vựng khi ảnh đầu tiên của bài là hình đứng hẹp (người), trông lọt thỏm trong ô vuông.
+ * `null` = bài chỉ có tranh người: không trả ảnh, Bảng tin dùng ảnh chung `ui/sections/vocabulary`.
+ * ponytail: chọn tay theo đo khung nội dung ảnh 08/10/2026; bài mới có ảnh hẹp thì thêm vào đây.
+ */
+const VOCAB_THUMB: Record<number, string | null> = {
+  1: null,
+  10: 'panda-v1.webp',
+  21: 'tv-news-v1.webp',
+  22: 'strawberry-cake-v1.webp',
+  24: 'bringing-friend-v1.webp',
+  25: 'arriving-station-v1.webp',
+};
+
+function pickVocabThumb(lesson: Lesson, vocab: VocabWord[]): IllustrationAsset | undefined {
+  const pick = VOCAB_THUMB[lesson.number];
+  if (pick === null) return undefined;
+  return (
+    (pick && vocab.find((w) => w.illustration?.src.endsWith(`/${pick}`))?.illustration) ||
+    vocab.find((w) => w.illustration)?.illustration
+  );
+}
+
+/**
  * Nạp thông tin tóm tắt của một bài học (cho danh sách /hoc).
  */
 export async function loadLessonSummary(lessonNum: number): Promise<LessonSummary> {
@@ -191,7 +214,7 @@ export async function loadLessonSummary(lessonNum: number): Promise<LessonSummar
     vocabCount: vocab.length,
     grammarCount: lesson.grammar.length,
     cover: lesson.cover,
-    vocabThumb: vocab.find((w) => w.illustration)?.illustration,
+    vocabThumb: pickVocabThumb(lesson, vocab),
     grammarThumb: lesson.grammar.find((g) => g.illustration)?.illustration,
   };
 }

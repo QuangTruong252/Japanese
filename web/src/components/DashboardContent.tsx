@@ -3,7 +3,7 @@
 import { useMemo, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { ArrowRight, BookOpen, CalendarDays, Clock, Dumbbell, Headphones, TableProperties } from 'lucide-react';
+import { ArrowRight, BookOpen, CalendarDays, Clock, Dumbbell, TableProperties } from 'lucide-react';
 import { db } from '@/lib/db';
 import { useDueQueue } from '@/lib/use-due-queue';
 import { countLearnedByLesson, pickActiveLesson } from '@/lib/stats';
@@ -36,6 +36,19 @@ const DONE_ASSET: IllustrationAsset = {
   width: 512,
   height: 512,
   alt: { vi: '' },
+};
+
+const sectionThumb = (stem: string): IllustrationAsset => ({
+  src: `/assets/illustrations/ui/sections/${stem}-v1.webp`,
+  width: 512,
+  height: 512,
+  alt: { vi: '' },
+});
+/** Ảnh chung cho hàng phần bài khi bài không có ảnh riêng phù hợp. */
+const SECTION_THUMB = {
+  vocab: sectionThumb('vocabulary'),
+  grammar: sectionThumb('grammar'),
+  listening: sectionThumb('listening'),
 };
 
 /** Bảng tin v3 "Sách sống", bố cục C2 (spec 2026-10-08 §4). */
@@ -233,20 +246,20 @@ export function DashboardContent({
                 index={1}
                 title="Từ vựng"
                 detail={`${activeSummary.vocabCount} từ`}
-                image={activeSummary.vocabThumb}
+                image={activeSummary.vocabThumb ?? SECTION_THUMB.vocab}
               />
               <PartRow
                 href={`/hoc/${activeLessonNum}#ngu-phap`}
                 index={2}
                 title="Ngữ pháp"
                 detail={`${activeSummary.grammarCount} mẫu`}
-                image={activeSummary.grammarThumb}
+                image={activeSummary.grammarThumb ?? SECTION_THUMB.grammar}
               />
               <PartRow
                 href={`/hoc/${activeLessonNum}#nghe`}
                 index={3}
                 title="Luyện nghe"
-                icon={<Headphones />}
+                image={SECTION_THUMB.listening}
               />
             </div>
           </section>
@@ -255,17 +268,20 @@ export function DashboardContent({
         <aside className="min-w-0">
           <section aria-labelledby="home-quick-search" className="xl:sticky xl:top-6">
             <SectionHeader id="home-quick-search" title="Tra cứu" />
-            <div className="flex gap-2">
+            <div className="relative">
               <SearchTrigger
                 variant="bar"
                 placeholder="Tìm từ, ngữ pháp, kanji…"
-                className="min-w-0 flex-1 rounded-xl shadow-none"
+                className="rounded-xl pr-14 shadow-none"
               />
               <Link
                 href="/hoc/tra-cuu"
                 aria-label="Bảng tra"
                 title="Bảng tra"
-                className={cn(buttonVariants({ variant: 'outline', size: 'icon-lg' }), 'size-12 shrink-0 rounded-xl')}
+                className={cn(
+                  buttonVariants({ variant: 'ghost', size: 'icon' }),
+                  'absolute right-1 top-1/2 size-11 -translate-y-1/2 rounded-lg text-muted-foreground',
+                )}
               >
                 <TableProperties className="size-5" aria-hidden="true" />
               </Link>
