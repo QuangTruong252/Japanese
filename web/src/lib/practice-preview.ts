@@ -34,7 +34,7 @@ export function parseLessonsParam(param?: string | null): number[] {
 }
 
 /**
- * Xác định cấu hình luyện tập ban đầu (SPEC-19 §2):
+ * Xác định cấu hình luyện tập ban đầu:
  * 1. Bài học: `?lessons=N` thắng; rồi `practicePreset` hợp lệ; rồi bài đang học cục bộ (1..25); người mới -> Bài 1.
  * 2. Dạng bài: `?type=T` thắng nếu hợp lệ; rồi `practicePreset.types` hợp lệ; fallback 5 dạng bài chuẩn.
  * 3. Số câu: `practicePreset.questionCount` nếu thuộc [10, 15, 20, 30]; fallback 15.
@@ -122,7 +122,7 @@ export function computeActualQuestionCount(
 }
 
 /**
- * Sinh nhãn cho nút CTA bắt đầu luyện tập (SPEC-19 §1, §3).
+ * Sinh nhãn cho nút CTA bắt đầu luyện tập.
  * Khi bị chặn hoặc 0 câu -> "Bắt đầu".
  * Khi có câu hợp lệ -> "Bắt đầu M câu".
  */
@@ -159,7 +159,7 @@ export function getPracticeBlockedReason(options: {
 }
 
 /**
- * Định dạng tiêu đề tóm tắt cho card bắt đầu nhanh trên màn đầu (SPEC-19 §1, §3).
+ * Định dạng tiêu đề tóm tắt cho card bắt đầu nhanh trên màn đầu.
  * Ví dụ: "Sẵn sàng luyện Bài 3 · 15 câu · 5 dạng bài"
  */
 export function formatPracticeSummaryTitle(

@@ -10,7 +10,7 @@ export interface LessonSummary {
   verification: 'verified' | 'unverified';
   vocabCount: number;
   grammarCount: number;
-  /** Cảnh của bài (SPEC-21), dùng cho sân khấu Bảng tin và lộ trình /hoc. */
+  /** Cảnh của bài, dùng cho sân khấu Bảng tin và lộ trình /hoc. */
   cover?: IllustrationAsset;
   /** Ảnh nhỏ cho hàng "Từ vựng" ở Bảng tin v3: minh họa của từ đầu tiên có ảnh (xem VOCAB_THUMB). */
   vocabThumb?: IllustrationAsset;
@@ -158,7 +158,7 @@ export async function loadLessonData(
 }
 
 /**
- * Nạp danh sách các bài học đã chọn (phục vụ SPEC-04 luyện tập theo bài).
+ * Nạp danh sách các bài học đã chọn (phục vụ luyện tập theo bài).
  */
 export async function loadLessons(lessonNums: number[]): Promise<Lesson[]> {
   return Promise.all(lessonNums.map((n) => loadLesson(n)));
@@ -220,7 +220,7 @@ export async function loadLessonSummary(lessonNum: number): Promise<LessonSummar
 }
 
 /**
- * Nạp danh sách tóm tắt toàn bộ 25 bài học N5 phục vụ màn /hoc (SPEC-03 §2, §5).
+ * Nạp danh sách tóm tắt toàn bộ 25 bài học N5 phục vụ màn /hoc.
  */
 export async function loadLessonSummaries(): Promise<LessonSummary[]> {
   return Promise.all(AVAILABLE_N5_LESSONS.map((n) => loadLessonSummary(n)));
@@ -235,7 +235,7 @@ export function clearLessonCache(): void {
 }
 
 /**
- * Đổi tham số route `/hoc/[so]` thành số bài, hoặc null nếu không hợp lệ (SPEC-03 §3, SPEC-12 §7).
+ * Đổi tham số route `/hoc/[so]` thành số bài, hoặc null nếu không hợp lệ.
  * Regex chặn cả '01', '1.5', '1e1', ' 1 ' — Number() một mình nhận hết những thứ đó.
  */
 export function parseLessonNumber(raw: string): number | null {

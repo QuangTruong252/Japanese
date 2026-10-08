@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-// SPEC-14: chỉ để cài lên màn hình chính, không có service worker.
+// Chỉ để cài lên màn hình chính, không có service worker.
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'MaiPace — Tự học tiếng Nhật',

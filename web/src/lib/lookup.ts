@@ -117,7 +117,7 @@ export function getReferenceDocBySlug(slug: string): ReferenceDocument | undefin
 }
 
 /**
- * Ví dụ Kanji đã có nghĩa tiếng Việt thật chưa (trùng tiếng Anh = chưa dịch, SPEC-12 §2.1).
+ * Ví dụ Kanji đã có nghĩa tiếng Việt thật chưa (trùng tiếng Anh = chưa dịch).
  * Nếu vi trùng hệt en (không phân biệt hoa thường), mục đó chưa dịch thật.
  */
 export function isExampleVerified(example: KanjiExample): boolean {

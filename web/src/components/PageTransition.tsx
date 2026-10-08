@@ -4,7 +4,7 @@ import { useLayoutEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { navDirection } from '@/lib/nav-direction';
 
-// Chuyển trang (DESIGN.md §Motion): trang mới trượt/mờ vào ngay trên DOM thật, không chụp ảnh
+// Chuyển trang: trang mới trượt/mờ vào ngay trên DOM thật, không chụp ảnh
 // như View Transitions (Safari iOS chụp @3x rồi đóng băng trang nên thấy khựng). Key theo pathname
 // để mỗi lần đổi trang gắn lại DOM và chạy lại animation; đổi query không kích hoạt. Wrapper là
 // `display: contents` nên không đổi layout; animation đặt lên phần tử gốc của trang (CSS

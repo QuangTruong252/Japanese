@@ -1,5 +1,5 @@
 /**
- * Xác định nhãn nút và trạng thái cho CTA chính của màn Bài học (/hoc/[so]) theo SPEC-18 §3.
+ * Xác định nhãn nút và trạng thái cho CTA chính của màn Bài học (/hoc/[so]).
  */
 export function resolveLessonCtaText({
   vocabDraft,

@@ -4,7 +4,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db';
 import { Progress } from '@/components/ui/progress';
 
-/** Thanh tiến độ thuần — lưới /hoc đã có sẵn số, không query lại (SPEC-03 §4). */
+/** Thanh tiến độ thuần — lưới /hoc đã có sẵn số, không query lại. */
 export function ProgressBar({ learned, total }: { learned: number; total: number }) {
   return (
     <Progress

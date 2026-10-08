@@ -34,7 +34,7 @@ export function parseFurigana(text: string): FuriganaSegment[] {
 
 /**
  * Gom segment thành cụm theo dấu cách (thường hoặc toàn góc) có sẵn trong dữ liệu. Mỗi cụm
- * render không ngắt dòng, nên câu chỉ xuống dòng giữa các cụm (spec v3 §2.3).
+ * render không ngắt dòng, nên câu chỉ xuống dòng giữa các cụm.
  */
 export function groupFuriganaWords(text: string): FuriganaSegment[][] {
   const words: FuriganaSegment[][] = [[]];
@@ -69,7 +69,7 @@ export function formatOptionalBrackets(text: string): string {
 /** Ký tự Hán — dùng để kiểm câu đã kana hóa hết chưa */
 const KANJI_CHAR = /[一-鿿㐀-䶿々〆ヶ]/;
 
-/** Dấu câu bỏ qua khi chấm: người chép chính tả gõ hay không gõ đều được (SPEC-01 §4.5) */
+/** Dấu câu bỏ qua khi chấm: người chép chính tả gõ hay không gõ đều được */
 const SKIPPED_PUNCTUATION = /[。、．，！？!?「」『』・…‥]/g;
 
 /**
@@ -113,7 +113,7 @@ export function normalizeJapaneseInput(input: string): string {
  *
  * Không dùng `wanakana.bind()` cho ô nhập controlled: bind ghi thẳng vào DOM node,
  * còn React render lại từ state của nó và ghi đè ngược — state đọng lại ở "h" trong
- * khi màn hình hiện "は", và bài bị chấm sai (SPEC-04 §B.3).
+ * khi màn hình hiện "は", và bài bị chấm sai.
  */
 export function toTypedKana(input: string): string {
   // NFKC gộp full-width ASCII về half-width ("ｈａ" -> "ha") và nửa-rộng katakana về

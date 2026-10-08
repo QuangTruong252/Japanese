@@ -119,7 +119,7 @@ export function VerbTable({ verbs }: VerbTableProps) {
 
         {/* Hàng nút lọc Nhóm và Bài: wrap trong 390px, chip/select/nút ≥44px */}
         <div className="flex flex-wrap items-center gap-3 pt-0.5">
-          {/* Nhóm động từ (Nhóm 1, Nhóm 2, Nhóm 3) kèm màu token Washi */}
+          {/* Nhóm động từ (Nhóm 1, Nhóm 2, Nhóm 3) kèm màu token */}
           <div className="flex flex-wrap items-center gap-2">
             <button
               type="button"

@@ -6,7 +6,7 @@ import type { IllustrationAsset } from '@/types';
 import { cn } from '@/lib/utils';
 
 /**
- * "Sân khấu + mảnh giấy" (DESIGN.md §Patterns): cảnh tràn ngang, mờ dần vào giấy; con
+ * "Sân khấu + mảnh giấy": cảnh tràn ngang, mờ dần vào giấy; con
  * (bong bóng thoại…) do màn tự đặt tuyệt đối. Ảnh lỗi thì chỉ còn con, chữ vẫn đọc được.
  */
 export function Stage({

@@ -49,7 +49,7 @@ const featureIcon = (name: FeatureIconName) =>
     return <FeatureIcon name={name} className={className} />;
   };
 
-// 5 đích điều hướng chính theo SPEC-16 & DESIGN.md §Navigation:
+// 5 đích điều hướng chính:
 // Bảng tin · Học bài · Luyện tập · Ôn tập · Tra cứu
 const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Bảng tin', icon: featureIcon('nav-home') },
@@ -123,7 +123,7 @@ export function AppNav() {
     engineState: engineStatus.state,
   });
 
-  // Luồng làm bài và học từ vựng chiếm trọn màn hình, có điều hướng riêng (SPEC-16 B16.3).
+  // Luồng làm bài và học từ vựng chiếm trọn màn hình, có điều hướng riêng.
   if (shouldHideAppChrome(pathname)) {
     return null;
   }
@@ -236,7 +236,7 @@ export function AppNav() {
 
       {/* ========================================================
           2. Desktop Shell (>= 1024px): Left Sidebar cố định w-64
-          5 mục chính + khối cuối sidebar dẫn /ca-nhan (SPEC-16)
+          5 mục chính + khối cuối sidebar dẫn /ca-nhan
           ======================================================== */}
       <aside
         aria-label="Điều hướng ứng dụng"
@@ -269,7 +269,7 @@ export function AppNav() {
             </div>
           </Link>
 
-          {/* Hành động toàn cục (desktop): Tìm kiếm Ctrl+K (SPEC-13) + Giao diện; Cài đặt ở đáy sidebar */}
+          {/* Hành động toàn cục (desktop): Tìm kiếm Ctrl+K + Giao diện; Cài đặt ở đáy sidebar */}
           <div className="mt-8 flex items-center gap-2">
             <button
               type="button"
@@ -331,7 +331,7 @@ export function AppNav() {
           </nav>
         </div>
 
-        {/* Đáy: Khối Tài khoản dẫn /ca-nhan có trạng thái sync bằng chữ (SPEC-16 §3) */}
+        {/* Đáy: Khối Tài khoản dẫn /ca-nhan có trạng thái sync bằng chữ */}
         <div className="pt-3 border-t border-border/80 space-y-2">
           {/* Lối vào Hồ sơ /ca-nhan */}
           <Link

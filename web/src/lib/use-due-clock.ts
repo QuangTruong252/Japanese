@@ -5,7 +5,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db';
 
 /**
- * Mốc thời gian dùng cho mọi truy vấn "đến hạn" (SPEC-02 §2.2).
+ * Mốc thời gian dùng cho mọi truy vấn "đến hạn".
  *
  * `useLiveQuery` chạy lại khi bảng Dexie đổi — nhưng thời gian trôi qua KHÔNG phải là một thay
  * đổi của bảng. Tab mở từ 8 giờ sáng sẽ hiện số liệu của 8 giờ sáng cho tới khi người dùng làm

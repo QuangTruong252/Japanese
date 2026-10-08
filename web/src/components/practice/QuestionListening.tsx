@@ -18,7 +18,7 @@ export function QuestionListening({
   const [value, setValue] = useState('');
   const [rate, setRate] = useState<number>(1.0);
 
-  // prompt của dạng nghe là notation furigana (SPEC-01 sinh từ example.jp), không phải kana.
+  // prompt của dạng nghe là notation furigana (sinh từ example.jp), không phải kana.
   // Đưa thẳng vào speechSynthesis thì máy đọc cả chữ Hán lẫn phần đọc trong ngoặc.
   const spoken = useMemo(() => toKanaSentence(question.prompt), [question.prompt]);
 

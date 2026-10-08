@@ -92,7 +92,7 @@ test('resolveInitialPracticeConfig: typeParam ghi đè loại bài tập từ pr
   assert.deepEqual(result.types, ['reorder']);
 });
 
-test('hồi quy review SPEC-19: settings chỉ có theme + preset mặc định (mô phỏng saveSettings({theme})) -> resolveInitialPracticeConfig dùng activeLessonNum', () => {
+test('hồi quy review: settings chỉ có theme + preset mặc định (mô phỏng saveSettings({theme})) -> resolveInitialPracticeConfig dùng activeLessonNum', () => {
   // Mô phỏng trường hợp saveSettings({ theme: 'dark' }) ghi toàn bộ AppSettings với preset mặc định vào storage
   const result = resolveInitialPracticeConfig({
     lessonsParam: null,
@@ -109,7 +109,7 @@ test('hồi quy review SPEC-19: settings chỉ có theme + preset mặc định 
   assert.equal(result.questionCount, 15);
 });
 
-test('hồi quy review SPEC-19: preset đã chỉnh (ví dụ [3, 5]) vẫn thắng activeLessonNum', () => {
+test('hồi quy review: preset đã chỉnh (ví dụ [3, 5]) vẫn thắng activeLessonNum', () => {
   const result = resolveInitialPracticeConfig({
     lessonsParam: null,
     savedPreset: {
@@ -124,7 +124,7 @@ test('hồi quy review SPEC-19: preset đã chỉnh (ví dụ [3, 5]) vẫn th�
   assert.equal(result.questionCount, 20);
 });
 
-test('hồi quy review SPEC-19: ?lessons=N vẫn thắng tất cả (kể cả preset đã chỉnh và activeLessonNum)', () => {
+test('hồi quy review: ?lessons=N vẫn thắng tất cả (kể cả preset đã chỉnh và activeLessonNum)', () => {
   const result = resolveInitialPracticeConfig({
     lessonsParam: '2',
     savedPreset: {

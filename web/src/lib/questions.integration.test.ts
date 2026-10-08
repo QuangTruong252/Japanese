@@ -1,5 +1,5 @@
 /**
- * Kiểm tra tích hợp trên DỮ LIỆU THẬT trong src/data/n5 (SPEC-01 §7).
+ * Kiểm tra tích hợp trên DỮ LIỆU THẬT trong src/data/n5.
  * Đây là loại lỗi chỉ lộ ra khi gặp câu thật, không lộ ra với dữ liệu giả.
  */
 import { test } from 'node:test';
@@ -34,7 +34,7 @@ test('dữ liệu thật: 25/25 bài đều có verification: unverified và kh�
   }
 });
 
-test('hiệu năng: sinh câu hỏi cho bài 1-5 dưới 100ms (SPEC-01 §7)', async () => {
+test('hiệu năng: sinh câu hỏi cho bài 1-5 dưới 100ms', async () => {
   const subsetLessons = await loadLessons([1, 2, 3, 4, 5]);
   const subsetVocab = await loadVocabMap([1, 2, 3, 4, 5]);
 

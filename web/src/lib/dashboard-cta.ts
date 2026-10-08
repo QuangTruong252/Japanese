@@ -1,5 +1,5 @@
 /**
- * CTA chính của Bảng tin (v3, 08/10/2026 — docs/superpowers/specs/2026-10-08-maipace-visual-language-v3-design.md §4.1).
+ * CTA chính của Bảng tin (v3, 08/10/2026).
  *
  * Nút chính luôn là hành động bài học: người mới "Bắt đầu Bài 1", còn lại "Tiếp tục Bài N".
  * Mục đến hạn và phiên dở là các dòng phụ dưới thẻ; dòng ôn đi qua /on-tap khi đang có nháp

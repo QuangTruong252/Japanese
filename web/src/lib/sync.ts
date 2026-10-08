@@ -113,7 +113,7 @@ export function setLastPulledAt(isoString: string | null): void {
 let isSyncRunning = false;
 
 /**
- * Đẩy hàng đợi pendingSync lên Supabase RPC sync_practice (SPEC-08 §2.1–2.2).
+ * Đẩy hàng đợi pendingSync lên Supabase RPC sync_practice.
  */
 async function pushPendingQueue(
   supabase: ReturnType<typeof createClient>,
@@ -131,7 +131,7 @@ async function pushPendingQueue(
       });
 
       if (error) {
-        // Lỗi 4xx (client error) -> không retry vô hạn (SPEC-08 §2.7)
+        // Lỗi 4xx (client error) -> không retry vô hạn
         if (error.code?.startsWith('4') || error.message.includes('Not authenticated')) {
           updateSyncStatus({
             errorMessage: 'Một số bản ghi không đồng bộ được. Vui lòng xuất file JSON dự phòng.',
@@ -154,7 +154,7 @@ async function pushPendingQueue(
 }
 
 /**
- * Kéo delta từ Supabase về Dexie với phân trang keyset bắt buộc (SPEC-08 §2.3).
+ * Kéo delta từ Supabase về Dexie với phân trang keyset bắt buộc.
  */
 async function pullRemoteChanges(
   supabase: ReturnType<typeof createClient>,
@@ -273,7 +273,7 @@ async function pullRemoteChanges(
 }
 
 /**
- * Chu trình đồng bộ hai chiều hoàn chỉnh: Đẩy trước, Kéo sau (SPEC-08 §2.4).
+ * Chu trình đồng bộ hai chiều hoàn chỉnh: Đẩy trước, Kéo sau.
  */
 export async function triggerSync(): Promise<boolean> {
   if (isSyncRunning) return false;
@@ -322,7 +322,7 @@ export async function triggerSync(): Promise<boolean> {
   if (!owner) {
     setOwnerUserId(user.id);
   } else if (owner !== user.id) {
-    // Tài khoản không khớp -> chặn để tránh trộn dữ liệu (SPEC-08 §2.5)
+    // Tài khoản không khớp -> chặn để tránh trộn dữ liệu
     updateSyncStatus({
       state: 'pending',
       pendingCount,
@@ -366,7 +366,7 @@ export async function triggerSync(): Promise<boolean> {
 }
 
 /**
- * Khởi tạo các listener tự động kích hoạt đồng bộ (SPEC-08 §2.7).
+ * Khởi tạo các listener tự động kích hoạt đồng bộ.
  */
 export function initSyncEngine(): () => void {
   if (typeof window === 'undefined') return () => {};

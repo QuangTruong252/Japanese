@@ -224,7 +224,7 @@ test('loadSavedPracticePreset trả về null khi chưa có hoặc preset không
     store.set('jp:settings', JSON.stringify({ theme: 'dark' }));
     assert.equal(loadSavedPracticePreset(), null);
 
-    // Settings có practicePreset nhưng trùng với mặc định -> null (SPEC-19 §2)
+    // Settings có practicePreset nhưng trùng với mặc định -> null
     store.set(
       'jp:settings',
       JSON.stringify({

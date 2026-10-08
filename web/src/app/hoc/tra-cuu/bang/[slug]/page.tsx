@@ -117,7 +117,7 @@ export default async function ReferenceDetailPage({
                   <thead>
                     <tr className="border-b border-border bg-muted/40 text-xs font-bold text-muted-foreground">
                       {table.headers.map((h, hIdx) => {
-                        // Bảo toàn 8 ô header rỗng có chủ đích (SPEC-12 §3.5)
+                        // Bảo toàn 8 ô header rỗng có chủ đích
                         if (h.vi === '') {
                           return (
                             <th

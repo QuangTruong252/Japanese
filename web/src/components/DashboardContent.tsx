@@ -52,7 +52,7 @@ const SECTION_THUMB = {
   listening: sectionThumb('listening'),
 };
 
-/** Bảng tin v3 "Sách sống", bố cục C2 (spec 2026-10-08 §4). */
+/** Bảng tin v3 "Sách sống", bố cục C2. */
 export function DashboardContent({
   summaries,
   lessonExamples = {},

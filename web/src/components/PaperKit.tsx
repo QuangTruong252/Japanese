@@ -6,7 +6,7 @@ import type { IllustrationAsset } from '@/types';
 import { cn } from '@/lib/utils';
 
 /**
- * Bộ thành phần giấy v3 "Sách sống" (spec 2026-10-08 §3). Dùng song song PaperStage.tsx;
+ * Bộ thành phần giấy v3 "Sách sống". Dùng song song PaperStage.tsx;
  * các màn cũ chuyển dần sang bộ này.
  */
 

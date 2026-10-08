@@ -150,7 +150,7 @@ export function applyResults(
 /**
  * `totalQuestions` đếm MỤC TIÊU ĐÃ CHẤM, không phải số câu hiện ra. Một lượt ghép cặp là
  * một câu nhưng chấm 5 mục tiêu; lấy số câu thì bản ghi tự mâu thuẫn (correctCount 18 trên
- * totalQuestions 8) và SPEC-07 tính sai tỷ lệ đúng.
+ * totalQuestions 8) và tính sai tỷ lệ đúng.
  */
 export function summarizeSession(
   config: PracticeConfig,

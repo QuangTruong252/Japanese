@@ -1,5 +1,5 @@
 /**
- * SPEC-09: Thư viện thuần kiểm tra và xử lý audio zip
+ * Thư viện thuần kiểm tra và xử lý audio zip
  */
 
 export const MAX_ZIP_FILE_SIZE = 2 * 1024 * 1024 * 1024; // 2 GB
@@ -57,7 +57,7 @@ export interface ZipLimitsInput {
 }
 
 /**
- * Kiểm tra các giới hạn an toàn trước khi giải nén (SPEC-09 §2.1b)
+ * Kiểm tra các giới hạn an toàn trước khi giải nén
  */
 export function validateZipLimits(limits: ZipLimitsInput): { valid: boolean; error?: string } {
   if (limits.fileSize !== undefined && limits.fileSize > MAX_ZIP_FILE_SIZE) {

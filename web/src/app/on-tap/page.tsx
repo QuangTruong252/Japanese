@@ -80,7 +80,7 @@ export default function ReviewTodayPage() {
   const { draft, clearDraft } = useReviewDraft();
   const isOnline = useOnlineStatus();
 
-  // Trạng thái Supabase Auth chỉ đọc session cục bộ (onAuthStateChange), không gọi mạng getUser (SPEC-20, Lỗi #2)
+  // Trạng thái Supabase Auth chỉ đọc session cục bộ (onAuthStateChange), không gọi mạng getUser
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
     if (!isSupabaseConfigured()) return;
@@ -169,7 +169,7 @@ export default function ReviewTodayPage() {
     clearDraft();
   }, [clearDraft, setConfirmDiscardOpen]);
 
-  // Phím tắt Space (SPEC-05 §6, SPEC-20 §6): ưu tiên tiếp tục nháp nếu có
+  // Phím tắt Space: ưu tiên tiếp tục nháp nếu có
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key !== ' ' && event.code !== 'Space') return;
@@ -608,7 +608,7 @@ export default function ReviewTodayPage() {
       {/* 3. Cần củng cố: 3 mục sai nhiều nhất + LinkRow Điểm yếu của tôi */}
       {reinforcementSection}
 
-      {/* Hộp thoại xác nhận ghi đè phiên nháp ôn tập đang dở (SPEC-20, Lỗi #6) */}
+      {/* Hộp thoại xác nhận ghi đè phiên nháp ôn tập đang dở */}
       <AlertDialog
         open={confirmNewSessionOpen}
         onOpenChange={setConfirmNewSessionOpen}

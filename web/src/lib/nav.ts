@@ -1,5 +1,5 @@
 /**
- * Logic xác định trạng thái active của mục điều hướng chính theo SPEC-16 & DESIGN.md §Navigation.
+ * Logic xác định trạng thái active của mục điều hướng chính.
  *
  * Quy tắc:
  * - '/' chỉ active khi pathname chính xác là '/'.
@@ -44,7 +44,7 @@ export function shouldHideAppChrome(pathname: string): boolean {
 }
 
 /**
- * Định dạng số hiển thị trên badge điều hướng (SPEC-16 Lỗi #3).
+ * Định dạng số hiển thị trên badge điều hướng.
  * Trả về null nếu count <= 0 hoặc không hợp lệ (không hiển thị badge).
  * Cắt '99+' nếu count > 99.
  */

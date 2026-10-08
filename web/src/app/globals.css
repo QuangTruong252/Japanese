@@ -75,7 +75,7 @@
 
 :root {
   /* Phố giấy (06/10/2026): màu lấy từ bộ minh họa màu nước — giấy ngà, mực sumi ấm (hue ~65),
-     đỏ son, rêu, gỗ, chàm. Số đo và tương phản: docs/research/open-design/README.md. */
+     đỏ son, rêu, gỗ, chàm. */
   --background: oklch(0.975 0.014 85);        /* #fbf6ec */
   --foreground: oklch(0.26 0.014 65);         /* #29231d · 14.5:1 */
   --card: oklch(0.99 0.007 85);               /* #fefbf7 */
@@ -175,7 +175,7 @@
     background: var(--accent);
     color: var(--accent-foreground);
   }
-  /* App đã cài (SPEC-14): kéo quá không lộ nền, không kéo-để-tải-lại giữa phiên học. */
+  /* App đã cài: kéo quá không lộ nền, không kéo-để-tải-lại giữa phiên học. */
   @media (display-mode: standalone) {
     html,
     body {
@@ -198,7 +198,7 @@
   .paper-scene { max-height: 9rem; }
 }
 
-/* v3 "Sách sống" (docs/superpowers/specs/2026-10-08-maipace-visual-language-v3-design.md §3).
+/* v3 "Sách sống".
    Tranh giữ khung chữ nhật; chỉ một dải hẹp ở mỗi mép tan vào giấy. Hai mask giao nhau. */
 .soft-scene {
   --fade-x: 1.75rem;
@@ -262,7 +262,7 @@ ruby {
 }
 
 rt {
-  /* Sàn 11px theo token furigana (DESIGN.md), vẫn nhân theo --furigana-scale */
+  /* Sàn 11px theo token furigana, vẫn nhân theo --furigana-scale */
   font-size: calc(max(11px, min(0.62em, 0.95rem)) * var(--furigana-scale));
   font-weight: 500;
   color: var(--muted-foreground);
@@ -309,7 +309,7 @@ html.hide-translations .translation:active {
   }
 }
 
-/* Bậc chữ Nhật (DESIGN.md §Japanese scale). Luôn đi kèm class `jp`. */
+/* Bậc chữ Nhật. Luôn đi kèm class `jp`. */
 .jp-quiz {
   font-size: 1.5rem;
   font-weight: 500;
@@ -325,7 +325,7 @@ html.hide-translations .translation:active {
   font-weight: 400;
 }
 
-/* Rung báo sai: 300ms, biên độ 4px, 3 nhịp (SPEC-04 §6). Dùng `motion-safe:animate-jp-shake`. */
+/* Rung báo sai: 300ms, biên độ 4px, 3 nhịp. Dùng `motion-safe:animate-jp-shake`. */
 @keyframes jp-shake {
   0%, 100% { transform: translateX(0); }
   16%, 50%, 83% { transform: translateX(-4px); }
@@ -339,7 +339,7 @@ input[type="search"]::-webkit-search-decoration {
   appearance: none;
   display: none;
 }
-/* Chuyển trang (DESIGN.md §Motion): trang mới trượt 8px theo --nav-dir (1 tiến, -1 lùi, 0 chỉ mờ;
+/* Chuyển trang: trang mới trượt 8px theo --nav-dir (1 tiến, -1 lùi, 0 chỉ mờ;
    đặt bởi PageTransition) và mờ vào 250ms, chạy trên DOM thật. Chỉ opacity/translate để GPU
    tự lo; không blur. `backwards`: hết animation không còn translate giữ lại trên phần tử. */
 @media (prefers-reduced-motion: no-preference) {

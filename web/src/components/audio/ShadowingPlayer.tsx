@@ -110,7 +110,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
 
   const activeRecord = activeType ? availableTracksMap.get(activeType) : null;
 
-  // Quản lý tạo và revoke Blob URL cho thẻ <audio> (SPEC-10 §2.1)
+  // Quản lý tạo và revoke Blob URL cho thẻ <audio>
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -234,7 +234,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
     setCurrentTime(targetTime);
   };
 
-  // Đăng ký phím tắt (SPEC-10 §6)
+  // Đăng ký phím tắt
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (isTypingTarget(e.target)) return;
@@ -290,7 +290,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
     setShowTranscript,
   ]);
 
-  // Khi đang tải dữ liệu audio từ Dexie (SPEC-10)
+  // Khi đang tải dữ liệu audio từ Dexie
   if (audioRecords === undefined) {
     return (
       <div className="h-28 rounded-2xl border border-border/60 bg-card/40 animate-pulse flex items-center justify-center">
@@ -299,7 +299,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
     );
   }
 
-  // Khi chưa nạp bất kỳ track nào cho bài này (SPEC-10 §5)
+  // Khi chưa nạp bất kỳ track nào cho bài này
   if (audioRecords.length === 0) {
     return (
       <Card className="rounded-2xl border-dashed border-border/80 bg-card/60 p-6 text-center space-y-3">
@@ -566,7 +566,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
         </div>
       </Card>
 
-      {/* 3. Khối Câu ví dụ tham khảo (SPEC-10 §2.4) */}
+      {/* 3. Khối Câu ví dụ tham khảo */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <div className="space-y-0.5">

@@ -226,7 +226,7 @@ test('summarizeSession tính đúng tỷ lệ theo tổng câu', () => {
 
 test('summarizeSession đếm theo mục tiêu đã chấm, không theo số câu hiện ra', () => {
   // Ca hồi quy: một lượt ghép cặp là MỘT câu nhưng chấm 5 mục tiêu. Lấy số câu thì bản ghi
-  // tự mâu thuẫn (correctCount > totalQuestions) và SPEC-07 tính sai tỷ lệ đúng.
+  // tự mâu thuẫn (correctCount > totalQuestions) và tính sai tỷ lệ đúng.
   const now = new Date('2026-09-17T10:00:00Z');
   const pairResults: AnswerResult[] = ['a', 'b', 'c', 'd', 'e'].map((id, i) => ({
     targetId: id,

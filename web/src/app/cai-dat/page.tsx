@@ -200,7 +200,7 @@ export default function SettingsPage() {
     applySettingsToDOM(settings);
   }, [settings]);
 
-  // Lắng nghe thay đổi theme system khi tab đang mở (SPEC-06 §6)
+  // Lắng nghe thay đổi theme system khi tab đang mở
   useEffect(() => {
     if (typeof window === 'undefined' || !window.matchMedia) return;
     const media = window.matchMedia('(prefers-color-scheme: dark)');
@@ -238,7 +238,7 @@ export default function SettingsPage() {
   const [wipeInputText, setWipeInputText] = useState('');
   const [isWiping, setIsWiping] = useState(false);
 
-  // 4. Trạng thái Supabase Auth & Sync (SPEC-08)
+  // 4. Trạng thái Supabase Auth & Sync
   const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [logoutConfirmOpen, setLogoutConfirmOpen] = useState(false);
@@ -470,7 +470,7 @@ export default function SettingsPage() {
         </div>
       )}
 
-      {/* TÀI KHOẢN & ĐỒNG BỘ (SPEC-08, Feedback #37) */}
+      {/* TÀI KHOẢN & ĐỒNG BỘ */}
       <section className="space-y-4 scroll-mt-24" aria-labelledby="heading-account-title" id="heading-account">
         <h2 id="heading-account-title" className="font-heading text-base font-medium text-foreground">
           Tài khoản & Đồng bộ
@@ -609,7 +609,7 @@ export default function SettingsPage() {
         </Card>
       </section>
 
-      {/* CÀI ĐẶT ỨNG DỤNG (SPEC-14) */}
+      {/* CÀI ĐẶT ỨNG DỤNG */}
       <InstallAppCard />
 
       {/* NHÓM 1: HIỂN THỊ */}
@@ -755,7 +755,7 @@ export default function SettingsPage() {
           </CardContent>
         </Card>
 
-        {/* Ô xem trước (SPEC-06 §3.1) */}
+        {/* Ô xem trước */}
         <div className="rounded-xl border border-border bg-card/60 p-4">
           <p className="text-xs font-medium text-muted-foreground">Xem trước hiển thị:</p>
           <div className="mt-2 space-y-1">
@@ -922,7 +922,7 @@ export default function SettingsPage() {
           </CardContent>
         </Card>
 
-        {/* Audio đĩa CD (SPEC-09) */}
+        {/* Audio đĩa CD */}
         <Card>
           <CardHeader>
             <div className="flex items-center justify-between">
@@ -993,7 +993,7 @@ export default function SettingsPage() {
         </Card>
       </section>
 
-      {/* DIALOG XEM TRƯỚC KHI NHẬP FILE (SPEC-06 §3.2) */}
+      {/* DIALOG XEM TRƯỚC KHI NHẬP FILE */}
       <Dialog
         open={importPreview !== null}
         onOpenChange={(open) => {
@@ -1173,7 +1173,7 @@ export default function SettingsPage() {
         </AlertDialogContent>
       </AlertDialog>
 
-      {/* ALERT DIALOG XÁC NHẬN ĐĂNG XUẤT (SPEC-08) */}
+      {/* ALERT DIALOG XÁC NHẬN ĐĂNG XUẤT */}
       <AlertDialog open={logoutConfirmOpen} onOpenChange={setLogoutConfirmOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>

@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 
 /**
  * Nút phát âm. `text` là chuỗi ĐỌC ĐƯỢC (kana hoặc đã stripFurigana), không phải notation thô.
- * Không có giọng ja-JP thì ẩn hẳn nút (SPEC-03 §5) — nút chết tệ hơn không có nút.
+ * Không có giọng ja-JP thì ẩn hẳn nút — nút chết tệ hơn không có nút.
  */
 export function SpeakButton({
   text,

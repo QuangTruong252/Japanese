@@ -1,5 +1,5 @@
 /**
- * Mẫu manifest.json chuẩn cho nạp audio (SPEC-09 & Feedback #34)
+ * Mẫu manifest.json chuẩn cho nạp audio
  * Khớp hoàn toàn với schema validator trong web/src/lib/audio-zip.ts
  */
 

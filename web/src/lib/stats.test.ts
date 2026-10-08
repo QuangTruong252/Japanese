@@ -252,7 +252,7 @@ test('secondsPerQuestion lấy trung bình theo tổng câu, bỏ phiên rỗng'
   );
 });
 
-test('Feedback #2: 0 phiên hôm nay -> chưa học, 0 giây, "0 phút"', () => {
+test('0 phiên hôm nay -> chưa học, 0 giây, "0 phút"', () => {
   const now = new Date(2026, 8, 17, 12, 0);
   const sessions: PracticeSession[] = [];
 
@@ -262,7 +262,7 @@ test('Feedback #2: 0 phiên hôm nay -> chưa học, 0 giây, "0 phút"', () => 
   assert.equal(formatStudyTimeToday(secondsOnDay(sessions, now)), '0 phút');
 });
 
-test('Feedback #2: phiên 29 giây hôm nay -> đã học (studied), "Dưới 1 phút"', () => {
+test('phiên 29 giây hôm nay -> đã học (studied), "Dưới 1 phút"', () => {
   const now = new Date(2026, 8, 17, 12, 0);
   const shortSession = session('2026-09-17T10:00:00', { durationSeconds: 29 });
   const sessions = [shortSession];
@@ -273,7 +273,7 @@ test('Feedback #2: phiên 29 giây hôm nay -> đã học (studied), "Dưới 1 
   assert.equal(formatStudyTimeToday(secondsOnDay(sessions, now)), 'Dưới 1 phút');
 });
 
-test('Feedback #2: phiên 90 giây hôm nay -> đã học, 2 phút theo Math.round(90/60)', () => {
+test('phiên 90 giây hôm nay -> đã học, 2 phút theo Math.round(90/60)', () => {
   const now = new Date(2026, 8, 17, 12, 0);
   const s90 = session('2026-09-17T10:00:00', { durationSeconds: 90 });
   const sessions = [s90];
@@ -285,7 +285,7 @@ test('Feedback #2: phiên 90 giây hôm nay -> đã học, 2 phút theo Math.rou
   assert.equal(formatStudyTimeToday(secondsOnDay(sessions, now)), '2 phút');
 });
 
-test('Feedback #37: resolveSyncBadgeState khi CHƯA đăng nhập luôn là "Chỉ lưu trên máy"', () => {
+test('resolveSyncBadgeState khi CHƯA đăng nhập luôn là "Chỉ lưu trên máy"', () => {
   // Có bản ghi chờ đồng bộ nhưng chưa đăng nhập -> không dùng "Chờ đồng bộ (3)"
   const withPending = resolveSyncBadgeState({
     pendingCount: 3,
@@ -305,7 +305,7 @@ test('Feedback #37: resolveSyncBadgeState khi CHƯA đăng nhập luôn là "Ch�
   assert.equal(empty.label, 'Chỉ lưu trên máy');
 });
 
-test('Feedback #37: resolveSyncBadgeState khi ĐÃ đăng nhập giữ nguyên ngữ nghĩa', () => {
+test('resolveSyncBadgeState khi ĐÃ đăng nhập giữ nguyên ngữ nghĩa', () => {
   // Có bản ghi chờ đồng bộ
   const pending = resolveSyncBadgeState({
     pendingCount: 5,
@@ -343,7 +343,7 @@ test('Feedback #37: resolveSyncBadgeState khi ĐÃ đăng nhập giữ nguyên n
   assert.equal(offline.label, 'Ngoại tuyến — đã lưu trên máy');
 });
 
-test('resolveStatsEmptyState: phân biệt trạng thái rỗng Thống kê (SPEC-16 Lỗi #5)', () => {
+test('resolveStatsEmptyState: phân biệt trạng thái rỗng Thống kê', () => {
   // Ca không rỗng: đã có phiên
   const notEmpty = resolveStatsEmptyState({
     sessionCount: 2,

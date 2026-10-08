@@ -11,7 +11,7 @@ export const TARGET_TYPE_LABEL: Record<TargetType, string> = {
 };
 
 /**
- * Ánh xạ CỐ ĐỊNH loại mục tiêu → slot màu (design-system §11.3): màu gắn với thực thể, không
+ * Ánh xạ CỐ ĐỊNH loại mục tiêu → slot màu: màu gắn với thực thể, không
  * gắn với thứ hạng — đổi bộ lọc không được đổi màu của các mục còn lại.
  * Màu nằm ở chấm tròn, chữ luôn mang màu chữ: chart-3/4/5 có tương phản dưới 3:1 trên nền
  * card nên không được dùng làm màu chữ.

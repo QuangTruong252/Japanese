@@ -11,7 +11,7 @@ function Progress({
   max = 100,
   ...props
 }: ProgressPrimitive.Root.Props) {
-  // DESIGN.md: progress fill chỉ animate scaleX, không animate width
+  // Progress fill chỉ animate scaleX, không animate width
   const ratio =
     value == null || max <= min ? 0 : Math.min(1, Math.max(0, (value - min) / (max - min)))
   return (

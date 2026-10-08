@@ -46,7 +46,7 @@ export function AnswerOption({
         'active:translate-y-px',
         disabled && 'pointer-events-none',
         // Chỉ làm mờ ô KHÔNG mang thông tin. Ô đúng/sai phải giữ nguyên độ tương phản,
-        // nếu không thì phản hồi chính là thứ bị mờ đi (SPEC-04 §5, §7).
+        // nếu không thì phản hồi chính là thứ bị mờ đi.
         disabled && state === 'idle' && 'opacity-50',
         STATE_CLASS[state],
         className,

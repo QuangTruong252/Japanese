@@ -47,7 +47,7 @@ import {
 import { cn } from '@/lib/utils';
 import type { TargetType } from '@/types';
 
-// Cấu hình loại mục tiêu cố định theo SPEC-07 §4 & design-system §11.3
+// Cấu hình loại mục tiêu cố định
 const TARGET_TYPE_CONFIG: Record<
   TargetType,
   { label: string; colorClass: string; bgClass: string; borderClass: string }
@@ -186,7 +186,7 @@ export function StatisticsContent() {
     [sessions, now],
   );
 
-  // Trạng thái rỗng theo helper thuần có unit test (SPEC-16 Lỗi #5)
+  // Trạng thái rỗng theo helper thuần có unit test
   const emptyState = useMemo(() => {
     if (!sessions || !reviewItems) return null;
     return resolveStatsEmptyState({
@@ -223,7 +223,7 @@ export function StatisticsContent() {
     );
   }
 
-  // 4. Trạng thái rỗng theo helper thuần (SPEC-16 Lỗi #5, B16.7)
+  // 4. Trạng thái rỗng theo helper thuần
   if (emptyState?.isEmpty && emptyState.cta) {
     const CtaIcon =
       emptyState.cta.action === 'start_lesson_1'

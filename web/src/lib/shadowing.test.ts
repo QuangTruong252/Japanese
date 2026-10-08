@@ -32,7 +32,7 @@ test('normalizeLoopPoints: xử lý mốc chuẩn hợp lệ', () => {
   assert.deepEqual(result, { loopA: 10, loopB: 20 });
 });
 
-test('normalizeLoopPoints: tự động hoán đổi khi đặt B trước A (SPEC-10 §2.2)', () => {
+test('normalizeLoopPoints: tự động hoán đổi khi đặt B trước A', () => {
   const result = normalizeLoopPoints(30, 10, 100);
   assert.deepEqual(result, { loopA: 10, loopB: 30 });
 });

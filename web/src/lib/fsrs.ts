@@ -10,7 +10,7 @@ import {
 // FSRS scheduler với tham số enable_fuzz để tránh dồn thẻ cùng ngày
 const scheduler = fsrs(generatorParameters({ enable_fuzz: true }));
 
-/** Số mẫu thời gian trả lời giữ lại cho mỗi mục tiêu (SPEC-04 §2.2) */
+/** Số mẫu thời gian trả lời giữ lại cho mỗi mục tiêu */
 export const ELAPSED_SAMPLE_SIZE = 5;
 
 /**

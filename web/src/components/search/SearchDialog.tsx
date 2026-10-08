@@ -150,7 +150,7 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
         router.push(target.href);
       }
     } else if (e.key === 'Tab') {
-      // Bẫy focus trong dialog, Tab không đóng hộp (SPEC-13 §6 & §7)
+      // Bẫy focus trong dialog, Tab không đóng hộp
       e.preventDefault();
     }
   };
@@ -243,7 +243,7 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
 
         {/* 2. Thân danh sách kết quả / Trạng thái */}
         <div className="flex-1 overflow-y-auto overscroll-contain divide-y divide-border/40">
-          {/* Trạng thái lỗi nạp chỉ mục: thông báo và lối duyệt danh mục (SPEC-17 §5) */}
+          {/* Trạng thái lỗi nạp chỉ mục: thông báo và lối duyệt danh mục */}
           {!isLoadingIndex && hasIndexError && (
             <div className="p-4 sm:p-5 space-y-4">
               <div className="flex items-start gap-3 rounded-xl border border-destructive/30 bg-destructive/5 p-3.5 text-xs sm:text-sm">

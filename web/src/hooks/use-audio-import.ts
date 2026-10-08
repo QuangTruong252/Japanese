@@ -32,7 +32,7 @@ export function useAudioImport() {
     }
   }, []);
 
-  // Cảnh báo beforeunload khi đang nạp (SPEC-09 §5)
+  // Cảnh báo beforeunload khi đang nạp
   useEffect(() => {
     if (!isImporting) return;
 
@@ -70,7 +70,7 @@ export function useAudioImport() {
 
   const startImport = useCallback(
     async (file: File) => {
-      // 1. Kiểm tra kích thước file ZIP ở main thread trước khi mở worker (SPEC-09 §2.1b)
+      // 1. Kiểm tra kích thước file ZIP ở main thread trước khi mở worker
       if (file.size > MAX_ZIP_FILE_SIZE) {
         setError('File ZIP vượt quá dung lượng tối đa cho phép (2 GB).');
         return;

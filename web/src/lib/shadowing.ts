@@ -1,5 +1,5 @@
 /**
- * SPEC-10: Các hàm thuần túy hỗ trợ trình phát Shadowing
+ * Các hàm thuần túy hỗ trợ trình phát Shadowing
  */
 
 /**
@@ -26,7 +26,7 @@ export interface LoopPoints {
 }
 
 /**
- * Chuẩn hóa các mốc lặp A-B (SPEC-10 §2.2):
+ * Chuẩn hóa các mốc lặp A-B:
  * - Tự động hoán đổi nếu B < A
  * - Ràng buộc B > A + 0.5s
  * - Giới hạn trong khoảng [0, duration]
@@ -68,7 +68,7 @@ export function normalizeLoopPoints(
 
 /**
  * Kiểm tra xem sự kiện bàn phím có bắt nguồn từ ô nhập liệu hay không
- * để tránh cướp phím của người dùng (SPEC-10 §6)
+ * để tránh cướp phím của người dùng
  */
 export function isTypingTarget(target: EventTarget | null): boolean {
   if (!target || typeof target !== 'object') {

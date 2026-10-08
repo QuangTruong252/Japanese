@@ -54,7 +54,7 @@ export function useQuestionPool(lessons: number[]): {
   };
 }
 
-/** null = đang dò giọng. `availableAudioKeys` của SPEC-01 §5 nghĩa là "máy có giọng ja-JP". */
+/** null = đang dò giọng. `availableAudioKeys` nghĩa là "máy có giọng ja-JP". */
 export function useJapaneseVoice(): boolean | null {
   const [hasVoice, setHasVoice] = useState<boolean | null>(null);
   useEffect(() => {

@@ -17,7 +17,7 @@ export interface DashboardReinforcementProps {
 }
 
 /**
- * Hiển thị các mục có số lần trả lời sai nhiều nhất từ lịch sử (SPEC-05 §2, SPEC-20).
+ * Hiển thị các mục có số lần trả lời sai nhiều nhất từ lịch sử.
  * Dùng chung nguồn nhãn với màn Điểm yếu (/on-tap/diem-yeu).
  */
 export function DashboardReinforcement({

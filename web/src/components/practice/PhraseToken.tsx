@@ -3,7 +3,7 @@
 import { m } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
-// Spring theo DESIGN.md §Motion (kéo/di chuyển khối từ).
+// Spring kéo/di chuyển khối từ.
 const TOKEN_SPRING = { type: 'spring', stiffness: 400, damping: 30 } as const;
 
 export function PhraseToken({

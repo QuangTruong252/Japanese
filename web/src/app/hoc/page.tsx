@@ -2,7 +2,7 @@ import { loadLessonSummaries } from '@/lib/lessons';
 import { LessonGrid } from '@/components/LessonGrid';
 
 // loadLessonSummaries() nạp cả 50 file JSON để đếm số từ mỗi bài, nhưng chạy trên
-// server lúc build nên trình duyệt chỉ nhận RSC payload (SPEC-03 §2).
+// server lúc build nên trình duyệt chỉ nhận RSC payload.
 export default async function HocPage() {
   const summaries = await loadLessonSummaries();
   return (

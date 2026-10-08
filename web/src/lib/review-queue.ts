@@ -23,7 +23,7 @@ export function lessonFromTargetId(targetId: string): number {
 
 /**
  * Mọi targetId mà bể câu hỏi có thể hỏi tới, kể cả targetId nằm trong `pairs` của dạng
- * matching (mỗi cặp có lịch ôn riêng — SPEC-01 §4.2). Xếp bài nhỏ trước: người mới học
+ * matching (mỗi cặp có lịch ôn riêng). Xếp bài nhỏ trước: người mới học
  * không bị nạp mục của bài 20 trước bài 2.
  */
 export function collectTargetIds(questions: QuestionItem[]): string[] {
@@ -40,7 +40,7 @@ export function collectTargetIds(questions: QuestionItem[]): string[] {
 }
 
 /**
- * Mục tiêu chưa từng vào lịch ôn, cắt theo hạn mức mục mới CÒN LẠI trong ngày (SPEC-05 §2.1).
+ * Mục tiêu chưa từng vào lịch ôn, cắt theo hạn mức mục mới CÒN LẠI trong ngày.
  * `remaining <= 0` nghĩa là đã đủ hạn mức: trả rỗng, không nạp thêm.
  */
 export function selectNewTargetIds(
@@ -59,7 +59,7 @@ export function selectNewTargetIds(
 }
 
 /**
- * Chia hàng đợi thành một lô (SPEC-05 §2.1a). Mục đến hạn (đã xếp quá hạn lâu nhất trước) lấp
+ * Chia hàng đợi thành một lô. Mục đến hạn (đã xếp quá hạn lâu nhất trước) lấp
  * lô trước; mục mới chỉ lấp chỗ còn trống — nên khi tồn đọng ≥ một lô thì không nạp mục mới.
  */
 export function planReviewBatch<T>(
@@ -98,7 +98,7 @@ export interface NextBatchPlanResult {
 }
 
 /**
- * Tính toán kế hoạch lô ôn tập tiếp theo (SPEC-20).
+ * Tính toán kế hoạch lô ôn tập tiếp theo.
  * Hàm thuần kết hợp planReviewBatch với buildSession:
  * - Tôn trọng hạn mức mục mới còn lại trong ngày (dailyNewLimit - newLoadedToday);
  * - Chỉ nạp mục mới khi batch còn chỗ trống (ưu tiên mục đến hạn trước);
@@ -203,7 +203,7 @@ export function resolveNextBatchPlan({
 }
 
 /**
- * Mô tả số mục và số lô còn lại (SPEC-20 §3, §5).
+ * Mô tả số mục và số lô còn lại.
  */
 export function describeRemainingBatches(remainingDue: number, batchSize: number): string {
   if (remainingDue <= 0) return '';
@@ -243,7 +243,7 @@ export function overdueDays(dueAt: Date, now: Date): number {
 }
 
 /**
- * Dòng "Lần ôn kế tiếp" của màn kết quả (SPEC-05 §3.3): "3 mục ngày mai, 12 mục sau 4 ngày".
+ * Dòng "Lần ôn kế tiếp" của màn kết quả: "3 mục ngày mai, 12 mục sau 4 ngày".
  * Gom theo ngày địa phương, lấy `maxGroups` mốc gần nhất. Không có gì → chuỗi rỗng.
  */
 export function describeNextReviews(dueDates: Date[], now: Date, maxGroups = 3): string {
@@ -338,7 +338,7 @@ export type ReviewSyncNotice =
     };
 
 /**
- * Xác định nội dung hiển thị dòng trạng thái sync trên trang /on-tap (SPEC-20, Lỗi #2).
+ * Xác định nội dung hiển thị dòng trạng thái sync trên trang /on-tap.
  * - Chưa cấu hình Supabase (!isConfigured): trả về null (không hiện dòng chờ đồng bộ lên máy chủ).
  * - Đang offline (!isOnline) hoặc không có bản ghi chờ (pendingSyncCount <= 0): trả về null.
  * - Đã cấu hình nhưng chưa đăng nhập: nhắc lưu trên máy và dẫn link /ca-nhan để đăng nhập.
@@ -398,7 +398,7 @@ export interface ReviewStartActionConfig {
 }
 
 /**
- * Quyết định mức ưu tiên của nút "Bắt đầu ôn" khi có nháp dở dang (SPEC-20, Lỗi #6).
+ * Quyết định mức ưu tiên của nút "Bắt đầu ôn" khi có nháp dở dang.
  * Khi có nháp: "Tiếp tục phiên ôn" là primary duy nhất; "Bắt đầu ôn" hạ xuống outline và cần xác nhận.
  * Khi không có nháp: "Bắt đầu ôn" giữ mức primary (default) và không cần xác nhận.
  */

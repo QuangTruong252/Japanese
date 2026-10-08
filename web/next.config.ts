@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   allowedDevOrigins: ['10.106.20.*'],
   async redirects() {
-    // Thống kê đã chuyển vào trang Cá nhân (SPEC-16); query string được giữ nguyên.
+    // Thống kê đã chuyển vào trang Cá nhân; query string được giữ nguyên.
     return [{ source: '/thong-ke', destination: '/ca-nhan/thong-ke', permanent: false }];
   },
   async headers() {

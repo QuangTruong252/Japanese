@@ -186,7 +186,7 @@ test('executeSearch tìm động từ qua cả thể từ điển và thể masu
   assert.ok(resKanaMasu.results.some((r) => r.id === 'vocab-07-kirimasu'));
 });
 
-test('executeSearch trả về đích tính năng phù hợp cho tra cuu, kana, kanji, dong tu, thong ke với đúng href (SPEC-17 §9)', async () => {
+test('executeSearch trả về đích tính năng phù hợp cho tra cuu, kana, kanji, dong tu, thong ke với đúng href', async () => {
   const index = await buildSearchIndex();
 
   // 1. tra cuu -> trả feature Tra cứu (Tier 1) với href /hoc/tra-cuu
@@ -231,7 +231,7 @@ test('executeSearch trả về đích tính năng phù hợp cho tra cuu, kana, 
   assert.equal(resThongKe.results[0]?.href, '/ca-nhan/thong-ke');
 });
 
-test('executeSearch: watashi và tôi vẫn trả nội dung học liệu, nhóm Tính năng không đẩy nội dung khỏi giới hạn 20 (SPEC-17 §9)', async () => {
+test('executeSearch: watashi và tôi vẫn trả nội dung học liệu, nhóm Tính năng không đẩy nội dung khỏi giới hạn 20', async () => {
   const index = await buildSearchIndex();
 
   // 1. Tìm "watashi" trả về nội dung từ vựng (không phải rỗng)
@@ -265,7 +265,7 @@ test('executeSearch: watashi và tôi vẫn trả nội dung học liệu, nhóm
   assert.ok(resWatashi.results.length <= 20, 'watashi kết quả <= 20');
 });
 
-test('executeSearch giới hạn nhóm tính năng tối đa 4 mục, không làm tụt học liệu (SPEC-17)', async () => {
+test('executeSearch giới hạn nhóm tính năng tối đa 4 mục, không làm tụt học liệu', async () => {
   const index = await buildSearchIndex();
 
   const resTraCuu = executeSearch(index, 'tra cuu');

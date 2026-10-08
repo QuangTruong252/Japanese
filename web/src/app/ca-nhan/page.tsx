@@ -529,7 +529,7 @@ export default function CaNhanPage() {
       )}
 
       {/* ========================================================
-          3. HỘP THOẠI XÁC NHẬN ĐĂNG XUẤT (SPEC-08)
+          3. HỘP THOẠI XÁC NHẬN ĐĂNG XUẤT
           ======================================================== */}
       <AlertDialog open={logoutConfirmOpen} onOpenChange={setLogoutConfirmOpen}>
         <AlertDialogContent className="max-w-md">

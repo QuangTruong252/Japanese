@@ -164,7 +164,7 @@ export const generateQuestions = (
 
     // 2. Dạng Matching từ Vocab (chia từng nhóm 4-5 từ cùng bài)
     // Mỗi cặp mang targetId riêng: cả nhóm dùng chung một targetId thì 4 từ còn lại
-    // không bao giờ được lên lịch ôn (SPEC-01 §4.2).
+    // không bao giờ được lên lịch ôn.
     for (let i = 0; i < words.length; i += 5) {
       const chunk = words.slice(i, i + 5);
       if (chunk.length >= 4) {
@@ -251,7 +251,7 @@ export const generateQuestions = (
         }
 
         // 3.3 Listening (Nghe và chép chính tả câu)
-        // Đáp án là KANA: người nghe xong gõ kana, không gõ kanji (SPEC-01 §4.5).
+        // Đáp án là KANA: người nghe xong gõ kana, không gõ kanji.
         // Câu còn sót chữ Hán sau khi chuyển nghĩa là thiếu cách đọc — loại, không đoán.
         const kanaAnswer = toKanaSentence(example.jp);
         if (!containsKanji(kanaAnswer)) {

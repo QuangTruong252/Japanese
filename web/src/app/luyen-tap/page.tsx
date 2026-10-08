@@ -143,7 +143,7 @@ function PracticeConfigContent() {
     };
   }, []);
 
-  // 2. Khởi tạo store ban đầu theo thứ tự ưu tiên (SPEC-19 §2):
+  // 2. Khởi tạo store ban đầu theo thứ tự ưu tiên:
   // ?lessons=N thắng -> preset hợp lệ -> bài đang học cục bộ -> Bài 1
   useEffect(() => {
     if (initializedRef.current) return;

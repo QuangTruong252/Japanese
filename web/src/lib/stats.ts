@@ -1,12 +1,12 @@
 import type { PracticeSession, ReviewItem, TargetType } from '@/types';
 
 /**
- * Số liệu học tập — hàm thuần, nhận mảng trả số (SPEC-07 §2.2).
+ * Số liệu học tập — hàm thuần, nhận mảng trả số.
  * Không đọc Dexie, không gọi Date.now() bên trong: `now` luôn là tham số, nếu không thì
- * không test được. Dashboard (SPEC-02) và trang Thống kê (SPEC-07) dùng chung module này.
+ * không test được. Bảng tin và trang Thống kê dùng chung module này.
  */
 
-/** Nửa đêm giờ ĐỊA PHƯƠNG, không phải UTC (SPEC-07 §2.1) */
+/** Nửa đêm giờ ĐỊA PHƯƠNG, không phải UTC */
 export function startOfLocalDay(date: Date): Date {
   return new Date(date.getFullYear(), date.getMonth(), date.getDate());
 }
@@ -26,7 +26,7 @@ export function formatDayShort(date: Date): string {
   return `${d}/${m}`;
 }
 
-/** Một phiên thuộc về ngày của createdAt — thời điểm ghi xong (SPEC-07 §2.1) */
+/** Một phiên thuộc về ngày của createdAt — thời điểm ghi xong */
 const sessionDayKey = (session: PracticeSession): string =>
   localDayKey(new Date(session.createdAt));
 
@@ -57,7 +57,7 @@ export function currentStreak(sessions: PracticeSession[], now: Date): StreakRes
     cursor.setDate(cursor.getDate() - 1);
   }
 
-  // Dữ liệu cục bộ có thể bị cắt (SPEC-08 §2.3 chỉ kéo về 90 ngày): nếu ngày cũ nhất đang có
+  // Dữ liệu cục bộ có thể bị cắt (chỉ kéo về 90 ngày): nếu ngày cũ nhất đang có
   // cũng nằm trong chuỗi thì chuỗi thật có thể dài hơn — nói "90+" thay vì "90".
   const oldest = [...days].sort()[0]!;
   const truncated = count > 0 && oldest === localDayKey(new Date(cursor.getTime() + 86400000));
@@ -79,7 +79,7 @@ export function sessionCountOnDay(sessions: PracticeSession[], day: Date): numbe
   return sessions.filter((s) => sessionDayKey(s) === key).length;
 }
 
-/** Kiểm tra đã học trong ngày chưa (ít nhất 1 phiên - Feedback #2) */
+/** Kiểm tra đã học trong ngày chưa (ít nhất 1 phiên) */
 export function hasStudiedOnDay(sessions: PracticeSession[], day: Date): boolean {
   return sessionCountOnDay(sessions, day) > 0;
 }
@@ -90,7 +90,7 @@ export function minutesOnDay(sessions: PracticeSession[], day: Date): number {
 }
 
 /**
- * Định dạng hiển thị thời lượng học hôm nay (Feedback #2).
+ * Định dạng hiển thị thời lượng học hôm nay.
  * 0 < giây < 60: "Dưới 1 phút"
  * giây >= 60 hoặc = 0: "N phút"
  */
@@ -109,7 +109,7 @@ export interface SyncBadgeResolution {
 }
 
 /**
- * Xác định nhãn và trạng thái cho SyncBadge (SPEC-08, Feedback #37).
+ * Xác định nhãn và trạng thái cho SyncBadge.
  * Khi CHƯA đăng nhập: luôn dùng "Chỉ lưu trên máy", không dùng "Chờ đồng bộ (n)".
  * Khi ĐÃ đăng nhập: giữ nguyên ngữ nghĩa đồng bộ hai chiều.
  */
@@ -163,7 +163,7 @@ export function accuracyOverDays(
 }
 
 /**
- * Đếm số mục từ vựng đã VÀO LỊCH ÔN theo bài (SPEC-03 §4) — "đã học", không phải "đã thuộc".
+ * Đếm số mục từ vựng đã VÀO LỊCH ÔN theo bài — "đã học", không phải "đã thuộc".
  * Đầu vào là mảng primary key của `reviewItems`; hàm thuần, không đọc Dexie.
  */
 export function countLearnedByLesson(targetIds: string[]): Map<number, number> {
@@ -178,7 +178,7 @@ export function countLearnedByLesson(targetIds: string[]): Map<number, number> {
 }
 
 /**
- * Bài đang học — dùng chung cho Bảng tin và `/hoc` (SPEC-02 §3.2). Bài ≤ `learnedThroughLesson`
+ * Bài đang học — dùng chung cho Bảng tin và `/hoc`. Bài ≤ `learnedThroughLesson`
  * (người học khai báo đã học) không bao giờ là bài đang học. Ưu tiên bài nhỏ nhất đang học dở,
  * rồi tới bài đầu tiên chưa xong; học xong hết thì về bài cuối.
  */
@@ -221,7 +221,7 @@ export interface DayValue {
 }
 
 /**
- * Phút học từng ngày trong cửa sổ `days` ngày gần nhất (tính cả hôm nay) (SPEC-07 §2.2).
+ * Phút học từng ngày trong cửa sổ `days` ngày gần nhất (tính cả hôm nay).
  */
 export function dailyMinutes(sessions: PracticeSession[], days: number, now: Date): DayValue[] {
   const results: DayValue[] = [];
@@ -251,7 +251,7 @@ export function dailyMinutes(sessions: PracticeSession[], days: number, now: Dat
 }
 
 /**
- * Tỷ lệ đúng từng ngày trong cửa sổ `days` ngày gần nhất (SPEC-07 §2.2).
+ * Tỷ lệ đúng từng ngày trong cửa sổ `days` ngày gần nhất.
  * Ngày không có phiên có hasData = false, value = 0 (tránh nối đường thẳng qua khoảng trống).
  */
 export function dailyAccuracy(sessions: PracticeSession[], days: number, now: Date): DayValue[] {
@@ -286,7 +286,7 @@ export function dailyAccuracy(sessions: PracticeSession[], days: number, now: Da
 }
 
 /**
- * Gom số lượng mục theo từng loại mục tiêu (SPEC-07 §2.2, §3.1).
+ * Gom số lượng mục theo từng loại mục tiêu.
  * Cố định: vocab, grammar, kanji, particle, listening.
  */
 export function targetsByType(items: ReviewItem[]): Record<TargetType, number> {
@@ -321,10 +321,10 @@ export interface HeatmapWeek {
 }
 
 /**
- * Lưới lịch nhiệt `weeksCount` tuần gần nhất (SPEC-07 §3.1, §5).
+ * Lưới lịch nhiệt `weeksCount` tuần gần nhất.
  * Tuần bắt đầu từ Thứ Hai (Monday = 1) và kết thúc ở Chủ Nhật (Sunday = 0).
  * Cấp độ 0: Không học
- * Cấp độ 1: 1-10 phút (kể cả 0 phút nếu có ít nhất 1 phiên - SPEC-07 §5)
+ * Cấp độ 1: 1-10 phút (kể cả 0 phút nếu có ít nhất 1 phiên)
  * Cấp độ 2: 11-20 phút
  * Cấp độ 3: 21-35 phút
  * Cấp độ 4: > 35 phút
@@ -417,7 +417,7 @@ export interface StatsEmptyStateResult {
 }
 
 /**
- * Phân biệt trạng thái rỗng của màn Thống kê (SPEC-16 Lỗi #5):
+ * Phân biệt trạng thái rỗng của màn Thống kê:
  * - sessions > 0: không rỗng (isEmpty = false)
  * - sessions = 0, chưa có reviewItems và chưa khai báo learnedThroughLesson:
  *   CTA "Bắt đầu Bài 1" -> /hoc/1

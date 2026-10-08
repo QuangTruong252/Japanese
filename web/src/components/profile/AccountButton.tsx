@@ -23,7 +23,7 @@ export function AccountButton({ className, user }: AccountButtonProps) {
   const displayName = user?.displayName;
   const avatarUrl = user?.avatarUrl;
 
-  // Trên /ca-nhan/**, nút header Tài khoản hiển thị trạng thái active (aria-current="page") (SPEC-16 §3, §7)
+  // Trên /ca-nhan/**, nút header Tài khoản hiển thị trạng thái active (aria-current="page")
   const isActive = pathname === '/ca-nhan' || pathname.startsWith('/ca-nhan/');
 
   return (

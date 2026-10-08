@@ -4,7 +4,7 @@ import { useSyncExternalStore } from 'react';
 import { Smartphone } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
-// SPEC-14 §3.2: hướng dẫn bằng chữ, không dùng beforeinstallprompt (không có trên Safari iOS).
+// Hướng dẫn bằng chữ, không dùng beforeinstallprompt (không có trên Safari iOS).
 const noop = () => () => {};
 function isStandalone() {
   return (

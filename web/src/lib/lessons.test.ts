@@ -188,7 +188,7 @@ test('parseLessonNumber nhận số bài hợp lệ', () => {
 });
 
 test('parseLessonNumber từ chối mọi tham số không phải số bài 1..25', () => {
-  // SPEC-12 §7: `so` không phải số thì notFound(), KHÔNG crash
+  // `so` không phải số thì notFound(), KHÔNG crash
   for (const raw of ['tra-cuu', 'abc', '', ' ', '0', '26', '01', '1.5', '1e1', '-1', '+1', '١']) {
     assert.equal(parseLessonNumber(raw), null, `phải từ chối: "${raw}"`);
   }

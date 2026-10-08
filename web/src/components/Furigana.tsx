@@ -11,7 +11,7 @@ interface FuriganaProps {
 
 /**
  * Furigana bằng thẻ <ruby>/<rt> gốc. Mỗi cụm giữa hai dấu cách của dữ liệu là một khối
- * không ngắt dòng; khoảng cách giữa cụm thay cho dấu cách (spec v3 §2.3).
+ * không ngắt dòng; khoảng cách giữa cụm thay cho dấu cách.
  */
 export function Furigana({ text, className = '', zoomable = true }: FuriganaProps) {
   const words = groupFuriganaWords(text);

@@ -74,7 +74,7 @@ test('normalizeJapaneseInput: bỏ dấu câu ở cả hai vế', () => {
 
 test('toTypedKana chuyển romaji khi gõ, giữ phụ âm chưa đủ cặp', () => {
   // Ca hồi quy: ô nhập controlled từng dùng wanakana.bind() nên state đọng ở "h"
-  // trong khi DOM hiện "は" — bài gõ đúng vẫn bị chấm sai (SPEC-04 §B.3).
+  // trong khi DOM hiện "は" — bài gõ đúng vẫn bị chấm sai.
   assert.equal(toTypedKana('h'), 'h');
   assert.equal(toTypedKana('ha'), 'は');
   assert.equal(toTypedKana('wo'), 'を');

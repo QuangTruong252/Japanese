@@ -37,7 +37,7 @@ const MAX_PER_GROUP: Record<SearchKind, number> = {
 };
 
 /**
- * Chuẩn hóa chuỗi tìm kiếm (SPEC-13 §2.2):
+ * Chuẩn hóa chuỗi tìm kiếm:
  * 1. Chữ thường, gộp khoảng trắng
  * 2. Bỏ dấu tiếng Việt NFD
  * 3. Bắt buộc thay đ/Đ thành d (ca kiểm thử: dong tu -> động từ, do an -> đồ ăn)
@@ -63,7 +63,7 @@ export function getCachedSearchIndex(): SearchEntry[] | null {
 }
 
 /**
- * Danh sách điểm đến tính năng tĩnh cho hộp tìm kiếm (SPEC-17 §2).
+ * Danh sách điểm đến tính năng tĩnh cho hộp tìm kiếm.
  * Cung cấp đường vào nhanh cho các phân hệ của app khi người dùng gõ tên hoặc alias.
  */
 export function getFeatureEntries(): SearchEntry[] {
@@ -204,7 +204,7 @@ export async function buildSearchIndex(): Promise<SearchEntry[]> {
 
   const entries: SearchEntry[] = [];
 
-  // 0. Nạp danh mục tính năng tĩnh (SPEC-17 §2)
+  // 0. Nạp danh mục tính năng tĩnh
   entries.push(...getFeatureEntries());
 
   // 1. Nạp 25 bài học và từ vựng
@@ -386,7 +386,7 @@ export async function buildSearchIndex(): Promise<SearchEntry[]> {
 }
 
 /**
- * Thực thi tìm kiếm trên tập chỉ mục (SPEC-13 §2.3):
+ * Thực thi tìm kiếm trên tập chỉ mục:
  * 1. Khớp cả bản chuẩn hóa và bản đã đổi sang kana bằng wanakana
  * 2. Xếp hạng 3 mức: chính xác > đầu chuỗi > chứa trong chuỗi
  * 3. Phân nhóm theo thứ tự cố định, tối đa 5 mục/nhóm, tối đa 20 mục tổng cộng
@@ -430,7 +430,7 @@ export function executeSearch(
       }
 
       // Tier 3: Khớp chứa trong chuỗi
-      // Đối với nhóm tính năng, bỏ qua substring matching khi query < 2 ký tự để tránh chiếm chỗ học liệu (SPEC-17)
+      // Đối với nhóm tính năng, bỏ qua substring matching khi query < 2 ký tự để tránh chiếm chỗ học liệu
       else if (
         !(entry.kind === 'feature' && trimmed.length < 2) &&
         ((qNorm && key.includes(qNorm)) ||

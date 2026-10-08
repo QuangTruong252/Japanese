@@ -12,7 +12,7 @@ import type { ExerciseType, PracticeConfig, QuestionItem, ReviewItem } from '@/t
 
 /**
  * Phiên ôn không cho người học chọn dạng bài: lấy hết. `filterExercises` tự loại `matching`
- * ở `mode: 'due'` vì một lượt ghép cặp gom nhiều mục tiêu khác hạn ôn (SPEC-01 §4.2).
+ * ở `mode: 'due'` vì một lượt ghép cặp gom nhiều mục tiêu khác hạn ôn.
  */
 const ALL_EXERCISE_TYPES: ExerciseType[] = ['mc', 'matching', 'cloze', 'reorder', 'listening'];
 
@@ -20,7 +20,7 @@ export interface DueQueue {
   loading: boolean;
   /** Mốc "bây giờ" dùng chung cho mọi phép so hạn ôn của trang. */
   now: Date;
-  /** Mục đến hạn của lô này, quá hạn lâu nhất xếp trước (SPEC-05 §2.1a). */
+  /** Mục đến hạn của lô này, quá hạn lâu nhất xếp trước. */
   dueItems: ReviewItem[];
   /** Mục đến hạn còn lại sau lô này — ôn ở lô sau. */
   remainingDue: number;
@@ -116,7 +116,7 @@ export function useDueQueue(): DueQueue {
     () => ({
       mode: 'due',
       lessons: learnedLessons,
-      // Spec §2.1 viết "số bài lớn nhất trong các mục đang đến hạn". Lấy đúng chữ đó thì câu
+      // Nếu chỉ lấy "số bài lớn nhất trong các mục đang đến hạn" thì câu
       // của các mục MỚI thuộc bài cao hơn sẽ bị bước 2 của filterExercises loại sạch
       // (auxiliaryLessons > maxLearnedLesson). Dùng bài lớn nhất ĐÃ vào lịch ôn — mọi mục
       // trong phiên đều thuộc các bài người học đã gặp.

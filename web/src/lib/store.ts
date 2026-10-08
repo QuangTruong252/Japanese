@@ -23,7 +23,7 @@ export interface UIState {
   setLoopB: (time: number | null) => void;
   setShowTranscript: (show: boolean) => void;
 
-  // Search dialog state (SPEC-13)
+  // Trạng thái hộp thoại tìm kiếm
   isSearchOpen: boolean;
   openSearch: () => void;
   closeSearch: () => void;

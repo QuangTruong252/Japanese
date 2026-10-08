@@ -201,7 +201,7 @@ export default async function LessonDetailPage({
                   <Furigana text={formatOptionalBrackets(point.title.vi)} />
                 </h3>
 
-                {/* Khối cấu trúc mẫu câu Washi */}
+                {/* Khối cấu trúc mẫu câu */}
                 <div className="grammar-pattern-block rounded-lg bg-muted p-4">
                   <div className="jp jp-example font-medium text-foreground leading-loose">
                     <Furigana text={formatOptionalBrackets(point.pattern.vi)} />

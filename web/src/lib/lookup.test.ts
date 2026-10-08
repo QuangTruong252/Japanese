@@ -66,7 +66,7 @@ test('getAllReferenceDocs & getReferenceDocBySlug trả về đủ 10 bảng tha
   assert.ok(demonstratives);
   assert.equal(demonstratives.title.vi, 'Đại từ chỉ thị');
 
-  // Kiểm tra bảo toàn 8 ô header rỗng có chủ đích (SPEC-12 §3.5)
+  // Kiểm tra bảo toàn 8 ô header rỗng có chủ đích
   const firstTable = demonstratives.sections[0]?.tables[0];
   assert.ok(firstTable);
   const emptyHeader = firstTable.headers[0];
@@ -161,7 +161,7 @@ test('mọi ví dụ Kanji đều đã có nghĩa tiếng Việt', () => {
   assert.deepEqual(untranslated, []);
 });
 
-test('các động từ quan trọng có nghĩa tiếng Việt chuẩn xác (feedback #1)', () => {
+test('các động từ quan trọng có nghĩa tiếng Việt chuẩn xác', () => {
   const all = getAllVerbs();
 
   // 泳ぎます="bơi"

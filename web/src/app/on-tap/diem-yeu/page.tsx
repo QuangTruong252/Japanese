@@ -41,7 +41,7 @@ export default function WeakPointsPage() {
   const items = useLiveQuery(async () => {
     const types = filter === 'all' ? TARGET_TYPES : [filter];
     // Index tổ hợp [targetType+incorrectCount] có sẵn trong schema: chặn "từ 1 lần sai trở
-    // lên" ngay ở tầng index thay vì duyệt cả bảng rồi lọc trong JS (SPEC-05 §2).
+    // lên" ngay ở tầng index thay vì duyệt cả bảng rồi lọc trong JS.
     const lists = await Promise.all(
       types.map((type) =>
         db.reviewItems

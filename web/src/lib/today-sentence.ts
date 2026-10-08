@@ -5,7 +5,7 @@ export interface TodaySentenceItem {
 }
 
 /**
- * Định dạng chuỗi YYYY-MM-DD theo giờ địa phương (SPEC-18 §3, "cố định trong ngày").
+ * Định dạng chuỗi YYYY-MM-DD theo giờ địa phương ("cố định trong ngày").
  */
 export function getLocalDateKey(date: Date = new Date()): string {
   const year = date.getFullYear();
@@ -26,7 +26,7 @@ export function hashString(str: string): number {
 }
 
 /**
- * Chọn câu ví dụ ngữ pháp cố định trong ngày cho bài học đang học (SPEC-18 v2).
+ * Chọn câu ví dụ ngữ pháp cố định trong ngày cho bài học đang học.
  * - Cùng ngày + cùng bài -> luôn ra cùng một câu (idempotent / deterministic).
  * - Danh sách rỗng, null hoặc undefined -> trả về null để ẩn bong bóng thoại.
  * - 1 câu -> luôn trả về câu duy nhất đó.

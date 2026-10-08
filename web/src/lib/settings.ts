@@ -13,9 +13,9 @@ export interface AppSettings {
   theme: 'light' | 'dark' | 'system';
   soundVolume: number;
   dailyNewLimit: number;
-  /** Số mục tối đa của một phiên ôn (SPEC-05 §2.1a). */
+  /** Số mục tối đa của một phiên ôn. */
   reviewBatchSize: number;
-  /** "Đã học đến bài N" do người học khai báo; 0 = chưa khai báo (SPEC-05 §2.1a). */
+  /** "Đã học đến bài N" do người học khai báo; 0 = chưa khai báo. */
   learnedThroughLesson: number;
   /** Cấu hình mặc định/lưu tạm thời của màn Luyện tập. */
   practicePreset: PracticePreset;
@@ -152,7 +152,7 @@ export const isDefaultPracticePreset = (preset: PracticePreset): boolean => {
 };
 
 /**
- * Đọc practicePreset đã được lưu thật sự trong localStorage (SPEC-19 §2).
+ * Đọc practicePreset đã được lưu thật sự trong localStorage.
  * Trả về null nếu người học chưa từng tùy chỉnh hoặc localStorage rỗng,
  * hoặc preset trùng giá trị mặc định DEFAULT_SETTINGS.practicePreset (chưa có preset hữu ích).
  */

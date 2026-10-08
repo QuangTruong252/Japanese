@@ -9,7 +9,7 @@ test('isNavActive: trang chủ "/" chỉ active khi đúng pathname "/"', () => 
   assert.equal(isNavActive('/', '/ca-nhan'), false);
 });
 
-test('isNavActive: "/hoc/tra-cuu" active tại hub và toàn bộ route con (SPEC-16 §3)', () => {
+test('isNavActive: "/hoc/tra-cuu" active tại hub và toàn bộ route con', () => {
   assert.equal(isNavActive('/hoc/tra-cuu', '/hoc/tra-cuu'), true);
   assert.equal(isNavActive('/hoc/tra-cuu', '/hoc/tra-cuu/kanji'), true);
   assert.equal(isNavActive('/hoc/tra-cuu', '/hoc/tra-cuu/dong-tu'), true);
@@ -19,7 +19,7 @@ test('isNavActive: "/hoc/tra-cuu" active tại hub và toàn bộ route con (SPE
   assert.equal(isNavActive('/hoc/tra-cuu', '/hoc/1'), false);
 });
 
-test('isNavActive: "/hoc" active tại danh sách bài và chi tiết bài, KHÔNG active tại tra cứu (SPEC-16 §3)', () => {
+test('isNavActive: "/hoc" active tại danh sách bài và chi tiết bài, KHÔNG active tại tra cứu', () => {
   assert.equal(isNavActive('/hoc', '/hoc'), true);
   assert.equal(isNavActive('/hoc', '/hoc/1'), true);
   assert.equal(isNavActive('/hoc', '/hoc/25'), true);
@@ -40,7 +40,7 @@ test('isNavActive: "/luyen-tap" và "/on-tap" active đúng tiền tố', () => 
   assert.equal(isNavActive('/on-tap', '/hoc'), false);
 });
 
-test('shouldHideAppChrome: ẩn chrome (header/dock/sidebar) trong các phiên toàn màn hình (SPEC-16 B16.3)', () => {
+test('shouldHideAppChrome: ẩn chrome (header/dock/sidebar) trong các phiên toàn màn hình', () => {
   // Ca đúng (phải ẩn):
   assert.equal(shouldHideAppChrome('/luyen-tap/phien'), true);
   assert.equal(shouldHideAppChrome('/luyen-tap/phien/'), true);
@@ -66,7 +66,7 @@ test('shouldHideAppChrome: ẩn chrome (header/dock/sidebar) trong các phiên t
   assert.equal(shouldHideAppChrome('/cai-dat'), false);
 });
 
-test('formatNavBadgeCount: định dạng số badge điều hướng (SPEC-16 Lỗi #3)', () => {
+test('formatNavBadgeCount: định dạng số badge điều hướng', () => {
   // Ca không hiển thị (trả về null):
   assert.equal(formatNavBadgeCount(0), null);
   assert.equal(formatNavBadgeCount(-1), null);

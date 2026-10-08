@@ -24,7 +24,7 @@ export const filterExercises = (
   pool = pool.filter((q) => config.selectedTypes.includes(q.type));
 
   // 3b. Ở chế độ ôn theo lịch, loại dạng ghép cặp: một lượt matching gom 4-5 mục tiêu có
-  // hạn ôn khác nhau vào cùng một lần chấm (SPEC-01 §4.2).
+  // hạn ôn khác nhau vào cùng một lần chấm.
   if (config.mode === 'due') {
     pool = pool.filter((q) => q.type !== 'matching');
   }

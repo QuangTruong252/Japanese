@@ -179,7 +179,7 @@ export default function AudioSettingsPage() {
   // Đọc danh sách audioFiles từ Dexie
   const audioFiles = useLiveQuery(() => db.audioFiles.toArray(), []);
 
-  // Ước tính dung lượng bộ nhớ trống từ trình duyệt (SPEC-09 §2)
+  // Ước tính dung lượng bộ nhớ trống từ trình duyệt
   useEffect(() => {
     if (typeof window !== 'undefined' && navigator.storage?.estimate) {
       navigator.storage.estimate().then((est) => {

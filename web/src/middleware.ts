@@ -33,7 +33,7 @@ export async function middleware(request: NextRequest) {
       },
     });
 
-    // Làm mới session im lặng theo SPEC-08 §8
+    // Làm mới session im lặng
     await supabase.auth.getUser();
   } catch {
     // Không chặn request nếu Supabase tạm thời không kết nối được
