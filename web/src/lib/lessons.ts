@@ -12,6 +12,10 @@ export interface LessonSummary {
   grammarCount: number;
   /** Cảnh của bài (SPEC-21), dùng cho sân khấu Bảng tin và lộ trình /hoc. */
   cover?: IllustrationAsset;
+  /** Ảnh nhỏ cho hàng "Từ vựng" ở Bảng tin v3: minh họa của từ đầu tiên có ảnh. */
+  vocabThumb?: IllustrationAsset;
+  /** Ảnh nhỏ cho hàng "Ngữ pháp": minh họa của mẫu đầu tiên có ảnh. */
+  grammarThumb?: IllustrationAsset;
 }
 
 interface VocabFile {
@@ -187,6 +191,8 @@ export async function loadLessonSummary(lessonNum: number): Promise<LessonSummar
     vocabCount: vocab.length,
     grammarCount: lesson.grammar.length,
     cover: lesson.cover,
+    vocabThumb: vocab.find((w) => w.illustration)?.illustration,
+    grammarThumb: lesson.grammar.find((g) => g.illustration)?.illustration,
   };
 }
 

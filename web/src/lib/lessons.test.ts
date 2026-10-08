@@ -251,5 +251,15 @@ test('loadLessonData bài 7 trả về động từ ở thể từ điển kèm 
   assert.equal(kiru.verbGroup, 1);
 });
 
+test('loadLessonSummary kèm ảnh nhỏ thật cho phần Từ vựng/Ngữ pháp (Home v3)', async () => {
+  clearLessonCache();
+  const s = await loadLessonSummary(5);
+  assert.ok(s.vocabThumb, 'Bài 5 có từ vựng minh họa');
+  assert.match(s.vocabThumb.src, /^\/assets\/illustrations\/.+\.webp$/);
+  const { lesson, vocab } = await loadLessonData(5);
+  assert.deepEqual(s.vocabThumb, vocab.find((w) => w.illustration)?.illustration);
+  assert.deepEqual(s.grammarThumb, lesson.grammar.find((g) => g.illustration)?.illustration);
+});
+
 
 
