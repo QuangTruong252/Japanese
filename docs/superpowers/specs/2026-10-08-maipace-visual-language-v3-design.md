@@ -78,26 +78,49 @@ Màn hình ít chữ nhất có thể; nội dung học (tiếng Nhật + nghĩa
 
 ## 3. Thành phần
 
-Đặt trong file mới (vd. `web/src/components/paper/`), **song song** `PaperStage.tsx`; 7 màn đang
-dùng `Stage/PaperSlip/LinkRow` giữ nguyên cho đến đợt chuyển của từng màn.
+Đã có ở `web/src/components/PaperKit.tsx` (CSS `.soft-scene`, `.paper-cloud`, `.torn-card*` trong
+`globals.css`), **song song** `PaperStage.tsx`; 7 màn đang dùng `Stage/PaperSlip/LinkRow` giữ nguyên cho
+đến đợt chuyển của từng màn.
 
 | Thành phần | Mô tả | Tham chiếu mockup |
 |---|---|---|
 | `SoftScene` | Bọc `Illustration`; giữ **khung chữ nhật**, mờ một dải hẹp ở mỗi mép bằng 2 `linear-gradient` mask giao nhau (`mask-composite: intersect`). Mặc định: trái/phải ~1.75rem, trên ~1.25rem, dưới ~2.5rem (biến CSS điều chỉnh được). Ảnh lỗi → chỉ còn nội dung con. | `.soft-scene` trong `lab-v3.css` |
 | `PaperCloud` | Lớp nền màu giấy mờ viền phía sau khối chữ đặt trên tranh; lõi gần đục dưới chữ, chỉ mép tan. Thân ≥ 4.5:1, tiêu đề ≥ 3:1, sáng và tối. | `.paper-cloud` |
-| `TornCard` | Thẻ giấy washi mép xé (SVG mask), chứa hành động chính của màn. | thẻ "Hôm nay" C2 |
+| `TornCard` | Thẻ giấy washi mép xé (`clip-path`, bóng ở lớp bọc), viền mảnh + quầng accent góc trên phải; chứa hành động chính của màn. Nhãn nhỏ trong thẻ dạng serif đỏ `/ Hôm nay /`. | thẻ "Hôm nay" C1 |
 | `SectionHeader` | Tiêu đề sans + nút viên thuốc "Xem tất cả ›" (tùy chọn). | |
-| `ListRow` | Dòng giấy: icon, tiêu đề, mô tả, chevron; cả dòng là link. Kế thừa hành vi `LinkRow`. | |
-| `PartRow` | Hàng ngang: số thứ tự, tiêu đề, mô tả, ảnh nhỏ thật. | |
+| `ListRow` | Dòng giấy: ô icon 36px (icon 24px), tiêu đề, mô tả, chevron; cả dòng là link. Kế thừa hành vi `LinkRow`. | |
+| `PartRow` | Hàng ngang: ô icon 40px (`FeatureIcon` 24px), tiêu đề + số liệu **cùng hàng** (số liệu `text-sm` mờ `muted-foreground/80`), ảnh nhỏ 48px trong khung `bg-secondary`. Không có số thứ tự. | |
 | Nút chính | `Button` hiện có, bo `rounded-xl`; không tạo button mới. | |
-| Tra cứu | Dùng `SearchTrigger` hiện có + nút "Bảng tra" → `/hoc/tra-cuu`. | |
+| Nút đọc | `SpeakButton` nhận `className`: tròn 44px, nền `secondary`, viền, icon `primary`. | |
+| Tra cứu | `SearchTrigger variant="bar"` với nút "Bảng tra" (icon bảng) **nằm trong** ô tìm, mép phải → `/hoc/tra-cuu`. | |
+
+### 3.1 Icon (`web/src/components/FeatureIcon.tsx`)
+- `<FeatureIcon name="…" className="size-6 text-primary" />`: path SVG đổ `currentColor`; màu theo class chữ,
+  cỡ theo `size-*`. Dùng từ 24px. Có `title` khi icon mang nghĩa một mình.
+- **Hai bộ, không dùng lẫn**:
+  - Icon thẻ (thành phần học): `vocab`, `grammar`, `listening`, `reading`, `kanji`, `kana`, `verbs`, `lesson`,
+    `review`, `practice`, `lookup`, `weak-points`, `home`.
+  - Icon thanh điều hướng: `nav-home`, `nav-lesson`, `nav-practice`, `nav-review`, `nav-lookup` — cùng khung,
+    nhìn thẳng, 2–3 nét, không nét kép/chéo.
+- Chuẩn nét: đo trên khung 240, Lucide 2px = 20; icon MaiPace 21–24. Icon đặt cạnh Lucide phải cùng độ đậm và
+  cùng cỡ thị giác. Icon chức năng chung (đồng hồ, chevron, loa, tìm kiếm trên thanh đầu…) vẫn dùng Lucide.
+- Nguồn, prompt và cách build lại: `artwork/icons/README.md` (`node build.js`). Không sửa tay path.
+- Thêm icon: vẽ atlas mới cùng quy tắc (lưới 24px/nét 2px, khe ≥ 1,5× nét, 3–4 nét), build, so cạnh Lucide
+  ở 24px trong ô accent sáng/tối trước khi dùng.
+
+### 3.2 Ảnh nhỏ cho hàng phần bài
+- Ưu tiên ảnh thật của bài (`LessonSummary.vocabThumb`/`grammarThumb`). Ảnh đầu tiên là hình người đứng hẹp
+  thì chọn ảnh khác qua bảng `VOCAB_THUMB` trong `lib/lessons.ts`.
+- Không có ảnh phù hợp → ảnh chung `ui/sections/{vocabulary,grammar,listening}-v1.webp`
+  (batch `artwork/illustrations/batches/home-sections.json`).
 
 ## 4. Home (màn áp dụng đầu tiên)
 
 Thứ tự từ trên xuống (C2; logo/điều hướng do `AppNav` lo): `SoftScene` dải trên (tranh bìa bài đang học
-`activeSummary.cover`) → lời chào một dòng (§2.5) trong `PaperCloud` (phần dưới dải tranh) → `SectionHeader`
-"Hôm nay" → `TornCard` (meta bài, câu `pickTodaySentence` + `SpeakButton`, nghĩa, nút chính) →
-các mục phụ (`ListRow`/`PartRow`) → tra cứu. Thẻ không lặp nhãn "Hôm nay".
+`activeSummary.cover`) → lời chào một dòng (§2.5) trong `PaperCloud` (phần dưới dải tranh) → `TornCard`
+(nhãn `/ Hôm nay /`, meta bài có icon sách, câu `pickTodaySentence` + `SpeakButton`, nghĩa in nghiêng,
+nút chính) → các dòng phụ (`ListRow`) → `SectionHeader` "Các phần trong bài" + "Xem tất cả" (`/hoc/N`) với
+3 `PartRow` → tra cứu. (Đã bỏ `SectionHeader` "Hôm nay" phía trên thẻ theo góp ý người dùng 08/10.)
 
 ### 4.1 Đổi luật nút chính (quyết định của người dùng)
 Nút đỏ chính **luôn là hành động bài học**:
@@ -132,6 +155,8 @@ phần "Hội thoại".
 - Browser (dev server riêng port, kiểm `<title>` là MaiPace): 360/390/1280 px · sáng/tối ·
   4 trạng thái (seed IndexedDB) · khung chữ dài (tên bài dài, furigana 1.5×) · bàn phím/focus ·
   reduced motion. Đặt ảnh chụp cạnh `design-lab/home-v3.html` (C2) để so hierarchy.
+- **Tự QA trước khi đưa người dùng review** (bắt buộc): chụp app và mockup cạnh nhau ở 390 px sáng + tối,
+  liệt kê mọi điểm lệch (nhãn, icon, viền, hình ô, ảnh nhỏ, đậm/nghiêng chữ), sửa hoặc ghi lý do giữ.
 - Đo tương phản chữ trên `PaperCloud` ở cả hai theme.
 
 ## 7. Triển khai
