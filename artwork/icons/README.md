@@ -3,12 +3,13 @@
 Nguồn của `web/src/components/FeatureIcon.tsx` (sinh tự động, không sửa tay path).
 
 - `atlas-v2.png` (đang dùng): 13 icon theo chuẩn lưới 24px/nét 2px, khe ≥ 1,5× nét, tối đa 3–4 nét/icon; Codex built-in image_gen (gpt-6-luna, effort low), 2026-10-08. Prompt ở mục Prompt v2 bên dưới.
+- `atlas-nav-v1.png`: 5 icon riêng cho thanh điều hướng (`nav-home`, `nav-lesson`, `nav-practice`, `nav-review`, `nav-lookup`): cùng khung, nhìn thẳng, 2–3 nét, không nét kép/chéo. Canh cỡ theo keyline Lucide (vuông 200/240, tròn 222/240). Không dùng lẫn icon thẻ trên thanh điều hướng.
 - `atlas-v1.png` (bỏ): nhiều chi tiết, bết khi làm nét đậm bằng Lucide.
 - `build.js`: tách icon theo dải trắng (không giả định lưới đều) → phóng từng icon vừa 222/240 → giãn nét tới độ dày đích `TARGET_STROKE` (mặc định 21/240; Lucide 2px đo ra 20) → potrace → svgo → ghi `FeatureIcon.tsx` và `out/*.svg|png`.
 - Thứ tự đọc: vocab, grammar, listening, reading, kanji, kana, verbs, lesson, review, practice, lookup, weak-points, home.
 
-Build lại: `cd artwork/icons && npm install && node build.js atlas-v2.png`.
-Thêm icon: tạo atlas mới cùng prompt (thêm ô), cập nhật `NAMES` trong `build.js` theo thứ tự đọc.
+Build lại: `cd artwork/icons && npm install && node build.js` (danh sách atlas trong `ATLASES`).
+Thêm icon: tạo atlas mới cùng prompt (thêm ô), thêm vào `ATLASES` trong `build.js` (tên theo thứ tự đọc).
 
 Dùng: `<FeatureIcon name="kanji" className="size-6 text-primary" />` — màu theo `currentColor`, nên dùng từ 24 px.
 
@@ -34,4 +35,10 @@ Avoid: Any extra icons or objects; any written words other than the exact single
 
 ```text
 Landscape icon atlas, 4 columns x 4 rows. Exactly thirteen simple clean black hand-inked Lucide-like Japanese learning icons in cells 1 through 13: overlapping flashcards with one line; two interlocking puzzle pieces; headphones with one sound arc; open book with one line per page; correctly written bold kanji 字 in rounded square; correctly written bold hiragana あ in matching rounded square; one curved up-forward arrow; upright closed book with bookmark notch; two curved refresh arrows with empty center; diagonal pencil with check; magnifying glass with 2x2 grid; target with exactly two rings and center dot plus one arrow; simple house roof body door. Cells 14–16 entirely empty. Centered icons, 15% clear gutters. Solid pure black strokes on pure white, uniform rounded 2px stroke on 24px basis, minimum 1.5x stroke gaps, no gray, shading, texture, color, shadows, gridlines, labels or decoration. Max 3–4 simple marks each; ample negative space and open holes. Reference attached v1 only for subject identity and hand-inked character. Crisp, consistent.
+```
+
+## Prompt nav v1
+
+```text
+Generate one landscape image containing exactly five separate mobile bottom-navigation icons in a single horizontal row, equal spacing, wide empty gutters of at least 40% of one icon width between icons. No labels, no grid lines, no extra marks. Pure flat solid black lines on pure flat white background. No gray, shading, texture, color, shadows, or filled areas. Drawn as if each icon sits on a 24x24 grid with a 2px stroke (stroke = 1/12 of icon height), identical everywhere, rounded caps and joins, very slightly hand-inked but clean. Same optical size and same visual weight; every icon fits the same square keyline; front/flat view only; no diagonal compositions; no perspective; no double lines (no book spine thickness, no layered outlines). Exactly 2–3 strokes per icon. Gaps between lines at least 1.5x the stroke width. Left to right: 1) home: simple house, pitched roof and body as one outline, small door (like Lucide "house"); 2) lesson: open book seen straight from the front, exactly two simple page shapes and one center fold line, nothing else; show only the two page outlines and center fold, absolutely no rear edges, outer backing border, spine thickness, shadow contour, or secondary/layered outlines (like Lucide "book-open"); 3) practice: clipboard (rounded rectangle with a small clip tab at top) with one check mark inside; 4) review: two curved arrows forming a circle (refresh), empty center (like Lucide "refresh-cw"); 5) lookup: a single magnifying glass, round lens and short handle to bottom-right, empty lens (like Lucide "search"). Use the attached artwork/icons/atlas-v2.png only as a reference for its hand-inked line character and stroke weight; do not reproduce its icons.
 ```

@@ -52,11 +52,11 @@ const featureIcon = (name: FeatureIconName) =>
 // 5 đích điều hướng chính theo SPEC-16 & DESIGN.md §Navigation:
 // Bảng tin · Học bài · Luyện tập · Ôn tập · Tra cứu
 const NAV_ITEMS: NavItem[] = [
-  { href: '/', label: 'Bảng tin', icon: featureIcon('home') },
-  { href: '/hoc', label: 'Học bài', icon: featureIcon('lesson') },
-  { href: '/luyen-tap', label: 'Luyện tập', icon: featureIcon('practice') },
-  { href: '/on-tap', label: 'Ôn tập', icon: featureIcon('review'), isDueTarget: true },
-  { href: '/hoc/tra-cuu', label: 'Tra cứu', icon: featureIcon('lookup') },
+  { href: '/', label: 'Bảng tin', icon: featureIcon('nav-home') },
+  { href: '/hoc', label: 'Học bài', icon: featureIcon('nav-lesson') },
+  { href: '/luyen-tap', label: 'Luyện tập', icon: featureIcon('nav-practice') },
+  { href: '/on-tap', label: 'Ôn tập', icon: featureIcon('nav-review'), isDueTarget: true },
+  { href: '/hoc/tra-cuu', label: 'Tra cứu', icon: featureIcon('nav-lookup') },
 ];
 
 // Nút icon trên thanh đầu mobile: vùng chạm 44px, không viền để nhóm bốn nút không nặng

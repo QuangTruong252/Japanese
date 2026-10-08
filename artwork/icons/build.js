@@ -1,13 +1,23 @@
-// Atlas PNG (4x3, black ink on white) -> traced, optimized SVG paths -> web/src/components/FeatureIcon.tsx
-// Usage (from artwork/icons): npm install && node build.js atlas-v1.png
+// Atlas PNG (black ink on white) -> traced, optimized SVG paths -> web/src/components/FeatureIcon.tsx
+// Usage (from artwork/icons): npm install && node build.js
 const fs = require('fs');
 const path = require('path');
 const potrace = require('potrace');
 const { optimize } = require('svgo');
 const sharp = require('sharp');
 
-const NAMES = ['vocab', 'grammar', 'listening', 'reading', 'kanji', 'kana', 'verbs', 'lesson', 'review', 'practice', 'lookup', 'weak-points', 'home'];
+// Mỗi atlas: tên icon theo thứ tự đọc. `keyline` (bộ điều hướng): canh cỡ như Lucide để hình vuông
+// và hình tròn trông bằng nhau — vuông/chữ nhật cạnh dài 200/240, tròn 222/240.
+const ATLASES = [
+  { file: 'atlas-v2.png', names: ['vocab', 'grammar', 'listening', 'reading', 'kanji', 'kana', 'verbs', 'lesson', 'review', 'practice', 'lookup', 'weak-points', 'home'] },
+  {
+    file: 'atlas-nav-v1.png',
+    names: ['nav-home', 'nav-lesson', 'nav-practice', 'nav-review', 'nav-lookup'],
+    keyline: { 'nav-review': 'circle', 'nav-lookup': 'circle' },
+  },
+];
 const BOX = 240, INNER = 222; // ~92% of the viewBox, same optical size as Lucide (20/24 + round caps)
+const KEYLINE = { square: 200, circle: 222 };
 // Nét gốc mảnh và không đều giữa các icon. Làm dày từng icon (blur + ngưỡng cao) tới khi nét đo được
 // >= TARGET_STROKE/240. Lucide (2px ở 24px) đo ra 20; để 21 bù cảm giác mảnh của nét vẽ tay.
 const TARGET_STROKE = Number(process.env.TARGET_STROKE ?? 21), BOLD_THRESHOLD = 250; // ngưỡng nhị phân hóa
@@ -58,11 +68,8 @@ const trace = (buf) =>
     potrace.trace(buf, { threshold: 128, turdSize: 8, optTolerance: 0.4, color: 'currentColor', background: 'transparent' }, (e, svg) => (e ? rej(e) : res(svg))),
   );
 
-(async () => {
-  const atlas = process.argv[2];
+async function processAtlas({ file: atlas, names: NAMES, keyline }, paths) {
   const { data, info } = await sharp(atlas).greyscale().raw().toBuffer({ resolveWithObject: true });
-  fs.mkdirSync(OUT_DIR, { recursive: true });
-  const paths = {};
   const boldInfo = {};
   // Pass 1: tìm icon theo dải trắng (atlas không chắc chia lưới đều): tách hàng bằng các hàng pixel trống,
   // rồi tách cột trong từng hàng; khe < GAP px coi là khe trong cùng một icon.
@@ -91,7 +98,8 @@ const trace = (buf) =>
   // được san bớt vì bước làm dày cộng thêm một lượng cố định sau khi phóng.
   for (let i = 0; i < NAMES.length; i++) {
     const { x0, y0, w, h } = boxes[i];
-    const scale = INNER / Math.max(w, h);
+    const fit = keyline ? KEYLINE[keyline[NAMES[i]] ?? 'square'] : INNER;
+    const scale = fit / Math.max(w, h);
     const sw = Math.round(w * scale), sh = Math.round(h * scale);
     const left = Math.floor((BOX - sw) / 2), top = Math.floor((BOX - sh) / 2);
     const png = await sharp(atlas)
@@ -115,8 +123,13 @@ const trace = (buf) =>
     paths[NAMES[i]] = [...svg.matchAll(/ d="([^"]+)"/g)].map((mm) => mm[1]).join('');
     console.log(NAMES[i], `${sw}x${sh}`, `dilate ${boldInfo[NAMES[i]]}px`, `stroke ${await strokeOf(png)}`, `${paths[NAMES[i]].length} chars`);
   }
+}
 
-  const entries = NAMES.map((n) => `  '${n}': '${paths[n]}',`).join('\n');
+(async () => {
+  fs.mkdirSync(OUT_DIR, { recursive: true });
+  const paths = {};
+  for (const atlas of ATLASES) await processAtlas(atlas, paths);
+  const entries = Object.entries(paths).map(([n, d]) => `  '${n}': '${d}',`).join('\n');
   fs.writeFileSync(
     TSX,
     `import type { SVGProps } from 'react';
@@ -125,7 +138,8 @@ import { cn } from '@/lib/utils';
 /**
  * Bộ icon thành phần MaiPace (nét mực vẽ tay). Màu theo \`currentColor\`, cỡ theo class:
  * \`<FeatureIcon name="kanji" className="size-6 text-primary" />\`.
- * Sinh tự động từ design-lab/icons (atlas Codex image_gen → potrace → svgo); sửa ở đó rồi build lại, không sửa tay path.
+ * Tên \`nav-*\` là bộ riêng cho thanh điều hướng (cùng khung, cùng độ phức tạp); không dùng lẫn với icon thẻ.
+ * Sinh tự động từ artwork/icons (atlas Codex image_gen → potrace → svgo); sửa ở đó rồi build lại, không sửa tay path.
  */
 const PATHS = {
 ${entries}
