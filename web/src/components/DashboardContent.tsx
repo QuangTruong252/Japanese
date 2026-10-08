@@ -139,7 +139,7 @@ export function DashboardContent({
         asset={coverAsset}
         sizes="(min-width: 1024px) 1024px, 100vw"
         eager
-        imageClassName="h-48 object-center sm:h-64 lg:h-72"
+        imageClassName="h-48 object-center sm:h-64 sm:object-[center_30%] lg:h-72 lg:object-[center_20%]"
         className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full"
       />
       <PaperCloud className="-mt-7 w-fit">
