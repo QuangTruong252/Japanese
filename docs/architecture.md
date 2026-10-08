@@ -14,7 +14,7 @@
 | `artwork/` | Nguồn và pipeline ảnh minh họa, icon. |
 | `design/<màn>/` | Mockup đã duyệt, ảnh "as-built". |
 | `docs/` | `architecture.md`, `engineering.md`, `data/`, `workflow/`. |
-| `scripts/` | `setup.mjs` (thiết lập máy), script dữ liệu (`docs/data/README.md`), `ui-qa/` (seed, chụp, so màn hình). |
+| `scripts/` | `setup.mjs` (thiết lập máy), script dữ liệu (`docs/data/README.md`), `ui-qa/` (seed, chụp, so màn hình), `orca-wait.mjs` (chờ worker). |
 | `supabase/migrations/` | Schema đồng bộ. |
 
 ## Routes

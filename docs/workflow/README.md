@@ -72,7 +72,14 @@ node scripts/ui-qa/compare.mjs design/home/mockup-v3.png .ui-qa/home/normal-ligh
 Ghi chú theo công cụ, không phải luật vai trò.
 
 - **Điều phối nhiều agent:** Orca (`orca skills get orchestration` để xem hướng dẫn đúng phiên bản).
-  Worker chạy trong cùng checkout; brief truyền qua `.work/`.
+  Worker chạy trong cùng checkout; brief truyền qua `.work/`. Một vòng điển hình:
+  `orca orchestration run-create` → `worker-start --spec "<đọc .work/<id>/brief.md>" --worktree current
+  --agent <cli> --model <id> --effort <mức>` → `node scripts/orca-wait.mjs` (bỏ qua heartbeat) → tự
+  nghiệm thu → `check --ack <deliveryId>` → `worker-release --dispatch <id>`.
+  Luôn ghi rõ `--model` và `--effort` (không ghi thì có CLI chạy mức suy luận cao nhất, tốn hạn mức).
+  Terminal worker mà người dùng đã thao tác sẽ được giữ lại (`user_takeover`); để người dùng tự đóng.
+- **Nghiệm thu:** không tin báo cáo của worker; tự chạy lại các lệnh nghiệm thu và đọc diff. Refactor
+  chỉ đổi comment kiểm được bằng máy: so kết quả `transpileModule` (bỏ comment) của HEAD và bản mới.
 - **CLI chạy không tương tác:** đóng stdin (`< /dev/null`), nếu không một số CLI (vd. `codex exec`)
   sẽ treo chờ input. Chỉ dùng chế độ bỏ qua sandbox/approval khi người dùng đã cho phép.
 - **Tạo ảnh:** đính kèm ảnh tham chiếu bằng đường dẫn file; chép ảnh kết quả (đúng bytes) vào `.work/`.
