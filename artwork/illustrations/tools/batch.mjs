@@ -28,6 +28,7 @@ const sha256 = buf => createHash('sha256').update(buf).digest('hex');
 const GROUPS = {
   vocab: { kind: 'cutout', role: 'vocabulary-cutout' },
   'ui/states': { kind: 'cutout', role: 'state-cutout' },
+  'ui/sections': { kind: 'cutout', role: 'section-cutout' },
   scenes: { kind: 'opaque', role: 'scene', width: 800, height: 600, shape: 'Landscape 4:3' },
   grammar: { kind: 'opaque', role: 'grammar-scene', width: 800, height: 600, shape: 'Landscape 4:3' },
   'ui/banners': { kind: 'opaque', role: 'banner', width: 1200, height: 400, shape: 'Wide 3:1 banner' },

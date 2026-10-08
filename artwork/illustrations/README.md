@@ -211,3 +211,15 @@ Tổng **121 WebP mới, 5.336.054 bytes**, kho **228 WebP / 233 tham chiếu**.
 Tổng **113 WebP mới, 5.521.916 bytes**. Độ phủ từ vựng: Bài 11 15/61, Bài 12 35/51, Bài 13 20/31, Bài 14 26/45, Bài 15 12/22, cộng cover Bài 11–15.
 
 Bài 16–25 đang làm dở. Bài 19/20/22/24/25 đã link 55 tham chiếu (thiếu `moving-house` và reuse `thinking-v1`). Phần còn lại chờ hạn mức tạo ảnh của Codex reset (07/10/2026). Xem handoff SPEC-21.
+
+## Thumbnail phần bài học Home (2026-10-08)
+
+Ba cutout `ui/sections` được tạo bằng Codex image_gen, giữ alpha thật và xuất WebP 512 × 512:
+
+| Stem | Bản gốc PNG | Bản web |
+| --- | --- | --- |
+| `vocabulary-v1` | [PNG](ui/sections/vocabulary-v1.png) | [WebP](../../web/public/assets/illustrations/ui/sections/vocabulary-v1.webp), 32.376 bytes |
+| `grammar-v1` | [PNG](ui/sections/grammar-v1.png) | [WebP](../../web/public/assets/illustrations/ui/sections/grammar-v1.webp), 27.146 bytes |
+| `listening-v1` | [PNG](ui/sections/listening-v1.png) | [WebP](../../web/public/assets/illustrations/ui/sections/listening-v1.webp), 32.554 bytes |
+
+Manifest và prompt: [home-sections.json](batches/home-sections.json), [prompts](batches/home-sections.prompts.md). Review sheet: [PNG](reports/home-sections-sheet.png).

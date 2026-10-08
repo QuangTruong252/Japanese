@@ -1,0 +1,56 @@
+{
+  "createdAt": "2026-10-08T07:53:06.381Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/home-sections.json",
+  "prompt": "Create ONE square 1:1 standalone cutout illustration for a small 48px lesson-section thumbnail in a Japanese self-study app.\n\nSTYLE: match the attached paper-town style reference exactly: hand-painted watercolor/gouache, fine dark pencil outline, soft painted shapes, subtle paper grain only inside painted shapes; warm ivory/sand, sage/olive, charcoal, restrained brick red. Friendly, tactile everyday illustration, not photorealistic, not 3D, not flat geometric cartoon. Use the commuter-train finish reference for comparable polish, pigment texture, and edge detail.\nBACKGROUND: fully TRANSPARENT with real PNG alpha. No background color, paper rectangle, checkerboard, wash, floor shadow, shadow plate, or stray paint specks.\nABSOLUTELY NO text, letters, kana, kanji, numbers, readable writing, logos, labels, marks, or watermark anywhere. The open book pages must be completely blank.\nCOMPOSITION: exactly one compact, chunky, roughly square silhouette (subject content-box width/height ratio 0.8–1.25), centered and large enough to read at 48px, fully inside canvas with transparent breathing room. Keep details broad and simple; no tiny details.\nSUBJECT: one recognizable pair of over-ear headphones resting across a small open blank book. Headphone band is charcoal, ear cups are restrained brick red with simple charcoal cushions; book is warm ivory with a sage hint at the spine. Arrange the parts as one coherent compact silhouette, no extra objects.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/ui/sections/listening-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "section-cutout",
+  "suggestedAlt": {
+    "vi": "Tai nghe chụp tai màu than và đỏ gạch đặt trên cuốn sách đang mở."
+  },
+  "master": {
+    "path": "artwork/illustrations/ui/sections/listening-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "hasAlpha": true
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 95,
+      "top": 184,
+      "width": 1112,
+      "height": 894
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.374,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 32554,
+    "sha256": "353294cb5423dbe3fcd60af4f07f9fe074729ce591f12b54d7afa6f61c15e8dc",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 177189,
+      "partial": 83969,
+      "opaque": 986
+    }
+  }
+}

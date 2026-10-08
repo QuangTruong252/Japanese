@@ -1,0 +1,56 @@
+{
+  "createdAt": "2026-10-08T07:53:06.336Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/home-sections.json",
+  "prompt": "Create ONE square 1:1 standalone cutout illustration for a small 48px lesson-section thumbnail in a Japanese self-study app.\n\nSTYLE: match the attached paper-town style reference exactly: hand-painted watercolor/gouache, fine dark pencil outline, soft painted shapes, subtle paper grain only inside painted shapes; warm ivory/sand, sage/olive, charcoal, restrained brick red. Friendly, tactile everyday illustration, not photorealistic, not 3D, not flat geometric cartoon. Use the commuter-train finish reference for comparable polish, pigment texture, and edge detail.\nBACKGROUND: fully TRANSPARENT with real PNG alpha. No background color, paper rectangle, checkerboard, wash, floor shadow, shadow plate, or stray paint specks.\nABSOLUTELY NO text, letters, kana, kanji, numbers, logos, labels, marks, or watermark anywhere. Every card must be completely blank.\nCOMPOSITION: exactly one compact, chunky, roughly square silhouette (subject content-box width/height ratio 0.8–1.25), centered and large enough to read at 48px, fully inside canvas with transparent breathing room. Keep details broad and simple; no tiny lines.\nSUBJECT: a small fanned stack of exactly three blank warm-ivory paper flashcards, visibly offset so all three cards read clearly, with one short charcoal pencil resting diagonally across the stack. Use simple sage and restrained brick-red edge accents. No extra objects.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/ui/sections/vocabulary-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "section-cutout",
+  "suggestedAlt": {
+    "vi": "Ba tấm thẻ giấy trống xòe ra, có bút chì đặt ngang."
+  },
+  "master": {
+    "path": "artwork/illustrations/ui/sections/vocabulary-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "hasAlpha": true
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 41,
+      "top": 132,
+      "width": 1179,
+      "height": 972
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.353,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 32376,
+    "sha256": "71a50b31277d544f5ba1554b22a73029908ac6a8efd4fca0bb1957fb5ca5d793",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 159006,
+      "partial": 102329,
+      "opaque": 809
+    }
+  }
+}

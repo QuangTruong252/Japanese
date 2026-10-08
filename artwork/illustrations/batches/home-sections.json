@@ -1,0 +1,36 @@
+{
+  "name": "home-sections",
+  "description": "Ba thumbnail minh họa cho các phần bài học trên Home.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "group": "ui/sections",
+      "stem": "vocabulary-v1",
+      "subject": "a compact fanned stack of exactly three blank paper flashcards with a short pencil resting diagonally across them",
+      "source": "image_gen",
+      "generation": { "tool": "Codex built-in image_gen", "orchestrator": "gpt-6-luna (effort low)" },
+      "prompt": "Create ONE square 1:1 standalone cutout illustration for a small 48px lesson-section thumbnail in a Japanese self-study app.\n\nSTYLE: match the attached paper-town style reference exactly: hand-painted watercolor/gouache, fine dark pencil outline, soft painted shapes, subtle paper grain only inside painted shapes; warm ivory/sand, sage/olive, charcoal, restrained brick red. Friendly, tactile everyday illustration, not photorealistic, not 3D, not flat geometric cartoon. Use the commuter-train finish reference for comparable polish, pigment texture, and edge detail.\nBACKGROUND: fully TRANSPARENT with real PNG alpha. No background color, paper rectangle, checkerboard, wash, floor shadow, shadow plate, or stray paint specks.\nABSOLUTELY NO text, letters, kana, kanji, numbers, logos, labels, marks, or watermark anywhere. Every card must be completely blank.\nCOMPOSITION: exactly one compact, chunky, roughly square silhouette (subject content-box width/height ratio 0.8–1.25), centered and large enough to read at 48px, fully inside canvas with transparent breathing room. Keep details broad and simple; no tiny lines.\nSUBJECT: a small fanned stack of exactly three blank warm-ivory paper flashcards, visibly offset so all three cards read clearly, with one short charcoal pencil resting diagonally across the stack. Use simple sage and restrained brick-red edge accents. No extra objects.",
+      "alt": { "vi": "Ba tấm thẻ giấy trống xòe ra, có bút chì đặt ngang." }
+    },
+    {
+      "group": "ui/sections",
+      "stem": "grammar-v1",
+      "subject": "an open warm-ivory notebook with a few abstract non-linguistic pencil strokes and a small sage bookmark ribbon",
+      "source": "image_gen",
+      "generation": { "tool": "Codex built-in image_gen", "orchestrator": "gpt-6-luna (effort low)" },
+      "prompt": "Create ONE square 1:1 standalone cutout illustration for a small 48px lesson-section thumbnail in a Japanese self-study app.\n\nSTYLE: match the attached paper-town style reference exactly: hand-painted watercolor/gouache, fine dark pencil outline, soft painted shapes, subtle paper grain only inside painted shapes; warm ivory/sand, sage/olive, charcoal, restrained brick red. Friendly, tactile everyday illustration, not photorealistic, not 3D, not flat geometric cartoon. Use the commuter-train finish reference for comparable polish, pigment texture, and edge detail.\nBACKGROUND: fully TRANSPARENT with real PNG alpha. No background color, paper rectangle, checkerboard, wash, floor shadow, shadow plate, or stray paint specks.\nABSOLUTELY NO text, letters, kana, kanji, numbers, readable writing, logos, labels, marks, or watermark anywhere. The page marks must be only a few loose abstract pencil strokes, not arranged like handwriting or a formula.\nCOMPOSITION: exactly one compact, chunky, roughly square silhouette (subject content-box width/height ratio 0.8–1.25), centered and large enough to read at 48px, fully inside canvas with transparent breathing room. Keep details broad and simple; no tiny details.\nSUBJECT: one open warm-ivory notebook seen at a slight top-down angle, with a few broad abstract charcoal pencil strokes on the pages and a small sage bookmark ribbon peeking from the bottom edge. Keep pages blank apart from those non-readable strokes. No pencil or extra objects.",
+      "alt": { "vi": "Cuốn sổ mở có vài nét chì trừu tượng và ruy-băng đánh dấu màu xanh sage." }
+    },
+    {
+      "group": "ui/sections",
+      "stem": "listening-v1",
+      "subject": "charcoal over-ear headphones with restrained brick-red ear cups resting on a small open blank book",
+      "source": "image_gen",
+      "generation": { "tool": "Codex built-in image_gen", "orchestrator": "gpt-6-luna (effort low)" },
+      "prompt": "Create ONE square 1:1 standalone cutout illustration for a small 48px lesson-section thumbnail in a Japanese self-study app.\n\nSTYLE: match the attached paper-town style reference exactly: hand-painted watercolor/gouache, fine dark pencil outline, soft painted shapes, subtle paper grain only inside painted shapes; warm ivory/sand, sage/olive, charcoal, restrained brick red. Friendly, tactile everyday illustration, not photorealistic, not 3D, not flat geometric cartoon. Use the commuter-train finish reference for comparable polish, pigment texture, and edge detail.\nBACKGROUND: fully TRANSPARENT with real PNG alpha. No background color, paper rectangle, checkerboard, wash, floor shadow, shadow plate, or stray paint specks.\nABSOLUTELY NO text, letters, kana, kanji, numbers, readable writing, logos, labels, marks, or watermark anywhere. The open book pages must be completely blank.\nCOMPOSITION: exactly one compact, chunky, roughly square silhouette (subject content-box width/height ratio 0.8–1.25), centered and large enough to read at 48px, fully inside canvas with transparent breathing room. Keep details broad and simple; no tiny details.\nSUBJECT: one recognizable pair of over-ear headphones resting across a small open blank book. Headphone band is charcoal, ear cups are restrained brick red with simple charcoal cushions; book is warm ivory with a sage hint at the spine. Arrange the parts as one coherent compact silhouette, no extra objects.",
+      "alt": { "vi": "Tai nghe chụp tai màu than và đỏ gạch đặt trên cuốn sách đang mở." }
+    }
+  ]
+}
