@@ -1,7 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/inter";
+@import "@fontsource-variable/noto-serif";
+@import "@fontsource/be-vietnam-pro/400.css";
+@import "@fontsource/be-vietnam-pro/500.css";
+@import "@fontsource/be-vietnam-pro/600.css";
+@import "@fontsource/be-vietnam-pro/700.css";
+@import "@fontsource/shippori-mincho/500.css";
+@import "@fontsource/shippori-mincho/700.css";
 @import "@fontsource-variable/noto-sans-jp";
 
 @custom-variant dark (&:is(.dark *));
@@ -11,12 +17,16 @@
   --color-foreground: var(--foreground);
   /* Không tự tham chiếu var(--font-sans) bên trong @theme inline: giá trị được
      nội tuyến tại điểm dùng nên tham chiếu vòng sẽ hỏng ngầm, không báo lỗi. */
-  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+  /* v3: chữ hiển thị (lời chào, tiêu đề lớn). Utility `font-serif` đang dùng ở nhiều màn. */
+  --font-serif: 'Noto Serif Variable', ui-serif, Georgia, serif;
+  /* v3: câu tiếng Nhật hiển thị lớn (Mincho), qua class `.jp-display`. Chữ Nhật nhỏ giữ --font-jp. */
+  --font-jp-display: 'Shippori Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
   /* Hiragino (có sẵn trên iOS/macOS) đứng trước: máy Apple không phải tải ~400KB webfont
      Noto khi lần đầu gặp chữ Nhật (giật lúc chuyển trang). Máy khác vẫn dùng Noto. */
   --font-jp: 'Hiragino Sans', 'Noto Sans JP Variable', 'Yu Gothic', sans-serif;
   --font-mono: ui-monospace, 'SFMono-Regular', 'Cascadia Code', monospace;
-  --font-heading: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
 
   --color-chart-5: var(--chart-5);
   --color-chart-4: var(--chart-4);
@@ -197,6 +207,10 @@
 .jp {
   font-family: var(--font-jp);
   line-height: 2;
+}
+/* v3: câu tiếng Nhật hiển thị lớn dùng Mincho. Luôn đi kèm `jp` (class thường để thắng `.jp`). */
+.jp-display {
+  font-family: var(--font-jp-display);
 }
 
 ruby {
