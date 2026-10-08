@@ -16,7 +16,7 @@ Tài liệu này quy định các nguyên tắc biên tập, chuẩn hóa ngôn 
 
 3. **Bảo toàn tính toàn vẹn:**
    - Giữ nguyên cú pháp Furigana của repo: `私[わたし]は 学生[がくせい]です`. Không chuyển đổi tự động làm hỏng thẻ Furigana.
-   - Giữ nguyên 100% tiếng Anh (`en`) có sẵn trong nguồn Noken để duy trì chế độ học song ngữ.
+   - Giữ nguyên 100% tiếng Anh (`en`) có sẵn trong dữ liệu để duy trì chế độ học song ngữ.
    - Không để sót bất kỳ trường nào mang tiếng Tây Ban Nha (`es`) hoặc giá trị rỗng (ngoại trừ 8 ô layout bảng đặc thù đã quy định).
 
 ---

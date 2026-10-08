@@ -5,11 +5,11 @@
 //   export   master PNG + sidecar in artwork/, WebP in web/public; never overwrites published bytes
 //   sheet    review sheet (reference + exported WebPs on ivory and dark) in reports/
 //   link     add exported assets to the learning JSON and mark their sidecars
-// One batch file is the source of truth for a set of assets (SPEC-21). Optional stems limit the run.
+// One batch file is the source of truth for a set of assets. Optional stems limit the run.
+// The full prompt lives in each sidecar JSON (not embedded in the PNG master).
 import { readFile, writeFile, access, readdir, stat, mkdir } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import { createHash } from 'node:crypto';
-import { execFileSync } from 'node:child_process';
 import { isDeepStrictEqual } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import os from 'node:os';
@@ -23,7 +23,7 @@ const exists = rel => access(abs(rel)).then(() => true, () => false);
 const sharp = createRequire(createRequire(new URL('web/package.json', root)).resolve('next/package.json'))('sharp');
 const sha256 = buf => createHash('sha256').update(buf).digest('hex');
 
-// Export profiles per SPEC-21 §4. Cutouts: subject bbox (alpha >= 8) fitted to INNER, centred in SIZE,
+// Export profiles per group (see artwork/illustrations/README.md). Cutouts: subject bbox (alpha >= 8) fitted to INNER, centred in SIZE,
 // so every subject has the same visual size whatever the source margin was.
 const GROUPS = {
   vocab: { kind: 'cutout', role: 'vocabulary-cutout' },
@@ -251,13 +251,9 @@ async function exportAssets(batchRel, batch, assets) {
   const results = await check(batch, assets);
   const bad = results.filter(r => !['ready', 'exported'].includes(r.status));
   if (bad.length) throw new Error(`${bad.length} asset(s) not exportable; nothing written`);
-  const embed = process.platform === 'win32' ? abs('.agents/skills/impeccable/scripts/bin/windows-x64/impeccable.exe') : abs('.agents/skills/impeccable/scripts/impeccable');
   for (const r of results.filter(x => x.status === 'ready')) {
     const { a, p } = r;
     if (r.masterBuf) await writeFile(abs(p.master), r.masterBuf, { flag: 'wx' });
-    const promptFile = path.join(os.tmpdir(), `maipace-prompt-${a.stem}.txt`);
-    await writeFile(promptFile, a.prompt, 'utf8');
-    execFileSync(embed, ['embed-prompt', abs(p.master), '--prompt-file', promptFile], { encoding: 'utf8' });
     const master = await sharp(abs(p.master)).metadata();
     const sidecar = {
       createdAt: new Date().toISOString(), source: a.source, ...(a.generation && { generation: a.generation }), batch: batchRel,

@@ -2,7 +2,7 @@
 
 ## 1. Tổng quan bộ dữ liệu
 
-Bộ dữ liệu tiếng Việt N5 (`web/src/data/n5/`) được khởi tạo và chuyển đổi hoàn chỉnh từ 230 file nguồn Noken (`repo-reference/noken/src/data/n5/`), phục vụ ứng dụng tự học Minna no Nihongo N5/N4.
+Bộ dữ liệu tiếng Việt N5 (`web/src/data/n5/`) được chuyển đổi một lần từ 230 file nguồn của một dự án cũ (không còn trong repo); từ đó JSON trong `web/src/data/n5/` là nguồn duy nhất, sửa trực tiếp.
 
 - **Phiên bản:** `1.0.0`
 - **Trạng thái biên tập (editorial_status):** `edited` (Đã hoàn thành biên soạn và dịch nghĩa tiếng Việt tự nhiên)
@@ -54,7 +54,7 @@ Toàn bộ 350 trường nội dung còn lại đều có bản dịch tiếng V
 
 ## 5. Checklist đối chiếu & kiểm chứng (Verification Checklist)
 
-Theo quy định `AGENTS.md`, các nội dung đã biên tập cần bước đối chiếu xác minh thực tế trước khi đưa vào tập bài học chính thức:
+Đối chiếu là tùy chọn (app phục vụ cá nhân, dữ liệu hiện tại được dùng trực tiếp; sửa lỗi khi phát hiện). Khi có thời gian:
 
 - [ ] **Từ vựng:** Đối chiếu 991 từ vựng với sách *Minna no Nihongo I - Bản dịch và Giải thích Ngữ pháp tiếng Việt* (Nhà xuất bản Trẻ).
 - [ ] **Ngữ pháp:** Đối chiếu 141 điểm ngữ pháp và 187 câu ví dụ với các bài tương ứng (Bài 1–25).

@@ -1,42 +1,19 @@
 # MaiPace
 
-**Học tiếng Nhật theo nhịp của bạn.**
+**Học tiếng Nhật theo nhịp của bạn.** App cá nhân cho người Việt tự học tiếng Nhật theo
+Minna no Nihongo (N5). Chạy trong trình duyệt, dữ liệu học lưu trên máy; đồng bộ Supabase là tùy chọn.
 
-Ứng dụng cá nhân cho người Việt tự học tiếng Nhật theo Minna no Nihongo.
-Hiện có màn học N5, luyện tập, ôn theo lịch, tra cứu, audio/Shadowing và sync
-(chưa kiểm với Supabase thật); N4 là lộ trình. Cài lên màn hình chính (PWA không
-service worker) là lộ trình; mở lại app khi mất mạng thì không. Xem [sản phẩm và thương hiệu](PRODUCT.md) và
-[trạng thái có bằng chứng](docs/specs/README.md).
+## Cài đặt
 
-## Làm việc với coding agent
-
-Mở repository tại root. Codex, Claude Code và Antigravity cùng dùng
-[AGENTS.md](AGENTS.md); bắt đầu với [mẫu giao việc](docs/handoff/PROMPT-phien-moi.md).
-Mỗi phiên đọc trạng thái và handoff liên quan trước khi sửa code; không cần kể
-lại toàn bộ lịch sử chat. Tên repository/thư mục vẫn là `Japanese`.
-
-## Clone và thiết lập
-
-Cài Git, **Node.js 24+**, **pnpm 11.9.0** và coding agent bạn dùng.
-Node và pnpm cần có trong PATH của ứng dụng agent; cần mạng khi tải dependency.
+Cần Git, **Node.js 24+** và **pnpm 11.9.0**.
 
 ```sh
 git clone https://github.com/QuangTruong252/Japanese.git
 cd Japanese
-node scripts/setup.mjs
-```
-
-Lệnh setup dùng trên Windows/macOS/Linux: cài dependency từ lockfile, nối 3 skills
-cho Claude và tạo cấu hình Next DevTools MCP phù hợp hệ điều hành. Có thể chạy lại.
-Mở agent tại **root repo**, chấp nhận workspace/MCP trust nếu ứng dụng yêu cầu.
-
-```sh
+node scripts/setup.mjs   # cài dependency, nối skill dùng chung, cấu hình MCP Next DevTools
 cd web
 pnpm dev
 ```
-
-Rules và skills đi cùng repository. Thiết lập đăng nhập, secrets, dữ liệu học/audio
-và approval của agent là riêng từng máy. Xem [công cụ agent](docs/agent-tooling.md).
 
 ## Kiểm tra
 
@@ -45,3 +22,8 @@ node --test scripts/setup.test.mjs
 pnpm --dir web check
 pnpm --dir web test
 ```
+
+## Làm việc với coding agent
+
+Mở agent tại root repo. Mọi agent đọc [`AGENTS.md`](AGENTS.md); chuẩn giao diện ở
+[`DESIGN.md`](DESIGN.md); vai trò và quy trình phối hợp ở [`docs/workflow/`](docs/workflow/README.md).

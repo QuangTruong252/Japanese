@@ -1,6 +1,3 @@
-# Bản sao repo tham chiếu chỉ để đọc (có .git riêng, không track)
-/repo-reference/
-
 node_modules/
 .DS_Store
 
@@ -11,6 +8,7 @@ node_modules/
 /.mcp.json
 /bugs/
 
-# Ảnh review tạm do `batch.mjs sheet` / scripts/ui-qa tạo; không commit.
+# Ảnh review tạm do `batch.mjs sheet` / scripts/ui-qa tạo, và thư mục làm việc của từng task; không commit.
 /artwork/illustrations/reports/
 /.ui-qa/
+/.work/
