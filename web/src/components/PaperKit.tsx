@@ -146,7 +146,7 @@ export function PartRow({
       className="flex min-h-16 items-center gap-3 rounded-xl border border-border bg-card p-3 outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring"
     >
       <span
-        className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground [&_svg]:size-7"
+        className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground [&_svg]:size-6"
         aria-hidden="true"
       >
         {icon}

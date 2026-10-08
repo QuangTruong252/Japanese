@@ -15,7 +15,6 @@ import {
 } from '@/lib/sync';
 import { createClient, isSupabaseConfigured } from '@/lib/supabase/client';
 import {
-  House,
   Search,
   Settings,
   User,
@@ -53,7 +52,7 @@ const featureIcon = (name: FeatureIconName) =>
 // 5 đích điều hướng chính theo SPEC-16 & DESIGN.md §Navigation:
 // Bảng tin · Học bài · Luyện tập · Ôn tập · Tra cứu
 const NAV_ITEMS: NavItem[] = [
-  { href: '/', label: 'Bảng tin', icon: House },
+  { href: '/', label: 'Bảng tin', icon: featureIcon('home') },
   { href: '/hoc', label: 'Học bài', icon: featureIcon('lesson') },
   { href: '/luyen-tap', label: 'Luyện tập', icon: featureIcon('practice') },
   { href: '/on-tap', label: 'Ôn tập', icon: featureIcon('review'), isDueTarget: true },

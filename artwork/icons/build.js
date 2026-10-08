@@ -6,11 +6,50 @@ const potrace = require('potrace');
 const { optimize } = require('svgo');
 const sharp = require('sharp');
 
-const NAMES = ['vocab', 'grammar', 'listening', 'reading', 'kanji', 'kana', 'verbs', 'lesson', 'review', 'practice', 'lookup', 'weak-points'];
-const COLS = 4, ROWS = 3;
+const NAMES = ['vocab', 'grammar', 'listening', 'reading', 'kanji', 'kana', 'verbs', 'lesson', 'review', 'practice', 'lookup', 'weak-points', 'home'];
 const BOX = 240, INNER = 222; // ~92% of the viewBox, same optical size as Lucide (20/24 + round caps)
-// Nét gốc chỉ ~7/240 (~0,7px ở 24px). Làm dày bằng blur + ngưỡng cao trước khi trace, đích ~Lucide 2px.
-const BOLD_SIGMA = Number(process.env.BOLD_SIGMA ?? 4), BOLD_THRESHOLD = Number(process.env.BOLD_THRESHOLD ?? 248);
+// Nét gốc mảnh và không đều giữa các icon. Làm dày từng icon (blur + ngưỡng cao) tới khi nét đo được
+// >= TARGET_STROKE/240. Lucide (2px ở 24px) đo ra 20; để 21 bù cảm giác mảnh của nét vẽ tay.
+const TARGET_STROKE = Number(process.env.TARGET_STROKE ?? 21), BOLD_THRESHOLD = 250; // ngưỡng nhị phân hóa
+
+// Độ dày nét ≈ 2 × số lần bào mòn tới khi còn < 10% mực (đã hiệu chỉnh: Lucide clock = 20).
+async function strokeOf(png) {
+  const { data, info } = await sharp(png).greyscale().raw().toBuffer({ resolveWithObject: true });
+  const W = info.width;
+  let a = Uint8Array.from(data, (v) => (v < 128 ? 1 : 0));
+  const total = a.reduce((s, v) => s + v, 0);
+  let k = 0, left = total;
+  while (left > total * 0.1) {
+    const b = new Uint8Array(a.length);
+    left = 0;
+    for (let i = W; i < a.length - W; i++) if (a[i] && a[i - 1] && a[i + 1] && a[i - W] && a[i + W]) { b[i] = 1; left++; }
+    a = b;
+    k++;
+  }
+  return 2 * k;
+}
+
+// Giãn nét thật (morphological dilation), xen kẽ lân cận 4 và 8 cho mép gần tròn; dừng khi đạt độ dày đích.
+async function bolden(png) {
+  const { data, info } = await sharp(png).greyscale().raw().toBuffer({ resolveWithObject: true });
+  const W = info.width, H = info.height;
+  let a = Uint8Array.from(data, (v) => (v < 128 ? 1 : 0));
+  const toPng = (m) => sharp(Buffer.from(m.map((v) => (v ? 0 : 255))), { raw: { width: W, height: H, channels: 1 } }).png().toBuffer();
+  let out = await toPng(a), steps = 0;
+  while ((await strokeOf(out)) < TARGET_STROKE && steps < 12) {
+    const b = Uint8Array.from(a), diag = steps % 2 === 1;
+    for (let y = 1; y < H - 1; y++)
+      for (let x = 1; x < W - 1; x++) {
+        const i = y * W + x;
+        if (a[i]) continue;
+        if (a[i - 1] || a[i + 1] || a[i - W] || a[i + W] || (diag && (a[i - W - 1] || a[i - W + 1] || a[i + W - 1] || a[i + W + 1]))) b[i] = 1;
+      }
+    a = b;
+    steps++;
+    out = await toPng(a);
+  }
+  return { out, sigma: steps };
+}
 const OUT_DIR = path.join(__dirname, 'out');
 const TSX = path.join(__dirname, '..', '..', 'web', 'src', 'components', 'FeatureIcon.tsx');
 
@@ -22,20 +61,32 @@ const trace = (buf) =>
 (async () => {
   const atlas = process.argv[2];
   const { data, info } = await sharp(atlas).greyscale().raw().toBuffer({ resolveWithObject: true });
-  const cw = Math.floor(info.width / COLS), ch = Math.floor(info.height / ROWS);
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const paths = {};
-  // Pass 1: ink bbox per cell (ignoring a 2% border so neighbours' strays don't count).
-  const boxes = NAMES.map((name, i) => {
-    const cx = (i % COLS) * cw, cy = Math.floor(i / COLS) * ch;
-    const m = Math.round(Math.min(cw, ch) * 0.02);
-    let x0 = Infinity, y0 = Infinity, x1 = -1, y1 = -1;
-    for (let y = cy + m; y < cy + ch - m; y++)
-      for (let x = cx + m; x < cx + cw - m; x++)
-        if (data[y * info.width + x] < 128) { x0 = Math.min(x0, x); y0 = Math.min(y0, y); x1 = Math.max(x1, x); y1 = Math.max(y1, y); }
-    if (x1 < 0) throw new Error(`${name}: empty cell`);
-    return { x0, y0, w: x1 - x0 + 1, h: y1 - y0 + 1 };
-  });
+  const boldInfo = {};
+  // Pass 1: tìm icon theo dải trắng (atlas không chắc chia lưới đều): tách hàng bằng các hàng pixel trống,
+  // rồi tách cột trong từng hàng; khe < GAP px coi là khe trong cùng một icon.
+  const GAP = Math.round(Math.min(info.width, info.height) * 0.03);
+  const ink = (x, y) => data[y * info.width + x] < 128;
+  const bands = (n, has) => {
+    const out = [];
+    let start = -1, lastInk = -Infinity;
+    for (let i = 0; i < n; i++) {
+      if (!has(i)) continue;
+      if (start < 0 || i - lastInk > GAP) { if (start >= 0) out.push([start, lastInk]); start = i; }
+      lastInk = i;
+    }
+    if (start >= 0) out.push([start, lastInk]);
+    return out;
+  };
+  const boxes = [];
+  for (const [ry0, ry1] of bands(info.height, (y) => { for (let x = 0; x < info.width; x++) if (ink(x, y)) return true; return false; }))
+    for (const [x0, x1] of bands(info.width, (x) => { for (let y = ry0; y <= ry1; y++) if (ink(x, y)) return true; return false; })) {
+      let y0 = Infinity, y1 = -1;
+      for (let y = ry0; y <= ry1; y++) for (let x = x0; x <= x1; x++) if (ink(x, y)) { y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
+      boxes.push({ x0, y0, w: x1 - x0 + 1, h: y1 - y0 + 1 });
+    }
+  if (boxes.length !== NAMES.length) throw new Error(`found ${boxes.length} icons, expected ${NAMES.length}: ${JSON.stringify(boxes)}`);
   // Mỗi icon phóng cho cạnh lớn nhất = INNER (như Lucide). Độ lệch nét gốc do tỉ lệ khác nhau
   // được san bớt vì bước làm dày cộng thêm một lượng cố định sau khi phóng.
   for (let i = 0; i < NAMES.length; i++) {
@@ -51,7 +102,8 @@ const trace = (buf) =>
       .flatten({ background: '#fff' })
       .png()
       .toBuffer()
-      .then((b) => sharp(b).blur(BOLD_SIGMA).threshold(BOLD_THRESHOLD).png().toBuffer());
+      .then(bolden)
+      .then(({ out, sigma }) => ((boldInfo[NAMES[i]] = sigma), out));
     fs.writeFileSync(path.join(OUT_DIR, `${NAMES[i]}.png`), png);
     const raw = await trace(png);
     const svg = optimize(raw, {
@@ -61,7 +113,7 @@ const trace = (buf) =>
     }).data;
     fs.writeFileSync(path.join(OUT_DIR, `${NAMES[i]}.svg`), svg.replace('<svg', '<svg fill="currentColor"'));
     paths[NAMES[i]] = [...svg.matchAll(/ d="([^"]+)"/g)].map((mm) => mm[1]).join('');
-    console.log(NAMES[i], `${sw}x${sh}`, `${paths[NAMES[i]].length} chars`);
+    console.log(NAMES[i], `${sw}x${sh}`, `dilate ${boldInfo[NAMES[i]]}px`, `stroke ${await strokeOf(png)}`, `${paths[NAMES[i]].length} chars`);
   }
 
   const entries = NAMES.map((n) => `  '${n}': '${paths[n]}',`).join('\n');
