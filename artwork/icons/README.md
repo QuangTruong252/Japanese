@@ -3,7 +3,7 @@
 Nguồn của `web/src/components/FeatureIcon.tsx` (sinh tự động, không sửa tay path).
 
 - `atlas-v1.png`: 12 icon nét mực đen/trắng, lưới 4×3, Codex built-in image_gen (gpt-6-luna, effort low), 2026-10-08.
-- `build.js`: cắt theo lưới → một tỉ lệ chung cho cả bộ (nét đều) → potrace → svgo → ghi `FeatureIcon.tsx` và `out/*.svg|png`.
+- `build.js`: cắt theo lưới → phóng từng icon vừa 222/240 → làm dày nét (blur + ngưỡng, `BOLD_SIGMA`/`BOLD_THRESHOLD`) → potrace → svgo → ghi `FeatureIcon.tsx` và `out/*.svg|png`.
 - Thứ tự ô: vocab, grammar, listening, reading, kanji, kana, verbs, lesson, review, practice, lookup, weak-points.
 
 Build lại: `cd artwork/icons && npm install && node build.js atlas-v1.png`.
