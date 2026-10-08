@@ -50,6 +50,10 @@ Kế hoạch tổng dựa trên quan sát luồng và ảnh minh họa. Branch `
 
 [Handoff kế hoạch](../handoff/UX-REDESIGN-PLAN.md) ghi rõ phần chưa kiểm chứng. Khi triển khai từng mốc, cập nhật spec hiện hành tương ứng và tạo handoff nghiệm thu riêng, không dùng bản kế hoạch thay cho kết quả kiểm thử.
 
+## UI v3 "Sách sống" + Home 08/10/2026 — nhánh `feat/ui-v3-home`, chưa merge
+
+Thay luật Stage + paper slip bằng ngôn ngữ v3 (font Be Vietnam Pro/Noto Serif/Shippori Mincho, tranh chữ nhật mờ mép, mây giấy, thẻ giấy xé, chữ giao diện tối giản, tiếng Nhật chỉ xuống dòng tại dấu cách của dữ liệu). Home dựng lại theo bố cục C2; **nút chính luôn là bài học**, ôn/nháp thành dòng phụ (đổi `resolveDashboardCta`). 7 màn khác chưa chuyển. Check, 267 test, build và browser 360/390/768/1280 sáng/tối 4 trạng thái đạt; chưa thiết bị thật. Chi tiết: [spec](../superpowers/specs/2026-10-08-maipace-visual-language-v3-design.md), [plan](../superpowers/plans/2026-10-08-visual-language-v3-home.md), [handoff](../handoff/UI-V3-HOME.md).
+
 ## Redesign UI v2 07/10/2026 — đã merge `master`
 
 Áp luật **Stage + paper slip** (DESIGN.md) cho 8 màn: Bảng tin theo SPEC-18 bản 2, lộ trình 25 bài ở `/hoc`, Chi tiết bài, phiên luyện tập, Kết quả (luyện và ôn), Ôn tập, Luyện tập, Tra cứu. Antigravity triển khai, Codex review (28 findings, đã sửa P0/P1), coordinator nghiệm thu browser 390/1280 sáng/tối. Sau merge: check, 268 test, build đạt. Chưa kiểm: khung câu hỏi phiên Ôn (vẫn khung cũ), reduced motion lúc chạy, 320px, đủ 5 dạng bằng bàn phím, thiết bị thật. Chi tiết: [handoff UI v2](../handoff/UI-REDESIGN-V2.md), [review Codex](../handoff/UI-REDESIGN-V2-REVIEW.md).
