@@ -8,7 +8,7 @@ import { Illustration } from '@/components/Illustration';
 import { SpeakButton } from '@/components/SpeakButton';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { stripFurigana, toKanaSentence } from '@/lib/japanese';
+import { formatOptionalBrackets, stripFurigana, toKanaSentence } from '@/lib/japanese';
 import { cn } from '@/lib/utils';
 import type { VocabEntry } from './vocab-shared';
 
@@ -105,7 +105,7 @@ export function VocabCard({
   onSwipeEnd: (event: unknown, info: PanInfo) => void;
 }) {
   const { word, example } = entry;
-  const surface = stripFurigana(word.word);
+  const surface = formatOptionalBrackets(stripFurigana(word.word));
 
   return (
     <m.article

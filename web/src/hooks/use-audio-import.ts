@@ -1,9 +1,9 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { db } from '@/lib/db';
 import { MAX_ZIP_FILE_SIZE } from '@/lib/audio-zip';
-import type { AudioFileRecord } from '@/types';
+import { createAudioImportRunner } from '@/lib/audio-import-session';
 import type {
   WorkerInMessage,
   WorkerOutMessage,
@@ -22,15 +22,57 @@ export function useAudioImport() {
   const [corruptedFiles, setCorruptedFiles] = useState<string[]>([]);
   const [conflicts, setConflicts] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [importedLessons, setImportedLessons] = useState<number | null>(null);
 
-  const workerRef = useRef<Worker | null>(null);
-
-  const cleanupWorker = useCallback(() => {
-    if (workerRef.current) {
-      workerRef.current.terminate();
-      workerRef.current = null;
-    }
-  }, []);
+  const [runner] = useState(() =>
+    createAudioImportRunner({
+      readHashes: async () => {
+        // Hash hiện có để worker kiểm tra TOFU
+        const hashes: Record<string, string> = {};
+        for (const record of await db.audioFiles.toArray()) hashes[record.id] = record.sha256;
+        return hashes;
+      },
+      startWorker: (file, existingHashes, onMessage, onWorkerError) => {
+        const worker = new Worker(new URL('@/workers/audio-import.worker.ts', import.meta.url));
+        worker.onmessage = (event: MessageEvent<WorkerOutMessage>) => onMessage(event.data);
+        worker.onerror = (e) => {
+          console.error('Worker error:', e);
+          onWorkerError();
+        };
+        const startMsg: WorkerInMessage = { type: 'START', file, existingHashes };
+        worker.postMessage(startMsg);
+        return () => worker.terminate();
+      },
+      store: {
+        get: (ids) => db.audioFiles.bulkGet(ids),
+        put: async (records) => {
+          await db.audioFiles.bulkPut(records);
+        },
+        restore: ({ restore, remove }) =>
+          db.transaction('rw', db.audioFiles, async () => {
+            await db.audioFiles.bulkDelete(remove);
+            await db.audioFiles.bulkPut(restore);
+          }),
+      },
+      onProgress: (msg) =>
+        setProgress({
+          current: msg.current,
+          total: msg.total,
+          currentFile: msg.currentFile,
+          percent: msg.total > 0 ? Math.round((msg.current / msg.total) * 100) : 0,
+        }),
+      onSuccess: (result) => {
+        setCorruptedFiles(result.corruptedFiles);
+        setConflicts(result.conflicts);
+        setImportedLessons(result.lessons);
+      },
+      onError: setError,
+      onEnd: () => {
+        setIsImporting(false);
+        setProgress(null);
+      },
+    }),
+  );
 
   // Cảnh báo beforeunload khi đang nạp
   useEffect(() => {
@@ -47,36 +89,26 @@ export function useAudioImport() {
     };
   }, [isImporting]);
 
-  // Dọn worker khi unmount
-  useEffect(() => {
-    return () => {
-      cleanupWorker();
-    };
-  }, [cleanupWorker]);
+  // Rời trang giữa chừng = Hủy: dừng worker và hoàn tác
+  useEffect(() => runner.cancel, [runner]);
 
-  const cancelImport = useCallback(() => {
-    if (workerRef.current) {
-      const cancelMsg: WorkerInMessage = { type: 'CANCEL' };
-      workerRef.current.postMessage(cancelMsg);
-      cleanupWorker();
-    }
-    setIsImporting(false);
-    setProgress(null);
-  }, [cleanupWorker]);
+  const cancelImport = runner.cancel;
 
   const clearError = useCallback(() => {
     setError(null);
+    setImportedLessons(null);
   }, []);
 
   const startImport = useCallback(
     async (file: File) => {
-      // 1. Kiểm tra kích thước file ZIP ở main thread trước khi mở worker
+      // Kiểm tra kích thước file ZIP ở main thread trước khi mở worker
       if (file.size > MAX_ZIP_FILE_SIZE) {
         setError('File ZIP vượt quá dung lượng tối đa cho phép (2 GB).');
         return;
       }
 
       setError(null);
+      setImportedLessons(null);
       setCorruptedFiles([]);
       setConflicts([]);
       setIsImporting(true);
@@ -87,88 +119,9 @@ export function useAudioImport() {
         percent: 0,
       });
 
-      try {
-        // 2. Lấy danh sách hash hiện có để kiểm tra TOFU
-        const existingRecords = await db.audioFiles.toArray();
-        const existingHashes: Record<string, string> = {};
-        for (const record of existingRecords) {
-          existingHashes[record.id] = record.sha256;
-        }
-
-        cleanupWorker();
-
-        // 3. Khởi tạo Web Worker
-        const worker = new Worker(
-          new URL('@/workers/audio-import.worker.ts', import.meta.url)
-        );
-        workerRef.current = worker;
-
-        worker.onmessage = async (event: MessageEvent<WorkerOutMessage>) => {
-          const msg = event.data;
-
-          if (msg.type === 'PROGRESS') {
-            const percent =
-              msg.total > 0 ? Math.round((msg.current / msg.total) * 100) : 0;
-            setProgress({
-              current: msg.current,
-              total: msg.total,
-              currentFile: msg.currentFile,
-              percent,
-            });
-          } else if (msg.type === 'BATCH') {
-            // Nhận lô ~20 file, tạo Blob và ghi db.audioFiles.bulkPut độc lập
-            const records: AudioFileRecord[] = msg.tracks.map((t) => ({
-              id: t.id,
-              lesson: t.lesson,
-              type: t.type,
-              blob: new Blob([t.buffer], { type: 'audio/mpeg' }),
-              size: t.size,
-              sha256: t.sha256,
-            }));
-
-            try {
-              await db.audioFiles.bulkPut(records);
-            } catch (dexieErr) {
-              console.error('Lỗi khi ghi batch vào IndexedDB:', dexieErr);
-            }
-          } else if (msg.type === 'COMPLETE') {
-            setCorruptedFiles(msg.corruptedFiles);
-            setConflicts(msg.conflicts);
-            setIsImporting(false);
-            setProgress(null);
-            cleanupWorker();
-          } else if (msg.type === 'ERROR') {
-            setError(msg.message);
-            setIsImporting(false);
-            setProgress(null);
-            cleanupWorker();
-          }
-        };
-
-        worker.onerror = (e) => {
-          console.error('Worker error:', e);
-          setError('Đã xảy ra lỗi trong quá trình xử lý Web Worker.');
-          setIsImporting(false);
-          setProgress(null);
-          cleanupWorker();
-        };
-
-        const startMsg: WorkerInMessage = {
-          type: 'START',
-          file,
-          existingHashes,
-        };
-        worker.postMessage(startMsg);
-      } catch (err: unknown) {
-        const errorMsg =
-          err instanceof Error ? err.message : 'Không thể khởi động tiến trình nạp audio.';
-        setError(errorMsg);
-        setIsImporting(false);
-        setProgress(null);
-        cleanupWorker();
-      }
+      await runner.start(file);
     },
-    [cleanupWorker]
+    [runner]
   );
 
   return {
@@ -177,6 +130,7 @@ export function useAudioImport() {
     corruptedFiles,
     conflicts,
     error,
+    importedLessons,
     startImport,
     cancelImport,
     clearError,

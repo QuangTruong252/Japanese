@@ -30,6 +30,12 @@ test('parseFurigana tách kanji + ruby và giữ nguyên phần thuần', () => 
   assert.deepEqual(parseFurigana(''), []);
 });
 
+test('parseFurigana đổi ngoặc tùy chọn ở phần thuần, giữ furigana', () => {
+  assert.deepEqual(parseFurigana('どこ[へ]も'), [{ base: 'どこ(へ)も' }]);
+  assert.deepEqual(parseFurigana('[どうも]ありがとう[ございます]'), [{ base: '(どうも)ありがとう(ございます)' }]);
+  assert.deepEqual(parseFurigana('食[た]べます'), [{ base: '食', ruby: 'た' }, { base: 'べます' }]);
+});
+
 test('stripFurigana bỏ ruby, giữ kanji', () => {
   assert.equal(stripFurigana('食[た]べます'), '食べます');
   assert.equal(stripFurigana('何[なに]も 食[た]べません'), '何も 食べません');

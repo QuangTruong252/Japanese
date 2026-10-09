@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { Pause, Play, Repeat, RotateCcw, RotateCw } from 'lucide-react';
@@ -10,12 +10,13 @@ import { Chip } from '@/components/PaperKit';
 import { FeatureIcon } from '@/components/FeatureIcon';
 import { Furigana } from '@/components/Furigana';
 import { SpeakButton } from '@/components/SpeakButton';
-import { stripFurigana } from '@/lib/japanese';
+import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
+import { DEFAULT_SETTINGS, getSettingsSnapshot, subscribeSettings } from '@/lib/settings';
 import { db } from '@/lib/db';
+import { shouldHandleShadowingKey } from '@/lib/shadowing-keys';
 import { useUIStore } from '@/lib/store';
 import {
   formatTime,
-  isTypingTarget,
   normalizeLoopPoints,
 } from '@/lib/shadowing';
 import { cn } from '@/lib/utils';
@@ -141,6 +142,18 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
     [setLoopA, setLoopB, setIsPlaying]
   );
 
+  // Âm lượng theo cài đặt; activeRecord trong deps để áp lại khi thẻ audio vừa được dựng
+  const { soundVolume } = useSyncExternalStore(
+    subscribeSettings,
+    getSettingsSnapshot,
+    () => DEFAULT_SETTINGS
+  );
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = soundVolume;
+    }
+  }, [soundVolume, activeRecord]);
+
   // Cập nhật playbackRate cho thẻ audio
   useEffect(() => {
     if (audioRef.current) {
@@ -231,7 +244,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
   // Đăng ký phím tắt
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (isTypingTarget(e.target)) return;
+      if (!shouldHandleShadowingKey(e, activeRecord != null)) return;
 
       switch (e.key) {
         case ' ':
@@ -280,6 +293,7 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
     handleToggleLoop,
     handleSeekOffset,
     activeType,
+    activeRecord,
     showTranscript,
     setShowTranscript,
   ]);
@@ -548,8 +562,8 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
                   <p className="translation text-sm text-muted-foreground">{ex.translation.vi}</p>
                 </div>
                 <SpeakButton
-                  text={stripFurigana(ex.jp)}
-                  label={stripFurigana(ex.jp)}
+                  text={stripFurigana(formatOptionalBrackets(ex.jp))}
+                  label={stripFurigana(formatOptionalBrackets(ex.jp))}
                   className="size-11 w-11 shrink-0 rounded-full border border-border bg-secondary text-primary hover:bg-accent"
                 />
               </div>

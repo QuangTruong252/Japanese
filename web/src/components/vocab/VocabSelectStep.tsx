@@ -5,7 +5,7 @@ import { Furigana } from '@/components/Furigana';
 import { Chip, PageTitle, SectionHeader } from '@/components/PaperKit';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
-import { stripFurigana } from '@/lib/japanese';
+import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
 import { cn } from '@/lib/utils';
 import type { ReviewItem } from '@/types';
 import { formatDate, getAccuracy, type VocabEntry } from './vocab-shared';
@@ -113,7 +113,7 @@ export function VocabSelectStep({
                     role="checkbox"
                     aria-checked={selected}
                     disabled={!hasMeaning}
-                    aria-label={`${selected ? 'Bỏ chọn' : 'Chọn'} ${stripFurigana(word.word)}`}
+                    aria-label={`${selected ? 'Bỏ chọn' : 'Chọn'} ${formatOptionalBrackets(stripFurigana(word.word))}`}
                     onClick={() => onToggle(targetId)}
                     className={cn(
                       'flex min-h-[76px] w-full items-center gap-4 rounded-xl border bg-card px-4 py-3 text-left outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50',
@@ -134,7 +134,7 @@ export function VocabSelectStep({
                         <Furigana text={word.word} />
                         {word.verbForms && (
                           <span className="ml-2 text-sm font-normal text-muted-foreground">
-                            (Masu: {stripFurigana(word.verbForms.masu)})
+                            (Masu: {formatOptionalBrackets(stripFurigana(word.verbForms.masu))})
                           </span>
                         )}
                       </span>

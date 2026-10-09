@@ -7,6 +7,7 @@ import {
   MAX_SINGLE_FILE_SIZE,
   MAX_COMPRESSION_RATIO,
 } from '@/lib/audio-zip';
+import { runBatchLoop } from '@/lib/audio-import-batching';
 
 export interface WorkerStartMessage {
   type: 'START';
@@ -175,82 +176,41 @@ ctx.onmessage = async (event: MessageEvent<WorkerInMessage>) => {
         return;
       }
 
-      // 5. Tiến hành giải nén, băm SHA-256 và gom lô 20 file
-      const total = validTrackEntries.length;
-      let current = 0;
-      let totalImported = 0;
-      const corruptedFiles: string[] = [];
-      const conflicts: string[] = [];
-      let batch: ExtractedTrack[] = [];
-
-      for (const item of validTrackEntries) {
-        if (isCancelled) {
-          return;
-        }
-
-        current++;
-        ctx.postMessage({
-          type: 'PROGRESS',
-          current,
-          total,
-          currentFile: item.relativePath,
-        } satisfies WorkerProgressMessage);
-
-        const buffer = await item.entry.async('arraybuffer');
-        if (buffer.byteLength > MAX_SINGLE_FILE_SIZE) {
-          corruptedFiles.push(item.relativePath);
-          continue;
-        }
-
-        // Băm SHA-256 bằng Web Crypto API
-        const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
-
-        const expectedHash = manifest[item.relativePath] || manifest[item.entry.name];
-
-        if (!expectedHash || expectedHash.toLowerCase() !== hashHex.toLowerCase()) {
-          corruptedFiles.push(item.relativePath);
-          continue;
-        }
-
-        // Kiểm tra TOFU
-        const oldHash = existingHashes[item.relativePath];
-        if (oldHash && oldHash.toLowerCase() !== hashHex.toLowerCase()) {
-          conflicts.push(item.relativePath);
-        }
-
-        const parsed = parseAudioTrackPath(item.relativePath)!;
-        batch.push({
-          id: item.relativePath,
-          lesson: parsed.lesson,
-          type: parsed.type,
-          buffer,
-          size: buffer.byteLength,
-          sha256: hashHex,
-        });
-        totalImported++;
-
-        // Khi đủ lô 20 file (hoặc đến file cuối), chuyển về Main Thread
-        if (batch.length >= 20 || current === total) {
-          const transferList = batch.map((t) => t.buffer);
+      // 5. Giải nén, băm SHA-256 và gom lô 20 file chuyển về Main Thread
+      const result = await runBatchLoop({
+        entries: validTrackEntries.map(({ relativePath, entry }) => ({
+          relativePath,
+          entryName: entry.name,
+          read: () => entry.async('arraybuffer'),
+        })),
+        manifest,
+        existingHashes,
+        maxFileSize: MAX_SINGLE_FILE_SIZE,
+        batchSize: 20,
+        parsePath: parseAudioTrackPath,
+        sha256: async (buffer) => {
+          const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+          return Array.from(new Uint8Array(hashBuffer))
+            .map((b) => b.toString(16).padStart(2, '0'))
+            .join('');
+        },
+        onProgress: (current, total, currentFile) =>
+          ctx.postMessage({ type: 'PROGRESS', current, total, currentFile } satisfies WorkerProgressMessage),
+        onBatch: (tracks) =>
           ctx.postMessage(
-            {
-              type: 'BATCH',
-              tracks: batch,
-            } satisfies WorkerBatchMessage,
-            transferList
-          );
-          batch = [];
-        }
-      }
+            { type: 'BATCH', tracks } satisfies WorkerBatchMessage,
+            tracks.map((t) => t.buffer),
+          ),
+        isCancelled: () => isCancelled,
+      });
+      if (!result) return;
 
       ctx.postMessage({
         type: 'COMPLETE',
-        totalImported,
-        corruptedFiles,
+        totalImported: result.totalImported,
+        corruptedFiles: result.corruptedFiles,
         skippedFiles,
-        conflicts,
+        conflicts: result.conflicts,
       } satisfies WorkerCompleteMessage);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Lỗi không xác định khi giải nén ZIP.';
