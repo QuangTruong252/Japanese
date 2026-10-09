@@ -37,6 +37,9 @@ Bản tối có bộ giá trị riêng trong `.dark` (không đảo màu tự đ
 | Giao diện, nhãn, nút, thân | Be Vietnam Pro | mặc định (`font-sans`) |
 | Tiếng Nhật cỡ nhỏ (bảng, thẻ, danh sách) | Hiragino / Noto Sans JP | class `jp` (`font-jp`, line-height 2) |
 
+`Furigana` tự gắn `jp` lên phần tử bên trong, nên `jp-display` và cỡ chữ phải truyền **vào prop `className` của `Furigana`**,
+không đặt ở thẻ cha (đặt ở thẻ cha thì chữ vẫn ra font sans).
+
 Cỡ thường dùng: tiêu đề mục `text-lg font-semibold`; thân `text-base`; số liệu và chữ phụ
 `text-sm text-muted-foreground`. Font tự host qua `@fontsource` (offline-first); không gọi Google Fonts.
 
