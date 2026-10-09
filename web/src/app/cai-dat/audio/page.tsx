@@ -1,21 +1,18 @@
 'use client';
 
 import { useEffect, useRef, useState, useTransition } from 'react';
-import Link from 'next/link';
 import { useLiveQuery } from 'dexie-react-hooks';
 import {
   AlertCircle,
-  ArrowLeft,
-  Check,
   CheckCircle2,
-  ChevronDown,
-  Copy,
   FileArchive,
   Info,
   Loader2,
   Trash2,
   TriangleAlert,
 } from 'lucide-react';
+import { PageTitle, SectionHeader } from '@/components/PaperKit';
+import { AudioPackageGuide } from '@/components/settings/AudioPackageGuide';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -27,138 +24,11 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { db } from '@/lib/db';
 import { formatStorageSize } from '@/lib/audio-zip';
-import {
-  SAMPLE_MANIFEST_JSON,
-  MANIFEST_FIELD_DOCS,
-} from '@/lib/audio-manifest-sample';
 import { useAudioImport } from '@/hooks/use-audio-import';
 import { cn } from '@/lib/utils';
-
-function AudioPackageGuide() {
-  const [copied, setCopied] = useState(false);
-  const codeRef = useRef<HTMLPreElement>(null);
-
-  const handleCopy = async () => {
-    try {
-      if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(SAMPLE_MANIFEST_JSON);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-        return;
-      }
-      throw new Error('Clipboard API unavailable');
-    } catch {
-      // Fallback: chọn văn bản trong DOM để người dùng dễ dàng bấm Ctrl+C
-      if (codeRef.current) {
-        const selection = window.getSelection();
-        const range = document.createRange();
-        range.selectNodeContents(codeRef.current);
-        selection?.removeAllRanges();
-        selection?.addRange(range);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      }
-    }
-  };
-
-  return (
-    <Card className="border border-border/70 bg-muted/30">
-      <CardContent className="p-4 space-y-4 text-xs text-muted-foreground">
-        {/* Cách tạo gói: 3 bước ngắn */}
-        <div className="space-y-2">
-          <div className="font-semibold text-foreground text-sm">
-            Cách tạo gói audio (.zip)
-          </div>
-          <ol className="space-y-1.5 list-decimal list-inside text-muted-foreground leading-relaxed">
-            <li>
-              <strong className="text-foreground font-medium">Đặt tên file:</strong> Gom các file MP3 theo từng thư mục bài học (<code className="font-mono text-foreground">L01</code>, <code className="font-mono text-foreground">L02</code>...). Đặt tên file theo chuẩn: <code className="font-mono text-foreground">01_vocab.mp3</code>, <code className="font-mono text-foreground">02_sentence_patterns.mp3</code>, <code className="font-mono text-foreground">03_examples.mp3</code>, <code className="font-mono text-foreground">04_conversation.mp3</code>.
-            </li>
-            <li>
-              <strong className="text-foreground font-medium">Tạo manifest.json:</strong> Đặt file <code className="font-mono text-foreground">manifest.json</code> ở thư mục gốc chứa mã SHA-256 của từng file MP3 để ứng dụng kiểm tra tính toàn vẹn khi giải nén.
-            </li>
-            <li>
-              <strong className="text-foreground font-medium">Nén thành file ZIP:</strong> Chọn các thư mục bài học cùng file <code className="font-mono text-foreground">manifest.json</code> nén thành 1 file ZIP (tối đa 2 GB) rồi nạp vào máy.
-            </li>
-          </ol>
-        </div>
-
-        {/* Cấu trúc cây thư mục */}
-        <div className="space-y-1.5">
-          <div className="font-medium text-foreground text-xs">Cấu trúc thư mục chuẩn:</div>
-          <pre className="p-2.5 rounded-lg bg-card border border-border/60 font-mono text-xs leading-relaxed text-foreground overflow-x-auto">
-{`minna-audio/
-├── L01/
-│   ├── 01_vocab.mp3
-│   ├── 02_sentence_patterns.mp3
-│   ├── 03_examples.mp3
-│   └── 04_conversation.mp3
-├── L02/ ...
-└── manifest.json`}
-          </pre>
-        </div>
-
-        {/* Mục gập Mẫu manifest.json */}
-        <details className="group rounded-xl border border-border/80 bg-card p-3 transition-colors">
-          <summary className="flex cursor-pointer items-center justify-between text-xs font-semibold text-foreground select-none list-none outline-none focus-visible:ring-2 focus-visible:ring-ring">
-            <span>Mẫu manifest.json</span>
-            <ChevronDown className="w-4 h-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180" />
-          </summary>
-
-          <div className="mt-3 pt-3 border-t border-border/60 space-y-3">
-            <div className="flex items-center justify-between gap-2">
-              <span className="text-xs font-mono text-muted-foreground">manifest.json (1 bài, 2 track mẫu)</span>
-              <Button
-                type="button"
-                variant="outline"
-                size="sm"
-                onClick={handleCopy}
-                aria-label={copied ? 'Đã sao chép' : 'Sao chép nội dung manifest.json'}
-                className="h-8 px-2.5 text-xs font-medium border-border/80 hover:bg-accent flex items-center gap-1.5"
-              >
-                {copied ? (
-                  <>
-                    <Check className="w-3.5 h-3.5 text-success" />
-                    <span className="text-success">Đã sao chép</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3.5 h-3.5 text-muted-foreground" />
-                    <span>Sao chép</span>
-                  </>
-                )}
-              </Button>
-            </div>
-
-            <pre
-              ref={codeRef}
-              tabIndex={0}
-              className="p-2.5 rounded-lg bg-muted/40 border border-border/60 font-mono text-xs leading-relaxed text-foreground overflow-x-auto focus:outline-none focus:ring-1 focus:ring-ring"
-            >
-              {SAMPLE_MANIFEST_JSON}
-            </pre>
-
-            {/* Chú thích ngắn từng field */}
-            <div className="space-y-1.5 pt-1 text-xs border-t border-border/40">
-              <div className="font-semibold text-foreground">Chú thích các trường:</div>
-              <ul className="space-y-1 text-muted-foreground">
-                {MANIFEST_FIELD_DOCS.map((doc) => (
-                  <li key={doc.name} className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2">
-                    <span className="font-mono text-foreground shrink-0 font-medium">• {doc.name}:</span>
-                    <span>{doc.description}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </details>
-      </CardContent>
-    </Card>
-  );
-}
 
 export default function AudioSettingsPage() {
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -228,61 +98,41 @@ export default function AudioSettingsPage() {
   };
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-6 pb-28 lg:pb-12 space-y-6">
-      {/* 1. Header & Điều hướng */}
-      <div className="space-y-2">
-        <Link
-          href="/cai-dat"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span>Cài đặt</span>
-        </Link>
-        <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-          Audio đĩa CD
-        </h1>
-        <p className="text-sm text-muted-foreground">
-          Nạp gói ZIP audio của bạn để luyện nghe trên máy này.
-        </p>
+    <div className="mx-auto w-full max-w-2xl space-y-8 px-4 py-6 pb-28 lg:pb-12">
+      <PageTitle back={{ href: '/cai-dat', label: 'Cài đặt' }} title="Audio đĩa CD" />
+
+      {/* Thư viện hiện tại */}
+      <div className="rounded-xl border border-border bg-card px-4 py-3">
+        <div className="text-sm text-muted-foreground">Thư viện hiện tại</div>
+        <div className="mt-0.5 text-2xl font-semibold tracking-tight text-foreground">
+          {totalTracks > 0
+            ? `${totalTracks} track · ${formatStorageSize(totalBytes)}`
+            : 'Chưa có audio'}
+        </div>
+        <div className="mt-0.5 text-sm text-muted-foreground">
+          {totalTracks > 0
+            ? 'Đã kiểm toàn vẹn gói'
+            : storageEstimate
+            ? `Bộ nhớ trình duyệt còn trống khoảng ${storageEstimate}`
+            : 'File audio nằm lại trên máy bạn, không được tải lên đâu cả.'}
+        </div>
       </div>
 
-      {/* 2. Thẻ Thư viện hiện tại */}
-      <Card className="border border-border/80 bg-card shadow-xs">
-        <CardContent className="p-5 space-y-1.5">
-          <div className="text-xs font-medium text-muted-foreground">
-            Thư viện hiện tại
-          </div>
-          <div className="text-2xl font-bold tracking-tight text-foreground">
-            {totalTracks > 0
-              ? `${totalTracks} track · ${formatStorageSize(totalBytes)}`
-              : 'Chưa có audio'}
-          </div>
-          <div className="text-xs text-muted-foreground/90">
-            {totalTracks > 0
-              ? 'Đã kiểm toàn vẹn gói'
-              : storageEstimate
-              ? `Bộ nhớ trình duyệt còn trống khoảng ${storageEstimate}`
-              : 'File audio nằm lại trên máy bạn, không được tải lên đâu cả.'}
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* 3. Lưới 25 bài học */}
-      <div className="space-y-3">
-        <div className="flex items-center justify-between">
-          <h2 className="text-base font-semibold text-foreground">
-            Tình trạng bài học
-          </h2>
-          <div className="flex items-center gap-3 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1">
-              <CheckCircle2 className="w-3.5 h-3.5 text-success" />
-              <span>Đầy đủ</span>
-            </span>
-            <span className="flex items-center gap-1">
-              <span className="inline-block w-3.5 h-3.5 rounded-full border border-warning bg-warning/30" />
-              <span>Thiếu track</span>
-            </span>
-          </div>
+      {/* Lưới 25 bài học */}
+      <section aria-labelledby="heading-lessons">
+        <SectionHeader id="heading-lessons" title="Tình trạng bài học" />
+        <div className="mb-3 flex items-center gap-4 text-sm text-muted-foreground">
+          <span className="flex items-center gap-1.5">
+            <CheckCircle2 className="size-4 text-success" aria-hidden="true" />
+            Đầy đủ
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span
+              className="inline-block size-3.5 rounded-full border border-warning bg-warning/30"
+              aria-hidden="true"
+            />
+            Thiếu track
+          </span>
         </div>
 
         <div className="grid grid-cols-5 gap-2 sm:gap-3">
@@ -294,104 +144,76 @@ export default function AudioSettingsPage() {
             return (
               <div
                 key={lessonNum}
+                role="img"
                 aria-label={`Bài ${lessonNum}, ${trackCount} trên 4 track`}
                 className={cn(
-                  'flex flex-col items-center justify-center py-2.5 px-1 rounded-xl border text-center transition-colors',
-                  isFull
-                    ? 'border-border/80 bg-card text-foreground'
-                    : isPartial
-                    ? 'border-warning/40 bg-warning/5 text-foreground'
-                    : 'border-dashed border-border/60 bg-muted/20 text-muted-foreground/70'
+                  'flex min-h-14 flex-col items-center justify-center rounded-xl border px-1 py-2 text-center',
+                  trackCount === 0
+                    ? 'border-dashed border-border/60 text-muted-foreground'
+                    : cn('bg-card text-foreground', isPartial ? 'border-warning/50' : 'border-border'),
                 )}
               >
-                <span className="text-sm font-bold">{lessonNum}</span>
-                <div className="mt-1 h-5 flex items-center justify-center">
-                  {isFull && (
-                    <CheckCircle2 className="w-4 h-4 text-success" />
-                  )}
+                <span className="font-semibold">{lessonNum}</span>
+                <span className="flex h-5 items-center justify-center" aria-hidden="true">
+                  {isFull && <CheckCircle2 className="size-4 text-success" />}
                   {isPartial && (
-                    <span className="text-xs font-semibold text-warning leading-tight">
-                      {trackCount}/4
-                    </span>
+                    <span className="text-xs font-semibold text-warning">{trackCount}/4</span>
                   )}
-                  {trackCount === 0 && (
-                    <span className="text-xs text-muted-foreground/50">
-                      0/4
-                    </span>
-                  )}
-                </div>
+                </span>
               </div>
             );
           })}
         </div>
-      </div>
+      </section>
 
-      {/* 4. Cảnh báo lỗi / file hỏng (Trạng thái D) */}
+      {/* Cảnh báo file hỏng */}
       {corruptedFiles.length > 0 && (
-        <Card className="border border-destructive/40 bg-destructive/5 text-destructive dark:text-destructive-foreground">
-          <CardContent className="p-4 space-y-2">
-            <div className="flex items-start gap-2.5">
-              <TriangleAlert className="w-5 h-5 shrink-0 mt-0.5 text-destructive" />
-              <div className="space-y-1">
-                <div className="text-sm font-semibold">
-                  {corruptedFiles.length} file không khớp mã kiểm tra
-                </div>
-                <p className="text-xs text-muted-foreground">
-                  Kiểm tra gói ZIP rồi nạp lại. Các track hợp lệ khác vẫn được giữ nguyên.
-                </p>
-                <ul className="text-xs font-mono space-y-0.5 pt-1 text-foreground/80 max-h-32 overflow-y-auto">
-                  {corruptedFiles.map((file) => (
-                    <li key={file}>• {file}</li>
-                  ))}
-                </ul>
-              </div>
+        <div className="flex items-start gap-3 rounded-xl border border-destructive/40 bg-card p-4">
+          <TriangleAlert className="mt-0.5 size-5 shrink-0 text-destructive" aria-hidden="true" />
+          <div className="min-w-0 space-y-1">
+            <div className="font-medium text-foreground">
+              {corruptedFiles.length} file không khớp mã kiểm tra
             </div>
-          </CardContent>
-        </Card>
+            <p className="text-sm text-muted-foreground">
+              Kiểm tra gói ZIP rồi nạp lại. Các track hợp lệ khác vẫn được giữ nguyên.
+            </p>
+            <ul className="max-h-32 space-y-0.5 overflow-y-auto pt-1 font-mono text-xs text-foreground/80">
+              {corruptedFiles.map((file) => (
+                <li key={file} className="break-all">• {file}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       )}
 
-      {/* Lỗi chung nếu có */}
+      {/* Lỗi chung */}
       {error && (
-        <Card className="border border-destructive/40 bg-destructive/5">
-          <CardContent className="p-4 flex items-start gap-2.5 text-destructive">
-            <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
-            <div className="text-xs sm:text-sm font-medium">{error}</div>
-          </CardContent>
-        </Card>
+        <div className="flex items-start gap-3 rounded-xl border border-destructive/40 bg-card p-4">
+          <AlertCircle className="mt-0.5 size-5 shrink-0 text-destructive" aria-hidden="true" />
+          <div className="text-sm font-medium text-foreground">{error}</div>
+        </div>
       )}
 
-      {/* 5. Khối điều khiển / Tiến độ (Trạng thái B hoặc A/C) */}
-      <div className="space-y-3 pt-2">
+      {/* Điều khiển / tiến trình */}
+      <div className="space-y-4">
         {isImporting && progress ? (
-          <Card className="border border-border/80 bg-card p-4 space-y-3">
-            <div className="space-y-1.5">
-              <div className="flex items-center justify-between text-xs font-medium text-foreground">
-                <span>Đang xử lý gói audio...</span>
-                <span>{progress.percent}%</span>
-              </div>
-              <Progress value={progress.percent} className="h-2" />
+          <div className="space-y-3 rounded-xl border border-border bg-card p-4">
+            <div className="flex items-center justify-between text-sm font-medium text-foreground">
+              <span>Đang xử lý gói audio...</span>
+              <span className="tabular-nums">{progress.percent}%</span>
             </div>
-            <div className="flex items-center justify-between gap-3 text-xs text-muted-foreground">
-              <div
-                className="truncate font-mono"
-                aria-live="polite"
-                aria-atomic="true"
-              >
+            <Progress value={progress.percent} />
+            <div className="flex items-center justify-between gap-3 text-sm text-muted-foreground">
+              <div className="min-w-0 truncate font-mono" aria-live="polite" aria-atomic="true">
                 {progress.currentFile} ({progress.current}/{progress.total})
               </div>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={cancelImport}
-                className="h-8 px-2.5 text-xs text-destructive hover:bg-destructive/10"
-              >
+              <Button type="button" variant="outline" className="min-h-11 shrink-0 px-4" onClick={cancelImport}>
                 Hủy
               </Button>
             </div>
-          </Card>
+          </div>
         ) : (
-          <div className="space-y-3">
-            {/* Input file ẩn */}
+          <>
             <input
               ref={fileInputRef}
               type="file"
@@ -402,65 +224,47 @@ export default function AudioSettingsPage() {
             />
 
             {totalTracks === 0 ? (
-              <div className="space-y-4">
-                <AudioPackageGuide />
-
+              <Button type="button" size="quiz" className="w-full" onClick={handleTriggerFileInput}>
+                <FileArchive />
+                <span>Chọn file ZIP</span>
+              </Button>
+            ) : (
+              <div className="flex flex-col gap-3 sm:flex-row">
                 <Button
-                  onClick={handleTriggerFileInput}
+                  type="button"
+                  variant="outline"
                   size="quiz"
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium"
+                  className="flex-1"
+                  onClick={handleTriggerFileInput}
                 >
-                  <FileArchive className="w-5 h-5 mr-2" />
-                  <span>Chọn file ZIP</span>
+                  <FileArchive className="text-muted-foreground" />
+                  <span>Nạp lại file ZIP</span>
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="quiz"
+                  className="border-destructive/40 text-destructive hover:bg-destructive/10 hover:text-destructive sm:w-auto"
+                  onClick={() => setShowDeleteDialog(true)}
+                >
+                  <Trash2 />
+                  <span>Gỡ audio</span>
                 </Button>
               </div>
-            ) : (
-              <div className="space-y-4">
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button
-                    onClick={handleTriggerFileInput}
-                    variant="outline"
-                    size="quiz"
-                    className="flex-1 font-medium border-border/80 hover:bg-accent"
-                  >
-                    <FileArchive className="w-5 h-5 mr-2 text-muted-foreground" />
-                    <span>Nạp lại file ZIP</span>
-                  </Button>
-
-                  <Button
-                    onClick={() => setShowDeleteDialog(true)}
-                    variant="outline"
-                    size="quiz"
-                    className="sm:w-auto font-medium text-destructive border-destructive/30 hover:bg-destructive/10 hover:text-destructive"
-                  >
-                    <Trash2 className="w-5 h-5 mr-2" />
-                    <span>Gỡ audio</span>
-                  </Button>
-                </div>
-
-                {/* Hướng dẫn tạo gói & mẫu manifest khi cần tra cứu lại */}
-                <details className="group rounded-xl border border-border/70 bg-card p-3 transition-colors">
-                  <summary className="flex cursor-pointer items-center justify-between text-xs font-semibold text-muted-foreground hover:text-foreground select-none list-none outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                    <span>Hướng dẫn cấu trúc gói & mẫu manifest.json</span>
-                    <ChevronDown className="w-4 h-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180" />
-                  </summary>
-                  <div className="mt-3 pt-3 border-t border-border/60">
-                    <AudioPackageGuide />
-                  </div>
-                </details>
-              </div>
             )}
-          </div>
+
+            {/* Chờ dữ liệu về rồi mới dựng, để mục không đóng lại khi đã có track */}
+            {audioFiles && <AudioPackageGuide defaultOpen={totalTracks === 0} />}
+          </>
         )}
 
-        {/* Ghi chú chân trang */}
-        <div className="flex items-center justify-center gap-1.5 text-xs text-muted-foreground pt-2">
-          <Info className="w-3.5 h-3.5" />
+        <div className="flex items-center justify-center gap-1.5 pt-1 text-sm text-muted-foreground">
+          <Info className="size-4 shrink-0" aria-hidden="true" />
           <span>Audio chỉ được lưu trên máy này.</span>
         </div>
       </div>
 
-      {/* 6. Hộp thoại xác nhận gỡ toàn bộ audio */}
+      {/* Hộp thoại xác nhận gỡ toàn bộ audio */}
       <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
         <AlertDialogContent className="max-w-md">
           <AlertDialogHeader>
@@ -477,13 +281,13 @@ export default function AudioSettingsPage() {
           <AlertDialogFooter>
             <AlertDialogCancel disabled={isDeleting}>Hủy</AlertDialogCancel>
             <AlertDialogAction
+              variant="destructive"
               onClick={handleDeleteAllAudio}
               disabled={isDeleting}
-              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
               {isDeleting ? (
                 <>
-                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  <Loader2 className="mr-2 size-4 animate-spin" />
                   <span>Đang xóa...</span>
                 </>
               ) : (
