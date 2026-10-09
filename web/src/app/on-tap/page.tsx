@@ -1,13 +1,14 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useMemo, useState, useSyncExternalStore, type ReactNode } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { AlarmClock, AlertCircle, Info, Play, RotateCcw } from 'lucide-react';
+import { AlarmClock, AlertCircle, ArrowRight, Clock, RefreshCw, Volume2, WifiOff } from 'lucide-react';
+import { FeatureIcon, type FeatureIconName } from '@/components/FeatureIcon';
 import { Furigana } from '@/components/Furigana';
-import { Stage, PaperSlip, LinkRow } from '@/components/PaperStage';
-import { DashboardReinforcement } from '@/components/DashboardReinforcement';
+import { Illustration } from '@/components/Illustration';
+import { ListRow, PageTitle, SectionHeader, TornCard } from '@/components/PaperKit';
 import { TARGET_TYPE_LABEL, TargetTypeBadge } from '@/components/review/TargetTypeBadge';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -22,6 +23,7 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import { db } from '@/lib/db';
+import { REVIEW_COMPLETE_ART } from '@/lib/illustrations';
 import { buildSession, targetTypeFromId } from '@/lib/practice';
 import {
   buildTargetLabels,
@@ -38,16 +40,20 @@ import { createClient, isSupabaseConfigured } from '@/lib/supabase/client';
 import { useDueQueue } from '@/lib/use-due-queue';
 import { useJapaneseVoice } from '@/lib/use-question-pool';
 import { useReviewDraft } from '@/lib/use-review-draft';
-import type { IllustrationAsset, TargetType } from '@/types';
+import type { TargetType } from '@/types';
+import { ReinforcementSection } from './ReinforcementSection';
 
 const TYPE_ORDER: TargetType[] = ['vocab', 'grammar', 'kanji', 'particle', 'listening'];
 
-const REVIEW_COMPLETE_ASSET: IllustrationAsset = {
-  src: '/assets/illustrations/ui/states/review-complete-v1.webp',
-  width: 512,
-  height: 512,
-  alt: { vi: '' },
+const TYPE_ICON: Record<TargetType, FeatureIconName> = {
+  vocab: 'vocab',
+  grammar: 'grammar',
+  kanji: 'kanji',
+  particle: 'grammar',
+  listening: 'listening',
 };
+
+const MAIN_CLASS = 'mx-auto w-full max-w-5xl space-y-8 px-4 pb-12 pt-3 sm:px-6 lg:px-8';
 
 function subscribeOnline(callback: () => void) {
   window.addEventListener('online', callback);
@@ -198,77 +204,71 @@ export default function ReviewTodayPage() {
     [queue.pendingSyncCount, isOnline, isLoggedIn],
   );
 
-  // Khối thông báo ngoại tuyến và pending sync
-  const networkStatusBanner = (
+  // Thông báo ngoại tuyến và chờ đồng bộ: dòng nhỏ có icon, không dựng hộp
+  const networkStatusNotice = (
     <>
       {!isOnline && (
-        <div
-          role="status"
-          className="flex items-center gap-2 rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground"
-        >
-          <AlertCircle className="size-4 shrink-0 text-warning" aria-hidden="true" />
+        <p role="status" className="flex items-start gap-2 text-sm text-muted-foreground">
+          <WifiOff className="mt-0.5 size-4 shrink-0 text-warning" aria-hidden="true" />
           <span>
             Đang ngoại tuyến. Dữ liệu ôn tập được lưu trên máy và sẽ đồng bộ khi có kết nối mạng.
           </span>
-        </div>
+        </p>
       )}
       {syncNotice && (
-        <p className="text-xs text-muted-foreground">
-          {syncNotice.text}
-          {syncNotice.kind === 'anonymous' && (
-            <>
-              {' '}
-              <Link
-                href={syncNotice.actionHref}
-                className="underline underline-offset-2 hover:text-foreground"
-              >
-                {syncNotice.actionText}
-              </Link>
-              .
-            </>
-          )}
+        <p className="flex items-start gap-2 text-sm text-muted-foreground">
+          <RefreshCw className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+          <span>
+            {syncNotice.text}
+            {syncNotice.kind === 'anonymous' && (
+              <>
+                {' '}
+                <Link
+                  href={syncNotice.actionHref}
+                  className="underline underline-offset-2 hover:text-foreground"
+                >
+                  {syncNotice.actionText}
+                </Link>
+                .
+              </>
+            )}
+          </span>
         </p>
       )}
     </>
   );
 
-  // Mảnh giấy phiên đang dở nếu có bản nháp (Finding 27, kích thước quiz 48px, câu có số)
-  const draftResumeSlip = hasActiveDraft && draft && (
-    <PaperSlip className="mt-0 space-y-4 border-primary/30">
-      <div className="space-y-1">
-        <span className="text-xs font-semibold uppercase tracking-wider text-primary">
-          Phiên dở dang
-        </span>
-        <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
-          Phiên dở · câu {Math.min(draft.currentIndex + 1, draft.questions.length)}/{draft.questions.length}
-        </h2>
-        <p className="text-xs sm:text-sm text-muted-foreground">
-          Đã trả lời {draft.currentIndex} trên {draft.questions.length} câu. Tiếp tục để hoàn thành phiên ôn này.
-        </p>
-      </div>
-      <div className="flex flex-col sm:flex-row items-center gap-2 pt-1">
+  // Phiên đang dở: "Tiếp tục phiên ôn" là nút đỏ duy nhất khi có nháp
+  const draftResumeCard = hasActiveDraft && draft && (
+    <TornCard>
+      <p className="font-serif text-sm font-bold tracking-wide text-primary">/ Phiên dở /</p>
+      <p className="mt-1.5 font-serif text-2xl font-bold tracking-tight text-foreground">
+        Phiên dở · câu {Math.min(draft.currentIndex + 1, draft.questions.length)}/{draft.questions.length}
+      </p>
+      <p className="mt-1 text-sm text-muted-foreground">
+        Đã trả lời {draft.currentIndex} trên {draft.questions.length} câu.
+      </p>
+      <div className="mt-5 flex flex-col gap-2 sm:flex-row">
         <Button
           size="quiz"
-          className="w-full sm:flex-1 text-base font-semibold"
+          className="w-full font-semibold sm:flex-1"
           onClick={() => router.push('/on-tap/phien?resume=1')}
         >
-          <Play className="mr-1.5 size-4" aria-hidden="true" />
           Tiếp tục phiên ôn
+          <ArrowRight aria-hidden="true" />
         </Button>
         <Button
           variant="outline"
           size="quiz"
-          className="w-full sm:w-auto text-muted-foreground hover:text-foreground"
+          className="w-full sm:w-auto"
           onClick={() => setConfirmDiscardOpen(true)}
         >
-          <RotateCcw className="mr-1.5 size-4" aria-hidden="true" />
           Bỏ nháp
         </Button>
       </div>
-    </PaperSlip>
+    </TornCard>
   );
 
-  // Hộp thoại xác nhận hủy bỏ phiên nháp ôn tập (Finding 27)
   const discardDraftDialog = (
     <AlertDialog
       open={confirmDiscardOpen}
@@ -296,33 +296,31 @@ export default function ReviewTodayPage() {
     </AlertDialog>
   );
 
-  // Khối "Cần củng cố" dùng chung cho các màn
-  const reinforcementSection = (
-    <section aria-labelledby="reinforce-heading" className="space-y-2 pt-2">
-      <h2 id="reinforce-heading" className="text-base font-semibold text-foreground">
-        Cần củng cố
-      </h2>
-      <div className="divide-y divide-border">
-        {weakCount > 0 && <DashboardReinforcement limit={3} />}
-        <LinkRow
-          href="/on-tap/diem-yeu"
-          title="Điểm yếu của tôi"
-          detail={weakCount > 0 ? `Xem toàn bộ ${weakCount} mục đã từng trả lời sai` : 'Chưa có mục nào cần củng cố'}
-        />
+  // Khung chung của mọi trạng thái (trừ đang tải): tiêu đề, thông báo mạng, nháp dở, hộp thoại bỏ nháp
+  const shell = (content: ReactNode) => (
+    <main className={MAIN_CLASS}>
+      <PageTitle title="Ôn tập hôm nay" />
+      <div className="max-w-2xl space-y-8">
+        {(!isOnline || syncNotice) && <div className="space-y-2">{networkStatusNotice}</div>}
+        {draftResumeCard}
+        {discardDraftDialog}
+        {content}
       </div>
-    </section>
+    </main>
   );
 
   // Trạng thái đang tải
   if (loading) {
     return (
-      <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
-        <h1 className="font-heading text-2xl font-semibold text-foreground">Ôn tập hôm nay</h1>
-        <Skeleton className="h-44 w-full rounded-xl" />
-        <div className="space-y-3">
-          <Skeleton className="h-5 w-32" />
-          <Skeleton className="h-16 w-full rounded-lg" />
-          <Skeleton className="h-16 w-full rounded-lg" />
+      <main className={MAIN_CLASS}>
+        <PageTitle title="Ôn tập hôm nay" />
+        <div className="max-w-2xl space-y-8">
+          <Skeleton className="h-56 w-full rounded-xl" />
+          <div className="space-y-2">
+            <Skeleton className="h-6 w-24" />
+            <Skeleton className="h-16 w-full rounded-xl" />
+            <Skeleton className="h-16 w-full rounded-xl" />
+          </div>
         </div>
       </main>
     );
@@ -330,61 +328,49 @@ export default function ReviewTodayPage() {
 
   // Trạng thái: Người học mới, chưa từng có mục ôn nào
   if (!queue.hasAnyReviewItem && totalCount === 0 && queue.learnedLessons.length === 0) {
-    return (
-      <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
-        <h1 className="font-heading text-2xl font-semibold text-foreground">Ôn tập hôm nay</h1>
-        {networkStatusBanner}
-        {draftResumeSlip}
-        {discardDraftDialog}
-        <div className="rounded-xl border border-border bg-card p-6 text-center space-y-2">
-          <h2 className="text-lg font-semibold text-foreground">Chưa có gì để ôn</h2>
-          <p className="text-sm text-muted-foreground">
-            Lịch ôn được tạo từ những bài bạn đã học hoặc luyện tập. Hãy bắt đầu từ bài 1.
-          </p>
-        </div>
-        <div className="divide-y divide-border pt-2">
-          <LinkRow
+    return shell(
+      <>
+        <h2 className="font-serif text-2xl font-semibold text-foreground">Chưa có gì để ôn</h2>
+        <div className="space-y-2">
+          <ListRow
             href="/hoc"
+            icon={<FeatureIcon name="lesson" />}
             title="Bắt đầu học bài"
             detail="Khám phá các bài học Minna no Nihongo N5"
           />
         </div>
-      </main>
+      </>,
     );
   }
 
   // Trạng thái: Đã đạt hạn mức mục mới hôm nay
   if (totalCount === 0 && queue.limitReached) {
-    return (
-      <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
-        <h1 className="font-heading text-2xl font-semibold text-foreground">Ôn tập hôm nay</h1>
-        {networkStatusBanner}
-        {draftResumeSlip}
-        {discardDraftDialog}
-        <div className="rounded-xl border border-border bg-card p-6 space-y-3">
-          <div className="flex items-center gap-3">
-            <Info className="size-6 shrink-0 text-info" aria-hidden="true" />
-            <h2 className="text-xl font-semibold text-foreground">
-              Đã đạt hạn mức mục mới hôm nay
-            </h2>
-          </div>
-          <p className="text-sm text-muted-foreground">
-            Bạn đã hoàn thành các mục đến hạn và đạt hạn mức {queue.dailyNewLimit} mục mới hôm nay. Hãy quay lại vào ngày mai hoặc học thêm bài mới.
+    return shell(
+      <>
+        <div className="text-center">
+          <Illustration
+            asset={REVIEW_COMPLETE_ART}
+            sizes="(min-width: 640px) 224px, 192px"
+            className="mx-auto size-48 object-contain sm:size-56"
+          />
+          <h2 className="mt-2 font-serif text-2xl font-semibold text-foreground">
+            Đã đạt hạn mức mục mới hôm nay
+          </h2>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Hạn mức: {queue.dailyNewLimit} mục mới mỗi ngày
           </p>
         </div>
-        <div className="divide-y divide-border">
-          <LinkRow
+        <div className="space-y-2">
+          <ListRow
             href="/hoc"
+            icon={<FeatureIcon name="lesson" />}
             title="Học bài mới"
             detail="Học thêm từ vựng và ngữ pháp mới"
           />
-          <LinkRow
-            href="/"
-            title="Về Bảng tin"
-          />
+          <ListRow href="/" icon={<FeatureIcon name="home" />} title="Về Bảng tin" />
         </div>
-        {reinforcementSection}
-      </main>
+        <ReinforcementSection weakCount={weakCount} />
+      </>,
     );
   }
 
@@ -394,55 +380,39 @@ export default function ReviewTodayPage() {
       ? `${queue.dueTomorrowCount} mục vào ngày mai`
       : 'ngày mai chưa có mục nào';
 
-    return (
-      <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
-        <h1 className="font-heading text-2xl font-semibold text-foreground">Ôn tập hôm nay</h1>
-        {networkStatusBanner}
-        {draftResumeSlip}
-        {discardDraftDialog}
-        <div className="space-y-4">
-          <Stage
-            asset={REVIEW_COMPLETE_ASSET}
-            sizes="(max-width: 672px) 100vw, 672px"
-            imageClassName="h-48 sm:h-56 object-contain mx-auto"
+    return shell(
+      <>
+        <div className="text-center">
+          <Illustration
+            asset={REVIEW_COMPLETE_ART}
+            sizes="(min-width: 640px) 224px, 192px"
+            className="mx-auto size-48 object-contain sm:size-56"
           />
-          <div className="space-y-1 text-center">
-            <h2 className="text-xl sm:text-2xl font-semibold text-foreground">
-              Hôm nay đã ôn xong
-            </h2>
-            <p className="text-sm text-muted-foreground">
-              Lượt tiếp theo: {nextDueText}
-            </p>
-          </div>
+          <h2 className="mt-2 font-serif text-2xl font-semibold text-foreground">
+            Hôm nay đã ôn xong
+          </h2>
+          <p className="mt-1 text-sm text-muted-foreground">Lượt tiếp theo: {nextDueText}</p>
         </div>
-        <div className="divide-y divide-border">
-          <LinkRow
+        <div className="space-y-2">
+          <ListRow
             href="/hoc"
+            icon={<FeatureIcon name="lesson" />}
             title="Học bài mới"
             detail="Tiếp tục học từ vựng và ngữ pháp"
           />
-          <LinkRow
-            href="/"
-            title="Về Bảng tin"
-          />
+          <ListRow href="/" icon={<FeatureIcon name="home" />} title="Về Bảng tin" />
         </div>
-        {reinforcementSection}
-      </main>
+        <ReinforcementSection weakCount={weakCount} />
+      </>,
     );
   }
 
-  // Trạng thái: Bị chặn (thiếu giọng Nhật hoặc thiếu câu hỏi hợp lệ) (Decision D2: plain block, no nested card)
+  // Trạng thái: Bị chặn (thiếu giọng Nhật hoặc thiếu câu hỏi hợp lệ)
   if (!canStart) {
-    return (
-      <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
-        <h1 className="font-heading text-2xl font-semibold text-foreground">Ôn tập hôm nay</h1>
-        {networkStatusBanner}
-        {draftResumeSlip}
-        {discardDraftDialog}
+    return shell(
+      <>
         <div className="space-y-3">
-          <p className="text-xl font-semibold text-foreground">
-            {dueSummaryText}
-          </p>
+          <h2 className="font-serif text-2xl font-semibold text-foreground">{dueSummaryText}</h2>
           {preview.excludedAudioCount > 0 ? (
             <div role="alert" className="flex items-start gap-3 rounded-xl border border-warning/40 bg-warning/10 p-4 text-foreground">
               <AlertCircle className="mt-0.5 size-5 shrink-0 text-warning" aria-hidden="true" />
@@ -464,25 +434,20 @@ export default function ReviewTodayPage() {
             </div>
           )}
         </div>
-        <div className="divide-y divide-border">
+        <div className="space-y-2">
           {preview.excludedAudioCount > 0 && (
-            <LinkRow
+            <ListRow
               href="/cai-dat/audio"
+              icon={<Volume2 />}
               title="Cài đặt âm thanh"
               detail="Thêm giọng tiếng Nhật để ôn câu nghe"
             />
           )}
-          <LinkRow
-            href="/hoc"
-            title="Học bài khác"
-          />
-          <LinkRow
-            href="/"
-            title="Về Bảng tin"
-          />
+          <ListRow href="/hoc" icon={<FeatureIcon name="lesson" />} title="Học bài khác" />
+          <ListRow href="/" icon={<FeatureIcon name="home" />} title="Về Bảng tin" />
         </div>
-        {reinforcementSection}
-      </main>
+        <ReinforcementSection weakCount={weakCount} />
+      </>,
     );
   }
 
@@ -501,112 +466,113 @@ export default function ReviewTodayPage() {
   const previewRows = batchItems.slice(0, 5);
   const remainingInBatch = Math.max(0, batchItems.length - 5);
 
-  return (
-    <main className="mx-auto w-full max-w-2xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
-      <h1 className="font-heading text-2xl font-semibold text-foreground">Ôn tập hôm nay</h1>
-      {networkStatusBanner}
-      {draftResumeSlip}
-      {discardDraftDialog}
-
-      {/* 1. Mảnh giấy điều khiển: không cảnh nền, yên tĩnh */}
-      <PaperSlip className="mt-0 space-y-4">
-        <div className="space-y-1">
-          <p className="text-xl sm:text-2xl font-semibold text-foreground">
+  return shell(
+    <>
+      <section aria-labelledby="review-today-heading">
+        <TornCard>
+          <p
+            id="review-today-heading"
+            className="font-serif text-sm font-bold tracking-wide text-primary"
+          >
+            / Hôm nay /
+          </p>
+          <p className="mt-1.5 font-serif text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             <span aria-hidden="true">{dueSummaryText}</span>
             <span className="sr-only">
               Hôm nay có {queue.totalDueCount} mục đến hạn ôn tập và {newCount} mục mới.
             </span>
           </p>
           {minutesEstimate !== null && (
-            <p className="text-sm text-muted-foreground">khoảng {minutesEstimate} phút</p>
+            <p className="mt-2 flex items-center gap-1.5 text-sm text-muted-foreground">
+              <Clock className="size-4 shrink-0" aria-hidden="true" />
+              khoảng {minutesEstimate} phút
+            </p>
           )}
-        </div>
+          {breakdownText && (
+            <p className="mt-1 text-sm text-muted-foreground">{breakdownText}</p>
+          )}
 
-        <Button
-          size="quiz"
-          variant={startAction.buttonVariant}
-          className="w-full text-base font-medium"
-          onClick={handleStartClick}
-        >
-          Bắt đầu ôn
-        </Button>
+          {preview.excludedAudioCount > 0 && (
+            <div
+              role="status"
+              className="mt-3 flex items-start gap-2 rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground"
+            >
+              <AlertCircle className="mt-0.5 size-4 shrink-0 text-warning" aria-hidden="true" />
+              <span>
+                Tạm thời bỏ qua {preview.excludedAudioCount} câu nghe do thiết bị chưa có giọng tiếng Nhật (ja-JP).{' '}
+                <Link href="/cai-dat/audio" className="font-semibold underline underline-offset-2 hover:text-foreground">
+                  Cài đặt âm thanh
+                </Link>
+              </span>
+            </div>
+          )}
 
-        {breakdownText && (
-          <p className="text-sm text-muted-foreground">
-            {breakdownText}
-          </p>
-        )}
-
-        {preview.excludedAudioCount > 0 && (
-          <div
-            role="status"
-            className="flex items-center gap-2 rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm text-foreground"
+          <Button
+            size="quiz"
+            variant={startAction.buttonVariant}
+            className="mt-5 w-full font-semibold"
+            onClick={handleStartClick}
           >
-            <AlertCircle className="size-4 shrink-0 text-warning" aria-hidden="true" />
-            <span>
-              Tạm thời bỏ qua {preview.excludedAudioCount} câu nghe do thiết bị chưa có giọng tiếng Nhật (ja-JP).{' '}
-              <Link href="/cai-dat/audio" className="font-semibold underline underline-offset-2 hover:text-foreground">
-                Cài đặt âm thanh
-              </Link>
-            </span>
-          </div>
-        )}
+            Bắt đầu ôn
+            <ArrowRight aria-hidden="true" />
+          </Button>
 
-        {queue.remainingDue > 0 && (
-          <p className="text-sm text-muted-foreground">
-            {remainingBatchesText}
-          </p>
-        )}
-      </PaperSlip>
+          {queue.remainingDue > 0 && (
+            <p className="mt-3 text-sm text-muted-foreground">{remainingBatchesText}</p>
+          )}
+        </TornCard>
+      </section>
 
-      {/* 2. Lô này: xem trước tối đa 5 mục của lô hiện tại (chỉ xem, không bấm) */}
-      <section aria-labelledby="batch-preview-heading" className="space-y-2">
-        <h2 id="batch-preview-heading" className="text-base font-semibold text-foreground">
-          Lô này
-        </h2>
-        <ul className="divide-y divide-border">
+      {/* Lô này: xem trước tối đa 5 mục của lô hiện tại (chỉ xem, không bấm) */}
+      <section aria-labelledby="batch-preview-heading">
+        <SectionHeader id="batch-preview-heading" title="Lô này" />
+        <ul className="space-y-2">
           {previewRows.map((row) => {
             const label = labels.get(row.targetId);
             const late = row.dueAt ? overdueDays(row.dueAt, queue.now) : 0;
+            const type = targetTypeFromId(row.targetId);
             return (
               <li
                 key={row.targetId}
-                className="flex flex-col items-start gap-1.5 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3"
+                className="flex items-start gap-3 rounded-xl border border-border bg-card px-4 py-3"
               >
-                <div className="min-w-0 flex-1 space-y-0.5">
-                  <div className="jp jp-vocab text-lg font-medium text-foreground">
+                <span
+                  className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground [&_svg]:size-6"
+                  aria-hidden="true"
+                >
+                  <FeatureIcon name={TYPE_ICON[type]} />
+                </span>
+                <div className="min-w-0 flex-1">
+                  <div className="jp-vocab text-lg font-medium text-foreground">
                     {label ? (
                       <Furigana text={label.jp} />
                     ) : (
                       <span className="text-muted-foreground">{row.targetId}</span>
                     )}
                   </div>
-                  {label?.vi && (
-                    <p className="text-sm text-muted-foreground line-clamp-2">{label.vi}</p>
-                  )}
+                  {label?.vi && <p className="text-sm text-muted-foreground">{label.vi}</p>}
                 </div>
-                <div className="flex flex-wrap items-center gap-2 sm:shrink-0">
+                <div className="flex shrink-0 flex-col items-end gap-1">
+                  <TargetTypeBadge type={type} />
                   {late > 0 && (
-                    <span className="inline-flex items-center gap-1 rounded-sm bg-warning/15 px-2 py-0.5 text-xs font-medium text-warning">
+                    <span className="inline-flex items-center gap-1 text-xs font-medium text-primary">
                       <AlarmClock className="size-3" aria-hidden="true" />
-                      <span>Quá hạn {late} ngày</span>
+                      Quá hạn {late} ngày
                     </span>
                   )}
-                  <TargetTypeBadge type={targetTypeFromId(row.targetId)} />
                 </div>
               </li>
             );
           })}
         </ul>
         {remainingInBatch > 0 && (
-          <p className="text-sm text-muted-foreground pt-1">
+          <p className="mt-2 rounded-xl border border-border bg-secondary/50 px-4 py-3 text-center text-sm text-muted-foreground">
             và {remainingInBatch} mục khác
           </p>
         )}
       </section>
 
-      {/* 3. Cần củng cố: 3 mục sai nhiều nhất + LinkRow Điểm yếu của tôi */}
-      {reinforcementSection}
+      <ReinforcementSection weakCount={weakCount} />
 
       {/* Hộp thoại xác nhận ghi đè phiên nháp ôn tập đang dở */}
       <AlertDialog
@@ -636,7 +602,6 @@ export default function ReviewTodayPage() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-    </main>
+    </>,
   );
 }
-

@@ -1,4 +1,3 @@
-import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import type { TargetType } from '@/types';
 
@@ -26,12 +25,17 @@ const TARGET_TYPE_DOT: Record<TargetType, string> = {
 
 export function TargetTypeBadge({ type, className }: { type: TargetType; className?: string }) {
   return (
-    <Badge variant="outline" className={cn('gap-1.5', className)}>
+    <span
+      className={cn(
+        'inline-flex shrink-0 items-center gap-1.5 rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground',
+        className,
+      )}
+    >
       <span
         aria-hidden="true"
         className={cn('size-2 shrink-0 rounded-full', TARGET_TYPE_DOT[type])}
       />
       {TARGET_TYPE_LABEL[type]}
-    </Badge>
+    </span>
   );
 }
