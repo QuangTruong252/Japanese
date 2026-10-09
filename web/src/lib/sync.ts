@@ -1,5 +1,4 @@
 import { db } from './db.ts';
-import { saveSettings } from './settings.ts';
 import { isSupabaseConfigured, createClient } from './supabase/client.ts';
 import type { Card } from 'ts-fsrs';
 import type { ExerciseType, PracticeSession, ReviewItem, TargetType } from '../types/index.ts';
@@ -110,7 +109,31 @@ export function setLastPulledAt(isoString: string | null): void {
   }
 }
 
+/**
+ * Gỡ liên kết máy với tài khoản: lần đồng bộ sau coi máy như chưa thuộc ai và không kéo lại dữ liệu cũ.
+ */
+export function clearAccountLink(): void {
+  syncGeneration++;
+  setOwnerUserId(null);
+  setLastPulledAt(null);
+}
+
 let isSyncRunning = false;
+// Tăng mỗi khi gỡ liên kết tài khoản: lượt sync đã bắt đầu từ trước thấy số đổi thì bỏ mọi thao tác ghi còn lại,
+// nếu không phản hồi pull đến trễ sẽ ghi dữ liệu và con trỏ ngược lại sau khi người dùng đã xóa.
+let syncGeneration = 0;
+// Bản ghi pendingSync đến trong lúc đang đồng bộ: chạy thêm một lượt khi lượt hiện tại xong.
+let rerunRequested = false;
+
+const SYNC_DEBOUNCE_MS = 300;
+
+type SyncClient = ReturnType<typeof createClient>;
+let makeClient: () => SyncClient = createClient;
+
+/** Chỉ cho test: thay client Supabase bằng bản giả. */
+export function setSyncClientFactoryForTest(factory: (() => SyncClient) | null): void {
+  makeClient = factory ?? createClient;
+}
 
 /**
  * Đẩy hàng đợi pendingSync lên Supabase RPC sync_practice.
@@ -158,7 +181,7 @@ async function pushPendingQueue(
  */
 async function pullRemoteChanges(
   supabase: ReturnType<typeof createClient>,
-  currentUserId: string,
+  isCurrent: () => boolean,
 ): Promise<{ maxUpdatedAt: string | null }> {
   const lastPulledAt = getLastPulledAt();
   let newestTimestamp = lastPulledAt;
@@ -181,7 +204,7 @@ async function pullRemoteChanges(
     }
 
     const { data: rows, error } = await query;
-    if (error || !rows) {
+    if (!isCurrent() || error || !rows) {
       break;
     }
 
@@ -210,6 +233,7 @@ async function pullRemoteChanges(
 
     // Hợp nhất vào Dexie theo nguyên tắc LWW (updatedAt mới hơn thắng)
     await db.transaction('rw', db.reviewItems, async () => {
+      if (!isCurrent()) return;
       for (const item of incomingReviews) {
         const existing = await db.reviewItems.get(item.targetId);
         if (!existing || new Date(item.updatedAt).getTime() >= new Date(existing.updatedAt).getTime()) {
@@ -218,6 +242,7 @@ async function pullRemoteChanges(
       }
     });
 
+    if (!isCurrent()) break;
     const lastRow = rows[rows.length - 1];
     cursor = lastRow.updated_at;
     newestTimestamp = cursor;
@@ -241,7 +266,7 @@ async function pullRemoteChanges(
   }
 
   const { data: sessionRows } = await sessionsQuery;
-  if (sessionRows && sessionRows.length > 0) {
+  if (isCurrent() && sessionRows && sessionRows.length > 0) {
     const incomingSessions: PracticeSession[] = (sessionRows as unknown as SupabaseSessionRow[]).map((s) => ({
       id: s.id,
       selectedLessons: s.selected_lessons ?? [],
@@ -254,20 +279,12 @@ async function pullRemoteChanges(
     }));
 
     await db.transaction('rw', db.practiceSessions, async () => {
+      if (!isCurrent()) return;
       await db.practiceSessions.bulkPut(incomingSessions);
     });
   }
 
-  // 3. Kéo profiles settings
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('settings')
-    .eq('id', currentUserId)
-    .single();
-
-  if (profile?.settings) {
-    saveSettings(profile.settings);
-  }
+  // Cài đặt là riêng từng máy nên không kéo profiles.settings: làm vậy sẽ ghi đè cài đặt máy bằng mặc định của server.
 
   return { maxUpdatedAt: newestTimestamp };
 }
@@ -277,6 +294,8 @@ async function pullRemoteChanges(
  */
 export async function triggerSync(): Promise<boolean> {
   if (isSyncRunning) return false;
+  const generation = syncGeneration;
+  const isCurrent = () => generation === syncGeneration;
   if (!isSupabaseConfigured()) {
     const pendingCount = await db.pendingSync.count();
     updateSyncStatus({
@@ -297,7 +316,7 @@ export async function triggerSync(): Promise<boolean> {
 
   let supabase: ReturnType<typeof createClient>;
   try {
-    supabase = createClient();
+    supabase = makeClient();
   } catch {
     updateSyncStatus({ state: 'unconfigured' });
     return false;
@@ -308,6 +327,7 @@ export async function triggerSync(): Promise<boolean> {
   } = await supabase.auth.getUser();
 
   const pendingCount = await db.pendingSync.count();
+  if (!isCurrent()) return false;
 
   if (!user) {
     updateSyncStatus({
@@ -339,7 +359,8 @@ export async function triggerSync(): Promise<boolean> {
     await pushPendingQueue(supabase);
 
     // 2. Kéo sau (Pull)
-    const { maxUpdatedAt } = await pullRemoteChanges(supabase, user.id);
+    const { maxUpdatedAt } = await pullRemoteChanges(supabase, isCurrent);
+    if (!isCurrent()) return false;
     if (maxUpdatedAt) {
       setLastPulledAt(maxUpdatedAt);
     }
@@ -353,6 +374,7 @@ export async function triggerSync(): Promise<boolean> {
     });
     return true;
   } catch (err: unknown) {
+    if (!isCurrent()) return false;
     const remainingPending = await db.pendingSync.count();
     updateSyncStatus({
       state: remainingPending > 0 ? 'pending' : 'offline',
@@ -362,6 +384,10 @@ export async function triggerSync(): Promise<boolean> {
     return false;
   } finally {
     isSyncRunning = false;
+    if (rerunRequested) {
+      rerunRequested = false;
+      void triggerSync();
+    }
   }
 }
 
@@ -381,6 +407,20 @@ export function initSyncEngine(): () => void {
     }
   };
 
+  // Một chỗ chung cho mọi nơi ghi pendingSync (học từ, luyện tập, nhập sao lưu): hẹn đẩy sau một nhịp ngắn
+  // để nhiều bản ghi liên tiếp gộp thành một lượt. Hook chạy trước khi transaction commit, còn lượt sync
+  // đọc hàng đợi bằng transaction mới nên luôn thấy bản ghi đã commit.
+  let debounceTimer: ReturnType<typeof setTimeout> | null = null;
+  const onPendingCreated = () => {
+    if (debounceTimer) clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      debounceTimer = null;
+      if (isSyncRunning) rerunRequested = true;
+      else void triggerSync();
+    }, SYNC_DEBOUNCE_MS);
+  };
+  db.pendingSync.hook('creating', onPendingCreated);
+
   window.addEventListener('online', onOnline);
   document.addEventListener('visibilitychange', onVisibilityChange);
 
@@ -388,6 +428,8 @@ export function initSyncEngine(): () => void {
   triggerSync();
 
   return () => {
+    db.pendingSync.hook('creating').unsubscribe(onPendingCreated);
+    if (debounceTimer) clearTimeout(debounceTimer);
     window.removeEventListener('online', onOnline);
     document.removeEventListener('visibilitychange', onVisibilityChange);
   };
@@ -417,11 +459,20 @@ export async function signInWithGoogle(): Promise<{ error: Error | null }> {
   }
 }
 
-export async function signOut(): Promise<{ error: Error | null }> {
+/**
+ * `local`: chỉ thu hồi phiên của máy này, nhưng thư viện vẫn gửi một request lên server nên offline sẽ trả lỗi
+ * dù phiên cục bộ đã bị bỏ. Vì vậy với `local` ta quyết định theo phiên còn trên máy (đọc lưu trữ, không cần mạng):
+ * hết phiên thì coi như đăng xuất xong, còn phiên thì giữ nguyên lỗi.
+ */
+export async function signOut(options?: { local?: boolean }): Promise<{ error: Error | null }> {
   if (!isSupabaseConfigured()) return { error: null };
   try {
-    const supabase = createClient();
-    const { error } = await supabase.auth.signOut();
+    const supabase = makeClient();
+    let { error } = await supabase.auth.signOut(options?.local ? { scope: 'local' } : undefined);
+    if (error && options?.local) {
+      const { data, error: sessionError } = await supabase.auth.getSession();
+      if (!sessionError && !data.session) error = null;
+    }
     updateSyncStatus({
       state: 'offline',
     });

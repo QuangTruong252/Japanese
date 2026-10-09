@@ -1,5 +1,6 @@
 import { db } from './db.ts';
 import { loadSettings, type AppSettings } from './settings.ts';
+import { clearAccountLink, getOwnerUserId, signOut } from './sync.ts';
 import type { PracticeSession, ReviewItem, TargetType } from '../types/index.ts';
 
 export interface ExportFile {
@@ -283,6 +284,14 @@ export function downloadExportFile(data: ExportFile): void {
   URL.revokeObjectURL(url);
 }
 
+/**
+ * Máy chưa liên kết tài khoản mà gửi `replaced: true` thì lần đăng nhập đầu tiên sẽ khiến server
+ * xóa dữ liệu của tài khoản ngoài ý muốn; chỉ máy đã liên kết mới được thay cả dữ liệu trên tài khoản.
+ */
+export function isReplacePayload(mode: 'merge' | 'replace', ownerUserId: string | null): boolean {
+  return mode === 'replace' && ownerUserId !== null;
+}
+
 export async function executeImport(
   importData: ParsedImportData,
   mode: 'merge' | 'replace',
@@ -318,7 +327,7 @@ export async function executeImport(
         kind: 'import',
         reviewItems: finalReviews,
         sessions: finalSessions,
-        replaced: mode === 'replace',
+        replaced: isReplacePayload(mode, getOwnerUserId()),
       },
       createdAt: Date.now(),
     });
@@ -330,6 +339,17 @@ export async function executeImport(
   };
 }
 
+/**
+ * Gỡ liên kết trước để vô hiệu hóa lượt sync đang chạy, đăng xuất cục bộ rồi mới xóa.
+ * Còn phiên trên máy (đăng xuất lỗi) thì không xóa: sync sau sẽ kéo dữ liệu về lại.
+ */
+export async function wipeAllLocalData(): Promise<void> {
+  clearAccountLink();
+  const { error } = await signOut({ local: true });
+  if (error) throw error;
+  await executeWipeAllData();
+}
+
 export async function executeWipeAllData(): Promise<void> {
   await db.transaction('rw', db.reviewItems, db.practiceSessions, db.pendingSync, async () => {
     await db.reviewItems.clear();
@@ -337,11 +357,5 @@ export async function executeWipeAllData(): Promise<void> {
     await db.pendingSync.clear();
   });
 
-  if (typeof window !== 'undefined' && window.localStorage) {
-    try {
-      window.localStorage.removeItem('jp:lastPulledAt');
-    } catch {
-      // ignore
-    }
-  }
+  clearAccountLink();
 }

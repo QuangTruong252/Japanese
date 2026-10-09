@@ -1,3 +1,5 @@
+import { loadSettings } from './settings.ts';
+
 export const hasJapaneseVoice = async (): Promise<boolean> => {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
     return false;
@@ -31,7 +33,12 @@ export const hasJapaneseVoice = async (): Promise<boolean> => {
   });
 };
 
-export const speak = (text: string, rate = 1.0): SpeechSynthesisUtterance | null => {
+/** `volume` chỉ để nghe thử giá trị thanh trượt chưa lưu; mặc định theo cài đặt hiện tại. */
+export const speak = (
+  text: string,
+  rate = 1.0,
+  volume: number = loadSettings().soundVolume,
+): SpeechSynthesisUtterance | null => {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
     return null;
   }
@@ -40,6 +47,7 @@ export const speak = (text: string, rate = 1.0): SpeechSynthesisUtterance | null
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'ja-JP';
   utterance.rate = rate;
+  utterance.volume = volume;
 
   const voices = window.speechSynthesis.getVoices();
   const jaVoice = voices.find((v) => v.lang.toLowerCase().startsWith('ja'));

@@ -1,6 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
+  clearAccountLink,
+  LAST_PULLED_STORAGE_KEY,
+  OWNER_STORAGE_KEY,
   getOwnerUserId,
   setOwnerUserId,
   getLastPulledAt,
@@ -49,4 +52,28 @@ test('SyncStatus: thông báo cho các listener khi có cập nhật', () => {
   assert.equal(getSyncStatusSnapshot().pendingCount, 0);
 
   unsubscribe();
+});
+
+test('clearAccountLink: xóa jp:ownerUserId và jp:lastPulledAt để lần đồng bộ sau không kéo lại dữ liệu', () => {
+  const store = new Map<string, string>([
+    [OWNER_STORAGE_KEY, 'u1'],
+    [LAST_PULLED_STORAGE_KEY, '2026-10-01T00:00:00.000Z'],
+    ['jp:settings', '{}'],
+  ]);
+  const g = globalThis as Record<string, unknown>;
+  g.window = {
+    localStorage: {
+      getItem: (k: string) => store.get(k) ?? null,
+      setItem: (k: string, v: string) => void store.set(k, v),
+      removeItem: (k: string) => void store.delete(k),
+    },
+  };
+  try {
+    clearAccountLink();
+    assert.equal(getOwnerUserId(), null);
+    assert.equal(getLastPulledAt(), null);
+    assert.equal(store.has('jp:settings'), true);
+  } finally {
+    delete g.window;
+  }
 });

@@ -11,7 +11,9 @@ import { resolveSyncBadgeState } from '@/lib/stats';
 import {
   getSyncStatusSnapshot,
   getServerSyncStatusSnapshot,
+  initSyncEngine,
   subscribeSyncStatus,
+  triggerSync,
 } from '@/lib/sync';
 import { createClient, isSupabaseConfigured } from '@/lib/supabase/client';
 import {
@@ -80,6 +82,9 @@ export function AppNav() {
   const dexiePendingCount = useLiveQuery(() => db.pendingSync.count(), []) ?? 0;
   const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
 
+  // AppNav có mặt trên mọi trang nên đây là nơi duy nhất gắn bộ tự đồng bộ: hàng đợi pendingSync được đẩy dù người học không mở trang nào có nút đồng bộ.
+  useEffect(() => initSyncEngine(), []);
+
   useEffect(() => {
     if (!isSupabaseConfigured()) return;
     try {
@@ -98,6 +103,7 @@ export function AppNav() {
               session.user.email?.split('@')[0],
             avatarUrl: session.user.user_metadata?.avatar_url,
           });
+          triggerSync();
         } else {
           setCurrentUser(null);
         }

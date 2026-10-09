@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useState, useSyncExternalStore } from 'react';
 import { CloudOff, LogOut, RefreshCw, User } from 'lucide-react';
+import { useLiveQuery } from 'dexie-react-hooks';
 import { SectionHeader } from '@/components/PaperKit';
 import {
   AlertDialog,
@@ -14,6 +15,9 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import { Button } from '@/components/ui/button';
+import { Skeleton } from '@/components/ui/skeleton';
+import { db } from '@/lib/db';
+import { resolveSyncBadgeState } from '@/lib/stats';
 import {
   getSyncStatusSnapshot,
   getServerSyncStatusSnapshot,
@@ -40,6 +44,7 @@ interface AuthUser {
 export function AccountSection({ onNotify }: { onNotify: (notice: SettingsNotice) => void }) {
   const headingId = useId();
   const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
+  const [isCheckingSession, setIsCheckingSession] = useState(isSupabaseConfigured);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [logoutConfirmOpen, setLogoutConfirmOpen] = useState(false);
 
@@ -49,47 +54,37 @@ export function AccountSection({ onNotify }: { onNotify: (notice: SettingsNotice
     getServerSyncStatusSnapshot,
   );
 
+  const dexiePendingCount = useLiveQuery(() => db.pendingSync.count(), []) ?? 0;
+  const syncResolution = resolveSyncBadgeState({
+    pendingCount: Math.max(dexiePendingCount, syncEngineStatus.pendingCount),
+    isLoggedIn: currentUser !== null,
+    engineState: syncEngineStatus.state,
+  });
+
   useEffect(() => {
     if (!isSupabaseConfigured()) return;
-    try {
-      const supabase = createClient();
-      supabase.auth.getUser().then(({ data: { user } }) => {
-        if (user) {
-          setCurrentUser({
-            id: user.id,
-            email: user.email,
-            displayName:
-              user.user_metadata?.full_name ||
-              user.user_metadata?.name ||
-              user.email?.split('@')[0],
-            avatarUrl: user.user_metadata?.avatar_url,
-          });
-        }
-      });
+    // Chỉ đọc session cục bộ: onAuthStateChange phát INITIAL_SESSION ngay khi đăng ký.
+    const supabase = createClient();
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session?.user) {
+        setCurrentUser({
+          id: session.user.id,
+          email: session.user.email,
+          displayName:
+            session.user.user_metadata?.full_name ||
+            session.user.user_metadata?.name ||
+            session.user.email?.split('@')[0],
+          avatarUrl: session.user.user_metadata?.avatar_url,
+        });
+      } else {
+        setCurrentUser(null);
+      }
+      setIsCheckingSession(false);
+    });
 
-      const {
-        data: { subscription },
-      } = supabase.auth.onAuthStateChange((_event, session) => {
-        if (session?.user) {
-          setCurrentUser({
-            id: session.user.id,
-            email: session.user.email,
-            displayName:
-              session.user.user_metadata?.full_name ||
-              session.user.user_metadata?.name ||
-              session.user.email?.split('@')[0],
-            avatarUrl: session.user.user_metadata?.avatar_url,
-          });
-          triggerSync();
-        } else {
-          setCurrentUser(null);
-        }
-      });
-
-      return () => subscription.unsubscribe();
-    } catch {
-      // Supabase unconfigured or error
-    }
+    return () => subscription.unsubscribe();
   }, []);
 
   const handleGoogleSignIn = async () => {
@@ -120,7 +115,15 @@ export function AccountSection({ onNotify }: { onNotify: (notice: SettingsNotice
     <section aria-labelledby={headingId} id="heading-account" className="scroll-mt-24">
       <SectionHeader id={headingId} title="Tài khoản & Đồng bộ" />
       <SettingsGroup className="space-y-3 p-4 divide-y-0">
-        {!currentUser ? (
+        {isCheckingSession ? (
+          <div className="flex items-center gap-3">
+            <Skeleton className="size-12 rounded-full" />
+            <div className="flex-1 space-y-1.5">
+              <Skeleton className="h-4 w-40 max-w-full" />
+              <Skeleton className="h-3 w-24" />
+            </div>
+          </div>
+        ) : !currentUser ? (
           <>
             <div className="flex items-center gap-3">
               <span
@@ -205,27 +208,9 @@ export function AccountSection({ onNotify }: { onNotify: (notice: SettingsNotice
 
             <div className="flex flex-wrap items-center gap-x-2 border-t border-border pt-3 text-sm text-muted-foreground">
               <span>Trạng thái:</span>
-              {syncEngineStatus.state === 'synced' && (
-                <span className="font-medium text-success">
-                  Đã đồng bộ{' '}
-                  {syncEngineStatus.lastSyncedAt
-                    ? `· ${syncEngineStatus.lastSyncedAt.toLocaleTimeString('vi-VN', {
-                        hour: '2-digit',
-                        minute: '2-digit',
-                      })}`
-                    : ''}
-                </span>
-              )}
-              {syncEngineStatus.state === 'pending' && (
-                <span className="font-medium text-warning">
-                  Chờ đồng bộ ({syncEngineStatus.pendingCount} mục)
-                </span>
-              )}
-              {syncEngineStatus.state === 'syncing' && (
-                <span className="font-medium text-warning">Đang đẩy và kéo dữ liệu…</span>
-              )}
-              {syncEngineStatus.state === 'offline' && <span>Ngoại tuyến — đã lưu trên máy</span>}
-              {syncEngineStatus.state === 'unconfigured' && <span>Đã lưu trên máy</span>}
+              <span className={cn('font-medium', syncResolution.state === 'synced' && 'text-success', (syncResolution.state === 'pending' || syncResolution.state === 'syncing') && 'text-warning')}>
+                {syncResolution.label}
+              </span>
             </div>
           </>
         )}
