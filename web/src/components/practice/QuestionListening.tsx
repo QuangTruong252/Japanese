@@ -80,7 +80,7 @@ export function QuestionListening({
 
   const handleRateChange = (newRate: number) => {
     setRate(newRate);
-    speak(question.prompt, newRate);
+    speak(spoken, newRate);
   };
 
   const state: 'idle' | 'correct' | 'incorrect' = !answered

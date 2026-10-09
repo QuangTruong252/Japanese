@@ -319,3 +319,17 @@ export function particleHint(
 
   return null;
 }
+
+// Space/Enter chỉ sang câu khi đã trả lời, phiên chưa kết thúc và không có dialog che phía trước.
+export function shouldAdvanceOnKey(state: {
+  key: string;
+  code?: string;
+  targetTag?: string;
+  answered: boolean;
+  isFinished: boolean;
+  exitDialogOpen: boolean;
+}): boolean {
+  if (state.targetTag === 'INPUT' || state.targetTag === 'TEXTAREA') return false;
+  const isAdvanceKey = state.key === ' ' || state.code === 'Space' || state.key === 'Enter';
+  return isAdvanceKey && state.answered && !state.isFinished && !state.exitDialogOpen;
+}

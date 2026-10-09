@@ -30,6 +30,7 @@ import {
   savePracticeDraft,
   particleHint,
   PRACTICE_DRAFT_VERSION,
+  shouldAdvanceOnKey,
 } from '@/lib/practice-draft';
 import { cn } from '@/lib/utils';
 import { containsJapanese, stripFurigana } from '@/lib/japanese';
@@ -73,6 +74,8 @@ export function PracticeRunner({
   const [nextReviewLine, setNextReviewLine] = useState<string | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [exitDialogOpen, setExitDialogOpen] = useState(false);
+  // Focus mặc định của dialog thoát nằm ở nút đầu tiên ("Bỏ phiên"); Esc rồi Space sẽ xóa phiên. Đặt focus vào nút an toàn.
+  const keepGoingRef = useRef<HTMLButtonElement>(null);
 
   // Đo thời gian làm bài của từng câu không tính lúc tạm dừng (startedAtRef)
   const questionActiveMsRef = useRef<number>(0);
@@ -213,6 +216,7 @@ export function PracticeRunner({
 
   // Sang câu tiếp theo hoặc kết thúc
   const handleNext = useCallback(() => {
+    if (isFinished) return;
     if (currentIndex + 1 < questions.length) {
       const next = currentIndex + 1;
       setCurrentIndex(next);
@@ -235,13 +239,12 @@ export function PracticeRunner({
       setIsFinished(true);
       void saveResults(allResults);
     }
-  }, [currentIndex, questions, startQuestionTimer, allResults, sessionDuration, config, saveResults]);
+  }, [isFinished, currentIndex, questions, startQuestionTimer, allResults, sessionDuration, config, saveResults]);
 
   // Phím tắt: Escape mở dialog thoát, Space sang câu tiếp khi đã trả lời
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null;
-      const isInput = target?.tagName === 'INPUT' || target?.tagName === 'TEXTAREA';
 
       if (e.key === 'Escape') {
         e.preventDefault();
@@ -252,19 +255,24 @@ export function PracticeRunner({
         return;
       }
 
-      if (isInput) return;
-
-      if (e.key === ' ' || e.code === 'Space' || e.key === 'Enter') {
-        if (answered) {
-          e.preventDefault();
-          handleNext();
-        }
+      if (
+        shouldAdvanceOnKey({
+          key: e.key,
+          code: e.code,
+          targetTag: target?.tagName,
+          answered,
+          isFinished,
+          exitDialogOpen,
+        })
+      ) {
+        e.preventDefault();
+        handleNext();
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [answered, handleNext, isPaused, pauseQuestionTimer]);
+  }, [answered, exitDialogOpen, handleNext, isFinished, isPaused, pauseQuestionTimer]);
 
   // Chỉ dẫn ngữ cảnh câu hỏi cho vùng câu hỏi
   const instruction = useMemo(() => {
@@ -645,7 +653,7 @@ export function PracticeRunner({
 
       {/* Hộp thoại xác nhận thoát với 3 lựa chọn */}
       <AlertDialog open={exitDialogOpen} onOpenChange={setExitDialogOpen}>
-        <AlertDialogContent>
+        <AlertDialogContent initialFocus={keepGoingRef}>
           <AlertDialogHeader>
             <AlertDialogTitle>
               {isDue ? 'Tạm dừng hoặc thoát phiên ôn tập?' : 'Tạm dừng hoặc thoát phiên luyện tập?'}
@@ -666,6 +674,7 @@ export function PracticeRunner({
               Bỏ phiên
             </Button>
             <AlertDialogCancel
+              ref={keepGoingRef}
               size="quiz"
               className="w-full sm:w-auto"
               onClick={handleCancelExit}

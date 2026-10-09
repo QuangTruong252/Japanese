@@ -34,6 +34,7 @@ import {
   particleHint,
   PRACTICE_DRAFT_VERSION,
   savePracticeDraft,
+  shouldAdvanceOnKey,
   shouldSaveDraftOnAnswer,
 } from '@/lib/practice-draft';
 import { savePracticeSession } from '@/lib/practice-write';
@@ -87,6 +88,8 @@ export function ReviewRunner({
   const [nextReviewLine, setNextReviewLine] = useState<string | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [exitDialogOpen, setExitDialogOpen] = useState(false);
+  // Focus mặc định của dialog thoát nằm ở nút đầu tiên ("Bỏ phiên"); Esc rồi Space sẽ xóa phiên. Đặt focus vào nút an toàn.
+  const keepGoingRef = useRef<HTMLButtonElement>(null);
   const [nextBatchPlan, setNextBatchPlan] = useState<NextBatchPlanResult | null>(null);
 
   const isSavingRef = useRef(false);
@@ -273,7 +276,7 @@ export function ReviewRunner({
   );
 
   const handleNext = useCallback(() => {
-    if (!answered && !isFinished) return;
+    if (!answered || isFinished) return;
 
     if (currentIndex + 1 < questions.length) {
       const nextIdx = currentIndex + 1;
@@ -299,7 +302,6 @@ export function ReviewRunner({
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null;
-      const isInput = target?.tagName === 'INPUT' || target?.tagName === 'TEXTAREA';
 
       if (e.key === 'Escape') {
         e.preventDefault();
@@ -310,9 +312,16 @@ export function ReviewRunner({
         return;
       }
 
-      if (isInput) return;
-
-      if ((e.key === ' ' || e.code === 'Space' || e.key === 'Enter') && answered) {
+      if (
+        shouldAdvanceOnKey({
+          key: e.key,
+          code: e.code,
+          targetTag: target?.tagName,
+          answered,
+          isFinished,
+          exitDialogOpen,
+        })
+      ) {
         e.preventDefault();
         handleNext();
       }
@@ -320,7 +329,7 @@ export function ReviewRunner({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [answered, isPaused, pauseQuestionTimer, handleNext]);
+  }, [answered, exitDialogOpen, isFinished, isPaused, pauseQuestionTimer, handleNext]);
 
   // Câu sai và câu trả lời theo từng câu (một từ có thể nằm ở nhiều câu)
   const { incorrectQuestions, userAnswers } = useMemo(
@@ -599,7 +608,7 @@ export function ReviewRunner({
 
       {/* Hộp thoại xác nhận thoát phiên */}
       <AlertDialog open={exitDialogOpen} onOpenChange={setExitDialogOpen}>
-        <AlertDialogContent>
+        <AlertDialogContent initialFocus={keepGoingRef}>
           <AlertDialogHeader>
             <AlertDialogTitle>Tạm dừng hoặc thoát phiên ôn tập?</AlertDialogTitle>
             <AlertDialogDescription>
@@ -618,6 +627,7 @@ export function ReviewRunner({
               Bỏ phiên
             </Button>
             <AlertDialogCancel
+              ref={keepGoingRef}
               size="quiz"
               className="w-full sm:w-auto"
               onClick={handleCancelExit}

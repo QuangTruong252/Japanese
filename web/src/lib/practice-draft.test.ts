@@ -11,6 +11,7 @@ import {
   clearPracticeDraft,
   particleHint,
   shouldSaveDraftOnAnswer,
+  shouldAdvanceOnKey,
   type PracticeDraft,
 } from './practice-draft.ts';
 import type { QuestionItem } from '../types/index.ts';
@@ -380,3 +381,16 @@ test('Scenario (c): trả lời câu cuối -> không lưu nháp -> phiên kết
   assert.equal(loadPracticeDraft(storage), null);
 });
 
+
+test('shouldAdvanceOnKey: chỉ sang câu khi đã trả lời, chưa kết thúc, không dialog', () => {
+  const base = { key: ' ', answered: true, isFinished: false, exitDialogOpen: false };
+  assert.equal(shouldAdvanceOnKey(base), true);
+  assert.equal(shouldAdvanceOnKey({ ...base, key: 'Enter' }), true);
+  assert.equal(shouldAdvanceOnKey({ ...base, key: 'x', code: 'Space' }), true);
+  assert.equal(shouldAdvanceOnKey({ ...base, isFinished: true }), false);
+  assert.equal(shouldAdvanceOnKey({ ...base, exitDialogOpen: true }), false);
+  assert.equal(shouldAdvanceOnKey({ ...base, answered: false }), false);
+  assert.equal(shouldAdvanceOnKey({ ...base, targetTag: 'INPUT' }), false);
+  assert.equal(shouldAdvanceOnKey({ ...base, targetTag: 'TEXTAREA' }), false);
+  assert.equal(shouldAdvanceOnKey({ ...base, key: 'a' }), false);
+});
