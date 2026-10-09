@@ -18,7 +18,8 @@ export function parseFurigana(text: string): FuriganaSegment[] {
 
   const matches = text.matchAll(KANJI_RUN_WITH_READING);
   const pushPlain = (plain: string) => {
-    if (plain) segments.push({ base: plain });
+    // Ngoặc tùy chọn ("どこ[へ]も") đổi tại đây để mọi chỗ render qua Furigana đều không lộ ngoặc vuông
+    if (plain) segments.push({ base: formatOptionalBrackets(plain) });
   };
 
   for (const match of matches) {

@@ -65,7 +65,7 @@ export default async function LessonDetailPage({
           <p className="text-sm font-bold tracking-wide text-primary">Bài {lesson.number}</p>
           {lesson.jpTitle && (
             <Furigana
-              text={formatOptionalBrackets(lesson.jpTitle)}
+              text={lesson.jpTitle}
               className="jp-display block text-2xl font-bold text-foreground sm:text-3xl"
             />
           )}
@@ -141,13 +141,13 @@ export default async function LessonDetailPage({
                   <div className="min-w-0 flex-1 space-y-0.5">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="jp text-lg font-medium text-foreground">
-                        <Furigana text={formatOptionalBrackets(w.word)} />
+                        <Furigana text={w.word} />
                       </span>
                       {group && <VerbGroupBadge group={group} />}
                     </div>
                     {w.verbForms && (
                       <p className="text-sm text-muted-foreground">
-                        Thể masu: <Furigana text={formatOptionalBrackets(w.verbForms.masu)} />
+                        Thể masu: <Furigana text={w.verbForms.masu} />
                       </p>
                     )}
                     <p className="text-sm leading-relaxed text-muted-foreground">
@@ -185,12 +185,12 @@ export default async function LessonDetailPage({
                 className={cn('space-y-3 rounded-xl border border-border bg-card p-4 sm:p-5', SECTION)}
               >
                 <h3 className="text-lg font-semibold text-foreground">
-                  <Furigana text={formatOptionalBrackets(point.title.vi)} />
+                  <Furigana text={point.title.vi} />
                 </h3>
 
                 <div className="grammar-pattern-block rounded-lg bg-secondary p-4">
                   <div className="jp jp-example font-medium leading-loose text-foreground">
-                    <Furigana text={formatOptionalBrackets(point.pattern.vi)} />
+                    <Furigana text={point.pattern.vi} />
                   </div>
                 </div>
 
@@ -221,7 +221,7 @@ export default async function LessonDetailPage({
                         <div key={i} className="flex items-start gap-3 py-3">
                           <div className="min-w-0 flex-1 space-y-0.5">
                             <div className="jp jp-example font-medium leading-loose text-foreground">
-                              <Furigana text={formatOptionalBrackets(ex.jp)} />
+                              <Furigana text={ex.jp} />
                             </div>
                             <p className="translation text-sm leading-relaxed text-muted-foreground">
                               {ex.translation.vi}

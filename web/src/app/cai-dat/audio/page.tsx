@@ -41,6 +41,7 @@ export default function AudioSettingsPage() {
     progress,
     corruptedFiles,
     error,
+    importedLessons,
     startImport,
     cancelImport,
     clearError,
@@ -182,6 +183,16 @@ export default function AudioSettingsPage() {
                 <li key={file} className="break-all">• {file}</li>
               ))}
             </ul>
+          </div>
+        </div>
+      )}
+
+      {/* Nạp xong */}
+      {importedLessons !== null && importedLessons > 0 && (
+        <div className="flex items-start gap-3 rounded-xl border border-success/40 bg-card p-4" role="status">
+          <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-success" aria-hidden="true" />
+          <div className="text-sm font-medium text-foreground">
+            Đã nạp audio cho {importedLessons} bài.
           </div>
         </div>
       )}
