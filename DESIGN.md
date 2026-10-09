@@ -129,13 +129,16 @@ lật thẻ flashcard (lật qua lại được), easing `ease-smooth-out`. Khô
 | Màn | Trạng thái | Mockup |
 |---|---|---|
 | Bảng tin `/` | **v3** — tham chiếu chuẩn | `design/home/` |
-| `/hoc`, `/hoc/[so]` | v3 (chờ G2) | `design/hoc/`, `design/bai/` |
-| `/hoc/[so]/tu-vung` | v3 (chờ G2) | `design/tu-vung/` |
-| `/luyen-tap`, `/on-tap`, `/on-tap/diem-yeu` | v3 (chờ G2) | `design/luyen-tap/`, `design/on-tap/` |
-| `/luyen-tap/phien`, `/on-tap/phien` | v3 (chờ G2) | `design/phien/` |
-| Tra cứu `/hoc/tra-cuu` và trang con | v3 (chờ G2) | `design/tra-cuu/` (kana, bảng: theo mẫu) |
-| `/ca-nhan`, `/ca-nhan/thong-ke` | v3 (chờ G2) | `design/ca-nhan/` |
-| `/cai-dat`, `/cai-dat/audio` | v3 (chờ G2) | `design/cai-dat/` (audio: theo mẫu) |
+| `/hoc`, `/hoc/[so]` | **v3** — G2 đã duyệt | `design/hoc/`, `design/bai/` |
+| `/hoc/[so]/tu-vung` | **v3** — G2 đã duyệt | `design/tu-vung/` |
+| `/luyen-tap`, `/on-tap`, `/on-tap/diem-yeu` | **v3** — G2 đã duyệt | `design/luyen-tap/`, `design/on-tap/` |
+| `/luyen-tap/phien`, `/on-tap/phien` | **v3** — G2 đã duyệt | `design/phien/` |
+| Tra cứu `/hoc/tra-cuu` và trang con | **v3** — G2 đã duyệt | `design/tra-cuu/` |
+| `/ca-nhan`, `/ca-nhan/thong-ke` | **v3** — G2 đã duyệt | `design/ca-nhan/` |
+| `/cai-dat`, `/cai-dat/audio` | **v3** — G2 đã duyệt | `design/cai-dat/` |
+
+G2 đợt rollout đã duyệt ngày 2026-10-09. Ảnh sáng/tối sau triển khai nằm trong các thư mục trên;
+route, trạng thái dữ liệu và cách chụp ghi tại `design/README.md`.
 
 Cập nhật bảng khi màn đổi trạng thái. Không còn thành phần legacy; màn mới tham chiếu Home (`DashboardContent.tsx`) và `PaperKit.tsx`.
 
