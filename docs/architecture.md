@@ -42,7 +42,7 @@ dùng chung cho mọi màn. Màn nào đã sang v3: `DESIGN.md` §11.
 | IndexedDB `JapaneseLearningDB` (Dexie, `lib/db.ts`) | `reviewItems` (thẻ ôn FSRS), `practiceSessions`, `audioFiles`, `pendingSync` | `useLiveQuery`; hàng đợi ôn qua `lib/use-due-queue.ts`, `lib/review-queue.ts` |
 | `localStorage` | Cài đặt `jp:settings` (`lib/settings.ts`); nháp phiên `jp:practice-draft`, `jp:vocab-draft:<bài>` | `lib/settings.ts`, `lib/practice-draft.ts`, `lib/vocab-draft.ts`, `lib/active-drafts.ts` |
 | Zustand (`lib/store.ts`) | Chỉ trạng thái UI tạm (mở hộp tìm kiếm…) | — |
-| Supabase (tùy chọn) | Auth và đồng bộ từ `pendingSync` | `lib/sync.ts`, `lib/supabase/` |
+| Supabase (tùy chọn) | Auth và đồng bộ từ `pendingSync` (engine khởi động một lần trong `AppNav`, tự đẩy khi có mục chờ mới). Cài đặt là riêng từng máy, không đồng bộ | `lib/sync.ts`, `lib/supabase/` |
 
 Luồng chính:
 - **Ôn tập:** trả lời → `lib/fsrs.ts` (`rateAnswer`, `applyReview`) → ghi `reviewItems` (+ `pendingSync`

@@ -12,6 +12,8 @@ hiện; không bịa số trang hay liên kết audio.
 
 - Cú pháp furigana: `私[わたし]は 学生[がくせい]です`. Đọc/hiển thị qua `lib/japanese.ts` và component
   `Furigana`; không viết parser, regex hay bộ chuyển kana riêng.
+- Ngoặc vuông không đứng sau chữ Hán là phần tùy chọn (`どこ[へ]も`, `[どうも]ありがとう`). `Furigana` tự hiện
+  thành ngoặc tròn; chữ thường không qua `Furigana` (aria-label, giọng đọc) dùng `formatOptionalBrackets`.
 - Dấu cách trong câu là điểm được phép xuống dòng khi hiển thị; giữ nguyên khi sửa dữ liệu.
 - Không bịa tiếng Nhật ở UI, mockup, test hay ví dụ: lấy từ các file trên và ghi rõ nguồn trong brief.
 - Chấm đáp án chỉ chuẩn hóa những khác biệt được phép; không biến đáp án sai nghĩa thành đúng.
