@@ -5,6 +5,7 @@ import {
   mergeReviewItems,
   mergePracticeSessions,
   validateReviewItem,
+  isReplacePayload,
 } from './backup.ts';
 import type { ReviewItem, PracticeSession } from '../types/index.ts';
 
@@ -174,4 +175,10 @@ test('mergePracticeSessions: khử trùng lặp theo session id', () => {
 
   const merged = mergePracticeSessions(existing, incoming);
   assert.equal(merged.length, 2);
+});
+
+test('isReplacePayload: máy chưa liên kết tài khoản không bao giờ gửi replaced', () => {
+  assert.equal(isReplacePayload('replace', null), false);
+  assert.equal(isReplacePayload('replace', 'user-1'), true);
+  assert.equal(isReplacePayload('merge', 'user-1'), false);
 });

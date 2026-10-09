@@ -149,7 +149,6 @@ export default function CaNhanPage() {
             session.user.email?.split('@')[0],
           avatarUrl: session.user.user_metadata?.avatar_url,
         });
-        triggerSync();
       } else {
         setCurrentUser(null);
       }

@@ -46,7 +46,7 @@ import {
   createExportData,
   downloadExportFile,
   executeImport,
-  executeWipeAllData,
+  wipeAllLocalData,
   parseAndValidateImport,
   type ParsedImportData,
 } from '@/lib/backup';
@@ -59,6 +59,8 @@ import {
   saveSettings,
   subscribeSettings,
 } from '@/lib/settings';
+import { isSupabaseConfigured } from '@/lib/supabase/client';
+import { getOwnerUserId } from '@/lib/sync';
 import { speak } from '@/lib/tts';
 import { cn } from '@/lib/utils';
 
@@ -81,6 +83,9 @@ export default function SettingsPage() {
   useEffect(() => {
     applySettingsToDOM(settings);
   }, [settings]);
+
+  // Chữ về tài khoản chỉ đúng khi máy đã liên kết (payload Thay thế và việc đăng xuất đều theo jp:ownerUserId).
+  const accountLinked = mounted && isSupabaseConfigured() && getOwnerUserId() !== null;
 
   // Lắng nghe thay đổi theme system khi tab đang mở
   useEffect(() => {
@@ -209,7 +214,7 @@ export default function SettingsPage() {
     if (wipeInputText !== 'XÓA') return;
     setIsWiping(true);
     try {
-      await executeWipeAllData();
+      await wipeAllLocalData();
       setWipeConfirmOpen(false);
       setWipeInputText('');
       router.push('/');
@@ -373,7 +378,7 @@ export default function SettingsPage() {
                 type="button"
                 variant="outline"
                 className="min-h-11 shrink-0 gap-1.5 border-primary/40 px-3 text-primary hover:text-primary"
-                onClick={() => speak('こんにちは', settings.soundVolume)}
+                onClick={() => speak('こんにちは', 1.0, settings.soundVolume)}
               >
                 <Volume2 />
                 Nghe thử
@@ -532,7 +537,7 @@ export default function SettingsPage() {
                       )}
                     </span>
                     <span className="mt-0.5 text-muted-foreground">
-                      Xóa toàn bộ dữ liệu trên máy hiện tại trước khi nạp dữ liệu từ bản sao lưu.
+                      Xóa toàn bộ dữ liệu hiện tại trước khi nạp bản sao lưu.{accountLinked && ' Dữ liệu trên tài khoản cũng bị thay ở lần đồng bộ tiếp theo.'}
                     </span>
                   </label>
                 </div>
@@ -569,7 +574,8 @@ export default function SettingsPage() {
             <AlertDialogTitle>Xác nhận thay thế dữ liệu?</AlertDialogTitle>
             <AlertDialogDescription>
               Thao tác này sẽ xóa {reviewCount} mục ôn tập và {sessionCount} phiên hiện có trên
-              máy, thay bằng {importPreview?.reviewItems.length} mục từ bản sao lưu. Hành động này không
+              máy thay bằng {importPreview?.reviewItems.length} mục từ bản sao lưu.
+              {accountLinked && ' Dữ liệu trên tài khoản cũng bị thay ở lần đồng bộ tiếp theo.'} Hành động này không
               thể hoàn tác.
             </AlertDialogDescription>
           </AlertDialogHeader>
@@ -596,7 +602,10 @@ export default function SettingsPage() {
             <AlertDialogDescription className="space-y-2">
               <span>
                 Thao tác này sẽ xóa vĩnh viễn {reviewCount} mục ôn tập, {sessionCount} phiên luyện
-                tập và hàng đợi đồng bộ trên máy này. Audio đã nạp sẽ không bị ảnh hưởng.
+                tập trên máy này.
+                {accountLinked &&
+                  ' Máy sẽ đăng xuất. Dữ liệu trên tài khoản được giữ nguyên và trở lại khi bạn đăng nhập lại.'}{' '}
+                Audio đã nạp không bị ảnh hưởng.
               </span>
               <span className="block font-medium text-foreground">
                 Để xác nhận, vui lòng gõ đúng chữ <strong>XÓA</strong> vào ô bên dưới:
