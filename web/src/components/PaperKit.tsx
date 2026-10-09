@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Illustration } from '@/components/Illustration';
 import type { IllustrationAsset } from '@/types';
 import { cn } from '@/lib/utils';
@@ -51,6 +51,72 @@ export function TornCard({ className, children }: { className?: string; children
     <div className="torn-card-shadow">
       <div className={cn('torn-card p-5 sm:p-6', className)}>{children}</div>
     </div>
+  );
+}
+
+/** Đầu màn không có tranh: nút quay lại nhỏ (trang con), tiêu đề serif, một dòng số liệu. */
+export function PageTitle({
+  title,
+  meta,
+  back,
+}: {
+  title: ReactNode;
+  meta?: ReactNode;
+  back?: { href: string; label: string };
+}) {
+  return (
+    <header className="pt-2">
+      {back && (
+        <Link
+          href={back.href}
+          className="-ml-2 mb-1 inline-flex min-h-11 items-center gap-0.5 rounded-lg px-2 text-sm font-medium text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring"
+        >
+          <ChevronLeft className="size-4" aria-hidden="true" />
+          {back.label}
+        </Link>
+      )}
+      <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">{title}</h1>
+      {meta && <p className="mt-1 text-sm text-muted-foreground">{meta}</p>}
+    </header>
+  );
+}
+
+/** Viên thuốc bật–tắt để lọc hoặc chọn; trạng thái chọn nằm ở `aria-pressed`. */
+export function Chip({
+  pressed,
+  onClick,
+  icon,
+  disabled,
+  title,
+  className,
+  children,
+}: {
+  pressed: boolean;
+  onClick: () => void;
+  icon?: ReactNode;
+  disabled?: boolean;
+  title?: string;
+  className?: string;
+  children: ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      aria-pressed={pressed}
+      onClick={onClick}
+      disabled={disabled}
+      title={title}
+      className={cn(
+        'inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-full border px-4 text-sm font-medium outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0',
+        pressed
+          ? 'border-primary/40 bg-accent text-primary'
+          : 'border-border bg-card text-foreground hover:bg-muted/60',
+        className,
+      )}
+    >
+      {icon}
+      {children}
+    </button>
   );
 }
 

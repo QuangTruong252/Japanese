@@ -23,7 +23,7 @@ Không thêm màu mới.
 | `muted-foreground` | Chữ phụ, số liệu (đạt ≥ 4.5:1) |
 | `accent` / `accent-foreground` | Sakura: ô icon, vùng nhấn nhẹ |
 | `border` | Viền mảnh |
-| `success`, `warning`, `info`, `destructive` | Phản hồi; **luôn kèm icon và chữ**, màu không tự mang nghĩa |
+| `success`, `warning`, `info`, `destructive` | Phản hồi; **luôn kèm icon** (✓, ✕…), màu không tự mang nghĩa. Ô đáp án chỉ hiện icon; chữ "Đúng"/"Chưa đúng" nằm ở `sr-only` |
 | `verb-1..3`, `chart-1..5` | Nhóm động từ, biểu đồ |
 
 Bản tối có bộ giá trị riêng trong `.dark` (không đảo màu tự động).
@@ -76,6 +76,8 @@ hay `line-clamp` nội dung học. Icon và chevron giữ kích thước, bám d
 | `SectionHeader` | Đầu mỗi mục | Tiêu đề sans + nút viên thuốc tùy chọn ("Xem tất cả ›"). |
 | `ListRow` | Việc phụ, danh sách điều hướng | Ô icon 36 px (icon 24 px), tiêu đề, chữ phụ, chevron; cả dòng là link. |
 | `PartRow` | Các phần của bài | Ô icon 40 px, tiêu đề + số liệu cùng hàng (số liệu `text-sm text-muted-foreground/80`), ảnh nhỏ 48 px trong khung `bg-secondary`. |
+| `PageTitle` | Đầu màn không có tranh | Nút quay lại nhỏ xám `‹ …` cho trang con, tiêu đề serif, một dòng số liệu. Màn có tranh thì dùng `SoftScene` + `PaperCloud` như Home. |
+| `Chip` | Lọc, chọn nhanh | Viên thuốc cao 44 px, `aria-pressed`; chọn = nền sakura chữ đỏ. Hàng chip xuống dòng hoặc cuộn ngang, không co chữ. |
 
 Thành phần dùng chung khác:
 - Nút chính: `buttonVariants({ size: 'quiz' })` (cao 48 px, `rounded-xl`, đỏ son), chữ + `ArrowRight`.
@@ -83,6 +85,8 @@ Thành phần dùng chung khác:
 - `SpeakButton`: tròn 44 px, nền `secondary`, viền, icon `primary` (truyền qua `className`).
 - `SearchTrigger variant="bar"`: ô tìm; nút "Bảng tra" nằm trong ô, mép phải.
 - `Illustration` cho mọi ảnh; `Skeleton` giữ chiều cao khi đang tải, không nhảy bố cục.
+- Mỗi màn chỉ **một** nút đỏ đặc. Hành động lặp theo dòng (Luyện, Xem bài…) dùng `outline`/`ghost`.
+- Ô số liệu: nhãn nhỏ + số lớn + đơn vị; không đặt nút hay link bên trong ô.
 
 ## 7. Icon
 
@@ -107,7 +111,7 @@ Thành phần dùng chung khác:
 ## 9. Chuyển động
 
 Tối thiểu, chỉ để phản hồi: chuyển trang có sẵn (`PageTransition`), rung báo sai `animate-jp-shake`,
-easing `ease-smooth-out`. Không thêm animation trang trí. Mọi chuyển động tôn trọng `prefers-reduced-motion`.
+lật thẻ flashcard (lật qua lại được), easing `ease-smooth-out`. Không thêm animation trang trí. Mọi chuyển động tôn trọng `prefers-reduced-motion`.
 
 ## 10. Accessibility
 
