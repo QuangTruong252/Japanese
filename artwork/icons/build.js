@@ -13,7 +13,9 @@ const ATLASES = [
   {
     file: 'atlas-nav-v1.png',
     names: ['nav-home', 'nav-lesson', 'nav-practice', 'nav-review', 'nav-lookup'],
-    keyline: { 'nav-review': 'circle', 'nav-lookup': 'circle' },
+    // Số = cỡ khung riêng (/240). nav-review là hai mũi tên phủ kín vòng tròn nên 222 trông to hơn hẳn
+    // các icon có khoảng trống góc; thu nhỏ cho cân thị giác.
+    keyline: { 'nav-review': 190, 'nav-lookup': 'circle' },
   },
 ];
 const BOX = 240, INNER = 222; // ~92% of the viewBox, same optical size as Lucide (20/24 + round caps)
@@ -98,7 +100,7 @@ async function processAtlas({ file: atlas, names: NAMES, keyline }, paths) {
   // được san bớt vì bước làm dày cộng thêm một lượng cố định sau khi phóng.
   for (let i = 0; i < NAMES.length; i++) {
     const { x0, y0, w, h } = boxes[i];
-    const fit = keyline ? KEYLINE[keyline[NAMES[i]] ?? 'square'] : INNER;
+    const fit = keyline ? (() => { const k = keyline[NAMES[i]] ?? 'square'; return KEYLINE[k] ?? k; })() : INNER;
     const scale = fit / Math.max(w, h);
     const sw = Math.round(w * scale), sh = Math.round(h * scale);
     const left = Math.floor((BOX - sw) / 2), top = Math.floor((BOX - sh) / 2);

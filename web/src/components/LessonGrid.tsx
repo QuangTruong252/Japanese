@@ -306,14 +306,17 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                           const isLast = s.number === filteredSummaries[filteredSummaries.length - 1].number;
 
                           return (
-                            <li key={s.number} className="flex gap-3 py-1">
-                              {/* Thanh dọc chạy suốt nhóm; ô tròn nằm trên thanh, ngoài thẻ dòng */}
+                            <li key={s.number} className="flex gap-3">
+                              {/* Thanh dọc chạy suốt nhóm; ô tròn nằm trên thanh, ngoài thẻ dòng.
+                                  Khoảng cách giữa thẻ là margin của thẻ (không phải padding của li) để cột
+                                  thanh, kéo giãn theo li, phủ luôn khoảng đó và không hở giữa hai ô tròn */}
                               <div className="relative flex w-8 shrink-0 items-center justify-center">
                                 <span
                                   aria-hidden="true"
                                   className={cn(
                                     'absolute left-1/2 w-0.5 -translate-x-1/2',
-                                    state === 'learned' ? 'bg-primary/40' : 'bg-border',                                    isFirst && isLast
+                                    state === 'learned' ? 'bg-primary/40' : 'bg-border',
+                                    isFirst && isLast
                                       ? 'hidden'
                                       : isFirst
                                         ? 'bottom-0 top-1/2'
@@ -328,7 +331,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                               <Link
                                 href={`/hoc/${s.number}`}
                                 className={cn(
-                                  'group flex min-w-0 flex-1 items-center gap-3 rounded-xl border bg-card p-3 outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring',
+                                  'group my-1 flex min-w-0 flex-1 items-center gap-3 rounded-xl border bg-card p-3 outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring',
                                   isCurrent ? 'border-primary/40 bg-accent/40' : 'border-border',
                                 )}
                               >

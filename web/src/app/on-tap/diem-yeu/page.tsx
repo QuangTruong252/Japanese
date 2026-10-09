@@ -13,11 +13,11 @@ import { db } from '@/lib/db';
 import { loadLessonData } from '@/lib/lessons';
 import { buildTargetLabels, lessonFromTargetId } from '@/lib/review-queue';
 import { useQuestionPool } from '@/lib/use-question-pool';
+import { weakFilterTypes } from '@/lib/weak-filters';
 import { cn } from '@/lib/utils';
 import type { TargetType } from '@/types';
 
 const TARGET_TYPES: TargetType[] = ['vocab', 'grammar', 'kanji', 'particle', 'listening'];
-const FILTERS: (TargetType | 'all')[] = ['all', ...TARGET_TYPES];
 
 const dateText = (value?: string | Date | null): string =>
   value ? new Date(value).toLocaleDateString('vi-VN') : '—';
@@ -37,7 +37,25 @@ function getAnchor(targetId: string, map: Map<string, string>): string {
 }
 
 export default function WeakPointsPage() {
-  const [filter, setFilter] = useState<TargetType | 'all'>('all');
+  const [picked, setFilter] = useState<TargetType | 'all'>('all');
+
+  const presentTypes = useLiveQuery(async () => {
+    const counts = await Promise.all(
+      TARGET_TYPES.map((type) =>
+        db.reviewItems
+          .where('[targetType+incorrectCount]')
+          .between([type, 1], [type, Dexie.maxKey])
+          .count(),
+      ),
+    );
+    return new Set(TARGET_TYPES.filter((_, i) => counts[i]! > 0));
+  }, []);
+  const filterTypes = useMemo(
+    () => weakFilterTypes(presentTypes ?? new Set(), TARGET_TYPES),
+    [presentTypes],
+  );
+  // Loại đang chọn không còn mục yếu (hoặc hàng chip bị ẩn) thì quay về "Tất cả"
+  const filter = filterTypes.includes(picked as TargetType) ? picked : 'all';
 
   const items = useLiveQuery(async () => {
     const types = filter === 'all' ? TARGET_TYPES : [filter];
@@ -98,17 +116,19 @@ export default function WeakPointsPage() {
       <PageTitle back={{ href: '/on-tap', label: 'Ôn tập' }} title="Điểm yếu của tôi" />
 
       <div className="max-w-2xl space-y-4">
-        <div
-          role="group"
-          aria-label="Lọc theo loại mục tiêu"
-          className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0"
-        >
-          {FILTERS.map((value) => (
-            <Chip key={value} pressed={filter === value} onClick={() => setFilter(value)}>
-              {value === 'all' ? 'Tất cả' : TARGET_TYPE_LABEL[value]}
-            </Chip>
-          ))}
-        </div>
+        {filterTypes.length > 0 && (
+          <div
+            role="group"
+            aria-label="Lọc theo loại mục tiêu"
+            className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0"
+          >
+            {(['all', ...filterTypes] as const).map((value) => (
+              <Chip key={value} pressed={filter === value} onClick={() => setFilter(value)}>
+                {value === 'all' ? 'Tất cả' : TARGET_TYPE_LABEL[value]}
+              </Chip>
+            ))}
+          </div>
+        )}
 
         {items === undefined ? (
           <div className="space-y-2">
