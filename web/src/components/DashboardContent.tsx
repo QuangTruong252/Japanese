@@ -262,7 +262,8 @@ export function DashboardContent({
                 title="Bảng tra"
                 className={cn(
                   buttonVariants({ variant: 'ghost', size: 'icon' }),
-                  'absolute right-1 top-1/2 size-11 -translate-y-1/2 rounded-lg text-muted-foreground',
+                  // Canh giữa bằng margin, không bằng translate: hiệu ứng nhấn của nút ghi đè translate làm nút nhảy xuống.
+                  'absolute inset-y-0 right-1 my-auto size-11 rounded-lg text-muted-foreground',
                 )}
               >
                 <TableProperties className="size-5" aria-hidden="true" />
