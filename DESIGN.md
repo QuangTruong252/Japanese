@@ -76,12 +76,14 @@ hay `line-clamp` nội dung học. Icon và chevron giữ kích thước, bám d
 | `SectionHeader` | Đầu mỗi mục | Tiêu đề sans + nút viên thuốc tùy chọn ("Xem tất cả ›"). |
 | `ListRow` | Việc phụ, danh sách điều hướng | Ô icon 36 px (icon 24 px), tiêu đề, chữ phụ, chevron; cả dòng là link. |
 | `PartRow` | Các phần của bài | Ô icon 40 px, tiêu đề + số liệu cùng hàng (số liệu `text-sm text-muted-foreground/80`), ảnh nhỏ 48 px trong khung `bg-secondary`. |
+| `ListRow` (nút) | Việc phải chạy trước khi đi tiếp | Như `ListRow` nhưng không có `href` → render `<button>` (ví dụ ghi nháp rồi mới điều hướng). |
 | `PageTitle` | Đầu màn không có tranh | Nút quay lại nhỏ xám `‹ …` cho trang con, tiêu đề serif, một dòng số liệu. Màn có tranh thì dùng `SoftScene` + `PaperCloud` như Home. |
 | `Chip` | Lọc, chọn nhanh | Viên thuốc cao 44 px, `aria-pressed`; chọn = nền sakura chữ đỏ. Hàng chip xuống dòng hoặc cuộn ngang, không co chữ. |
 
 Thành phần dùng chung khác:
 - Nút chính: `buttonVariants({ size: 'quiz' })` (cao 48 px, `rounded-xl`, đỏ son), chữ + `ArrowRight`.
   Nút phụ: `outline` hoặc `ghost`. Không tạo button mới.
+- `VerbGroupBadge`: nhóm động từ = viên thuốc nền `secondary`, chấm màu `verb-N`, chữ màu chữ chính (màu verb-N không đủ tương phản làm chữ).
 - `SpeakButton`: tròn 44 px, nền `secondary`, viền, icon `primary` (truyền qua `className`).
 - `SearchTrigger variant="bar"`: ô tìm; nút "Bảng tra" nằm trong ô, mép phải.
 - `Illustration` cho mọi ảnh; `Skeleton` giữ chiều cao khi đang tải, không nhảy bố cục.
@@ -121,19 +123,18 @@ lật thẻ flashcard (lật qua lại được), easing `ease-smooth-out`. Khô
 
 ## 11. Trạng thái màn
 
-| Màn | Trạng thái |
-|---|---|
-| Bảng tin `/` | **v3** — tham chiếu chuẩn |
-| Hub Tra cứu `/hoc/tra-cuu` | Cũ, đã dùng `FeatureIcon` |
-| `/hoc`, `/hoc/[so]`, `/hoc/[so]/tu-vung` | Cũ |
-| `/luyen-tap`, `/on-tap` và các phiên | Cũ |
-| Trang con tra cứu, `/ca-nhan`, `/cai-dat` | Cũ |
+| Màn | Trạng thái | Mockup |
+|---|---|---|
+| Bảng tin `/` | **v3** — tham chiếu chuẩn | `design/home/` |
+| `/hoc`, `/hoc/[so]` | v3 (chờ G2) | `design/hoc/`, `design/bai/` |
+| `/hoc/[so]/tu-vung` | v3 (chờ G2) | `design/tu-vung/` |
+| `/luyen-tap`, `/on-tap`, `/on-tap/diem-yeu` | v3 (chờ G2) | `design/luyen-tap/`, `design/on-tap/` |
+| `/luyen-tap/phien`, `/on-tap/phien` | v3 (chờ G2) | `design/phien/` |
+| Tra cứu `/hoc/tra-cuu` và trang con | v3 (chờ G2) | `design/tra-cuu/` (kana, bảng: theo mẫu) |
+| `/ca-nhan`, `/ca-nhan/thong-ke` | v3 (chờ G2) | `design/ca-nhan/` |
+| `/cai-dat`, `/cai-dat/audio` | v3 (chờ G2) | `design/cai-dat/` (audio: theo mẫu) |
 
-Thanh điều hướng (`AppNav`) đã dùng bộ icon `nav-*`. Cập nhật bảng này khi một màn chuyển xong.
-
-**Legacy — không dùng cho việc mới:** `PaperStage.tsx` (`Stage`, `PaperSlip`, `LinkRow`), `LessonProgress`,
-`DashboardReinforcement`, CSS `.paper-scene`. Chúng chỉ còn phục vụ màn cũ và bị xóa khi màn cuối cùng
-dùng chúng chuyển xong. Màn mới tham chiếu Home (`DashboardContent.tsx`) và `PaperKit.tsx`.
+Cập nhật bảng khi màn đổi trạng thái. Không còn thành phần legacy; màn mới tham chiếu Home (`DashboardContent.tsx`) và `PaperKit.tsx`.
 
 ## 12. Kiểm tra giao diện (trước khi người dùng review)
 

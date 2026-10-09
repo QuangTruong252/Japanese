@@ -3,6 +3,7 @@
 import { Info, X } from 'lucide-react';
 import { m, type MotionValue, type PanInfo } from 'framer-motion';
 import { Furigana } from '@/components/Furigana';
+import { VerbGroupBadge } from '@/components/VerbGroupBadge';
 import { Illustration } from '@/components/Illustration';
 import { SpeakButton } from '@/components/SpeakButton';
 import { Button } from '@/components/ui/button';
@@ -33,14 +34,6 @@ const BACK_TIERS = [
   [9, 'text-3xl'],
   [11, 'text-2xl'],
 ] as const;
-
-function VerbBadge({ group }: { group: number | string }) {
-  return (
-    <span className="rounded-full border border-primary/20 bg-accent px-2.5 py-0.5 text-xs font-semibold text-primary">
-      Động từ Nhóm {group}
-    </span>
-  );
-}
 
 const VERB_FORM_LABELS = [
   ['masu', 'Masu', 'Lịch sự'],
@@ -135,7 +128,7 @@ export function VocabCard({
             <SpeakButton text={word.kana} label={surface} className="bg-secondary text-primary" />
           </div>
           <div className="pointer-events-none flex flex-1 flex-col items-center justify-center gap-1 px-4 py-16 text-center sm:px-8">
-            {word.verbGroup && <VerbBadge group={word.verbGroup} />}
+            {word.verbGroup && <VerbGroupBadge group={Number(word.verbGroup)} prefix="Động từ " />}
             <div className={cn('max-w-full font-bold', wordSizeClass(surface, FRONT_TIERS, 'text-xl'))}>
               <Furigana text={surface} zoomable={false} className="jp-display justify-center" />
             </div>
@@ -172,7 +165,7 @@ export function VocabCard({
                 <Furigana text={surface} zoomable={false} className="jp-display justify-center" />
               </div>
               <Furigana text={word.kana} zoomable={false} className="jp-example justify-center text-sm text-muted-foreground" />
-              {word.verbGroup && <VerbBadge group={word.verbGroup} />}
+              {word.verbGroup && <VerbGroupBadge group={Number(word.verbGroup)} prefix="Động từ " />}
               <p className="mt-1 text-2xl font-semibold leading-relaxed text-foreground sm:text-3xl">
                 {word.meaning.vi}
               </p>

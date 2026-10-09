@@ -2,8 +2,8 @@
 
 import { useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import { AlertCircle, ArrowRight, Check, CheckCircle2, ChevronRight, X } from 'lucide-react';
-import { FeatureIcon, type FeatureIconName } from '@/components/FeatureIcon';
+import { AlertCircle, ArrowRight, Check, CheckCircle2, X } from 'lucide-react';
+import { FeatureIcon } from '@/components/FeatureIcon';
 import { Furigana } from '@/components/Furigana';
 import { ListRow, SectionHeader, SoftScene, TornCard } from '@/components/PaperKit';
 import { Button } from '@/components/ui/button';
@@ -21,39 +21,6 @@ const RESULT_SCENE = {
   height: 600,
   alt: { vi: '' },
 };
-
-/** Dòng hành động trông như ListRow nhưng là nút: ghi nháp rồi mới điều hướng nên không thể là link. */
-function ActionRow({
-  icon,
-  title,
-  detail,
-  onClick,
-}: {
-  icon: FeatureIconName;
-  title: string;
-  detail: string;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="flex min-h-14 w-full items-start gap-3 rounded-xl border border-border bg-card px-4 py-3 text-left outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring"
-    >
-      <span
-        className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground"
-        aria-hidden="true"
-      >
-        <FeatureIcon name={icon} className="size-6" />
-      </span>
-      <span className="min-w-0 flex-1 pt-1">
-        <span className="block font-medium text-foreground">{title}</span>
-        <span className="mt-0.5 block text-sm text-muted-foreground">{detail}</span>
-      </span>
-      <ChevronRight className="mt-2 size-5 shrink-0 text-muted-foreground" aria-hidden="true" />
-    </button>
-  );
-}
 
 export function SessionResult({
   session,
@@ -334,8 +301,8 @@ export function SessionResult({
         {/* Các dòng điều hướng */}
         <div className="space-y-2">
           {incorrectQuestions.length > 0 && (
-            <ActionRow
-              icon="practice"
+            <ListRow
+              icon={<FeatureIcon name="practice" />}
               title="Làm lại câu sai"
               detail={`Luyện lại ${incorrectQuestions.length} câu chưa đúng`}
               onClick={handleRetryIncorrect}

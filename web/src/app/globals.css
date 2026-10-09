@@ -190,14 +190,6 @@
   }
 }
 
-/* Cảnh minh họa mở vào trang giấy (màn chưa chuyển v3). */
-.paper-scene {
-  mask-image: linear-gradient(to bottom, black 88%, transparent);
-}
-@media (max-height: 700px) and (max-width: 639px) {
-  .paper-scene { max-height: 9rem; }
-}
-
 /* v3 "Sách sống".
    Tranh giữ khung chữ nhật; chỉ một dải hẹp ở mỗi mép tan vào giấy. Hai mask giao nhau. */
 .soft-scene {

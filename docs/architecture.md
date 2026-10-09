@@ -24,12 +24,12 @@
 | `/` | Bảng tin | `DashboardContent` |
 | `/hoc` | Danh sách bài | `LessonGrid` |
 | `/hoc/[so]` | Chi tiết bài | `page.tsx` + `_parts.tsx`, `ShadowingPlayer` |
-| `/hoc/[so]/tu-vung` | Học từ vựng | `VocabLearningFlow` |
-| `/luyen-tap`, `/luyen-tap/phien` | Luyện tập | `PracticeRunner` |
-| `/on-tap`, `/on-tap/phien`, `/on-tap/diem-yeu` | Ôn tập | `ReviewRunner`, `DashboardReinforcement` |
+| `/hoc/[so]/tu-vung` | Học từ vựng | `VocabLearningFlow` (+ `components/vocab/*`) |
+| `/luyen-tap`, `/luyen-tap/phien` | Luyện tập | `PracticeRunner`, khung phiên chung `practice/SessionFrame` |
+| `/on-tap`, `/on-tap/phien`, `/on-tap/diem-yeu` | Ôn tập | `ReviewRunner` (dùng `SessionFrame`), `on-tap/ReinforcementSection` |
 | `/hoc/tra-cuu` (+ `kana`, `kanji`, `kanji/[chu]`, `dong-tu`, `bang`, `bang/[slug]`) | Tra cứu | `KanjiGrid`, `VerbTable` |
-| `/ca-nhan`, `/ca-nhan/thong-ke` | Cá nhân, thống kê | `StatisticsContent` |
-| `/cai-dat`, `/cai-dat/audio` | Cài đặt, nạp audio | `InstallAppCard` |
+| `/ca-nhan`, `/ca-nhan/thong-ke` | Cá nhân, thống kê | `StatisticsContent` (+ `components/stats/*`) |
+| `/cai-dat`, `/cai-dat/audio` | Cài đặt, nạp audio | `components/settings/*`, `InstallAppCard` |
 
 `AppNav` (thanh dưới trên mobile, thanh bên từ `lg`) và hộp tìm kiếm `Ctrl+K` (`components/search/`)
 dùng chung cho mọi màn. Màn nào đã sang v3: `DESIGN.md` §11.

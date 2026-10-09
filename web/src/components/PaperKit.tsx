@@ -5,10 +5,7 @@ import { Illustration } from '@/components/Illustration';
 import type { IllustrationAsset } from '@/types';
 import { cn } from '@/lib/utils';
 
-/**
- * Bộ thành phần giấy v3 "Sách sống". Dùng song song PaperStage.tsx;
- * các màn cũ chuyển dần sang bộ này.
- */
+/** Bộ thành phần giấy v3 "Sách sống", dùng chung cho mọi màn. */
 
 /** Tranh chữ nhật, mép tan vào giấy. Ảnh lỗi thì chỉ còn nội dung con, chữ vẫn đọc được. */
 export function SoftScene({
@@ -150,7 +147,10 @@ export function SectionHeader({
   );
 }
 
-/** Dòng giấy: cả dòng là link; icon và chevron bám dòng đầu khi chữ xuống dòng. */
+/**
+ * Dòng giấy: cả dòng là link; icon và chevron bám dòng đầu khi chữ xuống dòng.
+ * Không có `href` thì là nút (việc phải chạy trước khi điều hướng, ví dụ ghi nháp).
+ */
 export function ListRow({
   href,
   onClick,
@@ -159,22 +159,19 @@ export function ListRow({
   detail,
   className,
 }: {
-  href: string;
+  href?: string;
   onClick?: () => void;
   icon?: ReactNode;
   title: ReactNode;
   detail?: ReactNode;
   className?: string;
 }) {
-  return (
-    <Link
-      href={href}
-      onClick={onClick}
-      className={cn(
-        'flex min-h-14 items-start gap-3 rounded-xl border border-border bg-card px-4 py-3 outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring',
-        className,
-      )}
-    >
+  const rowClass = cn(
+    'flex min-h-14 w-full items-start gap-3 rounded-xl border border-border bg-card px-4 py-3 text-left outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring',
+    className,
+  );
+  const body = (
+    <>
       {icon && (
         <span
           className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground [&_svg]:size-6"
@@ -188,7 +185,16 @@ export function ListRow({
         {detail && <span className="mt-0.5 block text-sm text-muted-foreground">{detail}</span>}
       </span>
       <ChevronRight className="mt-2 size-5 shrink-0 text-muted-foreground" aria-hidden="true" />
+    </>
+  );
+  return href ? (
+    <Link href={href} onClick={onClick} className={rowClass}>
+      {body}
     </Link>
+  ) : (
+    <button type="button" onClick={onClick} className={rowClass}>
+      {body}
+    </button>
   );
 }
 

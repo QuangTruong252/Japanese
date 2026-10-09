@@ -223,7 +223,7 @@ export function AppNav() {
               </div>
               <span
                 className={cn(
-                  'text-xs mt-0.5 tracking-tight font-medium',
+                  'text-xs mt-0.5 whitespace-nowrap tracking-tight font-medium',
                   isActive ? 'text-primary font-semibold' : 'text-muted-foreground'
                 )}
               >

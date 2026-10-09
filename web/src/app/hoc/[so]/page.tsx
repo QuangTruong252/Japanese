@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ChevronLeft } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 import { Furigana } from '@/components/Furigana';
+import { VerbGroupBadge } from '@/components/VerbGroupBadge';
 import { SpeakButton } from '@/components/SpeakButton';
 import { FeatureIcon } from '@/components/FeatureIcon';
 import { Illustration } from '@/components/Illustration';
@@ -23,12 +23,7 @@ export function generateStaticParams() {
   return AVAILABLE_N5_LESSONS.map((n) => ({ so: String(n) }));
 }
 
-// Màu nằm ở chấm tròn, chữ luôn là màu chữ chính để đủ tương phản ở cả hai theme.
-const VERB_GROUP: Record<string, { label: string; dot: string }> = {
-  'verb-godan': { label: 'Nhóm 1', dot: 'bg-verb-1' },
-  'verb-ichidan': { label: 'Nhóm 2', dot: 'bg-verb-2' },
-  'verb-irregular': { label: 'Nhóm 3', dot: 'bg-verb-3' },
-};
+const VERB_GROUP: Record<string, number> = { 'verb-godan': 1, 'verb-ichidan': 2, 'verb-irregular': 3 };
 
 const SECTION = 'scroll-mt-20 sm:scroll-mt-24';
 
@@ -148,15 +143,7 @@ export default async function LessonDetailPage({
                       <span className="jp text-lg font-medium text-foreground">
                         <Furigana text={formatOptionalBrackets(w.word)} />
                       </span>
-                      {group && (
-                        <Badge variant="secondary" className="h-auto gap-1.5 rounded-full px-2 py-0.5 text-xs text-foreground">
-                          <span
-                            aria-hidden="true"
-                            className={cn('size-2 shrink-0 rounded-full', group.dot)}
-                          />
-                          {group.label}
-                        </Badge>
-                      )}
+                      {group && <VerbGroupBadge group={group} />}
                     </div>
                     {w.verbForms && (
                       <p className="text-sm text-muted-foreground">

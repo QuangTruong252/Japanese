@@ -6,25 +6,10 @@ import { Search, X, FilterX } from 'lucide-react';
 import type { VerbItem } from '@/types/lookup';
 import { filterVerbs } from '@/lib/lookup';
 import { Furigana } from '@/components/Furigana';
+import { VerbGroupBadge } from '@/components/VerbGroupBadge';
 import { Chip } from '@/components/PaperKit';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-
-const GROUP_DOT: Record<number, string> = {
-  1: 'bg-verb-1',
-  2: 'bg-verb-2',
-  3: 'bg-verb-3',
-};
-
-/** Màu nằm ở chấm tròn, chữ giữ màu chữ: màu verb-N không đủ tương phản làm chữ ở cả hai theme. */
-function VerbGroupBadge({ group }: { group: number }) {
-  return (
-    <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-2.5 py-0.5 text-xs font-semibold text-foreground">
-      <span aria-hidden="true" className={cn('size-2 shrink-0 rounded-full', GROUP_DOT[group])} />
-      Nhóm {group}
-    </span>
-  );
-}
 
 /** Tách cụm đi kèm ở cuối chuỗi, ví dụ `会[あ]います[ともだちに〜]`. */
 function splitCollocation(verb: string) {
