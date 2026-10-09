@@ -9,13 +9,16 @@ import { SessionNotice, SessionSkeleton } from '@/components/practice/SessionFra
 import { buildSession } from '@/lib/practice';
 import { useUIStore } from '@/lib/store';
 import { useJapaneseVoice, useQuestionPool } from '@/lib/use-question-pool';
-import { loadPracticeDraft, wasNewSessionRequested } from '@/lib/practice-draft';
+import { draftMatchesMode, loadPracticeDraft, wasNewSessionRequested } from '@/lib/practice-draft';
 import type { PracticeConfig } from '@/types';
 
 function ResumedSession() {
   const router = useRouter();
-  // Đọc nháp MỘT lần khi mount, không subscribe nháp đang sống
-  const [draft] = useState(() => loadPracticeDraft());
+  // Đọc nháp MỘT lần khi mount, không subscribe nháp đang sống. Nháp ôn chỉ mở được ở /on-tap/phien.
+  const [draft] = useState(() => {
+    const saved = loadPracticeDraft();
+    return draftMatchesMode(saved, 'lesson') ? saved : null;
+  });
 
   useEffect(() => {
     if (!draft || draft.questions.length === 0) {
@@ -49,7 +52,7 @@ function ResumedSession() {
 function NewSession() {
   const router = useRouter();
   const { selectedLessons, selectedTypes, questionCount } = useUIStore();
-  const { questions, loading } = useQuestionPool(selectedLessons);
+  const { questions, loading, error, retry } = useQuestionPool(selectedLessons);
   const hasVoice = useJapaneseVoice();
 
   const audioKeys = useMemo(
@@ -79,6 +82,20 @@ function NewSession() {
     const { questions: sessionList } = buildSession(questions, config, audioKeys);
     return sessionList;
   }, [loading, questions, config, audioKeys]);
+
+  // Không kẹt skeleton khi nạp dữ liệu bài lỗi
+  if (error) {
+    return (
+      <SessionNotice message="Không tải được câu hỏi.">
+        <Button size="quiz" className="w-full font-semibold" onClick={retry}>
+          Thử lại
+        </Button>
+        <Button size="quiz" variant="outline" className="w-full" onClick={() => router.push('/luyen-tap')}>
+          Quay lại chọn bài
+        </Button>
+      </SessionNotice>
+    );
+  }
 
   // Đang nạp dữ liệu câu hỏi cho phiên mới
   if (hasVoice === null || loading || (questions.length > 0 && sessionQuestions === null)) {

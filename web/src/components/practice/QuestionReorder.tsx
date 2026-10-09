@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { PhraseToken } from './PhraseToken';
 import { Furigana } from '@/components/Furigana';
 import type { QuestionProps } from './types';
-import { checkReorderAnswer, targetTypeFromId } from '@/lib/practice';
+import { checkReorderAnswer, reorderUserAnswer, targetTypeFromId } from '@/lib/practice';
 import { cn } from '@/lib/utils';
 
 // Chạm để chọn/bỏ; khối từ bay giữa kho và thanh trả lời (shared layout).
@@ -17,6 +17,7 @@ export function QuestionReorder({
   question,
   answered,
   onAnswer,
+  paused = false,
 }: QuestionProps) {
   // Gắn id duy nhất cho từng token để xử lý trường hợp có các từ giống nhau trong câu
   const tokens = useMemo(() => {
@@ -63,12 +64,13 @@ export function QuestionReorder({
         isCorrect,
         elapsedMs: 0,
         usedHint: false,
+        userAnswer: reorderUserAnswer(chosenWords),
       },
     ]);
   }, [answered, chosenIds.length, tokens.length, chosenTokens, question, onAnswer]);
 
   useEffect(() => {
-    if (answered) return;
+    if (answered || paused) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.defaultPrevented) return;
       if (e.key !== 'Enter') return;
@@ -93,7 +95,7 @@ export function QuestionReorder({
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [answered, chosenIds.length, tokens.length, handleSubmit]);
+  }, [answered, paused, chosenIds.length, tokens.length, handleSubmit]);
 
   const isCorrect = answered
     ? checkReorderAnswer(

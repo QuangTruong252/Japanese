@@ -5,7 +5,7 @@ import { AnswerOption, type AnswerOptionState } from './AnswerOption';
 import type { QuestionProps } from './types';
 import { checkOptionAnswer, targetTypeFromId } from '@/lib/practice';
 
-export function QuestionMc({ question, answered, onAnswer }: QuestionProps) {
+export function QuestionMc({ question, answered, onAnswer, paused = false }: QuestionProps) {
   const [chosen, setChosen] = useState<string | null>(null);
   const options = useMemo(() => question.options ?? [], [question.options]);
 
@@ -40,7 +40,7 @@ export function QuestionMc({ question, answered, onAnswer }: QuestionProps) {
   };
 
   useEffect(() => {
-    if (answered) return;
+    if (answered || paused) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null;
       if (target?.tagName === 'INPUT' || target?.tagName === 'TEXTAREA') return;
@@ -54,7 +54,7 @@ export function QuestionMc({ question, answered, onAnswer }: QuestionProps) {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [answered, options, pick]);
+  }, [answered, paused, options, pick]);
 
   return (
     <div className="flex flex-col gap-2" role="group" aria-label="Các lựa chọn đáp án">

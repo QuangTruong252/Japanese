@@ -4,7 +4,7 @@ import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'rea
 import { AnswerOption, type AnswerOptionState } from './AnswerOption';
 import { Furigana } from '@/components/Furigana';
 import type { QuestionProps } from './types';
-import { shuffle, targetTypeFromId } from '@/lib/practice';
+import { matchingUserAnswer, shuffle, targetTypeFromId } from '@/lib/practice';
 import { cn } from '@/lib/utils';
 import type { AnswerResult } from '@/types';
 
@@ -36,6 +36,7 @@ export function QuestionMatching({
   } | null>(null);
 
   const failedTargetIdsRef = useRef<Set<string>>(new Set());
+  const wrongAttemptsRef = useRef<{ leftTargetId: string; rightTargetId: string }[]>([]);
   const completedResultsRef = useRef<AnswerResult[]>([]);
   const lastMatchedAtRef = useRef<number>(0);
   const isResolvingRef = useRef<boolean>(false);
@@ -84,11 +85,14 @@ export function QuestionMatching({
 
         // Khi đã chốt hết tất cả các cặp: gọi onAnswer MỘT LẦN duy nhất
         if (completedResultsRef.current.length === pairs.length) {
-          onAnswer(completedResultsRef.current);
+          // Câu sai kèm các lần ghép nhầm để màn kết quả không hiện "Chưa biết".
+          const userAnswer = matchingUserAnswer(wrongAttemptsRef.current, pairs);
+          onAnswer(completedResultsRef.current.map((r) => (r.isCorrect ? r : { ...r, userAnswer })));
         }
       } else {
         // Cố tình ghép sai: ghi nhận mục tiêu đang giải quyết bị sai
         failedTargetIdsRef.current.add(firstSelectedTargetId);
+        wrongAttemptsRef.current.push({ leftTargetId: leftId, rightTargetId: rightId });
 
         setIncorrectPair({ leftTargetId: leftId, rightTargetId: rightId });
         isResolvingRef.current = true;
@@ -102,7 +106,7 @@ export function QuestionMatching({
         }, 350);
       }
     },
-    [onAnswer, pairs.length],
+    [onAnswer, pairs],
   );
 
   const handleLeftClick = useCallback(

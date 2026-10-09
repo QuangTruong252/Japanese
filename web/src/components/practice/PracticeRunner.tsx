@@ -21,6 +21,7 @@ import { QuestionReorder } from './QuestionReorder';
 import { SessionResult } from './SessionResult';
 import { FeedbackPanel, PauseLayer, QuestionPrompt, SessionHeader, SessionShell } from './SessionFrame';
 import { savePracticeSession } from '@/lib/practice-write';
+import { createOnce } from '@/lib/once';
 import { summarizeIncorrect, summarizeSession } from '@/lib/practice';
 import { describeNextReviews } from '@/lib/review-queue';
 import {
@@ -65,6 +66,7 @@ export function PracticeRunner({
   const [exitDialogOpen, setExitDialogOpen] = useState(false);
   // Focus mặc định của dialog thoát nằm ở nút đầu tiên ("Bỏ phiên"); Esc rồi Space sẽ xóa phiên. Đặt focus vào nút an toàn.
   const keepGoingRef = useRef<HTMLButtonElement>(null);
+  const saveOnceRef = useRef(createOnce<void>());
 
   // Đo thời gian làm bài của từng câu không tính lúc tạm dừng (startedAtRef)
   const questionActiveMsRef = useRef<number>(0);
@@ -108,14 +110,14 @@ export function PracticeRunner({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Đồng hồ tổng phiên: tự dừng khi đã trả lời hoặc đang tạm dừng
+  // Đồng hồ tổng phiên: tự dừng khi đã trả lời, đang tạm dừng hoặc dialog thoát đang mở
   useEffect(() => {
-    if (isFinished || isPaused || answered) return;
+    if (isFinished || isPaused || answered || exitDialogOpen) return;
     const timer = setInterval(() => {
       setSessionDuration((d) => d + 1);
     }, 1000);
     return () => clearInterval(timer);
-  }, [isFinished, isPaused, answered]);
+  }, [isFinished, isPaused, answered, exitDialogOpen]);
 
   // Nút tạm dừng/tiếp tục bấm giờ
   const togglePause = useCallback(() => {
@@ -148,7 +150,7 @@ export function PracticeRunner({
   // Ghi nhận đáp án: PracticeRunner giữ đồng hồ và ghi đè elapsedMs khi results.length === 1
   const handleAnswer = useCallback(
     (results: AnswerResult[]) => {
-      if (answered) return;
+      if (answered || isPaused) return;
       pauseQuestionTimer();
       const elapsedMs = getQuestionElapsedMs();
       const questionId = questions[currentIndex]?.id;
@@ -178,24 +180,27 @@ export function PracticeRunner({
         });
       }
     },
-    [answered, pauseQuestionTimer, getQuestionElapsedMs, allResults, questions, currentIndex, sessionDuration, config],
+    [answered, isPaused, pauseQuestionTimer, getQuestionElapsedMs, allResults, questions, currentIndex, sessionDuration, config],
   );
 
   // Ghi kết quả Dexie một transaction duy nhất
   const saveResults = useCallback(
     async (finalResults: AnswerResult[]) => {
       setSaveError(null);
+      // Bấm "Thử lại" hai lần liền không được ghi hai phiên (FSRS áp hai lần)
       try {
-        const { session, reviewItems } = await savePracticeSession({
-          config,
-          results: finalResults,
-          lessonByTargetId,
-          durationSeconds: sessionDuration,
+        await saveOnceRef.current(async () => {
+          const { session, reviewItems } = await savePracticeSession({
+            config,
+            results: finalResults,
+            lessonByTargetId,
+            durationSeconds: sessionDuration,
+          });
+          setSavedSession(session);
+          setNextReviewLine(describeNextReviews(reviewItems.map((item) => item.dueAt), new Date()));
+          // Kết thúc phiên thành công thì không còn gì để khôi phục: xóa nháp.
+          clearPracticeDraft();
         });
-        setSavedSession(session);
-        setNextReviewLine(describeNextReviews(reviewItems.map((item) => item.dueAt), new Date()));
-        // Kết thúc phiên (saveResults thành công) -> xóa nháp (Requirement 2)
-        clearPracticeDraft();
       } catch (err) {
         setSaveError(err instanceof Error ? err.message : 'Lỗi lưu phiên vào cơ sở dữ liệu');
       }
@@ -336,6 +341,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
+            paused={isPaused}
           />
         );
       case 'reorder':
@@ -345,6 +351,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
+            paused={isPaused}
           />
         );
       case 'listening':
@@ -354,6 +361,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
+            paused={isPaused}
           />
         );
       case 'cloze':
@@ -363,6 +371,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
+            paused={isPaused}
           />
         );
       case 'mc':
@@ -373,6 +382,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
+            paused={isPaused}
           />
         );
     }
@@ -409,8 +419,10 @@ export function PracticeRunner({
 
         {/* Chỉ vùng câu hỏi cuộn khi tràn; khối phản hồi luôn nằm dưới cùng */}
         <div className="flex min-h-0 flex-1 flex-col overflow-y-auto py-2">
+          {/* Tạm dừng: câu vẫn mounted để giữ chữ đang gõ; inert chặn focus và chạm xuyên lớp phủ */}
           <div
             key={currentQuestion.id}
+            inert={isPaused}
             className="my-auto w-full space-y-6 py-2 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-2 motion-safe:duration-250 motion-safe:ease-in-out"
           >
             <QuestionPrompt question={currentQuestion} />

@@ -6,4 +6,6 @@ export interface QuestionProps {
   /** Đã trả lời xong; component chuyển sang trạng thái chỉ đọc, hiện đúng/sai. */
   answered: boolean;
   onAnswer: (results: AnswerResult[]) => void;
+  /** Phiên đang tạm dừng: câu vẫn mounted (giữ chữ đang gõ) nhưng phím tắt toàn cục phải im. */
+  paused?: boolean;
 }

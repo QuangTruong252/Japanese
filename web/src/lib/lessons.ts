@@ -84,6 +84,23 @@ const VOCAB_LOADERS: Record<number, () => Promise<{ default: unknown }>> = {
   25: () => import('../data/n5/vocab/lesson-25.json', { with: { type: 'json' } }),
 };
 
+/**
+ * Cache theo khóa, nhưng Promise lỗi bị gỡ khỏi cache: nếu giữ lại thì "Thử lại" nhận
+ * đúng Promise đã reject và không bao giờ gọi lại nguồn tải.
+ */
+export function memoizeUntilFailure<K, V>(cache: Map<K, Promise<V>>, key: K, load: () => Promise<V>): Promise<V> {
+  let cached = cache.get(key);
+  if (!cached) {
+    const created: Promise<V> = load().catch((err: unknown) => {
+      if (cache.get(key) === created) cache.delete(key);
+      throw err;
+    });
+    cached = created;
+    cache.set(key, created);
+  }
+  return cached;
+}
+
 const lessonCache = new Map<number, Promise<Lesson>>();
 const vocabCache = new Map<number, Promise<VocabWord[]>>();
 
@@ -99,9 +116,8 @@ export function loadLesson(lessonNum: number): Promise<Lesson> {
     );
   }
 
-  let cached = lessonCache.get(lessonNum);
-  if (!cached) {
-    cached = loader().then((mod) => {
+  return memoizeUntilFailure(lessonCache, lessonNum, () =>
+    loader().then((mod) => {
       const lesson = mod.default as Lesson;
       if (lesson.cover !== undefined) validateIllustrationAsset(lesson.cover);
       for (const point of lesson.grammar) {
@@ -111,11 +127,8 @@ export function loadLesson(lessonNum: number): Promise<Lesson> {
         }
       }
       return lesson;
-    });
-    lessonCache.set(lessonNum, cached);
-  }
-
-  return cached;
+    }),
+  );
 }
 
 /**
@@ -129,19 +142,15 @@ export function loadVocab(lessonNum: number): Promise<VocabWord[]> {
     );
   }
 
-  let cached = vocabCache.get(lessonNum);
-  if (!cached) {
-    cached = loader().then((mod) => {
+  return memoizeUntilFailure(vocabCache, lessonNum, () =>
+    loader().then((mod) => {
       const words = (mod.default as VocabFile).words;
       for (const word of words) {
         if (word.illustration !== undefined) validateIllustrationAsset(word.illustration);
       }
       return words;
-    });
-    vocabCache.set(lessonNum, cached);
-  }
-
-  return cached;
+    }),
+  );
 }
 
 /**

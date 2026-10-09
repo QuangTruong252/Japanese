@@ -11,6 +11,7 @@ import {
   loadLessonSummary,
   loadLessonSummaries,
   clearLessonCache,
+  memoizeUntilFailure,
   AVAILABLE_N5_LESSONS,
   parseLessonNumber,
 } from './lessons.ts';
@@ -272,3 +273,13 @@ test('vocabThumb tránh ảnh người đứng hẹp: Bài 1 không có ảnh, B
 
 
 
+
+test('memoizeUntilFailure: nguồn lỗi lần đầu, lần hai thành công → nguồn được gọi lại', async () => {
+  const cache = new Map<number, Promise<string>>();
+  let calls = 0;
+  const load = () => (++calls === 1 ? Promise.reject(new Error('chunk lỗi')) : Promise.resolve('ok'));
+  await assert.rejects(memoizeUntilFailure(cache, 1, load), /chunk lỗi/);
+  assert.equal(await memoizeUntilFailure(cache, 1, load), 'ok');
+  assert.equal(await memoizeUntilFailure(cache, 1, load), 'ok');
+  assert.equal(calls, 2);
+});

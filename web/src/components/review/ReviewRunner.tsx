@@ -25,6 +25,7 @@ import {
   SessionHeader,
   SessionShell,
 } from '@/components/practice/SessionFrame';
+import { createOnce } from '@/lib/once';
 import { db } from '@/lib/db';
 import { summarizeIncorrect, summarizeSession } from '@/lib/practice';
 import {
@@ -88,7 +89,7 @@ export function ReviewRunner({
   const keepGoingRef = useRef<HTMLButtonElement>(null);
   const [nextBatchPlan, setNextBatchPlan] = useState<NextBatchPlanResult | null>(null);
 
-  const isSavingRef = useRef(false);
+  const saveOnceRef = useRef(createOnce<void>());
   const savedSessionRef = useRef<PracticeSession | null>(null);
 
   // Đo thời gian làm bài của từng câu không tính lúc tạm dừng
@@ -131,14 +132,14 @@ export function ReviewRunner({
     startQuestionTimer();
   }, [startQuestionTimer]);
 
-  // Đồng hồ tổng phiên
+  // Đồng hồ tổng phiên: dừng cả khi dialog thoát đang mở
   useEffect(() => {
-    if (isFinished || isPaused || answered) return;
+    if (isFinished || isPaused || answered || exitDialogOpen) return;
     const timer = setInterval(() => {
       setSessionDuration((d) => d + 1);
     }, 1000);
     return () => clearInterval(timer);
-  }, [isFinished, isPaused, answered]);
+  }, [isFinished, isPaused, answered, exitDialogOpen]);
 
   const togglePause = useCallback(() => {
     if (answered || isFinished) return;
@@ -164,54 +165,52 @@ export function ReviewRunner({
   // Ghi kết quả vào Dexie (nguyên tử) và tính toán chính xác lô tiếp theo (hàm thuần)
   const saveResults = useCallback(
     async (resultsToSave: AnswerResult[]) => {
-      if (isSavingRef.current) return;
-      isSavingRef.current = true;
+      setSaveError(null);
       try {
-        setSaveError(null);
-        let session = savedSessionRef.current;
-        let reviewItems: ReviewItem[] = [];
+        await saveOnceRef.current(async () => {
+          let session = savedSessionRef.current;
+          let reviewItems: ReviewItem[] = [];
 
-        if (!session) {
-          const res = await savePracticeSession({
+          if (!session) {
+            const res = await savePracticeSession({
+              config,
+              results: resultsToSave,
+              lessonByTargetId,
+              durationSeconds: sessionDuration,
+            });
+            session = res.session;
+            reviewItems = res.reviewItems;
+            savedSessionRef.current = session;
+            setSavedSession(session);
+          }
+
+          const now = new Date();
+          if (reviewItems.length > 0) {
+            setNextReviewLine(describeNextReviews(reviewItems.map((r: ReviewItem) => r.dueAt), now));
+          }
+
+          // Tính toán lô tiếp theo bằng resolveNextBatchPlan
+          // (khớp 100% logic useDueQueue/planReviewBatch, tính cả newTargetIds và lọc audio/câu hỏi hợp lệ)
+          const allItems = await db.reviewItems.toArray();
+          const nextPlan = resolveNextBatchPlan({
+            allReviewItems: allItems,
+            poolQuestions: allPoolQuestions ?? questions,
+            dailyNewLimit: dailyNewLimit ?? DEFAULT_SETTINGS.dailyNewLimit,
+            reviewBatchSize,
+            now,
+            availableAudioKeys: availableAudioKeys ?? new Set(['tts']),
             config,
-            results: resultsToSave,
-            lessonByTargetId,
-            durationSeconds: sessionDuration,
           });
-          session = res.session;
-          reviewItems = res.reviewItems;
-          savedSessionRef.current = session;
-          setSavedSession(session);
-        }
+          setNextBatchPlan(nextPlan);
 
-        const now = new Date();
-        if (reviewItems.length > 0) {
-          setNextReviewLine(describeNextReviews(reviewItems.map((r: ReviewItem) => r.dueAt), now));
-        }
-
-        // Tính toán lô tiếp theo bằng resolveNextBatchPlan
-        // (khớp 100% logic useDueQueue/planReviewBatch, tính cả newTargetIds và lọc audio/câu hỏi hợp lệ)
-        const allItems = await db.reviewItems.toArray();
-        const nextPlan = resolveNextBatchPlan({
-          allReviewItems: allItems,
-          poolQuestions: allPoolQuestions ?? questions,
-          dailyNewLimit: dailyNewLimit ?? DEFAULT_SETTINGS.dailyNewLimit,
-          reviewBatchSize,
-          now,
-          availableAudioKeys: availableAudioKeys ?? new Set(['tts']),
-          config,
+          clearPracticeDraft();
         });
-        setNextBatchPlan(nextPlan);
-
-        clearPracticeDraft();
       } catch (err) {
         setSaveError(
           err instanceof Error
             ? err.message
             : 'Không thể lưu kết quả phiên ôn tập vào bộ nhớ máy.',
         );
-      } finally {
-        isSavingRef.current = false;
       }
     },
     [
@@ -401,6 +400,7 @@ export function ReviewRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
+            paused={isPaused}
           />
         );
       case 'cloze':
@@ -410,6 +410,7 @@ export function ReviewRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
+            paused={isPaused}
           />
         );
       case 'reorder':
@@ -419,6 +420,7 @@ export function ReviewRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
+            paused={isPaused}
           />
         );
       case 'listening':
@@ -428,6 +430,7 @@ export function ReviewRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
+            paused={isPaused}
           />
         );
       default:
@@ -466,17 +469,16 @@ export function ReviewRunner({
 
         {/* Chỉ vùng câu hỏi cuộn khi tràn; khối phản hồi luôn nằm dưới cùng */}
         <div className="flex min-h-0 flex-1 flex-col overflow-y-auto py-2">
-          {/* Gỡ câu hỏi khi tạm dừng (như trước): lớp tạm dừng chỉ là phần trình bày */}
-          {!isPaused && (
-            <section
-              aria-label="Nội dung câu hỏi"
-              key={currentQuestion.id}
-              className="my-auto w-full space-y-6 py-2"
-            >
-              <QuestionPrompt question={currentQuestion} />
-              {renderQuestionComponent()}
-            </section>
-          )}
+          {/* Tạm dừng: câu vẫn mounted để giữ chữ đang gõ; inert chặn focus và chạm xuyên lớp phủ */}
+          <section
+            aria-label="Nội dung câu hỏi"
+            key={currentQuestion.id}
+            inert={isPaused}
+            className="my-auto w-full space-y-6 py-2"
+          >
+            <QuestionPrompt question={currentQuestion} />
+            {renderQuestionComponent()}
+          </section>
         </div>
 
         {answered && lastResult && (

@@ -11,6 +11,9 @@ import {
   summarizeSession,
   summarizeIncorrect,
   userAnswerFor,
+  reorderUserAnswer,
+  answerText,
+  matchingUserAnswer,
 } from './practice.ts';
 import { ELAPSED_SAMPLE_SIZE } from './fsrs.ts';
 import type {
@@ -324,4 +327,30 @@ test('summarizeIncorrect: kết quả nháp cũ không có questionId vẫn kh�
   assert.deepEqual(out.incorrectQuestions.map((x) => x.id), ['b']);
   assert.equal(userAnswerFor(out.userAnswers, b), 'x');
   assert.equal(userAnswerFor(out.userAnswers, a), undefined);
+});
+
+test('buildSession bỏ câu ghép cặp không có cặp nào', () => {
+  const empty = q({ id: 'm-empty', type: 'matching', targetId: 'vocab-01-01', pairs: [] });
+  const ok = q({
+    id: 'm-ok',
+    type: 'matching',
+    targetId: 'vocab-01-02',
+    pairs: [{ targetId: 'vocab-01-02', jp: 'a', vi: 'b' }],
+  });
+  const { questions } = buildSession([empty, ok], config(), new Set());
+  assert.deepEqual(questions.map((x) => x.id), ['m-ok']);
+});
+
+test('reorderUserAnswer và matchingUserAnswer cho màn kết quả không rơi về "Chưa biết"', () => {
+  assert.equal(reorderUserAnswer(['ワット', '先生[せんせい]は']), 'ワット 先生[せんせい]は');
+  assert.equal(answerText(['物は', 'おいしいですが、']), reorderUserAnswer(['物は', 'おいしいですが、']));
+  assert.equal(answerText('はい'), 'はい');
+  const pairs = [
+    { targetId: 'vocab-01-01', jp: '私[わたし]', vi: 'tôi' },
+    { targetId: 'vocab-01-02', jp: 'あなた', vi: 'bạn' },
+  ];
+  assert.equal(
+    matchingUserAnswer([{ leftTargetId: 'vocab-01-01', rightTargetId: 'vocab-01-02' }], pairs),
+    '私[わたし] ↔ bạn',
+  );
 });

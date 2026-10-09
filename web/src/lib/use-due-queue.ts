@@ -18,6 +18,9 @@ const ALL_EXERCISE_TYPES: ExerciseType[] = ['mc', 'matching', 'cloze', 'reorder'
 
 export interface DueQueue {
   loading: boolean;
+  /** Không tải được dữ liệu bài: khác với "không có mục nào", không được chốt phiên rỗng. */
+  error: boolean;
+  retry: () => void;
   /** Mốc "bây giờ" dùng chung cho mọi phép so hạn ôn của trang. */
   now: Date;
   /** Mục đến hạn của lô này, quá hạn lâu nhất xếp trước. */
@@ -93,7 +96,7 @@ export function useDueQueue(): DueQueue {
   }, [now]);
 
   const learnedLessons = useMemo(() => snapshot?.learnedLessons ?? [], [snapshot]);
-  const { questions, loading: poolLoading } = useQuestionPool(learnedLessons);
+  const { questions, loading: poolLoading, error, retry } = useQuestionPool(learnedLessons);
 
   const plan = useMemo(() => {
     if (!snapshot) return { batchDue: [] as ReviewItem[], newTargetIds: [] as string[], remainingDue: 0 };
@@ -129,6 +132,8 @@ export function useDueQueue(): DueQueue {
 
   return {
     loading: snapshot === undefined || poolLoading,
+    error,
+    retry,
     now,
     dueItems,
     remainingDue,
