@@ -1,14 +1,14 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Volume2 } from 'lucide-react';
+import { ArrowRight, Volume2 } from 'lucide-react';
+import { Chip } from '@/components/PaperKit';
 import { Button } from '@/components/ui/button';
 import { JpInput } from './JpInput';
 import type { QuestionProps } from './types';
 import { checkTextAnswer, targetTypeFromId } from '@/lib/practice';
 import { toKanaSentence } from '@/lib/japanese';
 import { speak } from '@/lib/tts';
-import { cn } from '@/lib/utils';
 
 export function QuestionListening({
   question,
@@ -91,50 +91,30 @@ export function QuestionListening({
 
   return (
     <div className="flex flex-col gap-6">
-      {/* Vùng phát audio: nút tròn 56px và hai chip tốc độ 44px */}
+      {/* Vùng phát audio: nút tròn 56px (không đỏ đặc: màn chỉ có một nút son) và hai chip tốc độ */}
       <div className="flex flex-col items-center justify-center gap-3">
         <Button
           type="button"
-          variant="default"
+          variant="ghost"
           onClick={play}
           aria-label="Phát lại"
-          className="size-14 rounded-full p-0 shadow-sm"
+          className="size-14 rounded-full border border-border bg-secondary p-0 text-primary hover:bg-muted"
         >
           <Volume2 className="size-7" />
         </Button>
 
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            aria-pressed={rate === 0.8}
-            onClick={() => handleRateChange(0.8)}
-            className={cn(
-              'flex h-11 min-w-11 items-center justify-center rounded-xl px-3 text-xs font-medium transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px',
-              rate === 0.8
-                ? 'border-2 border-primary bg-accent text-foreground'
-                : 'border border-border bg-card text-muted-foreground hover:bg-accent hover:text-foreground',
-            )}
-          >
+          <Chip pressed={rate === 0.8} onClick={() => handleRateChange(0.8)}>
             0.8×
-          </button>
-          <button
-            type="button"
-            aria-pressed={rate === 1.0}
-            onClick={() => handleRateChange(1.0)}
-            className={cn(
-              'flex h-11 min-w-11 items-center justify-center rounded-xl px-3 text-xs font-medium transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px',
-              rate === 1.0
-                ? 'border-2 border-primary bg-accent text-foreground'
-                : 'border border-border bg-card text-muted-foreground hover:bg-accent hover:text-foreground',
-            )}
-          >
+          </Chip>
+          <Chip pressed={rate === 1.0} onClick={() => handleRateChange(1.0)}>
             1.0×
-          </button>
+          </Chip>
         </div>
       </div>
 
       {/* Vùng nhập câu trả lời */}
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         <JpInput
           value={value}
           onChange={setValue}
@@ -148,11 +128,12 @@ export function QuestionListening({
             <Button
               type="button"
               size="quiz"
-              className="w-full"
+              className="w-full font-semibold"
               disabled={value.trim().length === 0}
               onClick={handleSubmit}
             >
               Kiểm tra
+              <ArrowRight aria-hidden="true" />
             </Button>
             <Button
               type="button"

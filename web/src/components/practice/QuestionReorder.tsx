@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { LazyMotion, MotionConfig, domMax } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PhraseToken } from './PhraseToken';
 import { Furigana } from '@/components/Furigana';
@@ -108,8 +109,8 @@ export function QuestionReorder({
       {/* Thanh trả lời: vùng chứa các khối từ đã chọn */}
       <div
         className={cn(
-          'flex min-h-16 w-full flex-wrap items-center gap-2 rounded-xl border-2 p-3 transition-colors duration-150',
-          !answered && 'border-dashed border-border bg-card/50',
+          'flex min-h-20 w-full flex-wrap items-center gap-2 rounded-xl border-2 p-3 transition-colors duration-150',
+          !answered && 'border-dashed border-border bg-transparent',
           answered && isCorrect && 'border-success bg-success/10',
           answered && !isCorrect && 'border-destructive bg-destructive/10 motion-safe:animate-jp-shake',
         )}
@@ -156,11 +157,12 @@ export function QuestionReorder({
       {!answered && (
         <Button
           size="quiz"
-          className="w-full"
+          className="w-full font-semibold"
           disabled={chosenIds.length !== tokens.length}
           onClick={handleSubmit}
         >
           Kiểm tra
+          <ArrowRight aria-hidden="true" />
         </Button>
       )}
     </div>

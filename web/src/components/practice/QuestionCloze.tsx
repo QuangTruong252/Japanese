@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { JpInput } from './JpInput';
 import type { QuestionProps } from './types';
@@ -45,7 +46,7 @@ export function QuestionCloze({ question, answered, onAnswer }: QuestionProps) {
       : 'incorrect';
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-4">
       <JpInput
         value={value}
         onChange={setValue}
@@ -59,11 +60,12 @@ export function QuestionCloze({ question, answered, onAnswer }: QuestionProps) {
           <Button
             type="button"
             size="quiz"
-            className="w-full"
+            className="w-full font-semibold"
             disabled={value.trim().length === 0}
             onClick={handleSubmit}
           >
             Kiểm tra
+            <ArrowRight aria-hidden="true" />
           </Button>
           <Button
             type="button"

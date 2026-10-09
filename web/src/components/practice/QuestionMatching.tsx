@@ -171,7 +171,7 @@ export function QuestionMatching({
 
   return (
     <div
-      className="grid grid-cols-2 gap-3"
+      className="grid grid-cols-2 gap-2"
       role="group"
       aria-label="Ghép cặp từ vựng và nghĩa tiếng Việt"
     >

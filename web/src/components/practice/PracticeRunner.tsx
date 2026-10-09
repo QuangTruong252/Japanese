@@ -2,9 +2,6 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Check, Lightbulb, Pause, X } from 'lucide-react';
-import { Furigana } from '@/components/Furigana';
-import { SpeakButton } from '@/components/SpeakButton';
 import { Button } from '@/components/ui/button';
 import {
   AlertDialog,
@@ -22,30 +19,22 @@ import { QuestionMatching } from './QuestionMatching';
 import { QuestionMc } from './QuestionMc';
 import { QuestionReorder } from './QuestionReorder';
 import { SessionResult } from './SessionResult';
+import { FeedbackPanel, PauseLayer, QuestionPrompt, SessionHeader, SessionShell } from './SessionFrame';
 import { savePracticeSession } from '@/lib/practice-write';
 import { summarizeIncorrect, summarizeSession } from '@/lib/practice';
 import { describeNextReviews } from '@/lib/review-queue';
 import {
   clearPracticeDraft,
   savePracticeDraft,
-  particleHint,
   PRACTICE_DRAFT_VERSION,
   shouldAdvanceOnKey,
 } from '@/lib/practice-draft';
-import { cn } from '@/lib/utils';
-import { containsJapanese, stripFurigana } from '@/lib/japanese';
 import type {
   AnswerResult,
   PracticeConfig,
   PracticeSession,
   QuestionItem,
 } from '@/types';
-
-function formatDuration(sec: number): string {
-  const m = Math.floor(sec / 60);
-  const s = sec % 60;
-  return `${m}:${s.toString().padStart(2, '0')}`;
-}
 
 export function PracticeRunner({
   questions,
@@ -274,49 +263,11 @@ export function PracticeRunner({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [answered, exitDialogOpen, handleNext, isFinished, isPaused, pauseQuestionTimer]);
 
-  // Chỉ dẫn ngữ cảnh câu hỏi cho vùng câu hỏi
-  const instruction = useMemo(() => {
-    if (currentQuestion?.context) return currentQuestion.context;
-    switch (currentQuestion?.type) {
-      case 'mc':
-        return 'Chọn nghĩa đúng';
-      case 'cloze':
-        return 'Điền từ thích hợp vào chỗ trống';
-      case 'listening':
-        return 'Nghe và nhập lại câu tiếng Nhật';
-      case 'matching':
-        return 'Ghép các cặp từ tương ứng';
-      case 'reorder':
-        return 'Sắp xếp các từ thành câu hoàn chỉnh';
-      default:
-        return 'Chọn đáp án đúng';
-    }
-  }, [currentQuestion]);
-
   // Câu sai và câu trả lời theo từng câu (một từ có thể nằm ở nhiều câu)
   const { incorrectQuestions, userAnswers } = useMemo(
     () => summarizeIncorrect(questions, allResults),
     [questions, allResults],
   );
-
-  // Tính đáp án đúng để hiển thị trong vùng phản hồi
-  const correctAnswerText = useMemo(() => {
-    if (!currentQuestion) return '';
-    if (currentQuestion.type === 'matching' && currentQuestion.pairs) {
-      return currentQuestion.pairs.map((p) => `${p.jp} ↔ ${p.vi}`).join(' · ');
-    }
-    return Array.isArray(currentQuestion.answer)
-      ? currentQuestion.answer.join(', ')
-      : currentQuestion.answer;
-  }, [currentQuestion]);
-
-  // Gợi ý trợ từ khi người dùng làm sai
-  const currentHint = useMemo(() => {
-    if (!lastResult || lastResult.isCorrect || !currentQuestion) return null;
-    const userAnswer = lastResult.userAnswer;
-    if (!userAnswer) return null;
-    return particleHint(userAnswer, currentQuestion.answer);
-  }, [lastResult, currentQuestion]);
 
   // Thoát: Lưu và học tiếp sau (nút chính)
   const handleSaveAndExit = () => {
@@ -427,227 +378,53 @@ export function PracticeRunner({
     }
   };
 
-  const userAnswerText = lastResult?.userAnswer;
-
   return (
-    <main className="fixed inset-0 z-40 mx-auto flex w-full max-w-xl flex-col bg-background overflow-hidden px-4 pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] sm:px-6">
+    <SessionShell>
       {/* Thông báo tiếp cận cho Screen Reader */}
       <div role="status" className="sr-only">
         {`Câu ${currentIndex + 1} trên ${questions.length}`}
       </div>
 
-      {/* Thanh trên: nút đóng (×), tiến độ mỏng, nút tạm dừng, số câu "7/20" bên phải */}
-      <header className="flex h-14 shrink-0 items-center justify-between gap-3 px-1">
-        <Button
-          type="button"
-          variant="ghost"
-          size="quiz"
-          className="size-12 shrink-0 px-0 text-muted-foreground hover:text-foreground"
-          onClick={() => {
-            if (!answered && !isPaused) pauseQuestionTimer();
-            setExitDialogOpen(true);
-          }}
-          aria-label="Thoát phiên"
-        >
-          <X className="size-5" aria-hidden="true" />
-        </Button>
+      <SessionHeader
+        regionLabel="Phiên luyện tập"
+        exitLabel="Thoát phiên"
+        onExit={() => {
+          if (!answered && !isPaused) pauseQuestionTimer();
+          setExitDialogOpen(true);
+        }}
+        index={currentIndex}
+        total={questions.length}
+        progress={(currentIndex + (answered ? 1 : 0)) / questions.length}
+        duration={sessionDuration}
+        isPaused={isPaused}
+        pauseLabel={isPaused ? 'Tiếp tục làm bài' : 'Tạm dừng phiên'}
+        pauseDisabled={answered || isFinished}
+        onTogglePause={togglePause}
+      />
 
-        <div className="min-w-0 flex-1 mx-2 h-1.5 overflow-hidden rounded-full bg-muted" aria-hidden="true">
-          <div
-            className="h-full origin-left bg-primary transition-transform duration-250 ease-smooth-out"
-            style={{ transform: `scaleX(${(currentIndex + (answered ? 1 : 0)) / questions.length})` }}
-          />
-        </div>
-
-        <Button
-          type="button"
-          variant="ghost"
-          size="quiz"
-          className="size-12 shrink-0 px-0 sm:w-auto sm:px-2.5 sm:gap-1.5 text-muted-foreground hover:text-foreground"
-          onClick={togglePause}
-          disabled={answered || isFinished}
-          aria-label="Tạm dừng phiên"
-        >
-          <Pause className="size-5" aria-hidden="true" />
-          <span className="hidden sm:inline text-sm font-medium tabular-nums">
-            {formatDuration(sessionDuration)}
-          </span>
-        </Button>
-
-        <span className="shrink-0 text-sm font-semibold tabular-nums text-muted-foreground">
-          {currentIndex + 1}/{questions.length}
-        </span>
-      </header>
-
-      {/* KHÔNG CUỘN TRANG (Finding 3): Grid 3 vùng - chỉ vùng câu hỏi được cuộn nếu dài, footer và feedback luôn cố định */}
-      <div className="relative grid min-h-0 flex-1 grid-rows-[minmax(0,1fr)_auto_auto] overflow-hidden">
-        {/* Lớp phủ khi tạm dừng */}
+      <div className="relative flex min-h-0 flex-1 flex-col">
         {isPaused && !answered && (
-          <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-background/95 backdrop-blur-xs p-6 text-center gap-4 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:duration-150">
-            <div className="flex size-14 items-center justify-center rounded-full bg-accent text-primary">
-              <Pause className="size-7" />
-            </div>
-            <div>
-              <h2 className="text-lg font-medium text-foreground">Phiên đang tạm dừng</h2>
-              <p className="mt-1 text-sm text-muted-foreground">Đồng hồ và thời gian làm bài đã được dừng lại.</p>
-            </div>
-            <Button
-              size="quiz"
-              className="w-full max-w-xs"
-              onClick={togglePause}
-            >
-              Tiếp tục làm bài
-            </Button>
-          </div>
+          <PauseLayer title="Phiên đang tạm dừng" resumeLabel="Tiếp tục làm bài" onResume={togglePause} />
         )}
 
-        {/* VÙNG CÂU HỎI (Finding 1, 3): chỉ dẫn mờ, prompt chữ Nhật to; chỉ cuộn khi thực sự tràn, không hiện loa trước khi chấm */}
-        <section
-          key={`prompt-${currentQuestion.id}`}
-          className="flex min-h-0 flex-col items-center overflow-y-auto px-2 py-4 text-center motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-2 motion-safe:duration-250 motion-safe:ease-in-out"
-        >
-          <div className="my-auto flex w-full max-w-full flex-col items-center justify-center">
-            <p className="mb-3 text-sm font-medium text-muted-foreground">
-              {instruction}
-            </p>
-
-            {currentQuestion.type !== 'listening' ? (
-              <div
-                className={cn(
-                  'jp font-bold tracking-tight text-foreground text-center break-words max-w-full',
-                  stripFurigana(currentQuestion.prompt).length <= 12
-                    ? 'text-5xl sm:text-6xl text-[3.5rem] leading-none'
-                    : 'text-xl sm:text-2xl font-semibold jp-quiz',
-                )}
-              >
-                <Furigana text={currentQuestion.prompt} />
-              </div>
-            ) : (
-              <div className="flex flex-col items-center gap-2">
-                <p className="text-sm font-medium text-muted-foreground">
-                  Nghe và nhập lại câu tiếng Nhật
-                </p>
-              </div>
-            )}
-          </div>
-        </section>
-
-        {/* VÙNG TRẢ LỜI (nửa dưới, trong tầm với ngón cái): các options full-width 56px, xl radius, card + hairline, 8px gap */}
-        <section
-          key={`answer-${currentQuestion.id}`}
-          className="w-full shrink-0 pb-2 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-2 motion-safe:duration-250 motion-safe:ease-in-out"
-        >
-          {renderQuestionComponent()}
-        </section>
-
-        {/* VÙNG PHẢN HỒI (tấm trượt lên từ đáy sau khi trả lời, motion-safe only) */}
-        {answered && lastResult && (
+        {/* Chỉ vùng câu hỏi cuộn khi tràn; khối phản hồi luôn nằm dưới cùng */}
+        <div className="flex min-h-0 flex-1 flex-col overflow-y-auto py-2">
           <div
-            role="region"
-            aria-label="Phản hồi kết quả"
-            aria-live="polite"
-            className={cn(
-              'shrink-0 rounded-t-2xl border-t-2 bg-card p-4 sm:p-5 shadow-lg',
-              'transition-colors duration-150',
-              'motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 motion-safe:duration-250 motion-safe:ease-smooth-out',
-              lastResult.isCorrect ? 'border-success' : 'border-destructive',
-            )}
+            key={currentQuestion.id}
+            className="my-auto w-full space-y-6 py-2 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-2 motion-safe:duration-250 motion-safe:ease-in-out"
           >
-            <div className="flex flex-col gap-3">
-              {/* Icon + "Đúng rồi" / "Chưa đúng" + Loa phát âm sau khi chấm (Finding 1, 6) */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div
-                    className={cn(
-                      'flex size-8 shrink-0 items-center justify-center rounded-full',
-                      lastResult.isCorrect
-                        ? 'bg-success/15 text-success'
-                        : 'bg-destructive/15 text-destructive',
-                    )}
-                  >
-                    {lastResult.isCorrect ? (
-                      <Check className="size-5 stroke-[2.5]" aria-hidden="true" />
-                    ) : (
-                      <X className="size-5 stroke-[2.5]" aria-hidden="true" />
-                    )}
-                  </div>
-                  <span
-                    className={cn(
-                      'text-base font-semibold',
-                      lastResult.isCorrect ? 'text-success' : 'text-destructive',
-                    )}
-                  >
-                    {lastResult.isCorrect ? 'Đúng rồi' : 'Chưa đúng'}
-                  </span>
-                </div>
-
-                {/* Loa phát âm câu hỏi chỉ xuất hiện sau khi chấm (Finding 1) */}
-                {containsJapanese(currentQuestion.prompt) && currentQuestion.type !== 'listening' && (
-                  <SpeakButton
-                    text={stripFurigana(currentQuestion.prompt)}
-                    label="câu hỏi"
-                  />
-                )}
-              </div>
-
-              {/* Câu đầy đủ kèm furigana và nghĩa (khi có trong dữ liệu) - Finding 6 */}
-              {(currentQuestion.explanationJp || currentQuestion.explanationVi) && (
-                <div className="space-y-1 rounded-lg bg-muted/40 p-3">
-                  {currentQuestion.explanationJp && (
-                    <div className="jp jp-example font-medium text-foreground leading-loose">
-                      <Furigana text={currentQuestion.explanationJp} />
-                    </div>
-                  )}
-                  {currentQuestion.explanationVi && (
-                    <p className="text-sm text-muted-foreground">
-                      {currentQuestion.explanationVi}
-                    </p>
-                  )}
-                </div>
-              )}
-
-              {/* Hiển thị thêm đáp án đúng nếu câu sai ở các dạng không có options */}
-              {!lastResult.isCorrect && currentQuestion.type !== 'mc' && (
-                <div className="space-y-1 text-sm">
-                  {userAnswerText !== undefined && userAnswerText.trim().length > 0 && (
-                    <div>
-                      <span className="text-muted-foreground">Bạn trả lời: </span>
-                      <span className="jp font-medium text-destructive line-through">
-                        {userAnswerText}
-                      </span>
-                    </div>
-                  )}
-                  <div>
-                    <span className="text-muted-foreground">Đáp án đúng: </span>
-                    <Furigana
-                      text={correctAnswerText}
-                      zoomable={false}
-                      className="jp font-medium text-success"
-                    />
-                  </div>
-                </div>
-              )}
-
-              {/* Gợi ý trợ từ khi làm sai */}
-              {!lastResult.isCorrect && currentHint && (
-                <p className="flex items-start gap-2 rounded-lg border border-info/30 bg-info/10 p-2 text-xs text-foreground">
-                  <Lightbulb className="mt-0.5 size-3.5 shrink-0 text-info" aria-hidden="true" />
-                  <span><span className="font-semibold">Gợi ý:</span> {currentHint}</span>
-                </p>
-              )}
-
-              {/* Nút son duy nhất "Tiếp tục" (size quiz, full width on mobile) */}
-              <div className="pt-1">
-                <Button
-                  size="quiz"
-                  className="w-full"
-                  onClick={handleNext}
-                >
-                  {currentIndex + 1 < questions.length ? 'Tiếp tục' : 'Xem kết quả'}
-                </Button>
-              </div>
-            </div>
+            <QuestionPrompt question={currentQuestion} />
+            {renderQuestionComponent()}
           </div>
+        </div>
+
+        {answered && lastResult && (
+          <FeedbackPanel
+            question={currentQuestion}
+            result={lastResult}
+            isLast={currentIndex + 1 >= questions.length}
+            onNext={handleNext}
+          />
         )}
       </div>
 
@@ -691,6 +468,6 @@ export function PracticeRunner({
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-    </main>
+    </SessionShell>
   );
 }
