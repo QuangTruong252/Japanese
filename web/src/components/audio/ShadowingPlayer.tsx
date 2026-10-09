@@ -3,17 +3,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useLiveQuery } from 'dexie-react-hooks';
-import {
-  FileArchive,
-  Pause,
-  Play,
-  Repeat,
-  RotateCcw,
-  RotateCw,
-  Volume2,
-} from 'lucide-react';
+import { Pause, Play, Repeat, RotateCcw, RotateCw } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Chip } from '@/components/PaperKit';
+import { FeatureIcon } from '@/components/FeatureIcon';
 import { Furigana } from '@/components/Furigana';
 import { SpeakButton } from '@/components/SpeakButton';
 import { stripFurigana } from '@/lib/japanese';
@@ -292,41 +286,32 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
 
   // Khi đang tải dữ liệu audio từ Dexie
   if (audioRecords === undefined) {
-    return (
-      <div className="h-28 rounded-2xl border border-border/60 bg-card/40 animate-pulse flex items-center justify-center">
-        <span className="text-xs text-muted-foreground">Đang kiểm tra audio…</span>
-      </div>
-    );
+    return <Skeleton className="h-[4.5rem] w-full rounded-xl" />;
   }
 
   // Khi chưa nạp bất kỳ track nào cho bài này
   if (audioRecords.length === 0) {
     return (
-      <Card className="rounded-2xl border-dashed border-border/80 bg-card/60 p-6 text-center space-y-3">
-        <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-          <Volume2 className="size-6" />
-        </div>
-        <div className="space-y-1">
-          <h3 className="text-base font-semibold text-foreground">
-            Chưa nạp audio cho bài này
-          </h3>
-          <p className="text-xs text-muted-foreground max-w-md mx-auto">
-            Bạn có thể nạp gói ZIP audio từ đĩa CD Minna no Nihongo mà bạn sở hữu trong mục Cài đặt để luyện nghe và Shadowing trên máy này.
-          </p>
-        </div>
-        <div className="pt-1">
-          <Link
-            href="/cai-dat/audio"
-            className={cn(
-              buttonVariants({ variant: 'outline', size: 'sm' }),
-              'gap-1.5 text-xs'
-            )}
-          >
-            <FileArchive className="size-3.5" />
-            <span>Nạp audio đĩa CD</span>
-          </Link>
-        </div>
-      </Card>
+      <div className="flex flex-wrap items-center gap-3 rounded-xl border border-border bg-card p-3">
+        <span
+          className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground [&_svg]:size-7"
+          aria-hidden="true"
+        >
+          <FeatureIcon name="listening" />
+        </span>
+        <p className="min-w-0 flex-1 basis-40 font-medium text-foreground">
+          Chưa nạp audio cho bài này
+        </p>
+        <Link
+          href="/cai-dat/audio"
+          className={cn(
+            buttonVariants({ variant: 'outline' }),
+            'min-h-11 border-primary/40 text-primary'
+          )}
+        >
+          Nạp audio đĩa CD
+        </Link>
+      </div>
     );
   }
 
@@ -363,33 +348,21 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
         className="hidden"
       />
 
-      {/* 1. Hàng chọn Track (Tabs) */}
-      <div className="flex border-b border-border/80 overflow-x-auto">
-        {availableTrackTypes.map((tab) => {
-          const isActive = activeType === tab.type;
-          return (
-            <button
-              key={tab.type}
-              type="button"
-              onClick={() => handleSelectTrack(tab.type)}
-              className={cn(
-                'px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-colors relative cursor-pointer',
-                isActive
-                  ? 'text-foreground font-semibold'
-                  : 'text-muted-foreground hover:text-foreground'
-              )}
-            >
-              <span>{tab.label}</span>
-              {isActive && (
-                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
-              )}
-            </button>
-          );
-        })}
+      {/* 1. Hàng chọn Track */}
+      <div className="flex gap-2 overflow-x-auto pb-1">
+        {availableTrackTypes.map((tab) => (
+          <Chip
+            key={tab.type}
+            pressed={activeType === tab.type}
+            onClick={() => handleSelectTrack(tab.type)}
+          >
+            {tab.label}
+          </Chip>
+        ))}
       </div>
 
       {/* 2. Thẻ Trình phát Shadowing (Player Card) */}
-      <Card className="rounded-2xl border border-border/80 bg-card p-5 shadow-xs space-y-6">
+      <div className="space-y-6 rounded-xl border border-border bg-card p-4 sm:p-5">
         {/* Scrubber Tiến trình */}
         <div className="space-y-1.5">
           <div
@@ -470,19 +443,25 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
             size="icon"
             onClick={() => handleSeekOffset(-10)}
             aria-label="Lùi 10 giây"
-            className="size-11 rounded-full text-foreground hover:bg-muted/80 relative"
+            className="relative size-11 rounded-full text-foreground hover:bg-muted/80"
           >
-            <RotateCcw className="size-5" />
-            <span className="text-xs font-bold absolute mt-0.5">10</span>
+            <RotateCcw className="size-5" aria-hidden="true" />
+            <span className="absolute mt-0.5 text-xs font-bold">10</span>
           </Button>
 
           <Button
             type="button"
+            variant="outline"
+            size="icon"
             onClick={handleTogglePlay}
             aria-label={isPlaying ? 'Tạm dừng' : 'Phát'}
-            className="size-14 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-md shadow-primary/20 flex items-center justify-center"
+            className="size-11 rounded-full border-primary/40 bg-accent text-primary hover:bg-accent/70"
           >
-            {isPlaying ? <Pause className="size-7" /> : <Play className="size-7 ml-0.5" />}
+            {isPlaying ? (
+              <Pause className="size-5" aria-hidden="true" />
+            ) : (
+              <Play className="ml-0.5 size-5" aria-hidden="true" />
+            )}
           </Button>
 
           <Button
@@ -491,80 +470,45 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
             size="icon"
             onClick={() => handleSeekOffset(10)}
             aria-label="Tiến 10 giây"
-            className="size-11 rounded-full text-foreground hover:bg-muted/80 relative"
+            className="relative size-11 rounded-full text-foreground hover:bg-muted/80"
           >
-            <RotateCw className="size-5" />
-            <span className="text-xs font-bold absolute mt-0.5">10</span>
+            <RotateCw className="size-5" aria-hidden="true" />
+            <span className="absolute mt-0.5 text-xs font-bold">10</span>
           </Button>
         </div>
 
-        {/* Tốc độ phát (Speed Chips) */}
-        <div className="flex items-center justify-center gap-2">
-          {SPEEDS.map((s) => {
-            const isSelected = playbackRate === s;
-            return (
-              <button
-                key={s}
-                type="button"
-                onClick={() => setPlaybackRate(s)}
-                className={cn(
-                  'h-8 px-3 rounded-full text-xs font-semibold tabular-nums transition-colors cursor-pointer',
-                  isSelected
-                    ? 'bg-primary text-primary-foreground shadow-xs'
-                    : 'bg-muted text-foreground hover:bg-muted/80'
-                )}
-              >
-                {s.toFixed(2).replace(/\.00$/, '.0')}×
-              </button>
-            );
-          })}
+        {/* Tốc độ phát */}
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          {SPEEDS.map((s) => (
+            <Chip
+              key={s}
+              pressed={playbackRate === s}
+              onClick={() => setPlaybackRate(s)}
+              className="tabular-nums"
+            >
+              {s.toFixed(2).replace(/\.00$/, '.0')}×
+            </Chip>
+          ))}
         </div>
 
-        {/* Các nút Chức năng Lặp A-B & Transcript */}
-        <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-2 border-t border-border/60">
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            onClick={handleSetLoopA}
-            className="h-10 gap-1.5 font-medium text-xs border-border/80"
-          >
-            <span className="size-4 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
-              A
-            </span>
-            <span>Đặt A</span>
-          </Button>
-
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            onClick={handleSetLoopB}
-            className="h-10 gap-1.5 font-medium text-xs border-border/80"
-          >
-            <span className="size-4 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
-              B
-            </span>
-            <span>Đặt B</span>
-          </Button>
-
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
+        {/* Lặp A-B */}
+        <div className="flex flex-wrap items-center justify-center gap-2 border-t border-border pt-4">
+          <Chip pressed={loopA !== null} onClick={handleSetLoopA}>
+            Đặt A
+          </Chip>
+          <Chip pressed={loopB !== null} onClick={handleSetLoopB}>
+            Đặt B
+          </Chip>
+          <Chip
+            pressed={isLoopActive}
             onClick={handleToggleLoop}
-            aria-pressed={isLoopActive}
             disabled={loopPoints === null && duration === 0}
-            className={cn(
-              'h-10 gap-1.5 font-medium text-xs border-border/80 transition-colors',
-              isLoopActive && 'border-primary bg-primary/10 text-primary font-semibold'
-            )}
+            icon={<Repeat aria-hidden="true" />}
           >
-            <Repeat className="size-4" />
-            <span>Lặp</span>
-          </Button>
+            Lặp
+          </Chip>
         </div>
-      </Card>
+      </div>
 
       {/* 3. Khối Câu ví dụ tham khảo */}
       <div className="space-y-3">
@@ -593,25 +537,22 @@ export function ShadowingPlayer({ lessonNum, examples = [] }: ShadowingPlayerPro
         {showTranscript && examples.length > 0 && (
           <div className="space-y-2">
             {examples.map((ex, idx) => (
-              <Card
+              <div
                 key={idx}
-                className="rounded-xl border border-border/70 bg-card/60 p-4 space-y-1.5"
+                className="flex items-start gap-3 rounded-xl border border-border bg-card p-3"
               >
-                <div className="flex items-start justify-between gap-3">
-                  <div className="space-y-1">
-                    <div className="jp font-jp text-base font-medium text-foreground">
-                      <Furigana text={ex.jp} />
-                    </div>
-                    <p className="translation text-xs sm:text-sm text-muted-foreground">
-                      {ex.translation.vi}
-                    </p>
+                <div className="min-w-0 flex-1 space-y-1">
+                  <div className="jp font-jp text-base font-medium text-foreground">
+                    <Furigana text={ex.jp} />
                   </div>
-                  <SpeakButton
-                    text={stripFurigana(ex.jp)}
-                    label={stripFurigana(ex.jp)}
-                  />
+                  <p className="translation text-sm text-muted-foreground">{ex.translation.vi}</p>
                 </div>
-              </Card>
+                <SpeakButton
+                  text={stripFurigana(ex.jp)}
+                  label={stripFurigana(ex.jp)}
+                  className="size-11 w-11 shrink-0 rounded-full border border-border bg-secondary text-primary hover:bg-accent"
+                />
+              </div>
             ))}
           </div>
         )}

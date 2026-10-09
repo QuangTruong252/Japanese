@@ -9,21 +9,14 @@ import { DEFAULT_SETTINGS, getSettingsSnapshot, subscribeSettings } from '@/lib/
 import { useActiveDrafts } from '@/lib/active-drafts';
 import type { LessonSummary } from '@/lib/lessons';
 import type { IllustrationAsset } from '@/types';
-import {
-  Search,
-  Check,
-  Clock,
-  Circle,
-  ChevronRight,
-  ArrowRight,
-  X,
-} from 'lucide-react';
+import { ArrowRight, BookOpen, Check, ChevronRight, Circle, Play, Search, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Progress } from '@/components/ui/progress';
 import { Furigana } from '@/components/Furigana';
 import { Illustration } from '@/components/Illustration';
-import { Stage, PaperSlip } from '@/components/PaperStage';
+import { PaperCloud, SoftScene, TornCard } from '@/components/PaperKit';
 import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
 
 const FALLBACK_SCENE_COVER: IllustrationAsset = {
@@ -31,7 +24,7 @@ const FALLBACK_SCENE_COVER: IllustrationAsset = {
   width: 800,
   height: 600,
   alt: {
-    vi: 'Cảnh minh họa bài học Minna no Nihongo',
+    vi: '',
   },
 };
 
@@ -42,6 +35,27 @@ const LESSON_GROUPS = [
   { label: 'Bài 16–20', min: 16, max: 20 },
   { label: 'Bài 21–25', min: 21, max: 25 },
 ] as const;
+
+type LessonState = 'learned' | 'current' | 'todo';
+
+/** Ô tròn trên thanh dòng thời gian; trang trí, trạng thái đã có chữ trong dòng. */
+function TimelineNode({ state }: { state: LessonState }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={cn(
+        'relative z-10 flex size-8 items-center justify-center rounded-full border-2',
+        state === 'learned' && 'border-primary bg-primary text-primary-foreground',
+        state === 'current' && 'border-primary bg-card text-primary',
+        state === 'todo' && 'border-border bg-card text-muted-foreground/60',
+      )}
+    >
+      {state === 'learned' && <Check className="size-4 stroke-[3]" />}
+      {state === 'current' && <Play className="size-3.5 fill-current" />}
+      {state === 'todo' && <Circle className="size-2.5" />}
+    </span>
+  );
+}
 
 export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -98,7 +112,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
     learnedThroughLesson === 0 &&
     (targetIds?.length ?? 0) === 0;
 
-  // Bài học hiện tại trên Stage: nếu đã học hết tất cả 25 bài thì hiển thị bài cuối cùng (Bài 25)
+  // Bài đang học: nếu đã học hết tất cả 25 bài thì hiển thị bài cuối cùng (Bài 25)
   const activeLessonNum = isAllLearned
     ? (summaries[summaries.length - 1]?.number ?? 25)
     : lessonStats.activeLessonNum;
@@ -143,288 +157,237 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
     ctaHref = `/hoc/${activeLessonNum}`;
   }
 
-  const stageCover = activeSummary?.cover ?? FALLBACK_SCENE_COVER;
+  const sceneCover = activeSummary?.cover ?? FALLBACK_SCENE_COVER;
 
   return (
-    <div className="space-y-6 sm:space-y-8">
-      {/* 1. Header: h1 "Học bài" + "25 bài · đã học N" + small "Lọc bài học" text field */}
-      <header className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pb-4 border-b border-border">
-        <div>
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-            Học bài
-          </h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {summaries.length} bài · đã học {lessonStats.completed}
-          </p>
-        </div>
+    <main className="mx-auto w-full max-w-5xl px-4 pb-12 pt-3 sm:px-6 lg:px-8">
+      <SoftScene
+        asset={sceneCover}
+        sizes="(min-width: 1024px) 1024px, 100vw"
+        eager
+        imageClassName="h-48 object-center sm:h-64 sm:object-[center_30%] lg:h-72 lg:object-[center_20%]"
+        className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full"
+      />
+      <PaperCloud className="-mt-7 w-fit">
+        <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+          Học bài
+        </h1>
+        <p className="mt-0.5 text-sm text-muted-foreground">
+          {summaries.length} bài · đã học {lessonStats.completed}
+        </p>
+      </PaperCloud>
 
-        <div className="w-full sm:w-64 space-y-1.5">
-          <label
-            htmlFor="lesson-filter"
-            className="block text-xs font-semibold text-muted-foreground"
-          >
-            Lọc bài học
-          </label>
+      <div className="mt-6 grid gap-8 xl:grid-cols-[minmax(0,1.2fr)_minmax(21rem,0.8fr)]">
+        {/* Thẻ đang học đứng đầu trên mobile, sang cột phụ từ xl */}
+        <aside
+          aria-labelledby="hoc-active-heading"
+          className="min-w-0 xl:order-2"
+        >
+          <div className="xl:sticky xl:top-6">
+            <TornCard>
+              <p
+                id="hoc-active-heading"
+                className="font-serif text-sm font-bold tracking-wide text-primary"
+              >
+                / Đang học /
+              </p>
+              <p className="mt-1.5 flex items-start gap-1.5 text-sm font-medium text-muted-foreground">
+                <BookOpen className="mt-0.5 size-3.5 shrink-0" aria-hidden="true" />
+                Bài {activeLessonNum} · {activeSummary?.title?.vi}
+              </p>
+              {activeSummary?.jpTitle && (
+                <Furigana
+                  text={formatOptionalBrackets(activeSummary.jpTitle)}
+                  zoomable={false}
+                  className="jp-display mt-3 block text-2xl font-bold text-foreground sm:text-3xl"
+                />
+              )}
+              <div className="mt-4 flex items-center gap-3">
+                <Progress
+                  value={learnedInActive}
+                  max={Math.max(1, totalInActive)}
+                  getAriaValueText={() => `${learnedInActive} trên ${totalInActive} từ đã vào lịch ôn`}
+                  className="min-w-0 flex-1"
+                />
+                <span className="shrink-0 text-sm tabular-nums text-muted-foreground">
+                  {learnedInActive}/{totalInActive} từ
+                </span>
+              </div>
+              <Link
+                href={ctaHref}
+                className={cn(
+                  buttonVariants({
+                    variant: isAllLearned ? 'secondary' : 'default',
+                    size: 'quiz',
+                  }),
+                  'mt-5 h-auto min-h-12 w-full py-3 font-semibold',
+                )}
+              >
+                <span className="whitespace-normal text-center">{ctaText}</span>
+                <ArrowRight aria-hidden="true" />
+              </Link>
+            </TornCard>
+          </div>
+        </aside>
+
+        <div className="min-w-0 space-y-6 xl:order-1">
           <div className="relative">
             <Search
-              className="size-4 text-muted-foreground absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
+              className="pointer-events-none absolute left-3.5 top-1/2 size-5 -translate-y-1/2 text-muted-foreground"
               aria-hidden="true"
             />
-            <input
+            <Input
               id="lesson-filter"
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Lọc bài học..."
               aria-label="Lọc bài học"
-              className="w-full h-12 pl-10 pr-12 bg-card border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring"
+              className="h-12 rounded-xl border-border bg-card pl-11 pr-12 text-base md:text-base dark:bg-card"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
-                className="size-12 inline-flex items-center justify-center absolute right-0 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground rounded-r-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="absolute right-0 top-1/2 inline-flex size-12 -translate-y-1/2 items-center justify-center rounded-r-xl text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring"
                 aria-label="Xóa bộ lọc"
               >
                 <X className="size-4" aria-hidden="true" />
               </button>
             )}
           </div>
-        </div>
-      </header>
 
-      {/* 2. Main content: At 1280px (xl:), stage sticky in left 5/12 column, route in right 7/12 column */}
-      <div className="xl:grid xl:grid-cols-12 xl:gap-10 xl:items-start">
-        {/* Left 5/12 column: Stage + PaperSlip */}
-        <section
-          aria-label="Bài đang học"
-          className="xl:col-span-5 xl:sticky xl:top-6"
-        >
-          <Stage
-            asset={stageCover}
-            sizes="(min-width: 1280px) 40vw, 100vw"
-            imageClassName="h-48 sm:h-56 xl:h-64"
-            className="-mx-4 sm:mx-0"
-          />
-          <PaperSlip>
-            <p className="text-sm font-medium text-muted-foreground">
-              Bài {activeLessonNum} · {activeSummary?.title?.vi ?? 'Minna no Nihongo'}
-            </p>
-            {activeSummary?.jpTitle && (
-              <div className="jp text-2xl sm:text-3xl font-bold text-foreground mt-1">
-                <Furigana
-                  text={formatOptionalBrackets(activeSummary.jpTitle)}
-                  zoomable={false}
-                />
+          <section aria-label="Lộ trình bài học">
+            {filteredSummaries.length === 0 ? (
+              <div className="flex flex-col items-center gap-4 rounded-xl border border-dashed border-border bg-card/50 px-4 py-10 text-center">
+                <p className="text-base font-semibold text-foreground">Không có bài khớp</p>
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className={cn(buttonVariants({ variant: 'outline' }), 'min-h-11')}
+                >
+                  Xóa bộ lọc
+                </button>
               </div>
-            )}
-            <div className="mt-3 space-y-1.5">
-              <div className="flex items-center justify-between text-xs text-muted-foreground">
-                <span>
-                  {learnedInActive}/{totalInActive} từ
-                </span>
-                {totalInActive > 0 && (
-                  <span className="tabular-nums">
-                    {Math.round((learnedInActive / totalInActive) * 100)}%
-                  </span>
-                )}
-              </div>
-              <Progress
-                value={learnedInActive}
-                max={Math.max(1, totalInActive)}
-                className="w-full"
-              />
-            </div>
+            ) : (
+              <div>
+                {LESSON_GROUPS.map((group) => {
+                  const groupLessons = filteredSummaries.filter(
+                    (s) => s.number >= group.min && s.number <= group.max,
+                  );
+                  if (groupLessons.length === 0) return null;
+                  const isFirstGroup = groupLessons[0].number === filteredSummaries[0].number;
 
-            <Link
-              href={ctaHref}
-              className={cn(
-                buttonVariants({
-                  variant: isAllLearned ? 'secondary' : 'default',
-                  size: 'quiz',
-                }),
-                'mt-4 w-full justify-center',
-              )}
-            >
-              <span>{ctaText}</span>
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </Link>
-          </PaperSlip>
-        </section>
+                  return (
+                    <div key={group.label}>
+                      {/* Thanh dọc không hở: tiêu đề nhóm nằm bên phải thanh, thanh chạy qua bằng đoạn riêng (trừ trước ô tròn đầu) */}
+                      <div className="relative pb-2 pl-11 pt-4 first:pt-0">
+                        {!isFirstGroup && (
+                          <span
+                            aria-hidden="true"
+                            className="absolute inset-y-0 left-4 w-0.5 -translate-x-1/2 bg-border"
+                          />
+                        )}
+                        <h2 className="text-lg font-semibold text-foreground">{group.label}</h2>
+                      </div>
+                      <ol>
+                        {groupLessons.map((s) => {
+                          const learned = learnedByLesson.get(s.number) ?? 0;
+                          const isLearned =
+                            (s.vocabCount > 0 && learned >= s.vocabCount) ||
+                            s.number <= learnedThroughLesson;
+                          const isCurrent = !isAllLearned && s.number === activeLessonNum;
+                          const state: LessonState = isLearned
+                            ? 'learned'
+                            : isCurrent
+                              ? 'current'
+                              : 'todo';
+                          const isFirst = s.number === filteredSummaries[0].number;
+                          const isLast = s.number === filteredSummaries[filteredSummaries.length - 1].number;
 
-        {/* Right 7/12 column: Stepped Route of 25 lessons */}
-        <section
-          aria-label="Lộ trình bài học"
-          className="mt-8 xl:mt-0 xl:col-span-7"
-        >
-          {filteredSummaries.length === 0 ? (
-            <div className="py-12 px-4 text-center rounded-xl border border-dashed border-border bg-card/50">
-              <p className="text-base font-semibold text-foreground">
-                Không có bài khớp
-              </p>
-              <p className="mt-1 text-xs text-muted-foreground">
-                Không tìm thấy bài học nào phù hợp với từ khóa &ldquo;{searchQuery}&rdquo;.
-              </p>
-              <button
-                type="button"
-                onClick={() => setSearchQuery('')}
-                className={cn(
-                  buttonVariants({ variant: 'secondary', size: 'default' }),
-                  'mt-4 rounded-xl text-xs font-medium',
-                )}
-              >
-                Xóa bộ lọc
-              </button>
-            </div>
-          ) : (
-            <div className="space-y-8">
-              {LESSON_GROUPS.map((group) => {
-                const groupLessons = filteredSummaries.filter(
-                  (s) => s.number >= group.min && s.number <= group.max,
-                );
-                if (groupLessons.length === 0) return null;
-
-                return (
-                  <div key={group.label} className="space-y-1">
-                    {/* Section label */}
-                    <div className="flex items-center gap-2 pl-9 py-1">
-                      <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                        {group.label}
-                      </span>
-                    </div>
-
-                    {/* Stepped Route stations */}
-                    <div className="flex flex-col divide-y divide-border">
-                      {groupLessons.map((s) => {
-                        const learned = learnedByLesson.get(s.number) ?? 0;
-                        const isLearned =
-                          (s.vocabCount > 0 && learned >= s.vocabCount) ||
-                          s.number <= learnedThroughLesson;
-                        const isCurrent =
-                          !isAllLearned && s.number === activeLessonNum;
-                        const isNotStarted = !isLearned && !isCurrent;
-
-                        // Xác định xem đường mực nối lên/nối xuống:
-                        const isFirstInFiltered = s.number === filteredSummaries[0]?.number;
-                        const isLastInFiltered =
-                          s.number ===
-                          filteredSummaries[filteredSummaries.length - 1]?.number;
-
-                        return (
-                          <Link
-                            key={s.number}
-                            href={`/hoc/${s.number}`}
-                            className="group flex items-center gap-3 sm:gap-4 py-3 sm:py-3.5 px-2 -mx-2 rounded-xl transition-colors hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring"
-                          >
-                            {/* Station node column with ink line */}
-                            <div className="relative flex flex-col items-center justify-center shrink-0 w-6 self-stretch">
-                              <span
-                                className={cn(
-                                  'absolute w-px bg-border -z-0',
-                                  isFirstInFiltered && !isLastInFiltered
-                                    ? 'top-1/2 bottom-0'
-                                    : isLastInFiltered && !isFirstInFiltered
-                                      ? 'top-0 bottom-1/2'
-                                      : isFirstInFiltered && isLastInFiltered
-                                        ? 'hidden'
-                                        : 'top-0 bottom-0',
-                                )}
-                                aria-hidden="true"
-                              />
-                              {isLearned ? (
-                                <span className="relative z-10 size-4 rounded-full bg-success text-success-foreground flex items-center justify-center ring-4 ring-background">
-                                  <Check
-                                    className="size-2.5 stroke-[3]"
-                                    aria-hidden="true"
-                                  />
-                                </span>
-                              ) : isCurrent ? (
-                                <span className="relative z-10 size-4 rounded-full border-2 border-primary bg-background ring-4 ring-background flex items-center justify-center">
-                                  <span className="size-1.5 rounded-full bg-primary" />
-                                </span>
-                              ) : (
-                                <span className="relative z-10 size-3 rounded-full border-2 border-muted-foreground/40 bg-background ring-4 ring-background" />
-                              )}
-                            </div>
-
-                            {/* 64px scene thumbnail */}
-                            <div className="size-16 shrink-0 rounded-lg overflow-hidden bg-muted relative">
-                              <Illustration
-                                asset={s.cover ?? FALLBACK_SCENE_COVER}
-                                sizes="64px"
-                                className={cn(
-                                  'size-16 object-cover',
-                                  isNotStarted && 'grayscale opacity-60',
-                                )}
-                              />
-                            </div>
-
-                            {/* Lesson details */}
-                            <div className="min-w-0 flex-1">
-                              <div className="flex items-center gap-2 flex-wrap">
-                                <span className="text-xs font-semibold text-muted-foreground">
-                                  Bài {s.number}
-                                </span>
-                                {isLearned ? (
-                                  <span className="inline-flex items-center gap-1 text-xs font-medium text-success">
-                                    <Check
-                                      className="size-3 stroke-[2.5]"
-                                      aria-hidden="true"
-                                    />
-                                    Đã học
-                                  </span>
-                                ) : isCurrent ? (
-                                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary">
-                                    <Clock className="size-3" aria-hidden="true" />
-                                    Đang học {learned}/{s.vocabCount}
-                                  </span>
-                                ) : (
-                                  <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
-                                    <Circle
-                                      className="size-2.5"
-                                      aria-hidden="true"
-                                    />
-                                    Chưa học
-                                  </span>
-                                )}
+                          return (
+                            <li key={s.number} className="flex gap-3 py-1">
+                              {/* Thanh dọc chạy suốt nhóm; ô tròn nằm trên thanh, ngoài thẻ dòng */}
+                              <div className="relative flex w-8 shrink-0 items-center justify-center">
+                                <span
+                                  aria-hidden="true"
+                                  className={cn(
+                                    'absolute left-1/2 w-0.5 -translate-x-1/2',
+                                    state === 'learned' ? 'bg-primary/40' : 'bg-border',                                    isFirst && isLast
+                                      ? 'hidden'
+                                      : isFirst
+                                        ? 'bottom-0 top-1/2'
+                                        : isLast
+                                          ? 'bottom-1/2 top-0'
+                                          : 'inset-y-0',
+                                  )}
+                                />
+                                <TimelineNode state={state} />
                               </div>
 
-                              {s.jpTitle ? (
-                                <div className="jp jp-example font-medium text-foreground truncate mt-0.5">
-                                  <Furigana
-                                    text={formatOptionalBrackets(s.jpTitle)}
-                                    zoomable={false}
-                                  />
-                                </div>
-                              ) : (
-                                <span className="block text-base font-semibold text-foreground truncate mt-0.5">
-                                  {s.title.vi}
+                              <Link
+                                href={`/hoc/${s.number}`}
+                                className={cn(
+                                  'group flex min-w-0 flex-1 items-center gap-3 rounded-xl border bg-card p-3 outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring',
+                                  isCurrent ? 'border-primary/40 bg-accent/40' : 'border-border',
+                                )}
+                              >
+                                <Illustration
+                                  asset={s.cover ?? FALLBACK_SCENE_COVER}
+                                  sizes="48px"
+                                  className="size-12 shrink-0 rounded-lg bg-secondary object-cover"
+                                />
+                                <span className="min-w-0 flex-1">
+                                  <span className="flex flex-wrap items-baseline gap-x-2">
+                                    <span className="text-sm font-semibold text-foreground">
+                                      Bài {s.number}
+                                    </span>
+                                    {isLearned ? (
+                                      <span className="text-sm font-medium text-success">Đã học</span>
+                                    ) : isCurrent ? (
+                                      <span className="text-sm font-semibold text-primary">
+                                        Đang học {learned}/{s.vocabCount}
+                                      </span>
+                                    ) : (
+                                      <span className="text-sm text-muted-foreground">Chưa học</span>
+                                    )}
+                                  </span>
+                                  {s.jpTitle && (
+                                    <span className="jp block font-medium text-foreground">
+                                      <Furigana
+                                        text={formatOptionalBrackets(s.jpTitle)}
+                                        zoomable={false}
+                                      />
+                                    </span>
+                                  )}
+                                  <span
+                                    className={cn(
+                                      'block text-sm',
+                                      s.jpTitle
+                                        ? 'text-muted-foreground'
+                                        : 'font-semibold text-foreground',
+                                    )}
+                                  >
+                                    {s.title.vi}
+                                  </span>
                                 </span>
-                              )}
-
-                              {s.jpTitle ? (
-                                <span className="block text-sm font-normal text-muted-foreground truncate">
-                                  {s.title.vi}
-                                </span>
-                              ) : null}
-                            </div>
-
-                            {/* Chevron */}
-                            <ChevronRight
-                              className="size-5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5"
-                              aria-hidden="true"
-                            />
-                          </Link>
-                        );
-                      })}
+                                <ChevronRight
+                                  className="size-5 shrink-0 text-muted-foreground"
+                                  aria-hidden="true"
+                                />
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ol>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-          )}
-        </section>
+                  );
+                })}
+              </div>
+            )}
+          </section>
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
