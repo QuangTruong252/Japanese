@@ -13,6 +13,7 @@ import { clearNewSessionRequest } from '@/lib/practice-draft';
 import { resolveDashboardCta } from '@/lib/dashboard-cta';
 import type { LessonSummary } from '@/lib/lessons';
 import type { IllustrationAsset } from '@/types';
+import { REVIEW_COMPLETE_ART, SECTION_THUMB } from '@/lib/illustrations';
 import { SoftScene, PaperCloud, TornCard, SectionHeader, ListRow, PartRow } from '@/components/PaperKit';
 import { Illustration } from '@/components/Illustration';
 import { FeatureIcon } from '@/components/FeatureIcon';
@@ -30,26 +31,6 @@ const FALLBACK_COVER: IllustrationAsset = {
   width: 800,
   height: 600,
   alt: { vi: '' },
-};
-
-const DONE_ASSET: IllustrationAsset = {
-  src: '/assets/illustrations/ui/states/review-complete-v1.webp',
-  width: 512,
-  height: 512,
-  alt: { vi: '' },
-};
-
-const sectionThumb = (stem: string): IllustrationAsset => ({
-  src: `/assets/illustrations/ui/sections/${stem}-v1.webp`,
-  width: 512,
-  height: 512,
-  alt: { vi: '' },
-});
-/** Ảnh chung cho hàng phần bài khi bài không có ảnh riêng phù hợp. */
-const SECTION_THUMB = {
-  vocab: sectionThumb('vocabulary'),
-  grammar: sectionThumb('grammar'),
-  listening: sectionThumb('listening'),
 };
 
 /** Bảng tin v3 "Sách sống", bố cục C2. */
@@ -225,7 +206,7 @@ export function DashboardContent({
               )}
               {isDoneToday && (
                 <div className="flex items-center gap-3 rounded-xl border border-border bg-card p-3">
-                  <Illustration asset={DONE_ASSET} sizes="56px" className="size-14 shrink-0 object-contain" />
+                  <Illustration asset={REVIEW_COMPLETE_ART} sizes="56px" className="size-14 shrink-0 object-contain" />
                   <p className="font-medium text-foreground">Đã xong phần ôn hôm nay</p>
                 </div>
               )}

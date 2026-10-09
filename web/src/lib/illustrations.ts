@@ -18,3 +18,20 @@ export function validateIllustrationAsset(value: unknown): asserts value is Illu
     throw new Error('Đường dẫn, kích thước hoặc mô tả ảnh minh họa không hợp lệ.');
   }
 }
+
+const uiArt = (stem: string): IllustrationAsset => ({
+  src: `/assets/illustrations/ui/${stem}-v1.webp`,
+  width: 512,
+  height: 512,
+  alt: { vi: '' },
+});
+
+/** Ảnh nhỏ chung cho hàng phần bài khi bài không có ảnh riêng phù hợp. */
+export const SECTION_THUMB = {
+  vocab: uiArt('sections/vocabulary'),
+  grammar: uiArt('sections/grammar'),
+  listening: uiArt('sections/listening'),
+};
+
+/** Ảnh trạng thái "đã ôn xong", dùng chung giữa Bảng tin và Ôn tập. */
+export const REVIEW_COMPLETE_ART = uiArt('states/review-complete');
