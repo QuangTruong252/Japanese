@@ -5,9 +5,5 @@ import { LessonGrid } from '@/components/LessonGrid';
 // server lúc build nên trình duyệt chỉ nhận RSC payload.
 export default async function HocPage() {
   const summaries = await loadLessonSummaries();
-  return (
-    <main className="mx-auto w-full max-w-6xl px-4 sm:px-6 pt-4 sm:pt-8 pb-16">
-      <LessonGrid summaries={summaries} />
-    </main>
-  );
+  return <LessonGrid summaries={summaries} />;
 }

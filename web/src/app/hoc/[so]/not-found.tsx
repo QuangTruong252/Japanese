@@ -1,14 +1,16 @@
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
+import { PageTitle } from '@/components/PaperKit';
+import { cn } from '@/lib/utils';
 
 export default function LessonNotFound() {
   return (
-    <main className="mx-auto w-full flex max-w-2xl flex-col items-start gap-4 px-4 py-12">
-      <h1 className="font-heading text-xl font-medium">Không tìm thấy bài học</h1>
-      <p className="text-sm text-muted-foreground">
-        Hiện chỉ có 25 bài N5 (bài 1 đến bài 25).
-      </p>
-      <Link href="/hoc" className={buttonVariants({ size: 'quiz' })}>
+    <main className="mx-auto w-full max-w-5xl space-y-6 px-4 pb-12 pt-3 sm:px-6 lg:px-8">
+      <PageTitle
+        title="Không tìm thấy bài học"
+        meta="Hiện chỉ có 25 bài N5 (bài 1 đến bài 25)."
+      />
+      <Link href="/hoc" className={cn(buttonVariants({ variant: 'outline' }), 'min-h-11')}>
         Về danh sách bài
       </Link>
     </main>
