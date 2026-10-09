@@ -10,7 +10,8 @@ Vai trò: **Review** · Agent: <khác agent Triển khai của task này> · Th�
 ## Kiểm
 1. Đúng brief: phạm vi file, từng yêu cầu, hành vi phải giữ.
 2. Đúng `DESIGN.md`: token màu, chữ, thành phần `PaperKit`, icon, luật chữ tối giản và chữ dài, accessibility.
-3. Đúng `AGENTS.md`: Dexie/FSRS/furigana, không bịa tiếng Nhật, comment không trỏ tài liệu.
+3. Đúng `AGENTS.md` và `docs/engineering.md` (Dexie, sync, FSRS, test, comment không trỏ tài liệu),
+   `docs/data/README.md` (furigana, không bịa tiếng Nhật).
 4. Lỗi logic, trường hợp biên, hồi quy; test có đủ cho logic mới không.
 
 ## Cấm
