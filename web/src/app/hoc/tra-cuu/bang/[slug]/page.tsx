@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ChevronLeft, Info } from 'lucide-react';
+import { Info } from 'lucide-react';
 import { getAllReferenceDocs, getReferenceDocBySlug } from '@/lib/lookup';
 import type { TableCell } from '@/types/lookup';
 import { Furigana } from '@/components/Furigana';
-import { buttonVariants } from '@/components/ui/button';
+import { PageTitle, SectionHeader } from '@/components/PaperKit';
 import { cn } from '@/lib/utils';
 
 export function generateStaticParams() {
@@ -37,7 +36,7 @@ function RenderCellContent({ cell }: { cell: TableCell }) {
       return <Furigana text={cell} className="text-foreground" />;
     }
     const isJp = JAPANESE_CHAR_REGEX.test(cell);
-    return <span className={cn(isJp && 'font-jp font-medium')}>{cell}</span>;
+    return <span className={cn(isJp && 'font-jp font-medium whitespace-nowrap')}>{cell}</span>;
   }
 
   if (typeof cell === 'object' && cell !== null) {
@@ -47,7 +46,7 @@ function RenderCellContent({ cell }: { cell: TableCell }) {
       return <Furigana text={text} className="text-foreground" />;
     }
     const isJp = JAPANESE_CHAR_REGEX.test(text);
-    return <span className={cn(isJp && 'font-jp font-medium')}>{text}</span>;
+    return <span className={cn(isJp && 'font-jp font-medium whitespace-nowrap')}>{text}</span>;
   }
 
   return null;
@@ -66,39 +65,18 @@ export default async function ReferenceDetailPage({
   }
 
   return (
-    <main className="mx-auto w-full max-w-3xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24">
-      {/* 1. Header & Điều hướng quay lại */}
-      <header className="space-y-4">
-        <Link
-          href="/hoc/tra-cuu/bang"
-          className={cn(
-            buttonVariants({ variant: 'ghost' }),
-            'min-h-11 px-3 -ml-3 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors'
-          )}
-        >
-          <ChevronLeft className="size-4 mr-1" />
-          <span>Bảng tham chiếu</span>
-        </Link>
+    <main className="mx-auto w-full max-w-5xl space-y-6 px-4 pb-24 sm:px-6 lg:px-8 lg:pb-12">
+      <PageTitle
+        title={doc.title.vi}
+        meta={doc.description.vi}
+        back={{ href: '/hoc/tra-cuu/bang', label: 'Bảng tham chiếu' }}
+      />
 
-        <div className="space-y-1">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-            {doc.title.vi}
-          </h1>
-          <p className="text-sm text-muted-foreground">
-            {doc.description.vi}
-          </p>
-        </div>
-      </header>
-
-      {/* 2. Render từng section */}
       <div className="space-y-8">
         {doc.sections.map((section, sIdx) => (
-          <section key={section.id || sIdx} className="space-y-4">
-            {/* Tiêu đề section (nếu tài liệu có từ 2 section trở lên hoặc tiêu đề khác với title chính) */}
+          <section key={section.id || sIdx} className="space-y-3">
             {doc.sections.length > 1 && section.title.vi && (
-              <h2 className="text-lg font-bold text-foreground pt-2">
-                {section.title.vi}
-              </h2>
+              <SectionHeader id={`section-${section.id || sIdx}`} title={section.title.vi} />
             )}
 
             {/* Các bảng trong section */}
@@ -108,48 +86,37 @@ export default async function ReferenceDetailPage({
                 tabIndex={0}
                 role="region"
                 aria-label={`${doc.title.vi} - ${section.title.vi || 'Bảng'}`}
-                className="overflow-x-auto rounded-2xl border border-border/80 bg-card shadow-xs focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-ring"
+                className="overflow-x-auto rounded-xl border border-border bg-card outline-none focus-visible:ring-3 focus-visible:ring-ring"
               >
-                <table className="w-full text-left text-sm border-collapse">
+                <table className="w-full border-collapse text-left text-sm">
                   <caption className="sr-only">
                     {doc.title.vi} - {section.title.vi}
                   </caption>
                   <thead>
-                    <tr className="border-b border-border bg-muted/40 text-xs font-bold text-muted-foreground">
+                    <tr className="border-b border-border bg-secondary text-xs font-semibold text-muted-foreground">
                       {table.headers.map((h, hIdx) => {
                         // Bảo toàn 8 ô header rỗng có chủ đích
                         if (h.vi === '') {
-                          return (
-                            <th
-                              key={hIdx}
-                              scope="col"
-                              className="py-3 px-3.5 bg-muted/20 w-8"
-                              aria-hidden="true"
-                            />
-                          );
+                          return <th key={hIdx} scope="col" className={cn('px-3.5 py-3', hIdx === 0 ? 'min-w-30' : 'w-8')} aria-hidden="true" />;
                         }
                         return (
-                          <th
-                            key={hIdx}
-                            scope="col"
-                            className="py-3 px-3.5 whitespace-nowrap"
-                          >
+                          <th key={hIdx} scope="col" className={cn('whitespace-nowrap px-3.5 py-3', hIdx === 0 && 'min-w-30')}>
                             {h.vi}
                           </th>
                         );
                       })}
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-border/60">
+                  <tbody className="divide-y divide-border">
                     {table.rows.map((row, rIdx) => (
-                      <tr
-                        key={rIdx}
-                        className="hover:bg-muted/20 transition-colors duration-100"
-                      >
+                      <tr key={rIdx} className="transition-colors hover:bg-muted/30">
                         {row.map((cell, cIdx) => (
                           <td
                             key={cIdx}
-                            className="py-3 px-3.5 align-middle text-sm text-foreground"
+                            className={cn(
+                              'px-3.5 py-3 align-middle text-sm text-foreground',
+                              cIdx === 0 && 'min-w-30',
+                            )}
                           >
                             <RenderCellContent cell={cell} />
                           </td>
@@ -163,10 +130,10 @@ export default async function ReferenceDetailPage({
 
             {/* Ghi chú của section (nếu có) */}
             {section.note?.vi && (
-              <div className="flex items-start gap-2.5 p-4 rounded-xl bg-muted/40 border border-border/60 text-xs sm:text-sm text-muted-foreground">
-                <Info className="size-4 shrink-0 text-primary mt-0.5" />
+              <p className="flex items-start gap-2 text-sm text-muted-foreground">
+                <Info className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
                 <span>{section.note.vi}</span>
-              </div>
+              </p>
             )}
           </section>
         ))}

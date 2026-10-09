@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ChevronLeft, Info } from 'lucide-react';
-import { buttonVariants } from '@/components/ui/button';
+import { Info } from 'lucide-react';
+import { PageTitle } from '@/components/PaperKit';
 import { KanaChart } from './KanaChart';
-import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Bảng chữ cái Kana · MaiPace',
@@ -12,43 +10,16 @@ export const metadata: Metadata = {
 
 export default function KanaPage() {
   return (
-    <main className="mx-auto w-full max-w-2xl space-y-6 px-4 sm:px-6 pt-6 sm:pt-10 pb-24">
-      {/* 1. Header & Điều hướng quay lại */}
-      <header className="space-y-4">
-        <Link
-          href="/hoc/tra-cuu"
-          className={cn(
-            buttonVariants({ variant: 'ghost' }),
-            'min-h-11 px-3 -ml-3 text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors'
-          )}
-        >
-          <ChevronLeft className="size-4 mr-1" />
-          <span>Tra cứu</span>
-        </Link>
+    <main className="mx-auto w-full max-w-5xl space-y-6 px-4 pb-24 sm:px-6 lg:px-8 lg:pb-12">
+      <PageTitle title="Bảng chữ Kana" back={{ href: '/hoc/tra-cuu', label: 'Tra cứu' }} />
 
-        <div className="flex items-center justify-between">
-          <div className="space-y-1">
-            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-              Bảng chữ Kana
-            </h1>
-            <p className="text-sm text-muted-foreground">
-              Hiragana & Katakana cho người mới bắt đầu.
-            </p>
-          </div>
-        </div>
-      </header>
-
-      {/* 2. Lời khuyên định hướng cho người mới bắt đầu */}
-      <aside
-        aria-label="Chỉ dẫn cho người mới học chữ Kana"
-        className="rounded-2xl border border-border/80 bg-muted/40 p-4 sm:p-5 space-y-2.5 text-sm"
-      >
-        <div className="flex items-center gap-2 font-semibold text-foreground">
-          <Info className="size-4.5 text-primary shrink-0" aria-hidden="true" />
-          <span>Chỉ dẫn cho người mới bắt đầu</span>
-        </div>
-
-        <ul className="space-y-1.5 text-xs sm:text-sm text-muted-foreground list-disc list-inside">
+      <section aria-label="Chỉ dẫn cho người mới học chữ Kana">
+      <details className="group rounded-xl border border-border bg-card text-sm">
+        <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-xl px-4 font-medium text-foreground outline-none focus-visible:ring-3 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+          <Info className="size-4 shrink-0 text-primary" aria-hidden="true" />
+          Chỉ dẫn
+        </summary>
+        <ul className="list-inside list-disc space-y-1.5 px-4 pb-4 text-muted-foreground">
           <li>
             Bạn nên học thuộc bảng <strong className="text-foreground">Hiragana</strong> trước vì đây là nền tảng tối cần thiết để bắt đầu bài 1.
           </li>
@@ -59,9 +30,9 @@ export default function KanaPage() {
             Bảng <strong className="text-foreground">Katakana</strong> chủ yếu dùng để ghi các từ mượn tiếng nước ngoài, tên riêng quốc tế và từ tượng thanh.
           </li>
         </ul>
-      </aside>
+      </details>
+      </section>
 
-      {/* 3. Lưới chữ tương tác kèm phát âm */}
       <KanaChart />
     </main>
   );
