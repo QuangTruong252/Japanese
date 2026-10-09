@@ -30,14 +30,15 @@ export function PhraseToken({
       tabIndex={used ? -1 : 0}
       onClick={used || disabled ? undefined : onClick}
       className={cn(
-        'flex h-12 min-h-12 items-center justify-center rounded-xl px-4 text-base font-medium',
+        // Viên giấy: nền card, viền mảnh, bóng nhẹ. Khối đã dùng chỉ còn khung đứt tại chỗ.
+        'flex min-h-14 items-center justify-center rounded-xl border px-4 text-base font-medium',
         // Không transition `transform`: framer-motion điều khiển transform khi bay.
-        'bg-secondary text-secondary-foreground transition-[color,background-color,opacity,translate] duration-150 ease-out',
-        'outline-none focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px',
-        'jp jp-vocab select-none',
+        'transition-[color,background-color,opacity,translate] duration-150 ease-out',
+        'outline-none focus-visible:ring-3 focus-visible:ring-ring active:translate-y-px',
+        'jp jp-display jp-example select-none',
         used
-          ? 'pointer-events-none opacity-40'
-          : 'cursor-pointer hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)]',
+          ? 'pointer-events-none border-dashed border-border bg-transparent opacity-40'
+          : 'cursor-pointer border-border bg-card text-foreground shadow-sm hover:bg-muted/60',
       )}
     >
       {children}

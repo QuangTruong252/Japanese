@@ -2,36 +2,15 @@
 
 import { Suspense, useEffect, useMemo, useState, useSyncExternalStore } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Skeleton } from '@/components/ui/skeleton';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PracticeRunner } from '@/components/practice/PracticeRunner';
+import { SessionNotice, SessionSkeleton } from '@/components/practice/SessionFrame';
 import { buildSession } from '@/lib/practice';
 import { useUIStore } from '@/lib/store';
 import { useJapaneseVoice, useQuestionPool } from '@/lib/use-question-pool';
 import { loadPracticeDraft, wasNewSessionRequested } from '@/lib/practice-draft';
 import type { PracticeConfig } from '@/types';
-
-function PracticeSessionLoading() {
-  return (
-    <main className="fixed inset-0 z-40 mx-auto flex w-full max-w-xl flex-col bg-background justify-between px-4 py-6">
-      <div className="flex items-center justify-between">
-        <Skeleton className="size-8 rounded-lg" />
-        <Skeleton className="h-4 w-16" />
-        <Skeleton className="h-4 w-16" />
-      </div>
-      <div className="space-y-4 text-center">
-        <Skeleton className="mx-auto h-8 w-64" />
-        <Skeleton className="mx-auto h-4 w-48" />
-      </div>
-      <div className="space-y-3">
-        <Skeleton className="h-12 w-full rounded-xl" />
-        <Skeleton className="h-12 w-full rounded-xl" />
-        <Skeleton className="h-12 w-full rounded-xl" />
-        <Skeleton className="h-12 w-full rounded-xl" />
-      </div>
-    </main>
-  );
-}
 
 function ResumedSession() {
   const router = useRouter();
@@ -45,7 +24,7 @@ function ResumedSession() {
   }, [draft, router]);
 
   if (!draft || draft.questions.length === 0) {
-    return <PracticeSessionLoading />;
+    return <SessionSkeleton />;
   }
 
   const resumeConfig: PracticeConfig = draft.config ?? {
@@ -103,20 +82,18 @@ function NewSession() {
 
   // Đang nạp dữ liệu câu hỏi cho phiên mới
   if (hasVoice === null || loading || (questions.length > 0 && sessionQuestions === null)) {
-    return <PracticeSessionLoading />;
+    return <SessionSkeleton />;
   }
 
   // Không có câu hỏi nào hợp lệ
   if (!sessionQuestions || sessionQuestions.length === 0) {
     return (
-      <main className="fixed inset-0 z-40 mx-auto flex w-full max-w-xl flex-col bg-background items-center justify-center gap-4 px-4 text-center">
-        <p className="text-muted-foreground">
-          Không có câu hỏi nào hợp lệ với lựa chọn hiện tại.
-        </p>
-        <Button size="quiz" onClick={() => router.push('/luyen-tap')}>
+      <SessionNotice message="Không có câu hỏi nào hợp lệ với lựa chọn hiện tại.">
+        <Button size="quiz" className="w-full font-semibold" onClick={() => router.push('/luyen-tap')}>
           Quay lại chọn bài
+          <ArrowRight aria-hidden="true" />
         </Button>
-      </main>
+      </SessionNotice>
     );
   }
 
@@ -144,7 +121,7 @@ function PracticeSessionContent() {
   const startNew = !resumeToken && wasNewSessionRequested() && selectedLessons.length > 0;
 
   if (!mounted) {
-    return <PracticeSessionLoading />;
+    return <SessionSkeleton />;
   }
 
   // Không phải vừa bấm "Bắt đầu" => khôi phục nháp tại chỗ (ResumedSession tự về /luyen-tap
@@ -158,7 +135,7 @@ function PracticeSessionContent() {
 
 export default function PracticeSessionPage() {
   return (
-    <Suspense fallback={<PracticeSessionLoading />}>
+    <Suspense fallback={<SessionSkeleton />}>
       <PracticeSessionContent />
     </Suspense>
   );

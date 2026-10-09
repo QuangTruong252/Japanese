@@ -3,15 +3,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import {
-  AlertCircle,
-  CheckCircle2,
-  Lightbulb,
-  Pause,
-  Play,
-  X,
-} from 'lucide-react';
-import { Furigana } from '@/components/Furigana';
-import {
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -27,11 +18,17 @@ import { QuestionListening } from '@/components/practice/QuestionListening';
 import { QuestionMc } from '@/components/practice/QuestionMc';
 import { QuestionReorder } from '@/components/practice/QuestionReorder';
 import { SessionResult } from '@/components/practice/SessionResult';
+import {
+  FeedbackPanel,
+  PauseLayer,
+  QuestionPrompt,
+  SessionHeader,
+  SessionShell,
+} from '@/components/practice/SessionFrame';
 import { db } from '@/lib/db';
 import { summarizeIncorrect, summarizeSession } from '@/lib/practice';
 import {
   clearPracticeDraft,
-  particleHint,
   PRACTICE_DRAFT_VERSION,
   savePracticeDraft,
   shouldAdvanceOnKey,
@@ -40,7 +37,6 @@ import {
 import { savePracticeSession } from '@/lib/practice-write';
 import { describeNextReviews, resolveNextBatchPlan, type NextBatchPlanResult } from '@/lib/review-queue';
 import { DEFAULT_SETTINGS } from '@/lib/settings';
-import { cn } from '@/lib/utils';
 import type {
   AnswerResult,
   PracticeConfig,
@@ -337,13 +333,6 @@ export function ReviewRunner({
     [questions, allResults],
   );
 
-  const currentHint = useMemo(() => {
-    if (!lastResult || lastResult.isCorrect || !currentQuestion) return null;
-    const userAnswer = lastResult.userAnswer;
-    if (!userAnswer) return null;
-    return particleHint(userAnswer, currentQuestion.answer);
-  }, [lastResult, currentQuestion]);
-
   const handleSaveAndExit = () => {
     setExitDialogOpen(false);
     if (answered && currentIndex + 1 >= questions.length) {
@@ -447,163 +436,57 @@ export function ReviewRunner({
   };
 
   return (
-    <main className="fixed inset-0 z-40 flex flex-col justify-between overflow-y-auto bg-background px-4 py-4 sm:py-6">
-      <div className="mx-auto w-full max-w-xl space-y-4">
-        {/* Thanh tiêu đề phiên */}
-        <header className="flex items-center justify-between gap-4">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="size-11 rounded-xl"
-            aria-label="Tạm dừng hoặc thoát phiên ôn tập"
-            onClick={() => {
-              pauseQuestionTimer();
-              setExitDialogOpen(true);
-            }}
-          >
-            <X className="size-5" />
-          </Button>
+    <SessionShell>
+      {/* Thông báo tiếp cận cho Screen Reader */}
+      <div role="status" className="sr-only">
+        {`Câu ${currentIndex + 1} trên ${questions.length}`}
+      </div>
 
-          <div className="flex flex-col items-center">
-            <span className="text-xs font-medium text-muted-foreground">
-              Ôn tập theo lịch
-            </span>
-            <span className="text-sm font-semibold tabular-nums text-foreground">
-              Câu {currentIndex + 1} / {questions.length}
-            </span>
-          </div>
+      <SessionHeader
+        regionLabel="Ôn tập theo lịch"
+        exitLabel="Tạm dừng hoặc thoát phiên ôn tập"
+        onExit={() => {
+          pauseQuestionTimer();
+          setExitDialogOpen(true);
+        }}
+        index={currentIndex}
+        total={questions.length}
+        progress={(currentIndex + 1) / questions.length}
+        duration={sessionDuration}
+        isPaused={isPaused}
+        pauseLabel={isPaused ? 'Tiếp tục bấm giờ' : 'Tạm dừng bấm giờ'}
+        pauseDisabled={answered}
+        onTogglePause={togglePause}
+      />
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="size-11 rounded-xl"
-            aria-label={isPaused ? 'Tiếp tục bấm giờ' : 'Tạm dừng bấm giờ'}
-            onClick={togglePause}
-          >
-            {isPaused ? <Play className="size-5" /> : <Pause className="size-5" />}
-          </Button>
-        </header>
+      <div className="relative flex min-h-0 flex-1 flex-col">
+        {isPaused && (
+          <PauseLayer title="Đang tạm dừng phiên ôn tập" resumeLabel="Tiếp tục ôn" onResume={togglePause} />
+        )}
 
-        {/* Thanh tiến trình hỗ trợ Accessibility */}
-        <div
-          role="progressbar"
-          aria-valuenow={currentIndex + 1}
-          aria-valuemin={1}
-          aria-valuemax={questions.length}
-          aria-valuetext={`Câu ${currentIndex + 1} trên ${questions.length}`}
-          className="h-1.5 w-full overflow-hidden rounded-full bg-muted"
-        >
-          <div
-            className="h-full bg-primary transition-all duration-300 ease-out"
-            style={{ width: `${((currentIndex + 1) / questions.length) * 100}%` }}
-          />
-        </div>
-
-        {/* Nội dung câu hỏi */}
-        <div className="space-y-6 pt-2">
-          {isPaused ? (
-            <div className="flex min-h-[300px] flex-col items-center justify-center gap-4 rounded-2xl border border-dashed border-border p-6 text-center">
-              <p className="text-lg font-medium text-muted-foreground">
-                Đang tạm dừng phiên ôn tập
-              </p>
-              <Button size="quiz" onClick={togglePause}>
-                <Play className="mr-2 size-5" />
-                Tiếp tục ôn
-              </Button>
-            </div>
-          ) : (
-            <div className="space-y-6">
-              <section aria-label="Nội dung câu hỏi" className="space-y-5">
-                {/* Đề bài như ở Luyện tập: dạng nghe chỉ có lời dặn, đề là âm thanh */}
-                <div key={`prompt-${currentQuestion.id}`} className="flex flex-col items-center text-center">
-                  {currentQuestion.type === 'listening' ? (
-                    <p className="text-sm font-medium text-muted-foreground">
-                      Nghe và nhập lại câu tiếng Nhật
-                    </p>
-                  ) : (
-                    <>
-                      {currentQuestion.context && (
-                        <p className="mb-2 text-sm text-muted-foreground">{currentQuestion.context}</p>
-                      )}
-                      <div className="jp jp-quiz">
-                        <Furigana text={currentQuestion.prompt} />
-                      </div>
-                    </>
-                  )}
-                </div>
-                {renderQuestionComponent()}
-              </section>
-
-              {/* Vùng phản hồi sau khi trả lời */}
-              {answered && lastResult && (
-                <section
-                  aria-live="polite"
-                  className={cn(
-                    'space-y-3 rounded-2xl border p-4 sm:p-5 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-2 motion-safe:duration-200',
-                    lastResult.isCorrect
-                      ? 'border-success/30 bg-success/10'
-                      : 'border-destructive/30 bg-destructive/10',
-                  )}
-                >
-                  <div className="flex items-center gap-2">
-                    {lastResult.isCorrect ? (
-                      <CheckCircle2 className="size-5 shrink-0 text-success" />
-                    ) : (
-                      <AlertCircle className="size-5 shrink-0 text-destructive" />
-                    )}
-                    <span
-                      className={cn(
-                        'font-semibold text-sm sm:text-base',
-                        lastResult.isCorrect ? 'text-success' : 'text-destructive',
-                      )}
-                    >
-                      {lastResult.isCorrect ? 'Chính xác!' : 'Chưa chính xác'}
-                    </span>
-                  </div>
-
-                  {!lastResult.isCorrect && (
-                    <div className="space-y-1 text-sm">
-                      <p className="text-muted-foreground">
-                        Đáp án đúng:{' '}
-                        <Furigana
-                          text={
-                            Array.isArray(currentQuestion.answer)
-                              ? currentQuestion.answer.join(', ')
-                              : currentQuestion.answer
-                          }
-                          zoomable={false}
-                          className="jp-vocab font-medium text-foreground"
-                        />
-                      </p>
-                      {currentHint && (
-                        <p className="flex items-start gap-2 rounded-lg border border-info/30 bg-info/10 p-2.5 text-xs text-foreground">
-                          <Lightbulb className="mt-px size-3.5 shrink-0 text-info" aria-hidden="true" />
-                          <span><span className="font-semibold">Gợi ý:</span> {currentHint}</span>
-                        </p>
-                      )}
-                    </div>
-                  )}
-
-                  {currentQuestion.explanationVi && (
-                    <p className="text-xs text-muted-foreground">
-                      {currentQuestion.explanationVi}
-                    </p>
-                  )}
-
-                  <div className="pt-2">
-                    <Button
-                      size="quiz"
-                      className="w-full text-base font-medium"
-                      onClick={handleNext}
-                    >
-                      {currentIndex + 1 < questions.length ? 'Tiếp tục' : 'Xem kết quả'}
-                    </Button>
-                  </div>
-                </section>
-              )}
-            </div>
+        {/* Chỉ vùng câu hỏi cuộn khi tràn; khối phản hồi luôn nằm dưới cùng */}
+        <div className="flex min-h-0 flex-1 flex-col overflow-y-auto py-2">
+          {/* Gỡ câu hỏi khi tạm dừng (như trước): lớp tạm dừng chỉ là phần trình bày */}
+          {!isPaused && (
+            <section
+              aria-label="Nội dung câu hỏi"
+              key={currentQuestion.id}
+              className="my-auto w-full space-y-6 py-2"
+            >
+              <QuestionPrompt question={currentQuestion} />
+              {renderQuestionComponent()}
+            </section>
           )}
         </div>
+
+        {answered && lastResult && (
+          <FeedbackPanel
+            question={currentQuestion}
+            result={lastResult}
+            isLast={currentIndex + 1 >= questions.length}
+            onNext={handleNext}
+          />
+        )}
       </div>
 
       {/* Hộp thoại xác nhận thoát phiên */}
@@ -644,6 +527,6 @@ export function ReviewRunner({
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-    </main>
+    </SessionShell>
   );
 }

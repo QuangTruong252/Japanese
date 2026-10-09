@@ -23,7 +23,7 @@ export function JpInput({
   const captionId = `${id}-caption`;
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={id} className="sr-only">
+      <label htmlFor={id} className="text-sm font-semibold text-foreground">
         {label}
       </label>
       <input
@@ -42,16 +42,15 @@ export function JpInput({
           }
         }}
         className={cn(
-          'jp h-12 w-full rounded-lg border-2 bg-card px-4 text-center text-[1.25rem]',
+          'jp h-14 w-full rounded-xl border bg-card px-4 text-left text-2xl',
           'transition-colors duration-150 ease-out',
-          'outline-none focus-visible:ring-3 focus-visible:ring-ring/50',
-          'disabled:opacity-50',
-          state === 'idle' && 'border-border',
-          state === 'correct' && 'border-success bg-success/10',
-          state === 'incorrect' && 'border-destructive bg-destructive/10 motion-safe:animate-jp-shake',
+          'outline-none focus-visible:ring-3 focus-visible:ring-ring',
+          state === 'idle' && 'border-border disabled:opacity-50',
+          state === 'correct' && 'border-success bg-success/10 ring-1 ring-success',
+          state === 'incorrect' && 'border-destructive bg-destructive/10 ring-1 ring-destructive motion-safe:animate-jp-shake',
         )}
       />
-      <p id={captionId} className="text-center text-sm text-muted-foreground">
+      <p id={captionId} className="text-sm text-muted-foreground">
         Gõ romaji, chữ tự chuyển sang hiragana
       </p>
     </div>
