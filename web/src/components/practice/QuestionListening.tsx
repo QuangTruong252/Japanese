@@ -14,6 +14,7 @@ export function QuestionListening({
   question,
   answered,
   onAnswer,
+  paused = false,
 }: QuestionProps) {
   const [value, setValue] = useState('');
   const [rate, setRate] = useState<number>(1.0);
@@ -33,7 +34,7 @@ export function QuestionListening({
 
   // Phím Space để phát lại khi không focus trong input
   useEffect(() => {
-    if (answered) return;
+    if (answered || paused) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null;
       const isInput = target?.tagName === 'INPUT' || target?.tagName === 'TEXTAREA';
@@ -47,7 +48,7 @@ export function QuestionListening({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [answered, play]);
+  }, [answered, paused, play]);
 
   const handleSubmit = () => {
     if (answered || value.trim().length === 0) return;

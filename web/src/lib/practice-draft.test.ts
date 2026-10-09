@@ -12,6 +12,7 @@ import {
   particleHint,
   shouldSaveDraftOnAnswer,
   shouldAdvanceOnKey,
+  draftMatchesMode,
   type PracticeDraft,
 } from './practice-draft.ts';
 import type { QuestionItem } from '../types/index.ts';
@@ -393,4 +394,28 @@ test('shouldAdvanceOnKey: chỉ sang câu khi đã trả lời, chưa kết thú
   assert.equal(shouldAdvanceOnKey({ ...base, targetTag: 'INPUT' }), false);
   assert.equal(shouldAdvanceOnKey({ ...base, targetTag: 'TEXTAREA' }), false);
   assert.equal(shouldAdvanceOnKey({ ...base, key: 'a' }), false);
+});
+
+test('draftMatchesMode: nháp ôn (due) không khôi phục được ở route luyện tập và ngược lại', () => {
+  const base = { version: PRACTICE_DRAFT_VERSION, questions: [], currentIndex: 0, results: [], elapsedSec: 0, savedAt: 1 };
+  const cfg = (mode: 'lesson' | 'due') => ({ mode, lessons: [1], maxLearnedLesson: 1, selectedTypes: ['mc' as const], questionCount: 1 });
+  const due = { ...base, config: cfg('due') };
+  const lesson = { ...base, config: cfg('lesson') };
+  assert.equal(draftMatchesMode(due, 'lesson'), false);
+  assert.equal(draftMatchesMode(due, 'due'), true);
+  assert.equal(draftMatchesMode(lesson, 'lesson'), true);
+  assert.equal(draftMatchesMode(lesson, 'due'), false);
+  // Nháp cũ không có config là nháp luyện
+  assert.equal(draftMatchesMode(base, 'lesson'), true);
+  assert.equal(draftMatchesMode(null, 'lesson'), false);
+});
+
+test('validatePracticeDraft: từ chối câu ghép cặp không có cặp nào', () => {
+  const draft = {
+    version: PRACTICE_DRAFT_VERSION,
+    questions: [{ id: 'm', type: 'matching', lesson: 1, targetId: 'vocab-01-01', prompt: 'x', answer: [], pairs: [] }],
+    currentIndex: 0,
+    results: [],
+  };
+  assert.equal(validatePracticeDraft(draft), null);
 });

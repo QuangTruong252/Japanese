@@ -66,7 +66,11 @@ export function buildSession(
     availableAudioKeys,
     dueTargetIds,
   );
-  const shuffled = shuffle(eligibleQuestions, rng);
+  // Câu ghép cặp không có cặp nào thì không có gì để chấm: runner không có phản hồi để hiện và kẹt.
+  const shuffled = shuffle(
+    eligibleQuestions.filter((q) => q.type !== 'matching' || (q.pairs?.length ?? 0) > 0),
+    rng,
+  );
   const picked = config.mode === 'due' ? oneQuestionPerTarget(shuffled) : shuffled;
 
   return {
@@ -74,6 +78,30 @@ export function buildSession(
     excludedAudioCount,
     eligibleCount: eligibleQuestions.length,
   };
+}
+
+/** Văn bản câu trả lời của người học cho dạng sắp xếp: các cụm đã chọn, theo thứ tự chọn. */
+export function reorderUserAnswer(chosenWords: string[]): string {
+  return chosenWords.join(' ');
+}
+
+/** Đáp án đúng dạng chuỗi; các cụm của câu sắp xếp nối bằng dấu cách, cùng khuôn `reorderUserAnswer`. */
+export function answerText(answer: string | string[]): string {
+  return Array.isArray(answer) ? answer.join(' ') : answer;
+}
+
+/**
+ * Văn bản các lần ghép sai của dạng ghép cặp, cùng khuôn `jp ↔ vi` với đáp án đúng.
+ * Rỗng nếu người học ghép đúng hết (khi đó không có câu sai để hiện).
+ */
+export function matchingUserAnswer(
+  attempts: { leftTargetId: string; rightTargetId: string }[],
+  pairs: { targetId: string; jp: string; vi: string }[],
+): string {
+  const byId = new Map(pairs.map((p) => [p.targetId, p]));
+  return attempts
+    .map((a) => `${byId.get(a.leftTargetId)?.jp ?? ''} ↔ ${byId.get(a.rightTargetId)?.vi ?? ''}`)
+    .join(' · ');
 }
 
 const answerStrings = (question: QuestionItem): string[] =>

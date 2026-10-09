@@ -7,6 +7,7 @@ import { SpeakButton } from '@/components/SpeakButton';
 import { TornCard } from '@/components/PaperKit';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
+import { answerText } from '@/lib/practice';
 import { particleHint } from '@/lib/practice-draft';
 import { containsJapanese, stripFurigana } from '@/lib/japanese';
 import { cn } from '@/lib/utils';
@@ -196,9 +197,7 @@ export function FeedbackPanel({
   const correctAnswerText =
     question.type === 'matching' && question.pairs
       ? question.pairs.map((p) => `${p.jp} ↔ ${p.vi}`).join(' · ')
-      : Array.isArray(question.answer)
-        ? question.answer.join(', ')
-        : question.answer;
+      : answerText(question.answer);
 
   return (
     <div className="shrink-0 pt-2">
@@ -257,7 +256,7 @@ export function FeedbackPanel({
               {userAnswer.length > 0 && (
                 <div>
                   <span className="text-muted-foreground">Bạn trả lời: </span>
-                  <span className="jp font-medium text-destructive line-through">{userAnswer}</span>
+                  <Furigana text={userAnswer} zoomable={false} className="jp font-medium text-destructive line-through" />
                 </div>
               )}
               <div>

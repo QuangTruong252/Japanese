@@ -75,7 +75,9 @@ export function validatePracticeDraft(data: unknown): PracticeDraft | null {
       typeof q.lesson !== 'number' ||
       typeof q.targetId !== 'string' ||
       typeof q.prompt !== 'string' ||
-      q.answer === undefined
+      q.answer === undefined ||
+      // Ghép cặp không có cặp nào không chấm được: runner sẽ kẹt, coi như nháp hỏng.
+      (q.type === 'matching' && !(Array.isArray(q.pairs) && q.pairs.length > 0))
     ) {
       return null;
     }
@@ -118,6 +120,17 @@ export function validatePracticeDraft(data: unknown): PracticeDraft | null {
     savedAt,
     ...(config ? { config } : {}),
   };
+}
+
+/**
+ * Nháp luyện và nháp ôn dùng chung một khóa lưu; mỗi route chỉ được khôi phục nháp của mình,
+ * nếu không `/luyen-tap/phien` mở phiên ôn (due) như một phiên luyện thường.
+ */
+export function draftMatchesMode(
+  draft: PracticeDraft | null,
+  mode: PracticeConfig['mode'],
+): draft is PracticeDraft {
+  return draft !== null && (draft.config?.mode === 'due') === (mode === 'due');
 }
 
 export function serializePracticeDraft(draft: PracticeDraft): string {

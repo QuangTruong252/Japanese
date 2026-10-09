@@ -12,7 +12,7 @@ import {
   PRACTICE_DRAFT_VERSION,
 } from '@/lib/practice-draft';
 import { containsJapanese } from '@/lib/japanese';
-import { userAnswerFor } from '@/lib/practice';
+import { answerText, userAnswerFor } from '@/lib/practice';
 import type { PracticeConfig, PracticeSession, QuestionItem } from '@/types';
 
 const RESULT_SCENE = {
@@ -251,7 +251,7 @@ export function SessionResult({
             <SectionHeader id="result-review-heading" title={`Câu cần xem lại (${incorrectQuestions.length})`} />
             <ol className="divide-y divide-border border-y border-border">
               {incorrectQuestions.map((q, i) => {
-                const answerText = Array.isArray(q.answer) ? q.answer.join(', ') : q.answer;
+                const correctText = answerText(q.answer);
                 const userAnswer = userAnswerFor(userAnswers, q);
 
                 return (
@@ -274,7 +274,7 @@ export function SessionResult({
                         <X className="size-4 shrink-0" aria-hidden="true" />
                         <span className="text-xs text-muted-foreground">Bạn trả lời:</span>
                         {userAnswer && userAnswer.trim().length > 0 ? (
-                          <span className="jp font-medium line-through">{userAnswer}</span>
+                          <Furigana text={userAnswer} zoomable={false} className="jp font-medium line-through" />
                         ) : (
                           <span className="italic text-muted-foreground">Chưa biết</span>
                         )}
@@ -285,11 +285,11 @@ export function SessionResult({
                         <Check className="size-4 shrink-0" aria-hidden="true" />
                         <span className="text-xs text-muted-foreground">Đáp án đúng:</span>
                         <span className="jp font-medium">
-                          <Furigana text={answerText} zoomable={false} />
+                          <Furigana text={correctText} zoomable={false} />
                         </span>
                       </div>
 
-                      {q.explanationVi && <p className="text-sm text-muted-foreground">{q.explanationVi}</p>}
+                      {q.explanationVi && q.explanationVi.trim() !== q.prompt.trim() && <p className="text-sm text-muted-foreground">{q.explanationVi}</p>}
                     </div>
                   </li>
                 );

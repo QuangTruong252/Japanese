@@ -34,7 +34,8 @@ function ReviewSessionContent() {
   const ready = !queue.loading && hasVoice !== null;
 
   // Khởi tạo phiên từ bản nháp (nếu có yêu cầu resume hoặc nháp đang dở) hoặc tạo lô mới
-  if (ready && session === null) {
+  // Lỗi tải dữ liệu bài không được chốt thành phiên rỗng (sẽ hiện "không còn mục nào" dù mục vẫn đến hạn).
+  if (ready && !queue.error && session === null) {
     const shouldResume =
       draft !== null && (searchParams.get('resume') === '1' || draft.results.length > 0);
 
@@ -75,6 +76,19 @@ function ReviewSessionContent() {
     setSession(null);
     setBatchKey((k) => k + 1);
   }, []);
+
+  if (queue.error) {
+    return (
+      <SessionNotice message="Không tải được câu hỏi.">
+        <Button size="quiz" className="w-full font-semibold" onClick={queue.retry}>
+          Thử lại
+        </Button>
+        <Button size="quiz" variant="outline" className="w-full" onClick={() => router.push('/on-tap')}>
+          Về trang ôn tập
+        </Button>
+      </SessionNotice>
+    );
+  }
 
   if (!ready || session === null) {
     return <SessionSkeleton />;
