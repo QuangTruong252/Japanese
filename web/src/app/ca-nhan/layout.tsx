@@ -2,8 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { TrendingUp, BarChart3 } from 'lucide-react';
+import { PageTitle } from '@/components/PaperKit';
 import { cn } from '@/lib/utils';
+
+// Ô đang chọn nền primary chữ trắng: tương phản cao nhất trong bộ token và khớp mockup đã duyệt.
+const TAB_BASE =
+  'inline-flex min-h-11 flex-1 items-center justify-center rounded-lg px-5 text-sm font-medium outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring';
 
 export default function CaNhanLayout({
   children,
@@ -13,22 +17,16 @@ export default function CaNhanLayout({
   const pathname = usePathname();
 
   const isThongKe = pathname === '/ca-nhan/thong-ke' || pathname.startsWith('/ca-nhan/thong-ke/');
-  const isTienDo = !isThongKe && (pathname === '/ca-nhan' || pathname.startsWith('/ca-nhan'));
+  const isTienDo = !isThongKe && pathname.startsWith('/ca-nhan');
 
   return (
-    <main className="mx-auto w-full max-w-5xl px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8">
-      {/* 1. Header Trang Cá Nhân (Cài đặt nằm ở thanh đầu toàn cục) */}
-      <header>
-        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-          Cá nhân
-        </h1>
-      </header>
+    <main className="mx-auto w-full max-w-5xl space-y-6 px-4 pb-12 pt-3 sm:px-6 lg:px-8">
+      <PageTitle title="Cá nhân" />
 
-      {/* 2. URL Tabs: Tiến độ vs Thống kê */}
       <nav
         aria-label="Phân khu cá nhân"
         role="tablist"
-        className="inline-flex w-full sm:w-auto p-1 rounded-xl bg-muted/60 border border-border/60 gap-1 select-none"
+        className="flex w-full select-none gap-1 rounded-xl border border-border bg-card p-1 sm:w-80"
       >
         <Link
           href="/ca-nhan"
@@ -36,36 +34,30 @@ export default function CaNhanLayout({
           aria-selected={isTienDo}
           aria-controls="panel-tiendo"
           className={cn(
-            'flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition duration-150 outline-none',
-            'focus-visible:ring-2 focus-visible:ring-primary/60 min-h-[44px]',
+            TAB_BASE,
             isTienDo
-              ? 'bg-background text-foreground font-semibold shadow-xs'
-              : 'text-muted-foreground hover:text-foreground hover:bg-background/40'
+              ? 'bg-primary font-semibold text-primary-foreground'
+              : 'text-muted-foreground hover:bg-muted/60 hover:text-foreground',
           )}
         >
-          <TrendingUp className="size-4 shrink-0" />
-          <span>Tiến độ</span>
+          Tiến độ
         </Link>
-
         <Link
           href="/ca-nhan/thong-ke"
           role="tab"
           aria-selected={isThongKe}
           aria-controls="panel-thongke"
           className={cn(
-            'flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition duration-150 outline-none',
-            'focus-visible:ring-2 focus-visible:ring-primary/60 min-h-[44px]',
+            TAB_BASE,
             isThongKe
-              ? 'bg-background text-foreground font-semibold shadow-xs'
-              : 'text-muted-foreground hover:text-foreground hover:bg-background/40'
+              ? 'bg-primary font-semibold text-primary-foreground'
+              : 'text-muted-foreground hover:bg-muted/60 hover:text-foreground',
           )}
         >
-          <BarChart3 className="size-4 shrink-0" />
-          <span>Thống kê</span>
+          Thống kê
         </Link>
       </nav>
 
-      {/* 3. Nội dung của Tab */}
       <div id={isThongKe ? 'panel-thongke' : 'panel-tiendo'} role="tabpanel">
         {children}
       </div>
