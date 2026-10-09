@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Dexie from 'dexie';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { Furigana } from '@/components/Furigana';
+import { Chip, PageTitle } from '@/components/PaperKit';
 import { TARGET_TYPE_LABEL, TargetTypeBadge } from '@/components/review/TargetTypeBadge';
 import { buttonVariants } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -93,154 +94,96 @@ export default function WeakPointsPage() {
   }, [lessons]);
 
   return (
-    <main className="mx-auto w-full max-w-3xl space-y-6 px-4 py-6 pb-28 sm:pb-12">
-      <div className="space-y-4">
-        <h1 className="font-heading text-xl font-medium">Ôn tập</h1>
-        <div className="flex items-center gap-6 border-b border-border/80 text-sm">
-          <Link
-            href="/on-tap"
-            className="text-muted-foreground hover:text-foreground pb-2.5 -mb-px transition-colors"
-          >
-            Hôm nay
-          </Link>
-          <Link
-            href="/on-tap/diem-yeu"
-            className="font-semibold text-primary border-b-2 border-primary pb-2.5 -mb-px transition-colors"
-          >
-            Điểm yếu của tôi
-          </Link>
-        </div>
-      </div>
+    <main className="mx-auto w-full max-w-5xl space-y-8 px-4 pb-12 pt-3 sm:px-6 lg:px-8">
+      <PageTitle back={{ href: '/on-tap', label: 'Ôn tập' }} title="Điểm yếu của tôi" />
 
-      <div role="group" aria-label="Lọc theo loại mục tiêu" className="flex flex-wrap gap-2">
-        {FILTERS.map((value) => {
-          const selected = filter === value;
-          return (
-            <button
-              key={value}
-              type="button"
-              aria-pressed={selected}
-              onClick={() => setFilter(value)}
-              className={cn(
-                'flex min-h-12 items-center justify-center rounded-xl px-4 py-2.5 text-sm font-medium transition-colors duration-150 ease-out outline-none focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px',
-                selected
-                  ? 'border-2 border-primary bg-accent text-foreground'
-                  : 'border border-border bg-card text-muted-foreground hover:bg-accent hover:text-foreground',
-              )}
-            >
+      <div className="max-w-2xl space-y-4">
+        <div
+          role="group"
+          aria-label="Lọc theo loại mục tiêu"
+          className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0"
+        >
+          {FILTERS.map((value) => (
+            <Chip key={value} pressed={filter === value} onClick={() => setFilter(value)}>
               {value === 'all' ? 'Tất cả' : TARGET_TYPE_LABEL[value]}
-            </button>
-          );
-        })}
-      </div>
-
-      {items === undefined ? (
-        <div className="space-y-3">
-          <Skeleton className="h-10 w-full rounded-lg" />
-          <Skeleton className="h-10 w-full rounded-lg" />
-          <Skeleton className="h-10 w-full rounded-lg" />
+            </Chip>
+          ))}
         </div>
-      ) : rows.length === 0 ? (
-        <p className="rounded-xl border border-border bg-card p-6 text-center text-sm text-muted-foreground">
-          Chưa có điểm yếu nào được ghi nhận — mọi mục bạn đã làm đều đúng.
-        </p>
-      ) : (
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <caption className="sr-only">Bảng điểm yếu, xếp theo số lần sai giảm dần</caption>
-            <thead>
-              <tr className="border-b border-border text-left text-xs text-muted-foreground">
-                <th scope="col" className="py-2 pr-3 font-medium">
-                  Nội dung
-                </th>
-                <th scope="col" className="py-2 pr-3 font-medium">
-                  Loại
-                </th>
-                <th scope="col" className="py-2 pr-3 font-medium whitespace-nowrap">
-                  Sai / Tổng
-                </th>
-                <th scope="col" className="py-2 pr-3 font-medium whitespace-nowrap">
-                  Sai gần nhất
-                </th>
-                <th scope="col" className="py-2 pr-3 font-medium whitespace-nowrap">
-                  Hạn ôn kế
-                </th>
-                <th scope="col" className="py-2 pl-3 font-medium whitespace-nowrap text-right">
-                  Hành động
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((item) => {
-                const label = labels.get(item.targetId);
-                const total = item.correctCount + item.incorrectCount;
-                const lessonNum = item.lesson > 0 ? item.lesson : lessonFromTargetId(item.targetId);
-                const practiceType = TARGET_TYPE_PRACTICE_MAP[item.targetType];
-                const practiceHref =
-                  lessonNum > 0
-                    ? practiceType
-                      ? `/luyen-tap?lessons=${lessonNum}&type=${practiceType}`
-                      : `/luyen-tap?lessons=${lessonNum}`
-                    : '/luyen-tap';
 
-                const anchor = getAnchor(item.targetId, anchorMap);
-                const studyHref = lessonNum > 0 ? `/hoc/${lessonNum}${anchor}` : '/hoc';
+        {items === undefined ? (
+          <div className="space-y-2">
+            <Skeleton className="h-28 w-full rounded-xl" />
+            <Skeleton className="h-28 w-full rounded-xl" />
+            <Skeleton className="h-28 w-full rounded-xl" />
+          </div>
+        ) : rows.length === 0 ? (
+          <p className="rounded-xl border border-border bg-card p-6 text-center text-sm text-muted-foreground">
+            Chưa có điểm yếu nào được ghi nhận — mọi mục bạn đã làm đều đúng.
+          </p>
+        ) : (
+          <ul className="space-y-2">
+            {rows.map((item) => {
+              const label = labels.get(item.targetId);
+              const total = item.correctCount + item.incorrectCount;
+              const lessonNum = item.lesson > 0 ? item.lesson : lessonFromTargetId(item.targetId);
+              const practiceType = TARGET_TYPE_PRACTICE_MAP[item.targetType];
+              const practiceHref =
+                lessonNum > 0
+                  ? practiceType
+                    ? `/luyen-tap?lessons=${lessonNum}&type=${practiceType}`
+                    : `/luyen-tap?lessons=${lessonNum}`
+                  : '/luyen-tap';
 
-                return (
-                  <tr key={item.targetId} className="border-b border-border/60 align-top">
-                    <td className="py-3 pr-3">
-                      <div className="jp jp-vocab font-medium">
+              const anchor = getAnchor(item.targetId, anchorMap);
+              const studyHref = lessonNum > 0 ? `/hoc/${lessonNum}${anchor}` : '/hoc';
+
+              return (
+                <li
+                  key={item.targetId}
+                  className="flex flex-col gap-3 rounded-xl border border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div className="min-w-0 flex-1 space-y-1">
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                      <div className="jp-vocab text-lg font-medium text-foreground">
                         {label ? (
                           <Furigana text={label.jp} />
                         ) : (
                           <span className="text-muted-foreground">{item.targetId}</span>
                         )}
                       </div>
-                      {label?.vi && <p className="text-xs text-muted-foreground">{label.vi}</p>}
-                    </td>
-                    <td className="py-3 pr-3">
                       <TargetTypeBadge type={item.targetType} />
-                    </td>
-                    <td className="py-3 pr-3 tabular-nums whitespace-nowrap">
-                      {item.incorrectCount}/{total}
-                    </td>
-                    <td className="py-3 pr-3 whitespace-nowrap text-muted-foreground">
-                      {dateText(item.lastFailedAt)}
-                    </td>
-                    <td className="py-3 pr-3 whitespace-nowrap text-muted-foreground">
+                    </div>
+                    {label?.vi && <p className="text-sm text-foreground/80">{label.vi}</p>}
+                    <p className="text-sm text-muted-foreground">
+                      Sai {item.incorrectCount}/{total} · sai gần nhất {dateText(item.lastFailedAt)} · ôn lại{' '}
                       {dateText(item.dueAt)}
-                    </td>
-                    <td className="py-2.5 pl-3 whitespace-nowrap text-right">
-                      <div className="flex items-center justify-end gap-2">
-                        <Link
-                          href={practiceHref}
-                          aria-label={`Luyện bài ${lessonNum || ''}`}
-                          className={cn(
-                            buttonVariants({ variant: 'outline', size: 'quiz' }),
-                            'min-h-11 px-3 text-xs sm:text-sm font-medium hover:border-primary/50 hover:bg-accent',
-                          )}
-                        >
-                          Luyện
-                        </Link>
-                        <Link
-                          href={studyHref}
-                          aria-label={`Xem bài ${lessonNum || ''}`}
-                          className={cn(
-                            buttonVariants({ variant: 'ghost', size: 'quiz' }),
-                            'min-h-11 px-2.5 text-xs text-muted-foreground hover:text-foreground',
-                          )}
-                        >
-                          Xem bài
-                        </Link>
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-      )}
+                    </p>
+                  </div>
+                  <div className="flex shrink-0 items-center gap-2">
+                    <Link
+                      href={practiceHref}
+                      aria-label={`Luyện bài ${lessonNum || ''}`}
+                      className={cn(buttonVariants({ variant: 'outline' }), 'min-h-11 px-4')}
+                    >
+                      Luyện
+                    </Link>
+                    <Link
+                      href={studyHref}
+                      aria-label={`Xem bài ${lessonNum || ''}`}
+                      className={cn(
+                        buttonVariants({ variant: 'ghost' }),
+                        'min-h-11 px-4 text-muted-foreground hover:text-foreground',
+                      )}
+                    >
+                      Xem bài
+                    </Link>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </div>
     </main>
   );
 }
