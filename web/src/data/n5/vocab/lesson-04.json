@@ -464,6 +464,14 @@
         "translation": {
           "vi": "Tôi đã thức dậy lúc 9 giờ sáng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/morning-sun-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mặt trời buổi sáng chiếu rọi ấm áp từ phía đông trên mái nhà."
+        }
       }
     },
     {
@@ -480,6 +488,14 @@
         "kana": "ごご べんきょうします。",
         "translation": {
           "vi": "Tôi học bài vào buổi chiều."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/afternoon-sun-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ánh nắng chiều nghiêng đổ bóng dài trên góc phố êm đềm."
         }
       }
     },
@@ -658,6 +674,14 @@
         "translation": {
           "vi": "Sáng nay tôi đã thức dậy lúc 6 giờ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/brushing-teeth-morning-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đang đánh răng bên bồn rửa mặt vào buổi sáng sớm."
+        }
       }
     },
     {
@@ -674,6 +698,14 @@
         "kana": "こんばん べんきょうします。",
         "translation": {
           "vi": "Tối nay tôi sẽ học bài."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/moonlit-window-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Khung cửa sổ nhìn ra bầu trời đêm có trăng lưỡi liềm và các vì sao."
         }
       }
     },
@@ -692,6 +724,14 @@
         "translation": {
           "vi": "Ngày mai là ngày nghỉ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/day-off-work-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái nghỉ làm ở nhà, uống trà, túi công sở treo cạnh cửa."
+        }
       }
     },
     {
@@ -708,6 +748,14 @@
         "kana": "ひるやすみは じゅうにじからです。",
         "translation": {
           "vi": "Giờ nghỉ trưa bắt đầu từ 12 giờ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/lunch-break-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái ăn cơm hộp tại bàn làm việc trong giờ nghỉ trưa công ty."
         }
       }
     },
@@ -801,6 +849,14 @@
         "translation": {
           "vi": "Mỗi sáng tôi thức dậy lúc 6 giờ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/brushing-teeth-morning-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đang đánh răng bên bồn rửa mặt vào buổi sáng sớm."
+        }
       }
     },
     {
@@ -817,6 +873,14 @@
         "kana": "まいばん べんきょうします。",
         "translation": {
           "vi": "Mỗi tối tôi đều học bài."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/moonlit-window-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Khung cửa sổ nhìn ra bầu trời đêm có trăng lưỡi liềm và các vì sao."
         }
       }
     },
@@ -1038,6 +1102,14 @@
         "kana": "たいへんですね。",
         "translation": {
           "vi": "Vất vả nhỉ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/overwhelmed-work-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai vất vả ôm chồng hồ sơ cao ngất ngưởng chực đổ."
         }
       }
     },

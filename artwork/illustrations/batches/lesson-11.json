@@ -248,6 +248,174 @@
       "alt": {
         "vi": "Cô gái gửi bưu kiện ở quầy bưu điện, chàng trai xách túi quýt đứng chờ."
       }
+    },
+    {
+      "stem": "older-brother-v1",
+      "subject": "a teenage older brother standing tall in the foreground as the main figure, resting one hand protectively on the shoulder of his much smaller younger sibling who looks up at him admiringly",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "ani"
+      },
+      "alt": {
+        "vi": "Người anh trai khoanh tay mỉm cười tự tin."
+      }
+    },
+    {
+      "reuse": "vocab/older-brother-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "oniisan"
+      },
+      "alt": {
+        "vi": "Người anh trai khoanh tay mỉm cười tự tin."
+      }
+    },
+    {
+      "stem": "older-sister-v1",
+      "subject": "a teenage older sister standing tall in the foreground as the main figure, resting one hand gently on the shoulder of her much smaller younger sibling who looks up at her admiringly",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "ane"
+      },
+      "alt": {
+        "vi": "Người chị gái mặc áo khoác cardigan len mỉm cười dịu dàng."
+      }
+    },
+    {
+      "reuse": "vocab/older-sister-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "oneesan"
+      },
+      "alt": {
+        "vi": "Người chị gái mặc áo khoác cardigan len mỉm cười dịu dàng."
+      }
+    },
+    {
+      "stem": "younger-brother-v1",
+      "subject": "a small young boy in the foreground as the main figure, holding the hand of his much taller teenage older sibling who smiles down at him",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "otouto"
+      },
+      "alt": {
+        "vi": "Cậu em trai mặc áo thun kẻ sọc chống tay ngang hông mỉm cười."
+      }
+    },
+    {
+      "reuse": "vocab/younger-brother-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "otoutosan"
+      },
+      "alt": {
+        "vi": "Cậu em trai mặc áo thun kẻ sọc chống tay ngang hông mỉm cười."
+      }
+    },
+    {
+      "stem": "younger-sister-v1",
+      "subject": "a small young girl with twin pigtails in the foreground as the main figure, holding the hand of her much taller teenage older sibling who smiles down at her",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "imouto"
+      },
+      "alt": {
+        "vi": "Cô em gái nhỏ buộc tóc hai bên mỉm cười tươi tắn."
+      }
+    },
+    {
+      "reuse": "vocab/younger-sister-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "imoutosan"
+      },
+      "alt": {
+        "vi": "Cô em gái nhỏ buộc tóc hai bên mỉm cười tươi tắn."
+      }
+    },
+    {
+      "stem": "sydney-opera-house-v1",
+      "subject": "the Sydney Opera House in Australia with its iconic white sail-shaped shell roofs, resting beside calm blue harbor water",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "oosutoraria"
+      },
+      "alt": {
+        "vi": "Nhà hát Opera Sydney với mái vòm cánh buồm trắng bên bờ vịnh."
+      }
+    },
+    {
+      "stem": "friends-group-v1",
+      "subject": "a cheerful group of four young diverse friends standing shoulder to shoulder, smiling and chatting warmly together",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "minna"
+      },
+      "alt": {
+        "vi": "Nhóm bốn người bạn trẻ đứng cạnh nhau vui vẻ trò chuyện."
+      }
+    },
+    {
+      "stem": "leaving-home-wave-v1",
+      "subject": "the reference male student wearing his backpack stepping through an open entryway front door, turning back to wave goodbye with a friendly smile",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "ittekimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai đeo ba lô bước qua cửa ra vào, quay lại mỉm cười vẫy tay chào khi rời nhà."
+      }
+    },
+    {
+      "stem": "seeing-off-wave-v1",
+      "subject": "the reference woman standing in an entryway hall, smiling warmly and waving one hand to see someone off as they head out",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "itterasshai"
+      },
+      "alt": {
+        "vi": "Cô gái đứng ở hành lang cửa ra vào, mỉm cười vẫy tay tiễn người thân đi ra ngoài."
+      }
     }
   ]
 }

@@ -449,6 +449,22 @@
       "alt": {
         "vi": "Cuốn hộ chiếu bìa đỏ có hình dập nổi."
       }
+    },
+    {
+      "stem": "using-scissors-v1",
+      "subject": "the reference male student sitting at a desk, carefully using a pair of craft scissors to cut along a dotted line on colored construction paper",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "tsukaimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai ngồi bên bàn cẩn thận dùng kéo cắt giấy màu thủ công."
+      }
     }
   ]
 }

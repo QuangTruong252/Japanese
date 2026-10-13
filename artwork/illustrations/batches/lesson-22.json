@@ -287,6 +287,42 @@
       "alt": {
         "vi": "Hai bạn trẻ xem sơ đồ căn hộ cùng nhân viên môi giới đeo kính, thắt cà vạt."
       }
+    },
+    {
+      "reuse": "vocab/eiffel-tower-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "pari"
+      },
+      "alt": {
+        "vi": "Tháp Eiffel biểu tượng của thủ đô Paris."
+      }
+    },
+    {
+      "reuse": "vocab/great-wall-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "banri-no-choujou"
+      },
+      "alt": {
+        "vi": "Vạn Lý Trường Thành uốn lượn trên triền núi đá."
+      }
+    },
+    {
+      "stem": "congratulations-flowers-v1",
+      "subject": "a festive celebration bouquet of colorful flowers wrapped in decorative paper with satin ribbons, with party popper confetti fluttering around it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "omedetou"
+      },
+      "alt": {
+        "vi": "Bó hoa chúc mừng rực rỡ kèm dải ruy băng và pháo hoa giấy."
+      }
     }
   ]
 }

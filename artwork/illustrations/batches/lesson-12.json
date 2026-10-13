@@ -649,6 +649,144 @@
       "alt": {
         "vi": "Chong chóng gió trên mái nhà giữa mây, nắng và gió nhẹ."
       }
+    },
+    {
+      "stem": "gion-festival-float-v1",
+      "subject": "a tall traditional Kyoto Gion Festival Yamaboko wooden float decorated with rich ornamental tapestries, hanging lanterns and large wooden wheels, drawn small at about 55% of the canvas with generous empty transparent margin on every side, nothing near the edges",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "gionmatsuri"
+      },
+      "alt": {
+        "vi": "Xe rước Yamaboko truyền thống lộng lẫy trong lễ hội Gion ở Kyoto."
+      }
+    },
+    {
+      "stem": "hong-kong-junk-boat-v1",
+      "subject": "a traditional Chinese junk boat with iconic ribbed red sails sailing on blue harbor water, representing Hong Kong",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "honkon"
+      },
+      "alt": {
+        "vi": "Thuyền buồm đỏ truyền thống đặc trưng của Hồng Kông trên vịnh biển."
+      }
+    },
+    {
+      "stem": "merlion-statue-v1",
+      "subject": "the iconic white Merlion statue of Singapore with lion head and fish body, spouting water into the bay, viewed from three-quarter profile",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "shingapooru"
+      },
+      "alt": {
+        "vi": "Tượng Merlion sư tử biển màu trắng phun nước đặc trưng của Singapore."
+      }
+    },
+    {
+      "stem": "distance-near-v1",
+      "subject": "the reference male student standing along a garden path right in front of a cozy cottage, just a few short steps from the entrance",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "chikai"
+      },
+      "alt": {
+        "vi": "Chàng trai đứng trên lối đi ngay sát trước ngôi nhà nhỏ, chỉ cách cổng vào vài bước chân."
+      }
+    },
+    {
+      "stem": "distance-far-v1",
+      "subject": "the reference male student standing in the foreground looking out along a long winding country road toward a tiny cottage far in the distance",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "tooi"
+      },
+      "alt": {
+        "vi": "Chàng trai đứng từ xa nhìn ngôi nhà nhỏ tít chân trời phía cuối con đường quanh co."
+      }
+    },
+    {
+      "stem": "four-seasons-tree-v1",
+      "subject": "a single mature tree with its circular canopy divided into four quadrants displaying pink spring cherry blossoms, lush green summer leaves, golden autumn foliage, and bare snowy winter twigs",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "kisetsu"
+      },
+      "alt": {
+        "vi": "Một thân cây với tán tròn chia bốn góc thể hiện bốn mùa xuân hạ thu đông."
+      }
+    },
+    {
+      "stem": "arriving-home-v1",
+      "subject": "the reference male student stepping into the home entryway taking off his shoes, smiling happily and greeting as he returns home",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "tadaima"
+      },
+      "alt": {
+        "vi": "Chàng trai bước vào cửa nhà tháo giày, tươi cười cất tiếng chào khi về đến nhà."
+      }
+    },
+    {
+      "stem": "welcome-home-v1",
+      "subject": "the reference woman wearing an apron welcoming someone at the entryway hallway, smiling warmly with a welcoming gesture",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "okaerinasai"
+      },
+      "alt": {
+        "vi": "Cô gái mặc tạp dề đón người thân ở cửa ra vào với nụ cười ấm áp."
+      }
+    },
+    {
+      "reuse": "vocab/tired-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "tsukaremashita"
+      },
+      "alt": {
+        "vi": "Chàng trai mệt mỏi gục xuống bàn đầy giấy tờ."
+      }
     }
   ]
 }

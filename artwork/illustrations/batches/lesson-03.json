@@ -1,0 +1,19 @@
+{
+  "name": "lesson-03",
+  "description": "Bài 3 — địa điểm, nơi chốn, cơ sở vật chất và hỏi giá cả.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "reuse": "vocab/bowing-apology-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "sumimasen"
+      },
+      "alt": {
+        "vi": "Chàng trai cúi gập người lịch sự để xin lỗi."
+      }
+    }
+  ]
+}

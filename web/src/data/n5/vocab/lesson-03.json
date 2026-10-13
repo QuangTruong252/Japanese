@@ -781,6 +781,14 @@
         "translation": {
           "vi": "Xin lỗi, nhà vệ sinh ở đâu?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bowing-apology-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cúi gập người lịch sự để xin lỗi."
+        }
       }
     },
     {

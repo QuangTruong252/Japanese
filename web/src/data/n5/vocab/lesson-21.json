@@ -68,6 +68,14 @@
         "naiKana": "いわない",
         "ta": "言[い]った",
         "taKana": "いった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/speaking-bubble-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai nói chuyện với bong bóng lời thoại trống."
+        }
       }
     },
     {
@@ -173,6 +181,14 @@
         "naiKana": "",
         "ta": "あった[お 祭[まつ]りが〜]",
         "taKana": "あった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/festival-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Lễ hội đang diễn ra tưng bừng trên đường phố."
+        }
       }
     },
     {
@@ -203,6 +219,14 @@
         "naiKana": "やくにたたない",
         "ta": "役[やく]に 立[た]った",
         "taKana": "やくにたった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/handy-tool-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Dụng cụ đa năng rất hữu ích trong cuộc sống."
+        }
       }
     },
     {
@@ -233,6 +257,14 @@
         "naiKana": "うごかない",
         "ta": "動[うご]いた",
         "taKana": "うごいた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/gears-turning-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Các bánh răng cơ khí đang ăn khớp và chuyển động trơn tru."
+        }
       }
     },
     {
@@ -301,6 +333,14 @@
         "naiKana": "きをつけない",
         "ta": "気[き]をつけた",
         "taKana": "きをつけた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/walking-cautiously-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cẩn thận nhìn đường khi bước qua chỗ ướt cạnh cọc tiêu cảnh báo."
+        }
       }
     },
     {
@@ -331,6 +371,14 @@
         "naiKana": "りゅうがくしない",
         "ta": "留学[りゅうがく]した",
         "taKana": "りゅうがくした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/international-student-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai kéo vali và đeo ba lô lên đường đi du học."
+        }
       }
     },
     {
@@ -364,6 +412,14 @@
         "kana": "この まちは ふべんだと おもいます。",
         "translation": {
           "vi": "Tôi nghĩ thị trấn này thì bất tiện."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/inconvenient-bus-stop-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đứng chờ ở bến xe buýt vắng vẻ lúc trời mưa, đi lại rất bất tiện."
         }
       }
     },
@@ -500,6 +556,14 @@
         "translation": {
           "vi": "Tôi đã xem chương trình phát sóng tin tức."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/broadcast-microphone-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Micro phát thanh trên bàn phòng thu và tai nghe."
+        }
       }
     },
     {
@@ -541,6 +605,14 @@
         "kana": "にほんの アニメは おもしろいでしょう？",
         "translation": {
           "vi": "Phim hoạt hình của Nhật thú vị phải không?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/animation-cel-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn vẽ phim hoạt hình với các tờ giấy phác thảo chuyển động nhân vật."
         }
       }
     },
@@ -584,6 +656,14 @@
         "translation": {
           "vi": "Thiết kế của đôi giày này đẹp nhỉ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/fashion-design-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bản phác thảo thiết kế thời trang cùng bảng mẫu vải và thước kẻ."
+        }
       }
     },
     {
@@ -600,6 +680,14 @@
         "kana": "わたしの ゆめは せんせいに なる ことです。",
         "translation": {
           "vi": "Ước mơ của tôi là trở thành giáo viên."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/dream-bubble-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai ngủ say với đám mây giấc mơ bay bổng phía trên."
         }
       }
     },
@@ -845,6 +933,14 @@
         "kana": "ひさしぶりですね。お げんきですか。",
         "translation": {
           "vi": "Lâu lắm rồi mới gặp lại! Bạn có khỏe không?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/reunion-greeting-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai người bạn mừng rỡ dang tay đón nhau khi lâu ngày mới gặp lại."
         }
       }
     },

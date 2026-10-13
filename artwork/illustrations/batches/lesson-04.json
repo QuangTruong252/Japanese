@@ -1,0 +1,129 @@
+{
+  "name": "lesson-04",
+  "description": "Bài 4 — thời gian, giờ giấc, thói quen hằng ngày và ngày nghỉ.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "reuse": "vocab/day-off-work-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "yasumi"
+      },
+      "alt": {
+        "vi": "Cô gái nghỉ làm ở nhà, uống trà, túi công sở treo cạnh cửa."
+      }
+    },
+    {
+      "stem": "brushing-teeth-morning-v1",
+      "subject": "the reference male student brushing his teeth in front of a bathroom mirror in the early morning sunlight, toothbrush in hand and a small cup beside the basin",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "kesa"
+      },
+      "alt": {
+        "vi": "Chàng trai đang đánh răng bên bồn rửa mặt vào buổi sáng sớm."
+      }
+    },
+    {
+      "reuse": "vocab/brushing-teeth-morning-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "maiasa"
+      },
+      "alt": {
+        "vi": "Chàng trai đang đánh răng bên bồn rửa mặt vào buổi sáng sớm."
+      }
+    },
+    {
+      "stem": "moonlit-window-v1",
+      "subject": "a cozy window looking out into the night sky with a gentle crescent moon and soft twinkling stars, quiet nighttime mood",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "konban"
+      },
+      "alt": {
+        "vi": "Khung cửa sổ nhìn ra bầu trời đêm có trăng lưỡi liềm và các vì sao."
+      }
+    },
+    {
+      "reuse": "vocab/moonlit-window-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "maiban"
+      },
+      "alt": {
+        "vi": "Khung cửa sổ nhìn ra bầu trời đêm có trăng lưỡi liềm và các vì sao."
+      }
+    },
+    {
+      "stem": "morning-sun-v1",
+      "subject": "a bright morning sun rising gently in the eastern sky over low rooftops, soft warm morning light",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "gozen"
+      },
+      "alt": {
+        "vi": "Mặt trời buổi sáng chiếu rọi ấm áp từ phía đông trên mái nhà."
+      }
+    },
+    {
+      "stem": "afternoon-sun-v1",
+      "subject": "a warm afternoon sun hanging low in the sky, casting gentle slanted amber shadows across a quiet street corner",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "gogo"
+      },
+      "alt": {
+        "vi": "Ánh nắng chiều nghiêng đổ bóng dài trên góc phố êm đềm."
+      }
+    },
+    {
+      "stem": "lunch-break-v1",
+      "subject": "the reference woman enjoying a bento lunch at her tidy office desk during lunch break, holding chopsticks, thermos beside the box",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "hiruyasumi"
+      },
+      "alt": {
+        "vi": "Cô gái ăn cơm hộp tại bàn làm việc trong giờ nghỉ trưa công ty."
+      }
+    },
+    {
+      "reuse": "vocab/overwhelmed-work-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "taihen-desu-ne"
+      },
+      "alt": {
+        "vi": "Chàng trai vất vả ôm chồng hồ sơ cao ngất ngưởng chực đổ."
+      }
+    }
+  ]
+}

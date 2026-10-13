@@ -905,6 +905,14 @@
         "translation": {
           "vi": "Xin cảm ơn rất nhiều."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bowing-thanks-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cúi chào lịch thiệp mỉm cười cảm ơn."
+        }
       }
     },
     {

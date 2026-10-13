@@ -237,6 +237,118 @@
         "width": 1104,
         "height": 828
       }
+    },
+    {
+      "stem": "can-do-thumbs-up-v1",
+      "subject": "the reference male student smiling with bright confidence, giving a cheerful thumbs-up gesture with one hand to show he can do it, drawn small at about 55% of the canvas with generous empty transparent margin on every side, nothing near the edges",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "dekimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai tự tin giơ ngón tay cái thể hiện mình có thể làm được."
+      }
+    },
+    {
+      "stem": "booking-reservation-v1",
+      "subject": "the reference woman standing at a hotel reception counter, speaking with a clerk and pointing at an open blank reservation ledger to book in advance",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "yoyaku-shimasu"
+      },
+      "alt": {
+        "vi": "Cô gái trao đổi tại quầy lễ tân để đặt chỗ trước."
+      }
+    },
+    {
+      "stem": "hobbies-collection-v1",
+      "subject": "an assortment of favorite pastimes: an acoustic guitar resting on a wooden chair, a camera with neck strap, an artist's palette with paintbrushes, and an open book",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "shumi"
+      },
+      "alt": {
+        "vi": "Đàn ghi-ta, máy ảnh, bảng màu vẽ và sách tượng trưng cho các sở thích."
+      }
+    },
+    {
+      "stem": "section-chief-v1",
+      "subject": "a middle-aged manager in a suit standing at the head of one small desk island, giving instructions to three seated office workers who listen; the manager is the main figure",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "kachou"
+      },
+      "alt": {
+        "vi": "Trưởng phòng năng động mặc vest cầm bìa hồ sơ."
+      }
+    },
+    {
+      "stem": "department-director-v1",
+      "subject": "an older senior manager with grey hair in a dark suit standing at the front of a larger office, addressing two separate groups of office workers, each group led by a younger manager; the senior manager is clearly the main figure",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "buchou"
+      },
+      "alt": {
+        "vi": "Trưởng ban trung niên chững chạc mặc âu phục lịch lãm."
+      }
+    },
+    {
+      "stem": "company-president-v1",
+      "subject": "a distinguished senior company president with silver-grey hair wearing a dark executive suit, sitting in a high-backed armchair behind a wide wooden office desk",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "shachou"
+      },
+      "alt": {
+        "vi": "Tổng giám đốc công ty tóc hoa râm ngồi tại bàn làm việc lớn."
+      }
+    },
+    {
+      "stem": "internet-wifi-v1",
+      "subject": "a modern laptop resting open on a wooden table with a gentle glowing Wi-Fi radio wave symbol hovering above the blank screen, no letters or numbers",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "intaanetto"
+      },
+      "alt": {
+        "vi": "Máy tính xách tay với biểu tượng sóng Wi-Fi kết nối Internet."
+      }
     }
   ]
 }

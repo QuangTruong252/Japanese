@@ -208,6 +208,74 @@
       "alt": {
         "vi": "Trong thư viện, cậu sinh viên xin phép ngồi vào ghế trống."
       }
+    },
+    {
+      "stem": "living-at-home-v1",
+      "subject": "the reference male student relaxing peacefully in his cozy furnished apartment living room with potted plants and sunlight streaming through the window",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "sumimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai sinh sống thảnh thơi trong căn hộ tiện nghi tràn ngập ánh nắng."
+      }
+    },
+    {
+      "stem": "conveyor-products-v1",
+      "subject": "an automated factory conveyor belt transporting a row of neatly sealed, identical blank cardboard product boxes ready for shipping, drawn small at about 55% of the canvas with generous empty transparent margin on every side, nothing near the edges",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "seihin"
+      },
+      "alt": {
+        "vi": "Băng chuyền nhà máy vận chuyển các hộp sản phẩm đóng gói gọn gàng."
+      }
+    },
+    {
+      "stem": "economy-growth-chart-v1",
+      "subject": "a neat stack of shiny gold coins standing next to an upward-trending economic arrow graph with no numbers or labels",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "keizai"
+      },
+      "alt": {
+        "vi": "Chồng tiền xu vàng bên cạnh đồ thị mũi tên kinh tế đi lên không có chữ số."
+      }
+    },
+    {
+      "reuse": "vocab/bowing-apology-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "sumimasen-perdon"
+      },
+      "alt": {
+        "vi": "Chàng trai cúi gập người lịch sự để xin lỗi."
+      }
+    },
+    {
+      "reuse": "vocab/friends-group-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "minasan-15"
+      },
+      "alt": {
+        "vi": "Nhóm bốn người bạn trẻ đứng cạnh nhau vui vẻ trò chuyện."
+      }
     }
   ]
 }

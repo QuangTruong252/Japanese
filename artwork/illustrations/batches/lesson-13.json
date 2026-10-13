@@ -326,6 +326,54 @@
       "alt": {
         "vi": "Hai bạn trẻ ngồi ở quầy quán cơm trưa, nhân viên mang suất cơm và bát gyudon ra."
       }
+    },
+    {
+      "stem": "overwhelmed-work-v1",
+      "subject": "the reference male student struggling anxiously to hold an enormous, wobbling stack of paperwork folders that threatens to tumble over",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "taihen"
+      },
+      "alt": {
+        "vi": "Chàng trai vất vả ôm chồng hồ sơ cao ngất ngưởng chực đổ."
+      }
+    },
+    {
+      "stem": "wanting-bicycle-v1",
+      "subject": "the reference male student pressing both hands against a shop display window, staring with longing, yearning eyes at a shiny vintage bicycle displayed inside",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "hoshii"
+      },
+      "alt": {
+        "vi": "Chàng trai áp hai tay lên cửa kính ngắm chiếc xe đạp bên trong với ánh mắt khao khát."
+      }
+    },
+    {
+      "stem": "weekend-relaxation-v1",
+      "subject": "the reference woman relaxing comfortably in an armchair on a bright sunny morning, holding a steaming mug of tea and leisurely reading a magazine",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "shuumatsu"
+      },
+      "alt": {
+        "vi": "Cô gái ngồi thảnh thơi trên ghế bành đọc tạp chí và thưởng thức tách trà cuối tuần."
+      }
     }
   ]
 }

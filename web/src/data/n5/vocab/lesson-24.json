@@ -371,6 +371,14 @@
         "translation": {
           "vi": "Bạn bè đã giúp tôi chuẩn bị cho chuyến du lịch."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/packing-suitcase-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc vali mở sẵn trên sàn đang được xếp quần áo để chuẩn bị lên đường."
+        }
       }
     },
     {
@@ -463,6 +471,14 @@
         "translation": {
           "vi": "Tôi đã làm xong toàn bộ bài tập về nhà."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/complete-set-all-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hộp bút màu đầy đủ toàn bộ các cây màu xếp thẳng hàng."
+        }
       }
     },
     {
@@ -479,6 +495,14 @@
         "kana": "じぶんで りょうりを つくりました。",
         "translation": {
           "vi": "Tôi đã tự mình nấu ăn."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tying-shoes-by-oneself-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai mang ba lô tự mình cúi xuống buộc dây giày."
         }
       }
     },
@@ -513,6 +537,14 @@
         "kana": "ははの ひに はなを かって あげました。",
         "translation": {
           "vi": "Vào Ngày của Mẹ, tôi đã mua hoa tặng mẹ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/mothers-day-carnation-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đứa bé tặng hoa cẩm chướng đỏ tươi thắm cho mẹ nhân Ngày của Mẹ."
         }
       }
     }

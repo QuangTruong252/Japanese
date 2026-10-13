@@ -448,6 +448,14 @@
         "naiKana": "つかわない",
         "ta": "使[つか]った",
         "taKana": "つかった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/using-scissors-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai ngồi bên bàn cẩn thận dùng kéo cắt giấy màu thủ công."
+        }
       }
     },
     {

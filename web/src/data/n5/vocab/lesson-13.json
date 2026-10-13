@@ -321,6 +321,14 @@
         "translation": {
           "vi": "Công việc rất vất vả."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/overwhelmed-work-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai vất vả ôm chồng hồ sơ cao ngất ngưởng chực đổ."
+        }
       }
     },
     {
@@ -337,6 +345,14 @@
         "kana": "わたしは あたらしい パソコンが ほしいです。",
         "translation": {
           "vi": "Tôi muốn có cái máy tính mới."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/wanting-bicycle-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai áp hai tay lên cửa kính ngắm chiếc xe đạp bên trong với ánh mắt khao khát."
         }
       }
     },
@@ -529,6 +545,14 @@
         "kana": "しゅうまつ どこへ いきますか。",
         "translation": {
           "vi": "Cuối tuần bạn đi đâu?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/weekend-relaxation-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái ngồi thảnh thơi trên ghế bành đọc tạp chí và thưởng thức tách trà cuối tuần."
         }
       }
     },

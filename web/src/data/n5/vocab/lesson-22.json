@@ -530,6 +530,14 @@
         "translation": {
           "vi": "Chúc mừng sinh nhật bạn!"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/congratulations-flowers-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bó hoa chúc mừng rực rỡ kèm dải ruy băng và pháo hoa giấy."
+        }
       }
     },
     {
@@ -715,6 +723,14 @@
         "translation": {
           "vi": "Tôi nghĩ Paris là một thành phố đẹp."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/eiffel-tower-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tháp Eiffel biểu tượng của thủ đô Paris."
+        }
       }
     },
     {
@@ -731,6 +747,14 @@
         "kana": "ばんりの ちょうじょうへ いった ことが ありますか。",
         "translation": {
           "vi": "Bạn đã từng đến Vạn Lý Trường Thành chưa?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/great-wall-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Vạn Lý Trường Thành uốn lượn trên triền núi đá."
         }
       }
     }

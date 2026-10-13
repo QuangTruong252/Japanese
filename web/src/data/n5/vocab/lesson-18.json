@@ -30,6 +30,14 @@
         "naiKana": "できない",
         "ta": "できた",
         "taKana": "できた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/can-do-thumbs-up-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai tự tin giơ ngón tay cái thể hiện mình có thể làm được."
+        }
       }
     },
     {
@@ -326,6 +334,14 @@
         "naiKana": "よやくしない",
         "ta": "予約[よやく]した",
         "taKana": "よやくした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/booking-reservation-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái trao đổi tại quầy lễ tân để đặt chỗ trước."
+        }
       }
     },
     {
@@ -410,6 +426,14 @@
         "translation": {
           "vi": "Sở thích của tôi là nghe nhạc."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hobbies-collection-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đàn ghi-ta, máy ảnh, bảng màu vẽ và sách tượng trưng cho các sở thích."
+        }
       }
     },
     {
@@ -477,6 +501,14 @@
         "translation": {
           "vi": "Anh ấy là trưởng phòng của công ty."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/section-chief-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Trưởng phòng năng động mặc vest cầm bìa hồ sơ."
+        }
       }
     },
     {
@@ -494,6 +526,14 @@
         "translation": {
           "vi": "Trưởng ban đang ở trong phòng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/department-director-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Trưởng ban trung niên chững chạc mặc âu phục lịch lãm."
+        }
       }
     },
     {
@@ -510,6 +550,14 @@
         "kana": "しゃちょうは くるまの うんてんが できません。",
         "translation": {
           "vi": "Giám đốc không biết lái xe."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/company-president-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tổng giám đốc công ty tóc hoa râm ngồi tại bàn làm việc lớn."
         }
       }
     },
@@ -577,6 +625,14 @@
         "kana": "インターネットで ホテルを よやくする ことが できます。",
         "translation": {
           "vi": "Có thể đặt khách sạn trên mạng Internet."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/internet-wifi-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Máy tính xách tay với biểu tượng sóng Wi-Fi kết nối Internet."
         }
       }
     },

@@ -183,6 +183,180 @@
       "alt": {
         "vi": "Hai bạn trẻ ngồi quán cà phê bàn luận về trận bóng trên tivi, mỗi người nêu ý kiến."
       }
+    },
+    {
+      "reuse": "vocab/international-student-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "ryuugaku-shimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai kéo vali và đeo ba lô lên đường đi du học."
+      }
+    },
+    {
+      "stem": "speaking-bubble-v1",
+      "subject": "the reference male student speaking aloud with an open mouth and an expressive hand gesture, an empty clean speech bubble hovering beside him",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "iimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai nói chuyện với bong bóng lời thoại trống."
+      }
+    },
+    {
+      "reuse": "vocab/festival-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "arimasu-evento"
+      },
+      "alt": {
+        "vi": "Lễ hội đang diễn ra tưng bừng trên đường phố."
+      }
+    },
+    {
+      "reuse": "vocab/handy-tool-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "yakuni-tachimasu"
+      },
+      "alt": {
+        "vi": "Dụng cụ đa năng rất hữu ích trong cuộc sống."
+      }
+    },
+    {
+      "stem": "gears-turning-v1",
+      "subject": "a mechanical clockwork gear mechanism with three brass cogs visibly meshed and turning smoothly, subtle curved motion lines around the gears",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "ugokimasu"
+      },
+      "alt": {
+        "vi": "Các bánh răng cơ khí đang ăn khớp và chuyển động trơn tru."
+      }
+    },
+    {
+      "stem": "walking-cautiously-v1",
+      "subject": "the reference male student walking carefully across a wet pavement beside a yellow caution cone, looking down attentively at his footing",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "kiotsukemasu"
+      },
+      "alt": {
+        "vi": "Chàng trai cẩn thận nhìn đường khi bước qua chỗ ướt cạnh cọc tiêu cảnh báo."
+      }
+    },
+    {
+      "stem": "inconvenient-bus-stop-v1",
+      "subject": "the reference male student waiting at a remote countryside bus stop in the rain with an umbrella, looking at a blank timetable board with no buses coming",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "fuben"
+      },
+      "alt": {
+        "vi": "Chàng trai đứng chờ ở bến xe buýt vắng vẻ lúc trời mưa, đi lại rất bất tiện."
+      }
+    },
+    {
+      "stem": "broadcast-microphone-v1",
+      "subject": "a classic broadcast studio microphone on a desktop stand with an on-air red light glow, a pair of studio headphones resting beside it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "housou"
+      },
+      "alt": {
+        "vi": "Micro phát thanh trên bàn phòng thu và tai nghe."
+      }
+    },
+    {
+      "stem": "animation-cel-v1",
+      "subject": "an animator's wooden desk with a backlit light table showing layered hand-drawn animation cel sheets of a running character, colored pencils in a cup",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "anime"
+      },
+      "alt": {
+        "vi": "Bàn vẽ phim hoạt hình với các tờ giấy phác thảo chuyển động nhân vật."
+      }
+    },
+    {
+      "stem": "fashion-design-v1",
+      "subject": "a designer's drafting table with an open sketchbook showing a clean fashion dress design sketch, fabric color swatches and a drafting ruler beside it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "dezain"
+      },
+      "alt": {
+        "vi": "Bản phác thảo thiết kế thời trang cùng bảng mẫu vải và thước kẻ."
+      }
+    },
+    {
+      "stem": "dream-bubble-v1",
+      "subject": "the reference male student peacefully asleep in bed with a fluffy cloud dream bubble floating above, depicting a flying airplane and stars inside",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "yume"
+      },
+      "alt": {
+        "vi": "Chàng trai ngủ say với đám mây giấc mơ bay bổng phía trên."
+      }
+    },
+    {
+      "stem": "reunion-greeting-v1",
+      "subject": "the reference male student and an old friend running toward each other with big smiles and open arms, greeting each other warmly after a long time",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "hisashiburi"
+      },
+      "alt": {
+        "vi": "Hai người bạn mừng rỡ dang tay đón nhau khi lâu ngày mới gặp lại."
+      }
     }
   ]
 }

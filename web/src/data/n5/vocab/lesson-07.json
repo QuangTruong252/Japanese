@@ -144,6 +144,14 @@
         "naiKana": "もらわない",
         "ta": "もらった",
         "taKana": "もらった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/receiving-gift-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái hai tay vui mừng nhận hộp quà từ chàng trai."
+        }
       }
     },
     {
@@ -174,6 +182,14 @@
         "naiKana": "かさない",
         "ta": "貸[か]した",
         "taKana": "かした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/lending-book-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai hai tay đưa sách cho bạn mượn."
+        }
       }
     },
     {
@@ -204,6 +220,14 @@
         "naiKana": "かりない",
         "ta": "借[か]りた",
         "taKana": "かりた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/borrowing-book-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai hai tay đón nhận cuốn sách bạn cho mượn."
+        }
       }
     },
     {
@@ -1121,6 +1145,14 @@
         "translation": {
           "vi": "Vậy thì, tôi xin phép ăn."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/before-meal-gratitude-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai chắp hai tay kẹp đũa trước ngực cảm ơn trước bữa ăn."
+        }
       }
     },
     {
@@ -1137,6 +1169,14 @@
         "kana": "ごちそうさまでした。",
         "translation": {
           "vi": "Cảm ơn vì bữa ăn."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/after-meal-gratitude-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai chắp tay cảm ơn hài lòng sau khi dùng xong bữa ăn."
         }
       }
     },
@@ -1171,6 +1211,14 @@
         "kana": "スペインへ いきます。",
         "translation": {
           "vi": "Tôi đi Tây Ban Nha."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sagrada-familia-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhà thờ Sagrada Familia với các tháp chuông đá độc đáo."
         }
       }
     }

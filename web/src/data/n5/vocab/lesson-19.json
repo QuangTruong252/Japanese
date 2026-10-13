@@ -274,6 +274,14 @@
         "translation": {
           "vi": "Hàng ngày tôi đều luyện tập piano."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sports-practice-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai chăm chỉ luyện tập đánh bóng với rổ bóng tennis."
+        }
       }
     },
     {
@@ -502,6 +510,14 @@
         "translation": {
           "vi": "\"Cạn ly!\""
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/drinking-with-friends-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai người bạn cùng nâng ly, cụng ly cạn chén."
+        }
       }
     },
     {
@@ -544,6 +560,14 @@
         "translation": {
           "vi": "Việc ăn kiêng quá sức thì không tốt cho cơ thể."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/impossible-task-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cố nâng quả tạ quá nặng, vẫy tay xin hàng vì quá sức."
+        }
       }
     },
     {
@@ -577,6 +601,14 @@
         "kana": "とうきょうスカイツリーへ いった ことが ありますか。",
         "translation": {
           "vi": "Bạn đã từng đi Tháp Tokyo Skytree chưa?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tokyo-skytree-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tháp Tokyo Skytree vươn cao với kết cấu thép đặc trưng."
         }
       }
     },

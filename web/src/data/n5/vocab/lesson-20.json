@@ -377,6 +377,14 @@
         "translation": {
           "vi": "Tất cả mọi người đã cùng nhau chụp ảnh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/group-together-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhóm bốn người bạn vui vẻ khoác vai nhau cùng đi."
+        }
       }
     },
     {

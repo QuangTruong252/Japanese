@@ -769,6 +769,14 @@
         "translation": {
           "vi": "Trên bàn có cái bút."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cat-on-box-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chú mèo mướp ngồi ngoan ngoãn trên nắp chiếc hộp gỗ sáng màu."
+        }
       }
     },
     {
@@ -785,6 +793,14 @@
         "kana": "いすの したに いぬが います。",
         "translation": {
           "vi": "Dưới ghế có con chó."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cat-under-box-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chú mèo mướp cuộn tròn nằm dưới gầm chiếc hộp gỗ sáng màu."
         }
       }
     },
@@ -803,6 +819,14 @@
         "translation": {
           "vi": "Trước mặt tôi có thầy giáo."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cat-in-front-of-box-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chú mèo mướp ngồi ngay ngắn phía trước chiếc hộp gỗ sáng màu."
+        }
       }
     },
     {
@@ -819,6 +843,14 @@
         "kana": "いえの うしろに やまが あります。",
         "translation": {
           "vi": "Phía sau nhà có ngọn núi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cat-behind-box-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chú mèo mướp lấp ló nửa người tò mò ngó ra từ phía sau chiếc hộp gỗ sáng màu."
         }
       }
     },
@@ -837,6 +869,14 @@
         "translation": {
           "vi": "Bên phải có nhà vệ sinh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/direction-right-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đứng ở ngã rẽ, giơ tay chỉ rõ về con đường nhánh bên phải."
+        }
       }
     },
     {
@@ -853,6 +893,14 @@
         "kana": "ひだりに ぎんこうが あります。",
         "translation": {
           "vi": "Bên trái có ngân hàng."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/direction-left-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đứng ở ngã rẽ, giơ tay chỉ rõ về con đường nhánh bên trái."
         }
       }
     },
@@ -871,6 +919,14 @@
         "translation": {
           "vi": "Trong cặp có cuốn sách."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cat-inside-box-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chú mèo mướp thò đầu và hai chân trước ra từ bên trong chiếc hộp gỗ sáng màu."
+        }
       }
     },
     {
@@ -887,6 +943,14 @@
         "kana": "そとに だれが いますか。",
         "translation": {
           "vi": "Bên ngoài có ai thế?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cat-outside-box-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chú mèo mướp ngồi bên ngoài chiếc hộp gỗ sáng màu đang mở nắp trống rỗng."
         }
       }
     },
@@ -905,6 +969,14 @@
         "translation": {
           "vi": "Bên cạnh ngân hàng có bưu điện."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cat-beside-box-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chú mèo mướp ngồi sát cạnh chiếc hộp gỗ sáng màu."
+        }
       }
     },
     {
@@ -922,6 +994,14 @@
         "translation": {
           "vi": "Gần nhà có siêu thị."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cat-near-house-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chú mèo mướp ngồi trên bãi cỏ gần một ngôi nhà nhỏ mái đỏ."
+        }
       }
     },
     {
@@ -938,6 +1018,14 @@
         "kana": "ほんやと ぎんこうの あいだに カフェが あります。",
         "translation": {
           "vi": "Giữa hiệu sách và ngân hàng có quán cà phê."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cat-between-boxes-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chú mèo mướp ngồi ngay ngắn ở khoảng giữa hai chiếc hộp gỗ sáng màu."
         }
       }
     },
@@ -972,6 +1060,14 @@
         "kana": "どうも すみません。",
         "translation": {
           "vi": "Xin cảm ơn bạn rất nhiều."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bowing-apology-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cúi gập người lịch sự để xin lỗi."
         }
       }
     },

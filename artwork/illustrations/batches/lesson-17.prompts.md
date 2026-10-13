@@ -3,7 +3,7 @@
 Sinh từ `artwork/illustrations/batches/lesson-17.json` bằng `batch.mjs prompts`; sửa batch rồi chạy lại, không sửa file này.
 Mỗi mục: một lần gọi tạo ảnh. Đính kèm ảnh tham chiếu khi có. Lưu đúng đường dẫn, giữ nguyên bytes, không ghi đè file có sẵn.
 
-## `artwork/illustrations/vocab/fever-v1.png`
+## `artwork/illustrations/vocab/health-insurance-card-v1.png`
 
 Tham chiếu: `artwork/illustrations/reference/paper-town-style-v1.png`
 
@@ -17,5 +17,5 @@ ABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand 
 
 LAYOUT: a single standalone cutout vignette centered, occupying about 70% of the canvas, with wide EMPTY transparent margins on all four sides. Show every person and object completely (full figures including feet); nothing is cropped by or touches the canvas edge.
 
-SUBJECT: a sick-day bedside still life: a glass thermometer, a folded damp towel in a small basin of water, a cup of tea and a pill box on a small wooden tray beside a pillow, no person
+SUBJECT: at a clinic reception counter with a small stethoscope on it, a patient hands a pale blue health insurance card (blank, only abstract colour bars) to a receptionist in a white uniform with a small medical cross badge
 ```

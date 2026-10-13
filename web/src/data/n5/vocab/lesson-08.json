@@ -977,6 +977,14 @@
         "translation": {
           "vi": "Công việc của bạn có bận không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/work-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái làm việc với máy tính xách tay."
+        }
       }
     },
     {

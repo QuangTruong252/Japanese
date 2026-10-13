@@ -223,6 +223,70 @@
       "alt": {
         "vi": "Chàng trai bê thùng đồ giúp cô gái chuyển đến căn hộ mới."
       }
+    },
+    {
+      "stem": "packing-suitcase-v1",
+      "subject": "an open suitcase on the floor with folded clothes, a toiletry bag and a passport neatly placed inside as travel preparation",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "junbi"
+      },
+      "alt": {
+        "vi": "Chiếc vali mở sẵn trên sàn đang được xếp quần áo để chuẩn bị lên đường."
+      }
+    },
+    {
+      "stem": "complete-set-all-v1",
+      "subject": "a set of all seven colored crayons arranged neatly in a complete row in their open tin box, nothing missing",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "zenbu"
+      },
+      "alt": {
+        "vi": "Hộp bút màu đầy đủ toàn bộ các cây màu xếp thẳng hàng."
+      }
+    },
+    {
+      "stem": "tying-shoes-by-oneself-v1",
+      "subject": "a young boy kneeling and tying his own shoelaces independently with a proud smile",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "jibunde"
+      },
+      "alt": {
+        "vi": "Chàng trai mang ba lô tự mình cúi xuống buộc dây giày."
+      }
+    },
+    {
+      "stem": "mothers-day-carnation-v1",
+      "subject": "a small child presenting a single bright red carnation flower with green leaves to their smiling mother",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "haha-no-hi"
+      },
+      "alt": {
+        "vi": "Đứa bé tặng hoa cẩm chướng đỏ tươi thắm cho mẹ nhân Ngày của Mẹ."
+      }
     }
   ]
 }
