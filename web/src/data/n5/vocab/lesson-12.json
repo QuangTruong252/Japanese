@@ -42,6 +42,14 @@
         "translation": {
           "vi": "Nhà của tôi thì gần nhà ga."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/distance-near-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đứng trên lối đi ngay sát trước ngôi nhà nhỏ, chỉ cách cổng vào vài bước chân."
+        }
       }
     },
     {
@@ -58,6 +66,14 @@
         "kana": "だいがくは とおかったです。",
         "translation": {
           "vi": "Trường đại học đã rất xa."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/distance-far-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đứng từ xa nhìn ngôi nhà nhỏ tít chân trời phía cuối con đường quanh co."
         }
       }
     },
@@ -342,6 +358,14 @@
         "kana": "きせつの なかで はるが いちばん すきです。",
         "translation": {
           "vi": "Trong các mùa, tôi thích mùa xuân nhất."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/four-seasons-tree-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một thân cây với tán tròn chia bốn góc thể hiện bốn mùa xuân hạ thu đông."
         }
       }
     },
@@ -1045,6 +1069,14 @@
         "translation": {
           "vi": "\"Tôi đã về đây.\" \"Bạn đã về đấy à.\""
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/arriving-home-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai bước vào cửa nhà tháo giày, tươi cười cất tiếng chào khi về đến nhà."
+        }
       }
     },
     {
@@ -1061,6 +1093,14 @@
         "kana": "「おかえりなさい。」",
         "translation": {
           "vi": "\"Bạn đã về đấy à.\""
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/welcome-home-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái mặc tạp dề đón người thân ở cửa ra vào với nụ cười ấm áp."
         }
       }
     },
@@ -1096,6 +1136,14 @@
         "translation": {
           "vi": "Tôi đã rất mệt."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tired-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai mệt mỏi gục xuống bàn đầy giấy tờ."
+        }
       }
     },
     {
@@ -1112,6 +1160,14 @@
         "kana": "ぎおんまつりは ゆうめいな おまつりです。",
         "translation": {
           "vi": "Lễ hội Gion là một lễ hội nổi tiếng."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/gion-festival-float-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Xe rước Yamaboko truyền thống lộng lẫy trong lễ hội Gion ở Kyoto."
         }
       }
     },
@@ -1130,6 +1186,14 @@
         "translation": {
           "vi": "Tôi đã đi Hồng Kông."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hong-kong-junk-boat-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Thuyền buồm đỏ truyền thống đặc trưng của Hồng Kông trên vịnh biển."
+        }
       }
     },
     {
@@ -1146,6 +1210,14 @@
         "kana": "シンガポールは きれいな まちです。",
         "translation": {
           "vi": "Singapore là thành phố sạch đẹp."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/merlion-statue-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tượng Merlion sư tử biển màu trắng phun nước đặc trưng của Singapore."
         }
       }
     }

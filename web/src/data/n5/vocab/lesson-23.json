@@ -144,6 +144,14 @@
         "naiKana": "かえない",
         "ta": "変[か]えた",
         "taKana": "かえた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/changing-settings-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn tay vặn núm xoay chuyển sang chế độ thiết lập mới."
+        }
       }
     },
     {
@@ -174,6 +182,14 @@
         "naiKana": "さわらない",
         "ta": "触[さわ]った[ドアに〜]",
         "taKana": "さわった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/touching-door-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn tay nhẹ nhàng chạm đầu ngón tay vào mặt cửa kính."
+        }
       }
     },
     {
@@ -393,6 +409,14 @@
         "translation": {
           "vi": "Âm thanh từ phòng bên cạnh thật ồn ào."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sound-waves-speaker-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc loa để bàn phát ra các đường sóng âm thanh."
+        }
       }
     },
     {
@@ -410,6 +434,14 @@
         "translation": {
           "vi": "Kích cỡ của bộ quần áo này thì nhỏ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/three-sizes-shirts-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ba chiếc áo thun với ba kích cỡ nhỏ, vừa và lớn xếp cạnh nhau."
+        }
       }
     },
     {
@@ -426,6 +458,14 @@
         "kana": "きかいが こしょうした とき、わたしに いって ください。",
         "translation": {
           "vi": "Khi máy móc hỏng, xin hãy nói với tôi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/broken-machine-smoke-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Máy giặt bị hỏng hóc bốc khói nhẹ và rò rỉ nước."
         }
       }
     },
@@ -669,6 +709,14 @@
         "kana": "やすみの ひ、ほうりゅうじへ いきます。",
         "translation": {
           "vi": "Ngày nghỉ, tôi đi Chùa Horyu-ji."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/horyuji-temple-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chùa Horyu-ji cổ kính ở Nara với ngôi tháp năm tầng bằng gỗ."
         }
       }
     }

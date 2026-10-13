@@ -106,6 +106,14 @@
         "naiKana": "すわない",
         "ta": "吸[す]った",
         "taKana": "すった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/smoking-cigarette-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn tay cầm điếu thuốc lá đang cháy với làn khói mỏng bốc lên cạnh gạt tàn."
+        }
       }
     },
     {
@@ -844,6 +852,14 @@
         "translation": {
           "vi": "Tôi không hút thuốc lá."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cigarettes-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bao thuốc lá và điếu thuốc trên gạt tàn."
+        }
       }
     },
     {
@@ -927,6 +943,14 @@
         "kana": "ビデオを みます。",
         "translation": {
           "vi": "Tôi xem video."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/videotape-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuộn băng video VHS có nhãn trắng."
         }
       }
     },
@@ -1112,6 +1136,14 @@
         "translation": {
           "vi": "Anh/chị có muốn đi cùng không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/walking-together-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai bạn trẻ cùng nhau đi dạo thảnh thơi trên con đường nhỏ."
+        }
       }
     },
     {
@@ -1231,6 +1263,14 @@
         "translation": {
           "vi": "Vâng, tôi đã hiểu."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/understanding-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai gật đầu mỉm cười hiểu ra, phía trên là bóng đèn phát sáng."
+        }
       }
     },
     {
@@ -1281,6 +1321,14 @@
         "kana": "メキシコへ いきます。",
         "translation": {
           "vi": "Tôi đi Mexico."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/chichen-itza-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Kim tự tháp Chichen Itza với các bậc thang đá."
         }
       }
     }

@@ -527,6 +527,86 @@
       "alt": {
         "vi": "Chàng trai xuống xe buýt, cô gái rút tiền ở ATM, phía sau là lối vào đền."
       }
+    },
+    {
+      "stem": "taking-out-bag-v1",
+      "subject": "the reference male student reaching into his backpack with both hands and carefully pulling out a folder of documents",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "dashimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai giữ ba lô mở và dùng một tay lấy tập tài liệu ra ngoài."
+      }
+    },
+    {
+      "stem": "entering-university-gate-v1",
+      "subject": "seen from behind, the reference male student carrying books and a backpack walks away from the viewer through the open university gates into the campus courtyard toward an academic building",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "hairimasu-uni"
+      },
+      "alt": {
+        "vi": "Sinh viên mang ba lô ôm sách bước qua cánh cổng lớn của trường đại học."
+      }
+    },
+    {
+      "stem": "starting-race-v1",
+      "subject": "an athlete in running shoes poised down in the starting block at a track line, focused intently as the race is about to start",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "hajimemasu"
+      },
+      "alt": {
+        "vi": "Vận động viên vào tư thế xuất phát trên đường chạy chuẩn bị bắt đầu cuộc đua."
+      }
+    },
+    {
+      "stem": "youthful-person-v1",
+      "subject": "a lively, youthful student with a bright vibrant smile skipping forward energetically, radiating youthful vitality and optimism",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "wakai"
+      },
+      "alt": {
+        "vi": "Người trẻ tràn đầy sức sống tươi cười rảo bước với nguồn năng lượng phơi phới."
+      }
+    },
+    {
+      "stem": "full-body-figure-v1",
+      "subject": "the reference male student standing upright facing forward with arms resting naturally at his sides, head to feet completely visible in full-body posture",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "karada"
+      },
+      "alt": {
+        "vi": "Chàng trai đứng thẳng toàn thân hướng về phía trước, trọn vẹn từ đầu đến chân."
+      }
     }
   ]
 }

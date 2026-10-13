@@ -174,6 +174,14 @@
         "naiKana": "すまない",
         "ta": "住[す]んだ",
         "taKana": "すんだ"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/living-at-home-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai sinh sống thảnh thơi trong căn hộ tiện nghi tràn ngập ánh nắng."
+        }
       }
     },
     {
@@ -329,6 +337,14 @@
         "translation": {
           "vi": "Đây là sản phẩm của Nhật Bản."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/conveyor-products-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Băng chuyền nhà máy vận chuyển các hộp sản phẩm đóng gói gọn gàng."
+        }
       }
     },
     {
@@ -387,6 +403,14 @@
         "kana": "だいがくで けいざいを べんきょうしています。",
         "translation": {
           "vi": "Tôi đang học kinh tế ở trường đại học."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/economy-growth-chart-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chồng tiền xu vàng bên cạnh đồ thị mũi tên kinh tế đi lên không có chữ số."
         }
       }
     },
@@ -497,6 +521,14 @@
         "translation": {
           "vi": "\"Xin lỗi, tôi mượn cuốn từ điển này có được không?\""
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bowing-apology-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cúi gập người lịch sự để xin lỗi."
+        }
       }
     },
     {
@@ -513,6 +545,14 @@
         "kana": "「みなさん、この しりょうを みてください。」",
         "translation": {
           "vi": "\"Mọi người, xin hãy xem tài liệu này.\""
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/friends-group-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhóm bốn người bạn trẻ đứng cạnh nhau vui vẻ trò chuyện."
         }
       }
     },

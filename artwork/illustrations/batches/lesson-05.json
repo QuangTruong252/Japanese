@@ -274,6 +274,112 @@
       "alt": {
         "vi": "Hai bạn trẻ chờ tàu trên sân ga nhỏ vào buổi sáng."
       }
+    },
+    {
+      "stem": "walking-to-station-v1",
+      "subject": "the reference male student walking along a pavement away from the viewer toward a train station entrance in the distance, back turned slightly, mid-stride",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "ikimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai đi bộ về phía nhà ga ở phía xa."
+      }
+    },
+    {
+      "stem": "coming-towards-v1",
+      "subject": "the reference male student walking forward toward the viewer with a friendly smile, backpack over one shoulder, mid-stride",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "kimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai bước đi về phía người xem với nụ cười thân thiện."
+      }
+    },
+    {
+      "stem": "person-figure-v1",
+      "subject": "a full-figure standalone cutout of a person standing naturally, neutral and relaxed posture, everyday clothes",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "hito"
+      },
+      "alt": {
+        "vi": "Một người đứng thẳng toàn thân với tư thế tự nhiên."
+      }
+    },
+    {
+      "stem": "couple-pointing-man-v1",
+      "subject": "a young couple standing side by side, with a clear hand gesture pointing specifically toward the young man",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "kare"
+      },
+      "alt": {
+        "vi": "Cặp đôi đứng cạnh nhau, có bàn tay chỉ về phía chàng trai."
+      }
+    },
+    {
+      "stem": "couple-pointing-woman-v1",
+      "subject": "a young couple standing side by side, with a clear hand gesture pointing specifically toward the young woman",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "kanojo"
+      },
+      "alt": {
+        "vi": "Cặp đôi đứng cạnh nhau, có bàn tay chỉ về phía cô gái."
+      }
+    },
+    {
+      "stem": "dining-alone-v1",
+      "subject": "the reference male student sitting alone at a small wooden dining table eating a simple meal by himself, peaceful solitary atmosphere",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "hitoride"
+      },
+      "alt": {
+        "vi": "Chàng trai ngồi ăn cơm một mình tại bàn ăn nhỏ."
+      }
+    },
+    {
+      "reuse": "vocab/bowing-thanks-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "arigatou-gozaimashita"
+      },
+      "alt": {
+        "vi": "Chàng trai cúi chào lịch thiệp mỉm cười cảm ơn."
+      }
     }
   ]
 }

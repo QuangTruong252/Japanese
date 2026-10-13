@@ -89,6 +89,96 @@
       "alt": {
         "vi": "Chàng trai cúi chào cảm ơn cô gái và hai ông bà chủ nhà trước khi lên đường."
       }
+    },
+    {
+      "stem": "one-pillar-pagoda-v1",
+      "subject": "the iconic One Pillar Pagoda in Hanoi, Vietnam: a delicate wooden temple pavilion resembling a lotus blossom set upon a single stone pillar in a tranquil square pond with lotus leaves, surrounded by greenery, no people, no text",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-25.json",
+        "id": "betonamu"
+      },
+      "alt": {
+        "vi": "Chùa Một Cột trên đài sen, công trình biểu tượng của Việt Nam."
+      }
+    },
+    {
+      "reuse": "vocab/phone-call-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-25.json",
+        "id": "moshimoshi"
+      },
+      "alt": {
+        "vi": "Sinh viên áp điện thoại vào tai nói a-lô khi bắt máy."
+      }
+    },
+    {
+      "stem": "job-transfer-v1",
+      "subject": "an office worker in a suit carrying packed moving boxes and a briefcase outside a company building, waving goodbye to colleagues as he transfers to a new office",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-25.json",
+        "id": "tenkin"
+      },
+      "alt": {
+        "vi": "Nhân viên công ty xách cặp công sở và mang thùng đồ, vẫy chào đồng nghiệp khi chuyển nơi công tác."
+      }
+    },
+    {
+      "stem": "deep-bow-thanks-v1",
+      "subject": "the reference male student bowing deeply at 45 degrees with hands at his sides, expressing heartfelt gratitude for all the help received",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-25.json",
+        "id": "osewa-ni-narimashita"
+      },
+      "alt": {
+        "vi": "Chàng trai cúi gập người cảm ơn vì đã luôn được giúp đỡ."
+      }
+    },
+    {
+      "stem": "determination-fist-v1",
+      "subject": "the reference male student smiling with a determined expression, raising a clenched fist in front of his chest with high resolve",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-25.json",
+        "id": "ganbarimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai nắm chặt nắm tay với vẻ mặt quyết tâm cố gắng hết sức."
+      }
+    },
+    {
+      "stem": "waving-farewell-v1",
+      "subject": "the reference woman standing on a porch waving goodbye with a warm gentle smile, wishing someone well and good health",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-25.json",
+        "id": "douzo-ogenkide"
+      },
+      "alt": {
+        "vi": "Cô gái tươi cười vẫy tay tiễn bạn và chúc bảo trọng."
+      }
     }
   ]
 }

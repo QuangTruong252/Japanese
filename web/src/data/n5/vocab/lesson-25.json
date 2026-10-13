@@ -254,6 +254,14 @@
         "translation": {
           "vi": "“A lô, anh Yamada phải không?”"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/phone-call-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Sinh viên áp điện thoại vào tai nói a-lô khi bắt máy."
+        }
       }
     },
     {
@@ -270,6 +278,14 @@
         "kana": "とうきょうへ てんきんしたら、さびしく なります。",
         "translation": {
           "vi": "Nếu chuyển công tác đến Tokyo thì tôi sẽ thấy buồn."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/job-transfer-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên công ty xách cặp công sở và mang thùng đồ, vẫy chào đồng nghiệp khi chuyển nơi công tác."
         }
       }
     },
@@ -330,6 +346,14 @@
         "translation": {
           "vi": "Cảm ơn vì đã luôn giúp đỡ tôi suốt thời gian qua."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/deep-bow-thanks-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cúi gập người cảm ơn vì đã luôn được giúp đỡ."
+        }
       }
     },
     {
@@ -360,6 +384,14 @@
         "naiKana": "がんばらない",
         "ta": "頑張[がんば]った",
         "taKana": "がんばった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/determination-fist-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai nắm chặt nắm tay với vẻ mặt quyết tâm cố gắng hết sức."
+        }
       }
     },
     {
@@ -377,6 +409,14 @@
         "translation": {
           "vi": "Chúc bạn luôn mạnh khỏe."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/waving-farewell-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái tươi cười vẫy tay tiễn bạn và chúc bảo trọng."
+        }
       }
     },
     {
@@ -393,6 +433,14 @@
         "kana": "ベトナムに かえっても、にほんごを べんきょうします。",
         "translation": {
           "vi": "Dù về Việt Nam, tôi vẫn sẽ học tiếng Nhật."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/one-pillar-pagoda-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chùa Một Cột trên đài sen, công trình biểu tượng của Việt Nam."
         }
       }
     }

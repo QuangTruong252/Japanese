@@ -228,6 +228,16 @@
       "alt": {
         "vi": "Hai bạn trẻ cười vui vẻ trong buổi dã ngoại."
       }
+    },
+    {
+      "reuse": "vocab/work-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "oshigoto"
+      },
+      "alt": {
+        "vi": "Cô gái làm việc với máy tính xách tay."
+      }
     }
   ]
 }

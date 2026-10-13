@@ -271,6 +271,102 @@
       "alt": {
         "vi": "Cô gái chỉ đường cho chàng trai cầm bản đồ ở ngã tư có đèn giao thông."
       }
+    },
+    {
+      "stem": "changing-settings-v1",
+      "subject": "a hand turning the dial knob of a thermostat or radio selector switch from one position to a new setting, with a curved change arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "kaemasu-cambiar"
+      },
+      "alt": {
+        "vi": "Bàn tay vặn núm xoay chuyển sang chế độ thiết lập mới."
+      }
+    },
+    {
+      "stem": "touching-door-v1",
+      "subject": "close-up of an open hand with fingertips gently touching the smooth glass panel of an automatic sliding door",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "sawarimasu"
+      },
+      "alt": {
+        "vi": "Bàn tay nhẹ nhàng chạm đầu ngón tay vào mặt cửa kính."
+      }
+    },
+    {
+      "stem": "sound-waves-speaker-v1",
+      "subject": "a small tabletop speaker with stylized curved sound waves radiating outward from its grille, no letters or numbers",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "oto"
+      },
+      "alt": {
+        "vi": "Chiếc loa để bàn phát ra các đường sóng âm thanh."
+      }
+    },
+    {
+      "stem": "three-sizes-shirts-v1",
+      "subject": "three simple t-shirts hanging in a row from smallest to largest: small, medium, and large, showing three distinct sizes, plain and unlabeled",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "saizu"
+      },
+      "alt": {
+        "vi": "Ba chiếc áo thun với ba kích cỡ nhỏ, vừa và lớn xếp cạnh nhau."
+      }
+    },
+    {
+      "stem": "broken-machine-smoke-v1",
+      "subject": "a modern front-loading washing machine with its front door ajar, a small puff of grey smoke rising from the top panel and water leaking onto the floor",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "koshou"
+      },
+      "alt": {
+        "vi": "Máy giặt bị hỏng hóc bốc khói nhẹ và rò rỉ nước."
+      }
+    },
+    {
+      "stem": "horyuji-temple-v1",
+      "subject": "the historic Horyu-ji temple in Nara: the ancient five-story wooden pagoda and Kondo main hall standing gracefully against a clear sky, surrounded by pine trees, drawn small at about 55% of the canvas with generous empty transparent margin on every side, nothing near the edges",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "houryuuji"
+      },
+      "alt": {
+        "vi": "Chùa Horyu-ji cổ kính ở Nara với ngôi tháp năm tầng bằng gỗ."
+      }
     }
   ]
 }

@@ -220,6 +220,14 @@
         "naiKana": "ださない",
         "ta": "出[だ]した",
         "taKana": "だした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/taking-out-bag-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai giữ ba lô mở và dùng một tay lấy tập tài liệu ra ngoài."
+        }
       }
     },
     {
@@ -288,6 +296,14 @@
         "naiKana": "はいらない",
         "ta": "入[はい]った[大学[だいがく]に〜]",
         "taKana": "はいった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/entering-university-gate-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Sinh viên mang ba lô ôm sách bước qua cánh cổng lớn của trường đại học."
+        }
       }
     },
     {
@@ -432,6 +448,14 @@
         "naiKana": "はじめない",
         "ta": "始[はじ]めた",
         "taKana": "はじめた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/starting-race-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Vận động viên vào tư thế xuất phát trên đường chạy chuẩn bị bắt đầu cuộc đua."
+        }
       }
     },
     {
@@ -516,6 +540,14 @@
         "kana": "やまださんは わかいです。",
         "translation": {
           "vi": "Anh Yamada trẻ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/youthful-person-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người trẻ tràn đầy sức sống tươi cười rảo bước với nguồn năng lượng phơi phới."
         }
       }
     },
@@ -633,6 +665,14 @@
         "kana": "からだが おおきいです。",
         "translation": {
           "vi": "Cơ thể to lớn."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/full-body-figure-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đứng thẳng toàn thân hướng về phía trước, trọn vẹn từ đầu đến chân."
         }
       }
     },

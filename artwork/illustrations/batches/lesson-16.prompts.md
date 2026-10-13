@@ -3,7 +3,7 @@
 Sinh từ `artwork/illustrations/batches/lesson-16.json` bằng `batch.mjs prompts`; sửa batch rồi chạy lại, không sửa file này.
 Mỗi mục: một lần gọi tạo ảnh. Đính kèm ảnh tham chiếu khi có. Lưu đúng đường dẫn, giữ nguyên bytes, không ghi đè file có sẵn.
 
-## `artwork/illustrations/vocab/snow-festival-v1.png`
+## `artwork/illustrations/vocab/entering-university-gate-v1.png`
 
 Tham chiếu: `artwork/illustrations/reference/paper-town-style-v1.png`
 
@@ -17,5 +17,5 @@ ABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand 
 
 LAYOUT: a single standalone cutout vignette centered, occupying about 70% of the canvas, with wide EMPTY transparent margins on all four sides. Show every person and object completely (full figures including feet); nothing is cropped by or touches the canvas edge.
 
-SUBJECT: a snow festival in winter: large white snow sculptures of a castle and an animal, visitors in warm coats walking past, gentle snowfall
+SUBJECT: seen from behind, the reference male student carrying books and a backpack walks away from the viewer through the open university gates into the campus courtyard toward an academic building
 ```

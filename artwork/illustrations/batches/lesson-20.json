@@ -101,6 +101,22 @@
       "alt": {
         "vi": "Hai bạn trẻ ngồi ghế đá công viên trò chuyện thân mật, chàng trai rủ cô gái đi chơi."
       }
+    },
+    {
+      "stem": "group-together-v1",
+      "subject": "a cheerful group of four young friends walking together side by side with their arms around each other's shoulders, laughing happily",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "minnade"
+      },
+      "alt": {
+        "vi": "Nhóm bốn người bạn vui vẻ khoác vai nhau cùng đi."
+      }
     }
   ]
 }

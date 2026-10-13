@@ -522,6 +522,96 @@
       "alt": {
         "vi": "Khu vườn Nhật có ao, đèn đá và cây thông."
       }
+    },
+    {
+      "stem": "cigarettes-v1",
+      "subject": "a plain pack of cigarettes standing beside a simple ceramic ashtray with an unlit cigarette resting on it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "tabako"
+      },
+      "alt": {
+        "vi": "Bao thuốc lá và điếu thuốc trên gạt tàn."
+      }
+    },
+    {
+      "stem": "videotape-v1",
+      "subject": "a black VHS video tape cassette with a plain blank white label sticker, standing upright",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "bideo"
+      },
+      "alt": {
+        "vi": "Cuộn băng video VHS có nhãn trắng."
+      }
+    },
+    {
+      "stem": "chichen-itza-v1",
+      "subject": "the ancient El Castillo step-pyramid at Chichen Itza with stone terraces under a clear sky",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "mekishiko"
+      },
+      "alt": {
+        "vi": "Kim tự tháp Chichen Itza với các bậc thang đá."
+      }
+    },
+    {
+      "stem": "smoking-cigarette-v1",
+      "subject": "a hand holding a lit cigarette with a delicate curl of smoke rising, resting beside a ceramic ashtray",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "suimasu"
+      },
+      "alt": {
+        "vi": "Bàn tay cầm điếu thuốc lá đang cháy với làn khói mỏng bốc lên cạnh gạt tàn."
+      }
+    },
+    {
+      "stem": "walking-together-v1",
+      "subject": "the reference male student and the reference woman walking side by side together along a pathway, chatting pleasantly",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "isshoni"
+      },
+      "alt": {
+        "vi": "Hai bạn trẻ cùng nhau đi dạo thảnh thơi trên con đường nhỏ."
+      }
+    },
+    {
+      "reuse": "vocab/understanding-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "wakarimashita"
+      },
+      "alt": {
+        "vi": "Chàng trai gật đầu mỉm cười hiểu ra, phía trên là bóng đèn phát sáng."
+      }
     }
   ]
 }

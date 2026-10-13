@@ -257,6 +257,202 @@
       "alt": {
         "vi": "Hai đứa trẻ chơi bóng cùng nhau."
       }
+    },
+    {
+      "stem": "husband-v1",
+      "subject": "a smiling husband in the foreground as the main figure, holding hands with his wife slightly behind him, both wearing clearly visible plain gold wedding rings, a small framed wedding photo on a little table beside them",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "otto"
+      },
+      "alt": {
+        "vi": "Người chồng mặc áo len, đeo nhẫn cưới và mỉm cười."
+      }
+    },
+    {
+      "reuse": "vocab/husband-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "goshujin"
+      },
+      "alt": {
+        "vi": "Người chồng mặc áo len, đeo nhẫn cưới và mỉm cười."
+      }
+    },
+    {
+      "stem": "wife-v1",
+      "subject": "a smiling wife in the foreground as the main figure, holding hands with her husband slightly behind her, both wearing clearly visible plain gold wedding rings, a small framed wedding photo on a little table beside them",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "tsuma"
+      },
+      "alt": {
+        "vi": "Người vợ trong trang phục thường ngày, đeo nhẫn cưới và mỉm cười."
+      }
+    },
+    {
+      "reuse": "vocab/wife-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "okusan"
+      },
+      "alt": {
+        "vi": "Người vợ trong trang phục thường ngày, đeo nhẫn cưới và mỉm cười."
+      }
+    },
+    {
+      "stem": "understanding-v1",
+      "subject": "the reference male student nodding with a bright, enlightened smile, a softly glowing lightbulb illuminated above his head indicating clear understanding",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "wakarimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai mỉm cười giơ ngón trỏ khi hiểu ra, phía trên là bóng đèn phát sáng."
+      }
+    },
+    {
+      "stem": "fondness-v1",
+      "subject": "the reference woman happily cuddling a cute striped tabby cat against her cheek with a loving smile, tiny pink hearts floating beside her",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "suki"
+      },
+      "alt": {
+        "vi": "Cô gái mỉm cười hạnh phúc ôm chú mèo mướp cùng vài trái tim nhỏ."
+      }
+    },
+    {
+      "stem": "disliking-v1",
+      "subject": "the reference male student grimacing with an unpleasant expression and turning his head away while pushing a plate of leafy vegetables away with both hands",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "kirai"
+      },
+      "alt": {
+        "vi": "Chàng trai nhăn mặt quay đi, giơ hai lòng bàn tay từ chối đĩa rau xanh được đưa tới."
+      }
+    },
+    {
+      "stem": "skillful-v1",
+      "subject": "the reference male student playing an acoustic guitar with confident posture and a broad smile, while people nearby enthusiastically applaud, drawn small at about 55% of the canvas with generous empty transparent margin on every side, nothing near the edges",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "jouzu"
+      },
+      "alt": {
+        "vi": "Chàng trai tự tin chơi đàn guitar trong tiếng vỗ tay khen ngợi."
+      }
+    },
+    {
+      "stem": "unskilled-v1",
+      "subject": "the reference male student scratching the back of his head with an embarrassed, awkward smile next to an easel showing a clumsy, childish scribble painting",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "heta"
+      },
+      "alt": {
+        "vi": "Chàng trai bối rối gãi đầu bên giá vẽ có bức tranh nguệch ngoạc vụng về."
+      }
+    },
+    {
+      "stem": "music-headphones-v1",
+      "subject": "a pair of sleek over-ear studio headphones resting on a wooden tabletop with floating colorful musical note symbols drifting upwards",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "ongaku"
+      },
+      "alt": {
+        "vi": "Chiếc tai nghe chụp tai trên mặt bàn cùng các nốt nhạc bay bổng."
+      }
+    },
+    {
+      "stem": "hourglass-v1",
+      "subject": "a traditional wooden hourglass with amber sand smoothly trickling down through the narrow neck into the bottom bulb",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "jikan"
+      },
+      "alt": {
+        "vi": "Chiếc đồng hồ cát bằng gỗ với những hạt cát mịn đang chảy xuống."
+      }
+    },
+    {
+      "stem": "pinky-promise-v1",
+      "subject": "two hands linked in a pinky swear promise, little fingers hooked firmly together against a clear background",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "yakusoku"
+      },
+      "alt": {
+        "vi": "Hai bàn tay móc ngón tay út ngoéo tay giữ trọn lời hứa."
+      }
+    },
+    {
+      "stem": "part-time-job-v1",
+      "subject": "the reference male student wearing a neat green work apron over his clothes, smiling politely behind a convenience store checkout counter",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "arubaito"
+      },
+      "alt": {
+        "vi": "Sinh viên mặc tạp dề làm việc đứng niềm nở sau quầy cửa hàng tiện lợi."
+      }
     }
   ]
 }

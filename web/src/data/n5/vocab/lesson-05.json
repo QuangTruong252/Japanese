@@ -30,6 +30,14 @@
         "naiKana": "いかない",
         "ta": "行[い]った",
         "taKana": "いった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/walking-to-station-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đi bộ về phía nhà ga ở phía xa."
+        }
       }
     },
     {
@@ -60,6 +68,14 @@
         "naiKana": "こない",
         "ta": "来[き]た",
         "taKana": "きた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/coming-towards-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai bước đi về phía người xem với nụ cười thân thiện."
+        }
       }
     },
     {
@@ -415,6 +431,14 @@
         "translation": {
           "vi": "Người kia là ai?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/person-figure-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một người đứng thẳng toàn thân với tư thế tự nhiên."
+        }
       }
     },
     {
@@ -457,6 +481,14 @@
         "translation": {
           "vi": "Anh ấy là bác sĩ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/couple-pointing-man-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cặp đôi đứng cạnh nhau, có bàn tay chỉ về phía chàng trai."
+        }
       }
     },
     {
@@ -473,6 +505,14 @@
         "kana": "かのじょは せんせいです。",
         "translation": {
           "vi": "Cô ấy là giáo viên."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/couple-pointing-woman-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cặp đôi đứng cạnh nhau, có bàn tay chỉ về phía cô gái."
         }
       }
     },
@@ -515,6 +555,14 @@
         "kana": "ひとりで デパートへ いきます。",
         "translation": {
           "vi": "Tôi đi đến trung tâm thương mại một mình."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/dining-alone-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai ngồi ăn cơm một mình tại bàn ăn nhỏ."
         }
       }
     },
@@ -1067,6 +1115,14 @@
         "kana": "どうもありがとうございました。",
         "translation": {
           "vi": "Xin cảm ơn anh/chị rất nhiều."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bowing-thanks-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cúi chào lịch thiệp mỉm cười cảm ơn."
         }
       }
     },

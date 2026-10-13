@@ -197,6 +197,64 @@
       "alt": {
         "vi": "Hai bạn trẻ đeo ba lô vui mừng giơ tay trên đỉnh núi."
       }
+    },
+    {
+      "reuse": "vocab/drinking-with-friends-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "kanpai"
+      },
+      "alt": {
+        "vi": "Hai người bạn cùng nâng ly, cụng ly cạn chén."
+      }
+    },
+    {
+      "stem": "tokyo-skytree-v1",
+      "subject": "the iconic Tokyo Skytree broadcasting and observation tower rising gracefully with its lattice steel structure, delicate pastel lighting accents, surrounded by low town rooftops at its base",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "toukyou-sukaitsurii"
+      },
+      "alt": {
+        "vi": "Tháp Tokyo Skytree vươn cao với kết cấu thép đặc trưng."
+      }
+    },
+    {
+      "stem": "sports-practice-v1",
+      "subject": "the reference male student in athletic sportswear practicing tennis swings repeatedly with a racket, a basket of tennis balls and sweat droplets beside him",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "renshuu"
+      },
+      "alt": {
+        "vi": "Chàng trai chăm chỉ luyện tập đánh bóng với rổ bóng tennis."
+      }
+    },
+    {
+      "stem": "impossible-task-v1",
+      "subject": "the reference male student sweating and straining while attempting to lift an impossibly huge heavy barbell, waving one hand in defeat to show it cannot be done",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "muri"
+      },
+      "alt": {
+        "vi": "Chàng trai cố nâng quả tạ quá nặng, vẫy tay xin hàng vì quá sức."
+      }
     }
   ]
 }

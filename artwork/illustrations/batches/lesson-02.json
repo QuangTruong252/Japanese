@@ -1,0 +1,25 @@
+{
+  "name": "lesson-02",
+  "description": "Bài 2 — đồ vật cá nhân, văn phòng phẩm, thiết bị; đại từ chỉ định và câu giao tiếp.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "stem": "bowing-thanks-v1",
+      "subject": "the reference male student bowing politely at 30 degrees with hands on thighs and a warm grateful smile, expressing sincere thanks",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "doumo-arigatou"
+      },
+      "alt": {
+        "vi": "Chàng trai cúi chào lịch thiệp mỉm cười cảm ơn."
+      }
+    }
+  ]
+}

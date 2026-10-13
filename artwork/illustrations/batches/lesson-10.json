@@ -376,6 +376,198 @@
       "alt": {
         "vi": "Căn phòng có mèo nằm trên giường và chó dưới gầm bàn."
       }
+    },
+    {
+      "stem": "cat-on-box-v1",
+      "subject": "a cute striped tabby cat sitting comfortably on top of the closed lid of a light wooden box",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "ue"
+      },
+      "alt": {
+        "vi": "Chú mèo mướp ngồi ngoan ngoãn trên nắp chiếc hộp gỗ sáng màu."
+      }
+    },
+    {
+      "stem": "cat-under-box-v1",
+      "subject": "a cute striped tabby cat curled up and resting underneath a raised light wooden box",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "shita"
+      },
+      "alt": {
+        "vi": "Chú mèo mướp cuộn tròn nằm dưới gầm chiếc hộp gỗ sáng màu."
+      }
+    },
+    {
+      "stem": "cat-in-front-of-box-v1",
+      "subject": "a cute striped tabby cat sitting upright directly in front of a light wooden box, facing forward",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "mae"
+      },
+      "alt": {
+        "vi": "Chú mèo mướp ngồi ngay ngắn phía trước chiếc hộp gỗ sáng màu."
+      }
+    },
+    {
+      "stem": "cat-behind-box-v1",
+      "subject": "a cute striped tabby cat half-hidden behind a light wooden box, peeking curious ears and eyes out from behind",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "ushiro"
+      },
+      "alt": {
+        "vi": "Chú mèo mướp lấp ló nửa người tò mò ngó ra từ phía sau chiếc hộp gỗ sáng màu."
+      }
+    },
+    {
+      "stem": "direction-right-v1",
+      "subject": "seen from behind: the reference male student standing at a street fork, pointing his right arm clearly toward the right-hand branch of the road, so his right is also the viewer's right",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "migi"
+      },
+      "alt": {
+        "vi": "Chàng trai đứng ở ngã rẽ, giơ tay chỉ rõ về con đường nhánh bên phải."
+      }
+    },
+    {
+      "stem": "direction-left-v1",
+      "subject": "seen from behind: the reference male student standing at a street fork, pointing his left arm clearly toward the left-hand branch of the road, so his left is also the viewer's left",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "hidari"
+      },
+      "alt": {
+        "vi": "Chàng trai đứng ở ngã rẽ, giơ tay chỉ rõ về con đường nhánh bên trái."
+      }
+    },
+    {
+      "stem": "cat-inside-box-v1",
+      "subject": "a cute striped tabby cat sitting inside an open light wooden box, with only its head and front paws resting over the front edge",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "naka"
+      },
+      "alt": {
+        "vi": "Chú mèo mướp thò đầu và hai chân trước ra từ bên trong chiếc hộp gỗ sáng màu."
+      }
+    },
+    {
+      "stem": "cat-outside-box-v1",
+      "subject": "a cute striped tabby cat sitting calmly on the floor outside next to an open, empty light wooden box",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "soto"
+      },
+      "alt": {
+        "vi": "Chú mèo mướp ngồi bên ngoài chiếc hộp gỗ sáng màu đang mở nắp trống rỗng."
+      }
+    },
+    {
+      "stem": "cat-beside-box-v1",
+      "subject": "a cute striped tabby cat sitting closely side by side right next to a light wooden box",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "tonari"
+      },
+      "alt": {
+        "vi": "Chú mèo mướp ngồi sát cạnh chiếc hộp gỗ sáng màu."
+      }
+    },
+    {
+      "stem": "cat-near-house-v1",
+      "subject": "a cute striped tabby cat sitting on the grass near a small cozy red-roofed house in the background",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "chikaku"
+      },
+      "alt": {
+        "vi": "Chú mèo mướp ngồi trên bãi cỏ gần một ngôi nhà nhỏ mái đỏ."
+      }
+    },
+    {
+      "stem": "cat-between-boxes-v1",
+      "subject": "a cute striped tabby cat sitting neatly in the middle gap between two identical light wooden boxes",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "aida"
+      },
+      "alt": {
+        "vi": "Chú mèo mướp ngồi ngay ngắn ở khoảng giữa hai chiếc hộp gỗ sáng màu."
+      }
+    },
+    {
+      "stem": "bowing-apology-v1",
+      "subject": "the reference male student bending forward in a polite Japanese bow of apology, hands resting against his thighs and expression earnest",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "doumo-sumimasen"
+      },
+      "alt": {
+        "vi": "Chàng trai cúi gập người lịch sự để xin lỗi."
+      }
     }
   ]
 }

@@ -136,6 +136,14 @@
         "translation": {
           "vi": "Tôi không phải là giáo viên."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/teacher-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô giáo đứng bên bảng đen cầm sách giảng bài."
+        }
       }
     },
     {
@@ -153,6 +161,14 @@
         "translation": {
           "vi": "Tôi là giáo viên."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/teacher-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô giáo đứng bên bảng đen cầm sách giảng bài."
+        }
       }
     },
     {
@@ -161,7 +177,9 @@
         "src": "/assets/illustrations/vocab/student-v1.webp",
         "width": 512,
         "height": 512,
-        "alt": { "vi": "Một sinh viên mang ba lô và ôm sách bìa đỏ." }
+        "alt": {
+          "vi": "Một sinh viên mang ba lô và ôm sách bìa đỏ."
+        }
       },
       "word": "学生[がくせい]",
       "kana": "がくせい",
@@ -193,6 +211,14 @@
         "translation": {
           "vi": "Người kia là nhân viên công ty."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/office-worker-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên công ty mặc âu phục cầm cặp tài liệu."
+        }
       }
     },
     {
@@ -209,6 +235,14 @@
         "kana": "IMCの しゃいんです。",
         "translation": {
           "vi": "Là nhân viên của IMC."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/office-worker-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên công ty mặc âu phục cầm cặp tài liệu."
         }
       }
     },
@@ -227,6 +261,14 @@
         "translation": {
           "vi": "Vị kia là nhân viên ngân hàng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bank-clerk-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên ngân hàng đứng sau quầy giao dịch."
+        }
       }
     },
     {
@@ -235,7 +277,9 @@
         "src": "/assets/illustrations/vocab/doctor-v1.webp",
         "width": 512,
         "height": 512,
-        "alt": { "vi": "Một bác sĩ mặc áo blouse, đeo ống nghe và cầm hồ sơ." }
+        "alt": {
+          "vi": "Một bác sĩ mặc áo blouse, đeo ống nghe và cầm hồ sơ."
+        }
       },
       "word": "医者[いしゃ]",
       "kana": "いしゃ",
@@ -267,6 +311,14 @@
         "translation": {
           "vi": "Người kia không phải là nhà nghiên cứu."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/research-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhà nghiên cứu nhìn vào kính hiển vi."
+        }
       }
     },
     {
@@ -284,6 +336,14 @@
         "translation": {
           "vi": "Là giáo viên của đại học Sakura."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/university-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tòa nhà trường đại học với bậc thềm đá và bãi cỏ."
+        }
       }
     },
     {
@@ -300,6 +360,14 @@
         "kana": "こうべびょういんの いしゃです。",
         "translation": {
           "vi": "Là bác sĩ của bệnh viện Kobe."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hospital-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tòa nhà bệnh viện hiện đại với lối vào cấp cứu."
         }
       }
     },
@@ -471,6 +539,14 @@
         "translation": {
           "vi": "Rất vui được gặp bạn. Tôi là Miller."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/business-card-exchange-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai người cúi chào và trao danh thiếp cho nhau bằng hai tay."
+        }
       }
     },
     {
@@ -539,6 +615,14 @@
         "translation": {
           "vi": "Tôi đến từ Mỹ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/statue-of-liberty-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tượng Nữ thần Tự do trên bệ đá."
+        }
       }
     },
     {
@@ -555,6 +639,14 @@
         "kana": "あの ひとは イギリスじんです。",
         "translation": {
           "vi": "Người kia là người Anh."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/big-ben-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tháp đồng hồ Big Ben ở Luân Đôn."
         }
       }
     },
@@ -573,6 +665,14 @@
         "translation": {
           "vi": "Vị kia là người Ấn Độ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/taj-mahal-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Lăng mộ Taj Mahal bằng đá cẩm thạch trắng."
+        }
       }
     },
     {
@@ -589,6 +689,14 @@
         "kana": "あの ひとは インドネシアじんです。",
         "translation": {
           "vi": "Người kia là người Indonesia."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/borobudur-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bảo tháp đá Borobudur hình chuông trên nền đá."
         }
       }
     },
@@ -607,6 +715,14 @@
         "translation": {
           "vi": "Vị kia là người Hàn Quốc."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/gyeongbokgung-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cổng cung điện Gyeongbokgung với mái ngói truyền thống."
+        }
       }
     },
     {
@@ -623,6 +739,14 @@
         "kana": "あの ひとは タイじんです。",
         "translation": {
           "vi": "Người kia là người Thái Lan."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/wat-arun-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ngọn tháp Wat Arun với hoa văn tinh xảo."
         }
       }
     },
@@ -641,6 +765,14 @@
         "translation": {
           "vi": "Vị kia là người Trung Quốc."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/great-wall-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Vạn Lý Trường Thành uốn lượn qua các sườn núi."
+        }
       }
     },
     {
@@ -657,6 +789,14 @@
         "kana": "あの ひとは ドイツじんです。",
         "translation": {
           "vi": "Người kia là người Đức."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/brandenburg-gate-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cổng Brandenburg với hàng cột đá sa thạch."
         }
       }
     },
@@ -675,6 +815,14 @@
         "translation": {
           "vi": "Vị kia là người Nhật Bản."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/mount-fuji-pagoda-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chùa năm tầng màu đỏ và núi Phú Sĩ phủ tuyết phía xa."
+        }
       }
     },
     {
@@ -692,6 +840,14 @@
         "translation": {
           "vi": "Người kia là người Pháp."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/eiffel-tower-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tháp Eiffel bằng thép vươn cao trên bầu trời."
+        }
       }
     },
     {
@@ -708,6 +864,14 @@
         "kana": "あの かたは ブラジルじんです。",
         "translation": {
           "vi": "Vị kia là người Brazil."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/christ-the-redeemer-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tượng Chúa Cứu Thế dang rộng tay trên đỉnh núi."
         }
       }
     }

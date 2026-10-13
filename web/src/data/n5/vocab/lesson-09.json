@@ -30,6 +30,14 @@
         "naiKana": "わからない",
         "ta": "わかった",
         "taKana": "わかった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/understanding-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai mỉm cười giơ ngón trỏ khi hiểu ra, phía trên là bóng đèn phát sáng."
+        }
       }
     },
     {
@@ -76,6 +84,14 @@
         "translation": {
           "vi": "Tôi thích chó."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/fondness-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái mỉm cười hạnh phúc ôm chú mèo mướp cùng vài trái tim nhỏ."
+        }
       }
     },
     {
@@ -92,6 +108,14 @@
         "kana": "やさいが きらいです。",
         "translation": {
           "vi": "Tôi ghét rau."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/disliking-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai nhăn mặt quay đi, giơ hai lòng bàn tay từ chối đĩa rau xanh được đưa tới."
         }
       }
     },
@@ -110,6 +134,14 @@
         "translation": {
           "vi": "Mẹ tôi nấu ăn giỏi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/skillful-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai tự tin chơi đàn guitar trong tiếng vỗ tay khen ngợi."
+        }
       }
     },
     {
@@ -126,6 +158,14 @@
         "kana": "わたしは ダンスが へたです。",
         "translation": {
           "vi": "Tôi khiêu vũ kém."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/unskilled-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai bối rối gãi đầu bên giá vẽ có bức tranh nguệch ngoạc vụng về."
         }
       }
     },
@@ -293,6 +333,14 @@
         "kana": "おんがくを ききます。",
         "translation": {
           "vi": "Tôi nghe nhạc."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/music-headphones-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc tai nghe chụp tai trên mặt bàn cùng các nốt nhạc bay bổng."
         }
       }
     },
@@ -621,6 +669,14 @@
         "translation": {
           "vi": "Hôm nay tôi không có thời gian."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hourglass-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc đồng hồ cát bằng gỗ với những hạt cát mịn đang chảy xuống."
+        }
       }
     },
     {
@@ -655,6 +711,14 @@
         "translation": {
           "vi": "Tôi có cuộc hẹn với bạn."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/pinky-promise-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai bàn tay móc ngón tay út ngoéo tay giữ trọn lời hứa."
+        }
       }
     },
     {
@@ -671,6 +735,14 @@
         "kana": "あした アルバイトが あります。",
         "translation": {
           "vi": "Ngày mai tôi có việc làm thêm."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/part-time-job-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Sinh viên mặc tạp dề làm việc đứng niềm nở sau quầy cửa hàng tiện lợi."
         }
       }
     },
@@ -689,6 +761,14 @@
         "translation": {
           "vi": "Chồng của chị là nhân viên công ty phải không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/husband-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người chồng mặc áo len, đeo nhẫn cưới và mỉm cười."
+        }
       }
     },
     {
@@ -705,6 +785,14 @@
         "kana": "おっとは えいごが わかります。",
         "translation": {
           "vi": "Chồng tôi hiểu tiếng Anh."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/husband-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người chồng mặc áo len, đeo nhẫn cưới và mỉm cười."
         }
       }
     },
@@ -723,6 +811,14 @@
         "translation": {
           "vi": "Vợ của anh nấu ăn có giỏi không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/wife-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người vợ trong trang phục thường ngày, đeo nhẫn cưới và mỉm cười."
+        }
       }
     },
     {
@@ -739,6 +835,14 @@
         "kana": "つまは はなが すきです。",
         "translation": {
           "vi": "Vợ tôi thích hoa."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/wife-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người vợ trong trang phục thường ngày, đeo nhẫn cưới và mỉm cười."
         }
       }
     },

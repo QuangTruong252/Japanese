@@ -684,6 +684,14 @@
         "translation": {
           "vi": "Anh trai tôi là nhân viên công ty."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/older-brother-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người anh trai khoanh tay mỉm cười tự tin."
+        }
       }
     },
     {
@@ -700,6 +708,14 @@
         "kana": "おにいさんは なんさいですか。",
         "translation": {
           "vi": "Anh trai bạn bao nhiêu tuổi?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/older-brother-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người anh trai khoanh tay mỉm cười tự tin."
         }
       }
     },
@@ -718,6 +734,14 @@
         "translation": {
           "vi": "Chị gái tôi học ở đại học."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/older-sister-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người chị gái mặc áo khoác cardigan len mỉm cười dịu dàng."
+        }
       }
     },
     {
@@ -734,6 +758,14 @@
         "kana": "おねえさんは どこに いますか。",
         "translation": {
           "vi": "Chị gái bạn ở đâu?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/older-sister-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người chị gái mặc áo khoác cardigan len mỉm cười dịu dàng."
         }
       }
     },
@@ -752,6 +784,14 @@
         "translation": {
           "vi": "Em trai tôi là học sinh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/younger-brother-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cậu em trai mặc áo thun kẻ sọc chống tay ngang hông mỉm cười."
+        }
       }
     },
     {
@@ -768,6 +808,14 @@
         "kana": "おとうとさんは カメラが ありますか。",
         "translation": {
           "vi": "Em trai bạn có máy ảnh không?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/younger-brother-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cậu em trai mặc áo thun kẻ sọc chống tay ngang hông mỉm cười."
         }
       }
     },
@@ -786,6 +834,14 @@
         "translation": {
           "vi": "Em gái tôi hiểu tiếng Nhật."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/younger-sister-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô em gái nhỏ buộc tóc hai bên mỉm cười tươi tắn."
+        }
       }
     },
     {
@@ -802,6 +858,14 @@
         "kana": "いもうとさんは テニスが すきですか。",
         "translation": {
           "vi": "Em gái bạn có thích tennis không?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/younger-sister-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô em gái nhỏ buộc tóc hai bên mỉm cười tươi tắn."
         }
       }
     },
@@ -1006,6 +1070,14 @@
         "translation": {
           "vi": "Mọi người cùng nhau ăn cơm."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/friends-group-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhóm bốn người bạn trẻ đứng cạnh nhau vui vẻ trò chuyện."
+        }
       }
     },
     {
@@ -1108,6 +1180,14 @@
         "translation": {
           "vi": "\"Tôi đi đây.\" \"Bạn đi nhé.\""
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/seeing-off-wave-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đứng ở hành lang cửa ra vào, mỉm cười vẫy tay tiễn người thân đi ra ngoài."
+        }
       }
     },
     {
@@ -1124,6 +1204,14 @@
         "kana": "いってきます。",
         "translation": {
           "vi": "Tôi đi đây."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/leaving-home-wave-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đeo ba lô bước qua cửa ra vào, quay lại mỉm cười vẫy tay chào khi rời nhà."
         }
       }
     },
@@ -1208,6 +1296,14 @@
         "kana": "らいげつ オーストラリアへ いきます。",
         "translation": {
           "vi": "Tháng sau tôi sẽ đi Úc."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sydney-opera-house-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhà hát Opera Sydney với mái vòm cánh buồm trắng bên bờ vịnh."
         }
       }
     }

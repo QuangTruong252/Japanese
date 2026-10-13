@@ -458,6 +458,102 @@
       "alt": {
         "vi": "Chàng trai tặng quà cho cô gái trong phòng khách."
       }
+    },
+    {
+      "stem": "sagrada-familia-v1",
+      "subject": "the Sagrada Familia basilica in Barcelona with its distinctive ornate stone spires under a clear sky",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "supein"
+      },
+      "alt": {
+        "vi": "Nhà thờ Sagrada Familia với các tháp chuông đá độc đáo."
+      }
+    },
+    {
+      "stem": "receiving-gift-v1",
+      "subject": "the reference woman happily receiving a beautifully wrapped gift box with both hands from the reference male student, bowing with a delighted smile",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "moraimasu"
+      },
+      "alt": {
+        "vi": "Cô gái hai tay vui mừng nhận hộp quà từ chàng trai."
+      }
+    },
+    {
+      "stem": "lending-book-v1",
+      "subject": "the reference male student holding a hardcover book forward with both hands to lend it to a friend, clear gesture of offering",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "kashimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai hai tay đưa sách cho bạn mượn."
+      }
+    },
+    {
+      "stem": "borrowing-book-v1",
+      "subject": "at a library counter, a librarian behind the desk hands a hardcover book across to the reference male student, who takes it with both hands to borrow it; bookshelves behind the librarian, blank book spines",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "karimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai hai tay đón nhận cuốn sách bạn cho mượn."
+      }
+    },
+    {
+      "stem": "before-meal-gratitude-v1",
+      "subject": "the reference male student sitting before a meal tray, hands pressed together at his chest holding chopsticks horizontally between his thumbs in pre-meal gratitude",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "itadakimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai chắp hai tay kẹp đũa trước ngực cảm ơn trước bữa ăn."
+      }
+    },
+    {
+      "stem": "after-meal-gratitude-v1",
+      "subject": "the reference male student sitting contentedly before empty dishes and a clean bowl, hands clasped together in gratitude after finishing the meal, smiling satisfied",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "gochisousama"
+      },
+      "alt": {
+        "vi": "Chàng trai chắp tay cảm ơn hài lòng sau khi dùng xong bữa ăn."
+      }
     }
   ]
 }
