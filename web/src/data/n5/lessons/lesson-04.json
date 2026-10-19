@@ -172,6 +172,274 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l04-ima-nanji",
+      "title": {
+        "vi": "Bây giờ là mấy giờ?"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "田中[たなか]さん、今[いま] 何時[なんじ]ですか。",
+          "kana": "たなかさん、いま なんじですか。",
+          "translation": {
+            "vi": "Anh Tanaka ơi, mấy giờ rồi anh?"
+          },
+          "vocabIds": [
+            "nanji"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "三時[さんじ] 十分[じゅっぷん]です。",
+          "kana": "さんじ じゅっぷんです。",
+          "translation": {
+            "vi": "Ba giờ mười phút."
+          },
+          "vocabIds": [
+            "fun"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "銀行[ぎんこう]は 何時[なんじ]から 何時[なんじ]までですか。",
+          "kana": "ぎんこうは なんじから なんじまでですか。",
+          "translation": {
+            "vi": "Ngân hàng mở cửa từ mấy giờ đến mấy giờ hả anh?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "九時[くじ]から 三時[さんじ]までです。",
+          "kana": "くじから さんじまでです。",
+          "translation": {
+            "vi": "Từ chín giờ đến ba giờ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "えっ、三時[さんじ]までですか。あしたは？",
+          "kana": "えっ、さんじまでですか。あしたは？",
+          "translation": {
+            "vi": "Hả, chỉ đến ba giờ thôi ạ? Thế còn ngày mai?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "あしたは 土曜日[どようび]ですね。土曜日[どようび]と 日曜日[にちようび]は 休[やす]みです。",
+          "kana": "あしたは どようびですね。どようびと にちようびは やすみです。",
+          "translation": {
+            "vi": "Ngày mai là thứ bảy nhỉ. Thứ bảy và chủ nhật ngân hàng nghỉ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "そうですか。じゃ、月曜日[げつようび]ですね。",
+          "kana": "そうですか。じゃ、げつようびですね。",
+          "translation": {
+            "vi": "Vậy à. Thế thì thứ hai nhỉ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l04-denwa",
+      "title": {
+        "vi": "Gọi điện hỏi giờ mở cửa"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "toshokan",
+          "name": "図書館[としょかん]の 人[ひと]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "toshokan",
+          "jp": "はい、図書館[としょかん]です。",
+          "kana": "はい、としょかんです。",
+          "translation": {
+            "vi": "Vâng, thư viện xin nghe."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "すみません。そちらは 何時[なんじ]までですか。",
+          "kana": "すみません。そちらは なんじまでですか。",
+          "translation": {
+            "vi": "Xin lỗi, cho tôi hỏi bên mình mở cửa đến mấy giờ ạ?"
+          }
+        },
+        {
+          "speaker": "toshokan",
+          "jp": "夜[よる] 八時[はちじ]までです。",
+          "kana": "よる はちじまでです。",
+          "translation": {
+            "vi": "Dạ, đến tám giờ tối ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "土曜日[どようび]と 日曜日[にちようび]も 八時[はちじ]までですか。",
+          "kana": "どようびと にちようびも はちじまでですか。",
+          "translation": {
+            "vi": "Thứ bảy và chủ nhật cũng mở đến tám giờ ạ?"
+          }
+        },
+        {
+          "speaker": "toshokan",
+          "jp": "いいえ、土曜日[どようび]と 日曜日[にちようび]は 五時[ごじ]までです。",
+          "kana": "いいえ、どようびと にちようびは ごじまでです。",
+          "translation": {
+            "vi": "Dạ không, thứ bảy và chủ nhật chỉ mở đến năm giờ thôi ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "休[やす]みは 何曜日[なんようび]ですか。",
+          "kana": "やすみは なんようびですか。",
+          "translation": {
+            "vi": "Bên mình nghỉ vào thứ mấy ạ?"
+          },
+          "vocabIds": [
+            "nanyoubi"
+          ]
+        },
+        {
+          "speaker": "toshokan",
+          "jp": "月曜日[げつようび]です。",
+          "kana": "げつようびです。",
+          "translation": {
+            "vi": "Dạ, thứ hai ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "月曜日[げつようび]ですね。どうも ありがとう ございました。",
+          "kana": "げつようびですね。どうも ありがとう ございました。",
+          "translation": {
+            "vi": "Thứ hai ạ. Xin cảm ơn nhiều ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l04-mainichi",
+      "title": {
+        "vi": "Một ngày của bạn"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "マイさん、毎朝[まいあさ] 何時[なんじ]に 起[お]きますか。",
+          "kana": "マイさん、まいあさ なんじに おきますか。",
+          "translation": {
+            "vi": "Mai này, mỗi sáng em dậy lúc mấy giờ?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "五時[ごじ]半[はん]に 起[お]きます。六時[ろくじ]から 七時[しちじ]半[はん]まで 勉強[べんきょう]します。",
+          "kana": "ごじはんに おきます。ろくじから しちじはんまで べんきょうします。",
+          "translation": {
+            "vi": "Em dậy lúc năm rưỡi, rồi học từ sáu giờ đến bảy rưỡi."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "毎朝[まいあさ]ですか。",
+          "kana": "まいあさですか。",
+          "translation": {
+            "vi": "Sáng nào cũng vậy à?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、月曜日[げつようび]から 金曜日[きんようび]までです。",
+          "kana": "いいえ、げつようびから きんようびまでです。",
+          "translation": {
+            "vi": "Dạ không, chỉ từ thứ hai đến thứ sáu thôi ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "大変[たいへん]ですね。",
+          "kana": "たいへんですね。",
+          "translation": {
+            "vi": "Vất vả quá nhỉ."
+          },
+          "vocabIds": [
+            "taihen-desu-ne"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "田中[たなか]さんは？",
+          "kana": "たなかさんは？",
+          "translation": {
+            "vi": "Còn anh thì sao?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "七時[しちじ]に 起[お]きます。きのうは 夜[よる] 十時[じゅうじ]まで 働[はたら]きました。",
+          "kana": "しちじに おきます。きのうは よる じゅうじまで はたらきました。",
+          "translation": {
+            "vi": "Anh dậy lúc bảy giờ. Hôm qua anh làm việc đến tận mười giờ tối."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "えっ、日曜日[にちようび]もですか。",
+          "kana": "えっ、にちようびもですか。",
+          "translation": {
+            "vi": "Hả, cả chủ nhật anh cũng làm ạ?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "はい。マイさんは きのうの 晩[ばん] 勉強[べんきょう]しましたか。",
+          "kana": "はい。マイさんは きのうの ばん べんきょうしましたか。",
+          "translation": {
+            "vi": "Ừ. Còn em, tối qua có học không?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、勉強[べんきょう]しませんでした。九時[くじ]に 寝[ね]ました。",
+          "kana": "いいえ、べんきょうしませんでした。くじに ねました。",
+          "translation": {
+            "vi": "Dạ không, tối qua em không học. Em đi ngủ lúc chín giờ."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "time",
     "calendar",
