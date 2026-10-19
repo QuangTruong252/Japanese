@@ -178,6 +178,199 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l10-heya",
+      "title": {
+        "vi": "Điện thoại ở đâu nhỉ?"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "田中[たなか]さん、私[わたし]の ケータイは どこに ありますか。",
+          "kana": "たなかさん、わたしの ケータイは どこに ありますか。",
+          "translation": {
+            "vi": "Anh Tanaka ơi, điện thoại của em ở đâu nhỉ?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "テーブルの 上[うえ]に ありませんか。",
+          "kana": "テーブルの うえに ありませんか。",
+          "translation": {
+            "vi": "Có phải ở trên bàn không?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、ありません。",
+          "kana": "いいえ、ありません。",
+          "translation": {
+            "vi": "Không ạ, không có."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "じゃ、かばんの 中[なか]ですか。",
+          "kana": "じゃ、かばんの なかですか。",
+          "translation": {
+            "vi": "Vậy là trong cặp à?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ああ、かばんの 中[なか]に ありました。",
+          "kana": "ああ、かばんの なかに ありました。",
+          "translation": {
+            "vi": "A, nó ở trong cặp ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l10-michi",
+      "title": {
+        "vi": "Hỏi đường tìm hòm thư"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "otoko",
+          "name": "男[おとこ]の 人[ひと]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "すみません。この 近[ちか]くに ポストが ありますか。",
+          "kana": "すみません。この ちかくに ポストが ありますか。",
+          "translation": {
+            "vi": "Xin lỗi, gần đây có hòm thư không ạ?"
+          }
+        },
+        {
+          "speaker": "otoko",
+          "jp": "ポストですか。あの コンビニの 前[まえ]に ありますよ。",
+          "kana": "ポストですか。あの コンビニの まえに ありますよ。",
+          "translation": {
+            "vi": "Hòm thư à? Ở trước cửa hàng tiện lợi kia đấy."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "コンビニの 前[まえ]ですか。",
+          "kana": "コンビニの まえですか。",
+          "translation": {
+            "vi": "Trước cửa hàng tiện lợi ạ?"
+          }
+        },
+        {
+          "speaker": "otoko",
+          "jp": "ええ。あそこに 女[おんな]の 子[こ]が いますね。ポストは その 女[おんな]の 子[こ]の 後[うし]ろです。",
+          "kana": "ええ。あそこに おんなの こが いますね。ポストは その おんなの この うしろです。",
+          "translation": {
+            "vi": "Ừ. Ở đằng kia có một bé gái đúng không. Hòm thư ở ngay sau bé đó."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ああ、あります。どうも すみません。",
+          "kana": "ああ、あります。どうも すみません。",
+          "translation": {
+            "vi": "A, em thấy rồi ạ. Cảm ơn anh nhiều ạ."
+          },
+          "vocabIds": [
+            "doumo-sumimasen"
+          ]
+        },
+        {
+          "speaker": "otoko",
+          "jp": "いいえ。",
+          "kana": "いいえ。",
+          "translation": {
+            "vi": "Không có gì."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l10-reizouko",
+      "title": {
+        "vi": "Trong tủ lạnh có gì?"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "田中[たなか]さん、冷蔵庫[れいぞうこ]の 中[なか]に 何[なに]が ありますか。",
+          "kana": "たなかさん、れいぞうこの なかに なにが ありますか。",
+          "translation": {
+            "vi": "Anh Tanaka, trong tủ lạnh có gì ạ?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "卵[たまご]や 牛乳[ぎゅうにゅう]や 野菜[やさい]などが あります。野菜[やさい]は いちばん 下[した]です。",
+          "kana": "たまごや ぎゅうにゅうや やさいなどが あります。やさいは いちばん したです。",
+          "translation": {
+            "vi": "Có trứng, sữa, rau... Rau ở ngăn dưới cùng."
+          },
+          "vocabIds": [
+            "ichiban-shita"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "肉[にく]や パンも ありますか。",
+          "kana": "にくや パンも ありますか。",
+          "translation": {
+            "vi": "Có cả thịt và bánh mì không ạ?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "いいえ、ありません。パン屋[や]は 駅[えき]の 隣[となり]に あります。",
+          "kana": "いいえ、ありません。パンやは えきの となりに あります。",
+          "translation": {
+            "vi": "Không, không có. Tiệm bánh mì ở cạnh ga."
+          },
+          "vocabIds": [
+            "ya-tienda"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "じゃ、いっしょに パン屋[や]へ 行[い]きましょう。",
+          "kana": "じゃ、いっしょに パンやへ いきましょう。",
+          "translation": {
+            "vi": "Vậy mình cùng ra tiệm bánh mì nhé."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "particles"
   ],

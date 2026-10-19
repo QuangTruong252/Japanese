@@ -225,6 +225,289 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l08-ogenki",
+      "title": {
+        "vi": "Hỏi thăm cuộc sống ở Nhật"
+      },
+      "roles": [
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mori",
+          "jp": "マイさん、お 元気[げんき]ですか。",
+          "kana": "マイさん、お げんきですか。",
+          "translation": {
+            "vi": "Mai này, em khỏe không?"
+          },
+          "vocabIds": [
+            "ogenki-desu-ka"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、元気[げんき]です。先生[せんせい]も お 元気[げんき]ですか。",
+          "kana": "はい、げんきです。せんせいも お げんきですか。",
+          "translation": {
+            "vi": "Dạ khỏe ạ. Thầy cũng khỏe chứ ạ?"
+          },
+          "vocabIds": [
+            "ogenki-desu-ka"
+          ]
+        },
+        {
+          "speaker": "mori",
+          "jp": "ええ、元気[げんき]ですよ。日本[にほん]の 生活[せいかつ]は どうですか。",
+          "kana": "ええ、げんきですよ。にほんの せいかつは どうですか。",
+          "translation": {
+            "vi": "Ừ, thầy khỏe. Cuộc sống ở Nhật của em thế nào?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "とても 楽[たの]しいです。",
+          "kana": "とても たのしいです。",
+          "translation": {
+            "vi": "Rất vui ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "勉強[べんきょう]は どうですか。",
+          "kana": "べんきょうは どうですか。",
+          "translation": {
+            "vi": "Còn việc học thì sao?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "難[むずか]しいですが、おもしろいです。",
+          "kana": "むずかしいですが、おもしろいです。",
+          "translation": {
+            "vi": "Khó nhưng thú vị ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "マイさんは いつも 勉強[べんきょう]しますね。",
+          "kana": "マイさんは いつも べんきょうしますね。",
+          "translation": {
+            "vi": "Em lúc nào cũng học nhỉ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、毎朝[まいあさ] 勉強[べんきょう]します。",
+          "kana": "はい、まいあさ べんきょうします。",
+          "translation": {
+            "vi": "Dạ, sáng nào em cũng học ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l08-ryou",
+      "title": {
+        "vi": "Ký túc xá của Mai"
+      },
+      "roles": [
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "マイさんの 寮[りょう]は どんな 所[ところ]ですか。",
+          "kana": "マイさんの りょうは どんな ところですか。",
+          "translation": {
+            "vi": "Ký túc xá của em là nơi như thế nào?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "新[あたら]しい 寮[りょう]です。静[しず]かです。そして きれいです。",
+          "kana": "あたらしい りょうです。しずかです。そして きれいです。",
+          "translation": {
+            "vi": "Là ký túc xá mới ạ. Yên tĩnh và sạch sẽ ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "部屋[へや]は 大[おお]きいですか。",
+          "kana": "へやは おおきいですか。",
+          "translation": {
+            "vi": "Phòng có rộng không?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、小[ちい]さいですが、とても 便利[べんり]です。",
+          "kana": "いいえ、ちいさいですが、とても べんりです。",
+          "translation": {
+            "vi": "Không ạ, phòng nhỏ nhưng rất tiện ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "町[まち]は にぎやかですか。",
+          "kana": "まちは にぎやかですか。",
+          "translation": {
+            "vi": "Khu đó có nhộn nhịp không?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、静[しず]かな 町[まち]です。あまり 有名[ゆうめい]じゃ ありません。",
+          "kana": "いいえ、しずかな まちです。あまり ゆうめいじゃ ありません。",
+          "translation": {
+            "vi": "Không ạ, là một khu yên tĩnh. Cũng không nổi tiếng lắm ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "食堂[しょくどう]は どうですか。",
+          "kana": "しょくどうは どうですか。",
+          "translation": {
+            "vi": "Còn nhà ăn thì sao?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "安[やす]いです。そして おいしいです。",
+          "kana": "やすいです。そして おいしいです。",
+          "translation": {
+            "vi": "Rẻ và ngon ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "いいですね。",
+          "kana": "いいですね。",
+          "translation": {
+            "vi": "Hay quá nhỉ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l08-sorosoro",
+      "title": {
+        "vi": "Uống trà ở nhà thầy"
+      },
+      "roles": [
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mori",
+          "jp": "マイさん、お 茶[ちゃ]を もう 一杯[いっぱい] いかがですか。",
+          "kana": "マイさん、お ちゃを もう いっぱい いかがですか。",
+          "translation": {
+            "vi": "Mai này, em dùng thêm một tách trà nữa nhé?"
+          },
+          "vocabIds": [
+            "mou-ippai"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、けっこうです。ありがとう ございます。",
+          "kana": "いいえ、けっこうです。ありがとう ございます。",
+          "translation": {
+            "vi": "Dạ thôi ạ, em đủ rồi. Em cảm ơn thầy ạ."
+          },
+          "vocabIds": [
+            "kekkou-desu"
+          ]
+        },
+        {
+          "speaker": "mori",
+          "jp": "日本[にほん]の お 茶[ちゃ]は どうですか。",
+          "kana": "にほんの お ちゃは どうですか。",
+          "translation": {
+            "vi": "Trà Nhật em thấy thế nào?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "とても おいしいです。ベトナムの お 茶[ちゃ]と ちょっと 違[ちが]いますね。",
+          "kana": "とても おいしいです。ベトナムの お ちゃと ちょっと ちがいますね。",
+          "translation": {
+            "vi": "Rất ngon ạ. Hơi khác trà Việt Nam một chút ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "マイさんは どんな お 茶[ちゃ]を 飲[の]みますか。",
+          "kana": "マイさんは どんな お ちゃを のみますか。",
+          "translation": {
+            "vi": "Em uống loại trà nào?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "私[わたし]は 冷[つめ]たい お 茶[ちゃ]を 飲[の]みます。",
+          "kana": "わたしは つめたい お ちゃを のみます。",
+          "translation": {
+            "vi": "Em uống trà lạnh ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "そうですか。",
+          "kana": "そうですか。",
+          "translation": {
+            "vi": "Ra vậy."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "先生[せんせい]、そろそろ 失礼[しつれい]します。きょうは ありがとう ございました。",
+          "kana": "せんせい、そろそろ しつれいします。きょうは ありがとう ございました。",
+          "translation": {
+            "vi": "Thưa thầy, em xin phép về ạ. Hôm nay em cảm ơn thầy nhiều ạ."
+          },
+          "vocabIds": [
+            "sorosoro"
+          ]
+        },
+        {
+          "speaker": "mori",
+          "jp": "いいえ。またいらっしゃってください。",
+          "kana": "いいえ。またいらっしゃってください。",
+          "translation": {
+            "vi": "Không có gì. Lần sau em lại đến chơi nhé."
+          },
+          "vocabIds": [
+            "iie-denada",
+            "mata-irasshatte"
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     "adjectives"
   ],
