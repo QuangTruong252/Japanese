@@ -1,0 +1,577 @@
+{
+  "name": "kaiwa-vocab-group-a",
+  "description": "Đợt ảnh từ vựng Nhóm A: từ chưa có ảnh nhưng vẽ được bằng tình huống (xưng hô, chỉ định こそあど, nơi chốn, tòa nhà/ga, đơn vị đếm, chỉ hướng).",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "stem": "self-pointing-woman-v1",
+      "subject": "the reference female student standing alone, full figure, smiling and looking directly at the viewer with one hand placed gently on her chest in a clear self-pointing gesture indicating herself (watashi / I / me); clean transparent background, solitary figure so it cannot be mistaken for someone else; no speech bubbles or text",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "watashi"
+      },
+      "alt": {
+        "vi": "Cô gái đứng một mình, tay đặt lên ngực tự chỉ vào mình và mỉm cười."
+      }
+    },
+    {
+      "stem": "addressing-listener-v1",
+      "subject": "the reference female student and the reference male student standing opposite each other in three-quarter view, full figures; the female student speaks and gestures politely toward the male student (the listener) with an open upward-facing palm; polite Japanese hand gesture, absolutely NO pointing with an extended index finger; they look at each other warmly",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "anata"
+      },
+      "alt": {
+        "vi": "Cô gái hướng lòng bàn tay mở về phía chàng trai đối diện để xưng hô lịch sự."
+      }
+    },
+    {
+      "stem": "third-person-over-there-v1",
+      "subject": "the reference female student and the reference male student standing side by side in the foreground, looking together toward a third person standing at a distance; the third person is an adult wearing a plain gray overcoat; the female student extends an open palm pointing clearly toward this distant third person (that person over there); full figures, clear separation of distance",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "ano-hito"
+      },
+      "alt": {
+        "vi": "Cô gái và chàng trai cùng nhìn và hướng lòng bàn tay về một người thứ ba đứng cách một quãng."
+      }
+    },
+    {
+      "reuse": "vocab/third-person-over-there-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "ano-kata"
+      },
+      "alt": {
+        "vi": "Cô gái và chàng trai cùng nhìn và hướng lòng bàn tay về một người thứ ba đứng cách một quãng."
+      }
+    },
+    {
+      "stem": "age-candles-v1",
+      "subject": "celebration of age: a round birthday cake adorned with a dense cluster of many burning candles on a small wooden table, with NO numbers, NO digits, and NO gift boxes; the reference female student leans slightly forward ready to blow out the candles, while the reference male student claps cheerfully beside her; festive, focused on the candles and blowing them out",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "sai"
+      },
+      "alt": {
+        "vi": "Bánh sinh nhật cắm nhiều nến, cô gái chuẩn bị thổi nến và chàng trai vỗ tay chúc mừng."
+      }
+    },
+    {
+      "reuse": "vocab/age-candles-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "nansai"
+      },
+      "alt": {
+        "vi": "Bánh sinh nhật cắm nhiều nến, cô gái chuẩn bị thổi nến và chàng trai vỗ tay chúc mừng."
+      }
+    },
+    {
+      "reuse": "vocab/age-candles-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "oikutsu"
+      },
+      "alt": {
+        "vi": "Bánh sinh nhật cắm nhiều nến, cô gái chuẩn bị thổi nến và chàng trai vỗ tay chúc mừng."
+      }
+    },
+    {
+      "stem": "nodding-yes-v1",
+      "subject": "the reference female student, bust / upper body vignette, smiling warmly with curved eyes and gently nodding her head down in affirmation (hai / yes); subtle delicate dark motion arcs near her head and chin indicating the downward nodding movement; hands resting naturally at her sides; no speech bubbles, exclamation marks, or text",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "hai"
+      },
+      "alt": {
+        "vi": "Cô gái mỉm cười gật đầu đồng ý."
+      }
+    },
+    {
+      "stem": "waving-no-v1",
+      "subject": "the reference male student, bust / upper body vignette, expressing 'no' or polite refusal (iie) by waving an upright open hand back and forth horizontally directly in front of his face; hand is held at face level with palm facing inward toward himself, elbow bent low, arm NOT raised above shoulder; slight apologetic head tilt and polite smile; subtle delicate motion lines beside the hand; clearly distinct from waving goodbye",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "iie"
+      },
+      "alt": {
+        "vi": "Chàng trai giơ bàn tay vẫy nhẹ ngang mặt lắc đầu từ chối lịch sự."
+      }
+    },
+    {
+      "stem": "kosoado-kore-v1",
+      "subject": "kosoado series (kore / this object near speaker): consistent staged scene on a small cobblestone street path; the reference female student (speaker) stands on the left and the reference male student (listener) stands on the right, facing each other in three-quarter view a few paces apart; a plain light-wood cube box sits right on the cobblestones beside the female student's feet; she gestures directly down at the box near her; the male student watches from the right; full figures, identical camera framing and character scale across the kosoado series",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "kore"
+      },
+      "alt": {
+        "vi": "Cô gái đứng bên trái chỉ vào chiếc hộp gỗ ngay sát chân mình, cách xa chàng trai đứng bên phải (vật gần người nói)."
+      }
+    },
+    {
+      "stem": "kosoado-sore-v1",
+      "subject": "kosoado series (sore / that object near listener): identical staged scene, cobblestone path, camera framing, scale and character positions as kosoado-kore-v1; the reference female student stands on the left and gestures with an open palm toward the plain light-wood cube box resting on the cobblestones right beside the feet of the reference male student standing on the right; both full figures",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "sore"
+      },
+      "alt": {
+        "vi": "Cô gái hướng lòng bàn tay về phía chiếc hộp gỗ đặt sát chân chàng trai đối diện (vật gần người nghe)."
+      }
+    },
+    {
+      "stem": "kosoado-are-v1",
+      "subject": "kosoado series (are / that object far from both): matching staged scene and cobblestone path as kosoado-kore-v1; the reference female student on the left and the reference male student on the right both look down the street into the distance; a small plain light-wood cube box is placed far away at the distant end of the cobblestone path; the female student points forward toward the distant box; both full figures",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "are"
+      },
+      "alt": {
+        "vi": "Cô gái và chàng trai cùng nhìn và chỉ về chiếc hộp gỗ ở tít cuối con đường (vật ở xa cả hai người)."
+      }
+    },
+    {
+      "reuse": "vocab/kosoado-kore-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "kono"
+      },
+      "alt": {
+        "vi": "Cô gái đứng bên trái chỉ vào chiếc hộp gỗ ngay sát chân mình, cách xa chàng trai đứng bên phải (vật gần người nói)."
+      }
+    },
+    {
+      "reuse": "vocab/kosoado-sore-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "sono"
+      },
+      "alt": {
+        "vi": "Cô gái hướng lòng bàn tay về phía chiếc hộp gỗ đặt sát chân chàng trai đối diện (vật gần người nghe)."
+      }
+    },
+    {
+      "reuse": "vocab/kosoado-are-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "ano"
+      },
+      "alt": {
+        "vi": "Cô gái và chàng trai cùng nhìn và chỉ về chiếc hộp gỗ ở tít cuối con đường (vật ở xa cả hai người)."
+      }
+    },
+    {
+      "stem": "kosoado-koko-v1",
+      "subject": "kosoado place series (koko / this place near speaker): identical cobblestone street path, camera framing, character scale and positions as kosoado-kore-v1; instead of a wooden box, the target is a distinct circular brick-red paving stone marker integrated into the cobblestone ground right at the feet of the reference female student on the left; she points down at the ground marker beneath her feet; the reference male student stands on the right watching; both full figures",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "koko"
+      },
+      "alt": {
+        "vi": "Cô gái chỉ xuống vòng gạch đỏ trên mặt đường ngay dưới chân mình (chỗ này, gần người nói)."
+      }
+    },
+    {
+      "stem": "kosoado-soko-v1",
+      "subject": "kosoado place series (soko / that place near listener): identical cobblestone street path, camera framing, character scale and positions as kosoado-koko-v1; the circular brick-red paving stone marker is on the ground right at the feet of the reference male student on the right; the reference female student on the left gestures with an open palm toward the marker at his feet; both full figures",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "soko"
+      },
+      "alt": {
+        "vi": "Cô gái hướng tay về phía vòng gạch đỏ trên mặt đường ngay dưới chân chàng trai (chỗ đó, gần người nghe)."
+      }
+    },
+    {
+      "stem": "kosoado-asoko-v1",
+      "subject": "kosoado place series (asoko / that place far from both): identical cobblestone street path, characters and perspective as kosoado-koko-v1; both the reference female student on the left and the reference male student on the right look into the far distance toward a circular brick-red paving stone marker on the ground at the far end of the street, in front of a quaint small house; the female student points toward that distant location; both full figures",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "asoko"
+      },
+      "alt": {
+        "vi": "Cô gái và chàng trai cùng nhìn và chỉ về phía vòng gạch đỏ ở tít cuối đường (chỗ kia, xa cả hai người)."
+      }
+    },
+    {
+      "reuse": "vocab/kosoado-koko-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "kochira"
+      },
+      "alt": {
+        "vi": "Cô gái chỉ xuống vòng gạch đỏ trên mặt đường ngay dưới chân mình (chỗ này, gần người nói)."
+      }
+    },
+    {
+      "reuse": "vocab/kosoado-soko-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "sochira"
+      },
+      "alt": {
+        "vi": "Cô gái hướng tay về phía vòng gạch đỏ trên mặt đường ngay dưới chân chàng trai (chỗ đó, gần người nghe)."
+      }
+    },
+    {
+      "reuse": "vocab/kosoado-asoko-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "achira"
+      },
+      "alt": {
+        "vi": "Cô gái và chàng trai cùng nhìn và chỉ về phía vòng gạch đỏ ở tít cuối đường (chỗ kia, xa cả hai người)."
+      }
+    },
+    {
+      "stem": "building-floors-v1",
+      "subject": "building series: architectural cutaway vignette of a charming multi-story building showing four above-ground floor levels stacked clearly on top of each other; the reference female student is walking up an internal wooden staircase between two floors; visible room interiors with simple furniture and windows on each distinct level; absolutely NO numbers, digits, floor numbers or letters on doors, walls, or elevator",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "kai"
+      },
+      "alt": {
+        "vi": "Mặt cắt tòa nhà thấy rõ bốn tầng lầu chồng lên nhau và cô gái đang đi cầu thang giữa các tầng."
+      }
+    },
+    {
+      "reuse": "vocab/building-floors-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "nangai"
+      },
+      "alt": {
+        "vi": "Mặt cắt tòa nhà thấy rõ bốn tầng lầu chồng lên nhau và cô gái đang đi cầu thang giữa các tầng."
+      }
+    },
+    {
+      "stem": "building-basement-v1",
+      "subject": "building series (basement / chika): architectural cutaway vignette matching the style and architecture of building-floors-v1; showing a distinct horizontal ground line with a cross-section of earth and soil layers, below which is an underground basement room; the reference female student is walking down a staircase that leads underground into the basement level; warm lighting downstairs, clearly subterranean; no numbers or text",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "chika"
+      },
+      "alt": {
+        "vi": "Mặt cắt tầng hầm dưới lòng đất với bậc thang đi xuống và cô gái đang bước xuống."
+      }
+    },
+    {
+      "stem": "station-tracks-platforms-v1",
+      "subject": "a train station cutaway vignette featuring multiple numbered platform tracks: two passenger platforms separated by three parallel railway tracks with gravel ballast; a local commuter train is docked beside one platform, and the reference female student stands waiting on that platform; platform signs, track number boards and overhead indicators are completely blank with no digits, numbers, or letters",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "bansen"
+      },
+      "alt": {
+        "vi": "Nhà ga có hai ke chờ và ba đường ray tàu song song, tàu dừng ở một ke ga."
+      }
+    },
+    {
+      "reuse": "vocab/nodding-yes-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "ee"
+      },
+      "alt": {
+        "vi": "Cô gái mỉm cười gật đầu đồng ý."
+      }
+    },
+    {
+      "reuse": "vocab/fast-hare-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "hayaku"
+      },
+      "alt": {
+        "vi": "Chú thỏ đang chạy rất nhanh."
+      }
+    },
+    {
+      "stem": "fish-sauce-bottle-v1",
+      "subject": "still life vignette of fish sauce (nam pla): a clear glass bottle filled with translucent amber fish sauce, with a plain blank paper label (absolutely NO text, letters, Thai script or characters) and a bright red screw cap; next to the bottle rests a small ceramic dipping dish containing fish sauce and two fresh little silver anchovy fish; clean tabletop cutout",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "nanpuraa"
+      },
+      "alt": {
+        "vi": "Chai nước mắm thủy tinh màu hổ phách có nắp đỏ, bên cạnh là bát nước chấm nhỏ và hai con cá."
+      }
+    },
+    {
+      "stem": "cat-lowest-shelf-v1",
+      "subject": "a three-tier light-wood shelving unit matching the wooden furniture of lesson 10; the top shelf holds a small potted green plant, the middle shelf holds a few neatly upright books (blank spines), and the bottom-most (lowest) shelf is occupied by the reference friendly brown-striped tabby cat resting comfortably; visual emphasis on the cat on the bottom shelf; no text or numbers",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "ichiban-shita"
+      },
+      "alt": {
+        "vi": "Kệ gỗ ba tầng với sách và chậu cây ở các tầng trên, chú mèo mướp ngồi ở ngăn dưới cùng."
+      }
+    },
+    {
+      "stem": "people-in-a-row-v1",
+      "subject": "counting counter for people (nin): five people of varied ages arranged in a neat, evenly spaced horizontal straight row facing forward as if being counted, standing calmly side by side with neutral relaxed postures without interacting or chatting; the group includes the reference female student, the reference male student, an older man, a woman, and a young child; full figures from head to shoes, no numbers or counting digits",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "nin"
+      },
+      "alt": {
+        "vi": "Năm người thuộc các lứa tuổi khác nhau đứng thành một hàng ngang ngay ngắn như đang được đếm."
+      }
+    },
+    {
+      "stem": "machines-and-vehicles-v1",
+      "subject": "mechanical machines and vehicles counter (dai): a neat horizontal row of four mechanical items arranged side by side: a compact sage-green car, a city bicycle with front basket, a modern front-loading washing machine, and an open silver laptop; clean cutouts representing machinery and vehicles; absolutely NO brand logos, numbers, or text on screens or equipment",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "dai"
+      },
+      "alt": {
+        "vi": "Bốn món máy móc và xe cộ gồm ô tô con, xe đạp, máy giặt và máy tính xách tay xếp thành hàng."
+      }
+    },
+    {
+      "stem": "flat-things-v1",
+      "subject": "flat thin objects counter (mai): three thin flat items arranged neatly on a surface: a neat stack of blank white sheets of paper, a neatly folded plain cotton t-shirt, and two rectangular blank paper tickets; laid out to clearly highlight their thin, flat rectangular form; completely blank surfaces with no writing, printed lines, letters, or numbers",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "mai"
+      },
+      "alt": {
+        "vi": "Ba vật thể mỏng phẳng gồm xấp giấy trắng, chiếc áo phông gấp gọn và vé giấy xếp cạnh nhau."
+      }
+    },
+    {
+      "stem": "direction-straight-v1",
+      "subject": "direction series (straight ahead / massugu): the reference male student seen from behind (back view), standing at the beginning of a long straight town street that recedes into the distance; he extends his arm pointing straight forward down the center of the road toward a distant clock tower or landmark at the horizon; matching the street setting and viewpoint of direction-left-v1 and direction-right-v1; full figure",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "massugu"
+      },
+      "alt": {
+        "vi": "Chàng trai đứng từ phía sau chỉ tay thẳng về phía trước theo con đường dài thẳng tắp."
+      }
+    },
+    {
+      "reuse": "vocab/slow-tortoise-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "yukkuri"
+      },
+      "alt": {
+        "vi": "Con rùa bò chậm rãi."
+      }
+    },
+    {
+      "stem": "self-pointing-man-v1",
+      "subject": "the reference male student standing alone, full figure, smiling and looking directly at the viewer with one hand placed gently on his chest in a clear self-pointing gesture indicating himself (boku / I / me); clean transparent background, solitary figure; matching the pose and concept of self-pointing-woman-v1; no text",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "boku"
+      },
+      "alt": {
+        "vi": "Chàng trai đứng một mình, tay đặt lên ngực tự chỉ vào mình và mỉm cười."
+      }
+    },
+    {
+      "reuse": "vocab/addressing-listener-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "kimi"
+      },
+      "alt": {
+        "vi": "Cô gái hướng lòng bàn tay mở về phía chàng trai đối diện để xưng hô lịch sự."
+      }
+    },
+    {
+      "reuse": "vocab/nodding-yes-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "un"
+      },
+      "alt": {
+        "vi": "Cô gái mỉm cười gật đầu đồng ý."
+      }
+    },
+    {
+      "reuse": "vocab/waving-no-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "uun"
+      },
+      "alt": {
+        "vi": "Chàng trai giơ bàn tay vẫy nhẹ ngang mặt lắc đầu từ chối lịch sự."
+      }
+    },
+    {
+      "reuse": "vocab/kosoado-koko-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "kocchi"
+      },
+      "alt": {
+        "vi": "Cô gái chỉ xuống vòng gạch đỏ trên mặt đường ngay dưới chân mình (chỗ này, gần người nói)."
+      }
+    },
+    {
+      "reuse": "vocab/kosoado-soko-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "socchi"
+      },
+      "alt": {
+        "vi": "Cô gái hướng tay về phía vòng gạch đỏ trên mặt đường ngay dưới chân chàng trai (chỗ đó, gần người nghe)."
+      }
+    },
+    {
+      "reuse": "vocab/kosoado-asoko-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "acchi"
+      },
+      "alt": {
+        "vi": "Cô gái và chàng trai cùng nhìn và chỉ về phía vòng gạch đỏ ở tít cuối đường (chỗ kia, xa cả hai người)."
+      }
+    },
+    {
+      "stem": "we-together-v1",
+      "subject": "the reference female student and the reference male student standing side by side shoulder-to-shoulder, both smiling warmly and looking straight at the viewer, each placing one hand on their own chest in a unified self-referring gesture indicating 'we / us' (watashitachi); full figures, harmonious pair; clean background, no speech bubbles or text",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "watashitachi"
+      },
+      "alt": {
+        "vi": "Cô gái và chàng trai đứng sát vai nhau, mỗi người một tay đặt lên ngực mình thể hiện 'chúng tôi'."
+      }
+    },
+    {
+      "reuse": "vocab/kosoado-kore-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "kochira-esto"
+      },
+      "alt": {
+        "vi": "Cô gái đứng bên trái chỉ vào chiếc hộp gỗ ngay sát chân mình, cách xa chàng trai đứng bên phải (vật gần người nói)."
+      }
+    }
+  ]
+}
