@@ -16,6 +16,9 @@ const tokenizer = await new Promise<Tokenizer<IpadicFeatures>>((resolve, reject)
 
 /** Từ ngoài từ vựng được phép dùng trong hội thoại; `from` là bài đầu tiên được dùng. */
 const ALLOWED: { token: string; from: number; reason: string }[] = [
+  { token: 'マイ', from: 1, reason: 'Nhân vật cố định của mọi hội thoại; được nhắc tên cả trong tình huống không đóng vai.' },
+  { token: '田中', from: 1, reason: 'Nhân vật cố định của mọi hội thoại; được nhắc tên cả trong tình huống không đóng vai.' },
+  { token: '森', from: 1, reason: 'Nhân vật cố định của mọi hội thoại; được nhắc tên cả trong tình huống không đóng vai.' },
   { token: 'ベトナム', from: 1, reason: 'Quê của マイ, nhân vật chính; từ vựng chỉ có các nước trong sách.' },
   {
     token: 'の',
@@ -66,6 +69,11 @@ interface Scope {
   parts: string[];
   /** Dạng gốc (basic_form của kuromoji) được chấp nhận cho token đã chia */
   basics: Set<string>;
+  /**
+   * Cách viết của câu giao tiếp: động từ bên trong là cụm học thuộc nên không tính thể. Không lấy từ
+   * mọi từ vựng vì cách viết của động từ (勉強する) hay danh từ kana ngắn (した) sẽ che thể của chính nó.
+   */
+  phrases: string[];
 }
 
 function buildScope(words: VocabWord[], extra: string[] = []): Scope {
@@ -83,7 +91,8 @@ function buildScope(words: VocabWord[], extra: string[] = []): Scope {
       basics.add('する');
     }
   }
-  return { parts: [...parts], basics };
+  const phrases = words.filter((w) => w.type === 'expression').flatMap(wordParts);
+  return { parts: [...parts], basics, phrases };
 }
 
 async function wordsUpTo(lesson: number): Promise<VocabWord[]> {
@@ -121,39 +130,56 @@ function spans(text: string, parts: string[]): [number, number][] {
 const FREE_POS = new Set(['助詞', '助動詞', '記号', '接頭詞']);
 
 /**
+ * あり của じゃありません / ではありません là phủ định của です (bài 1), không phải động từ ある (bài 9).
+ * kuromoji tách あり thành động từ ある; sau の nó gộp じゃ hoặc では thành một token 接続詞
+ * (私のじゃありません, 私のではありません), sau danh từ thì tách で + は (学生ではありません).
+ */
+function isCopulaAru(placed: Placed[], i: number): boolean {
+  if (placed[i]?.token.basic_form !== 'ある') return false;
+  const prev = placed[i - 1]?.token.surface_form;
+  return prev === 'じゃ' || prev === 'では' || (prev === 'は' && placed[i - 2]?.token.surface_form === 'で');
+}
+
+/**
  * Token nội dung có ký tự nằm ngoài mọi từ vựng xuất hiện trong câu, và dạng gốc cũng ngoài phạm vi.
  * So theo ký tự vì kuromoji có khi gộp hai từ đã học thành một token (中国人 = 中国 + 〜人).
  */
 function outOfScope(text: string, scope: Scope): string[] {
   const covered = Array<boolean>(text.length).fill(false);
   for (const [s, e] of spans(text, scope.parts)) covered.fill(true, s, e);
-  return place(text)
-    .filter(({ token, start, end }) => {
+  const placed = place(text);
+  return placed
+    .filter(({ token, start, end }, i) => {
       if (FREE_POS.has(token.pos) || token.pos_detail_1 === '数') return false;
+      // ある của phủ định です và token じゃ/では đứng ngay trước nó là ngữ pháp, không phải từ riêng.
+      if (isCopulaAru(placed, i) || isCopulaAru(placed, i + 1)) return false;
       if (covered.slice(start, end).every(Boolean)) return false;
       return !scope.basics.has(token.basic_form);
     })
     .map(({ token }) => token.surface_form);
 }
 
-/** Bài đầu tiên học mỗi thể; dùng sớm hơn là vượt chương trình. */
-const FORM_LESSON = { masu: 4, te: 14, nai: 17, dictionary: 18, ta: 19, plain: 20 } as const;
+/**
+ * Bài đầu tiên học mỗi thể; dùng sớm hơn là vượt chương trình. Chỉ đọc token động từ và だ/ない nên
+ * không kiểm: tính từ quá khứ 〜かった (bài 12), tính từ 〜くて (bài 16), tính từ thể thường (bài 20);
+ * 〜たり (bài 19) không bị nhận là thể た; động từ thể thường cuối câu tính là thể từ điển (bài 18) chứ
+ * không phải văn thể thường (bài 20). Chấp nhận được vì người duyệt vẫn đọc ngữ pháp từng câu; gate chỉ
+ * cần chặn thể động từ, chỗ dễ vượt bài nhất.
+ */
+const FORM_LESSON = { masu: 4, invite: 6, tai: 13, te: 14, nai: 17, dictionary: 18, ta: 19, plain: 20 } as const;
 type VerbForm = keyof typeof FORM_LESSON;
 
 /**
- * Thể động từ trong câu. Token nằm trong một cụm từ vựng dài hơn nó (いらっしゃいませ, 見せてください,
+ * Thể động từ trong câu. Token nằm trong một câu giao tiếp dài hơn nó (いらっしゃいませ, 見せてください,
  * 〜から来ました) thuộc cụm học thuộc nên không tính.
  */
-function verbForms(text: string, parts: string[]): { form: VerbForm; surface: string }[] {
-  const found = spans(text, parts);
+function verbForms(text: string, phrases: string[]): { form: VerbForm; surface: string }[] {
+  const found = spans(text, phrases);
   const placed = place(text);
   const forms: { form: VerbForm; surface: string }[] = [];
   placed.forEach(({ token, start, end }, i) => {
     if (found.some(([s, e]) => s <= start && end <= e && e - s > end - start)) return;
-    // じゃありません / ではありません là phủ định của です (bài 1), không phải động từ ある. kuromoji tách あり
-    // thành động từ ある, có khi còn gắn じゃ là 接続詞 (私のじゃありません), nên bỏ ある đứng sau じゃ hoặc で + は.
-    const prev = placed[i - 1]?.token.surface_form;
-    if (token.basic_form === 'ある' && (prev === 'じゃ' || (prev === 'は' && placed[i - 2]?.token.surface_form === 'で'))) return;
+    if (isCopulaAru(placed, i)) return;
     const next = placed[i + 1]?.token;
     let form: VerbForm | null = null;
     // だ chỉ tính là thể thường khi đứng cuối câu (だ, だった); な (体言接続) nối tính từ な với danh từ
@@ -162,7 +188,14 @@ function verbForms(text: string, parts: string[]): { form: VerbForm; surface: st
       if (token.conjugated_form === '基本形' || token.conjugated_form === '連用タ接続') form = 'plain';
     } else if (token.pos === '形容詞' && token.basic_form === 'ない') form = 'plain';
     else if (token.pos === '動詞' && token.pos_detail_1 === '自立') {
-      if (next?.pos === '助動詞' && next.basic_form === 'ます') form = 'masu';
+      if (next?.pos === '助動詞' && next.basic_form === 'ます') {
+        // Rủ rê 〜ましょう (ましょ + う) và 〜ませんか cuối câu (ませ + ん + か) học ở bài 6, sau ます thường.
+        const [a, b, c] = placed.slice(i + 2, i + 5).map((p) => p.token);
+        const invite =
+          (next.surface_form === 'ましょ' && a?.surface_form === 'う') ||
+          (next.surface_form === 'ませ' && a?.surface_form === 'ん' && b?.surface_form === 'か' && (!c || c.pos === '記号'));
+        form = invite ? 'invite' : 'masu';
+      } else if (next?.conjugated_type === '特殊・タイ') form = 'tai';
       else if (next?.pos_detail_1 === '接続助詞' && (next.surface_form === 'て' || next.surface_form === 'で')) form = 'te';
       else if (next?.conjugated_type === '特殊・ナイ') form = 'nai';
       else if (next?.conjugated_type === '特殊・タ') form = 'ta';
@@ -183,10 +216,16 @@ test('phạm vi từ: từ ghép bị tách và từ đã chia vẫn khớp từ
   assert.deepEqual(outOfScope('初めまして。', lesson1), ['初め', 'まして']);
   assert.deepEqual(outOfScope('毎晩勉強します。', buildScope(await wordsUpTo(4))), []);
   assert.deepEqual(outOfScope('きのう学校へ行きませんでした。', buildScope(await wordsUpTo(5))), []);
+  // あり trong じゃ/では ありません là phủ định của です; động từ ある (có) đến bài 9 mới học.
+  const lesson2 = buildScope(await wordsUpTo(2), ['マイ']);
+  assert.deepEqual(outOfScope('マイさんのじゃありません。', lesson2), []);
+  assert.deepEqual(outOfScope('私のではありません。', lesson2), []);
+  assert.deepEqual(outOfScope('学生ではありません。', lesson1), []);
+  assert.deepEqual(outOfScope('本があります。', buildScope(await wordsUpTo(5))), ['あり']);
 });
 
-test('thể động từ đọc từ token, cụm học thuộc không tính', () => {
-  const forms = (text: string, parts: string[] = []) => verbForms(text, parts).map((f) => f.form);
+test('thể động từ đọc từ token, cụm học thuộc không tính', async () => {
+  const forms = (text: string, phrases: string[] = []) => verbForms(text, phrases).map((f) => f.form);
   assert.deepEqual(forms('毎朝六時に起きます。'), ['masu']);
   assert.deepEqual(forms('きのう映画を見ませんでした。'), ['masu']);
   assert.deepEqual(forms('ちょっと待ってください。'), ['te']);
@@ -202,11 +241,24 @@ test('thể động từ đọc từ token, cụm học thuộc không tính', (
   assert.deepEqual(forms('学生ではありませんでした。'), []);
   assert.deepEqual(forms('私のじゃありません。'), []);
   assert.deepEqual(forms('私のじゃありませんでした。'), []);
+  assert.deepEqual(forms('私のではありません。'), []);
+  assert.deepEqual(forms('マイさんのじゃありません。'), []);
   assert.deepEqual(forms('本があります。'), ['masu']);
   assert.deepEqual(forms('時間がない。'), ['plain']);
+  assert.deepEqual(forms('行きたいです。'), ['tai']);
+  assert.deepEqual(forms('いっしょに行きませんか。'), ['invite']);
+  assert.deepEqual(forms('行きましょう。'), ['invite']);
+  assert.deepEqual(forms('行きません。'), ['masu']);
+  assert.deepEqual(forms('行きませんでした。'), ['masu']);
   assert.deepEqual(forms('いらっしゃいませ。'), ['masu']);
   assert.deepEqual(forms('いらっしゃいませ。', ['いらっしゃいませ']), []);
   assert.deepEqual(forms('これを見せてください。', ['見せてください']), []);
+  const lesson3 = buildScope(await wordsUpTo(3));
+  assert.deepEqual(forms('いらっしゃいませ。', lesson3.phrases), []);
+  assert.deepEqual(forms('これを見せてください。', lesson3.phrases), []);
+  // Cách viết của động từ (勉強する) hay danh từ した (下, bài 10) không được che thể của động từ.
+  assert.deepEqual(forms('毎日勉強する。', buildScope(await wordsUpTo(4)).phrases), ['dictionary']);
+  assert.deepEqual(forms('勉強した。', buildScope(await wordsUpTo(10)).phrases), ['ta']);
 });
 
 const ID = /^l(\d{2})-[a-z0-9]+(?:-[a-z0-9]+)*$/u;
@@ -235,9 +287,12 @@ test('hội thoại: cấu trúc, cách đọc, phạm vi từ và thể động
       assert.ok(d.lines.length >= 4 && d.lines.length <= 10, `${where}: cần 4–10 câu`);
       for (const role of d.roles) {
         assert.doesNotMatch(stripFurigana(role.name), /[[\]]/u, `${where}: tên vai ${role.id} sai cú pháp furigana`);
+        assert.doesNotMatch(toKanaSentence(role.name), KANJI, `${where}: tên vai ${role.id} có chữ Hán thiếu cách đọc`);
         assert.ok(d.lines.some((l) => l.speaker === role.id), `${where}: vai ${role.id} không nói câu nào`);
       }
-      const scope = buildScope(words, [...d.roles.map((r) => stripFurigana(r.name)), ...allowed]);
+      // Câu thoại được bỏ dấu cách trước khi so nên tên vai cũng bỏ (受付の 人 → 受付の人) mới khớp.
+      const names = d.roles.map((r) => stripFurigana(r.name).replace(/[ 　]/gu, ''));
+      const scope = buildScope(words, [...names, ...allowed]);
 
       d.lines.forEach((line, i) => {
         const at = `${where} câu ${i}`;
@@ -252,7 +307,7 @@ test('hội thoại: cấu trúc, cách đọc, phạm vi từ và thể động
 
         const text = written.replace(/[ 　]/gu, '');
         assert.deepEqual(outOfScope(text, scope), [], `${at}: từ ngoài phạm vi bài 1–${lesson}`);
-        for (const { form, surface } of verbForms(text, scope.parts)) {
+        for (const { form, surface } of verbForms(text, scope.phrases)) {
           assert.ok(FORM_LESSON[form] <= lesson, `${at}: ${surface} dùng thể ${form}, học từ bài ${FORM_LESSON[form]}`);
         }
         for (const id of line.vocabIds ?? []) {
@@ -264,8 +319,14 @@ test('hội thoại: cấu trúc, cách đọc, phạm vi từ và thể động
       });
     }
 
+    const lessonWords = await loadVocab(lesson);
     const skipped = UNUSED_EXPRESSIONS[lesson] ?? {};
-    for (const w of await loadVocab(lesson)) {
+    for (const id of Object.keys(skipped)) {
+      const isExpression = lessonWords.some((w) => w.id === id && w.type === 'expression');
+      assert.ok(isExpression, `bài ${lesson}: UNUSED_EXPRESSIONS ${id} không phải câu giao tiếp của bài`);
+      assert.ok(!used.has(id), `bài ${lesson}: UNUSED_EXPRESSIONS ${id} đã có trong vocabIds, cần bỏ khỏi danh sách`);
+    }
+    for (const w of lessonWords) {
       if (w.type !== 'expression' || w.id in skipped) continue;
       assert.ok(used.has(w.id), `bài ${lesson}: câu giao tiếp ${w.id} chưa có trong vocabIds của câu nào`);
     }
