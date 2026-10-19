@@ -126,6 +126,9 @@ export function loadLesson(lessonNum: number): Promise<Lesson> {
           throw new Error('Chú thích ảnh ngữ pháp không hợp lệ.');
         }
       }
+      for (const dialogue of lesson.dialogues ?? []) {
+        if (dialogue.illustration !== undefined) validateIllustrationAsset(dialogue.illustration);
+      }
       return lesson;
     }),
   );

@@ -35,6 +35,29 @@ export interface GrammarPoint {
   illustrationCaption?: LocalizedText;
 }
 
+export interface DialogueRole {
+  id: string;
+  /** Cú pháp furigana: "マイ", "田中[たなか]" */
+  name: string;
+}
+
+export interface DialogueLine extends ExampleSentence {
+  /** DialogueRole.id */
+  speaker: string;
+  /** Từ vựng (thường là câu giao tiếp) mà câu này dùng, để trang từ vựng trỏ tới đúng câu. */
+  vocabIds?: string[];
+}
+
+export interface Dialogue {
+  /** `l<số bài 2 chữ số>-<slug>`, ví dụ `l01-hajimemashite` */
+  id: string;
+  title: LocalizedText;
+  /** Từ 2 vai trở lên */
+  roles: DialogueRole[];
+  lines: DialogueLine[];
+  illustration?: IllustrationAsset;
+}
+
 export interface VerbForms {
   dictionary: string;
   dictionaryKana: string;
@@ -79,6 +102,7 @@ export interface Lesson {
   /** Mặc định 'unverified' khi vắng mặt. */
   verification?: 'verified' | 'unverified';
   grammar: GrammarPoint[];
+  dialogues?: Dialogue[];
   references?: string[];
   cover?: IllustrationAsset;
 }

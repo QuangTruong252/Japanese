@@ -1,6 +1,6 @@
 # Dữ liệu học và tiếng Nhật
 
-Dữ liệu N5 nằm ở `web/src/data/n5/` (JSON, sửa trực tiếp): `lessons/` (bài, ngữ pháp, ví dụ, cover),
+Dữ liệu N5 nằm ở `web/src/data/n5/` (JSON, sửa trực tiếp): `lessons/` (bài, ngữ pháp, ví dụ, hội thoại, cover),
 `vocab/` (từ vựng theo bài), `kanji/` (mỗi chữ một file), `verbs/`, `reference/` (bảng tham chiếu).
 Kiểu dữ liệu: `web/src/types/`. Đây là nội dung tự biên soạn cho mục đích cá nhân: sửa lỗi khi phát
 hiện; không bịa số trang hay liên kết audio.
@@ -17,6 +17,8 @@ hiện; không bịa số trang hay liên kết audio.
 - Dấu cách trong câu là điểm được phép xuống dòng khi hiển thị; giữ nguyên khi sửa dữ liệu.
 - Không bịa tiếng Nhật ở UI, mockup, test hay ví dụ: lấy từ các file trên và ghi rõ nguồn trong brief.
 - Chấm đáp án chỉ chuẩn hóa những khác biệt được phép; không biến đáp án sai nghĩa thành đúng.
+- Hội thoại (`Lesson.dialogues`) chỉ dùng từ vựng và thể động từ đã học đến bài đó. `web/src/lib/dialogues.test.ts`
+  kiểm bằng kuromoji (chỉ là devDependency); ngoại lệ ghi vào `ALLOWED` hoặc `UNUSED_EXPRESSIONS` kèm lý do.
 
 ## Ảnh trong dữ liệu
 
