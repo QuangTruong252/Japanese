@@ -183,6 +183,296 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l03-uketsuke",
+      "title": {
+        "vi": "Hỏi đường ở quầy lễ tân"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "uketsuke",
+          "name": "受付[うけつけ]の 人[ひと]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "すみません。トイレは どこですか。",
+          "kana": "すみません。トイレは どこですか。",
+          "translation": {
+            "vi": "Xin lỗi, cho tôi hỏi nhà vệ sinh ở đâu ạ?"
+          },
+          "vocabIds": [
+            "sumimasen"
+          ]
+        },
+        {
+          "speaker": "uketsuke",
+          "jp": "あそこです。",
+          "kana": "あそこです。",
+          "translation": {
+            "vi": "Ở đằng kia ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "どうも。あのう、会議室[かいぎしつ]は 何階[なんがい]ですか。",
+          "kana": "どうも。あのう、かいぎしつは なんがいですか。",
+          "translation": {
+            "vi": "Cảm ơn ạ. À, phòng họp ở tầng mấy ạ?"
+          },
+          "vocabIds": [
+            "doumo"
+          ]
+        },
+        {
+          "speaker": "uketsuke",
+          "jp": "三階[さんがい]です。",
+          "kana": "さんがいです。",
+          "translation": {
+            "vi": "Ở tầng ba ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "エレベーターは どちらですか。",
+          "kana": "エレベーターは どちらですか。",
+          "translation": {
+            "vi": "Thang máy ở phía nào ạ?"
+          }
+        },
+        {
+          "speaker": "uketsuke",
+          "jp": "あちらです。",
+          "kana": "あちらです。",
+          "translation": {
+            "vi": "Ở phía bên kia ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ありがとう ございます。",
+          "kana": "ありがとう ございます。",
+          "translation": {
+            "vi": "Cảm ơn nhiều ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l03-depaato",
+      "title": {
+        "vi": "Mua cà vạt"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "ten-in",
+          "name": "店員[てんいん]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "ten-in",
+          "jp": "いらっしゃいませ。",
+          "kana": "いらっしゃいませ。",
+          "translation": {
+            "vi": "Xin kính chào quý khách."
+          },
+          "vocabIds": [
+            "irasshaimase"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "すみません。その ネクタイを 見[み]せてください。",
+          "kana": "すみません。その ネクタイを みせてください。",
+          "translation": {
+            "vi": "Xin lỗi, cho tôi xem chiếc cà vạt đó với."
+          },
+          "vocabIds": [
+            "misete-kudasai"
+          ]
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "この ネクタイですか。どうぞ。",
+          "kana": "この ネクタイですか。どうぞ。",
+          "translation": {
+            "vi": "Chiếc này phải không ạ? Mời chị xem."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "これは どこの ネクタイですか。",
+          "kana": "これは どこの ネクタイですか。",
+          "translation": {
+            "vi": "Cà vạt này là hàng nước nào vậy?"
+          }
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "フランスのです。",
+          "kana": "フランスのです。",
+          "translation": {
+            "vi": "Dạ, hàng Pháp ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いくらですか。",
+          "kana": "いくらですか。",
+          "translation": {
+            "vi": "Giá bao nhiêu vậy?"
+          },
+          "vocabIds": [
+            "ikura"
+          ]
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "一万二千円[いちまんにせんえん]です。",
+          "kana": "いちまんにせんえんです。",
+          "translation": {
+            "vi": "Dạ, mười hai nghìn yên ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "一万二千円[いちまんにせんえん]ですか。あの ネクタイは？",
+          "kana": "いちまんにせんえんですか。あの ネクタイは？",
+          "translation": {
+            "vi": "Mười hai nghìn yên cơ ạ? Thế còn chiếc kia thì sao?"
+          }
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "あちらは 日本[にほん]の ネクタイです。三千五百円[さんぜんごひゃくえん]です。",
+          "kana": "あちらは にほんの ネクタイです。さんぜんごひゃくえんです。",
+          "translation": {
+            "vi": "Chiếc kia là hàng Nhật, giá ba nghìn năm trăm yên ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "じゃ、あれを ください。",
+          "kana": "じゃ、あれを ください。",
+          "translation": {
+            "vi": "Vậy cho tôi lấy chiếc kia."
+          },
+          "vocabIds": [
+            "ja",
+            "kudasai"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l03-okuni",
+      "title": {
+        "vi": "Đồng nghiệp của anh Tanaka"
+      },
+      "roles": [
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mori",
+          "jp": "田中[たなか]さん、会社[かいしゃ]は どこですか。",
+          "kana": "たなかさん、かいしゃは どこですか。",
+          "translation": {
+            "vi": "Anh Tanaka, công ty anh ở đâu vậy?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "会社[かいしゃ]ですか。あそこです。",
+          "kana": "かいしゃですか。あそこです。",
+          "translation": {
+            "vi": "Công ty tôi ạ? Ở đằng kia thầy ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "あの 方[かた]も 田中[たなか]さんの 会社[かいしゃ]の 人[ひと]ですか。",
+          "kana": "あの かたも たなかさんの かいしゃの ひとですか。",
+          "translation": {
+            "vi": "Người kia cũng làm ở công ty anh à?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "はい、研究者[けんきゅうしゃ]です。",
+          "kana": "はい、けんきゅうしゃです。",
+          "translation": {
+            "vi": "Ừ, anh ấy là nhà nghiên cứu."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "あの 方[かた]の お 国[くに]は どちらですか。",
+          "kana": "あの かたの お くには どちらですか。",
+          "translation": {
+            "vi": "Người đó là người nước nào vậy?"
+          },
+          "vocabIds": [
+            "okuni"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "インドです。",
+          "kana": "インドです。",
+          "translation": {
+            "vi": "Dạ, người Ấn Độ ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "田中[たなか]さんの 会社[かいしゃ]は 日本[にほん]の 会社[かいしゃ]ですか。",
+          "kana": "たなかさんの かいしゃは にほんの かいしゃですか。",
+          "translation": {
+            "vi": "Công ty anh là công ty Nhật à?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "いいえ、アメリカの 会社[かいしゃ]です。",
+          "kana": "いいえ、アメリカの かいしゃです。",
+          "translation": {
+            "vi": "Dạ không, công ty của Mỹ ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "えっ、アメリカの 会社[かいしゃ]ですか。",
+          "kana": "えっ、アメリカの かいしゃですか。",
+          "translation": {
+            "vi": "Ơ, công ty Mỹ hả anh?"
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "demonstratives",
     "numbers",
