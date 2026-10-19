@@ -242,6 +242,251 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l02-hikkoshi",
+      "title": {
+        "vi": "Chào hàng xóm mới"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "ookawa",
+          "name": "大川[おおかわ]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "はじめまして。マイです。これから お 世話[せわ]に なります。",
+          "kana": "はじめまして。マイです。これから お せわに なります。",
+          "translation": {
+            "vi": "Rất vui được gặp chị. Tôi là Mai. Từ nay mong chị giúp đỡ."
+          },
+          "vocabIds": [
+            "korekara-osewa"
+          ]
+        },
+        {
+          "speaker": "ookawa",
+          "jp": "大川[おおかわ]です。こちらこそ どうぞ よろしく。",
+          "kana": "おおかわです。こちらこそ どうぞ よろしく。",
+          "translation": {
+            "vi": "Tôi là Ookawa. Tôi cũng rất mong được bạn giúp đỡ."
+          },
+          "vocabIds": [
+            "kochirakoso"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "あのう、これ、ベトナムの お 土産[みやげ]です。どうぞ。",
+          "kana": "あのう、これ、ベトナムの お みやげです。どうぞ。",
+          "translation": {
+            "vi": "À, đây là chút quà từ Việt Nam. Mời chị nhận cho."
+          },
+          "vocabIds": [
+            "anou",
+            "douzo"
+          ]
+        },
+        {
+          "speaker": "ookawa",
+          "jp": "どうも ありがとう ございます。これは コーヒーですか。",
+          "kana": "どうも ありがとう ございます。これは コーヒーですか。",
+          "translation": {
+            "vi": "Cảm ơn bạn nhiều lắm. Đây là cà phê à?"
+          },
+          "vocabIds": [
+            "doumo-arigatou"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、ベトナムの コーヒーです。",
+          "kana": "はい、ベトナムの コーヒーです。",
+          "translation": {
+            "vi": "Vâng, cà phê Việt Nam đấy ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l02-kore-wa-nan",
+      "title": {
+        "vi": "Cái này là gì?"
+      },
+      "roles": [
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "マイさん、それは 何[なん]ですか。",
+          "kana": "マイさん、それは なんですか。",
+          "translation": {
+            "vi": "Mai ơi, cái đó là gì vậy?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "これですか。辞書[じしょ]です。",
+          "kana": "これですか。じしょです。",
+          "translation": {
+            "vi": "Cái này ạ? Từ điển đấy anh."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "日本語[にほんご]の 辞書[じしょ]ですか、英語[えいご]の 辞書[じしょ]ですか。",
+          "kana": "にほんごの じしょですか、えいごの じしょですか。",
+          "translation": {
+            "vi": "Từ điển tiếng Nhật hay tiếng Anh vậy?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "日本語[にほんご]の 辞書[じしょ]です。",
+          "kana": "にほんごの じしょです。",
+          "translation": {
+            "vi": "Từ điển tiếng Nhật anh ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "その 本[ほん]も 日本語[にほんご]の 本[ほん]ですか。",
+          "kana": "その ほんも にほんごの ほんですか。",
+          "translation": {
+            "vi": "Cuốn sách đó cũng là sách tiếng Nhật à?"
+          },
+          "vocabIds": [
+            "sono"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、そうじゃ ありません。この 本[ほん]は ベトナム語[ご]の 本[ほん]です。",
+          "kana": "いいえ、そうじゃ ありません。この ほんは ベトナムごの ほんです。",
+          "translation": {
+            "vi": "Không phải đâu anh. Cuốn này là sách tiếng Việt."
+          },
+          "vocabIds": [
+            "sou",
+            "kono",
+            "go"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "そうですか。",
+          "kana": "そうですか。",
+          "translation": {
+            "vi": "Ra vậy."
+          },
+          "vocabIds": [
+            "sou-desu-ka"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l02-kasa",
+      "title": {
+        "vi": "Chiếc ô của ai?"
+      },
+      "roles": [
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mori",
+          "jp": "あの 傘[かさ]は マイさんのですか。",
+          "kana": "あの かさは マイさんのですか。",
+          "translation": {
+            "vi": "Chiếc ô kia có phải của em không, Mai?"
+          },
+          "vocabIds": [
+            "ano"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、私[わたし]の 傘[かさ]じゃ ありません。",
+          "kana": "いいえ、わたしの かさじゃ ありません。",
+          "translation": {
+            "vi": "Dạ không, không phải của em ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "田中[たなか]さんのですか。",
+          "kana": "たなかさんのですか。",
+          "translation": {
+            "vi": "Thế có phải của anh Tanaka không?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "いいえ、違[ちが]います。先生[せんせい]のです。",
+          "kana": "いいえ、ちがいます。せんせいのです。",
+          "translation": {
+            "vi": "Dạ không phải ạ. Ô đó là của thầy đấy ạ."
+          },
+          "vocabIds": [
+            "chigaimasu"
+          ]
+        },
+        {
+          "speaker": "mori",
+          "jp": "えっ、私[わたし]のですか。",
+          "kana": "えっ、わたしのですか。",
+          "translation": {
+            "vi": "Ơ, của tôi à?"
+          },
+          "vocabIds": [
+            "e"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、そうです。",
+          "kana": "はい、そうです。",
+          "translation": {
+            "vi": "Vâng, đúng rồi ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "そうですか。ありがとう ございます。",
+          "kana": "そうですか。ありがとう ございます。",
+          "translation": {
+            "vi": "Thế à. Cảm ơn hai người nhé."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "demonstratives",
     "particles"

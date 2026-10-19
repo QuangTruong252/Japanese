@@ -17,6 +17,11 @@ const tokenizer = await new Promise<Tokenizer<IpadicFeatures>>((resolve, reject)
 /** Từ ngoài từ vựng được phép dùng trong hội thoại; `from` là bài đầu tiên được dùng. */
 const ALLOWED: { token: string; from: number; reason: string }[] = [
   { token: 'ベトナム', from: 1, reason: 'Quê của マイ, nhân vật chính; từ vựng chỉ có các nước trong sách.' },
+  {
+    token: 'の',
+    from: 2,
+    reason: 'の thay danh từ (私のです, マイさんのですか) là ngữ pháp bài 2; kuromoji gắn nhãn danh từ phi tự lập nên không rơi vào nhóm trợ từ được miễn.',
+  },
 ];
 
 /** Câu giao tiếp của bài không có trong hội thoại nào của bài đó, kèm lý do. */
@@ -140,8 +145,10 @@ function verbForms(text: string, parts: string[]): { form: VerbForm; surface: st
   const forms: { form: VerbForm; surface: string }[] = [];
   placed.forEach(({ token, start, end }, i) => {
     if (found.some(([s, e]) => s <= start && end <= e && e - s > end - start)) return;
-    // ではありません là phủ định của です (bài 1); kuromoji tách あり thành động từ ある nên phải loại ra.
-    if (token.basic_form === 'ある' && placed[i - 2]?.token.surface_form === 'で' && placed[i - 1]?.token.surface_form === 'は') return;
+    // じゃありません / ではありません là phủ định của です (bài 1), không phải động từ ある. kuromoji tách あり
+    // thành động từ ある, có khi còn gắn じゃ là 接続詞 (私のじゃありません), nên bỏ ある đứng sau じゃ hoặc で + は.
+    const prev = placed[i - 1]?.token.surface_form;
+    if (token.basic_form === 'ある' && (prev === 'じゃ' || (prev === 'は' && placed[i - 2]?.token.surface_form === 'で'))) return;
     const next = placed[i + 1]?.token;
     let form: VerbForm | null = null;
     // だ chỉ tính là thể thường khi đứng cuối câu (だ, だった); な (体言接続) nối tính từ な với danh từ
@@ -188,6 +195,8 @@ test('thể động từ đọc từ token, cụm học thuộc không tính', (
   assert.deepEqual(forms('静かな町です。'), []);
   assert.deepEqual(forms('学生ではありません。'), []);
   assert.deepEqual(forms('学生ではありませんでした。'), []);
+  assert.deepEqual(forms('私のじゃありません。'), []);
+  assert.deepEqual(forms('私のじゃありませんでした。'), []);
   assert.deepEqual(forms('本があります。'), ['masu']);
   assert.deepEqual(forms('時間がない。'), ['plain']);
   assert.deepEqual(forms('いらっしゃいませ。'), ['masu']);
