@@ -11,6 +11,7 @@ import {
   savePracticeDraft,
   PRACTICE_DRAFT_VERSION,
 } from '@/lib/practice-draft';
+import { AUDIO_IMPORT_ENABLED } from '@/lib/features';
 import { containsJapanese } from '@/lib/japanese';
 import { answerText, userAnswerFor } from '@/lib/practice';
 import type { PracticeConfig, PracticeSession, QuestionItem } from '@/types';
@@ -157,7 +158,7 @@ export function SessionResult({
                   Ôn lô tiếp
                   <ArrowRight aria-hidden="true" />
                 </Button>
-              ) : blockedReason === 'no-audio' ? (
+              ) : blockedReason === 'no-audio' && AUDIO_IMPORT_ENABLED ? (
                 <Button
                   size="quiz"
                   className="w-full font-semibold"

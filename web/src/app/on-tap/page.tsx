@@ -23,6 +23,7 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import { db } from '@/lib/db';
+import { AUDIO_IMPORT_ENABLED } from '@/lib/features';
 import { REVIEW_COMPLETE_ART } from '@/lib/illustrations';
 import { buildSession, targetTypeFromId } from '@/lib/practice';
 import {
@@ -435,7 +436,7 @@ export default function ReviewTodayPage() {
           )}
         </div>
         <div className="space-y-2">
-          {preview.excludedAudioCount > 0 && (
+          {AUDIO_IMPORT_ENABLED && preview.excludedAudioCount > 0 && (
             <ListRow
               href="/cai-dat/audio"
               icon={<Volume2 />}
@@ -499,10 +500,15 @@ export default function ReviewTodayPage() {
             >
               <AlertCircle className="mt-0.5 size-4 shrink-0 text-warning" aria-hidden="true" />
               <span>
-                Tạm thời bỏ qua {preview.excludedAudioCount} câu nghe do thiết bị chưa có giọng tiếng Nhật (ja-JP).{' '}
-                <Link href="/cai-dat/audio" className="font-semibold underline underline-offset-2 hover:text-foreground">
-                  Cài đặt âm thanh
-                </Link>
+                Tạm thời bỏ qua {preview.excludedAudioCount} câu nghe do thiết bị chưa có giọng tiếng Nhật (ja-JP).
+                {AUDIO_IMPORT_ENABLED && (
+                  <>
+                    {' '}
+                    <Link href="/cai-dat/audio" className="font-semibold underline underline-offset-2 hover:text-foreground">
+                      Cài đặt âm thanh
+                    </Link>
+                  </>
+                )}
               </span>
             </div>
           )}

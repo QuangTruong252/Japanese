@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   formatOptionalBrackets,
+  maxFuriganaWordEm,
   containsKanji,
   containsJapanese,
   normalizeJapaneseInput,
@@ -122,4 +123,13 @@ test('groupFuriganaWords gom segment theo dấu cách của dữ liệu (luật 
   assert.deepEqual(groupFuriganaWords('  はい  そうです '), [[{ base: 'はい' }], [{ base: 'そうです' }]]);
   assert.deepEqual(groupFuriganaWords('わたし　は'), [[{ base: 'わたし' }], [{ base: 'は' }]]);
   assert.deepEqual(groupFuriganaWords(''), []);
+});
+
+test('maxFuriganaWordEm: cụm dài nhất, furigana rộng hơn chữ gốc thì lấy furigana', () => {
+  const close = (a: number, b: number) => assert.ok(Math.abs(a - b) < 1e-9, `${a} != ${b}`);
+  close(maxFuriganaWordEm('あなた'), 3);
+  close(maxFuriganaWordEm('私[わたし]'), 3 * 0.93);
+  // Dấu cách tách cụm: "どうぞよろしくお" (8) dài hơn "願[ねが]いします" (2×0.93 + 4)
+  close(maxFuriganaWordEm('どうぞよろしくお 願[ねが]いします'), 8);
+  close(maxFuriganaWordEm(''), 0);
 });

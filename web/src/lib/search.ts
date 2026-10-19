@@ -2,6 +2,7 @@ import * as wanakana from 'wanakana';
 import { stripFurigana } from './japanese.ts';
 import { getAllKanji, getAllVerbs, getAllReferenceDocs } from './lookup.ts';
 import { loadLesson, loadVocab } from './lessons.ts';
+import { AUDIO_IMPORT_ENABLED } from './features.ts';
 
 export type SearchKind = 'feature' | 'vocab' | 'grammar' | 'kanji' | 'verb' | 'table' | 'lesson';
 
@@ -163,14 +164,19 @@ export function getFeatureEntries(): SearchEntry[] {
       href: '/cai-dat',
       aliases: ['cai dat', 'thiet lap', 'settings', 'sao luu', 'dong bo'],
     },
-    {
-      id: 'feature-audio',
-      label: 'Audio CD',
-      sublabel: 'Nạp âm thanh bài học từ file ZIP đĩa CD Minna no Nihongo',
-      badge: 'Tính năng',
-      href: '/cai-dat/audio',
-      aliases: ['audio', 'audio cd', 'am thanh', 'audio zip', 'nap audio'],
-    },
+    // Nạp audio CD đang tạm ẩn: tìm kiếm không được thành lối vào.
+    ...(AUDIO_IMPORT_ENABLED
+      ? [
+          {
+            id: 'feature-audio',
+            label: 'Audio CD',
+            sublabel: 'Nạp âm thanh bài học từ file ZIP đĩa CD Minna no Nihongo',
+            badge: 'Tính năng',
+            href: '/cai-dat/audio',
+            aliases: ['audio', 'audio cd', 'am thanh', 'audio zip', 'nap audio'],
+          },
+        ]
+      : []),
   ];
 
   return rawFeatures.map((f) => {

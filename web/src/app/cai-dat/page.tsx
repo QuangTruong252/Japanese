@@ -51,11 +51,11 @@ import {
   type ParsedImportData,
 } from '@/lib/backup';
 import { db } from '@/lib/db';
+import { AUDIO_IMPORT_ENABLED } from '@/lib/features';
 import {
   applySettingsToDOM,
   DEFAULT_SETTINGS,
   getSettingsSnapshot,
-  loadSettings,
   saveSettings,
   subscribeSettings,
 } from '@/lib/settings';
@@ -87,24 +87,10 @@ export default function SettingsPage() {
   // Chữ về tài khoản chỉ đúng khi máy đã liên kết (payload Thay thế và việc đăng xuất đều theo jp:ownerUserId).
   const accountLinked = mounted && isSupabaseConfigured() && getOwnerUserId() !== null;
 
-  // Lắng nghe thay đổi theme system khi tab đang mở
-  useEffect(() => {
-    if (typeof window === 'undefined' || !window.matchMedia) return;
-    const media = window.matchMedia('(prefers-color-scheme: dark)');
-    const onChange = () => {
-      const current = loadSettings();
-      if (current.theme === 'system') {
-        applySettingsToDOM(current);
-      }
-    };
-    media.addEventListener('change', onChange);
-    return () => media.removeEventListener('change', onChange);
-  }, []);
-
   // 2. Đọc thống kê dữ liệu hiện có trên máy
   const reviewCount = useLiveQuery(() => db.reviewItems.count(), []) ?? 0;
   const sessionCount = useLiveQuery(() => db.practiceSessions.count(), []) ?? 0;
-  const audioCount = useLiveQuery(() => db.audioFiles.count(), []) ?? 0;
+  const audioCount = useLiveQuery(() => (AUDIO_IMPORT_ENABLED ? db.audioFiles.count() : 0), []) ?? 0;
 
   // 3. Trạng thái Export / Import / Wipe
   const [notification, setNotification] = useState<SettingsNotice | null>(null);
@@ -404,12 +390,14 @@ export default function SettingsPage() {
             title="Khôi phục từ bản sao lưu"
             onClick={() => fileInputRef.current?.click()}
           />
-          <ActionRow
-            href="/cai-dat/audio"
-            icon={<Disc3 />}
-            title="Audio đĩa CD"
-            detail={audioCount > 0 ? `${audioCount}/100 track` : 'Chưa nạp'}
-          />
+          {AUDIO_IMPORT_ENABLED && (
+            <ActionRow
+              href="/cai-dat/audio"
+              icon={<Disc3 />}
+              title="Audio đĩa CD"
+              detail={audioCount > 0 ? `${audioCount}/100 track` : 'Chưa nạp'}
+            />
+          )}
         </SettingsGroup>
         <input
           ref={fileInputRef}

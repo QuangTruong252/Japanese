@@ -31,6 +31,24 @@ test('getFOUCScriptContent sinh chuỗi JavaScript hợp lệ chống FOUC', () 
   assert.ok(script.includes('dark'));
 });
 
+test('Script chống FOUC áp theme hệ thống tối kể cả khi chưa lưu cài đặt', () => {
+  const run = (raw: string | null, systemDark: boolean) => {
+    const classes = new Set<string>();
+    const env = {
+      localStorage: { getItem: () => raw },
+      document: { documentElement: { classList: { add: (c: string) => classes.add(c) } } },
+      window: { matchMedia: () => ({ matches: systemDark }) },
+    };
+    new Function('localStorage', 'document', 'window', getFOUCScriptContent())(env.localStorage, env.document, env.window);
+    return classes.has('dark');
+  };
+  assert.equal(run(null, true), true);
+  assert.equal(run(null, false), false);
+  assert.equal(run(JSON.stringify({ theme: 'light' }), true), false);
+  assert.equal(run(JSON.stringify({ theme: 'dark' }), false), true);
+  assert.equal(run(JSON.stringify({ theme: 'lạ' }), true), true);
+});
+
 test('Theme mặc định là system và chấp nhận light / dark', () => {
   assert.equal(DEFAULT_SETTINGS.theme, 'system');
   const validThemes = ['light', 'dark', 'system'];
@@ -273,6 +291,30 @@ test('hồi quy: saveSettings({theme}) ghi đầy đủ AppSettings nhưng loadS
 
     // Mặc dù practicePreset có trong storage, loadSavedPracticePreset phải trả về null
     assert.equal(loadSavedPracticePreset(), null);
+  } finally {
+    delete g.window;
+  }
+});
+
+test('loadSettings chỉ nhận vocabView là list hoặc grid, còn lại về list', () => {
+  const store = new Map<string, string>();
+  const g = globalThis as unknown as { window?: unknown };
+  g.window = {
+    localStorage: {
+      getItem: (k: string) => store.get(k) ?? null,
+      setItem: (k: string, v: string) => store.set(k, v),
+    },
+  };
+  try {
+    assert.equal(DEFAULT_SETTINGS.vocabView, 'list');
+    store.set('jp:settings', JSON.stringify({ vocabView: 'grid' }));
+    assert.equal(loadSettings().vocabView, 'grid');
+    store.set('jp:settings', JSON.stringify({ vocabView: 'list' }));
+    assert.equal(loadSettings().vocabView, 'list');
+    store.set('jp:settings', JSON.stringify({ vocabView: 'table' }));
+    assert.equal(loadSettings().vocabView, 'list');
+    store.set('jp:settings', JSON.stringify({ theme: 'dark' }));
+    assert.equal(loadSettings().vocabView, 'list');
   } finally {
     delete g.window;
   }

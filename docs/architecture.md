@@ -23,7 +23,7 @@
 |---|---|---|
 | `/` | Bảng tin | `DashboardContent` |
 | `/hoc` | Danh sách bài | `LessonGrid` |
-| `/hoc/[so]` | Chi tiết bài | `page.tsx` + `_parts.tsx`, `ShadowingPlayer` |
+| `/hoc/[so]` | Chi tiết bài | `page.tsx` + `_parts.tsx`, `_tabs.tsx` (tab, lưới/danh sách từ) |
 | `/hoc/[so]/tu-vung` | Học từ vựng | `VocabLearningFlow` (+ `components/vocab/*`) |
 | `/luyen-tap`, `/luyen-tap/phien` | Luyện tập | `PracticeRunner`, khung phiên chung `practice/SessionFrame` |
 | `/on-tap`, `/on-tap/phien`, `/on-tap/diem-yeu` | Ôn tập | `ReviewRunner` (dùng `SessionFrame`), `on-tap/ReinforcementSection` |
@@ -49,5 +49,5 @@ Luồng chính:
   khi đăng nhập) → hàng đợi đến hạn tính lại.
 - **Luyện tập:** câu hỏi sinh từ dữ liệu bài (`lib/questions.ts`, `lib/practice.ts`), nháp lưu
   `localStorage` để học tiếp.
-- **Audio:** người học nạp ZIP (`lib/audio-zip.ts`, `hooks/use-audio-import.ts`) → `audioFiles` →
+- **Audio:** đang tạm ẩn mọi lối vào (cờ `AUDIO_IMPORT_ENABLED` trong `lib/features.ts`). Khi bật: người học nạp ZIP (`lib/audio-zip.ts`, `hooks/use-audio-import.ts`) → `audioFiles` →
   `ShadowingPlayer`. Audio nguồn không nằm trong repo.

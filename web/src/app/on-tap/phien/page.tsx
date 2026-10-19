@@ -6,6 +6,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SessionNotice, SessionSkeleton } from '@/components/practice/SessionFrame';
 import { ReviewRunner } from '@/components/review/ReviewRunner';
+import { AUDIO_IMPORT_ENABLED } from '@/lib/features';
 import { buildSession } from '@/lib/practice';
 import { useDueQueue } from '@/lib/use-due-queue';
 import { useJapaneseVoice } from '@/lib/use-question-pool';
@@ -105,7 +106,7 @@ function ReviewSessionContent() {
           : 'Các mục đến hạn không tạo được câu hỏi nào trên máy này. Hạn ôn của chúng giữ nguyên.';
     return (
       <SessionNotice message={message}>
-        {hasAudioBlock && (
+        {AUDIO_IMPORT_ENABLED && hasAudioBlock && (
           <Button size="quiz" variant="outline" className="w-full" onClick={() => router.push('/cai-dat/audio')}>
             Cài đặt âm thanh
           </Button>

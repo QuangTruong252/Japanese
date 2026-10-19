@@ -19,6 +19,8 @@ export interface AppSettings {
   learnedThroughLesson: number;
   /** Cấu hình mặc định/lưu tạm thời của màn Luyện tập. */
   practicePreset: PracticePreset;
+  /** Cách xem danh sách từ vựng trong trang bài; riêng từng máy. */
+  vocabView: 'list' | 'grid';
 }
 
 export const SETTINGS_STORAGE_KEY = 'jp:settings';
@@ -49,6 +51,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   reviewBatchSize: 20,
   learnedThroughLesson: 0,
   practicePreset: DEFAULT_PRACTICE_PRESET,
+  vocabView: 'list',
 };
 
 const clampInt = (value: unknown, min: number, max: number, fallback: number): number =>
@@ -125,6 +128,7 @@ export const loadSettings = (): AppSettings => {
       reviewBatchSize: clampInt(parsed.reviewBatchSize, 5, 100, DEFAULT_SETTINGS.reviewBatchSize),
       learnedThroughLesson: clampInt(parsed.learnedThroughLesson, 0, 25, 0),
       practicePreset: validatePracticePreset(parsed.practicePreset),
+      vocabView: parsed.vocabView === 'grid' ? 'grid' : 'list',
     };
   } catch {
     return DEFAULT_SETTINGS;
@@ -263,13 +267,14 @@ export const getFOUCScriptContent = (): string => {
   return `(function() {
     try {
       var raw = localStorage.getItem('jp:settings');
-      if (!raw) return;
-      var s = JSON.parse(raw);
+      var s = raw ? JSON.parse(raw) : {};
       var cl = document.documentElement.classList;
       if (s.furigana === false) cl.add('hide-furigana');
       if (s.furiganaSize === 'large') cl.add('furigana-large');
       if (s.hideTranslations === true) cl.add('hide-translations');
-      if (s.theme === 'dark' || (s.theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      // Chưa lưu hoặc giá trị lạ → mặc định "system", giống loadSettings.
+      var theme = s.theme === 'light' || s.theme === 'dark' ? s.theme : 'system';
+      if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         cl.add('dark');
       }
     } catch (e) {}
