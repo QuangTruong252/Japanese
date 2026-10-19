@@ -10,6 +10,7 @@ export interface LessonSummary {
   verification: 'verified' | 'unverified';
   vocabCount: number;
   grammarCount: number;
+  dialogueCount: number;
   /** Cảnh của bài, dùng cho sân khấu Bảng tin và lộ trình /hoc. */
   cover?: IllustrationAsset;
   /** Ảnh nhỏ cho hàng "Từ vựng" ở Bảng tin v3: minh họa của từ đầu tiên có ảnh (xem VOCAB_THUMB). */
@@ -225,6 +226,7 @@ export async function loadLessonSummary(lessonNum: number): Promise<LessonSummar
     verification: lesson.verification ?? 'unverified',
     vocabCount: vocab.length,
     grammarCount: lesson.grammar.length,
+    dialogueCount: lesson.dialogues?.length ?? 0,
     cover: lesson.cover,
     vocabThumb: pickVocabThumb(lesson, vocab),
     grammarThumb: lesson.grammar.find((g) => g.illustration)?.illustration,

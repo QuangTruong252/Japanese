@@ -38,6 +38,7 @@ export const speak = (
   text: string,
   rate = 1.0,
   volume: number = loadSettings().soundVolume,
+  pitch = 1,
 ): SpeechSynthesisUtterance | null => {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
     return null;
@@ -48,6 +49,7 @@ export const speak = (
   utterance.lang = 'ja-JP';
   utterance.rate = rate;
   utterance.volume = volume;
+  utterance.pitch = pitch;
 
   const voices = window.speechSynthesis.getVoices();
   const jaVoice = voices.find((v) => v.lang.toLowerCase().startsWith('ja'));

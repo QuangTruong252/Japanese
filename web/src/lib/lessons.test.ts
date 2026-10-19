@@ -150,6 +150,10 @@ test('loadLessonSummary và loadLessonSummaries trả về đúng thông tin tó
   assert.equal(summary1.verification, 'unverified');
   assert.ok(summary1.vocabCount > 0);
   assert.ok(summary1.grammarCount > 0);
+  assert.equal(summary1.dialogueCount, 3);
+
+  const summary25 = await loadLessonSummary(25);
+  assert.equal(summary25.dialogueCount, 0);
 
   const allSummaries = await loadLessonSummaries();
   assert.equal(allSummaries.length, 25);
@@ -161,6 +165,7 @@ test('loadLessonSummary và loadLessonSummaries trả về đúng thông tin tó
     assert.equal(s.verification, 'unverified');
     assert.ok(s.vocabCount > 0);
     assert.ok(s.grammarCount > 0);
+    assert.equal(typeof s.dialogueCount, 'number');
   }
 });
 
