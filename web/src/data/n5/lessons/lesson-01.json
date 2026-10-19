@@ -165,6 +165,250 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l01-hajimemashite",
+      "title": {
+        "vi": "Lần đầu gặp mặt"
+      },
+      "roles": [
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "はじめまして。田中[たなか]です。どうぞ よろしく お願[ねが]いします。",
+          "kana": "はじめまして。たなかです。どうぞ よろしく おねがいします。",
+          "translation": {
+            "vi": "Rất vui được gặp bạn. Tôi là Tanaka. Rất mong được bạn giúp đỡ."
+          },
+          "vocabIds": [
+            "hajimemashite",
+            "douzo-yoroshiku"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "はじめまして。マイです。ベトナムから 来[き]ました。どうぞ よろしく お願[ねが]いします。",
+          "kana": "はじめまして。マイです。ベトナムから きました。どうぞ よろしく おねがいします。",
+          "translation": {
+            "vi": "Rất vui được gặp anh. Tôi là Mai. Tôi đến từ Việt Nam. Rất mong được anh giúp đỡ."
+          },
+          "vocabIds": [
+            "kara-kimashita"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "マイさんは 学生[がくせい]ですか。",
+          "kana": "マイさんは がくせいですか。",
+          "translation": {
+            "vi": "Mai là sinh viên à?"
+          },
+          "vocabIds": [
+            "san"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、学生[がくせい]です。田中[たなか]さんも 学生[がくせい]ですか。",
+          "kana": "はい、がくせいです。たなかさんも がくせいですか。",
+          "translation": {
+            "vi": "Vâng, tôi là sinh viên. Anh Tanaka cũng là sinh viên ạ?"
+          },
+          "vocabIds": [
+            "hai"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "いいえ、学生[がくせい]じゃ ありません。会社員[かいしゃいん]です。",
+          "kana": "いいえ、がくせいじゃ ありません。かいしゃいんです。",
+          "translation": {
+            "vi": "Không, tôi không phải sinh viên. Tôi là nhân viên công ty."
+          },
+          "vocabIds": [
+            "iie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l01-shoukai",
+      "title": {
+        "vi": "Giới thiệu bạn với thầy"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "森[もり]先生[せんせい]、こちらは 田中[たなか]さんです。",
+          "kana": "もりせんせい、こちらは たなかさんです。",
+          "translation": {
+            "vi": "Thưa thầy Mori, đây là anh Tanaka."
+          },
+          "vocabIds": [
+            "kochira-wa"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "はじめまして。田中[たなか]です。",
+          "kana": "はじめまして。たなかです。",
+          "translation": {
+            "vi": "Rất vui được gặp thầy. Tôi là Tanaka."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "はじめまして。森[もり]です。大学[だいがく]の 教師[きょうし]です。",
+          "kana": "はじめまして。もりです。だいがくの きょうしです。",
+          "translation": {
+            "vi": "Rất vui được gặp anh. Tôi là Mori, giảng viên đại học."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "マイさんは 森[もり]先生[せんせい]の 学生[がくせい]ですか。",
+          "kana": "マイさんは もりせんせいの がくせいですか。",
+          "translation": {
+            "vi": "Mai là sinh viên của thầy ạ?"
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "はい、マイさんは 私[わたし]の 学生[がくせい]です。",
+          "kana": "はい、マイさんは わたしの がくせいです。",
+          "translation": {
+            "vi": "Vâng, Mai là sinh viên của tôi."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "どうぞ よろしく お願[ねが]いします。",
+          "kana": "どうぞ よろしく おねがいします。",
+          "translation": {
+            "vi": "Rất mong được thầy giúp đỡ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l01-byouin",
+      "title": {
+        "vi": "Ở phòng khám"
+      },
+      "roles": [
+        {
+          "id": "isha",
+          "name": "医者[いしゃ]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "isha",
+          "jp": "失礼[しつれい]ですが、お 名前[なまえ]は？",
+          "kana": "しつれいですが、お なまえは？",
+          "translation": {
+            "vi": "Xin lỗi, chị tên là gì ạ?"
+          },
+          "vocabIds": [
+            "shitsurei-desu-ga",
+            "onamae-wa"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "マイです。",
+          "kana": "マイです。",
+          "translation": {
+            "vi": "Tôi là Mai."
+          }
+        },
+        {
+          "speaker": "isha",
+          "jp": "マイさんは 中国人[ちゅうごくじん]ですか。",
+          "kana": "マイさんは ちゅうごくじんですか。",
+          "translation": {
+            "vi": "Chị Mai là người Trung Quốc phải không?"
+          },
+          "vocabIds": [
+            "jin"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、中国人[ちゅうごくじん]じゃ ありません。ベトナム人[じん]です。",
+          "kana": "いいえ、ちゅうごくじんじゃ ありません。ベトナムじんです。",
+          "translation": {
+            "vi": "Không, tôi không phải người Trung Quốc. Tôi là người Việt Nam."
+          }
+        },
+        {
+          "speaker": "isha",
+          "jp": "学生[がくせい]ですか。",
+          "kana": "がくせいですか。",
+          "translation": {
+            "vi": "Chị là sinh viên à?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、大学[だいがく]の 学生[がくせい]です。",
+          "kana": "はい、だいがくの がくせいです。",
+          "translation": {
+            "vi": "Vâng, tôi là sinh viên đại học."
+          }
+        },
+        {
+          "speaker": "isha",
+          "jp": "おいくつですか。",
+          "kana": "おいくつですか。",
+          "translation": {
+            "vi": "Chị bao nhiêu tuổi?"
+          },
+          "vocabIds": [
+            "oikutsu"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "十九歳[じゅうきゅうさい]です。",
+          "kana": "じゅうきゅうさいです。",
+          "translation": {
+            "vi": "Tôi mười chín tuổi."
+          },
+          "vocabIds": [
+            "sai"
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     "greetings",
     "particles"

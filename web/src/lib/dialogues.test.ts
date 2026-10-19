@@ -20,7 +20,9 @@ const ALLOWED: { token: string; from: number; reason: string }[] = [
 ];
 
 /** Câu giao tiếp của bài không có trong hội thoại nào của bài đó, kèm lý do. */
-const UNUSED_EXPRESSIONS: Record<number, Record<string, string>> = {};
+const UNUSED_EXPRESSIONS: Record<number, Record<string, string>> = {
+  1: { chan: 'Ba tình huống bài 1 đều giữa người lớn; 〜ちゃん dùng cho trẻ em sẽ gượng.' },
+};
 
 const KANJI = /[一-鿿㐀-䶿々〆〇ヶ]/u;
 const IGNORED_IN_READING = /[「」『』\s　]/gu;
