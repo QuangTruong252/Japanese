@@ -198,6 +198,276 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l05-eki",
+      "title": {
+        "vi": "Hỏi tàu ở nhà ga"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "ekiin",
+          "name": "駅[えき]の 人[ひと]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "すみません。この 電車[でんしゃ]は 甲子園[こうしえん]へ 行[い]きますか。",
+          "kana": "すみません。この でんしゃは こうしえんへ いきますか。",
+          "translation": {
+            "vi": "Xin lỗi, tàu này có đi Koshien không ạ?"
+          }
+        },
+        {
+          "speaker": "ekiin",
+          "jp": "いいえ、行[い]きません。次[つぎ]の 普通[ふつう]ですよ。",
+          "kana": "いいえ、いきません。つぎの ふつうですよ。",
+          "translation": {
+            "vi": "Không ạ. Chuyến tàu thường tiếp theo mới đi Koshien ạ."
+          },
+          "vocabIds": [
+            "tsugi-no"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "そうですか。次[つぎ]の 普通[ふつう]は 何時[なんじ]ですか。",
+          "kana": "そうですか。つぎの ふつうは なんじですか。",
+          "translation": {
+            "vi": "Vậy ạ. Chuyến tàu thường tiếp theo mấy giờ chạy ạ?"
+          }
+        },
+        {
+          "speaker": "ekiin",
+          "jp": "十時[じゅうじ] 十五分[じゅうごふん]です。",
+          "kana": "じゅうじ じゅうごふんです。",
+          "translation": {
+            "vi": "Mười giờ mười lăm ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "何番線[なんばんせん]ですか。",
+          "kana": "なんばんせんですか。",
+          "translation": {
+            "vi": "Tàu chạy ở đường ray số mấy ạ?"
+          },
+          "vocabIds": [
+            "bansen"
+          ]
+        },
+        {
+          "speaker": "ekiin",
+          "jp": "三番線[さんばんせん]です。",
+          "kana": "さんばんせんです。",
+          "translation": {
+            "vi": "Đường ray số ba ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "三番線[さんばんせん]ですね。ありがとう ございました。",
+          "kana": "さんばんせんですね。ありがとう ございました。",
+          "translation": {
+            "vi": "Đường số ba, đúng không ạ? Cảm ơn nhiều ạ."
+          },
+          "vocabIds": [
+            "arigatou-gozaimashita"
+          ]
+        },
+        {
+          "speaker": "ekiin",
+          "jp": "どういたしまして。",
+          "kana": "どういたしまして。",
+          "translation": {
+            "vi": "Không có gì ạ."
+          },
+          "vocabIds": [
+            "dou-itashimashite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l05-nichiyoubi",
+      "title": {
+        "vi": "Chủ nhật bạn đi đâu?"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "マイさん、日曜日[にちようび]は どこへ 行[い]きましたか。",
+          "kana": "マイさん、にちようびは どこへ いきましたか。",
+          "translation": {
+            "vi": "Mai này, chủ nhật vừa rồi em đi đâu thế?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "友達[ともだち]と デパートへ 行[い]きました。",
+          "kana": "ともだちと デパートへ いきました。",
+          "translation": {
+            "vi": "Em đi trung tâm thương mại với bạn ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "電車[でんしゃ]で 行[い]きましたか。",
+          "kana": "でんしゃで いきましたか。",
+          "translation": {
+            "vi": "Em đi tàu điện à?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、自転車[じてんしゃ]で 行[い]きました。田中[たなか]さんは？",
+          "kana": "いいえ、じてんしゃで いきました。たなかさんは？",
+          "translation": {
+            "vi": "Dạ không, em đạp xe đi. Còn anh thì sao?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "私[わたし]は どこも 行[い]きませんでした。",
+          "kana": "わたしは どこも いきませんでした。",
+          "translation": {
+            "vi": "Anh chẳng đi đâu cả."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "そうですか。来週[らいしゅう]の 日曜日[にちようび]は？",
+          "kana": "そうですか。らいしゅうの にちようびは？",
+          "translation": {
+            "vi": "Thế ạ. Vậy chủ nhật tuần sau thì sao anh?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "会社[かいしゃ]の 人[ひと]と 甲子園[こうしえん]へ 行[い]きます。マイさんも 行[い]きますか。",
+          "kana": "かいしゃの ひとと こうしえんへ いきます。マイさんも いきますか。",
+          "translation": {
+            "vi": "Anh đi sân Koshien với mấy người ở công ty. Em có đi cùng không?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、行[い]きます。",
+          "kana": "はい、いきます。",
+          "translation": {
+            "vi": "Dạ có, em đi ạ!"
+          }
+        }
+      ]
+    },
+    {
+      "id": "l05-tanjoubi",
+      "title": {
+        "vi": "Sinh nhật khi nào?"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "マイさん、誕生日[たんじょうび]は いつですか。",
+          "kana": "マイさん、たんじょうびは いつですか。",
+          "translation": {
+            "vi": "Mai này, sinh nhật em là ngày nào?"
+          },
+          "vocabIds": [
+            "itsu"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "来月[らいげつ]の 八日[ようか]です。",
+          "kana": "らいげつの ようかです。",
+          "translation": {
+            "vi": "Mùng tám tháng sau anh ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "来月[らいげつ]の 八日[ようか]は 日曜日[にちようび]ですね。",
+          "kana": "らいげつの ようかは にちようびですね。",
+          "translation": {
+            "vi": "Mùng tám tháng sau là chủ nhật nhỉ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "そうですね。その 日[ひ]は 家族[かぞく]と 美術館[びじゅつかん]へ 行[い]きます。",
+          "kana": "そうですね。その ひは かぞくと びじゅつかんへ いきます。",
+          "translation": {
+            "vi": "Dạ, đúng vậy thầy ạ. Hôm đó em sẽ đi bảo tàng mỹ thuật với gia đình."
+          },
+          "vocabIds": [
+            "sou-desu-ne"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "えっ、ご 家族[かぞく]は 日本[にほん]へ 来[き]ますか。",
+          "kana": "えっ、ご かぞくは にほんへ きますか。",
+          "translation": {
+            "vi": "Ơ, gia đình em sang Nhật à?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、来月[らいげつ]の 一日[ついたち]に 来[き]ます。",
+          "kana": "はい、らいげつの ついたちに きます。",
+          "translation": {
+            "vi": "Dạ, mùng một tháng sau cả nhà em sang Nhật ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "じゃ、ご 家族[かぞく]と ベトナムへ 帰[かえ]りますか。",
+          "kana": "じゃ、ご かぞくと ベトナムへ かえりますか。",
+          "translation": {
+            "vi": "Vậy em có về Việt Nam cùng gia đình không?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、私[わたし]は 帰[かえ]りません。家族[かぞく]は 十日[とおか]に 帰[かえ]ります。",
+          "kana": "いいえ、わたしは かえりません。かぞくは とおかに かえります。",
+          "translation": {
+            "vi": "Dạ không, em ở lại ạ. Mùng mười gia đình em về."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "calendar",
     "particles"

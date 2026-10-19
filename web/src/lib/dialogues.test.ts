@@ -22,6 +22,11 @@ const ALLOWED: { token: string; from: number; reason: string }[] = [
     from: 2,
     reason: 'の thay danh từ (私のです, マイさんのですか) là ngữ pháp bài 2; kuromoji gắn nhãn danh từ phi tự lập nên không rơi vào nhóm trợ từ được miễn.',
   },
+  {
+    token: '甲子園',
+    from: 5,
+    reason: 'Ga đích trong câu tựa của bài 5 (この電車は甲子園へ行きますか); từ vựng không liệt kê địa danh này.',
+  },
 ];
 
 /** Câu giao tiếp của bài không có trong hội thoại nào của bài đó, kèm lý do. */
