@@ -82,6 +82,7 @@ hay `line-clamp` nội dung học. Icon và chevron giữ kích thước, bám d
 | `ListRow` (nút) | Việc phải chạy trước khi đi tiếp | Như `ListRow` nhưng không có `href` → render `<button>` (ví dụ ghi nháp rồi mới điều hướng). |
 | `PageTitle` | Đầu màn không có tranh | Nút quay lại nhỏ xám `‹ …` cho trang con, tiêu đề serif, một dòng số liệu. Màn có tranh thì dùng `SoftScene` + `PaperCloud` như Home. |
 | `Chip` | Lọc, chọn nhanh | Viên thuốc cao 44 px, `aria-pressed`; chọn = nền sakura chữ đỏ. Hàng chip xuống dòng hoặc cuộn ngang, không co chữ. |
+| Segmented tabs (`app/hoc/[so]/_tabs.tsx`) | Chia nội dung một trang dài thành vài phần ngang hàng | Track nền `secondary` viền mảnh, ô bằng nhau cao 44 px, nhãn chỉ chữ (không số, không icon); ô chọn nền `card` chữ đỏ đậm, không nền đỏ đặc. Dính đầu vùng cuộn (`sticky top-0`, nền `background/95`); thanh phụ của panel (số liệu + nút icon) dính cùng. Panel ẩn vẫn render; hash URL chọn tab. |
 
 Thành phần dùng chung khác:
 - Nút chính: `buttonVariants({ size: 'quiz' })` (cao 48 px, `rounded-xl`, đỏ son), chữ + `ArrowRight`.
@@ -129,7 +130,8 @@ lật thẻ flashcard (lật qua lại được), easing `ease-smooth-out`. Khô
 | Màn | Trạng thái | Mockup |
 |---|---|---|
 | Bảng tin `/` | **v3** — tham chiếu chuẩn | `design/home/` |
-| `/hoc`, `/hoc/[so]` | **v3** — G2 đã duyệt | `design/hoc/`, `design/bai/` |
+| `/hoc` | **v3** — G2 đã duyệt | `design/hoc/` |
+| `/hoc/[so]` | **v3** — G2 đã duyệt 2026-10-19 (tab Từ vựng · Ngữ pháp, lưới/danh sách) | `design/bai/mockup-v2-*` |
 | `/hoc/[so]/tu-vung` | **v3** — G2 đã duyệt | `design/tu-vung/` |
 | `/luyen-tap`, `/on-tap`, `/on-tap/diem-yeu` | **v3** — G2 đã duyệt | `design/luyen-tap/`, `design/on-tap/` |
 | `/luyen-tap/phien`, `/on-tap/phien` | **v3** — G2 đã duyệt | `design/phien/` |

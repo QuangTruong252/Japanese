@@ -26,6 +26,22 @@ const KIND_LABELS: Record<SearchKind, string> = {
   lesson: 'BÀI HỌC',
 };
 
+/**
+ * Link cùng trang chỉ khác hash: pushState không bắn hashchange nên trang bài không biết để đổi tab.
+ * Gọi history.pushState (Next bọc hàm này nên router vẫn đồng bộ URL) rồi tự bắn hashchange như trình duyệt làm
+ * với link neo thường. Không gán location.hash: Next không thấy URL mới và ghi đè lại ở lượt render sau.
+ */
+function navigate(router: ReturnType<typeof useRouter>, href: string) {
+  const url = new URL(href, window.location.href);
+  if (url.hash && url.pathname === window.location.pathname && url.search === window.location.search) {
+    const oldURL = window.location.href;
+    window.history.pushState(null, '', url.href);
+    window.dispatchEvent(new HashChangeEvent('hashchange', { oldURL, newURL: url.href }));
+  } else {
+    router.push(href);
+  }
+}
+
 const SUGGESTIONS = ['学生', 'がくせい', 'gakusei', 'hoc sinh', 'tra cứu'];
 
 interface SearchModalInnerProps {
@@ -147,7 +163,7 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
       const target = results[selectedIndex];
       if (target) {
         onClose();
-        router.push(target.href);
+        navigate(router, target.href);
       }
     } else if (e.key === 'Tab') {
       // Bẫy focus trong dialog, Tab không đóng hộp
@@ -157,7 +173,7 @@ function SearchModalInner({ onClose }: SearchModalInnerProps) {
 
   const handleSelect = (item: SearchEntry) => {
     onClose();
-    router.push(item.href);
+    navigate(router, item.href);
   };
 
   // Gom nhóm kết quả để hiển thị header nhóm

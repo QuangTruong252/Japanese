@@ -25,6 +25,7 @@ import {
   CloudUpload,
 } from 'lucide-react';
 import { formatNavBadgeCount, isNavActive, shouldHideAppChrome } from '@/lib/nav';
+import { applySettingsToDOM, loadSettings } from '@/lib/settings';
 import { AccountButton } from '@/components/profile/AccountButton';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -113,6 +114,18 @@ export function AppNav() {
     } catch {
       // Supabase unconfigured / unavailable
     }
+  }, []);
+
+  // Theme "Theo hệ thống" phải đổi ngay khi hệ điều hành đổi sáng/tối. Đặt ở đây vì AppNav luôn mount,
+  // kể cả ở màn làm bài (chỉ ẩn phần hiển thị).
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const onChange = () => {
+      const current = loadSettings();
+      if (current.theme === 'system') applySettingsToDOM(current);
+    };
+    media.addEventListener('change', onChange);
+    return () => media.removeEventListener('change', onChange);
   }, []);
 
   const engineStatus = useSyncExternalStore(

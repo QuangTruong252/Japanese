@@ -13,6 +13,7 @@ import { clearNewSessionRequest } from '@/lib/practice-draft';
 import { resolveDashboardCta } from '@/lib/dashboard-cta';
 import type { LessonSummary } from '@/lib/lessons';
 import type { IllustrationAsset } from '@/types';
+import { AUDIO_IMPORT_ENABLED } from '@/lib/features';
 import { REVIEW_COMPLETE_ART, SECTION_THUMB } from '@/lib/illustrations';
 import { SoftScene, PaperCloud, TornCard, SectionHeader, ListRow, PartRow } from '@/components/PaperKit';
 import { Illustration } from '@/components/Illustration';
@@ -237,12 +238,14 @@ export function DashboardContent({
                 detail={`${activeSummary.grammarCount} mẫu`}
                 image={activeSummary.grammarThumb ?? SECTION_THUMB.grammar}
               />
-              <PartRow
-                href={`/hoc/${activeLessonNum}#nghe`}
-                icon={<FeatureIcon name="listening" />}
-                title="Luyện nghe"
-                image={SECTION_THUMB.listening}
-              />
+              {AUDIO_IMPORT_ENABLED && (
+                <PartRow
+                  href={`/hoc/${activeLessonNum}#nghe`}
+                  icon={<FeatureIcon name="listening" />}
+                  title="Luyện nghe"
+                  image={SECTION_THUMB.listening}
+                />
+              )}
             </div>
           </section>
         </div>

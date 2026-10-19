@@ -52,6 +52,25 @@ export function groupFuriganaWords(text: string): FuriganaSegment[][] {
   return words.filter((word) => word.length > 0);
 }
 
+// rt cao nhất 0.62em (xem globals.css), nhân tối đa 1.5 khi người dùng phóng furigana.
+const FURIGANA_EM_PER_CHAR = 0.62 * 1.5;
+
+/**
+ * Độ rộng (đơn vị em của chữ gốc) của cụm không dấu cách dài nhất, để chia cỡ chữ cho vừa ô.
+ * Mỗi ký tự gốc = 1em; đoạn có furigana rộng bằng max(chữ gốc, furigana) vì <ruby> căn theo cái rộng hơn.
+ */
+export function maxFuriganaWordEm(text: string): number {
+  let max = 0;
+  for (const word of groupFuriganaWords(text)) {
+    const em = word.reduce(
+      (sum, { base, ruby }) => sum + Math.max([...base].length, ruby ? [...ruby].length * FURIGANA_EM_PER_CHAR : 0),
+      0,
+    );
+    max = Math.max(max, em);
+  }
+  return max;
+}
+
 /**
  * Xóa bỏ furigana để lấy văn bản thuần (dùng cho tiêu đề, accessibility, câu hỏi trắc nghiệm đọc)
  */
