@@ -219,6 +219,283 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l06-hirugohan",
+      "title": {
+        "vi": "Rủ đi ăn trưa"
+      },
+      "roles": [
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "マイさん、いっしょに 昼[ひる]ごはんを 食[た]べませんか。",
+          "kana": "マイさん、いっしょに ひるごはんを たべませんか。",
+          "translation": {
+            "vi": "Mai này, em đi ăn trưa cùng anh nhé?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ええ、いいですね。どこで 食[た]べますか。",
+          "kana": "ええ、いいですね。どこで たべますか。",
+          "translation": {
+            "vi": "Vâng, hay quá. Mình ăn ở đâu ạ?"
+          },
+          "vocabIds": [
+            "ee",
+            "ii-desu-ne"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "駅[えき]の 店[みせ]で 食[た]べましょう。",
+          "kana": "えきの みせで たべましょう。",
+          "translation": {
+            "vi": "Mình ăn ở quán ở ga đi."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "田中[たなか]さんは 何[なに]を 食[た]べますか。",
+          "kana": "たなかさんは なにを たべますか。",
+          "translation": {
+            "vi": "Anh Tanaka ăn gì ạ?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "私[わたし]は 魚[さかな]を 食[た]べます。マイさんは？",
+          "kana": "わたしは さかなを たべます。マイさんは？",
+          "translation": {
+            "vi": "Anh ăn cá. Còn em?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "私[わたし]は 野菜[やさい]と 卵[たまご]を 食[た]べます。それから、お 茶[ちゃ]を 飲[の]みます。",
+          "kana": "わたしは やさいと たまごを たべます。それから、お ちゃを のみます。",
+          "translation": {
+            "vi": "Em ăn rau với trứng ạ. Rồi em uống trà."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "じゃ、十二時[じゅうにじ]に 駅[えき]で 会[あ]いましょう。",
+          "kana": "じゃ、じゅうにじに えきで あいましょう。",
+          "translation": {
+            "vi": "Vậy mười hai giờ mình gặp nhau ở ga nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "わかりました。",
+          "kana": "わかりました。",
+          "translation": {
+            "vi": "Vâng, em biết rồi ạ."
+          },
+          "vocabIds": [
+            "wakarimashita"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l06-ohanami",
+      "title": {
+        "vi": "Rủ thầy đi ngắm hoa anh đào"
+      },
+      "roles": [
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mori",
+          "jp": "マイさん、日曜日[にちようび]に 何[なに]を しますか。",
+          "kana": "マイさん、にちようびに なにを しますか。",
+          "translation": {
+            "vi": "Mai này, chủ nhật em làm gì?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "友達[ともだち]と お 花見[はなみ]を します。大学[だいがく]の 庭[にわ]で します。",
+          "kana": "ともだちと お はなみを します。だいがくの にわで します。",
+          "translation": {
+            "vi": "Em đi ngắm hoa anh đào với bạn ạ. Bọn em ngắm ở khu vườn trong trường đại học."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "いいですね。何[なに]を 食[た]べますか。",
+          "kana": "いいですね。なにを たべますか。",
+          "translation": {
+            "vi": "Hay đấy. Các em ăn gì?"
+          },
+          "vocabIds": [
+            "ii-desu-ne"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "パンと 果物[くだもの]を 食[た]べます。ジュースも 飲[の]みます。",
+          "kana": "パンと くだものを たべます。ジュースも のみます。",
+          "translation": {
+            "vi": "Bọn em ăn bánh mì với trái cây ạ. Còn uống nước ép nữa."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "写真[しゃしん]も 撮[と]りますか。",
+          "kana": "しゃしんも とりますか。",
+          "translation": {
+            "vi": "Em có chụp ảnh không?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、撮[と]ります。先生[せんせい]も いっしょに 行[い]きませんか。",
+          "kana": "はい、とります。せんせいも いっしょに いきませんか。",
+          "translation": {
+            "vi": "Có ạ. Thầy cũng đi cùng bọn em nhé?"
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "ええ、行[い]きましょう。何時[なんじ]に 会[あ]いますか。",
+          "kana": "ええ、いきましょう。なんじに あいますか。",
+          "translation": {
+            "vi": "Ừ, cùng đi nhé. Mấy giờ mình gặp nhau?"
+          },
+          "vocabIds": [
+            "ee"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "午後[ごご] 一時[いちじ]に 庭[にわ]で 会[あ]いましょう。",
+          "kana": "ごご いちじに にわで あいましょう。",
+          "translation": {
+            "vi": "Một giờ chiều mình gặp nhau ở khu vườn nhé thầy."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "わかりました。",
+          "kana": "わかりました。",
+          "translation": {
+            "vi": "Được rồi, thầy biết rồi."
+          },
+          "vocabIds": [
+            "wakarimashita"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l06-tenisu",
+      "title": {
+        "vi": "Hẹn chơi tennis"
+      },
+      "roles": [
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "マイさん。",
+          "kana": "マイさん。",
+          "translation": {
+            "vi": "Mai này."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、何[なん]ですか。",
+          "kana": "はい、なんですか。",
+          "translation": {
+            "vi": "Dạ, có chuyện gì ạ?"
+          },
+          "vocabIds": [
+            "nan-desu-ka"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "あした、テニスを しませんか。",
+          "kana": "あした、テニスを しませんか。",
+          "translation": {
+            "vi": "Ngày mai em chơi tennis với anh nhé?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ええ、いいですね。時々[ときどき] 友達[ともだち]と します。",
+          "kana": "ええ、いいですね。ときどき ともだちと します。",
+          "translation": {
+            "vi": "Vâng, hay quá. Thỉnh thoảng em cũng chơi với bạn ạ."
+          },
+          "vocabIds": [
+            "ee",
+            "ii-desu-ne"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "朝[あさ] 九時[くじ]に 大学[だいがく]で 会[あ]いましょう。",
+          "kana": "あさ くじに だいがくで あいましょう。",
+          "translation": {
+            "vi": "Chín giờ sáng mình gặp nhau ở trường đại học nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "わかりました。それから、晩[ばん]ごはんも いっしょに 食[た]べませんか。",
+          "kana": "わかりました。それから、ばんごはんも いっしょに たべませんか。",
+          "translation": {
+            "vi": "Em biết rồi ạ. Rồi tối mình cũng đi ăn cùng nhau nhé?"
+          },
+          "vocabIds": [
+            "wakarimashita"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "ええ、食[た]べましょう。じゃ、また あした。",
+          "kana": "ええ、たべましょう。じゃ、また あした。",
+          "translation": {
+            "vi": "Ừ, mai mình cùng ăn nhé. Vậy mai gặp lại nhé."
+          },
+          "vocabIds": [
+            "ja-mata"
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     "particles",
     "verbs"

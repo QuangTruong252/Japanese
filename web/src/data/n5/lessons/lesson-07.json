@@ -161,6 +161,248 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l07-otaku",
+      "title": {
+        "vi": "Đến chơi nhà anh Tanaka"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "ごめんください。",
+          "kana": "ごめんください。",
+          "translation": {
+            "vi": "Xin lỗi, có ai ở nhà không ạ?"
+          },
+          "vocabIds": [
+            "gomen-kudasai"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "はい。マイさん、いらっしゃい。どうぞ お 上[あ]がりください。",
+          "kana": "はい。マイさん、いらっしゃい。どうぞ お あがりください。",
+          "translation": {
+            "vi": "Vâng. Mai đến rồi à, mời em vào nhà."
+          },
+          "vocabIds": [
+            "irasshai",
+            "douzo-oagari"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "失礼[しつれい]します。これ、ベトナムの お 茶[ちゃ]です。母[はは]に もらいました。どうぞ。",
+          "kana": "しつれいします。これ、ベトナムの お ちゃです。ははに もらいました。どうぞ。",
+          "translation": {
+            "vi": "Em xin phép ạ. Đây là trà Việt Nam, mẹ em cho em đấy ạ. Mời anh."
+          },
+          "vocabIds": [
+            "shitsurei-shimasu"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "ありがとう。コーヒーは いかがですか。",
+          "kana": "ありがとう。コーヒーは いかがですか。",
+          "translation": {
+            "vi": "Cảm ơn em. Em uống cà phê nhé?"
+          },
+          "vocabIds": [
+            "ikaga-desu-ka"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "ええ、いただきます。この 花[はな]、すてきですね。",
+          "kana": "ええ、いただきます。この はな、すてきですね。",
+          "translation": {
+            "vi": "Vâng, em xin ạ. Hoa này đẹp quá anh nhỉ."
+          },
+          "vocabIds": [
+            "itadakimasu",
+            "suteki-desu-ne"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "会社[かいしゃ]の 人[ひと]に もらいました。",
+          "kana": "かいしゃの ひとに もらいました。",
+          "translation": {
+            "vi": "Anh được người ở công ty tặng đấy."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "そうですか。",
+          "kana": "そうですか。",
+          "translation": {
+            "vi": "Ra vậy ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l07-bangohan",
+      "title": {
+        "vi": "Bữa tối ở nhà anh Tanaka"
+      },
+      "roles": [
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "マイさん、晩[ばん]ごはんです。魚[さかな]は いかがですか。",
+          "kana": "マイさん、ばんごはんです。さかなは いかがですか。",
+          "translation": {
+            "vi": "Mai này, cơm tối xong rồi đây. Em ăn cá nhé?"
+          },
+          "vocabIds": [
+            "ikaga-desu-ka"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "ありがとう ございます。いただきます。",
+          "kana": "ありがとう ございます。いただきます。",
+          "translation": {
+            "vi": "Em cảm ơn anh. Em xin phép ăn ạ."
+          },
+          "vocabIds": [
+            "itadakimasu"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "はしで 食[た]べますか、フォークで 食[た]べますか。",
+          "kana": "はしで たべますか、フォークで たべますか。",
+          "translation": {
+            "vi": "Em ăn bằng đũa hay bằng nĩa?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はしで 食[た]べます。田中[たなか]さんは？",
+          "kana": "はしで たべます。たなかさんは？",
+          "translation": {
+            "vi": "Em ăn bằng đũa ạ. Còn anh?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "私[わたし]も 魚[さかな]は はしで 食[た]べます。肉[にく]は ナイフと フォークで 食[た]べます。",
+          "kana": "わたしも さかなは はしで たべます。にくは ナイフと フォークで たべます。",
+          "translation": {
+            "vi": "Anh cũng ăn cá bằng đũa. Còn thịt thì anh ăn bằng dao với nĩa."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "そうですか。",
+          "kana": "そうですか。",
+          "translation": {
+            "vi": "Ra vậy ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "マイさん、もう 食[た]べましたか。",
+          "kana": "マイさん、もう たべましたか。",
+          "translation": {
+            "vi": "Mai, em ăn xong rồi à?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、もう 食[た]べました。ごちそうさま でした。",
+          "kana": "はい、もう たべました。ごちそうさま でした。",
+          "translation": {
+            "vi": "Vâng, em ăn xong rồi ạ. Em cảm ơn anh về bữa ăn ạ."
+          },
+          "vocabIds": [
+            "gochisousama"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l07-repooto",
+      "title": {
+        "vi": "Gửi báo cáo cho thầy"
+      },
+      "roles": [
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mori",
+          "jp": "マイさん、レポートは もう 書[か]きましたか。",
+          "kana": "マイさん、レポートは もう かきましたか。",
+          "translation": {
+            "vi": "Mai này, em viết báo cáo xong chưa?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、きのう パソコンで 書[か]きました。",
+          "kana": "はい、きのう パソコンで かきました。",
+          "translation": {
+            "vi": "Rồi ạ, hôm qua em viết bằng máy tính rồi ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "私[わたし]に メールで 送[おく]りましたか。",
+          "kana": "わたしに メールで おくりましたか。",
+          "translation": {
+            "vi": "Em đã gửi mail cho thầy chưa?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、まだです。これから 送[おく]ります。",
+          "kana": "いいえ、まだです。これから おくります。",
+          "translation": {
+            "vi": "Dạ chưa ạ. Em sẽ gửi ngay bây giờ ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "わかりました。",
+          "kana": "わかりました。",
+          "translation": {
+            "vi": "Được rồi, thầy biết rồi."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "family",
     "particles"

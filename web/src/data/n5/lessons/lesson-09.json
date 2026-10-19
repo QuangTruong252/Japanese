@@ -153,6 +153,276 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l09-konsaato",
+      "title": {
+        "vi": "Rủ đi nghe hòa nhạc"
+      },
+      "roles": [
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "マイさんは 音楽[おんがく]が 好[す]きですか。",
+          "kana": "マイさんは おんがくが すきですか。",
+          "translation": {
+            "vi": "Mai có thích âm nhạc không?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、好[す]きです。ジャズを よく 聞[き]きます。",
+          "kana": "はい、すきです。ジャズを よく ききます。",
+          "translation": {
+            "vi": "Có ạ. Em hay nghe nhạc jazz."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "私[わたし]は クラシックが 好[す]きです。あしたの コンサートの チケットが あります。いっしょに いかがですか。",
+          "kana": "わたしは クラシックが すきです。あしたの コンサートの チケットが あります。いっしょに いかがですか。",
+          "translation": {
+            "vi": "Anh thì thích nhạc cổ điển. Anh có vé buổi hòa nhạc ngày mai. Em đi cùng anh nhé?"
+          },
+          "vocabIds": [
+            "isshoni-ikaga"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "あしたですか。あしたは ちょっと……。",
+          "kana": "あしたですか。あしたは ちょっと……。",
+          "translation": {
+            "vi": "Ngày mai ạ? Ngày mai thì hơi..."
+          },
+          "vocabIds": [
+            "chotto-euf"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "だめですか。",
+          "kana": "だめですか。",
+          "translation": {
+            "vi": "Không được à?"
+          },
+          "vocabIds": [
+            "dame-desu-ka"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "すみません。あしたは 友達[ともだち]と 約束[やくそく]が あります。",
+          "kana": "すみません。あしたは ともだちと やくそくが あります。",
+          "translation": {
+            "vi": "Em xin lỗi. Ngày mai em có hẹn với bạn rồi ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "ああ、残念[ざんねん]です。",
+          "kana": "ああ、ざんねんです。",
+          "translation": {
+            "vi": "Ôi, tiếc quá."
+          },
+          "vocabIds": [
+            "aa",
+            "zannen-desu"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "また 今度[こんど] お 願[ねが]いします。",
+          "kana": "また こんど お ねがいします。",
+          "translation": {
+            "vi": "Hẹn anh lần sau nhé."
+          },
+          "vocabIds": [
+            "mata-kondo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l09-kanji",
+      "title": {
+        "vi": "Mượn từ điển của thầy"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "先生[せんせい]、この 漢字[かんじ]が よく わかりません。",
+          "kana": "せんせい、この かんじが よく わかりません。",
+          "translation": {
+            "vi": "Thưa thầy, em không hiểu rõ chữ Hán này ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "辞書[じしょ]で 見[み]ましたか。",
+          "kana": "じしょで みましたか。",
+          "translation": {
+            "vi": "Em tra từ điển chưa?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、見[み]ました。この 辞書[じしょ]は 小[ちい]さいですから、よく わかりません。",
+          "kana": "はい、みました。この じしょは ちいさいですから、よく わかりません。",
+          "translation": {
+            "vi": "Rồi ạ. Từ điển này nhỏ nên em không hiểu rõ ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "そうですか。私[わたし]の 辞書[じしょ]は 大[おお]きいですよ。",
+          "kana": "そうですか。わたしの じしょは おおきいですよ。",
+          "translation": {
+            "vi": "Thế à. Từ điển của thầy to lắm đấy."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "先生[せんせい]の 辞書[じしょ]を 貸[か]してください。",
+          "kana": "せんせいの じしょを かしてください。",
+          "translation": {
+            "vi": "Thầy cho em mượn từ điển của thầy với ạ."
+          },
+          "vocabIds": [
+            "kashite-kudasai"
+          ]
+        },
+        {
+          "speaker": "mori",
+          "jp": "ええ、いいですよ。どうぞ。",
+          "kana": "ええ、いいですよ。どうぞ。",
+          "translation": {
+            "vi": "Ừ, được chứ. Đây em."
+          },
+          "vocabIds": [
+            "ii-desu-yo"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "ありがとう ございます。漢字[かんじ]は 好[す]きですが、まだ 下手[へた]です。",
+          "kana": "ありがとう ございます。かんじは すきですが、まだ へたです。",
+          "translation": {
+            "vi": "Em cảm ơn thầy ạ. Em thích chữ Hán nhưng vẫn còn kém ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "マイさんの 字[じ]は きれいですよ。",
+          "kana": "マイさんの じは きれいですよ。",
+          "translation": {
+            "vi": "Chữ của em đẹp đấy chứ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l09-doushite",
+      "title": {
+        "vi": "Tại sao học tiếng Nhật?"
+      },
+      "roles": [
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "マイさんは どうして 日本語[にほんご]を 勉強[べんきょう]しますか。",
+          "kana": "マイさんは どうして にほんごを べんきょうしますか。",
+          "translation": {
+            "vi": "Tại sao em học tiếng Nhật vậy?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "日本[にほん]の 歌[うた]が 好[す]きですから。",
+          "kana": "にほんの うたが すきですから。",
+          "translation": {
+            "vi": "Vì em thích các bài hát Nhật ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "そうですか。どんな 歌[うた]が 好[す]きですか。",
+          "kana": "そうですか。どんな うたが すきですか。",
+          "translation": {
+            "vi": "Thế à. Em thích loại bài hát nào?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ジャズの 歌[うた]が 好[す]きです。それから、田中[たなか]さんは どんな スポーツが 好[す]きですか。",
+          "kana": "ジャズの うたが すきです。それから、たなかさんは どんな スポーツが すきですか。",
+          "translation": {
+            "vi": "Em thích các bài hát jazz ạ. Ngoài ra, anh Tanaka thích môn thể thao nào ạ?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "野球[やきゅう]が 好[す]きですが、下手[へた]です。",
+          "kana": "やきゅうが すきですが、へたです。",
+          "translation": {
+            "vi": "Anh thích bóng chày nhưng chơi dở lắm."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "私[わたし]は 野球[やきゅう]が 全然[ぜんぜん] わかりません。",
+          "kana": "わたしは やきゅうが ぜんぜん わかりません。",
+          "translation": {
+            "vi": "Em thì chẳng hiểu gì về bóng chày cả."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "じゃ、日曜日[にちようび]に いっしょに 野球[やきゅう]を 見[み]ませんか。",
+          "kana": "じゃ、にちようびに いっしょに やきゅうを みませんか。",
+          "translation": {
+            "vi": "Vậy chủ nhật mình cùng đi xem bóng chày nhé?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ええ、いいですね。",
+          "kana": "ええ、いいですね。",
+          "translation": {
+            "vi": "Vâng, hay quá ạ."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "adjectives",
     "particles"
