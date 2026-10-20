@@ -1,0 +1,60 @@
+{
+  "name": "kaiwa-characters-3",
+  "description": "Đợt avatar nhân vật hội thoại N5 bổ sung (bài 16-25): nhân viên ngân hàng, bạn cùng lớp của Mai, trưởng phòng.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "group": "characters",
+      "stem": "ginkouin-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Japanese bank clerk woman about 30, dark hair in a neat low bun, navy vest uniform over a white blouse with a small plain scarf, no badge or text, polite smile",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "ginkouin"
+      },
+      "alt": {
+        "vi": "Chân dung nhân viên ngân hàng"
+      }
+    },
+    {
+      "group": "characters",
+      "stem": "tomodachi-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Mai's Japanese university classmate, young woman about 20, shoulder-length light-brown hair in a low ponytail, mustard-yellow sweater over a white collar, cheerful grin",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "tomodachi"
+      },
+      "alt": {
+        "vi": "Chân dung bạn cùng lớp của Mai"
+      }
+    },
+    {
+      "group": "characters",
+      "stem": "kachou-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Japanese section chief man about 50, short black hair greying at the temples, no glasses, charcoal suit, white shirt, navy tie, composed friendly smile",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "kachou"
+      },
+      "alt": {
+        "vi": "Chân dung trưởng phòng"
+      }
+    }
+  ]
+}
