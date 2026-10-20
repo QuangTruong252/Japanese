@@ -28,7 +28,7 @@ export function RoleAvatar({
     return (
       <div
         className={cn(
-          'relative flex shrink-0 items-center justify-center overflow-hidden rounded-full',
+          'relative flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-accent',
           config.container,
           className,
         )}
@@ -36,7 +36,8 @@ export function RoleAvatar({
         <Illustration
           asset={asset}
           sizes={config.sizes}
-          className="size-full rounded-full object-cover"
+          // Chân dung bán thân: đầu + cổ áo chiếm ~9–62% chiều cao ảnh, phóng 1.7 lần quanh điểm 19% để mặt đầy vòng tròn
+          className="size-full origin-[50%_19%] scale-[1.7] rounded-full object-cover"
         />
       </div>
     );

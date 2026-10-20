@@ -109,7 +109,7 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
         <>
           <div className="min-h-0 flex-1 overflow-y-auto pb-4">
             {dialogue.illustration && (
-              <SoftScene asset={dialogue.illustration} sizes="(min-width: 672px) 672px, 100vw" imageClassName="h-40 sm:h-48" />
+              <SoftScene asset={dialogue.illustration} sizes="(min-width: 672px) 672px, 100vw" imageClassName="aspect-[16/10] h-auto object-[50%_45%]" />
             )}
             <h1 className="mt-4 text-center font-serif text-2xl font-semibold sm:text-3xl">{dialogue.title.vi}</h1>
             <p className="mt-2 text-center text-sm text-muted-foreground">Bài {lessonNum} · {view.total} câu</p>
