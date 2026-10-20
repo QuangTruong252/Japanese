@@ -27,6 +27,7 @@ Không đặt PNG, JSON, prompt hay ảnh thử vào `public/`. Icon không làm
 | Nhóm | Khuôn xuất | Nền | Dùng cho |
 |---|---|---|---|
 | `vocab` | 512 × 512, chủ thể vừa 416 px | alpha thật | Nghĩa một từ |
+| `characters` | 512 × 512, chủ thể vừa 416 px | alpha thật | Avatar nhân vật |
 | `scenes` | 800 × 600 | đục | Cover bài (tranh đầu màn) |
 | `grammar` | 800 × 600 | đục | Tình huống ngữ pháp |
 | `ui/banners` | 1200 × 400 | đục | Banner |
@@ -59,8 +60,7 @@ node artwork/illustrations/tools/batch.mjs link    artwork/illustrations/batches
    cutout chạm mép hoặc phải phóng quá 1,3×, ảnh đục lệch tỷ lệ khuôn quá 2%. Ô atlas hỏng: đánh dấu
    `skip` kèm lý do rồi thêm job ảnh đơn. `export` không ghi đè; chạy lại sẽ bỏ qua ảnh có hash khớp.
 4. **Duyệt sheet** (Điều phối xem trước, rồi người dùng).
-5. **`link`**: ghi `illustration` / `cover` / `illustrationCaption` vào JSON học, đặt sidecar thành
-   `added-to-learning-data` (`web/src/lib/illustrations.test.ts` kiểm sidecar ↔ tham chiếu).
+5. **`link`**: ghi `illustration` / `cover` / `illustrationCaption` vào JSON học, hỗ trợ thêm `illustration` cho tình huống hội thoại (`dialogues[].illustration` theo bài từ tiền tố id) và `avatar` cho nhân vật (`characters.json`), đặt sidecar thành `added-to-learning-data` (`web/src/lib/illustrations.test.ts` kiểm sidecar ↔ tham chiếu).
 6. `pnpm check` và `pnpm test` trong `web/`; kiểm trình duyệt nếu đổi màn.
 
 Ghi chú công cụ: `collect` hiện đọc ảnh từ thư mục `generated_images` của Codex CLI, khớp theo dòng

@@ -18,7 +18,7 @@ import { detectCrops } from './detect-crops.mjs';
 import { validateIllustrationAsset } from '../../../web/src/lib/illustrations.ts';
 
 const root = new URL('../../../', import.meta.url);
-const abs = rel => fileURLToPath(new URL(rel, root));
+const abs = rel => path.isAbsolute(rel) ? path.resolve(rel) : fileURLToPath(new URL(rel, root));
 const exists = rel => access(abs(rel)).then(() => true, () => false);
 const sharp = createRequire(createRequire(new URL('web/package.json', root)).resolve('next/package.json'))('sharp');
 const sha256 = buf => createHash('sha256').update(buf).digest('hex');
@@ -27,6 +27,7 @@ const sha256 = buf => createHash('sha256').update(buf).digest('hex');
 // so every subject has the same visual size whatever the source margin was.
 const GROUPS = {
   vocab: { kind: 'cutout', role: 'vocabulary-cutout' },
+  characters: { kind: 'cutout', role: 'character-avatar' },
   'ui/states': { kind: 'cutout', role: 'state-cutout' },
   'ui/sections': { kind: 'cutout', role: 'section-cutout' },
   scenes: { kind: 'opaque', role: 'scene', width: 800, height: 600, shape: 'Landscape 4:3' },
@@ -46,8 +47,10 @@ BACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper recta
 ABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.`;
 const ATLAS_LAYOUT = 'LAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY transparent margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames.';
 const SINGLE_LAYOUT = 'LAYOUT: a single standalone cutout vignette centered, occupying about 70% of the canvas, with wide EMPTY transparent margins on all four sides. Show every person and object completely (full figures including feet); nothing is cropped by or touches the canvas edge.';
+// Avatar nhân vật: chỉ lấy phần đầu và vai, mặt ở chính giữa để cắt tròn trên UI mà không bị lệch hay vướng tay/đồ vật.
+const CHARACTER_LAYOUT = 'LAYOUT: a bust portrait (head and shoulders only), facing forward or slightly turned, with the face centered in the frame so it can be cropped into a circle. No hands visible, no held objects, no background objects, wide EMPTY transparent margins on all four sides; nothing touches the canvas edge.';
 const OPAQUE_STYLE = shape => `Editorial watercolor and gouache illustration, hand-painted Japanese book-illustration feel: delicate dark pencil contours, soft organic painted washes, subtle paper texture, warm ivory paper tones. Palette: cream, warm sand, charcoal gray, muted sage green, warm timber wood, muted brick-red accents. ${shape} composition, FULL-BLEED: the painting fills the whole canvas edge to edge, with NO frame, NO border line, NO mat and NO paper margin around it.
-Characters, when present: young male student = slightly messy short dark hair, cream long-sleeved shirt, charcoal trousers, black backpack; young woman = chin-length dark bob with bangs, cream cardigan over muted brick-red top, charcoal skirt, small brown shoulder bag.`;
+People, when present: young male student = slightly messy short dark hair, cream long-sleeved shirt, charcoal trousers, black backpack; young woman = chin-length dark bob with bangs, cream cardigan over muted brick-red top, charcoal skirt, small brown shoulder bag.`;
 const OPAQUE_RULES = `STRICT REQUIREMENTS:
 - Absolutely NO text, letters, kanji, kana, numbers or words anywhere: signs, boards, labels and screens stay completely blank.
 - Clock faces have NO digits and NO Roman numerals.
@@ -62,7 +65,11 @@ function atlasPrompt(job) {
 function singlePrompt(job) {
   const profile = GROUPS[job.group];
   if (profile.kind === 'opaque') return `${OPAQUE_STYLE(profile.shape)}\n\nSubject: ${job.subject}\nKeep the main subject in the central area so the image survives cropping to a thumbnail.\n\n${OPAQUE_RULES}`;
-  return [`Create ONE square 1:1 illustration for a Japanese-learning app's ${job.group === 'vocab' ? 'vocabulary card' : 'empty/finished state'}.`, STYLE, SINGLE_LAYOUT, `SUBJECT: ${job.subject}`].join('\n\n');
+  if (job.group === 'characters') {
+    return ["Create ONE square 1:1 illustration for a Japanese-learning app's character avatar.", STYLE, CHARACTER_LAYOUT, `SUBJECT: ${job.subject}`].join('\n\n');
+  }
+  const appRole = job.group === 'vocab' ? 'vocabulary card' : job.group === 'ui/sections' ? 'section thumbnail' : 'empty/finished state';
+  return [`Create ONE square 1:1 illustration for a Japanese-learning app's ${appRole}.`, STYLE, SINGLE_LAYOUT, `SUBJECT: ${job.subject}`].join('\n\n');
 }
 
 // ---------- batch model ----------
@@ -80,6 +87,16 @@ function load(batch) {
     if (job.cells && GROUPS[job.group].kind !== 'cutout') throw new Error('Atlases are for alpha cutouts only');
     job.prompt ??= job.cells ? atlasPrompt(job) : singlePrompt(job);
     job.referenceImages ??= batch.referenceImages ?? [];
+    // Tự suy ra dataFile cho target nếu chưa khai báo: bài học từ tiền tố lNN- của dialogue, hoặc characters.json cho avatar nhân vật.
+    const normalizeTarget = (t, grp) => {
+      if (!t || t.dataFile) return;
+      const dId = t.dialogue ?? t.id;
+      const m = typeof dId === 'string' ? dId.match(/^l(\d{2})-/) : null;
+      if (m) t.dataFile = `web/src/data/n5/lessons/lesson-${m[1]}.json`;
+      else if (t.roleId || grp === 'characters') t.dataFile = 'web/src/data/n5/characters.json';
+    };
+    normalizeTarget(job.target, job.group);
+    if (job.cells) job.cells.forEach(c => normalizeTarget(c.target, job.group));
     const common = { group: job.group, source: job.source, generation: job.generation, prompt: job.prompt, referenceImages: job.referenceImages };
     if (job.cells) job.cells.forEach((cell, index) => { if (!cell.skip) assets.push({ ...common, ...cell, atlas: job, index }); });
     else assets.push({ ...common, ...job });
@@ -307,13 +324,73 @@ async function link(batch, assets) {
       files.set(dataFile, { data, crlf, changed: false });
     }
     const f = files.get(dataFile);
-    const [node, key] = a.target.field === 'cover' ? [f.data, 'cover']
-      : dataFile.includes('/lessons/') ? [f.data.grammar?.find(g => g.id === a.target.id), 'illustration']
-      : [f.data.words?.find(w => w.id === a.target.id), 'illustration'];
+    if (dataFile.includes('characters.json') || a.target.roleId) {
+      const roleId = a.target.roleId ?? a.target.id;
+      if (!roleId) throw new Error(`${a.stem}: character target needs roleId or id`);
+      const existing = f.data[roleId]?.avatar;
+      if (existing && !isDeepStrictEqual(existing, ref)) {
+        throw new Error(`${a.stem}: ${dataFile} already has ${existing.src}; add a new version deliberately`);
+      }
+      if (!existing) {
+        f.data[roleId] = { ...(f.data[roleId] ?? {}), avatar: ref };
+        f.changed = true;
+      }
+      if (!a.reused) pending.push({ p, sidecar });
+      continue;
+    }
+    if (a.target.field === 'cover') {
+      if (f.data.cover && !isDeepStrictEqual(f.data.cover, ref)) {
+        throw new Error(`${a.stem}: ${dataFile} already has ${f.data.cover.src}; add a new version deliberately`);
+      }
+      if (!f.data.cover) {
+        f.data.cover = ref;
+        f.changed = true;
+      }
+      if (!a.reused) pending.push({ p, sidecar });
+      continue;
+    }
+    if (dataFile.includes('lesson') || f.data.dialogues || f.data.grammar) {
+      const dialogueId = a.target.dialogue ?? a.target.id;
+      const dIndex = f.data.dialogues ? f.data.dialogues.findIndex(d => d.id === dialogueId) : -1;
+      if (dIndex !== -1) {
+        const d = f.data.dialogues[dIndex];
+        if (d.illustration && !isDeepStrictEqual(d.illustration, ref)) {
+          throw new Error(`${a.stem}: ${dataFile} already has ${d.illustration.src}; add a new version deliberately`);
+        }
+        if (!d.illustration) {
+          // Giữ thứ tự khóa: illustration đặt ngay sau lines
+          const { id, title, roles, lines, ...rest } = d;
+          f.data.dialogues[dIndex] = { id, title, roles, lines, illustration: ref, ...rest };
+          f.changed = true;
+        }
+        if (!a.reused) pending.push({ p, sidecar });
+        continue;
+      }
+      const node = f.data.grammar?.find(g => g.id === a.target.id);
+      if (!node) throw new Error(`${a.stem}: ${a.target.id ?? a.target.field} not found in ${dataFile}`);
+      if (node.illustration && !isDeepStrictEqual(node.illustration, ref)) {
+        throw new Error(`${a.stem}: ${dataFile} already has ${node.illustration.src}; add a new version deliberately`);
+      }
+      if (!node.illustration) {
+        node.illustration = ref;
+        f.changed = true;
+      }
+      if (a.target.caption && !isDeepStrictEqual(node.illustrationCaption, a.target.caption)) {
+        node.illustrationCaption = a.target.caption;
+        f.changed = true;
+      }
+      if (!a.reused) pending.push({ p, sidecar });
+      continue;
+    }
+    const node = f.data.words?.find(w => w.id === a.target.id);
     if (!node) throw new Error(`${a.stem}: ${a.target.id ?? a.target.field} not found in ${dataFile}`);
-    if (node[key] && !isDeepStrictEqual(node[key], ref)) throw new Error(`${a.stem}: ${dataFile} already has ${node[key].src}; add a new version deliberately`);
-    if (!node[key]) { node[key] = ref; f.changed = true; }
-    if (a.target.caption && !isDeepStrictEqual(node.illustrationCaption, a.target.caption)) { node.illustrationCaption = a.target.caption; f.changed = true; }
+    if (node.illustration && !isDeepStrictEqual(node.illustration, ref)) {
+      throw new Error(`${a.stem}: ${dataFile} already has ${node.illustration.src}; add a new version deliberately`);
+    }
+    if (!node.illustration) {
+      node.illustration = ref;
+      f.changed = true;
+    }
     if (!a.reused) pending.push({ p, sidecar });
   }
   for (const [file, f] of files) {

@@ -1,6 +1,6 @@
 import type { IllustrationAsset } from '../types/index.ts';
 
-const ASSET_PATH = /^\/assets\/illustrations\/(?:ui\/(?:banners|states|decor)|scenes|vocab|grammar)\/[a-z0-9]+(?:-[a-z0-9]+)*-v[1-9][0-9]*\.webp$/;
+const ASSET_PATH = /^\/assets\/illustrations\/(?:ui\/(?:banners|states|decor)|scenes|vocab|grammar|characters)\/[a-z0-9]+(?:-[a-z0-9]+)*-v[1-9][0-9]*\.webp$/;
 
 /** Kiểm metadata ở biên nạp JSON; kiểm file thật/kích thước nằm trong test nội dung. */
 export function validateIllustrationAsset(value: unknown): asserts value is IllustrationAsset {
