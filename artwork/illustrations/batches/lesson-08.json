@@ -238,6 +238,272 @@
       "alt": {
         "vi": "Cô gái làm việc với máy tính xách tay."
       }
+    },
+    {
+      "stem": "lovely-leather-bag-v1",
+      "subject": "an elegant, exquisitely crafted warm leather shoulder bag resting on a polished wooden surface, tasteful classic design with fine stitching, a delicate dried flower sprig beside it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "suteki"
+      },
+      "alt": {
+        "vi": "Chiếc túi xách da màu nâu thanh lịch tuyệt đẹp đặt trên mặt gỗ."
+      }
+    },
+    {
+      "stem": "fine-sunny-weather-v1",
+      "subject": "a cheerful outdoor weather scene: a bright gentle warm sun shining in a clear soft sky with small fluffy white clouds and green leafy branches, representing good fine weather",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "ii"
+      },
+      "alt": {
+        "vi": "Mặt trời tỏa nắng ấm bầu trời trong xanh cành lá tươi tốt, biểu thị thời tiết tốt."
+      }
+    },
+    {
+      "stem": "stormy-bad-weather-v1",
+      "subject": "a gloomy bad weather scene: heavy dark rain clouds, slanted driving rain pouring down, and strong wind bending a tree, representing bad weather",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "warui"
+      },
+      "alt": {
+        "vi": "Trời mưa xám xịt gió lớn quất nghiêng cành cây, biểu thị thời tiết xấu."
+      }
+    },
+    {
+      "stem": "location-map-pin-v1",
+      "subject": "a stylized folded paper tourist map on a table with a classic bright brick-red location map pin marker placed on a scenic green park spot, signifying a specific place or location",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "tokoro"
+      },
+      "alt": {
+        "vi": "Ghim định vị màu đỏ cắm trên bản đồ giấy, chỉ một địa điểm."
+      }
+    },
+    {
+      "stem": "daily-life-room-v1",
+      "subject": "a warm everyday student living scene: corner of a cozy small studio apartment with a modest hot dinner bowl on a low table, folded laundry in a basket, and clothes hanging near a warm window",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "seikatsu"
+      },
+      "alt": {
+        "vi": "Góc phòng trọ ấm cúng với bữa cơm tối giản dị và giỏ đồ áo, biểu thị đời sống sinh hoạt."
+      }
+    },
+    {
+      "stem": "asking-how-is-it-v1",
+      "subject": "the reference male student in conversation with an open, inquiring gesture with palms turned upward and a friendly attentive smile, asking 'how is it?', a small question mark '?' in a thought bubble",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "dou"
+      },
+      "alt": {
+        "vi": "Chàng trai mở lòng bàn tay mỉm cười hỏi han: như thế nào?"
+      }
+    },
+    {
+      "stem": "asking-what-kind-v1",
+      "subject": "a person looking at a display of three distinctly different movie genre posters/cases (action mountain, comedy mask, gentle landscape), head tilted inquiringly with a large question mark '?' bubble asking 'what kind'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "donna"
+      },
+      "alt": {
+        "vi": "Ba bìa đĩa phim khác thể loại với dấu hỏi chấm thắc mắc: phim như thế nào."
+      }
+    },
+    {
+      "stem": "very-delicious-expression-v1",
+      "subject": "the reference male student tasting a forkful of strawberry shortcake, eyes sparkling with pure delight, hands cupping his cheeks with floating sparkle stars showing extreme pleasure and satisfaction",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "totemo"
+      },
+      "alt": {
+        "vi": "Chàng trai nếm miếng bánh kem, mắt sáng ngời ôm má khen rất ngon."
+      }
+    },
+    {
+      "stem": "not-very-good-camera-v1",
+      "subject": "a person holding an outdated compact camera, tilting head with a lukewarm, slightly disappointed expression and a small wavering hand gesture indicating 'not very good'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "amari"
+      },
+      "alt": {
+        "vi": "Người cầm chiếc máy ảnh với nét mặt hơi thất vọng, xua tay: không tốt lắm."
+      }
+    },
+    {
+      "stem": "conjunction-and-also-v1",
+      "subject": "a bright spacious room corner with a gentle red plus sign '+' connecting the wide sunlit window to a neat vase of fresh blooming flowers on a spotless table, expressing 'and furthermore'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "soshite"
+      },
+      "alt": {
+        "vi": "Căn phòng rộng ngập nắng nối với bình hoa tươi bằng dấu cộng, biểu thị 'và còn'."
+      }
+    },
+    {
+      "stem": "tasty-but-expensive-v1",
+      "subject": "a delicious plate of fresh gourmet sushi on a ceramic platter, paired with a long payment bill receipt beside it making the diner scratch his head in dilemma, visually showing 'delicious, BUT expensive'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "ga-pero"
+      },
+      "alt": {
+        "vi": "Đĩa sushi ngon lành đặt cạnh hóa đơn tiền dài khiến thực khách băn khoăn: ngon nhưng đắt."
+      }
+    },
+    {
+      "stem": "asking-how-are-you-phone-v1",
+      "subject": "the reference woman speaking into a mobile phone with a warm, caring, radiant smile, a hand raised in a gentle greeting wave, expressing a heartfelt 'how are you doing?'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "ogenki-desu-ka"
+      },
+      "alt": {
+        "vi": "Cô gái gọi điện thoại với nụ cười ấm áp hỏi thăm: bạn có khỏe không?"
+      }
+    },
+    {
+      "stem": "offering-another-cup-v1",
+      "subject": "a host holding a ceramic teapot tilted over a guest's empty teacup, pausing with a polite questioning smile ready to pour a refill, asking 'would you like another cup?'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "mou-ippai"
+      },
+      "alt": {
+        "vi": "Người rót nghiêng bình trà bên tách rỗng, mỉm cười hỏi khách có dùng thêm một ly nữa không."
+      }
+    },
+    {
+      "stem": "polite-refusal-full-cup-v1",
+      "subject": "a guest seated at a tea table gently resting a palm flat over the rim of their teacup with a polite, appreciative smile, politely refusing another serving: 'no thank you, I am full'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "kekkou-desu"
+      },
+      "alt": {
+        "vi": "Khách khẽ đặt tay che miệng chén trà mỉm cười từ chối: tôi đủ rồi ạ."
+      }
+    },
+    {
+      "stem": "time-to-leave-gesture-v1",
+      "subject": "the reference male student visiting a living room, glancing briefly at his blank-faced wristwatch and placing both hands on his knees as he prepares to bow and stand up to depart politely",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "sorosoro"
+      },
+      "alt": {
+        "vi": "Khách liếc nhìn đồng hồ rồi đặt tay lên gối chuẩn bị đứng dậy xin phép ra về."
+      }
+    },
+    {
+      "reuse": "vocab/waving-no-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "iie-denada"
+      },
+      "alt": {
+        "vi": "Chàng trai xua nhẹ bàn tay ngang mặt cười xòa: không có chi."
+      }
+    },
+    {
+      "stem": "please-come-again-host-v1",
+      "subject": "the host standing warmly at the open front porch, bowing slightly with both hands clasped gently in front and a welcoming smile, waving a warm invitation to please visit again",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+        "id": "mata-irasshatte"
+      },
+      "alt": {
+        "vi": "Chủ nhà đứng ở cửa hiên mỉm cười cúi chào tiễn khách: lần sau lại ghé chơi nhé."
+      }
     }
   ]
 }

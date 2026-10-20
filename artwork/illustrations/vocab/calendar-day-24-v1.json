@@ -1,0 +1,61 @@
+{
+  "createdAt": "2026-10-20T07:01:47.931Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/lesson-05.json",
+  "prompt": "Create ONE square 1:1 illustration for a Japanese-learning app's vocabulary card.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nNO text, letters, Japanese characters, logos, brand marks, labels, captions, watermark or UI anywhere. The ONLY writing allowed is the Arabic numerals that the subject names explicitly, painted large, clean and correct; no other numbers anywhere.\n\nLAYOUT: a single standalone cutout vignette centered, occupying about 70% of the canvas, with wide EMPTY transparent margins on all four sides. Show every person and object completely (full figures including feet); nothing is cropped by or touches the canvas edge.\n\nSUBJECT: a tear-off desk calendar page showing the large clean Arabic numeral 24 in charcoal, circled in red",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/calendar-day-24-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Tờ lịch xé bàn in con số 24 được khoanh đỏ chỉ ngày hai mươi tư."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+    "id": "nijuuyokka",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/calendar-day-24-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "hasAlpha": true
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 145,
+      "top": 141,
+      "width": 995,
+      "height": 996
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.418,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 45006,
+    "sha256": "bededc3ae9213709a0fe6774564114f5aff954ae3b74e126b5279e9058c89b34",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 132944,
+      "partial": 128150,
+      "opaque": 1050
+    }
+  }
+}

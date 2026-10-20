@@ -323,6 +323,16 @@
       "alt": {
         "vi": "Bó hoa chúc mừng rực rỡ kèm dải ruy băng và pháo hoa giấy."
       }
+    },
+    {
+      "reuse": "vocab/frequency-often-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "yoku-frecuente"
+      },
+      "alt": {
+        "vi": "Hàng bảy ô ngày trong tuần với năm ô được đóng dấu đỏ tròn, biểu thị thường xuyên."
+      }
     }
   ]
 }

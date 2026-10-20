@@ -612,6 +612,160 @@
       "alt": {
         "vi": "Chàng trai gật đầu mỉm cười hiểu ra, phía trên là bóng đèn phát sáng."
       }
+    },
+    {
+      "stem": "playing-tennis-v1",
+      "subject": "the reference male student in athletic sportswear mid-action swinging a tennis racket to hit a bright tennis ball, dynamic sports pose with energetic motion lines",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "shimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai vung vợt đánh bóng tennis trên sân."
+      }
+    },
+    {
+      "stem": "written-report-v1",
+      "subject": "a neatly bound printed report document lying on a desk with a simple bar chart and pie chart visible on the cover page (all text/labels illegible abstract lines), a sleek pen resting beside it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "repooto"
+      },
+      "alt": {
+        "vi": "Tập báo cáo học tập đóng bìa gọn gàng kèm chiếc bút cạnh biểu đồ."
+      }
+    },
+    {
+      "reuse": "vocab/asking-what-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "nani"
+      },
+      "alt": {
+        "vi": "Chàng trai cầm hộp quà bí ẩn nghiêng đầu thắc mắc với dấu hỏi chấm."
+      }
+    },
+    {
+      "stem": "pinching-a-little-v1",
+      "subject": "a close-up vignette of a hand showing a 'tiny amount' pinch gesture with thumb and index finger held just slightly apart, beside a small steaming teacup suggesting a brief rest pause",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "chotto"
+      },
+      "alt": {
+        "vi": "Bàn tay làm cử chỉ ngón cái và trỏ khép gần nhau ra hiệu một chút bên tách trà."
+      }
+    },
+    {
+      "stem": "frequency-always-v1",
+      "subject": "a horizontal row of seven neat square calendar day-boxes representing a week, with all 7 out of 7 boxes stamped with a solid circular brick-red tick mark, symbolizing always",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "itsumo"
+      },
+      "alt": {
+        "vi": "Hàng bảy ô ngày trong tuần với cả bảy ô đều được đóng dấu đỏ tròn, biểu thị luôn luôn."
+      }
+    },
+    {
+      "stem": "frequency-sometimes-v1",
+      "subject": "a horizontal row of seven neat square calendar day-boxes representing a week, with exactly 2 out of 7 boxes stamped with a circular brick-red mark (the 2nd and 6th boxes) and the other 5 boxes empty, symbolizing sometimes",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "tokidoki"
+      },
+      "alt": {
+        "vi": "Hàng bảy ô ngày trong tuần với chỉ hai ô được đóng dấu đỏ tròn, biểu thị thỉnh thoảng."
+      }
+    },
+    {
+      "stem": "sequence-and-then-v1",
+      "subject": "two side-by-side vignette scenes connected by a curved brick-red arrow pointing from left to right: on the left the student finishing a meal at a table, on the right sitting down to write a letter",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "sorekara"
+      },
+      "alt": {
+        "vi": "Hai cảnh nối bằng mũi tên đỏ: bên trái vừa ăn xong, bên phải ngồi viết thư."
+      }
+    },
+    {
+      "stem": "agreeing-great-idea-v1",
+      "subject": "the reference woman with a delighted, enthusiastic expression, smiling brightly and giving two thumbs up in approval during a conversation, agreeing that an idea is great",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "ii-desu-ne"
+      },
+      "alt": {
+        "vi": "Cô gái tươi cười giơ ngón tay cái tán thành nhiệt tình: hay quá nhỉ."
+      }
+    },
+    {
+      "stem": "responding-what-is-it-v1",
+      "subject": "the reference male student turning his head back over his shoulder with an attentive, friendly inquiring expression as if responding to his name being called, a small speech bubble with a gentle question mark '?' beside him",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "nan-desu-ka"
+      },
+      "alt": {
+        "vi": "Chàng trai ngoảnh lại niềm nở lắng nghe khi được gọi: có chuyện gì thế?"
+      }
+    },
+    {
+      "stem": "see-you-again-farewell-v1",
+      "subject": "the reference male student and female student walking away in slightly divergent directions at a street corner after class, both turning back to wave cheerful goodbyes to each other with warm smiles",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-06.json",
+        "id": "ja-mata"
+      },
+      "alt": {
+        "vi": "Hai bạn sinh viên quay lại vẫy tay mỉm cười chào nhau sau giờ học."
+      }
     }
   ]
 }

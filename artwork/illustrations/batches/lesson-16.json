@@ -607,6 +607,16 @@
       "alt": {
         "vi": "Chàng trai đứng thẳng toàn thân hướng về phía trước, trọn vẹn từ đầu đến chân."
       }
+    },
+    {
+      "reuse": "vocab/number-id-tag-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "ban-numero"
+      },
+      "alt": {
+        "vi": "Thẻ số móc chìa khóa bằng gỗ in rõ con số 42."
+      }
     }
   ]
 }

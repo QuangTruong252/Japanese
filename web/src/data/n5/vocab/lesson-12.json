@@ -342,6 +342,14 @@
         "translation": {
           "vi": "Tôi chọn cà phê."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/choosing-coffee-preference-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái mỉm cười cầm tách cà phê, bên cạnh là tách trà xanh đặt trên bàn."
+        }
       }
     },
     {
@@ -1001,6 +1009,14 @@
         "translation": {
           "vi": "Tôi thích cả hai."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/both-options-checked-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai đĩa tráng miệng đặt cạnh nhau đều có dấu tick xanh, biểu thị cả hai cái."
+        }
       }
     },
     {
@@ -1017,6 +1033,14 @@
         "kana": "スポーツの なかで サッカーが いちばん すきです。",
         "translation": {
           "vi": "Trong các môn thể thao, tôi thích bóng đá nhất."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/podium-number-one-trophy-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bục vinh quang ba bậc với con số 1 ở bậc cao nhất có chiếc cúp vàng, biểu thị đứng đầu, nhất."
         }
       }
     },
@@ -1035,6 +1059,14 @@
         "translation": {
           "vi": "Nhật Bản lạnh hơn Việt Nam nhiều."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/balance-scale-tilted-far-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc cân đĩa nghiêng lệch hẳn về một bên, biểu thị sự chênh lệch hơn hẳn."
+        }
       }
     },
     {
@@ -1051,6 +1083,14 @@
         "kana": "はじめて にほんへ いきました。",
         "translation": {
           "vi": "Tôi đã đi Nhật Bản lần đầu tiên."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/first-time-passport-stamp-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuốn hộ chiếu mở trang với con dấu nhập cảnh đầu tiên bên chiếc vali, biểu thị lần đầu tiên."
         }
       }
     },

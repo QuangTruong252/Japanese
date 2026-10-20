@@ -67,6 +67,14 @@
         "naiKana": "",
         "ta": "あった",
         "taKana": "あった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/having-tickets-items-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai vui vẻ cầm trên tay cặp vé và đồng xu, biểu thị có đồ vật, tiền vé."
+        }
       }
     },
     {
@@ -534,6 +542,14 @@
         "translation": {
           "vi": "Chữ của thầy giáo rất đẹp."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/handwritten-script-page-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Trang sổ mở với những dòng chữ viết tay nắn nót trừu tượng bên chiếc bút máy."
+        }
       }
     },
     {
@@ -568,6 +584,14 @@
         "translation": {
           "vi": "Bạn có hiểu chữ Hiragana không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hiragana-soft-strokes-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nét bút chì uốn lượn mềm mại trên trang giấy kẻ ô kiểu chữ Hiragana trừu tượng."
+        }
       }
     },
     {
@@ -585,6 +609,14 @@
         "translation": {
           "vi": "Tôi hiểu chữ Katakana."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/katakana-angular-strokes-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nét bút góc cạnh gãy khúc dứt khoát trên giấy kiểu chữ Katakana trừu tượng."
+        }
       }
     },
     {
@@ -601,6 +633,14 @@
         "kana": "ローマじで かきます。",
         "translation": {
           "vi": "Tôi viết bằng chữ La-tinh."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/romaji-wooden-blocks-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng khối gỗ đồ chơi xếp trên bàn mang hình khối chữ cái La-tinh trừu tượng."
         }
       }
     },
@@ -693,6 +733,14 @@
         "kana": "ようじが ありますから、かえります。",
         "translation": {
           "vi": "Vì có việc bận nên tôi về."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/personal-errand-checklist-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuốn sổ tay ghi lịch trình bận rộn đặt cạnh chùm chìa khóa và túi xách, biểu thị việc riêng."
         }
       }
     },
@@ -886,6 +934,14 @@
         "translation": {
           "vi": "Tôi rất hiểu tiếng Anh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/frequency-often-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng bảy ô ngày trong tuần với năm ô được đóng dấu đỏ tròn, biểu thị thường xuyên."
+        }
       }
     },
     {
@@ -902,6 +958,14 @@
         "kana": "かんじが だいたい わかります。",
         "translation": {
           "vi": "Tôi hiểu đại khái chữ Hán."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/mostly-progress-circle-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Biểu đồ tròn đã tô màu khoảng tám mươi phần trăm, biểu thị đại khái, phần lớn."
         }
       }
     },
@@ -920,6 +984,14 @@
         "translation": {
           "vi": "Tôi có nhiều tiền."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/heaping-rice-bowl-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bát cơm trắng đầy ắp vun cao ngọn, biểu thị số lượng nhiều."
+        }
       }
     },
     {
@@ -937,6 +1009,14 @@
         "translation": {
           "vi": "Tôi hiểu một chút tiếng Nhật."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tiny-portion-spoon-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc thìa gỗ chỉ múc một lượng rất nhỏ ở đầu thìa, biểu thị một chút, ít."
+        }
       }
     },
     {
@@ -953,6 +1033,14 @@
         "kana": "かんこくごが ぜんぜん わかりません。",
         "translation": {
           "vi": "Tôi hoàn toàn không hiểu tiếng Hàn Quốc."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/frequency-not-at-all-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng bảy ô ngày trong tuần hoàn toàn để trống không có dấu nào, biểu thị hoàn toàn không."
         }
       }
     },
@@ -996,6 +1084,14 @@
         "translation": {
           "vi": "Vì không có thời gian nên tôi đi bằng taxi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/reason-cause-arrow-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai cảnh nối bằng mũi tên chỉ lý do: bên trái sắp muộn giờ, bên phải vội vẫy taxi."
+        }
       }
     },
     {
@@ -1012,6 +1108,14 @@
         "kana": "どうして しんぶんを よみませんか。",
         "translation": {
           "vi": "Tại sao bạn không đọc báo?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-why-rainbow-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Em bé chỉ tay lên cầu vồng nghiêng đầu tò mò hỏi tại sao với dấu hỏi chấm."
         }
       }
     },
@@ -1030,6 +1134,14 @@
         "translation": {
           "vi": "Xin hãy cho tôi mượn cuốn sách đó."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-to-borrow-book-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai bàn tay đưa ra cử chỉ lịch sự ngỏ lời xin mượn cuốn sách trên bàn."
+        }
       }
     },
     {
@@ -1046,6 +1158,14 @@
         "kana": "いいですよ、どうぞ。",
         "translation": {
           "vi": "Được chứ, xin mời."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/gladly-agreeing-lending-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái tươi cười trao cuốn sách đồng ý cho mượn: được chứ!"
         }
       }
     },
@@ -1064,6 +1184,14 @@
         "translation": {
           "vi": "Thật đáng tiếc nhưng tôi không có thời gian."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/feeling-regret-ticket-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cầm vé nhìn xuống tiếc nuối vì bận việc không đi được: tiếc quá."
+        }
       }
     },
     {
@@ -1080,6 +1208,14 @@
         "kana": "ああ、そうですか。",
         "translation": {
           "vi": "A, vậy à."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/exclaiming-realization-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai mở to mắt ồ lên một tiếng hiểu ra: A, vậy à!"
         }
       }
     },
@@ -1098,6 +1234,14 @@
         "translation": {
           "vi": "Cùng đi với tôi nhé?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/inviting-along-tickets-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái cầm hai tấm vé mỉm cười nghiêng người rủ bạn: cùng đi với mình nhé?"
+        }
       }
     },
     {
@@ -1114,6 +1258,14 @@
         "kana": "きょうは ちょっと……。",
         "translation": {
           "vi": "Hôm nay thì có chút..."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hesitant-polite-refusal-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai gãi sau gáy nét mặt ngập ngừng bối rối từ chối khéo léo."
         }
       }
     },
@@ -1132,6 +1284,14 @@
         "translation": {
           "vi": "Không được à?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-pleading-is-it-no-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái chắp nhẹ tay nét mặt hụt hẫng năn nỉ hỏi lại: không được à?"
+        }
       }
     },
     {
@@ -1148,6 +1308,14 @@
         "kana": "また こんど おねがいします。",
         "translation": {
           "vi": "Hẹn bạn lần sau nhé."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/raincheck-next-time-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai mỉm cười xua tay vui vẻ hẹn lại dịp sau nhé."
         }
       }
     }

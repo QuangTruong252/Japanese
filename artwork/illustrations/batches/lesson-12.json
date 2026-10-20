@@ -787,6 +787,87 @@
       "alt": {
         "vi": "Chàng trai mệt mỏi gục xuống bàn đầy giấy tờ."
       }
+    },
+    {
+      "stem": "choosing-coffee-preference-v1",
+      "subject": "a hand reaching decisively to pick up a warm mug of black coffee placed beside a cup of green tea on a table, with a satisfied smile expressing 'I prefer coffee / coffee is good for me'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "ii-preferir"
+      },
+      "alt": {
+        "vi": "Cô gái mỉm cười cầm tách cà phê, bên cạnh là tách trà xanh đặt trên bàn."
+      }
+    },
+    {
+      "stem": "both-options-checked-v1",
+      "subject": "two side-by-side dessert plates (one slice of melon, one slice of cake) each marked with a cheerful painted green checkmark tick, two thumbs up indicating 'both are good / I like both'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "dochiramo"
+      },
+      "alt": {
+        "vi": "Hai đĩa tráng miệng đặt cạnh nhau đều có dấu tick xanh, biểu thị cả hai cái."
+      }
+    },
+    {
+      "stem": "podium-number-one-trophy-v1",
+      "digits": true,
+      "subject": "a three-tiered winner's podium with the center tier highest, displaying the large clean Arabic numeral 1 painted on the center front, with a shiny golden winner's trophy cup resting on top",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "ichiban"
+      },
+      "alt": {
+        "vi": "Bục vinh quang ba bậc với con số 1 ở bậc cao nhất có chiếc cúp vàng, biểu thị đứng đầu, nhất."
+      }
+    },
+    {
+      "stem": "balance-scale-tilted-far-v1",
+      "subject": "a classic balance scale tilted steeply to one side with one pan resting far lower than the other, visually demonstrating an overwhelming difference ('by far / much more')",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "zutto"
+      },
+      "alt": {
+        "vi": "Chiếc cân đĩa nghiêng lệch hẳn về một bên, biểu thị sự chênh lệch hơn hẳn."
+      }
+    },
+    {
+      "stem": "first-time-passport-stamp-v1",
+      "subject": "an open passport on a travel desk showing a single crisp round arrival entry stamp freshly marked on an otherwise clean page, beside a small suitcase, symbolizing doing something for the first time",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "hajimete"
+      },
+      "alt": {
+        "vi": "Cuốn hộ chiếu mở trang với con dấu nhập cảnh đầu tiên bên chiếc vali, biểu thị lần đầu tiên."
+      }
     }
   ]
 }

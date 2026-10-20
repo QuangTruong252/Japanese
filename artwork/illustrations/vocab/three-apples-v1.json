@@ -1,0 +1,68 @@
+{
+  "createdAt": "2026-10-20T08:05:52.497Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/lesson-11.json",
+  "prompt": "Create ONE square 1:1 image that is a sprite atlas of 4 separate illustrations arranged in a precise grid of 2 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nCELLS (row-major):\n1. (row 1, column 1) a single standalone shiny red apple with a small green leaf resting on a surface\n2. (row 1, column 2) two shiny red apples placed neatly side by side\n3. (row 2, column 1) three shiny red apples arranged neatly in a tight cluster\n4. (row 2, column 2) four shiny red apples arranged neatly in a compact square group\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY transparent margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/three-apples-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Ba quả táo đỏ xếp thành nhóm."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+    "id": "mittsu",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/three-apples-v1.png",
+    "width": 564,
+    "height": 441,
+    "format": "png",
+    "hasAlpha": true,
+    "sourceImage": "artwork/illustrations/atlases/lesson-11-counting-apples-part1-v1.png",
+    "crop": {
+      "left": 46,
+      "top": 685,
+      "width": 564,
+      "height": 441
+    }
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 45,
+      "top": 13,
+      "width": 503,
+      "height": 416
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.827,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 50898,
+    "sha256": "e2816e1f27d9e399f93dec001757431f02f5e6a9d52bae80c1e20161d027f8ce",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 158619,
+      "partial": 103352,
+      "opaque": 173
+    }
+  }
+}

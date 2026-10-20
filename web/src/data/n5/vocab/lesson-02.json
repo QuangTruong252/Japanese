@@ -817,6 +817,14 @@
         "translation": {
           "vi": "Đây là sách tiếng Anh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/english-language-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bong bóng lời nói có hình cờ Vương quốc Anh bên cạnh cuốn sách mở."
+        }
       }
     },
     {
@@ -833,6 +841,14 @@
         "kana": "それは にほんごの じしょです。",
         "translation": {
           "vi": "Đó là từ điển tiếng Nhật."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/japanese-language-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bong bóng lời nói có hình cờ Nhật Bản bên cạnh cuốn sách mở."
         }
       }
     },
@@ -851,6 +867,14 @@
         "translation": {
           "vi": "Đây là tạp chí tiếng Nhật."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/language-suffix-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bong bóng lời nói có hai lá cờ biểu thị ngôn ngữ bên trên cuốn từ điển."
+        }
       }
     },
     {
@@ -867,6 +891,14 @@
         "kana": "これは なんの ざっしですか。",
         "translation": {
           "vi": "Đây là tạp chí gì?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-what-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cầm hộp quà bí ẩn nghiêng đầu thắc mắc với dấu hỏi chấm."
         }
       }
     },
@@ -885,6 +917,14 @@
         "translation": {
           "vi": "Vâng, đúng vậy."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/thats-right-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai mỉm cười gật đầu đồng ý bên cạnh dấu tick xanh."
+        }
       }
     },
     {
@@ -901,6 +941,14 @@
         "kana": "あのう、これは おみやげです。",
         "translation": {
           "vi": "À này, đây là quà lưu niệm."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hesitant-filler-anou-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái ngập ngừng đưa ngón tay lên má suy nghĩ với dấu ba chấm."
         }
       }
     },
@@ -919,6 +967,14 @@
         "translation": {
           "vi": "Hả, thế à."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/surprised-exclamation-e-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai giật mình lùi lại mở to mắt bất ngờ với dấu chấm than."
+        }
       }
     },
     {
@@ -935,6 +991,14 @@
         "kana": "どうぞ。",
         "translation": {
           "vi": "Xin mời."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/inviting-gesture-douzo-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đưa bàn tay mở mỉm cười mời ngồi vào chiếc ghế trống."
         }
       }
     },
@@ -978,6 +1042,14 @@
         "translation": {
           "vi": "Thế à. Cảm ơn."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/understanding-realization-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đập nhẹ nắm tay vào lòng bàn tay gật đầu vỡ lẽ khi hiểu ra."
+        }
       }
     },
     {
@@ -994,6 +1066,14 @@
         "kana": "いいえ、ちがいます。",
         "translation": {
           "vi": "Không, không phải."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/thats-wrong-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai bắt chéo hai tay tạo thành chữ X lắc đầu báo hiệu sai rồi."
         }
       }
     },
@@ -1012,6 +1092,14 @@
         "translation": {
           "vi": "Từ nay rất mong được giúp đỡ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/in-your-care-bow-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai hai tay cầm hộp quà nhỏ cúi chào tại cửa nhà mong được giúp đỡ từ nay về sau."
+        }
       }
     },
     {
@@ -1028,6 +1116,14 @@
         "kana": "こちらこそよろしく。",
         "translation": {
           "vi": "Chính tôi cũng mong được giúp đỡ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/reciprocating-bow-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái cúi đầu đáp lễ mỉm cười khiêm tốn đáp lại lời chào."
         }
       }
     }

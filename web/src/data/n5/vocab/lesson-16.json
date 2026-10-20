@@ -1108,6 +1108,14 @@
         "translation": {
           "vi": "Tôi đi xe buýt số 12."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/number-id-tag-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Thẻ số móc chìa khóa bằng gỗ in rõ con số 42."
+        }
       }
     },
     {

@@ -1,0 +1,68 @@
+{
+  "createdAt": "2026-10-20T07:01:47.929Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/lesson-05.json",
+  "prompt": "Create ONE square 1:1 image that is a sprite atlas of 4 separate illustrations arranged in a precise grid of 2 columns x 2 rows, for a Japanese-learning app's vocabulary cards.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nNO text, letters, Japanese characters, logos, brand marks, labels, captions, watermark or UI anywhere. The ONLY writing allowed is the Arabic numerals that the subject names explicitly, painted large, clean and correct; no other numbers anywhere.\n\nCELLS (row-major):\n1. (row 1, column 1) a tear-off desk calendar page showing the large clean Arabic numeral 9 in charcoal\n2. (row 1, column 2) a tear-off desk calendar page showing the large clean Arabic numeral 10 in charcoal\n3. (row 2, column 1) a tear-off desk calendar page showing the large clean Arabic numeral 14 in charcoal\n4. (row 2, column 2) a tear-off desk calendar page showing the large clean Arabic numeral 20 in charcoal\n\nLAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY transparent margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/calendar-day-20-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Tờ lịch xé bàn in con số 20 chỉ ngày hai mươi."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+    "id": "hatsuka",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/calendar-day-20-v1.png",
+    "width": 592,
+    "height": 488,
+    "format": "png",
+    "hasAlpha": true,
+    "sourceImage": "artwork/illustrations/atlases/lesson-05-days-part3-v1.png",
+    "crop": {
+      "left": 635,
+      "top": 673,
+      "width": 592,
+      "height": 488
+    }
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 22,
+      "top": 11,
+      "width": 554,
+      "height": 461
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.751,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 46076,
+    "sha256": "7e4bd6118911d73358050249238058fc755f620cf87f925ddd0aa1179431b642",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 160054,
+      "partial": 101767,
+      "opaque": 323
+    }
+  }
+}

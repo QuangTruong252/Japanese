@@ -504,6 +504,14 @@
         "translation": {
           "vi": "Quán giải khát tôi hay đến nằm ở trước nhà ga."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/frequency-often-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng bảy ô ngày trong tuần với năm ô được đóng dấu đỏ tròn, biểu thị thường xuyên."
+        }
       }
     },
     {

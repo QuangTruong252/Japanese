@@ -372,6 +372,14 @@
         "naiKana": "しない",
         "ta": "した",
         "taKana": "した"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/playing-tennis-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai vung vợt đánh bóng tennis trên sân."
+        }
       }
     },
     {
@@ -902,6 +910,14 @@
         "translation": {
           "vi": "Tôi đã viết báo cáo."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/written-report-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tập báo cáo học tập đóng bìa gọn gàng kèm chiếc bút cạnh biểu đồ."
+        }
       }
     },
     {
@@ -1119,6 +1135,14 @@
         "translation": {
           "vi": "Bạn mua cái gì?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-what-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cầm hộp quà bí ẩn nghiêng đầu thắc mắc với dấu hỏi chấm."
+        }
       }
     },
     {
@@ -1161,6 +1185,14 @@
         "translation": {
           "vi": "Cùng nghỉ một chút thôi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/pinching-a-little-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn tay làm cử chỉ ngón cái và trỏ khép gần nhau ra hiệu một chút bên tách trà."
+        }
       }
     },
     {
@@ -1177,6 +1209,14 @@
         "kana": "いつも パンを たべます。",
         "translation": {
           "vi": "Tôi luôn ăn bánh mì."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/frequency-always-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng bảy ô ngày trong tuần với cả bảy ô đều được đóng dấu đỏ tròn, biểu thị luôn luôn."
         }
       }
     },
@@ -1195,6 +1235,14 @@
         "translation": {
           "vi": "Thỉnh thoảng tôi xem phim."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/frequency-sometimes-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng bảy ô ngày trong tuần với chỉ hai ô được đóng dấu đỏ tròn, biểu thị thỉnh thoảng."
+        }
       }
     },
     {
@@ -1211,6 +1259,14 @@
         "kana": "それから、てがみを かきました。",
         "translation": {
           "vi": "Sau đó, tôi đã viết thư."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sequence-and-then-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai cảnh nối bằng mũi tên đỏ: bên trái vừa ăn xong, bên phải ngồi viết thư."
         }
       }
     },
@@ -1254,6 +1310,14 @@
         "translation": {
           "vi": "Được đấy / Hay quá nhỉ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/agreeing-great-idea-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái tươi cười giơ ngón tay cái tán thành nhiệt tình: hay quá nhỉ."
+        }
       }
     },
     {
@@ -1296,6 +1360,14 @@
         "translation": {
           "vi": "Cái gì vậy? / Có chuyện gì vậy?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/responding-what-is-it-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai ngoảnh lại niềm nở lắng nghe khi được gọi: có chuyện gì thế?"
+        }
       }
     },
     {
@@ -1312,6 +1384,14 @@
         "kana": "じゃ、また あした。",
         "translation": {
           "vi": "Thế thì, hẹn gặp lại ngày mai."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/see-you-again-farewell-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai bạn sinh viên quay lại vẫy tay mỉm cười chào nhau sau giờ học."
         }
       }
     },

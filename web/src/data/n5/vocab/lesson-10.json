@@ -29,6 +29,14 @@
         "naiKana": "",
         "ta": "あった",
         "taKana": "あった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/items-on-desk-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuốn sổ và chiếc cốc đặt ngay ngắn trên mặt bàn gỗ, biểu thị đồ vật có ở trên bàn."
+        }
       }
     },
     {
@@ -59,6 +67,14 @@
         "naiKana": "いない",
         "ta": "いた",
         "taKana": "いた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/living-presence-classroom-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Thầy giáo đứng bên bàn và chú mèo nằm dưới ghế, biểu thị người và con vật có mặt."
+        }
       }
     },
     {
@@ -75,6 +91,14 @@
         "kana": "いろいろな のみものが あります。",
         "translation": {
           "vi": "Có nhiều loại đồ uống."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/assorted-bottles-variety-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng chai lọ nhiều màu sắc hình dáng khác nhau xếp trên kệ, biểu thị nhiều loại đa dạng."
         }
       }
     },
@@ -317,6 +341,14 @@
         "kana": "つくえの うえに ものが たくさん あります。",
         "translation": {
           "vi": "Trên bàn có nhiều đồ vật."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/everyday-miscellaneous-objects-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhóm đồ vật thường ngày gồm kéo, chìa khóa, hộp thiếc trên bàn, biểu thị đồ vật."
         }
       }
     },
@@ -710,6 +742,14 @@
         "translation": {
           "vi": "Cửa hàng bánh mì ở gần nhà ga."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/neighborhood-shopfront-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mặt tiền tiệm nhỏ xinh xắn có rèm vải noren và mái hiên, biểu thị cửa hàng."
+        }
       }
     },
     {
@@ -751,6 +791,14 @@
         "kana": "ちばけんに います。",
         "translation": {
           "vi": "Tôi ở tỉnh Chiba."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/prefecture-boundary-map-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bản đồ phân chia các tỉnh với một tỉnh được tô màu viền đỏ nổi bật."
         }
       }
     },
@@ -1110,6 +1158,14 @@
         "kana": "パンの コーナーは どこですか。",
         "translation": {
           "vi": "Quầy bánh mì ở đâu?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/store-department-corner-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một góc quầy hàng trưng bày có kệ gỗ và biển treo chỉ dẫn, biểu thị quầy khu vực."
         }
       }
     },

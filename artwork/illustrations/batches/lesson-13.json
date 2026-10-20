@@ -374,6 +374,134 @@
       "alt": {
         "vi": "Cô gái ngồi thảnh thơi trên ghế bành đọc tạp chí và thưởng thức tách trà cuối tuần."
       }
+    },
+    {
+      "stem": "approximate-time-v1",
+      "subject": "a round minimalist wall clock face without numbers, its hour and minute hands pointing together near the 12 o'clock position, with a soft warm yellow shaded arc spanning between 11:45 and 12:15 representing an approximate time window",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "goro"
+      },
+      "alt": {
+        "vi": "Mặt đồng hồ không số có hai kim chỉ khoảng 12 giờ và một vùng cung tròn đánh dấu khoảng thời gian ước chừng."
+      }
+    },
+    {
+      "stem": "something-to-drink-v1",
+      "subject": "the reference male student standing in front of a vending machine filled with many different drink bottles and cans with blank labels, finger hovering undecided, clearly thirsty and wanting something to drink",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "nanika"
+      },
+      "alt": {
+        "vi": "Chàng trai đứng trước máy bán nước, phân vân muốn uống cái gì đó."
+      }
+    },
+    {
+      "stem": "somewhere-travel-map-v1",
+      "subject": "the reference male student with his backpack standing beside a wheeled travel suitcase, holding an unfolded travel map in his hands and looking up at a wooden signpost with directional arrows pointing in several directions",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "dokoka"
+      },
+      "alt": {
+        "vi": "Chàng trai xách vali, cầm bản đồ mở rộng và ngước nhìn biển chỉ đường nhiều hướng."
+      }
+    },
+    {
+      "stem": "agreeing-together-v1",
+      "subject": "the reference male student and the reference woman standing side by side, smiling warmly and nodding in agreement, both making a friendly thumbs-up gesture together to confirm a shared plan",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "sou-shimashou"
+      },
+      "alt": {
+        "vi": "Chàng trai và cô gái cùng mỉm cười gật đầu và giơ ngón tay tán thành."
+      }
+    },
+    {
+      "stem": "taking-order-v1",
+      "subject": "a friendly cafe waiter wearing a dark apron holding a small order notepad and a pen, bowing slightly and politely toward an unseen customer table to take their order",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "gochuumon"
+      },
+      "alt": {
+        "vi": "Người phục vụ mặc tạp dề cầm sổ tay và bút cúi nhẹ người hỏi khách gọi món."
+      }
+    },
+    {
+      "stem": "please-wait-moment-v1",
+      "subject": "a polite receptionist smiling behind a counter, holding one palm gently raised outward in a polite 'please wait a moment' gesture, with a small hourglass on the counter beside her",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "omachi-kudasai"
+      },
+      "alt": {
+        "vi": "Nhân viên lễ tân tươi cười đưa bàn tay ra hiệu xin chờ, bên cạnh là chiếc đồng hồ cát nhỏ."
+      }
+    },
+    {
+      "stem": "polite-bow-service-v1",
+      "subject": "a well-groomed hotel staff member in a neat formal suit standing upright and bowing respectfully at a 30-degree angle with hands folded neatly in front, delivering an ultra-polite formal greeting",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "de-gozaimasu"
+      },
+      "alt": {
+        "vi": "Nhân viên mặc âu phục cúi đầu chào lịch thiệp hai tay khép trước người."
+      }
+    },
+    {
+      "stem": "split-bill-trays-v1",
+      "subject": "two small change trays placed side by side on a wooden checkout counter, each containing separate Japanese yen coins and an individual receipt slip, clearly separating the payments for two people",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-13.json",
+        "id": "betsubetsuni"
+      },
+      "alt": {
+        "vi": "Hai khay hóa đơn và tiền thanh toán riêng rẽ đặt cạnh nhau trên quầy."
+      }
     }
   ]
 }

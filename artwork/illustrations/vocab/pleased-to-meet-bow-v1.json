@@ -1,0 +1,61 @@
+{
+  "createdAt": "2026-10-20T06:05:55.550Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/lesson-01.json",
+  "prompt": "Create ONE square 1:1 illustration for a Japanese-learning app's vocabulary card.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nLAYOUT: a single standalone cutout vignette centered, occupying about 70% of the canvas, with wide EMPTY transparent margins on all four sides. Show every person and object completely (full figures including feet); nothing is cropped by or touches the canvas edge.\n\nSUBJECT: the reference male student performing a deep polite bow from the waist with hands straight at his sides, smiling warmly as he completes a self-introduction asking for goodwill",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/pleased-to-meet-bow-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Chàng trai cúi gập người lịch sự mong được giúp đỡ khi chào hỏi lần đầu."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+    "id": "douzo-yoroshiku",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/pleased-to-meet-bow-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "hasAlpha": true
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 125,
+      "top": 123,
+      "width": 1048,
+      "height": 1057
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.394,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 32774,
+    "sha256": "8422358ff9f119a3bad7d5c9caffab6b4d06d353ba859972eb32689e9d24114f",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 192152,
+      "partial": 68531,
+      "opaque": 1461
+    }
+  }
+}

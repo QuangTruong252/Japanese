@@ -384,6 +384,14 @@
         "translation": {
           "vi": "Tôi có thể bơi 100 mét."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/measuring-tape-meter-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Thước dây cuộn kim loại kéo dài đặt trên mặt bàn thợ mộc."
+        }
       }
     },
     {
@@ -651,6 +659,14 @@
         "translation": {
           "vi": "Tôi thích động vật. Đặc biệt là tôi thích ngựa."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/especially-spotlight-horse-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chú ngựa gỗ được đặt trên bục cao có ánh sáng chiếu rọi nổi bật giữa các con vật khác."
+        }
       }
     },
     {
@@ -667,6 +683,14 @@
         "kana": "「へえ、すごいですね。」",
         "translation": {
           "vi": "\"Thế cơ à, tuyệt vời quá nhỉ.\""
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/amazed-reaction-hee-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người nghe tròn mắt há miệng ngạc nhiên trước câu chuyện bất ngờ thú vị."
         }
       }
     },

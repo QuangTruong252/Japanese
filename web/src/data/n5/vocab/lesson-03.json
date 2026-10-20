@@ -92,6 +92,14 @@
         "translation": {
           "vi": "Nhà vệ sinh ở đâu?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-where-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cầm bản đồ mở nhìn quanh tìm đường với dấu hỏi chấm."
+        }
       }
     },
     {
@@ -183,6 +191,14 @@
         "kana": "エレベーターは どちらですか。",
         "translation": {
           "vi": "Thang máy ở phía nào?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-where-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cầm bản đồ mở nhìn quanh tìm hướng với dấu hỏi chấm."
         }
       }
     },
@@ -526,6 +542,14 @@
         "translation": {
           "vi": "Đất nước của bạn là ở đâu?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/globe-country-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Quả địa cầu để bàn trên giá gỗ với một vùng quốc gia được làm nổi bật."
+        }
       }
     },
     {
@@ -768,6 +792,14 @@
         "translation": {
           "vi": "Quyển sách này giá 500 yên."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/yen-currency-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chồng tiền xu yên Nhật có đồng 500 trên cùng bên cạnh tờ tiền giấy gập."
+        }
       }
     },
     {
@@ -785,6 +817,14 @@
         "translation": {
           "vi": "Chai rượu vang này giá bao nhiêu?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-price-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái cầm áo len có nhãn giá để trống thắc mắc giá tiền với dấu hỏi chấm."
+        }
       }
     },
     {
@@ -801,6 +841,14 @@
         "kana": "この えんぴつは ひゃくえんです。",
         "translation": {
           "vi": "Cây bút chì này giá 100 yên."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/number-100-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đồng xu 100 yên màu bạc in nổi con số 100 rõ nét."
         }
       }
     },
@@ -878,6 +926,14 @@
         "translation": {
           "vi": "Xin cảm ơn rất nhiều."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bowing-thanks-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cúi đầu mỉm cười cảm ơn ngắn gọn."
+        }
       }
     },
     {
@@ -894,6 +950,14 @@
         "kana": "いらっしゃいませ。",
         "translation": {
           "vi": "Xin chào quý khách."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/irasshaimase-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên cửa hàng đeo tạp dề cúi chào đón khách bước vào tiệm."
         }
       }
     },
@@ -912,6 +976,14 @@
         "translation": {
           "vi": "Hãy cho tôi xem cái đồng hồ đó."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/please-show-me-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái chỉ tay vào món đồ trong tủ kính cửa hàng xin được xem."
+        }
       }
     },
     {
@@ -929,6 +1001,14 @@
         "translation": {
           "vi": "Thế thì, cho tôi cái này."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/well-then-decision-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai mỉm cười gật đầu giơ ngón tay khi đưa ra quyết định mua hàng."
+        }
       }
     },
     {
@@ -945,6 +1025,14 @@
         "kana": "これを ください。",
         "translation": {
           "vi": "Cho tôi cái này."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/please-give-me-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Khách hàng đặt món đồ đã chọn lên quầy thanh toán yêu cầu mua."
         }
       }
     }

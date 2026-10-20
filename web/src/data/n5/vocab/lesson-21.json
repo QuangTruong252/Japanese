@@ -396,6 +396,14 @@
         "translation": {
           "vi": "Tôi đã mua sắm lãng phí."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/wasteful-dripping-tap-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc vòi nước rò rỉ nhỏ giọt tràn xô biểu thị sự lãng phí vô ích."
+        }
       }
     },
     {
@@ -438,6 +446,14 @@
         "translation": {
           "vi": "Chiếc máy tính đó thật tuyệt vời nhỉ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/astonishing-powerful-computer-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Dàn máy tính siêu mạnh khiến người xem há hốc mồm thán phục."
+        }
       }
     },
     {
@@ -455,6 +471,14 @@
         "translation": {
           "vi": "Điều đó là sự thật hả?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/truth-magnifying-glass-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Kính lúp soi rõ con dấu xác thực bảo đảm sự thật chuẩn xác."
+        }
       }
     },
     {
@@ -471,6 +495,14 @@
         "kana": "かれの はなしは うそだと おもいます。",
         "translation": {
           "vi": "Tôi nghĩ câu chuyện của anh ấy là lời nói dối."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/crossed-fingers-fib-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một bàn tay giấu sau lưng với hai ngón tay bắt chéo biểu thị lời nói dối."
         }
       }
     },
@@ -538,6 +570,14 @@
         "kana": "にほんは ぶっかが たかいと おもいます。",
         "translation": {
           "vi": "Tôi nghĩ vật giá ở Nhật Bản đắt đỏ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/rising-prices-basket-chart-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Giỏ hàng hóa bên cạnh biểu đồ mũi tên tăng vọt biểu thị vật giá đắt đỏ."
         }
       }
     },
@@ -706,6 +746,14 @@
         "translation": {
           "vi": "Tôi nghĩ anh ấy là thiên tài."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/child-prodigy-genius-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cậu bé thiên tài ngồi suy ngẫm trước bàn cờ với vầng sáng ý tưởng quanh đầu."
+        }
       }
     },
     {
@@ -748,6 +796,14 @@
         "translation": {
           "vi": "Ý kiến của tôi thì hơi khác một chút."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/raising-hand-opinion-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một người giơ tay xin phát biểu để nêu lên ý kiến quan điểm của mình."
+        }
       }
     },
     {
@@ -764,6 +820,14 @@
         "kana": "ぶちょうの はなしは ながいと おもいます。",
         "translation": {
           "vi": "Tôi nghĩ bài nói của trưởng phòng thì dài."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/speech-podium-talk-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Diễn giả đứng trước bục micro say sưa thuyết trình bài nói chuyện."
         }
       }
     },
@@ -832,6 +896,14 @@
         "translation": {
           "vi": "Dạo này tôi rất bận rộn."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/recent-days-calendar-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch bàn với vài ngày gần đây được đánh dấu sao nổi bật."
+        }
       }
     },
     {
@@ -848,6 +920,14 @@
         "kana": "かれは たぶん こないと おもいます。",
         "translation": {
           "vi": "Tôi nghĩ có lẽ anh ấy sẽ không đến."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/probably-uncertain-weather-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người cầm ô ngước nhìn trời nửa nắng nửa mây phân vân có lẽ sẽ mưa."
         }
       }
     },
@@ -866,6 +946,14 @@
         "translation": {
           "vi": "Tôi nghĩ ngày mai chắc chắn thời tiết sẽ đẹp."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/teru-teru-bozu-sunshine-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Búp bê cầu nắng treo bên cửa sổ dưới nắng rực rỡ tin chắc thời tiết sẽ đẹp."
+        }
       }
     },
     {
@@ -883,6 +971,14 @@
         "translation": {
           "vi": "Món ăn này thực sự rất ngon."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/truly-delicious-taste-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người nếm món ăn nhắm mắt mãn nguyện vì hương vị thực sự thơm ngon."
+        }
       }
     },
     {
@@ -899,6 +995,14 @@
         "kana": "テストは そんなに むずかしくなかったと おもいます。",
         "translation": {
           "vi": "Tôi nghĩ bài kiểm tra đã không khó đến mức như thế."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/not-that-much-so-so-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Học sinh mỉm cười lắc nhẹ tay biểu thị bài thi không khó đến mức như vậy."
         }
       }
     },

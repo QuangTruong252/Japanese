@@ -1,0 +1,61 @@
+{
+  "createdAt": "2026-10-20T07:14:57.927Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/lesson-08.json",
+  "prompt": "Create ONE square 1:1 illustration for a Japanese-learning app's vocabulary card.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nLAYOUT: a single standalone cutout vignette centered, occupying about 70% of the canvas, with wide EMPTY transparent margins on all four sides. Show every person and object completely (full figures including feet); nothing is cropped by or touches the canvas edge.\n\nSUBJECT: the reference male student in conversation with an open, inquiring gesture with palms turned upward and a friendly attentive smile, asking 'how is it?', a small question mark '?' in a thought bubble",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/vocab/asking-how-is-it-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "vocabulary-cutout",
+  "suggestedAlt": {
+    "vi": "Chàng trai mở lòng bàn tay mỉm cười hỏi han: như thế nào?"
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/vocab/lesson-08.json",
+    "id": "dou",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/vocab/asking-how-is-it-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "hasAlpha": true
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 211,
+      "top": 94,
+      "width": 898,
+      "height": 1086
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.383,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 35528,
+    "sha256": "6fe5c955a17933c89438b11ec0a71894606bf78308241d2ac29801b159542f4d",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 199062,
+      "partial": 61623,
+      "opaque": 1459
+    }
+  }
+}

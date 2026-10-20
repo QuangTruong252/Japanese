@@ -568,6 +568,118 @@
       "alt": {
         "vi": "Chàng trai cúi gập người lịch sự để xin lỗi."
       }
+    },
+    {
+      "stem": "items-on-desk-v1",
+      "subject": "a clean light-wood desk with a clear view of an apple, a closed notebook, and a mug resting quietly on top of it, depicting the existence and location of inanimate objects",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "arimasu"
+      },
+      "alt": {
+        "vi": "Cuốn sổ và chiếc cốc đặt ngay ngắn trên mặt bàn gỗ, biểu thị đồ vật có ở trên bàn."
+      }
+    },
+    {
+      "stem": "living-presence-classroom-v1",
+      "subject": "inside a cozy room, the reference teacher standing beside a desk while a cute tabby cat sleeps curled up peacefully under a chair, depicting the presence of living beings (people and animals)",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "imasu"
+      },
+      "alt": {
+        "vi": "Thầy giáo đứng bên bàn và chú mèo nằm dưới ghế, biểu thị người và con vật có mặt."
+      }
+    },
+    {
+      "stem": "assorted-bottles-variety-v1",
+      "subject": "a delightful row of diverse glass and ceramic bottles and jars in various shapes, sizes and soft watercolor hues arranged on a wooden shelf, visually showing variety and diversity",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "iroiro"
+      },
+      "alt": {
+        "vi": "Hàng chai lọ nhiều màu sắc hình dáng khác nhau xếp trên kệ, biểu thị nhiều loại đa dạng."
+      }
+    },
+    {
+      "stem": "everyday-miscellaneous-objects-v1",
+      "subject": "a neat tabletop grouping of everyday miscellaneous still-life items: scissors, brass key, small metal tin, and a pocket notebook, illustrating the generic concept of objects / things",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "mono"
+      },
+      "alt": {
+        "vi": "Nhóm đồ vật thường ngày gồm kéo, chìa khóa, hộp thiếc trên bàn, biểu thị đồ vật."
+      }
+    },
+    {
+      "stem": "neighborhood-shopfront-v1",
+      "subject": "a charming small Japanese street shopfront with a striped fabric awning, a plain fabric noren curtain in the doorway, and display window showing freshly baked goods, depicting a specialty shop (~ya)",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "ya-tienda"
+      },
+      "alt": {
+        "vi": "Mặt tiền tiệm nhỏ xinh xắn có rèm vải noren và mái hiên, biểu thị cửa hàng."
+      }
+    },
+    {
+      "stem": "prefecture-boundary-map-v1",
+      "subject": "a stylized territorial regional map with clear boundary lines dividing administrative prefectures, with one specific prefecture highlighted in warm brick-red tone and a small pennant marker pin",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "ken"
+      },
+      "alt": {
+        "vi": "Bản đồ phân chia các tỉnh với một tỉnh được tô màu viền đỏ nổi bật."
+      }
+    },
+    {
+      "stem": "store-department-corner-v1",
+      "subject": "a designated shopping department alcove/corner in a store with neat wooden display shelving and a blank hanging section sign overhead, signifying a store corner / section",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "koonaa"
+      },
+      "alt": {
+        "vi": "Một góc quầy hàng trưng bày có kệ gỗ và biển treo chỉ dẫn, biểu thị quầy khu vực."
+      }
     }
   ]
 }

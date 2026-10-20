@@ -581,6 +581,14 @@
         "translation": {
           "vi": "Tôi đã đến Nhật tuần trước."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timeline-week-last-week-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng ba tờ lịch tuần với tờ bên trái được tô đỏ gạch chỉ tuần trước."
+        }
       }
     },
     {
@@ -597,6 +605,14 @@
         "kana": "こんしゅう はたらきます。",
         "translation": {
           "vi": "Tuần này tôi làm việc."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timeline-week-this-week-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng ba tờ lịch tuần với tờ chính giữa được tô đỏ gạch chỉ tuần này."
         }
       }
     },
@@ -615,6 +631,14 @@
         "translation": {
           "vi": "Tuần sau tôi đi Mỹ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timeline-week-next-week-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng ba tờ lịch tuần với tờ bên phải được tô đỏ gạch chỉ tuần sau."
+        }
       }
     },
     {
@@ -631,6 +655,14 @@
         "kana": "せんげつ べんきょうしました。",
         "translation": {
           "vi": "Tháng trước tôi đã học bài."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timeline-month-last-month-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng ba tờ lịch tháng với tờ bên trái được tô đỏ gạch chỉ tháng trước."
         }
       }
     },
@@ -649,6 +681,14 @@
         "translation": {
           "vi": "Tháng này thì bận rộn."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timeline-month-this-month-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng ba tờ lịch tháng với tờ chính giữa được tô đỏ gạch chỉ tháng này."
+        }
       }
     },
     {
@@ -665,6 +705,14 @@
         "kana": "らいげつ うちへ かえります。",
         "translation": {
           "vi": "Tháng sau tôi về nhà."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timeline-month-next-month-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng ba tờ lịch tháng với tờ bên phải được tô đỏ gạch chỉ tháng sau."
         }
       }
     },
@@ -683,6 +731,14 @@
         "translation": {
           "vi": "Tôi đã đến Nhật năm ngoái."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timeline-year-last-year-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng ba cuốn sổ kế hoạch năm với cuốn bên trái được tô đỏ gạch chỉ năm ngoái."
+        }
       }
     },
     {
@@ -699,6 +755,14 @@
         "kana": "ことし アメリカへ いきます。",
         "translation": {
           "vi": "Năm nay tôi đi Mỹ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timeline-year-this-year-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng ba cuốn sổ kế hoạch năm với cuốn chính giữa được tô đỏ gạch chỉ năm nay."
         }
       }
     },
@@ -717,6 +781,14 @@
         "translation": {
           "vi": "Năm sau tôi đi Nhật."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timeline-year-next-year-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng ba cuốn sổ kế hoạch năm với cuốn bên phải được tô đỏ gạch chỉ năm sau."
+        }
       }
     },
     {
@@ -733,6 +805,14 @@
         "kana": "にせんにじゅうねんに にほんへ きました。",
         "translation": {
           "vi": "Tôi đã đến Nhật vào năm 2020."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/year-counter-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuốn sổ kế hoạch năm mở ra in con số 2026 ở đầu trang."
         }
       }
     },
@@ -751,6 +831,14 @@
         "translation": {
           "vi": "Bạn đến Nhật năm nào?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-what-year-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bìa sổ kế hoạch năm có dấu hỏi chấm lớn thắc mắc năm nào."
+        }
       }
     },
     {
@@ -767,6 +855,14 @@
         "kana": "さんがつに かえります。",
         "translation": {
           "vi": "Tôi về vào tháng 3."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/month-counter-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Trang lịch tháng treo tường có con số 4 được khoanh đỏ chỉ tháng 4."
         }
       }
     },
@@ -785,6 +881,14 @@
         "translation": {
           "vi": "Tháng mấy bạn đi?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-what-month-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Trang lịch tháng có dấu hỏi chấm ở phần đầu trang thắc mắc tháng mấy."
+        }
       }
     },
     {
@@ -801,6 +905,14 @@
         "kana": "きょうは ついたちです。",
         "translation": {
           "vi": "Hôm nay là mùng 1."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-day-1-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn in con số 1 chỉ ngày mùng một."
         }
       }
     },
@@ -819,6 +931,14 @@
         "translation": {
           "vi": "Ngày mai là mùng 2."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-day-2-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn in con số 2 chỉ ngày mùng hai."
+        }
       }
     },
     {
@@ -835,6 +955,14 @@
         "kana": "みっかに かえります。",
         "translation": {
           "vi": "Tôi về vào mùng 3."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-day-3-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn in con số 3 chỉ ngày mùng ba."
         }
       }
     },
@@ -853,6 +981,14 @@
         "translation": {
           "vi": "Tôi đi vào mùng 4."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-day-4-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn in con số 4 chỉ ngày mùng bốn."
+        }
       }
     },
     {
@@ -869,6 +1005,14 @@
         "kana": "きょうは いつかです。",
         "translation": {
           "vi": "Hôm nay là mùng 5."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-day-5-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn in con số 5 chỉ ngày mùng năm."
         }
       }
     },
@@ -887,6 +1031,14 @@
         "translation": {
           "vi": "Tôi học bài vào mùng 6."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-day-6-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn in con số 6 chỉ ngày mùng sáu."
+        }
       }
     },
     {
@@ -903,6 +1055,14 @@
         "kana": "なのかに やすみます。",
         "translation": {
           "vi": "Tôi nghỉ vào mùng 7."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-day-7-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn in con số 7 chỉ ngày mùng bảy."
         }
       }
     },
@@ -921,6 +1081,14 @@
         "translation": {
           "vi": "Tôi làm việc vào mùng 8."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-day-8-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn in con số 8 chỉ ngày mùng tám."
+        }
       }
     },
     {
@@ -937,6 +1105,14 @@
         "kana": "きょうは ここのかです。",
         "translation": {
           "vi": "Hôm nay là mùng 9."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-day-9-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn in con số 9 chỉ ngày mùng chín."
         }
       }
     },
@@ -955,6 +1131,14 @@
         "translation": {
           "vi": "Tôi về vào mùng 10."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-day-10-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn in con số 10 chỉ ngày mùng mười."
+        }
       }
     },
     {
@@ -971,6 +1155,14 @@
         "kana": "じゅうよっかに いきます。",
         "translation": {
           "vi": "Tôi đi vào ngày 14."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-day-14-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn in con số 14 chỉ ngày mười bốn."
         }
       }
     },
@@ -989,6 +1181,14 @@
         "translation": {
           "vi": "Hôm nay là ngày 20."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-day-20-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn in con số 20 chỉ ngày hai mươi."
+        }
       }
     },
     {
@@ -1005,6 +1205,14 @@
         "kana": "にじゅうよっかに やすみます。",
         "translation": {
           "vi": "Tôi nghỉ vào ngày 24."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-day-24-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn in con số 24 được khoanh đỏ chỉ ngày hai mươi tư."
         }
       }
     },
@@ -1023,6 +1231,14 @@
         "translation": {
           "vi": "Hôm nay là ngày 25."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-day-counter-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn in con số 15 biểu thị ngày trong tháng."
+        }
       }
     },
     {
@@ -1040,6 +1256,14 @@
         "translation": {
           "vi": "Ngày mấy bạn về?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-what-day-of-month-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch xé bàn có dấu hỏi chấm ở giữa thắc mắc ngày mấy."
+        }
       }
     },
     {
@@ -1056,6 +1280,14 @@
         "kana": "いつ にほんへ いきますか。",
         "translation": {
           "vi": "Bao giờ bạn đi Nhật?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-when-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai ngước nhìn lịch tường và đồng hồ với dấu hỏi chấm thắc mắc khi nào."
         }
       }
     },
@@ -1099,6 +1331,14 @@
         "translation": {
           "vi": "À nhỉ... (thể hiện sự đồng tình)."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sympathetic-agreement-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái mỉm cười gật đầu đồng tình hai tay khép nhẹ trước ngực."
+        }
       }
     },
     {
@@ -1140,6 +1380,14 @@
         "kana": "いいえ、どういたしまして。",
         "translation": {
           "vi": "Không có gì."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/youre-welcome-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai mỉm cười xua nhẹ tay tỏ ý không có chi khi đáp lại lời cảm ơn."
         }
       }
     },
@@ -1183,6 +1431,14 @@
         "translation": {
           "vi": "Tôi đi bằng chuyến tàu điện tiếp theo."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/next-in-line-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mũi tên hướng từ hành khách đứng đầu hàng về phía chuyến tàu kế tiếp đang tiến vào ga."
+        }
       }
     },
     {
@@ -1199,6 +1455,14 @@
         "kana": "ふつうで いきます。",
         "translation": {
           "vi": "Tôi đi bằng tàu thường."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/local-train-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Toa tàu điện thường dừng tại sân ga nhỏ với sơ đồ tuyến ghé qua mọi trạm."
         }
       }
     },
@@ -1217,6 +1481,14 @@
         "translation": {
           "vi": "Tôi về bằng tàu tốc hành."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/express-train-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tàu nhanh có sọc cam chạy vụt qua sân ga nhỏ không dừng lại."
+        }
       }
     },
     {
@@ -1233,6 +1505,14 @@
         "kana": "とっきゅうで いきます。",
         "translation": {
           "vi": "Tôi đi bằng tàu tốc hành đặc biệt."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/limited-express-train-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tàu tốc hành đặc biệt với mũi tàu khí động học và sọc đỏ lướt trên đường ray trên cao."
         }
       }
     }
