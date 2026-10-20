@@ -7,33 +7,34 @@ import { Furigana } from '@/components/Furigana';
 import { Illustration } from '@/components/Illustration';
 import { SpeakButton } from '@/components/SpeakButton';
 import { VerbGroupBadge } from '@/components/VerbGroupBadge';
+import { DialogueReader } from '@/components/dialogue/DialogueReader';
+import { SPEAK_CLASS } from '@/components/dialogue/reader-styles';
 import { Button } from '@/components/ui/button';
 import { AUDIO_IMPORT_ENABLED } from '@/lib/features';
 import { formatOptionalBrackets, maxFuriganaWordEm, stripFurigana } from '@/lib/japanese';
 import { DEFAULT_SETTINGS, getSettingsSnapshot, saveSettings, subscribeSettings } from '@/lib/settings';
 import { cn } from '@/lib/utils';
-import type { VocabWord } from '@/types';
+import type { Dialogue, VocabWord } from '@/types';
 
-type TabValue = 'tu-vung' | 'ngu-phap' | 'nghe';
+type TabValue = 'tu-vung' | 'ngu-phap' | 'hoi-thoai' | 'nghe';
 
 const VERB_GROUP: Record<string, number> = { 'verb-godan': 1, 'verb-ichidan': 2, 'verb-irregular': 3 };
 
 const TAB_LABELS: { value: TabValue; label: string }[] = [
   { value: 'tu-vung', label: 'Từ vựng' },
   { value: 'ngu-phap', label: 'Ngữ pháp' },
+  { value: 'hoi-thoai', label: 'Hội thoại' },
   ...(AUDIO_IMPORT_ENABLED ? [{ value: 'nghe' as const, label: 'Nghe' }] : []),
 ];
 
 // Chừa chỗ cho thanh dính (tab ~68 px, thêm dải từ vựng ~44 px) để đích cuộn không bị che.
 const VOCAB_TARGET = 'scroll-mt-32';
 
-const SPEAK_CLASS = 'size-11 w-11 shrink-0 rounded-full border border-border bg-secondary text-primary hover:bg-accent';
-
 /** Đích cuộn chờ sau commit: phần tử theo id (null = đầu thanh tab) hoặc đầu panel đang hiện khi thanh dính. */
 type PendingScroll = { id: string | null } | 'panel';
 
 /** Hash → tab + phần tử đích (null = đầu thanh tab). Hash lạ → không làm gì. */
-function parseHash(hash: string): { tab: TabValue; targetId: string | null } | null {
+function parseHash(hash: string, hasDialogues: boolean): { tab: TabValue; targetId: string | null } | null {
   let id: string;
   try {
     id = decodeURIComponent(hash.replace(/^#/, ''));
@@ -41,6 +42,11 @@ function parseHash(hash: string): { tab: TabValue; targetId: string | null } | n
     return null;
   }
   if (id === 'tu-vung' || id === 'ngu-phap') return { tab: id, targetId: null };
+  // Bài không có hội thoại thì tab không tồn tại: về Từ vựng thay vì để panel trống.
+  if (id === 'hoi-thoai' || id.startsWith('dialogue-')) {
+    if (!hasDialogues) return { tab: 'tu-vung', targetId: null };
+    return { tab: 'hoi-thoai', targetId: id === 'hoi-thoai' ? null : id };
+  }
   // Link cũ `#nghe` không gãy khi tab Nghe đang ẩn: về đầu thanh tab của Từ vựng.
   if (id === 'nghe') return { tab: AUDIO_IMPORT_ENABLED ? 'nghe' : 'tu-vung', targetId: null };
   if (id.startsWith('vocab-')) return { tab: 'tu-vung', targetId: id };
@@ -48,13 +54,22 @@ function parseHash(hash: string): { tab: TabValue; targetId: string | null } | n
   return null;
 }
 
-function VocabItem({ w, view }: { w: VocabWord; view: 'list' | 'grid' }) {
+function VocabItem({ w, view, anchor }: { w: VocabWord; view: 'list' | 'grid'; anchor?: string }) {
   const group = VERB_GROUP[w.type];
   const speakLabel = stripFurigana(formatOptionalBrackets(w.word));
   const meaning = w.meaning.vi ? (
     <span className="translation">{w.meaning.vi}</span>
   ) : (
     <span className="italic opacity-50">Chưa có bản dịch</span>
+  );
+
+  const dialogueLink = anchor && (
+    <a
+      href={`#${anchor}`}
+      className="inline-flex min-h-11 items-center text-xs font-medium text-primary underline-offset-4 hover:underline"
+    >
+      Trong hội thoại ›
+    </a>
   );
 
   if (view === 'grid') {
@@ -107,6 +122,7 @@ function VocabItem({ w, view }: { w: VocabWord; view: 'list' | 'grid' }) {
             </div>
           )}
           <p className="text-sm leading-relaxed text-muted-foreground">{meaning}</p>
+          {dialogueLink}
         </div>
       </div>
     );
@@ -134,6 +150,7 @@ function VocabItem({ w, view }: { w: VocabWord; view: 'list' | 'grid' }) {
           </p>
         )}
         <p className="text-sm leading-relaxed text-muted-foreground">{meaning}</p>
+        {dialogueLink}
       </div>
       <SpeakButton text={w.kana} label={speakLabel} className={SPEAK_CLASS} />
     </div>
@@ -144,11 +161,20 @@ export function LessonTabs({
   vocab,
   grammar,
   listening,
+  lessonNum,
+  dialogues,
+  vocabAnchors,
 }: {
   vocab: VocabWord[];
   grammar: ReactNode;
   listening?: ReactNode;
+  lessonNum: number;
+  dialogues: Dialogue[];
+  /** vocabId → neo câu hội thoại đầu tiên dùng từ đó */
+  vocabAnchors: Record<string, string>;
 }) {
+  const hasDialogues = dialogues.length > 0;
+  const tabs = TAB_LABELS.filter((t) => t.value !== 'hoi-thoai' || hasDialogues);
   const [tab, setTab] = useState<TabValue>('tu-vung');
   // Đích cuộn nằm trong ref (xóa không cần render lại); `request` chỉ để đánh thức effect khi tab không đổi.
   const pending = useRef<PendingScroll | null>(null);
@@ -167,7 +193,7 @@ export function LessonTabs({
 
   useEffect(() => {
     const goToHash = () => {
-      const parsed = parseHash(window.location.hash);
+      const parsed = parseHash(window.location.hash, hasDialogues);
       if (!parsed) return;
       setTab(parsed.tab);
       requestScroll({ id: parsed.targetId });
@@ -176,7 +202,7 @@ export function LessonTabs({
     // Link cùng trang từ SearchDialog cũng bắn hashchange (pushState tự nó thì không).
     window.addEventListener('hashchange', goToHash);
     return () => window.removeEventListener('hashchange', goToHash);
-  }, []);
+  }, [hasDialogues]);
 
   // Panel ẩn không cuộn tới được, nên cuộn sau commit khi panel đích đã hiện.
   useEffect(() => {
@@ -214,7 +240,7 @@ export function LessonTabs({
         className="sticky top-0 z-10 -mx-4 border-b border-border bg-background/95 px-4 py-2 backdrop-blur sm:mx-0 sm:px-0"
       >
         <Tabs.List className="grid auto-cols-fr grid-flow-col rounded-xl border border-border bg-secondary p-1">
-          {TAB_LABELS.map(({ value, label }) => (
+          {tabs.map(({ value, label }) => (
             <Tabs.Tab
               key={value}
               value={value}
@@ -245,13 +271,13 @@ export function LessonTabs({
         {view === 'grid' ? (
           <div className="grid grid-cols-2 items-start gap-3 sm:grid-cols-3 lg:grid-cols-4">
             {vocab.map((w) => (
-              <VocabItem key={w.id} w={w} view="grid" />
+              <VocabItem key={w.id} w={w} view="grid" anchor={vocabAnchors[w.id]} />
             ))}
           </div>
         ) : (
           <div className="mx-auto max-w-3xl divide-y divide-border overflow-hidden rounded-xl border border-border bg-card">
             {vocab.map((w) => (
-              <VocabItem key={w.id} w={w} view="list" />
+              <VocabItem key={w.id} w={w} view="list" anchor={vocabAnchors[w.id]} />
             ))}
           </div>
         )}
@@ -259,6 +285,13 @@ export function LessonTabs({
       <Tabs.Panel value="ngu-phap" keepMounted className="mx-auto mt-4 max-w-3xl outline-none">
         {grammar}
       </Tabs.Panel>
+      {hasDialogues && (
+        <Tabs.Panel value="hoi-thoai" keepMounted className="mx-auto mt-4 max-w-3xl space-y-4 outline-none">
+          {dialogues.map((d) => (
+            <DialogueReader key={d.id} dialogue={d} lessonNum={lessonNum} active={tab === 'hoi-thoai'} />
+          ))}
+        </Tabs.Panel>
+      )}
       {listening && (
         <Tabs.Panel value="nghe" keepMounted className="mx-auto mt-4 max-w-3xl outline-none">
           {listening}
