@@ -1,0 +1,54 @@
+{
+  "createdAt": "2026-10-20T02:06:56.571Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/kaiwa-scenes-06-15.json",
+  "prompt": "Editorial watercolor and gouache illustration, hand-painted Japanese book-illustration feel: delicate dark pencil contours, soft organic painted washes, subtle paper texture, warm ivory paper tones. Palette: cream, warm sand, charcoal gray, muted sage green, warm timber wood, muted brick-red accents. Landscape 4:3 composition, FULL-BLEED: the painting fills the whole canvas edge to edge, with NO frame, NO border line, NO mat and NO paper margin around it.\nPeople, when present: young male student = slightly messy short dark hair, cream long-sleeved shirt, charcoal trousers, black backpack; young woman = chin-length dark bob with bangs, cream cardigan over muted brick-red top, charcoal skirt, small brown shoulder bag.\n\nSubject: medium shot from the waist up at a low wooden table in a campus lounge: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, and a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, sit in comfortable armchairs talking cheerfully as she describes her quiet and convenient dormitory; tea mugs on the table, softly blurred lounge interior, no street with bicycle, no text.\nKeep the main subject in the central area so the image survives cropping to a thumbnail.\n\nSTRICT REQUIREMENTS:\n- Absolutely NO text, letters, kanji, kana, numbers or words anywhere: signs, boards, labels and screens stay completely blank.\n- Clock faces have NO digits and NO Roman numerals.\n- Hand-painted watercolor gouache look, NOT 3D, NOT CGI, NOT glossy vector, NOT photo.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/scenes/dormitory-chat-v1.webp",
+  "width": 800,
+  "height": 600,
+  "role": "scene",
+  "suggestedAlt": {
+    "vi": "Tanaka và Mai ngồi trò chuyện về khu ký túc xá mới và tiện lợi của Mai."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/lessons/lesson-08.json",
+    "id": "l08-ryou",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/scenes/dormitory-chat-v1.png",
+    "width": 1448,
+    "height": 1086,
+    "format": "png",
+    "hasAlpha": false
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "cover",
+    "width": 800,
+    "height": 600,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 115454,
+    "sha256": "d4af8adfb59e9996028c6b7e9c8613334fddac50665a7aa401e0073d43bec5f5",
+    "hasAlpha": false,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 0,
+      "partial": 0,
+      "opaque": 480000
+    }
+  }
+}

@@ -251,7 +251,15 @@
             "vi": "Ra vậy ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/visiting-tanaka-home-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai đến thăm nhà Tanaka và trân trọng tặng anh hộp trà Việt Nam."
+        }
+      }
     },
     {
       "id": "l07-bangohan",
@@ -342,7 +350,15 @@
             "gochisousama"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/dinner-at-tanaka-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka và Mai cùng thưởng thức bữa tối gia đình ấm áp bên bàn ăn."
+        }
+      }
     },
     {
       "id": "l07-repooto",
@@ -400,7 +416,15 @@
             "vi": "Được rồi, thầy biết rồi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/report-submission-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai báo cáo tình hình làm bài và chuẩn bị gửi email cho thầy Mori."
+        }
+      }
     }
   ],
   "references": [

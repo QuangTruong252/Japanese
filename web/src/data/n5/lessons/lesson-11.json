@@ -197,7 +197,15 @@
             "vi": "Một nghìn năm trăm yên ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/buying-sandwiches-and-postcards-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai thanh toán bánh mì kẹp, nước ép và bưu thiếp tại quầy bán hàng."
+        }
+      }
     },
     {
       "id": "l11-odekake",
@@ -276,7 +284,15 @@
             "ittekimasu"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/greeting-neighbor-leaving-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chị Ookawa hàng xóm tươi cười vẫy chào Mai trước khi Mai ra ngoài."
+        }
+      }
     },
     {
       "id": "l11-kurasu",
@@ -352,7 +368,15 @@
             "jikan-counter"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/discussing-study-hours-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Thầy Mori và Mai thảo luận về số lượng sinh viên và giờ tự học ở thư viện."
+        }
+      }
     }
   ],
   "references": [

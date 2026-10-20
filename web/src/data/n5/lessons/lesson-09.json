@@ -250,7 +250,15 @@
             "mata-kondo"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/concert-tickets-invitation-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka mời Mai đi nghe hòa nhạc bằng hai chiếc vé nhưng Mai đã có hẹn trước."
+        }
+      }
     },
     {
       "id": "l09-kanji",
@@ -338,7 +346,15 @@
             "vi": "Chữ của em đẹp đấy chứ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/borrowing-dictionary-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Thầy Mori ân cần cho Mai mượn cuốn từ điển chữ Hán lớn trong phòng làm việc."
+        }
+      }
     },
     {
       "id": "l09-doushite",
@@ -420,7 +436,15 @@
             "vi": "Vâng, hay quá ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/discussing-japanese-study-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka và Mai trò chuyện trên ghế công viên về âm nhạc và lý do học tiếng Nhật."
+        }
+      }
     }
   ],
   "references": [

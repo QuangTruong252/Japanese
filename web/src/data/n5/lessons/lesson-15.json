@@ -180,7 +180,15 @@
             "vi": "Dạ không, ở đây không được uống ạ. Đồ uống chị vui lòng dùng ở sảnh."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/library-regulations-inquiry-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai đứng trước quầy hỏi nhân viên thư viện về quy định mượn sách và sao chụp."
+        }
+      }
     },
     {
       "id": "l15-shigoto",
@@ -254,7 +262,15 @@
             "vi": "Ra vậy. Em cũng dùng máy tính hằng ngày ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/discussing-software-job-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka và Mai trò chuyện về công việc phần mềm máy tính và cuộc sống gần ga."
+        }
+      }
     }
   ],
   "references": [

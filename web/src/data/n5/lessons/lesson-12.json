@@ -246,7 +246,15 @@
             "vi": "Trời nhiều mây ạ. Núi đẹp lắm mẹ ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/returning-home-to-mother-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka trở về nhà sau chuyến đi leo núi và được mẹ tươi cười chào đón."
+        }
+      }
     },
     {
       "id": "l12-matsuri",
@@ -315,7 +323,15 @@
             "vi": "Quán kem đấy. Kem ở đó ngon lắm."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/summer-festival-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka và Mai hòa mình vào không khí nhộn nhịp của lễ hội mùa hè."
+        }
+      }
     },
     {
       "id": "l12-kisetsu",
@@ -384,7 +400,15 @@
             "vi": "Tuyết ạ? Những ngày lạnh em ở nhà đọc sách ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/favorite-seasons-chat-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Thầy Mori và Mai ngắm cảnh sắc mùa thu và cùng chia sẻ về mùa yêu thích."
+        }
+      }
     }
   ],
   "references": [

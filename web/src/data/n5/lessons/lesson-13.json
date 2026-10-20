@@ -231,7 +231,15 @@
             "vi": "Vâng. Em muốn ăn cà ri ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/planning-swimming-trip-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka và Mai ngồi trong quán cà phê lên kế hoạch đi bơi vào cuối tuần."
+        }
+      }
     },
     {
       "id": "l13-chuumon",
@@ -318,7 +326,15 @@
             "omachi-kudasai"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/ordering-tempura-set-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai gọi món cơm tempura và đồ uống với nhân viên phục vụ tại quán ăn."
+        }
+      }
     }
   ],
   "references": [

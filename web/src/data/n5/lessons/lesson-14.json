@@ -287,7 +287,15 @@
             "vi": "Tiền thừa của chị là ba trăm yên ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/taxi-ride-directions-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai ngồi trên xe taxi và lịch sự chỉ đường cho bác tài xế tới trường đại học."
+        }
+      }
     },
     {
       "id": "l14-benkyou",
@@ -359,7 +367,15 @@
             "vi": "Vâng, nhờ thầy ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/kanji-study-with-teacher-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Thầy Mori ân cần viết mẫu và hướng dẫn Mai học chữ Hán trong buổi chiều mưa."
+        }
+      }
     }
   ],
   "references": [

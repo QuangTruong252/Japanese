@@ -235,7 +235,15 @@
             "vi": "A, nó ở trong cặp ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/finding-phone-in-bag-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai vui mừng tìm thấy chiếc điện thoại trong túi xách cùng anh Tanaka."
+        }
+      }
     },
     {
       "id": "l10-michi",
@@ -304,7 +312,15 @@
             "vi": "Không có gì."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/asking-for-postbox-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Người đàn ông qua đường nhiệt tình chỉ cho Mai vị trí hòm thư màu đỏ."
+        }
+      }
     },
     {
       "id": "l10-reizouko",
@@ -368,7 +384,15 @@
             "vi": "Vậy mình cùng ra tiệm bánh mì nhé."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/checking-refrigerator-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka mở tủ lạnh cùng Mai kiểm tra thực phẩm trước khi đi mua bánh mì."
+        }
+      }
     }
   ],
   "references": [
