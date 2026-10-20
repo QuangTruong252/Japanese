@@ -122,6 +122,239 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l11-kaimono",
+      "title": {
+        "vi": "Mua đồ ở cửa hàng nhỏ"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "ten-in",
+          "name": "店員[てんいん]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "すみません。サンドイッチを みっつ お願[ねが]いします。",
+          "kana": "すみません。サンドイッチを みっつ おねがいします。",
+          "translation": {
+            "vi": "Xin lỗi, cho tôi ba phần bánh mì kẹp ạ."
+          },
+          "vocabIds": [
+            "onegaishimasu"
+          ]
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "かしこまりました。飲[の]み 物[もの]は？",
+          "kana": "かしこまりました。のみ ものは？",
+          "translation": {
+            "vi": "Vâng ạ. Chị dùng đồ uống gì ạ?"
+          },
+          "vocabIds": [
+            "kashikomarimashita"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "ジュースを みっつ ください。",
+          "kana": "ジュースを みっつ ください。",
+          "translation": {
+            "vi": "Cho tôi ba phần nước trái cây ạ."
+          }
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "はい、みっつですね。",
+          "kana": "はい、みっつですね。",
+          "translation": {
+            "vi": "Vâng, ba phần nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "それから、はがきを 二枚[にまい] ください。全部[ぜんぶ]で いくらですか。",
+          "kana": "それから、はがきを にまい ください。ぜんぶで いくらですか。",
+          "translation": {
+            "vi": "Cho tôi thêm hai tấm bưu thiếp nữa. Tất cả hết bao nhiêu ạ?"
+          },
+          "vocabIds": [
+            "mai",
+            "zenbude"
+          ]
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "千五百円[せんごひゃくえん]です。",
+          "kana": "せんごひゃくえんです。",
+          "translation": {
+            "vi": "Một nghìn năm trăm yên ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l11-odekake",
+      "title": {
+        "vi": "Gặp hàng xóm trước khi ra ngoài"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "ookawa",
+          "name": "大川[おおかわ]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "ookawa",
+          "jp": "いい お 天気[てんき]ですね。お 出[で]かけですか。",
+          "kana": "いい お てんきですね。お でかけですか。",
+          "translation": {
+            "vi": "Trời đẹp quá nhỉ. Em đi đâu à?"
+          },
+          "vocabIds": [
+            "ii-otenki",
+            "odekake"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、ちょっと 図書館[としょかん]まで。",
+          "kana": "はい、ちょっと としょかんまで。",
+          "translation": {
+            "vi": "Vâng, em ra thư viện một chút ạ."
+          },
+          "vocabIds": [
+            "chotto-made"
+          ]
+        },
+        {
+          "speaker": "ookawa",
+          "jp": "図書館[としょかん]まで どのくらい かかりますか。",
+          "kana": "としょかんまで どのくらい かかりますか。",
+          "translation": {
+            "vi": "Từ đây đến thư viện mất bao lâu?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "自転車[じてんしゃ]で 十分[じゅっぷん]ぐらいです。",
+          "kana": "じてんしゃで じゅっぷんぐらいです。",
+          "translation": {
+            "vi": "Đi xe đạp mất khoảng mười phút ạ."
+          }
+        },
+        {
+          "speaker": "ookawa",
+          "jp": "そうですか。行[い]ってらっしゃい。",
+          "kana": "そうですか。いってらっしゃい。",
+          "translation": {
+            "vi": "Thế à. Em đi nhé."
+          },
+          "vocabIds": [
+            "itterasshai"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "行[い]ってきます。",
+          "kana": "いってきます。",
+          "translation": {
+            "vi": "Vâng, em đi đây ạ."
+          },
+          "vocabIds": [
+            "ittekimasu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l11-kurasu",
+      "title": {
+        "vi": "Lớp học và giờ tự học"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mori",
+          "jp": "マイさんの クラスに 留学生[りゅうがくせい]が 何人[なんにん] いますか。",
+          "kana": "マイさんの クラスに りゅうがくせいが なんにん いますか。",
+          "translation": {
+            "vi": "Lớp em có bao nhiêu du học sinh, Mai?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "三人[さんにん] います。ベトナム人[じん]は 私[わたし]だけです。",
+          "kana": "さんにん います。ベトナムじんは わたしだけです。",
+          "translation": {
+            "vi": "Có ba người ạ. Chỉ có mình em là người Việt Nam."
+          },
+          "vocabIds": [
+            "nin",
+            "dake"
+          ]
+        },
+        {
+          "speaker": "mori",
+          "jp": "一週間[いっしゅうかん]に 何回[なんかい] 図書館[としょかん]へ 行[い]きますか。",
+          "kana": "いっしゅうかんに なんかい としょかんへ いきますか。",
+          "translation": {
+            "vi": "Mỗi tuần em đến thư viện mấy lần?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "二回[にかい] 行[い]きます。",
+          "kana": "にかい いきます。",
+          "translation": {
+            "vi": "Em đến hai lần ạ."
+          },
+          "vocabIds": [
+            "kai-veces"
+          ]
+        },
+        {
+          "speaker": "mori",
+          "jp": "図書館[としょかん]で どのくらい 勉強[べんきょう]しますか。",
+          "kana": "としょかんで どのくらい べんきょうしますか。",
+          "translation": {
+            "vi": "Mỗi lần ở thư viện em học khoảng bao lâu?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "二時間[にじかん]ぐらい 勉強[べんきょう]します。",
+          "kana": "にじかんぐらい べんきょうします。",
+          "translation": {
+            "vi": "Em học khoảng hai tiếng ạ."
+          },
+          "vocabIds": [
+            "jikan-counter"
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     "counters",
     "numbers",

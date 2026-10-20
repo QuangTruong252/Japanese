@@ -164,6 +164,229 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l12-tadaima",
+      "title": {
+        "vi": "Trở về sau buổi đi chơi"
+      },
+      "roles": [
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "haha",
+          "name": "お母[かあ]さん"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "ただいま。",
+          "kana": "ただいま。",
+          "translation": {
+            "vi": "Con về rồi ạ."
+          },
+          "vocabIds": [
+            "tadaima"
+          ]
+        },
+        {
+          "speaker": "haha",
+          "jp": "お 帰[かえ]りなさい。きょうは どこへ 行[い]きましたか。",
+          "kana": "お かえりなさい。きょうは どこへ いきましたか。",
+          "translation": {
+            "vi": "Con về rồi à. Hôm nay con đi đâu thế?"
+          },
+          "vocabIds": [
+            "okaerinasai"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "友達[ともだち]と 山[やま]へ 行[い]きました。疲[つか]れました。",
+          "kana": "ともだちと やまへ いきました。つかれました。",
+          "translation": {
+            "vi": "Con đi núi với bạn. Mệt quá mẹ ạ."
+          },
+          "vocabIds": [
+            "tsukaremashita"
+          ]
+        },
+        {
+          "speaker": "haha",
+          "jp": "山[やま]は 寒[さむ]かったですか。",
+          "kana": "やまは さむかったですか。",
+          "translation": {
+            "vi": "Trên núi có lạnh không?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "いいえ、あまり 寒[さむ]くなかったです。",
+          "kana": "いいえ、あまり さむくなかったです。",
+          "translation": {
+            "vi": "Dạ không lạnh lắm ạ."
+          }
+        },
+        {
+          "speaker": "haha",
+          "jp": "お 天気[てんき]は どうでしたか。",
+          "kana": "お てんきは どうでしたか。",
+          "translation": {
+            "vi": "Thời tiết thế nào?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "曇[くも]りでした。山[やま]は とても きれいでした。",
+          "kana": "くもりでした。やまは とても きれいでした。",
+          "translation": {
+            "vi": "Trời nhiều mây ạ. Núi đẹp lắm mẹ ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l12-matsuri",
+      "title": {
+        "vi": "Ở lễ hội"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "わあ、すごい 人[ひと]ですね。",
+          "kana": "わあ、すごい ひとですね。",
+          "translation": {
+            "vi": "Ôi, đông người quá anh nhỉ!"
+          },
+          "vocabIds": [
+            "waa-sugoi"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "ええ。マイさんは この お 祭[まつ]りは 初[はじ]めてですか。",
+          "kana": "ええ。マイさんは この お まつりは はじめてですか。",
+          "translation": {
+            "vi": "Ừ. Đây là lần đầu em đến lễ hội này à?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、初[はじ]めてです。きのうも にぎやかでしたか。",
+          "kana": "はい、はじめてです。きのうも にぎやかでしたか。",
+          "translation": {
+            "vi": "Vâng, lần đầu anh ạ. Hôm qua cũng náo nhiệt thế này à anh?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "いいえ、きのうは あまり にぎやかでは ありませんでした。きょうの ほうが ずっと にぎやかです。",
+          "kana": "いいえ、きのうは あまり にぎやかでは ありませんでした。きょうの ほうが ずっと にぎやかです。",
+          "translation": {
+            "vi": "Không, hôm qua không náo nhiệt lắm. Hôm nay náo nhiệt hơn hẳn."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "あの 店[みせ]は 何[なん]の 店[みせ]ですか。",
+          "kana": "あの みせは なんの みせですか。",
+          "translation": {
+            "vi": "Quán kia là quán gì vậy anh?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "アイスクリームの 店[みせ]です。あそこの アイスクリームは おいしいですよ。",
+          "kana": "アイスクリームの みせです。あそこの アイスクリームは おいしいですよ。",
+          "translation": {
+            "vi": "Quán kem đấy. Kem ở đó ngon lắm."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l12-kisetsu",
+      "title": {
+        "vi": "Mùa yêu thích"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mori",
+          "jp": "マイさん、一年[いちねん]で いつが いちばん 好[す]きですか。",
+          "kana": "マイさん、いちねんで いつが いちばん すきですか。",
+          "translation": {
+            "vi": "Mai này, trong một năm em thích mùa nào nhất?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "秋[あき]が いちばん 好[す]きです。涼[すず]しいですから。先生[せんせい]は？",
+          "kana": "あきが いちばん すきです。すずしいですから。せんせいは？",
+          "translation": {
+            "vi": "Em thích mùa thu nhất ạ, vì trời mát. Còn thầy ạ?"
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "私[わたし]は 春[はる]が いちばん 好[す]きです。",
+          "kana": "わたしは はるが いちばん すきです。",
+          "translation": {
+            "vi": "Thầy thích mùa xuân nhất."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "夏[なつ]と 冬[ふゆ]と どちらが 好[す]きですか。",
+          "kana": "なつと ふゆと どちらが すきですか。",
+          "translation": {
+            "vi": "Giữa mùa hè và mùa đông, thầy thích mùa nào hơn ạ?"
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "どちらも 好[す]きですよ。夏[なつ]は 海[うみ]へ 行[い]きます。冬[ふゆ]は 雪[ゆき]が きれいですから。",
+          "kana": "どちらも すきですよ。なつは うみへ いきます。ふゆは ゆきが きれいですから。",
+          "translation": {
+            "vi": "Thầy thích cả hai. Mùa hè thầy đi biển. Còn mùa đông thì vì tuyết đẹp."
+          },
+          "vocabIds": [
+            "dochiramo"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "雪[ゆき]ですか。私[わたし]は 寒[さむ]い 日[ひ]は うちで 本[ほん]を 読[よ]みます。",
+          "kana": "ゆきですか。わたしは さむい ひは うちで ほんを よみます。",
+          "translation": {
+            "vi": "Tuyết ạ? Những ngày lạnh em ở nhà đọc sách ạ."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "adjectives",
     "question-words"

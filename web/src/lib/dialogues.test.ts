@@ -30,6 +30,8 @@ const ALLOWED: { token: string; from: number; reason: string }[] = [
     from: 5,
     reason: 'Ga đích trong câu tựa của bài 5 (この電車は甲子園へ行きますか); từ vựng không liệt kê địa danh này.',
   },
+  { token: 'ほう', from: 12, reason: 'mẫu ngữ pháp bài 12: Nのほうが; từ vựng không liệt kê thành phần này.' },
+  { token: 'いけ', from: 15, reason: 'mẫu ngữ pháp bài 15: 〜てはいけません; từ vựng không liệt kê thành phần này.' },
 ];
 
 /** Câu giao tiếp của bài không có trong hội thoại nào của bài đó, kèm lý do. */
