@@ -17,6 +17,7 @@ const ATLASES = [
     // các icon có khoảng trống góc; thu nhỏ cho cân thị giác.
     keyline: { 'nav-review': 190, 'nav-lookup': 'circle' },
   },
+  { file: 'atlas-dialogue-v1.png', names: ['dialogue'] },
 ];
 const BOX = 240, INNER = 222; // ~92% of the viewBox, same optical size as Lucide (20/24 + round caps)
 const KEYLINE = { square: 200, circle: 222 };
