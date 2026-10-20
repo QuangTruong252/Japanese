@@ -74,12 +74,22 @@ function singlePrompt(job) {
 
 // ---------- batch model ----------
 function load(batch) {
+  // Tự suy ra dataFile cho target nếu chưa khai báo: bài học từ tiền tố lNN- của dialogue, hoặc characters.json cho avatar nhân vật.
+  const normalizeTarget = (t, grp) => {
+    if (!t || t.dataFile) return;
+    const dId = t.dialogue ?? t.id;
+    const m = typeof dId === 'string' ? dId.match(/^l(\d{2})-/) : null;
+    if (m) t.dataFile = `web/src/data/n5/lessons/lesson-${m[1]}.json`;
+    else if (t.roleId || grp === 'characters') t.dataFile = 'web/src/data/n5/characters.json';
+  };
   const assets = [];
   for (const job of batch.jobs) {
     // { "reuse": "vocab/laptop-v1", target, alt }: link an existing asset to one more entry.
     if (job.reuse) {
       const parts = job.reuse.split('/');
-      assets.push({ ...job, group: parts.slice(0, -1).join('/'), stem: parts.at(-1), reused: true });
+      const group = parts.slice(0, -1).join('/');
+      normalizeTarget(job.target, group);
+      assets.push({ ...job, group, stem: parts.at(-1), reused: true });
       continue;
     }
     job.group ??= 'vocab';
@@ -87,14 +97,6 @@ function load(batch) {
     if (job.cells && GROUPS[job.group].kind !== 'cutout') throw new Error('Atlases are for alpha cutouts only');
     job.prompt ??= job.cells ? atlasPrompt(job) : singlePrompt(job);
     job.referenceImages ??= batch.referenceImages ?? [];
-    // Tự suy ra dataFile cho target nếu chưa khai báo: bài học từ tiền tố lNN- của dialogue, hoặc characters.json cho avatar nhân vật.
-    const normalizeTarget = (t, grp) => {
-      if (!t || t.dataFile) return;
-      const dId = t.dialogue ?? t.id;
-      const m = typeof dId === 'string' ? dId.match(/^l(\d{2})-/) : null;
-      if (m) t.dataFile = `web/src/data/n5/lessons/lesson-${m[1]}.json`;
-      else if (t.roleId || grp === 'characters') t.dataFile = 'web/src/data/n5/characters.json';
-    };
     normalizeTarget(job.target, job.group);
     if (job.cells) job.cells.forEach(c => normalizeTarget(c.target, job.group));
     const common = { group: job.group, source: job.source, generation: job.generation, prompt: job.prompt, referenceImages: job.referenceImages };

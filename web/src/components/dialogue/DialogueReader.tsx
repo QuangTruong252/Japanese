@@ -42,9 +42,9 @@ export function DialogueReader({
   }, []);
 
   const stop = () => {
-    if (!stopRef.current) return;
-    stopRef.current();
+    stopRef.current?.();
     stopRef.current = null;
+    // Câu phát riêng bằng nút loa không nằm trong chuỗi; rời tab hay rời trang vẫn phải tắt nó.
     window.speechSynthesis?.cancel();
   };
 
