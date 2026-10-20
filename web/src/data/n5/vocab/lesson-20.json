@@ -123,6 +123,14 @@
         "translation": {
           "vi": "Mình ăn bánh mì mỗi sáng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/self-pointing-man-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đứng một mình, tay đặt lên ngực tự chỉ vào mình và mỉm cười."
+        }
       }
     },
     {
@@ -139,6 +147,14 @@
         "kana": "きみは きのう どこへ いった？",
         "translation": {
           "vi": "Cậu đã đi đâu ngày hôm qua vậy?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/addressing-listener-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái hướng lòng bàn tay mở về phía chàng trai đối diện để xưng hô lịch sự."
         }
       }
     },
@@ -174,6 +190,14 @@
         "translation": {
           "vi": "\"Cậu ăn cơm chưa?\" \"Ừ, mình ăn rồi.\""
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/nodding-yes-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái mỉm cười gật đầu đồng ý."
+        }
       }
     },
     {
@@ -190,6 +214,14 @@
         "kana": "「ひま？」「ううん、ひまじゃない。」",
         "translation": {
           "vi": "\"Cậu rảnh không?\" \"Không, mình không rảnh.\""
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/waving-no-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai giơ bàn tay vẫy nhẹ ngang mặt lắc đầu từ chối lịch sự."
         }
       }
     },
@@ -309,6 +341,14 @@
         "translation": {
           "vi": "Chỗ này thì mát mẻ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-koko-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái chỉ xuống vòng gạch đỏ trên mặt đường ngay dưới chân mình (chỗ này, gần người nói)."
+        }
       }
     },
     {
@@ -326,6 +366,14 @@
         "translation": {
           "vi": "Chỗ đó có nóng không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-soko-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái hướng tay về phía vòng gạch đỏ trên mặt đường ngay dưới chân chàng trai (chỗ đó, gần người nghe)."
+        }
       }
     },
     {
@@ -342,6 +390,14 @@
         "kana": "あっちで やすみましょう。",
         "translation": {
           "vi": "Chúng ta hãy nghỉ ngơi ở đằng kia nhé."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-asoko-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái và chàng trai cùng nhìn và chỉ về phía vòng gạch đỏ ở tít cuối đường (chỗ kia, xa cả hai người)."
         }
       }
     },

@@ -1059,6 +1059,14 @@
         "translation": {
           "vi": "Xin hãy đi thẳng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/direction-straight-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đứng từ phía sau chỉ tay thẳng về phía trước theo con đường dài thẳng tắp."
+        }
       }
     },
     {
@@ -1075,6 +1083,14 @@
         "kana": "ゆっくり はなしてください。",
         "translation": {
           "vi": "Xin hãy nói chậm lại."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/slow-tortoise-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Con rùa bò chậm rãi."
         }
       }
     },

@@ -1158,6 +1158,14 @@
         "translation": {
           "vi": "Là sân ga số 1."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/station-tracks-platforms-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhà ga có hai ke chờ và ba đường ray tàu song song, tàu dừng ở một ke ga."
+        }
       }
     },
     {

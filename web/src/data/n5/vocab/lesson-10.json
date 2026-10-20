@@ -1086,6 +1086,14 @@
         "translation": {
           "vi": "Có nước mắm không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/fish-sauce-bottle-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chai nước mắm thủy tinh màu hổ phách có nắp đỏ, bên cạnh là bát nước chấm nhỏ và hai con cá."
+        }
       }
     },
     {
@@ -1119,6 +1127,14 @@
         "kana": "いちばん したの たなに あります。",
         "translation": {
           "vi": "Nó ở trên kệ dưới cùng."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cat-lowest-shelf-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Kệ gỗ ba tầng với sách và chậu cây ở các tầng trên, chú mèo mướp ngồi ở ngăn dưới cùng."
         }
       }
     }

@@ -349,7 +349,7 @@ async function link(batch, assets) {
       if (!a.reused) pending.push({ p, sidecar });
       continue;
     }
-    if (dataFile.includes('lesson') || f.data.dialogues || f.data.grammar) {
+    if (dataFile.includes('/lessons/')) {
       const dialogueId = a.target.dialogue ?? a.target.id;
       const dIndex = f.data.dialogues ? f.data.dialogues.findIndex(d => d.id === dialogueId) : -1;
       if (dIndex !== -1) {

@@ -1229,6 +1229,14 @@
         "translation": {
           "vi": "Vâng, được đó."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/nodding-yes-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái mỉm cười gật đầu đồng ý."
+        }
       }
     },
     {

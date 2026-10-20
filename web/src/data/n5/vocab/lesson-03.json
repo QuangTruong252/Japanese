@@ -17,6 +17,14 @@
         "translation": {
           "vi": "Chỗ này là phòng học."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-koko-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái chỉ xuống vòng gạch đỏ trên mặt đường ngay dưới chân mình (chỗ này, gần người nói)."
+        }
       }
     },
     {
@@ -34,6 +42,14 @@
         "translation": {
           "vi": "Chỗ đó là nhà ăn phải không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-soko-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái hướng tay về phía vòng gạch đỏ trên mặt đường ngay dưới chân chàng trai (chỗ đó, gần người nghe)."
+        }
       }
     },
     {
@@ -50,6 +66,14 @@
         "kana": "あそこは トイレです。",
         "translation": {
           "vi": "Chỗ kia là nhà vệ sinh."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-asoko-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái và chàng trai cùng nhìn và chỉ về phía vòng gạch đỏ ở tít cuối đường (chỗ kia, xa cả hai người)."
         }
       }
     },
@@ -85,6 +109,14 @@
         "translation": {
           "vi": "Phía này là thang máy."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-koko-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái chỉ xuống vòng gạch đỏ trên mặt đường ngay dưới chân mình (chỗ này, gần người nói)."
+        }
       }
     },
     {
@@ -102,6 +134,14 @@
         "translation": {
           "vi": "Phía đó là căn phòng phải không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-soko-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái hướng tay về phía vòng gạch đỏ trên mặt đường ngay dưới chân chàng trai (chỗ đó, gần người nghe)."
+        }
       }
     },
     {
@@ -118,6 +158,14 @@
         "kana": "あちらは トイレです。",
         "translation": {
           "vi": "Phía kia là nhà vệ sinh."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-asoko-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái và chàng trai cùng nhìn và chỉ về phía vòng gạch đỏ ở tít cuối đường (chỗ kia, xa cả hai người)."
         }
       }
     },
@@ -645,6 +693,14 @@
         "translation": {
           "vi": "Nhà ăn ở tầng hầm."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/building-basement-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mặt cắt tầng hầm dưới lòng đất với bậc thang đi xuống và cô gái đang bước xuống."
+        }
       }
     },
     {
@@ -662,6 +718,14 @@
         "translation": {
           "vi": "Văn phòng ở tầng 2."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/building-floors-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mặt cắt tòa nhà thấy rõ bốn tầng lầu chồng lên nhau và cô gái đang đi cầu thang giữa các tầng."
+        }
       }
     },
     {
@@ -678,6 +742,14 @@
         "kana": "かいぎしつは なんがいですか。",
         "translation": {
           "vi": "Phòng họp ở tầng mấy?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/building-floors-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mặt cắt tòa nhà thấy rõ bốn tầng lầu chồng lên nhau và cô gái đang đi cầu thang giữa các tầng."
         }
       }
     },

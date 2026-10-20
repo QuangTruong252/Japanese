@@ -245,6 +245,14 @@
         "translation": {
           "vi": "Trường của chúng tôi thì lớn."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/we-together-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái và chàng trai đứng sát vai nhau, mỗi người một tay đặt lên ngực mình thể hiện 'chúng tôi'."
+        }
       }
     },
     {
@@ -588,6 +596,14 @@
         "kana": "こちらは ドイツで つくった カメラです。",
         "translation": {
           "vi": "Đây là chiếc máy ảnh được làm ở Đức."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-kore-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đứng bên trái chỉ vào chiếc hộp gỗ ngay sát chân mình, cách xa chàng trai đứng bên phải (vật gần người nói)."
         }
       }
     },

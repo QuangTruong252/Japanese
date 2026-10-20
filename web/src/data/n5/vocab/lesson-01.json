@@ -17,6 +17,14 @@
         "translation": {
           "vi": "Tôi là học sinh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/self-pointing-woman-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đứng một mình, tay đặt lên ngực tự chỉ vào mình và mỉm cười."
+        }
       }
     },
     {
@@ -33,6 +41,14 @@
         "kana": "あなたは かいしゃいんですか。",
         "translation": {
           "vi": "Bạn là nhân viên công ty phải không?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/addressing-listener-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái hướng lòng bàn tay mở về phía chàng trai đối diện để xưng hô lịch sự."
         }
       }
     },
@@ -51,6 +67,14 @@
         "translation": {
           "vi": "Người kia là ai?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/third-person-over-there-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái và chàng trai cùng nhìn và hướng lòng bàn tay về một người thứ ba đứng cách một quãng."
+        }
       }
     },
     {
@@ -67,6 +91,14 @@
         "kana": "あの かたは どなたですか。",
         "translation": {
           "vi": "Vị kia là ai?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/third-person-over-there-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái và chàng trai cùng nhìn và hướng lòng bàn tay về một người thứ ba đứng cách một quãng."
         }
       }
     },
@@ -420,6 +452,14 @@
         "translation": {
           "vi": "Bé Teresa 9 tuổi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/age-candles-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bánh sinh nhật cắm nhiều nến, cô gái chuẩn bị thổi nến và chàng trai vỗ tay chúc mừng."
+        }
       }
     },
     {
@@ -436,6 +476,14 @@
         "kana": "テレサちゃんは なんさいですか。",
         "translation": {
           "vi": "Bé Teresa mấy tuổi?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/age-candles-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bánh sinh nhật cắm nhiều nến, cô gái chuẩn bị thổi nến và chàng trai vỗ tay chúc mừng."
         }
       }
     },
@@ -454,6 +502,14 @@
         "translation": {
           "vi": "Giáo viên bao nhiêu tuổi?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/age-candles-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bánh sinh nhật cắm nhiều nến, cô gái chuẩn bị thổi nến và chàng trai vỗ tay chúc mừng."
+        }
       }
     },
     {
@@ -471,6 +527,14 @@
         "translation": {
           "vi": "Vâng, tôi là học sinh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/nodding-yes-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái mỉm cười gật đầu đồng ý."
+        }
       }
     },
     {
@@ -487,6 +551,14 @@
         "kana": "いいえ、わたしは せんせいじゃありません。",
         "translation": {
           "vi": "Không, tôi không phải là giáo viên."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/waving-no-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai giơ bàn tay vẫy nhẹ ngang mặt lắc đầu từ chối lịch sự."
         }
       }
     },

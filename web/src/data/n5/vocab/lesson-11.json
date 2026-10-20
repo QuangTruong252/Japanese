@@ -366,6 +366,14 @@
         "translation": {
           "vi": "Ở công ty có 10 người."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/people-in-a-row-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Năm người thuộc các lứa tuổi khác nhau đứng thành một hàng ngang ngay ngắn như đang được đếm."
+        }
       }
     },
     {
@@ -383,6 +391,14 @@
         "translation": {
           "vi": "Có 3 chiếc ô tô."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/machines-and-vehicles-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bốn món máy móc và xe cộ gồm ô tô con, xe đạp, máy giặt và máy tính xách tay xếp thành hàng."
+        }
       }
     },
     {
@@ -399,6 +415,14 @@
         "kana": "きってを ごまい かいました。",
         "translation": {
           "vi": "Tôi đã mua 5 con tem."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/flat-things-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ba vật thể mỏng phẳng gồm xấp giấy trắng, chiếc áo phông gấp gọn và vé giấy xếp cạnh nhau."
         }
       }
     },

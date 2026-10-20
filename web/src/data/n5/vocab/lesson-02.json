@@ -17,6 +17,14 @@
         "translation": {
           "vi": "Đây là sách."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-kore-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đứng bên trái chỉ vào chiếc hộp gỗ ngay sát chân mình, cách xa chàng trai đứng bên phải (vật gần người nói)."
+        }
       }
     },
     {
@@ -33,6 +41,14 @@
         "kana": "それは とけいですか。",
         "translation": {
           "vi": "Đó là đồng hồ phải không?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-sore-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái hướng lòng bàn tay về phía chiếc hộp gỗ đặt sát chân chàng trai đối diện (vật gần người nghe)."
         }
       }
     },
@@ -51,6 +67,14 @@
         "translation": {
           "vi": "Kia là ô của tôi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-are-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái và chàng trai cùng nhìn và chỉ về chiếc hộp gỗ ở tít cuối con đường (vật ở xa cả hai người)."
+        }
       }
     },
     {
@@ -67,6 +91,14 @@
         "kana": "この じしょは わたしのです。",
         "translation": {
           "vi": "Quyển từ điển này là của tôi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-kore-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái đứng bên trái chỉ vào chiếc hộp gỗ ngay sát chân mình, cách xa chàng trai đứng bên phải (vật gần người nói)."
         }
       }
     },
@@ -85,6 +117,14 @@
         "translation": {
           "vi": "Cuốn tạp chí đó là tạp chí về ô tô."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-sore-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái hướng lòng bàn tay về phía chiếc hộp gỗ đặt sát chân chàng trai đối diện (vật gần người nghe)."
+        }
       }
     },
     {
@@ -101,6 +141,14 @@
         "kana": "あの かぎは だれのですか。",
         "translation": {
           "vi": "Chìa khóa kia là của ai?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kosoado-are-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái và chàng trai cùng nhìn và chỉ về chiếc hộp gỗ ở tít cuối con đường (vật ở xa cả hai người)."
         }
       }
     },

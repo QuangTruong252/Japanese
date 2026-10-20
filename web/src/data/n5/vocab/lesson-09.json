@@ -971,6 +971,14 @@
         "translation": {
           "vi": "Hôm nay tôi về sớm."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/fast-hare-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chú thỏ đang chạy rất nhanh."
+        }
       }
     },
     {
