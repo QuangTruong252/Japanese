@@ -42,6 +42,30 @@ const UNUSED_EXPRESSIONS: Record<number, Record<string, string>> = {
 const KANJI = /[一-鿿㐀-䶿々〆〇ヶ]/u;
 const IGNORED_IN_READING = /[「」『』\s　]/gu;
 
+function assertDialogueSpacing(jp: string, kana: string, at: string): void {
+  const written = stripFurigana(jp);
+  for (const [field, text] of [['jp', written], ['kana', kana]]) {
+    for (const chunk of text.split(/[ 　]+/u)) {
+      assert.doesNotMatch(chunk, /[。？！]./u, `${at}: ${field} cụm "${chunk}" thiếu dấu cách sau dấu kết câu`);
+    }
+  }
+  for (const chunk of written.split(/[ 　]+/u)) {
+    assert.ok([...chunk].length <= 10, `${at}: jp cụm "${chunk}" dài ${[...chunk].length} ký tự, tối đa 10`);
+  }
+}
+
+test('dấu cách hội thoại: ngắt sau dấu kết câu và giới hạn cụm không tính furigana', () => {
+  const at = 'l01-hajimemashite câu 0';
+  assert.doesNotThrow(() => assertDialogueSpacing('はじめまして。 マイです。', 'はじめまして。 マイです。', at));
+  for (const punctuation of ['。', '？', '！']) {
+    const joined = `はじめまして${punctuation}マイです。`;
+    assert.throws(() => assertDialogueSpacing(joined, 'はじめまして。 マイです。', at), /l01-hajimemashite câu 0: jp cụm .*thiếu dấu cách/u);
+    assert.throws(() => assertDialogueSpacing('はじめまして。 マイです。', joined, at), /l01-hajimemashite câu 0: kana cụm .*thiếu dấu cách/u);
+  }
+  assert.doesNotThrow(() => assertDialogueSpacing('難[むずか]しいですが、 おもしろいです。', 'むずかしいですが、 おもしろいです。', at));
+  assert.throws(() => assertDialogueSpacing('マイさん、いらっしゃい。', 'マイさん、いらっしゃい。', at), /l01-hajimemashite câu 0: jp cụm "マイさん、いらっしゃい。".*tối đa 10/u);
+});
+
 /**
  * Các cách viết của một từ để tìm trong câu thoại: tách theo 〜 và cách viết thay thế
  * (`こちらは〜さんです` → こちらは, さんです; `トイレ（お手洗い）` → トイレ, お手洗い), ngoặc tùy chọn
@@ -301,6 +325,7 @@ test('hội thoại: cấu trúc, cách đọc, phạm vi từ và thể động
         assert.ok(roleIds.has(line.speaker), `${at}: người nói không thuộc vai`);
         assert.ok(line.kana && line.translation.vi.trim(), `${at}: thiếu kana hoặc nghĩa`);
         const written = stripFurigana(line.jp);
+        assertDialogueSpacing(line.jp, line.kana ?? '', at);
         assert.doesNotMatch(written, /[[\]]/u, `${at}: ngoặc vuông không phải furigana`);
         assert.doesNotMatch(line.jp + (line.kana ?? ''), /[0-9０-９]/u, `${at}: dùng chữ số (TTS đọc thừa)`);
         const reading = toKanaSentence(line.jp).replace(IGNORED_IN_READING, '');

@@ -15,6 +15,7 @@ hiện; không bịa số trang hay liên kết audio.
 - Ngoặc vuông không đứng sau chữ Hán là phần tùy chọn (`どこ[へ]も`, `[どうも]ありがとう`). `Furigana` tự hiện
   thành ngoặc tròn; chữ thường không qua `Furigana` (aria-label, giọng đọc) dùng `formatOptionalBrackets`.
 - Dấu cách trong câu là điểm được phép xuống dòng khi hiển thị; giữ nguyên khi sửa dữ liệu.
+- Hội thoại phải có dấu cách sau `。？！` nếu còn chữ phía sau; mỗi cụm trong `jp` giữa hai dấu cách dài tối đa 10 ký tự (bỏ furigana, đếm code point, tính cả dấu câu), `kana` ngắt cùng vị trí.
 - Không bịa tiếng Nhật ở UI, mockup, test hay ví dụ: lấy từ các file trên và ghi rõ nguồn trong brief.
 - Chấm đáp án chỉ chuẩn hóa những khác biệt được phép; không biến đáp án sai nghĩa thành đúng.
 - Hội thoại (`Lesson.dialogues`) chỉ dùng từ vựng và thể động từ đã học đến bài đó. `web/src/lib/dialogues.test.ts`
