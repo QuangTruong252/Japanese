@@ -14,6 +14,7 @@ import {
 } from '@/lib/lessons';
 import { AUDIO_IMPORT_ENABLED } from '@/lib/features';
 import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
+import { vocabDialogueAnchors } from '@/lib/kaiwa';
 import { LessonHeroCard } from './_parts';
 import { LessonTabs } from './_tabs';
 import { cn } from '@/lib/utils';
@@ -83,6 +84,9 @@ export default async function LessonDetailPage({
       <div className="mt-6">
         <LessonTabs
           vocab={vocab}
+          lessonNum={lessonNum}
+          dialogues={lesson.dialogues ?? []}
+          vocabAnchors={vocabDialogueAnchors(lesson.dialogues ?? [])}
           grammar={
             <div className="space-y-3">
               {lesson.grammar.map((point) => (
