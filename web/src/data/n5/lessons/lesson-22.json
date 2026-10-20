@@ -161,7 +161,15 @@
             "vi": "Không. Là bánh mẹ anh làm đấy."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/birthday-photo-memory-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka khoe tấm ảnh chụp cùng chị gái trong ngày sinh nhật bên chiếc bánh kem."
+        }
+      }
     },
     {
       "id": "l22-heya",
@@ -230,7 +238,15 @@
             "vi": "Vâng, nhờ anh ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/real-estate-apartment-search-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Nhân viên bất động sản giới thiệu căn phòng gần trường cho Mai."
+        }
+      }
     }
   ],
   "references": [

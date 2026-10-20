@@ -230,7 +230,15 @@
             "vi": "Vâng, em sẽ tiếp tục học mỗi ngày ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/language-learning-opinion-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Thầy Mori chia sẻ lời khuyên về việc duy trì học tiếng Nhật mỗi ngày."
+        }
+      }
     },
     {
       "id": "l21-shiai",
@@ -291,7 +299,15 @@
             "vi": "Vậy hẹn anh ngày mai."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/soccer-match-invitation-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai rủ anh Tanaka đi xem trận bóng đá tại trường vào ngày mai."
+        }
+      }
     },
     {
       "id": "l21-kissa",
@@ -355,7 +371,15 @@
             "vi": "Em thấy cà phê ở đó ngon lắm ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/cafe-reunion-chat-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai tình cờ gặp lại chị Ookawa và rủ chị vào quán cà phê trò chuyện."
+        }
+      }
     }
   ],
   "references": [

@@ -192,7 +192,15 @@
             "vi": "Bạn ấy còn cho em cuốn sách về máy tính nữa."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/repaired-laptop-chat-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai vui mừng chỉ cho anh Tanaka chiếc máy tính xách tay vừa được bạn sửa giúp."
+        }
+      }
     },
     {
       "id": "l24-junbi",
@@ -258,7 +266,15 @@
             "vi": "Chị Ookawa có nhiều đồ nên em đã mang giúp về tận phòng chị ấy."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/party-preparation-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka khen ngợi Mai khi thấy căn phòng đã chuẩn bị tươm tất cho bữa tiệc."
+        }
+      }
     }
   ],
   "references": [

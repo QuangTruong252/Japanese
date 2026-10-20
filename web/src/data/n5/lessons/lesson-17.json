@@ -252,7 +252,15 @@
             "odaijini"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/clinic-doctor-consultation-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Bác sĩ tận tình thăm khám và dặn dò Mai cách uống thuốc nghỉ ngơi."
+        }
+      }
     },
     {
       "id": "l17-repooto",
@@ -334,7 +342,15 @@
             "vi": "Không sao đâu. Em không cần lo lắng đâu."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/report-deadline-inquiry-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai hỏi thầy Mori về thời hạn và yêu cầu nộp bản báo cáo."
+        }
+      }
     },
     {
       "id": "l17-shucchou",
@@ -416,7 +432,15 @@
             "vi": "Ừ, vậy nhé."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/business-trip-farewell-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai nhắc anh Tanaka nhớ mang ô trước chuyến đi công tác ngày mai."
+        }
+      }
     }
   ],
   "references": [

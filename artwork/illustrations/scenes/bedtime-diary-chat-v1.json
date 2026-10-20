@@ -1,0 +1,54 @@
+{
+  "createdAt": "2026-10-20T02:38:34.109Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/kaiwa-scenes-16-25.json",
+  "prompt": "Editorial watercolor and gouache illustration, hand-painted Japanese book-illustration feel: delicate dark pencil contours, soft organic painted washes, subtle paper texture, warm ivory paper tones. Palette: cream, warm sand, charcoal gray, muted sage green, warm timber wood, muted brick-red accents. Landscape 4:3 composition, FULL-BLEED: the painting fills the whole canvas edge to edge, with NO frame, NO border line, NO mat and NO paper margin around it.\nPeople, when present: young male student = slightly messy short dark hair, cream long-sleeved shirt, charcoal trousers, black backpack; young woman = chin-length dark bob with bangs, cream cardigan over muted brick-red top, charcoal skirt, small brown shoulder bag.\n\nSubject: medium shot from the waist up at an oak consultation table in a bright tutorial room: a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, holds a neat hardcover diary with a plain blank cover, explaining how she writes in Japanese every evening before sleep, while a Japanese university teacher, man about 55, short gray hair, thin round glasses, navy cardigan over light-blue collared shirt, calm kind smile, listens with warm appreciation and encouraging nods; calm tutorial room with a potted bonsai and wooden shelves, no text.\nKeep the main subject in the central area so the image survives cropping to a thumbnail.\n\nSTRICT REQUIREMENTS:\n- Absolutely NO text, letters, kanji, kana, numbers or words anywhere: signs, boards, labels and screens stay completely blank.\n- Clock faces have NO digits and NO Roman numerals.\n- Hand-painted watercolor gouache look, NOT 3D, NOT CGI, NOT glossy vector, NOT photo.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/scenes/bedtime-diary-chat-v1.webp",
+  "width": 800,
+  "height": 600,
+  "role": "scene",
+  "suggestedAlt": {
+    "vi": "Mai khoe cuốn nhật ký tiếng Nhật mỗi tối với thầy Mori."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/lessons/lesson-18.json",
+    "id": "l18-nikki",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/scenes/bedtime-diary-chat-v1.png",
+    "width": 1448,
+    "height": 1086,
+    "format": "png",
+    "hasAlpha": false
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "cover",
+    "width": 800,
+    "height": 600,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 109684,
+    "sha256": "e022b03870f79432c88087e262b185c570990298d151303f13ea5d885bbbe565",
+    "hasAlpha": false,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 0,
+      "partial": 0,
+      "opaque": 480000
+    }
+  }
+}

@@ -178,7 +178,15 @@
             "uun"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/lunch-with-classmate-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai cùng bạn cùng lớp vui vẻ rủ nhau đi ăn sushi."
+        }
+      }
     },
     {
       "id": "l20-matsuri",
@@ -263,7 +271,15 @@
             "vi": "Ừ. Chỉ xem thôi cũng vui anh nhỉ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/festival-kimono-stalls-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka và Mai dạo bước ngắm các gian hàng vải yukata truyền thống trong lễ hội."
+        }
+      }
     },
     {
       "id": "l20-kengaku",
@@ -352,7 +368,15 @@
             "vi": "Dạ, em hiểu rồi ạ. Em xin lỗi ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/company-office-tour-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka giới thiệu Mai với trưởng phòng Nakamura tại văn phòng công ty."
+        }
+      }
     }
   ],
   "references": [
