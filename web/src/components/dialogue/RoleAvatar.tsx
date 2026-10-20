@@ -5,9 +5,10 @@ import { Illustration } from '@/components/Illustration';
 import { cn } from '@/lib/utils';
 
 const SIZE_CONFIG: Record<32 | 40 | 48, { container: string; sizes: string }> = {
-  32: { container: 'size-8 text-sm', sizes: '32px' },
-  40: { container: 'size-10 text-base', sizes: '40px' },
-  48: { container: 'size-12 text-lg', sizes: '48px' },
+  // sizes tính cả mức phóng 1.7× để trình duyệt tải đủ điểm ảnh cho khuôn mặt.
+  32: { container: 'size-8 text-sm', sizes: '55px' },
+  40: { container: 'size-10 text-base', sizes: '68px' },
+  48: { container: 'size-12 text-lg', sizes: '82px' },
 };
 
 export function RoleAvatar({

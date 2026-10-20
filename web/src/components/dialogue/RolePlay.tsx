@@ -30,8 +30,9 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
   );
   const [hasVoice, setHasVoice] = useState(false);
   const scrollArea = useRef<HTMLDivElement>(null);
-  const spokenIndex = useRef<number | null>(null);
+  const revealedLine = useRef<number | null>(null);
   const view = rolePlayView(dialogue, state);
+  const { speechStart, speechEnd } = view;
   const role = dialogue.roles.find((item) => item.id === state.roleId)!;
   const currentIndex = state.phase === 'session' ? state.index : null;
   const revealed = state.phase === 'session' && state.revealed;
@@ -48,15 +49,30 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
   }, []);
 
   useEffect(() => {
-    const line = currentIndex === null ? undefined : dialogue.lines[currentIndex];
-    if (!hasVoice || !line || line.speaker === state.roleId || spokenIndex.current === currentIndex) return;
-    spokenIndex.current = currentIndex;
-    speak(line.kana ?? toKanaSentence(line.jp), 1, undefined, rolePitch(dialogue.roles, line.speaker));
-  }, [currentIndex, hasVoice, dialogue, state.roleId]);
+    if (!hasVoice || speechStart === speechEnd) return;
+    let active = true;
+    let index = speechStart;
+    const playNext = () => {
+      if (!active || index >= speechEnd) return;
+      const line = dialogue.lines[index++];
+      const utterance = speak(line.kana ?? toKanaSentence(line.jp), 1, undefined, rolePitch(dialogue.roles, line.speaker));
+      if (utterance) utterance.onend = playNext;
+    };
+    playNext();
+    return () => {
+      active = false;
+      cancelSpeech();
+    };
+  }, [speechStart, speechEnd, hasVoice, dialogue]);
 
   useEffect(() => {
     const area = scrollArea.current;
-    if (area) area.scrollTop = area.scrollHeight;
+    if (!area) return;
+    const line = revealedLine.current === null ? null : area.querySelector(`[data-line-index="${revealedLine.current}"]`);
+    // Giữ câu vừa mở trong tầm nhìn khi phần đối thoại tiếp theo được thêm vào.
+    if (line) area.scrollTop += line.getBoundingClientRect().top - area.getBoundingClientRect().top;
+    else area.scrollTop = area.scrollHeight;
+    revealedLine.current = null;
   }, [currentIndex, revealed, state.phase]);
 
   const exit = () => {
@@ -65,11 +81,11 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
   };
   const advance = () => {
     cancelSpeech();
+    revealedLine.current = state.phase === 'session' && !state.revealed ? state.index : null;
     dispatch({ type: 'next' });
   };
   const changeRole = () => {
     cancelSpeech();
-    spokenIndex.current = null;
     dispatch({ type: 'change-role' });
   };
 
@@ -107,7 +123,7 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
 
       {state.phase === 'pick' && (
         <>
-          <div className="min-h-0 flex-1 overflow-y-auto pb-4">
+          <div className="scrollbar-none min-h-0 flex-1 overflow-y-auto pb-4">
             {dialogue.illustration && (
               <SoftScene asset={dialogue.illustration} sizes="(min-width: 672px) 672px, 100vw" imageClassName="aspect-[16/10] h-auto object-[50%_45%]" />
             )}
@@ -147,13 +163,13 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
 
       {state.phase === 'session' && (
         <>
-          <div ref={scrollArea} role="region" aria-label="Đoạn hội thoại" tabIndex={0} className="min-h-0 flex-1 overflow-y-auto rounded-lg outline-none focus-visible:ring-3 focus-visible:ring-ring">
+          <div ref={scrollArea} role="region" aria-label="Đoạn hội thoại" tabIndex={0} className="scrollbar-none min-h-0 flex-1 overflow-y-auto rounded-lg outline-none focus-visible:ring-3 focus-visible:ring-ring">
             <ol aria-live="polite" aria-relevant="additions text" className="flex flex-col gap-6 py-5">
               {view.visibleLines.map(({ line, index, isOwn, hidden }) => {
                 const speaker = dialogue.roles.find((item) => item.id === line.speaker)!;
                 if (hidden) {
                   return (
-                    <li key={index} className={cn('flex w-[90%] min-w-0 flex-col gap-2', isOwn && 'ml-auto items-end')}>
+                    <li key={index} data-line-index={index} className={cn('flex w-[90%] min-w-0 flex-col gap-2', isOwn && 'ml-auto items-end')}>
                       <div className={cn('flex items-center gap-2', isOwn && 'flex-row-reverse')}>
                         <RoleAvatar role={speaker} size={32} />
                         <Furigana text={speaker.name} className="text-sm font-medium" />
@@ -166,7 +182,7 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
                   );
                 }
                 return (
-                  <li key={index} className="min-w-0">
+                  <li key={index} data-line-index={index} className="min-w-0">
                     <DialogueBubble
                       role={speaker}
                       line={line}
@@ -189,7 +205,7 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
       )}
 
       {state.phase === 'done' && (
-        <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-6 overflow-y-auto py-8 text-center">
+        <div className="scrollbar-none flex min-h-0 flex-1 flex-col items-center justify-center gap-6 overflow-y-auto py-8 text-center">
           <RoleAvatar role={role} size={48} />
           <h1 className="font-serif text-3xl font-semibold">Xong</h1>
           <p className="text-sm text-muted-foreground">Vai <Furigana text={role.name} /> · {view.total} câu</p>

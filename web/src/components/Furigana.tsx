@@ -17,9 +17,9 @@ export function Furigana({ text, className = '', zoomable = true }: FuriganaProp
   const words = groupFuriganaWords(text);
 
   return (
-    <span className={`jp inline-flex flex-wrap items-baseline gap-x-[0.3em] ${className}`}>
+    <span className={`jp inline-flex max-w-full flex-wrap items-baseline gap-x-[0.3em] ${className}`}>
       {words.map((word, w) => (
-        <span key={w} className="whitespace-nowrap">
+        <span key={w} className="inline-block max-w-full break-words [overflow-wrap:anywhere]">
           {word.map((segment, index) => {
             if (!segment.ruby) {
               return <span key={index}>{segment.base}</span>;

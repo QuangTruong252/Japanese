@@ -23,7 +23,7 @@ export function formatDuration(sec: number): string {
 
 export function SessionShell({ className, children }: { className?: string; children: ReactNode }) {
   return (
-    <main className="fixed inset-0 z-40 bg-background">
+    <main className="fixed inset-0 z-40 bg-background overflow-hidden">
       <div
         className={cn(
           'mx-auto flex h-full w-full max-w-2xl flex-col px-4 pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] sm:px-6',
@@ -206,7 +206,7 @@ export function FeedbackPanel({
         role="region"
         aria-label="Phản hồi kết quả"
         aria-live="polite"
-        className="max-h-[60dvh] overflow-y-auto px-1 pb-3 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 motion-safe:duration-250 motion-safe:ease-smooth-out"
+        className="max-h-[60dvh] overflow-y-auto overflow-x-hidden px-1 pb-3 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 motion-safe:duration-250 motion-safe:ease-smooth-out"
       >
         <TornCard className="space-y-3 p-4 sm:p-5">
           <div className="flex items-center justify-between gap-3">

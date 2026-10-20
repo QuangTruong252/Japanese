@@ -190,7 +190,7 @@ export function QuestionMatching({
           <Fragment key={`pair-row-${leftItem.targetId}-${rightItem.targetId}`}>
             {/* Ô trái: tiếng Nhật */}
             <div
-              className={cn('h-full flex', matchedLeft && 'opacity-40 transition-opacity duration-200')}
+              className={cn('min-w-0 h-full flex', matchedLeft && 'opacity-40 transition-opacity duration-200')}
             >
               <AnswerOption
                 state={stateOfLeft(leftItem.targetId)}
@@ -205,7 +205,7 @@ export function QuestionMatching({
 
             {/* Ô phải: tiếng Việt */}
             <div
-              className={cn('h-full flex', matchedRight && 'opacity-40 transition-opacity duration-200')}
+              className={cn('min-w-0 h-full flex', matchedRight && 'opacity-40 transition-opacity duration-200')}
             >
               <AnswerOption
                 state={stateOfRight(rightItem.targetId)}

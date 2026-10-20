@@ -18,6 +18,16 @@ export function createRolePlay(dialogue: Dialogue): RolePlayState {
   };
 }
 
+function nextTurn(dialogue: Dialogue, roleId: string, from: number): RolePlayState {
+  const index = dialogue.lines.findIndex((line, index) => index >= from && line.speaker === roleId);
+  return {
+    phase: 'session',
+    roleId,
+    index: index < 0 ? dialogue.lines.length - 1 : index,
+    revealed: index < 0,
+  };
+}
+
 export function stepRolePlay(
   dialogue: Dialogue,
   state: RolePlayState,
@@ -33,28 +43,30 @@ export function stepRolePlay(
     if (!dialogue.roles.some((role) => role.id === state.roleId)) return state;
     return dialogue.lines.length === 0
       ? { phase: 'done', roleId: state.roleId }
-      : { phase: 'session', roleId: state.roleId, index: 0, revealed: false };
+      : nextTurn(dialogue, state.roleId, 0);
   }
   if (action.type !== 'next' || state.phase !== 'session') return state;
-  if (dialogue.lines[state.index]?.speaker === state.roleId && !state.revealed) {
-    return { ...state, revealed: true };
-  }
-  return state.index + 1 >= dialogue.lines.length
+  return state.revealed
     ? { phase: 'done', roleId: state.roleId }
-    : { ...state, index: state.index + 1, revealed: false };
+    : nextTurn(dialogue, state.roleId, state.index + 1);
 }
 
 export function rolePlayView(dialogue: Dialogue, state: RolePlayState) {
   const current = state.phase === 'session' ? dialogue.lines[state.index] : undefined;
   const isOwnTurn = current?.speaker === state.roleId;
   const count = state.phase === 'pick' ? 0 : state.phase === 'done' ? dialogue.lines.length : state.index + 1;
+  const speechEnd = state.phase !== 'session' ? 0 : count - (isOwnTurn && !state.revealed ? 1 : 0);
+  let speechStart = speechEnd;
+  while (speechStart > 0 && dialogue.lines[speechStart - 1]!.speaker !== state.roleId) speechStart--;
   return {
     current,
     isOwnTurn,
     count,
     total: dialogue.lines.length,
     progress: `${count}/${dialogue.lines.length}`,
-    buttonLabel: state.phase === 'session' && isOwnTurn && !state.revealed ? 'Hiện câu' : 'Tiếp',
+    buttonLabel: state.phase === 'session' && !state.revealed ? 'Hiện câu' : 'Hoàn tất',
+    speechStart,
+    speechEnd,
     visibleLines: dialogue.lines.slice(0, count).map((line, index) => ({
       line,
       index,

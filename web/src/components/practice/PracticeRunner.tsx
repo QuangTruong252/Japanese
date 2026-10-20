@@ -418,12 +418,12 @@ export function PracticeRunner({
         )}
 
         {/* Chỉ vùng câu hỏi cuộn khi tràn; khối phản hồi luôn nằm dưới cùng */}
-        <div className="flex min-h-0 flex-1 flex-col overflow-y-auto py-2">
+        <div className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden py-2">
           {/* Tạm dừng: câu vẫn mounted để giữ chữ đang gõ; inert chặn focus và chạm xuyên lớp phủ */}
           <div
             key={currentQuestion.id}
             inert={isPaused}
-            className="my-auto w-full space-y-6 py-2 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-2 motion-safe:duration-250 motion-safe:ease-in-out"
+            className="my-auto w-full space-y-6 py-2 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:duration-150"
           >
             <QuestionPrompt question={currentQuestion} />
             {renderQuestionComponent()}

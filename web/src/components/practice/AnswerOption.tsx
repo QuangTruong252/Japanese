@@ -76,7 +76,7 @@ export function AnswerOption({
       {/* Đáp án nghĩa tiếng Việt dùng font giao diện; chữ Nhật mới dùng bậc jp-vocab */}
       <span
         className={cn(
-          'min-w-0 flex-1',
+          'min-w-0 flex-1 break-words',
           typeof children === 'string' && !containsJapanese(children)
             ? 'text-base font-normal'
             : 'jp jp-vocab',
