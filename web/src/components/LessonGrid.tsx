@@ -9,7 +9,7 @@ import { DEFAULT_SETTINGS, getSettingsSnapshot, subscribeSettings } from '@/lib/
 import { useActiveDrafts } from '@/lib/active-drafts';
 import type { LessonSummary } from '@/lib/lessons';
 import type { IllustrationAsset } from '@/types';
-import { ArrowRight, BookOpen, Check, ChevronRight, Circle, Play, Search, X } from 'lucide-react';
+import { ArrowRight, BookOpen, Check, Play, Search, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -38,22 +38,37 @@ const LESSON_GROUPS = [
 
 type LessonState = 'learned' | 'current' | 'todo';
 
-/** Ô tròn trên thanh dòng thời gian; trang trí, trạng thái đã có chữ trong dòng. */
-function TimelineNode({ state }: { state: LessonState }) {
+// Tâm thẻ theo bề ngang khối lộ trình: thẻ rộng 78%, lệch trái thì tâm 39%, lệch phải thì 61%
+const centerX = (index: number) => (index % 2 === 0 ? 39 : 61);
+
+/** Nét nối giữa các thẻ; bài đã học thì tô đỏ, còn lại xám nhạt. */
+function RoadLine({
+  d,
+  height,
+  learned,
+  className,
+}: {
+  d: string;
+  height: number;
+  learned: boolean;
+  className?: string;
+}) {
   return (
-    <span
+    <svg
       aria-hidden="true"
-      className={cn(
-        'relative z-10 flex size-8 items-center justify-center rounded-full border-2',
-        state === 'learned' && 'border-primary bg-primary text-primary-foreground',
-        state === 'current' && 'border-primary bg-card text-primary',
-        state === 'todo' && 'border-border bg-card text-muted-foreground/60',
-      )}
+      viewBox={`0 0 100 ${height}`}
+      preserveAspectRatio="none"
+      className={cn('block w-full', className)}
     >
-      {state === 'learned' && <Check className="size-4 stroke-[3]" />}
-      {state === 'current' && <Play className="size-3.5 fill-current" />}
-      {state === 'todo' && <Circle className="size-2.5" />}
-    </span>
+      <path
+        d={d}
+        fill="none"
+        strokeWidth={4}
+        strokeLinecap="round"
+        vectorEffect="non-scaling-stroke"
+        className={learned ? 'stroke-primary/60' : 'stroke-muted-foreground/30'}
+      />
+    </svg>
   );
 }
 
@@ -270,115 +285,126 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                 </button>
               </div>
             ) : (
-              <div>
+              <div className="mx-auto max-w-md">
                 {LESSON_GROUPS.map((group) => {
                   const groupLessons = filteredSummaries.filter(
                     (s) => s.number >= group.min && s.number <= group.max,
                   );
                   if (groupLessons.length === 0) return null;
-                  const isFirstGroup = groupLessons[0].number === filteredSummaries[0].number;
+                  const firstIndex = filteredSummaries.indexOf(groupLessons[0]);
+                  const prevLesson = filteredSummaries[firstIndex - 1];
+                  const isLessonLearned = (s: LessonSummary) =>
+                    (s.vocabCount > 0 && (learnedByLesson.get(s.number) ?? 0) >= s.vocabCount) ||
+                    s.number <= learnedThroughLesson;
 
                   return (
                     <div key={group.label}>
-                      {/* Thanh dọc không hở: tiêu đề nhóm nằm bên phải thanh, thanh chạy qua bằng đoạn riêng (trừ trước ô tròn đầu) */}
-                      <div className="relative pb-2 pl-11 pt-4 first:pt-0">
-                        {!isFirstGroup && (
-                          <span
-                            aria-hidden="true"
-                            className="absolute inset-y-0 left-4 w-0.5 -translate-x-1/2 bg-border"
+                      {prevLesson ? (
+                        // Nét đi từ thẻ cuối nhóm trước, qua mốc ở tâm, tới thẻ đầu nhóm sau; mốc có nền giấy nên nằm "trên đường"
+                        <div className="relative flex h-14 items-center justify-center">
+                          <RoadLine
+                            d={`M ${centerX(firstIndex - 1)} 0 C ${centerX(firstIndex - 1)} 14 50 14 50 28 C 50 42 ${centerX(firstIndex)} 42 ${centerX(firstIndex)} 56`}
+                            height={56}
+                            learned={isLessonLearned(prevLesson)}
+                            className="absolute inset-0 size-full"
                           />
-                        )}
-                        <h2 className="text-lg font-semibold text-foreground">{group.label}</h2>
-                      </div>
+                          <h2 className="relative bg-background px-3 font-serif text-sm font-semibold text-muted-foreground">
+                            {group.label}
+                          </h2>
+                        </div>
+                      ) : (
+                        <h2 className="mx-auto mb-3 w-fit bg-background px-3 font-serif text-sm font-semibold text-muted-foreground">
+                          {group.label}
+                        </h2>
+                      )}
                       <ol>
-                        {groupLessons.map((s) => {
+                        {groupLessons.map((s, i) => {
+                          const index = firstIndex + i;
                           const learned = learnedByLesson.get(s.number) ?? 0;
-                          const isLearned =
-                            (s.vocabCount > 0 && learned >= s.vocabCount) ||
-                            s.number <= learnedThroughLesson;
+                          const isLearned = isLessonLearned(s);
                           const isCurrent = !isAllLearned && s.number === activeLessonNum;
                           const state: LessonState = isLearned
                             ? 'learned'
                             : isCurrent
                               ? 'current'
                               : 'todo';
-                          const isFirst = s.number === filteredSummaries[0].number;
-                          const isLast = s.number === filteredSummaries[filteredSummaries.length - 1].number;
 
                           return (
-                            <li key={s.number} className="flex gap-3">
-                              {/* Thanh dọc chạy suốt nhóm; ô tròn nằm trên thanh, ngoài thẻ dòng.
-                                  Khoảng cách giữa thẻ là margin của thẻ (không phải padding của li) để cột
-                                  thanh, kéo giãn theo li, phủ luôn khoảng đó và không hở giữa hai ô tròn */}
-                              <div className="relative flex w-8 shrink-0 items-center justify-center">
-                                <span
-                                  aria-hidden="true"
-                                  className={cn(
-                                    'absolute left-1/2 w-0.5 -translate-x-1/2',
-                                    state === 'learned' ? 'bg-primary/40' : 'bg-border',
-                                    isFirst && isLast
-                                      ? 'hidden'
-                                      : isFirst
-                                        ? 'bottom-0 top-1/2'
-                                        : isLast
-                                          ? 'bottom-1/2 top-0'
-                                          : 'inset-y-0',
-                                  )}
-                                />
-                                <TimelineNode state={state} />
-                              </div>
-
+                            <li key={s.number}>
                               <Link
                                 href={`/hoc/${s.number}`}
                                 className={cn(
-                                  'group my-1 flex min-w-0 flex-1 items-center gap-3 rounded-xl border bg-card p-3 outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring',
-                                  isCurrent ? 'border-primary/40 bg-accent/40' : 'border-border',
+                                  'relative isolate grid w-[78%] overflow-hidden rounded-2xl border bg-card outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring',
+                                  index % 2 === 0 ? 'mr-auto' : 'ml-auto',
+                                  isCurrent
+                                    ? 'border-primary ring-2 ring-primary/40'
+                                    : 'border-border hover:border-foreground/30',
                                 )}
                               >
+                                {/* Phóng nhẹ để cắt mép nhạt của tranh, mép tan vào màu giấy thay vì thành khung sáng */}
                                 <Illustration
                                   asset={s.cover ?? FALLBACK_SCENE_COVER}
-                                  sizes="48px"
-                                  className="size-12 shrink-0 rounded-lg bg-secondary object-cover"
+                                  sizes="(min-width: 640px) 384px, 78vw"
+                                  className="absolute inset-0 size-full scale-110 object-cover dark:brightness-[0.88]"
                                 />
-                                <span className="min-w-0 flex-1">
-                                  <span className="flex flex-wrap items-baseline gap-x-2">
+                                {/* Ô giữ tỉ lệ 3:2 tối thiểu; thẻ cao thêm được khi chữ dài, không cắt chữ */}
+                                <span aria-hidden="true" className="col-start-1 row-start-1 aspect-[3/2]" />
+                                <span className="relative col-start-1 row-start-1 flex flex-col">
+                                  <span className="m-3 inline-flex items-center gap-2 self-start rounded-full border border-border bg-card/85 py-1 pl-3 pr-1.5 backdrop-blur-sm">
                                     <span className="text-sm font-semibold text-foreground">
                                       Bài {s.number}
                                     </span>
-                                    {isLearned ? (
-                                      <span className="text-sm font-medium text-success">Đã học</span>
-                                    ) : isCurrent ? (
-                                      <span className="text-sm font-semibold text-primary">
-                                        Đang học {learned}/{s.vocabCount}
-                                      </span>
-                                    ) : (
-                                      <span className="text-sm text-muted-foreground">Chưa học</span>
-                                    )}
-                                  </span>
-                                  {s.jpTitle && (
-                                    <span className="jp block font-medium text-foreground">
-                                      <Furigana
-                                        text={formatOptionalBrackets(s.jpTitle)}
-                                        zoomable={false}
-                                      />
+                                    <span className="sr-only">
+                                      {state === 'learned'
+                                        ? ', Đã học'
+                                        : state === 'current'
+                                          ? `, Đang học, ${learned}/${s.vocabCount} từ`
+                                          : ', Chưa học'}
                                     </span>
-                                  )}
-                                  <span
-                                    className={cn(
-                                      'block text-sm',
-                                      s.jpTitle
-                                        ? 'text-muted-foreground'
-                                        : 'font-semibold text-foreground',
+                                    <span
+                                      aria-hidden="true"
+                                      className={cn(
+                                        'flex size-5 items-center justify-center rounded-full',
+                                        state === 'learned' && 'bg-success text-success-foreground',
+                                        state === 'current' && 'bg-primary text-primary-foreground',
+                                        state === 'todo' && 'border-2 border-muted-foreground/60',
+                                      )}
+                                    >
+                                      {state === 'learned' && <Check className="size-3 stroke-[3]" />}
+                                      {state === 'current' && <Play className="size-2.5 fill-current" />}
+                                    </span>
+                                  </span>
+                                  {/* Lớp giấy mờ giữ chữ đọc rõ; mép trên tan dần để thoáng thấy tranh */}
+                                  <span className="mt-auto block bg-background/90 px-4 pb-3 pt-5 backdrop-blur-md [mask-image:linear-gradient(to_bottom,transparent,black_1.25rem)]">
+                                    {s.jpTitle && (
+                                      <span className="jp block font-medium text-foreground">
+                                        <Furigana
+                                          text={formatOptionalBrackets(s.jpTitle)}
+                                          zoomable={false}
+                                        />
+                                      </span>
                                     )}
-                                  >
-                                    {s.title.vi}
+                                    <span
+                                      className={cn(
+                                        'block text-sm',
+                                        s.jpTitle
+                                          ? 'text-muted-foreground'
+                                          : 'font-semibold text-foreground',
+                                      )}
+                                    >
+                                      {s.title.vi}
+                                    </span>
                                   </span>
                                 </span>
-                                <ChevronRight
-                                  className="size-5 shrink-0 text-muted-foreground"
-                                  aria-hidden="true"
-                                />
                               </Link>
+                              {i < groupLessons.length - 1 && (
+                                <RoadLine
+                                  d={`M ${centerX(index)} 0 C ${centerX(index)} 20 ${centerX(index + 1)} 20 ${centerX(index + 1)} 40`}
+                                  height={40}
+                                  learned={isLearned}
+                                  className="h-10"
+                                />
+                              )}
                             </li>
                           );
                         })}
