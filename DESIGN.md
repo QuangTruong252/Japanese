@@ -130,7 +130,7 @@ lật thẻ flashcard (lật qua lại được), easing `ease-smooth-out`. Khô
 | Màn | Trạng thái | Mockup |
 |---|---|---|
 | Bảng tin `/` | **v3** — tham chiếu chuẩn | `design/home/` |
-| `/hoc` | **v3** — G2 đã duyệt | `design/hoc/` |
+| `/hoc` | **v3** — G2 đã duyệt 2026-10-20 (lộ trình thẻ tranh so le, không có mockup ảnh) | `design/hoc/sketch-lo-trinh.png`, `as-built-*` |
 | `/hoc/[so]` | **v3** — G2 đã duyệt 2026-10-19 (tab Từ vựng · Ngữ pháp, lưới/danh sách) | `design/bai/mockup-v2-*` |
 | `/hoc/[so]/tu-vung` | **v3** — G2 đã duyệt | `design/tu-vung/` |
 | `/luyen-tap`, `/on-tap`, `/on-tap/diem-yeu` | **v3** — G2 đã duyệt | `design/luyen-tap/`, `design/on-tap/` |
