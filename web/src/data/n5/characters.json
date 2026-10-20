@@ -118,5 +118,35 @@
         "vi": "Chân dung tài xế taxi"
       }
     }
+  },
+  "ginkouin": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/ginkouin-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung nhân viên ngân hàng"
+      }
+    }
+  },
+  "tomodachi": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/tomodachi-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung bạn cùng lớp của Mai"
+      }
+    }
+  },
+  "kachou": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/kachou-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung trưởng phòng"
+      }
+    }
   }
 }
