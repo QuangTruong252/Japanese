@@ -4,15 +4,15 @@ import { useEffect, useReducer, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, Check, X } from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
-import { SpeakButton } from '@/components/SpeakButton';
 import { SoftScene, TornCard } from '@/components/PaperKit';
 import { Button } from '@/components/ui/button';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { SessionShell } from '@/components/practice/SessionFrame';
+import { DialogueBubble } from '@/components/dialogue/DialogueBubble';
 import { RoleAvatar } from '@/components/dialogue/RoleAvatar';
 import { createRolePlay, rolePlayView, stepRolePlay, type RolePlayAction } from '@/lib/roleplay';
 import { rolePitch } from '@/lib/kaiwa';
-import { stripFurigana, toKanaSentence } from '@/lib/japanese';
+import { toKanaSentence } from '@/lib/japanese';
 import { hasJapaneseVoice, speak } from '@/lib/tts';
 import { cn } from '@/lib/utils';
 import type { Dialogue } from '@/types';
@@ -31,7 +31,6 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
   const [hasVoice, setHasVoice] = useState(false);
   const scrollArea = useRef<HTMLDivElement>(null);
   const spokenIndex = useRef<number | null>(null);
-  const leaving = useRef(false);
   const view = rolePlayView(dialogue, state);
   const role = dialogue.roles.find((item) => item.id === state.roleId)!;
   const currentIndex = state.phase === 'session' ? state.index : null;
@@ -40,7 +39,7 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
   useEffect(() => {
     let alive = true;
     hasJapaneseVoice().then((available) => {
-      if (alive && !leaving.current) setHasVoice(available);
+      if (alive) setHasVoice(available);
     });
     return () => {
       alive = false;
@@ -50,7 +49,7 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
 
   useEffect(() => {
     const line = currentIndex === null ? undefined : dialogue.lines[currentIndex];
-    if (leaving.current || !hasVoice || !line || line.speaker === state.roleId || spokenIndex.current === currentIndex) return;
+    if (!hasVoice || !line || line.speaker === state.roleId || spokenIndex.current === currentIndex) return;
     spokenIndex.current = currentIndex;
     speak(line.kana ?? toKanaSentence(line.jp), 1, undefined, rolePitch(dialogue.roles, line.speaker));
   }, [currentIndex, hasVoice, dialogue, state.roleId]);
@@ -61,7 +60,6 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
   }, [currentIndex, revealed, state.phase]);
 
   const exit = () => {
-    leaving.current = true;
     cancelSpeech();
     router.push(`/hoc/${lessonNum}#hoi-thoai`);
   };
@@ -153,28 +151,28 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
             <ol aria-live="polite" aria-relevant="additions text" className="flex flex-col gap-6 py-5">
               {view.visibleLines.map(({ line, index, isOwn, hidden }) => {
                 const speaker = dialogue.roles.find((item) => item.id === line.speaker)!;
+                if (hidden) {
+                  return (
+                    <li key={index} className={cn('flex w-[90%] min-w-0 flex-col gap-2', isOwn && 'ml-auto items-end')}>
+                      <div className={cn('flex items-center gap-2', isOwn && 'flex-row-reverse')}>
+                        <RoleAvatar role={speaker} size={32} />
+                        <Furigana text={speaker.name} className="text-sm font-medium" />
+                      </div>
+                      <div className="w-full min-w-0 rounded-2xl border border-dashed border-primary bg-background p-4 sm:p-5">
+                        <p className="mb-3 text-sm font-semibold text-primary">Lượt của bạn</p>
+                        <p className="leading-relaxed">{line.translation.vi}</p>
+                      </div>
+                    </li>
+                  );
+                }
                 return (
-                  <li key={index} className={cn('flex w-[90%] min-w-0 flex-col gap-2', isOwn && 'ml-auto items-end')}>
-                    <div className={cn('flex items-center gap-2', isOwn && 'flex-row-reverse')}>
-                      <RoleAvatar role={speaker} size={32} />
-                      <Furigana text={speaker.name} className="text-sm font-medium" />
-                    </div>
-                    <div className={cn('w-full min-w-0 rounded-2xl border p-4 sm:p-5', isOwn ? 'border-primary/25 bg-accent/40' : 'border-border bg-card', hidden && 'border-dashed border-primary bg-background')}>
-                      {hidden ? (
-                        <>
-                          <p className="mb-3 text-sm font-semibold text-primary">Lượt của bạn</p>
-                          <p className="leading-relaxed">{line.translation.vi}</p>
-                        </>
-                      ) : (
-                        <>
-                          <div className="flex flex-wrap items-start gap-2">
-                            <Furigana text={line.jp} className="jp-display min-w-0 flex-1 basis-40 text-xl font-bold sm:text-2xl" />
-                            {hasVoice && <SpeakButton text={line.kana ?? toKanaSentence(line.jp)} label={stripFurigana(line.jp)} />}
-                          </div>
-                          <p className="translation mt-3 text-sm leading-relaxed text-muted-foreground">{line.translation.vi}</p>
-                        </>
-                      )}
-                    </div>
+                  <li key={index} className="min-w-0">
+                    <DialogueBubble
+                      role={speaker}
+                      line={line}
+                      side={isOwn ? 'right' : 'left'}
+                      pitch={rolePitch(dialogue.roles, line.speaker)}
+                    />
                   </li>
                 );
               })}
