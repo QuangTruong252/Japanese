@@ -562,6 +562,14 @@
         "naiKana": "おしえない",
         "ta": "教[おし]えた[住所[じゅうしょ]を〜]",
         "taKana": "おしえた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/showing-address-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái cầm bút viết địa chỉ vào cuốn sổ tay và tận tình chỉ dẫn cho chàng trai."
+        }
       }
     },
     {
@@ -882,6 +890,14 @@
         "translation": {
           "vi": "Xin hãy viết tên vào đây."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/name-badge-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Thẻ tên cài áo với khung trống và cây bút bi đặt cạnh."
+        }
       }
     },
     {
@@ -898,6 +914,14 @@
         "kana": "じゅうしょを おしえてください。",
         "translation": {
           "vi": "Xin hãy cho tôi biết địa chỉ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/envelope-address-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Phong bì thư có dán tem và khung dòng kẻ địa chỉ được đánh dấu viền nổi bật."
         }
       }
     },
@@ -991,6 +1015,14 @@
         "translation": {
           "vi": "Bạn có hiểu câu hỏi này không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/question-problem-sheet-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ giấy bài tập với dấu hỏi chấm lớn biểu thị câu hỏi hóc búa."
+        }
       }
     },
     {
@@ -1007,6 +1039,14 @@
         "kana": "こたえを かいてください。",
         "translation": {
           "vi": "Xin hãy viết câu trả lời."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/answer-sheet-circle-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ bài làm với dấu khoanh tròn đỏ đánh dấu câu trả lời chính xác."
         }
       }
     },
@@ -1041,6 +1081,14 @@
         "kana": "この ケーキの つくりかたを おしえてください。",
         "translation": {
           "vi": "Hãy dạy cho tôi cách làm cái bánh này."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/how-to-steps-guide-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Sách hướng dẫn mở rộng minh họa từng bước cách làm nối tiếp nhau bằng mũi tên."
         }
       }
     },
@@ -1109,6 +1157,14 @@
         "translation": {
           "vi": "Tôi sẽ đi ngay."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/rushing-out-immediately-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai vội vã xỏ giày bên cửa để đi ngay lập tức."
+        }
       }
     },
     {
@@ -1125,6 +1181,14 @@
         "kana": "また きます。",
         "translation": {
           "vi": "Tôi sẽ lại đến."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/see-you-again-farewell-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai bạn sinh viên quay lại vẫy tay mỉm cười chào nhau sau giờ học."
         }
       }
     },
@@ -1143,6 +1207,14 @@
         "translation": {
           "vi": "Lát nữa tôi sẽ gọi điện."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/call-later-desk-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Điện thoại để cạnh đồng hồ báo thức trên bàn làm việc ngụ ý để lát nữa gọi."
+        }
       }
     },
     {
@@ -1159,6 +1231,14 @@
         "kana": "もう すこし おおきい のを みせてください。",
         "translation": {
           "vi": "Xin hãy cho tôi xem cái lớn hơn một chút nữa."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/a-little-more-pour-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ấm trà rót thêm một chút nước vào chiếc tách đã gần đầy."
         }
       }
     },
@@ -1177,6 +1257,14 @@
         "translation": {
           "vi": "Tôi đã mua thêm một quả táo."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/one-more-apple-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn tay đặt thêm một quả táo vào cạnh đĩa hoa quả có sẵn."
+        }
       }
     },
     {
@@ -1193,6 +1281,14 @@
         "kana": "「さあ、いきましょう。」",
         "translation": {
           "vi": "\"Nào, chúng ta cùng đi thôi.\""
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/urging-lets-go-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái tươi cười vẫy tay khích lệ mọi người cùng đứng dậy bước đi."
         }
       }
     },
@@ -1211,6 +1307,14 @@
         "translation": {
           "vi": "\"Ủa? Anh Miller không có ở đây.\""
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/puzzled-surprise-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai nghiêng đầu giơ hai tay bối rối ngạc nhiên trước chiếc bàn trống."
+        }
       }
     },
     {
@@ -1228,6 +1332,14 @@
         "translation": {
           "vi": "Xin hãy rẽ phải ở đèn tín hiệu kia."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/turn-right-traffic-light-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc xe ô tô rẽ phải tại ngã tư có cột đèn giao thông và mũi tên rẽ phải trên mặt đường."
+        }
       }
     },
     {
@@ -1244,6 +1356,14 @@
         "kana": "「これで おねがいします。」",
         "translation": {
           "vi": "\"Xin thanh toán bằng số tiền này.\""
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/handing-payment-money-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai bàn tay lịch sự đưa tiền mặt thanh toán tại quầy thu ngân."
         }
       }
     },

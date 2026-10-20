@@ -20,6 +20,198 @@
       "alt": {
         "vi": "Chàng trai cúi chào lịch thiệp mỉm cười cảm ơn."
       }
+    },
+    {
+      "stem": "english-language-v1",
+      "subject": "a speech bubble containing a stylized British flag with Union Jack pattern, floating neatly above an open study book with blank lined pages",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "eigo"
+      },
+      "alt": {
+        "vi": "Bong bóng lời nói có hình cờ Vương quốc Anh bên cạnh cuốn sách mở."
+      }
+    },
+    {
+      "stem": "japanese-language-v1",
+      "subject": "a speech bubble containing a stylized Japanese flag with a clean red circle on a white background, floating neatly above an open study book with blank lined pages",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "nihongo"
+      },
+      "alt": {
+        "vi": "Bong bóng lời nói có hình cờ Nhật Bản bên cạnh cuốn sách mở."
+      }
+    },
+    {
+      "stem": "language-suffix-v1",
+      "subject": "a speech bubble containing two small stylized colorful national flags side by side, floating neatly above an open dictionary",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "go"
+      },
+      "alt": {
+        "vi": "Bong bóng lời nói có hai lá cờ biểu thị ngôn ngữ bên trên cuốn từ điển."
+      }
+    },
+    {
+      "stem": "asking-what-v1",
+      "subject": "the reference male student holding an unmarked wrapped gift box in both hands, tilting his head with a puzzled curious expression, with a question mark '?' symbol in a thought bubble above",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "nan"
+      },
+      "alt": {
+        "vi": "Chàng trai cầm hộp quà bí ẩn nghiêng đầu thắc mắc với dấu hỏi chấm."
+      }
+    },
+    {
+      "stem": "thats-right-v1",
+      "subject": "the reference male student smiling and nodding affirmatively in agreement, giving an approving gesture beside a prominent green checkmark tick symbol",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "sou"
+      },
+      "alt": {
+        "vi": "Chàng trai mỉm cười gật đầu đồng ý bên cạnh dấu tick xanh."
+      }
+    },
+    {
+      "stem": "thats-wrong-v1",
+      "subject": "the reference male student with an apologetic smile shaking his head and crossing his forearms in an X gesture in front of his chest, beside a bold red cross X mark symbol",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "chigaimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai bắt chéo hai tay tạo thành chữ X lắc đầu báo hiệu sai rồi."
+      }
+    },
+    {
+      "stem": "hesitant-filler-anou-v1",
+      "subject": "the reference woman pausing hesitantly, touching her cheek with one index finger and glancing slightly upward in thought, mouth slightly open as if saying um, a small ellipsis '...' thought bubble above",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "anou"
+      },
+      "alt": {
+        "vi": "Cô gái ngập ngừng đưa ngón tay lên má suy nghĩ với dấu ba chấm."
+      }
+    },
+    {
+      "stem": "surprised-exclamation-e-v1",
+      "subject": "the reference male student leaning back in sudden surprise with wide open eyes, raised eyebrows and hands slightly raised in astonishment, with an exclamation mark '!' bubble above",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "e"
+      },
+      "alt": {
+        "vi": "Chàng trai giật mình lùi lại mở to mắt bất ngờ với dấu chấm than."
+      }
+    },
+    {
+      "stem": "inviting-gesture-douzo-v1",
+      "subject": "the reference woman smiling warmly, extending an open welcoming hand gracefully toward a comfortable empty wooden chair at a table, inviting the viewer to take a seat",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "douzo"
+      },
+      "alt": {
+        "vi": "Cô gái đưa bàn tay mở mỉm cười mời ngồi vào chiếc ghế trống."
+      }
+    },
+    {
+      "stem": "understanding-realization-v1",
+      "subject": "the reference woman gently clapping one small fist into her open palm in a gesture of sudden understanding and acknowledgment, nodding with a small warm lightbulb symbol glowing above",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "sou-desu-ka"
+      },
+      "alt": {
+        "vi": "Cô gái đập nhẹ nắm tay vào lòng bàn tay gật đầu vỡ lẽ khi hiểu ra."
+      }
+    },
+    {
+      "stem": "in-your-care-bow-v1",
+      "subject": "the reference male student holding a neatly wrapped small housewarming gift box with both hands, bowing politely with a sincere smile at an open apartment doorway",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "korekara-osewa"
+      },
+      "alt": {
+        "vi": "Chàng trai hai tay cầm hộp quà nhỏ cúi chào tại cửa nhà mong được giúp đỡ từ nay về sau."
+      }
+    },
+    {
+      "stem": "reciprocating-bow-v1",
+      "subject": "the reference woman bowing in return with hands placed neatly in front, smiling warmly and modestly to return a polite introduction greeting",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-02.json",
+        "id": "kochirakoso"
+      },
+      "alt": {
+        "vi": "Cô gái cúi đầu đáp lễ mỉm cười khiêm tốn đáp lại lời chào."
+      }
     }
   ]
 }

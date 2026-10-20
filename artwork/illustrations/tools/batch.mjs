@@ -45,6 +45,9 @@ const STYLE = `STYLE: match the attached reference image exactly ("paper town"):
 People, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.
 BACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.
 ABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.`;
+// Job `digits: true` (từ chỉ số, ngày, giờ, tiền): nghĩa của từ chính là con số nên cho phép đúng chữ số SUBJECT nêu; chữ cái vẫn cấm.
+const DIGITS_RULE = 'NO text, letters, Japanese characters, logos, brand marks, labels, captions, watermark or UI anywhere. The ONLY writing allowed is the Arabic numerals that the subject names explicitly, painted large, clean and correct; no other numbers anywhere.';
+const styleFor = job => job.digits ? STYLE.replace(/^ABSOLUTELY NO text.*$/m, DIGITS_RULE) : STYLE;
 const ATLAS_LAYOUT = 'LAYOUT RULES: each illustration is a standalone cutout centered in its own cell and fits inside the central 60% of the cell, with wide EMPTY transparent margins on all four sides; nothing touches another cell or the canvas edge. No grid lines, no cell backgrounds, no frames.';
 const SINGLE_LAYOUT = 'LAYOUT: a single standalone cutout vignette centered, occupying about 70% of the canvas, with wide EMPTY transparent margins on all four sides. Show every person and object completely (full figures including feet); nothing is cropped by or touches the canvas edge.';
 // Avatar nhân vật: chỉ lấy phần đầu và vai, mặt ở chính giữa để cắt tròn trên UI mà không bị lệch hay vướng tay/đồ vật.
@@ -60,7 +63,7 @@ function atlasPrompt(job) {
   const shape = job.columns === job.rows ? 'square 1:1 image' : job.columns === 2 * job.rows ? 'wide 2:1 image (landscape)' : `${job.columns}:${job.rows} image`;
   const cells = job.cells.map((c, i) => `${i + 1}. (row ${Math.floor(i / job.columns) + 1}, column ${i % job.columns + 1}) ${c.subject}`);
   return [`Create ONE ${shape} that is a sprite atlas of ${job.cells.length} separate illustrations arranged in a precise grid of ${job.columns} columns x ${job.rows} rows, for a Japanese-learning app's vocabulary cards.`,
-    STYLE, `CELLS (row-major):\n${cells.join('\n')}`, ATLAS_LAYOUT].join('\n\n');
+    styleFor(job), `CELLS (row-major):\n${cells.join('\n')}`, ATLAS_LAYOUT].join('\n\n');
 }
 function singlePrompt(job) {
   const profile = GROUPS[job.group];
@@ -69,7 +72,7 @@ function singlePrompt(job) {
     return ["Create ONE square 1:1 illustration for a Japanese-learning app's character avatar.", STYLE, CHARACTER_LAYOUT, `SUBJECT: ${job.subject}`].join('\n\n');
   }
   const appRole = job.group === 'vocab' ? 'vocabulary card' : job.group === 'ui/sections' ? 'section thumbnail' : 'empty/finished state';
-  return [`Create ONE square 1:1 illustration for a Japanese-learning app's ${appRole}.`, STYLE, SINGLE_LAYOUT, `SUBJECT: ${job.subject}`].join('\n\n');
+  return [`Create ONE square 1:1 illustration for a Japanese-learning app's ${appRole}.`, styleFor(job), SINGLE_LAYOUT, `SUBJECT: ${job.subject}`].join('\n\n');
 }
 
 // ---------- batch model ----------

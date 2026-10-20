@@ -349,6 +349,54 @@
       "alt": {
         "vi": "Máy tính xách tay với biểu tượng sóng Wi-Fi kết nối Internet."
       }
+    },
+    {
+      "stem": "measuring-tape-meter-v1",
+      "subject": "a yellow and black steel retractable measuring tape resting on a wooden carpenter's workbench, its metallic blade pulled out straight with fine black metric graduation markings along the edge",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "meetoru"
+      },
+      "alt": {
+        "vi": "Thước dây cuộn kim loại kéo dài đặt trên mặt bàn thợ mộc."
+      }
+    },
+    {
+      "stem": "especially-spotlight-horse-v1",
+      "subject": "a row of small carved wooden animal figurines (a dog, a cat, a rabbit), with a carved wooden horse standing elevated on a central wooden pedestal under a soft circular spotlight beam",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "tokuni"
+      },
+      "alt": {
+        "vi": "Chú ngựa gỗ được đặt trên bục cao có ánh sáng chiếu rọi nổi bật giữa các con vật khác."
+      }
+    },
+    {
+      "stem": "amazed-reaction-hee-v1",
+      "subject": "the reference male student reacting in astonished fascination, eyes rounded wide and mouth slightly open in an excited 'ooh / really!', one hand raised to his cheek in surprised wonder",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "hee"
+      },
+      "alt": {
+        "vi": "Người nghe tròn mắt há miệng ngạc nhiên trước câu chuyện bất ngờ thú vị."
+      }
     }
   ]
 }

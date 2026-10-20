@@ -416,6 +416,488 @@
       "alt": {
         "vi": "Cô gái đứng ở hành lang cửa ra vào, mỉm cười vẫy tay tiễn người thân đi ra ngoài."
       }
+    },
+    {
+      "stem": "parent-with-child-v1",
+      "subject": "a loving parent smiling warmly while holding hands with a happy little toddler walking alongside, expressing having a child",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "imasu-kodomo"
+      },
+      "alt": {
+        "vi": "Người phụ nữ nắm tay một bé trai đang vui vẻ bước đi."
+      }
+    },
+    {
+      "stem": "living-in-japan-student-v1",
+      "subject": "the reference male student standing comfortably in a quiet Tokyo residential lane with traditional timber eaves and a small potted plant alley, depicting residing/staying in Japan",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "imasu-nihon"
+      },
+      "alt": {
+        "vi": "Chàng sinh viên đứng trong con phố nhỏ nhà gỗ yên bình, biểu thị đang ở Nhật Bản."
+      }
+    },
+    {
+      "stem": "costing-time-and-money-v1",
+      "subject": "an hourglass with sand trickling down placed beside a train ticket and a small stack of coins, visually conveying taking / costing time and money",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "kakarimasu"
+      },
+      "alt": {
+        "vi": "Chiếc đồng hồ cát đang chảy cát đặt cạnh đồng xu và vé tàu, biểu thị tốn thời gian và tiền bạc."
+      }
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-11-counting-apples-part1-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "one-apple-v1",
+          "subject": "a single standalone shiny red apple with a small green leaf resting on a surface",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "hitotsu"
+          },
+          "alt": {
+            "vi": "Một quả táo đỏ có cuống lá xanh."
+          }
+        },
+        {
+          "stem": "two-apples-v1",
+          "subject": "two shiny red apples placed neatly side by side",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "futatsu"
+          },
+          "alt": {
+            "vi": "Hai quả táo đỏ đặt cạnh nhau."
+          },
+          "skip": "faint alpha noise on the cell border"
+        },
+        {
+          "stem": "three-apples-v1",
+          "subject": "three shiny red apples arranged neatly in a tight cluster",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "mittsu"
+          },
+          "alt": {
+            "vi": "Ba quả táo đỏ xếp thành nhóm."
+          }
+        },
+        {
+          "stem": "four-apples-v1",
+          "subject": "four shiny red apples arranged neatly in a compact square group",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "yottsu"
+          },
+          "alt": {
+            "vi": "Bốn quả táo đỏ xếp thành nhóm vuông."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-11-counting-apples-part2-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "five-apples-v1",
+          "subject": "five shiny red apples arranged neatly together",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "itsutsu"
+          },
+          "alt": {
+            "vi": "Năm quả táo đỏ xếp cạnh nhau."
+          }
+        },
+        {
+          "stem": "six-apples-v1",
+          "subject": "six shiny red apples arranged neatly in two rows of three",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "muttsu"
+          },
+          "alt": {
+            "vi": "Sáu quả táo đỏ xếp thành hai hàng."
+          }
+        },
+        {
+          "stem": "seven-apples-v1",
+          "subject": "seven shiny red apples grouped neatly in a shallow bowl or neat arrangement",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "nanatsu"
+          },
+          "alt": {
+            "vi": "Bảy quả táo đỏ xếp gọn gàng."
+          }
+        },
+        {
+          "stem": "eight-apples-v1",
+          "subject": "eight shiny red apples arranged in two neat rows of four",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+            "id": "yattsu"
+          },
+          "alt": {
+            "vi": "Tám quả táo đỏ xếp thành hai hàng ngay ngắn."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "nine-apples-v1",
+      "subject": "nine shiny red apples arranged neatly in a 3 by 3 square grid on a table",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "kokonotsu"
+      },
+      "alt": {
+        "vi": "Chín quả táo đỏ xếp thành lưới ba nhân ba ngay ngắn."
+      }
+    },
+    {
+      "stem": "ten-apples-v1",
+      "subject": "ten shiny red apples arranged neatly in a clean pyramid stack (four on base, three above, two, one on top)",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "too"
+      },
+      "alt": {
+        "vi": "Mười quả táo đỏ xếp thành hình tháp tam giác đẹp mắt."
+      }
+    },
+    {
+      "stem": "asking-how-many-apples-v1",
+      "subject": "a loose uncounted heap of red apples resting on a surface, with a single prominent question mark '?' in a thought bubble overhead asking 'how many?'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "ikutsu"
+      },
+      "alt": {
+        "vi": "Đống táo chất lộn xộn với dấu hỏi chấm thắc mắc: có bao nhiêu quả táo?"
+      }
+    },
+    {
+      "stem": "one-person-figure-v1",
+      "subject": "a single standalone full figure of a young student with backpack and notebook standing alone in the center, clearly depicting one person (hitori)",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "hitori-11"
+      },
+      "alt": {
+        "vi": "Một bạn sinh viên đứng một mình ôm sách, biểu thị một người."
+      }
+    },
+    {
+      "stem": "two-people-standing-v1",
+      "subject": "the reference male student and female student standing side by side smiling and conversing, clearly depicting two people together (futari)",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "futari"
+      },
+      "alt": {
+        "vi": "Hai người bạn đứng cạnh nhau mỉm cười trò chuyện, biểu thị hai người."
+      }
+    },
+    {
+      "stem": "knocking-three-times-v1",
+      "subject": "a hand knocking on a wooden door with three distinct ripple vibration arcs painted beside the knuckles, visualizing knocking three times to signify the counter for times (~kai)",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "kai-veces"
+      },
+      "alt": {
+        "vi": "Chàng trai gõ cửa, cạnh bàn tay có các nét cong biểu thị động tác lặp lại."
+      }
+    },
+    {
+      "stem": "foreign-country-globe-v1",
+      "subject": "a desk globe showing soft world continents, flanked by a passport and a small airplane ascending, visualizing foreign countries / abroad",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "gaikoku"
+      },
+      "alt": {
+        "vi": "Quả địa cầu bên cuốn hộ chiếu và chiếc máy bay nhỏ, biểu thị nước ngoài."
+      }
+    },
+    {
+      "stem": "duration-hours-clock-v1",
+      "subject": "a round wall clock face without digits, featuring a highlighted tinted shaded sector between the hour hands showing a span of three elapsed hours, visualizing hour duration (~jikan)",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "jikan-counter"
+      },
+      "alt": {
+        "vi": "Mặt đồng hồ không số có phần quạt thời gian tô màu, biểu thị khoảng thời gian mấy tiếng."
+      }
+    },
+    {
+      "stem": "duration-three-weeks-v1",
+      "subject": "three mini weekly calendar grid sheets (each showing a neat 7-box week row) laid out from left to right, all three sheets enclosed in a warm brick-red bracket indicating a duration of three weeks",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "shuukan"
+      },
+      "alt": {
+        "vi": "Ba tờ lịch tuần dạng lưới bảy ô nối tiếp nhau, biểu thị khoảng thời gian ba tuần."
+      }
+    },
+    {
+      "stem": "duration-two-months-v1",
+      "subject": "two monthly calendar grid pages partially overlapping side by side, tied together by a brick-red bracket below, symbolizing a time duration of two months (~kagetsu)",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "kagetsu"
+      },
+      "alt": {
+        "vi": "Hai tờ lịch tháng gối đầu nhau nối bằng dấu ngoặc đỏ, biểu thị thời gian hai tháng."
+      }
+    },
+    {
+      "stem": "duration-one-year-seasons-v1",
+      "subject": "a thick hardcover yearly planner notebook beside a circular four-season cycle vignette (cherry blossom, sun, maple leaf, snowflake) showing the passage of one full year",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "nen-counter"
+      },
+      "alt": {
+        "vi": "Cuốn sổ kế hoạch dày bên vòng tròn bốn mùa xoay chuyển, biểu thị khoảng thời gian một năm."
+      }
+    },
+    {
+      "stem": "approximate-range-bracket-v1",
+      "subject": "a wooden ruler lying flat with a brick-red soft bracket and gentle tilde marker highlighting a fuzzy approximate span between markers, visualizing 'around / approximately'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "gurai"
+      },
+      "alt": {
+        "vi": "Thước đo bằng gỗ có vạch ngoặc mờ ước lượng, biểu thị khoảng chừng, xấp xỉ."
+      }
+    },
+    {
+      "stem": "asking-how-long-hourglass-v1",
+      "subject": "the reference male student looking inquiringly at a running hourglass and a calendar, hand on chin with a prominent question mark '?' in a thought bubble, asking 'how long / how much?'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "donokurai"
+      },
+      "alt": {
+        "vi": "Chàng trai nhìn đồng hồ cát và cuốn lịch suy nghĩ với dấu hỏi: mất bao lâu?"
+      }
+    },
+    {
+      "stem": "total-sum-bill-v1",
+      "digits": true,
+      "subject": "a grocery receipt and a small coin tray on a store counter, the receipt clearly showing the large Arabic numeral 1000 circled neatly in red at the bottom sum line, signifying 'in total'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "zenbude"
+      },
+      "alt": {
+        "vi": "Tờ hóa đơn và khay tiền trên quầy ghi rõ con số tổng cộng 1000 được khoanh tròn đỏ."
+      }
+    },
+    {
+      "stem": "only-one-cookie-plate-v1",
+      "subject": "a wide ceramic serving plate with only a single lonely butter cookie resting right in the middle, all other parts of the plate completely empty, visualizing 'only / just (~dake)'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "dake"
+      },
+      "alt": {
+        "vi": "Chiếc đĩa rộng chỉ còn trơ trọi một chiếc bánh quy ở chính giữa, biểu thị 'chỉ'."
+      }
+    },
+    {
+      "stem": "respectful-order-understood-bow-v1",
+      "subject": "a cafe staff member in a neat apron, standing tall and bowing respectfully at a 30-degree angle with hands folded politely in front, attentively acknowledging a customer order: 'certainly, right away'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "kashikomarimashita"
+      },
+      "alt": {
+        "vi": "Nhân viên quán đeo tạp dề cúi chào cung kính nhận lời yêu cầu của khách."
+      }
+    },
+    {
+      "stem": "lovely-weather-greeting-v1",
+      "subject": "a smiling person in a small sunlit garden by a low wooden fence, gazing up at a clear warm blue sky with soft white clouds and fluttering swallows, cheerfully admiring the lovely weather",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "ii-otenki"
+      },
+      "alt": {
+        "vi": "Người đứng bên luống hoa ngắm trời trong xanh nắng ấm mỉm cười: thời tiết đẹp quá nhỉ!"
+      }
+    },
+    {
+      "stem": "neighbor-asking-going-out-v1",
+      "subject": "a friendly elderly neighbor smiling over a low garden fence, waving gently and greeting the reference student who is walking by with a bag, warmly asking 'are you heading out?'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "odekake"
+      },
+      "alt": {
+        "vi": "Người hàng xóm bên hàng rào mỉm cười vẫy tay hỏi han: bạn đi ra ngoài đấy à?"
+      }
+    },
+    {
+      "stem": "stepping-out-briefly-envelope-v1",
+      "subject": "the reference male student walking along a sidewalk, turning back with a cheerful smile and holding up a paper letter envelope toward a nearby post office building, replying 'just stepping out for a moment'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "chotto-made"
+      },
+      "alt": {
+        "vi": "Chàng trai cầm phong bì mỉm cười đáp: tôi đi ra bưu điện một chút."
+      }
+    },
+    {
+      "stem": "polite-request-hands-forward-v1",
+      "subject": "the reference male student presenting a document with both hands extended forward, head bowed in a polite, earnest request across a counter: 'please / I entrust this to you'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "onegaishimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai đưa tài liệu bằng hai tay cúi đầu tha thiết: làm ơn xin nhờ bạn."
+      }
     }
   ]
 }

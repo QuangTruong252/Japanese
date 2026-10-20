@@ -357,6 +357,214 @@
       "alt": {
         "vi": "Hai người bạn mừng rỡ dang tay đón nhau khi lâu ngày mới gặp lại."
       }
+    },
+    {
+      "stem": "wasteful-dripping-tap-v1",
+      "subject": "a brass outdoor water tap left slightly open, water steadily dripping down into an already overflowing bucket that spills over the ground, conveying useless waste",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "muda"
+      },
+      "alt": {
+        "vi": "Chiếc vòi nước rò rỉ nhỏ giọt tràn xô biểu thị sự lãng phí vô ích."
+      }
+    },
+    {
+      "stem": "astonishing-powerful-computer-v1",
+      "subject": "a workstation desktop computer setup with a sleek ultra-wide curved monitor and glowing desktop unit, with a student staring at it with dropped jaw and widened eyes in absolute awe at its incredible power",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "sugoi"
+      },
+      "alt": {
+        "vi": "Dàn máy tính siêu mạnh khiến người xem há hốc mồm thán phục."
+      }
+    },
+    {
+      "stem": "truth-magnifying-glass-v1",
+      "subject": "a brass magnifying glass examining an official embossed golden wax seal on a parchment scroll, revealing a crisp red verification checkmark confirming 100% genuine authenticity and truth",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "hontou"
+      },
+      "alt": {
+        "vi": "Kính lúp soi rõ con dấu xác thực bảo đảm sự thật chuẩn xác."
+      }
+    },
+    {
+      "stem": "crossed-fingers-fib-v1",
+      "subject": "seen from behind, a hand hidden behind a person's back with the index and middle fingers crossed tightly, telling a fib while facing someone across the table",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "uso"
+      },
+      "alt": {
+        "vi": "Một bàn tay giấu sau lưng với hai ngón tay bắt chéo biểu thị lời nói dối."
+      }
+    },
+    {
+      "stem": "rising-prices-basket-chart-v1",
+      "subject": "a simple wire supermarket shopping basket holding a loaf of bread and a carton of milk, sitting beside a sharp ascending price graph line pointing steeply upward into the clouds",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "bukka"
+      },
+      "alt": {
+        "vi": "Giỏ hàng hóa bên cạnh biểu đồ mũi tên tăng vọt biểu thị vật giá đắt đỏ."
+      }
+    },
+    {
+      "stem": "child-prodigy-genius-v1",
+      "subject": "a young child prodigy sitting thoughtfully before a chess board with intricate pieces, surrounded by abstract glowing geometric constellations radiating from their forehead like a genius mind",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "tensai"
+      },
+      "alt": {
+        "vi": "Cậu bé thiên tài ngồi suy ngẫm trước bàn cờ với vầng sáng ý tưởng quanh đầu."
+      }
+    },
+    {
+      "stem": "raising-hand-opinion-v1",
+      "subject": "in a small group discussion around a round table, the reference woman politely raises one hand to share her viewpoint, an open speech bubble hovering above to express her opinion",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "iken"
+      },
+      "alt": {
+        "vi": "Một người giơ tay xin phát biểu để nêu lên ý kiến quan điểm của mình."
+      }
+    },
+    {
+      "stem": "speech-podium-talk-v1",
+      "subject": "a speaker in formal attire standing behind a wooden podium with two small gooseneck microphones, holding speech note papers and addressing an audience warmly",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "hanashi"
+      },
+      "alt": {
+        "vi": "Diễn giả đứng trước bục micro say sưa thuyết trình bài nói chuyện."
+      }
+    },
+    {
+      "stem": "recent-days-calendar-v1",
+      "subject": "a tear-off desk calendar showing a row of the three most recent daily pages grouped together under a warm highlighted glow with small gold star markers, representing the recent days",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "saikin"
+      },
+      "alt": {
+        "vi": "Tờ lịch bàn với vài ngày gần đây được đánh dấu sao nổi bật."
+      }
+    },
+    {
+      "stem": "probably-uncertain-weather-v1",
+      "subject": "the reference male student standing outside holding a closed umbrella, looking up with a hesitant expression at a mixed sky of both dark rain clouds and faint sunlight, guessing 'probably it might rain'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "tabun"
+      },
+      "alt": {
+        "vi": "Người cầm ô ngước nhìn trời nửa nắng nửa mây phân vân có lẽ sẽ mưa."
+      }
+    },
+    {
+      "stem": "teru-teru-bozu-sunshine-v1",
+      "subject": "a smiling white cloth teru teru bozu ghost doll hanging by a red string at a bright sunlit window, bathed in clear blue sky and warm sunshine, expressing certainty that tomorrow will surely be fine",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "kitto"
+      },
+      "alt": {
+        "vi": "Búp bê cầu nắng treo bên cửa sổ dưới nắng rực rỡ tin chắc thời tiết sẽ đẹp."
+      }
+    },
+    {
+      "stem": "truly-delicious-taste-v1",
+      "subject": "the reference woman tasting a steaming spoonful of savory ramen soup, her eyes closed in blissful delight with flushed cheeks, smiling ecstatically at how genuinely delicious it is",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "hontouni"
+      },
+      "alt": {
+        "vi": "Người nếm món ăn nhắm mắt mãn nguyện vì hương vị thực sự thơm ngon."
+      }
+    },
+    {
+      "stem": "not-that-much-so-so-v1",
+      "subject": "the reference male student coming out of an exam room holding his test pencil, tilting his hand side-to-side in a 'so-so / not that much' gesture with a relieved smile, saying it wasn't that difficult",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "sonnani"
+      },
+      "alt": {
+        "vi": "Học sinh mỉm cười lắc nhẹ tay biểu thị bài thi không khó đến mức như vậy."
+      }
     }
   ]
 }

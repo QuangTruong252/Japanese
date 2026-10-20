@@ -824,6 +824,14 @@
         "translation": {
           "vi": "Tôi sẽ nghỉ vài ngày."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calendar-two-three-days-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch bàn với hai ba ô ngày liên tiếp được khoanh chung bằng nét vẽ màu đỏ."
+        }
       }
     },
     {
@@ -840,6 +848,14 @@
         "kana": "CDを にさんまい かいます。",
         "translation": {
           "vi": "Tôi sẽ mua vài đĩa CD."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/two-three-items-cds-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai ba chiếc hộp đĩa CD xếp so le trên bàn gỗ."
         }
       }
     },
@@ -858,6 +874,14 @@
         "translation": {
           "vi": "Tôi phải trả sách trước thứ Bảy."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/deadline-calendar-arrow-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuốn sách đặt cạnh tờ lịch với ô ngày hạn chót được khoanh đỏ và mũi tên chỉ vào."
+        }
       }
     },
     {
@@ -875,6 +899,14 @@
         "translation": {
           "vi": "Tôi bị sốt. Vì thế tôi sẽ đi bệnh viện."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/cause-and-effect-fever-clinic-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bên trái là nhiệt kế sốt, mũi tên dẫn sang bên phải là người bệnh đi khám."
+        }
       }
     },
     {
@@ -891,6 +923,14 @@
         "kana": "「どうしましたか。」",
         "translation": {
           "vi": "\"Bạn bị làm sao thế?\""
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/doctor-asking-patient-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bác sĩ ân cần nghiêng người về phía trước hỏi thăm người bệnh."
         }
       }
     },
@@ -984,6 +1024,14 @@
         "translation": {
           "vi": "\"Hơn nữa, hôm nay bạn đừng tắm bồn nhé.\""
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/and-then-furthermore-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai ô hành động nối nhau bằng mũi tên biểu thị việc dặn dò tiếp theo sau đó."
+        }
       }
     },
     {
@@ -1000,6 +1048,14 @@
         "kana": "「おだいじに。」",
         "translation": {
           "vi": "\"Chúc bạn mau khỏe nhé.\""
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/get-well-care-basket-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Giỏ mây đựng trái cây, hoa và một phong bì đặt trên tủ nhỏ, gợi quà thăm người ốm."
         }
       }
     }

@@ -517,6 +517,14 @@
         "translation": {
           "vi": "Tôi đã mua nhiều thứ ở cửa hàng bách hóa."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/assorted-bottles-variety-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng chai lọ nhiều màu sắc hình dáng khác nhau xếp trên kệ, biểu thị nhiều loại đa dạng."
+        }
       }
     }
   ]

@@ -465,6 +465,240 @@
       "alt": {
         "vi": "Chàng trai ngồi bên bàn cẩn thận dùng kéo cắt giấy màu thủ công."
       }
+    },
+    {
+      "stem": "showing-address-v1",
+      "subject": "the reference woman holding a pen and writing an address into a small open pocket notebook held by the reference male student, pointing with her pen tip as she explains the location",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "oshiemasu-direccion"
+      },
+      "alt": {
+        "vi": "Cô gái cầm bút viết địa chỉ vào cuốn sổ tay và tận tình chỉ dẫn cho chàng trai."
+      }
+    },
+    {
+      "stem": "name-badge-v1",
+      "subject": "a rectangular clip-on plastic staff name badge lying on a wooden surface, showing a subtle blank line for a name and a small silhouette bust icon, with a ballpoint pen resting beside it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "namae"
+      },
+      "alt": {
+        "vi": "Thẻ tên cài áo với khung trống và cây bút bi đặt cạnh."
+      }
+    },
+    {
+      "stem": "envelope-address-v1",
+      "subject": "a traditional Japanese postal envelope lying flat on a wooden desk with a postage stamp in the corner, its central address column highlighted with a warm brick-red boundary box",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "juusho"
+      },
+      "alt": {
+        "vi": "Phong bì thư có dán tem và khung dòng kẻ địa chỉ được đánh dấu viền nổi bật."
+      }
+    },
+    {
+      "stem": "question-problem-sheet-v1",
+      "subject": "a study worksheet lying on a wooden desk with several blank exercise lines, featuring a prominent red question mark symbol in the center indicating an exam problem",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "mondai"
+      },
+      "alt": {
+        "vi": "Tờ giấy bài tập với dấu hỏi chấm lớn biểu thị câu hỏi hóc búa."
+      }
+    },
+    {
+      "stem": "answer-sheet-circle-v1",
+      "subject": "a completed test paper lying on a wooden desk with handwritten-style answer lines marked with a neat, large red circle mark (hanamaru/seikai) signifying a correct answer",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "kotae"
+      },
+      "alt": {
+        "vi": "Tờ bài làm với dấu khoanh tròn đỏ đánh dấu câu trả lời chính xác."
+      }
+    },
+    {
+      "stem": "how-to-steps-guide-v1",
+      "subject": "an opened cooking recipe guide laid flat showing three sequential pictorial steps (mixing bowl, baking tray, finished cake) connected by clean curved arrows, illustrating the method of preparation",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "kata"
+      },
+      "alt": {
+        "vi": "Sách hướng dẫn mở rộng minh họa từng bước cách làm nối tiếp nhau bằng mũi tên."
+      }
+    },
+    {
+      "stem": "rushing-out-immediately-v1",
+      "subject": "the reference male student hurriedly slipping on his shoe at the entryway (genkan), already grabbing the front door handle to dash out immediately without a second's delay",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "sugu"
+      },
+      "alt": {
+        "vi": "Chàng trai vội vã xỏ giày bên cửa để đi ngay lập tức."
+      }
+    },
+    {
+      "reuse": "vocab/see-you-again-farewell-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "mata"
+      },
+      "alt": {
+        "vi": "Hai bạn sinh viên quay lại vẫy tay mỉm cười chào nhau sau giờ học."
+      }
+    },
+    {
+      "stem": "call-later-desk-v1",
+      "subject": "a smartphone resting face-up on a tidy wooden desk beside a small analogue alarm clock and an open notebook, with a person's hand placing the phone aside to attend to it later",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "atode"
+      },
+      "alt": {
+        "vi": "Điện thoại để cạnh đồng hồ báo thức trên bàn làm việc ngụ ý để lát nữa gọi."
+      }
+    },
+    {
+      "stem": "a-little-more-pour-v1",
+      "subject": "a ceramic teapot pouring a thin stream of green tea into an already mostly full tea cup, carefully adding just a little bit more liquid near the rim",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "mou-sukoshi"
+      },
+      "alt": {
+        "vi": "Ấm trà rót thêm một chút nước vào chiếc tách đã gần đầy."
+      }
+    },
+    {
+      "stem": "one-more-apple-v1",
+      "subject": "a person's hand gently placing one additional fresh red apple beside a small ceramic bowl already containing three apples, adding another one",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "mou-otro"
+      },
+      "alt": {
+        "vi": "Bàn tay đặt thêm một quả táo vào cạnh đĩa hoa quả có sẵn."
+      }
+    },
+    {
+      "stem": "urging-lets-go-v1",
+      "subject": "the reference woman standing up from a wooden bench with an encouraging smile, one hand beckoning forward and the other pointing along the path, urging 'come on, let's go!'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "saa"
+      },
+      "alt": {
+        "vi": "Cô gái tươi cười vẫy tay khích lệ mọi người cùng đứng dậy bước đi."
+      }
+    },
+    {
+      "stem": "puzzled-surprise-v1",
+      "subject": "the reference male student standing with his head tilted in utter surprise, both hands upturned with palms open, eyes wide with a small question mark floating beside his head as he notices something unexpected missing",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "are-sorpresa"
+      },
+      "alt": {
+        "vi": "Chàng trai nghiêng đầu giơ hai tay bối rối ngạc nhiên trước chiếc bàn trống."
+      }
+    },
+    {
+      "stem": "turn-right-traffic-light-v1",
+      "subject": "a compact ivory car with its amber right turn signal flashing, navigating a clean road intersection beneath a traffic signal showing a green light, a curved arrow on the asphalt marking the right turn",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "shingou-migi"
+      },
+      "alt": {
+        "vi": "Chiếc xe ô tô rẽ phải tại ngã tư có cột đèn giao thông và mũi tên rẽ phải trên mặt đường."
+      }
+    },
+    {
+      "stem": "handing-payment-money-v1",
+      "subject": "a customer's two hands respectfully offering a folded paper currency bill across a wooden retail payment counter toward a cashier's change tray, saying 'with this, please'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "korede-onegai"
+      },
+      "alt": {
+        "vi": "Hai bàn tay lịch sự đưa tiền mặt thanh toán tại quầy thu ngân."
+      }
     }
   ]
 }

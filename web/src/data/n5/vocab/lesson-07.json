@@ -1009,6 +1009,14 @@
         "translation": {
           "vi": "Tôi đã gửi email rồi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/already-done-parcel-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc bưu kiện đã được dán kín băng keo cẩn thận kèm dấu tick hoàn thành."
+        }
       }
     },
     {
@@ -1025,6 +1033,14 @@
         "kana": "「もう にもつを おくりましたか。」「いいえ、まだです。」",
         "translation": {
           "vi": "“Bạn đã gửi hành lý chưa?” “Chưa, vẫn chưa.”"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/not-yet-parcel-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc hộp carton mở nắp đang đóng gói dở dang, cuộn băng dính để cạnh biểu thị chưa xong."
         }
       }
     },
@@ -1043,6 +1059,14 @@
         "translation": {
           "vi": "Từ giờ tôi sẽ đến trường."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/starting-now-leaving-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai xỏ giày khoác ba lô mở cửa bước ra đường, chuẩn bị đi từ bây giờ."
+        }
       }
     },
     {
@@ -1059,6 +1083,14 @@
         "kana": "その シャツ、すてきですね。",
         "translation": {
           "vi": "Chiếc áo sơ mi đó đẹp quá nhỉ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/admiring-lovely-shirt-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái chắp tay mỉm cười trầm trồ khen ngợi chiếc áo sơ mi đẹp trên mắc treo."
         }
       }
     },
@@ -1077,6 +1109,14 @@
         "translation": {
           "vi": "“Chào mừng bạn đến chơi. Xin mời vào nhà.”"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/welcoming-guest-home-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chủ nhà mở rộng cửa tươi cười chào đón bạn đến chơi nhà."
+        }
       }
     },
     {
@@ -1093,6 +1133,14 @@
         "kana": "どうぞ おあがりください。",
         "translation": {
           "vi": "Xin mời vào nhà."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/please-come-in-genkan-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chủ nhà đưa tay mời khách xỏ dép bước lên thềm vào nhà."
         }
       }
     },
@@ -1111,6 +1159,14 @@
         "translation": {
           "vi": "“Mời vào.” “Tôi xin phép.”"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/polite-entry-bow-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai khẽ cúi đầu bước qua cửa phòng: xin thất lễ."
+        }
       }
     },
     {
@@ -1127,6 +1183,14 @@
         "kana": "コーヒーは いかがですか。",
         "translation": {
           "vi": "Bạn dùng cà phê nhé?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/offering-drink-tray-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai tay bưng khay gỗ có tách cà phê nóng mời khách dùng."
         }
       }
     },
@@ -1194,6 +1258,14 @@
         "kana": "ごめんください。はい、どうぞ。",
         "translation": {
           "vi": "“Xin lỗi, có ai ở nhà không?” “Vâng, mời vào.”"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calling-at-door-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Khách đứng ngoài cửa khẽ gõ khung cửa cất tiếng hỏi có ai ở nhà không."
         }
       }
     },

@@ -596,6 +596,14 @@
         "translation": {
           "vi": "Khoảng 12 giờ tôi ăn cơm."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/approximate-time-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mặt đồng hồ không số có hai kim chỉ khoảng 12 giờ và một vùng cung tròn đánh dấu khoảng thời gian ước chừng."
+        }
       }
     },
     {
@@ -613,6 +621,14 @@
         "translation": {
           "vi": "Tôi muốn uống cái gì đó."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/something-to-drink-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đứng trước máy bán nước, phân vân muốn uống cái gì đó."
+        }
       }
     },
     {
@@ -629,6 +645,14 @@
         "kana": "なつやすみに どこかへ いきたいです。",
         "translation": {
           "vi": "Kỳ nghỉ hè tôi muốn đi đâu đó."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/somewhere-travel-map-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai xách vali, cầm bản đồ mở rộng và ngước nhìn biển chỉ đường nhiều hướng."
         }
       }
     },
@@ -697,6 +721,14 @@
         "translation": {
           "vi": "\"Chúng ta nghỉ ngơi thôi.\" \"Hãy làm như thế đi!\""
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/agreeing-together-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai và cô gái cùng mỉm cười gật đầu và giơ ngón tay tán thành."
+        }
       }
     },
     {
@@ -713,6 +745,14 @@
         "kana": "「ごちゅうもんは？」「コーヒーを おねがいします。」",
         "translation": {
           "vi": "\"Quý khách muốn gọi món gì ạ?\" \"Cho tôi một cà phê.\""
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/taking-order-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người phục vụ mặc tạp dề cầm sổ tay và bút cúi nhẹ người hỏi khách gọi món."
         }
       }
     },
@@ -781,6 +821,14 @@
         "translation": {
           "vi": "Xin vui lòng chờ trong giây lát."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/please-wait-moment-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên lễ tân tươi cười đưa bàn tay ra hiệu xin chờ, bên cạnh là chiếc đồng hồ cát nhỏ."
+        }
       }
     },
     {
@@ -798,6 +846,14 @@
         "translation": {
           "vi": "Tôi là Mike Miller."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/polite-bow-service-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên mặc âu phục cúi đầu chào lịch thiệp hai tay khép trước người."
+        }
       }
     },
     {
@@ -814,6 +870,14 @@
         "kana": "べつべつに おねがいします。",
         "translation": {
           "vi": "Xin vui lòng thanh toán riêng rẽ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/split-bill-trays-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai khay hóa đơn và tiền thanh toán riêng rẽ đặt cạnh nhau trên quầy."
         }
       }
     }

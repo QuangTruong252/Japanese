@@ -117,6 +117,14 @@
         "translation": {
           "vi": "Đây là anh Miller."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calling-adult-san-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái hướng tay mỉm cười chào gọi đồng nghiệp một cách lịch sự."
+        }
       }
     },
     {
@@ -134,6 +142,14 @@
         "translation": {
           "vi": "Bé Teresa 9 tuổi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calling-child-chan-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái cúi người tươi cười gọi bé gái có tóc buộc hai bên."
+        }
       }
     },
     {
@@ -150,6 +166,14 @@
         "kana": "あの ひとは アメリカじんです。",
         "translation": {
           "vi": "Người kia là người Mỹ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/nationality-person-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ba người thuộc các quốc tịch khác nhau đứng cạnh cuốn hộ chiếu mở."
         }
       }
     },
@@ -418,6 +442,14 @@
         "translation": {
           "vi": "Người kia là ai?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-who-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người phụ nữ nhìn bóng người lạ sau cửa kính mờ với dấu hỏi chấm."
+        }
       }
     },
     {
@@ -434,6 +466,14 @@
         "kana": "あの かたは どなたですか。",
         "translation": {
           "vi": "Vị kia là vị nào?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-who-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người phụ nữ nhìn bóng người lạ sau cửa kính mờ với dấu hỏi chấm."
         }
       }
     },
@@ -577,6 +617,14 @@
         "translation": {
           "vi": "Xin lỗi, tên của bạn là gì?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/excuse-me-politely-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cúi nhẹ người đặt tay lên ngực mỉm cười ái ngại khi mở lời xin lỗi."
+        }
       }
     },
     {
@@ -593,6 +641,14 @@
         "kana": "しつれいですが、お なまえは？",
         "translation": {
           "vi": "Xin lỗi, tên của bạn là gì?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-name-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái cầm thẻ tên để trống và đưa tay hỏi tên đối phương."
         }
       }
     },
@@ -636,6 +692,14 @@
         "translation": {
           "vi": "Rất mong được giúp đỡ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/pleased-to-meet-bow-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cúi gập người lịch sự mong được giúp đỡ khi chào hỏi lần đầu."
+        }
       }
     },
     {
@@ -653,6 +717,14 @@
         "translation": {
           "vi": "Đây là anh Miller."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/introducing-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái hướng tay giới thiệu bạn với người đối diện."
+        }
       }
     },
     {
@@ -669,6 +741,14 @@
         "kana": "アメリカから きました。",
         "translation": {
           "vi": "Tôi đến từ Mỹ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/came-from-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đứng cạnh vali kéo chỉ tay về hướng vạch xuất phát trên quả địa cầu."
         }
       }
     },

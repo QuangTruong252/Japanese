@@ -1,0 +1,1110 @@
+{
+  "name": "vocab-all-pending",
+  "description": "Phần còn lại của đợt phủ ảnh mọi từ vựng (2026-10-20): ảnh chưa tạo do hết hạn mức Codex image_gen và ảnh phải làm lại.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "stem": "kanji-brush-calligraphy-v1",
+      "subject": "a calligraphy set seen from above: a brush resting on an ink stone, and a sheet of paper with only a few thick bold abstract black brush strokes (dots and short straight bars, clearly NOT any real or fake character), a stack of square study cards with blank faces beside it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "kanji"
+      },
+      "alt": {
+        "vi": "Bút lông, nghiên mực và vài nét mực đậm trên giấy, gợi việc học chữ Hán."
+      }
+    },
+    {
+      "stem": "grocery-basket-etc-v1",
+      "subject": "a woven shopping market basket seen slightly from above, filled with a loaf of bread, a bottle of milk, and a couple of fruits, with other items peeking out beneath, depicting non-exhaustive listing (~ya ... ~nado) Keep the whole scene compact and small in the frame, well away from every edge.",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-10.json",
+        "id": "ya-nado"
+      },
+      "alt": {
+        "vi": "Giỏ đi chợ có bánh mì, sữa, trái cây và vài món khác ló ra."
+      }
+    },
+    {
+      "subject": "two shiny red apples placed neatly side by side",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-11.json",
+        "id": "futatsu"
+      },
+      "alt": {
+        "vi": "Hai quả táo đỏ đặt cạnh nhau."
+      },
+      "stem": "two-apples-single-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      }
+    },
+    {
+      "reuse": "vocab/comparing-two-choices-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "dochira-cual"
+      },
+      "alt": {
+        "vi": "Chàng trai hai tay cầm hai mô hình biển và núi để cân nhắc so sánh xem thích bên nào."
+      }
+    },
+    {
+      "stem": "marveling-huge-crowd-v1",
+      "subject": "the reference male student standing near a bustling pedestrian crosswalk, looking around with wide astonished eyes and an impressed, awed expression at the busy crowd of people walking by Keep the whole scene compact and small in the frame, well away from every edge.",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-12.json",
+        "id": "waa-sugoi"
+      },
+      "alt": {
+        "vi": "Chàng sinh viên mở to mắt trầm trồ trước dòng người đông đúc tấp nập qua lại trên phố."
+      }
+    },
+    {
+      "stem": "reading-pronunciation-guide-v1",
+      "subject": "the reference male student reading aloud from an open book held in both hands, small curved sound-wave lines coming from his mouth, the book pages showing only soft grey lines (no characters at all)",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-14.json",
+        "id": "yomikata"
+      },
+      "alt": {
+        "vi": "Chàng trai cầm sách đọc to thành tiếng."
+      }
+    },
+    {
+      "stem": "knowing-lightbulb-v1",
+      "subject": "the reference male student smiling confidently with his index finger tapped gently to his temple, a bright glowing yellow lightbulb vignette beside him indicating understanding and knowing information",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "shirimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai mỉm cười chỉ tay lên đầu cạnh bóng đèn bật sáng biểu thị đã biết rõ."
+      }
+    },
+    {
+      "stem": "software-box-disc-v1",
+      "subject": "a retail software package box standing upright on a desk beside an iridescent optical disc (CD-ROM) in a jewel case, with abstract computer window illustrations on the box cover",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "sofuto"
+      },
+      "alt": {
+        "vi": "Hộp phần mềm máy tính đặt cạnh đĩa quang và biểu tượng ứng dụng."
+      }
+    },
+    {
+      "stem": "bachelor-living-alone-v1",
+      "subject": "a relaxed young man sitting casually in an armchair with a mug of coffee and a book, a small striped cat curled up asleep on the rug beside him in a comfortable single-person apartment",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "dokushin"
+      },
+      "alt": {
+        "vi": "Chàng trai độc thân ngồi đọc sách thư thái bên chú mèo trong căn hộ của mình."
+      }
+    },
+    {
+      "stem": "remembering-photo-v1",
+      "subject": "the reference woman resting her chin in her hand, smiling wistfully as she looks at a small framed family portrait on her wooden desk, a soft memory cloud above her head",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "omoidashimasu"
+      },
+      "alt": {
+        "vi": "Cô gái mỉm cười ngắm bức ảnh gia đình và hồi tưởng lại kỷ niệm."
+      }
+    },
+    {
+      "stem": "honorable-presence-v1",
+      "subject": "a graceful receptionist in a traditional kimono standing near a sliding wooden door, bowing respectfully and gesturing with an open palm to welcome an esteemed guest into the room",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-15.json",
+        "id": "irasshaimasu"
+      },
+      "alt": {
+        "vi": "Lễ tân cung kính hướng dẫn vị khách quý bước vào phòng."
+      }
+    },
+    {
+      "stem": "study-tour-visit-v1",
+      "subject": "a small group of two student visitors wearing visitor badges and carrying clipboards, looking with interest as an instructor in a white coat points out details on a display model",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "kengaku-shimasu"
+      },
+      "alt": {
+        "vi": "Học viên cầm sổ ghi chép chăm chú đi tham quan học hỏi cùng người hướng dẫn."
+      }
+    },
+    {
+      "stem": "complimentary-service-v1",
+      "subject": "a polite cafe waitress smiling as she presents a complimentary small ceramic cup of hot tea and a tiny complimentary tea biscuit on a wooden saucer with a small flower vase",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "saabisu"
+      },
+      "alt": {
+        "vi": "Người phục vụ chu đáo mang đĩa bánh tráng miệng và trà tặng kèm cho khách."
+      }
+    },
+    {
+      "stem": "how-to-go-route-v1",
+      "subject": "the reference male student standing before a simple transit route diagram on a wall, scratching his chin in contemplation as dashed arrow paths branch out to train, bus, and bicycle icons",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "douyatte"
+      },
+      "alt": {
+        "vi": "Chàng trai đứng trước sơ đồ tuyến đường đắn đo suy nghĩ cách đi đến nơi."
+      }
+    },
+    {
+      "stem": "which-person-group-v1",
+      "subject": "the reference male student looking closely at a printed group photograph of four distinct people in various outfits, holding up a small question mark thought bubble wondering 'which person?'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "dono"
+      },
+      "alt": {
+        "vi": "Chàng trai nhìn vào bức ảnh tập thể tìm kiếm xem người nào là người cần gặp."
+      }
+    },
+    {
+      "stem": "which-one-hesitating-hand-v1",
+      "subject": "three different bags (a backpack, a shoulder bag, and a tote bag) lined up on a low bench, with a person's hand hovering above them in hesitation, wondering 'which one is it?'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "dore"
+      },
+      "alt": {
+        "vi": "Bàn tay lưỡng lự phân vân chọn một trong ba chiếc túi xách đặt trên kệ."
+      }
+    },
+    {
+      "stem": "admiring-applause-v1",
+      "subject": "the reference woman clapping her hands with genuine admiration, eyes sparkling with delight and a warm smile as she marvels at an impressive display, expressing 'how wonderful!'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "sugoi-desu-ne"
+      },
+      "alt": {
+        "vi": "Cô gái vỗ tay tán thưởng đầy thán phục trước một điều tuyệt vời."
+      }
+    },
+    {
+      "stem": "humble-waving-hand-v1",
+      "subject": "the reference male student waving one hand modestly in front of his chest, blushing slightly with an embarrassed humble smile and scratching the back of his neck, gesturing 'not yet, I still have much to learn'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "madamada"
+      },
+      "alt": {
+        "vi": "Chàng trai khiêm tốn xua nhẹ tay và gãi đầu mỉm cười ngượng nghịu."
+      }
+    },
+    {
+      "stem": "bank-withdrawal-inquiry-v1",
+      "subject": "a friendly bank teller sitting behind a counter window with a polite smile, gesturing with an open palm toward a cash withdrawal slip and pen, asking if the customer wishes to make a withdrawal",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "ohikidashi"
+      },
+      "alt": {
+        "vi": "Nhân viên ngân hàng niềm nở hỏi khách có phải muốn rút tiền mặt không."
+      }
+    },
+    {
+      "stem": "step-one-first-button-v1",
+      "subject": "a close-up of a person's index finger pressing the very first circular green button on an automated machine console, with a prominent curved arrow indicating step one",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "mazu"
+      },
+      "alt": {
+        "vi": "Ngón tay ấn vào nút bấm đầu tiên có đánh dấu mũi tên trên bảng điều khiển."
+      }
+    },
+    {
+      "stem": "step-two-insert-money-v1",
+      "subject": "a hand inserting a Japanese yen banknote into the glowing currency slot of an automated payment terminal, with a sequence arrow guiding from the previous step",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "tsugini"
+      },
+      "alt": {
+        "vi": "Bàn tay đưa tờ tiền vào khe máy theo mũi tên hướng dẫn bước tiếp theo."
+      }
+    },
+    {
+      "stem": "shielding-pin-keypad-v1",
+      "subject": "one hand cupped carefully over an ATM numeric keypad to shield the view, while the index finger of the other hand secretly enters the confidential PIN code buttons",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "anshoubangou"
+      },
+      "alt": {
+        "vi": "Một tay khum lại che bàn phím số ATM trong khi tay kia nhập mã PIN bí mật."
+      }
+    },
+    {
+      "stem": "atm-screen-amount-v1",
+      "digits": true,
+      "subject": "the digital interface screen of an ATM terminal clearly displaying the prominent bold numerals 50000 in a central highlighted box, digits only, no words or letters",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "kingaku"
+      },
+      "alt": {
+        "vi": "Màn hình máy ATM hiển thị con số 50000 trong khung số tiền cần rút."
+      }
+    },
+    {
+      "stem": "pressing-confirm-button-v1",
+      "subject": "an index finger pressing a large rectangular confirmation touch button on an automated terminal screen, the button displaying a clean dark green checkmark icon",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-16.json",
+        "id": "kakunin"
+      },
+      "alt": {
+        "vi": "Ngón tay ấn nút xác nhận có biểu tượng dấu tick tròn nổi bật."
+      }
+    },
+    {
+      "stem": "listening-excitedly-interesting-v1",
+      "subject": "the reference woman sitting at a cafe table resting her chin on her hand, her eyes sparkling with keen interest as she smiles and nods attentively, finding the story thoroughly entertaining",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "sorewa-omoshiroi"
+      },
+      "alt": {
+        "vi": "Cô gái chống cằm mắt sáng lên chăm chú nghe chuyện và hào hứng tán thưởng."
+      }
+    },
+    {
+      "stem": "looking-far-in-vain-binoculars-v1",
+      "subject": "a person standing at a wooden fence beside a vast empty green pasture, holding binoculars to their eyes and searching the far horizon in vain without spotting any horse, sighing with mild disappointment",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "nakanaka"
+      },
+      "alt": {
+        "vi": "Người cầm ống nhòm tìm kiếm mãi trên đồng cỏ trống mà không thấy bóng dáng con ngựa."
+      }
+    },
+    {
+      "stem": "really-incredulous-ask-v1",
+      "subject": "the reference male student leaning slightly forward with one eyebrow raised high and eyes wide with skeptical curiosity, asking in disbelief whether that can truly be genuine",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "hontou-desu-ka"
+      },
+      "alt": {
+        "vi": "Chàng trai rướn người nhướng mày ngạc nhiên hỏi lại xem có thật không."
+      }
+    },
+    {
+      "stem": "eager-determination-japan-v1",
+      "subject": "the reference woman clutching both hands firmly in front of her chest with resolute, shining eyes and a passionate smile, looking toward a wall travel poster of Mount Fuji with heartfelt determination",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-18.json",
+        "id": "zehi"
+      },
+      "alt": {
+        "vi": "Cô gái nắm chặt tay đầy quyết tâm và háo hức hướng về ước mơ đi Nhật."
+      }
+    },
+    {
+      "stem": "becoming-summer-branch-v1",
+      "subject": "a tree branch depicted in transition from left to right: tender tiny pale spring buds on the left developing through an arrow into lush, deep green summer foliage basking in warm sunlight",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "narimasu"
+      },
+      "alt": {
+        "vi": "Cành cây đâm chồi xanh mướt dưới ánh nắng biểu thị sự chuyển mùa trở nên ấm áp."
+      }
+    },
+    {
+      "stem": "sun-daylight-window-v1",
+      "subject": "a warm morning sun shining brightly through a wooden window frame, casting soft golden sunlight across a cozy room and a desk calendar on a peaceful day off",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "hi"
+      },
+      "alt": {
+        "vi": "Ánh mặt trời buổi sớm chiếu rọi qua khung cửa sổ vào một ngày bình yên."
+      }
+    },
+    {
+      "stem": "good-condition-gauge-v1",
+      "subject": "a round condition gauge instrument with a pointer needle resting firmly in the bright green optimal zone marked with a neat smiling sun emblem, signifying top physical condition",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "choushi"
+      },
+      "alt": {
+        "vi": "Kim đồng hồ đo chỉ vào vạch màu xanh lá biểu thị tình trạng cơ thể rất tốt."
+      }
+    },
+    {
+      "stem": "once-summit-flag-v1",
+      "subject": "the snow-capped peak of Mount Fuji beneath a blue sky, crowned with a small red summit flag and a single red verification checkmark, symbolizing having climbed it once",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "ichido"
+      },
+      "alt": {
+        "vi": "Ngọn núi cao với lá cờ nhỏ trên đỉnh biểu thị trải nghiệm một lần chinh phục."
+      }
+    },
+    {
+      "stem": "never-tried-sushi-curious-v1",
+      "subject": "the reference male student sitting before a platter of assorted nigiri sushi with a pair of chopsticks held uncertainly, looking at the food with wide curious eyes having never once tasted it before",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "ichidomo"
+      },
+      "alt": {
+        "vi": "Chàng trai cầm đũa nhìn đĩa sushi với vẻ bỡ ngỡ vì chưa từng ăn bao giờ."
+      }
+    },
+    {
+      "stem": "gradual-leaves-color-v1",
+      "subject": "a horizontal sequence of three autumn maple leaves laid side by side, transforming gradually step-by-step from fresh olive green to warm ochre yellow, and finally to deep brick red",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "dandan"
+      },
+      "alt": {
+        "vi": "Hàng lá cây chuyển màu dần dần từ xanh sang vàng rồi đỏ thẫm."
+      }
+    },
+    {
+      "stem": "bud-almost-blooming-v1",
+      "subject": "a swollen pink lotus flower bud standing in water, its outer petals just beginning to uncurl and on the very verge of blooming open at any moment, heralding the imminent arrival of summer",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "mousugu"
+      },
+      "alt": {
+        "vi": "Búp hoa sen hé nở sắp bung cánh báo hiệu mùa hè sắp tới."
+      }
+    },
+    {
+      "stem": "grateful-wellbeing-gesture-v1",
+      "subject": "the reference woman with a radiant, healthy smile, bowing gently with both hands pressed together in a prayerful gesture of gratitude, expressing heartfelt thankfulness for being in good health",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "okagesamade"
+      },
+      "alt": {
+        "vi": "Cô gái mỉm cười chắp tay cảm tạ vì nhờ ơn trời vẫn khỏe mạnh."
+      }
+    },
+    {
+      "stem": "contrast-small-camera-price-v1",
+      "subject": "a tiny vintage-style compact camera sitting on a tabletop, beside an unexpectedly heavy, towering balance weight sack of gold coins, creating a sharp contrast between its tiny size and high price",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "demo"
+      },
+      "alt": {
+        "vi": "Chiếc máy ảnh nhỏ xíu nhưng bên cạnh là biểu tượng giá tiền đắt đỏ đối lập."
+      }
+    },
+    {
+      "stem": "healthy-lifestyle-salad-shoes-v1",
+      "subject": "a vibrant ceramic bowl filled with fresh crisp green salad, sliced avocado and cherry tomatoes, placed beside a pair of clean running sneakers and an insulated water bottle, representing a healthy lifestyle",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "karada-ni-ii"
+      },
+      "alt": {
+        "vi": "Đĩa salad rau củ tươi đặt cạnh đôi giày chạy bộ tốt cho cơ thể."
+      }
+    },
+    {
+      "stem": "hokusai-great-wave-artist-v1",
+      "subject": "the elderly Edo-period woodblock master Katsushika Hokusai with grey hair in a traditional kimono holding a painting brush, standing beside an easel showing his iconic Great Wave ukiyo-e print",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-19.json",
+        "id": "katsushika-hokusai"
+      },
+      "alt": {
+        "vi": "Họa sĩ già Hokusai mặc kimono cầm bút bên bức tranh khắc gỗ sóng lừng nổi tiếng."
+      }
+    },
+    {
+      "stem": "passport-visa-stamp-v1",
+      "subject": "an opened passport lying flat on a wooden travel desk, displaying a crisp rectangular official visa stamp marked in dark red ink on one page, necessary for international travel",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "irimasu"
+      },
+      "alt": {
+        "vi": "Cuốn hộ chiếu mở trang có đóng dấu thị thực visa đi lại."
+      }
+    },
+    {
+      "stem": "calling-schoolboy-kun-v1",
+      "subject": "a cheerful young schoolboy carrying a navy school backpack, turning around with a bright grin as a classmate waves and calls out his name from behind",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "kun-20"
+      },
+      "alt": {
+        "vi": "Cậu học trò đeo cặp sách ngoái đầu lại mỉm cười khi được bạn gọi tên."
+      }
+    },
+    {
+      "stem": "words-speech-bubbles-notebook-v1",
+      "subject": "an open notebook with abstract hand-drawn speech dialogue bubbles floating upwards, surrounded by gentle calligraphic ink strokes representing spoken words and language",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "kotoba"
+      },
+      "alt": {
+        "vi": "Cuốn sổ tay với các bong bóng lời thoại và nét ký tự tượng hình bay bổng."
+      }
+    },
+    {
+      "stem": "race-track-starting-line-v1",
+      "subject": "a young male runner crouched in a focused starting stance behind a clean white starting line on an athletic track, facing forward ready to begin the race",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "hajime"
+      },
+      "alt": {
+        "vi": "Vận động viên ở tư thế chuẩn bị xuất phát tại vạch bắt đầu của đường chạy."
+      }
+    },
+    {
+      "stem": "race-track-finish-line-v1",
+      "subject": "the same young male runner joyfully breaking through the red ribbon at the finish line on the track, raising both arms high in celebration as the race concludes",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "owari"
+      },
+      "alt": {
+        "vi": "Vận động viên giơ hai tay vui sướng khi băng qua dải băng vạch đích kết thúc."
+      }
+    },
+    {
+      "stem": "comparing-two-choices-v1",
+      "subject": "the reference male student holding up two miniature models in his hands to compare: a sunny beach with a seashell in his left hand, a green mountain in his right hand, smiling as he weighs which one he prefers",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "docchi"
+      },
+      "alt": {
+        "vi": "Chàng trai hai tay cầm hai mô hình biển và núi để cân nhắc so sánh xem thích bên nào."
+      }
+    },
+    {
+      "stem": "casual-offering-curry-v1",
+      "subject": "the reference male student wearing a home apron, holding out a steaming plate of Japanese curry rice with a shy, friendly smile and scratching his cheek, offering 'I made curry, but would you like some?'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "kedo"
+      },
+      "alt": {
+        "vi": "Chàng trai bưng đĩa cơm cà ri tươi cười mời bạn ăn thử."
+      }
+    },
+    {
+      "stem": "inviting-movie-tickets-v1",
+      "subject": "the reference woman smiling gently and extending two cinema admission tickets forward with both hands, tilting her head in a warm, friendly invitation: 'if you'd like, shall we watch together?'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "yokattara"
+      },
+      "alt": {
+        "vi": "Cô gái cầm đôi vé xem phim mỉm cười ngỏ lời mời nếu bạn tiện thì đi cùng."
+      }
+    },
+    {
+      "stem": "studying-topic-globe-books-v1",
+      "subject": "an opened reference book on a desk beside a small desk globe, with an index finger pointed directly at the Japanese archipelago on the globe, studying about that specific topic",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "nitsuite"
+      },
+      "alt": {
+        "vi": "Sách mở ra quanh quả địa cầu và ngón tay trỏ vào chủ đề đang tìm hiểu."
+      }
+    },
+    {
+      "stem": "coffee-together-invitation-v1",
+      "subject": "two warm ceramic mugs of coffee emitting gentle steam curls, sitting side by side on a small wooden table beside a small plate of butter cookies, an inviting tea break scene",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "demo-nomimasen"
+      },
+      "alt": {
+        "vi": "Hai tách cà phê nóng bốc khói đặt cạnh đĩa bánh mời cùng uống giải khát."
+      }
+    },
+    {
+      "stem": "of-course-thumbs-up-v1",
+      "subject": "the reference male student smiling with absolute confidence, nodding firmly and giving a bright thumbs-up gesture without any hesitation, declaring 'of course!'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "mochiron"
+      },
+      "alt": {
+        "vi": "Chàng trai tươi cười giơ ngón cái tự tin tán thành dĩ nhiên là có."
+      }
+    },
+    {
+      "stem": "must-head-home-coat-watch-v1",
+      "subject": "a dinner guest standing up from the dining table, holding a coat over one arm and checking the time on their wristwatch with an apologetic smile, saying 'I really must be getting home now'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-21.json",
+        "id": "mou-kaeranaito"
+      },
+      "alt": {
+        "vi": "Khách cầm áo khoác nhìn đồng hồ xin phép phải về vì trời đã muộn."
+      }
+    },
+    {
+      "stem": "humorous-storyteller-laugh-v1",
+      "subject": "a witty friend performing a comical gesture at a table, making the surrounding group of friends burst into warm, joyful laughter, illustrating a keen sense of humor",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "yuumoa"
+      },
+      "alt": {
+        "vi": "Người có khiếu hài hước làm mọi người xung quanh bật cười vui vẻ."
+      }
+    },
+    {
+      "stem": "schedule-conflict-convenience-v1",
+      "subject": "an open daily planner notebook where a full-day schedule is crossed out with a soft pencil line and marked with a clock icon and a regretful note, showing an inconvenient schedule conflict",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "tsugou"
+      },
+      "alt": {
+        "vi": "Cuốn sổ tay lịch trình bị gạch dấu biểu thị điều kiện không thuận tiện."
+      }
+    },
+    {
+      "stem": "hesitating-thinking-eeto-v1",
+      "subject": "the reference male student looking upward to the corner in gentle concentration, touching his chin lightly with one finger and murmuring 'let me see... / umm...' while trying to remember",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "eeto"
+      },
+      "alt": {
+        "vi": "Người khẽ chạm tay lên cằm ngước mắt suy nghĩ ngập ngừng để xem nào."
+      }
+    },
+    {
+      "stem": "shop-clerk-assisting-customer-v1",
+      "subject": "a polite bookstore clerk wearing an apron stepping forward with an attentive smile and hands held together courteously, asking an approaching customer if they are looking for something",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "osagashi"
+      },
+      "alt": {
+        "vi": "Nhân viên bán hàng niềm nở tiến lại hỏi xem khách đang tìm món gì."
+      }
+    },
+    {
+      "stem": "then-deciding-gesture-v1",
+      "subject": "a customer at a shop counter nodding decisively with a pleasant smile, gesturing with an open hand toward a chosen item on display: 'well then, please show me this one'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "dewa"
+      },
+      "alt": {
+        "vi": "Khách hàng mỉm cười đưa tay hướng về món đồ quyết định xem tiếp."
+      }
+    },
+    {
+      "stem": "apartment-rent-envelope-key-v1",
+      "subject": "a brass apartment door key with a neat keyring resting on top of a thick paper rent envelope bearing a small hand-drawn house motif on the front, placed on a wooden table",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-22.json",
+        "id": "yachin"
+      },
+      "alt": {
+        "vi": "Chìa khóa phòng đặt cạnh phong bì tiền thuê nhà có hình vẽ ngôi nhà nhỏ."
+      }
+    },
+    {
+      "stem": "many-times-passport-stamps-v1",
+      "subject": "an open passport book with pages covered in numerous overlapping entry and exit border stamps in various ink tones, testifying to having visited Japan many times",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "nankaimo"
+      },
+      "alt": {
+        "vi": "Trang hộ chiếu dày đặc nhiều con dấu nhập cảnh biểu thị đã đi rất nhiều lần."
+      }
+    },
+    {
+      "stem": "ordinal-second-turn-arrow-v1",
+      "subject": "a street perspective showing a quiet neighborhood road with three consecutive side corners; the second corner (2nd turn) is marked with a clear red sequence banner and a left-turning arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "me-orden"
+      },
+      "alt": {
+        "vi": "Góc rẽ thứ hai trên con đường được đánh dấu mũi tên nổi bật biểu thị số thứ tự."
+      }
+    },
+    {
+      "stem": "prince-shotoku-portrait-v1",
+      "subject": "Prince Shotoku (Shotoku Taishi) in traditional Asuka-period royal court robes and headdress, holding a wooden ceremonial tablet (shaku) with both hands, calm historical portrait, full transparent alpha",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-23.json",
+        "id": "shoutokutaishi"
+      },
+      "alt": {
+        "vi": "Thái tử Shotoku mặc áo triều phục thời Asuka hai tay cầm thẻ hốt bằng gỗ."
+      }
+    },
+    {
+      "stem": "besides-anyone-else-v1",
+      "subject": "a central student figure standing inside a circular boundary, while outside the circle several soft silhouette figures with question marks peek around, asking 'who else besides them?'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-24.json",
+        "id": "hokani"
+      },
+      "alt": {
+        "vi": "Nhân vật đứng trung tâm bên cạnh các bóng người khác hỏi xem còn ai ngoài ra nữa."
+      }
+    },
+    {
+      "stem": "sufficient-exact-money-bill-v1",
+      "subject": "an open leather wallet on a table with banknotes and coins spread out that neatly match the exact total shown on a dining bill, with a green checkmark indicating sufficient funds",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-25.json",
+        "id": "tarimasu"
+      },
+      "alt": {
+        "vi": "Số tiền trong ví vừa vặn chính xác đủ để thanh toán hóa đơn."
+      }
+    },
+    {
+      "stem": "open-door-opportunity-v1",
+      "subject": "a glowing golden wooden doorway standing slightly ajar in a peaceful room, bright radiant light streaming through the opening toward an eager traveler, symbolizing a golden opportunity",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-25.json",
+        "id": "chansu"
+      },
+      "alt": {
+        "vi": "Cánh cửa mở hé tỏa ánh sáng rực rỡ biểu thị cơ hội tốt đẹp mở ra."
+      }
+    },
+    {
+      "stem": "hundred-million-money-mountain-v1",
+      "subject": "a towering, monumental stack of tied canvas bank money sacks bearing subtle gold twine ribbons, piled high like a small mountain to signify immense wealth (one hundred million yen)",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-25.json",
+        "id": "oku"
+      },
+      "alt": {
+        "vi": "Núi túi tiền ngân hàng chất cao biểu thị số tiền khổng lồ hàng trăm triệu."
+      }
+    },
+    {
+      "stem": "supposing-what-if-dream-v1",
+      "subject": "the reference male student resting his chin in his hand, daydreaming wistfully as a translucent cloud above his head illustrates a hypothetical 'what if...' future scenario",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-25.json",
+        "id": "moshi"
+      },
+      "alt": {
+        "vi": "Người chống cằm mơ màng suy nghĩ về những giả định viễn cảnh nếu như."
+      }
+    },
+    {
+      "stem": "dictionary-meaning-lightbulb-v1",
+      "subject": "a thick opened Japanese dictionary lying on a desk, a round magnifying glass resting on its pages, and a bright glowing yellow lightbulb floating overhead representing grasping the meaning",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-25.json",
+        "id": "imi"
+      },
+      "alt": {
+        "vi": "Cuốn từ điển mở ra dưới chiếc kính lúp và bóng đèn bừng sáng biểu thị hiểu ra ý nghĩa."
+      }
+    },
+    {
+      "stem": "completed-tasks-notebook-v1",
+      "subject": "an open study journal on a wooden desk showing a checklist of various accomplished activities neatly marked with checkmarks, beside a wooden pencil and a tea cup, representing experiences and matters done",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-25.json",
+        "id": "koto"
+      },
+      "alt": {
+        "vi": "Cuốn sổ tay với các điều việc đã thực hiện được đánh dấu kiểm gọn gàng."
+      }
+    },
+    {
+      "stem": "banknote-1000-v1",
+      "subject": "a crisp banknote laid flat with the large Arabic numeral 1000, a gentle portrait and soft floral patterns; NO red seal stamp, NO characters, NO writing of any kind other than 1000",
+      "digits": true,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "sen"
+      },
+      "alt": {
+        "vi": "Tờ tiền giấy 1.000 yên Nhật phẳng phiu in rõ con số 1000."
+      }
+    },
+    {
+      "stem": "banknote-10000-v1",
+      "subject": "a crisp banknote laid flat with the large Arabic numeral 10000, a gentle portrait and soft floral patterns; NO red seal stamp, NO characters, NO writing of any kind other than 10000",
+      "digits": true,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "man"
+      },
+      "alt": {
+        "vi": "Tờ tiền giấy 10.000 yên Nhật in rõ con số 10000."
+      }
+    }
+  ]
+}

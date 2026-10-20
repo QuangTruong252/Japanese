@@ -380,6 +380,549 @@
       "alt": {
         "vi": "Chàng trai cúi chào lịch thiệp mỉm cười cảm ơn."
       }
+    },
+    {
+      "stem": "timeline-week-last-week-v1",
+      "subject": "a horizontal row of three blank 7-day calendar grid sheets from past to future; the reference male student stands under sheet 2 (this week); sheet 1 on the left (last week) is highlighted in brick-red with a red pointer arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "senshuu"
+      },
+      "alt": {
+        "vi": "Hàng ba tờ lịch tuần với tờ bên trái được tô đỏ gạch chỉ tuần trước."
+      }
+    },
+    {
+      "stem": "timeline-week-this-week-v1",
+      "subject": "a horizontal row of three blank 7-day calendar grid sheets from past to future; the reference male student stands smiling under sheet 2 in the center (this week), which is highlighted in brick-red with a red pointer arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "konshuu"
+      },
+      "alt": {
+        "vi": "Hàng ba tờ lịch tuần với tờ chính giữa được tô đỏ gạch chỉ tuần này."
+      }
+    },
+    {
+      "stem": "timeline-week-next-week-v1",
+      "subject": "a horizontal row of three blank 7-day calendar grid sheets from past to future; the reference male student stands under sheet 2 (this week); sheet 3 on the right (next week) is highlighted in brick-red with a red pointer arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "raishuu"
+      },
+      "alt": {
+        "vi": "Hàng ba tờ lịch tuần với tờ bên phải được tô đỏ gạch chỉ tuần sau."
+      }
+    },
+    {
+      "stem": "timeline-month-last-month-v1",
+      "subject": "a horizontal row of three monthly calendar sheets from past to future; the reference woman stands under sheet 2 (this month); sheet 1 on the left (last month) is highlighted in brick-red with a red pointer arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "sengetsu"
+      },
+      "alt": {
+        "vi": "Hàng ba tờ lịch tháng với tờ bên trái được tô đỏ gạch chỉ tháng trước."
+      }
+    },
+    {
+      "stem": "timeline-month-this-month-v1",
+      "subject": "a horizontal row of three monthly calendar sheets from past to future; the reference woman stands smiling under sheet 2 in the center (this month), which is highlighted in brick-red with a red pointer arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "kongetsu"
+      },
+      "alt": {
+        "vi": "Hàng ba tờ lịch tháng với tờ chính giữa được tô đỏ gạch chỉ tháng này."
+      }
+    },
+    {
+      "stem": "timeline-month-next-month-v1",
+      "subject": "a horizontal row of three monthly calendar sheets from past to future; the reference woman stands under sheet 2 (this month); sheet 3 on the right (next month) is highlighted in brick-red with a red pointer arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "raigetsu"
+      },
+      "alt": {
+        "vi": "Hàng ba tờ lịch tháng với tờ bên phải được tô đỏ gạch chỉ tháng sau."
+      }
+    },
+    {
+      "stem": "timeline-year-last-year-v1",
+      "subject": "a horizontal row of three thick yearly planner books from past to future; the reference male student stands beside book 2 (this year); book 1 on the left (last year) is highlighted in brick-red with a red pointer arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "kyonen"
+      },
+      "alt": {
+        "vi": "Hàng ba cuốn sổ kế hoạch năm với cuốn bên trái được tô đỏ gạch chỉ năm ngoái."
+      }
+    },
+    {
+      "stem": "timeline-year-this-year-v1",
+      "subject": "a horizontal row of three thick yearly planner books from past to future; the reference male student stands smiling beside book 2 in the center (this year), which is highlighted in brick-red with a red pointer arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "kotoshi"
+      },
+      "alt": {
+        "vi": "Hàng ba cuốn sổ kế hoạch năm với cuốn chính giữa được tô đỏ gạch chỉ năm nay."
+      }
+    },
+    {
+      "stem": "timeline-year-next-year-v1",
+      "subject": "a horizontal row of three thick yearly planner books from past to future; the reference male student stands beside book 2 (this year); book 3 on the right (next year) is highlighted in brick-red with a red pointer arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "rainen"
+      },
+      "alt": {
+        "vi": "Hàng ba cuốn sổ kế hoạch năm với cuốn bên phải được tô đỏ gạch chỉ năm sau."
+      }
+    },
+    {
+      "stem": "year-counter-v1",
+      "digits": true,
+      "subject": "an open yearly desk planner showing a clean year header with the large 4-digit Arabic numeral 2026 printed at the top",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "nen"
+      },
+      "alt": {
+        "vi": "Cuốn sổ kế hoạch năm mở ra in con số 2026 ở đầu trang."
+      }
+    },
+    {
+      "stem": "asking-what-year-v1",
+      "subject": "the cover of a yearly diary planner displaying a prominent question mark '?' symbol where the year digits would be",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "nannen"
+      },
+      "alt": {
+        "vi": "Bìa sổ kế hoạch năm có dấu hỏi chấm lớn thắc mắc năm nào."
+      }
+    },
+    {
+      "stem": "month-counter-v1",
+      "digits": true,
+      "subject": "a monthly wall calendar page showing the large Arabic numeral 4 circled in red as the month number",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "gatsu"
+      },
+      "alt": {
+        "vi": "Trang lịch tháng treo tường có con số 4 được khoanh đỏ chỉ tháng 4."
+      }
+    },
+    {
+      "stem": "asking-what-month-v1",
+      "subject": "a monthly wall calendar page with a blank header area containing a prominent question mark '?' symbol asking what month",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "nangatsu"
+      },
+      "alt": {
+        "vi": "Trang lịch tháng có dấu hỏi chấm ở phần đầu trang thắc mắc tháng mấy."
+      }
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-05-days-part1-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "digits": true,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "calendar-day-1-v1",
+          "subject": "a tear-off desk calendar page showing the large clean Arabic numeral 1 in charcoal",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "tsuitachi"
+          },
+          "alt": {
+            "vi": "Tờ lịch xé bàn in con số 1 chỉ ngày mùng một."
+          }
+        },
+        {
+          "stem": "calendar-day-2-v1",
+          "subject": "a tear-off desk calendar page showing the large clean Arabic numeral 2 in charcoal",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "futsuka"
+          },
+          "alt": {
+            "vi": "Tờ lịch xé bàn in con số 2 chỉ ngày mùng hai."
+          }
+        },
+        {
+          "stem": "calendar-day-3-v1",
+          "subject": "a tear-off desk calendar page showing the large clean Arabic numeral 3 in charcoal",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "mikka"
+          },
+          "alt": {
+            "vi": "Tờ lịch xé bàn in con số 3 chỉ ngày mùng ba."
+          }
+        },
+        {
+          "stem": "calendar-day-4-v1",
+          "subject": "a tear-off desk calendar page showing the large clean Arabic numeral 4 in charcoal",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "yokka"
+          },
+          "alt": {
+            "vi": "Tờ lịch xé bàn in con số 4 chỉ ngày mùng bốn."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-05-days-part2-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "digits": true,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "calendar-day-5-v1",
+          "subject": "a tear-off desk calendar page showing the large clean Arabic numeral 5 in charcoal",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "itsuka"
+          },
+          "alt": {
+            "vi": "Tờ lịch xé bàn in con số 5 chỉ ngày mùng năm."
+          }
+        },
+        {
+          "stem": "calendar-day-6-v1",
+          "subject": "a tear-off desk calendar page showing the large clean Arabic numeral 6 in charcoal",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "muika"
+          },
+          "alt": {
+            "vi": "Tờ lịch xé bàn in con số 6 chỉ ngày mùng sáu."
+          }
+        },
+        {
+          "stem": "calendar-day-7-v1",
+          "subject": "a tear-off desk calendar page showing the large clean Arabic numeral 7 in charcoal",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "nanoka"
+          },
+          "alt": {
+            "vi": "Tờ lịch xé bàn in con số 7 chỉ ngày mùng bảy."
+          }
+        },
+        {
+          "stem": "calendar-day-8-v1",
+          "subject": "a tear-off desk calendar page showing the large clean Arabic numeral 8 in charcoal",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "youka"
+          },
+          "alt": {
+            "vi": "Tờ lịch xé bàn in con số 8 chỉ ngày mùng tám."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-05-days-part3-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "digits": true,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "calendar-day-9-v1",
+          "subject": "a tear-off desk calendar page showing the large clean Arabic numeral 9 in charcoal",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "kokonoka"
+          },
+          "alt": {
+            "vi": "Tờ lịch xé bàn in con số 9 chỉ ngày mùng chín."
+          }
+        },
+        {
+          "stem": "calendar-day-10-v1",
+          "subject": "a tear-off desk calendar page showing the large clean Arabic numeral 10 in charcoal",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "tooka"
+          },
+          "alt": {
+            "vi": "Tờ lịch xé bàn in con số 10 chỉ ngày mùng mười."
+          }
+        },
+        {
+          "stem": "calendar-day-14-v1",
+          "subject": "a tear-off desk calendar page showing the large clean Arabic numeral 14 in charcoal",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "juuyokka"
+          },
+          "alt": {
+            "vi": "Tờ lịch xé bàn in con số 14 chỉ ngày mười bốn."
+          }
+        },
+        {
+          "stem": "calendar-day-20-v1",
+          "subject": "a tear-off desk calendar page showing the large clean Arabic numeral 20 in charcoal",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+            "id": "hatsuka"
+          },
+          "alt": {
+            "vi": "Tờ lịch xé bàn in con số 20 chỉ ngày hai mươi."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "calendar-day-24-v1",
+      "digits": true,
+      "subject": "a tear-off desk calendar page showing the large clean Arabic numeral 24 in charcoal, circled in red",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "nijuuyokka"
+      },
+      "alt": {
+        "vi": "Tờ lịch xé bàn in con số 24 được khoanh đỏ chỉ ngày hai mươi tư."
+      }
+    },
+    {
+      "stem": "calendar-day-counter-v1",
+      "digits": true,
+      "subject": "a tear-off desk calendar page showing the large clean Arabic numeral 15 in charcoal as a general date counter representation",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "nichi"
+      },
+      "alt": {
+        "vi": "Tờ lịch xé bàn in con số 15 biểu thị ngày trong tháng."
+      }
+    },
+    {
+      "stem": "asking-what-day-of-month-v1",
+      "subject": "a tear-off desk calendar page with a blank center showing a prominent question mark '?' symbol asking what day of the month",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "nannichi"
+      },
+      "alt": {
+        "vi": "Tờ lịch xé bàn có dấu hỏi chấm ở giữa thắc mắc ngày mấy."
+      }
+    },
+    {
+      "stem": "asking-when-v1",
+      "subject": "the reference male student looking up thoughtfully at a blank wall calendar and an analog wall clock, with a prominent question mark '?' symbol in a thought bubble above",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "itsu"
+      },
+      "alt": {
+        "vi": "Chàng trai ngước nhìn lịch tường và đồng hồ với dấu hỏi chấm thắc mắc khi nào."
+      }
+    },
+    {
+      "stem": "sympathetic-agreement-v1",
+      "subject": "the reference woman smiling and nodding sympathetically in shared agreement, tilting her head slightly with hands clasped gently in front",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "sou-desu-ne"
+      },
+      "alt": {
+        "vi": "Cô gái mỉm cười gật đầu đồng tình hai tay khép nhẹ trước ngực."
+      }
+    },
+    {
+      "stem": "youre-welcome-v1",
+      "subject": "the reference male student smiling modestly with a friendly wave of an open palm at chest level, shaking his head gently to politely dismiss thanks",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "dou-itashimashite"
+      },
+      "alt": {
+        "vi": "Chàng trai mỉm cười xua nhẹ tay tỏ ý không có chi khi đáp lại lời cảm ơn."
+      }
+    },
+    {
+      "stem": "next-in-line-v1",
+      "subject": "at a train station platform, a dynamic forward pointer arrow leading from the first waiting passenger in queue toward the next arriving train",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "tsugi-no"
+      },
+      "alt": {
+        "vi": "Mũi tên hướng từ hành khách đứng đầu hàng về phía chuyến tàu kế tiếp đang tiến vào ga."
+      }
+    },
+    {
+      "stem": "local-train-v1",
+      "subject": "a standard commuter electric train car stopped at a small open-air local station platform, with a simple route diagram above showing all stops marked with dots",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "futsuu"
+      },
+      "alt": {
+        "vi": "Toa tàu điện thường dừng tại sân ga nhỏ với sơ đồ tuyến ghé qua mọi trạm."
+      }
+    },
+    {
+      "stem": "express-train-v1",
+      "subject": "a sleek commuter express train with an orange accent stripe speeding swiftly past a smaller platform without stopping, subtle motion lines",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "kyuukou"
+      },
+      "alt": {
+        "vi": "Tàu nhanh có sọc cam chạy vụt qua sân ga nhỏ không dừng lại."
+      }
+    },
+    {
+      "stem": "limited-express-train-v1",
+      "subject": "an aerodynamic limited express train with a streamlined sharp aerodynamic nose and sleek red stripe gliding along an elevated track",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-05.json",
+        "id": "tokkyuu"
+      },
+      "alt": {
+        "vi": "Tàu tốc hành đặc biệt với mũi tàu khí động học và sọc đỏ lướt trên đường ray trên cao."
+      }
     }
   ]
 }

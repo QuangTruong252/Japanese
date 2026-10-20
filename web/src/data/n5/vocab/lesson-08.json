@@ -242,6 +242,14 @@
         "translation": {
           "vi": "Cái cặp tuyệt vời quá nhỉ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/lovely-leather-bag-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc túi xách da màu nâu thanh lịch tuyệt đẹp đặt trên mặt gỗ."
+        }
       }
     },
     {
@@ -359,6 +367,14 @@
         "translation": {
           "vi": "Thời tiết đẹp nhỉ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/fine-sunny-weather-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mặt trời tỏa nắng ấm bầu trời trong xanh cành lá tươi tốt, biểu thị thời tiết tốt."
+        }
       }
     },
     {
@@ -375,6 +391,14 @@
         "kana": "きょうは てんきが わるいです。",
         "translation": {
           "vi": "Hôm nay thời tiết xấu."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/stormy-bad-weather-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Trời mưa xám xịt gió lớn quất nghiêng cành cây, biểu thị thời tiết xấu."
         }
       }
     },
@@ -893,6 +917,14 @@
         "translation": {
           "vi": "Chỗ này là nơi tốt."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/location-map-pin-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ghim định vị màu đỏ cắm trên bản đồ giấy, chỉ một địa điểm."
+        }
       }
     },
     {
@@ -960,6 +992,14 @@
         "translation": {
           "vi": "Cuộc sống ở Nhật Bản rất vui."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/daily-life-room-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Góc phòng trọ ấm cúng với bữa cơm tối giản dị và giỏ đồ áo, biểu thị đời sống sinh hoạt."
+        }
       }
     },
     {
@@ -1002,6 +1042,14 @@
         "translation": {
           "vi": "Cuộc sống ở Nhật Bản thế nào?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-how-is-it-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai mở lòng bàn tay mỉm cười hỏi han: như thế nào?"
+        }
       }
     },
     {
@@ -1018,6 +1066,14 @@
         "kana": "どんな えいがを みますか。",
         "translation": {
           "vi": "Bạn xem loại phim như thế nào?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-what-kind-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ba bìa đĩa phim khác thể loại với dấu hỏi chấm thắc mắc: phim như thế nào."
         }
       }
     },
@@ -1036,6 +1092,14 @@
         "translation": {
           "vi": "Cái bánh kem này rất ngon."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/very-delicious-expression-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai nếm miếng bánh kem, mắt sáng ngời ôm má khen rất ngon."
+        }
       }
     },
     {
@@ -1052,6 +1116,14 @@
         "kana": "この カメラは あまり よくないです。",
         "translation": {
           "vi": "Cái máy ảnh này không tốt lắm."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/not-very-good-camera-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người cầm chiếc máy ảnh với nét mặt hơi thất vọng, xua tay: không tốt lắm."
         }
       }
     },
@@ -1070,6 +1142,14 @@
         "translation": {
           "vi": "Căn phòng này lớn. Và còn sạch sẽ nữa."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/conjunction-and-also-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Căn phòng rộng ngập nắng nối với bình hoa tươi bằng dấu cộng, biểu thị 'và còn'."
+        }
       }
     },
     {
@@ -1086,6 +1166,14 @@
         "kana": "にほんの たべものは おいしいですが、たかいです。",
         "translation": {
           "vi": "Đồ ăn Nhật Bản ngon nhưng đắt."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tasty-but-expensive-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đĩa sushi ngon lành đặt cạnh hóa đơn tiền dài khiến thực khách băn khoăn: ngon nhưng đắt."
         }
       }
     },
@@ -1104,6 +1192,14 @@
         "translation": {
           "vi": "Bạn có khỏe không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-how-are-you-phone-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái gọi điện thoại với nụ cười ấm áp hỏi thăm: bạn có khỏe không?"
+        }
       }
     },
     {
@@ -1120,6 +1216,14 @@
         "kana": "もう いっぱい いかがですか。",
         "translation": {
           "vi": "Bạn có muốn dùng thêm một ly nữa không?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/offering-another-cup-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người rót nghiêng bình trà bên tách rỗng, mỉm cười hỏi khách có dùng thêm một ly nữa không."
         }
       }
     },
@@ -1138,6 +1242,14 @@
         "translation": {
           "vi": "Không, cảm ơn."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/polite-refusal-full-cup-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Khách khẽ đặt tay che miệng chén trà mỉm cười từ chối: tôi đủ rồi ạ."
+        }
       }
     },
     {
@@ -1154,6 +1266,14 @@
         "kana": "そろそろ しつれいします。",
         "translation": {
           "vi": "Đã đến lúc tôi phải xin phép ra về."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/time-to-leave-gesture-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Khách liếc nhìn đồng hồ rồi đặt tay lên gối chuẩn bị đứng dậy xin phép ra về."
         }
       }
     },
@@ -1172,6 +1292,14 @@
         "translation": {
           "vi": "“Cảm ơn nhiều.” “Không có chi.”"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/waving-no-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai xua nhẹ bàn tay ngang mặt cười xòa: không có chi."
+        }
       }
     },
     {
@@ -1188,6 +1316,14 @@
         "kana": "また いらっしゃって ください。",
         "translation": {
           "vi": "Lần sau lại ghé chơi nhé."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/please-come-again-host-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chủ nhà đứng ở cửa hiên mỉm cười cúi chào tiễn khách: lần sau lại ghé chơi nhé."
         }
       }
     }

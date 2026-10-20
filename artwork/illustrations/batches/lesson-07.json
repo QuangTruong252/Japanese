@@ -554,6 +554,150 @@
       "alt": {
         "vi": "Chàng trai chắp tay cảm ơn hài lòng sau khi dùng xong bữa ăn."
       }
+    },
+    {
+      "stem": "already-done-parcel-v1",
+      "subject": "a neatly packed and sealed cardboard delivery parcel completely closed with packing tape, stamped with a prominent painted checkmark tick mark indicating the packing is already finished",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "mou"
+      },
+      "alt": {
+        "vi": "Chiếc bưu kiện đã được dán kín băng keo cẩn thận kèm dấu tick hoàn thành."
+      }
+    },
+    {
+      "stem": "not-yet-parcel-v1",
+      "subject": "an open cardboard shipping box with items only half packed inside, packing tape roll and scissors lying unfinished beside it, an unfilled blank checklist tag showing it is not yet completed",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "mada"
+      },
+      "alt": {
+        "vi": "Chiếc hộp carton mở nắp đang đóng gói dở dang, cuộn băng dính để cạnh biểu thị chưa xong."
+      }
+    },
+    {
+      "stem": "starting-now-leaving-v1",
+      "subject": "the reference male student putting on his outdoor shoe in the entryway with backpack over one shoulder, hand turning the front door handle outward toward a sunny morning pathway, ready to set off from now on",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "korekara"
+      },
+      "alt": {
+        "vi": "Chàng trai xỏ giày khoác ba lô mở cửa bước ra đường, chuẩn bị đi từ bây giờ."
+      }
+    },
+    {
+      "stem": "admiring-lovely-shirt-v1",
+      "subject": "the reference woman clasping her hands gently in front of her chest with an admiring, impressed expression, admiring a smart tailored shirt displayed on a wooden hanger",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "suteki-desu-ne"
+      },
+      "alt": {
+        "vi": "Cô gái chắp tay mỉm cười trầm trồ khen ngợi chiếc áo sơ mi đẹp trên mắc treo."
+      }
+    },
+    {
+      "stem": "welcoming-guest-home-v1",
+      "subject": "the reference woman standing at her open apartment doorway in casual home clothes, smiling warmly with both hands held in an inviting gesture to welcome a visiting friend into her home",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "irasshai"
+      },
+      "alt": {
+        "vi": "Chủ nhà mở rộng cửa tươi cười chào đón bạn đến chơi nhà."
+      }
+    },
+    {
+      "stem": "please-come-in-genkan-v1",
+      "subject": "at a Japanese entryway step (genkan), the host smiling and gesturing with an open palm toward a pair of neat guest slippers set ready on the raised wooden floor, inviting the guest to step up and enter",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "douzo-oagari"
+      },
+      "alt": {
+        "vi": "Chủ nhà đưa tay mời khách xỏ dép bước lên thềm vào nhà."
+      }
+    },
+    {
+      "stem": "polite-entry-bow-v1",
+      "subject": "the reference male student stepping softly through an open sliding room door, bowing his head slightly and politely with hands folded in front, saying excuse me as he enters",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "shitsurei-shimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai khẽ cúi đầu bước qua cửa phòng: xin thất lễ."
+      }
+    },
+    {
+      "stem": "offering-drink-tray-v1",
+      "subject": "two hands holding a small wooden serving tray with a freshly poured steaming cup of coffee in a ceramic cup and saucer, extending it forward offering the guest a drink",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "ikaga-desu-ka"
+      },
+      "alt": {
+        "vi": "Hai tay bưng khay gỗ có tách cà phê nóng mời khách dùng."
+      }
+    },
+    {
+      "stem": "calling-at-door-v1",
+      "subject": "a visitor standing outside an entryway with the door slightly ajar, gently knocking on the door frame and leaning in slightly with an inquisitive friendly voice, calling out if anyone is home",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-07.json",
+        "id": "gomen-kudasai"
+      },
+      "alt": {
+        "vi": "Khách đứng ngoài cửa khẽ gõ khung cửa cất tiếng hỏi có ai ở nhà không."
+      }
     }
   ]
 }

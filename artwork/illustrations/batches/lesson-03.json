@@ -14,6 +14,197 @@
       "alt": {
         "vi": "Chàng trai cúi gập người lịch sự để xin lỗi."
       }
+    },
+    {
+      "stem": "asking-where-v1",
+      "subject": "the reference male student holding an open street map in both hands, looking around quizzically with a prominent question mark '?' symbol in a thought bubble above",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "doko"
+      },
+      "alt": {
+        "vi": "Chàng trai cầm bản đồ mở nhìn quanh tìm đường với dấu hỏi chấm."
+      }
+    },
+    {
+      "reuse": "vocab/asking-where-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "dochira"
+      },
+      "alt": {
+        "vi": "Chàng trai cầm bản đồ mở nhìn quanh tìm hướng với dấu hỏi chấm."
+      }
+    },
+    {
+      "stem": "globe-country-v1",
+      "subject": "a desktop spinning globe on a wooden stand showing continent outlines, with a gentle spotlight highlighting one country territory",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "okuni"
+      },
+      "alt": {
+        "vi": "Quả địa cầu để bàn trên giá gỗ với một vùng quốc gia được làm nổi bật."
+      }
+    },
+    {
+      "reuse": "vocab/bowing-thanks-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "doumo"
+      },
+      "alt": {
+        "vi": "Chàng trai cúi đầu mỉm cười cảm ơn ngắn gọn."
+      }
+    },
+    {
+      "stem": "irasshaimase-v1",
+      "subject": "a friendly shop clerk wearing a clean apron standing behind a counter, bowing warmly with both hands clasped neatly in front to welcome entering customers",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "irasshaimase"
+      },
+      "alt": {
+        "vi": "Nhân viên cửa hàng đeo tạp dề cúi chào đón khách bước vào tiệm."
+      }
+    },
+    {
+      "stem": "please-show-me-v1",
+      "subject": "the reference woman leaning slightly forward over a glass shop showcase, pointing gently with an index finger at an item inside the case and asking to view it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "misete-kudasai"
+      },
+      "alt": {
+        "vi": "Cô gái chỉ tay vào món đồ trong tủ kính cửa hàng xin được xem."
+      }
+    },
+    {
+      "stem": "well-then-decision-v1",
+      "subject": "the reference male student nodding with a decisive smile, tapping his chin and raising one index finger as he reaches a clear decision between options in a shop",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "ja"
+      },
+      "alt": {
+        "vi": "Chàng trai mỉm cười gật đầu giơ ngón tay khi đưa ra quyết định mua hàng."
+      }
+    },
+    {
+      "stem": "please-give-me-v1",
+      "subject": "customer hands placing a chosen packaged purchase on the counter toward the store cashier, requesting to buy it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "kudasai"
+      },
+      "alt": {
+        "vi": "Khách hàng đặt món đồ đã chọn lên quầy thanh toán yêu cầu mua."
+      }
+    },
+    {
+      "stem": "asking-price-v1",
+      "subject": "the reference woman in a clothing shop holding a knit sweater with a blank hanging price tag, looking at it with a question mark '?' symbol in a thought bubble",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+        "id": "ikura"
+      },
+      "alt": {
+        "vi": "Cô gái cầm áo len có nhãn giá để trống thắc mắc giá tiền với dấu hỏi chấm."
+      }
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-03-money-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "digits": true,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "yen-currency-v1",
+          "subject": "a neat small stack of Japanese yen coins with a large 500 coin on top showing the numeral 500, beside a folded crisp banknote",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+            "id": "en"
+          },
+          "alt": {
+            "vi": "Chồng tiền xu yên Nhật có đồng 500 trên cùng bên cạnh tờ tiền giấy gập."
+          }
+        },
+        {
+          "stem": "number-100-v1",
+          "subject": "a large round silver 100-yen coin showing the numeral 100 clearly stamped on its face",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+            "id": "hyaku"
+          },
+          "alt": {
+            "vi": "Đồng xu 100 yên màu bạc in nổi con số 100 rõ nét."
+          }
+        },
+        {
+          "stem": "number-1000-v1",
+          "subject": "a crisp Japanese 1,000-yen banknote laid flat, showing the large numeral 1000 in clean Arabic digits",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+            "id": "sen"
+          },
+          "alt": {
+            "vi": "Tờ tiền giấy 1.000 yên Nhật phẳng phiu in rõ con số 1000."
+          },
+          "skip": "red seal stamp with Chinese-character-like marks"
+        },
+        {
+          "stem": "number-10000-v1",
+          "subject": "a crisp Japanese 10,000-yen banknote laid flat, showing the large numeral 10000 in clean Arabic digits",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-03.json",
+            "id": "man"
+          },
+          "alt": {
+            "vi": "Tờ tiền giấy 10.000 yên Nhật in rõ con số 10000."
+          },
+          "skip": "red seal stamp with Chinese-character-like marks"
+        }
+      ]
     }
   ]
 }

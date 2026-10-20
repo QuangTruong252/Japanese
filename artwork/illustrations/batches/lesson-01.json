@@ -306,6 +306,154 @@
       "alt": {
         "vi": "Hai người cúi chào và trao danh thiếp cho nhau bằng hai tay."
       }
+    },
+    {
+      "stem": "calling-adult-san-v1",
+      "subject": "the reference woman turning with a warm polite smile, raising one hand gently in a polite greeting gesture toward an adult coworker standing nearby, showing respectful address",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "san"
+      },
+      "alt": {
+        "vi": "Cô gái hướng tay mỉm cười chào gọi đồng nghiệp một cách lịch sự."
+      }
+    },
+    {
+      "stem": "calling-child-chan-v1",
+      "subject": "the reference woman gently bending forward with a cheerful affectionate smile, greeting a little girl with pigtails who smiles happily back",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "chan"
+      },
+      "alt": {
+        "vi": "Cô gái cúi người tươi cười gọi bé gái có tóc buộc hai bên."
+      }
+    },
+    {
+      "stem": "nationality-person-v1",
+      "subject": "three diverse people standing side by side representing different nationalities, with an open passport booklet showing a small circular visa stamp beside them",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "jin"
+      },
+      "alt": {
+        "vi": "Ba người thuộc các quốc tịch khác nhau đứng cạnh cuốn hộ chiếu mở."
+      }
+    },
+    {
+      "stem": "asking-who-v1",
+      "subject": "the reference woman looking curiously through a frosted glass door at the mysterious silhouette of an unknown person standing outside, with a prominent question mark '?' symbol in a thought bubble above",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "dare"
+      },
+      "alt": {
+        "vi": "Người phụ nữ nhìn bóng người lạ sau cửa kính mờ với dấu hỏi chấm."
+      }
+    },
+    {
+      "reuse": "vocab/asking-who-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "donata"
+      },
+      "alt": {
+        "vi": "Người phụ nữ nhìn bóng người lạ sau cửa kính mờ với dấu hỏi chấm."
+      }
+    },
+    {
+      "stem": "excuse-me-politely-v1",
+      "subject": "the reference male student bowing slightly forward with a polite apologetic smile, one hand placed gently over his chest as he prepares to ask an awkward personal question",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "shitsurei-desu-ga"
+      },
+      "alt": {
+        "vi": "Chàng trai cúi nhẹ người đặt tay lên ngực mỉm cười ái ngại khi mở lời xin lỗi."
+      }
+    },
+    {
+      "stem": "asking-name-v1",
+      "subject": "the reference woman holding a blank clip-on name badge in one hand, extending her other open palm in a friendly inquiring gesture toward the listener, with a question mark '?' symbol in a speech bubble",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "onamae-wa"
+      },
+      "alt": {
+        "vi": "Cô gái cầm thẻ tên để trống và đưa tay hỏi tên đối phương."
+      }
+    },
+    {
+      "stem": "pleased-to-meet-bow-v1",
+      "subject": "the reference male student performing a deep polite bow from the waist with hands straight at his sides, smiling warmly as he completes a self-introduction asking for goodwill",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "douzo-yoroshiku"
+      },
+      "alt": {
+        "vi": "Chàng trai cúi gập người lịch sự mong được giúp đỡ khi chào hỏi lần đầu."
+      }
+    },
+    {
+      "reuse": "vocab/introducing-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "kochira-wa"
+      },
+      "alt": {
+        "vi": "Cô gái hướng tay giới thiệu bạn với người đối diện."
+      }
+    },
+    {
+      "stem": "came-from-v1",
+      "subject": "the reference male student standing beside his wheeled travel suitcase, pointing back toward a miniature globe showing a curved departure trajectory dotted arrow, smiling as he announces where he came from",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-01.json",
+        "id": "kara-kimashita"
+      },
+      "alt": {
+        "vi": "Chàng trai đứng cạnh vali kéo chỉ tay về hướng vạch xuất phát trên quả địa cầu."
+      }
     }
   ]
 }

@@ -472,6 +472,119 @@
       "alt": {
         "vi": "Đồ dùng chăm sóc người ốm bên giường bệnh."
       }
+    },
+    {
+      "stem": "calendar-two-three-days-v1",
+      "digits": true,
+      "subject": "a grid desk calendar page where three consecutive date cells showing numerals 14, 15, and 16 are encircled together by a single soft brick-red pencil loop, no letters or other words",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "ni-san-nichi"
+      },
+      "alt": {
+        "vi": "Tờ lịch bàn với hai ba ô ngày liên tiếp được khoanh chung bằng nét vẽ màu đỏ."
+      }
+    },
+    {
+      "stem": "two-three-items-cds-v1",
+      "subject": "a tidy small stack of two or three jewel-case audio CDs arranged slightly staggered on a wooden shelf, clearly displaying a small quantity of two or three items",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "ni-san"
+      },
+      "alt": {
+        "vi": "Hai ba chiếc hộp đĩa CD xếp so le trên bàn gỗ."
+      }
+    },
+    {
+      "stem": "deadline-calendar-arrow-v1",
+      "subject": "a hardback library book resting on a wooden desk beside a calendar sheet where a single Saturday cell is circled in bold brick-red with a decisive straight arrow pointing directly at it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "madeni"
+      },
+      "alt": {
+        "vi": "Cuốn sách đặt cạnh tờ lịch với ô ngày hạn chót được khoanh đỏ và mũi tên chỉ vào."
+      }
+    },
+    {
+      "stem": "cause-and-effect-fever-clinic-v1",
+      "subject": "a two-part cause-and-effect layout: on the left, a clinical thermometer showing a red fever line, connected by a bold transition arrow pointing right to a person with a warm scarf entering a clinic gate",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "desukara"
+      },
+      "alt": {
+        "vi": "Bên trái là nhiệt kế sốt, mũi tên dẫn sang bên phải là người bệnh đi khám."
+      }
+    },
+    {
+      "stem": "doctor-asking-patient-v1",
+      "subject": "a kind doctor wearing a white coat and stethoscope leaning forward across his consultation desk with a caring, attentive expression, asking the patient what seems to be the problem",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "dou-shimashita-ka"
+      },
+      "alt": {
+        "vi": "Bác sĩ ân cần nghiêng người về phía trước hỏi thăm người bệnh."
+      }
+    },
+    {
+      "stem": "and-then-furthermore-v1",
+      "subject": "two medical advice vignettes linked by an arrow: a blister pack of medicine pills on the left, connected by a curved sequence arrow to a clean wooden bathtub with a gentle red crossed-out sign",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "sorekara-ademas"
+      },
+      "alt": {
+        "vi": "Hai ô hành động nối nhau bằng mũi tên biểu thị việc dặn dò tiếp theo sau đó."
+      }
+    },
+    {
+      "stem": "get-well-care-basket-v1",
+      "subject": "a woven wicker gift basket on a wooden bedside nightstand, filled with round apples, fresh oranges, a small bouquet of soft pastel blossoms, and a neat envelope card, quiet peaceful still life with no sick person",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-17.json",
+        "id": "odaijini"
+      },
+      "alt": {
+        "vi": "Giỏ mây đựng trái cây, hoa và một phong bì đặt trên tủ nhỏ, gợi quà thăm người ốm."
+      }
     }
   ]
 }

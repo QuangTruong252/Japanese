@@ -124,6 +124,407 @@
       "alt": {
         "vi": "Chàng trai vất vả ôm chồng hồ sơ cao ngất ngưởng chực đổ."
       }
+    },
+    {
+      "stem": "finishing-work-v1",
+      "subject": "the reference male student closing his notebook, stretching his arms with a relieved smile at his office desk as an analog wall clock indicates 5:00 quitting time",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "owarimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai gấp sổ tay vươn vai mỉm cười nhẹ nhõm khi hết giờ làm việc."
+      }
+    },
+    {
+      "stem": "looking-at-watch-now-v1",
+      "subject": "the reference male student looking down attentively at his wristwatch, pointing with his index finger directly at the watch face to emphasize the present moment",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "ima"
+      },
+      "alt": {
+        "vi": "Chàng trai nhìn đồng hồ đeo tay chỉ ngón tay vào mặt đồng hồ nhấn mạnh thời điểm hiện tại."
+      }
+    },
+    {
+      "stem": "clock-hour-v1",
+      "subject": "a classic round wall clock with analog hands pointing exactly to 3:00, with a bold arrow highlighting the short hour hand pointing at the 3 position",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "ji"
+      },
+      "alt": {
+        "vi": "Đồng hồ treo tường chỉ đúng 3 giờ với mũi tên nhấn mạnh kim giờ ngắn."
+      }
+    },
+    {
+      "stem": "clock-minute-v1",
+      "subject": "a round analog clock face showing a highlighted shaded 5-minute arc sector along the rim, with the long minute hand pointing forward",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "fun"
+      },
+      "alt": {
+        "vi": "Mặt đồng hồ kim có một cung 5 phút được tô nổi bật cùng kim phút dài."
+      }
+    },
+    {
+      "stem": "clock-half-past-v1",
+      "subject": "a round analog clock face with hands indicating 7:30, the bottom half (30 minutes) shaded in a warm pastel tone illustrating half past",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "han"
+      },
+      "alt": {
+        "vi": "Mặt đồng hồ kim chỉ 7 giờ rưỡi với nửa phải mặt số được tô màu ấm."
+      }
+    },
+    {
+      "stem": "asking-what-time-v1",
+      "subject": "a round analog wall clock with hands, accompanied by a prominent question mark '?' symbol inside a speech bubble asking the hour",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "nanji"
+      },
+      "alt": {
+        "vi": "Đồng hồ treo tường bên cạnh bong bóng lời nói có dấu hỏi chấm thắc mắc mấy giờ."
+      }
+    },
+    {
+      "stem": "asking-what-minute-v1",
+      "subject": "a closeup of an analog clock dial focusing on minute tick marks, with a small question mark '?' symbol inside a thought bubble asking the minute",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "nanpun"
+      },
+      "alt": {
+        "vi": "Cận cảnh vạch phút của mặt đồng hồ với dấu hỏi chấm thắc mắc mấy phút."
+      }
+    },
+    {
+      "stem": "timeline-day-day-before-yesterday-v1",
+      "subject": "a horizontal row of five blank daily tear-off calendar pages from past to future; the reference male student stands under the middle third sheet (today); the first sheet on the far left (day before yesterday) is highlighted in brick-red with a red pointer arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "ototoi"
+      },
+      "alt": {
+        "vi": "Hàng năm tờ lịch ngày với tờ ngoài cùng bên trái được tô đỏ gạch chỉ ngày hôm kia."
+      }
+    },
+    {
+      "stem": "timeline-day-yesterday-v1",
+      "subject": "a horizontal row of five blank daily tear-off calendar pages from past to future; the reference male student stands under the middle third sheet (today); the second sheet from the left (yesterday) is highlighted in brick-red with a red pointer arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "kinou"
+      },
+      "alt": {
+        "vi": "Hàng năm tờ lịch ngày với tờ thứ hai từ trái sang được tô đỏ gạch chỉ ngày hôm qua."
+      }
+    },
+    {
+      "stem": "timeline-day-today-v1",
+      "subject": "a horizontal row of five blank daily tear-off calendar pages from past to future; the reference male student stands smiling under the middle third sheet (today), which is highlighted in brick-red with a red pointer arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "kyou"
+      },
+      "alt": {
+        "vi": "Hàng năm tờ lịch ngày với tờ chính giữa được tô đỏ gạch chỉ ngày hôm nay."
+      }
+    },
+    {
+      "stem": "timeline-day-tomorrow-v1",
+      "subject": "a horizontal row of five blank daily tear-off calendar pages from past to future; the reference male student stands under the middle third sheet (today); the fourth sheet from the left (tomorrow) is highlighted in brick-red with a red pointer arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "ashita"
+      },
+      "alt": {
+        "vi": "Hàng năm tờ lịch ngày với tờ thứ tư từ trái sang được tô đỏ gạch chỉ ngày mai."
+      }
+    },
+    {
+      "stem": "timeline-day-day-after-tomorrow-v1",
+      "subject": "a horizontal row of five blank daily tear-off calendar pages from past to future; the reference male student stands under the middle third sheet (today); the fifth sheet on the far right (day after tomorrow) is highlighted in brick-red with a red pointer arrow",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "asatte"
+      },
+      "alt": {
+        "vi": "Hàng năm tờ lịch ngày với tờ ngoài cùng bên phải được tô đỏ gạch chỉ ngày kia."
+      }
+    },
+    {
+      "stem": "every-day-calendar-v1",
+      "subject": "a horizontal strip of seven consecutive day calendar boxes, all seven boxes stamped with a neat round red completion seal, showing an uninterrupted daily habit",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "mainichi"
+      },
+      "alt": {
+        "vi": "Dãy bảy ô ngày liên tiếp đều được đóng dấu đỏ tròn biểu thị thói quen mỗi ngày."
+      }
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-04-weekdays-part1-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "monday-moon-v1",
+          "subject": "a blank tear-off calendar sheet illustrated with a serene glowing crescent moon in the center",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+            "id": "getsuyoubi"
+          },
+          "alt": {
+            "vi": "Tờ lịch vẽ hình vầng trăng khuyết biểu thị thứ Hai."
+          }
+        },
+        {
+          "stem": "tuesday-fire-v1",
+          "subject": "a blank tear-off calendar sheet illustrated with a warm cozy campfire flame in the center",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+            "id": "kayoubi"
+          },
+          "alt": {
+            "vi": "Tờ lịch vẽ hình ngọn lửa ấm biểu thị thứ Ba."
+          }
+        },
+        {
+          "stem": "wednesday-water-v1",
+          "subject": "a blank tear-off calendar sheet illustrated with clear blue-green water droplets in the center",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+            "id": "suiyoubi"
+          },
+          "alt": {
+            "vi": "Tờ lịch vẽ hình giọt nước trong biếc biểu thị thứ Tư."
+          }
+        },
+        {
+          "stem": "thursday-tree-v1",
+          "subject": "a blank tear-off calendar sheet illustrated with a sturdy green leafy tree in the center",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+            "id": "mokuyoubi"
+          },
+          "alt": {
+            "vi": "Tờ lịch vẽ hình cái cây xanh tươi tốt biểu thị thứ Năm."
+          }
+        }
+      ]
+    },
+    {
+      "master": "artwork/illustrations/atlases/lesson-04-weekdays-part2-v1.png",
+      "columns": 2,
+      "rows": 2,
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "cells": [
+        {
+          "stem": "friday-gold-v1",
+          "subject": "a blank tear-off calendar sheet illustrated with a sparkling round gold coin in the center",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+            "id": "kinyoubi"
+          },
+          "alt": {
+            "vi": "Tờ lịch vẽ hình đồng xu vàng lấp lánh biểu thị thứ Sáu."
+          }
+        },
+        {
+          "stem": "saturday-earth-v1",
+          "subject": "a blank tear-off calendar sheet illustrated with a neat mound of garden soil with a tiny green sprout in the center",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+            "id": "doyoubi"
+          },
+          "alt": {
+            "vi": "Tờ lịch vẽ hình luống đất màu mỡ có mầm xanh biểu thị thứ Bảy."
+          }
+        },
+        {
+          "stem": "sunday-sun-v1",
+          "subject": "a blank tear-off calendar sheet illustrated with a bright warm smiling sun in the center",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+            "id": "nichiyoubi"
+          },
+          "alt": {
+            "vi": "Tờ lịch vẽ hình mặt trời rực rỡ biểu thị Chủ nhật."
+          }
+        },
+        {
+          "stem": "what-weekday-v1",
+          "subject": "a blank tear-off calendar sheet illustrated with a prominent question mark '?' symbol in the center",
+          "target": {
+            "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+            "id": "nanyoubi"
+          },
+          "alt": {
+            "vi": "Tờ lịch có dấu hỏi chấm lớn ở giữa biểu thị thắc mắc thứ mấy."
+          }
+        }
+      ]
+    },
+    {
+      "stem": "starting-point-from-v1",
+      "subject": "a winding footpath leading from a small house to a school; the house at the starting point is circled in bold brick-red with a clear arrow pointing outward along the path",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "kara"
+      },
+      "alt": {
+        "vi": "Con đường từ nhà đến trường với điểm xuất phát tại ngôi nhà được khoanh đỏ và có mũi tên bắt đầu."
+      }
+    },
+    {
+      "stem": "destination-point-until-v1",
+      "subject": "a winding footpath leading from a small house to a school; the school gate at the destination point is circled in bold brick-red with a clear arrow pointing into it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "made"
+      },
+      "alt": {
+        "vi": "Con đường từ nhà đến trường với điểm đích tại cổng trường được khoanh đỏ và có mũi tên hướng vào."
+      }
+    },
+    {
+      "stem": "apple-and-orange-v1",
+      "subject": "a fresh red apple and a juicy ripe orange placed neatly side by side on a small wooden cutting board, with a subtle connecting ampersand-like visual balance",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "to"
+      },
+      "alt": {
+        "vi": "Quả táo đỏ và quả cam đặt cạnh nhau trên thớt gỗ biểu thị quan hệ nối và."
+      }
+    },
+    {
+      "stem": "number-id-tag-v1",
+      "digits": true,
+      "subject": "a round wooden locker key tag on a brass ring, showing the large crisp Arabic numeral 42 painted clearly in charcoal",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "bangou"
+      },
+      "alt": {
+        "vi": "Thẻ số móc chìa khóa bằng gỗ in rõ con số 42."
+      }
+    },
+    {
+      "stem": "asking-what-number-v1",
+      "subject": "a bus stop post with a blank circular tag displaying a prominent question mark '?' symbol asking what number",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-04.json",
+        "id": "nanban"
+      },
+      "alt": {
+        "vi": "Biển số để trống có dấu hỏi chấm thắc mắc số mấy."
+      }
     }
   ]
 }

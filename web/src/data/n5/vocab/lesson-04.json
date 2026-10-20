@@ -220,6 +220,14 @@
         "naiKana": "おわらない",
         "ta": "終[お]わった",
         "taKana": "おわった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/finishing-work-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai gấp sổ tay vươn vai mỉm cười nhẹ nhõm khi hết giờ làm việc."
+        }
       }
     },
     {
@@ -362,6 +370,14 @@
         "translation": {
           "vi": "Bây giờ là 4 giờ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/looking-at-watch-now-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai nhìn đồng hồ đeo tay chỉ ngón tay vào mặt đồng hồ nhấn mạnh thời điểm hiện tại."
+        }
       }
     },
     {
@@ -378,6 +394,14 @@
         "kana": "いま よじです。",
         "translation": {
           "vi": "Bây giờ là 4 giờ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/clock-hour-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đồng hồ treo tường chỉ đúng 3 giờ với mũi tên nhấn mạnh kim giờ ngắn."
         }
       }
     },
@@ -396,6 +420,14 @@
         "translation": {
           "vi": "Bây giờ là 4 giờ 5 phút."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/clock-minute-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mặt đồng hồ kim có một cung 5 phút được tô nổi bật cùng kim phút dài."
+        }
       }
     },
     {
@@ -412,6 +444,14 @@
         "kana": "じゅうじはんに ねます。",
         "translation": {
           "vi": "Tôi ngủ lúc 10 rưỡi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/clock-half-past-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mặt đồng hồ kim chỉ 7 giờ rưỡi với nửa phải mặt số được tô màu ấm."
         }
       }
     },
@@ -430,6 +470,14 @@
         "translation": {
           "vi": "Bây giờ là mấy giờ?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-what-time-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đồng hồ treo tường bên cạnh bong bóng lời nói có dấu hỏi chấm thắc mắc mấy giờ."
+        }
       }
     },
     {
@@ -446,6 +494,14 @@
         "kana": "いま なんじ なんぷんですか。",
         "translation": {
           "vi": "Bây giờ là mấy giờ mấy phút?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-what-minute-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cận cảnh vạch phút của mặt đồng hồ với dấu hỏi chấm thắc mắc mấy phút."
         }
       }
     },
@@ -589,6 +645,14 @@
         "translation": {
           "vi": "Tôi đã làm việc hôm kia."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timeline-day-day-before-yesterday-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng năm tờ lịch ngày với tờ ngoài cùng bên trái được tô đỏ gạch chỉ ngày hôm kia."
+        }
       }
     },
     {
@@ -605,6 +669,14 @@
         "kana": "きのう べんきょうしました。",
         "translation": {
           "vi": "Hôm qua tôi đã học bài."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timeline-day-yesterday-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng năm tờ lịch ngày với tờ thứ hai từ trái sang được tô đỏ gạch chỉ ngày hôm qua."
         }
       }
     },
@@ -623,6 +695,14 @@
         "translation": {
           "vi": "Hôm nay là thứ hai."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timeline-day-today-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng năm tờ lịch ngày với tờ chính giữa được tô đỏ gạch chỉ ngày hôm nay."
+        }
       }
     },
     {
@@ -640,6 +720,14 @@
         "translation": {
           "vi": "Ngày mai tôi không làm việc."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timeline-day-tomorrow-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng năm tờ lịch ngày với tờ thứ tư từ trái sang được tô đỏ gạch chỉ ngày mai."
+        }
       }
     },
     {
@@ -656,6 +744,14 @@
         "kana": "あさっては やすみです。",
         "translation": {
           "vi": "Ngày kia là ngày nghỉ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/timeline-day-day-after-tomorrow-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng năm tờ lịch ngày với tờ ngoài cùng bên phải được tô đỏ gạch chỉ ngày kia."
         }
       }
     },
@@ -899,6 +995,14 @@
         "translation": {
           "vi": "Mỗi ngày tôi đều làm việc."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/every-day-calendar-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Dãy bảy ô ngày liên tiếp đều được đóng dấu đỏ tròn biểu thị thói quen mỗi ngày."
+        }
       }
     },
     {
@@ -915,6 +1019,14 @@
         "kana": "きょうは げつようびです。",
         "translation": {
           "vi": "Hôm nay là thứ hai."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/monday-moon-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch vẽ hình vầng trăng khuyết biểu thị thứ Hai."
         }
       }
     },
@@ -933,6 +1045,14 @@
         "translation": {
           "vi": "Tôi học bài vào thứ ba."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/tuesday-fire-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch vẽ hình ngọn lửa ấm biểu thị thứ Ba."
+        }
       }
     },
     {
@@ -949,6 +1069,14 @@
         "kana": "すいようびは やすみです。",
         "translation": {
           "vi": "Thứ tư là ngày nghỉ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/wednesday-water-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch vẽ hình giọt nước trong biếc biểu thị thứ Tư."
         }
       }
     },
@@ -967,6 +1095,14 @@
         "translation": {
           "vi": "Tôi làm việc vào thứ năm."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/thursday-tree-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch vẽ hình cái cây xanh tươi tốt biểu thị thứ Năm."
+        }
       }
     },
     {
@@ -983,6 +1119,14 @@
         "kana": "きんようびの ばんです。",
         "translation": {
           "vi": "Là buổi tối thứ sáu."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/friday-gold-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch vẽ hình đồng xu vàng lấp lánh biểu thị thứ Sáu."
         }
       }
     },
@@ -1001,6 +1145,14 @@
         "translation": {
           "vi": "Thứ bảy tôi không làm việc."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/saturday-earth-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch vẽ hình luống đất màu mỡ có mầm xanh biểu thị thứ Bảy."
+        }
       }
     },
     {
@@ -1017,6 +1169,14 @@
         "kana": "にちようびは やすみです。",
         "translation": {
           "vi": "Chủ nhật là ngày nghỉ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sunday-sun-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch vẽ hình mặt trời rực rỡ biểu thị Chủ nhật."
         }
       }
     },
@@ -1035,6 +1195,14 @@
         "translation": {
           "vi": "Hôm nay là thứ mấy?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/what-weekday-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ lịch có dấu hỏi chấm lớn ở giữa biểu thị thắc mắc thứ mấy."
+        }
       }
     },
     {
@@ -1051,6 +1219,14 @@
         "kana": "ぎんこうは くじからです。",
         "translation": {
           "vi": "Ngân hàng mở cửa từ 9 giờ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/starting-point-from-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Con đường từ nhà đến trường với điểm xuất phát tại ngôi nhà được khoanh đỏ và có mũi tên bắt đầu."
         }
       }
     },
@@ -1069,6 +1245,14 @@
         "translation": {
           "vi": "Ngân hàng mở cửa đến 3 giờ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/destination-point-until-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Con đường từ nhà đến trường với điểm đích tại cổng trường được khoanh đỏ và có mũi tên hướng vào."
+        }
       }
     },
     {
@@ -1085,6 +1269,14 @@
         "kana": "ぎんこうの やすみは どようびと にちようびです。",
         "translation": {
           "vi": "Ngày nghỉ của ngân hàng là thứ bảy và chủ nhật."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/apple-and-orange-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Quả táo đỏ và quả cam đặt cạnh nhau trên thớt gỗ biểu thị quan hệ nối và."
         }
       }
     },
@@ -1128,6 +1320,14 @@
         "translation": {
           "vi": "Số điện thoại là số mấy?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/number-id-tag-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Thẻ số móc chìa khóa bằng gỗ in rõ con số 42."
+        }
       }
     },
     {
@@ -1144,6 +1344,14 @@
         "kana": "でんわ ばんごうは なんばんですか。",
         "translation": {
           "vi": "Số điện thoại là số mấy?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-what-number-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Biển số để trống có dấu hỏi chấm thắc mắc số mấy."
         }
       }
     }

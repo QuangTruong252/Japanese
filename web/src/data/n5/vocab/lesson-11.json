@@ -30,6 +30,14 @@
         "naiKana": "いない",
         "ta": "いた[子[こ]どもが〜]",
         "taKana": "いた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/parent-with-child-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người phụ nữ nắm tay một bé trai đang vui vẻ bước đi."
+        }
       }
     },
     {
@@ -60,6 +68,14 @@
         "naiKana": "いない",
         "ta": "いた[日本[にほん]に〜]",
         "taKana": "いた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/living-in-japan-student-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng sinh viên đứng trong con phố nhỏ nhà gỗ yên bình, biểu thị đang ở Nhật Bản."
+        }
       }
     },
     {
@@ -90,6 +106,14 @@
         "naiKana": "かからない",
         "ta": "かかった",
         "taKana": "かかった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/costing-time-and-money-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc đồng hồ cát đang chảy cát đặt cạnh đồng xu và vé tàu, biểu thị tốn thời gian và tiền bạc."
+        }
       }
     },
     {
@@ -145,6 +169,14 @@
         "translation": {
           "vi": "Tôi đã mua một quả táo."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/one-apple-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một quả táo đỏ có cuống lá xanh."
+        }
       }
     },
     {
@@ -179,6 +211,14 @@
         "translation": {
           "vi": "Tôi đã mua ba cái bánh mì."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/three-apples-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ba quả táo đỏ xếp thành nhóm."
+        }
       }
     },
     {
@@ -195,6 +235,14 @@
         "kana": "かばんが よっつ あります。",
         "translation": {
           "vi": "Có bốn cái cặp."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/four-apples-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bốn quả táo đỏ xếp thành nhóm vuông."
         }
       }
     },
@@ -213,6 +261,14 @@
         "translation": {
           "vi": "Có năm cái hộp."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/five-apples-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Năm quả táo đỏ xếp cạnh nhau."
+        }
       }
     },
     {
@@ -229,6 +285,14 @@
         "kana": "いすが むっつ あります。",
         "translation": {
           "vi": "Có sáu cái ghế."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/six-apples-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Sáu quả táo đỏ xếp thành hai hàng."
         }
       }
     },
@@ -247,6 +311,14 @@
         "translation": {
           "vi": "Tôi đã mua bảy cục tẩy."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/seven-apples-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bảy quả táo đỏ xếp gọn gàng."
+        }
       }
     },
     {
@@ -263,6 +335,14 @@
         "kana": "とけいが やっつ あります。",
         "translation": {
           "vi": "Có tám cái đồng hồ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/eight-apples-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tám quả táo đỏ xếp thành hai hàng ngay ngắn."
         }
       }
     },
@@ -281,6 +361,14 @@
         "translation": {
           "vi": "Có chín quả táo."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/nine-apples-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chín quả táo đỏ xếp thành lưới ba nhân ba ngay ngắn."
+        }
       }
     },
     {
@@ -297,6 +385,14 @@
         "kana": "みかんを とお かいました。",
         "translation": {
           "vi": "Tôi đã mua mười quả quýt."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/ten-apples-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mười quả táo đỏ xếp thành hình tháp tam giác đẹp mắt."
         }
       }
     },
@@ -315,6 +411,14 @@
         "translation": {
           "vi": "Có bao nhiêu quả táo?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-how-many-apples-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đống táo chất lộn xộn với dấu hỏi chấm thắc mắc: có bao nhiêu quả táo?"
+        }
       }
     },
     {
@@ -332,6 +436,14 @@
         "translation": {
           "vi": "Có một học sinh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/one-person-figure-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một bạn sinh viên đứng một mình ôm sách, biểu thị một người."
+        }
       }
     },
     {
@@ -348,6 +460,14 @@
         "kana": "せんせいが ふたり います。",
         "translation": {
           "vi": "Có hai thầy giáo."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/two-people-standing-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai người bạn đứng cạnh nhau mỉm cười trò chuyện, biểu thị hai người."
         }
       }
     },
@@ -440,6 +560,14 @@
         "kana": "いっしゅうかんに にかい テニスを します。",
         "translation": {
           "vi": "Tôi chơi tennis 2 lần 1 tuần."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/knocking-three-times-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai gõ cửa, cạnh bàn tay có các nét cong biểu thị động tác lặp lại."
         }
       }
     },
@@ -908,6 +1036,14 @@
         "translation": {
           "vi": "Tháng sau tôi sẽ đi nước ngoài."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/foreign-country-globe-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Quả địa cầu bên cuốn hộ chiếu và chiếc máy bay nhỏ, biểu thị nước ngoài."
+        }
       }
     },
     {
@@ -975,6 +1111,14 @@
         "translation": {
           "vi": "Mỗi ngày tôi làm việc 8 tiếng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/duration-hours-clock-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Mặt đồng hồ không số có phần quạt thời gian tô màu, biểu thị khoảng thời gian mấy tiếng."
+        }
       }
     },
     {
@@ -991,6 +1135,14 @@
         "kana": "さんしゅうかん にほんに います。",
         "translation": {
           "vi": "Tôi ở Nhật 3 tuần."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/duration-three-weeks-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ba tờ lịch tuần dạng lưới bảy ô nối tiếp nhau, biểu thị khoảng thời gian ba tuần."
         }
       }
     },
@@ -1009,6 +1161,14 @@
         "translation": {
           "vi": "Tôi đã học tiếng Nhật 2 tháng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/duration-two-months-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai tờ lịch tháng gối đầu nhau nối bằng dấu ngoặc đỏ, biểu thị thời gian hai tháng."
+        }
       }
     },
     {
@@ -1025,6 +1185,14 @@
         "kana": "いちねん にほんに います。",
         "translation": {
           "vi": "Tôi ở Nhật 1 năm."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/duration-one-year-seasons-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuốn sổ kế hoạch dày bên vòng tròn bốn mùa xoay chuyển, biểu thị khoảng thời gian một năm."
         }
       }
     },
@@ -1043,6 +1211,14 @@
         "translation": {
           "vi": "Mất khoảng 10 phút để đến ga."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/approximate-range-bracket-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Thước đo bằng gỗ có vạch ngoặc mờ ước lượng, biểu thị khoảng chừng, xấp xỉ."
+        }
       }
     },
     {
@@ -1060,6 +1236,14 @@
         "translation": {
           "vi": "Bạn đã học tiếng Nhật khoảng bao lâu?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/asking-how-long-hourglass-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai nhìn đồng hồ cát và cuốn lịch suy nghĩ với dấu hỏi: mất bao lâu?"
+        }
       }
     },
     {
@@ -1076,6 +1260,14 @@
         "kana": "ぜんぶで せんえんです。",
         "translation": {
           "vi": "Tổng cộng là 1000 yên."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/total-sum-bill-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ hóa đơn và khay tiền trên quầy ghi rõ con số tổng cộng 1000 được khoanh tròn đỏ."
         }
       }
     },
@@ -1119,6 +1311,14 @@
         "translation": {
           "vi": "Ngày nghỉ chỉ có chủ nhật."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/only-one-cookie-plate-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc đĩa rộng chỉ còn trơ trọi một chiếc bánh quy ở chính giữa, biểu thị 'chỉ'."
+        }
       }
     },
     {
@@ -1135,6 +1335,14 @@
         "kana": "「コーヒーを おねがいします。」「かしこまりました。」",
         "translation": {
           "vi": "\"Cho tôi một cà phê.\" \"Tôi hiểu rồi ạ.\""
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/respectful-order-understood-bow-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên quán đeo tạp dề cúi chào cung kính nhận lời yêu cầu của khách."
         }
       }
     },
@@ -1153,6 +1361,14 @@
         "translation": {
           "vi": "Thời tiết đẹp quá nhỉ."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/lovely-weather-greeting-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người đứng bên luống hoa ngắm trời trong xanh nắng ấm mỉm cười: thời tiết đẹp quá nhỉ!"
+        }
       }
     },
     {
@@ -1170,6 +1386,14 @@
         "translation": {
           "vi": "Bạn ra ngoài đấy à?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/neighbor-asking-going-out-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người hàng xóm bên hàng rào mỉm cười vẫy tay hỏi han: bạn đi ra ngoài đấy à?"
+        }
       }
     },
     {
@@ -1186,6 +1410,14 @@
         "kana": "ちょっと ゆうびんきょくまで いきます。",
         "translation": {
           "vi": "Tôi đi ra bưu điện một chút."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/stepping-out-briefly-envelope-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cầm phong bì mỉm cười đáp: tôi đi ra bưu điện một chút."
         }
       }
     },
@@ -1303,6 +1535,14 @@
         "kana": "これを おねがいします。",
         "translation": {
           "vi": "Xin nhờ bạn việc này."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/polite-request-hands-forward-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đưa tài liệu bằng hai tay cúi đầu tha thiết: làm ơn xin nhờ bạn."
         }
       }
     },

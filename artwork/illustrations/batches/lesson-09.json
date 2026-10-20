@@ -453,6 +453,342 @@
       "alt": {
         "vi": "Sinh viên mặc tạp dề làm việc đứng niềm nở sau quầy cửa hàng tiện lợi."
       }
+    },
+    {
+      "stem": "having-tickets-items-v1",
+      "subject": "the reference male student smiling happily, holding up a pair of blank concert event tickets in one hand and showing coins in an open palm, depicting having possessions and resources",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "arimasu"
+      },
+      "alt": {
+        "vi": "Chàng trai vui vẻ cầm trên tay cặp vé và đồng xu, biểu thị có đồ vật, tiền vé."
+      }
+    },
+    {
+      "stem": "handwritten-script-page-v1",
+      "subject": "an open notebook page displaying rows of graceful, neat handwritten ink strokes (strictly illegible abstract handwriting loops and strokes, not real characters or readable text), with a fountain pen resting beside it",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "ji"
+      },
+      "alt": {
+        "vi": "Trang sổ mở với những dòng chữ viết tay nắn nót trừu tượng bên chiếc bút máy."
+      }
+    },
+    {
+      "stem": "hiragana-soft-strokes-v1",
+      "subject": "a pencil writing on lined practice paper with delicate, flowing, softly curved looping strokes resembling Japanese hiragana style (strictly illegible abstract soft curves, not real characters)",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "hiragana"
+      },
+      "alt": {
+        "vi": "Nét bút chì uốn lượn mềm mại trên trang giấy kẻ ô kiểu chữ Hiragana trừu tượng."
+      }
+    },
+    {
+      "stem": "katakana-angular-strokes-v1",
+      "subject": "a flat-nib pen drawing crisp, sharp, straight angular and geometric strokes resembling Japanese katakana structure (strictly illegible abstract straight geometric strokes, not real characters) on paper",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "katakana"
+      },
+      "alt": {
+        "vi": "Nét bút góc cạnh gãy khúc dứt khoát trên giấy kiểu chữ Katakana trừu tượng."
+      }
+    },
+    {
+      "stem": "romaji-wooden-blocks-v1",
+      "subject": "a neat row of square wooden toy alphabet-style blocks sitting on a wooden desk, each block face painted with illegible abstract geometric Latin-alphabet-like lines (completely abstract shapes, no readable letters), a wooden pencil nearby",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "roomaji"
+      },
+      "alt": {
+        "vi": "Hàng khối gỗ đồ chơi xếp trên bàn mang hình khối chữ cái La-tinh trừu tượng."
+      }
+    },
+    {
+      "stem": "personal-errand-checklist-v1",
+      "subject": "a pocket organizer notebook open to a busy daily errand checklist with checkmarks, a house key and a packed shoulder bag beside it ready to head out for personal errands",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "youji"
+      },
+      "alt": {
+        "vi": "Cuốn sổ tay ghi lịch trình bận rộn đặt cạnh chùm chìa khóa và túi xách, biểu thị việc riêng."
+      }
+    },
+    {
+      "stem": "frequency-often-v1",
+      "subject": "a horizontal row of seven neat square calendar day-boxes representing a week, with exactly 5 out of 7 boxes stamped with a circular brick-red tick mark and 2 boxes empty, symbolizing often or frequently",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "yoku"
+      },
+      "alt": {
+        "vi": "Hàng bảy ô ngày trong tuần với năm ô được đóng dấu đỏ tròn, biểu thị thường xuyên."
+      }
+    },
+    {
+      "stem": "mostly-progress-circle-v1",
+      "subject": "a clean circular pie progress chart on paper with roughly eighty percent (80%) filled in solid warm sage color and only a small slice remaining blank, visually representing mostly or approximately all",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "daitai"
+      },
+      "alt": {
+        "vi": "Biểu đồ tròn đã tô màu khoảng tám mươi phần trăm, biểu thị đại khái, phần lớn."
+      }
+    },
+    {
+      "stem": "heaping-rice-bowl-v1",
+      "subject": "a traditional ceramic rice bowl filled high with a generous, tall heaping mound of fluffy white steamed rice piled well above the rim, visually symbolizing a large quantity or plenty",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "takusan"
+      },
+      "alt": {
+        "vi": "Bát cơm trắng đầy ắp vun cao ngọn, biểu thị số lượng nhiều."
+      }
+    },
+    {
+      "stem": "tiny-portion-spoon-v1",
+      "subject": "a small wooden tasting spoon held horizontally, carrying only a tiny modest pinch of ingredients on its tip, visually symbolizing a small amount or a little",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "sukoshi"
+      },
+      "alt": {
+        "vi": "Chiếc thìa gỗ chỉ múc một lượng rất nhỏ ở đầu thìa, biểu thị một chút, ít."
+      }
+    },
+    {
+      "stem": "frequency-not-at-all-v1",
+      "subject": "a horizontal row of seven neat square calendar day-boxes representing a week, with all 7 out of 7 boxes completely empty and unmarked (0 out of 7), symbolizing not at all or never",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "zenzen"
+      },
+      "alt": {
+        "vi": "Hàng bảy ô ngày trong tuần hoàn toàn để trống không có dấu nào, biểu thị hoàn toàn không."
+      }
+    },
+    {
+      "stem": "reason-cause-arrow-v1",
+      "subject": "two linked vignettes connected by a bold brick-red causal arrow: on the left a clock showing time running out, pointing directly to the right where a commuter rushes to hail a taxi, depicting cause and effect",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "kara-porque"
+      },
+      "alt": {
+        "vi": "Hai cảnh nối bằng mũi tên chỉ lý do: bên trái sắp muộn giờ, bên phải vội vẫy taxi."
+      }
+    },
+    {
+      "stem": "asking-why-rainbow-v1",
+      "subject": "a curious little child standing outdoors pointing a finger up toward a bright rainbow in the sky, tilting head in wonder with a large graphic question mark '?' in a thought bubble, asking 'why?'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "doushite"
+      },
+      "alt": {
+        "vi": "Em bé chỉ tay lên cầu vồng nghiêng đầu tò mò hỏi tại sao với dấu hỏi chấm."
+      }
+    },
+    {
+      "stem": "asking-to-borrow-book-v1",
+      "subject": "two hands gently extended with palms facing up in a polite requesting gesture toward an interesting hardcover book resting on a table, asking 'please lend this to me'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "kashite-kudasai"
+      },
+      "alt": {
+        "vi": "Hai bàn tay đưa ra cử chỉ lịch sự ngỏ lời xin mượn cuốn sách trên bàn."
+      }
+    },
+    {
+      "stem": "gladly-agreeing-lending-v1",
+      "subject": "the reference woman smiling kindly and cheerfully, extending a requested book with one hand while giving a warm reassuring nod of consent, expressing 'sure, go ahead / of course'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "ii-desu-yo"
+      },
+      "alt": {
+        "vi": "Cô gái tươi cười trao cuốn sách đồng ý cho mượn: được chứ!"
+      }
+    },
+    {
+      "stem": "feeling-regret-ticket-v1",
+      "subject": "the reference male student looking down at a concert/movie ticket with a sorrowful, apologetic grimace, one hand behind his head showing sincere regret: 'what a pity / that is too bad'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "zannen-desu"
+      },
+      "alt": {
+        "vi": "Chàng trai cầm vé nhìn xuống tiếc nuối vì bận việc không đi được: tiếc quá."
+      }
+    },
+    {
+      "stem": "exclaiming-realization-v1",
+      "subject": "the reference male student with eyes widening and mouth slightly open in sudden polite understanding and realization, a small lightbulb sparkle above, expressing 'ah, I see!'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "aa"
+      },
+      "alt": {
+        "vi": "Chàng trai mở to mắt ồ lên một tiếng hiểu ra: A, vậy à!"
+      }
+    },
+    {
+      "stem": "inviting-along-tickets-v1",
+      "subject": "the reference woman holding two colorful event admission tickets, smiling engagingly and leaning forward to invite a friend along to join her",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "isshoni-ikaga"
+      },
+      "alt": {
+        "vi": "Cô gái cầm hai tấm vé mỉm cười nghiêng người rủ bạn: cùng đi với mình nhé?"
+      }
+    },
+    {
+      "stem": "hesitant-polite-refusal-v1",
+      "subject": "the reference male student scratching the back of his neck with an awkward, apologetic, hesitant smile and tilted head, gently declining an invitation indirectly",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "chotto-euf"
+      },
+      "alt": {
+        "vi": "Chàng trai gãi sau gáy nét mặt ngập ngừng bối rối từ chối khéo léo."
+      }
+    },
+    {
+      "stem": "asking-pleading-is-it-no-v1",
+      "subject": "the reference woman leaning forward slightly with hands lightly clasped in front, wearing a hopeful yet disappointed pleading expression, asking 'is it really no good?'",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "dame-desu-ka"
+      },
+      "alt": {
+        "vi": "Cô gái chắp nhẹ tay nét mặt hụt hẫng năn nỉ hỏi lại: không được à?"
+      }
+    },
+    {
+      "stem": "raincheck-next-time-v1",
+      "subject": "the reference male student smiling warmly and waving an open hand in a reassuring, friendly gesture, promising to do it next time with no hard feelings",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-09.json",
+        "id": "mata-kondo"
+      },
+      "alt": {
+        "vi": "Chàng trai mỉm cười xua tay vui vẻ hẹn lại dịp sau nhé."
+      }
     }
   ]
 }

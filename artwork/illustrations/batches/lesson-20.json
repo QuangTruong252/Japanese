@@ -117,6 +117,16 @@
       "alt": {
         "vi": "Nhóm bốn người bạn vui vẻ khoác vai nhau cùng đi."
       }
+    },
+    {
+      "reuse": "vocab/assorted-bottles-variety-v1",
+      "target": {
+        "dataFile": "web/src/data/n5/vocab/lesson-20.json",
+        "id": "iroiro"
+      },
+      "alt": {
+        "vi": "Hàng chai lọ nhiều màu sắc hình dáng khác nhau xếp trên kệ, biểu thị nhiều loại đa dạng."
+      }
     }
   ]
 }
