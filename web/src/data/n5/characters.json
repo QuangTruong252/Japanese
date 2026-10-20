@@ -1,1 +1,92 @@
-{}
+{
+  "mai": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/mai-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung Mai"
+      }
+    }
+  },
+  "tanaka": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/tanaka-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung Tanaka"
+      }
+    }
+  },
+  "mori": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/mori-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung thầy Mori"
+      }
+    }
+  },
+  "ookawa": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/ookawa-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung chị Ookawa"
+      }
+    }
+  },
+  "isha": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/isha-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung bác sĩ"
+      }
+    }
+  },
+  "uketsuke": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/uketsuke-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung nhân viên lễ tân"
+      }
+    }
+  },
+  "ten-in": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/ten-in-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung nhân viên bán hàng"
+      }
+    }
+  },
+  "toshokan": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/toshokan-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung nhân viên thư viện"
+      }
+    }
+  },
+  "ekiin": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/ekiin-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung nhân viên nhà ga"
+      }
+    }
+  }
+}

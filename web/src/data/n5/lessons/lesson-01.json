@@ -238,7 +238,15 @@
             "iie"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l01-first-meeting-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka và Mai cúi chào làm quen trên con phố thị trấn."
+        }
+      }
     },
     {
       "id": "l01-shoukai",
@@ -311,7 +319,15 @@
             "vi": "Rất mong được thầy giúp đỡ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l01-introducing-friend-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai giới thiệu Tanaka với thầy Mori ở hành lang trường đại học."
+        }
+      }
     },
     {
       "id": "l01-byouin",
@@ -406,7 +422,15 @@
             "sai"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l01-clinic-consultation-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Bác sĩ hỏi thông tin của Mai trong phòng khám."
+        }
+      }
     }
   ],
   "references": [

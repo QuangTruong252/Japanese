@@ -312,7 +312,15 @@
             "vi": "Vâng, cà phê Việt Nam đấy ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l02-neighbor-gift-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai tặng quà cà phê làm quen với chị hàng xóm Ookawa trước cửa nhà."
+        }
+      }
     },
     {
       "id": "l02-kore-wa-nan",
@@ -397,7 +405,15 @@
             "sou-desu-ka"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l02-dictionary-inquiry-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka và Mai trò chuyện về cuốn từ điển và sách trên bàn."
+        }
+      }
     },
     {
       "id": "l02-kasa",
@@ -484,7 +500,15 @@
             "vi": "Thế à. Cảm ơn hai người nhé."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l02-lost-umbrella-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Thầy Mori hỏi về chiếc ô, Tanaka và Mai tươi cười chỉ chiếc ô của thầy."
+        }
+      }
     }
   ],
   "references": [

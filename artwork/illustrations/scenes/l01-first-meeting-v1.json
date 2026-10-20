@@ -1,0 +1,54 @@
+{
+  "createdAt": "2026-10-20T00:53:39.277Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/kaiwa-scenes-01-05.json",
+  "prompt": "Editorial watercolor and gouache illustration, hand-painted Japanese book-illustration feel: delicate dark pencil contours, soft organic painted washes, subtle paper texture, warm ivory paper tones. Palette: cream, warm sand, charcoal gray, muted sage green, warm timber wood, muted brick-red accents. Landscape 4:3 composition, FULL-BLEED: the painting fills the whole canvas edge to edge, with NO frame, NO border line, NO mat and NO paper margin around it.\nPeople, when present: young male student = slightly messy short dark hair, cream long-sleeved shirt, charcoal trousers, black backpack; young woman = chin-length dark bob with bangs, cream cardigan over muted brick-red top, charcoal skirt, small brown shoulder bag.\n\nSubject: medium shot from the knees up inside a bright station-front cafe: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, and a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, standing large in the foreground facing each other and exchanging slight polite bows as they meet for the first time; softly blurred simple cafe interior with plants behind them, no street, no bicycle.\nKeep the main subject in the central area so the image survives cropping to a thumbnail.\n\nSTRICT REQUIREMENTS:\n- Absolutely NO text, letters, kanji, kana, numbers or words anywhere: signs, boards, labels and screens stay completely blank.\n- Clock faces have NO digits and NO Roman numerals.\n- Hand-painted watercolor gouache look, NOT 3D, NOT CGI, NOT glossy vector, NOT photo.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/scenes/l01-first-meeting-v1.webp",
+  "width": 800,
+  "height": 600,
+  "role": "scene",
+  "suggestedAlt": {
+    "vi": "Tanaka và Mai cúi chào làm quen trên con phố thị trấn."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/lessons/lesson-01.json",
+    "id": "l01-hajimemashite",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/scenes/l01-first-meeting-v1.png",
+    "width": 1448,
+    "height": 1086,
+    "format": "png",
+    "hasAlpha": false
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "cover",
+    "width": 800,
+    "height": 600,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 108148,
+    "sha256": "02442cc44ec293224a34a45aabecc6a29111bd09cefdd54612dd8cebd17e08a8",
+    "hasAlpha": false,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 0,
+      "partial": 0,
+      "opaque": 480000
+    }
+  }
+}

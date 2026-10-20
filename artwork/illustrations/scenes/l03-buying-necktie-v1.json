@@ -1,0 +1,54 @@
+{
+  "createdAt": "2026-10-20T00:53:39.309Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/kaiwa-scenes-01-05.json",
+  "prompt": "Editorial watercolor and gouache illustration, hand-painted Japanese book-illustration feel: delicate dark pencil contours, soft organic painted washes, subtle paper texture, warm ivory paper tones. Palette: cream, warm sand, charcoal gray, muted sage green, warm timber wood, muted brick-red accents. Landscape 4:3 composition, FULL-BLEED: the painting fills the whole canvas edge to edge, with NO frame, NO border line, NO mat and NO paper margin around it.\nPeople, when present: young male student = slightly messy short dark hair, cream long-sleeved shirt, charcoal trousers, black backpack; young woman = chin-length dark bob with bangs, cream cardigan over muted brick-red top, charcoal skirt, small brown shoulder bag.\n\nSubject: inside a quiet department store menswear counter, a Japanese department-store clerk, man about 30, neat dark hair, dark vest, white shirt, plain tie, shows a neatly displayed patterned necktie on a wooden counter to a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, who looks at it thoughtfully; glass display case with folded ties and accessories, no price tags, no signs, no text.\nKeep the main subject in the central area so the image survives cropping to a thumbnail.\n\nSTRICT REQUIREMENTS:\n- Absolutely NO text, letters, kanji, kana, numbers or words anywhere: signs, boards, labels and screens stay completely blank.\n- Clock faces have NO digits and NO Roman numerals.\n- Hand-painted watercolor gouache look, NOT 3D, NOT CGI, NOT glossy vector, NOT photo.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/scenes/l03-buying-necktie-v1.webp",
+  "width": 800,
+  "height": 600,
+  "role": "scene",
+  "suggestedAlt": {
+    "vi": "Nhân viên bán hàng giới thiệu cà vạt cho Mai tại quầy bách hóa."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/lessons/lesson-03.json",
+    "id": "l03-depaato",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/scenes/l03-buying-necktie-v1.png",
+    "width": 1448,
+    "height": 1086,
+    "format": "png",
+    "hasAlpha": false
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "cover",
+    "width": 800,
+    "height": 600,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 126338,
+    "sha256": "05a3d5765b4c1921c2514116f238bcc262a8b26e3fd6c31cd2e7e2bd6f7f4d8b",
+    "hasAlpha": false,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 0,
+      "partial": 0,
+      "opaque": 480000
+    }
+  }
+}

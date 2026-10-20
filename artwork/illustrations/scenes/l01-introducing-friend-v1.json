@@ -1,0 +1,54 @@
+{
+  "createdAt": "2026-10-20T00:53:39.281Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/kaiwa-scenes-01-05.json",
+  "prompt": "Editorial watercolor and gouache illustration, hand-painted Japanese book-illustration feel: delicate dark pencil contours, soft organic painted washes, subtle paper texture, warm ivory paper tones. Palette: cream, warm sand, charcoal gray, muted sage green, warm timber wood, muted brick-red accents. Landscape 4:3 composition, FULL-BLEED: the painting fills the whole canvas edge to edge, with NO frame, NO border line, NO mat and NO paper margin around it.\nPeople, when present: young male student = slightly messy short dark hair, cream long-sleeved shirt, charcoal trousers, black backpack; young woman = chin-length dark bob with bangs, cream cardigan over muted brick-red top, charcoal skirt, small brown shoulder bag.\n\nSubject: in a quiet university campus hallway, a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, gestures politely to introduce a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, to a Japanese university teacher, man about 55, short gray hair, thin round glasses, navy cardigan over light-blue collared shirt, calm kind smile; clean campus corridor with wooden bench and soft window light.\nKeep the main subject in the central area so the image survives cropping to a thumbnail.\n\nSTRICT REQUIREMENTS:\n- Absolutely NO text, letters, kanji, kana, numbers or words anywhere: signs, boards, labels and screens stay completely blank.\n- Clock faces have NO digits and NO Roman numerals.\n- Hand-painted watercolor gouache look, NOT 3D, NOT CGI, NOT glossy vector, NOT photo.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/scenes/l01-introducing-friend-v1.webp",
+  "width": 800,
+  "height": 600,
+  "role": "scene",
+  "suggestedAlt": {
+    "vi": "Mai giới thiệu Tanaka với thầy Mori ở hành lang trường đại học."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/lessons/lesson-01.json",
+    "id": "l01-shoukai",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/scenes/l01-introducing-friend-v1.png",
+    "width": 1448,
+    "height": 1086,
+    "format": "png",
+    "hasAlpha": false
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "cover",
+    "width": 800,
+    "height": 600,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 107704,
+    "sha256": "476d3d66f5626d3889a9f688e6629e01af51d3b3e038141b15ba07bfd79e586b",
+    "hasAlpha": false,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 0,
+      "partial": 0,
+      "opaque": 480000
+    }
+  }
+}

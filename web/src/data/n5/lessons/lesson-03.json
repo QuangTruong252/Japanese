@@ -262,7 +262,15 @@
             "vi": "Cảm ơn nhiều ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l03-reception-desk-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai hỏi đường nhân viên lễ tân tại quầy thông tin."
+        }
+      }
     },
     {
       "id": "l03-depaato",
@@ -373,7 +381,15 @@
             "kudasai"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l03-buying-necktie-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Nhân viên bán hàng giới thiệu cà vạt cho Mai tại quầy bách hóa."
+        }
+      }
     },
     {
       "id": "l03-okuni",
@@ -470,7 +486,15 @@
             "vi": "Ơ, công ty Mỹ hả anh?"
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l03-company-colleagues-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka chỉ về phía tòa nhà công ty khi trò chuyện cùng thầy Mori và Mai."
+        }
+      }
     }
   ],
   "references": [

@@ -13,7 +13,7 @@
         "tool": "Codex built-in image_gen",
         "orchestrator": "gpt-6-luna (effort low)"
       },
-      "subject": "on a peaceful Japanese town street corner, two young people introduce themselves: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, and a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, exchanging slight polite bows and greeting each other; quiet street with simple shop facades and potted plants in the background.",
+      "subject": "medium shot from the knees up inside a bright station-front cafe: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, and a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, standing large in the foreground facing each other and exchanging slight polite bows as they meet for the first time; softly blurred simple cafe interior with plants behind them, no street, no bicycle.",
       "target": {
         "dataFile": "web/src/data/n5/lessons/lesson-01.json",
         "id": "l01-hajimemashite"

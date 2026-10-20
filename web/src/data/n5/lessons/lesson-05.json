@@ -291,7 +291,15 @@
             "dou-itashimashite"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l05-station-inquiry-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai hỏi nhân viên nhà ga về chuyến tàu đi Koshien."
+        }
+      }
     },
     {
       "id": "l05-nichiyoubi",
@@ -373,7 +381,15 @@
             "vi": "Dạ có, em đi ạ!"
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l05-sunday-plans-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka và Mai trò chuyện về kế hoạch đi chơi cuối tuần."
+        }
+      }
     },
     {
       "id": "l05-tanjoubi",
@@ -465,7 +481,15 @@
             "vi": "Dạ không, em ở lại ạ. Mùng mười gia đình em về."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l05-birthday-plans-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai hào hứng kể với Tanaka và thầy Mori về ngày sinh nhật và chuyến đi bảo tàng cùng gia đình."
+        }
+      }
     }
   ],
   "references": [

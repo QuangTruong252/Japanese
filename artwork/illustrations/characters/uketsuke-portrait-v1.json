@@ -1,0 +1,61 @@
+{
+  "createdAt": "2026-10-20T00:53:35.948Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/kaiwa-characters.json",
+  "prompt": "Create ONE square 1:1 illustration for a Japanese-learning app's character avatar.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nLAYOUT: a bust portrait (head and shoulders only), facing forward or slightly turned, with the face centered in the frame so it can be cropped into a circle. No hands visible, no held objects, no background objects, wide EMPTY transparent margins on all four sides; nothing touches the canvas edge.\n\nSUBJECT: young Japanese receptionist woman, dark hair in a low bun, navy blazer, white blouse",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/characters/uketsuke-portrait-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "character-avatar",
+  "suggestedAlt": {
+    "vi": "Chân dung nhân viên lễ tân"
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/characters.json",
+    "roleId": "uketsuke",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/characters/uketsuke-portrait-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "hasAlpha": true
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 191,
+      "top": 136,
+      "width": 916,
+      "height": 1065
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.391,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 34408,
+    "sha256": "bf98ecc968115fdbe47d7cf3f2edc769aae5fb4e9c30ea46aa7b741879e6c820",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 170866,
+      "partial": 90333,
+      "opaque": 945
+    }
+  }
+}

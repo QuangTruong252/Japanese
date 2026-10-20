@@ -16,7 +16,5 @@ test('mọi entry trong characters.json đều có avatar hợp lệ', () => {
 
 test('roleId không có trong dữ liệu trả về undefined', () => {
   assert.equal(getRoleAvatar('non-existent-role'), undefined);
-  assert.equal(getRoleAvatar('mai'), undefined);
-  assert.equal(getRoleAvatar('tanaka'), undefined);
   assert.equal(getRoleAvatar(''), undefined);
 });

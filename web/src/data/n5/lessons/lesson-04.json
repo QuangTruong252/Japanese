@@ -251,7 +251,15 @@
             "vi": "Vậy à. Thế thì thứ hai nhỉ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l04-asking-time-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai hỏi giờ anh Tanaka trước tòa nhà ngân hàng."
+        }
+      }
     },
     {
       "id": "l04-denwa",
@@ -336,7 +344,15 @@
             "vi": "Thứ hai ạ. Xin cảm ơn nhiều ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l04-phone-library-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai ngồi ở nhà gọi điện thoại hỏi thông tin."
+        }
+      }
     },
     {
       "id": "l04-mainichi",
@@ -437,7 +453,15 @@
             "vi": "Dạ không, tối qua em không học. Em đi ngủ lúc chín giờ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/l04-daily-schedule-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka và Mai trò chuyện về thói quen sinh hoạt mỗi ngày."
+        }
+      }
     }
   ],
   "references": [

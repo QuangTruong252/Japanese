@@ -1,0 +1,61 @@
+{
+  "createdAt": "2026-10-20T00:53:35.924Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/kaiwa-characters.json",
+  "prompt": "Create ONE square 1:1 illustration for a Japanese-learning app's character avatar.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nLAYOUT: a bust portrait (head and shoulders only), facing forward or slightly turned, with the face centered in the frame so it can be cropped into a circle. No hands visible, no held objects, no background objects, wide EMPTY transparent margins on all four sides; nothing touches the canvas edge.\n\nSUBJECT: young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/characters/mai-portrait-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "character-avatar",
+  "suggestedAlt": {
+    "vi": "Chân dung Mai"
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/characters.json",
+    "roleId": "mai",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/characters/mai-portrait-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "hasAlpha": true
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 193,
+      "top": 132,
+      "width": 907,
+      "height": 1076
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.387,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 37408,
+    "sha256": "bef7f335263201c1d159a937e5c4f6372a538c2c72111df94f99437bf555a9b2",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 161989,
+      "partial": 99188,
+      "opaque": 967
+    }
+  }
+}
