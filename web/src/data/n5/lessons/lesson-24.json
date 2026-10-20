@@ -127,6 +127,140 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l24-pasokon",
+      "title": {
+        "vi": "Chiếc máy tính đã sửa xong"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "パソコンは もう 大丈夫[だいじょうぶ]？",
+          "kana": "パソコンは もう だいじょうぶ？",
+          "translation": {
+            "vi": "Máy tính ổn rồi chứ em?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "うん。 友達[ともだち]に 直[なお]して もらったよ。",
+          "kana": "うん。 ともだちに なおして もらったよ。",
+          "translation": {
+            "vi": "Vâng. Em đã nhờ bạn sửa giúp rồi."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "よかったね。",
+          "kana": "よかったね。",
+          "translation": {
+            "vi": "May quá nhỉ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "うん。 パソコンについて 説明[せつめい]して くれた。",
+          "kana": "うん。 パソコンについて せつめいして くれた。",
+          "translation": {
+            "vi": "Vâng. Bạn ấy còn giải thích cho em về máy tính nữa."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "親切[しんせつ]な 友達[ともだち]だね。",
+          "kana": "しんせつな ともだちだね。",
+          "translation": {
+            "vi": "Bạn em tốt bụng thật đấy."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "パソコンの 本[ほん]も くれたよ。",
+          "kana": "パソコンの ほんも くれたよ。",
+          "translation": {
+            "vi": "Bạn ấy còn cho em cuốn sách về máy tính nữa."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l24-junbi",
+      "title": {
+        "vi": "Chuẩn bị bữa tiệc"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "パーティーの 準備[じゅんび]は 全部[ぜんぶ] 自分[じぶん]で したの？",
+          "kana": "パーティーの じゅんびは ぜんぶ じぶんで したの？",
+          "translation": {
+            "vi": "Em tự chuẩn bị hết bữa tiệc à?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ううん。 料理[りょうり]は 大川[おおかわ]さんが 作[つく]って くれたよ。",
+          "kana": "ううん。 りょうりは おおかわさんが つくって くれたよ。",
+          "translation": {
+            "vi": "Không. Đồ ăn là chị Ookawa làm giúp em đấy."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "飲[の]み 物[もの]は？",
+          "kana": "のみ ものは？",
+          "translation": {
+            "vi": "Còn đồ uống thì sao?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "友達[ともだち]に 買[か]って もらった。 私[わたし]は 部屋[へや]を 掃除[そうじ]したよ。",
+          "kana": "ともだちに かって もらった。 わたしは へやを そうじしたよ。",
+          "translation": {
+            "vi": "Em nhờ bạn mua giúp. Còn em thì dọn phòng."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "そう。 大川[おおかわ]さんは もう 帰[かえ]った？",
+          "kana": "そう。 おおかわさんは もう かえった？",
+          "translation": {
+            "vi": "Vậy à. Chị Ookawa về rồi à?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "大川[おおかわ]さんは 荷物[にもつ]が 多[おお]かったから、 部屋[へや]まで 持[も]って いって あげた。",
+          "kana": "おおかわさんは にもつが おおかったから、 へやまで もって いって あげた。",
+          "translation": {
+            "vi": "Chị Ookawa có nhiều đồ nên em đã mang giúp về tận phòng chị ấy."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "family"
   ],

@@ -144,6 +144,148 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l23-kikai",
+      "title": {
+        "vi": "Dùng máy ở thư viện"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "toshokan",
+          "name": "図書館[としょかん]の 人[ひと]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "すみません。 コピーするとき、 この ボタンを 押[お]しますか。",
+          "kana": "すみません。 コピーするとき、 この ボタンを おしますか。",
+          "translation": {
+            "vi": "Xin lỗi, khi sao chụp thì bấm nút này phải không ạ?"
+          }
+        },
+        {
+          "speaker": "toshokan",
+          "jp": "はい。 押[お]すと、 コピーが できます。",
+          "kana": "はい。 おすと、 コピーが できます。",
+          "translation": {
+            "vi": "Vâng. Bấm vào là máy sẽ sao chụp ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "サイズを 変[か]えたいときは、 どうしますか。",
+          "kana": "サイズを かえたいときは、 どうしますか。",
+          "translation": {
+            "vi": "Khi muốn đổi kích thước thì làm thế nào ạ?"
+          }
+        },
+        {
+          "speaker": "toshokan",
+          "jp": "この 赤[あか]い ボタンを 押[お]してください。",
+          "kana": "この あかい ボタンを おしてください。",
+          "translation": {
+            "vi": "Chị bấm nút đỏ này nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "わからないときは、 聞[き]いても いいですか。",
+          "kana": "わからないときは、 きいても いいですか。",
+          "translation": {
+            "vi": "Khi không hiểu, tôi hỏi thêm có được không ạ?"
+          }
+        },
+        {
+          "speaker": "toshokan",
+          "jp": "ええ、 いつでも どうぞ。",
+          "kana": "ええ、 いつでも どうぞ。",
+          "translation": {
+            "vi": "Vâng, chị cứ hỏi bất cứ lúc nào ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l23-michi",
+      "title": {
+        "vi": "Đến bảo tàng mỹ thuật"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "ekiin",
+          "name": "駅[えき]の 人[ひと]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "すみません。 美術館[びじゅつかん]へ 行[い]くとき、 どこで 電車[でんしゃ]を 降[お]りますか。",
+          "kana": "すみません。 びじゅつかんへ いくとき、 どこで でんしゃを おりますか。",
+          "translation": {
+            "vi": "Xin lỗi, khi đến bảo tàng mỹ thuật thì tôi xuống tàu ở ga nào ạ?"
+          }
+        },
+        {
+          "speaker": "ekiin",
+          "jp": "次[つぎ]の 駅[えき]で 降[お]りてください。",
+          "kana": "つぎの えきで おりてください。",
+          "translation": {
+            "vi": "Chị xuống ở ga tiếp theo nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "電車[でんしゃ]を 降[お]りたとき、 どちらへ 行[い]きますか。",
+          "kana": "でんしゃを おりたとき、 どちらへ いきますか。",
+          "translation": {
+            "vi": "Sau khi xuống tàu thì tôi đi về phía nào ạ?"
+          }
+        },
+        {
+          "speaker": "ekiin",
+          "jp": "駅[えき]の 前[まえ]の 橋[はし]を 渡[わた]って、 右[みぎ]へ 曲[ま]がってください。",
+          "kana": "えきの まえの はしを わたって、 みぎへ まがってください。",
+          "translation": {
+            "vi": "Chị qua cầu trước ga rồi rẽ phải nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "右[みぎ]ですね。",
+          "kana": "みぎですね。",
+          "translation": {
+            "vi": "Rẽ phải, đúng không ạ?"
+          }
+        },
+        {
+          "speaker": "ekiin",
+          "jp": "ええ。 少[すこ]し 歩[ある]くと、 左[ひだり]に 大[おお]きい 建物[たてもの]が あります。 それが 美術館[びじゅつかん]です。",
+          "kana": "ええ。 すこし あるくと、 ひだりに おおきい たてものが あります。 それが びじゅつかんです。",
+          "translation": {
+            "vi": "Vâng. Đi bộ một chút sẽ có tòa nhà lớn bên trái. Đó là bảo tàng mỹ thuật ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "わかりました。 どうも ありがとう ございます。",
+          "kana": "わかりました。 どうも ありがとう ございます。",
+          "translation": {
+            "vi": "Tôi hiểu rồi. Cảm ơn anh nhiều ạ."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "question-words",
     "verbs"

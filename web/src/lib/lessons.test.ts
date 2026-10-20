@@ -153,7 +153,7 @@ test('loadLessonSummary và loadLessonSummaries trả về đúng thông tin tó
   assert.equal(summary1.dialogueCount, 3);
 
   const summary25 = await loadLessonSummary(25);
-  assert.equal(summary25.dialogueCount, 0);
+  assert.equal(summary25.dialogueCount, 3);
 
   const allSummaries = await loadLessonSummaries();
   assert.equal(allSummaries.length, 25);
