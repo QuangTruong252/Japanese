@@ -91,6 +91,270 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l20-tomodachi",
+      "title": {
+        "vi": "Rủ bạn đi ăn"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tomodachi",
+          "name": "友達[ともだち]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tomodachi",
+          "jp": "マイ、 今晩[こんばん]、 暇[ひま]？",
+          "kana": "マイ、 こんばん、 ひま？",
+          "translation": {
+            "vi": "Mai, tối nay cậu rảnh không?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "うん、 暇[ひま]。 どうして？",
+          "kana": "うん、 ひま。 どうして？",
+          "translation": {
+            "vi": "Ừ, rảnh. Sao thế?"
+          },
+          "vocabIds": [
+            "un"
+          ]
+        },
+        {
+          "speaker": "tomodachi",
+          "jp": "いっしょに ごはんを 食[た]べない？ すしと カレー、 どっちが いい？",
+          "kana": "いっしょに ごはんを たべない？ すしと カレー、 どっちが いい？",
+          "translation": {
+            "vi": "Mình đi ăn cơm cùng nhau không? Sushi với cà ri, cậu thích món nào hơn?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "すしが いい。 カレーは きのう 食[た]べた。",
+          "kana": "すしが いい。 カレーは きのう たべた。",
+          "translation": {
+            "vi": "Sushi đi. Cà ri hôm qua mình ăn rồi."
+          }
+        },
+        {
+          "speaker": "tomodachi",
+          "jp": "じゃ、 すしを 食[た]べに 行[い]く？",
+          "kana": "じゃ、 すしを たべに いく？",
+          "translation": {
+            "vi": "Vậy mình đi ăn sushi nhé?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "うん。 あっちの 店[みせ]が おいしいよ。",
+          "kana": "うん。 あっちの みせが おいしいよ。",
+          "translation": {
+            "vi": "Ừ. Quán đằng kia ngon đấy."
+          }
+        },
+        {
+          "speaker": "tomodachi",
+          "jp": "どれ？ あの 赤[あか]い 店[みせ]？",
+          "kana": "どれ？ あの あかい みせ？",
+          "translation": {
+            "vi": "Quán nào? Quán màu đỏ kia à?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ううん、 あの 白[しろ]い 店[みせ]。 あそこの すしは 安[やす]いよ。",
+          "kana": "ううん、 あの しろい みせ。 あそこの すしは やすいよ。",
+          "translation": {
+            "vi": "Không, quán màu trắng kia cơ. Sushi ở đó rẻ lắm."
+          },
+          "vocabIds": [
+            "uun"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l20-matsuri",
+      "title": {
+        "vi": "Dạo lễ hội"
+      },
+      "roles": [
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "人[ひと]が 多[おお]いね。 マイさん、 疲[つか]れなかった？",
+          "kana": "ひとが おおいね。 マイさん、 つかれなかった？",
+          "translation": {
+            "vi": "Đông người quá nhỉ. Đi vừa rồi em có mệt không?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ううん、 大丈夫[だいじょうぶ]。 とても 楽[たの]しいよ。",
+          "kana": "ううん、 だいじょうぶ。 とても たのしいよ。",
+          "translation": {
+            "vi": "Không, em ổn. Vui lắm anh."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "これ、 アイスクリーム。 よかったら、 食[た]べて。 僕[ぼく]も 食[た]べたけど、 おいしいよ。",
+          "kana": "これ、 アイスクリーム。 よかったら、 たべて。 ぼくも たべたけど、 おいしいよ。",
+          "translation": {
+            "vi": "Kem này. Em ăn nhé? Anh cũng ăn rồi, ngon lắm."
+          },
+          "vocabIds": [
+            "yokattara"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "ありがとう。 でも もう たくさん 食[た]べたよ。",
+          "kana": "ありがとう。 でも もう たくさん たべたよ。",
+          "translation": {
+            "vi": "Cảm ơn anh. Nhưng em ăn nhiều rồi."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "そう。 じゃ、 あっちの 店[みせ]を 見[み]に 行[い]かない？",
+          "kana": "そう。 じゃ、 あっちの みせを みに いかない？",
+          "translation": {
+            "vi": "Thế à. Vậy mình sang xem quán bên kia nhé?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "うん。 着物[きもの]が たくさん あるね。",
+          "kana": "うん。 きものが たくさん あるね。",
+          "translation": {
+            "vi": "Ừ. Nhiều kimono quá anh nhỉ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "うん。 いろいろ あるけど、 ちょっと 高[たか]いよ。",
+          "kana": "うん。 いろいろ あるけど、 ちょっと たかいよ。",
+          "translation": {
+            "vi": "Ừ. Nhiều loại lắm, nhưng hơi đắt đấy."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "うん。 見[み]るだけでも 楽[たの]しいよ。",
+          "kana": "うん。 みるだけでも たのしいよ。",
+          "translation": {
+            "vi": "Ừ. Chỉ xem thôi cũng vui anh nhỉ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l20-kengaku",
+      "title": {
+        "vi": "Tham quan công ty anh Tanaka"
+      },
+      "roles": [
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "kachou",
+          "name": "課長[かちょう]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "課長[かちょう]、 こちらは 友達[ともだち]の マイさんです。",
+          "kana": "かちょう、 こちらは ともだちの マイさんです。",
+          "translation": {
+            "vi": "Thưa trưởng phòng, đây là Mai, bạn của em ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はじめまして。 マイです。 会社[かいしゃ]を 見学[けんがく]しても いいですか。",
+          "kana": "はじめまして。 マイです。 かいしゃを けんがくしても いいですか。",
+          "translation": {
+            "vi": "Rất vui được gặp ạ. Em là Mai. Em tham quan công ty có được không ạ?"
+          }
+        },
+        {
+          "speaker": "kachou",
+          "jp": "ああ、 田中君[たなかくん]の 友達[ともだち]ですか。 いいですよ。",
+          "kana": "ああ、 たなかくんの ともだちですか。 いいですよ。",
+          "translation": {
+            "vi": "Ồ, bạn của cậu Tanaka à. Được chứ."
+          },
+          "vocabIds": [
+            "kun-20"
+          ]
+        },
+        {
+          "speaker": "kachou",
+          "jp": "どうぞ、 いろいろ 見[み]てください。 田中君[たなかくん]、 あっちの 部屋[へや]も 見[み]せて。",
+          "kana": "どうぞ、 いろいろ みてください。 たなかくん、 あっちの へやも みせて。",
+          "translation": {
+            "vi": "Mời em cứ tham quan nhé. Cậu Tanaka, cho Mai xem cả phòng bên kia nữa."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "はい。 マイさん、 こっちです。",
+          "kana": "はい。 マイさん、 こっちです。",
+          "translation": {
+            "vi": "Vâng ạ. Mai, lối này."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "すみません、 ここで 写真[しゃしん]を 撮[と]っても いいですか。",
+          "kana": "すみません、 ここで しゃしんを とっても いいですか。",
+          "translation": {
+            "vi": "Xin lỗi, em chụp ảnh ở đây có được không ạ?"
+          }
+        },
+        {
+          "speaker": "kachou",
+          "jp": "いいえ、 ここは 写真[しゃしん]を 撮[と]っては いけません。",
+          "kana": "いいえ、 ここは しゃしんを とっては いけません。",
+          "translation": {
+            "vi": "Không, ở đây không được chụp ảnh."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "わかりました。 すみません。",
+          "kana": "わかりました。 すみません。",
+          "translation": {
+            "vi": "Dạ, em hiểu rồi ạ. Em xin lỗi ạ."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "verbs",
     "demonstratives",

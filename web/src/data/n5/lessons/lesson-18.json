@@ -162,6 +162,245 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l18-shumi",
+      "title": {
+        "vi": "Hỏi về sở thích"
+      },
+      "roles": [
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "マイさんの 趣味[しゅみ]は 何[なん]ですか。",
+          "kana": "マイさんの しゅみは なんですか。",
+          "translation": {
+            "vi": "Sở thích của em là gì vậy, Mai?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "日本[にほん]の 歌[うた]を 聞[き]く ことです。 田中[たなか]さんは？",
+          "kana": "にほんの うたを きく ことです。 たなかさんは？",
+          "translation": {
+            "vi": "Là nghe các bài hát Nhật ạ. Còn anh Tanaka thì sao ạ?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "私[わたし]の 趣味[しゅみ]は 馬[うま]に 乗[の]る ことです。",
+          "kana": "わたしの しゅみは うまに のる ことです。",
+          "translation": {
+            "vi": "Sở thích của anh là cưỡi ngựa."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "へえ、 それは おもしろいですね。",
+          "kana": "へえ、 それは おもしろいですね。",
+          "translation": {
+            "vi": "Ồ, hay quá anh nhỉ!"
+          },
+          "vocabIds": [
+            "hee",
+            "sorewa-omoshiroi"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "日曜日[にちようび]に 時々[ときどき] 乗[の]りますよ。 マイさんも ぜひ 乗[の]りませんか。",
+          "kana": "にちようびに ときどき のりますよ。 マイさんも ぜひ のりませんか。",
+          "translation": {
+            "vi": "Thỉnh thoảng vào chủ nhật anh đi cưỡi ngựa. Mai cũng đi cùng anh nhé?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ええ、 ぜひ お 願[ねが]いします。 私[わたし]は 馬[うま]に 乗[の]る ことが できませんが、 大丈夫[だいじょうぶ]ですか。",
+          "kana": "ええ、 ぜひ お ねがいします。 わたしは うまに のる ことが できませんが、 だいじょうぶですか。",
+          "translation": {
+            "vi": "Vâng, nhất định ạ. Em chưa biết cưỡi ngựa, nhưng có sao không ạ?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "大丈夫[だいじょうぶ]ですよ。 すぐ できます。",
+          "kana": "だいじょうぶですよ。 すぐ できます。",
+          "translation": {
+            "vi": "Không sao đâu. Em sẽ làm được ngay thôi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l18-yoyaku",
+      "title": {
+        "vi": "Gọi điện đặt bàn"
+      },
+      "roles": [
+        {
+          "id": "ten-in",
+          "name": "店員[てんいん]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "ten-in",
+          "jp": "はい、 レストランです。",
+          "kana": "はい、 レストランです。",
+          "translation": {
+            "vi": "Vâng, nhà hàng xin nghe ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "あしたの 晩[ばん]、 予約[よやく]する ことが できますか。",
+          "kana": "あしたの ばん、 よやくする ことが できますか。",
+          "translation": {
+            "vi": "Tối mai tôi đặt bàn được không ạ?"
+          }
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "はい、 できます。 何人[なんにん]ですか。",
+          "kana": "はい、 できます。 なんにんですか。",
+          "translation": {
+            "vi": "Vâng, được ạ. Mấy người ạ?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "三人[さんにん]です。 七時[しちじ]ごろ お 願[ねが]いします。",
+          "kana": "さんにんです。 しちじごろ お ねがいします。",
+          "translation": {
+            "vi": "Ba người ạ. Cho tôi khoảng bảy giờ ạ."
+          }
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "わかりました。 インターネットでも 予約[よやく]する ことが できますよ。",
+          "kana": "わかりました。 インターネットでも よやくする ことが できますよ。",
+          "translation": {
+            "vi": "Tôi hiểu rồi ạ. Quý khách cũng có thể đặt qua mạng ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "そうですか。 現金[げんきん]で 払[はら]う ことが できますか。",
+          "kana": "そうですか。 げんきんで はらう ことが できますか。",
+          "translation": {
+            "vi": "Vậy ạ. Tôi trả bằng tiền mặt được không ạ?"
+          }
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "はい、 できます。 カードも 使[つか]う ことが できますよ。",
+          "kana": "はい、 できます。 カードも つかう ことが できますよ。",
+          "translation": {
+            "vi": "Vâng, được ạ. Quý khách cũng dùng thẻ được ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ありがとう ございました。 じゃ、 あした お 願[ねが]いします。",
+          "kana": "ありがとう ございました。 じゃ、 あした お ねがいします。",
+          "translation": {
+            "vi": "Cảm ơn ạ. Vậy mai nhờ nhà hàng nhé."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l18-nikki",
+      "title": {
+        "vi": "Nhật ký trước khi ngủ"
+      },
+      "roles": [
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mori",
+          "jp": "マイさん、 毎晩[まいばん] 寝[ね]る まえに 何[なに]を しますか。",
+          "kana": "マイさん、 まいばん ねる まえに なにを しますか。",
+          "translation": {
+            "vi": "Mai này, mỗi tối trước khi đi ngủ em làm gì?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "日本語[にほんご]で 日記[にっき]を 書[か]きます。",
+          "kana": "にほんごで にっきを かきます。",
+          "translation": {
+            "vi": "Em viết nhật ký bằng tiếng Nhật ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "ほんとうですか。 いいですね。",
+          "kana": "ほんとうですか。 いいですね。",
+          "translation": {
+            "vi": "Thật không? Hay quá nhỉ."
+          },
+          "vocabIds": [
+            "hontou-desu-ka"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "ええ。 家族[かぞく]に なかなか 会[あ]う ことが できません。 毎晩[まいばん]、 日記[にっき]を 書[か]いて、 故郷[ふるさと]を 思[おも]い 出[だ]します。",
+          "kana": "ええ。 かぞくに なかなか あう ことが できません。 まいばん、 にっきを かいて、 ふるさとを おもい だします。",
+          "translation": {
+            "vi": "Vâng ạ. Em khó có dịp gặp gia đình. Mỗi tối em viết nhật ký rồi nhớ về quê hương ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "そうですか。 大変[たいへん]ですね。",
+          "kana": "そうですか。 たいへんですね。",
+          "translation": {
+            "vi": "Thế à. Vất vả cho em nhỉ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい。 朝[あさ]ごはんの まえに、 家族[かぞく]の 写真[しゃしん]も 見[み]ます。",
+          "kana": "はい。 あさごはんの まえに、 かぞくの しゃしんも みます。",
+          "translation": {
+            "vi": "Vâng ạ. Trước bữa sáng em cũng xem ảnh gia đình ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "日本語[にほんご]で 日記[にっき]を 書[か]く ことは いい 勉強[べんきょう]ですね。",
+          "kana": "にほんごで にっきを かく ことは いい べんきょうですね。",
+          "translation": {
+            "vi": "Viết nhật ký bằng tiếng Nhật là cách học tốt đấy."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "verbs"
   ],

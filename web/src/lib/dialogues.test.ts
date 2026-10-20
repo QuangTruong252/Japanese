@@ -32,11 +32,20 @@ const ALLOWED: { token: string; from: number; reason: string }[] = [
   },
   { token: 'ほう', from: 12, reason: 'mẫu ngữ pháp bài 12: Nのほうが; từ vựng không liệt kê thành phần này.' },
   { token: 'いけ', from: 15, reason: 'mẫu ngữ pháp bài 15: 〜てはいけません; từ vựng không liệt kê thành phần này.' },
+  { token: 'なり', from: 17, reason: 'mẫu ngữ pháp bài 17: 〜なければなりません; なる chỉ vào từ vựng ở bài 19 nhưng なりません là thành phần cố định của mẫu.' },
+  { token: 'こと', from: 18, reason: 'mẫu ngữ pháp bài 18: Vる ことが できます, 趣味は Vる ことです; từ vựng không liệt kê thành phần này.' },
 ];
 
 /** Câu giao tiếp của bài không có trong hội thoại nào của bài đó, kèm lý do. */
 const UNUSED_EXPRESSIONS: Record<number, Record<string, string>> = {
   1: { chan: 'Ba tình huống bài 1 đều giữa người lớn; 〜ちゃん dùng cho trẻ em sẽ gượng.' },
+  17: {
+    'ni-san-nichi': 'Từ vựng chỉ ghi bằng chữ số (2、3日) mà hội thoại cấm chữ số; câu thoại dùng 二三日 nhưng test không khớp được chữ Hán với bản chữ số.',
+    'ni-san': 'Cùng lý do ni-san-nichi: 2、3〜 chỉ có chữ số; câu thoại bài 17 không cần thêm một cụm 二三〜 nào khác.',
+  },
+  20: {
+    'onaka-ippai': 'Cụm chỉ có dạng lịch sự (おなかがいっぱいです); Mai nói thể thường với Tanaka nên không có chỗ tự nhiên cho nó.',
+  },
 };
 
 const KANJI = /[一-鿿㐀-䶿々〆〇ヶ]/u;
