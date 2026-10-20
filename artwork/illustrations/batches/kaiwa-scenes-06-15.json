@@ -1,0 +1,468 @@
+{
+  "name": "kaiwa-scenes-06-15",
+  "description": "27 cảnh minh họa cho các tình huống hội thoại Bài 6 đến Bài 15.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "group": "scenes",
+      "stem": "lunch-invitation-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the knees up in a spacious university campus corridor: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, and a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, stand large in the foreground facing each other as he warmly invites her to have lunch together; softly blurred campus hallway with wide windows and wooden benches behind them, no street, no bicycle, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-06.json",
+        "id": "l06-hirugohan"
+      },
+      "alt": {
+        "vi": "Tanaka tươi cười rủ Mai cùng đi ăn trưa ở quán gần ga."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "cherry-blossom-invitation-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the knees up in a quiet university campus garden: a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, stands bowing slightly as she invites a Japanese university teacher, man about 55, short gray hair, thin round glasses, navy cardigan over light-blue collared shirt, calm kind smile, who listens with a pleased, nodding smile; lush green lawn and blooming cherry blossom branches overhead, no street with bicycle, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-06.json",
+        "id": "l06-ohanami"
+      },
+      "alt": {
+        "vi": "Mai tươi cười mời thầy Mori cùng tham gia buổi ngắm hoa anh đào."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "tennis-invitation-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the knees up beside an outdoor campus sports court fence: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, holds a tennis racket lightly over his shoulder while inviting a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, who responds cheerfully holding her canvas tote bag; green wire tennis fence and lawn behind them, no street with bicycle, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-06.json",
+        "id": "l06-tenisu"
+      },
+      "alt": {
+        "vi": "Tanaka cầm vợt tennis hẹn Mai cùng chơi thể thao vào sáng mai."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "visiting-tanaka-home-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up inside the tidy modern entryway of an apartment: a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, presents a small wrapped gift box of Vietnamese tea with both hands to a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, who welcomes her warmly at the doorway; wooden entryway threshold and a small vase of colorful flowers on a shelf, no street with bicycle, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-07.json",
+        "id": "l07-otaku"
+      },
+      "alt": {
+        "vi": "Mai đến thăm nhà Tanaka và trân trọng tặng anh hộp trà Việt Nam."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "dinner-at-tanaka-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up across a warm wooden dining table: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, and a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, sit opposite each other enjoying a home-cooked dinner; Mai holds wooden chopsticks with a grateful smile after finishing her meal, simple ceramic bowls and dishes on the table, cozy room lighting, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-07.json",
+        "id": "l07-bangohan"
+      },
+      "alt": {
+        "vi": "Tanaka và Mai cùng thưởng thức bữa tối gia đình ấm áp bên bàn ăn."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "report-submission-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up inside a university faculty office: a Japanese university teacher, man about 55, short gray hair, thin round glasses, navy cardigan over light-blue collared shirt, calm kind smile, stands beside his tidy wooden desk listening attentively as a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, holds a slim closed laptop and explains she is sending her report by email; bookshelves with blank book spines in background, warm interior lighting, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-07.json",
+        "id": "l07-repooto"
+      },
+      "alt": {
+        "vi": "Mai báo cáo tình hình làm bài và chuẩn bị gửi email cho thầy Mori."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "chatting-about-life-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the knees up in a sunlit university hallway beside a tall window: a Japanese university teacher, man about 55, short gray hair, thin round glasses, navy cardigan over light-blue collared shirt, calm kind smile, and a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, stand chatting warmly about her daily life and studies in Japan; bright hallway with a potted green plant, soft natural window light, no street with bicycle, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-08.json",
+        "id": "l08-ogenki"
+      },
+      "alt": {
+        "vi": "Thầy Mori hỏi thăm cuộc sống và việc học tập tại Nhật Bản của Mai."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "dormitory-chat-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up at a low wooden table in a campus lounge: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, and a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, sit in comfortable armchairs talking cheerfully as she describes her quiet and convenient dormitory; tea mugs on the table, softly blurred lounge interior, no street with bicycle, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-08.json",
+        "id": "l08-ryou"
+      },
+      "alt": {
+        "vi": "Tanaka và Mai ngồi trò chuyện về khu ký túc xá mới và tiện lợi của Mai."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "tea-at-teacher-home-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up in a serene Japanese tatami living room: a Japanese university teacher, man about 55, short gray hair, thin round glasses, navy cardigan over light-blue collared shirt, calm kind smile, sits behind a low wooden tea table with a ceramic teapot, while a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, sits politely thanking him after enjoying tea together; sliding shoji paper screen in background, warm ambient light, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-08.json",
+        "id": "l08-sorosoro"
+      },
+      "alt": {
+        "vi": "Mai lễ phép cảm ơn thầy Mori sau buổi thưởng trà tại nhà thầy."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "concert-tickets-invitation-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the knees up in a quiet university courtyard: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, holds up two blank concert tickets invitingly, while a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, raises a gentle hand in polite apology as she explains her prior plans; simple courtyard garden shrubs, calm daylight, no street with bicycle, no letters or numbers on the tickets, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-09.json",
+        "id": "l09-konsaato"
+      },
+      "alt": {
+        "vi": "Tanaka mời Mai đi nghe hòa nhạc bằng hai chiếc vé nhưng Mai đã có hẹn trước."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "borrowing-dictionary-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up across a study desk in a faculty office: a Japanese university teacher, man about 55, short gray hair, thin round glasses, navy cardigan over light-blue collared shirt, calm kind smile, hands a thick, large hardcover dictionary with a blank cover across the desk to a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, who receives it with both hands and a look of deep gratitude; bookshelf with plain books behind them, warm study lamp, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-09.json",
+        "id": "l09-kanji"
+      },
+      "alt": {
+        "vi": "Thầy Mori ân cần cho Mai mượn cuốn từ điển chữ Hán lớn trong phòng làm việc."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "discussing-japanese-study-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the knees up outdoors on a wooden park bench under green shade trees: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, gestures playfully with his hands about playing baseball, while a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, listens happily as they discuss why she learns Japanese and plan their weekend outing; open park greenery in background, pleasant sunny day, no street with bicycle, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-09.json",
+        "id": "l09-doushite"
+      },
+      "alt": {
+        "vi": "Tanaka và Mai trò chuyện trên ghế công viên về âm nhạc và lý do học tiếng Nhật."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "finding-phone-in-bag-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up inside a tidy study room: a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, happily reaches into her brown shoulder bag and pulls out her blank smartphone, while a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, stands beside the wooden desk pointing with an amused, relieved grin; simple bookshelves and table lamp in background, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-10.json",
+        "id": "l10-heya"
+      },
+      "alt": {
+        "vi": "Mai vui mừng tìm thấy chiếc điện thoại trong túi xách cùng anh Tanaka."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "asking-for-postbox-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the knees up on an open pedestrian plaza: a Japanese man about 35, short neat black hair, casual grey jacket over white t-shirt, friendly helpful smile, points with an outstretched arm toward a plain red pillar post box in the distance, while a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, turns to look in the direction with a thankful smile; clean modern storefront in the background without any signs or logos, open paved ground, no street with bicycle, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-10.json",
+        "id": "l10-michi"
+      },
+      "alt": {
+        "vi": "Người đàn ông qua đường nhiệt tình chỉ cho Mai vị trí hòm thư màu đỏ."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "checking-refrigerator-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up in a bright, clean kitchen: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, holds open the door of a white refrigerator and points to shelves with eggs, a plain glass milk bottle and fresh vegetables, while a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, looks inside curiously with a bright expression; clean kitchen counter and tiled wall in background, no text or labels on cartons.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-10.json",
+        "id": "l10-reizouko"
+      },
+      "alt": {
+        "vi": "Tanaka mở tủ lạnh cùng Mai kiểm tra thực phẩm trước khi đi mua bánh mì."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "buying-sandwiches-and-postcards-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up at a wooden checkout counter in a cozy neighborhood shop: a Japanese department-store clerk, man about 30, neat dark hair, dark vest, white shirt, plain tie, neatly packages three wrapped sandwiches and three juice bottles on the counter, while a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, holds two blank scenic postcards ready to buy; tidy wooden display shelves behind the counter, no price tags, no signs, no numbers or text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-11.json",
+        "id": "l11-kaimono"
+      },
+      "alt": {
+        "vi": "Mai thanh toán bánh mì kẹp, nước ép và bưu thiếp tại quầy bán hàng."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "greeting-neighbor-leaving-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the knees up in a quiet residential apartment hallway: a Japanese woman about 45, shoulder-length brown hair tied low, beige sweater, warm smile (neighbor), stands waving a friendly goodbye from near her open doorway to a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, who carries her student tote bag and bows politely as she heads out; clean residential corridor with a small potted plant, no street with bicycle, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-11.json",
+        "id": "l11-odekake"
+      },
+      "alt": {
+        "vi": "Chị Ookawa hàng xóm tươi cười vẫy chào Mai trước khi Mai ra ngoài."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "discussing-study-hours-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up at a round wooden seminar table in a bright university classroom: a Japanese university teacher, man about 55, short gray hair, thin round glasses, navy cardigan over light-blue collared shirt, calm kind smile, listens attentively with hands resting on a notepad, while a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, counts fingers lightly explaining her study routine and library hours; sunny classroom windows and a blank whiteboard behind them, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-11.json",
+        "id": "l11-kurasu"
+      },
+      "alt": {
+        "vi": "Thầy Mori và Mai thảo luận về số lượng sinh viên và giờ tự học ở thư viện."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "returning-home-to-mother-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the knees up in the warm wooden entryway (genkan) of a family home: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, unties his shoes with a pleasantly tired grin having returned from a mountain trip, while Tanaka's mother, Japanese woman about 55, short permed dark hair with some grey, beige cardigan over a soft blue blouse, warm smile, stands at the step greeting him warmly with a small clean towel; wooden shoe cabinet, warm entryway lighting, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-12.json",
+        "id": "l12-tadaima"
+      },
+      "alt": {
+        "vi": "Tanaka trở về nhà sau chuyến đi leo núi và được mẹ tươi cười chào đón."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "summer-festival-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the knees up at a vibrant outdoor summer festival plaza: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, gestures toward a festival food stall in the background, while a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, looks around in wonder and delight at the lively atmosphere; festive paper lanterns strung overhead, cheerful distant festival crowd, no street with bicycle, no signs with writing, no characters or text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-12.json",
+        "id": "l12-matsuri"
+      },
+      "alt": {
+        "vi": "Tanaka và Mai hòa mình vào không khí nhộn nhịp của lễ hội mùa hè."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "favorite-seasons-chat-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the knees up on a wide stone terrace of the university overlooking a garden: a Japanese university teacher, man about 55, short gray hair, thin round glasses, navy cardigan over light-blue collared shirt, calm kind smile, and a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, stand beside the stone railing chatting pleasantly about autumn and winter seasons; beautiful golden and russet autumn foliage on trees in background, clear sky, no street with bicycle, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-12.json",
+        "id": "l12-kisetsu"
+      },
+      "alt": {
+        "vi": "Thầy Mori và Mai ngắm cảnh sắc mùa thu và cùng chia sẻ về mùa yêu thích."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "planning-swimming-trip-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up at a small wooden cafe booth: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, and a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, sit opposite each other with iced drinks, talking animatedly and planning their Saturday swimming outing; cozy cafe partition and a green potted fern behind them, no street with bicycle, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-13.json",
+        "id": "l13-puuru"
+      },
+      "alt": {
+        "vi": "Tanaka và Mai ngồi trong quán cà phê lên kế hoạch đi bơi vào cuối tuần."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "ordering-tempura-set-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up at a dining booth inside a cozy casual restaurant: a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, sits holding an open blank menu and points politely to order her meal, while a Japanese department-store clerk, man about 30, neat dark hair, dark vest, white shirt, plain tie, stands attentively beside the table with a blank order notepad and pen; warm wooden restaurant partitions, glasses of water on table, no numbers, no price tags, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-13.json",
+        "id": "l13-chuumon"
+      },
+      "alt": {
+        "vi": "Mai gọi món cơm tempura và đồ uống với nhân viên phục vụ tại quán ăn."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "taxi-ride-directions-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up inside the interior of a tidy passenger taxi: a Japanese taxi driver man about 50, short grey hair, navy uniform jacket and cap without any logo or text, white gloves not visible, turns slightly with a courteous nod from the driver seat, while a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, sits in the rear seat gesturing toward the road ahead to indicate her destination; view through car windows of open road, blank dashboard and blank fare meter, no numbers, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-14.json",
+        "id": "l14-takushii"
+      },
+      "alt": {
+        "vi": "Mai ngồi trên xe taxi và lịch sự chỉ đường cho bác tài xế tới trường đại học."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "kanji-study-with-teacher-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up at an oak study table in a quiet classroom: a Japanese university teacher, man about 55, short gray hair, thin round glasses, navy cardigan over light-blue collared shirt, calm kind smile, writes carefully with a pencil into an open notebook, while a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, leans forward watching attentively to learn the kanji; window in the background with gentle rain trickling down the glass, cozy warm study lamp, no legible letters or characters on the page, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-14.json",
+        "id": "l14-benkyou"
+      },
+      "alt": {
+        "vi": "Thầy Mori ân cần viết mẫu và hướng dẫn Mai học chữ Hán trong buổi chiều mưa."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "library-regulations-inquiry-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the waist up at the curved wooden circulation desk in a quiet university library: a Japanese librarian woman about 30, dark ponytail, sage-green cardigan, plain lanyard without text, gestures politely with an open hand explaining library rules, while a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, stands holding a thick book and listens respectfully; neat library bookshelves with blank book spines in the background, soft reading hall light, no signs, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-15.json",
+        "id": "l15-toshokan"
+      },
+      "alt": {
+        "vi": "Mai đứng trước quầy hỏi nhân viên thư viện về quy định mượn sách và sao chụp."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "discussing-software-job-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "medium shot from the knees up in a brightly lit modern community lounge: a young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile, and a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile, sit on comfortable chairs conversing warmly about his computer software company and neighbourhood; a blank slim tablet rests on the side table, large clean architectural windows behind them, no street with bicycle, no text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-15.json",
+        "id": "l15-shigoto"
+      },
+      "alt": {
+        "vi": "Tanaka và Mai trò chuyện về công việc phần mềm máy tính và cuộc sống gần ga."
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "kaiwa-characters-2",
+  "description": "Đợt avatar nhân vật hội thoại N5 bổ sung (bài 06-15): người đàn ông đi đường, mẹ Tanaka, tài xế taxi.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "group": "characters",
+      "stem": "otoko-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Japanese man about 35, short neat black hair, casual grey jacket over white t-shirt, friendly helpful smile",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "otoko"
+      },
+      "alt": {
+        "vi": "Chân dung người đàn ông"
+      }
+    },
+    {
+      "group": "characters",
+      "stem": "haha-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Tanaka's mother, Japanese woman about 55, short permed dark hair with some grey, beige cardigan over a soft blue blouse, warm smile",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "haha"
+      },
+      "alt": {
+        "vi": "Chân dung mẹ anh Tanaka"
+      }
+    },
+    {
+      "group": "characters",
+      "stem": "takushii-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Japanese taxi driver man about 50, short grey hair, navy uniform jacket and cap without any logo or text, white gloves not visible",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "takushii"
+      },
+      "alt": {
+        "vi": "Chân dung tài xế taxi"
+      }
+    }
+  ]
+}
