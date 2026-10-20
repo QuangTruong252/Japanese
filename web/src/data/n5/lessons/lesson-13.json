@@ -144,6 +144,183 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l13-puuru",
+      "title": {
+        "vi": "Hẹn đi bơi cuối tuần"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "週末[しゅうまつ]は どこかへ 行[い]きたいですね。",
+          "kana": "しゅうまつは どこかへ いきたいですね。",
+          "translation": {
+            "vi": "Cuối tuần anh muốn đi đâu đó."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "私[わたし]は プールへ 行[い]きたいです。たくさん 泳[およ]ぎたいです。",
+          "kana": "わたしは プールへ いきたいです。たくさん およぎたいです。",
+          "translation": {
+            "vi": "Em muốn đến bể bơi ạ. Em muốn bơi thật nhiều."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "じゃ、土曜日[どようび]に いっしょに 行[い]きませんか。",
+          "kana": "じゃ、どようびに いっしょに いきませんか。",
+          "translation": {
+            "vi": "Thế thứ bảy mình đi cùng nhau nhé?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ええ、そうしましょう。",
+          "kana": "ええ、そうしましょう。",
+          "translation": {
+            "vi": "Vâng, vậy nhé."
+          },
+          "vocabIds": [
+            "sou-shimashou"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "プールの 近[ちか]くに レストランが ありますよ。",
+          "kana": "プールの ちかくに レストランが ありますよ。",
+          "translation": {
+            "vi": "Gần bể bơi có nhà hàng đấy."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいですね。泳[およ]ぎますから、おなかが すきますね。",
+          "kana": "いいですね。およぎますから、おなかが すきますね。",
+          "translation": {
+            "vi": "Hay quá. Đi bơi thì sẽ đói bụng anh nhỉ."
+          },
+          "vocabIds": [
+            "onaka-ga-sukimasu"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "じゃ、十二時[じゅうにじ]ごろ そこへ 食事[しょくじ]に 行[い]きましょう。",
+          "kana": "じゃ、じゅうにじごろ そこへ しょくじに いきましょう。",
+          "translation": {
+            "vi": "Vậy khoảng mười hai giờ mình đến đó ăn nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい。私[わたし]は カレーを 食[た]べたいです。",
+          "kana": "はい。わたしは カレーを たべたいです。",
+          "translation": {
+            "vi": "Vâng. Em muốn ăn cà ri ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l13-chuumon",
+      "title": {
+        "vi": "Gọi món ở quán ăn"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "ten-in",
+          "name": "店員[てんいん]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "ten-in",
+          "jp": "いらっしゃいませ。ご 注文[ちゅうもん]は？",
+          "kana": "いらっしゃいませ。ご ちゅうもんは？",
+          "translation": {
+            "vi": "Xin chào quý khách. Chị dùng gì ạ?"
+          },
+          "vocabIds": [
+            "gochuumon"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "暑[あつ]いですね。のどが 渇[かわ]きます。冷[つめ]たい 水[みず]が 欲[ほ]しいです。",
+          "kana": "あついですね。のどが かわきます。つめたい みずが ほしいです。",
+          "translation": {
+            "vi": "Trời nóng quá nhỉ, khát nước thật. Tôi muốn uống nước lạnh ạ."
+          },
+          "vocabIds": [
+            "nodo-ga-kawakimasu"
+          ]
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "はい。お 食事[しょくじ]は？",
+          "kana": "はい。お しょくじは？",
+          "translation": {
+            "vi": "Vâng. Còn đồ ăn ạ?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "あのう、てんぷら 定食[ていしょく]は いくらですか。",
+          "kana": "あのう、てんぷら ていしょくは いくらですか。",
+          "translation": {
+            "vi": "À, suất cơm tempura giá bao nhiêu ạ?"
+          }
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "八百円[はっぴゃくえん]でございます。",
+          "kana": "はっぴゃくえんでございます。",
+          "translation": {
+            "vi": "Tám trăm yên ạ."
+          },
+          "vocabIds": [
+            "de-gozaimasu"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "じゃ、それを お願[ねが]いします。コーヒーも お願[ねが]いします。",
+          "kana": "じゃ、それを おねがいします。コーヒーも おねがいします。",
+          "translation": {
+            "vi": "Vậy cho tôi suất đó. Cho tôi cà phê nữa ạ."
+          }
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "かしこまりました。お 待[ま]ちください。",
+          "kana": "かしこまりました。お まちください。",
+          "translation": {
+            "vi": "Vâng ạ. Chị vui lòng đợi một chút."
+          },
+          "vocabIds": [
+            "kashikomarimashita",
+            "omachi-kudasai"
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     "particles"
   ],

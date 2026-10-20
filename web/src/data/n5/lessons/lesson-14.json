@@ -181,6 +181,187 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l14-takushii",
+      "title": {
+        "vi": "Chỉ đường trên taxi"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "takushii",
+          "name": "タクシーの 人[ひと]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "すみません。図書館[としょかん]まで お願[ねが]いします。",
+          "kana": "すみません。としょかんまで おねがいします。",
+          "translation": {
+            "vi": "Cho tôi đến thư viện ạ."
+          }
+        },
+        {
+          "speaker": "takushii",
+          "jp": "はい。駅[えき]の 前[まえ]の 図書館[としょかん]ですか。",
+          "kana": "はい。えきの まえの としょかんですか。",
+          "translation": {
+            "vi": "Vâng. Thư viện trước ga phải không ạ?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、大学[だいがく]の 図書館[としょかん]です。",
+          "kana": "いいえ、だいがくの としょかんです。",
+          "translation": {
+            "vi": "Không ạ, thư viện của trường đại học ạ."
+          }
+        },
+        {
+          "speaker": "takushii",
+          "jp": "あれ？ この 地図[ちず]に 大学[だいがく]が ありませんね。",
+          "kana": "あれ？ この ちずに だいがくが ありませんね。",
+          "translation": {
+            "vi": "Ơ? Trên bản đồ này không có trường đại học nhỉ."
+          },
+          "vocabIds": [
+            "are-sorpresa"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "あの 信号[しんごう]を 右[みぎ]へ 曲[ま]がってください。",
+          "kana": "あの しんごうを みぎへ まがってください。",
+          "translation": {
+            "vi": "Anh rẽ phải ở chỗ đèn giao thông kia giúp tôi ạ."
+          },
+          "vocabIds": [
+            "shingou-migi"
+          ]
+        },
+        {
+          "speaker": "takushii",
+          "jp": "はい。あそこですね。学生[がくせい]が たくさん 待[ま]っていますね。",
+          "kana": "はい。あそこですね。がくせいが たくさん まっていますね。",
+          "translation": {
+            "vi": "Vâng. Ở đằng kia nhỉ. Có nhiều sinh viên đang đợi quá."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ええ。ここで 止[と]めてください。",
+          "kana": "ええ。ここで とめてください。",
+          "translation": {
+            "vi": "Vâng. Anh dừng ở đây giúp tôi ạ."
+          }
+        },
+        {
+          "speaker": "takushii",
+          "jp": "はい。七百円[ななひゃくえん]です。",
+          "kana": "はい。ななひゃくえんです。",
+          "translation": {
+            "vi": "Vâng. Hết bảy trăm yên ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "これで お願[ねが]いします。",
+          "kana": "これで おねがいします。",
+          "translation": {
+            "vi": "Tôi gửi tiền đây ạ."
+          },
+          "vocabIds": [
+            "korede-onegai"
+          ]
+        },
+        {
+          "speaker": "takushii",
+          "jp": "三百円[さんびゃくえん]の お 釣[つ]りです。",
+          "kana": "さんびゃくえんの お つりです。",
+          "translation": {
+            "vi": "Tiền thừa của chị là ba trăm yên ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l14-benkyou",
+      "title": {
+        "vi": "Cùng học với thầy"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mori",
+          "jp": "さあ、勉強[べんきょう]しましょう。",
+          "kana": "さあ、べんきょうしましょう。",
+          "translation": {
+            "vi": "Nào, mình bắt đầu học nhé."
+          },
+          "vocabIds": [
+            "saa"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "先生[せんせい]、この 漢字[かんじ]の 読[よ]み 方[かた]を 教[おし]えてください。",
+          "kana": "せんせい、この かんじの よみ かたを おしえてください。",
+          "translation": {
+            "vi": "Thầy chỉ cho em cách đọc chữ Hán này với ạ."
+          },
+          "vocabIds": [
+            "kata"
+          ]
+        },
+        {
+          "speaker": "mori",
+          "jp": "「あめ」です。今[いま]、外[そと]は 雨[あめ]が 降[ふ]っていますね。",
+          "kana": "「あめ」です。いま、そとは あめが ふっていますね。",
+          "translation": {
+            "vi": "Đọc là “ame”. Bây giờ ngoài trời đang mưa nhỉ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "「あめ」ですね。あのう、すみませんが、もう 少[すこ]し ゆっくり 話[はな]してください。",
+          "kana": "「あめ」ですね。あのう、すみませんが、もう すこし ゆっくり はなしてください。",
+          "translation": {
+            "vi": "Dạ, “ame” ạ. Thưa thầy, thầy nói chậm hơn một chút giúp em với ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "はい。ノートに 書[か]きましょうか。",
+          "kana": "はい。ノートに かきましょうか。",
+          "translation": {
+            "vi": "Được. Thầy viết vào vở cho em nhé?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、お願[ねが]いします。",
+          "kana": "はい、おねがいします。",
+          "translation": {
+            "vi": "Vâng, nhờ thầy ạ."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "verbs"
   ],
