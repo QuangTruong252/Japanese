@@ -205,7 +205,15 @@
             "vi": "Hay đấy. Trời mưa cũng không sao nhỉ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/station-call-in-rain-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai gọi điện hẹn anh Tanaka ở nhà ga trong lúc ngoài trời bắt đầu mưa."
+        }
+      }
     },
     {
       "id": "l25-benkyou",
@@ -263,7 +271,15 @@
             "vi": "Em cảm ơn thầy. Về nhà rồi em sẽ tra lại những chữ Hán đã học hôm nay ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/kanji-study-guidance-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Thầy Mori ân cần giải thích phương pháp tra cứu và học chữ Hán cho Mai."
+        }
+      }
     },
     {
       "id": "l25-tenkin",
@@ -335,7 +351,15 @@
             "douzo-ogenkide"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/job-relocation-farewell-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka cúi đầu chào tạm biệt và cảm ơn thầy Mori trước chuyến chuyển công tác đến Osaka."
+        }
+      }
     }
   ],
   "references": [

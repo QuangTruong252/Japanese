@@ -239,7 +239,15 @@
             "vi": "Không sao đâu. Em sẽ làm được ngay thôi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/horse-riding-hobby-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka hào hứng rủ Mai đi cưỡi ngựa vào ngày chủ nhật."
+        }
+      }
     },
     {
       "id": "l18-yoyaku",
@@ -321,7 +329,15 @@
             "vi": "Cảm ơn ạ. Vậy mai nhờ nhà hàng nhé."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/restaurant-phone-reservation-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai gọi điện thoại đặt bàn ba người cho bữa tối ngày mai."
+        }
+      }
     },
     {
       "id": "l18-nikki",
@@ -398,7 +414,15 @@
             "vi": "Viết nhật ký bằng tiếng Nhật là cách học tốt đấy."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/bedtime-diary-chat-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai khoe cuốn nhật ký tiếng Nhật mỗi tối với thầy Mori."
+        }
+      }
     }
   ],
   "references": [

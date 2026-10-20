@@ -209,7 +209,15 @@
             "vi": "Vâng, chị cứ hỏi bất cứ lúc nào ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/photocopier-instructions-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Nhân viên thư viện hướng dẫn Mai cách thao tác trên máy photocopy."
+        }
+      }
     },
     {
       "id": "l23-michi",
@@ -283,7 +291,15 @@
             "vi": "Tôi hiểu rồi. Cảm ơn anh nhiều ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/art-museum-directions-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Nhân viên nhà ga tận tình chỉ đường đến bảo tàng mỹ thuật cho Mai."
+        }
+      }
     }
   ],
   "references": [

@@ -242,7 +242,15 @@
             "vi": "Tiền ra rồi ạ. Cảm ơn nhiều ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/atm-withdrawal-guidance-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Nhân viên ngân hàng hướng dẫn Mai thao tác rút tiền tại máy ATM."
+        }
+      }
     },
     {
       "id": "l16-asa",
@@ -330,7 +338,15 @@
             "madamada"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/morning-routine-chat-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai vui vẻ kể cho thầy Mori nghe về thói quen chạy bộ và học bài buổi sáng."
+        }
+      }
     },
     {
       "id": "l16-shashin",
@@ -420,7 +436,15 @@
             "vi": "Ơ, mẹ em ạ? Trẻ quá nhỉ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/family-photo-sharing-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai chia sẻ tấm ảnh gia đình chụp ở Việt Nam với Tanaka."
+        }
+      }
     }
   ],
   "references": [

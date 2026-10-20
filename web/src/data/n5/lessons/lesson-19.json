@@ -192,7 +192,15 @@
             "vi": "Em cảm ơn thầy ạ. Thầy lại cho em xem ảnh núi nhé."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/mountain-climbing-chat-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Thầy Mori chia sẻ trải nghiệm leo núi và động viên Mai thử sức."
+        }
+      }
     },
     {
       "id": "l19-kyuujitsu",
@@ -266,7 +274,15 @@
             "vi": "Hay quá anh. Nhất định nhờ anh nhé."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/golf-practice-chat-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka và Mai trò chuyện về môn golf trên sân cỏ."
+        }
+      }
     },
     {
       "id": "l19-kanpai",
@@ -361,7 +377,15 @@
             "vi": "Đúng rồi thầy nhỉ. Vậy mình lại nâng ly bằng trà nhé."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/tea-toast-celebration-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Thầy Mori, anh Tanaka và Mai vui vẻ nâng ly trà cùng nhau."
+        }
+      }
     }
   ],
   "references": [
