@@ -154,6 +154,271 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l17-byouin",
+      "title": {
+        "vi": "Đi khám bệnh"
+      },
+      "roles": [
+        {
+          "id": "isha",
+          "name": "医者[いしゃ]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "isha",
+          "jp": "どうしましたか。",
+          "kana": "どうしましたか。",
+          "translation": {
+            "vi": "Chị bị làm sao vậy?"
+          },
+          "vocabIds": [
+            "dou-shimashita-ka"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "のどが 痛[いた]いです。 熱[ねつ]も あります。",
+          "kana": "のどが いたいです。 ねつも あります。",
+          "translation": {
+            "vi": "Tôi bị đau họng ạ. Tôi cũng bị sốt ạ."
+          },
+          "vocabIds": [
+            "itai"
+          ]
+        },
+        {
+          "speaker": "isha",
+          "jp": "かぜですね。 保険証[ほけんしょう]を 持[も]って 来[き]ましたか。",
+          "kana": "かぜですね。 ほけんしょうを もって きましたか。",
+          "translation": {
+            "vi": "Chị bị cảm rồi. Chị có mang thẻ bảo hiểm y tế đến không?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、 持[も]って 来[き]ました。",
+          "kana": "はい、 もって きました。",
+          "translation": {
+            "vi": "Vâng, tôi mang theo rồi ạ."
+          }
+        },
+        {
+          "speaker": "isha",
+          "jp": "薬[くすり]を 飲[の]んでください。 二三日[にさんにち]、 おふろに 入[はい]らないでください。",
+          "kana": "くすりを のんでください。 にさんにち、 おふろに はいらないでください。",
+          "translation": {
+            "vi": "Chị uống thuốc nhé. Trong hai, ba ngày, chị đừng tắm bồn nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "シャワーは 浴[あ]びても いいですか。",
+          "kana": "シャワーは あびても いいですか。",
+          "translation": {
+            "vi": "Tôi tắm vòi sen thì có được không ạ?"
+          }
+        },
+        {
+          "speaker": "isha",
+          "jp": "ええ、 いいですよ。 それから、 お 酒[さけ]を 飲[の]まないでください。",
+          "kana": "ええ、 いいですよ。 それから、 お さけを のまないでください。",
+          "translation": {
+            "vi": "Vâng, được ạ. Ngoài ra, chị đừng uống rượu bia nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "わかりました。 ありがとう ございます。",
+          "kana": "わかりました。 ありがとう ございます。",
+          "translation": {
+            "vi": "Tôi hiểu rồi ạ. Cảm ơn bác sĩ ạ."
+          }
+        },
+        {
+          "speaker": "isha",
+          "jp": "お 大事[だいじ]に。",
+          "kana": "お だいじに。",
+          "translation": {
+            "vi": "Chị nhớ giữ gìn sức khỏe nhé."
+          },
+          "vocabIds": [
+            "odaijini"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l17-repooto",
+      "title": {
+        "vi": "Hạn nộp báo cáo"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "先生[せんせい]、 レポートは いつまでに 出[だ]さなければ なりませんか。",
+          "kana": "せんせい、 レポートは いつまでに ださなければ なりませんか。",
+          "translation": {
+            "vi": "Thưa thầy, hạn chót em phải nộp báo cáo là khi nào ạ?"
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "金曜日[きんようび]までに 出[だ]してください。 名前[なまえ]を 忘[わす]れないでください。",
+          "kana": "きんようびまでに だしてください。 なまえを わすれないでください。",
+          "translation": {
+            "vi": "Em nộp chậm nhất vào thứ sáu nhé. Đừng quên ghi tên em nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、 わかりました。 ノートも 出[だ]さなければ なりませんか。",
+          "kana": "はい、 わかりました。 ノートも ださなければ なりませんか。",
+          "translation": {
+            "vi": "Vâng, em hiểu rồi ạ. Em có phải nộp cả vở ghi không ạ?"
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "いいえ、 ノートは 出[だ]さなくても いいです。",
+          "kana": "いいえ、 ノートは ださなくても いいです。",
+          "translation": {
+            "vi": "Không, vở ghi thì em không cần nộp."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "それから、 辞書[じしょ]は 持[も]って 来[こ]なくても いいですか。",
+          "kana": "それから、 じしょは もって こなくても いいですか。",
+          "translation": {
+            "vi": "Còn từ điển thì em không mang đến cũng được ạ?"
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "いいえ、 辞書[じしょ]は 持[も]って 来[こ]なければ なりません。",
+          "kana": "いいえ、 じしょは もって こなければ なりません。",
+          "translation": {
+            "vi": "Không, từ điển thì em phải mang đến."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい。 レポートが 難[むずか]しいですから、 ちょっと 心配[しんぱい]です。",
+          "kana": "はい。 レポートが むずかしいですから、 ちょっと しんぱいです。",
+          "translation": {
+            "vi": "Vâng ạ. Báo cáo khó nên em hơi lo ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "大丈夫[だいじょうぶ]ですよ。 心配[しんぱい]しなくても いいです。",
+          "kana": "だいじょうぶですよ。 しんぱいしなくても いいです。",
+          "translation": {
+            "vi": "Không sao đâu. Em không cần lo lắng đâu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l17-shucchou",
+      "title": {
+        "vi": "Anh Tanaka đi công tác"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "田中[たなか]さん、 今晩[こんばん]、 いっしょに 食事[しょくじ]しませんか。",
+          "kana": "たなかさん、 こんばん、 いっしょに しょくじしませんか。",
+          "translation": {
+            "vi": "Anh Tanaka ơi, tối nay anh đi ăn cùng em không ạ?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "すみません。 今晩[こんばん]は 残業[ざんぎょう]しなければ なりません。",
+          "kana": "すみません。 こんばんは ざんぎょうしなければ なりません。",
+          "translation": {
+            "vi": "Xin lỗi em. Tối nay anh phải tăng ca."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "そうですか。 大変[たいへん]ですね。",
+          "kana": "そうですか。 たいへんですね。",
+          "translation": {
+            "vi": "Vậy ạ. Anh vất vả quá nhỉ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "あしたは 出張[しゅっちょう]です。 ですから、 早[はや]く 寝[ね]なければ なりません。",
+          "kana": "あしたは しゅっちょうです。 ですから、 はやく ねなければ なりません。",
+          "translation": {
+            "vi": "Ngày mai anh đi công tác. Vì vậy anh phải đi ngủ sớm."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "あしたは 雨[あめ]ですよ。 傘[かさ]を 忘[わす]れないでください。",
+          "kana": "あしたは あめですよ。 かさを わすれないでください。",
+          "translation": {
+            "vi": "Ngày mai trời mưa đấy anh. Anh đừng quên mang ô nhé."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "ありがとう。 タクシーで 行[い]きますから、 傘[かさ]は 持[も]って 行[い]かなくても いいですよ。",
+          "kana": "ありがとう。 タクシーで いきますから、 かさは もって いかなくても いいですよ。",
+          "translation": {
+            "vi": "Cảm ơn em. Anh đi bằng taxi nên không cần mang ô đâu."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "そうですか。 じゃ、 来週[らいしゅう]、 いっしょに 食事[しょくじ]しましょう。",
+          "kana": "そうですか。 じゃ、 らいしゅう、 いっしょに しょくじしましょう。",
+          "translation": {
+            "vi": "Vậy ạ. Thế tuần sau mình cùng đi ăn nhé anh."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "ええ、 そうしましょう。",
+          "kana": "ええ、 そうしましょう。",
+          "translation": {
+            "vi": "Ừ, vậy nhé."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "verbs",
     "time"

@@ -158,6 +158,271 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l16-atm",
+      "title": {
+        "vi": "Rút tiền ở máy ATM"
+      },
+      "roles": [
+        {
+          "id": "ginkouin",
+          "name": "銀行員[ぎんこういん]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "ginkouin",
+          "jp": "いらっしゃいませ。 お 引[ひ]き 出[だ]しですか。",
+          "kana": "いらっしゃいませ。 お ひき だしですか。",
+          "translation": {
+            "vi": "Xin chào quý khách. Quý khách muốn rút tiền ạ?"
+          },
+          "vocabIds": [
+            "ohikidashi"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい。 あのう、 どうやって お 金[かね]を 下[お]ろしますか。",
+          "kana": "はい。 あのう、 どうやって お かねを おろしますか。",
+          "translation": {
+            "vi": "Vâng. Dạ, cho tôi hỏi, rút tiền như thế nào ạ?"
+          }
+        },
+        {
+          "speaker": "ginkouin",
+          "jp": "まず、 キャッシュカードを 入[い]れてください。",
+          "kana": "まず、 キャッシュカードを いれてください。",
+          "translation": {
+            "vi": "Trước hết, quý khách cho thẻ ATM vào máy ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい。 入[い]れました。",
+          "kana": "はい。 いれました。",
+          "translation": {
+            "vi": "Vâng. Tôi cho thẻ vào rồi ạ."
+          }
+        },
+        {
+          "speaker": "ginkouin",
+          "jp": "次[つぎ]に、 暗証番号[あんしょうばんごう]を 押[お]して、 金額[きんがく]を 押[お]してください。",
+          "kana": "つぎに、 あんしょうばんごうを おして、 きんがくを おしてください。",
+          "translation": {
+            "vi": "Tiếp theo, quý khách bấm mã số bí mật, rồi bấm số tiền ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "押[お]しました。 確認[かくにん]ボタンも 押[お]しますか。",
+          "kana": "おしました。 かくにんボタンも おしますか。",
+          "translation": {
+            "vi": "Tôi bấm xong rồi ạ. Có phải bấm cả nút xác nhận không ạ?"
+          }
+        },
+        {
+          "speaker": "ginkouin",
+          "jp": "はい。 金額[きんがく]を 確認[かくにん]して、 ボタンを 押[お]してください。",
+          "kana": "はい。 きんがくを かくにんして、 ボタンを おしてください。",
+          "translation": {
+            "vi": "Vâng. Quý khách xác nhận số tiền rồi bấm nút ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "お 金[かね]が 出[で]ました。 ありがとう ございました。",
+          "kana": "お かねが でました。 ありがとう ございました。",
+          "translation": {
+            "vi": "Tiền ra rồi ạ. Cảm ơn nhiều ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l16-asa",
+      "title": {
+        "vi": "Buổi sáng của Mai"
+      },
+      "roles": [
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mori",
+          "jp": "マイさん、 毎朝[まいあさ] 何[なに]を しますか。",
+          "kana": "マイさん、 まいあさ なにを しますか。",
+          "translation": {
+            "vi": "Mai này, mỗi sáng em làm gì?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "五時半[ごじはん]に 起[お]きて、 ジョギングを します。 シャワーを 浴[あ]びて、 六時[ろくじ]から 勉強[べんきょう]します。",
+          "kana": "ごじはんに おきて、 ジョギングを します。 シャワーを あびて、 ろくじから べんきょうします。",
+          "translation": {
+            "vi": "Em dậy lúc năm rưỡi rồi chạy bộ ạ. Tắm vòi sen xong thì từ sáu giờ em học bài ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "すごいですね。 ジョギングは いつから 始[はじ]めましたか。",
+          "kana": "すごいですね。 ジョギングは いつから はじめましたか。",
+          "translation": {
+            "vi": "Giỏi quá nhỉ. Em bắt đầu chạy bộ từ khi nào vậy?"
+          },
+          "vocabIds": [
+            "sugoi-desu-ne"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "大学[だいがく]に 入[はい]ってから 始[はじ]めました。",
+          "kana": "だいがくに はいってから はじめました。",
+          "translation": {
+            "vi": "Em bắt đầu sau khi vào đại học ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "寮[りょう]を 出[で]てから、 どうやって 大学[だいがく]へ 来[き]ますか。",
+          "kana": "りょうを でてから、 どうやって だいがくへ きますか。",
+          "translation": {
+            "vi": "Ra khỏi ký túc xá rồi thì em đến trường bằng cách nào?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "電車[でんしゃ]に 乗[の]って、 駅[えき]で 降[お]りて、 歩[ある]いて 来[き]ます。",
+          "kana": "でんしゃに のって、 えきで おりて、 あるいて きます。",
+          "translation": {
+            "vi": "Em đi tàu, xuống ở ga rồi đi bộ đến ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "マイさんは 日本語[にほんご]が 上手[じょうず]で、 明[あか]るいですね。",
+          "kana": "マイさんは にほんごが じょうずで、 あかるいですね。",
+          "translation": {
+            "vi": "Mai giỏi tiếng Nhật, lại vui vẻ nữa nhỉ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、 まだまだです。",
+          "kana": "いいえ、 まだまだです。",
+          "translation": {
+            "vi": "Dạ không ạ, em còn kém lắm ạ."
+          },
+          "vocabIds": [
+            "madamada"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l16-shashin",
+      "title": {
+        "vi": "Xem ảnh gia đình"
+      },
+      "roles": [
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "マイさん、 その 写真[しゃしん]は 家族[かぞく]の 写真[しゃしん]ですか。",
+          "kana": "マイさん、 その しゃしんは かぞくの しゃしんですか。",
+          "translation": {
+            "vi": "Mai này, đó là ảnh gia đình em à?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい。 去年[きょねん]、 ベトナムで 撮[と]りました。",
+          "kana": "はい。 きょねん、 ベトナムで とりました。",
+          "translation": {
+            "vi": "Vâng ạ. Em chụp ở Việt Nam hồi năm ngoái ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "お 姉[ねえ]さんは どの 人[ひと]ですか。",
+          "kana": "お ねえさんは どの ひとですか。",
+          "translation": {
+            "vi": "Chị của em là người nào vậy?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "この 人[ひと]です。 髪[かみ]が 長[なが]くて、 背[せ]が 高[たか]いです。",
+          "kana": "この ひとです。 かみが ながくて、 せが たかいです。",
+          "translation": {
+            "vi": "Người này ạ. Chị ấy tóc dài và dáng cao ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "目[め]が 大[おお]きくて、 きれいな 人[ひと]ですね。",
+          "kana": "めが おおきくて、 きれいな ひとですね。",
+          "translation": {
+            "vi": "Mắt to và xinh nhỉ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい。 姉[あね]は 頭[あたま]が よくて、 親切[しんせつ]です。",
+          "kana": "はい。 あねは あたまが よくて、 しんせつです。",
+          "translation": {
+            "vi": "Vâng ạ. Chị em thông minh và tốt bụng ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "お 母[かあ]さんは どの 人[ひと]ですか。",
+          "kana": "お かあさんは どの ひとですか。",
+          "translation": {
+            "vi": "Còn mẹ em là người nào?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "この 人[ひと]です。 髪[かみ]が 短[みじか]くて、 若[わか]いです。",
+          "kana": "この ひとです。 かみが みじかくて、 わかいです。",
+          "translation": {
+            "vi": "Là người này ạ. Mẹ em tóc ngắn và trẻ ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "えっ、 お 母[かあ]さんですか。 とても 若[わか]いですね。",
+          "kana": "えっ、 お かあさんですか。 とても わかいですね。",
+          "translation": {
+            "vi": "Ơ, mẹ em ạ? Trẻ quá nhỉ."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "question-words",
     "verbs"

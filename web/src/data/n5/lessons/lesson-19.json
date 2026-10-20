@@ -111,6 +111,259 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l19-yama",
+      "title": {
+        "vi": "Leo núi"
+      },
+      "roles": [
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mori",
+          "jp": "マイさんは 山[やま]に 登[のぼ]った ことが ありますか。",
+          "kana": "マイさんは やまに のぼった ことが ありますか。",
+          "translation": {
+            "vi": "Mai đã từng leo núi chưa?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいえ、 一度[いちど]も ありません。 先生[せんせい]は？",
+          "kana": "いいえ、 いちども ありません。 せんせいは？",
+          "translation": {
+            "vi": "Chưa ạ, em chưa leo lần nào. Còn thầy ạ?"
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "私[わたし]は 二回[にかい] あります。 山[やま]の ホテルに 泊[と]まった ことも ありますよ。",
+          "kana": "わたしは にかい あります。 やまの ホテルに とまった ことも ありますよ。",
+          "translation": {
+            "vi": "Thầy leo hai lần rồi. Thầy cũng từng trọ ở khách sạn trên núi đấy."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "へえ、 いいですね。 山[やま]で 何[なに]を しましたか。",
+          "kana": "へえ、 いいですね。 やまで なにを しましたか。",
+          "translation": {
+            "vi": "Ồ, thích quá ạ. Thầy làm gì trên núi vậy ạ?"
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "写真[しゃしん]を 撮[と]ったり、 お 茶[ちゃ]を 飲[の]んだり しました。",
+          "kana": "しゃしんを とったり、 お ちゃを のんだり しました。",
+          "translation": {
+            "vi": "Thầy chụp ảnh, uống trà, đại loại thế."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "私[わたし]も 登[のぼ]りたいです。 でも 山[やま]は 危[あぶ]ないですか。",
+          "kana": "わたしも のぼりたいです。 でも やまは あぶないですか。",
+          "translation": {
+            "vi": "Em cũng muốn leo ạ. Nhưng núi có nguy hiểm không ạ?"
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "大丈夫[だいじょうぶ]ですよ。 マイさんは ジョギングを して いますから、 体[からだ]が 強[つよ]く なりましたね。 登[のぼ]る ことが できますよ。",
+          "kana": "だいじょうぶですよ。 マイさんは ジョギングを して いますから、 からだが つよく なりましたね。 のぼる ことが できますよ。",
+          "translation": {
+            "vi": "Không sao đâu em. Em chạy bộ nên khỏe lên rồi đấy. Em leo được mà."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ありがとう ございます。 山[やま]の 写真[しゃしん]を また 見[み]せてください。",
+          "kana": "ありがとう ございます。 やまの しゃしんを また みせてください。",
+          "translation": {
+            "vi": "Em cảm ơn thầy ạ. Thầy lại cho em xem ảnh núi nhé."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l19-kyuujitsu",
+      "title": {
+        "vi": "Ngày nghỉ của anh Tanaka"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "田中[たなか]さんは 休[やす]みの 日[ひ]に 何[なに]を しますか。",
+          "kana": "たなかさんは やすみの ひに なにを しますか。",
+          "translation": {
+            "vi": "Ngày nghỉ anh Tanaka thường làm gì ạ?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "掃除[そうじ]したり、 洗濯[せんたく]したり します。 時々[ときどき] ゴルフも します。",
+          "kana": "そうじしたり、 せんたくしたり します。 ときどき ゴルフも します。",
+          "translation": {
+            "vi": "Anh dọn dẹp, giặt giũ, đại loại thế. Thỉnh thoảng anh cũng chơi golf."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ゴルフは 難[むずか]しいですか。",
+          "kana": "ゴルフは むずかしいですか。",
+          "translation": {
+            "vi": "Golf có khó không anh?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "ええ。 でも 練習[れんしゅう]して、 だんだん 上手[じょうず]に なりました。",
+          "kana": "ええ。 でも れんしゅうして、 だんだん じょうずに なりました。",
+          "translation": {
+            "vi": "Ừ. Nhưng anh luyện tập nên dần dần giỏi lên rồi."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "私[わたし]は まだ ゴルフを した ことが ありません。",
+          "kana": "わたしは まだ ゴルフを した ことが ありません。",
+          "translation": {
+            "vi": "Em vẫn chưa từng chơi golf ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "じゃ、 いっしょに 練習[れんしゅう]しませんか。",
+          "kana": "じゃ、 いっしょに れんしゅうしませんか。",
+          "translation": {
+            "vi": "Vậy mình cùng tập nhé?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいですね。 ぜひ お 願[ねが]いします。",
+          "kana": "いいですね。 ぜひ お ねがいします。",
+          "translation": {
+            "vi": "Hay quá anh. Nhất định nhờ anh nhé."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l19-kanpai",
+      "title": {
+        "vi": "Nâng ly"
+      },
+      "roles": [
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        },
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mori",
+          "jp": "マイさん、 調子[ちょうし]は どうですか。",
+          "kana": "マイさん、 ちょうしは どうですか。",
+          "translation": {
+            "vi": "Mai này, dạo này em thế nào?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "おかげさまで 元気[げんき]です。 先生[せんせい]は？",
+          "kana": "おかげさまで げんきです。 せんせいは？",
+          "translation": {
+            "vi": "Dạ, cảm ơn thầy quan tâm, em vẫn khỏe ạ. Còn thầy ạ?"
+          },
+          "vocabIds": [
+            "okagesamade"
+          ]
+        },
+        {
+          "speaker": "mori",
+          "jp": "私[わたし]も 元気[げんき]です。 田中[たなか]さん、 ジュースで 乾杯[かんぱい]しましょう。",
+          "kana": "わたしも げんきです。 たなかさん、 ジュースで かんぱいしましょう。",
+          "translation": {
+            "vi": "Thầy cũng khỏe. Anh Tanaka, mình cùng nâng ly nước trái cây nhé."
+          },
+          "vocabIds": [
+            "kanpai"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "いいですね。 乾杯[かんぱい]！",
+          "kana": "いいですね。 かんぱい！",
+          "translation": {
+            "vi": "Hay quá. Cạn ly!"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "乾杯[かんぱい]！ もうすぐ 夏[なつ]に なりますね。 冷[つめ]たい ジュースが おいしいです。",
+          "kana": "かんぱい！ もうすぐ なつに なりますね。 つめたい ジュースが おいしいです。",
+          "translation": {
+            "vi": "Cạn ly ạ! Sắp sang hè rồi nhỉ. Nước trái cây lạnh ngon quá ạ."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "でも 私[わたし]は ダイエットを して いますから、 たくさんは 無理[むり]です。",
+          "kana": "でも わたしは ダイエットを して いますから、 たくさんは むりです。",
+          "translation": {
+            "vi": "Nhưng anh đang ăn kiêng nên uống nhiều thì không được."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "ジュースより お 茶[ちゃ]が 体[からだ]に いいですよ。",
+          "kana": "ジュースより お ちゃが からだに いいですよ。",
+          "translation": {
+            "vi": "Trà tốt cho sức khỏe hơn nước trái cây đấy."
+          },
+          "vocabIds": [
+            "karada-ni-ii"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "そうですね。 じゃ、 お 茶[ちゃ]で もう 一度[いちど] 乾杯[かんぱい]しましょう。",
+          "kana": "そうですね。 じゃ、 お ちゃで もう いちど かんぱいしましょう。",
+          "translation": {
+            "vi": "Đúng rồi thầy nhỉ. Vậy mình lại nâng ly bằng trà nhé."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "verbs",
     "adjectives"
