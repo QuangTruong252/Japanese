@@ -30,6 +30,7 @@ const uiArt = (stem: string): IllustrationAsset => ({
 export const SECTION_THUMB = {
   vocab: uiArt('sections/vocabulary'),
   grammar: uiArt('sections/grammar'),
+  dialogue: uiArt('sections/dialogue'),
   listening: uiArt('sections/listening'),
 };
 

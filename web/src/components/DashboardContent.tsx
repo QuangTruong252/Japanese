@@ -238,6 +238,15 @@ export function DashboardContent({
                 detail={`${activeSummary.grammarCount} mẫu`}
                 image={activeSummary.grammarThumb ?? SECTION_THUMB.grammar}
               />
+              {activeSummary.dialogueCount > 0 && (
+                <PartRow
+                  href={`/hoc/${activeLessonNum}#hoi-thoai`}
+                  icon={<FeatureIcon name="dialogue" />}
+                  title="Hội thoại"
+                  detail={`${activeSummary.dialogueCount} tình huống`}
+                  image={SECTION_THUMB.dialogue}
+                />
+              )}
               {AUDIO_IMPORT_ENABLED && (
                 <PartRow
                   href={`/hoc/${activeLessonNum}#nghe`}

@@ -4,6 +4,7 @@ Nguồn của `web/src/components/FeatureIcon.tsx` (sinh tự động, không s�
 
 - `atlas-v2.png` (đang dùng): 13 icon theo chuẩn lưới 24px/nét 2px, khe ≥ 1,5× nét, tối đa 3–4 nét/icon; Codex built-in image_gen (gpt-6-luna, effort low), 2026-10-08. Prompt ở mục Prompt v2 bên dưới.
 - `atlas-nav-v1.png`: 5 icon riêng cho thanh điều hướng (`nav-home`, `nav-lesson`, `nav-practice`, `nav-review`, `nav-lookup`): cùng khung, nhìn thẳng, 2–3 nét, không nét kép/chéo. Canh cỡ theo keyline Lucide (vuông 200/240, tròn 222/240). Không dùng lẫn icon thẻ trên thanh điều hướng.
+- `atlas-dialogue-v1.png`: 1 icon (`dialogue`): hai bong bóng thoại cho phần Hội thoại.
 - `atlas-v1.png` (bỏ): nhiều chi tiết, bết khi làm nét đậm bằng Lucide.
 - `build.js`: tách icon theo dải trắng (không giả định lưới đều) → phóng từng icon vừa 222/240 → giãn nét tới độ dày đích `TARGET_STROKE` (mặc định 21/240; Lucide 2px đo ra 20) → potrace → svgo → ghi `FeatureIcon.tsx` và `out/*.svg|png`.
 - Thứ tự đọc: vocab, grammar, listening, reading, kanji, kana, verbs, lesson, review, practice, lookup, weak-points, home.
