@@ -88,5 +88,35 @@
         "vi": "Chân dung nhân viên nhà ga"
       }
     }
+  },
+  "otoko": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/otoko-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung người đàn ông"
+      }
+    }
+  },
+  "haha": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/haha-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung mẹ anh Tanaka"
+      }
+    }
+  },
+  "takushii": {
+    "avatar": {
+      "src": "/assets/illustrations/characters/takushii-portrait-v1.webp",
+      "width": 512,
+      "height": 512,
+      "alt": {
+        "vi": "Chân dung tài xế taxi"
+      }
+    }
   }
 }
