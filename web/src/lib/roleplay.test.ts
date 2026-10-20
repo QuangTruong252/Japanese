@@ -68,3 +68,9 @@ test('không có Mai chọn vai đầu, vai lạ và thao tác sai bước khôn
   assert.deepEqual(stepRolePlay(withoutMai, session, { type: 'select', roleId: 'third' }), session);
   assert.deepEqual(stepRolePlay(withoutMai, session, { type: 'start' }), session);
 });
+
+test('bắt đầu với bài không có câu nào thì sang done, không vào phiên', () => {
+  const empty = { ...dialogue, lines: [] };
+  const state = stepRolePlay(empty, createRolePlay(empty), { type: 'start' });
+  assert.deepEqual(state, { phase: 'done', roleId: 'mai' });
+});

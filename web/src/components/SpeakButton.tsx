@@ -16,12 +16,15 @@ export function SpeakButton({
   visibleLabel,
   iconClassName,
   className,
+  pitch,
 }: {
   text: string;
   label: string;
   visibleLabel?: string;
   iconClassName?: string;
   className?: string;
+  /** Cao độ của vai; bỏ trống thì giọng chuẩn. */
+  pitch?: number;
 }) {
   const [hasVoice, setHasVoice] = useState(false);
   const [speaking, setSpeaking] = useState(false);
@@ -39,7 +42,7 @@ export function SpeakButton({
   if (!hasVoice) return null;
 
   const handleClick = () => {
-    const utterance = speak(text);
+    const utterance = speak(text, undefined, undefined, pitch);
     if (!utterance) return;
     setSpeaking(true);
     const done = () => setSpeaking(false);
