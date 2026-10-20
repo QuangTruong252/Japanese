@@ -1,0 +1,175 @@
+{
+  "name": "kaiwa-characters",
+  "description": "Đợt avatar nhân vật hội thoại N5 và thumbnail hàng Hội thoại trên Bảng tin.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "group": "characters",
+      "stem": "mai-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top, gentle smile",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "mai"
+      },
+      "alt": {
+        "vi": "Chân dung Mai"
+      }
+    },
+    {
+      "group": "characters",
+      "stem": "tanaka-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "young Japanese man about 25, short slightly messy dark hair, ivory long-sleeve shirt, friendly smile",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "tanaka"
+      },
+      "alt": {
+        "vi": "Chân dung Tanaka"
+      }
+    },
+    {
+      "group": "characters",
+      "stem": "mori-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Japanese university teacher, man about 55, short gray hair, thin round glasses, navy cardigan over light-blue collared shirt, calm kind smile",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "mori"
+      },
+      "alt": {
+        "vi": "Chân dung thầy Mori"
+      }
+    },
+    {
+      "group": "characters",
+      "stem": "ookawa-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Japanese woman about 45, shoulder-length brown hair tied low, beige sweater, warm smile (neighbor)",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "ookawa"
+      },
+      "alt": {
+        "vi": "Chân dung chị Ookawa"
+      }
+    },
+    {
+      "group": "characters",
+      "stem": "isha-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Japanese male doctor about 40, short black hair, white coat, stethoscope around neck",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "isha"
+      },
+      "alt": {
+        "vi": "Chân dung bác sĩ"
+      }
+    },
+    {
+      "group": "characters",
+      "stem": "uketsuke-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "young Japanese receptionist woman, dark hair in a low bun, navy blazer, white blouse",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "uketsuke"
+      },
+      "alt": {
+        "vi": "Chân dung nhân viên lễ tân"
+      }
+    },
+    {
+      "group": "characters",
+      "stem": "ten-in-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Japanese department-store clerk, man about 30, neat dark hair, dark vest, white shirt, plain tie",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "ten-in"
+      },
+      "alt": {
+        "vi": "Chân dung nhân viên bán hàng"
+      }
+    },
+    {
+      "group": "characters",
+      "stem": "toshokan-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Japanese librarian woman about 30, dark ponytail, sage-green cardigan, plain lanyard without text",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "toshokan"
+      },
+      "alt": {
+        "vi": "Chân dung nhân viên thư viện"
+      }
+    },
+    {
+      "group": "characters",
+      "stem": "ekiin-portrait-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Japanese station attendant man about 35, navy uniform jacket and cap without any logo or text",
+      "target": {
+        "dataFile": "web/src/data/n5/characters.json",
+        "roleId": "ekiin"
+      },
+      "alt": {
+        "vi": "Chân dung nhân viên nhà ga"
+      }
+    },
+    {
+      "group": "ui/sections",
+      "stem": "dialogue-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "two small cutout figures of Mai and Tanaka in conversation, standing and talking cheerfully",
+      "alt": {
+        "vi": "Mai và Tanaka nhỏ đang trò chuyện."
+      }
+    }
+  ]
+}
