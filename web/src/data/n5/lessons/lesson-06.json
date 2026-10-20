@@ -307,7 +307,15 @@
             "wakarimashita"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/lunch-invitation-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka tươi cười rủ Mai cùng đi ăn trưa ở quán gần ga."
+        }
+      }
     },
     {
       "id": "l06-ohanami",
@@ -406,7 +414,15 @@
             "wakarimashita"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/cherry-blossom-invitation-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai tươi cười mời thầy Mori cùng tham gia buổi ngắm hoa anh đào."
+        }
+      }
     },
     {
       "id": "l06-tenisu",
@@ -493,7 +509,15 @@
             "ja-mata"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/tennis-invitation-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka cầm vợt tennis hẹn Mai cùng chơi thể thao vào sáng mai."
+        }
+      }
     }
   ],
   "references": [

@@ -312,7 +312,15 @@
             "vi": "Dạ, sáng nào em cũng học ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/chatting-about-life-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Thầy Mori hỏi thăm cuộc sống và việc học tập tại Nhật Bản của Mai."
+        }
+      }
     },
     {
       "id": "l08-ryou",
@@ -402,7 +410,15 @@
             "vi": "Hay quá nhỉ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/dormitory-chat-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tanaka và Mai ngồi trò chuyện về khu ký túc xá mới và tiện lợi của Mai."
+        }
+      }
     },
     {
       "id": "l08-sorosoro",
@@ -505,7 +521,15 @@
             "mata-irasshatte"
           ]
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/scenes/tea-at-teacher-home-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mai lễ phép cảm ơn thầy Mori sau buổi thưởng trà tại nhà thầy."
+        }
+      }
     }
   ],
   "references": [
