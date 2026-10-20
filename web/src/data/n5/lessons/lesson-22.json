@@ -90,6 +90,149 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l22-shashin",
+      "title": {
+        "vi": "Người trong ảnh"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "この 写真[しゃしん]の 人[ひと]は だれ？",
+          "kana": "この しゃしんの ひとは だれ？",
+          "translation": {
+            "vi": "Người trong ảnh này là ai vậy anh?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "どの 人[ひと]？",
+          "kana": "どの ひと？",
+          "translation": {
+            "vi": "Người nào cơ?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "えーと、 赤[あか]い セーターを 着[き]ている 人[ひと]。",
+          "kana": "えーと、 あかい セーターを きている ひと。",
+          "translation": {
+            "vi": "Ừm, người đang mặc áo len đỏ ấy."
+          },
+          "vocabIds": [
+            "eeto"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "ああ、 姉[あね]だよ。 きょうは 誕生日[たんじょうび]だから、 姉[あね]も 来[き]たよ。",
+          "kana": "ああ、 あねだよ。 きょうは たんじょうびだから、 あねも きたよ。",
+          "translation": {
+            "vi": "À, chị gái anh đấy. Hôm nay sinh nhật anh nên chị ấy cũng đến."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "誕生日[たんじょうび] おめでとう。 その ケーキは 田中[たなか]さんが 作[つく]ったの？",
+          "kana": "たんじょうび おめでとう。 その ケーキは たなかさんが つくったの？",
+          "translation": {
+            "vi": "Chúc mừng sinh nhật nhé. Chiếc bánh kia là anh làm à?"
+          },
+          "vocabIds": [
+            "omedetou"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "ううん。 母[はは]が 作[つく]った ケーキだよ。",
+          "kana": "ううん。 ははが つくった ケーキだよ。",
+          "translation": {
+            "vi": "Không. Là bánh mẹ anh làm đấy."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l22-heya",
+      "title": {
+        "vi": "Tìm phòng gần trường"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "ten-in",
+          "name": "店員[てんいん]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "ten-in",
+          "jp": "どんな 部屋[へや]を お 探[さが]しですか。",
+          "kana": "どんな へやを お さがしですか。",
+          "translation": {
+            "vi": "Chị đang tìm phòng như thế nào ạ?"
+          },
+          "vocabIds": [
+            "osagashi"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "友達[ともだち]は 大学[だいがく]に 近[ちか]い 部屋[へや]が いいと 言[い]っています。",
+          "kana": "ともだちは だいがくに ちかい へやが いいと いっています。",
+          "translation": {
+            "vi": "Bạn tôi nói là muốn phòng gần trường đại học ạ."
+          }
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "こちらは どうですか。 台所[だいどころ]が 広[ひろ]い 部屋[へや]です。",
+          "kana": "こちらは どうですか。 だいどころが ひろい へやです。",
+          "translation": {
+            "vi": "Phòng này thì sao ạ? Phòng có bếp rộng đấy ạ."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "いいですね。 部屋[へや]を 見[み]る 時間[じかん]は ありますか。",
+          "kana": "いいですね。 へやを みる じかんは ありますか。",
+          "translation": {
+            "vi": "Hay quá. Có thời gian để xem phòng không ạ?"
+          }
+        },
+        {
+          "speaker": "ten-in",
+          "jp": "はい。 今[いま]から いっしょに 見[み]に 行[い]きましょうか。",
+          "kana": "はい。 いまから いっしょに みに いきましょうか。",
+          "translation": {
+            "vi": "Có ạ. Tôi dẫn chị đi xem ngay nhé?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、 お 願[ねが]いします。",
+          "kana": "はい、 お ねがいします。",
+          "translation": {
+            "vi": "Vâng, nhờ anh ạ."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "verbs"
   ],

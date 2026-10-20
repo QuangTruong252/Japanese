@@ -162,6 +162,202 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l21-iken",
+      "title": {
+        "vi": "Nghĩ về việc học tiếng Nhật"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mori",
+          "jp": "日本語[にほんご]の 勉強[べんきょう]について どう 思[おも]いますか。",
+          "kana": "にほんごの べんきょうについて どう おもいますか。",
+          "translation": {
+            "vi": "Em nghĩ thế nào về việc học tiếng Nhật?"
+          },
+          "vocabIds": [
+            "nitsuite"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "難[むずか]しいですが、 おもしろいと 思[おも]います。",
+          "kana": "むずかしいですが、 おもしろいと おもいます。",
+          "translation": {
+            "vi": "Em thấy khó nhưng thú vị ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "日本語[にほんご]は 仕事[しごと]にも 役[やく]に 立[た]つと 思[おも]いますよ。",
+          "kana": "にほんごは しごとにも やくに たつと おもいますよ。",
+          "translation": {
+            "vi": "Thầy nghĩ tiếng Nhật cũng có ích cho công việc đấy."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい。 田中[たなか]さんも 会社[かいしゃ]で 日本語[にほんご]を 使[つか]うと 言[い]っていました。",
+          "kana": "はい。 たなかさんも かいしゃで にほんごを つかうと いっていました。",
+          "translation": {
+            "vi": "Vâng. Anh Tanaka cũng nói là anh ấy dùng tiếng Nhật ở công ty ạ."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "毎日[まいにち] 少[すこ]し 日本語[にほんご]で 話[はな]してくださいね。",
+          "kana": "まいにち すこし にほんごで はなしてくださいね。",
+          "translation": {
+            "vi": "Em hãy nói tiếng Nhật một chút mỗi ngày nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい。 これからも 毎日[まいにち] 勉強[べんきょう]します。",
+          "kana": "はい。 これからも まいにち べんきょうします。",
+          "translation": {
+            "vi": "Vâng, em sẽ tiếp tục học mỗi ngày ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l21-shiai",
+      "title": {
+        "vi": "Rủ đi xem trận đấu"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "あした 学校[がっこう]で サッカーの 試合[しあい]が あるよ。 田中[たなか]さんは サッカーが 好[す]きでしょう？ いっしょに 見[み]に 行[い]かない？",
+          "kana": "あした がっこうで サッカーの しあいが あるよ。 たなかさんは サッカーが すきでしょう？ いっしょに みに いかない？",
+          "translation": {
+            "vi": "Ngày mai ở trường có trận bóng đá đấy. Anh thích bóng đá mà, đúng không? Mình cùng đi xem nhé?"
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "うん。 あしたは 暇[ひま]だから、 行[い]きたいな。",
+          "kana": "うん。 あしたは ひまだから、 いきたいな。",
+          "translation": {
+            "vi": "Ừ. Ngày mai anh rảnh nên muốn đi lắm."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "じゃ、 あした 学校[がっこう]の 前[まえ]で 会[あ]わない？",
+          "kana": "じゃ、 あした がっこうの まえで あわない？",
+          "translation": {
+            "vi": "Vậy ngày mai mình gặp trước trường nhé."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "うん。 もう 帰[かえ]らないと……。",
+          "kana": "うん。 もう かえらないと……。",
+          "translation": {
+            "vi": "Ừ, anh phải về rồi..."
+          },
+          "vocabIds": [
+            "mou-kaeranaito"
+          ]
+        },
+        {
+          "speaker": "mai",
+          "jp": "じゃ、 また あした。",
+          "kana": "じゃ、 また あした。",
+          "translation": {
+            "vi": "Vậy hẹn anh ngày mai."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l21-kissa",
+      "title": {
+        "vi": "Gặp lại ở quán cà phê"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "ookawa",
+          "name": "大川[おおかわ]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "大川[おおかわ]さん、 久[ひさ]しぶりですね。",
+          "kana": "おおかわさん、 ひさしぶりですね。",
+          "translation": {
+            "vi": "Chị Ookawa, lâu rồi mới gặp chị nhỉ."
+          },
+          "vocabIds": [
+            "hisashiburi"
+          ]
+        },
+        {
+          "speaker": "ookawa",
+          "jp": "お 元気[げんき]ですか。",
+          "kana": "お げんきですか。",
+          "translation": {
+            "vi": "Em vẫn khỏe chứ?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "はい、 元気[げんき]です。 コーヒーでも 飲[の]みませんか。",
+          "kana": "はい、 げんきです。 コーヒーでも のみませんか。",
+          "translation": {
+            "vi": "Vâng, em khỏe ạ. Chị đi uống chút cà phê với em nhé?"
+          },
+          "vocabIds": [
+            "demo-nomimasen"
+          ]
+        },
+        {
+          "speaker": "ookawa",
+          "jp": "いいですね。 あの 喫茶店[きっさてん]へ 行[い]きましょう。",
+          "kana": "いいですね。 あの きっさてんへ いきましょう。",
+          "translation": {
+            "vi": "Được đấy. Mình vào quán cà phê kia nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "あそこの コーヒーは おいしいと 思[おも]います。",
+          "kana": "あそこの コーヒーは おいしいと おもいます。",
+          "translation": {
+            "vi": "Em thấy cà phê ở đó ngon lắm ạ."
+          }
+        }
+      ]
+    }
+  ],
   "references": [
     "verbs"
   ],

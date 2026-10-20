@@ -32,6 +32,8 @@ const ALLOWED: { token: string; from: number; reason: string }[] = [
   },
   { token: 'ほう', from: 12, reason: 'mẫu ngữ pháp bài 12: Nのほうが; từ vựng không liệt kê thành phần này.' },
   { token: 'いけ', from: 15, reason: 'mẫu ngữ pháp bài 15: 〜てはいけません; từ vựng không liệt kê thành phần này.' },
+  { token: '大川', from: 24, reason: 'Người hàng xóm đã xuất hiện từ bài 2; Mai nhắc lại người giúp chuẩn bị tiệc khi kể với Tanaka.' },
+  { token: '大阪', from: 25, reason: 'Địa danh đích cho tình huống Tanaka chuyển công tác; cần phân biệt nơi đến với nơi đang sống.' },
 ];
 
 /** Câu giao tiếp của bài không có trong hội thoại nào của bài đó, kèm lý do. */

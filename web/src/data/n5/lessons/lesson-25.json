@@ -137,6 +137,207 @@
       ]
     }
   ],
+  "dialogues": [
+    {
+      "id": "l25-denwa",
+      "title": {
+        "vi": "Hẹn ở ga qua điện thoại"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "もしもし、 田中[たなか]さん？ 今[いま] どこ？",
+          "kana": "もしもし、 たなかさん？ いま どこ？",
+          "translation": {
+            "vi": "A lô, anh Tanaka à? Anh đang ở đâu vậy?"
+          },
+          "vocabIds": [
+            "moshimoshi"
+          ]
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "電車[でんしゃ]の 中[なか]だよ。 駅[えき]に 着[つ]いたら、 電話[でんわ]するね。",
+          "kana": "でんしゃの なかだよ。 えきに ついたら、 でんわするね。",
+          "translation": {
+            "vi": "Anh đang trên tàu. Đến ga rồi anh gọi em nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "うん。 もし 雨[あめ]が 降[ふ]ったら、 駅[えき]の 中[なか]で 待[ま]っていてね。",
+          "kana": "うん。 もし あめが ふったら、 えきの なかで まっていてね。",
+          "translation": {
+            "vi": "Vâng. Nếu trời mưa thì anh đợi trong ga nhé."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "雨[あめ]でも 公園[こうえん]へ 行[い]く？",
+          "kana": "あめでも こうえんへ いく？",
+          "translation": {
+            "vi": "Trời mưa mình vẫn ra công viên à?"
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ううん。 雨[あめ]だったら、 映画[えいが]を 見[み]に 行[い]かない？",
+          "kana": "ううん。 あめだったら、 えいがを みに いかない？",
+          "translation": {
+            "vi": "Không. Nếu mưa thì mình đi xem phim nhé."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "いいね。 雨[あめ]が 降[ふ]っても 大丈夫[だいじょうぶ]だね。",
+          "kana": "いいね。 あめが ふっても だいじょうぶだね。",
+          "translation": {
+            "vi": "Hay đấy. Trời mưa cũng không sao nhỉ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l25-benkyou",
+      "title": {
+        "vi": "Hỏi thầy cách học"
+      },
+      "roles": [
+        {
+          "id": "mai",
+          "name": "マイ"
+        },
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "mai",
+          "jp": "先生[せんせい]、 漢字[かんじ]の 意味[いみ]が わからなかったら、 どう しますか。",
+          "kana": "せんせい、 かんじの いみが わからなかったら、 どう しますか。",
+          "translation": {
+            "vi": "Thưa thầy, nếu không hiểu nghĩa của chữ Hán thì nên làm thế nào ạ?"
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "辞書[じしょ]で 調[しら]べてください。",
+          "kana": "じしょで しらべてください。",
+          "translation": {
+            "vi": "Em hãy tra từ điển nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "調[しら]べても わからなかったら、 先生[せんせい]に 聞[き]いても いいですか。",
+          "kana": "しらべても わからなかったら、 せんせいに きいても いいですか。",
+          "translation": {
+            "vi": "Nếu tra rồi mà vẫn không hiểu thì em hỏi thầy được không ạ?"
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "もちろんです。 難[むずか]しくても、 いっしょに 考[かんが]えましょう。",
+          "kana": "もちろんです。 むずかしくても、 いっしょに かんがえましょう。",
+          "translation": {
+            "vi": "Tất nhiên rồi. Dù khó thì thầy trò mình cùng suy nghĩ nhé."
+          }
+        },
+        {
+          "speaker": "mai",
+          "jp": "ありがとう ございます。 うちに 帰[かえ]ったら、 きょう 勉強[べんきょう]した 漢字[かんじ]を もう 一度[いちど] 調[しら]べます。",
+          "kana": "ありがとう ございます。 うちに かえったら、 きょう べんきょうした かんじを もう いちど しらべます。",
+          "translation": {
+            "vi": "Em cảm ơn thầy. Về nhà rồi em sẽ tra lại những chữ Hán đã học hôm nay ạ."
+          }
+        }
+      ]
+    },
+    {
+      "id": "l25-tenkin",
+      "title": {
+        "vi": "Chào trước chuyến chuyển công tác"
+      },
+      "roles": [
+        {
+          "id": "tanaka",
+          "name": "田中[たなか]"
+        },
+        {
+          "id": "mori",
+          "name": "森[もり]"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "tanaka",
+          "jp": "先生[せんせい]、 来月[らいげつ] 大阪[おおさか]へ 転勤[てんきん]します。",
+          "kana": "せんせい、 らいげつ おおさかへ てんきんします。",
+          "translation": {
+            "vi": "Thưa thầy, tháng sau tôi sẽ chuyển công tác đến Osaka."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "そうですか。 大阪[おおさか]に 着[つ]いたら、 電話[でんわ]して ください。",
+          "kana": "そうですか。 おおさかに ついたら、 でんわして ください。",
+          "translation": {
+            "vi": "Vậy à. Đến Osaka rồi anh gọi điện cho tôi nhé."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "はい。 いろいろ お 世話[せわ]に なりました。",
+          "kana": "はい。 いろいろ お せわに なりました。",
+          "translation": {
+            "vi": "Vâng. Cảm ơn thầy đã giúp đỡ tôi rất nhiều trong thời gian qua."
+          },
+          "vocabIds": [
+            "osewa-ni-narimashita"
+          ]
+        },
+        {
+          "speaker": "mori",
+          "jp": "忙[いそが]しくても、 ときどき 会[あ]いに 来[き]てくださいね。",
+          "kana": "いそがしくても、 ときどき あいに きてくださいね。",
+          "translation": {
+            "vi": "Dù bận cũng thỉnh thoảng ghé chơi nhé."
+          }
+        },
+        {
+          "speaker": "tanaka",
+          "jp": "はい。 休[やす]みが あったら、 また 来[き]ます。",
+          "kana": "はい。 やすみが あったら、 また きます。",
+          "translation": {
+            "vi": "Vâng. Nếu có ngày nghỉ tôi sẽ lại ghé thăm thầy."
+          }
+        },
+        {
+          "speaker": "mori",
+          "jp": "どうぞ お 元気[げんき]で。",
+          "kana": "どうぞ お げんきで。",
+          "translation": {
+            "vi": "Chúc anh luôn mạnh khỏe nhé."
+          },
+          "vocabIds": [
+            "douzo-ogenkide"
+          ]
+        }
+      ]
+    }
+  ],
   "references": [
     "verbs"
   ],
