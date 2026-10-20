@@ -217,7 +217,11 @@ export function LessonTabs({
         panel.scrollIntoView({ block: 'start' });
       }
     } else {
-      (target.id ? document.getElementById(target.id) : root)?.scrollIntoView({ block: 'start' });
+      const el = target.id ? document.getElementById(target.id) : root;
+      // Tải trang với neo: effect này chạy trong cùng commit với setTab nên panel đích còn `hidden`.
+      // Giữ pending, lượt chạy sau khi tab đổi sẽ cuộn.
+      if (el?.closest('[hidden]')) return;
+      el?.scrollIntoView({ block: 'start' });
     }
     pending.current = null;
   }, [tab, request, view]);

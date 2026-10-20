@@ -72,10 +72,11 @@ export function DialogueReader({
   return (
     <section className="overflow-hidden rounded-xl border border-border bg-card">
       {dialogue.illustration && (
+        // Người trong ảnh cảnh nằm khoảng 25–70% chiều cao: khung 16:10 + tâm 45% không cắt mặt ở 390/1280 px.
         <Illustration
           asset={dialogue.illustration}
           sizes="(min-width: 768px) 768px, 100vw"
-          className="h-36 w-full object-cover sm:h-48"
+          className="aspect-[16/10] h-auto w-full object-cover object-[50%_45%]"
         />
       )}
       <div className="flex items-center justify-between gap-3 p-4">
