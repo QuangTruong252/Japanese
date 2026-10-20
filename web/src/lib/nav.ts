@@ -29,6 +29,7 @@ export function isNavActive(itemHref: string, pathname: string): boolean {
  * - /luyen-tap/phien (phiên luyện tập)
  * - /on-tap/phien (phiên ôn tập FSRS)
  * - /hoc/[so]/tu-vung (phiên flashcard từ vựng theo bài)
+ * - /hoc/[so]/hoi-thoai/[id] (phiên nhập vai)
  */
 export function shouldHideAppChrome(pathname: string): boolean {
   if (pathname === '/luyen-tap/phien' || pathname.startsWith('/luyen-tap/phien/')) {
@@ -38,6 +39,9 @@ export function shouldHideAppChrome(pathname: string): boolean {
     return true;
   }
   if (/^\/hoc\/[^/]+\/tu-vung(\/.*)?$/.test(pathname)) {
+    return true;
+  }
+  if (/^\/hoc\/[^/]+\/hoi-thoai\/[^/]+\/?$/.test(pathname)) {
     return true;
   }
   return false;

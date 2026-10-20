@@ -50,6 +50,11 @@ test('shouldHideAppChrome: ẩn chrome (header/dock/sidebar) trong các phiên t
   assert.equal(shouldHideAppChrome('/hoc/1/tu-vung'), true);
   assert.equal(shouldHideAppChrome('/hoc/25/tu-vung'), true);
   assert.equal(shouldHideAppChrome('/hoc/1/tu-vung/'), true);
+  assert.equal(shouldHideAppChrome('/hoc/1/hoi-thoai/l01-dong-nghiep-moi'), true);
+  assert.equal(shouldHideAppChrome('/hoc/25/hoi-thoai/example/'), true);
+  assert.equal(shouldHideAppChrome('/hoc/1/hoi-thoai'), false);
+  assert.equal(shouldHideAppChrome('/hoc/1/hoi-thoai/'), false);
+  assert.equal(shouldHideAppChrome('/hoc/1/hoi-thoai/id/extra'), false);
 
   // Ca sai (không ẩn, vẫn hiển thị chrome):
   assert.equal(shouldHideAppChrome('/'), false);
