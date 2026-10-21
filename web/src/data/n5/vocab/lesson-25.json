@@ -144,6 +144,14 @@
         "naiKana": "たりない",
         "ta": "足[た]りた",
         "taKana": "たりた"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sufficient-exact-money-bill-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Số tiền trong ví vừa vặn chính xác đủ để thanh toán hóa đơn."
+        }
       }
     },
     {
@@ -186,6 +194,14 @@
         "translation": {
           "vi": "Nếu có cơ hội, tôi muốn đi Anh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/open-door-opportunity-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cánh cửa mở hé tỏa ánh sáng rực rỡ biểu thị cơ hội tốt đẹp mở ra."
+        }
       }
     },
     {
@@ -202,6 +218,14 @@
         "kana": "いちおくえん あったら、いえを かいます。",
         "translation": {
           "vi": "Nếu có một trăm triệu yên, tôi sẽ mua nhà."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hundred-million-money-mountain-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Núi túi tiền ngân hàng chất cao biểu thị số tiền khổng lồ hàng trăm triệu."
         }
       }
     },
@@ -220,6 +244,14 @@
         "translation": {
           "vi": "Giả sử nếu rảnh rỗi thì xin hãy giúp tôi."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/supposing-what-if-dream-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người chống cằm mơ màng suy nghĩ về những giả định viễn cảnh nếu như."
+        }
       }
     },
     {
@@ -236,6 +268,14 @@
         "kana": "じしょを みても、いみが わかりません。",
         "translation": {
           "vi": "Dù có tra từ điển cũng không hiểu ý nghĩa."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/dictionary-meaning-lightbulb-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuốn từ điển mở ra dưới chiếc kính lúp và bóng đèn bừng sáng biểu thị hiểu ra ý nghĩa."
         }
       }
     },
@@ -303,6 +343,14 @@
         "kana": "いろいろな ことを べんきょうしました。",
         "translation": {
           "vi": "Tôi đã học được nhiều điều."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/completed-tasks-notebook-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuốn sổ tay với các điều việc đã thực hiện được đánh dấu kiểm gọn gàng."
         }
       }
     },

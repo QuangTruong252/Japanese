@@ -486,6 +486,14 @@
         "naiKana": "けんがくしない",
         "ta": "見学[けんがく]した",
         "taKana": "けんがくした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/study-tour-visit-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Học viên cầm sổ ghi chép chăm chú đi tham quan học hỏi cùng người hướng dẫn."
+        }
       }
     },
     {
@@ -966,6 +974,14 @@
         "translation": {
           "vi": "Nhà hàng kia dịch vụ rất tốt."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/complimentary-service-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người phục vụ chu đáo mang đĩa bánh tráng miệng và trà tặng kèm cho khách."
+        }
       }
     },
     {
@@ -1133,6 +1149,14 @@
         "translation": {
           "vi": "Bạn đi đến công ty bằng cách nào?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/how-to-go-route-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai đứng trước sơ đồ tuyến đường đắn đo suy nghĩ cách đi đến nơi."
+        }
       }
     },
     {
@@ -1149,6 +1173,14 @@
         "kana": "ミラーさんは どの ひとですか。",
         "translation": {
           "vi": "Anh Miller là người nào?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/which-person-group-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai nhìn vào bức ảnh tập thể tìm kiếm xem người nào là người cần gặp."
         }
       }
     },
@@ -1167,6 +1199,14 @@
         "translation": {
           "vi": "Cặp sách của bạn là cái nào?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/which-one-hesitating-hand-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn tay lưỡng lự phân vân chọn một trong ba chiếc túi xách đặt trên kệ."
+        }
       }
     },
     {
@@ -1183,6 +1223,14 @@
         "kana": "「すごいですね。」",
         "translation": {
           "vi": "\"Tuyệt vời quá nhỉ!\""
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/admiring-applause-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái vỗ tay tán thưởng đầy thán phục trước một điều tuyệt vời."
         }
       }
     },
@@ -1201,6 +1249,14 @@
         "translation": {
           "vi": "\"Không, tôi vẫn còn kém lắm.\""
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/humble-waving-hand-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai khiêm tốn xua nhẹ tay và gãi đầu mỉm cười ngượng nghịu."
+        }
       }
     },
     {
@@ -1217,6 +1273,14 @@
         "kana": "「おひきだしですか。」",
         "translation": {
           "vi": "\"Quý khách muốn rút tiền ạ?\""
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bank-withdrawal-inquiry-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên ngân hàng niềm nở hỏi khách có phải muốn rút tiền mặt không."
         }
       }
     },
@@ -1235,6 +1299,14 @@
         "translation": {
           "vi": "Trước hết xin hãy ấn nút này."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/step-one-first-button-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ngón tay ấn vào nút bấm đầu tiên có đánh dấu mũi tên trên bảng điều khiển."
+        }
       }
     },
     {
@@ -1251,6 +1323,14 @@
         "kana": "つぎに おかねを いれてください。",
         "translation": {
           "vi": "Tiếp theo xin hãy cho tiền vào."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/step-two-insert-money-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bàn tay đưa tờ tiền vào khe máy theo mũi tên hướng dẫn bước tiếp theo."
         }
       }
     },
@@ -1294,6 +1374,14 @@
         "translation": {
           "vi": "Xin hãy bấm mã số PIN."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/shielding-pin-keypad-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Một tay khum lại che bàn phím số ATM trong khi tay kia nhập mã PIN bí mật."
+        }
       }
     },
     {
@@ -1311,6 +1399,14 @@
         "translation": {
           "vi": "Xin hãy bấm số tiền."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/atm-screen-amount-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Màn hình máy ATM hiển thị con số 50000 trong khung số tiền cần rút."
+        }
       }
     },
     {
@@ -1327,6 +1423,14 @@
         "kana": "かくにんの ボタンを おします。",
         "translation": {
           "vi": "Tôi bấm nút xác nhận."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/pressing-confirm-button-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ngón tay ấn nút xác nhận có biểu tượng dấu tick tròn nổi bật."
         }
       }
     },

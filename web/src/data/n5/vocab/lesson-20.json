@@ -30,6 +30,14 @@
         "naiKana": "いらない",
         "ta": "要[い]った[ビザが〜]",
         "taKana": "いった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/passport-visa-stamp-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuốn hộ chiếu mở trang có đóng dấu thị thực visa đi lại."
+        }
       }
     },
     {
@@ -173,6 +181,14 @@
         "translation": {
           "vi": "Cậu Miller bây giờ đang ở trong phòng."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/calling-schoolboy-kun-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cậu học trò đeo cặp sách ngoái đầu lại mỉm cười khi được bạn gọi tên."
+        }
       }
     },
     {
@@ -239,6 +255,14 @@
         "kana": "この ことばの いみが わかりません。",
         "translation": {
           "vi": "Tôi không hiểu ý nghĩa của từ này."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/words-speech-bubbles-notebook-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai bạn trò chuyện bên cuốn sổ mở, phía trên là các bong bóng lời thoại trống và nét trang trí."
         }
       }
     },
@@ -307,6 +331,14 @@
         "translation": {
           "vi": "Lúc đầu tôi đã không hiểu tiếng Nhật."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/race-track-starting-line-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Vận động viên ở tư thế chuẩn bị xuất phát tại vạch bắt đầu của đường chạy."
+        }
       }
     },
     {
@@ -323,6 +355,14 @@
         "kana": "えいがの おわりは どうでしたか。",
         "translation": {
           "vi": "Kết thúc của bộ phim thì như thế nào?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/race-track-finish-line-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Vận động viên giơ hai tay vui sướng khi băng qua dải băng vạch đích kết thúc."
         }
       }
     },
@@ -416,6 +456,14 @@
         "translation": {
           "vi": "Biển và núi, cậu thích nơi nào hơn?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/comparing-two-choices-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai hai tay cầm hai mô hình biển và núi để cân nhắc so sánh xem thích bên nào."
+        }
       }
     },
     {
@@ -458,6 +506,14 @@
         "translation": {
           "vi": "Mình đã làm món cà ri, cậu ăn không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/casual-offering-curry-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai bưng đĩa cơm cà ri tươi cười mời bạn ăn thử."
+        }
       }
     },
     {
@@ -499,6 +555,14 @@
         "kana": "よかったら、いっしょに えいがを みませんか。",
         "translation": {
           "vi": "Nếu tiện thì, bạn có muốn đi xem phim cùng tôi không?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/inviting-movie-tickets-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái cầm đôi vé xem phim mỉm cười ngỏ lời mời nếu bạn tiện thì đi cùng."
         }
       }
     },

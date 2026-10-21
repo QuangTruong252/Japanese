@@ -1065,6 +1065,14 @@
         "translation": {
           "vi": "Hãy dạy cho tôi cách đọc chữ Hán này."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/reading-pronunciation-guide-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cầm sách đọc to thành tiếng."
+        }
       }
     },
     {

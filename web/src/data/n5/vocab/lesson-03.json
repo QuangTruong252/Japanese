@@ -867,6 +867,14 @@
         "translation": {
           "vi": "Cuốn tạp chí đó giá 1000 yên."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/banknote-1000-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ tiền giấy 1.000 yên Nhật phẳng phiu in rõ con số 1000."
+        }
       }
     },
     {
@@ -883,6 +891,14 @@
         "kana": "この かばんは いちまんえんです。",
         "translation": {
           "vi": "Cái cặp này giá 1 vạn yên."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/banknote-10000-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Tờ tiền giấy 10.000 yên Nhật in rõ con số 10000."
         }
       }
     },

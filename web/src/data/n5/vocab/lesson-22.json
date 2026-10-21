@@ -470,6 +470,14 @@
         "translation": {
           "vi": "Anh ấy là người có khiếu hài hước."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/humorous-storyteller-laugh-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người có khiếu hài hước làm mọi người xung quanh bật cười vui vẻ."
+        }
       }
     },
     {
@@ -486,6 +494,14 @@
         "kana": "あしたは つごうが わるいです。",
         "translation": {
           "vi": "Ngày mai tôi bận (không thuận tiện)."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/schedule-conflict-convenience-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cuốn sổ tay lịch trình bị gạch dấu biểu thị điều kiện không thuận tiện."
         }
       }
     },
@@ -529,6 +545,14 @@
         "translation": {
           "vi": "\"Cách đọc của chữ Hán này là...\" \"À, để xem nào, tôi không biết.\""
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hesitating-thinking-eeto-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người khẽ chạm tay lên cằm ngước mắt suy nghĩ ngập ngừng để xem nào."
+        }
       }
     },
     {
@@ -571,6 +595,14 @@
         "translation": {
           "vi": "Quý khách đang tìm kiếm món gì ạ?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/shop-clerk-assisting-customer-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân viên bán hàng niềm nở tiến lại hỏi xem khách đang tìm món gì."
+        }
       }
     },
     {
@@ -587,6 +619,14 @@
         "kana": "では、これを みせて ください。",
         "translation": {
           "vi": "Vậy thì, xin cho tôi xem cái này."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/then-deciding-gesture-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Khách hàng mỉm cười đưa tay hướng về món đồ quyết định xem tiếp."
         }
       }
     },
@@ -629,6 +669,14 @@
         "kana": "この へやは やちんが たかいです。",
         "translation": {
           "vi": "Căn phòng này tiền thuê nhà cao."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/apartment-rent-envelope-key-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chìa khóa phòng đặt cạnh phong bì tiền thuê nhà có hình vẽ ngôi nhà nhỏ."
         }
       }
     },

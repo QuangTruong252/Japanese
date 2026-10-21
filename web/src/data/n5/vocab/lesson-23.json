@@ -659,6 +659,14 @@
         "translation": {
           "vi": "Tôi đã đi Nhật Bản rất nhiều lần."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/many-times-passport-stamps-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Trang hộ chiếu dày đặc nhiều con dấu nhập cảnh biểu thị đã đi rất nhiều lần."
+        }
       }
     },
     {
@@ -676,6 +684,14 @@
         "translation": {
           "vi": "Xin hãy rẽ trái ở góc đường thứ hai."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/ordinal-second-turn-arrow-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Góc rẽ thứ hai trên con đường được đánh dấu mũi tên nổi bật biểu thị số thứ tự."
+        }
       }
     },
     {
@@ -692,6 +708,14 @@
         "kana": "しょうとくたいしは むかしの ひとです。",
         "translation": {
           "vi": "Thái tử Shotoku là người thời xưa."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/prince-shotoku-portrait-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Thái tử Shotoku mặc áo triều phục thời Asuka hai tay cầm thẻ hốt bằng gỗ."
         }
       }
     },
