@@ -70,11 +70,12 @@ export function matchStroke(drawn: Point[], expected: Point[], remaining: Point[
   const dForward = meanPairDistance(d, e);
 
   // Chỉ bắt nhầm thứ tự khi nét chưa viết gần hơn rõ rệt; chừa sai số cho ngón tay lệch.
-  if (remaining.some((stroke) => {
+  const closerToLater = remaining.some((stroke) => {
     if (stroke.length === 0) return false;
     const other = meanPairDistance(d, resample(stroke, SAMPLES));
     return other + tol.orderMargin < dForward && other < dForward * tol.orderRatio;
-  })) return { ok: false, reason: 'shape' };
+  });
+  if (closerToLater) return { ok: false, reason: 'shape' };
 
   if (pathLength(expected) < tol.shortLength) {
     return dist(centroid(d), centroid(e)) <= tol.start ? { ok: true } : { ok: false, reason: 'shape' };
