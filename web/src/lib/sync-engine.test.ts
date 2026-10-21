@@ -44,10 +44,16 @@ function setup() {
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'key';
 
   const reviewItems = new Map<string, Row>();
+  const writingCards = new Map<string, Row>();
   const sessions = new Map<string, Row>();
   const pending = new Map<string, Row>();
   const creatingHooks = new Set<() => void>();
   const fake: Record<string, unknown> = {
+    writingCards: {
+      get: async (k: string) => writingCards.get(k),
+      put: async (r: Row) => void writingCards.set(r.char as string, r),
+      clear: async () => writingCards.clear(),
+    },
     reviewItems: {
       get: async (k: string) => reviewItems.get(k),
       put: async (r: Row) => void reviewItems.set(r.targetId as string, r),
@@ -86,6 +92,7 @@ function setup() {
   return {
     store,
     reviewItems,
+    writingCards,
     sessions,
     pending,
     creatingHooks,
@@ -275,6 +282,7 @@ test('signOut({ local: true }) dùng phạm vi cục bộ; mặc định giữ p
 
 function seedLocalData(ctx: ReturnType<typeof setup>) {
   ctx.reviewItems.set('r', { targetId: 'r' });
+  ctx.writingCards.set('あ', { char: 'あ' });
   ctx.sessions.set('s', { id: 's' });
   ctx.pending.set('p', { id: 'p' });
   ctx.store.set(OWNER_STORAGE_KEY, 'u1');
@@ -286,7 +294,7 @@ test('xóa dữ liệu offline: signOut lỗi mạng nhưng không còn phiên �
     fakeClient({ signOutError: 'offline', hasSession: false });
     seedLocalData(ctx);
     await wipeAllLocalData();
-    assert.equal(ctx.reviewItems.size + ctx.sessions.size + ctx.pending.size, 0);
+    assert.equal(ctx.reviewItems.size + ctx.sessions.size + ctx.pending.size + ctx.writingCards.size, 0);
     assert.equal(ctx.store.has(OWNER_STORAGE_KEY), false);
     assert.equal(ctx.store.has(LAST_PULLED_STORAGE_KEY), false);
   });
