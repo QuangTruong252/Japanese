@@ -1,7 +1,8 @@
 import Dexie, { type Table } from 'dexie';
-import type { AudioFileRecord, PracticeSession, ReviewItem, PendingSyncRecord } from '@/types';
+import type { AudioFileRecord, PracticeSession, ReviewItem, PendingSyncRecord, WritingCard } from '@/types';
 
 export class AppDatabase extends Dexie {
+  writingCards!: Table<WritingCard, string>;
   audioFiles!: Table<AudioFileRecord, string>;
   reviewItems!: Table<ReviewItem, string>;
   practiceSessions!: Table<PracticeSession, string>;
@@ -27,6 +28,9 @@ export class AppDatabase extends Dexie {
           item.createdAt ??= item.updatedAt ?? new Date().toISOString();
         });
     });
+
+    // Lịch viết tách riêng để không trộn vào ôn tập và đồng bộ tài khoản.
+    this.version(3).stores({ writingCards: 'char, dueAt' });
   }
 }
 
