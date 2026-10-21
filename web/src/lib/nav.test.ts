@@ -47,6 +47,7 @@ test('shouldHideAppChrome: ẩn chrome (header/dock/sidebar) trong các phiên t
   assert.equal(shouldHideAppChrome('/luyen-tap/phien/ket-qua'), true);
   assert.equal(shouldHideAppChrome('/on-tap/phien'), true);
   assert.equal(shouldHideAppChrome('/on-tap/phien/'), true);
+  assert.equal(shouldHideAppChrome('/luyen-viet/phien'), true);
   assert.equal(shouldHideAppChrome('/hoc/1/tu-vung'), true);
   assert.equal(shouldHideAppChrome('/hoc/25/tu-vung'), true);
   assert.equal(shouldHideAppChrome('/hoc/1/tu-vung/'), true);
@@ -63,6 +64,7 @@ test('shouldHideAppChrome: ẩn chrome (header/dock/sidebar) trong các phiên t
   assert.equal(shouldHideAppChrome('/hoc/25'), false);
   assert.equal(shouldHideAppChrome('/luyen-tap'), false);
   assert.equal(shouldHideAppChrome('/on-tap'), false);
+  assert.equal(shouldHideAppChrome('/luyen-viet'), false);
   assert.equal(shouldHideAppChrome('/on-tap/diem-yeu'), false);
   assert.equal(shouldHideAppChrome('/hoc/tra-cuu'), false);
   assert.equal(shouldHideAppChrome('/hoc/tra-cuu/kanji'), false);

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Info } from 'lucide-react';
-import { PageTitle } from '@/components/PaperKit';
+import { FeatureIcon } from '@/components/FeatureIcon';
+import { ListRow, PageTitle } from '@/components/PaperKit';
 import { KanaChart } from './KanaChart';
 
 export const metadata: Metadata = {
@@ -32,6 +33,8 @@ export default function KanaPage() {
         </ul>
       </details>
       </section>
+
+      <ListRow href="/luyen-viet" icon={<FeatureIcon name="kana" />} title="Luyện viết" />
 
       <KanaChart />
     </main>

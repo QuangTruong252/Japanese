@@ -21,10 +21,14 @@ export function useDueClock(): Date {
   const [now, setNow] = useState(() => new Date());
 
   // Mốc đến hạn kế tiếp — Dexie tự bắn lại khi lịch ôn đổi.
-  const nextDueAt = useLiveQuery(
-    () => db.reviewItems.where('dueAt').above(now).first().then((item) => item?.dueAt ?? null),
-    [now]
-  );
+  const nextDueAt = useLiveQuery(async () => {
+    const [review, writing] = await Promise.all([
+      db.reviewItems.where('dueAt').above(now).first(),
+      db.writingCards.where('dueAt').above(now).first(),
+    ]);
+    const times = [review?.dueAt, writing?.dueAt].filter((d): d is Date => !!d);
+    return times.length ? new Date(Math.min(...times.map((d) => d.getTime()))) : null;
+  }, [now]);
 
   useEffect(() => {
     const tick = () => setNow(new Date());
