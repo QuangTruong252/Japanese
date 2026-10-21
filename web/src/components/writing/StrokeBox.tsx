@@ -180,6 +180,20 @@ function StrokeBoxInner({ strokes, numbers, mode, label, onComplete, ref, classN
     return () => clearTimeout(t);
   }, [hintStroke]);
 
+  // `touch-action: none` trên <svg> không đủ với Safari iOS: kéo ngón tay vẫn cuộn trang thay vì vẽ.
+  // React gắn sự kiện touch ở chế độ passive nên không chặn được; phải gắn listener gốc passive: false.
+  useEffect(() => {
+    const box = boxRef.current;
+    if (!box || mode === 'watch') return;
+    const block = (e: TouchEvent) => e.preventDefault();
+    box.addEventListener('touchstart', block, { passive: false });
+    box.addEventListener('touchmove', block, { passive: false });
+    return () => {
+      box.removeEventListener('touchstart', block);
+      box.removeEventListener('touchmove', block);
+    };
+  }, [mode]);
+
   // Bỏ nét đang viết dở và trả con trỏ đang bị giữ.
   const abortStroke = useCallback(() => {
     const id = pointerId.current;
@@ -298,7 +312,11 @@ function StrokeBoxInner({ strokes, numbers, mode, label, onComplete, ref, classN
   return (
     <div
       ref={boxRef}
-      className={cn('relative aspect-square w-full overflow-hidden rounded-2xl border border-border bg-card', className)}
+      className={cn(
+        'relative aspect-square w-full overflow-hidden rounded-2xl border border-border bg-card',
+        mode !== 'watch' && 'touch-none',
+        className,
+      )}
     >
       <span aria-hidden="true" className="absolute inset-y-2 left-1/2 border-l border-dashed border-border" />
       <span aria-hidden="true" className="absolute inset-x-2 top-1/2 border-t border-dashed border-border" />
