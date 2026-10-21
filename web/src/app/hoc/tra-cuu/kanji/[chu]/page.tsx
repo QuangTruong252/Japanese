@@ -11,7 +11,10 @@ import {
 } from '@/lib/lookup';
 import { Furigana } from '@/components/Furigana';
 import { SpeakButton } from '@/components/SpeakButton';
-import { SectionHeader } from '@/components/PaperKit';
+import { FeatureIcon } from '@/components/FeatureIcon';
+import { ListRow, SectionHeader } from '@/components/PaperKit';
+import { KanjiStrokeView } from '@/components/writing/KanjiStrokeView';
+import { getStrokes } from '@/lib/strokes';
 import { stripFurigana, toKanaSentence } from '@/lib/japanese';
 
 const speakClass = 'size-11 w-11 rounded-full border border-border bg-secondary text-primary hover:bg-accent';
@@ -52,6 +55,7 @@ export default async function KanjiDetailPage({
   }
 
   const lesson = getKanjiLesson(kanji);
+  const strokes = getStrokes(kanji.character);
   const vocabIndex = getKanjiVocabIndex();
   const textbookWords = vocabIndex.get(kanji.character) ?? [];
   const hasUnverified = kanji.examples.some((ex) => !isExampleVerified(ex));
@@ -74,14 +78,18 @@ export default async function KanjiDetailPage({
       </header>
 
       <section className="flex items-center gap-4 sm:gap-6">
-        {/* Đường kẻ chữ thập mờ giống ô luyện viết, để người học nhận ra khung chữ */}
-        <div className="relative flex size-28 shrink-0 items-center justify-center rounded-2xl border border-border bg-card sm:size-36">
-          <span aria-hidden="true" className="absolute inset-y-2 left-1/2 border-l border-dashed border-border" />
-          <span aria-hidden="true" className="absolute inset-x-2 top-1/2 border-t border-dashed border-border" />
-          <span lang="ja" className="jp-display relative select-none text-6xl font-semibold leading-none text-foreground sm:text-7xl">
-            {kanji.character}
-          </span>
-        </div>
+        {/* Chưa có dữ liệu nét thì giữ ô tĩnh, kẻ chữ thập mờ giống ô luyện viết để nhận ra khung chữ */}
+        {strokes ? (
+          <KanjiStrokeView strokes={strokes.d} numbers={strokes.n} label={`Thứ tự nét chữ Hán ${kanji.hanviet ?? kanji.character}`} />
+        ) : (
+          <div className="relative flex size-28 shrink-0 items-center justify-center rounded-2xl border border-border bg-card sm:size-36">
+            <span aria-hidden="true" className="absolute inset-y-2 left-1/2 border-l border-dashed border-border" />
+            <span aria-hidden="true" className="absolute inset-x-2 top-1/2 border-t border-dashed border-border" />
+            <span lang="ja" className="jp-display relative select-none text-6xl font-semibold leading-none text-foreground sm:text-7xl">
+              {kanji.character}
+            </span>
+          </div>
+        )}
 
         <div className="min-w-0 flex-1 space-y-2">
           <div className="flex flex-wrap items-center gap-2">
@@ -104,6 +112,15 @@ export default async function KanjiDetailPage({
           )}
         </div>
       </section>
+
+      {strokes && (
+        <ListRow
+          href={`/luyen-viet/phien?c=${encodeURIComponent(kanji.character)}`}
+          icon={<FeatureIcon name="kanji" />}
+          title="Luyện viết chữ này"
+          detail={`${kanji.strokes} nét`}
+        />
+      )}
 
       <section aria-labelledby="kanji-readings">
         <SectionHeader id="kanji-readings" title="Cách đọc" />
