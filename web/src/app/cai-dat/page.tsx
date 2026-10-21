@@ -90,6 +90,8 @@ export default function SettingsPage() {
   // 2. Đọc thống kê dữ liệu hiện có trên máy
   const reviewCount = useLiveQuery(() => db.reviewItems.count(), []) ?? 0;
   const sessionCount = useLiveQuery(() => db.practiceSessions.count(), []) ?? 0;
+  const writingCount = useLiveQuery(() => db.writingCards.count(), []) ?? 0;
+  const writingExtra = writingCount > 0 ? `, ${writingCount} chữ luyện viết` : '';
   const audioCount = useLiveQuery(() => (AUDIO_IMPORT_ENABLED ? db.audioFiles.count() : 0), []) ?? 0;
 
   // 3. Trạng thái Export / Import / Wipe
@@ -181,7 +183,7 @@ export default function SettingsPage() {
 
       setNotification({
         type: 'success',
-        message: `Đã nhập thành công ${result.reviewCount} mục ôn tập và ${result.sessionCount} phiên luyện tập (${mode === 'replace' ? 'chế độ Thay thế' : 'chế độ Gộp'}).`,
+        message: `Đã nhập thành công ${result.reviewCount} mục ôn tập${result.writingCount > 0 ? `, ${result.writingCount} chữ luyện viết` : ''} và ${result.sessionCount} phiên luyện tập (${mode === 'replace' ? 'chế độ Thay thế' : 'chế độ Gộp'}).`,
       });
       setImportPreview(null);
       setConfirmReplaceOpen(false);
@@ -224,7 +226,7 @@ export default function SettingsPage() {
     );
   }
 
-  const hasAnyData = reviewCount > 0 || sessionCount > 0;
+  const hasAnyData = reviewCount > 0 || sessionCount > 0 || writingCount > 0;
 
   return (
     <main className="mx-auto w-full max-w-2xl space-y-8 px-4 py-6 pb-28 lg:pb-12">
@@ -381,7 +383,7 @@ export default function SettingsPage() {
           <ActionRow
             icon={<CloudUpload />}
             title="Sao lưu dữ liệu"
-            detail={`${reviewCount} mục ôn tập · ${sessionCount} phiên luyện tập`}
+            detail={`${reviewCount} mục ôn tập · ${sessionCount} phiên luyện tập${writingCount > 0 ? ` · ${writingCount} chữ luyện viết` : ''}`}
             disabled={!hasAnyData}
             onClick={handleExport}
           />
@@ -425,6 +427,19 @@ export default function SettingsPage() {
         Xóa toàn bộ dữ liệu
       </Button>
 
+      <p className="text-sm text-muted-foreground">
+        Dữ liệu nét chữ:{' '}
+        <a
+          href="https://kanjivg.tagaini.net"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 hover:text-foreground"
+        >
+          KanjiVG
+        </a>{' '}
+        (CC BY-SA 3.0)
+      </p>
+
       {/* DIALOG XEM TRƯỚC KHI NHẬP FILE */}
       <Dialog
         open={importPreview !== null}
@@ -451,6 +466,12 @@ export default function SettingsPage() {
                   <span className="text-muted-foreground">Phiên luyện tập:</span>
                   <span className="font-medium">{importPreview.practiceSessions.length}</span>
                 </div>
+                {importPreview.writingCards !== undefined && (
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Chữ luyện viết:</span>
+                    <span className="font-medium">{importPreview.writingCards.length}</span>
+                  </div>
+                )}
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Ngày xuất:</span>
                   <span className="font-medium">
@@ -561,7 +582,9 @@ export default function SettingsPage() {
           <AlertDialogHeader>
             <AlertDialogTitle>Xác nhận thay thế dữ liệu?</AlertDialogTitle>
             <AlertDialogDescription>
-              Thao tác này sẽ xóa {reviewCount} mục ôn tập và {sessionCount} phiên hiện có trên
+              {/* File cũ không có writingCards thì import không đụng tới chữ luyện viết, nên không nhắc xóa */}
+              Thao tác này sẽ xóa {reviewCount} mục ôn tập
+              {importPreview?.writingCards !== undefined ? writingExtra : ''} và {sessionCount} phiên hiện có trên
               máy thay bằng {importPreview?.reviewItems.length} mục từ bản sao lưu.
               {accountLinked && ' Dữ liệu trên tài khoản cũng bị thay ở lần đồng bộ tiếp theo.'} Hành động này không
               thể hoàn tác.
@@ -589,7 +612,7 @@ export default function SettingsPage() {
             </AlertDialogTitle>
             <AlertDialogDescription className="space-y-2">
               <span>
-                Thao tác này sẽ xóa vĩnh viễn {reviewCount} mục ôn tập, {sessionCount} phiên luyện
+                Thao tác này sẽ xóa vĩnh viễn {reviewCount} mục ôn tập{writingExtra}, {sessionCount} phiên luyện
                 tập trên máy này.
                 {accountLinked &&
                   ' Máy sẽ đăng xuất. Dữ liệu trên tài khoản được giữ nguyên và trở lại khi bạn đăng nhập lại.'}{' '}

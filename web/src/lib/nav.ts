@@ -28,6 +28,7 @@ export function isNavActive(itemHref: string, pathname: string): boolean {
  * Áp dụng cho:
  * - /luyen-tap/phien (phiên luyện tập)
  * - /on-tap/phien (phiên ôn tập FSRS)
+ * - /luyen-viet/phien (phiên viết chữ: dock che mất vùng vẽ)
  * - /hoc/[so]/tu-vung (phiên flashcard từ vựng theo bài)
  * - /hoc/[so]/hoi-thoai/[id] (phiên nhập vai)
  */
@@ -36,6 +37,9 @@ export function shouldHideAppChrome(pathname: string): boolean {
     return true;
   }
   if (pathname === '/on-tap/phien' || pathname.startsWith('/on-tap/phien/')) {
+    return true;
+  }
+  if (pathname === '/luyen-viet/phien' || pathname.startsWith('/luyen-viet/phien/')) {
     return true;
   }
   if (/^\/hoc\/[^/]+\/tu-vung(\/.*)?$/.test(pathname)) {

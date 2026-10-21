@@ -50,6 +50,11 @@ export function DashboardContent({
     () => DEFAULT_SETTINGS,
   );
   const batchCount = queue.sessionTargetIds.size;
+  const writingDueCount = useLiveQuery(
+    () => db.writingCards.where('dueAt').belowOrEqual(now).count(),
+    [now],
+    0,
+  );
   const drafts = useActiveDrafts();
 
   const vocabTargetIds = useLiveQuery(
@@ -203,6 +208,14 @@ export function DashboardContent({
                   icon={<FeatureIcon name="review" />}
                   title="Ôn tập đến hạn"
                   detail={dueSummaryText || `${batchCount} mục`}
+                />
+              )}
+              {writingDueCount > 0 && (
+                <ListRow
+                  href="/luyen-viet/phien?mode=den-han"
+                  icon={<FeatureIcon name="kana" />}
+                  title="Viết chữ đến hạn"
+                  detail={`${writingDueCount} chữ`}
                 />
               )}
               {isDoneToday && (
