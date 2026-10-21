@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Tabs } from '@base-ui/react/tabs';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { ArrowRight, CircleCheck, Clock } from 'lucide-react';
@@ -10,6 +11,7 @@ import { ListRow, PageTitle, SectionHeader } from '@/components/PaperKit';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { getKanaGroups, type KanaType } from '@/data/kana';
 import { db } from '@/lib/db';
+import { writingBackHref } from '@/lib/nav';
 import { useDueClock } from '@/lib/use-due-clock';
 import { dueChars, hardChars } from '@/lib/writing';
 import { charStatus, writingCountsText, type CharStatus } from '@/lib/writing-ui';
@@ -60,6 +62,7 @@ function StatusMark({ status }: { status: CharStatus }) {
 }
 
 export function WritingPicker() {
+  const router = useRouter();
   const now = useDueClock();
   const cards = useLiveQuery(() => db.writingCards.toArray(), []);
   const [tab, setTab] = useState<KanaType>('hiragana');
@@ -88,7 +91,15 @@ export function WritingPicker() {
       <PageTitle
         title="Luyện viết"
         meta={writingCountsText(dueCount, hardCount) || undefined}
-        back={{ href: '/', label: 'Bảng tin' }}
+        back={{
+          href: '/',
+          label: 'Quay lại',
+          // Đọc lúc bấm: AppNav ghi trang trước trong effect, có thể chạy sau lần render đầu của trang này.
+          onClick: (e) => {
+            e.preventDefault();
+            router.push(writingBackHref());
+          },
+        }}
       />
 
       {(dueCount > 0 || hardCount > 0) && (

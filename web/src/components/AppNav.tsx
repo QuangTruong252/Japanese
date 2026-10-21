@@ -24,7 +24,7 @@ import {
   CloudOff,
   CloudUpload,
 } from 'lucide-react';
-import { formatNavBadgeCount, isNavActive, shouldHideAppChrome } from '@/lib/nav';
+import { formatNavBadgeCount, isNavActive, shouldHideAppChrome, trackPath } from '@/lib/nav';
 import { applySettingsToDOM, loadSettings } from '@/lib/settings';
 import { AccountButton } from '@/components/profile/AccountButton';
 import { SearchTrigger } from '@/components/search/SearchTrigger';
@@ -85,6 +85,7 @@ export function AppNav() {
 
   // AppNav có mặt trên mọi trang nên đây là nơi duy nhất gắn bộ tự đồng bộ: hàng đợi pendingSync được đẩy dù người học không mở trang nào có nút đồng bộ.
   useEffect(() => initSyncEngine(), []);
+  useEffect(() => trackPath(pathname), [pathname]);
 
   useEffect(() => {
     if (!isSupabaseConfigured()) return;

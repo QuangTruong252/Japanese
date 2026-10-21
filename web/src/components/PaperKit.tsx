@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { MouseEventHandler, ReactNode } from 'react';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Illustration } from '@/components/Illustration';
@@ -59,13 +59,14 @@ export function PageTitle({
 }: {
   title: ReactNode;
   meta?: ReactNode;
-  back?: { href: string; label: string };
+  back?: { href: string; label: string; onClick?: MouseEventHandler<HTMLAnchorElement> };
 }) {
   return (
     <header className="pt-2">
       {back && (
         <Link
           href={back.href}
+          onClick={back.onClick}
           className="-ml-2 mb-1 inline-flex min-h-11 items-center gap-0.5 rounded-lg px-2 text-sm font-medium text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring"
         >
           <ChevronLeft className="size-4" aria-hidden="true" />

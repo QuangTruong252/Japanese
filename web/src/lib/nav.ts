@@ -65,3 +65,18 @@ export function formatNavBadgeCount(count: number): string | null {
   }
   return String(Math.floor(count));
 }
+
+// Luyện viết có nhiều lối vào (Bảng tin, trang Kana, tìm kiếm) nên nút quay lại trở về trang đã mở nó,
+// bỏ qua các bước trong /luyen-viet/*. Biến module sống suốt phiên SPA; tải lại trang thì về Bảng tin.
+let currentPath: string | null = null;
+let writingOrigin: string | null = null;
+
+const isWriting = (path: string) => path === '/luyen-viet' || path.startsWith('/luyen-viet/');
+
+export function trackPath(path: string): void {
+  if (path === currentPath) return;
+  if (isWriting(path) && currentPath && !isWriting(currentPath)) writingOrigin = currentPath;
+  currentPath = path;
+}
+
+export const writingBackHref = (): string => writingOrigin ?? '/';
