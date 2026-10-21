@@ -27,7 +27,7 @@
 | `/hoc/[so]/tu-vung` | Học từ vựng | `VocabLearningFlow` (+ `components/vocab/*`) |
 | `/luyen-tap`, `/luyen-tap/phien` | Luyện tập | `PracticeRunner`, khung phiên chung `practice/SessionFrame` |
 | `/on-tap`, `/on-tap/phien`, `/on-tap/diem-yeu` | Ôn tập | `ReviewRunner` (dùng `SessionFrame`), `on-tap/ReinforcementSection` |
-| `/luyen-viet`, `/luyen-viet/phien` | Luyện viết kana (vẽ nét) | `WritingPicker`, `WritingSession`, ô viết `components/writing/StrokeBox` |
+| `/luyen-viet`, `/luyen-viet/phien` | Luyện viết kana và kanji N5 (vẽ nét) | `WritingPicker`, `WritingSession`, ô viết `components/writing/StrokeBox` |
 | `/hoc/tra-cuu` (+ `kana`, `kanji`, `kanji/[chu]`, `dong-tu`, `bang`, `bang/[slug]`) | Tra cứu | `KanjiGrid`, `VerbTable` |
 | `/ca-nhan`, `/ca-nhan/thong-ke` | Cá nhân, thống kê | `StatisticsContent` (+ `components/stats/*`) |
 | `/cai-dat`, `/cai-dat/audio` | Cài đặt, nạp audio | `components/settings/*`, `InstallAppCard` |
@@ -40,7 +40,7 @@ dùng chung cho mọi màn. Màn nào đã sang v3: `DESIGN.md` §11.
 | Nơi lưu | Nội dung | Truy cập |
 |---|---|---|
 | Dữ liệu tĩnh `web/src/data/n5/` | Bài học, từ vựng, kanji, động từ, bảng tham chiếu | `lib/lessons.ts`, `lib/lookup.ts`, `lib/search.ts` |
-| Dữ liệu nét `web/src/data/strokes/kana.json` (KanjiVG) | Thứ tự và đường nét kana | `lib/strokes.ts`; chấm nét `lib/stroke-match.ts` |
+| Dữ liệu nét `web/src/data/strokes/kana.json`, `kanji.json` (KanjiVG) | Thứ tự và đường nét kana, kanji N5 | `lib/strokes.ts`; chấm nét `lib/stroke-match.ts` |
 | IndexedDB `JapaneseLearningDB` (Dexie, `lib/db.ts`) | `reviewItems` (thẻ ôn FSRS), `practiceSessions`, `audioFiles`, `pendingSync`; `writingCards` (lịch FSRS luyện viết, tách khỏi ôn tập, chưa đồng bộ) | `useLiveQuery`; hàng đợi ôn qua `lib/use-due-queue.ts`, `lib/review-queue.ts`; luyện viết qua `lib/writing.ts` |
 | `localStorage` | Cài đặt `jp:settings` (`lib/settings.ts`); nháp phiên `jp:practice-draft`, `jp:vocab-draft:<bài>` | `lib/settings.ts`, `lib/practice-draft.ts`, `lib/vocab-draft.ts`, `lib/active-drafts.ts` |
 | Zustand (`lib/store.ts`) | Chỉ trạng thái UI tạm (mở hộp tìm kiếm…) | — |
