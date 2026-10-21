@@ -9,7 +9,8 @@ export interface Point {
 export type MatchResult = { ok: true } | { ok: false; reason: 'start' | 'end' | 'direction' | 'shape' };
 
 /** Ngưỡng theo đơn vị khung 109×109; nới cho ngón tay, chỉnh sau khi thử trên máy thật. */
-export const STROKE_TOLERANCE = { start: 20, end: 22, mean: 15, shortLength: 10 };
+// orderMargin/orderRatio: nét chưa viết phải gần hơn cả theo khoảng tuyệt đối lẫn tỉ lệ mới bị coi là vẽ nhầm thứ tự.
+export const STROKE_TOLERANCE = { start: 20, end: 22, mean: 15, shortLength: 10, orderMargin: 8, orderRatio: 0.5 };
 
 const SAMPLES = 24;
 
@@ -59,19 +60,26 @@ function centroid(points: Point[]): Point {
   return { x: sum.x / points.length, y: sum.y / points.length };
 }
 
-export function matchStroke(drawn: Point[], expected: Point[]): MatchResult {
+export function matchStroke(drawn: Point[], expected: Point[], remaining: Point[][] = []): MatchResult {
   if (drawn.length === 0 || expected.length === 0) return { ok: false, reason: 'shape' };
   const tol = STROKE_TOLERANCE;
 
   // Lấy mẫu đều trước: trọng tâm trên điểm thô lệch theo mật độ sự kiện pointermove.
   const d = resample(drawn, SAMPLES);
   const e = resample(expected, SAMPLES);
+  const dForward = meanPairDistance(d, e);
+
+  // Chỉ bắt nhầm thứ tự khi nét chưa viết gần hơn rõ rệt; chừa sai số cho ngón tay lệch.
+  if (remaining.some((stroke) => {
+    if (stroke.length === 0) return false;
+    const other = meanPairDistance(d, resample(stroke, SAMPLES));
+    return other + tol.orderMargin < dForward && other < dForward * tol.orderRatio;
+  })) return { ok: false, reason: 'shape' };
 
   if (pathLength(expected) < tol.shortLength) {
     return dist(centroid(d), centroid(e)) <= tol.start ? { ok: true } : { ok: false, reason: 'shape' };
   }
 
-  const dForward = meanPairDistance(d, e);
   const dReverse = meanPairDistance(d, [...e].reverse());
   if (dReverse < dForward && dReverse <= tol.mean) return { ok: false, reason: 'direction' };
   if (dist(d[0], e[0]) > tol.start) return { ok: false, reason: 'start' };
