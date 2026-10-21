@@ -85,7 +85,11 @@ export function WritingPicker() {
 
   return (
     <main className="mx-auto w-full max-w-5xl space-y-6 px-4 pt-3 sm:px-6 lg:px-8">
-      <PageTitle title="Luyện viết" meta={writingCountsText(dueCount, hardCount) || undefined} />
+      <PageTitle
+        title="Luyện viết"
+        meta={writingCountsText(dueCount, hardCount) || undefined}
+        back={{ href: '/', label: 'Bảng tin' }}
+      />
 
       {(dueCount > 0 || hardCount > 0) && (
         <div className="space-y-2">
