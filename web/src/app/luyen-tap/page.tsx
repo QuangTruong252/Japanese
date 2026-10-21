@@ -25,7 +25,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
-import { Chip, PageTitle, SectionHeader, TornCard } from '@/components/PaperKit';
+import { FeatureIcon } from '@/components/FeatureIcon';
+import { Chip, ListRow, PageTitle, SectionHeader, TornCard } from '@/components/PaperKit';
 import { filterExercises } from '@/lib/filter';
 import { AVAILABLE_N5_LESSONS, loadLessonSummaries } from '@/lib/lessons';
 import { buildSession } from '@/lib/practice';
@@ -465,6 +466,14 @@ function PracticeConfigContent() {
       <PageTitle title="Luyện tập" />
 
       <div className="max-w-2xl space-y-8">
+        {/* Luyện viết là dạng luyện riêng (vẽ nét, lịch ôn riêng), không phải một dạng câu hỏi của phiên bên dưới. */}
+        <ListRow
+          href="/luyen-viet"
+          icon={<FeatureIcon name="kanji" />}
+          title="Luyện viết"
+          detail="Kana và kanji N5, vẽ từng nét"
+        />
+
         {hasActiveDraft && draftInfo ? (
           <section aria-labelledby="practice-draft-heading" className="space-y-4">
             <TornCard>

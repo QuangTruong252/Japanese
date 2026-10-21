@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { getAllKanji, getKanjiLesson } from '@/lib/lookup';
 import { WritingPicker, type KanjiGroup } from './WritingPicker';
@@ -20,5 +21,10 @@ function buildKanjiGroups(): KanjiGroup[] {
 }
 
 export default function WritingPage() {
-  return <WritingPicker kanjiGroups={buildKanjiGroups()} />;
+  return (
+    // Suspense vì WritingPicker đọc useSearchParams (tab mở sẵn).
+    <Suspense fallback={<div className="mx-auto mt-24 h-96 w-full max-w-5xl animate-pulse rounded-xl border border-border bg-card" />}>
+      <WritingPicker kanjiGroups={buildKanjiGroups()} />
+    </Suspense>
+  );
 }

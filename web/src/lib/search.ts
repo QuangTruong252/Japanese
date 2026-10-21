@@ -135,10 +135,10 @@ export function getFeatureEntries(): SearchEntry[] {
     {
       id: 'feature-luyen-viet',
       label: 'Luyện viết',
-      sublabel: 'Tập viết Hiragana, Katakana bằng ngón tay theo thứ tự nét',
+      sublabel: 'Tập viết Hiragana, Katakana và kanji N5 bằng ngón tay theo thứ tự nét',
       badge: 'Tính năng',
       href: '/luyen-viet',
-      aliases: ['luyen viet', 'tap viet', 'viet chu', 'thu tu net', 'stroke order'],
+      aliases: ['luyen viet', 'tap viet', 'viet chu', 'viet kanji', 'thu tu net', 'stroke order'],
     },
     {
       id: 'feature-luyen-tap',

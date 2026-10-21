@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Tabs } from '@base-ui/react/tabs';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { ArrowRight, CircleCheck, Clock } from 'lucide-react';
@@ -75,7 +75,11 @@ export function WritingPicker({ kanjiGroups }: { kanjiGroups: KanjiGroup[] }) {
   const router = useRouter();
   const now = useDueClock();
   const cards = useLiveQuery(() => db.writingCards.toArray(), []);
-  const [tab, setTab] = useState<Tab>('hiragana');
+  // Lối vào từ trang Kanji mở thẳng tab Kanji; tham số lạ thì về Hiragana.
+  const tabParam = useSearchParams().get('tab');
+  const [tab, setTab] = useState<Tab>(
+    tabParam === 'katakana' || tabParam === 'kanji' ? tabParam : 'hiragana',
+  );
   const [selected, setSelected] = useState<ReadonlySet<string>>(new Set());
 
   const byChar = useMemo(() => new Map((cards ?? []).map((c): [string, WritingCard] => [c.char, c])), [cards]);

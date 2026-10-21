@@ -2,7 +2,8 @@ import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { getAllKanji, getKanjiVocabIndex } from '@/lib/lookup';
 import { KanjiGrid } from '@/components/lookup/KanjiGrid';
-import { PageTitle } from '@/components/PaperKit';
+import { FeatureIcon } from '@/components/FeatureIcon';
+import { ListRow, PageTitle } from '@/components/PaperKit';
 
 export const metadata: Metadata = {
   title: 'Tra cứu Kanji N5 · MaiPace',
@@ -23,6 +24,8 @@ export default function KanjiLookupPage() {
   return (
     <main className="mx-auto w-full max-w-5xl space-y-6 px-4 pb-24 sm:px-6 lg:px-8 lg:pb-12">
       <PageTitle title="Kanji" meta="169 chữ N5" back={{ href: '/hoc/tra-cuu', label: 'Tra cứu' }} />
+
+      <ListRow href="/luyen-viet?tab=kanji" icon={<FeatureIcon name="kanji" />} title="Luyện viết kanji" />
 
       {/* Suspense vì KanjiGrid đọc useSearchParams */}
       <Suspense fallback={<div className="h-64 animate-pulse rounded-xl border border-border bg-card" />}>

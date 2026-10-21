@@ -34,7 +34,7 @@ export default function KanaPage() {
       </details>
       </section>
 
-      <ListRow href="/luyen-viet" icon={<FeatureIcon name="kana" />} title="Luyện viết" />
+      <ListRow href="/luyen-viet" icon={<FeatureIcon name="kana" />} title="Luyện viết kana" />
 
       <KanaChart />
     </main>
