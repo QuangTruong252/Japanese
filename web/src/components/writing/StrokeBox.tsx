@@ -280,7 +280,7 @@ function StrokeBoxInner({ strokes, numbers, mode, label, onComplete, ref, classN
     setInk([]);
 
     const index = doneRef.current;
-    if (matchStroke(drawn, samples[index] ?? []).ok) {
+    if (matchStroke(drawn, samples[index] ?? [], samples.slice(index + 1)).ok) {
       doneRef.current = index + 1;
       missesOnStroke.current = 0;
       setDone(index + 1);

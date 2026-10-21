@@ -35,8 +35,9 @@ khi thay dữ liệu cũ; xử lý thiếu file, hết quota và import lại. K
 
 ## Dữ liệu nét
 
-Thứ tự nét kana (hiragana, katakana cơ bản và âm đục) lấy từ KanjiVG (https://kanjivg.tagaini.net),
-giấy phép CC BY-SA 3.0. Dữ liệu nằm ở `web/src/data/strokes/kana.json`, sinh bằng script, không sửa tay.
+Thứ tự nét kana (hiragana, katakana cơ bản và âm đục) và 169 kanji N5 lấy từ KanjiVG
+(https://kanjivg.tagaini.net), giấy phép CC BY-SA 3.0. Dữ liệu nằm ở `web/src/data/strokes/kana.json` và
+`kanji.json`, sinh bằng script, không sửa tay. Script dừng nếu số nét KanjiVG lệch trường `strokes` của kanji.
 
 ## Script
 
@@ -46,6 +47,6 @@ Chạy ở root repo sau khi đổi dữ liệu tương ứng:
 |---|---|
 | `node scripts/generate-kanji-index.mjs` | Thêm hoặc xóa file trong `kanji/` (sinh lại `kanji-index.ts`). |
 | `node scripts/enrich-vocab-verbs.mjs` | Đổi `verbs/verbs.json` hoặc động từ trong `vocab/` (điền thể động từ vào từ vựng). |
-| `node scripts/build-strokes.mjs <thư-mục-kanji-của-kanjivg>` | Đổi danh sách kana hoặc cập nhật KanjiVG. Test parser: `node --test scripts/build-strokes.test.mjs`. |
+| `node scripts/build-strokes.mjs <thư-mục-kanji-của-kanjivg>` | Đổi danh sách kana, thêm/xóa kanji hoặc cập nhật KanjiVG. Test parser: `node --test scripts/build-strokes.test.mjs`. |
 
 Sau đó chạy `pnpm check` và `pnpm test` trong `web/`.

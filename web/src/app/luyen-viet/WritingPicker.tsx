@@ -18,17 +18,27 @@ import { charStatus, writingCountsText, type CharStatus } from '@/lib/writing-ui
 import { cn } from '@/lib/utils';
 import type { WritingCard } from '@/types';
 
-const TABS: { type: KanaType; sample: string; label: string }[] = [
+type Tab = KanaType | 'kanji';
+
+export interface KanjiGroup {
+  id: string;
+  title: string;
+  cells: { char: string; hanviet: string }[];
+}
+
+const TABS: { type: Tab; sample: string; label: string }[] = [
   { type: 'hiragana', sample: 'あ', label: 'Hiragana' },
   { type: 'katakana', sample: 'ア', label: 'Katakana' },
+  { type: 'kanji', sample: '漢', label: 'Kanji' },
 ];
+const KANA_TABS = TABS.filter((t): t is { type: KanaType; sample: string; label: string } => t.type !== 'kanji');
 
 // Âm ghép không có ô viết riêng: ghép từ chữ đã có.
 const GROUP_IDS = new Set(['basic', 'dakuon']);
 const groupsOf = (type: KanaType) => getKanaGroups(type).filter((g) => GROUP_IDS.has(g.id));
 
 // Thứ tự lưới để chuỗi gửi sang phiên không phụ thuộc thứ tự bấm.
-const GRID_ORDER = TABS.flatMap((tab) =>
+const KANA_ORDER = KANA_TABS.flatMap((tab) =>
   groupsOf(tab.type).flatMap((g) => g.rows.flatMap((r) => r.cells.flatMap((c) => (c ? [c.kana] : [])))),
 );
 
@@ -61,11 +71,11 @@ function StatusMark({ status }: { status: CharStatus }) {
   );
 }
 
-export function WritingPicker() {
+export function WritingPicker({ kanjiGroups }: { kanjiGroups: KanjiGroup[] }) {
   const router = useRouter();
   const now = useDueClock();
   const cards = useLiveQuery(() => db.writingCards.toArray(), []);
-  const [tab, setTab] = useState<KanaType>('hiragana');
+  const [tab, setTab] = useState<Tab>('hiragana');
   const [selected, setSelected] = useState<ReadonlySet<string>>(new Set());
 
   const byChar = useMemo(() => new Map((cards ?? []).map((c): [string, WritingCard] => [c.char, c])), [cards]);
@@ -84,7 +94,8 @@ export function WritingPicker() {
       return next;
     });
 
-  const chosen = GRID_ORDER.filter((c) => selected.has(c));
+  const gridOrder = useMemo(() => [...KANA_ORDER, ...kanjiGroups.flatMap((g) => g.cells.map((c) => c.char))], [kanjiGroups]);
+  const chosen = gridOrder.filter((c) => selected.has(c));
 
   return (
     <main className="mx-auto w-full max-w-5xl space-y-6 px-4 pt-3 sm:px-6 lg:px-8">
@@ -123,10 +134,10 @@ export function WritingPicker() {
         </div>
       )}
 
-      <Tabs.Root value={tab} onValueChange={(v) => setTab(v as KanaType)}>
+      <Tabs.Root value={tab} onValueChange={(v) => setTab(v as Tab)}>
         {/* Bảng kana dài hơn một màn: thanh tab dính đầu vùng cuộn để đổi Hiragana/Katakana ở bất cứ đâu. */}
         <div className="sticky top-0 z-10 -mx-4 bg-background/95 px-4 py-2 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-          <Tabs.List className="grid w-full max-w-sm grid-cols-2 gap-1 rounded-xl border border-border bg-secondary p-1">
+          <Tabs.List className="grid w-full max-w-md grid-cols-3 gap-1 rounded-xl border border-border bg-secondary p-1">
             {TABS.map(({ type, sample, label }) => (
               <Tabs.Tab
                 key={type}
@@ -142,7 +153,7 @@ export function WritingPicker() {
           </Tabs.List>
         </div>
 
-        {TABS.map(({ type }) => (
+        {KANA_TABS.map(({ type }) => (
           <Tabs.Panel key={type} value={type} className="mt-6 space-y-8 outline-none">
             {groupsOf(type).map((group) => (
               <section key={group.id} aria-labelledby={`write-group-${type}-${group.id}`}>
@@ -227,6 +238,67 @@ export function WritingPicker() {
             ))}
           </Tabs.Panel>
         ))}
+
+        <Tabs.Panel value="kanji" className="mt-6 space-y-8 outline-none">
+          {kanjiGroups.map((group) => {
+            const chars = group.cells.map((c) => c.char);
+            const allOn = chars.every((c) => selected.has(c));
+            return (
+              <section key={group.id} aria-labelledby={`write-group-kanji-${group.id}`}>
+                {/* SectionHeader không có chỗ cho nút: đặt nút chồng lên mép phải, cao hơn tiêu đề nên nâng lên cho giữa dòng. */}
+                <div className="relative">
+                  <SectionHeader id={`write-group-kanji-${group.id}`} title={group.title} />
+                  <button
+                    type="button"
+                    aria-pressed={allOn}
+                    aria-label={`Chọn cả ${group.title}`}
+                    onClick={() => toggle(chars)}
+                    className={cn(
+                      'absolute -top-2 right-0 min-h-11 rounded-full border px-4 text-sm font-medium outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring',
+                      allOn
+                        ? 'border-primary bg-accent text-primary'
+                        : 'border-border bg-secondary text-muted-foreground hover:bg-muted',
+                    )}
+                  >
+                    Chọn cả bài
+                  </button>
+                </div>
+                <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
+                  {group.cells.map(({ char, hanviet }) => {
+                    const on = selected.has(char);
+                    const status = charStatus(byChar.get(char), now);
+                    return (
+                      <button
+                        key={char}
+                        type="button"
+                        aria-pressed={on}
+                        aria-label={`${char}, ${hanviet}, ${STATUS_LABEL[status]}`}
+                        onClick={() => toggle([char])}
+                        className={cn(
+                          'relative flex min-h-16 flex-col items-center justify-center rounded-xl border p-1 outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring',
+                          on ? 'border-primary bg-accent text-primary' : 'border-border bg-card hover:bg-muted/60',
+                        )}
+                      >
+                        <span className={cn('jp text-2xl font-bold leading-none sm:text-3xl', !on && 'text-foreground')} lang="ja">
+                          {char}
+                        </span>
+                        <span
+                          className={cn(
+                            'mt-1 max-w-full truncate text-xs font-medium uppercase leading-tight',
+                            !on && 'text-muted-foreground',
+                          )}
+                        >
+                          {hanviet}
+                        </span>
+                        <StatusMark status={status} />
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
+            );
+          })}
+        </Tabs.Panel>
       </Tabs.Root>
 
       {/* Vùng cuộn chừa pb-28 (sm: pb-32) cho AppNav cao ~75px + vùng an toàn, và sticky dừng ở mép trong padding đó:

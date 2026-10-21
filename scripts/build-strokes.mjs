@@ -1,6 +1,6 @@
-// Sinh web/src/data/strokes/kana.json từ KanjiVG (https://kanjivg.tagaini.net, CC BY-SA 3.0).
+// Sinh web/src/data/strokes/kana.json và kanji.json từ KanjiVG (https://kanjivg.tagaini.net, CC BY-SA 3.0).
 // Chạy ở root repo: node scripts/build-strokes.mjs <thư-mục-kanji-của-kanjivg>
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -47,30 +47,50 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     ),
   ];
 
+  // Kanji N5: số nét KanjiVG phải khớp trường strokes của dữ liệu học, lệch là một trong hai bên sai.
+  const kanjiDir = join(root, 'web/src/data/n5/kanji');
+  const kanji = readdirSync(kanjiDir)
+    .filter((f) => f.endsWith('.json'))
+    .sort()
+    .map((f) => JSON.parse(readFileSync(join(kanjiDir, f), 'utf8')));
+
   const fail = (ch, msg) => {
     console.error(`Lỗi ở chữ ${ch}: ${msg}`);
     process.exit(1);
   };
 
-  const out = {};
-  for (const ch of chars) {
-    const hex = ch.codePointAt(0).toString(16).padStart(5, '0');
-    let svg;
-    try {
-      svg = readFileSync(join(dir, `${hex}.svg`), 'utf8');
-    } catch {
-      fail(ch, `thiếu file ${hex}.svg`);
+  const build = (list) => {
+    const out = {};
+    for (const ch of list) {
+      const hex = ch.codePointAt(0).toString(16).padStart(5, '0');
+      let svg;
+      try {
+        svg = readFileSync(join(dir, `${hex}.svg`), 'utf8');
+      } catch {
+        fail(ch, `thiếu file ${hex}.svg`);
+      }
+      try {
+        out[ch] = parseKanjiSvg(svg);
+      } catch (e) {
+        fail(ch, e.message);
+      }
     }
-    try {
-      out[ch] = parseKanjiSvg(svg);
-    } catch (e) {
-      fail(ch, e.message);
-    }
+    return out;
+  };
+
+  const kanaOut = build(chars);
+  const kanjiOut = build(kanji.map((k) => k.character));
+  for (const k of kanji) {
+    const got = kanjiOut[k.character].d.length;
+    if (got !== k.strokes) fail(k.character, `KanjiVG ${got} nét, dữ liệu học ghi ${k.strokes}`);
   }
 
-  const lines = Object.entries(out).map(([ch, v]) => `${JSON.stringify(ch)}:${JSON.stringify(v)}`);
-  const file = join(root, 'web/src/data/strokes/kana.json');
-  mkdirSync(dirname(file), { recursive: true });
-  writeFileSync(file, `{\n${lines.join(',\n')}\n}\n`, 'utf8');
-  console.log(`Đã ghi ${chars.length} chữ vào ${file}`);
+  // Ghi sau khi mọi chữ đều hợp lệ, để lỗi không để lại file nửa vời.
+  for (const [name, out] of [['kana', kanaOut], ['kanji', kanjiOut]]) {
+    const lines = Object.entries(out).map(([ch, v]) => `${JSON.stringify(ch)}:${JSON.stringify(v)}`);
+    const file = join(root, `web/src/data/strokes/${name}.json`);
+    mkdirSync(dirname(file), { recursive: true });
+    writeFileSync(file, `{\n${lines.join(',\n')}\n}\n`, 'utf8');
+    console.log(`Đã ghi ${lines.length} chữ vào ${file}`);
+  }
 }

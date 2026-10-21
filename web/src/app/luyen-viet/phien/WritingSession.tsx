@@ -30,7 +30,9 @@ import {
   type WritingResult,
   type WritingStep,
 } from '@/lib/writing';
-import { kanaInfo, parseWritingChars } from '@/lib/writing-ui';
+import { kanaInfo, parseWritingChars, type KanjiWritingInfo } from '@/lib/writing-ui';
+
+type KanjiInfoMap = Record<string, KanjiWritingInfo>;
 
 const LEARN_MODES: StrokeBoxMode[] = ['watch', 'trace', 'guided'];
 const STEP_LABELS = ['Xem', 'Tô', 'Gợi ý', 'Tự viết'];
@@ -93,7 +95,45 @@ function StepLine({ current }: { current: number }) {
   );
 }
 
-function SessionDone({ records }: { records: WrittenChar[] }) {
+/** Đề kanji: âm Hán Việt, nghĩa, On/Kun và từ ví dụ với chữ cần viết thay bằng ô trống. Không có chữ đáp án. */
+function KanjiPrompt({ info }: { info: KanjiWritingInfo }) {
+  const readings = [info.on.length > 0 && `On ${info.on.join('・')}`, info.kun.length > 0 && `Kun ${info.kun.join('・')}`]
+    .filter(Boolean)
+    .join(' · ');
+  const { example } = info;
+  return (
+    <div className="flex w-full max-w-sm flex-col items-center gap-1 text-center">
+      <p className="font-serif text-4xl font-bold leading-tight text-foreground">{info.hanviet}</p>
+      <p className="font-serif text-xl font-semibold leading-snug text-foreground">{info.meaning}</p>
+      {readings && (
+        <p lang="ja" className="jp text-sm text-muted-foreground">
+          {readings}
+        </p>
+      )}
+      {example && (
+        <p className="mt-2 flex flex-wrap items-baseline justify-center gap-x-2 rounded-2xl border border-border bg-card px-4 py-2">
+          <span lang="ja" className="jp text-xl font-semibold text-foreground">
+            {[...example.blanked].map((c, i) =>
+              c === '＿' ? (
+                <span key={i} className="border-b-2 border-primary">
+                  {c}
+                </span>
+              ) : (
+                c
+              ),
+            )}
+          </span>
+          <span lang="ja" className="jp text-sm text-muted-foreground">
+            {example.reading}
+          </span>
+          <span className="text-sm text-muted-foreground">— {example.meaning}</span>
+        </p>
+      )}
+    </div>
+  );
+}
+
+function SessionDone({ records, kanjiInfo }: { records: WrittenChar[]; kanjiInfo: KanjiInfoMap }) {
   const router = useRouter();
   return (
     <SessionShell>
@@ -125,7 +165,7 @@ function SessionDone({ records }: { records: WrittenChar[] }) {
                 <span className="jp text-3xl font-bold leading-none text-foreground" lang="ja">
                   {char}
                 </span>
-                <span className="mt-1 text-sm text-muted-foreground">{kanaInfo(char)?.romaji}</span>
+                <span className="mt-1 text-sm text-muted-foreground">{kanjiInfo[char]?.hanviet ?? kanaInfo(char)?.romaji}</span>
               </div>
               <span aria-hidden="true" className="h-10 w-px shrink-0 bg-border" />
               <ResultLine result={result} />
@@ -142,7 +182,7 @@ function SessionDone({ records }: { records: WrittenChar[] }) {
   );
 }
 
-function WritingRunner({ steps }: { steps: WritingStep[] }) {
+function WritingRunner({ steps, kanjiInfo }: { steps: WritingStep[]; kanjiInfo: KanjiInfoMap }) {
   const router = useRouter();
   const [turn, setTurn] = useState(0);
   // Bước con trong lượt học: 0 Xem, 1 Tô, 2 Gợi ý. Lượt Tự viết luôn là 0.
@@ -190,9 +230,9 @@ function WritingRunner({ steps }: { steps: WritingStep[] }) {
 
   // Vào bước Tự viết: chỉ đọc chữ, không tự focus nút nào — Enter nhầm vào "Xem đáp án" sẽ lộ đáp án và bị tính Again.
   useEffect(() => {
-    if (phase !== 'recall' || !char) return;
+    if (phase !== 'recall' || !char || kanjiInfo[char]) return;
     speak(char);
-  }, [phase, char, turn]);
+  }, [phase, char, turn, kanjiInfo]);
   useEffect(() => {
     if (save === 'saved') nextRef.current?.focus();
   }, [save]);
@@ -211,10 +251,15 @@ function WritingRunner({ steps }: { steps: WritingStep[] }) {
     [],
   );
 
-  if (!step || !char) return <SessionDone records={records} />;
+  if (!step || !char) return <SessionDone records={records} kanjiInfo={kanjiInfo} />;
 
   const strokes = getStrokes(char);
+  const kanji = kanjiInfo[char];
+  // Kanji không có "cách đọc" để gọi tên chữ, nên nhãn ô dùng âm Hán Việt thay vì chữ (đề không được lộ chữ).
+  const boxLabel = kanji ? `Ô viết chữ Hán ${kanji.hanviet}` : `Ô viết chữ ${kanaInfo(char)?.romaji ?? char}`;
   const romaji = kanaInfo(char)?.romaji ?? char;
+  // Kanji có thêm khối đề nên ô hẹp lại (320px) để cả màn 390×844 vừa không cuộn.
+  const colWidth = kanji ? 'max-w-80' : 'max-w-sm';
   const isRecall = step.phase === 'recall';
   const mode: StrokeBoxMode = isRecall ? 'recall' : LEARN_MODES[sub];
 
@@ -265,14 +310,18 @@ function WritingRunner({ steps }: { steps: WritingStep[] }) {
         <div inert={paused} className="flex h-full flex-col items-center gap-4 overflow-y-auto pb-4 pt-2">
           <StepLine current={isRecall ? 3 : sub} />
 
-          <div className="flex items-center gap-4">
-            <p className="text-5xl font-bold text-foreground">{romaji}</p>
-            <SpeakButton
-              text={char}
-              label={romaji}
-              className="size-11 w-11 rounded-full border border-border bg-secondary text-primary hover:bg-accent"
-            />
-          </div>
+          {kanji ? (
+            <KanjiPrompt info={kanji} />
+          ) : (
+            <div className="flex items-center gap-4">
+              <p className="text-5xl font-bold text-foreground">{romaji}</p>
+              <SpeakButton
+                text={char}
+                label={romaji}
+                className="size-11 w-11 rounded-full border border-border bg-secondary text-primary hover:bg-accent"
+              />
+            </div>
+          )}
 
           {strokes && (
             <StrokeBox
@@ -281,14 +330,14 @@ function WritingRunner({ steps }: { steps: WritingStep[] }) {
               strokes={strokes.d}
               numbers={strokes.n}
               mode={mode}
-              label={`Ô viết chữ ${romaji}`}
+              label={boxLabel}
               onComplete={onComplete}
-              className="max-w-sm"
+              className={colWidth}
             />
           )}
 
           {!isRecall && (
-            <div className="flex w-full max-w-sm gap-2">
+            <div className={cn('flex w-full gap-2', colWidth)}>
               <Button
                 type="button"
                 variant="outline"
@@ -328,7 +377,7 @@ function WritingRunner({ steps }: { steps: WritingStep[] }) {
           )}
 
           {isRecall && !first && (
-            <div className="flex w-full max-w-sm gap-2">
+            <div className={cn('flex w-full gap-2', colWidth)}>
               <Button type="button" variant="outline" className={pillClass} onClick={() => boxRef.current?.clear()}>
                 <Eraser aria-hidden="true" />
                 Xóa nét
@@ -346,7 +395,7 @@ function WritingRunner({ steps }: { steps: WritingStep[] }) {
           )}
 
           {isRecall && first && (
-            <div className="flex w-full max-w-sm flex-col items-center gap-2" aria-live="polite">
+            <div className={cn('flex w-full flex-col items-center gap-2', colWidth)} aria-live="polite">
               <ResultLine result={first} />
               {save === 'error' && (
                 <div role="alert" className="flex items-center gap-2 text-sm text-destructive">
@@ -393,7 +442,7 @@ function WritingRunner({ steps }: { steps: WritingStep[] }) {
  * Tham số URL và thẻ đã có được chụp một lần lúc mở: thẻ đổi giữa phiên (vừa ghi lịch)
  * không được làm dựng lại hàng lượt hay biến chữ mới thành chữ cũ.
  */
-export function WritingSession() {
+export function WritingSession({ kanjiInfo }: { kanjiInfo: KanjiInfoMap }) {
   const search = useSearchParams();
   const [params] = useState(() => ({ c: search.get('c'), mode: search.get('mode') }));
   const [init, setInit] = useState<Init>({ kind: 'loading' });
@@ -429,7 +478,7 @@ export function WritingSession() {
   }, [params]);
 
   if (init.kind === 'loading') return <SessionSkeleton />;
-  if (init.kind === 'ready') return <WritingRunner steps={init.steps} />;
+  if (init.kind === 'ready') return <WritingRunner steps={init.steps} kanjiInfo={kanjiInfo} />;
   return (
     <SessionNotice message={init.kind === 'empty' ? init.message : 'Không đọc được dữ liệu luyện viết.'}>
       <Link href="/luyen-viet" className={cn(buttonVariants({ size: 'quiz' }), 'w-full font-semibold')}>

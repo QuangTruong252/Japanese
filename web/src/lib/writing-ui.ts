@@ -4,8 +4,10 @@ import {
   KATAKANA_BASIC_ROWS,
   KATAKANA_DAKUON_ROWS,
 } from '../data/kana.ts';
+import { stripFurigana, toKanaSentence } from './japanese.ts';
 import { hasStrokes } from './strokes.ts';
 import type { WritingCard } from '../types/index.ts';
+import type { KanjiData, KanjiExample } from '../types/lookup.ts';
 
 export type CharStatus = 'new' | 'due' | 'hard' | 'known';
 
@@ -37,4 +39,35 @@ export function charStatus(card: WritingCard | undefined, now: Date): CharStatus
 
 export function writingCountsText(due: number, hard: number): string {
   return [due > 0 && `${due} chữ đến hạn`, hard > 0 && `${hard} chữ khó`].filter(Boolean).join(' · ');
+}
+
+export interface KanjiWritingInfo {
+  hanviet: string;
+  meaning: string;
+  on: string[];
+  kun: string[];
+  /** Từ ghép với chữ cần viết thay bằng ＿; không lộ chữ đáp án. */
+  example?: { blanked: string; reading: string; meaning: string };
+}
+
+/**
+ * `isVerified` do bên gọi truyền vào để file này (client cũng import) không kéo theo `lookup.ts`
+ * và toàn bộ từ vựng 25 bài.
+ */
+export function kanjiWritingInfo(kanji: KanjiData, isVerified: (ex: KanjiExample) => boolean): KanjiWritingInfo {
+  const { character } = kanji;
+  const found = kanji.examples
+    .map((ex) => ({ ex, plain: stripFurigana(ex.word) }))
+    .find(({ ex, plain }) => isVerified(ex) && [...plain].length > 1 && plain.includes(character));
+  return {
+    hanviet: kanji.hanviet ?? '',
+    meaning: kanji.meanings.vi.join(', '),
+    on: kanji.onyomi,
+    kun: kanji.kunyomi,
+    example: found && {
+      blanked: found.plain.replaceAll(character, '＿'),
+      reading: toKanaSentence(found.ex.word),
+      meaning: found.ex.meaning.vi,
+    },
+  };
 }
