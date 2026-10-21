@@ -321,7 +321,7 @@
     },
     {
       "stem": "step-two-insert-money-v1",
-      "subject": "a hand inserting a Japanese yen banknote into the glowing currency slot of an automated payment terminal, with a sequence arrow guiding from the previous step",
+      "subject": "a hand inserting a plain blank banknote (no numbers, no printing, just soft decorative wash) into the glowing currency slot of an automated payment terminal, with a sequence arrow guiding from the previous step",
       "source": "image_gen",
       "generation": {
         "tool": "Codex built-in image_gen",
@@ -669,7 +669,7 @@
         "id": "kotoba"
       },
       "alt": {
-        "vi": "Cuốn sổ tay với các bong bóng lời thoại và nét ký tự tượng hình bay bổng."
+        "vi": "Hai bạn trò chuyện bên cuốn sổ mở, phía trên là các bong bóng lời thoại trống và nét trang trí."
       }
     },
     {
@@ -706,7 +706,7 @@
     },
     {
       "stem": "comparing-two-choices-v1",
-      "subject": "the reference male student holding up two miniature models in his hands to compare: a sunny beach with a seashell in his left hand, a green mountain in his right hand, smiling as he weighs which one he prefers",
+      "subject": "the reference male student standing and holding up two miniature models in his hands to compare: a tiny sunny beach with a seashell in his left hand, a tiny green mountain in his right hand, smiling as he weighs which one he prefers; clean isolated cutout with nothing else around him",
       "source": "image_gen",
       "generation": {
         "tool": "Codex built-in image_gen",
@@ -978,7 +978,7 @@
     },
     {
       "stem": "sufficient-exact-money-bill-v1",
-      "subject": "an open leather wallet on a table with banknotes and coins spread out that neatly match the exact total shown on a dining bill, with a green checkmark indicating sufficient funds",
+      "subject": "an open leather wallet on a table with plain blank banknotes and plain coins (no numbers, no printing on any of them) spread out next to a small blank receipt slip, with a green checkmark indicating there is enough money",
       "source": "image_gen",
       "generation": {
         "tool": "Codex built-in image_gen",

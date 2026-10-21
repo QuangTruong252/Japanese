@@ -182,6 +182,14 @@
         "naiKana": "ならない",
         "ta": "なった",
         "taKana": "なった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/becoming-summer-branch-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cành cây đâm chồi xanh mướt dưới ánh nắng biểu thị sự chuyển mùa trở nên ấm áp."
+        }
       }
     },
     {
@@ -374,6 +382,14 @@
         "translation": {
           "vi": "Vào ngày nghỉ tôi ở nhà."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/sun-daylight-window-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ánh mặt trời buổi sớm chiếu rọi qua khung cửa sổ vào một ngày bình yên."
+        }
       }
     },
     {
@@ -390,6 +406,14 @@
         "kana": "からだの ちょうしが いいです。",
         "translation": {
           "vi": "Tình trạng cơ thể rất tốt."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/good-condition-gauge-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Kim đồng hồ đo chỉ vào vạch màu xanh lá biểu thị tình trạng cơ thể rất tốt."
         }
       }
     },
@@ -408,6 +432,14 @@
         "translation": {
           "vi": "Tôi muốn leo núi Phú Sĩ một lần."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/once-summit-flag-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Ngọn núi cao với lá cờ nhỏ trên đỉnh biểu thị trải nghiệm một lần chinh phục."
+        }
       }
     },
     {
@@ -424,6 +456,14 @@
         "kana": "いちども おすしを たべた ことが ありません。",
         "translation": {
           "vi": "Tôi chưa từng ăn sushi một lần nào."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/never-tried-sushi-curious-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai cầm đũa nhìn đĩa sushi với vẻ bỡ ngỡ vì chưa từng ăn bao giờ."
         }
       }
     },
@@ -442,6 +482,14 @@
         "translation": {
           "vi": "Trời đã dần dần trở nên lạnh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/gradual-leaves-color-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hàng lá cây chuyển màu dần dần từ xanh sang vàng rồi đỏ thẫm."
+        }
       }
     },
     {
@@ -458,6 +506,14 @@
         "kana": "もうすぐ なつに なります。",
         "translation": {
           "vi": "Sắp sửa sang mùa hè rồi."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bud-almost-blooming-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Búp hoa sen hé nở sắp bung cánh báo hiệu mùa hè sắp tới."
         }
       }
     },
@@ -476,6 +532,14 @@
         "translation": {
           "vi": "\"Nhờ ơn trời, tôi vẫn khỏe.\""
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/grateful-wellbeing-gesture-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái mỉm cười chắp tay cảm tạ vì nhờ ơn trời vẫn khỏe mạnh."
+        }
       }
     },
     {
@@ -492,6 +556,14 @@
         "kana": "この カメラは ちいさいです。でも、たかいです。",
         "translation": {
           "vi": "Cái máy ảnh này nhỏ. Nhưng mà đắt."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/contrast-small-camera-price-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chiếc máy ảnh nhỏ xíu nhưng bên cạnh là biểu tượng giá tiền đắt đỏ đối lập."
         }
       }
     },
@@ -585,6 +657,14 @@
         "translation": {
           "vi": "Thể thao tốt cho cơ thể."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/healthy-lifestyle-salad-shoes-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Đĩa salad rau củ tươi đặt cạnh đôi giày chạy bộ tốt cho cơ thể."
+        }
       }
     },
     {
@@ -626,6 +706,14 @@
         "kana": "かつしかほくさいの えを みた ことが ありますか。",
         "translation": {
           "vi": "Bạn đã từng xem tranh của Katsushika Hokusai chưa?"
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/hokusai-great-wave-artist-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Họa sĩ già Hokusai mặc kimono cầm bút bên bức tranh khắc gỗ sóng lừng nổi tiếng."
         }
       }
     }

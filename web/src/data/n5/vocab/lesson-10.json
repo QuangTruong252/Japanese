@@ -1092,6 +1092,14 @@
         "translation": {
           "vi": "Trong hộp có những thứ như thư và ảnh."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/grocery-basket-etc-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Giỏ đi chợ có bánh mì, sữa, trái cây và vài món khác ló ra."
+        }
       }
     },
     {

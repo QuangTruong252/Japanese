@@ -992,6 +992,14 @@
         "translation": {
           "vi": "Cà phê và hồng trà, bạn thích loại nào hơn?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/comparing-two-choices-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai hai tay cầm hai mô hình biển và núi để cân nhắc so sánh xem thích bên nào."
+        }
       }
     },
     {
@@ -1158,6 +1166,14 @@
         "kana": "わあ、すごい ひとですね。",
         "translation": {
           "vi": "Ồ, đông người thật đấy nhỉ."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/marveling-huge-crowd-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng sinh viên mở to mắt trầm trồ trước dòng người đông đúc tấp nập qua lại trên phố."
         }
       }
     },

@@ -709,6 +709,14 @@
         "translation": {
           "vi": "\"Điều đó thú vị thật đấy.\""
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/listening-excitedly-interesting-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái chống cằm mắt sáng lên chăm chú nghe chuyện và hào hứng tán thưởng."
+        }
       }
     },
     {
@@ -725,6 +733,14 @@
         "kana": "にほんで なかなか うまを みる ことが できません。",
         "translation": {
           "vi": "Ở Nhật Bản mãi mà không thể nhìn thấy ngựa."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/looking-far-in-vain-binoculars-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Người cầm ống nhòm tìm kiếm mãi trên đồng cỏ trống mà không thấy bóng dáng con ngựa."
         }
       }
     },
@@ -743,6 +759,14 @@
         "translation": {
           "vi": "\"Có thật thế không?\""
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/really-incredulous-ask-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai rướn người nhướng mày ngạc nhiên hỏi lại xem có thật không."
+        }
       }
     },
     {
@@ -759,6 +783,14 @@
         "kana": "ぜひ にほんへ いきたいです。",
         "translation": {
           "vi": "Tôi nhất định muốn đi Nhật Bản."
+        }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/eager-determination-japan-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái nắm chặt tay đầy quyết tâm và háo hức hướng về ước mơ đi Nhật."
         }
       }
     },

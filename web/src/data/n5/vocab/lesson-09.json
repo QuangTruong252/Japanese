@@ -567,6 +567,14 @@
         "translation": {
           "vi": "Tôi hiểu chữ Hán."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/kanji-brush-calligraphy-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Bút lông, nghiên mực và vài nét mực đậm trên giấy, gợi việc học chữ Hán."
+        }
       }
     },
     {

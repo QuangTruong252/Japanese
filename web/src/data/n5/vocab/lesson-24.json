@@ -521,6 +521,14 @@
         "translation": {
           "vi": "Ngoài ra thì còn ai đi nữa không?"
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/besides-anyone-else-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Nhân vật đứng trung tâm bên cạnh các bóng người khác hỏi xem còn ai ngoài ra nữa."
+        }
       }
     },
     {

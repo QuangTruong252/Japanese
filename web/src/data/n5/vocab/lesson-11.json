@@ -194,6 +194,14 @@
         "translation": {
           "vi": "Tôi đã ăn hai quả quýt."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/two-apples-single-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hai quả táo đỏ đặt cạnh nhau."
+        }
       }
     },
     {

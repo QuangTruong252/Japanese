@@ -144,6 +144,14 @@
         "naiKana": "しらない",
         "ta": "知[し]った",
         "taKana": "しった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/knowing-lightbulb-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai mỉm cười chỉ tay lên đầu cạnh bóng đèn bật sáng biểu thị đã biết rõ."
+        }
       }
     },
     {
@@ -362,6 +370,14 @@
         "translation": {
           "vi": "Tôi đang làm phần mềm máy tính."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/software-box-disc-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Hộp phần mềm máy tính đặt cạnh đĩa quang và biểu tượng ứng dụng."
+        }
       }
     },
     {
@@ -504,6 +520,14 @@
         "translation": {
           "vi": "Anh Santos vẫn còn độc thân."
         }
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/bachelor-living-alone-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Chàng trai độc thân ngồi đọc sách thư thái bên chú mèo trong căn hộ của mình."
+        }
       }
     },
     {
@@ -584,6 +608,14 @@
         "naiKana": "おもいださない",
         "ta": "思[おも]い 出[だ]した",
         "taKana": "おもいだした"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/remembering-photo-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Cô gái mỉm cười ngắm bức ảnh gia đình và hồi tưởng lại kỷ niệm."
+        }
       }
     },
     {
@@ -614,6 +646,14 @@
         "naiKana": "いらっしゃらない",
         "ta": "いらっしゃった",
         "taKana": "いらっしゃった"
+      },
+      "illustration": {
+        "src": "/assets/illustrations/vocab/honorable-presence-v1.webp",
+        "width": 512,
+        "height": 512,
+        "alt": {
+          "vi": "Lễ tân cung kính hướng dẫn vị khách quý bước vào phòng."
+        }
       }
     }
   ]
