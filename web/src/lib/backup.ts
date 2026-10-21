@@ -1,7 +1,7 @@
 import { db } from './db.ts';
 import { loadSettings, type AppSettings } from './settings.ts';
 import { clearAccountLink, getOwnerUserId, signOut } from './sync.ts';
-import type { PracticeSession, ReviewItem, TargetType } from '../types/index.ts';
+import type { PracticeSession, ReviewItem, TargetType, WritingCard } from '../types/index.ts';
 
 export interface ExportFile {
   schemaVersion: 1;
@@ -10,6 +10,7 @@ export interface ExportFile {
   settings: AppSettings;
   reviewItems: ReviewItem[];
   practiceSessions: PracticeSession[];
+  writingCards: WritingCard[];
 }
 
 export interface ParsedImportData {
@@ -20,6 +21,8 @@ export interface ParsedImportData {
   settings?: AppSettings;
   reviewItems: ReviewItem[];
   practiceSessions: PracticeSession[];
+  writingCards?: WritingCard[];
+  skippedWritingCardsCount: number;
   skippedReviewItemsCount: number;
   skippedSessionsCount: number;
 }
@@ -41,6 +44,20 @@ const isValidIsoDate = (d: unknown): boolean => {
   const t = new Date(d).getTime();
   return !Number.isNaN(t);
 };
+
+function validateFsrsCard(raw: unknown): ReviewItem['fsrsCard'] | null {
+  const rawCard = raw as Record<string, unknown> | undefined;
+  if (!rawCard || typeof rawCard !== 'object') return null;
+  if (!isValidIsoDate(rawCard.due)) return null;
+
+  return {
+    ...rawCard,
+    due: new Date(rawCard.due as string | Date),
+    last_review: rawCard.last_review && isValidIsoDate(rawCard.last_review)
+      ? new Date(rawCard.last_review as string | Date)
+      : undefined,
+  } as unknown as ReviewItem['fsrsCard'];
+}
 
 export function validateReviewItem(raw: unknown): ReviewItem | null {
   if (!raw || typeof raw !== 'object') return null;
@@ -70,18 +87,8 @@ export function validateReviewItem(raw: unknown): ReviewItem | null {
     ? item.lastFailedAt
     : undefined;
 
-  // Validate FSRS Card
-  const rawCard = item.fsrsCard as Record<string, unknown> | undefined;
-  if (!rawCard || typeof rawCard !== 'object') return null;
-  if (!isValidIsoDate(rawCard.due)) return null;
-
-  const fsrsCard = {
-    ...rawCard,
-    due: new Date(rawCard.due as string | Date),
-    last_review: rawCard.last_review && isValidIsoDate(rawCard.last_review)
-      ? new Date(rawCard.last_review as string | Date)
-      : undefined,
-  } as unknown as ReviewItem['fsrsCard'];
+  const fsrsCard = validateFsrsCard(item.fsrsCard);
+  if (!fsrsCard) return null;
 
   return {
     targetId: item.targetId,
@@ -95,6 +102,31 @@ export function validateReviewItem(raw: unknown): ReviewItem | null {
     updatedAt,
     createdAt,
     recentElapsedMs,
+  };
+}
+
+export function validateWritingCard(raw: unknown): WritingCard | null {
+  if (!raw || typeof raw !== 'object') return null;
+  const item = raw as Record<string, unknown>;
+  if (typeof item.char !== 'string' || [...item.char].length !== 1) return null;
+  if (typeof item.correctCount !== 'number' || !Number.isFinite(item.correctCount) || item.correctCount < 0) return null;
+  if (typeof item.incorrectCount !== 'number' || !Number.isFinite(item.incorrectCount) || item.incorrectCount < 0) return null;
+  if (!isValidIsoDate(item.dueAt)) return null;
+  const fsrsCard = validateFsrsCard(item.fsrsCard);
+  if (!fsrsCard) return null;
+  const updatedAt = typeof item.updatedAt === 'string' && isValidIsoDate(item.updatedAt)
+    ? item.updatedAt : new Date().toISOString();
+  return {
+    char: item.char,
+    correctCount: item.correctCount,
+    incorrectCount: item.incorrectCount,
+    dueAt: new Date(item.dueAt as string | Date),
+    fsrsCard,
+    updatedAt,
+    createdAt: typeof item.createdAt === 'string' && isValidIsoDate(item.createdAt)
+      ? item.createdAt : updatedAt,
+    lastFailedAt: typeof item.lastFailedAt === 'string' && isValidIsoDate(item.lastFailedAt)
+      ? item.lastFailedAt : undefined,
   };
 }
 
@@ -189,7 +221,19 @@ export function parseAndValidateImport(
     }
   }
 
-  if (validReviewItems.length === 0 && validSessions.length === 0) {
+  const hasWritingCards = Array.isArray(obj.writingCards);
+  const rawWritingCards = Array.isArray(obj.writingCards) ? obj.writingCards : [];
+  const validWritingCards: WritingCard[] = [];
+  let skippedWritingCardsCount = 0;
+  for (const item of rawWritingCards) {
+    const validated = validateWritingCard(item);
+    if (validated) validWritingCards.push(validated);
+    else skippedWritingCardsCount++;
+  }
+  // Corrupt backup data must not erase writing progress already on this device.
+  const keepWritingCards = hasWritingCards && (rawWritingCards.length === 0 || validWritingCards.length > 0);
+
+  if (validReviewItems.length === 0 && validSessions.length === 0 && validWritingCards.length === 0) {
     return {
       ok: false,
       code: 'NO_VALID_DATA',
@@ -207,6 +251,8 @@ export function parseAndValidateImport(
       settings: obj.settings as AppSettings | undefined,
       reviewItems: validReviewItems,
       practiceSessions: validSessions,
+      ...(keepWritingCards ? { writingCards: validWritingCards } : {}),
+      skippedWritingCardsCount,
       skippedReviewItemsCount,
       skippedSessionsCount,
     },
@@ -236,6 +282,17 @@ export function mergeReviewItems(existing: ReviewItem[], incoming: ReviewItem[])
   return Array.from(map.values());
 }
 
+export function mergeWritingCards(existing: WritingCard[], incoming: WritingCard[]): WritingCard[] {
+  const map = new Map(existing.map((card) => [card.char, card]));
+  for (const card of incoming) {
+    const prev = map.get(card.char);
+    if (!prev || new Date(card.updatedAt).getTime() >= new Date(prev.updatedAt).getTime()) {
+      map.set(card.char, card);
+    }
+  }
+  return [...map.values()];
+}
+
 export function mergePracticeSessions(
   existing: PracticeSession[],
   incoming: PracticeSession[],
@@ -251,9 +308,10 @@ export function mergePracticeSessions(
 }
 
 export async function createExportData(): Promise<ExportFile> {
-  const [reviewItems, practiceSessions] = await Promise.all([
+  const [reviewItems, practiceSessions, writingCards] = await Promise.all([
     db.reviewItems.toArray(),
     db.practiceSessions.toArray(),
+    db.writingCards.toArray(),
   ]);
 
   const settings = loadSettings();
@@ -265,6 +323,7 @@ export async function createExportData(): Promise<ExportFile> {
     settings,
     reviewItems,
     practiceSessions,
+    writingCards,
   };
 }
 
@@ -295,11 +354,12 @@ export function isReplacePayload(mode: 'merge' | 'replace', ownerUserId: string 
 export async function executeImport(
   importData: ParsedImportData,
   mode: 'merge' | 'replace',
-): Promise<{ reviewCount: number; sessionCount: number }> {
+): Promise<{ reviewCount: number; sessionCount: number; writingCount: number }> {
   let finalReviews: ReviewItem[] = [];
   let finalSessions: PracticeSession[] = [];
+  let writingCount = 0;
 
-  await db.transaction('rw', db.reviewItems, db.practiceSessions, db.pendingSync, async () => {
+  await db.transaction('rw', [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards], async () => {
     if (mode === 'replace') {
       await db.reviewItems.clear();
       await db.practiceSessions.clear();
@@ -310,6 +370,18 @@ export async function executeImport(
       const existingSessions = await db.practiceSessions.toArray();
       finalReviews = mergeReviewItems(existingReviews, importData.reviewItems);
       finalSessions = mergePracticeSessions(existingSessions, importData.practiceSessions);
+    }
+
+    if (importData.writingCards !== undefined) {
+      let finalWritingCards: WritingCard[];
+      if (mode === 'replace') {
+        await db.writingCards.clear();
+        finalWritingCards = importData.writingCards;
+      } else {
+        finalWritingCards = mergeWritingCards(await db.writingCards.toArray(), importData.writingCards);
+      }
+      await db.writingCards.bulkPut(finalWritingCards);
+      writingCount = finalWritingCards.length;
     }
 
     await db.reviewItems.bulkPut(finalReviews);
@@ -336,6 +408,7 @@ export async function executeImport(
   return {
     reviewCount: finalReviews.length,
     sessionCount: finalSessions.length,
+    writingCount,
   };
 }
 
@@ -351,10 +424,11 @@ export async function wipeAllLocalData(): Promise<void> {
 }
 
 export async function executeWipeAllData(): Promise<void> {
-  await db.transaction('rw', db.reviewItems, db.practiceSessions, db.pendingSync, async () => {
+  await db.transaction('rw', [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards], async () => {
     await db.reviewItems.clear();
     await db.practiceSessions.clear();
     await db.pendingSync.clear();
+    await db.writingCards.clear();
   });
 
   clearAccountLink();

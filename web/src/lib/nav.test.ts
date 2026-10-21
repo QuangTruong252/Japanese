@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { formatNavBadgeCount, isNavActive, shouldHideAppChrome } from './nav.ts';
+import { formatNavBadgeCount, isNavActive, shouldHideAppChrome, trackPath, writingBackHref } from './nav.ts';
 
 test('isNavActive: trang chủ "/" chỉ active khi đúng pathname "/"', () => {
   assert.equal(isNavActive('/', '/'), true);
@@ -47,6 +47,7 @@ test('shouldHideAppChrome: ẩn chrome (header/dock/sidebar) trong các phiên t
   assert.equal(shouldHideAppChrome('/luyen-tap/phien/ket-qua'), true);
   assert.equal(shouldHideAppChrome('/on-tap/phien'), true);
   assert.equal(shouldHideAppChrome('/on-tap/phien/'), true);
+  assert.equal(shouldHideAppChrome('/luyen-viet/phien'), true);
   assert.equal(shouldHideAppChrome('/hoc/1/tu-vung'), true);
   assert.equal(shouldHideAppChrome('/hoc/25/tu-vung'), true);
   assert.equal(shouldHideAppChrome('/hoc/1/tu-vung/'), true);
@@ -63,6 +64,7 @@ test('shouldHideAppChrome: ẩn chrome (header/dock/sidebar) trong các phiên t
   assert.equal(shouldHideAppChrome('/hoc/25'), false);
   assert.equal(shouldHideAppChrome('/luyen-tap'), false);
   assert.equal(shouldHideAppChrome('/on-tap'), false);
+  assert.equal(shouldHideAppChrome('/luyen-viet'), false);
   assert.equal(shouldHideAppChrome('/on-tap/diem-yeu'), false);
   assert.equal(shouldHideAppChrome('/hoc/tra-cuu'), false);
   assert.equal(shouldHideAppChrome('/hoc/tra-cuu/kanji'), false);
@@ -89,4 +91,16 @@ test('formatNavBadgeCount: định dạng số badge điều hướng', () => {
   assert.equal(formatNavBadgeCount(100), '99+');
   assert.equal(formatNavBadgeCount(150), '99+');
   assert.equal(formatNavBadgeCount(999), '99+');
+});
+
+test('writingBackHref: về trang đã mở luyện viết, bỏ qua các bước trong /luyen-viet', () => {
+  assert.equal(writingBackHref(), '/');
+  trackPath('/hoc/tra-cuu/kana');
+  trackPath('/luyen-viet');
+  trackPath('/luyen-viet/phien');
+  trackPath('/luyen-viet');
+  assert.equal(writingBackHref(), '/hoc/tra-cuu/kana');
+  trackPath('/');
+  trackPath('/luyen-viet/phien');
+  assert.equal(writingBackHref(), '/');
 });

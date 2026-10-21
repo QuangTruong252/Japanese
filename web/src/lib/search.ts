@@ -133,6 +133,14 @@ export function getFeatureEntries(): SearchEntry[] {
       aliases: ['hoc', 'hoc bai', 'bai hoc', 'danh sach bai', 'lessons'],
     },
     {
+      id: 'feature-luyen-viet',
+      label: 'Luyện viết',
+      sublabel: 'Tập viết Hiragana, Katakana bằng ngón tay theo thứ tự nét',
+      badge: 'Tính năng',
+      href: '/luyen-viet',
+      aliases: ['luyen viet', 'tap viet', 'viet chu', 'thu tu net', 'stroke order'],
+    },
+    {
       id: 'feature-luyen-tap',
       label: 'Luyện tập',
       sublabel: 'Luyện tập 5 dạng bài: trắc nghiệm, điền từ, ghép cặp, nghe',

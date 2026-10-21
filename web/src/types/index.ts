@@ -169,6 +169,18 @@ export interface ReviewItem {
   recentElapsedMs: number[];
 }
 
+/** Thẻ viết chữ có lịch FSRS riêng, không nằm trong reviewItems. */
+export interface WritingCard {
+  char: string;
+  fsrsCard: Card;
+  dueAt: Date;
+  correctCount: number;
+  incorrectCount: number;
+  lastFailedAt?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface PracticeSession {
   id: string;
   selectedLessons: number[];

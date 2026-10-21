@@ -33,6 +33,11 @@ Người học tự nạp ZIP audio của giáo trình. Import phải kiểm tra
 khi thay dữ liệu cũ; xử lý thiếu file, hết quota và import lại. Không đưa audio nguồn vào bundle,
 `public/` hay cloud sync.
 
+## Dữ liệu nét
+
+Thứ tự nét kana (hiragana, katakana cơ bản và âm đục) lấy từ KanjiVG (https://kanjivg.tagaini.net),
+giấy phép CC BY-SA 3.0. Dữ liệu nằm ở `web/src/data/strokes/kana.json`, sinh bằng script, không sửa tay.
+
 ## Script
 
 Chạy ở root repo sau khi đổi dữ liệu tương ứng:
@@ -41,5 +46,6 @@ Chạy ở root repo sau khi đổi dữ liệu tương ứng:
 |---|---|
 | `node scripts/generate-kanji-index.mjs` | Thêm hoặc xóa file trong `kanji/` (sinh lại `kanji-index.ts`). |
 | `node scripts/enrich-vocab-verbs.mjs` | Đổi `verbs/verbs.json` hoặc động từ trong `vocab/` (điền thể động từ vào từ vựng). |
+| `node scripts/build-strokes.mjs <thư-mục-kanji-của-kanjivg>` | Đổi danh sách kana hoặc cập nhật KanjiVG. Test parser: `node --test scripts/build-strokes.test.mjs`. |
 
 Sau đó chạy `pnpm check` và `pnpm test` trong `web/`.
