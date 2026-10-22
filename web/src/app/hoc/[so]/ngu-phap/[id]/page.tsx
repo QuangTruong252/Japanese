@@ -54,11 +54,11 @@ export default async function GrammarPointPage({ params }: { params: Promise<Par
         className="flex min-h-14 items-start gap-3 rounded-xl border border-border bg-card p-3 outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring"
       >
         <span className="min-w-0 flex-1">
-          <span className="block text-xs font-medium text-muted-foreground">{dialogue.title.vi}</span>
+          <span className="mb-2 block text-xs font-medium text-muted-foreground">{dialogue.title.vi}</span>
           <Furigana text={line.jp} className="text-base" />
           <span className="translation block text-sm text-muted-foreground">{line.translation.vi}</span>
         </span>
-        <ChevronRight className="mt-5 size-5 shrink-0 text-muted-foreground" aria-hidden="true" />
+        <ChevronRight className="mt-7 size-5 shrink-0 text-muted-foreground" aria-hidden="true" />
       </Link>
     </li>
   );
