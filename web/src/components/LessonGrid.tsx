@@ -183,7 +183,7 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
         imageClassName="h-48 object-center sm:h-64 sm:object-[center_30%] lg:h-72 lg:object-[center_20%]"
         className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full"
       />
-      <PaperCloud className="-mt-7 w-fit">
+      <PaperCloud className="-mt-1.5 w-fit">
         <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
           Học bài
         </h1>
@@ -374,8 +374,8 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
                                       {state === 'current' && <Play className="size-2.5 fill-current" />}
                                     </span>
                                   </span>
-                                  {/* Lớp giấy mờ giữ chữ đọc rõ; mép trên tan dần để thoáng thấy tranh */}
-                                  <span className="mt-auto block bg-background/90 px-4 pb-3 pt-5 backdrop-blur-md [mask-image:linear-gradient(to_bottom,transparent,black_1.25rem)]">
+                                  {/* Mảnh giấy xé đè lên chân tranh, nền đặc để chữ đọc rõ */}
+                                  <span className="paper-tear-above mt-auto block bg-card px-4 pb-3 pt-2 [--tear-paper:var(--card)]">
                                     {s.jpTitle && (
                                       <span className="jp block font-medium text-foreground">
                                         <Furigana

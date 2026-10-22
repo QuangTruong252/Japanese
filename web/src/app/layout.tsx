@@ -32,6 +32,14 @@ export default function RootLayout({
     <html lang="vi" className="h-full antialiased" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: getFOUCScriptContent() }} />
+        {/* Chỉ bản build: ở dev, ảnh cache-first sẽ che mất ảnh vừa sửa. */}
+        {process.env.NODE_ENV === 'production' && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js',{updateViaCache:'none'})`,
+            }}
+          />
+        )}
       </head>
       <body
         className="h-dvh flex flex-col bg-background text-foreground font-sans overflow-hidden"

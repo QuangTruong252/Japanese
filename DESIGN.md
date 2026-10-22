@@ -73,16 +73,17 @@ hay `line-clamp` nội dung học. Icon và chevron giữ kích thước, bám d
 
 | Thành phần | Dùng khi | Ghi chú |
 |---|---|---|
-| `SoftScene` | Tranh đầu màn | Khung chữ nhật, mờ dải hẹp ở mép (`.soft-scene`). Tràn mép trên mobile: `-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full`. Chiều cao và `object-position` theo màn để không cắt mặt nhân vật. |
+| `SoftScene` | Tranh đầu màn | Mép trên và dưới xé giấy có viền xơ sáng (`.paper-tear`); khối chữ ngay dưới chỉ lấn `-mt-1.5`, không che mép xé. Khối giấy đè lên chân tranh dùng `.paper-tear-above` (đặt `--tear-paper` bằng màu khối). Tràn mép trên mobile: `-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full`. Chiều cao và `object-position` theo màn để không cắt mặt nhân vật. |
 | `PaperCloud` | Chữ đặt trên/sát tranh | Nền giấy mờ viền sau khối chữ; tự đổi theo theme. |
 | `TornCard` | **Một** hành động chính của màn | Mép xé, viền mảnh, quầng accent góc trên phải. Nhãn nhỏ trong thẻ: serif đỏ dạng `/ Hôm nay /`. |
 | `SectionHeader` | Đầu mỗi mục | Tiêu đề sans + nút viên thuốc tùy chọn ("Xem tất cả ›"). |
 | `ListRow` | Việc phụ, danh sách điều hướng | Ô icon 36 px (icon 24 px), tiêu đề, chữ phụ, chevron; cả dòng là link. |
 | `PartRow` | Các phần của bài | Ô icon 40 px, tiêu đề + số liệu cùng hàng (số liệu `text-sm text-muted-foreground/80`), ảnh nhỏ 48 px trong khung `bg-secondary`. |
 | `ListRow` (nút) | Việc phải chạy trước khi đi tiếp | Như `ListRow` nhưng không có `href` → render `<button>` (ví dụ ghi nháp rồi mới điều hướng). |
-| `PageTitle` | Đầu màn không có tranh | Nút quay lại nhỏ xám `‹ …` cho trang con, tiêu đề serif, một dòng số liệu. Màn có tranh thì dùng `SoftScene` + `PaperCloud` như Home. |
+| `PageTitle` | Đầu màn không có tranh | Nút quay lại (`BackLink`) cho trang con, tiêu đề serif, một dòng số liệu. Màn có tranh thì dùng `SoftScene` + `PaperCloud` như Home. |
+| `BackLink` | Quay lại từ trang con | Chữ nhỏ xám `‹ …` trên thanh cao 44 px dính đầu vùng cuộn (`sticky top-0`, nền `background/95`), luôn bấm được dù đã cuộn xa. Màn có tranh đặt nó trước `SoftScene`. Thanh dính khác trên cùng trang đặt `top-11` để nằm dưới. |
 | `Chip` | Lọc, chọn nhanh | Viên thuốc cao 44 px, `aria-pressed`; chọn = nền sakura chữ đỏ. Hàng chip xuống dòng hoặc cuộn ngang, không co chữ. |
-| Segmented tabs (`app/hoc/[so]/_tabs.tsx`) | Chia nội dung một trang dài thành vài phần ngang hàng | Track nền `secondary` viền mảnh, ô bằng nhau cao 44 px, nhãn chỉ chữ (không số, không icon); ô chọn nền `card` chữ đỏ đậm, không nền đỏ đặc. Dính đầu vùng cuộn (`sticky top-0`, nền `background/95`); thanh phụ của panel (số liệu + nút icon) dính cùng. Panel ẩn vẫn render; hash URL chọn tab. |
+| Segmented tabs (`app/hoc/[so]/_tabs.tsx`) | Chia nội dung một trang dài thành vài phần ngang hàng | Track nền `secondary` viền mảnh, ô bằng nhau cao 44 px, nhãn chỉ chữ (không số, không icon); ô chọn nền `card` chữ đỏ đậm, không nền đỏ đặc. Dính đầu vùng cuộn, dưới `BackLink` (`sticky top-11`, nền `background/95`); thanh phụ của panel (số liệu + nút icon) dính cùng. Panel ẩn vẫn render; hash URL chọn tab. |
 
 Thành phần dùng chung khác:
 - Nút chính: `buttonVariants({ size: 'quiz' })` (cao 48 px, `rounded-xl`, đỏ son), chữ + `ArrowRight`.
@@ -111,7 +112,7 @@ Thành phần dùng chung khác:
 - Tranh đầu màn: cover của bài đang học. Ảnh nhỏ cho hàng phần bài: ảnh thật của bài, không có
   thì dùng `ui/sections/*`. Trạng thái (xong, trống): `ui/states/*`.
 - Ảnh trang trí: `alt: { vi: '' }`. Không suy URL ảnh từ id/từ/số bài; chỉ dùng tham chiếu có trong dữ liệu.
-- Bản tối: tranh giảm sáng `brightness(0.88)` (đã có trong `.soft-scene`).
+- Bản tối: tranh giảm sáng `dark:brightness-[0.88]` (đã có trong `SoftScene`).
 - Ảnh mới tạo qua pipeline `artwork/illustrations/`, không đặt file tay vào `public/`.
 
 ## 9. Chuyển động

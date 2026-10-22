@@ -268,7 +268,8 @@ export function VocabLearningFlow({
                 : 'pb-[calc(2rem+env(safe-area-inset-bottom))]',
           )}
         >
-          <header className="flex min-h-12 items-center justify-between gap-3">
+          {/* Danh sách chọn từ dài hơn một màn: đầu màn dính để quay về bài hay thoát lượt mà không phải cuộn ngược. */}
+          <header className="sticky top-[env(safe-area-inset-top)] z-10 -mx-4 flex min-h-12 items-center justify-between gap-3 bg-background/95 px-4 backdrop-blur sm:-mx-6 sm:px-6">
             {stage === 'study' ? (
               <Button
                 type="button"

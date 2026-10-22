@@ -30,8 +30,8 @@ const TAB_LABELS: { value: TabValue; label: string }[] = [
   ...(AUDIO_IMPORT_ENABLED ? [{ value: 'nghe' as const, label: 'Nghe' }] : []),
 ];
 
-// Chừa chỗ cho thanh dính (tab ~68 px, thêm dải từ vựng ~44 px) để đích cuộn không bị che.
-const VOCAB_TARGET = 'scroll-mt-32';
+// Chừa chỗ cho các thanh dính (quay lại 44 px, tab ~68 px, thêm dải từ vựng ~44 px) để đích cuộn không bị che.
+const VOCAB_TARGET = 'scroll-mt-40';
 
 /** Đích cuộn chờ sau commit: phần tử theo id (null = đầu thanh tab) hoặc đầu panel đang hiện khi thanh dính. */
 type PendingScroll = { id: string | null } | 'panel';
@@ -203,7 +203,8 @@ export function LessonTabs({
     if (target === 'panel') {
       const panel = root?.querySelector<HTMLElement>('[role="tabpanel"]:not([hidden])');
       if (panel && barRef.current) {
-        panel.style.scrollMarginTop = `${barRef.current.offsetHeight}px`;
+        const bar = barRef.current;
+        panel.style.scrollMarginTop = `${parseFloat(getComputedStyle(bar).top) + bar.offsetHeight}px`;
         panel.scrollIntoView({ block: 'start' });
       }
     } else {
@@ -228,10 +229,10 @@ export function LessonTabs({
   };
 
   return (
-    <Tabs.Root ref={rootRef} value={tab} onValueChange={(v) => onTabChange(v as TabValue)}>
+    <Tabs.Root ref={rootRef} value={tab} onValueChange={(v) => onTabChange(v as TabValue)} className="scroll-mt-11">
       <div
         ref={barRef}
-        className="sticky top-0 z-10 -mx-4 border-b border-border bg-background/95 px-4 py-2 backdrop-blur sm:mx-0 sm:px-0"
+        className="sticky top-11 z-10 -mx-4 border-b border-border bg-background/95 px-4 py-2 backdrop-blur sm:mx-0 sm:px-0"
       >
         <Tabs.List className="grid auto-cols-fr grid-flow-col rounded-xl border border-border bg-secondary p-1">
           {tabs.map(({ value, label }) => (

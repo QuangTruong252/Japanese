@@ -143,7 +143,7 @@ export function DashboardContent({
         imageClassName="h-48 object-center sm:h-64 sm:object-[center_30%] lg:h-72 lg:object-[center_20%]"
         className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full"
       />
-      <PaperCloud className="-mt-7 w-fit">
+      <PaperCloud className="-mt-1.5 w-fit">
         <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
           {greeting}
         </h1>

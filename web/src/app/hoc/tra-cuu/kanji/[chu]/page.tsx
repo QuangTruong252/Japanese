@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { BookOpen, ChevronLeft, ChevronRight, Info, Pencil } from 'lucide-react';
+import { BookOpen, ChevronRight, Info, Pencil } from 'lucide-react';
 import {
   getAllKanji,
   getKanjiByChar,
@@ -12,7 +12,7 @@ import {
 import { Furigana } from '@/components/Furigana';
 import { SpeakButton } from '@/components/SpeakButton';
 import { FeatureIcon } from '@/components/FeatureIcon';
-import { ListRow, SectionHeader } from '@/components/PaperKit';
+import { BackLink, ListRow, SectionHeader } from '@/components/PaperKit';
 import { KanjiStrokeView } from '@/components/writing/KanjiStrokeView';
 import { getStrokes } from '@/lib/strokes';
 import { stripFurigana, toKanaSentence } from '@/lib/japanese';
@@ -66,16 +66,8 @@ export default async function KanjiDetailPage({
   ];
 
   return (
-    <main className="mx-auto w-full max-w-3xl space-y-8 px-4 pb-24 sm:px-6 lg:px-8 lg:pb-12">
-      <header className="pt-2">
-        <Link
-          href="/hoc/tra-cuu/kanji"
-          className="-ml-2 inline-flex min-h-11 items-center gap-0.5 rounded-lg px-2 text-sm font-medium text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring"
-        >
-          <ChevronLeft className="size-4" aria-hidden="true" />
-          Tra cứu kanji
-        </Link>
-      </header>
+    <main className="mx-auto w-full max-w-3xl space-y-8 px-4 pb-24 pt-2 sm:px-6 lg:px-8 lg:pb-12">
+      <BackLink href="/hoc/tra-cuu/kanji" label="Tra cứu kanji" />
 
       <section className="flex items-center gap-4 sm:gap-6">
         {/* Chưa có dữ liệu nét thì giữ ô tĩnh, kẻ chữ thập mờ giống ô luyện viết để nhận ra khung chữ */}

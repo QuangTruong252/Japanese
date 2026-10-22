@@ -139,8 +139,8 @@ export function WritingPicker({ kanjiGroups }: { kanjiGroups: KanjiGroup[] }) {
       )}
 
       <Tabs.Root value={tab} onValueChange={(v) => setTab(v as Tab)}>
-        {/* Bảng kana dài hơn một màn: thanh tab dính đầu vùng cuộn để đổi Hiragana/Katakana ở bất cứ đâu. */}
-        <div className="sticky top-0 z-10 -mx-4 bg-background/95 px-4 py-2 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+        {/* Bảng kana dài hơn một màn: thanh tab dính ngay dưới thanh quay lại để đổi Hiragana/Katakana ở bất cứ đâu. */}
+        <div className="sticky top-11 z-10 -mx-4 bg-background/95 px-4 py-2 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
           <Tabs.List className="grid w-full max-w-md grid-cols-3 gap-1 rounded-xl border border-border bg-secondary p-1">
             {TABS.map(({ type, sample, label }) => (
               <Tabs.Tab

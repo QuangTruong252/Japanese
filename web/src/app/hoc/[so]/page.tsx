@@ -1,10 +1,8 @@
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ChevronLeft } from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
 import { FeatureIcon } from '@/components/FeatureIcon';
 import { GrammarIndex } from '@/components/grammar/GrammarIndex';
-import { ListRow, PaperCloud, SoftScene } from '@/components/PaperKit';
+import { BackLink, ListRow, PaperCloud, SoftScene } from '@/components/PaperKit';
 import { ShadowingPlayer } from '@/components/audio/ShadowingPlayer';
 import {
   AVAILABLE_N5_LESSONS,
@@ -34,13 +32,7 @@ export default async function LessonDetailPage({
 
   return (
     <main className="mx-auto w-full max-w-5xl px-4 pb-16 pt-3 sm:px-6 lg:px-8">
-      <Link
-        href="/hoc"
-        className="-ml-2 mb-1 inline-flex min-h-11 items-center gap-0.5 rounded-lg px-2 text-sm font-medium text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring"
-      >
-        <ChevronLeft className="size-4" aria-hidden="true" />
-        Học bài
-      </Link>
+      <BackLink href="/hoc" label="Học bài" />
 
       <header>
         {lesson.cover && (
@@ -52,7 +44,7 @@ export default async function LessonDetailPage({
             className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full"
           />
         )}
-        <PaperCloud className={cn('w-fit max-w-full', lesson.cover && '-mt-7')}>
+        <PaperCloud className={cn('w-fit max-w-full', lesson.cover && '-mt-1.5')}>
           <p className="text-sm font-bold tracking-wide text-primary">Bài {lesson.number}</p>
           {lesson.jpTitle && (
             <Furigana

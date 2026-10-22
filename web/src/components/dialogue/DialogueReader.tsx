@@ -12,8 +12,8 @@ import { hasJapaneseVoice, speak } from '@/lib/tts';
 import { cn } from '@/lib/utils';
 import type { Dialogue } from '@/types';
 
-// Chừa chỗ cho thanh tab dính (~68 px) để câu được nhảy tới không bị che.
-const LINE_TARGET = 'scroll-mt-24';
+// Chừa chỗ cho thanh quay lại (44 px) và thanh tab (~68 px) cùng dính để câu được nhảy tới không bị che.
+const LINE_TARGET = 'scroll-mt-32';
 
 /** Một tình huống: ảnh + tiêu đề + nút nghe cả đoạn, các câu dạng bong bóng, nút sang màn nhập vai. */
 export function DialogueReader({

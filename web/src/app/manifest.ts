@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-// Chỉ để cài lên màn hình chính, không có service worker.
+// Để cài lên màn hình chính. Service worker (public/sw.js) chỉ cache ảnh, không phục vụ trang offline.
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'MaiPace — Tự học tiếng Nhật',

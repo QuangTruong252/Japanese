@@ -6,7 +6,7 @@ import { Furigana } from '@/components/Furigana';
 import { GrammarExample } from '@/components/grammar/GrammarExample';
 import { GrammarIndex } from '@/components/grammar/GrammarIndex';
 import { GrammarMeaning } from '@/components/grammar/GrammarMeaning';
-import { PaperCloud, SectionHeader, SoftScene } from '@/components/PaperKit';
+import { BackLink, PaperCloud, SectionHeader, SoftScene } from '@/components/PaperKit';
 import { buttonVariants } from '@/components/ui/button';
 import { grammarDialogueLines, patternMarks, type GrammarDialogueLine } from '@/lib/grammar';
 import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
@@ -65,13 +65,7 @@ export default async function GrammarPointPage({ params }: { params: Promise<Par
 
   return (
     <main className="mx-auto w-full max-w-5xl px-4 pb-16 pt-3 sm:px-6 lg:px-8">
-      <Link
-        href={`/hoc/${lessonNum}#ngu-phap`}
-        className="-ml-2 mb-1 inline-flex min-h-11 items-center gap-0.5 rounded-lg px-2 text-sm font-medium text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring"
-      >
-        <ChevronLeft className="size-4" aria-hidden="true" />
-        Bài {lessonNum}
-      </Link>
+      <BackLink href={`/hoc/${lessonNum}#ngu-phap`} label={`Bài ${lessonNum}`} />
 
       <div className="xl:grid xl:grid-cols-[minmax(0,1.2fr)_minmax(21rem,0.8fr)] xl:gap-8">
         <div className="min-w-0">
@@ -86,7 +80,7 @@ export default async function GrammarPointPage({ params }: { params: Promise<Par
                 className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full"
               />
             )}
-            <PaperCloud className={cn('w-fit max-w-full', scene && '-mt-7')}>
+            <PaperCloud className={cn('w-fit max-w-full', scene && '-mt-1.5')}>
               <p className="text-sm font-bold tracking-wide text-primary">
                 Ngữ pháp {index + 1}/{total}
               </p>
@@ -169,7 +163,7 @@ export default async function GrammarPointPage({ params }: { params: Promise<Par
         </div>
 
         <aside aria-label={`Mẫu câu bài ${lessonNum}`} className="hidden xl:block">
-          <div className="sticky top-4 max-h-[calc(100dvh-2rem)] overflow-y-auto">
+          <div className="sticky top-15 max-h-[calc(100dvh-4.75rem)] overflow-y-auto">
             <GrammarIndex lessonNum={lessonNum} points={lesson.grammar} currentId={point.id} />
           </div>
         </aside>

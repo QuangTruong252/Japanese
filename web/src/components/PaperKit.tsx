@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 
 /** Bộ thành phần giấy v3 "Sách sống", dùng chung cho mọi màn. */
 
-/** Tranh chữ nhật, mép tan vào giấy. Ảnh lỗi thì chỉ còn nội dung con, chữ vẫn đọc được. */
+/** Tranh có mép trên và dưới xé giấy. Ảnh lỗi thì chỉ còn nội dung con, chữ vẫn đọc được. */
 export function SoftScene({
   asset,
   sizes,
@@ -25,12 +25,12 @@ export function SoftScene({
   children?: ReactNode;
 }) {
   return (
-    <div className={cn('relative', className)}>
+    <div className={cn('paper-tear', className)}>
       <Illustration
         asset={asset}
         sizes={sizes}
         eager={eager}
-        className={cn('soft-scene w-full object-cover', imageClassName ?? 'h-48 sm:h-64')}
+        className={cn('block w-full object-cover dark:brightness-[0.88]', imageClassName ?? 'h-48 sm:h-64')}
       />
       {children}
     </div>
@@ -51,31 +51,39 @@ export function TornCard({ className, children }: { className?: string; children
   );
 }
 
-/** Đầu màn không có tranh: nút quay lại nhỏ (trang con), tiêu đề serif, một dòng số liệu. */
-export function PageTitle({
-  title,
-  meta,
-  back,
-}: {
-  title: ReactNode;
-  meta?: ReactNode;
-  back?: { href: string; label: string; onClick?: MouseEventHandler<HTMLAnchorElement> };
-}) {
+type BackTarget = { href: string; label: string; onClick?: MouseEventHandler<HTMLAnchorElement> };
+
+/**
+ * Nút quay lại của trang con, dính đầu vùng cuộn để quay về được ở bất cứ đâu trên trang dài.
+ * Phải là con trực tiếp của khối bao cả trang (sticky chỉ dính trong khối cha) và khối đó có
+ * padding ngang `px-4 sm:px-6 lg:px-8` để nền tràn kín mép. Cao đúng 44 px (`h-11`): thanh dính
+ * khác trên cùng trang đặt `top-11` để nằm ngay dưới.
+ */
+export function BackLink({ href, label, onClick }: BackTarget) {
   return (
-    <header className="pt-2">
-      {back && (
-        <Link
-          href={back.href}
-          onClick={back.onClick}
-          className="-ml-2 mb-1 inline-flex min-h-11 items-center gap-0.5 rounded-lg px-2 text-sm font-medium text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring"
-        >
-          <ChevronLeft className="size-4" aria-hidden="true" />
-          {back.label}
-        </Link>
-      )}
-      <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">{title}</h1>
-      {meta && <p className="mt-1 text-sm text-muted-foreground">{meta}</p>}
-    </header>
+    <div className="sticky top-0 z-20 -mx-4 mb-1 flex h-11 items-center bg-background/95 px-4 backdrop-blur sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+      <Link
+        href={href}
+        onClick={onClick}
+        className="-ml-2 inline-flex min-h-11 items-center gap-0.5 rounded-lg px-2 text-sm font-medium text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring"
+      >
+        <ChevronLeft className="size-4" aria-hidden="true" />
+        {label}
+      </Link>
+    </div>
+  );
+}
+
+/** Đầu màn không có tranh: nút quay lại nhỏ (trang con), tiêu đề serif, một dòng số liệu. */
+export function PageTitle({ title, meta, back }: { title: ReactNode; meta?: ReactNode; back?: BackTarget }) {
+  return (
+    <>
+      {back && <BackLink {...back} />}
+      <header className={back ? undefined : 'pt-2'}>
+        <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">{title}</h1>
+        {meta && <p className="mt-1 text-sm text-muted-foreground">{meta}</p>}
+      </header>
+    </>
   );
 }
 
