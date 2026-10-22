@@ -28,6 +28,17 @@
       "examples": [
         {
           "jp": "書[か]きます（I）・ 食[た]べます（II）・します（III）",
+          "marks": [
+            {
+              "text": "書[か]きます"
+            },
+            {
+              "text": "食[た]べます"
+            },
+            {
+              "text": "します"
+            }
+          ],
           "translation": {
             "en": "To write (I), to eat (II), to do (III).",
             "vi": "Viết (Nhóm I) ・ Ăn (Nhóm II) ・ Làm (Nhóm III)."
@@ -51,6 +62,11 @@
       "examples": [
         {
           "jp": "ちょっと 待[ま]って。",
+          "marks": [
+            {
+              "text": "待[ま]って"
+            }
+          ],
           "translation": {
             "en": "Wait a moment.",
             "vi": "Hãy đợi một chút."
@@ -67,6 +83,9 @@
       "pattern": {
         "vi": "V て ください"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "The て form + ください asks or instructs politely: 住所[じゅうしょ]を 教[おし]えてください (please tell me your address).",
         "vi": "Mẫu câu dùng để yêu cầu, nhờ vả hoặc chỉ dẫn người nghe làm một việc gì đó một cách lịch sự ('Xin hãy... / Làm ơn...')."
@@ -74,6 +93,15 @@
       "examples": [
         {
           "jp": "すみませんが、この 漢字[かんじ]の 読[よ]み 方[かた]を 教[おし]えてください。",
+          "marks": [
+            {
+              "text": "教[おし]え",
+              "slot": "V"
+            },
+            {
+              "text": "てください"
+            }
+          ],
           "translation": {
             "en": "Excuse me, could you tell me how to read this kanji?",
             "vi": "Xin lỗi, làm ơn hãy chỉ cho tôi cách đọc chữ Hán này."
@@ -81,6 +109,15 @@
         },
         {
           "jp": "信号[しんごう]を 右[みぎ]へ 曲[ま]がってください。",
+          "marks": [
+            {
+              "text": "曲[ま]がっ",
+              "slot": "V"
+            },
+            {
+              "text": "てください"
+            }
+          ],
           "translation": {
             "en": "Turn right at the traffic light.",
             "vi": "Hãy rẽ phải ở cột đèn giao thông."
@@ -97,6 +134,9 @@
       "pattern": {
         "vi": "V て います"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "〜ています says the action is happening right now: 雨[あめ]が 降[ふ]っています (it's raining), ミラーさんは 今[いま] 電話[でんわ]を かけています.",
         "vi": "Mẫu câu biểu thị hành động đang diễn ra tại thời điểm nói ('đang làm gì')."
@@ -104,6 +144,22 @@
       "examples": [
         {
           "jp": "今[いま] 雨[あめ]が 降[ふ]っていますか。…いいえ、 降[ふ]っていません。",
+          "marks": [
+            {
+              "text": "降[ふ]っ",
+              "slot": "V"
+            },
+            {
+              "text": "ています"
+            },
+            {
+              "text": "降[ふ]っ",
+              "slot": "V"
+            },
+            {
+              "text": "ていません"
+            }
+          ],
           "translation": {
             "en": "Is it raining now? …No, it isn't.",
             "vi": "Bây giờ trời có đang mưa không? …Không, trời không mưa."
@@ -120,6 +176,9 @@
       "pattern": {
         "vi": "V ましょうか"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "ましょうか offers to do something for the listener: 手伝[てつだ]いましょうか (shall I help you?). You accept with お 願[ねが]いします and decline with けっこうです.",
         "vi": "Dùng khi người nói chủ động đề nghị làm một việc gì đó giúp cho đối phương ('Tôi làm giúp bạn nhé?')."
@@ -127,6 +186,15 @@
       "examples": [
         {
           "jp": "荷物[にもつ]を 持[も]ちましょうか。…すみません。お 願[ねが]いします。",
+          "marks": [
+            {
+              "text": "持[も]ち",
+              "slot": "V"
+            },
+            {
+              "text": "ましょうか"
+            }
+          ],
           "translation": {
             "en": "Shall I carry your luggage? …Yes, please, thank you.",
             "vi": "Để tôi xách hành lý giúp bạn nhé? …Cảm ơn bạn. Làm phiền bạn giúp tôi."
@@ -143,6 +211,10 @@
       "pattern": {
         "vi": "N が V"
       },
+      "slots": [
+        "N",
+        "V"
+      ],
       "explanation": {
         "en": "When you describe something just as you perceive it, without making it the topic, the subject takes が: 雨[あめ]が 降[ふ]っています.",
         "vi": "Trợ từ が được dùng để chỉ chủ ngữ trong câu miêu tả trực tiếp một hiện tượng tự nhiên hoặc tình huống thực tế đang diễn ra (như mưa rơi, tuyết rơi)."
@@ -150,6 +222,19 @@
       "examples": [
         {
           "jp": "あれ？ 雪[ゆき]が 降[ふ]っていますよ。",
+          "marks": [
+            {
+              "text": "雪[ゆき]",
+              "slot": "N"
+            },
+            {
+              "text": "が"
+            },
+            {
+              "text": "降[ふ]っています",
+              "slot": "V"
+            }
+          ],
           "translation": {
             "en": "Oh! It's snowing!",
             "vi": "Ơ kìa? Tuyết đang rơi đấy nhé."
@@ -173,6 +258,14 @@
       "examples": [
         {
           "jp": "すみませんが、 塩[しお]を 取[と]ってください。",
+          "marks": [
+            {
+              "text": "すみませんが"
+            },
+            {
+              "text": "てください"
+            }
+          ],
           "translation": {
             "en": "Sorry, could you pass me the salt?",
             "vi": "Xin lỗi, làm ơn lấy giùm tôi lọ muối."
@@ -237,6 +330,9 @@
           "speaker": "mai",
           "jp": "あの 信号[しんごう]を 右[みぎ]へ 曲[ま]がってください。",
           "kana": "あの しんごうを みぎへ まがってください。",
+          "grammarIds": [
+            "te-kudasai"
+          ],
           "translation": {
             "vi": "Anh rẽ phải ở chỗ đèn giao thông kia giúp tôi ạ."
           },
@@ -248,6 +344,10 @@
           "speaker": "takushii",
           "jp": "はい。 あそこですね。 学生[がくせい]が たくさん 待[ま]っていますね。",
           "kana": "はい。 あそこですね。 がくせいが たくさん まっていますね。",
+          "grammarIds": [
+            "te-imasu",
+            "ga-fenomeno"
+          ],
           "translation": {
             "vi": "Vâng. Ở đằng kia nhỉ. Có nhiều sinh viên đang đợi quá."
           }
@@ -256,6 +356,9 @@
           "speaker": "mai",
           "jp": "ええ。 ここで 止[と]めてください。",
           "kana": "ええ。 ここで とめてください。",
+          "grammarIds": [
+            "te-kudasai"
+          ],
           "translation": {
             "vi": "Vâng. Anh dừng ở đây giúp tôi ạ."
           }
@@ -328,6 +431,9 @@
           "speaker": "mai",
           "jp": "先生[せんせい]、この 漢字[かんじ]の 読[よ]み 方[かた]を 教[おし]えてください。",
           "kana": "せんせい、この かんじの よみ かたを おしえてください。",
+          "grammarIds": [
+            "te-kudasai"
+          ],
           "translation": {
             "vi": "Thầy chỉ cho em cách đọc chữ Hán này với ạ."
           },
@@ -339,6 +445,10 @@
           "speaker": "mori",
           "jp": "「あめ」です。 今[いま]、外[そと]は 雨[あめ]が 降[ふ]っていますね。",
           "kana": "「あめ」です。 いま、そとは あめが ふっていますね。",
+          "grammarIds": [
+            "te-imasu",
+            "ga-fenomeno"
+          ],
           "translation": {
             "vi": "Đọc là “ame”. Bây giờ ngoài trời đang mưa nhỉ."
           }
@@ -347,6 +457,10 @@
           "speaker": "mai",
           "jp": "「あめ」ですね。 あのう、 すみませんが、 もう 少[すこ]し ゆっくり 話[はな]してください。",
           "kana": "「あめ」ですね。 あのう、 すみませんが、 もう すこし ゆっくり はなしてください。",
+          "grammarIds": [
+            "sumimasen-ga",
+            "te-kudasai"
+          ],
           "translation": {
             "vi": "Dạ, “ame” ạ. Thưa thầy, thầy nói chậm hơn một chút giúp em với ạ."
           }
@@ -355,6 +469,9 @@
           "speaker": "mori",
           "jp": "はい。 ノートに 書[か]きましょうか。",
           "kana": "はい。 ノートに かきましょうか。",
+          "grammarIds": [
+            "mashou-ka"
+          ],
           "translation": {
             "vi": "Được. Thầy viết vào vở cho em nhé?"
           }

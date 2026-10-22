@@ -21,6 +21,9 @@
         "en": "place へ 行[い]きます／来[き]ます／帰[かえ]ります",
         "vi": "địa điểm へ 行[い]きます／来[き]ます／帰[かえ]ります"
       },
+      "slots": [
+        "địa điểm"
+      ],
       "explanation": {
         "en": "The particle へ (read \"e\") marks the direction of movement with the verbs to go, to come and to return.",
         "vi": "Trợ từ へ (đọc là 'e') đứng sau danh từ chỉ nơi chốn để biểu thị phương hướng hoặc đích đến của hành động di chuyển với các động từ: 行きます (đi), 来ます (đến), 帰ります (trở về)."
@@ -28,6 +31,18 @@
       "examples": [
         {
           "jp": "京都[きょうと]へ 行[い]きます。",
+          "marks": [
+            {
+              "text": "京都[きょうと]",
+              "slot": "địa điểm"
+            },
+            {
+              "text": "へ"
+            },
+            {
+              "text": "行[い]きます"
+            }
+          ],
           "translation": {
             "en": "I'm going to Kyoto.",
             "vi": "Tôi đi Kyoto."
@@ -35,6 +50,18 @@
         },
         {
           "jp": "うちへ 帰[かえ]ります。",
+          "marks": [
+            {
+              "text": "うち",
+              "slot": "địa điểm"
+            },
+            {
+              "text": "へ"
+            },
+            {
+              "text": "帰[かえ]ります"
+            }
+          ],
           "translation": {
             "en": "I'm going back home.",
             "vi": "Tôi trở về nhà."
@@ -52,6 +79,10 @@
         "en": "どこ[へ]も V (negative)",
         "vi": "địa điểm[へ]も V (phủ định)"
       },
+      "slots": [
+        "địa điểm",
+        "V"
+      ],
       "explanation": {
         "en": "A question word + も with a negative verb negates the whole range of the question: どこも 行[い]きません means \"I'm not going anywhere\".",
         "vi": "Khi kết hợp từ để hỏi nghi vấn với trợ từ も và động từ thể phủ định, cấu trúc diễn tả sự phủ định hoàn toàn toàn bộ đối tượng ('không đi đâu cả')."
@@ -59,6 +90,22 @@
       "examples": [
         {
           "jp": "きのうどこ[へ]も 行[い]きませんでした。",
+          "marks": [
+            {
+              "text": "どこ",
+              "slot": "địa điểm"
+            },
+            {
+              "text": "[へ]も"
+            },
+            {
+              "text": "行[い]き",
+              "slot": "V"
+            },
+            {
+              "text": "ませんでした"
+            }
+          ],
           "translation": {
             "en": "I didn't go anywhere yesterday.",
             "vi": "Hôm qua tôi đã không đi đâu cả."
@@ -76,6 +123,9 @@
         "en": "vehicle で 行[い]きます／来[き]ます／帰[かえ]ります",
         "vi": "phương tiện で 行[い]きます／来[き]ます／帰[かえ]ります"
       },
+      "slots": [
+        "phương tiện"
+      ],
       "explanation": {
         "en": "The particle で indicates the means of transport. For \"on foot\" you use 歩[ある]いて, with no particle.",
         "vi": "Trợ từ で đứng sau danh từ chỉ phương tiện giao thông để biểu thị phương tiện dùng để di chuyển. Nếu đi bộ thì dùng cụm 歩いて (không dùng trợ từ で)."
@@ -83,6 +133,18 @@
       "examples": [
         {
           "jp": "電車[でんしゃ]で 会社[かいしゃ]へ 行[い]きます。",
+          "marks": [
+            {
+              "text": "電車[でんしゃ]",
+              "slot": "phương tiện"
+            },
+            {
+              "text": "で"
+            },
+            {
+              "text": "行[い]きます"
+            }
+          ],
           "translation": {
             "en": "I go to the company by train.",
             "vi": "Tôi đi đến công ty bằng tàu điện."
@@ -90,6 +152,14 @@
         },
         {
           "jp": "駅[えき]から 歩[ある]いて 帰[かえ]ります。",
+          "marks": [
+            {
+              "text": "歩[ある]いて"
+            },
+            {
+              "text": "帰[かえ]ります"
+            }
+          ],
           "translation": {
             "en": "I walk home from the station.",
             "vi": "Tôi đi bộ từ nhà ga về nhà."
@@ -107,6 +177,10 @@
         "en": "person と V",
         "vi": "người と V"
       },
+      "slots": [
+        "người",
+        "V"
+      ],
       "explanation": {
         "en": "と marks the person (or animal) you do the action with. \"Alone\" is 一人[ひとり]で, without と.",
         "vi": "Trợ từ と đứng sau danh từ chỉ người hoặc động vật để chỉ đối tượng cùng tham gia thực hiện hành động ('cùng với'). Nếu làm hành động một mình thì dùng 一人で (không dùng と)."
@@ -114,6 +188,19 @@
       "examples": [
         {
           "jp": "家族[かぞく]と 日本[にほん]へ 来[き]ました。",
+          "marks": [
+            {
+              "text": "家族[かぞく]",
+              "slot": "người"
+            },
+            {
+              "text": "と"
+            },
+            {
+              "text": "来[き]ました",
+              "slot": "V"
+            }
+          ],
           "translation": {
             "en": "I came to Japan with my family.",
             "vi": "Tôi đã đến Nhật Bản cùng với gia đình."
@@ -121,6 +208,15 @@
         },
         {
           "jp": "一人[ひとり]で 東京[とうきょう]へ 行[い]きます。",
+          "marks": [
+            {
+              "text": "一人[ひとり]で"
+            },
+            {
+              "text": "行[い]きます",
+              "slot": "V"
+            }
+          ],
           "translation": {
             "en": "I'm going to Tokyo alone.",
             "vi": "Tôi đi Tokyo một mình."
@@ -137,6 +233,9 @@
       "pattern": {
         "vi": "いつ V ますか"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "いつ asks about a time without needing the particle に. In the answer, に only appears if the time is a number (a date or a clock time).",
         "vi": "Từ nghi vấn いつ dùng để hỏi thời điểm xảy ra sự việc ('khi nào, bao giờ'). Chú ý: sau いつ không dùng trợ từ に."
@@ -144,6 +243,18 @@
       "examples": [
         {
           "jp": "いつ 日本[にほん]へ 来[き]ましたか。…3 月[がつ]25 日[にち]に 来[き]ました。",
+          "marks": [
+            {
+              "text": "いつ"
+            },
+            {
+              "text": "来[き]",
+              "slot": "V"
+            },
+            {
+              "text": "ましたか"
+            }
+          ],
           "translation": {
             "en": "When did you come to Japan? …I came on 25 March.",
             "vi": "Bạn đến Nhật Bản khi nào? …Tôi đến vào ngày 25 tháng 3."
@@ -160,6 +271,9 @@
       "pattern": {
         "vi": "S よ"
       },
+      "slots": [
+        "S"
+      ],
       "explanation": {
         "en": "The sentence-final particle よ stresses that you are giving information the listener does not have, like a friendly heads-up.",
         "vi": "Trợ từ よ đặt ở cuối câu dùng để cung cấp một thông tin mà người nghe chưa biết, hoặc để nhấn mạnh ý kiến, lời khuyên của người nói."
@@ -167,6 +281,15 @@
       "examples": [
         {
           "jp": "この 電車[でんしゃ]は 甲子園[こうしえん]へ 行[い]きませんよ。",
+          "marks": [
+            {
+              "text": "この 電車[でんしゃ]は 甲子園[こうしえん]へ 行[い]きません",
+              "slot": "S"
+            },
+            {
+              "text": "よ"
+            }
+          ],
           "translation": {
             "en": "This train doesn't go to Koshien, you know.",
             "vi": "Chuyến tàu này không đi Koshien đâu đấy nhé."
@@ -190,6 +313,11 @@
       "examples": [
         {
           "jp": "今日[きょう]はいい 天気[てんき]ですね。…そうですね。",
+          "marks": [
+            {
+              "text": "そうですね"
+            }
+          ],
           "translation": {
             "en": "The weather is nice today, isn't it? …It is.",
             "vi": "Hôm nay thời tiết đẹp nhỉ. …Đúng thế thật đấy nhỉ."
@@ -218,6 +346,9 @@
         {
           "speaker": "mai",
           "jp": "すみません。 この 電車[でんしゃ]は 甲子園[こうしえん]へ 行[い]きますか。",
+          "grammarIds": [
+            "e-ikimasu"
+          ],
           "kana": "すみません。 この でんしゃは こうしえんへ いきますか。",
           "translation": {
             "vi": "Xin lỗi, tàu này có đi Koshien không ạ?"
@@ -226,6 +357,9 @@
         {
           "speaker": "ekiin",
           "jp": "いいえ、行[い]きません。 次[つぎ]の 普通[ふつう]ですよ。",
+          "grammarIds": [
+            "yo"
+          ],
           "kana": "いいえ、いきません。 つぎの ふつうですよ。",
           "translation": {
             "vi": "Không ạ. Chuyến tàu thường tiếp theo mới đi Koshien ạ."
@@ -320,6 +454,9 @@
         {
           "speaker": "tanaka",
           "jp": "マイさん、日曜日[にちようび]は どこへ 行[い]きましたか。",
+          "grammarIds": [
+            "e-ikimasu"
+          ],
           "kana": "マイさん、にちようびは どこへ いきましたか。",
           "translation": {
             "vi": "Mai này, chủ nhật vừa rồi em đi đâu thế?"
@@ -328,6 +465,10 @@
         {
           "speaker": "mai",
           "jp": "友達[ともだち]と デパートへ 行[い]きました。",
+          "grammarIds": [
+            "to-persona",
+            "e-ikimasu"
+          ],
           "kana": "ともだちと デパートへ いきました。",
           "translation": {
             "vi": "Em đi trung tâm thương mại với bạn ạ."
@@ -336,6 +477,9 @@
         {
           "speaker": "tanaka",
           "jp": "電車[でんしゃ]で 行[い]きましたか。",
+          "grammarIds": [
+            "de-vehiculo"
+          ],
           "kana": "でんしゃで いきましたか。",
           "translation": {
             "vi": "Em đi tàu điện à?"
@@ -344,6 +488,9 @@
         {
           "speaker": "mai",
           "jp": "いいえ、自転車[じてんしゃ]で 行[い]きました。 田中[たなか]さんは？",
+          "grammarIds": [
+            "de-vehiculo"
+          ],
           "kana": "いいえ、じてんしゃで いきました。 たなかさんは？",
           "translation": {
             "vi": "Dạ không, em đạp xe đi. Còn anh thì sao?"
@@ -352,6 +499,9 @@
         {
           "speaker": "tanaka",
           "jp": "私[わたし]は どこも 行[い]きませんでした。",
+          "grammarIds": [
+            "doko-mo"
+          ],
           "kana": "わたしは どこも いきませんでした。",
           "translation": {
             "vi": "Anh chẳng đi đâu cả."
@@ -368,6 +518,10 @@
         {
           "speaker": "tanaka",
           "jp": "会社[かいしゃ]の 人[ひと]と 甲子園[こうしえん]へ 行[い]きます。 マイさんも 行[い]きますか。",
+          "grammarIds": [
+            "to-persona",
+            "e-ikimasu"
+          ],
           "kana": "かいしゃの ひとと こうしえんへ いきます。 マイさんも いきますか。",
           "translation": {
             "vi": "Anh đi sân Koshien với mấy người ở công ty. Em có đi cùng không?"
@@ -441,6 +595,11 @@
         {
           "speaker": "mai",
           "jp": "そうですね。 その 日[ひ]は 家族[かぞく]と 美術館[びじゅつかん]へ 行[い]きます。",
+          "grammarIds": [
+            "sou-desu-ne",
+            "to-persona",
+            "e-ikimasu"
+          ],
           "kana": "そうですね。 その ひは かぞくと びじゅつかんへ いきます。",
           "translation": {
             "vi": "Dạ, đúng vậy thầy ạ. Hôm đó em sẽ đi bảo tàng mỹ thuật với gia đình."
@@ -452,6 +611,9 @@
         {
           "speaker": "tanaka",
           "jp": "えっ、ご 家族[かぞく]は 日本[にほん]へ 来[き]ますか。",
+          "grammarIds": [
+            "e-ikimasu"
+          ],
           "kana": "えっ、ご かぞくは にほんへ きますか。",
           "translation": {
             "vi": "Ơ, gia đình em sang Nhật à?"
@@ -468,6 +630,10 @@
         {
           "speaker": "mori",
           "jp": "じゃ、ご 家族[かぞく]と ベトナムへ 帰[かえ]りますか。",
+          "grammarIds": [
+            "to-persona",
+            "e-ikimasu"
+          ],
           "kana": "じゃ、ご かぞくと ベトナムへ かえりますか。",
           "translation": {
             "vi": "Vậy em có về Việt Nam cùng gia đình không?"

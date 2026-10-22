@@ -21,6 +21,10 @@
         "en": "N を V (transitive)",
         "vi": "N を V (tha động từ)"
       },
+      "slots": [
+        "N",
+        "V"
+      ],
       "explanation": {
         "en": "The particle を marks the direct object of a transitive verb: ジュースを 飲[の]みます (I drink juice).",
         "vi": "Trợ từ を (đọc là 'o') đứng sau danh từ để chỉ đối tượng trực tiếp (tân ngữ) chịu tác động của tha động từ."
@@ -28,6 +32,19 @@
       "examples": [
         {
           "jp": "パンを 食[た]べます。",
+          "marks": [
+            {
+              "text": "パン",
+              "slot": "N"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "食[た]べます",
+              "slot": "V"
+            }
+          ],
           "translation": {
             "en": "I eat bread.",
             "vi": "Tôi ăn bánh mì."
@@ -35,6 +52,19 @@
         },
         {
           "jp": "写真[しゃしん]を 撮[と]ります。",
+          "marks": [
+            {
+              "text": "写真[しゃしん]",
+              "slot": "N"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "撮[と]ります",
+              "slot": "V"
+            }
+          ],
           "translation": {
             "en": "I take photos.",
             "vi": "Tôi chụp ảnh."
@@ -51,6 +81,9 @@
       "pattern": {
         "vi": "N を します"
       },
+      "slots": [
+        "N"
+      ],
       "explanation": {
         "en": "します with を covers many activities: sports (サッカーを します), tasks (宿題[しゅくだい]を します) or meetings. Its meaning depends on the noun.",
         "vi": "Động từ します mang nghĩa rộng: chơi môn thể thao, tham gia sự kiện, làm công việc hoặc nhiệm vụ cụ thể."
@@ -58,6 +91,18 @@
       "examples": [
         {
           "jp": "テニスを します。",
+          "marks": [
+            {
+              "text": "テニス",
+              "slot": "N"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "します"
+            }
+          ],
           "translation": {
             "en": "I play tennis.",
             "vi": "Tôi chơi quần vợt."
@@ -65,6 +110,18 @@
         },
         {
           "jp": "宿題[しゅくだい]を します。",
+          "marks": [
+            {
+              "text": "宿題[しゅくだい]",
+              "slot": "N"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "します"
+            }
+          ],
           "translation": {
             "en": "I do my homework.",
             "vi": "Tôi làm bài tập về nhà."
@@ -88,6 +145,14 @@
       "examples": [
         {
           "jp": "月曜日[げつようび] 何[なに]を しますか。… 東京[とうきょう]へ 行[い]きます。",
+          "marks": [
+            {
+              "text": "何[なに]を"
+            },
+            {
+              "text": "しますか"
+            }
+          ],
           "translation": {
             "en": "What are you doing on Monday? …I'm going to Tokyo.",
             "vi": "Thứ hai bạn sẽ làm gì? …Tôi sẽ đi Tokyo."
@@ -111,6 +176,11 @@
       "examples": [
         {
           "jp": "それは 何[なん]ですか。",
+          "marks": [
+            {
+              "text": "何[なん]"
+            }
+          ],
           "translation": {
             "en": "What is that?",
             "vi": "Đó là cái gì vậy?"
@@ -118,6 +188,11 @@
         },
         {
           "jp": "何[なに]を 買[か]いますか。",
+          "marks": [
+            {
+              "text": "何[なに]"
+            }
+          ],
           "translation": {
             "en": "What are you going to buy?",
             "vi": "Bạn sẽ mua cái gì?"
@@ -135,6 +210,10 @@
         "en": "place で V",
         "vi": "địa điểm で V"
       },
+      "slots": [
+        "địa điểm",
+        "V"
+      ],
       "explanation": {
         "en": "で marks the place where an action happens (unlike へ, which marks direction): 食堂[しょくどう]で 昼[ひる]ごはんを 食[た]べます.",
         "vi": "Trợ từ で đứng sau danh từ chỉ nơi chốn để biểu thị địa điểm nơi hành động diễn ra."
@@ -142,6 +221,19 @@
       "examples": [
         {
           "jp": "駅[えき]で 新聞[しんぶん]を 買[か]います。",
+          "marks": [
+            {
+              "text": "駅[えき]",
+              "slot": "địa điểm"
+            },
+            {
+              "text": "で"
+            },
+            {
+              "text": "買[か]います",
+              "slot": "V"
+            }
+          ],
           "translation": {
             "en": "I buy the newspaper at the station.",
             "vi": "Tôi mua báo ở nhà ga."
@@ -158,6 +250,9 @@
       "pattern": {
         "vi": "V ませんか"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "The negative form with か is a gentle invitation: いっしょに 行[い]きませんか (won't you come along?). It is politer than asking directly with ますか because it takes the listener's wishes into account.",
         "vi": "Dùng để rủ rê hoặc mời đối phương cùng thực hiện một hành động nào đó. Thể hiện sự tôn trọng ý kiến của người nghe ('Bạn có muốn cùng... không?')."
@@ -165,6 +260,15 @@
       "examples": [
         {
           "jp": "いっしょにビールを 飲[の]みませんか。…ええ、いいですね。",
+          "marks": [
+            {
+              "text": "飲[の]み",
+              "slot": "V"
+            },
+            {
+              "text": "ませんか"
+            }
+          ],
           "translation": {
             "en": "Shall we have a beer together? …Yes, good idea.",
             "vi": "Bạn có muốn cùng uống bia không? …Vâng, hay quá nhỉ."
@@ -181,6 +285,9 @@
       "pattern": {
         "vi": "V ましょう"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "It proposes doing something together, assuming the listener will agree, or accepts an invitation: ロビーで 会[あ]いましょう.",
         "vi": "Dùng để đề xuất làm một việc gì đó ('Chúng ta hãy cùng làm... nhé') hoặc đáp lại lời rủ rê V ませんか với thái độ chủ động, nhiệt tình."
@@ -188,6 +295,15 @@
       "examples": [
         {
           "jp": "10 時[じ]に 駅[えき]で 会[あ]いましょう。",
+          "marks": [
+            {
+              "text": "会[あ]い",
+              "slot": "V"
+            },
+            {
+              "text": "ましょう"
+            }
+          ],
           "translation": {
             "en": "Let's meet at ten at the station.",
             "vi": "Chúng ta hãy gặp nhau ở nhà ga lúc 10 giờ nhé."
@@ -204,6 +320,9 @@
       "pattern": {
         "vi": "S か"
       },
+      "slots": [
+        "S"
+      ],
       "explanation": {
         "en": "か at the end also confirms that you have understood a suggestion before answering: お 花見[はなみ]ですか。いいですね。",
         "vi": "Dùng trợ từ か lặp lại từ hoặc cụm từ mà người đối thoại vừa nói để xác nhận lại thông tin hoặc chuẩn bị đưa ra phản hồi."
@@ -211,6 +330,15 @@
       "examples": [
         {
           "jp": "お 花見[はなみ]を しませんか。…お 花見[はなみ]ですか。いいですね。",
+          "marks": [
+            {
+              "text": "お 花見[はなみ]です",
+              "slot": "S"
+            },
+            {
+              "text": "か"
+            }
+          ],
           "translation": {
             "en": "Shall we go and see the cherry blossom? …Cherry blossom? What a good idea!",
             "vi": "Bạn có muốn đi ngắm hoa anh đào cùng không? …Ngắm hoa anh đào à? Tuyệt quá nhỉ."
@@ -239,6 +367,10 @@
         {
           "speaker": "tanaka",
           "jp": "マイさん、いっしょに 昼[ひる]ごはんを 食[た]べませんか。",
+          "grammarIds": [
+            "masen-ka",
+            "o-transitivo"
+          ],
           "kana": "マイさん、いっしょに ひるごはんを たべませんか。",
           "translation": {
             "vi": "Mai này, em đi ăn trưa cùng anh nhé?"
@@ -247,6 +379,9 @@
         {
           "speaker": "mai",
           "jp": "ええ、いいですね。 どこで 食[た]べますか。",
+          "grammarIds": [
+            "de-lugar"
+          ],
           "kana": "ええ、いいですね。 どこで たべますか。",
           "translation": {
             "vi": "Vâng, hay quá. Mình ăn ở đâu ạ?"
@@ -259,6 +394,10 @@
         {
           "speaker": "tanaka",
           "jp": "駅[えき]の 店[みせ]で 食[た]べましょう。",
+          "grammarIds": [
+            "de-lugar",
+            "mashou"
+          ],
           "kana": "えきの みせで たべましょう。",
           "translation": {
             "vi": "Mình ăn ở quán ở ga đi."
@@ -267,6 +406,10 @@
         {
           "speaker": "mai",
           "jp": "田中[たなか]さんは 何[なに]を 食[た]べますか。",
+          "grammarIds": [
+            "o-transitivo",
+            "nan-nani"
+          ],
           "kana": "たなかさんは なにを たべますか。",
           "translation": {
             "vi": "Anh Tanaka ăn gì ạ?"
@@ -275,6 +418,9 @@
         {
           "speaker": "tanaka",
           "jp": "私[わたし]は 魚[さかな]を 食[た]べます。 マイさんは？",
+          "grammarIds": [
+            "o-transitivo"
+          ],
           "kana": "わたしは さかなを たべます。 マイさんは？",
           "translation": {
             "vi": "Anh ăn cá. Còn em?"
@@ -283,6 +429,9 @@
         {
           "speaker": "mai",
           "jp": "私[わたし]は 野菜[やさい]と 卵[たまご]を 食[た]べます。 それから、お 茶[ちゃ]を 飲[の]みます。",
+          "grammarIds": [
+            "o-transitivo"
+          ],
           "kana": "わたしは やさいと たまごを たべます。 それから、お ちゃを のみます。",
           "translation": {
             "vi": "Em ăn rau với trứng ạ. Rồi em uống trà."
@@ -291,6 +440,10 @@
         {
           "speaker": "tanaka",
           "jp": "じゃ、十二時[じゅうにじ]に 駅[えき]で 会[あ]いましょう。",
+          "grammarIds": [
+            "de-lugar",
+            "mashou"
+          ],
           "kana": "じゃ、じゅうにじに えきで あいましょう。",
           "translation": {
             "vi": "Vậy mười hai giờ mình gặp nhau ở ga nhé."
@@ -336,6 +489,9 @@
         {
           "speaker": "mori",
           "jp": "マイさん、日曜日[にちようび]に 何[なに]を しますか。",
+          "grammarIds": [
+            "nani-o-shimasu-ka"
+          ],
           "kana": "マイさん、にちようびに なにを しますか。",
           "translation": {
             "vi": "Mai này, chủ nhật em làm gì?"
@@ -344,6 +500,10 @@
         {
           "speaker": "mai",
           "jp": "友達[ともだち]と お 花見[はなみ]を します。 大学[だいがく]の 庭[にわ]で します。",
+          "grammarIds": [
+            "o-shimasu",
+            "de-lugar"
+          ],
           "kana": "ともだちと お はなみを します。 だいがくの にわで します。",
           "translation": {
             "vi": "Em đi ngắm hoa anh đào với bạn ạ. Bọn em ngắm ở khu vườn trong trường đại học."
@@ -352,6 +512,10 @@
         {
           "speaker": "mori",
           "jp": "いいですね。 何[なに]を 食[た]べますか。",
+          "grammarIds": [
+            "o-transitivo",
+            "nan-nani"
+          ],
           "kana": "いいですね。 なにを たべますか。",
           "translation": {
             "vi": "Hay đấy. Các em ăn gì?"
@@ -363,6 +527,9 @@
         {
           "speaker": "mai",
           "jp": "パンと 果物[くだもの]を 食[た]べます。 ジュースも 飲[の]みます。",
+          "grammarIds": [
+            "o-transitivo"
+          ],
           "kana": "パンと くだものを たべます。 ジュースも のみます。",
           "translation": {
             "vi": "Bọn em ăn bánh mì với trái cây ạ. Còn uống nước ép nữa."
@@ -379,6 +546,9 @@
         {
           "speaker": "mai",
           "jp": "はい、撮[と]ります。 先生[せんせい]も いっしょに 行[い]きませんか。",
+          "grammarIds": [
+            "masen-ka"
+          ],
           "kana": "はい、とります。 せんせいも いっしょに いきませんか。",
           "translation": {
             "vi": "Có ạ. Thầy cũng đi cùng bọn em nhé?"
@@ -387,6 +557,9 @@
         {
           "speaker": "mori",
           "jp": "ええ、行[い]きましょう。 何時[なんじ]に 会[あ]いますか。",
+          "grammarIds": [
+            "mashou"
+          ],
           "kana": "ええ、いきましょう。 なんじに あいますか。",
           "translation": {
             "vi": "Ừ, cùng đi nhé. Mấy giờ mình gặp nhau?"
@@ -398,6 +571,10 @@
         {
           "speaker": "mai",
           "jp": "午後[ごご] 一時[いちじ]に 庭[にわ]で 会[あ]いましょう。",
+          "grammarIds": [
+            "de-lugar",
+            "mashou"
+          ],
           "kana": "ごご いちじに にわで あいましょう。",
           "translation": {
             "vi": "Một giờ chiều mình gặp nhau ở khu vườn nhé thầy."
@@ -451,6 +628,9 @@
         {
           "speaker": "mai",
           "jp": "はい、何[なん]ですか。",
+          "grammarIds": [
+            "nan-nani"
+          ],
           "kana": "はい、なんですか。",
           "translation": {
             "vi": "Dạ, có chuyện gì ạ?"
@@ -462,6 +642,10 @@
         {
           "speaker": "tanaka",
           "jp": "あした、テニスを しませんか。",
+          "grammarIds": [
+            "o-shimasu",
+            "masen-ka"
+          ],
           "kana": "あした、テニスを しませんか。",
           "translation": {
             "vi": "Ngày mai em chơi tennis với anh nhé?"
@@ -482,6 +666,10 @@
         {
           "speaker": "tanaka",
           "jp": "朝[あさ] 九時[くじ]に 大学[だいがく]で 会[あ]いましょう。",
+          "grammarIds": [
+            "de-lugar",
+            "mashou"
+          ],
           "kana": "あさ くじに だいがくで あいましょう。",
           "translation": {
             "vi": "Chín giờ sáng mình gặp nhau ở trường đại học nhé."
@@ -490,6 +678,9 @@
         {
           "speaker": "mai",
           "jp": "わかりました。 それから、晩[ばん]ごはんも いっしょに 食[た]べませんか。",
+          "grammarIds": [
+            "masen-ka"
+          ],
           "kana": "わかりました。 それから、ばんごはんも いっしょに たべませんか。",
           "translation": {
             "vi": "Em biết rồi ạ. Rồi tối mình cũng đi ăn cùng nhau nhé?"
@@ -501,6 +692,9 @@
         {
           "speaker": "tanaka",
           "jp": "ええ、食[た]べましょう。 じゃ、また あした。",
+          "grammarIds": [
+            "mashou"
+          ],
           "kana": "ええ、たべましょう。 じゃ、また あした。",
           "translation": {
             "vi": "Ừ, mai mình cùng ăn nhé. Vậy mai gặp lại nhé."

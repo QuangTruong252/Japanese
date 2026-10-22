@@ -27,6 +27,14 @@
       "examples": [
         {
           "jp": "行[い]く → 行[い]かない ／ 飲[の]む → 飲[の]まない",
+          "marks": [
+            {
+              "text": "行[い]かない"
+            },
+            {
+              "text": "飲[の]まない"
+            }
+          ],
           "translation": {
             "en": "To go → not to go / to drink → not to drink.",
             "vi": "Đi → không đi ／ Uống → không uống."
@@ -43,6 +51,9 @@
       "pattern": {
         "vi": "V ない で ください"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "It asks someone not to do something: ここで 写真[しゃしん]を 撮[と]らないでください. It can also show concern: 心配[しんぱい]しないでください (don't worry).",
         "vi": "Mẫu câu dùng để yêu cầu, nhắc nhở hoặc khuyên bảo đối phương không được làm một việc gì đó một cách lịch sự."
@@ -50,6 +61,15 @@
       "examples": [
         {
           "jp": "ここでたばこを 吸[す]わないでください。",
+          "marks": [
+            {
+              "text": "吸[す]わ",
+              "slot": "V"
+            },
+            {
+              "text": "ないでください"
+            }
+          ],
           "translation": {
             "en": "Please don't smoke here.",
             "vi": "Xin đừng hút thuốc ở đây."
@@ -67,6 +87,9 @@
         "en": "V (ない form) なければ なりません",
         "vi": "V (thể ない) なければ なりません"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "It expresses obligation (\"have to\"), with no negative sense despite the form: 薬[くすり]を 飲[の]まなければ なりません (I have to take the medicine).",
         "vi": "Bỏ い ở thể ない rồi thêm ければなりません để diễn tả một hành động bắt buộc phải thực hiện, không phụ thuộc vào ý muốn của người nói ('phải làm gì')."
@@ -74,6 +97,15 @@
       "examples": [
         {
           "jp": "毎日[まいにち] 漢字[かんじ]を 勉強[べんきょう]しなければなりません。",
+          "marks": [
+            {
+              "text": "勉強[べんきょう]し",
+              "slot": "V"
+            },
+            {
+              "text": "なければなりません"
+            }
+          ],
           "translation": {
             "en": "I have to study kanji every day.",
             "vi": "Mỗi ngày tôi đều phải học chữ Hán."
@@ -91,6 +123,9 @@
         "en": "V (ない form) なくても いいです",
         "vi": "V (thể ない) なくても いいです"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "It says the action isn't necessary: あした 来[こ]なくても いいです (you don't have to come tomorrow).",
         "vi": "Bỏ い ở thể ない rồi thêm くてもいいです để diễn tả một việc không bắt buộc phải thực hiện ('không cần làm... cũng được')."
@@ -98,6 +133,15 @@
       "examples": [
         {
           "jp": "レポートは 出[だ]さなくてもいいです。",
+          "marks": [
+            {
+              "text": "出[だ]さ",
+              "slot": "V"
+            },
+            {
+              "text": "なくてもいいです"
+            }
+          ],
           "translation": {
             "en": "You don't have to hand in the report.",
             "vi": "Không cần nộp báo cáo cũng được."
@@ -115,6 +159,9 @@
         "en": "N は (topicalised object)",
         "vi": "N は (tân ngữ làm chủ đề)"
       },
+      "slots": [
+        "N"
+      ],
       "explanation": {
         "en": "The object of the sentence can become the topic with は so you can talk about it: 荷物[にもつ]は ロッカーに 入[い]れてください (as for your luggage, please put it in the locker).",
         "vi": "Để nhấn mạnh tân ngữ trực tiếp, người ta thay trợ từ を bằng は và đưa danh từ đó lên đầu câu làm chủ đề của lời nói."
@@ -122,6 +169,15 @@
       "examples": [
         {
           "jp": "保険証[ほけんしょう]は 持[も]ってきましたか。",
+          "marks": [
+            {
+              "text": "保険証[ほけんしょう]",
+              "slot": "N"
+            },
+            {
+              "text": "は"
+            }
+          ],
           "translation": {
             "en": "Did you bring your insurance card?",
             "vi": "Thẻ bảo hiểm y tế thì bạn đã mang theo chưa?"
@@ -139,6 +195,10 @@
         "en": "time までに V",
         "vi": "thời gian までに V"
       },
+      "slots": [
+        "thời gian",
+        "V"
+      ],
       "explanation": {
         "en": "までに marks the deadline the action must happen by: 土曜日[どようび]までに 本[ほん]を 返[かえ]さなければ なりません. Don't confuse it with まで (up until, continuously).",
         "vi": "Trợ từ までに biểu thị giới hạn thời gian (hạn chót) mà trước thời điểm đó một hành động đơn lẻ phải được hoàn thành."
@@ -146,6 +206,19 @@
       "examples": [
         {
           "jp": "会議[かいぎ]は5 時[じ]までに 終[お]わります。",
+          "marks": [
+            {
+              "text": "5 時[じ]",
+              "slot": "thời gian"
+            },
+            {
+              "text": "までに"
+            },
+            {
+              "text": "終[お]わります",
+              "slot": "V"
+            }
+          ],
           "translation": {
             "en": "The meeting will be over by five.",
             "vi": "Cuộc họp sẽ kết thúc trước 5 giờ."
@@ -213,6 +286,9 @@
           "speaker": "isha",
           "jp": "薬[くすり]を 飲[の]んでください。 二三日[にさんにち]、 おふろに 入[はい]らないでください。",
           "kana": "くすりを のんでください。 にさんにち、 おふろに はいらないでください。",
+          "grammarIds": [
+            "naide-kudasai"
+          ],
           "translation": {
             "vi": "Chị uống thuốc nhé. Trong hai, ba ngày, chị đừng tắm bồn nhé."
           }
@@ -221,6 +297,9 @@
           "speaker": "mai",
           "jp": "シャワーは 浴[あ]びても いいですか。",
           "kana": "シャワーは あびても いいですか。",
+          "grammarIds": [
+            "objeto-tema"
+          ],
           "translation": {
             "vi": "Tôi tắm vòi sen thì có được không ạ?"
           }
@@ -229,6 +308,9 @@
           "speaker": "isha",
           "jp": "ええ、 いいですよ。 それから、 お 酒[さけ]を 飲[の]まないでください。",
           "kana": "ええ、 いいですよ。 それから、 お さけを のまないでください。",
+          "grammarIds": [
+            "naide-kudasai"
+          ],
           "translation": {
             "vi": "Vâng, được ạ. Ngoài ra, chị đừng uống rượu bia nhé."
           }
@@ -282,6 +364,11 @@
           "speaker": "mai",
           "jp": "先生[せんせい]、 レポートは いつまでに 出[だ]さなければ なりませんか。",
           "kana": "せんせい、 レポートは いつまでに ださなければ なりませんか。",
+          "grammarIds": [
+            "made-ni",
+            "nakereba-narimasen",
+            "objeto-tema"
+          ],
           "translation": {
             "vi": "Thưa thầy, hạn chót em phải nộp báo cáo là khi nào ạ?"
           }
@@ -290,6 +377,10 @@
           "speaker": "mori",
           "jp": "金曜日[きんようび]までに 出[だ]してください。 名前[なまえ]を 忘[わす]れないでください。",
           "kana": "きんようびまでに だしてください。 なまえを わすれないでください。",
+          "grammarIds": [
+            "made-ni",
+            "naide-kudasai"
+          ],
           "translation": {
             "vi": "Em nộp chậm nhất vào thứ sáu nhé. Đừng quên ghi tên em nhé."
           }
@@ -298,6 +389,9 @@
           "speaker": "mai",
           "jp": "はい、 わかりました。 ノートも 出[だ]さなければ なりませんか。",
           "kana": "はい、 わかりました。 ノートも ださなければ なりませんか。",
+          "grammarIds": [
+            "nakereba-narimasen"
+          ],
           "translation": {
             "vi": "Vâng, em hiểu rồi ạ. Em có phải nộp cả vở ghi không ạ?"
           }
@@ -306,6 +400,10 @@
           "speaker": "mori",
           "jp": "いいえ、 ノートは 出[だ]さなくても いいです。",
           "kana": "いいえ、 ノートは ださなくても いいです。",
+          "grammarIds": [
+            "nakutemo-ii",
+            "objeto-tema"
+          ],
           "translation": {
             "vi": "Không, vở ghi thì em không cần nộp."
           }
@@ -314,6 +412,10 @@
           "speaker": "mai",
           "jp": "それから、 辞書[じしょ]は 持[も]って 来[こ]なくても いいですか。",
           "kana": "それから、 じしょは もって こなくても いいですか。",
+          "grammarIds": [
+            "nakutemo-ii",
+            "objeto-tema"
+          ],
           "translation": {
             "vi": "Còn từ điển thì em không mang đến cũng được ạ?"
           }
@@ -322,6 +424,10 @@
           "speaker": "mori",
           "jp": "いいえ、 辞書[じしょ]は 持[も]って 来[こ]なければ なりません。",
           "kana": "いいえ、 じしょは もって こなければ なりません。",
+          "grammarIds": [
+            "nakereba-narimasen",
+            "objeto-tema"
+          ],
           "translation": {
             "vi": "Không, từ điển thì em phải mang đến."
           }
@@ -338,6 +444,9 @@
           "speaker": "mori",
           "jp": "大丈夫[だいじょうぶ]ですよ。 心配[しんぱい]しなくても いいです。",
           "kana": "だいじょうぶですよ。 しんぱいしなくても いいです。",
+          "grammarIds": [
+            "nakutemo-ii"
+          ],
           "translation": {
             "vi": "Không sao đâu. Em không cần lo lắng đâu."
           }
@@ -380,6 +489,9 @@
           "speaker": "tanaka",
           "jp": "すみません。 今晩[こんばん]は 残業[ざんぎょう]しなければ なりません。",
           "kana": "すみません。 こんばんは ざんぎょうしなければ なりません。",
+          "grammarIds": [
+            "nakereba-narimasen"
+          ],
           "translation": {
             "vi": "Xin lỗi em. Tối nay anh phải tăng ca."
           }
@@ -396,6 +508,9 @@
           "speaker": "tanaka",
           "jp": "あしたは 出張[しゅっちょう]です。 ですから、 早[はや]く 寝[ね]なければ なりません。",
           "kana": "あしたは しゅっちょうです。 ですから、 はやく ねなければ なりません。",
+          "grammarIds": [
+            "nakereba-narimasen"
+          ],
           "translation": {
             "vi": "Ngày mai anh đi công tác. Vì vậy anh phải đi ngủ sớm."
           }
@@ -404,6 +519,9 @@
           "speaker": "mai",
           "jp": "あしたは 雨[あめ]ですよ。 傘[かさ]を 忘[わす]れないでください。",
           "kana": "あしたは あめですよ。 かさを わすれないでください。",
+          "grammarIds": [
+            "naide-kudasai"
+          ],
           "translation": {
             "vi": "Ngày mai trời mưa đấy anh. Anh đừng quên mang ô nhé."
           }
@@ -412,6 +530,10 @@
           "speaker": "tanaka",
           "jp": "ありがとう。 タクシーで 行[い]きますから、 傘[かさ]は 持[も]って 行[い]かなくても いいですよ。",
           "kana": "ありがとう。 タクシーで いきますから、 かさは もって いかなくても いいですよ。",
+          "grammarIds": [
+            "nakutemo-ii",
+            "objeto-tema"
+          ],
           "translation": {
             "vi": "Cảm ơn em. Anh đi bằng taxi nên không cần mang ô đâu."
           }

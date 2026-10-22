@@ -20,6 +20,9 @@
       "pattern": {
         "vi": "N が 欲[ほ]しいです"
       },
+      "slots": [
+        "N"
+      ],
       "explanation": {
         "en": "欲[ほ]しい is an -い adjective expressing the wish to have something; the thing wanted is marked with が: 車[くるま]が 欲[ほ]しいです (I want a car).",
         "vi": "Dùng để bày tỏ nguyện vọng muốn có một vật hoặc một thứ gì đó của người nói. Đối tượng mong muốn đi với trợ từ が. Phủ định là 欲しくないです."
@@ -27,6 +30,18 @@
       "examples": [
         {
           "jp": "私[わたし]は 友達[ともだち]が 欲[ほ]しいです。",
+          "marks": [
+            {
+              "text": "友達[ともだち]",
+              "slot": "N"
+            },
+            {
+              "text": "が"
+            },
+            {
+              "text": "欲[ほ]しいです"
+            }
+          ],
           "translation": {
             "en": "I want friends.",
             "vi": "Tôi muốn có bạn bè."
@@ -44,6 +59,9 @@
         "en": "V (ます form) たいです",
         "vi": "V (thể ます) たいです"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "Dropping ます and adding たい expresses the wish to do the action: 沖縄[おきなわ]へ 行[い]きたいです. たい conjugates like an -い adjective (行[い]きたくないです, 行[い]きたかったです). The object may be marked with を or が.",
         "vi": "Bỏ ます thêm たいです để diễn tả ý muốn làm một hành động nào đó của bản thân người nói. Tân ngữ có thể đi với が hoặc を. Phủ định là たくないです."
@@ -51,6 +69,15 @@
       "examples": [
         {
           "jp": "てんぷらを 食[た]べたいです。",
+          "marks": [
+            {
+              "text": "食[た]べ",
+              "slot": "V"
+            },
+            {
+              "text": "たいです"
+            }
+          ],
           "translation": {
             "en": "I want to eat tempura.",
             "vi": "Tôi muốn ăn món tempura."
@@ -58,6 +85,15 @@
         },
         {
           "jp": "今日[きょう]はどこ[へ]も 行[い]きたくないです。",
+          "marks": [
+            {
+              "text": "行[い]き",
+              "slot": "V"
+            },
+            {
+              "text": "たくないです"
+            }
+          ],
           "translation": {
             "en": "I don't want to go anywhere today.",
             "vi": "Hôm nay tôi không muốn đi đâu cả."
@@ -75,6 +111,11 @@
         "en": "place へ V (ます form)／N に 行[い]きます／来[き]ます／帰[かえ]ります",
         "vi": "địa điểm へ V (thể ます)／N に 行[い]きます／来[き]ます／帰[かえ]ります"
       },
+      "slots": [
+        "địa điểm",
+        "V",
+        "N"
+      ],
       "explanation": {
         "en": "に marks the purpose of the trip; it can take a verb stem (泳[およ]ぎに 行[い]きます, to go swimming) or an action noun (買[か]い 物[もの]に 行[い]きます, to go shopping).",
         "vi": "Trợ từ に đứng sau động từ bỏ ます hoặc danh từ chỉ hành động để biểu thị mục đích của việc đi/đến/trở về ('Đi đâu để làm gì')."
@@ -82,6 +123,25 @@
       "examples": [
         {
           "jp": "神戸[こうべ]へインド 料理[りょうり]を 食[た]べに 行[い]きます。",
+          "marks": [
+            {
+              "text": "神戸[こうべ]",
+              "slot": "địa điểm"
+            },
+            {
+              "text": "へ"
+            },
+            {
+              "text": "食[た]べ",
+              "slot": "V"
+            },
+            {
+              "text": "に"
+            },
+            {
+              "text": "行[い]きます"
+            }
+          ],
           "translation": {
             "en": "I'm going to Kobe to eat Indian food.",
             "vi": "Tôi đi Kobe để ăn món ăn Ấn Độ."
@@ -89,6 +149,25 @@
         },
         {
           "jp": "日本[にほん]へ 美術[びじゅつ]の 勉強[べんきょう]に 来[き]ました。",
+          "marks": [
+            {
+              "text": "日本[にほん]",
+              "slot": "địa điểm"
+            },
+            {
+              "text": "へ"
+            },
+            {
+              "text": "美術[びじゅつ]の 勉強[べんきょう]",
+              "slot": "N"
+            },
+            {
+              "text": "に"
+            },
+            {
+              "text": "来[き]ました"
+            }
+          ],
           "translation": {
             "en": "I came to Japan to study fine art.",
             "vi": "Tôi đến Nhật Bản để học mỹ thuật."
@@ -112,6 +191,11 @@
       "examples": [
         {
           "jp": "冬休[ふゆやす]みはどこか 行[い]きましたか。…はい、 北海道[ほっかいどう]へ 行[い]きました。",
+          "marks": [
+            {
+              "text": "どこか"
+            }
+          ],
           "translation": {
             "en": "Did you go anywhere over the winter holidays? …Yes, I went to Hokkaido.",
             "vi": "Kỳ nghỉ đông bạn có đi đâu đó không? …Có, tôi đã đi Hokkaido."
@@ -129,6 +213,9 @@
         "en": "ご + N (Sino-Japanese)",
         "vi": "ご + N (gốc Hán)"
       },
+      "slots": [
+        "N"
+      ],
       "explanation": {
         "en": "ご is the counterpart of お for words with Chinese readings: ご 注文[ちゅうもん] (your order), ご 家族[かぞく] (your family). Both prefixes show respect for the listener's things.",
         "vi": "Thêm tiền tố ご trước các từ gốc Hán (như ご注文, ご家族) để thể hiện thái độ tôn trọng, lịch sự."
@@ -136,6 +223,15 @@
       "examples": [
         {
           "jp": "ご 注文[ちゅうもん]は？… 牛[ぎゅう]どんをお 願[ねが]いします。",
+          "marks": [
+            {
+              "text": "ご"
+            },
+            {
+              "text": "注文[ちゅうもん]",
+              "slot": "N"
+            }
+          ],
           "translation": {
             "en": "What would you like to order? …A gyudon, please.",
             "vi": "Quý khách muốn gọi món gì ạ? …Cho tôi một phần cơm bò gyudon."
@@ -165,6 +261,10 @@
           "speaker": "tanaka",
           "jp": "週末[しゅうまつ]は どこかへ 行[い]きたいですね。",
           "kana": "しゅうまつは どこかへ いきたいですね。",
+          "grammarIds": [
+            "dokoka-nanika",
+            "tai-desu"
+          ],
           "translation": {
             "vi": "Cuối tuần anh muốn đi đâu đó."
           }
@@ -173,6 +273,9 @@
           "speaker": "mai",
           "jp": "私[わたし]は プールへ 行[い]きたいです。 たくさん 泳[およ]ぎたいです。",
           "kana": "わたしは プールへ いきたいです。 たくさん およぎたいです。",
+          "grammarIds": [
+            "tai-desu"
+          ],
           "translation": {
             "vi": "Em muốn đến bể bơi ạ. Em muốn bơi thật nhiều."
           }
@@ -219,6 +322,9 @@
           "speaker": "tanaka",
           "jp": "じゃ、十二時[じゅうにじ]ごろ そこへ 食事[しょくじ]に 行[い]きましょう。",
           "kana": "じゃ、じゅうにじごろ そこへ しょくじに いきましょう。",
+          "grammarIds": [
+            "ni-ikimasu"
+          ],
           "translation": {
             "vi": "Vậy khoảng mười hai giờ mình đến đó ăn nhé."
           }
@@ -227,6 +333,9 @@
           "speaker": "mai",
           "jp": "はい。 私[わたし]は カレーを 食[た]べたいです。",
           "kana": "はい。 わたしは カレーを たべたいです。",
+          "grammarIds": [
+            "tai-desu"
+          ],
           "translation": {
             "vi": "Vâng. Em muốn ăn cà ri ạ."
           }
@@ -261,6 +370,9 @@
           "speaker": "ten-in",
           "jp": "いらっしゃいませ。 ご 注文[ちゅうもん]は？",
           "kana": "いらっしゃいませ。 ご ちゅうもんは？",
+          "grammarIds": [
+            "go-cortesia"
+          ],
           "translation": {
             "vi": "Xin chào quý khách. Chị dùng gì ạ?"
           },
@@ -272,6 +384,9 @@
           "speaker": "mai",
           "jp": "暑[あつ]いですね。 のどが 渇[かわ]きます。 冷[つめ]たい 水[みず]が 欲[ほ]しいです。",
           "kana": "あついですね。 のどが かわきます。 つめたい みずが ほしいです。",
+          "grammarIds": [
+            "hoshii"
+          ],
           "translation": {
             "vi": "Trời nóng quá nhỉ, khát nước thật. Tôi muốn uống nước lạnh ạ."
           },

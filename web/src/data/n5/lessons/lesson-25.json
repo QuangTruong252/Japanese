@@ -21,6 +21,13 @@
         "en": "V たら、S ／ A-かったら ／ N・A-な だったら",
         "vi": "V たら、S ／ A-かったら ／ N・A-な だったら"
       },
+      "slots": [
+        "V",
+        "S",
+        "A-",
+        "N",
+        "A-な"
+      ],
       "explanation": {
         "en": "Adding ら to the た form makes the conditional: お 金[かね]が あったら、 旅行[りょこう]します (if I had money, I'd travel). It works with adjectives (安[やす]かったら) and nouns (雨[あめ]だったら) too.",
         "vi": "Mẫu câu điều kiện giả định phổ biến nhất: thêm ら vào sau thể quá khứ ngắn (thể た/だ). Mang nghĩa 'nếu giả sử vế trước xảy ra thì vế sau sẽ diễn ra'. Vế sau có thể dùng câu yêu cầu, nhờ vả, ý chí."
@@ -28,6 +35,19 @@
       "examples": [
         {
           "jp": "時間[じかん]があったら、 遊[あそ]びに 来[き]てください。",
+          "marks": [
+            {
+              "text": "あっ",
+              "slot": "V"
+            },
+            {
+              "text": "たら、"
+            },
+            {
+              "text": "遊[あそ]びに 来[き]てください",
+              "slot": "S"
+            }
+          ],
           "translation": {
             "en": "If you have time, come and visit us.",
             "vi": "Nếu có thời gian, hãy đến nhà tôi chơi nhé."
@@ -35,6 +55,19 @@
         },
         {
           "jp": "雨[あめ]だったら、 行[い]きません。",
+          "marks": [
+            {
+              "text": "雨[あめ]",
+              "slot": "N"
+            },
+            {
+              "text": "だったら、"
+            },
+            {
+              "text": "行[い]きません",
+              "slot": "S"
+            }
+          ],
           "translation": {
             "en": "If it rains, I won't go.",
             "vi": "Nếu trời mưa thì tôi sẽ không đi."
@@ -52,6 +85,10 @@
         "en": "V1 たら、V2 (future)",
         "vi": "V1 たら、V2 (tương lai)"
       },
+      "slots": [
+        "V1",
+        "V2"
+      ],
       "explanation": {
         "en": "たら also says V2 will happen once V1 is complete: 10 時[じ]に なったら、 出[で]かけましょう (when it gets to ten, let's go out).",
         "vi": "Dùng để diễn tả một sự việc V1 chắc chắn sẽ xảy ra trong tương lai, và ngay sau khi V1 hoàn tất thì hành động V2 sẽ được thực hiện ('khi/sau khi làm xong... thì sẽ...')."
@@ -59,6 +96,19 @@
       "examples": [
         {
           "jp": "国[くに]へ 帰[かえ]ったら、 父[ちち]の 会社[かいしゃ]で 働[はたら]きます。",
+          "marks": [
+            {
+              "text": "帰[かえ]っ",
+              "slot": "V1"
+            },
+            {
+              "text": "たら、"
+            },
+            {
+              "text": "働[はたら]きます",
+              "slot": "V2"
+            }
+          ],
           "translation": {
             "en": "When I go back to my country, I'll work at my father's company.",
             "vi": "Sau khi trở về nước, tôi sẽ làm việc ở công ty của bố tôi."
@@ -75,6 +125,13 @@
       "pattern": {
         "vi": "V ても ／ A-くても ／ N・A-な でも、S"
       },
+      "slots": [
+        "V",
+        "A-",
+        "N",
+        "A-な",
+        "S"
+      ],
       "explanation": {
         "en": "〜ても expresses concession: the result goes against what you would expect. 雨[あめ]が 降[ふ]っても、 洗濯[せんたく]します (even if it rains, I'll do the laundry); 安[やす]くても 買[か]いません; 便利[べんり]でも 使[つか]いません.",
         "vi": "Biểu thị quan hệ nhượng bộ trái ngược: dù điều kiện ở vế trước có xảy ra đi chăng nữa thì kết quả ở vế sau vẫn không thay đổi ('cho dù... thì vẫn...')."
@@ -82,6 +139,19 @@
       "examples": [
         {
           "jp": "日曜日[にちようび]でも 働[はたら]きます。",
+          "marks": [
+            {
+              "text": "日曜日[にちようび]",
+              "slot": "N"
+            },
+            {
+              "text": "でも"
+            },
+            {
+              "text": "働[はたら]きます",
+              "slot": "S"
+            }
+          ],
           "translation": {
             "en": "I work even on Sundays.",
             "vi": "Cho dù là chủ nhật thì tôi vẫn làm việc."
@@ -98,6 +168,9 @@
       "pattern": {
         "vi": "もし 〜たら、S"
       },
+      "slots": [
+        "S"
+      ],
       "explanation": {
         "en": "もし announces from the start that the sentence is hypothetical and reinforces the 〜たら: もし1 億円[おくえん]あったら、 何[なに]を したいですか.",
         "vi": "Phó từ もし đặt ở đầu câu để nhấn mạnh tính chất giả định của điều kiện ('Giả sử nếu như... thì...')."
@@ -105,6 +178,18 @@
       "examples": [
         {
           "jp": "もし1 億円[おくえん]あったら、いろいろな 国[くに]を 旅行[りょこう]したいです。",
+          "marks": [
+            {
+              "text": "もし"
+            },
+            {
+              "text": "たら、"
+            },
+            {
+              "text": "いろいろな 国[くに]を 旅行[りょこう]したいです",
+              "slot": "S"
+            }
+          ],
           "translation": {
             "en": "If I had a hundred million yen, I'd want to travel to lots of countries.",
             "vi": "Giả sử nếu có 100 triệu yên, tôi muốn đi du lịch thật nhiều quốc gia."
@@ -122,6 +207,10 @@
         "en": "S1 (subject が) とき／たら／ても、S2",
         "vi": "S1 (chủ ngữ が) とき／たら／ても、S2"
       },
+      "slots": [
+        "S1",
+        "S2"
+      ],
       "explanation": {
         "en": "When the subordinate clause has a different subject from the main clause, it is marked with が: 友達[ともだち]が 来[く]るまえに、 部屋[へや]を 掃除[そうじ]します.",
         "vi": "Trong một câu phức có mệnh đề phụ chỉ thời gian hoặc điều kiện (とき, たら, ても), chủ ngữ của mệnh đề phụ đó luôn đi kèm với trợ từ が, không dùng は."
@@ -129,6 +218,18 @@
       "examples": [
         {
           "jp": "妻[つま]が 病気[びょうき]のとき、 会社[かいしゃ]を 休[やす]みます。",
+          "marks": [
+            {
+              "text": "が"
+            },
+            {
+              "text": "とき、"
+            },
+            {
+              "text": "会社[かいしゃ]を 休[やす]みます",
+              "slot": "S2"
+            }
+          ],
           "translation": {
             "en": "When my wife is ill, I take time off work.",
             "vi": "Khi vợ tôi bị ốm, tôi sẽ xin nghỉ làm ở công ty."
@@ -169,6 +270,9 @@
           "speaker": "tanaka",
           "jp": "電車[でんしゃ]の 中[なか]だよ。 駅[えき]に 着[つ]いたら、 電話[でんわ]するね。",
           "kana": "でんしゃの なかだよ。 えきに ついたら、 でんわするね。",
+          "grammarIds": [
+            "tara-temporal"
+          ],
           "translation": {
             "vi": "Anh đang trên tàu. Đến ga rồi anh gọi em nhé."
           }
@@ -177,6 +281,11 @@
           "speaker": "mai",
           "jp": "うん。 もし 雨[あめ]が 降[ふ]ったら、 駅[えき]の 中[なか]で 待[ま]っていてね。",
           "kana": "うん。 もし あめが ふったら、 えきの なかで まっていてね。",
+          "grammarIds": [
+            "tara",
+            "moshi",
+            "sujeto-subordinada"
+          ],
           "translation": {
             "vi": "Vâng. Nếu trời mưa thì anh đợi trong ga nhé."
           }
@@ -185,6 +294,9 @@
           "speaker": "tanaka",
           "jp": "雨[あめ]でも 公園[こうえん]へ 行[い]く？",
           "kana": "あめでも こうえんへ いく？",
+          "grammarIds": [
+            "temo"
+          ],
           "translation": {
             "vi": "Trời mưa mình vẫn ra công viên à?"
           }
@@ -193,6 +305,9 @@
           "speaker": "mai",
           "jp": "ううん。 雨[あめ]だったら、 映画[えいが]を 見[み]に 行[い]かない？",
           "kana": "ううん。 あめだったら、 えいがを みに いかない？",
+          "grammarIds": [
+            "tara"
+          ],
           "translation": {
             "vi": "Không. Nếu mưa thì mình đi xem phim nhé."
           }
@@ -201,6 +316,10 @@
           "speaker": "tanaka",
           "jp": "いいね。 雨[あめ]が 降[ふ]っても 大丈夫[だいじょうぶ]だね。",
           "kana": "いいね。 あめが ふっても だいじょうぶだね。",
+          "grammarIds": [
+            "temo",
+            "sujeto-subordinada"
+          ],
           "translation": {
             "vi": "Hay đấy. Trời mưa cũng không sao nhỉ."
           }
@@ -235,6 +354,10 @@
           "speaker": "mai",
           "jp": "先生[せんせい]、 漢字[かんじ]の 意味[いみ]が わからなかったら、 どう しますか。",
           "kana": "せんせい、 かんじの いみが わからなかったら、 どう しますか。",
+          "grammarIds": [
+            "tara",
+            "sujeto-subordinada"
+          ],
           "translation": {
             "vi": "Thưa thầy, nếu không hiểu nghĩa của chữ Hán thì nên làm thế nào ạ?"
           }
@@ -251,6 +374,10 @@
           "speaker": "mai",
           "jp": "調[しら]べても わからなかったら、 先生[せんせい]に 聞[き]いても いいですか。",
           "kana": "しらべても わからなかったら、 せんせいに きいても いいですか。",
+          "grammarIds": [
+            "temo",
+            "tara"
+          ],
           "translation": {
             "vi": "Nếu tra rồi mà vẫn không hiểu thì em hỏi thầy được không ạ?"
           }
@@ -259,6 +386,9 @@
           "speaker": "mori",
           "jp": "もちろんです。 難[むずか]しくても、 いっしょに 考[かんが]えましょう。",
           "kana": "もちろんです。 むずかしくても、 いっしょに かんがえましょう。",
+          "grammarIds": [
+            "temo"
+          ],
           "translation": {
             "vi": "Tất nhiên rồi. Dù khó thì thầy trò mình cùng suy nghĩ nhé."
           }
@@ -267,6 +397,9 @@
           "speaker": "mai",
           "jp": "ありがとう ございます。 うちに 帰[かえ]ったら、 きょう 勉強[べんきょう]した 漢字[かんじ]を もう 一度[いちど] 調[しら]べます。",
           "kana": "ありがとう ございます。 うちに かえったら、 きょう べんきょうした かんじを もう いちど しらべます。",
+          "grammarIds": [
+            "tara-temporal"
+          ],
           "translation": {
             "vi": "Em cảm ơn thầy. Về nhà rồi em sẽ tra lại những chữ Hán đã học hôm nay ạ."
           }
@@ -309,6 +442,9 @@
           "speaker": "mori",
           "jp": "そうですか。 大阪[おおさか]に 着[つ]いたら、 電話[でんわ]して ください。",
           "kana": "そうですか。 おおさかに ついたら、 でんわして ください。",
+          "grammarIds": [
+            "tara-temporal"
+          ],
           "translation": {
             "vi": "Vậy à. Đến Osaka rồi anh gọi điện cho tôi nhé."
           }
@@ -328,6 +464,9 @@
           "speaker": "mori",
           "jp": "忙[いそが]しくても、 ときどき 会[あ]いに 来[き]てくださいね。",
           "kana": "いそがしくても、 ときどき あいに きてくださいね。",
+          "grammarIds": [
+            "temo"
+          ],
           "translation": {
             "vi": "Dù bận cũng thỉnh thoảng ghé chơi nhé."
           }
@@ -336,6 +475,10 @@
           "speaker": "tanaka",
           "jp": "はい。 休[やす]みが あったら、 また 来[き]ます。",
           "kana": "はい。 やすみが あったら、 また きます。",
+          "grammarIds": [
+            "tara",
+            "sujeto-subordinada"
+          ],
           "translation": {
             "vi": "Vâng. Nếu có ngày nghỉ tôi sẽ lại ghé thăm thầy."
           }

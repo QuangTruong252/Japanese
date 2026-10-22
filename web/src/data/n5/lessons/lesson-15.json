@@ -20,6 +20,9 @@
       "pattern": {
         "vi": "V ても いいですか"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "The て form + も いいです expresses permission: 写真[しゃしん]を 撮[と]っても いいですか (may I take photos?). You grant it with どうぞ or ええ、いいですよ.",
         "vi": "Mẫu câu dùng để xin phép làm một điều gì đó ('Tôi làm... có được không?'). Trả lời cho phép: ええ、いいですよ / どうぞ; từ chối khéo: すみません、ちょっと...."
@@ -27,6 +30,18 @@
       "examples": [
         {
           "jp": "たばこを 吸[す]ってもいいですか。…ええ、いいですよ。",
+          "marks": [
+            {
+              "text": "吸[す]っ",
+              "slot": "V"
+            },
+            {
+              "text": "ても"
+            },
+            {
+              "text": "いいですか"
+            }
+          ],
           "translation": {
             "en": "May I smoke? …Yes, go ahead.",
             "vi": "Tôi hút thuốc ở đây có được không? …Vâng, được chứ ạ."
@@ -43,6 +58,9 @@
       "pattern": {
         "vi": "V ては いけません"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "〜ては いけません forbids: ここで 遊[あそ]んでは いけません (you mustn't play here). It is the negative answer to 〜てもいいですか.",
         "vi": "Mẫu câu dùng để biểu thị sự cấm đoán, không cho phép làm một việc gì đó ('Không được phép...'). Thường dùng trong quy định, luật lệ hoặc người lớn nói với trẻ con."
@@ -50,6 +68,18 @@
       "examples": [
         {
           "jp": "ここで 写真[しゃしん]を 撮[と]ってはいけません。",
+          "marks": [
+            {
+              "text": "撮[と]っ",
+              "slot": "V"
+            },
+            {
+              "text": "ては"
+            },
+            {
+              "text": "いけません"
+            }
+          ],
           "translation": {
             "en": "You mustn't take photos here.",
             "vi": "Không được chụp ảnh ở đây."
@@ -67,6 +97,9 @@
         "en": "V て います (state)",
         "vi": "V て います (kết quả / trạng thái)"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "With certain verbs, 〜ています describes not an action in progress but the resulting state: 結婚[けっこん]しています (I'm married), 知[し]っています (I know), 住[す]んでいます (I live in…). The negative of 知[し]っています is 知[し]りません.",
         "vi": "Diễn tả trạng thái tĩnh là kết quả còn lưu lại của một hành động đã xảy ra trong quá khứ, như kết hôn (結婚しています), sinh sống (住んでいます), biết (知っています). Chú ý: phủ định của 知っています là 知りません."
@@ -74,6 +107,15 @@
       "examples": [
         {
           "jp": "ミラーさんは 大阪[おおさか]に 住[す]んでいます。",
+          "marks": [
+            {
+              "text": "住[す]ん",
+              "slot": "V"
+            },
+            {
+              "text": "でいます"
+            }
+          ],
           "translation": {
             "en": "Mr. Miller lives in Osaka.",
             "vi": "Anh Miller đang sống ở Osaka."
@@ -81,6 +123,15 @@
         },
         {
           "jp": "田中[たなか]さんの 電話番号[でんわばんごう]を 知[し]っていますか。…いいえ、 知[し]りません。",
+          "marks": [
+            {
+              "text": "知[し]っ",
+              "slot": "V"
+            },
+            {
+              "text": "ています"
+            }
+          ],
           "translation": {
             "en": "Do you know Mr. Tanaka's phone number? …No, I don't.",
             "vi": "Bạn có biết số điện thoại của anh Tanaka không? …Không, tôi không biết."
@@ -97,6 +148,10 @@
       "pattern": {
         "vi": "N は 〜を V て います"
       },
+      "slots": [
+        "N",
+        "V"
+      ],
       "explanation": {
         "en": "〜ています also describes someone's job or regular activity: IMCは ソフトを 作[つく]っています (IMC makes software), 妹[いもうと]は 銀行[ぎんこう]で 働[はたら]いています.",
         "vi": "Dùng thể V ています để nói về công việc, nghề nghiệp hoặc một thói quen được lặp đi lặp lại trong một thời gian dài."
@@ -104,6 +159,25 @@
       "examples": [
         {
           "jp": "姉[あね]は 高校[こうこう]で 英語[えいご]を 教[おし]えています。",
+          "marks": [
+            {
+              "text": "姉[あね]",
+              "slot": "N"
+            },
+            {
+              "text": "は"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "教[おし]え",
+              "slot": "V"
+            },
+            {
+              "text": "ています"
+            }
+          ],
           "translation": {
             "en": "My older sister teaches English at a high school.",
             "vi": "Chị gái tôi đang dạy tiếng Anh ở trường trung học phổ thông."
@@ -133,6 +207,9 @@
           "speaker": "mai",
           "jp": "すみません。 この 資料[しりょう]を コピーしても いいですか。",
           "kana": "すみません。 この しりょうを コピーしても いいですか。",
+          "grammarIds": [
+            "temo-ii"
+          ],
           "translation": {
             "vi": "Xin lỗi, tôi sao chụp tài liệu này có được không ạ?"
           },
@@ -152,6 +229,9 @@
           "speaker": "mai",
           "jp": "この 辞書[じしょ]も 借[か]りても いいですか。",
           "kana": "この じしょも かりても いいですか。",
+          "grammarIds": [
+            "temo-ii"
+          ],
           "translation": {
             "vi": "Tôi mượn cả cuốn từ điển này có được không ạ?"
           }
@@ -168,6 +248,9 @@
           "speaker": "mai",
           "jp": "はい。 ここで コーヒーを 飲[の]んでも いいですか。",
           "kana": "はい。 ここで コーヒーを のんでも いいですか。",
+          "grammarIds": [
+            "temo-ii"
+          ],
           "translation": {
             "vi": "Vâng. Tôi uống cà phê ở đây có được không ạ?"
           }
@@ -176,6 +259,9 @@
           "speaker": "toshokan",
           "jp": "いいえ、ここで 飲[の]んでは いけません。 飲[の]み 物[もの]は ロビーで お願[ねが]いします。",
           "kana": "いいえ、ここで のんでは いけません。 のみ ものは ロビーで おねがいします。",
+          "grammarIds": [
+            "tewa-ikemasen"
+          ],
           "translation": {
             "vi": "Dạ không, ở đây không được uống ạ. Đồ uống chị vui lòng dùng ở sảnh."
           }
@@ -210,6 +296,9 @@
           "speaker": "mai",
           "jp": "田中[たなか]さんは どこに 住[す]んでいますか。",
           "kana": "たなかさんは どこに すんでいますか。",
+          "grammarIds": [
+            "te-imasu-estado"
+          ],
           "translation": {
             "vi": "Anh Tanaka sống ở đâu ạ?"
           }
@@ -218,6 +307,9 @@
           "speaker": "tanaka",
           "jp": "駅[えき]の 近[ちか]くに 住[す]んでいます。 マイさんは あの スーパーを 知[し]っていますか。",
           "kana": "えきの ちかくに すんでいます。 マイさんは あの スーパーを しっていますか。",
+          "grammarIds": [
+            "te-imasu-estado"
+          ],
           "translation": {
             "vi": "Anh sống gần ga. Em có biết siêu thị kia không?"
           }
@@ -226,6 +318,9 @@
           "speaker": "mai",
           "jp": "はい、知[し]っています。 よく そこで 買[か]い 物[もの]します。",
           "kana": "はい、しっています。 よく そこで かい ものします。",
+          "grammarIds": [
+            "te-imasu-estado"
+          ],
           "translation": {
             "vi": "Dạ biết ạ. Em thường mua sắm ở đó."
           }
@@ -242,6 +337,9 @@
           "speaker": "mai",
           "jp": "会社[かいしゃ]では 何[なに]を 作[つく]っていますか。",
           "kana": "かいしゃでは なにを つくっていますか。",
+          "grammarIds": [
+            "te-imasu-habitual"
+          ],
           "translation": {
             "vi": "Công ty anh sản xuất gì ạ?"
           }
@@ -250,6 +348,9 @@
           "speaker": "tanaka",
           "jp": "コンピューターの ソフトを 作[つく]っています。",
           "kana": "コンピューターの ソフトを つくっています。",
+          "grammarIds": [
+            "te-imasu-habitual"
+          ],
           "translation": {
             "vi": "Công ty anh làm phần mềm máy tính."
           }
@@ -258,6 +359,9 @@
           "speaker": "mai",
           "jp": "そうですか。 私[わたし]も 毎日[まいにち] コンピューターを 使[つか]っています。",
           "kana": "そうですか。 わたしも まいにち コンピューターを つかっています。",
+          "grammarIds": [
+            "te-imasu-habitual"
+          ],
           "translation": {
             "vi": "Ra vậy. Em cũng dùng máy tính hằng ngày ạ."
           }

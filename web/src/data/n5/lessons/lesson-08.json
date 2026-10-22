@@ -27,6 +27,11 @@
       "examples": [
         {
           "jp": "富士山[ふじさん]は 高[たか]いです。",
+          "marks": [
+            {
+              "text": "高[たか]い"
+            }
+          ],
           "translation": {
             "en": "Mount Fuji is tall.",
             "vi": "Núi Phú Sĩ rất cao."
@@ -34,6 +39,11 @@
         },
         {
           "jp": "桜[さくら]はきれいです。",
+          "marks": [
+            {
+              "text": "きれい"
+            }
+          ],
           "translation": {
             "en": "Cherry blossoms are beautiful.",
             "vi": "Hoa anh đào rất đẹp."
@@ -50,6 +60,11 @@
       "pattern": {
         "vi": "N は A-な[な] です ／ N は A-い です"
       },
+      "slots": [
+        "N",
+        "A-な",
+        "A-い"
+      ],
       "explanation": {
         "en": "As a predicate, both types are followed by です. The -な adjective drops the な: 静[しず]かです. The negative differs: -な adjectives use じゃありません (静[しず]かじゃありません) and -い adjectives change 〜い to 〜くないです (高[たか]くないです). The negative of いい is よくないです.",
         "vi": "Khi làm vị ngữ: Tính từ đuôi い giữ nguyên đuôi い + です; phủ định là bỏ い thêm くないです. Tính từ đuôi な bỏ な + です; phủ định là じゃありません."
@@ -57,6 +72,22 @@
       "examples": [
         {
           "jp": "ペキンは 今[いま] 寒[さむ]いですか。…はい、 寒[さむ]いです。",
+          "marks": [
+            {
+              "text": "ペキン",
+              "slot": "N"
+            },
+            {
+              "text": "は"
+            },
+            {
+              "text": "寒[さむ]い",
+              "slot": "A-い"
+            },
+            {
+              "text": "です"
+            }
+          ],
           "translation": {
             "en": "Is it cold in Beijing now? …Yes, it's cold.",
             "vi": "Bắc Kinh bây giờ có lạnh không? …Vâng, lạnh lắm."
@@ -64,6 +95,22 @@
         },
         {
           "jp": "この 部屋[へや]は 静[しず]かじゃありません。",
+          "marks": [
+            {
+              "text": "この 部屋[へや]",
+              "slot": "N"
+            },
+            {
+              "text": "は"
+            },
+            {
+              "text": "静[しず]か",
+              "slot": "A-な"
+            },
+            {
+              "text": "じゃありません"
+            }
+          ],
           "translation": {
             "en": "This room is not quiet.",
             "vi": "Căn phòng này không yên tĩnh."
@@ -80,6 +127,11 @@
       "pattern": {
         "vi": "A-な[な] N ／ A-い N"
       },
+      "slots": [
+        "A-な",
+        "N",
+        "A-い"
+      ],
       "explanation": {
         "en": "When modifying a noun directly, -な adjectives keep the な (きれいな 花[はな]) and -い adjectives are used as they are (新[あたら]しい 車[くるま]).",
         "vi": "Để bổ nghĩa cho danh từ: Tính từ đuôi な giữ nguyên đuôi な rồi ghép trực tiếp trước danh từ (親切な先生). Tính từ đuôi い giữ nguyên đuôi い rồi ghép trực tiếp trước danh từ (高い山)."
@@ -87,6 +139,19 @@
       "examples": [
         {
           "jp": "ワット 先生[せんせい]は 親切[しんせつ]な 先生[せんせい]です。",
+          "marks": [
+            {
+              "text": "親切[しんせつ]",
+              "slot": "A-な"
+            },
+            {
+              "text": "な"
+            },
+            {
+              "text": "先生[せんせい]",
+              "slot": "N"
+            }
+          ],
           "translation": {
             "en": "Mr. Watt is a kind teacher.",
             "vi": "Thầy Watt là một người thầy tốt bụng."
@@ -94,6 +159,16 @@
         },
         {
           "jp": "富士山[ふじさん]は 高[たか]い 山[やま]です。",
+          "marks": [
+            {
+              "text": "高[たか]い",
+              "slot": "A-い"
+            },
+            {
+              "text": "山[やま]",
+              "slot": "N"
+            }
+          ],
           "translation": {
             "en": "Mount Fuji is a tall mountain.",
             "vi": "Núi Phú Sĩ là một ngọn núi cao."
@@ -110,6 +185,10 @@
       "pattern": {
         "vi": "S1 が、S2"
       },
+      "slots": [
+        "S1",
+        "S2"
+      ],
       "explanation": {
         "en": "が joins two sentences with a contrasting sense: 日本[にほん]の 食[た]べ 物[もの]はおいしいですが、 高[たか]いです.",
         "vi": "Liên từ が đặt ở cuối vế câu thứ nhất để nối hai mệnh đề có ý nghĩa tương phản hoặc đối lập nhau ('nhưng, tuy nhiên')."
@@ -117,6 +196,19 @@
       "examples": [
         {
           "jp": "日本[にほん]の 食[た]べ 物[もの]はおいしいですが、 高[たか]いです。",
+          "marks": [
+            {
+              "text": "日本[にほん]の 食[た]べ 物[もの]はおいしいです",
+              "slot": "S1"
+            },
+            {
+              "text": "が、"
+            },
+            {
+              "text": "高[たか]いです",
+              "slot": "S2"
+            }
+          ],
           "translation": {
             "en": "Japanese food is delicious, but expensive.",
             "vi": "Đồ ăn Nhật Bản ngon nhưng đắt."
@@ -134,6 +226,9 @@
         "en": "とても A ／ あまり A (negative)",
         "vi": "とても A ／ あまり A (phủ định)"
       },
+      "slots": [
+        "A"
+      ],
       "explanation": {
         "en": "とても intensifies in affirmative sentences (とても 大[おお]きい, very big). あまり only appears with a negative: あまり 有名[ゆうめい]じゃありません (it isn't very famous).",
         "vi": "とても mang nghĩa 'rất', đi với câu khẳng định. あまり mang nghĩa 'không... lắm', luôn đi với thể phủ định của tính từ hoặc động từ."
@@ -141,6 +236,15 @@
       "examples": [
         {
           "jp": "この 町[まち]はとてもにぎやかです。",
+          "marks": [
+            {
+              "text": "とても"
+            },
+            {
+              "text": "にぎやか",
+              "slot": "A"
+            }
+          ],
           "translation": {
             "en": "This town is very lively.",
             "vi": "Thị trấn này rất nhộn nhịp."
@@ -148,6 +252,18 @@
         },
         {
           "jp": "この 本[ほん]はあまりおもしろくないです。",
+          "marks": [
+            {
+              "text": "あまり"
+            },
+            {
+              "text": "おもしろ",
+              "slot": "A"
+            },
+            {
+              "text": "くないです"
+            }
+          ],
           "translation": {
             "en": "This book isn't very interesting.",
             "vi": "Cuốn sách này không thú vị lắm."
@@ -164,6 +280,9 @@
       "pattern": {
         "vi": "N は どうですか"
       },
+      "slots": [
+        "N"
+      ],
       "explanation": {
         "en": "It asks the listener's impression of something they have already experienced: 日本[にほん]の 生活[せいかつ]は どうですか (how is life in Japan?).",
         "vi": "Mẫu câu dùng để hỏi cảm nhận, ấn tượng hoặc ý kiến của đối phương về một sự vật, việc làm hoặc địa điểm."
@@ -171,6 +290,18 @@
       "examples": [
         {
           "jp": "仕事[しごと]はどうですか。… 忙[いそが]しいですが、おもしろいです。",
+          "marks": [
+            {
+              "text": "仕事[しごと]",
+              "slot": "N"
+            },
+            {
+              "text": "は"
+            },
+            {
+              "text": "どうですか"
+            }
+          ],
           "translation": {
             "en": "How is work? …It's busy, but interesting.",
             "vi": "Công việc thế nào rồi? …Bận rộn nhưng rất thú vị."
@@ -187,6 +318,10 @@
       "pattern": {
         "vi": "N1 は どんな N2 ですか"
       },
+      "slots": [
+        "N1",
+        "N2"
+      ],
       "explanation": {
         "en": "どんな + noun asks for a description; the answer uses an adjective: 奈良[なら]は どんな 町[まち]ですか。… 古[ふる]い 町[まち]です.",
         "vi": "どんな đứng trước một danh từ, dùng để hỏi về tính chất, đặc điểm hoặc trạng thái chi tiết của sự vật, người hoặc địa điểm đó."
@@ -194,6 +329,25 @@
       "examples": [
         {
           "jp": "奈良[なら]はどんな 町[まち]ですか。… 古[ふる]い 町[まち]です。",
+          "marks": [
+            {
+              "text": "奈良[なら]",
+              "slot": "N1"
+            },
+            {
+              "text": "は"
+            },
+            {
+              "text": "どんな"
+            },
+            {
+              "text": "町[まち]",
+              "slot": "N2"
+            },
+            {
+              "text": "ですか"
+            }
+          ],
           "translation": {
             "en": "What kind of town is Nara? …It's an old town.",
             "vi": "Nara là một thành phố như thế nào? …Là một thành phố cổ kính."
@@ -217,6 +371,11 @@
       "examples": [
         {
           "jp": "日本[にほん]の 生活[せいかつ]はどうですか。…そうですね、 楽[たの]しいです。",
+          "marks": [
+            {
+              "text": "そうですね"
+            }
+          ],
           "translation": {
             "en": "How is life in Japan? …Well… it's fun.",
             "vi": "Cuộc sống ở Nhật Bản thế nào? …À xem nào, rất vui."
@@ -256,6 +415,9 @@
         {
           "speaker": "mai",
           "jp": "はい、元気[げんき]です。 先生[せんせい]も お 元気[げんき]ですか。",
+          "grammarIds": [
+            "predicado-adjetivo"
+          ],
           "kana": "はい、げんきです。 せんせいも お げんきですか。",
           "translation": {
             "vi": "Dạ khỏe ạ. Thầy cũng khỏe chứ ạ?"
@@ -267,6 +429,9 @@
         {
           "speaker": "mori",
           "jp": "ええ、元気[げんき]ですよ。 日本[にほん]の 生活[せいかつ]は どうですか。",
+          "grammarIds": [
+            "dou-desu-ka"
+          ],
           "kana": "ええ、げんきですよ。 にほんの せいかつは どうですか。",
           "translation": {
             "vi": "Ừ, thầy khỏe. Cuộc sống ở Nhật của em thế nào?"
@@ -275,6 +440,10 @@
         {
           "speaker": "mai",
           "jp": "とても 楽[たの]しいです。",
+          "grammarIds": [
+            "totemo-amari",
+            "predicado-adjetivo"
+          ],
           "kana": "とても たのしいです。",
           "translation": {
             "vi": "Rất vui ạ."
@@ -283,6 +452,9 @@
         {
           "speaker": "mori",
           "jp": "勉強[べんきょう]は どうですか。",
+          "grammarIds": [
+            "dou-desu-ka"
+          ],
           "kana": "べんきょうは どうですか。",
           "translation": {
             "vi": "Còn việc học thì sao?"
@@ -291,6 +463,9 @@
         {
           "speaker": "mai",
           "jp": "難[むずか]しいですが、 おもしろいです。",
+          "grammarIds": [
+            "ga-pero"
+          ],
           "kana": "むずかしいですが、 おもしろいです。",
           "translation": {
             "vi": "Khó nhưng thú vị ạ."
@@ -341,6 +516,9 @@
         {
           "speaker": "tanaka",
           "jp": "マイさんの 寮[りょう]は どんな 所[ところ]ですか。",
+          "grammarIds": [
+            "donna"
+          ],
           "kana": "マイさんの りょうは どんな ところですか。",
           "translation": {
             "vi": "Ký túc xá của em là nơi như thế nào?"
@@ -349,6 +527,9 @@
         {
           "speaker": "mai",
           "jp": "新[あたら]しい 寮[りょう]です。 静[しず]かです。 そして きれいです。",
+          "grammarIds": [
+            "adjetivo-sustantivo"
+          ],
           "kana": "あたらしい りょうです。 しずかです。 そして きれいです。",
           "translation": {
             "vi": "Là ký túc xá mới ạ. Yên tĩnh và sạch sẽ ạ."
@@ -357,6 +538,9 @@
         {
           "speaker": "tanaka",
           "jp": "部屋[へや]は 大[おお]きいですか。",
+          "grammarIds": [
+            "predicado-adjetivo"
+          ],
           "kana": "へやは おおきいですか。",
           "translation": {
             "vi": "Phòng có rộng không?"
@@ -365,6 +549,10 @@
         {
           "speaker": "mai",
           "jp": "いいえ、 小[ちい]さいですが、 とても 便利[べんり]です。",
+          "grammarIds": [
+            "ga-pero",
+            "totemo-amari"
+          ],
           "kana": "いいえ、 ちいさいですが、 とても べんりです。",
           "translation": {
             "vi": "Không ạ, phòng nhỏ nhưng rất tiện ạ."
@@ -373,6 +561,9 @@
         {
           "speaker": "tanaka",
           "jp": "町[まち]は にぎやかですか。",
+          "grammarIds": [
+            "predicado-adjetivo"
+          ],
           "kana": "まちは にぎやかですか。",
           "translation": {
             "vi": "Khu đó có nhộn nhịp không?"
@@ -381,6 +572,10 @@
         {
           "speaker": "mai",
           "jp": "いいえ、静[しず]かな 町[まち]です。 あまり 有名[ゆうめい]じゃ ありません。",
+          "grammarIds": [
+            "adjetivo-sustantivo",
+            "totemo-amari"
+          ],
           "kana": "いいえ、しずかな まちです。 あまり ゆうめいじゃ ありません。",
           "translation": {
             "vi": "Không ạ, là một khu yên tĩnh. Cũng không nổi tiếng lắm ạ."
@@ -389,6 +584,9 @@
         {
           "speaker": "tanaka",
           "jp": "食堂[しょくどう]は どうですか。",
+          "grammarIds": [
+            "dou-desu-ka"
+          ],
           "kana": "しょくどうは どうですか。",
           "translation": {
             "vi": "Còn nhà ăn thì sao?"
@@ -461,6 +659,9 @@
         {
           "speaker": "mori",
           "jp": "日本[にほん]の お 茶[ちゃ]は どうですか。",
+          "grammarIds": [
+            "dou-desu-ka"
+          ],
           "kana": "にほんの お ちゃは どうですか。",
           "translation": {
             "vi": "Trà Nhật em thấy thế nào?"
@@ -469,6 +670,10 @@
         {
           "speaker": "mai",
           "jp": "とても おいしいです。 ベトナムの お 茶[ちゃ]と ちょっと 違[ちが]いますね。",
+          "grammarIds": [
+            "totemo-amari",
+            "predicado-adjetivo"
+          ],
           "kana": "とても おいしいです。 ベトナムの お ちゃと ちょっと ちがいますね。",
           "translation": {
             "vi": "Rất ngon ạ. Hơi khác trà Việt Nam một chút ạ."
@@ -485,6 +690,9 @@
         {
           "speaker": "mai",
           "jp": "私[わたし]は 冷[つめ]たい お 茶[ちゃ]を 飲[の]みます。",
+          "grammarIds": [
+            "adjetivo-sustantivo"
+          ],
           "kana": "わたしは つめたい お ちゃを のみます。",
           "translation": {
             "vi": "Em uống trà lạnh ạ."

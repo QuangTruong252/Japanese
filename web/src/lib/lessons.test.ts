@@ -288,3 +288,40 @@ test('memoizeUntilFailure: nguồn lỗi lần đầu, lần hai thành công �
   assert.equal(await memoizeUntilFailure(cache, 1, load), 'ok');
   assert.equal(calls, 2);
 });
+
+/** Ngoặc [..] của furigana phải cân bằng tại mọi điểm cắt: không mark nào bắt đầu hay kết thúc giữa cặp 漢字[かな]. */
+function insideFurigana(jp: string, index: number): boolean {
+  return jp.lastIndexOf('[', index - 1) > jp.lastIndexOf(']', index - 1);
+}
+
+test('chú thích ngữ pháp: slots thuộc pattern, mỗi ví dụ có marks hợp lệ', async () => {
+  for (const lesson of AVAILABLE_N5_LESSONS) {
+    for (const point of (await loadLesson(lesson)).grammar) {
+      const where = `bài ${lesson} ${point.id}`;
+      for (const slot of point.slots ?? []) {
+        assert.ok(point.pattern.vi.includes(slot), `${where}: slot "${slot}" không có trong pattern "${point.pattern.vi}"`);
+      }
+      point.examples.forEach((example, i) => {
+        const at = `${where} ví dụ ${i}`;
+        assert.ok(example.marks?.length, `${at}: chưa có marks`);
+        let cursor = 0;
+        for (const mark of example.marks) {
+          const start = example.jp.indexOf(mark.text, cursor);
+          assert.ok(mark.text && start !== -1, `${at}: mark "${mark.text}" không có trong jp sau vị trí ${cursor}`);
+          const end = start + mark.text.length;
+          assert.ok(!insideFurigana(example.jp, start) && !insideFurigana(example.jp, end), `${at}: mark "${mark.text}" cắt giữa furigana`);
+          if (mark.slot !== undefined) assert.ok(point.slots?.includes(mark.slot), `${at}: slot "${mark.slot}" không thuộc slots của điểm`);
+          cursor = end;
+        }
+      });
+    }
+  }
+});
+
+test('insideFurigana: điểm cắt giữa ngoặc furigana bị bắt', () => {
+  const jp = '私[わたし]は';
+  assert.equal(insideFurigana(jp, 0), false);
+  assert.equal(insideFurigana(jp, 2), true);
+  assert.equal(insideFurigana(jp, 5), true);
+  assert.equal(insideFurigana(jp, 9), false);
+});
