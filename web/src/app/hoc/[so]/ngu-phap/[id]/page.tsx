@@ -109,6 +109,21 @@ export default async function GrammarPointPage({ params }: { params: Promise<Par
             )}
           </header>
 
+          {/* Mở sẵn ngay dưới mẫu câu: người mới học cần hiểu mẫu trước khi đọc ví dụ; ai đã hiểu thì thu lại. */}
+          <details open className="group mt-6 rounded-xl border border-border bg-card">
+            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 rounded-xl px-4 font-semibold text-foreground outline-none focus-visible:ring-3 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+              Giải thích
+              <ChevronRight
+                className="size-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-90 motion-reduce:transition-none"
+                aria-hidden="true"
+              />
+            </summary>
+            <div className="space-y-3 px-4 pb-4">
+              <p className="text-base leading-relaxed text-foreground/90">{point.explanation.vi}</p>
+              {point.sourceRef && <p className="text-xs text-muted-foreground/80">Nguồn: {point.sourceRef}</p>}
+            </div>
+          </details>
+
           {point.examples.length > 0 && (
             <section aria-label="Ví dụ" className="mt-6">
               <ul className="divide-y divide-border">
@@ -135,20 +150,6 @@ export default async function GrammarPointPage({ params }: { params: Promise<Par
               )}
             </section>
           )}
-
-          <details className="group mt-8 rounded-xl border border-border bg-card">
-            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 rounded-xl px-4 font-semibold text-foreground outline-none focus-visible:ring-3 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
-              Giải thích
-              <ChevronRight
-                className="size-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-90 motion-reduce:transition-none"
-                aria-hidden="true"
-              />
-            </summary>
-            <div className="space-y-3 px-4 pb-4">
-              <p className="text-sm leading-relaxed text-foreground/90">{point.explanation.vi}</p>
-              {point.sourceRef && <p className="text-xs text-muted-foreground/80">Nguồn: {point.sourceRef}</p>}
-            </div>
-          </details>
 
           <div className="mt-8 flex flex-col gap-2">
             <Link
