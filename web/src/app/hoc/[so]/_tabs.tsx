@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
+import { useRouter } from 'next/navigation';
 import { Tabs } from '@base-ui/react/tabs';
 import { LayoutGrid, List } from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
@@ -12,11 +13,13 @@ import { SPEAK_CLASS } from '@/components/dialogue/reader-styles';
 import { Button } from '@/components/ui/button';
 import { AUDIO_IMPORT_ENABLED } from '@/lib/features';
 import { formatOptionalBrackets, maxFuriganaWordEm, stripFurigana } from '@/lib/japanese';
+import { parseLessonHash } from '@/lib/lesson-links';
+import type { LessonTab } from '@/lib/lesson-links';
 import { DEFAULT_SETTINGS, getSettingsSnapshot, saveSettings, subscribeSettings } from '@/lib/settings';
 import { cn } from '@/lib/utils';
 import type { Dialogue, VocabWord } from '@/types';
 
-type TabValue = 'tu-vung' | 'ngu-phap' | 'hoi-thoai' | 'nghe';
+type TabValue = LessonTab;
 
 const VERB_GROUP: Record<string, number> = { 'verb-godan': 1, 'verb-ichidan': 2, 'verb-irregular': 3 };
 
@@ -32,27 +35,6 @@ const VOCAB_TARGET = 'scroll-mt-32';
 
 /** Đích cuộn chờ sau commit: phần tử theo id (null = đầu thanh tab) hoặc đầu panel đang hiện khi thanh dính. */
 type PendingScroll = { id: string | null } | 'panel';
-
-/** Hash → tab + phần tử đích (null = đầu thanh tab). Hash lạ → không làm gì. */
-function parseHash(hash: string, hasDialogues: boolean): { tab: TabValue; targetId: string | null } | null {
-  let id: string;
-  try {
-    id = decodeURIComponent(hash.replace(/^#/, ''));
-  } catch {
-    return null;
-  }
-  if (id === 'tu-vung' || id === 'ngu-phap') return { tab: id, targetId: null };
-  // Bài không có hội thoại thì tab không tồn tại: về Từ vựng thay vì để panel trống.
-  if (id === 'hoi-thoai' || id.startsWith('dialogue-')) {
-    if (!hasDialogues) return { tab: 'tu-vung', targetId: null };
-    return { tab: 'hoi-thoai', targetId: id === 'hoi-thoai' ? null : id };
-  }
-  // Link cũ `#nghe` không gãy khi tab Nghe đang ẩn: về đầu thanh tab của Từ vựng.
-  if (id === 'nghe') return { tab: AUDIO_IMPORT_ENABLED ? 'nghe' : 'tu-vung', targetId: null };
-  if (id.startsWith('vocab-')) return { tab: 'tu-vung', targetId: id };
-  if (id.startsWith('grammar-')) return { tab: 'ngu-phap', targetId: id };
-  return null;
-}
 
 function VocabItem({ w, view, anchor }: { w: VocabWord; view: 'list' | 'grid'; anchor?: string }) {
   const group = VERB_GROUP[w.type];
@@ -160,6 +142,7 @@ function VocabItem({ w, view, anchor }: { w: VocabWord; view: 'list' | 'grid'; a
 export function LessonTabs({
   vocab,
   grammar,
+  grammarIds,
   listening,
   lessonNum,
   dialogues,
@@ -167,12 +150,15 @@ export function LessonTabs({
 }: {
   vocab: VocabWord[];
   grammar: ReactNode;
+  /** Id các điểm ngữ pháp của bài, để đổi link cũ `#grammar-<id>` sang trang điểm */
+  grammarIds: string[];
   listening?: ReactNode;
   lessonNum: number;
   dialogues: Dialogue[];
   /** vocabId → neo câu hội thoại đầu tiên dùng từ đó */
   vocabAnchors: Record<string, string>;
 }) {
+  const router = useRouter();
   const hasDialogues = dialogues.length > 0;
   const tabs = TAB_LABELS.filter((t) => t.value !== 'hoi-thoai' || hasDialogues);
   const [tab, setTab] = useState<TabValue>('tu-vung');
@@ -193,8 +179,12 @@ export function LessonTabs({
 
   useEffect(() => {
     const goToHash = () => {
-      const parsed = parseHash(window.location.hash, hasDialogues);
+      const parsed = parseLessonHash(window.location.hash, hasDialogues, lessonNum, grammarIds);
       if (!parsed) return;
+      if ('redirect' in parsed) {
+        router.replace(parsed.redirect);
+        return;
+      }
       setTab(parsed.tab);
       requestScroll({ id: parsed.targetId });
     };
@@ -202,7 +192,7 @@ export function LessonTabs({
     // Link cùng trang từ SearchDialog cũng bắn hashchange (pushState tự nó thì không).
     window.addEventListener('hashchange', goToHash);
     return () => window.removeEventListener('hashchange', goToHash);
-  }, [hasDialogues]);
+  }, [hasDialogues, lessonNum, grammarIds, router]);
 
   // Panel ẩn không cuộn tới được, nên cuộn sau commit khi panel đích đã hiện.
   useEffect(() => {

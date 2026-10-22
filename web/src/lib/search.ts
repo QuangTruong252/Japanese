@@ -302,7 +302,7 @@ export async function buildSearchIndex(): Promise<SearchEntry[]> {
         sublabel: g.title.vi,
         lesson: lessonNum,
         badge: `Bài ${lessonNum}`,
-        href: `/hoc/${lessonNum}#grammar-${g.id}`,
+        href: `/hoc/${lessonNum}/ngu-phap/${g.id}`,
         keys: [
           titleNorm,
           g.title.vi.toLowerCase(),

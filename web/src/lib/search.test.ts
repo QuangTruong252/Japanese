@@ -56,6 +56,10 @@ test('buildSearchIndex nạp đủ 7 nhóm dữ liệu tĩnh với href chính x
   assert.equal(gakusei.href, '/hoc/1#vocab-gakusei');
   assert.equal(gakusei.lesson, 1);
 
+  const grammarWaDesu = index.find((e) => e.kind === 'grammar' && e.lesson === 1);
+  assert.ok(grammarWaDesu);
+  assert.match(grammarWaDesu.href, /^\/hoc\/1\/ngu-phap\/[a-z0-9-]+$/);
+
   const verbAu = index.find((e) => e.id === 'verb-g1-01');
   assert.ok(verbAu);
   assert.equal(verbAu.href, '/hoc/tra-cuu/dong-tu?q=%E3%81%82%E3%81%84%E3%81%BE%E3%81%99');

@@ -2,9 +2,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ChevronLeft } from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
-import { SpeakButton } from '@/components/SpeakButton';
 import { FeatureIcon } from '@/components/FeatureIcon';
-import { Illustration } from '@/components/Illustration';
+import { GrammarIndex } from '@/components/grammar/GrammarIndex';
 import { ListRow, PaperCloud, SoftScene } from '@/components/PaperKit';
 import { ShadowingPlayer } from '@/components/audio/ShadowingPlayer';
 import {
@@ -13,7 +12,6 @@ import {
   parseLessonNumber,
 } from '@/lib/lessons';
 import { AUDIO_IMPORT_ENABLED } from '@/lib/features';
-import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
 import { vocabDialogueAnchors } from '@/lib/kaiwa';
 import { LessonHeroCard } from './_parts';
 import { LessonTabs } from './_tabs';
@@ -22,9 +20,6 @@ import { cn } from '@/lib/utils';
 export function generateStaticParams() {
   return AVAILABLE_N5_LESSONS.map((n) => ({ so: String(n) }));
 }
-
-// Chừa chỗ cho thanh tab dính (~68 px) để thẻ ngữ pháp không bị che khi nhảy tới.
-const SECTION = 'scroll-mt-20';
 
 export default async function LessonDetailPage({
   params,
@@ -87,73 +82,11 @@ export default async function LessonDetailPage({
           lessonNum={lessonNum}
           dialogues={lesson.dialogues ?? []}
           vocabAnchors={vocabDialogueAnchors(lesson.dialogues ?? [])}
+          grammarIds={lesson.grammar.map((g) => g.id)}
           grammar={
             <div className="space-y-3">
-              {lesson.grammar.map((point) => (
-                <article
-                  key={point.id}
-                  id={`grammar-${point.id}`}
-                  className={cn('space-y-3 rounded-xl border border-border bg-card p-4 sm:p-5', SECTION)}
-                >
-                  <h3 className="text-lg font-semibold text-foreground">
-                    <Furigana text={point.title.vi} />
-                  </h3>
-
-                  <div className="grammar-pattern-block rounded-lg bg-secondary p-4">
-                    <div className="jp jp-example font-medium leading-loose text-foreground">
-                      <Furigana text={point.pattern.vi} />
-                    </div>
-                  </div>
-
-                  <p className="text-sm leading-relaxed text-foreground/90">{point.explanation.vi}</p>
-
-                  {point.illustration && (
-                    <figure className="flex flex-col gap-2">
-                      <Illustration
-                        asset={point.illustration}
-                        sizes="(max-width: 768px) calc(100vw - 32px), 672px"
-                        className="mx-auto h-auto w-full max-w-xl rounded-xl"
-                      />
-                      {point.illustrationCaption && (
-                        <figcaption className="text-xs text-muted-foreground">
-                          <Furigana text={point.illustrationCaption.vi} />
-                        </figcaption>
-                      )}
-                    </figure>
-                  )}
-
-                  {point.examples.length > 0 && (
-                    <div>
-                      <p className="inline-block rounded-full bg-accent px-3 py-1 text-sm font-medium text-primary">
-                        Ví dụ
-                      </p>
-                      <div className="mt-1 divide-y divide-border">
-                        {point.examples.map((ex, i) => (
-                          <div key={i} className="flex items-start gap-3 py-3">
-                            <div className="min-w-0 flex-1 space-y-0.5">
-                              <div className="jp jp-example font-medium leading-loose text-foreground">
-                                <Furigana text={ex.jp} />
-                              </div>
-                              <p className="translation text-sm leading-relaxed text-muted-foreground">
-                                {ex.translation.vi}
-                              </p>
-                            </div>
-                            <SpeakButton
-                              text={stripFurigana(formatOptionalBrackets(ex.jp))}
-                              label={stripFurigana(formatOptionalBrackets(ex.jp))}
-                              className="size-11 w-11 shrink-0 rounded-full border border-border bg-secondary text-primary hover:bg-accent"
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {point.sourceRef && (
-                    <p className="text-xs text-muted-foreground/80">Nguồn: {point.sourceRef}</p>
-                  )}
-                </article>
-              ))}
+              <p className="text-sm text-muted-foreground">{lesson.grammar.length} mẫu câu</p>
+              <GrammarIndex lessonNum={lessonNum} points={lesson.grammar} />
             </div>
           }
           listening={
