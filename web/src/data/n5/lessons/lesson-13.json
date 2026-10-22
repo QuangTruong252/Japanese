@@ -47,7 +47,15 @@
             "vi": "Tôi muốn có bạn bè."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/friend-wish-gathering-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một chàng trai ngồi một mình trên ghế công viên, nhìn sang nhóm bạn đang vui vẻ ngồi picnic trên bãi cỏ và mong có bạn bên cạnh."
+        }
+      }
     },
     {
       "id": "tai-desu",
@@ -99,7 +107,15 @@
             "vi": "Hôm nay tôi không muốn đi đâu cả."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/tempura-craving-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một cô gái đứng trước quầy tiệm tempura, nhìn khay tempura vàng giòn với vẻ thèm thuồng."
+        }
+      }
     },
     {
       "id": "ni-ikimasu",
@@ -173,7 +189,15 @@
             "vi": "Tôi đến Nhật Bản để học mỹ thuật."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/kobe-curry-trip-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một chàng trai đeo ba lô bước ra tàu, trong đầu hiện đĩa cà ri Ấn Độ nóng hổi, anh đi đến Kobe để ăn món đó."
+        }
+      }
     },
     {
       "id": "dokoka-nanika",
@@ -201,7 +225,15 @@
             "vi": "Kỳ nghỉ đông bạn có đi đâu đó không? …Có, tôi đã đi Hokkaido."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/winter-trip-snow-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người bạn ngồi bên bàn sưởi nói chuyện về chuyến đi mùa đông, sau lưng là bức tranh phong cảnh tuyết phía bắc và chiếc vali nhỏ."
+        }
+      }
     },
     {
       "id": "go-cortesia",
@@ -237,7 +269,15 @@
             "vi": "Quý khách muốn gọi món gì ạ? …Cho tôi một phần cơm bò gyudon."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/gyudon-order-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Nữ phục vụ cúi chào lịch sự hỏi món, khách chỉ vào bát cơm bò gyudon bốc khói trên thực đơn."
+        }
+      }
     }
   ],
   "dialogues": [

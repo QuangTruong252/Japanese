@@ -67,7 +67,15 @@
             "vi": "Tôi trở về nhà."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/going-to-kyoto-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một du khách đeo ba lô đứng ở sân ga cầm vé, phía xa đồi núi có ngọn tháp cổ, chuẩn bị lên tàu đi cố đô."
+        }
+      }
     },
     {
       "id": "doko-mo",
@@ -111,7 +119,15 @@
             "vi": "Hôm qua tôi đã không đi đâu cả."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/stayed-home-all-day-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một người đàn ông mặc đồ ở nhà nằm đọc tạp chí trên sofa, giày để yên cạnh cửa, trời ngoài cửa sổ xám lặng."
+        }
+      }
     },
     {
       "id": "de-vehiculo",
@@ -165,7 +181,15 @@
             "vi": "Tôi đi bộ từ nhà ga về nhà."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/commute-by-train-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong toa tàu điện, một người đàn ông mặc vest cầm tay vịn và cặp, nhìn ra cửa sổ thành phố đang lướt qua."
+        }
+      }
     },
     {
       "id": "to-persona",
@@ -222,7 +246,15 @@
             "vi": "Tôi đi Tokyo một mình."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/came-to-japan-with-family-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Gia đình bốn người kéo vali, nắm tay nhau bước ra sảnh sân bay, ngoài cửa kính có máy bay."
+        }
+      }
     },
     {
       "id": "itsu",
@@ -260,7 +292,15 @@
             "vi": "Bạn đến Nhật Bản khi nào? …Tôi đến vào ngày 25 tháng 3."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/when-did-you-come-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một phụ nữ chống cằm tò mò hỏi chuyện người đàn ông nước ngoài, anh mỉm cười chỉ lên tờ lịch có khoanh tròn một ngày."
+        }
+      }
     },
     {
       "id": "yo",
@@ -295,7 +335,15 @@
             "vi": "Chuyến tàu này không đi Koshien đâu đấy nhé."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/this-train-doesnt-go-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Nhân viên nhà ga đồng phục đưa tay cảnh báo, chỉ chuyến tàu ở xa, hành khách cầm vé ngạc nhiên nhìn lại."
+        }
+      }
     },
     {
       "id": "sou-desu-ne",
@@ -323,7 +371,15 @@
             "vi": "Hôm nay thời tiết đẹp nhỉ. …Đúng thế thật đấy nhỉ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/nice-weather-isnt-it-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người hàng xóm đứng trên phố yên tĩnh cùng ngước nhìn bầu trời xanh nắng đẹp, mỉm cười gật đầu đồng ý."
+        }
+      }
     }
   ],
   "dialogues": [

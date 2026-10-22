@@ -156,7 +156,15 @@
             "vi": "Người kia là ai vậy?"
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/this-book-is-mine-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong lớp học, một cô gái ôm cuốn sách trước ngực, tay kia chỉ vào mình, còn bạn ngồi đối diện nhìn cuốn sách."
+        }
+      }
     },
     {
       "id": "sou-desu",
@@ -196,7 +204,15 @@
             "vi": "Đó có phải là vở ghi không? …Không, không phải vậy."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/yes-its-a-notebook-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một phụ nữ giơ cuốn sổ tay nhỏ lên và gật đầu xác nhận khi người đàn ông ngồi đối diện chỉ vào nó như đang hỏi."
+        }
+      }
     },
     {
       "id": "ka-ka",
@@ -239,7 +255,15 @@
             "vi": "Đây là số '9' hay số '7'? …Là số '9'."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/this-one-or-that-one-cards-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một phụ nữ và một người đàn ông ngồi bên bàn có hai tấm thẻ lớn khác nhau; anh chỉ vào thẻ như đang hỏi còn cô chỉ vào tấm thẻ đỏ và mỉm cười."
+        }
+      }
     },
     {
       "id": "no-posesion",
@@ -299,7 +323,15 @@
             "vi": "Đây là chiếc ô của tôi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/computer-book-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một sinh viên ở thư viện giơ cuốn sách dày có hình máy tính xách tay trên bìa, cạnh đó là một chiếc laptop đang mở."
+        }
+      }
     },
     {
       "id": "no-sustituto",
@@ -341,7 +373,15 @@
             "vi": "Chiếc cặp kia là của ai vậy? …Là của tôi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/whose-bag-is-that-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một người đàn ông chỉ vào chiếc cặp nâu đặt trên ghế với vẻ thắc mắc, còn cô gái đứng cạnh giơ tay cho biết đó là của mình."
+        }
+      }
     },
     {
       "id": "o-cortesia",
@@ -376,7 +416,15 @@
             "vi": "Đây là quà lưu niệm (tặng bạn)."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/souvenir-gift-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một người vừa đi du lịch về hai tay đưa hộp quà gói giấy có dây ruy băng cho một cô đồng nghiệp đang mỉm cười."
+        }
+      }
     },
     {
       "id": "sou-desu-ka",
@@ -404,7 +452,15 @@
             "vi": "Chiếc ô này có phải của bạn không? …Không, không phải. …Thế à."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/umbrella-not-mine-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Ngày mưa ở cửa văn phòng, một phụ nữ giơ chiếc ô lên hỏi, người đàn ông lắc đầu và cầm một chiếc ô khác của mình."
+        }
+      }
     }
   ],
   "dialogues": [

@@ -40,7 +40,15 @@
             "vi": "Bơi (oyogimasu → oyogu) ／ Chờ (machimasu → matsu)."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/swim-and-wait-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai cảnh cạnh nhau: người đang bơi và người đứng đợi xe buýt."
+        }
+      }
     },
     {
       "id": "dekimasu",
@@ -93,7 +101,15 @@
             "vi": "Bạn có thể thanh toán bằng thẻ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/speaking-japanese-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chàng trai phương Tây nói chuyện tự tin với cô gái Nhật ở quán cà phê."
+        }
+      }
     },
     {
       "id": "shumi",
@@ -133,7 +149,15 @@
             "vi": "Sở thích của tôi là chụp ảnh."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/hobby-photography-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái đứng trên đường đồi giơ máy ảnh chụp cảnh thị trấn phía xa."
+        }
+      }
     },
     {
       "id": "mae-ni",
@@ -176,7 +200,15 @@
             "vi": "Trước khi sang Nhật Bản, tôi đã học tiếng Nhật."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/study-before-japan-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một du học sinh ngồi học tiếng Nhật trong phòng, vali đã sắp một nửa và máy bay bay ngang cửa sổ, trước khi sang Nhật."
+        }
+      }
     },
     {
       "id": "nakanaka",
@@ -208,7 +240,15 @@
             "vi": "Ở Nhật Bản, khó lòng mà nhìn thấy ngựa."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/no-horses-in-city-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Du khách nhìn quanh phố hiện đại của Nhật nhưng chỉ thấy xe cộ và nhà cao tầng, hầu như không thấy ngựa."
+        }
+      }
     },
     {
       "id": "zehi",
@@ -237,7 +277,15 @@
             "vi": "Tôi nhất định muốn đi Hokkaido một chuyến."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/hokkaido-dream-trip-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái đứng trước bản đồ Nhật, đặt tay lên đảo phía bắc đầy háo hức, bên cạnh có vali nhỏ."
+        }
+      }
     }
   ],
   "dialogues": [

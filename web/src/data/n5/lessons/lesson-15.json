@@ -47,7 +47,15 @@
             "vi": "Tôi hút thuốc ở đây có được không? …Vâng, được chứ ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/ask-permission-terrace-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một người khách ở quán cà phê ngoài trời giơ tay lịch sự xin phép, người phục vụ gật đầu đồng ý."
+        }
+      }
     },
     {
       "id": "tewa-ikemasen",
@@ -85,7 +93,15 @@
             "vi": "Không được chụp ảnh ở đây."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/no-photos-museum-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong bảo tàng, nhân viên bảo vệ giơ tay ngăn du khách đang giơ máy ảnh lên chụp tranh."
+        }
+      }
     },
     {
       "id": "te-imasu-estado",
@@ -137,7 +153,15 @@
             "vi": "Bạn có biết số điện thoại của anh Tanaka không? …Không, tôi không biết."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/living-in-osaka-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một chàng trai phương Tây đứng ở ban công căn hộ, phía xa là thành phố Osaka, như người đang sống ở đó."
+        }
+      }
     },
     {
       "id": "te-imasu-habitual",
@@ -183,7 +207,15 @@
             "vi": "Chị gái tôi đang dạy tiếng Anh ở trường trung học phổ thông."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/sister-teaching-english-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô giáo đứng trước bảng giảng bài cho các học sinh cấp ba, trên bàn có quả địa cầu và sách."
+        }
+      }
     }
   ],
   "dialogues": [

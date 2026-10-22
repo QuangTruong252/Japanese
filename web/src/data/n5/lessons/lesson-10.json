@@ -67,7 +67,15 @@
             "vi": "Trong sân có một chú chó."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/photo-on-desk-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chiếc bàn gỗ gọn gàng, trên mặt bàn có khung ảnh gia đình dựng đứng, đèn bàn và chậu cây."
+        }
+      }
     },
     {
       "id": "ni-lugar",
@@ -114,7 +122,15 @@
             "vi": "Trong phòng họp có anh Miller."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/miller-in-meeting-room-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Phòng họp nhìn từ cửa, một người đàn ông phương Tây mặc sơ mi cà vạt ngồi một mình ở bàn dài, ngẩng lên mỉm cười."
+        }
+      }
     },
     {
       "id": "wa-ni-arimasu",
@@ -161,7 +177,15 @@
             "vi": "Tokyo Disneyland nằm ở tỉnh Chiba."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/amusement-park-by-the-sea-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Công viên giải trí với lâu đài cổ tích, bóng bay và đông gia đình, tàu lượn phía sau, biển xanh ở một bên."
+        }
+      }
     },
     {
       "id": "posiciones",
@@ -272,7 +296,15 @@
             "vi": "Trong hộp có thư từ, hình ảnh và nhiều thứ khác nữa."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/box-with-letters-and-photos-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hộp gỗ mở nắp đặt trên bàn, thư từ và ảnh tràn nhẹ ra miệng hộp, một bàn tay đưa tới."
+        }
+      }
     },
     {
       "id": "desu-ka-confirmacion",
@@ -303,7 +335,15 @@
             "vi": "Ở đây có nước mắm không ạ? …Nước mắm à? Ở đằng kia ạ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/fish-sauce-over-there-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong cửa hàng tạp hóa, khách xách giỏ hỏi, nhân viên chỉ sang kệ đối diện nơi có chai nước mắm màu hổ phách."
+        }
+      }
     }
   ],
   "dialogues": [

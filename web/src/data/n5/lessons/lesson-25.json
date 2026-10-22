@@ -73,7 +73,15 @@
             "vi": "Nếu trời mưa thì tôi sẽ không đi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/come-visit-if-free-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chủ nhà đứng ở cửa vẫy tay mời khách khi nào rảnh thì ghé chơi, phòng khách có bộ trà đã sẵn."
+        }
+      }
     },
     {
       "id": "tara-temporal",
@@ -114,7 +122,15 @@
             "vi": "Sau khi trở về nước, tôi sẽ làm việc ở công ty của bố tôi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/return-home-family-company-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chàng trai vừa trở về nước ở sân bay, bên cạnh là công ty gia đình của bố nơi anh sẽ đi làm."
+        }
+      }
     },
     {
       "id": "temo",
@@ -157,7 +173,15 @@
             "vi": "Cho dù là chủ nhật thì tôi vẫn làm việc."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/work-on-sunday-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Người đàn ông mặc đồ công sở rời nhà đi làm vào buổi sáng cuối tuần nắng đẹp."
+        }
+      }
     },
     {
       "id": "moshi",
@@ -195,7 +219,15 @@
             "vi": "Giả sử nếu có 100 triệu yên, tôi muốn đi du lịch thật nhiều quốc gia."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/if-i-had-money-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái ngồi trước chồng tiền và bản đồ thế giới, mơ về nhiều quốc gia sẽ đi du lịch."
+        }
+      }
     },
     {
       "id": "sujeto-subordinada",
@@ -235,7 +267,15 @@
             "vi": "Khi vợ tôi bị ốm, tôi sẽ xin nghỉ làm ở công ty."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/day-off-still-life-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Tĩnh vật bên giường: nhiệt kế, hộp thuốc, khăn và tách trà; áo vest và cặp công sở đặt cạnh cửa vì người chồng nghỉ làm ở nhà."
+        }
+      }
     }
   ],
   "dialogues": [

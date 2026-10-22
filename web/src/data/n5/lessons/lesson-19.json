@@ -37,7 +37,15 @@
             "vi": "Ăn: tabemasu → tabete → tabeta."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/finished-meal-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chàng trai ngồi tựa ghế hài lòng với đĩa đã ăn sạch."
+        }
+      }
     },
     {
       "id": "ta-koto-ga-arimasu",
@@ -72,7 +80,15 @@
             "vi": "Bạn đã từng đi Hokkaido chưa? …Chưa, tôi chưa từng đi một lần nào cả."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/never-been-hokkaido-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người bạn xem sách du lịch Hokkaido, một người lắc đầu mỉm cười vì chưa từng đến đó."
+        }
+      }
     },
     {
       "id": "tari-tari",
@@ -118,7 +134,15 @@
             "vi": "Vào ngày nghỉ tôi thường dọn dẹp, giặt giũ và làm những việc tương tự."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/days-off-chores-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái ngày nghỉ vừa quét dọn vừa phơi đồ giặt trong căn phòng nắng."
+        }
+      }
     },
     {
       "id": "narimasu",
@@ -171,7 +195,15 @@
             "vi": "Trời sắp sửa trở nên ấm áp rồi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/getting-better-japanese-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Giáo viên mỉm cười khen học viên nước ngoài đã tiến bộ nhiều, bên cạnh là chồng vở học."
+        }
+      }
     }
   ],
   "dialogues": [

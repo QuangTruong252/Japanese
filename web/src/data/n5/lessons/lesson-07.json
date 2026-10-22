@@ -70,7 +70,15 @@
             "vi": "Tôi viết thư bằng tiếng Nhật."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/eating-with-chopsticks-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một người ngồi bên bàn dùng đũa gắp mì từ bát sứ lên, bên cạnh có đĩa dưa muối và tách trà."
+        }
+      }
     },
     {
       "id": "wa-nan-desu-ka",
@@ -117,7 +125,15 @@
             "vi": "«Arigatou» trong tiếng Tây Ban Nha là gì? …Là «Gracias»."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/thank-you-in-spanish-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong lớp ngoại ngữ, cô giáo cầm tấm thẻ minh họa món quà cảm ơn, một học sinh giơ tay hỏi, bạn bên cạnh cầm từ điển."
+        }
+      }
     },
     {
       "id": "agemasu",
@@ -164,7 +180,15 @@
             "vi": "Tôi tặng hoa cho chị Kimura."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/giving-flowers-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một phụ nữ trao bó hoa gói giấy cho đồng nghiệp nữ đang mỉm cười đưa tay đón ở cửa văn phòng."
+        }
+      }
     },
     {
       "id": "moraimasu",
@@ -211,7 +235,15 @@
             "vi": "Tôi đã nhận được cuốn từ điển từ anh Yamada."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/receiving-a-dictionary-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một học sinh hai tay nhận cuốn từ điển dày từ anh khóa trên và cúi đầu cảm ơn ở hành lang trường."
+        }
+      }
     },
     {
       "id": "mou-mashita",
@@ -249,7 +281,15 @@
             "vi": "Bạn đã gửi hành lý đi rồi à? …Chưa, tôi vẫn chưa gửi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/already-sent-the-package-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Ở quầy bưu điện, nhân viên đặt gói hàng buộc dây lên cân, khách cầm phiếu đứng đợi, một nhân viên khác xếp hộp vào xe đẩy."
+        }
+      }
     },
     {
       "id": "omision-particulas",
@@ -277,7 +317,15 @@
             "vi": "Bạn dùng một ly cà phê nhé?"
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/coffee-offer-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chủ nhà đeo tạp dề bưng khay cà phê nóng mời vị khách ngồi trên sofa, vị khách giơ tay nhận lịch sự."
+        }
+      }
     }
   ],
   "dialogues": [

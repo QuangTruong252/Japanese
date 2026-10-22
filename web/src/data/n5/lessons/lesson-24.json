@@ -58,7 +58,15 @@
             "vi": "Anh Yamada đã tặng hoa cho tôi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/given-flowers-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chàng trai tặng bó hoa nhỏ cho cô gái, cô nhận bằng hai tay vui mừng."
+        }
+      }
     },
     {
       "id": "te-agemasu",
@@ -93,7 +101,15 @@
             "vi": "Tôi đã giảng bài tập giúp cho em gái tôi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/teach-little-sister-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chị ngồi cạnh em gái giảng bài tập, em ngước nhìn chăm chú."
+        }
+      }
     },
     {
       "id": "te-moraimasu",
@@ -137,7 +153,15 @@
             "vi": "Tôi đã được một người bạn giúp đỡ dọn nhà."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/friends-help-move-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người bạn giúp khuân hộp và đèn ra khỏi căn hộ, chủ nhà đứng cảm ơn."
+        }
+      }
     },
     {
       "id": "te-kuremasu",
@@ -180,7 +204,15 @@
             "vi": "Chị Sato đã vẽ bản đồ giúp cho tôi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/drew-me-a-map-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái vẽ bản đồ đơn giản trên giấy cho khách xem, khách cảm ơn."
+        }
+      }
     },
     {
       "id": "wa-ga-v",
@@ -231,7 +263,15 @@
             "vi": "Cơm hộp này là do chính vợ tôi đã làm giúp cho tôi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/wife-made-bento-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Người đàn ông mở hộp cơm bento vợ làm trong văn phòng, cạnh bàn có ảnh vợ."
+        }
+      }
     }
   ],
   "dialogues": [

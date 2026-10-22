@@ -61,7 +61,15 @@
             "vi": "Tuần trước tôi đã không rảnh rỗi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/rainy-yesterday-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Ngày mưa nhìn từ cửa sổ quán cà phê: nước chảy trên kính, người cầm ô đi trên phố ướt, tách trà và cuốn sách trên bàn."
+        }
+      }
     },
     {
       "id": "pasado-adjetivo-i",
@@ -112,7 +120,15 @@
             "vi": "Thời tiết đã không tốt."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/fun-trip-photos-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một cô gái mỉm cười xem album ảnh chuyến du lịch trên sofa, quanh cô là ảnh và quà lưu niệm."
+        }
+      }
     },
     {
       "id": "yori",
@@ -163,7 +179,15 @@
             "vi": "Máy bay nhanh hơn tàu thủy."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/airplane-faster-than-ship-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Máy bay bay nhanh trên cao còn con tàu thủy chạy chậm trên biển bên dưới, tương phản tốc độ."
+        }
+      }
     },
     {
       "id": "dochira-ga",
@@ -229,7 +253,15 @@
             "vi": "Giữa mùa hè và mùa đông bạn thích mùa nào hơn? …Tôi thích mùa hè hơn."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/summer-or-winter-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cảnh chia đôi: bên trái bãi biển nắng, bên phải đồi tuyết; cô gái đứng giữa chỉ về phía biển và mỉm cười."
+        }
+      }
     },
     {
       "id": "ichiban",
@@ -288,7 +320,15 @@
             "vi": "Trong một năm khi nào lạnh nhất? …Tháng 2 là lạnh nhất."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/coldest-month-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Làng phủ tuyết dày giữa mùa đông giá rét, một người quấn áo dày co ro, băng đóng ở mái hiên và ao."
+        }
+      }
     },
     {
       "id": "no-sustituto-12",
@@ -324,7 +364,15 @@
             "vi": "Chiếc cặp như thế nào vậy? …Là chiếc màu đen."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/the-black-one-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong cửa hàng túi, cô gái chỉ vào chiếc túi đen giữa các túi nhiều màu, nhân viên giơ nó lên."
+        }
+      }
     }
   ],
   "dialogues": [

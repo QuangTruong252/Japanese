@@ -41,7 +41,15 @@
             "vi": "Ngày mai cậu có đi Tokyo không? …Ừ, có đi chứ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/casual-friends-walking-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người bạn trẻ đi cạnh nhau nói chuyện thân mật về chuyến đi ngày mai."
+        }
+      }
     },
     {
       "id": "uso-estilos",
@@ -73,7 +81,15 @@
             "vi": "Đồng ý: hai → un ／ Từ chối: iie → uun."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/nod-and-shake-head-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người bạn ngồi đối diện, một người gật đầu cười, người kia lắc đầu vui vẻ."
+        }
+      }
     },
     {
       "id": "conversacion-informal",
@@ -120,7 +136,15 @@
             "vi": "Cây dù đó đẹp đấy chứ, mà có đắt không cậu?"
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/not-eaten-yet-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái hỏi bạn đã ăn cơm chưa, bạn nhún vai vì chưa ăn, nồi cơm đang bốc hơi."
+        }
+      }
     }
   ],
   "dialogues": [

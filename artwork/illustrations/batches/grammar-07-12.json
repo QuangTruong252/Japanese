@@ -1,0 +1,587 @@
+{
+  "name": "grammar-07-12",
+  "description": "Bài 7–12 — tranh tình huống của ví dụ đầu cho các điểm ngữ pháp.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "group": "grammar",
+      "stem": "eating-with-chopsticks-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A clear view of a person seated at a table, holding a pair of wooden chopsticks in one hand and lifting noodles from a ceramic bowl toward the mouth; a small plate of pickles and a teacup beside the bowl. Steam rising from the bowl, simple tablecloth background.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-07.json",
+        "id": "de-instrumento"
+      },
+      "alt": {
+        "vi": "Một người ngồi bên bàn dùng đũa gắp mì từ bát sứ lên, bên cạnh có đĩa dưa muối và tách trà."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "thank-you-in-spanish-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "In a language class, a teacher stands beside a plain blank whiteboard holding a small illustrated card showing a wrapped gift with a heart; a student raises her hand with a curious look, and a classmate holds a thick bilingual dictionary. A globe sits on the teacher's desk. Nothing is written on the board.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-07.json",
+        "id": "wa-nan-desu-ka"
+      },
+      "alt": {
+        "vi": "Trong lớp ngoại ngữ, cô giáo cầm tấm thẻ minh họa món quà cảm ơn, một học sinh giơ tay hỏi, bạn bên cạnh cầm từ điển."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "giving-flowers-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A woman in a neat blouse hands a bouquet of colorful flowers wrapped in paper to a smiling female colleague at an office doorway, with both arms extended gracefully. The recipient reaches out with delight. A bit of office desk behind them.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-07.json",
+        "id": "agemasu"
+      },
+      "alt": {
+        "vi": "Một phụ nữ trao bó hoa gói giấy cho đồng nghiệp nữ đang mỉm cười đưa tay đón ở cửa văn phòng."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "receiving-a-dictionary-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A student in a school uniform stands in a corridor receiving a thick dictionary with both hands from an older male student who extends it with a friendly nod, the first student bowing slightly in thanks. A row of lockers and a window behind them.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-07.json",
+        "id": "moraimasu"
+      },
+      "alt": {
+        "vi": "Một học sinh hai tay nhận cuốn từ điển dày từ anh khóa trên và cúi đầu cảm ơn ở hành lang trường."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "already-sent-the-package-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "At a post office counter, a clerk places a small cardboard parcel tied with string onto a scale, while a customer in a coat stands in front of the counter holding a paper slip; behind the clerk a second clerk loads other taped boxes into a mail cart. A calm mood, clearly a parcel being sent off.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-07.json",
+        "id": "mou-mashita"
+      },
+      "alt": {
+        "vi": "Ở quầy bưu điện, nhân viên đặt gói hàng buộc dây lên cân, khách cầm phiếu đứng đợi, một nhân viên khác xếp hộp vào xe đẩy."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "coffee-offer-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "In a cozy living room, a host in an apron holds a tray with a steaming cup of coffee and a small plate of biscuits, offering it with a welcoming smile to a seated guest on a sofa, who lifts a hand in polite acceptance. A side table with a plant.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-07.json",
+        "id": "omision-particulas"
+      },
+      "alt": {
+        "vi": "Chủ nhà đeo tạp dề bưng khay cà phê nóng mời vị khách ngồi trên sofa, vị khách giơ tay nhận lịch sự."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "fuji-is-tall-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A wide calm view of Mount Fuji with its snow-capped peak standing tall above a lake, with a few low houses and trees at its base, so its great height compared to the small village is obvious. A clear blue sky and a few thin clouds. No people.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-08.json",
+        "id": "adjetivos"
+      },
+      "alt": {
+        "vi": "Núi Phú Sĩ phủ tuyết sừng sững trên mặt hồ, ngôi làng nhỏ bé dưới chân núi làm nổi bật độ cao."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "beijing-is-cold-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A street scene in winter: a person bundled in a thick coat, scarf, hat and gloves walks briskly through falling snow past plain gray buildings, breath visible in the cold air, with bare trees along the road. Quiet and wintry.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-08.json",
+        "id": "predicado-adjetivo"
+      },
+      "alt": {
+        "vi": "Cảnh phố mùa đông: một người quấn áo khoác dày, khăn, mũ, găng tay đi nhanh trong tuyết rơi, hơi thở thành khói."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "kind-teacher-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "In a classroom, a middle-aged teacher with a warm smile bends slightly beside a student's desk, helping her with a notebook, one hand pointing at the page patiently. Other students sit in the background. The teacher's gentle kindness is obvious from the posture.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-08.json",
+        "id": "adjetivo-sustantivo"
+      },
+      "alt": {
+        "vi": "Trong lớp, thầy giáo trung niên mỉm cười ân cần cúi xuống chỉ bài trong vở cho một học sinh."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "delicious-but-expensive-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "At a restaurant table, a customer happily lifts a forkful of delicious-looking food from a pretty plate, while holding a small bill folder in the other hand and looking at it with a slightly worried frown, showing the food is tasty but costly. Warm restaurant background with a window.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-08.json",
+        "id": "ga-pero"
+      },
+      "alt": {
+        "vi": "Ở nhà hàng, thực khách vui vẻ nếm món ăn ngon nhưng tay kia cầm hóa đơn và hơi nhíu mày lo lắng."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "lively-town-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A bustling little town street in the afternoon: a crowd of cheerful people walking, shop awnings with no writing, bicycles and a street vendor with a cart, children running, colorful bunting overhead. Clear, lively, centered composition with the road running to the middle.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-08.json",
+        "id": "totemo-amari"
+      },
+      "alt": {
+        "vi": "Con phố nhỏ nhộn nhịp buổi chiều, đông người đi lại, tiệm quán, xe đạp, bé chạy chơi, dây cờ treo trên cao."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "how-is-work-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Two coworkers meet by a window in an office; one asks while holding a coffee mug, the other holds a thick pile of papers in both arms and has a tired but smiling face, with a laptop open on a cluttered desk behind him. The message is busy but interesting work.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-08.json",
+        "id": "dou-desu-ka"
+      },
+      "alt": {
+        "vi": "Hai đồng nghiệp gặp nhau bên cửa sổ, một người hỏi thăm, người kia ôm chồng giấy tờ, mệt nhưng vẫn mỉm cười."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "nara-old-town-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A quiet old Japanese town street with traditional wooden houses and tiled roofs, a stone lantern and a small temple gate in the background, a pagoda rising above the roofs, and a couple of deer at the side of the road. Soft, nostalgic atmosphere.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-08.json",
+        "id": "donna"
+      },
+      "alt": {
+        "vi": "Con phố cổ Nhật với nhà gỗ mái ngói, đèn đá, cổng chùa, tháp cổ và vài chú hươu bên đường."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "life-in-japan-fun-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A young foreign student in a bright common room hangs out with Japanese friends: they laugh together around a low table with snacks, one friend holding a camera, a cherry blossom branch in a vase on the table. The student sits in the center looking thoughtfully upward for a moment before smiling.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-08.json",
+        "id": "sou-desu-ne-8"
+      },
+      "alt": {
+        "vi": "Một du học sinh nước ngoài vui vẻ ngồi cùng bạn Nhật quanh bàn thấp, bình hoa anh đào, ai cũng cười."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "likes-italian-food-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "At a pretty restaurant table, a woman holds a fork of spaghetti, smiling with delight, with a plate of pasta, a small pizza and a glass of red wine before her; a decorative tomato and basil garland on the wall. Cozy warm tones.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-09.json",
+        "id": "ga-objeto"
+      },
+      "alt": {
+        "vi": "Một phụ nữ vui sướng ăn mì Ý ở bàn nhà hàng, trước mặt còn có pizza nhỏ và ly rượu vang."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "favorite-music-classical-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "In a living room, a man sits in an armchair with eyes closed, listening peacefully to music from a record player, with a violin and a small stack of records on a shelf beside him, and a woman sitting across from him leaning forward with curiosity. Soft warm lighting.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-09.json",
+        "id": "donna-9"
+      },
+      "alt": {
+        "vi": "Một người đàn ông ngồi ghế bành nhắm mắt nghe nhạc từ đĩa than, bên cạnh có đàn violin, cô gái ngồi đối diện tò mò hỏi."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "understand-english-well-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A bright classroom: a student at the front confidently reads aloud from a book while nodding, and her classmate listens to a native English-speaking teacher, nodding too. A globe and a pile of books on the desk. Everyone looks like they understand clearly.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-09.json",
+        "id": "adverbios-grado"
+      },
+      "alt": {
+        "vi": "Trong lớp học sáng, một học sinh tự tin đọc sách và gật đầu hiểu bài khi nghe thầy giáo người nước ngoài giảng."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "no-time-no-tv-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A man sits at a busy desk piled with paperwork and a laptop, working late with a wall clock showing evening hours, while a television in the corner of the room stands dark and switched off. A cup of coffee and a desk lamp. The dark idle TV is clearly visible.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-09.json",
+        "id": "kara-causa"
+      },
+      "alt": {
+        "vi": "Một người đàn ông làm việc khuya bên bàn chất đầy giấy tờ, chiếc tivi ở góc phòng tắt đen."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "why-dont-you-drink-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "At a dinner table, a colleague raises a bottle toward a man who politely puts a hand over his glass and shakes his head with a smile, while a briefcase and a laptop bag sit on the chair beside him hinting at tomorrow's work. Small dishes on the table, warm light.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-09.json",
+        "id": "doushite"
+      },
+      "alt": {
+        "vi": "Ở bàn tiệc, đồng nghiệp rót rượu mời, người đàn ông mỉm cười úp tay lên ly từ chối, cặp tài liệu để ghế bên."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "photo-on-desk-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A tidy wooden desk in the center of a quiet room, with a framed family photo standing upright on its top, clearly visible and the focus of the scene; a desk lamp and a small plant on the desk too. A window and a bookshelf behind. No people.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-10.json",
+        "id": "arimasu-imasu"
+      },
+      "alt": {
+        "vi": "Chiếc bàn gỗ gọn gàng, trên mặt bàn có khung ảnh gia đình dựng đứng, đèn bàn và chậu cây."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "miller-in-meeting-room-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A meeting room seen from the doorway: a long table with several chairs and a blank whiteboard at the back; a Western man in a shirt and tie sits at the table alone, reviewing documents, and looks up with a smile. The empty chairs make his presence clearly the point.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-10.json",
+        "id": "ni-lugar"
+      },
+      "alt": {
+        "vi": "Phòng họp nhìn từ cửa, một người đàn ông phương Tây mặc sơ mi cà vạt ngồi một mình ở bàn dài, ngẩng lên mỉm cười."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "amusement-park-by-the-sea-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A fairy-tale amusement park gate with a castle-like tower, colorful balloons and a happy crowd of families walking toward it under a blue sky, a roller coaster silhouette behind, and a stretch of light blue sea on one side to show its coastal location. No characters, no logos.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-10.json",
+        "id": "wa-ni-arimasu"
+      },
+      "alt": {
+        "vi": "Công viên giải trí với lâu đài cổ tích, bóng bay và đông gia đình, tàu lượn phía sau, biển xanh ở một bên."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "box-with-letters-and-photos-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A simple wooden box with its lid off sits on a table in the center, with a few blank letters in envelopes and some photographs spilling gently over its edge, and a small trinket beside it. A hand reaches toward the box. Warm room background.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-10.json",
+        "id": "ya-nado"
+      },
+      "alt": {
+        "vi": "Hộp gỗ mở nắp đặt trên bàn, thư từ và ảnh tràn nhẹ ra miệng hộp, một bàn tay đưa tới."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "fish-sauce-over-there-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "In a small grocery store with shelves of jars and bottles, a shopper in a casual jacket carrying a basket asks a store clerk, who points to a shelf across the aisle on which a tall bottle of amber liquid stands out. All bottles have plain blank labels.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-10.json",
+        "id": "desu-ka-confirmacion"
+      },
+      "alt": {
+        "vi": "Trong cửa hàng tạp hóa, khách xách giỏ hỏi, nhân viên chỉ sang kệ đối diện nơi có chai nước mắm màu hổ phách."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "bought-four-mandarins-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A fruit stall in a market: a customer holds a paper bag, and exactly four bright orange mandarins are arranged in a clear row on the counter in front of a smiling vendor, so their count is easy to see. Crates of fruit behind. Clean simple market.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-11.json",
+        "id": "numerales"
+      },
+      "alt": {
+        "vi": "Ở quầy trái cây, khách cầm túi giấy, bốn quả quýt cam xếp thành hàng trên quầy trước mặt người bán."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "five-stamps-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "At a post office counter, a customer waits while a smiling clerk behind the glass slides five small colorful stamps, laid in a clear row, forward on the counter. A mailbox and envelopes nearby. No text or digits.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-11.json",
+        "id": "uso-cuantificador"
+      },
+      "alt": {
+        "vi": "Ở bưu điện, nhân viên đẩy năm con tem xếp thành hàng về phía khách."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "tennis-once-a-week-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A man in sports clothes plays tennis on a sunny court; on a fence behind him hangs a weekly planner board with seven empty boxes in a row, only one of them marked with a bright red circle. Court and trees in the background. No digits or letters.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-11.json",
+        "id": "duracion-kai"
+      },
+      "alt": {
+        "vi": "Người đàn ông chơi tennis trên sân nắng, bảng lịch tuần bảy ô, chỉ một ô đánh dấu vòng đỏ."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "about-two-and-half-hours-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Inside a high-speed bullet train, a passenger in a window seat looks out at the countryside rushing by, with an hourglass-style sand timer standing on the tray table about half run and a wristwatch on his wrist. Sleek interior, calm traveling mood.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-11.json",
+        "id": "gurai-dake"
+      },
+      "alt": {
+        "vi": "Trong tàu cao tốc, hành khách ngồi nhìn cảnh làng quê lướt qua, trên bàn nhỏ có đồng hồ cát."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "rainy-yesterday-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A rainy day viewed from inside a cozy cafe window: raindrops running down the glass, a person with an open umbrella walking on a wet street outside, puddles reflecting soft lights, and a cup of tea and a closed book on the table inside. Muted, gentle rainy mood.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-12.json",
+        "id": "pasado-nominal"
+      },
+      "alt": {
+        "vi": "Ngày mưa nhìn từ cửa sổ quán cà phê: nước chảy trên kính, người cầm ô đi trên phố ướt, tách trà và cuốn sách trên bàn."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "fun-trip-photos-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A young woman in a cozy living room sits on a sofa and smiles happily while looking through a photo album and holding a souvenir from her trip; travel snapshots spread around her, a small suitcase in the corner. Warm memories, no readable text.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-12.json",
+        "id": "pasado-adjetivo-i"
+      },
+      "alt": {
+        "vi": "Một cô gái mỉm cười xem album ảnh chuyến du lịch trên sofa, quanh cô là ảnh và quà lưu niệm."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "airplane-faster-than-ship-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A wide composition with sea below and sky above: a sleek airplane flies high and fast across the upper part of the frame with a few thin speed lines, while a slow ship sails on the sea in the lower part, a clear contrast in speed between the two. Blue sky and calm sea.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-12.json",
+        "id": "yori"
+      },
+      "alt": {
+        "vi": "Máy bay bay nhanh trên cao còn con tàu thủy chạy chậm trên biển bên dưới, tương phản tốc độ."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "summer-or-winter-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A split scene balanced in the center: on the left half, a bright sunny beach with a parasol and a smiling person in a swimsuit holding a cold drink; on the right half, a snowy hill with a person in a scarf pulling a sled; a woman stands in the middle between the two halves pointing at the sunny beach with a smile. Clear contrast.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-12.json",
+        "id": "dochira-ga"
+      },
+      "alt": {
+        "vi": "Cảnh chia đôi: bên trái bãi biển nắng, bên phải đồi tuyết; cô gái đứng giữa chỉ về phía biển và mỉm cười."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "coldest-month-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A snow-covered village in deep winter in the center, with thick snow on rooftops, a person bundled in a heavy coat and scarf shivering with hands tucked under the arms, an icicle hanging from the eaves and a frozen pond. Clear sense of extreme cold.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-12.json",
+        "id": "ichiban"
+      },
+      "alt": {
+        "vi": "Làng phủ tuyết dày giữa mùa đông giá rét, một người quấn áo dày co ro, băng đóng ở mái hiên và ao."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "the-black-one-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A woman at a bag shop points to a black bag among several bags of different colors displayed in a row on a shelf (red, beige, green, black) while a shop assistant holds up the black one with a smile. The black bag clearly stands out. Clean shop interior.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-12.json",
+        "id": "no-sustituto-12"
+      },
+      "alt": {
+        "vi": "Trong cửa hàng túi, cô gái chỉ vào chiếc túi đen giữa các túi nhiều màu, nhân viên giơ nó lên."
+      }
+    }
+  ]
+}

@@ -64,7 +64,15 @@
             "vi": "Người đang đeo kính kia là ai vậy?"
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/cake-mother-made-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái cầm chiếc bánh kem dâu do mẹ làm, mẹ đứng phía sau trong bếp."
+        }
+      }
     },
     {
       "id": "v-dicc-tiempo",
@@ -100,7 +108,15 @@
             "vi": "Tôi không có thời gian để đọc báo."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/no-time-for-newspaper-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chàng trai bận rộn với hồ sơ, điện thoại, tờ báo gấp để nguyên trên bàn vì không có thời gian đọc."
+        }
+      }
     },
     {
       "id": "mashou-ka-22",
@@ -135,7 +151,15 @@
             "vi": "Chúng ta sẽ gặp nhau ở đâu đây? …Hãy gặp nhau ở nhà ga nhé."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/meet-at-station-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người bạn gọi điện hẹn gặp nhau ở nhà ga, giữa hai người là hình nhà ga."
+        }
+      }
     }
   ],
   "dialogues": [

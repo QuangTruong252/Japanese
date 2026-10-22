@@ -44,7 +44,15 @@
             "vi": "Viết (Nhóm I) ・ Ăn (Nhóm II) ・ Làm (Nhóm III)."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/verbs-write-eat-do-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Ba cảnh nhỏ cạnh nhau: tay đang viết, người đang ăn cơm và người đang quét nhà."
+        }
+      }
     },
     {
       "id": "forma-te",
@@ -72,7 +80,15 @@
             "vi": "Hãy đợi một chút."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/wait-a-moment-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái giơ một tay xin bạn chờ một chút trong khi người bạn chạy tới."
+        }
+      }
     },
     {
       "id": "te-kudasai",
@@ -123,7 +139,15 @@
             "vi": "Hãy rẽ phải ở cột đèn giao thông."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/kanji-ask-help-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một sinh viên nam lịch sự chỉ vào trang sách nhờ bạn nữ chỉ cách đọc."
+        }
+      }
     },
     {
       "id": "te-imasu",
@@ -165,7 +189,15 @@
             "vi": "Bây giờ trời có đang mưa không? …Không, trời không mưa."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/rain-from-window-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một người đứng bên cửa sổ nhìn mưa đang rơi ngoài phố, chiếc ô dựa cạnh cửa."
+        }
+      }
     },
     {
       "id": "mashou-ka",
@@ -200,7 +232,15 @@
             "vi": "Để tôi xách hành lý giúp bạn nhé? …Cảm ơn bạn. Làm phiền bạn giúp tôi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/offer-carry-luggage-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một chàng trai mỉm cười đưa tay đề nghị xách giúp chiếc vali nặng cho cụ bà ở nhà ga."
+        }
+      }
     },
     {
       "id": "ga-fenomeno",
@@ -240,7 +280,15 @@
             "vi": "Ơ kìa? Tuyết đang rơi đấy nhé."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/surprise-snowfall-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái mở cửa sổ, ngạc nhiên chỉ ra ngoài nơi tuyết đang rơi."
+        }
+      }
     },
     {
       "id": "sumimasen-ga",
@@ -271,7 +319,15 @@
             "vi": "Xin lỗi, làm ơn lấy giùm tôi lọ muối."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/pass-the-salt-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một chàng trai ngồi bàn ăn lịch sự nhờ cô gái đưa giúp lọ muối."
+        }
+      }
     }
   ],
   "dialogues": [

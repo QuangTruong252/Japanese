@@ -67,7 +67,15 @@
             "vi": "Nara là một thành phố yên tĩnh và xinh đẹp."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/shopping-then-movie-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái đi mua sắm với các túi đồ rồi ngồi xem phim trong rạp."
+        }
+      }
     },
     {
       "id": "te-kara",
@@ -107,7 +115,15 @@
             "vi": "Sau khi nhét tiền vào thì hãy nhấn nút."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/coin-then-button-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chàng trai bỏ tiền xu vào máy bán nước rồi chuẩn bị bấm nút."
+        }
+      }
     },
     {
       "id": "wa-ga",
@@ -158,7 +174,15 @@
             "vi": "Anh Miller có vóc dáng cao ráo."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/tall-coworker-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chàng trai phương Tây rất cao đứng giữa các đồng nghiệp thấp hơn, đầu cao hơn mọi người."
+        }
+      }
     },
     {
       "id": "o-salir",
@@ -199,7 +223,15 @@
             "vi": "Hãy xuống tàu điện ở ga Umeda."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/get-off-train-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một hành khách bước xuống khỏi toa tàu điện lên sân ga."
+        }
+      }
     },
     {
       "id": "douyatte",
@@ -237,7 +269,15 @@
             "vi": "Đi đến trường đại học bằng cách nào vậy? …Từ ga Kyoto bạn lên xe buýt số 16 rồi xuống ở trạm Daigaku-mae."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/station-bus-university-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một cô gái ở trạm xe buýt, đường đi từ nhà ga lên xe buýt đến trường đại học."
+        }
+      }
     },
     {
       "id": "dore-dono",
@@ -272,7 +312,15 @@
             "vi": "Anh Miller là người nào? …Là cái người cao ráo đằng kia kìa."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/pick-out-tall-person-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một chàng trai chỉ vào người cao nhất trong nhóm đông người khi được hỏi là ai."
+        }
+      }
     }
   ],
   "dialogues": [

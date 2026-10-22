@@ -75,7 +75,15 @@
             "vi": "Tôi là nhân viên công ty."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/office-self-introduction-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một người đàn ông trẻ đứng giữa văn phòng, hơi cúi chào và đặt tay lên ngực để tự giới thiệu với hai đồng nghiệp đang mỉm cười."
+        }
+      }
     },
     {
       "id": "ja-arimasen",
@@ -118,7 +126,15 @@
             "vi": "Anh Santos không phải là sinh viên."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/not-a-student-but-a-worker-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một người đàn ông Brazil mặc sơ mi ngồi làm việc ở bàn văn phòng, ba lô và chồng sách học đẩy sang mép bàn, đồng nghiệp chỉ vào ba lô còn anh xua tay phủ nhận."
+        }
+      }
     },
     {
       "id": "desu-ka",
@@ -177,7 +193,15 @@
             "vi": "Vâng, là người Mỹ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/asking-if-american-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong buổi gặp gỡ, một phụ nữ Nhật cầm tách trà quay sang hỏi chuyện người đàn ông phương Tây cao lớn đang mỉm cười chuẩn bị trả lời."
+        }
+      }
     },
     {
       "id": "mo",
@@ -220,7 +244,15 @@
             "vi": "Anh Gupta cũng là nhân viên công ty."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/also-company-employee-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người đàn ông mặc vest đứng cạnh nhau trong sảnh công ty, cùng xách cặp và đeo thẻ nhân viên, cùng mỉm cười gật đầu giống hệt nhau."
+        }
+      }
     },
     {
       "id": "no",
@@ -260,7 +292,15 @@
             "vi": "Anh Miller là nhân viên của công ty IMC."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/company-badge-employee-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một người đàn ông phương Tây mặc vest đứng trước cửa tòa nhà công ty, tự hào cầm thẻ nhân viên đeo trên cổ."
+        }
+      }
     },
     {
       "id": "san",
@@ -296,7 +336,15 @@
             "vi": "Đây là anh Santos."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/introducing-mr-santos-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chủ nhà đưa tay giới thiệu một người đàn ông Brazil đứng cạnh mình với một vị khách nữ đang nghiêng người chào lịch sự."
+        }
+      }
     }
   ],
   "dialogues": [

@@ -73,7 +73,15 @@
             "vi": "Khi rảnh rỗi, bạn có muốn đến nhà tôi chơi không?"
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/coffee-when-sleepy-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái ngáp buồn ngủ ở bàn học, tay nâng tách cà phê bốc khói."
+        }
+      }
     },
     {
       "id": "toki-aspecto",
@@ -109,7 +117,15 @@
             "vi": "Hồi đến Paris (khi đã ở Paris rồi), tôi đã mua bức tranh này."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/bought-painting-paris-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Du khách cầm bức tranh vừa mua bước ra từ cửa hàng nghệ thuật ở Paris, xa xa có tháp sắt."
+        }
+      }
     },
     {
       "id": "to-condicional",
@@ -170,7 +186,15 @@
             "vi": "Hễ đi thẳng con đường này thì sẽ thấy nhà ga."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/turn-dial-louder-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Bàn tay vặn núm chỉnh âm lượng trên chiếc radio cũ, tiếng vang ra rộng dần."
+        }
+      }
     },
     {
       "id": "ga-adjetivo",
@@ -208,7 +232,15 @@
             "vi": "Kích cỡ hơi nhỏ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/jacket-too-small-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chàng trai thử chiếc áo khoác quá nhỏ so với vai, nhìn nhân viên cửa hàng với vẻ ái ngại."
+        }
+      }
     },
     {
       "id": "o-movimiento",
@@ -246,7 +278,15 @@
             "vi": "Hãy rẽ phải ở khúc cua thứ hai."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/turn-right-second-corner-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Người đi đường chỉ tay rẽ phải ở khúc cua thứ hai của con phố."
+        }
+      }
     }
   ],
   "dialogues": [

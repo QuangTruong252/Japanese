@@ -89,7 +89,15 @@
             "vi": "上手／下手 dùng để nói về năng lực, sở trường; còn 好き dùng để nói về sở thích."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/likes-italian-food-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một phụ nữ vui sướng ăn mì Ý ở bàn nhà hàng, trước mặt còn có pizza nhỏ và ly rượu vang."
+        }
+      }
     },
     {
       "id": "donna-9",
@@ -130,7 +138,15 @@
             "vi": "Bạn thích thể loại âm nhạc nào? …Tôi thích nhạc cổ điển."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/favorite-music-classical-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một người đàn ông ngồi ghế bành nhắm mắt nghe nhạc từ đĩa than, bên cạnh có đàn violin, cô gái ngồi đối diện tò mò hỏi."
+        }
+      }
     },
     {
       "id": "adverbios-grado",
@@ -186,7 +202,15 @@
             "vi": "Tôi hoàn toàn không uống rượu."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/understand-english-well-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong lớp học sáng, một học sinh tự tin đọc sách và gật đầu hiểu bài khi nghe thầy giáo người nước ngoài giảng."
+        }
+      }
     },
     {
       "id": "kara-causa",
@@ -226,7 +250,15 @@
             "vi": "Vì không có thời gian nên tôi không xem tivi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/no-time-no-tv-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một người đàn ông làm việc khuya bên bàn chất đầy giấy tờ, chiếc tivi ở góc phòng tắt đen."
+        }
+      }
     },
     {
       "id": "doushite",
@@ -260,7 +292,15 @@
             "vi": "Tại sao bạn không uống rượu? …Vì ngày mai tôi có công việc."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/why-dont-you-drink-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Ở bàn tiệc, đồng nghiệp rót rượu mời, người đàn ông mỉm cười úp tay lên ly từ chối, cặp tài liệu để ghế bên."
+        }
+      }
     }
   ],
   "dialogues": [

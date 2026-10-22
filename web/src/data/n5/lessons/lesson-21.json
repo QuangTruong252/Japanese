@@ -67,7 +67,15 @@
             "vi": "Tôi nghĩ rằng anh Miller đã về nhà rồi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/prices-high-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Du khách nước ngoài trong siêu thị cầm quả dưa với vẻ ngạc nhiên, nghĩ rằng vật giá ở đây cao."
+        }
+      }
     },
     {
       "id": "to-iimasu",
@@ -107,7 +115,15 @@
             "vi": "Trước khi đi ngủ, người ta sẽ nói «Chúc ngủ ngon»."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/say-goodnight-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cha mẹ đứng ở cửa phòng mỉm cười chúc con ngủ ngon, đứa trẻ nằm trong chăn."
+        }
+      }
     },
     {
       "id": "deshou",
@@ -143,7 +159,15 @@
             "vi": "Hokkaido chắc là lạnh lắm đúng không? …Không, cũng không lạnh đến mức thế đâu."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/cold-hokkaido-confirm-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người bạn mặc áo ấm trong tuyết, một người hỏi xác nhận trời lạnh, người kia lắc đầu cười."
+        }
+      }
     },
     {
       "id": "de-lugar-evento",
@@ -190,7 +214,15 @@
             "vi": "Ở Tokyo sẽ có trận đấu bóng đá giữa Nhật Bản và Brazil."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/soccer-match-stadium-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Sân vận động bóng đá với hai đội áo khác màu ở giữa sân, khán giả vẫy cờ."
+        }
+      }
     },
     {
       "id": "demo-nomimasen-ka",
@@ -233,7 +265,15 @@
             "vi": "Chúng ta cùng đi uống một tách trà hay thứ gì đó không?"
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/invite-for-tea-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chàng trai mời đồng nghiệp đi uống trà, tay cầm khay ấm trà và hai tách."
+        }
+      }
     },
     {
       "id": "nai-to",
@@ -269,7 +309,15 @@
             "vi": "Tôi phải về bây giờ thôi kẻo muộn……"
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/must-leave-now-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái ở cửa nhìn đồng hồ tay áy náy, ôm áo khoác định ra về trong khi bạn bè vẫy chào."
+        }
+      }
     }
   ],
   "dialogues": [

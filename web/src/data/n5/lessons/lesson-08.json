@@ -49,7 +49,15 @@
             "vi": "Hoa anh đào rất đẹp."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/fuji-is-tall-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Núi Phú Sĩ phủ tuyết sừng sững trên mặt hồ, ngôi làng nhỏ bé dưới chân núi làm nổi bật độ cao."
+        }
+      }
     },
     {
       "id": "predicado-adjetivo",
@@ -116,7 +124,15 @@
             "vi": "Căn phòng này không yên tĩnh."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/beijing-is-cold-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cảnh phố mùa đông: một người quấn áo khoác dày, khăn, mũ, găng tay đi nhanh trong tuyết rơi, hơi thở thành khói."
+        }
+      }
     },
     {
       "id": "adjetivo-sustantivo",
@@ -174,7 +190,15 @@
             "vi": "Núi Phú Sĩ là một ngọn núi cao."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/kind-teacher-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong lớp, thầy giáo trung niên mỉm cười ân cần cúi xuống chỉ bài trong vở cho một học sinh."
+        }
+      }
     },
     {
       "id": "ga-pero",
@@ -214,7 +238,15 @@
             "vi": "Đồ ăn Nhật Bản ngon nhưng đắt."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/delicious-but-expensive-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Ở nhà hàng, thực khách vui vẻ nếm món ăn ngon nhưng tay kia cầm hóa đơn và hơi nhíu mày lo lắng."
+        }
+      }
     },
     {
       "id": "totemo-amari",
@@ -269,7 +301,15 @@
             "vi": "Cuốn sách này không thú vị lắm."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/lively-town-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Con phố nhỏ nhộn nhịp buổi chiều, đông người đi lại, tiệm quán, xe đạp, bé chạy chơi, dây cờ treo trên cao."
+        }
+      }
     },
     {
       "id": "dou-desu-ka",
@@ -307,7 +347,15 @@
             "vi": "Công việc thế nào rồi? …Bận rộn nhưng rất thú vị."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/how-is-work-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai đồng nghiệp gặp nhau bên cửa sổ, một người hỏi thăm, người kia ôm chồng giấy tờ, mệt nhưng vẫn mỉm cười."
+        }
+      }
     },
     {
       "id": "donna",
@@ -353,7 +401,15 @@
             "vi": "Nara là một thành phố như thế nào? …Là một thành phố cổ kính."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/nara-old-town-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Con phố cổ Nhật với nhà gỗ mái ngói, đèn đá, cổng chùa, tháp cổ và vài chú hươu bên đường."
+        }
+      }
     },
     {
       "id": "sou-desu-ne-8",
@@ -381,7 +437,15 @@
             "vi": "Cuộc sống ở Nhật Bản thế nào? …À xem nào, rất vui."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/life-in-japan-fun-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một du học sinh nước ngoài vui vẻ ngồi cùng bạn Nhật quanh bàn thấp, bình hoa anh đào, ai cũng cười."
+        }
+      }
     }
   ],
   "dialogues": [

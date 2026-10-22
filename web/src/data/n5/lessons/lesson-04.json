@@ -67,7 +67,15 @@
             "vi": "Bây giờ là 9 giờ rưỡi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/what-time-is-it-now-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một người đàn ông và một phụ nữ cùng ngước nhìn chiếc đồng hồ treo tường lớn chỉ bảy giờ mười."
+        }
+      }
     },
     {
       "id": "verbos-masu",
@@ -118,7 +126,15 @@
             "vi": "Hôm qua tôi đã không làm việc."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/study-every-day-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một sinh viên chăm chú học bài ở bàn cạnh cửa sổ, sách vở chất đống và cây đèn nhỏ, trên tường có tờ lịch."
+        }
+      }
     },
     {
       "id": "ni-tiempo",
@@ -159,7 +175,15 @@
             "vi": "Mỗi sáng tôi thức dậy lúc 6 giờ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/wake-up-at-six-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Buổi sáng sớm trong phòng ngủ, một chàng trai ngồi dậy vươn vai ngáp, đồng hồ báo thức bên giường chỉ sáu giờ."
+        }
+      }
     },
     {
       "id": "kara-made",
@@ -218,7 +242,15 @@
             "vi": "Nghỉ trưa bắt đầu từ 12 giờ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/bank-open-nine-to-three-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Mặt tiền ngân hàng nhỏ, cửa mở, hai chiếc đồng hồ hai bên chỉ chín giờ và ba giờ, một khách đang bước vào."
+        }
+      }
     },
     {
       "id": "to",
@@ -258,7 +290,15 @@
             "vi": "Ngày nghỉ là thứ bảy và chủ nhật."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/saturday-and-sunday-off-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người thư giãn trên sofa vào buổi sáng cuối tuần nắng đẹp với tách trà và cuốn sách trên bàn thấp."
+        }
+      }
     },
     {
       "id": "ne",
@@ -293,7 +333,15 @@
             "vi": "Mỗi ngày tôi đều học đến 10 giờ. …Vất vả quá nhỉ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/hard-work-isnt-it-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một chàng trai học bài khuya ở thư viện bên chồng sách cao, người bạn bên cạnh vỗ vai thông cảm, đồng hồ chỉ khoảng mười giờ."
+        }
+      }
     }
   ],
   "dialogues": [

@@ -50,7 +50,15 @@
             "vi": "Có 2 sinh viên nước ngoài."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/bought-four-mandarins-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Ở quầy trái cây, khách cầm túi giấy, bốn quả quýt cam xếp thành hàng trên quầy trước mặt người bán."
+        }
+      }
     },
     {
       "id": "uso-cuantificador",
@@ -96,7 +104,15 @@
             "vi": "Xin cho tôi 5 con tem."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/five-stamps-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Ở bưu điện, nhân viên đẩy năm con tem xếp thành hàng về phía khách."
+        }
+      }
     },
     {
       "id": "duracion-kai",
@@ -140,7 +156,15 @@
             "vi": "Một tuần tôi chơi tennis một lần."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/tennis-once-a-week-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Người đàn ông chơi tennis trên sân nắng, bảng lịch tuần bảy ô, chỉ một ô đánh dấu vòng đỏ."
+        }
+      }
     },
     {
       "id": "gurai-dake",
@@ -193,7 +217,15 @@
             "vi": "Ngày nghỉ chỉ có chủ nhật."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/about-two-and-half-hours-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong tàu cao tốc, hành khách ngồi nhìn cảnh làng quê lướt qua, trên bàn nhỏ có đồng hồ cát."
+        }
+      }
     }
   ],
   "dialogues": [

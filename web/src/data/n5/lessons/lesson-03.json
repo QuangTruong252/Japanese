@@ -127,7 +127,15 @@
             "vi": "Anh Yamada ở nhà ăn."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/telephone-in-office-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một cô nhân viên đứng cạnh bàn trong văn phòng, chỉ vào chiếc điện thoại để bàn cho vị khách đang nhìn theo."
+        }
+      }
     },
     {
       "id": "doko-dochira",
@@ -190,7 +198,15 @@
             "vi": "Bạn làm việc ở công ty nào? / Công ty của bạn ở đâu?"
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/where-is-the-restroom-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Ở sảnh nhà ga, một du khách kéo vali nhìn quanh hỏi đường, nhân viên đồng phục chỉ tay về cuối hành lang."
+        }
+      }
     },
     {
       "id": "no-origen",
@@ -241,7 +257,15 @@
             "vi": "Đây là máy tính của nước nào/hãng nào? …Là máy tính của Nhật Bản."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/japanese-made-computer-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong cửa hàng máy tính, khách chỉ vào một chiếc laptop hỏi han còn nhân viên tự hào giới thiệu chiếc máy."
+        }
+      }
     },
     {
       "id": "ko-so-a-do",
@@ -272,7 +296,15 @@
             "vi": "Thang máy ở phía nào vậy? …Ở phía đằng kia."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/elevator-over-there-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong trung tâm thương mại, nhân viên nữ đưa tay chỉ về phía thang máy ở cuối sảnh cho vị khách đang hỏi đường."
+        }
+      }
     },
     {
       "id": "o-cortesia-3",
@@ -307,7 +339,15 @@
             "vi": "Đất nước của bạn là nước nào? …Là nước Mỹ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/where-are-you-from-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Ở buổi tiệc chào mừng, một phụ nữ Nhật lịch sự trò chuyện, hỏi về quê hương của người đàn ông Mỹ đang cầm tách trà."
+        }
+      }
     }
   ],
   "dialogues": [

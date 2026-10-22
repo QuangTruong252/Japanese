@@ -81,7 +81,8 @@ export default async function GrammarPointPage({ params }: { params: Promise<Par
                 asset={scene}
                 sizes="(min-width: 1280px) 600px, (min-width: 1024px) 1024px, 100vw"
                 eager
-                imageClassName="h-48 object-center sm:h-64 lg:h-72"
+                // Tranh 4:3 cắt còn khoảng 2:1 trên điện thoại; mặt người thường ở phần ba trên nên lấy lệch lên.
+                imageClassName="h-48 object-[center_30%] sm:h-64 lg:h-72"
                 className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full"
               />
             )}

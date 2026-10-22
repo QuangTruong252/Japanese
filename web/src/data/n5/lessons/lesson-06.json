@@ -70,7 +70,15 @@
             "vi": "Tôi chụp ảnh."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/eating-bread-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một cô gái ngồi ăn sáng bên cửa sổ, đang cắn miếng bánh mì phết mứt, bên cạnh có tách cà phê."
+        }
+      }
     },
     {
       "id": "o-shimasu",
@@ -127,7 +135,15 @@
             "vi": "Tôi làm bài tập về nhà."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/playing-tennis-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trên sân quần vợt, một người đàn ông mặc áo trắng vung vợt đánh quả bóng vàng đang bay giữa không trung."
+        }
+      }
     },
     {
       "id": "nani-o-shimasu-ka",
@@ -158,7 +174,15 @@
             "vi": "Thứ hai bạn sẽ làm gì? …Tôi sẽ đi Tokyo."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/what-will-you-do-monday-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai đồng nghiệp trò chuyện ở góc pha cà phê, một người tò mò hỏi, người kia cầm sách hướng dẫn du lịch với chiếc vali nhỏ bên cạnh."
+        }
+      }
     },
     {
       "id": "nan-nani",
@@ -198,7 +222,15 @@
             "vi": "Bạn sẽ mua cái gì?"
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/what-is-that-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong cửa hàng quà tặng, khách cầm một món đồ gỗ lạ giơ lên hỏi, chủ tiệm mỉm cười sau quầy."
+        }
+      }
     },
     {
       "id": "de-lugar",
@@ -239,7 +271,15 @@
             "vi": "Tôi mua báo ở nhà ga."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/buying-newspaper-at-station-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Ở quầy bán hàng trong ga, một người đi làm đưa tiền mua tờ báo gấp, phía sau có đoàn tàu dừng ở sân ga."
+        }
+      }
     },
     {
       "id": "masen-ka",
@@ -274,7 +314,15 @@
             "vi": "Bạn có muốn cùng uống bia không? …Vâng, hay quá nhỉ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/invite-to-drink-beer-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong quán nhậu ấm cúng, một người đàn ông nâng cốc bia mời đồng nghiệp nữ, cô mỉm cười đưa tay nhận."
+        }
+      }
     },
     {
       "id": "mashou",
@@ -309,7 +357,15 @@
             "vi": "Chúng ta hãy gặp nhau ở nhà ga lúc 10 giờ nhé."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/meet-at-station-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người bạn trò chuyện ở cửa ga, một người chỉ vào tháp đồng hồ chỉ mười giờ, người kia gật đầu mỉm cười."
+        }
+      }
     },
     {
       "id": "ka-tema",
@@ -344,7 +400,15 @@
             "vi": "Bạn có muốn đi ngắm hoa anh đào cùng không? …Ngắm hoa anh đào à? Tuyệt quá nhỉ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/cherry-blossom-picnic-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Dưới gốc anh đào nở hồng trong công viên, hai người bạn ngồi trên tấm thảm picnic, một người chỉ lên hoa, người kia vui ngạc nhiên."
+        }
+      }
     }
   ],
   "dialogues": [

@@ -40,7 +40,15 @@
             "vi": "Đi → không đi ／ Uống → không uống."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/decline-cup-of-tea-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái giơ tay lịch sự từ chối tách trà mà bạn đưa."
+        }
+      }
     },
     {
       "id": "naide-kudasai",
@@ -75,7 +83,15 @@
             "vi": "Xin đừng hút thuốc ở đây."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/no-smoking-request-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Nhân viên cửa hàng giơ hai tay lịch sự xin vị khách đừng hút thuốc ở đây."
+        }
+      }
     },
     {
       "id": "nakereba-narimasen",
@@ -111,7 +127,15 @@
             "vi": "Mỗi ngày tôi đều phải học chữ Hán."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/daily-kanji-study-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Sinh viên ngồi học chữ Hán bên bàn đèn, bên cạnh là chồng vở cho thấy ngày nào cũng phải học."
+        }
+      }
     },
     {
       "id": "nakutemo-ii",
@@ -147,7 +171,15 @@
             "vi": "Không cần nộp báo cáo cũng được."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/no-report-needed-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Quản lý mỉm cười xua tay cho đồng nghiệp biết không cần nộp báo cáo."
+        }
+      }
     },
     {
       "id": "objeto-tema",
@@ -183,7 +215,15 @@
             "vi": "Thẻ bảo hiểm y tế thì bạn đã mang theo chưa?"
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/insurance-card-check-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Nhân viên lễ tân chìa tay hỏi bệnh nhân về chiếc thẻ, người đó lục túi tìm."
+        }
+      }
     },
     {
       "id": "made-ni",
@@ -224,7 +264,15 @@
             "vi": "Cuộc họp sẽ kết thúc trước 5 giờ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/meeting-ends-by-five-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Đồng hồ trên tường chỉ năm giờ, các đồng nghiệp quanh bàn họp đóng hồ sơ kết thúc cuộc họp."
+        }
+      }
     }
   ],
   "dialogues": [
