@@ -28,6 +28,11 @@
       "examples": [
         {
           "jp": "みかんをよっつ 買[か]いました。",
+          "marks": [
+            {
+              "text": "よっつ"
+            }
+          ],
           "translation": {
             "en": "I bought four mandarins.",
             "vi": "Tôi đã mua 4 quả quýt."
@@ -35,12 +40,25 @@
         },
         {
           "jp": "外国人[がいこくじん]の 学生[がくせい]が2 人[ふたり]います。",
+          "marks": [
+            {
+              "text": "2 人[ふたり]"
+            }
+          ],
           "translation": {
             "en": "There are two foreign students.",
             "vi": "Có 2 sinh viên nước ngoài."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/bought-four-mandarins-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Ở quầy trái cây, khách cầm túi giấy, bốn quả quýt cam xếp thành hàng trên quầy trước mặt người bán."
+        }
+      }
     },
     {
       "id": "uso-cuantificador",
@@ -52,6 +70,11 @@
         "en": "N を + quantity + V",
         "vi": "N を + lượng từ + V"
       },
+      "slots": [
+        "N",
+        "lượng từ",
+        "V"
+      ],
       "explanation": {
         "en": "The quantifier normally goes right before the verb, with no particle: りんごをふたつ 食[た]べました. It is not placed between the noun and its particle.",
         "vi": "Trong tiếng Nhật, số lượng từ thường đặt ngay trước động từ mà nó bổ nghĩa (sau trợ từ を, が...), không đặt trước danh từ như trong tiếng Việt."
@@ -59,12 +82,37 @@
       "examples": [
         {
           "jp": "切手[きって]を5 枚[まい]ください。",
+          "marks": [
+            {
+              "text": "切手[きって]",
+              "slot": "N"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "5 枚[まい]",
+              "slot": "lượng từ"
+            },
+            {
+              "text": "ください",
+              "slot": "V"
+            }
+          ],
           "translation": {
             "en": "Five stamps, please.",
             "vi": "Xin cho tôi 5 con tem."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/five-stamps-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Ở bưu điện, nhân viên đẩy năm con tem xếp thành hàng về phía khách."
+        }
+      }
     },
     {
       "id": "duracion-kai",
@@ -76,6 +124,10 @@
         "en": "period に − 回[かい] V",
         "vi": "khoảng thời gian に − 回[かい] V"
       },
+      "slots": [
+        "khoảng thời gian",
+        "V"
+      ],
       "explanation": {
         "en": "To express frequency you give the period with に and the number of times with 〜回[かい]: 1か 月[げつ]に2 回[かい] 映画[えいが]を 見[み]ます (I see a film twice a month).",
         "vi": "Cấu trúc diễn tả tần suất thực hiện một hành động trong một khoảng thời gian nhất định ('Mỗi... làm... lần')."
@@ -83,12 +135,36 @@
       "examples": [
         {
           "jp": "1 週間[しゅうかん]に1 回[かい]テニスをします。",
+          "marks": [
+            {
+              "text": "1 週間[しゅうかん]",
+              "slot": "khoảng thời gian"
+            },
+            {
+              "text": "に"
+            },
+            {
+              "text": "1 回[かい]"
+            },
+            {
+              "text": "テニスをします",
+              "slot": "V"
+            }
+          ],
           "translation": {
             "en": "I play tennis once a week.",
             "vi": "Một tuần tôi chơi tennis một lần."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/tennis-once-a-week-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Người đàn ông chơi tennis trên sân nắng, bảng lịch tuần bảy ô, chỉ một ô đánh dấu vòng đỏ."
+        }
+      }
     },
     {
       "id": "gurai-dake",
@@ -100,6 +176,10 @@
         "en": "quantity ぐらい ／ N だけ",
         "vi": "lượng từ ぐらい ／ N だけ"
       },
+      "slots": [
+        "lượng từ",
+        "N"
+      ],
       "explanation": {
         "en": "ぐらい after a quantity means \"about\" (30 分[ぷん]ぐらい, about half an hour). だけ means \"only\": 1 人[ひとり]だけ (only one person). どのくらい asks how long something takes; duration is expressed with 〜時間[じかん], 〜週間[しゅうかん], 〜か 月[げつ], 〜年[ねん].",
         "vi": "ぐらい đặt sau lượng từ để biểu thị con số ước chừng, xấp xỉ ('khoảng'). だけ đặt sau danh từ hoặc lượng từ để biểu thị sự giới hạn duy nhất ('chỉ')."
@@ -107,6 +187,15 @@
       "examples": [
         {
           "jp": "大阪[おおさか]から 東京[とうきょう]までどのくらいかかりますか。…2 時間半[じかんはん]ぐらいかかります。",
+          "marks": [
+            {
+              "text": "2 時間半[じかんはん]",
+              "slot": "lượng từ"
+            },
+            {
+              "text": "ぐらい"
+            }
+          ],
           "translation": {
             "en": "How long does it take from Osaka to Tokyo? …About two and a half hours.",
             "vi": "Từ Osaka đến Tokyo mất bao lâu? …Mất khoảng 2 tiếng rưỡi."
@@ -114,12 +203,29 @@
         },
         {
           "jp": "休[やす]みは 日曜日[にちようび]だけです。",
+          "marks": [
+            {
+              "text": "日曜日[にちようび]",
+              "slot": "N"
+            },
+            {
+              "text": "だけ"
+            }
+          ],
           "translation": {
             "en": "I only have Sundays off.",
             "vi": "Ngày nghỉ chỉ có chủ nhật."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/about-two-and-half-hours-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong tàu cao tốc, hành khách ngồi nhìn cảnh làng quê lướt qua, trên bàn nhỏ có đồng hồ cát."
+        }
+      }
     }
   ],
   "dialogues": [
@@ -142,6 +248,10 @@
         {
           "speaker": "mai",
           "jp": "すみません。 サンドイッチを みっつ お願[ねが]いします。",
+          "grammarIds": [
+            "uso-cuantificador",
+            "numerales"
+          ],
           "kana": "すみません。 サンドイッチを みっつ おねがいします。",
           "translation": {
             "vi": "Xin lỗi, cho tôi ba phần bánh mì kẹp ạ."
@@ -164,6 +274,10 @@
         {
           "speaker": "mai",
           "jp": "ジュースを みっつ ください。",
+          "grammarIds": [
+            "uso-cuantificador",
+            "numerales"
+          ],
           "kana": "ジュースを みっつ ください。",
           "translation": {
             "vi": "Cho tôi ba phần nước trái cây ạ."
@@ -172,6 +286,9 @@
         {
           "speaker": "ten-in",
           "jp": "はい、みっつですね。",
+          "grammarIds": [
+            "numerales"
+          ],
           "kana": "はい、みっつですね。",
           "translation": {
             "vi": "Vâng, ba phần nhé."
@@ -180,6 +297,10 @@
         {
           "speaker": "mai",
           "jp": "それから、はがきを 二枚[にまい] ください。 全部[ぜんぶ]で いくらですか。",
+          "grammarIds": [
+            "uso-cuantificador",
+            "numerales"
+          ],
           "kana": "それから、はがきを にまい ください。 ぜんぶで いくらですか。",
           "translation": {
             "vi": "Cho tôi thêm hai tấm bưu thiếp nữa. Tất cả hết bao nhiêu ạ?"
@@ -257,6 +378,9 @@
         {
           "speaker": "mai",
           "jp": "自転車[じてんしゃ]で 十分[じゅっぷん]ぐらいです。",
+          "grammarIds": [
+            "gurai-dake"
+          ],
           "kana": "じてんしゃで じゅっぷんぐらいです。",
           "translation": {
             "vi": "Đi xe đạp mất khoảng mười phút ạ."
@@ -313,6 +437,9 @@
         {
           "speaker": "mori",
           "jp": "マイさんの クラスに 留学生[りゅうがくせい]が 何人[なんにん] いますか。",
+          "grammarIds": [
+            "numerales"
+          ],
           "kana": "マイさんの クラスに りゅうがくせいが なんにん いますか。",
           "translation": {
             "vi": "Lớp em có bao nhiêu du học sinh, Mai?"
@@ -321,6 +448,10 @@
         {
           "speaker": "mai",
           "jp": "三人[さんにん] います。 ベトナム人[じん]は 私[わたし]だけです。",
+          "grammarIds": [
+            "numerales",
+            "gurai-dake"
+          ],
           "kana": "さんにん います。 ベトナムじんは わたしだけです。",
           "translation": {
             "vi": "Có ba người ạ. Chỉ có mình em là người Việt Nam."
@@ -333,6 +464,9 @@
         {
           "speaker": "mori",
           "jp": "一週間[いっしゅうかん]に 何回[なんかい] 図書館[としょかん]へ 行[い]きますか。",
+          "grammarIds": [
+            "duracion-kai"
+          ],
           "kana": "いっしゅうかんに なんかい としょかんへ いきますか。",
           "translation": {
             "vi": "Mỗi tuần em đến thư viện mấy lần?"
@@ -360,6 +494,9 @@
         {
           "speaker": "mai",
           "jp": "二時間[にじかん]ぐらい 勉強[べんきょう]します。",
+          "grammarIds": [
+            "gurai-dake"
+          ],
           "kana": "にじかんぐらい べんきょうします。",
           "translation": {
             "vi": "Em học khoảng hai tiếng ạ."

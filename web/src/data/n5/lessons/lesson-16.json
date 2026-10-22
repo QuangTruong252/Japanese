@@ -20,6 +20,12 @@
       "pattern": {
         "vi": "V1 て、V2 て、… ／ A-くて／A-なで、〜"
       },
+      "slots": [
+        "V1",
+        "V2",
+        "A-",
+        "A-な"
+      ],
       "explanation": {
         "en": "The て form chains actions in chronological order: 朝[あさ] 起[お]きて、シャワーを 浴[あ]びて、 会社[かいしゃ]へ 行[い]きます. Adjectives chain too: -い ones with 〜くて (安[やす]くておいしい), and -な ones and nouns with で (ハンサムで 親切[しんせつ]です).",
         "vi": "Dùng thể て để nối các hành động diễn ra theo trình tự thời gian ('làm V1 rồi làm V2'). Để nối tính từ: tính từ đuôi い đổi thành 〜くて, tính từ đuôi な đổi thành 〜で."
@@ -27,6 +33,19 @@
       "examples": [
         {
           "jp": "日曜日[にちようび]は 買[か]い 物[もの]して、 映画[えいが]を 見[み]ました。",
+          "marks": [
+            {
+              "text": "買[か]い 物[もの]し",
+              "slot": "V1"
+            },
+            {
+              "text": "て、"
+            },
+            {
+              "text": "見[み]ました",
+              "slot": "V2"
+            }
+          ],
           "translation": {
             "en": "On Sunday I went shopping and saw a film.",
             "vi": "Chủ nhật tôi đã đi mua sắm rồi xem phim."
@@ -34,12 +53,29 @@
         },
         {
           "jp": "奈良[なら]は 静[しず]かで、きれいな 町[まち]です。",
+          "marks": [
+            {
+              "text": "静[しず]か",
+              "slot": "A-な"
+            },
+            {
+              "text": "で、"
+            }
+          ],
           "translation": {
             "en": "Nara is a quiet, beautiful town.",
             "vi": "Nara là một thành phố yên tĩnh và xinh đẹp."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/shopping-then-movie-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái đi mua sắm với các túi đồ rồi ngồi xem phim trong rạp."
+        }
+      }
     },
     {
       "id": "te-kara",
@@ -50,6 +86,10 @@
       "pattern": {
         "vi": "V1 てから、V2"
       },
+      "slots": [
+        "V1",
+        "V2"
+      ],
       "explanation": {
         "en": "〜てから stresses that the second action happens once the first is finished: 仕事[しごと]が 終[お]わってから、 泳[およ]ぎに 行[い]きます.",
         "vi": "Biểu thị hành động V2 được tiến hành sau khi hành động V1 đã hoàn thành trọn vẹn. Thời của cả câu được quyết định ở động từ cuối cùng V2."
@@ -57,12 +97,33 @@
       "examples": [
         {
           "jp": "お 金[かね]を 入[い]れてから、ボタンを 押[お]してください。",
+          "marks": [
+            {
+              "text": "入[い]れ",
+              "slot": "V1"
+            },
+            {
+              "text": "てから、"
+            },
+            {
+              "text": "押[お]してください",
+              "slot": "V2"
+            }
+          ],
           "translation": {
             "en": "After putting the money in, press the button.",
             "vi": "Sau khi nhét tiền vào thì hãy nhấn nút."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/coin-then-button-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chàng trai bỏ tiền xu vào máy bán nước rồi chuẩn bị bấm nút."
+        }
+      }
     },
     {
       "id": "wa-ga",
@@ -73,6 +134,11 @@
       "pattern": {
         "vi": "N1 は N2 が A です"
       },
+      "slots": [
+        "N1",
+        "N2",
+        "A"
+      ],
       "explanation": {
         "en": "To describe a feature of part of the topic you use は…が…: 大阪[おおさか]は 食[た]べ 物[もの]が おいしいです (the food in Osaka is delicious), マリアさんは 髪[かみ]が 長[なが]いです.",
         "vi": "N1 là chủ đề của câu (người, động vật, địa điểm), N2 là một bộ phận, thuộc tính hoặc đặc điểm nổi bật gắn liền với N1, và A là tính từ miêu tả đặc điểm đó."
@@ -80,12 +146,43 @@
       "examples": [
         {
           "jp": "ミラーさんは 背[せ]が 高[たか]いです。",
+          "marks": [
+            {
+              "text": "ミラーさん",
+              "slot": "N1"
+            },
+            {
+              "text": "は"
+            },
+            {
+              "text": "背[せ]",
+              "slot": "N2"
+            },
+            {
+              "text": "が"
+            },
+            {
+              "text": "高[たか]い",
+              "slot": "A"
+            },
+            {
+              "text": "です"
+            }
+          ],
           "translation": {
             "en": "Mr. Miller is tall.",
             "vi": "Anh Miller có vóc dáng cao ráo."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/tall-coworker-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chàng trai phương Tây rất cao đứng giữa các đồng nghiệp thấp hơn, đầu cao hơn mọi người."
+        }
+      }
     },
     {
       "id": "o-salir",
@@ -97,6 +194,10 @@
         "en": "N を V (to leave, to get off)",
         "vi": "địa điểm を V (xuống xe / rời khỏi)"
       },
+      "slots": [
+        "địa điểm",
+        "V"
+      ],
       "explanation": {
         "en": "を also marks the place you leave or get off: 電車[でんしゃ]を 降[お]ります (to get off the train), 大学[だいがく]を 出[で]ます (to graduate).",
         "vi": "Trợ từ を đứng sau danh từ chỉ nơi chốn biểu thị điểm xuất phát, địa điểm mà chủ thể rời khỏi (xuống tàu/xe: 電車を降ります, rời khỏi nhà: うちを出ます)."
@@ -104,12 +205,33 @@
       "examples": [
         {
           "jp": "梅田[うめだ]で 電車[でんしゃ]を 降[お]りてください。",
+          "marks": [
+            {
+              "text": "電車[でんしゃ]",
+              "slot": "địa điểm"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "降[お]りてください",
+              "slot": "V"
+            }
+          ],
           "translation": {
             "en": "Get off the train at Umeda.",
             "vi": "Hãy xuống tàu điện ở ga Umeda."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/get-off-train-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một hành khách bước xuống khỏi toa tàu điện lên sân ga."
+        }
+      }
     },
     {
       "id": "douyatte",
@@ -120,6 +242,9 @@
       "pattern": {
         "vi": "どうやって V ますか"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "どうやって asks about the manner or procedure; the answer chains the steps with the て form.",
         "vi": "Dùng để hỏi phương thức, cách làm một việc gì đó hoặc chỉ dẫn đường đi từ điểm này đến điểm khác."
@@ -127,12 +252,32 @@
       "examples": [
         {
           "jp": "大学[だいがく]までどうやって 行[い]きますか。… 京都駅[きょうとえき]から16 番[ばん]のバスに 乗[の]って、 大学前[だいがくまえ]で 降[お]ります。",
+          "marks": [
+            {
+              "text": "どうやって"
+            },
+            {
+              "text": "行[い]き",
+              "slot": "V"
+            },
+            {
+              "text": "ますか"
+            }
+          ],
           "translation": {
             "en": "How do you get to the university? …From Kyoto station I take bus 16 and get off at Daigaku-mae.",
             "vi": "Đi đến trường đại học bằng cách nào vậy? …Từ ga Kyoto bạn lên xe buýt số 16 rồi xuống ở trạm Daigaku-mae."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/station-bus-university-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một cô gái ở trạm xe buýt, đường đi từ nhà ga lên xe buýt đến trường đại học."
+        }
+      }
     },
     {
       "id": "dore-dono",
@@ -143,6 +288,9 @@
       "pattern": {
         "vi": "どれ ／ どの N"
       },
+      "slots": [
+        "N"
+      ],
       "explanation": {
         "en": "To choose among three or more options you use どれ (on its own) or どの + noun: どれが 私[わたし]の 傘[かさ]ですか, どの 人[ひと]が 山田[やまだ]さんですか.",
         "vi": "どれ (cái nào) và どの N (N nào) dùng để hỏi nhằm lựa chọn một đối tượng cụ thể trong một nhóm gồm ba đối tượng trở lên."
@@ -150,12 +298,29 @@
       "examples": [
         {
           "jp": "ミラーさんはどの 人[ひと]ですか。…あの 背[せ]が 高[たか]い 人[ひと]です。",
+          "marks": [
+            {
+              "text": "どの"
+            },
+            {
+              "text": "人[ひと]",
+              "slot": "N"
+            }
+          ],
           "translation": {
             "en": "Which one is Mr. Miller? …That tall one.",
             "vi": "Anh Miller là người nào? …Là cái người cao ráo đằng kia kìa."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/pick-out-tall-person-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một chàng trai chỉ vào người cao nhất trong nhóm đông người khi được hỏi là ai."
+        }
+      }
     }
   ],
   "dialogues": [
@@ -190,6 +355,9 @@
           "speaker": "mai",
           "jp": "はい。 あのう、 どうやって お 金[かね]を 下[お]ろしますか。",
           "kana": "はい。 あのう、 どうやって お かねを おろしますか。",
+          "grammarIds": [
+            "douyatte"
+          ],
           "translation": {
             "vi": "Vâng. Dạ, cho tôi hỏi, rút tiền như thế nào ạ?"
           }
@@ -214,6 +382,9 @@
           "speaker": "ginkouin",
           "jp": "次[つぎ]に、 暗証番号[あんしょうばんごう]を 押[お]して、 金額[きんがく]を 押[お]してください。",
           "kana": "つぎに、 あんしょうばんごうを おして、 きんがくを おしてください。",
+          "grammarIds": [
+            "te-encadenar"
+          ],
           "translation": {
             "vi": "Tiếp theo, quý khách bấm mã số bí mật, rồi bấm số tiền ạ."
           }
@@ -230,6 +401,9 @@
           "speaker": "ginkouin",
           "jp": "はい。 金額[きんがく]を 確認[かくにん]して、 ボタンを 押[お]してください。",
           "kana": "はい。 きんがくを かくにんして、 ボタンを おしてください。",
+          "grammarIds": [
+            "te-encadenar"
+          ],
           "translation": {
             "vi": "Vâng. Quý khách xác nhận số tiền rồi bấm nút ạ."
           }
@@ -280,6 +454,9 @@
           "speaker": "mai",
           "jp": "五時半[ごじはん]に 起[お]きて、 ジョギングを します。 シャワーを 浴[あ]びて、 六時[ろくじ]から 勉強[べんきょう]します。",
           "kana": "ごじはんに おきて、 ジョギングを します。 シャワーを あびて、 ろくじから べんきょうします。",
+          "grammarIds": [
+            "te-encadenar"
+          ],
           "translation": {
             "vi": "Em dậy lúc năm rưỡi rồi chạy bộ ạ. Tắm vòi sen xong thì từ sáu giờ em học bài ạ."
           }
@@ -299,6 +476,9 @@
           "speaker": "mai",
           "jp": "大学[だいがく]に 入[はい]ってから 始[はじ]めました。",
           "kana": "だいがくに はいってから はじめました。",
+          "grammarIds": [
+            "te-kara"
+          ],
           "translation": {
             "vi": "Em bắt đầu sau khi vào đại học ạ."
           }
@@ -307,6 +487,11 @@
           "speaker": "mori",
           "jp": "寮[りょう]を 出[で]てから、 どうやって 大学[だいがく]へ 来[き]ますか。",
           "kana": "りょうを でてから、 どうやって だいがくへ きますか。",
+          "grammarIds": [
+            "te-kara",
+            "douyatte",
+            "o-salir"
+          ],
           "translation": {
             "vi": "Ra khỏi ký túc xá rồi thì em đến trường bằng cách nào?"
           }
@@ -315,6 +500,9 @@
           "speaker": "mai",
           "jp": "電車[でんしゃ]に 乗[の]って、 駅[えき]で 降[お]りて、 歩[ある]いて 来[き]ます。",
           "kana": "でんしゃに のって、 えきで おりて、 あるいて きます。",
+          "grammarIds": [
+            "te-encadenar"
+          ],
           "translation": {
             "vi": "Em đi tàu, xuống ở ga rồi đi bộ đến ạ."
           }
@@ -323,6 +511,9 @@
           "speaker": "mori",
           "jp": "マイさんは 日本語[にほんご]が 上手[じょうず]で、 明[あか]るいですね。",
           "kana": "マイさんは にほんごが じょうずで、 あかるいですね。",
+          "grammarIds": [
+            "te-encadenar"
+          ],
           "translation": {
             "vi": "Mai giỏi tiếng Nhật, lại vui vẻ nữa nhỉ."
           }
@@ -384,6 +575,9 @@
           "speaker": "tanaka",
           "jp": "お 姉[ねえ]さんは どの 人[ひと]ですか。",
           "kana": "お ねえさんは どの ひとですか。",
+          "grammarIds": [
+            "dore-dono"
+          ],
           "translation": {
             "vi": "Chị của em là người nào vậy?"
           }
@@ -392,6 +586,9 @@
           "speaker": "mai",
           "jp": "この 人[ひと]です。 髪[かみ]が 長[なが]くて、 背[せ]が 高[たか]いです。",
           "kana": "この ひとです。 かみが ながくて、 せが たかいです。",
+          "grammarIds": [
+            "te-encadenar"
+          ],
           "translation": {
             "vi": "Người này ạ. Chị ấy tóc dài và dáng cao ạ."
           }
@@ -400,6 +597,9 @@
           "speaker": "tanaka",
           "jp": "目[め]が 大[おお]きくて、 きれいな 人[ひと]ですね。",
           "kana": "めが おおきくて、 きれいな ひとですね。",
+          "grammarIds": [
+            "te-encadenar"
+          ],
           "translation": {
             "vi": "Mắt to và xinh nhỉ."
           }
@@ -408,6 +608,10 @@
           "speaker": "mai",
           "jp": "はい。 姉[あね]は 頭[あたま]が よくて、 親切[しんせつ]です。",
           "kana": "はい。 あねは あたまが よくて、 しんせつです。",
+          "grammarIds": [
+            "wa-ga",
+            "te-encadenar"
+          ],
           "translation": {
             "vi": "Vâng ạ. Chị em thông minh và tốt bụng ạ."
           }
@@ -416,6 +620,9 @@
           "speaker": "tanaka",
           "jp": "お 母[かあ]さんは どの 人[ひと]ですか。",
           "kana": "お かあさんは どの ひとですか。",
+          "grammarIds": [
+            "dore-dono"
+          ],
           "translation": {
             "vi": "Còn mẹ em là người nào?"
           }
@@ -424,6 +631,9 @@
           "speaker": "mai",
           "jp": "この 人[ひと]です。 髪[かみ]が 短[みじか]くて、 若[わか]いです。",
           "kana": "この ひとです。 かみが みじかくて、 わかいです。",
+          "grammarIds": [
+            "te-encadenar"
+          ],
           "translation": {
             "vi": "Là người này ạ. Mẹ em tóc ngắn và trẻ ạ."
           }

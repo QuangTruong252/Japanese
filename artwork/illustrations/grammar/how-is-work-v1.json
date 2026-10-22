@@ -1,0 +1,54 @@
+{
+  "createdAt": "2026-10-22T02:14:06.607Z",
+  "source": "image_gen",
+  "generation": {
+    "tool": "Codex built-in image_gen",
+    "orchestrator": "gpt-6-luna (effort low)"
+  },
+  "batch": "artwork/illustrations/batches/grammar-07-12.json",
+  "prompt": "Editorial watercolor and gouache illustration, hand-painted Japanese book-illustration feel: delicate dark pencil contours, soft organic painted washes, subtle paper texture, warm ivory paper tones. Palette: cream, warm sand, charcoal gray, muted sage green, warm timber wood, muted brick-red accents. Landscape 4:3 composition, FULL-BLEED: the painting fills the whole canvas edge to edge, with NO frame, NO border line, NO mat and NO paper margin around it.\nPeople, when present: young male student = slightly messy short dark hair, cream long-sleeved shirt, charcoal trousers, black backpack; young woman = chin-length dark bob with bangs, cream cardigan over muted brick-red top, charcoal skirt, small brown shoulder bag.\n\nSubject: Two coworkers meet by a window in an office; one asks while holding a coffee mug, the other holds a thick pile of papers in both arms and has a tired but smiling face, with a laptop open on a cluttered desk behind him. The message is busy but interesting work.\nKeep the main subject in the central area so the image survives cropping to a thumbnail.\n\nSTRICT REQUIREMENTS:\n- Absolutely NO text, letters, kanji, kana, numbers or words anywhere: signs, boards, labels and screens stay completely blank.\n- Clock faces have NO digits and NO Roman numerals.\n- Hand-painted watercolor gouache look, NOT 3D, NOT CGI, NOT glossy vector, NOT photo.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/grammar/how-is-work-v1.webp",
+  "width": 800,
+  "height": 600,
+  "role": "grammar-scene",
+  "suggestedAlt": {
+    "vi": "Hai đồng nghiệp gặp nhau bên cửa sổ, một người hỏi thăm, người kia ôm chồng giấy tờ, mệt nhưng vẫn mỉm cười."
+  },
+  "intendedContent": {
+    "dataFile": "web/src/data/n5/lessons/lesson-08.json",
+    "id": "dou-desu-ka",
+    "referenceStatus": "added-to-learning-data"
+  },
+  "master": {
+    "path": "artwork/illustrations/grammar/how-is-work-v1.png",
+    "width": 1448,
+    "height": 1086,
+    "format": "png",
+    "hasAlpha": false
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "fit": "cover",
+    "width": 800,
+    "height": 600,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 110806,
+    "sha256": "bb94f4d5fe741760d8a582c70282696c652bcbefe941c84c1ae0d2d3865a67fe",
+    "hasAlpha": false,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 0,
+      "partial": 0,
+      "opaque": 480000
+    }
+  }
+}

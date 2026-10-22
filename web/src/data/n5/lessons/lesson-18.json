@@ -27,12 +27,28 @@
       "examples": [
         {
           "jp": "泳[およ]ぎます → 泳[およ]ぐ ／ 待[ま]ちます → 待[ま]つ",
+          "marks": [
+            {
+              "text": "泳[およ]ぐ"
+            },
+            {
+              "text": "待[ま]つ"
+            }
+          ],
           "translation": {
             "en": "To swim, to wait (in dictionary form).",
             "vi": "Bơi (oyogimasu → oyogu) ／ Chờ (machimasu → matsu)."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/swim-and-wait-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai cảnh cạnh nhau: người đang bơi và người đứng đợi xe buýt."
+        }
+      }
     },
     {
       "id": "dekimasu",
@@ -44,6 +60,10 @@
         "en": "N が できます ／ V (dict.) こと が できます",
         "vi": "N が できます ／ V (thể từ điển) こと が できます"
       },
+      "slots": [
+        "N",
+        "V"
+      ],
       "explanation": {
         "en": "できます expresses ability or possibility. The object can be a noun (日本語[にほんご]が できます) or a verb nominalised with こと: 漢字[かんじ]を 読[よ]む ことが できます.",
         "vi": "Dùng để biểu thị khả năng có thể làm được một việc gì đó (do năng lực bản thân hoặc do hoàn cảnh cho phép). Danh từ hóa động từ bằng cấu trúc: V (thể từ điển) + こと."
@@ -51,6 +71,15 @@
       "examples": [
         {
           "jp": "ミラーさんは 日本語[にほんご]が 話[はな]せますか。… 日本語[にほんご]を 話[はな]すことができます。",
+          "marks": [
+            {
+              "text": "話[はな]す",
+              "slot": "V"
+            },
+            {
+              "text": "ことができます"
+            }
+          ],
           "translation": {
             "en": "Mr. Miller can speak Japanese.",
             "vi": "Anh Miller có thể nói tiếng Nhật được không? …Có, anh ấy có thể nói tiếng Nhật."
@@ -58,12 +87,29 @@
         },
         {
           "jp": "カードで 払[はら]うことができます。",
+          "marks": [
+            {
+              "text": "払[はら]う",
+              "slot": "V"
+            },
+            {
+              "text": "ことができます"
+            }
+          ],
           "translation": {
             "en": "You can pay by card.",
             "vi": "Bạn có thể thanh toán bằng thẻ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/speaking-japanese-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chàng trai phương Tây nói chuyện tự tin với cô gái Nhật ở quán cà phê."
+        }
+      }
     },
     {
       "id": "shumi",
@@ -75,6 +121,10 @@
         "en": "趣味[しゅみ]は N ／ V (dict.) こと です",
         "vi": "趣味[しゅみ]は N ／ V (thể từ điển) こと です"
       },
+      "slots": [
+        "N",
+        "V"
+      ],
       "explanation": {
         "en": "To give your hobby you can use a noun (趣味[しゅみ]は 音楽[おんがく]です) or a verb with こと, which is more precise: 趣味[しゅみ]は 音楽[おんがく]を 聞[き]く ことです.",
         "vi": "Dùng để giới thiệu về sở thích cá nhân. Khi sở thích là một hành động cụ thể, ta dùng V (thể từ điển) + こと です."
@@ -82,12 +132,32 @@
       "examples": [
         {
           "jp": "私[わたし]の 趣味[しゅみ]は 写真[しゃしん]を 撮[と]ることです。",
+          "marks": [
+            {
+              "text": "趣味[しゅみ]は"
+            },
+            {
+              "text": "撮[と]る",
+              "slot": "V"
+            },
+            {
+              "text": "ことです"
+            }
+          ],
           "translation": {
             "en": "My hobby is taking photos.",
             "vi": "Sở thích của tôi là chụp ảnh."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/hobby-photography-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái đứng trên đường đồi giơ máy ảnh chụp cảnh thị trấn phía xa."
+        }
+      }
     },
     {
       "id": "mae-ni",
@@ -99,6 +169,12 @@
         "en": "V (dict.) まえに、V2 ／ N の まえに ／ length of time まえに",
         "vi": "V (thể từ điển) まえに、V2 ／ N の まえに ／ khoảng thời gian まえに"
       },
+      "slots": [
+        "V",
+        "V2",
+        "N",
+        "khoảng thời gian"
+      ],
       "explanation": {
         "en": "まえに means \"before\": 寝[ね]る まえに 本[ほん]を 読[よ]みます (I read before going to sleep), 食事[しょくじ]の まえに (before the meal), 1 年[ねん] まえに (a year ago).",
         "vi": "Diễn tả hành động V2 diễn ra trước một hành động V1, một sự kiện N hoặc một khoảng thời gian. Chú ý: động từ trước まえに luôn ở thể từ điển, bất kể thời của cả câu."
@@ -106,12 +182,33 @@
       "examples": [
         {
           "jp": "日本[にほん]へ 来[く]るまえに、 日本語[にほんご]を 勉強[べんきょう]しました。",
+          "marks": [
+            {
+              "text": "来[く]る",
+              "slot": "V"
+            },
+            {
+              "text": "まえに、"
+            },
+            {
+              "text": "勉強[べんきょう]しました",
+              "slot": "V2"
+            }
+          ],
           "translation": {
             "en": "I studied Japanese before coming to Japan.",
             "vi": "Trước khi sang Nhật Bản, tôi đã học tiếng Nhật."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/study-before-japan-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một du học sinh ngồi học tiếng Nhật trong phòng, vali đã sắp một nửa và máy bay bay ngang cửa sổ, trước khi sang Nhật."
+        }
+      }
     },
     {
       "id": "nakanaka",
@@ -130,12 +227,28 @@
       "examples": [
         {
           "jp": "日本[にほん]では、なかなか 馬[うま]を 見[み]ることができません。",
+          "marks": [
+            {
+              "text": "なかなか"
+            },
+            {
+              "text": "ません"
+            }
+          ],
           "translation": {
             "en": "In Japan you don't often get to see horses.",
             "vi": "Ở Nhật Bản, khó lòng mà nhìn thấy ngựa."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/no-horses-in-city-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Du khách nhìn quanh phố hiện đại của Nhật nhưng chỉ thấy xe cộ và nhà cao tầng, hầu như không thấy ngựa."
+        }
+      }
     },
     {
       "id": "zehi",
@@ -154,12 +267,25 @@
       "examples": [
         {
           "jp": "ぜひ 北海道[ほっかいどう]へ 行[い]きたいです。",
+          "marks": [
+            {
+              "text": "ぜひ"
+            }
+          ],
           "translation": {
             "en": "I really want to go to Hokkaido.",
             "vi": "Tôi nhất định muốn đi Hokkaido một chuyến."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/hokkaido-dream-trip-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái đứng trước bản đồ Nhật, đặt tay lên đảo phía bắc đầy háo hức, bên cạnh có vali nhỏ."
+        }
+      }
     }
   ],
   "dialogues": [
@@ -183,6 +309,9 @@
           "speaker": "tanaka",
           "jp": "マイさんの 趣味[しゅみ]は 何[なん]ですか。",
           "kana": "マイさんの しゅみは なんですか。",
+          "grammarIds": [
+            "shumi"
+          ],
           "translation": {
             "vi": "Sở thích của em là gì vậy, Mai?"
           }
@@ -191,6 +320,9 @@
           "speaker": "mai",
           "jp": "日本[にほん]の 歌[うた]を 聞[き]く ことです。 田中[たなか]さんは？",
           "kana": "にほんの うたを きく ことです。 たなかさんは？",
+          "grammarIds": [
+            "shumi"
+          ],
           "translation": {
             "vi": "Là nghe các bài hát Nhật ạ. Còn anh Tanaka thì sao ạ?"
           }
@@ -199,6 +331,9 @@
           "speaker": "tanaka",
           "jp": "私[わたし]の 趣味[しゅみ]は 馬[うま]に 乗[の]る ことです。",
           "kana": "わたしの しゅみは うまに のる ことです。",
+          "grammarIds": [
+            "shumi"
+          ],
           "translation": {
             "vi": "Sở thích của anh là cưỡi ngựa."
           }
@@ -219,6 +354,9 @@
           "speaker": "tanaka",
           "jp": "日曜日[にちようび]に 時々[ときどき] 乗[の]りますよ。 マイさんも ぜひ 乗[の]りませんか。",
           "kana": "にちようびに ときどき のりますよ。 マイさんも ぜひ のりませんか。",
+          "grammarIds": [
+            "zehi"
+          ],
           "translation": {
             "vi": "Thỉnh thoảng vào chủ nhật anh đi cưỡi ngựa. Mai cũng đi cùng anh nhé?"
           }
@@ -227,6 +365,10 @@
           "speaker": "mai",
           "jp": "ええ、 ぜひ お 願[ねが]いします。 私[わたし]は 馬[うま]に 乗[の]る ことが できませんが、 大丈夫[だいじょうぶ]ですか。",
           "kana": "ええ、 ぜひ お ねがいします。 わたしは うまに のる ことが できませんが、 だいじょうぶですか。",
+          "grammarIds": [
+            "zehi",
+            "dekimasu"
+          ],
           "translation": {
             "vi": "Vâng, nhất định ạ. Em chưa biết cưỡi ngựa, nhưng có sao không ạ?"
           }
@@ -277,6 +419,9 @@
           "speaker": "mai",
           "jp": "あしたの 晩[ばん]、 予約[よやく]する ことが できますか。",
           "kana": "あしたの ばん、 よやくする ことが できますか。",
+          "grammarIds": [
+            "dekimasu"
+          ],
           "translation": {
             "vi": "Tối mai tôi đặt bàn được không ạ?"
           }
@@ -301,6 +446,9 @@
           "speaker": "ten-in",
           "jp": "わかりました。 インターネットでも 予約[よやく]する ことが できますよ。",
           "kana": "わかりました。 インターネットでも よやくする ことが できますよ。",
+          "grammarIds": [
+            "dekimasu"
+          ],
           "translation": {
             "vi": "Tôi hiểu rồi ạ. Quý khách cũng có thể đặt qua mạng ạ."
           }
@@ -309,6 +457,9 @@
           "speaker": "mai",
           "jp": "そうですか。 現金[げんきん]で 払[はら]う ことが できますか。",
           "kana": "そうですか。 げんきんで はらう ことが できますか。",
+          "grammarIds": [
+            "dekimasu"
+          ],
           "translation": {
             "vi": "Vậy ạ. Tôi trả bằng tiền mặt được không ạ?"
           }
@@ -317,6 +468,9 @@
           "speaker": "ten-in",
           "jp": "はい、 できます。 カードも 使[つか]う ことが できますよ。",
           "kana": "はい、 できます。 カードも つかう ことが できますよ。",
+          "grammarIds": [
+            "dekimasu"
+          ],
           "translation": {
             "vi": "Vâng, được ạ. Quý khách cũng dùng thẻ được ạ."
           }
@@ -359,6 +513,9 @@
           "speaker": "mori",
           "jp": "マイさん、 毎晩[まいばん] 寝[ね]る まえに 何[なに]を しますか。",
           "kana": "マイさん、 まいばん ねる まえに なにを しますか。",
+          "grammarIds": [
+            "mae-ni"
+          ],
           "translation": {
             "vi": "Mai này, mỗi tối trước khi đi ngủ em làm gì?"
           }
@@ -386,6 +543,10 @@
           "speaker": "mai",
           "jp": "ええ。 家族[かぞく]に なかなか 会[あ]う ことが できません。 毎晩[まいばん]、 日記[にっき]を 書[か]いて、 故郷[ふるさと]を 思[おも]い 出[だ]します。",
           "kana": "ええ。 かぞくに なかなか あう ことが できません。 まいばん、 にっきを かいて、 ふるさとを おもい だします。",
+          "grammarIds": [
+            "nakanaka",
+            "dekimasu"
+          ],
           "translation": {
             "vi": "Vâng ạ. Em khó có dịp gặp gia đình. Mỗi tối em viết nhật ký rồi nhớ về quê hương ạ."
           }
@@ -402,6 +563,9 @@
           "speaker": "mai",
           "jp": "はい。 朝[あさ]ごはんの まえに、 家族[かぞく]の 写真[しゃしん]も 見[み]ます。",
           "kana": "はい。 あさごはんの まえに、 かぞくの しゃしんも みます。",
+          "grammarIds": [
+            "mae-ni"
+          ],
           "translation": {
             "vi": "Vâng ạ. Trước bữa sáng em cũng xem ảnh gia đình ạ."
           }

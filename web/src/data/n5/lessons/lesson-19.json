@@ -27,12 +27,25 @@
       "examples": [
         {
           "jp": "食[た]べます → 食[た]べて → 食[た]べた",
+          "marks": [
+            {
+              "text": "食[た]べた"
+            }
+          ],
           "translation": {
             "en": "To eat → て form → た form.",
             "vi": "Ăn: tabemasu → tabete → tabeta."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/finished-meal-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chàng trai ngồi tựa ghế hài lòng với đĩa đã ăn sạch."
+        }
+      }
     },
     {
       "id": "ta-koto-ga-arimasu",
@@ -43,6 +56,9 @@
       "pattern": {
         "vi": "V た ことが あります"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "It says you have had the experience at some point: 馬[うま]に 乗[の]ったことが あります (I have ridden a horse). The negative with 一度[いちど]も means \"never\": 一度[いちど]も 食[た]べたことが ありません.",
         "vi": "Dùng để nói về trải nghiệm, việc từng làm trong quá khứ ('đã từng làm gì'). Phủ định là: V た ことが ありません (chưa từng làm bao giờ)."
@@ -50,12 +66,29 @@
       "examples": [
         {
           "jp": "北海道[ほっかいどう]へ 行[い]ったことがありますか。…いいえ、 一度[いちど]もありません。",
+          "marks": [
+            {
+              "text": "行[い]っ",
+              "slot": "V"
+            },
+            {
+              "text": "たことがあります"
+            }
+          ],
           "translation": {
             "en": "Have you ever been to Hokkaido? …No, never.",
             "vi": "Bạn đã từng đi Hokkaido chưa? …Chưa, tôi chưa từng đi một lần nào cả."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/never-been-hokkaido-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người bạn xem sách du lịch Hokkaido, một người lắc đầu mỉm cười vì chưa từng đến đó."
+        }
+      }
     },
     {
       "id": "tari-tari",
@@ -66,6 +99,10 @@
       "pattern": {
         "vi": "V1 たり、V2 たり します"
       },
+      "slots": [
+        "V1",
+        "V2"
+      ],
       "explanation": {
         "en": "It lists activities as examples, in no particular order (unlike the て form): 日曜日[にちようび]は テニスを したり、 映画[えいが]を 見[み]たり します.",
         "vi": "Dùng để liệt kê tiêu biểu một vài hành động đại diện trong số nhiều việc mà người nói làm ('nào là làm V1, nào là làm V2...'). Thời của câu đặt ở đuôi します / しました cuối cùng."
@@ -73,12 +110,39 @@
       "examples": [
         {
           "jp": "休[やす]みの 日[ひ]は 掃除[そうじ]したり、 洗濯[せんたく]したりします。",
+          "marks": [
+            {
+              "text": "掃除[そうじ]し",
+              "slot": "V1"
+            },
+            {
+              "text": "たり、"
+            },
+            {
+              "text": "洗濯[せんたく]し",
+              "slot": "V2"
+            },
+            {
+              "text": "たり"
+            },
+            {
+              "text": "します"
+            }
+          ],
           "translation": {
             "en": "On my days off I clean, do the laundry and so on.",
             "vi": "Vào ngày nghỉ tôi thường dọn dẹp, giặt giũ và làm những việc tương tự."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/days-off-chores-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái ngày nghỉ vừa quét dọn vừa phơi đồ giặt trong căn phòng nắng."
+        }
+      }
     },
     {
       "id": "narimasu",
@@ -89,6 +153,11 @@
       "pattern": {
         "vi": "A-い → 〜く なります ／ A-な[な] → 〜に なります ／ N に なります"
       },
+      "slots": [
+        "A-い",
+        "A-な",
+        "N"
+      ],
       "explanation": {
         "en": "なります expresses a change: 寒[さむ]く なります (it gets cold), 元気[げんき]に なります (to get better), 25 歳[さい]に なります (to turn 25).",
         "vi": "Biểu thị sự biến đổi sang một trạng thái mới: Tính từ đuôi い bỏ い thêm くなります; Tính từ đuôi な và Danh từ thêm になります ('trở nên... / trở thành...')."
@@ -96,6 +165,15 @@
       "examples": [
         {
           "jp": "日本語[にほんご]が 上手[じょうず]になりましたね。",
+          "marks": [
+            {
+              "text": "上手[じょうず]",
+              "slot": "A-な"
+            },
+            {
+              "text": "になりました"
+            }
+          ],
           "translation": {
             "en": "Your Japanese has got much better!",
             "vi": "Tiếng Nhật của bạn đã trở nên giỏi hơn rồi đấy nhỉ!"
@@ -103,12 +181,29 @@
         },
         {
           "jp": "もうすぐ 暖[あたた]かくなります。",
+          "marks": [
+            {
+              "text": "暖[あたた]か",
+              "slot": "A-い"
+            },
+            {
+              "text": "くなります"
+            }
+          ],
           "translation": {
             "en": "It will soon start getting hot.",
             "vi": "Trời sắp sửa trở nên ấm áp rồi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/getting-better-japanese-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Giáo viên mỉm cười khen học viên nước ngoài đã tiến bộ nhiều, bên cạnh là chồng vở học."
+        }
+      }
     }
   ],
   "dialogues": [
@@ -132,6 +227,9 @@
           "speaker": "mori",
           "jp": "マイさんは 山[やま]に 登[のぼ]った ことが ありますか。",
           "kana": "マイさんは やまに のぼった ことが ありますか。",
+          "grammarIds": [
+            "ta-koto-ga-arimasu"
+          ],
           "translation": {
             "vi": "Mai đã từng leo núi chưa?"
           }
@@ -148,6 +246,9 @@
           "speaker": "mori",
           "jp": "私[わたし]は 二回[にかい] あります。 山[やま]の ホテルに 泊[と]まった ことも ありますよ。",
           "kana": "わたしは にかい あります。 やまの ホテルに とまった ことも ありますよ。",
+          "grammarIds": [
+            "ta-koto-ga-arimasu"
+          ],
           "translation": {
             "vi": "Thầy leo hai lần rồi. Thầy cũng từng trọ ở khách sạn trên núi đấy."
           }
@@ -164,6 +265,9 @@
           "speaker": "mori",
           "jp": "写真[しゃしん]を 撮[と]ったり、 お 茶[ちゃ]を 飲[の]んだり しました。",
           "kana": "しゃしんを とったり、 お ちゃを のんだり しました。",
+          "grammarIds": [
+            "tari-tari"
+          ],
           "translation": {
             "vi": "Thầy chụp ảnh, uống trà, đại loại thế."
           }
@@ -180,6 +284,9 @@
           "speaker": "mori",
           "jp": "大丈夫[だいじょうぶ]ですよ。 マイさんは ジョギングを して いますから、 体[からだ]が 強[つよ]く なりましたね。 登[のぼ]る ことが できますよ。",
           "kana": "だいじょうぶですよ。 マイさんは ジョギングを して いますから、 からだが つよく なりましたね。 のぼる ことが できますよ。",
+          "grammarIds": [
+            "narimasu"
+          ],
           "translation": {
             "vi": "Không sao đâu em. Em chạy bộ nên khỏe lên rồi đấy. Em leo được mà."
           }
@@ -230,6 +337,9 @@
           "speaker": "tanaka",
           "jp": "掃除[そうじ]したり、 洗濯[せんたく]したり します。 時々[ときどき] ゴルフも します。",
           "kana": "そうじしたり、 せんたくしたり します。 ときどき ゴルフも します。",
+          "grammarIds": [
+            "tari-tari"
+          ],
           "translation": {
             "vi": "Anh dọn dẹp, giặt giũ, đại loại thế. Thỉnh thoảng anh cũng chơi golf."
           }
@@ -246,6 +356,9 @@
           "speaker": "tanaka",
           "jp": "ええ。 でも 練習[れんしゅう]して、 だんだん 上手[じょうず]に なりました。",
           "kana": "ええ。 でも れんしゅうして、 だんだん じょうずに なりました。",
+          "grammarIds": [
+            "narimasu"
+          ],
           "translation": {
             "vi": "Ừ. Nhưng anh luyện tập nên dần dần giỏi lên rồi."
           }
@@ -254,6 +367,9 @@
           "speaker": "mai",
           "jp": "私[わたし]は まだ ゴルフを した ことが ありません。",
           "kana": "わたしは まだ ゴルフを した ことが ありません。",
+          "grammarIds": [
+            "ta-koto-ga-arimasu"
+          ],
           "translation": {
             "vi": "Em vẫn chưa từng chơi golf ạ."
           }
@@ -346,6 +462,9 @@
           "speaker": "mai",
           "jp": "乾杯[かんぱい]！ もうすぐ 夏[なつ]に なりますね。 冷[つめ]たい ジュースが おいしいです。",
           "kana": "かんぱい！ もうすぐ なつに なりますね。 つめたい ジュースが おいしいです。",
+          "grammarIds": [
+            "narimasu"
+          ],
           "translation": {
             "vi": "Cạn ly ạ! Sắp sang hè rồi nhỉ. Nước trái cây lạnh ngon quá ạ."
           }

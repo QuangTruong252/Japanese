@@ -11,6 +11,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { db } from '@/lib/db';
 import { loadLessonData } from '@/lib/lessons';
+import { studyHref } from '@/lib/lesson-links';
 import { buildTargetLabels, lessonFromTargetId } from '@/lib/review-queue';
 import { useQuestionPool } from '@/lib/use-question-pool';
 import { weakFilterTypes } from '@/lib/weak-filters';
@@ -26,15 +27,6 @@ const TARGET_TYPE_PRACTICE_MAP: Partial<Record<TargetType, string>> = {
   particle: 'cloze',
   listening: 'listening',
 };
-
-function getAnchor(targetId: string, map: Map<string, string>): string {
-  if (map.has(targetId)) return map.get(targetId)!;
-  const directVocab = /^vocab-([a-zA-Z_-]+)$/.exec(targetId);
-  if (directVocab) return `#vocab-${directVocab[1]}`;
-  const directGrammar = /^grammar-([a-zA-Z_-]+)$/.exec(targetId);
-  if (directGrammar) return `#grammar-${directGrammar[1]}`;
-  return '';
-}
 
 export default function WeakPointsPage() {
   const [picked, setFilter] = useState<TargetType | 'all'>('all');
@@ -81,8 +73,8 @@ export default function WeakPointsPage() {
   const { questions } = useQuestionPool(lessons);
   const labels = useMemo(() => buildTargetLabels(questions), [questions]);
 
-  // Nạp dữ liệu các bài có điểm yếu để map targetId sang anchor (#vocab-<id> hoặc #grammar-<id>)
-  const [anchorMap, setAnchorMap] = useState<Map<string, string>>(new Map());
+  // Nạp dữ liệu các bài có điểm yếu để map targetId sang đích học
+  const [studyMap, setStudyMap] = useState<Map<string, string>>(new Map());
 
   useEffect(() => {
     if (lessons.length === 0) return;
@@ -96,14 +88,14 @@ export default function WeakPointsPage() {
           const padL = String(lNum).padStart(2, '0');
           vocab.forEach((w, idx) => {
             const targetId = `vocab-${padL}-${String(idx + 1).padStart(2, '0')}`;
-            map.set(targetId, `#vocab-${w.id}`);
+            map.set(targetId, `/hoc/${lNum}#vocab-${w.id}`);
           });
           lesson.grammar.forEach((g, idx) => {
             const targetId = `grammar-${padL}-${String(idx + 1).padStart(2, '0')}`;
-            map.set(targetId, `#grammar-${g.id}`);
+            map.set(targetId, `/hoc/${lNum}/ngu-phap/${g.id}`);
           });
         }
-        setAnchorMap(map);
+        setStudyMap(map);
       })
       .catch(() => {});
     return () => {
@@ -154,8 +146,7 @@ export default function WeakPointsPage() {
                     : `/luyen-tap?lessons=${lessonNum}`
                   : '/luyen-tap';
 
-              const anchor = getAnchor(item.targetId, anchorMap);
-              const studyHref = lessonNum > 0 ? `/hoc/${lessonNum}${anchor}` : '/hoc';
+              const studyUrl = studyHref(item.targetId, lessonNum, studyMap);
 
               return (
                 <li
@@ -188,7 +179,7 @@ export default function WeakPointsPage() {
                       Luyện
                     </Link>
                     <Link
-                      href={studyHref}
+                      href={studyUrl}
                       aria-label={`Xem bài ${lessonNum || ''}`}
                       className={cn(
                         buttonVariants({ variant: 'ghost' }),

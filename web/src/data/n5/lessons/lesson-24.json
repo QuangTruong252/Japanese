@@ -20,6 +20,10 @@
       "pattern": {
         "vi": "N1 は 私[わたし]に N2 を くれます"
       },
+      "slots": [
+        "N1",
+        "N2"
+      ],
       "explanation": {
         "en": "くれます is used when someone gives something to the speaker or their family: 佐藤[さとう]さんは 私[わたし]に お 菓子[かし]を くれました. あげます can never be used in that direction.",
         "vi": "Động từ くれます dùng khi người khác tặng hoặc cho chính bản thân người nói (hoặc người thân trong gia đình người nói) một món đồ N2."
@@ -27,12 +31,42 @@
       "examples": [
         {
           "jp": "山田[やまだ]さんは 私[わたし]に 花[はな]をくれました。",
+          "marks": [
+            {
+              "text": "山田[やまだ]さん",
+              "slot": "N1"
+            },
+            {
+              "text": "は"
+            },
+            {
+              "text": "私[わたし]に"
+            },
+            {
+              "text": "花[はな]",
+              "slot": "N2"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "くれました"
+            }
+          ],
           "translation": {
             "en": "Mr. Yamada gave me flowers.",
             "vi": "Anh Yamada đã tặng hoa cho tôi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/given-flowers-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chàng trai tặng bó hoa nhỏ cho cô gái, cô nhận bằng hai tay vui mừng."
+        }
+      }
     },
     {
       "id": "te-agemasu",
@@ -43,6 +77,9 @@
       "pattern": {
         "vi": "V て あげます"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "〜てあげます expresses doing something for someone else's benefit: 私[わたし]は 木村[きむら]さんに 本[ほん]を 貸[か]してあげました. Said straight to the person it can sound condescending, so it is avoided with superiors.",
         "vi": "Diễn tả hành động người nói làm một điều gì đó với mục đích giúp đỡ đối phương. Cần chú ý khi dùng với người lớn tuổi vì có thể tạo cảm giác ban ơn."
@@ -50,12 +87,29 @@
       "examples": [
         {
           "jp": "私[わたし]は 妹[いもうと]に 宿題[しゅくだい]を 教[おし]えてあげました。",
+          "marks": [
+            {
+              "text": "教[おし]え",
+              "slot": "V"
+            },
+            {
+              "text": "てあげました"
+            }
+          ],
           "translation": {
             "en": "I helped my little sister with her homework.",
             "vi": "Tôi đã giảng bài tập giúp cho em gái tôi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/teach-little-sister-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chị ngồi cạnh em gái giảng bài tập, em ngước nhìn chăm chú."
+        }
+      }
     },
     {
       "id": "te-moraimasu",
@@ -66,6 +120,11 @@
       "pattern": {
         "vi": "N1 は N2 に V て もらいます"
       },
+      "slots": [
+        "N1",
+        "N2",
+        "V"
+      ],
       "explanation": {
         "en": "〜てもらいます expresses receiving the favour, with gratitude: 私[わたし]は 山田[やまだ]さんに 図書館[としょかん]の 電話番号[でんわばんごう]を 教[おし]えてもらいました.",
         "vi": "Biểu thị việc chủ ngữ N1 nhận được một hành động giúp đỡ từ người N2, đồng thời hàm chứa lòng biết ơn đối với người đã giúp đỡ mình."
@@ -73,12 +132,36 @@
       "examples": [
         {
           "jp": "友達[ともだち]に 引[ひ]っ 越[こ]しを 手伝[てつだ]ってもらいました。",
+          "marks": [
+            {
+              "text": "友達[ともだち]",
+              "slot": "N2"
+            },
+            {
+              "text": "に"
+            },
+            {
+              "text": "手伝[てつだ]っ",
+              "slot": "V"
+            },
+            {
+              "text": "てもらいました"
+            }
+          ],
           "translation": {
             "en": "A friend helped me with the move.",
             "vi": "Tôi đã được một người bạn giúp đỡ dọn nhà."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/friends-help-move-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người bạn giúp khuân hộp và đèn ra khỏi căn hộ, chủ nhà đứng cảm ơn."
+        }
+      }
     },
     {
       "id": "te-kuremasu",
@@ -89,6 +172,10 @@
       "pattern": {
         "vi": "N は（私[わたし]に）V て くれます"
       },
+      "slots": [
+        "N",
+        "V"
+      ],
       "explanation": {
         "en": "〜てくれます highlights that someone did the favour of their own accord for the speaker: 母[はは]は（私[わたし]に）セーターを 送[おく]ってくれました. The 私[わたし]に is usually left out.",
         "vi": "Diễn tả hành động mà một người nào đó làm việc tốt giúp đỡ người nói (hoặc người trong gia đình người nói) với lòng biết ơn từ phía người nhận."
@@ -96,12 +183,36 @@
       "examples": [
         {
           "jp": "佐藤[さとう]さんは 地図[ちず]をかいてくれました。",
+          "marks": [
+            {
+              "text": "佐藤[さとう]さん",
+              "slot": "N"
+            },
+            {
+              "text": "は"
+            },
+            {
+              "text": "かい",
+              "slot": "V"
+            },
+            {
+              "text": "てくれました"
+            }
+          ],
           "translation": {
             "en": "Ms. Sato drew me a map.",
             "vi": "Chị Sato đã vẽ bản đồ giúp cho tôi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/drew-me-a-map-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái vẽ bản đồ đơn giản trên giấy cho khách xem, khách cảm ơn."
+        }
+      }
     },
     {
       "id": "wa-ga-v",
@@ -112,6 +223,11 @@
       "pattern": {
         "vi": "N1 は N2 が V て くれました"
       },
+      "slots": [
+        "N1",
+        "N2",
+        "V"
+      ],
       "explanation": {
         "en": "When the person who did the favour is new information, they are marked with が: 誰[だれ]が 手伝[てつだ]ってくれましたか。… 母[はは]が 手伝[てつだ]ってくれました.",
         "vi": "Khi muốn nhấn mạnh chính N2 là người đã tự tay làm món đồ hoặc hành động N1 giúp mình, trợ từ が được đặt sau người thực hiện N2."
@@ -119,12 +235,43 @@
       "examples": [
         {
           "jp": "お 弁当[べんとう]は 妻[つま]が 作[つく]ってくれました。",
+          "marks": [
+            {
+              "text": "お 弁当[べんとう]",
+              "slot": "N1"
+            },
+            {
+              "text": "は"
+            },
+            {
+              "text": "妻[つま]",
+              "slot": "N2"
+            },
+            {
+              "text": "が"
+            },
+            {
+              "text": "作[つく]っ",
+              "slot": "V"
+            },
+            {
+              "text": "てくれました"
+            }
+          ],
           "translation": {
             "en": "My wife made the bento for me.",
             "vi": "Cơm hộp này là do chính vợ tôi đã làm giúp cho tôi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/wife-made-bento-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Người đàn ông mở hộp cơm bento vợ làm trong văn phòng, cạnh bàn có ảnh vợ."
+        }
+      }
     }
   ],
   "dialogues": [
@@ -156,6 +303,9 @@
           "speaker": "mai",
           "jp": "うん。 友達[ともだち]に 直[なお]して もらったよ。",
           "kana": "うん。 ともだちに なおして もらったよ。",
+          "grammarIds": [
+            "te-moraimasu"
+          ],
           "translation": {
             "vi": "Vâng. Em đã nhờ bạn sửa giúp rồi."
           }
@@ -172,6 +322,9 @@
           "speaker": "mai",
           "jp": "うん。 パソコンについて 説明[せつめい]して くれた。",
           "kana": "うん。 パソコンについて せつめいして くれた。",
+          "grammarIds": [
+            "te-kuremasu"
+          ],
           "translation": {
             "vi": "Vâng. Bạn ấy còn giải thích cho em về máy tính nữa."
           }
@@ -188,6 +341,9 @@
           "speaker": "mai",
           "jp": "パソコンの 本[ほん]も くれたよ。",
           "kana": "パソコンの ほんも くれたよ。",
+          "grammarIds": [
+            "kuremasu"
+          ],
           "translation": {
             "vi": "Bạn ấy còn cho em cuốn sách về máy tính nữa."
           }
@@ -230,6 +386,10 @@
           "speaker": "mai",
           "jp": "ううん。 料理[りょうり]は 大川[おおかわ]さんが 作[つく]って くれたよ。",
           "kana": "ううん。 りょうりは おおかわさんが つくって くれたよ。",
+          "grammarIds": [
+            "te-kuremasu",
+            "wa-ga-v"
+          ],
           "translation": {
             "vi": "Không. Đồ ăn là chị Ookawa làm giúp em đấy."
           }
@@ -246,6 +406,9 @@
           "speaker": "mai",
           "jp": "友達[ともだち]に 買[か]って もらった。 私[わたし]は 部屋[へや]を 掃除[そうじ]したよ。",
           "kana": "ともだちに かって もらった。 わたしは へやを そうじしたよ。",
+          "grammarIds": [
+            "te-moraimasu"
+          ],
           "translation": {
             "vi": "Em nhờ bạn mua giúp. Còn em thì dọn phòng."
           }
@@ -262,6 +425,9 @@
           "speaker": "mai",
           "jp": "大川[おおかわ]さんは 荷物[にもつ]が 多[おお]かったから、 部屋[へや]まで 持[も]って いって あげた。",
           "kana": "おおかわさんは にもつが おおかったから、 へやまで もって いって あげた。",
+          "grammarIds": [
+            "te-agemasu"
+          ],
           "translation": {
             "vi": "Chị Ookawa có nhiều đồ nên em đã mang giúp về tận phòng chị ấy."
           }

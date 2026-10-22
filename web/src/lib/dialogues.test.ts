@@ -370,3 +370,21 @@ test('hội thoại: cấu trúc, cách đọc, phạm vi từ và thể động
     }
   }
 });
+
+test('grammarIds: thuộc điểm ngữ pháp cùng bài, không trùng, và có ít nhất một dòng được gắn', async () => {
+  let tagged = 0;
+  for (const lesson of AVAILABLE_N5_LESSONS) {
+    const { grammar, dialogues = [] } = await loadLesson(lesson);
+    const grammarIds = new Set(grammar.map((g) => g.id));
+    for (const d of dialogues) {
+      d.lines.forEach((line, i) => {
+        const ids = line.grammarIds ?? [];
+        const at = `bài ${lesson} ${d.id} câu ${i}`;
+        assert.equal(new Set(ids).size, ids.length, `${at}: grammarIds trùng lặp`);
+        for (const id of ids) assert.ok(grammarIds.has(id), `${at}: grammarIds "${id}" không thuộc ngữ pháp bài ${lesson}`);
+        if (ids.length) tagged++;
+      });
+    }
+  }
+  assert.ok(tagged > 0, 'chưa dòng hội thoại nào có grammarIds');
+});

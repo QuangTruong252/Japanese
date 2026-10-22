@@ -16,18 +16,29 @@ export interface IllustrationAsset {
   alt: LocalizedText;
 }
 
+/** Một phần của câu ví dụ thuộc mẫu ngữ pháp, để tô màu và gạch chân. */
+export interface GrammarMark {
+  /** Chuỗi con nguyên văn của `jp` (giữ cả ngoặc furigana) */
+  text: string;
+  /** Phần tử của `GrammarPoint.slots`; bỏ trống = phần cố định của mẫu */
+  slot?: string;
+}
+
 export interface ExampleSentence {
   jp: string; // Furigana bracket notation: "私[わたし]は 学生[がくせい]です"
   kana?: string; // Cách đọc câu để phát âm và hiển thị dưới ví dụ
   translation: LocalizedText;
   note?: LocalizedText;
   audioKey?: string;
+  marks?: GrammarMark[];
 }
 
 export interface GrammarPoint {
   id: string;
   title: LocalizedText;
   pattern: LocalizedText;
+  /** Ô biến của `pattern.vi` theo thứ tự xuất hiện, vd ["N1", "N2"] */
+  slots?: string[];
   explanation: LocalizedText;
   sourceRef?: string;
   examples: ExampleSentence[];
@@ -46,6 +57,8 @@ export interface DialogueLine extends ExampleSentence {
   speaker: string;
   /** Từ vựng (thường là câu giao tiếp) mà câu này dùng, để trang từ vựng trỏ tới đúng câu. */
   vocabIds?: string[];
+  /** Id điểm ngữ pháp cùng bài mà câu này dùng rõ ràng */
+  grammarIds?: string[];
 }
 
 export interface Dialogue {

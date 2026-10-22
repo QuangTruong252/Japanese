@@ -1,0 +1,672 @@
+{
+  "name": "grammar-01-06",
+  "description": "Bài 1–6 — tranh tình huống của ví dụ đầu cho các điểm ngữ pháp.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "group": "grammar",
+      "stem": "office-self-introduction-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A bright office. A young Western man with short brown hair in a shirt and tie stands in the center facing two seated colleagues, bowing slightly with one hand on his chest as he introduces himself. The colleagues, a woman and a man at neat desks, smile and look up at him. Desks, a plant and a window stay simple in the background.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-01.json",
+        "id": "wa-desu"
+      },
+      "alt": {
+        "vi": "Một người đàn ông trẻ đứng giữa văn phòng, hơi cúi chào và đặt tay lên ngực để tự giới thiệu với hai đồng nghiệp đang mỉm cười."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "not-a-student-but-a-worker-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A Brazilian man in a business shirt sits at a tidy office desk with a laptop and a coffee cup, while a college backpack and a stack of textbooks are pushed to the far edge of the desk, making clear that he works rather than studies. A friendly colleague standing beside him points at the backpack with a questioning look, and the man waves one hand gently to say no. Calm office background.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-01.json",
+        "id": "ja-arimasen"
+      },
+      "alt": {
+        "vi": "Một người đàn ông Brazil mặc sơ mi ngồi làm việc ở bàn văn phòng, ba lô và chồng sách học đẩy sang mép bàn, đồng nghiệp chỉ vào ba lô còn anh xua tay phủ nhận."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "asking-if-american-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "At a small gathering in a cozy room, a Japanese woman holds a cup of tea and turns to face a tall Western man with a curious, friendly expression, as if asking where he is from. The man stands in the middle, smiling and about to answer. A small round table with tea cups sits between them. No flags.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-01.json",
+        "id": "desu-ka"
+      },
+      "alt": {
+        "vi": "Trong buổi gặp gỡ, một phụ nữ Nhật cầm tách trà quay sang hỏi chuyện người đàn ông phương Tây cao lớn đang mỉm cười chuẩn bị trả lời."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "also-company-employee-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Two men in business suits stand side by side in an office lobby, each holding an identical briefcase and wearing an identical blank employee badge on a lanyard, both smiling and nodding in the same way so that the similarity between them is obvious. A third man, an Indian businessman in a suit, stands slightly to the left and gestures toward the pair. Simple lobby with a plant and a bench.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-01.json",
+        "id": "mo"
+      },
+      "alt": {
+        "vi": "Hai người đàn ông mặc vest đứng cạnh nhau trong sảnh công ty, cùng xách cặp và đeo thẻ nhân viên, cùng mỉm cười gật đầu giống hệt nhau."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "company-badge-employee-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A Western man in a suit stands in front of the entrance of a modern office building, proudly holding up with one hand the blank ID badge on a lanyard hanging from his neck. A glass door is behind him and a plain blank sign above it, with no letters. A colleague walks in behind him carrying a bag.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-01.json",
+        "id": "no"
+      },
+      "alt": {
+        "vi": "Một người đàn ông phương Tây mặc vest đứng trước cửa tòa nhà công ty, tự hào cầm thẻ nhân viên đeo trên cổ."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "introducing-mr-santos-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A host in a friendly living room gestures with an open palm toward a Brazilian man in a casual jacket who stands beside him, while a woman guest on the other side leans forward with a polite smile. The introduced man stands in the center, smiling and waving slightly. A sofa, a lamp and a small table with tea in the background.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-01.json",
+        "id": "san"
+      },
+      "alt": {
+        "vi": "Chủ nhà đưa tay giới thiệu một người đàn ông Brazil đứng cạnh mình với một vị khách nữ đang nghiêng người chào lịch sự."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "this-book-is-mine-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "In a classroom, a young woman holds a hardcover book with a blank cover close to her chest with one hand and points to herself with the other, smiling. A friend sits across the desk, looking at the book; a pencil case and a few other books lie on the desk. The book is large and clearly visible.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-02.json",
+        "id": "kono-sono-ano"
+      },
+      "alt": {
+        "vi": "Trong lớp học, một cô gái ôm cuốn sách trước ngực, tay kia chỉ vào mình, còn bạn ngồi đối diện nhìn cuốn sách."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "yes-its-a-notebook-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "At a desk, a woman holds up a small black pocket diary and a man across from her points at it with a questioning look, while she nods happily. A pen, a mug and a larger notebook sit on the desk so the diary is clearly the item being identified. Plain office background.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-02.json",
+        "id": "sou-desu"
+      },
+      "alt": {
+        "vi": "Một phụ nữ giơ cuốn sổ tay nhỏ lên và gật đầu xác nhận khi người đàn ông ngồi đối diện chỉ vào nó như đang hỏi."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "this-one-or-that-one-cards-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A woman and a man sit at a table. Between them stand two large blank cards on small easels, one with a bold red circle and one with a bold blue square, so that two clear options exist. The man points at the cards with a questioning expression while the woman points to the red-circle card, smiling. No digits or letters.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-02.json",
+        "id": "ka-ka"
+      },
+      "alt": {
+        "vi": "Một phụ nữ và một người đàn ông ngồi bên bàn có hai tấm thẻ lớn khác nhau; anh chỉ vào thẻ như đang hỏi còn cô chỉ vào tấm thẻ đỏ và mỉm cười."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "computer-book-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A student sits at a library table holding up a thick book whose cover shows a simple drawing of a laptop computer, with an actual laptop open on the table beside the book to make the topic obvious. A friend looks over at the book with interest. Shelves in the background.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-02.json",
+        "id": "no-posesion"
+      },
+      "alt": {
+        "vi": "Một sinh viên ở thư viện giơ cuốn sách dày có hình máy tính xách tay trên bìa, cạnh đó là một chiếc laptop đang mở."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "whose-bag-is-that-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "In a school hallway, a man points toward a lone brown bag lying on a bench in the middle of the frame with a puzzled look, while a young woman standing next to the bench raises her hand and smiles, signaling it belongs to her. A coat rack and a window in the background.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-02.json",
+        "id": "no-sustituto"
+      },
+      "alt": {
+        "vi": "Một người đàn ông chỉ vào chiếc cặp nâu đặt trên ghế với vẻ thắc mắc, còn cô gái đứng cạnh giơ tay cho biết đó là của mình."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "souvenir-gift-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A traveler just back from a trip hands a small gift box wrapped in plain paper with a ribbon, with both hands extended politely, to a smiling woman at her office desk. A small paper bag from the trip sits beside the box. Simple office background.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-02.json",
+        "id": "o-cortesia"
+      },
+      "alt": {
+        "vi": "Một người vừa đi du lịch về hai tay đưa hộp quà gói giấy có dây ruy băng cho một cô đồng nghiệp đang mỉm cười."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "umbrella-not-mine-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "At the entrance of an office on a rainy day, a woman holds up a closed umbrella and shows it to a man, who shakes his head with a polite gentle smile and holds up his own umbrella of another color in his other hand. Raindrops outside the glass door, an umbrella stand in the corner.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-02.json",
+        "id": "sou-desu-ka"
+      },
+      "alt": {
+        "vi": "Ngày mưa ở cửa văn phòng, một phụ nữ giơ chiếc ô lên hỏi, người đàn ông lắc đầu và cầm một chiếc ô khác của mình."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "telephone-in-office-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A small tidy office seen from the front: on a desk in the central area a cream-colored desk telephone is clearly the focus, with a woman standing beside the desk pointing at it while a visitor in a jacket looks where she points. A window and a filing shelf in the background.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-03.json",
+        "id": "wa-lugar-desu"
+      },
+      "alt": {
+        "vi": "Một cô nhân viên đứng cạnh bàn trong văn phòng, chỉ vào chiếc điện thoại để bàn cho vị khách đang nhìn theo."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "where-is-the-restroom-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "In a spacious train station concourse, a traveler with a small rolling suitcase looks around with a questioning expression and holds out one palm, while a station staff member in a uniform cap faces him and points down a corridor. The corridor ends in a plain open doorway. No signs with letters or pictograms.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-03.json",
+        "id": "doko-dochira"
+      },
+      "alt": {
+        "vi": "Ở sảnh nhà ga, một du khách kéo vali nhìn quanh hỏi đường, nhân viên đồng phục chỉ tay về cuối hành lang."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "japanese-made-computer-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "In a computer shop, a customer in a casual jacket points at a laptop on a display table with a questioning look, while a shop assistant gestures proudly toward the laptop with an open palm. Two or three other laptops sit on the table. Clean shop interior.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-03.json",
+        "id": "no-origen"
+      },
+      "alt": {
+        "vi": "Trong cửa hàng máy tính, khách chỉ vào một chiếc laptop hỏi han còn nhân viên tự hào giới thiệu chiếc máy."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "elevator-over-there-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "In a department store hall, a customer looks around with an inquiring look toward an elevator door on the far side of the hall, while a female store clerk in a uniform extends her arm and points clearly in that direction. A bench and a potted plant in the foreground.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-03.json",
+        "id": "ko-so-a-do"
+      },
+      "alt": {
+        "vi": "Trong trung tâm thương mại, nhân viên nữ đưa tay chỉ về phía thang máy ở cuối sảnh cho vị khách đang hỏi đường."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "where-are-you-from-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "At a welcome party, a smiling Japanese woman in a simple casual dress holds a cup of tea and politely faces an American man holding a small cup, with an open friendly gesture. Background of paper lanterns and a low table with snacks. No flags.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-03.json",
+        "id": "o-cortesia-3"
+      },
+      "alt": {
+        "vi": "Ở buổi tiệc chào mừng, một phụ nữ Nhật lịch sự trò chuyện, hỏi về quê hương của người đàn ông Mỹ đang cầm tách trà."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "what-time-is-it-now-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A man in a hallway looks at a large analog wall clock showing ten past seven, with his hand raised to his chin, while a woman in a cardigan beside him also looks up at the clock. The clock is big and sits in the upper center of the frame, with only simple tick marks on its face. A coat rack nearby.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-04.json",
+        "id": "ima-nanji"
+      },
+      "alt": {
+        "vi": "Một người đàn ông và một phụ nữ cùng ngước nhìn chiếc đồng hồ treo tường lớn chỉ bảy giờ mười."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "study-every-day-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A student sits at a wooden desk by a window with an open notebook, a pencil in hand, studying with calm concentration; a stack of textbooks and a small desk lamp on the desk, and a wall calendar with a plain empty grid on the wall behind him. Warm daylight from the window.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-04.json",
+        "id": "verbos-masu"
+      },
+      "alt": {
+        "vi": "Một sinh viên chăm chú học bài ở bàn cạnh cửa sổ, sách vở chất đống và cây đèn nhỏ, trên tường có tờ lịch."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "wake-up-at-six-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A bedroom in early morning, soft sunrise light through the window; a young man sits up in bed stretching his arms and yawning, with an analog alarm clock on the bedside table showing six o'clock. Simple bed, bedside table and curtains.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-04.json",
+        "id": "ni-tiempo"
+      },
+      "alt": {
+        "vi": "Buổi sáng sớm trong phòng ngủ, một chàng trai ngồi dậy vươn vai ngáp, đồng hồ báo thức bên giường chỉ sáu giờ."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "bank-open-nine-to-three-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "The front of a small bank building in the central area, its glass door open and a plain blank sign above it; to the left of the door a round wall clock shows nine o'clock and to the right another round wall clock shows three o'clock, placed symmetrically on the facade to show the opening hours. A customer walks in. No letters or digits.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-04.json",
+        "id": "kara-made"
+      },
+      "alt": {
+        "vi": "Mặt tiền ngân hàng nhỏ, cửa mở, hai chiếc đồng hồ hai bên chỉ chín giờ và ba giờ, một khách đang bước vào."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "saturday-and-sunday-off-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A happy couple relaxes on a sofa in a living room on a sunny weekend morning, with two cups of tea on a low table, an open book and a houseplant, and a window showing blue sky. Two cushions sit side by side on the sofa. The mood is cozy and relaxed, clearly days off.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-04.json",
+        "id": "to"
+      },
+      "alt": {
+        "vi": "Hai người thư giãn trên sofa vào buổi sáng cuối tuần nắng đẹp với tách trà và cuốn sách trên bàn thấp."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "hard-work-isnt-it-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A young man sits at a library desk at night, studying with a tall stack of books and a desk lamp, looking tired but determined, while a friend sits next to him and pats his shoulder sympathetically with a kind look. A wall clock above shows around ten. Warm lamp glow.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-04.json",
+        "id": "ne"
+      },
+      "alt": {
+        "vi": "Một chàng trai học bài khuya ở thư viện bên chồng sách cao, người bạn bên cạnh vỗ vai thông cảm, đồng hồ chỉ khoảng mười giờ."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "going-to-kyoto-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A traveler with a backpack stands on the platform of a small, calm train station facing a waiting local train, with a pagoda silhouette in the distant hills behind the station to suggest an old Japanese city. He holds a ticket in one hand and smiles with anticipation. Cherry trees at the platform edge.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-05.json",
+        "id": "e-ikimasu"
+      },
+      "alt": {
+        "vi": "Một du khách đeo ba lô đứng ở sân ga cầm vé, phía xa đồi núi có ngọn tháp cổ, chuẩn bị lên tàu đi cố đô."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "stayed-home-all-day-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A man in comfortable home clothes lounges on a sofa in a living room with a blanket and a mug, reading a magazine, while the front door of the room is clearly closed and his shoes sit neatly by the door, unused. A calm gray sky outside the window. Cozy and still.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-05.json",
+        "id": "doko-mo"
+      },
+      "alt": {
+        "vi": "Một người đàn ông mặc đồ ở nhà nằm đọc tạp chí trên sofa, giày để yên cạnh cửa, trời ngoài cửa sổ xám lặng."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "commute-by-train-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Inside a clean commuter train car, a man in a business suit holds a hanging strap with one hand and a briefcase with the other, looking out the window at passing city rooftops. A few other passengers sit in the background seats. Bright daylight through the windows.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-05.json",
+        "id": "de-vehiculo"
+      },
+      "alt": {
+        "vi": "Trong toa tàu điện, một người đàn ông mặc vest cầm tay vịn và cặp, nhìn ra cửa sổ thành phố đang lướt qua."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "came-to-japan-with-family-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "In a bright airport arrival hall, a family of four, a mother, a father, a boy and a girl, walk together toward the viewer with suitcases and happy faces, the parents holding the children by the hands. A large window with an airplane visible outside. No signs with letters.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-05.json",
+        "id": "to-persona"
+      },
+      "alt": {
+        "vi": "Gia đình bốn người kéo vali, nắm tay nhau bước ra sảnh sân bay, ngoài cửa kính có máy bay."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "when-did-you-come-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A woman sits at a cafe table with a cup of coffee, leaning forward with a curious expression and her chin on her hand as she talks to a foreign man across from her, who is smiling and pointing to a wall calendar behind him that has one date circled in red, no digits visible. Cafe interior with a window.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-05.json",
+        "id": "itsu"
+      },
+      "alt": {
+        "vi": "Một phụ nữ chống cằm tò mò hỏi chuyện người đàn ông nước ngoài, anh mỉm cười chỉ lên tờ lịch có khoanh tròn một ngày."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "this-train-doesnt-go-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "On a train platform, a station staff member in a uniform cap and white gloves points firmly but kindly at a train in the distance with one hand and raises the other in a gentle warning gesture, while a surprised passenger holding a ticket looks at him. Platform and train stay simple.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-05.json",
+        "id": "yo"
+      },
+      "alt": {
+        "vi": "Nhân viên nhà ga đồng phục đưa tay cảnh báo, chỉ chuyến tàu ở xa, hành khách cầm vé ngạc nhiên nhìn lại."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "nice-weather-isnt-it-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Two neighbors stand on a quiet residential street, both looking up at a bright blue sky with white clouds, one of them holding a shopping bag, nodding and smiling in agreement. A hedge, a house and a tree with fresh leaves. Peaceful sunny mood.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-05.json",
+        "id": "sou-desu-ne"
+      },
+      "alt": {
+        "vi": "Hai người hàng xóm đứng trên phố yên tĩnh cùng ngước nhìn bầu trời xanh nắng đẹp, mỉm cười gật đầu đồng ý."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "eating-bread-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A young woman sits at a breakfast table by a window, taking a bite of a slice of bread with jam, with a cup of coffee, a small plate and a butter dish before her. Sunlit kitchen with a plant on the sill. The bread is clearly the focus.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-06.json",
+        "id": "o-transitivo"
+      },
+      "alt": {
+        "vi": "Một cô gái ngồi ăn sáng bên cửa sổ, đang cắn miếng bánh mì phết mứt, bên cạnh có tách cà phê."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "playing-tennis-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "On an outdoor tennis court in the center of the frame, a man in a white shirt and shorts swings a racket to hit a yellow ball in mid-air, with a net across the court behind him and green trees beyond. Clear, dynamic but simple pose, bright sunny day.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-06.json",
+        "id": "o-shimasu"
+      },
+      "alt": {
+        "vi": "Trên sân quần vợt, một người đàn ông mặc áo trắng vung vợt đánh quả bóng vàng đang bay giữa không trung."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "what-will-you-do-monday-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Two coworkers chat by a coffee machine in an office break room; one holds a paper cup and looks curious with a raised eyebrow, while the other holds a travel guidebook with a plain cover and has a small suitcase beside him, smiling about his plans. A window and a small table behind them.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-06.json",
+        "id": "nani-o-shimasu-ka"
+      },
+      "alt": {
+        "vi": "Hai đồng nghiệp trò chuyện ở góc pha cà phê, một người tò mò hỏi, người kia cầm sách hướng dẫn du lịch với chiếc vali nhỏ bên cạnh."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "what-is-that-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "In a gift shop, a customer picks up an unusual carved wooden object from a shelf and holds it up toward a smiling shop owner behind the counter, tilting his head in puzzlement. The shelf holds a few simple trinkets. Warm shop interior.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-06.json",
+        "id": "nan-nani"
+      },
+      "alt": {
+        "vi": "Trong cửa hàng quà tặng, khách cầm một món đồ gỗ lạ giơ lên hỏi, chủ tiệm mỉm cười sau quầy."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "buying-newspaper-at-station-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "At a small station kiosk, a commuter in a coat hands coins to a vendor and takes a folded newspaper from the counter, with a train stopped on a platform behind. The kiosk has a plain blank awning. A few magazines on display with abstract covers.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-06.json",
+        "id": "de-lugar"
+      },
+      "alt": {
+        "vi": "Ở quầy bán hàng trong ga, một người đi làm đưa tiền mua tờ báo gấp, phía sau có đoàn tàu dừng ở sân ga."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "invite-to-drink-beer-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "In a cozy, simple pub-style room, a man raises a mug of beer toward a female colleague in a friendly invitation, a second mug already foaming on the table, with small dishes and a paper lantern in the background. She smiles and reaches for the mug.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-06.json",
+        "id": "masen-ka"
+      },
+      "alt": {
+        "vi": "Trong quán nhậu ấm cúng, một người đàn ông nâng cốc bia mời đồng nghiệp nữ, cô mỉm cười đưa tay nhận."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "meet-at-station-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Two friends talk beside the entrance of a train station, one pointing at a big clock tower with the hands at ten o'clock, the other nodding and smiling, both with small bags. Station entrance and a few trees. Clear, friendly mood.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-06.json",
+        "id": "mashou"
+      },
+      "alt": {
+        "vi": "Hai người bạn trò chuyện ở cửa ga, một người chỉ vào tháp đồng hồ chỉ mười giờ, người kia gật đầu mỉm cười."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "cherry-blossom-picnic-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Under a large cherry tree in full pink bloom in a park, two friends sit on a picnic blanket with a small basket and rice balls, one tilting her head surprised and delighted as the other points up at the blossoms. Falling petals, simple background.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-06.json",
+        "id": "ka-tema"
+      },
+      "alt": {
+        "vi": "Dưới gốc anh đào nở hồng trong công viên, hai người bạn ngồi trên tấm thảm picnic, một người chỉ lên hoa, người kia vui ngạc nhiên."
+      }
+    }
+  ]
+}

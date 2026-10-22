@@ -28,12 +28,28 @@
       "examples": [
         {
           "jp": "あした 東京[とうきょう]へ 行[い]く？…うん、 行[い]く。",
+          "marks": [
+            {
+              "text": "行[い]く"
+            },
+            {
+              "text": "行[い]く"
+            }
+          ],
           "translation": {
             "en": "Are you going to Tokyo tomorrow? …Yes, I am.",
             "vi": "Ngày mai cậu có đi Tokyo không? …Ừ, có đi chứ."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/casual-friends-walking-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người bạn trẻ đi cạnh nhau nói chuyện thân mật về chuyến đi ngày mai."
+        }
+      }
     },
     {
       "id": "uso-estilos",
@@ -52,12 +68,28 @@
       "examples": [
         {
           "jp": "はい → うん ／ いいえ → ううん",
+          "marks": [
+            {
+              "text": "うん"
+            },
+            {
+              "text": "ううん"
+            }
+          ],
           "translation": {
             "en": "Yes and no have plain versions too.",
             "vi": "Đồng ý: hai → un ／ Từ chối: iie → uun."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/nod-and-shake-head-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Hai người bạn ngồi đối diện, một người gật đầu cười, người kia lắc đầu vui vẻ."
+        }
+      }
     },
     {
       "id": "conversacion-informal",
@@ -76,6 +108,14 @@
       "examples": [
         {
           "jp": "ご 飯[はん][を] 食[た]べた？…ううん、まだ。",
+          "marks": [
+            {
+              "text": "[を]"
+            },
+            {
+              "text": "？"
+            }
+          ],
           "translation": {
             "en": "Have you eaten? …No, not yet.",
             "vi": "Cậu ăn cơm chưa? …Chưa, tớ vẫn chưa."
@@ -83,12 +123,28 @@
         },
         {
           "jp": "その 傘[かさ]、いいけど、 高[たか]かった？",
+          "marks": [
+            {
+              "text": "けど"
+            },
+            {
+              "text": "？"
+            }
+          ],
           "translation": {
             "en": "That umbrella is nice — was it expensive?",
             "vi": "Cây dù đó đẹp đấy chứ, mà có đắt không cậu?"
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/not-eaten-yet-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Cô gái hỏi bạn đã ăn cơm chưa, bạn nhún vai vì chưa ăn, nồi cơm đang bốc hơi."
+        }
+      }
     }
   ],
   "dialogues": [
@@ -112,6 +168,9 @@
           "speaker": "tomodachi",
           "jp": "マイ、 今晩[こんばん]、 暇[ひま]？",
           "kana": "マイ、 こんばん、 ひま？",
+          "grammarIds": [
+            "conversacion-informal"
+          ],
           "translation": {
             "vi": "Mai, tối nay cậu rảnh không?"
           }
@@ -120,6 +179,10 @@
           "speaker": "mai",
           "jp": "うん、 暇[ひま]。 どうして？",
           "kana": "うん、 ひま。 どうして？",
+          "grammarIds": [
+            "uso-estilos",
+            "conversacion-informal"
+          ],
           "translation": {
             "vi": "Ừ, rảnh. Sao thế?"
           },
@@ -131,6 +194,10 @@
           "speaker": "tomodachi",
           "jp": "いっしょに ごはんを 食[た]べない？ すしと カレー、 どっちが いい？",
           "kana": "いっしょに ごはんを たべない？ すしと カレー、 どっちが いい？",
+          "grammarIds": [
+            "estilos",
+            "conversacion-informal"
+          ],
           "translation": {
             "vi": "Mình đi ăn cơm cùng nhau không? Sushi với cà ri, cậu thích món nào hơn?"
           }
@@ -139,6 +206,9 @@
           "speaker": "mai",
           "jp": "すしが いい。 カレーは きのう 食[た]べた。",
           "kana": "すしが いい。 カレーは きのう たべた。",
+          "grammarIds": [
+            "estilos"
+          ],
           "translation": {
             "vi": "Sushi đi. Cà ri hôm qua mình ăn rồi."
           }
@@ -147,6 +217,10 @@
           "speaker": "tomodachi",
           "jp": "じゃ、 すしを 食[た]べに 行[い]く？",
           "kana": "じゃ、 すしを たべに いく？",
+          "grammarIds": [
+            "estilos",
+            "conversacion-informal"
+          ],
           "translation": {
             "vi": "Vậy mình đi ăn sushi nhé?"
           }
@@ -155,6 +229,10 @@
           "speaker": "mai",
           "jp": "うん。 あっちの 店[みせ]が おいしいよ。",
           "kana": "うん。 あっちの みせが おいしいよ。",
+          "grammarIds": [
+            "estilos",
+            "uso-estilos"
+          ],
           "translation": {
             "vi": "Ừ. Quán đằng kia ngon đấy."
           }
@@ -163,6 +241,9 @@
           "speaker": "tomodachi",
           "jp": "どれ？ あの 赤[あか]い 店[みせ]？",
           "kana": "どれ？ あの あかい みせ？",
+          "grammarIds": [
+            "conversacion-informal"
+          ],
           "translation": {
             "vi": "Quán nào? Quán màu đỏ kia à?"
           }
@@ -171,6 +252,10 @@
           "speaker": "mai",
           "jp": "ううん、 あの 白[しろ]い 店[みせ]。 あそこの すしは 安[やす]いよ。",
           "kana": "ううん、 あの しろい みせ。 あそこの すしは やすいよ。",
+          "grammarIds": [
+            "estilos",
+            "uso-estilos"
+          ],
           "translation": {
             "vi": "Không, quán màu trắng kia cơ. Sushi ở đó rẻ lắm."
           },
@@ -208,6 +293,10 @@
           "speaker": "tanaka",
           "jp": "人[ひと]が 多[おお]いね。 マイさん、 疲[つか]れなかった？",
           "kana": "ひとが おおいね。 マイさん、 つかれなかった？",
+          "grammarIds": [
+            "estilos",
+            "conversacion-informal"
+          ],
           "translation": {
             "vi": "Đông người quá nhỉ. Đi vừa rồi em có mệt không?"
           }
@@ -216,6 +305,10 @@
           "speaker": "mai",
           "jp": "ううん、 大丈夫[だいじょうぶ]。 とても 楽[たの]しいよ。",
           "kana": "ううん、 だいじょうぶ。 とても たのしいよ。",
+          "grammarIds": [
+            "estilos",
+            "uso-estilos"
+          ],
           "translation": {
             "vi": "Không, em ổn. Vui lắm anh."
           }
@@ -224,6 +317,10 @@
           "speaker": "tanaka",
           "jp": "これ、 アイスクリーム。 よかったら、 食[た]べて。 僕[ぼく]も 食[た]べたけど、 おいしいよ。",
           "kana": "これ、 アイスクリーム。 よかったら、 たべて。 ぼくも たべたけど、 おいしいよ。",
+          "grammarIds": [
+            "estilos",
+            "conversacion-informal"
+          ],
           "translation": {
             "vi": "Kem này. Em ăn nhé? Anh cũng ăn rồi, ngon lắm."
           },
@@ -235,6 +332,9 @@
           "speaker": "mai",
           "jp": "ありがとう。 でも もう たくさん 食[た]べたよ。",
           "kana": "ありがとう。 でも もう たくさん たべたよ。",
+          "grammarIds": [
+            "estilos"
+          ],
           "translation": {
             "vi": "Cảm ơn anh. Nhưng em ăn nhiều rồi."
           }
@@ -243,6 +343,10 @@
           "speaker": "tanaka",
           "jp": "そう。 じゃ、 あっちの 店[みせ]を 見[み]に 行[い]かない？",
           "kana": "そう。 じゃ、 あっちの みせを みに いかない？",
+          "grammarIds": [
+            "estilos",
+            "conversacion-informal"
+          ],
           "translation": {
             "vi": "Thế à. Vậy mình sang xem quán bên kia nhé?"
           }
@@ -251,6 +355,10 @@
           "speaker": "mai",
           "jp": "うん。 着物[きもの]が たくさん あるね。",
           "kana": "うん。 きものが たくさん あるね。",
+          "grammarIds": [
+            "estilos",
+            "uso-estilos"
+          ],
           "translation": {
             "vi": "Ừ. Nhiều kimono quá anh nhỉ."
           }
@@ -259,6 +367,11 @@
           "speaker": "tanaka",
           "jp": "うん。 いろいろ あるけど、 ちょっと 高[たか]いよ。",
           "kana": "うん。 いろいろ あるけど、 ちょっと たかいよ。",
+          "grammarIds": [
+            "estilos",
+            "conversacion-informal",
+            "uso-estilos"
+          ],
           "translation": {
             "vi": "Ừ. Nhiều loại lắm, nhưng hơi đắt đấy."
           }
@@ -267,6 +380,10 @@
           "speaker": "mai",
           "jp": "うん。 見[み]るだけでも 楽[たの]しいよ。",
           "kana": "うん。 みるだけでも たのしいよ。",
+          "grammarIds": [
+            "estilos",
+            "uso-estilos"
+          ],
           "translation": {
             "vi": "Ừ. Chỉ xem thôi cũng vui anh nhỉ."
           }

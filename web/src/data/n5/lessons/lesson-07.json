@@ -21,6 +21,10 @@
         "en": "tool で V",
         "vi": "công cụ で V"
       },
+      "slots": [
+        "công cụ",
+        "V"
+      ],
       "explanation": {
         "en": "で also marks the tool or means you do something with: はしで 食[た]べます (to eat with chopsticks), 日本語[にほんご]で レポートを 書[か]きます (to write the report in Japanese).",
         "vi": "Trợ từ で đứng sau danh từ chỉ công cụ, phương tiện thực hiện hoặc ngôn ngữ giao tiếp ('bằng...')."
@@ -28,6 +32,19 @@
       "examples": [
         {
           "jp": "はしで 食[た]べます。",
+          "marks": [
+            {
+              "text": "はし",
+              "slot": "công cụ"
+            },
+            {
+              "text": "で"
+            },
+            {
+              "text": "食[た]べます",
+              "slot": "V"
+            }
+          ],
           "translation": {
             "en": "I eat with chopsticks.",
             "vi": "Tôi ăn bằng đũa."
@@ -35,12 +52,33 @@
         },
         {
           "jp": "日本語[にほんご]で 手紙[てがみ]を 書[か]きます。",
+          "marks": [
+            {
+              "text": "日本語[にほんご]",
+              "slot": "công cụ"
+            },
+            {
+              "text": "で"
+            },
+            {
+              "text": "書[か]きます",
+              "slot": "V"
+            }
+          ],
           "translation": {
             "en": "I write the letter in Japanese.",
             "vi": "Tôi viết thư bằng tiếng Nhật."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/eating-with-chopsticks-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một người ngồi bên bàn dùng đũa gắp mì từ bát sứ lên, bên cạnh có đĩa dưa muối và tách trà."
+        }
+      }
     },
     {
       "id": "wa-nan-desu-ka",
@@ -52,6 +90,10 @@
         "en": "「word」は 〜語[ご]で 何[なん]ですか",
         "vi": "「từ」は 〜語[ご]で 何[なん]ですか"
       },
+      "slots": [
+        "từ",
+        "〜"
+      ],
       "explanation": {
         "en": "This asks how to say a word in another language: 「Thank you」は 日本語[にほんご]で 何[なん]ですか.",
         "vi": "Mẫu câu dùng để hỏi một từ hoặc cụm từ trong tiếng Nhật tương đương với từ gì trong ngôn ngữ khác (hoặc ngược lại)."
@@ -59,12 +101,39 @@
       "examples": [
         {
           "jp": "「ありがとう」はスペイン 語[ご]で 何[なん]ですか。…「Gracias」です。",
+          "marks": [
+            {
+              "text": "「ありがとう」",
+              "slot": "từ"
+            },
+            {
+              "text": "は"
+            },
+            {
+              "text": "スペイン",
+              "slot": "〜"
+            },
+            {
+              "text": "語[ご]で"
+            },
+            {
+              "text": "何[なん]ですか"
+            }
+          ],
           "translation": {
             "en": "How do you say \"arigatou\" in English? …You say \"thank you\".",
             "vi": "«Arigatou» trong tiếng Tây Ban Nha là gì? …Là «Gracias»."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/thank-you-in-spanish-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Trong lớp ngoại ngữ, cô giáo cầm tấm thẻ minh họa món quà cảm ơn, một học sinh giơ tay hỏi, bạn bên cạnh cầm từ điển."
+        }
+      }
     },
     {
       "id": "agemasu",
@@ -76,6 +145,10 @@
         "en": "person に N を あげます／貸[か]します／教[おし]えます",
         "vi": "người に N を あげます／貸[か]します／教[おし]えます"
       },
+      "slots": [
+        "người",
+        "N"
+      ],
       "explanation": {
         "en": "With verbs like あげます (to give), 貸[か]します (to lend) or 教[おし]えます (to teach), the particle に marks the recipient.",
         "vi": "Trợ từ に chỉ người tiếp nhận hành động từ người nói hoặc chủ ngữ: tặng (あげます), cho mượn (貸します), dạy (教えます)."
@@ -83,12 +156,39 @@
       "examples": [
         {
           "jp": "木村[きむら]さんに 花[はな]を あげます。",
+          "marks": [
+            {
+              "text": "木村[きむら]さん",
+              "slot": "người"
+            },
+            {
+              "text": "に"
+            },
+            {
+              "text": "花[はな]",
+              "slot": "N"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "あげます"
+            }
+          ],
           "translation": {
             "en": "I give flowers to Ms. Kimura.",
             "vi": "Tôi tặng hoa cho chị Kimura."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/giving-flowers-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một phụ nữ trao bó hoa gói giấy cho đồng nghiệp nữ đang mỉm cười đưa tay đón ở cửa văn phòng."
+        }
+      }
     },
     {
       "id": "moraimasu",
@@ -100,6 +200,10 @@
         "en": "person に N を もらいます／借[か]ります／習[なら]います",
         "vi": "người に N を もらいます／借[か]ります／習[なら]います"
       },
+      "slots": [
+        "người",
+        "N"
+      ],
       "explanation": {
         "en": "With もらいます (to receive), 借[か]ります (to borrow) and 習[なら]います (to learn from someone), に marks the person the thing or knowledge comes from. から can also be used, and is required when the source is an organisation.",
         "vi": "Trợ từ に chỉ người mà từ đó chủ ngữ nhận được hành động: nhận (もらいます), mượn (借ります), học (習います). Khi đối tượng là tổ chức, trường học thì có thể thay に bằng から."
@@ -107,12 +211,39 @@
       "examples": [
         {
           "jp": "山田[やまだ]さんに 辞書[じしょ]を もらいました。",
+          "marks": [
+            {
+              "text": "山田[やまだ]さん",
+              "slot": "người"
+            },
+            {
+              "text": "に"
+            },
+            {
+              "text": "辞書[じしょ]",
+              "slot": "N"
+            },
+            {
+              "text": "を"
+            },
+            {
+              "text": "もらいました"
+            }
+          ],
           "translation": {
             "en": "Mr. Yamada gave me a dictionary (I received it from him).",
             "vi": "Tôi đã nhận được cuốn từ điển từ anh Yamada."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/receiving-a-dictionary-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Một học sinh hai tay nhận cuốn từ điển dày từ anh khóa trên và cúi đầu cảm ơn ở hành lang trường."
+        }
+      }
     },
     {
       "id": "mou-mashita",
@@ -123,6 +254,9 @@
       "pattern": {
         "vi": "もう V ました"
       },
+      "slots": [
+        "V"
+      ],
       "explanation": {
         "en": "もう with the past means \"already\": もう 昼[ひる]ごはんを 食[た]べました. The negative answer is まだです (not yet), never 食[た]べませんでした, which would sound as if you had decided not to eat.",
         "vi": "Phó từ もう kết hợp với động từ ở dạng quá khứ để diễn tả hành động đã hoàn tất. Nếu chưa hoàn thành thì trả lời: いいえ、まだです (chưa, vẫn chưa)."
@@ -130,12 +264,32 @@
       "examples": [
         {
           "jp": "もう 荷物[にもつ]を 送[おく]りましたか。…いいえ、まだです。",
+          "marks": [
+            {
+              "text": "もう"
+            },
+            {
+              "text": "送[おく]り",
+              "slot": "V"
+            },
+            {
+              "text": "ました"
+            }
+          ],
           "translation": {
             "en": "Have you sent the parcel yet? …No, not yet.",
             "vi": "Bạn đã gửi hành lý đi rồi à? …Chưa, tôi vẫn chưa gửi."
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/already-sent-the-package-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Ở quầy bưu điện, nhân viên đặt gói hàng buộc dây lên cân, khách cầm phiếu đứng đợi, một nhân viên khác xếp hộp vào xe đẩy."
+        }
+      }
     },
     {
       "id": "omision-particulas",
@@ -153,12 +307,25 @@
       "examples": [
         {
           "jp": "コーヒー[を]、いかがですか。",
+          "marks": [
+            {
+              "text": "[を]"
+            }
+          ],
           "translation": {
             "en": "Would you like a coffee?",
             "vi": "Bạn dùng một ly cà phê nhé?"
           }
         }
-      ]
+      ],
+      "illustration": {
+        "src": "/assets/illustrations/grammar/coffee-offer-v1.webp",
+        "width": 800,
+        "height": 600,
+        "alt": {
+          "vi": "Chủ nhà đeo tạp dề bưng khay cà phê nóng mời vị khách ngồi trên sofa, vị khách giơ tay nhận lịch sự."
+        }
+      }
     }
   ],
   "dialogues": [
@@ -204,6 +371,9 @@
         {
           "speaker": "mai",
           "jp": "失礼[しつれい]します。 これ、ベトナムの お 茶[ちゃ]です。 母[はは]に もらいました。 どうぞ。",
+          "grammarIds": [
+            "moraimasu"
+          ],
           "kana": "しつれいします。 これ、ベトナムの お ちゃです。 ははに もらいました。 どうぞ。",
           "translation": {
             "vi": "Em xin phép ạ. Đây là trà Việt Nam, mẹ em cho em đấy ạ. Mời anh."
@@ -238,6 +408,9 @@
         {
           "speaker": "tanaka",
           "jp": "会社[かいしゃ]の 人[ひと]に もらいました。",
+          "grammarIds": [
+            "moraimasu"
+          ],
           "kana": "かいしゃの ひとに もらいました。",
           "translation": {
             "vi": "Anh được người ở công ty tặng đấy."
@@ -302,6 +475,9 @@
         {
           "speaker": "tanaka",
           "jp": "はしで 食[た]べますか、 フォークで 食[た]べますか。",
+          "grammarIds": [
+            "de-instrumento"
+          ],
           "kana": "はしで たべますか、 フォークで たべますか。",
           "translation": {
             "vi": "Em ăn bằng đũa hay bằng nĩa?"
@@ -310,6 +486,9 @@
         {
           "speaker": "mai",
           "jp": "はしで 食[た]べます。 田中[たなか]さんは？",
+          "grammarIds": [
+            "de-instrumento"
+          ],
           "kana": "はしで たべます。 たなかさんは？",
           "translation": {
             "vi": "Em ăn bằng đũa ạ. Còn anh?"
@@ -318,6 +497,9 @@
         {
           "speaker": "tanaka",
           "jp": "私[わたし]も 魚[さかな]は はしで 食[た]べます。 肉[にく]は ナイフと フォークで 食[た]べます。",
+          "grammarIds": [
+            "de-instrumento"
+          ],
           "kana": "わたしも さかなは はしで たべます。 にくは ナイフと フォークで たべます。",
           "translation": {
             "vi": "Anh cũng ăn cá bằng đũa. Còn thịt thì anh ăn bằng dao với nĩa."
@@ -334,6 +516,9 @@
         {
           "speaker": "tanaka",
           "jp": "マイさん、もう 食[た]べましたか。",
+          "grammarIds": [
+            "mou-mashita"
+          ],
           "kana": "マイさん、もう たべましたか。",
           "translation": {
             "vi": "Mai, em ăn xong rồi à?"
@@ -342,6 +527,9 @@
         {
           "speaker": "mai",
           "jp": "はい、もう 食[た]べました。 ごちそうさま でした。",
+          "grammarIds": [
+            "mou-mashita"
+          ],
           "kana": "はい、もう たべました。 ごちそうさま でした。",
           "translation": {
             "vi": "Vâng, em ăn xong rồi ạ. Em cảm ơn anh về bữa ăn ạ."
@@ -379,6 +567,9 @@
         {
           "speaker": "mori",
           "jp": "マイさん、レポートは もう 書[か]きましたか。",
+          "grammarIds": [
+            "mou-mashita"
+          ],
           "kana": "マイさん、レポートは もう かきましたか。",
           "translation": {
             "vi": "Mai này, em viết báo cáo xong chưa?"
@@ -387,6 +578,9 @@
         {
           "speaker": "mai",
           "jp": "はい、きのう パソコンで 書[か]きました。",
+          "grammarIds": [
+            "de-instrumento"
+          ],
           "kana": "はい、きのう パソコンで かきました。",
           "translation": {
             "vi": "Rồi ạ, hôm qua em viết bằng máy tính rồi ạ."
@@ -395,6 +589,9 @@
         {
           "speaker": "mori",
           "jp": "私[わたし]に メールで 送[おく]りましたか。",
+          "grammarIds": [
+            "de-instrumento"
+          ],
           "kana": "わたしに メールで おくりましたか。",
           "translation": {
             "vi": "Em đã gửi mail cho thầy chưa?"

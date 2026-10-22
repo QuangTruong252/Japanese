@@ -133,6 +133,7 @@ lật thẻ flashcard (lật qua lại được), easing `ease-smooth-out`. Khô
 | `/hoc` | **v3** — G2 đã duyệt 2026-10-20 (lộ trình thẻ tranh so le, không có mockup ảnh) | `design/hoc/sketch-lo-trinh.png`, `as-built-*` |
 | `/hoc/[so]` | **v3** — G2 đã duyệt 2026-10-19 (tab Từ vựng · Ngữ pháp, lưới/danh sách) | `design/bai/mockup-v2-*` |
 | `/hoc/[so]/tu-vung` | **v3** — G2 đã duyệt | `design/tu-vung/` |
+| Tab Ngữ pháp (mục lục), `/hoc/[so]/ngu-phap/[id]` | **v3** — G2 đã duyệt 2026-10-22 (giải thích mở sẵn dưới mẫu câu, mẫu câu chia ô màu `chart-1/3/4/5`, ví dụ gạch chân cùng màu) | `design/ngu-phap/` |
 | `/luyen-tap`, `/on-tap`, `/on-tap/diem-yeu` | **v3** — G2 đã duyệt | `design/luyen-tap/`, `design/on-tap/` |
 | `/luyen-tap/phien`, `/on-tap/phien` | **v3** — G2 đã duyệt | `design/phien/` |
 | `/luyen-viet`, `/luyen-viet/phien` | **v3** — kana và kanji: G2 đã duyệt 2026-10-21 | `design/luyen-viet/` |

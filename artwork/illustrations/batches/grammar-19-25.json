@@ -1,0 +1,536 @@
+{
+  "name": "grammar-19-25",
+  "description": "Bài 19–25 — tranh tình huống cho ví dụ đầu của từng điểm ngữ pháp.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "group": "grammar",
+      "stem": "finished-meal-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A young man sits back satisfied at a dining table, in front of him an empty plate with chopsticks laid neatly across it, and a happy full-belly expression. A small napkin and a teapot beside him. The empty plate is clearly central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-19.json",
+        "id": "forma-ta"
+      },
+      "alt": {
+        "vi": "Chàng trai ngồi tựa ghế hài lòng với đĩa đã ăn sạch."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "never-been-hokkaido-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Two friends sit at a cafe table looking at a travel brochure showing a snowy landscape picture; one of them shrugs and shakes her head with a smile to show she has never been there. The brochure shows only a scenic picture without text. A cozy cafe corner. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-19.json",
+        "id": "ta-koto-ga-arimasu"
+      },
+      "alt": {
+        "vi": "Hai người bạn xem sách du lịch Hokkaido, một người lắc đầu mỉm cười vì chưa từng đến đó."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "days-off-chores-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A tidy apartment room where a young woman is doing two chores in the same space: on the left she sweeps the floor with a broom, on the right a basket of fresh laundry sits beside a drying rack. The sunlit open window and houseplants make it calm. Both chores are visible at once. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-19.json",
+        "id": "tari-tari"
+      },
+      "alt": {
+        "vi": "Cô gái ngày nghỉ vừa quét dọn vừa phơi đồ giặt trong căn phòng nắng."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "getting-better-japanese-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A teacher smiles proudly and gives a small thumbs-up to a young foreign student who stands beside a tall stack of study notebooks. The student looks happy and slightly shy. A classroom with a blank board. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-19.json",
+        "id": "narimasu"
+      },
+      "alt": {
+        "vi": "Giáo viên mỉm cười khen học viên nước ngoài đã tiến bộ nhiều, bên cạnh là chồng vở học."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "casual-friends-walking-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Two young friends walk side by side along a casual street, chatting happily; one points ahead toward a train station as if talking about tomorrow, and the other nods. Relaxed body language, same age, simple background with a train station building without signs. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-20.json",
+        "id": "estilos"
+      },
+      "alt": {
+        "vi": "Hai người bạn trẻ đi cạnh nhau nói chuyện thân mật về chuyến đi ngày mai."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "nod-and-shake-head-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Two friends sit across from each other at a casual table; the left friend nods with a big smile and the right friend shakes his head with a playful grin, clearly opposite gestures. Two mugs on the table. Equal sizes and clear faces. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-20.json",
+        "id": "uso-estilos"
+      },
+      "alt": {
+        "vi": "Hai người bạn ngồi đối diện, một người gật đầu cười, người kia lắc đầu vui vẻ."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "not-eaten-yet-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A girl peeks into the kitchen where her friend holds an empty bowl, and the friend shrugs with a casual smile to say she has not eaten yet; a rice cooker steams and two bowls wait on the counter. Relaxed home setting, both friends visible. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-20.json",
+        "id": "conversacion-informal"
+      },
+      "alt": {
+        "vi": "Cô gái hỏi bạn đã ăn cơm chưa, bạn nhún vai vì chưa ăn, nồi cơm đang bốc hơi."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "prices-high-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A foreign visitor in a supermarket holds up a single perfect melon with a thoughtful, slightly surprised expression, looking at a blank shelf tag. Neatly arranged fruit and vegetable shelves behind. The visitor and the luxurious-looking fruit are central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-21.json",
+        "id": "to-omoimasu"
+      },
+      "alt": {
+        "vi": "Du khách nước ngoài trong siêu thị cầm quả dưa với vẻ ngạc nhiên, nghĩ rằng vật giá ở đây cao."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "say-goodnight-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A parent stands at the doorway of a child's bedroom with a gentle smile, the child tucked into bed with a plush toy, light from a small bedside lamp. The parent waves gently with their mouth slightly open as if speaking. Calm evening mood. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-21.json",
+        "id": "to-iimasu"
+      },
+      "alt": {
+        "vi": "Cha mẹ đứng ở cửa phòng mỉm cười chúc con ngủ ngon, đứa trẻ nằm trong chăn."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "cold-hokkaido-confirm-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Two friends in warm winter coats stand outdoors in a snowy place while one looks at the other with a confirming questioning look, and the second smiles and shakes his head lightly. Snow-covered pine trees in the background. Both faces are visible. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-21.json",
+        "id": "deshou"
+      },
+      "alt": {
+        "vi": "Hai người bạn mặc áo ấm trong tuyết, một người hỏi xác nhận trời lạnh, người kia lắc đầu cười."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "soccer-match-stadium-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A large soccer stadium seen from the stands, with two teams in clearly different colors of kits facing each other on a bright green pitch, and a crowd waving plain colored flags. A hint of a tall city tower beyond the stadium. The pitch and both teams are central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-21.json",
+        "id": "de-lugar-evento"
+      },
+      "alt": {
+        "vi": "Sân vận động bóng đá với hai đội áo khác màu ở giữa sân, khán giả vẫy cờ."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "invite-for-tea-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A young man leans in with a friendly open-hand gesture inviting a coworker to come for a cup of tea, while she looks up from her desk with a pleasant smile. A teapot and two cups sit on a small tray in his other hand. A quiet office corner. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-21.json",
+        "id": "demo-nomimasen-ka"
+      },
+      "alt": {
+        "vi": "Chàng trai mời đồng nghiệp đi uống trà, tay cầm khay ấm trà và hai tách."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "must-leave-now-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A young woman at the doorway of a cozy room where friends are still chatting glances at her wrist with an apologetic smile while hugging her coat and bag, ready to go. Friends at the table wave goodbye with warm smiles. Evening light through the window. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-21.json",
+        "id": "nai-to"
+      },
+      "alt": {
+        "vi": "Cô gái ở cửa nhìn đồng hồ tay áy náy, ôm áo khoác định ra về trong khi bạn bè vẫy chào."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "cake-mother-made-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A smiling young woman proudly holds out a freshly baked strawberry cream cake on a plate toward the viewer, with her mother visible behind in a kitchen wiping her hands on an apron. A mixing bowl on the counter. The cake is large and central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-22.json",
+        "id": "oracion-modificadora"
+      },
+      "alt": {
+        "vi": "Cô gái cầm chiếc bánh kem dâu do mẹ làm, mẹ đứng phía sau trong bếp."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "no-time-for-newspaper-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A very busy young man stands at a crowded desk with a briefcase, a phone to his ear and stacks of files, a folded newspaper lying untouched at the corner of the desk. He gives the newspaper an apologetic glance. The newspaper and the cluttered desk are central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-22.json",
+        "id": "v-dicc-tiempo"
+      },
+      "alt": {
+        "vi": "Chàng trai bận rộn với hồ sơ, điện thoại, tờ báo gấp để nguyên trên bàn vì không có thời gian đọc."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "meet-at-station-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Two friends talk by phone from two different spots drawn side by side in one scene: one stands in a cafe and the other in a small apartment, while the middle shows a clear picture of a train station building where they will meet. Phones in hands, smiling faces. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-22.json",
+        "id": "mashou-ka-22"
+      },
+      "alt": {
+        "vi": "Hai người bạn gọi điện hẹn gặp nhau ở nhà ga, giữa hai người là hình nhà ga."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "coffee-when-sleepy-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A young woman rubs her eyes and yawns at her desk in the middle of the afternoon, with a cup of steaming coffee in her other hand lifted toward her mouth. Slumped posture, a half-open notebook. The cup and her sleepy face are central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-23.json",
+        "id": "toki"
+      },
+      "alt": {
+        "vi": "Cô gái ngáp buồn ngủ ở bàn học, tay nâng tách cà phê bốc khói."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "bought-painting-paris-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A traveler walks out of a small art shop on a Paris-like street holding a framed landscape painting wrapped in light paper, with a distinctive iron tower faintly visible in the distance. Sidewalk cafe tables nearby. The traveler and the painting are central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-23.json",
+        "id": "toki-aspecto"
+      },
+      "alt": {
+        "vi": "Du khách cầm bức tranh vừa mua bước ra từ cửa hàng nghệ thuật ở Paris, xa xa có tháp sắt."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "turn-dial-louder-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A close view of a hand turning a big round volume knob on an old radio on a wooden table, with soft sound-wave shapes (no marks) swelling outward from the speaker. A person sits behind smiling. The knob and radio are central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-23.json",
+        "id": "to-condicional"
+      },
+      "alt": {
+        "vi": "Bàn tay vặn núm chỉnh âm lượng trên chiếc radio cũ, tiếng vang ra rộng dần."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "jacket-too-small-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "In a clothing store fitting area, a young man holds up a jacket in front of himself, clearly too small for his shoulders, and looks at a shop assistant with a polite frown. Hangers and other clothes behind. Jacket and man are central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-23.json",
+        "id": "ga-adjetivo"
+      },
+      "alt": {
+        "vi": "Chàng trai thử chiếc áo khoác quá nhỏ so với vai, nhìn nhân viên cửa hàng với vẻ ái ngại."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "turn-right-second-corner-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A street seen from the walker's viewpoint with two corners clearly drawn along the road: at the second corner a right turn opens into an alley, and a passerby points ahead with an arm out to the right. Quiet alleys and shop awnings without text. The pointing arm and the corner are central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-23.json",
+        "id": "o-movimiento"
+      },
+      "alt": {
+        "vi": "Người đi đường chỉ tay rẽ phải ở khúc cua thứ hai của con phố."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "given-flowers-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A smiling young man presents a small hand-tied bouquet of flowers to a young woman, who receives it with both hands, surprised and delighted. A park path behind them. The bouquet changing hands is central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-24.json",
+        "id": "kuremasu"
+      },
+      "alt": {
+        "vi": "Chàng trai tặng bó hoa nhỏ cho cô gái, cô nhận bằng hai tay vui mừng."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "teach-little-sister-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "An older sister sits beside her little sister at a low study table, patiently pointing at a notebook page as she explains the homework. The younger girl looks up in concentration. A pencil case and an eraser on the table. Both faces are visible. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-24.json",
+        "id": "te-agemasu"
+      },
+      "alt": {
+        "vi": "Chị ngồi cạnh em gái giảng bài tập, em ngước nhìn chăm chú."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "friends-help-move-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "Two friends carry a big cardboard box and a lamp out of an apartment door while the owner stands at the doorway thanking them with a grateful smile, more boxes stacked in the hallway. A small moving truck is faintly visible outside. Friends and the moving boxes are central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-24.json",
+        "id": "te-moraimasu"
+      },
+      "alt": {
+        "vi": "Hai người bạn giúp khuân hộp và đèn ra khỏi căn hộ, chủ nhà đứng cảm ơn."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "drew-me-a-map-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A young woman kneels at a low table drawing a simple street map on blank paper with a pen while a visitor leans in and watches closely with gratitude. The map shows only a few lines, a river and a tiny station, with no labels. Pen and map are central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-24.json",
+        "id": "te-kuremasu"
+      },
+      "alt": {
+        "vi": "Cô gái vẽ bản đồ đơn giản trên giấy cho khách xem, khách cảm ơn."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "wife-made-bento-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A man sits at his office desk opening a neatly arranged lunch box with rice balls, vegetables and fried egg, smiling gratefully, while a small framed photo of a woman stands at the corner of his desk. The bento box is open, large and central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-24.json",
+        "id": "wa-ga-v"
+      },
+      "alt": {
+        "vi": "Người đàn ông mở hộp cơm bento vợ làm trong văn phòng, cạnh bàn có ảnh vợ."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "come-visit-if-free-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A friendly woman stands at her front door waving to a guest walking down a garden path, with an open gate and an inviting living room with a tea set visible behind her. The invitation and the open door are central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-25.json",
+        "id": "tara"
+      },
+      "alt": {
+        "vi": "Chủ nhà đứng ở cửa vẫy tay mời khách khi nào rảnh thì ghé chơi, phòng khách có bộ trà đã sẵn."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "return-home-family-company-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A young man in an airport arrival hall stands with a suitcase and a smile, and beside him a soft wash picture shows a small family company building where his father waits, linked to the airport by a road. His plan for after returning home is the focus. The man and the little company building are central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-25.json",
+        "id": "tara-temporal"
+      },
+      "alt": {
+        "vi": "Chàng trai vừa trở về nước ở sân bay, bên cạnh là công ty gia đình của bố nơi anh sẽ đi làm."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "work-on-sunday-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A man in a business shirt and tie walks briskly out of his front door with a briefcase on a bright sunny morning, while his family waves from the window and a bicycle rests on the lawn, a calm weekend atmosphere contrasting with his work. The man is central and clearly dressed for work. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-25.json",
+        "id": "temo"
+      },
+      "alt": {
+        "vi": "Người đàn ông mặc đồ công sở rời nhà đi làm vào buổi sáng cuối tuần nắng đẹp."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "if-i-had-money-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A young woman sits at a table with a stack of banknotes and a large world map spread out in front of her, looking dreamy as small soft paper pictures of different places (pyramid, pagoda, tower) float above the map. A suitcase beside her. Banknotes and map are central. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-25.json",
+        "id": "moshi"
+      },
+      "alt": {
+        "vi": "Cô gái ngồi trước chồng tiền và bản đồ thế giới, mơ về nhiều quốc gia sẽ đi du lịch."
+      }
+    },
+    {
+      "group": "grammar",
+      "stem": "day-off-still-life-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "A still life on a bedside table by a window: a thermometer, a small medicine box, a damp folded towel and a cup of tea, with a man's folded office jacket and briefcase set neatly beside the door. No person appears. Soft morning light conveys the quiet of staying at home. Keep every important element inside the central horizontal band of the canvas.",
+      "target": {
+        "dataFile": "web/src/data/n5/lessons/lesson-25.json",
+        "id": "sujeto-subordinada"
+      },
+      "alt": {
+        "vi": "Tĩnh vật bên giường: nhiệt kế, hộp thuốc, khăn và tách trà; áo vest và cặp công sở đặt cạnh cửa vì người chồng nghỉ làm ở nhà."
+      }
+    }
+  ]
+}
