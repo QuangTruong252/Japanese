@@ -62,6 +62,7 @@ export function ReinforcementSection({ weakCount, wide }: { weakCount: number; w
           href="/on-tap/diem-yeu"
           icon={<FeatureIcon name="weak-points" />}
           title="Điểm yếu của tôi"
+          className={wide ? 'md:col-span-full' : undefined}
           detail={
             weakCount > 0
               ? `Xem toàn bộ ${weakCount} mục đã từng trả lời sai`
