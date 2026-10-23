@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Info } from 'lucide-react';
 import { FeatureIcon } from '@/components/FeatureIcon';
-import { ListRow, PageTitle } from '@/components/PaperKit';
+import { BackLink, ListRow } from '@/components/PaperKit';
+import { LookupHeader } from '@/components/lookup/LookupHeader';
 import { KanaChart } from './KanaChart';
 
 export const metadata: Metadata = {
@@ -10,9 +11,9 @@ export const metadata: Metadata = {
 };
 
 export default function KanaPage() {
-  return (
-    <main className="mx-auto w-full max-w-5xl space-y-6 px-4 pb-24 sm:px-6 lg:px-8 lg:pb-12">
-      <PageTitle title="Bảng chữ Kana" back={{ href: '/hoc/tra-cuu', label: 'Tra cứu' }} />
+  const header = (
+    <>
+      <LookupHeader title="Bảng chữ Kana" />
 
       <section aria-label="Chỉ dẫn cho người mới học chữ Kana">
       <details className="group rounded-xl border border-border bg-card text-sm">
@@ -34,9 +35,14 @@ export default function KanaPage() {
       </details>
       </section>
 
-      <ListRow href="/luyen-viet" icon={<FeatureIcon name="kana" />} title="Luyện viết kana" />
+      <ListRow href="/luyen-viet" icon={<FeatureIcon name="kana" />} title="Luyện viết kana" className="lg:hidden" />
+    </>
+  );
 
-      <KanaChart />
+  return (
+    <main className="mx-auto w-full max-w-5xl space-y-6 px-4 pb-24 sm:px-6 md:pb-12 lg:max-w-[1200px] lg:px-8">
+      <BackLink href="/hoc/tra-cuu" label="Tra cứu" />
+      <KanaChart header={header} />
     </main>
   );
 }

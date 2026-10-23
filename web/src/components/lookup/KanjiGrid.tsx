@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type MouseEvent, type ReactNode } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Check, FilterX, Search, X } from 'lucide-react';
@@ -9,7 +9,9 @@ import { db } from '@/lib/db';
 import type { KanjiData } from '@/types/lookup';
 import { getKanjiLesson } from '@/lib/lookup';
 import { filterKanjiWithQuery } from '@/lib/kanji-filter';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { Accent, BookSpread } from '@/components/PaperKit';
+import { KanjiDetailPanel } from '@/components/lookup/KanjiDetailPanel';
 import { cn } from '@/lib/utils';
 
 const selectLabelClass =
@@ -20,9 +22,11 @@ const selectClass =
 interface KanjiGridProps {
   kanjiList: KanjiData[];
   kanjiTargetIds: Record<string, string[]>;
+  /** Đầu trang (tiêu đề, lối vào luyện viết) nằm trong trang trái của sách mở. */
+  header: ReactNode;
 }
 
-export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
+export function KanjiGrid({ kanjiList, kanjiTargetIds, header }: KanjiGridProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -121,11 +125,22 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
     return Array.from(set).sort((a, b) => a - b);
   }, [kanjiList]);
 
+  // Từ `lg` bấm chữ là chọn để xem chi tiết ở trang phải; dưới `lg` link đi thẳng sang trang chữ
+  const [selectedChar, setSelectedChar] = useState<string | null>(null);
+  const selectedKanji = kanjiList.find((k) => k.character === selectedChar);
+  const selectOnWide = (ch: string) => (e: MouseEvent<HTMLAnchorElement>) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || !window.matchMedia('(min-width: 1024px)').matches) return;
+    e.preventDefault();
+    setSelectedChar(ch);
+  };
+
   const hasActiveFilter =
     query.trim() !== '' || selectedLesson !== 'all' || selectedStrokes !== 'all' || onlyLearned;
 
-  return (
-    <div className="space-y-5">
+  const left = (
+    <div className="space-y-6">
+      {header}
+      <div className="space-y-5">
       <section aria-label="Tìm kiếm và bộ lọc Kanji" className="space-y-3">
         <div className="relative">
           <Search className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
@@ -230,9 +245,10 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
           </Button>
         </div>
       ) : (
-        <div className="grid grid-cols-4 gap-2 sm:grid-cols-6 sm:gap-3 md:grid-cols-8">
+        <div className="grid grid-cols-4 gap-2 sm:grid-cols-6 sm:gap-3 md:grid-cols-5 lg:grid-cols-6 lg:gap-2 xl:grid-cols-7">
           {filteredList.map((k) => {
             const isLearned = learnedKanjiSet.has(k.character);
+            const isSelected = k.character === selectedChar;
             const lesson = getKanjiLesson(k);
             const reading = k.kunyomi[0] ?? k.onyomi[0] ?? '';
             const meaning = k.meanings.vi[0] ?? '';
@@ -241,8 +257,13 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
               <Link
                 key={k.character}
                 href={`/hoc/tra-cuu/kanji/${encodeURIComponent(k.character)}`}
+                onClick={selectOnWide(k.character)}
+                aria-current={isSelected ? 'true' : undefined}
                 aria-label={`${k.character}${k.hanviet ? ` (${k.hanviet})` : ''} — ${meaning}, bài ${lesson ?? 'N5'}${isLearned ? ', đã học' : ''}`}
-                className="relative flex flex-col items-center gap-0.5 rounded-xl border border-border bg-card px-1 pb-2 pt-2 text-center outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring"
+                className={cn(
+                  'relative flex min-w-0 flex-col items-center gap-0.5 rounded-xl border px-1 pb-2 pt-2 text-center outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring lg:gap-0 lg:pb-1.5 lg:pt-1.5',
+                  isSelected ? 'border-primary/40 bg-accent' : 'border-border bg-card hover:bg-muted/60',
+                )}
               >
                 {isLearned && (
                   <span
@@ -253,20 +274,20 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
                   </span>
                 )}
 
-                <span lang="ja" className="jp-display text-3xl font-medium leading-tight text-foreground sm:text-4xl">
+                <span lang="ja" className="jp-display text-3xl font-medium leading-tight text-foreground sm:text-4xl lg:text-3xl lg:leading-none">
                   {k.character}
                 </span>
                 {k.hanviet && (
                   <span className="text-xs font-semibold uppercase tracking-wide text-primary">{k.hanviet}</span>
                 )}
-                <span className="text-xs text-foreground">{meaning}</span>
-                <span lang="ja" className="jp text-xs leading-snug text-muted-foreground">
+                <span className="text-xs text-foreground lg:w-full lg:truncate">{meaning}</span>
+                <span lang="ja" className="jp text-xs leading-snug text-muted-foreground lg:w-full lg:truncate">
                   {reading}
                 </span>
 
                 <span
                   className={cn(
-                    'mt-1 whitespace-nowrap rounded-full px-2 py-0.5 text-xs',
+                    'mt-1 whitespace-nowrap rounded-full px-2 py-0.5 text-xs lg:mt-0.5 lg:py-0',
                     isLearned ? 'bg-accent font-semibold text-primary' : 'bg-secondary text-muted-foreground',
                   )}
                 >
@@ -277,6 +298,40 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds }: KanjiGridProps) {
           })}
         </div>
       )}
+      </div>
     </div>
+  );
+
+  const right = (
+    <aside aria-label="Chi tiết chữ Hán" aria-live="polite" className="hidden lg:block">
+      {selectedKanji ? (
+        <KanjiDetailPanel key={selectedKanji.character} kanji={selectedKanji} />
+      ) : (
+        <div className="relative flex min-h-96 flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-border p-8 text-center">
+          <p className="font-serif text-xl font-semibold text-foreground">Chọn một chữ</p>
+          <p className="max-w-64 text-sm text-muted-foreground">
+            Bấm hoặc nhấn Enter trên một chữ bên trái để xem thứ tự nét, âm đọc và từ ghép ngay tại đây.
+          </p>
+          <Link
+            href="/luyen-viet?tab=kanji"
+            className={cn(buttonVariants({ variant: 'secondary' }), 'min-h-11 px-4')}
+          >
+            Luyện viết kanji
+          </Link>
+          <Accent kind="sprig-left" className="bottom-0 right-0 w-28" />
+        </div>
+      )}
+    </aside>
+  );
+
+  return (
+    <BookSpread
+      leftWidth="wide"
+      sticky="right"
+      stickyTop="4.25rem"
+      className="max-lg:space-y-0"
+      left={left}
+      right={right}
+    />
   );
 }
