@@ -304,8 +304,7 @@ export function AppNav() {
               alt=""
               width={32}
               height={32}
-              style={{ width: 'auto', height: 'auto' }}
-              className="object-contain"
+              className="size-8 object-contain"
               priority
             />
           </Link>
@@ -391,8 +390,7 @@ export function AppNav() {
               alt=""
               width={32}
               height={32}
-              style={{ width: 'auto', height: 'auto' }}
-              className="shrink-0 object-contain"
+              className="size-8 shrink-0 object-contain"
               priority
             />
             <span className="text-2xl font-bold tracking-tight text-foreground">MaiPace</span>
@@ -404,14 +402,14 @@ export function AppNav() {
               onClick={openSearch}
               aria-label="Tìm kiếm nội dung (Ctrl+K)"
               className={cn(
-                'flex h-11 min-w-0 flex-1 cursor-pointer items-center gap-2.5 rounded-xl px-3 text-sm font-medium',
+                'flex h-11 min-w-0 flex-1 cursor-pointer items-center gap-2 rounded-xl border border-border bg-card px-3 text-sm font-medium',
                 'text-muted-foreground transition duration-150 hover:bg-muted/60 hover:text-foreground',
                 FOCUS_RING
               )}
             >
               <Search className="size-4 shrink-0" aria-hidden="true" />
               <span className="flex-1 whitespace-nowrap text-left">Tìm kiếm</span>
-              <kbd className="rounded-md border border-border bg-secondary px-1.5 py-0.5 font-mono text-xs text-muted-foreground">
+              <kbd className="shrink-0 whitespace-nowrap rounded-md border border-border bg-secondary px-1.5 py-0.5 font-sans text-xs text-muted-foreground">
                 Ctrl K
               </kbd>
             </button>
