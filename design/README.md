@@ -55,3 +55,17 @@ Bộ ảnh này lưu hình thức sau G2 tại 390 px; không thay thế toàn b
 và trạng thái khác. Bước Đóng chạy lại `pnpm check`; không đổi logic, không chạy lại
 test hoặc build. Những kiểm tra còn thiếu từ đợt QA trước: sync với Supabase thật,
 nạp ZIP audio thật, và màn lỗi tải câu hỏi bằng cách chặn chunk.
+
+## Tablet và PC (G2 ngày 2026-10-23)
+
+Đợt responsive (bento cho hub, sách mở cho trang nội dung, sân khấu cho phiên) thêm vào mỗi thư mục:
+
+- `mockup-rwd-pc.webp`, `mockup-rwd-tablet.webp`: mockup đã duyệt (một số phiên chỉ có bản PC).
+- `as-built-pc-{light,dark}.png` (1280 px) và `as-built-tablet-{light,dark}.png` (768 px): màn đầu của
+  app sau triển khai, cùng dữ liệu `normal` như trên, PNG nén palette.
+
+Thư mục mới: `ngu-phap/` (`/hoc/1/ngu-phap/wa-desu`), `luyen-viet/phien/` (`/luyen-viet/phien?c=あい`),
+`hoi-thoai/` (`/hoc/1/hoi-thoai/l01-hajimemashite`, bước chọn vai). Ảnh 390 px ở trên vẫn đúng: mobile không đổi,
+trừ kiểu tab Tiến độ/Thống kê ở Cá nhân.
+
+Chụp lại: `node scripts/ui-qa/as-built.mjs [thư mục,...] [base]` khi dev server đang chạy (mặc định cổng 3000).

@@ -1,6 +1,6 @@
 // Chụp một route theo trạng thái dữ liệu × theme × độ rộng bằng agent-browser (dev server phải đang chạy).
 // node scripts/ui-qa/shoot.mjs [--route hoc/tra-cuu] [--states normal,many] [--themes light,dark] [--widths 390,1280]
-//   [--base http://localhost:3000] [--name home] [--scale 1]
+//   [--base http://localhost:3000] [--name home] [--scale 1] [--max-height 6000]
 // Route viết không có "/" đầu (bỏ trống = Bảng tin), vì Git Bash trên Windows đổi "/" thành đường dẫn ổ đĩa.
 // Ảnh: .ui-qa/<name>/<state>-<theme>-<width>.png (git bỏ qua). Seed chỉ ghi vào profile của agent-browser.
 import { execFileSync } from 'node:child_process';
@@ -17,6 +17,8 @@ const { values: o } = parseArgs({
     base: { type: 'string', default: 'http://localhost:3000' },
     name: { type: 'string' },
     scale: { type: 'string', default: '1' },
+    // Trang rất dài (Động từ ~43 000 px ở 390) làm agent-browser chụp lỗi, nên cắt chiều cao viewport.
+    'max-height': { type: 'string', default: '20000' },
   },
 });
 
@@ -55,7 +57,7 @@ for (const width of list(o.widths)) {
           return Math.ceil(m ? m.getBoundingClientRect().top + m.scrollHeight : document.documentElement.scrollHeight);
         })()`).replace(/"/g, ''),
       );
-      ab(['set', 'viewport', width, String(Math.max(height, 640)), o.scale]);
+      ab(['set', 'viewport', width, String(Math.min(Math.max(height, 640), Number(o['max-height']))), o.scale]);
       ab(['wait', '800']);
       evalJs(`document.querySelectorAll('nextjs-portal').forEach((e) => e.remove()); 1`);
       const file = path.join(outDir, `${state}-${theme}-${width}.png`);

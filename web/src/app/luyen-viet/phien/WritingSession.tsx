@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { AlertCircle, ArrowRight, Check, Eraser, Eye, Pencil, RotateCw, X } from 'lucide-react';
 import { Illustration } from '@/components/Illustration';
+import { StrokeStep } from '@/components/lookup/StrokeSteps';
 import { TornCard } from '@/components/PaperKit';
 import { SpeakButton } from '@/components/SpeakButton';
 import {
@@ -103,24 +104,12 @@ function StrokeOrder({ strokes }: { strokes: string[] }) {
       {strokes.map((_, i) => (
         <li key={i} className="flex items-center gap-2">
           <span className="w-4 shrink-0 text-center text-sm tabular-nums text-muted-foreground">{i + 1}</span>
-          <svg
-            viewBox="0 0 109 109"
-            aria-hidden="true"
-            className="aspect-square min-w-0 flex-1 rounded-lg border border-border bg-card"
-            fill="none"
-            stroke="currentColor"
+          <StrokeStep
+            strokes={strokes}
+            step={i}
             strokeWidth={5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            {strokes.map((d, k) => (
-              <path
-                key={k}
-                d={d}
-                className={k < i ? 'text-foreground' : k === i ? 'text-primary' : 'text-muted-foreground opacity-25'}
-              />
-            ))}
-          </svg>
+            className="aspect-square min-w-0 flex-1 rounded-lg border border-border bg-card"
+          />
         </li>
       ))}
     </ol>
