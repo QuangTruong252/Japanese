@@ -79,7 +79,7 @@ export default async function GrammarPointPage({ params }: { params: Promise<Par
         leftWidth="narrow"
         sticky="left"
         stickyTop="4.25rem"
-        className="max-lg:space-y-4"
+        className="max-md:space-y-0 md:max-lg:space-y-4"
         left={
           <div className="hidden md:block">
             <p className="font-serif text-lg font-semibold text-primary">/ Ngữ pháp /</p>
