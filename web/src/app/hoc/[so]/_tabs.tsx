@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { Tabs } from '@base-ui/react/tabs';
+import { useLiveQuery } from 'dexie-react-hooks';
 import { LayoutGrid, List } from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
 import { Illustration } from '@/components/Illustration';
@@ -10,16 +11,26 @@ import { SpeakButton } from '@/components/SpeakButton';
 import { VerbGroupBadge } from '@/components/VerbGroupBadge';
 import { DialogueReader } from '@/components/dialogue/DialogueReader';
 import { SPEAK_CLASS } from '@/components/dialogue/reader-styles';
+import { Chip } from '@/components/PaperKit';
 import { Button } from '@/components/ui/button';
+import { db } from '@/lib/db';
 import { AUDIO_IMPORT_ENABLED } from '@/lib/features';
 import { formatOptionalBrackets, maxFuriganaWordEm, stripFurigana } from '@/lib/japanese';
 import { parseLessonHash } from '@/lib/lesson-links';
+import { groupVocab, vocabTargetId, type VocabFilter } from '@/lib/vocab-filter';
 import type { LessonTab } from '@/lib/lesson-links';
 import { DEFAULT_SETTINGS, getSettingsSnapshot, saveSettings, subscribeSettings } from '@/lib/settings';
 import { cn } from '@/lib/utils';
 import type { Dialogue, VocabWord } from '@/types';
 
 type TabValue = LessonTab;
+
+const FILTERS: { value: VocabFilter; label: string; empty: string }[] = [
+  { value: 'all', label: 'Tất cả', empty: 'Bài này chưa có từ vựng' },
+  { value: 'new', label: 'Chưa học', empty: 'Không còn từ chưa học' },
+  { value: 'reviewing', label: 'Đang ôn', empty: 'Chưa có từ đang ôn' },
+  { value: 'hard', label: 'Từ khó', empty: 'Chưa có từ khó' },
+];
 
 const VERB_GROUP: Record<string, number> = { 'verb-godan': 1, 'verb-ichidan': 2, 'verb-irregular': 3 };
 
@@ -36,7 +47,18 @@ const VOCAB_TARGET = 'scroll-mt-40';
 /** Đích cuộn chờ sau commit: phần tử theo id (null = đầu thanh tab) hoặc đầu panel đang hiện khi thanh dính. */
 type PendingScroll = { id: string | null } | 'panel';
 
-function VocabItem({ w, view, anchor }: { w: VocabWord; view: 'list' | 'grid'; anchor?: string }) {
+// Lọc chỉ có ở md trở lên: ẩn bằng CSS để mobile giữ nguyên và neo hội thoại vẫn có trong DOM.
+function VocabItem({
+  w,
+  view,
+  anchor,
+  filteredOut,
+}: {
+  w: VocabWord;
+  view: 'list' | 'grid';
+  anchor?: string;
+  filteredOut?: boolean;
+}) {
   const group = VERB_GROUP[w.type];
   const speakLabel = stripFurigana(formatOptionalBrackets(w.word));
   const meaning = w.meaning.vi ? (
@@ -61,7 +83,12 @@ function VocabItem({ w, view, anchor }: { w: VocabWord; view: 'list' | 'grid'; a
     return (
       <div
         id={`vocab-${w.id}`}
-        className={cn('rounded-xl border border-border bg-card p-2', wide && 'col-span-2', VOCAB_TARGET)}
+        className={cn(
+          'rounded-xl border border-border bg-card p-2',
+          wide && 'col-span-2',
+          VOCAB_TARGET,
+          filteredOut && 'md:hidden',
+        )}
       >
         <div
           className={cn(
@@ -73,7 +100,7 @@ function VocabItem({ w, view, anchor }: { w: VocabWord; view: 'list' | 'grid'; a
           {w.illustration ? (
             <Illustration
               asset={w.illustration}
-              sizes="(min-width: 1024px) 200px, (min-width: 640px) 30vw, 45vw"
+              sizes="(min-width: 1280px) 200px, (min-width: 1024px) 240px, (min-width: 640px) 30vw, 45vw"
               className="size-full object-cover"
             />
           ) : (
@@ -111,7 +138,7 @@ function VocabItem({ w, view, anchor }: { w: VocabWord; view: 'list' | 'grid'; a
   }
 
   return (
-    <div id={`vocab-${w.id}`} className={cn('flex items-center gap-3 p-3', VOCAB_TARGET)}>
+    <div id={`vocab-${w.id}`} className={cn('flex items-center gap-3 p-3', VOCAB_TARGET, filteredOut && 'md:hidden')}>
       {w.illustration && (
         <Illustration
           asset={w.illustration}
@@ -171,6 +198,14 @@ export function LessonTabs({
   };
   const rootRef = useRef<HTMLDivElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
+  const [filter, setFilter] = useState<VocabFilter>('all');
+  const prefix = vocabTargetId(lessonNum, 0).slice(0, -2);
+  const reviews = useLiveQuery(
+    async () => new Map((await db.reviewItems.where('targetId').startsWith(prefix).toArray()).map((r) => [r.targetId, r.incorrectCount])),
+    [prefix],
+  );
+  const { counts, indices } = groupVocab(lessonNum, vocab.length, reviews ?? new Map());
+  const visible = new Set(indices[filter]);
   const view = useSyncExternalStore(
     subscribeSettings,
     () => getSettingsSnapshot().vocabView,
@@ -186,6 +221,8 @@ export function LessonTabs({
         return;
       }
       setTab(parsed.tab);
+      // Từ đích có thể đang bị lọc ẩn.
+      setFilter('all');
       requestScroll({ id: parsed.targetId });
     };
     goToHash();
@@ -246,8 +283,16 @@ export function LessonTabs({
           ))}
         </Tabs.List>
         {tab === 'tu-vung' && (
-          <div className="mt-1 flex min-h-11 items-center justify-between">
-            <span className="text-sm text-muted-foreground">{vocab.length} từ vựng</span>
+          <div className="mt-1 flex min-h-11 items-center justify-between md:gap-2">
+            <span className="text-sm text-muted-foreground md:hidden">{vocab.length} từ vựng</span>
+            <div className="scrollbar-none -ml-1 hidden min-w-0 flex-1 gap-2 overflow-x-auto p-1 md:flex">
+              {FILTERS.map(({ value, label }) => (
+                <Chip key={value} pressed={filter === value} onClick={() => setFilter(value)}>
+                  {label}
+                  {reviews && <span className="tabular-nums opacity-70">{counts[value]}</span>}
+                </Chip>
+              ))}
+            </div>
             <Button
               type="button"
               variant="ghost"
@@ -264,17 +309,22 @@ export function LessonTabs({
 
       <Tabs.Panel value="tu-vung" keepMounted className="mt-4 outline-none">
         {view === 'grid' ? (
-          <div className="grid grid-cols-2 items-start gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {vocab.map((w) => (
-              <VocabItem key={w.id} w={w} view="grid" anchor={vocabAnchors[w.id]} />
+          <div className="grid grid-cols-2 items-start gap-3 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
+            {vocab.map((w, i) => (
+              <VocabItem key={w.id} w={w} view="grid" anchor={vocabAnchors[w.id]} filteredOut={!visible.has(i)} />
             ))}
           </div>
         ) : (
           <div className="mx-auto max-w-3xl divide-y divide-border overflow-hidden rounded-xl border border-border bg-card">
-            {vocab.map((w) => (
-              <VocabItem key={w.id} w={w} view="list" anchor={vocabAnchors[w.id]} />
+            {vocab.map((w, i) => (
+              <VocabItem key={w.id} w={w} view="list" anchor={vocabAnchors[w.id]} filteredOut={!visible.has(i)} />
             ))}
           </div>
+        )}
+        {visible.size === 0 && (
+          <p className="hidden rounded-xl border border-dashed border-border py-10 text-center text-sm text-muted-foreground md:block">
+            {FILTERS.find((f) => f.value === filter)?.empty}
+          </p>
         )}
       </Tabs.Panel>
       <Tabs.Panel value="ngu-phap" keepMounted className="mx-auto mt-4 max-w-3xl outline-none">
