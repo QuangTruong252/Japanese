@@ -20,6 +20,7 @@ import { QuestionReorder } from '@/components/practice/QuestionReorder';
 import { SessionResult } from '@/components/practice/SessionResult';
 import {
   FeedbackPanel,
+  KeyHints,
   PauseLayer,
   QuestionPrompt,
   SessionHeader,
@@ -307,6 +308,8 @@ export function ReviewRunner({
         return;
       }
 
+      if (e.ctrlKey || e.altKey || e.metaKey) return;
+
       if (
         shouldAdvanceOnKey({
           key: e.key,
@@ -460,6 +463,13 @@ export function ReviewRunner({
         pauseLabel={isPaused ? 'Tiếp tục bấm giờ' : 'Tạm dừng bấm giờ'}
         pauseDisabled={answered}
         onTogglePause={togglePause}
+      />
+
+      <KeyHints
+        items={[
+          ...(currentQuestion.type === 'mc' ? [{ keys: '1–4', label: 'Chọn đáp án' }] : []),
+          { keys: 'Enter', label: 'Tiếp' },
+        ]}
       />
 
       <div className="relative flex min-h-0 flex-1 flex-col">

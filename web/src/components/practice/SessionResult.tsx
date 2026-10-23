@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { AlertCircle, ArrowRight, Check, CheckCircle2, X } from 'lucide-react';
 import { FeatureIcon } from '@/components/FeatureIcon';
 import { Furigana } from '@/components/Furigana';
-import { ListRow, SectionHeader, SoftScene, TornCard } from '@/components/PaperKit';
+import { Accent, ListRow, SectionHeader, SoftScene, TornCard } from '@/components/PaperKit';
 import { Button } from '@/components/ui/button';
 import {
   savePracticeDraft,
@@ -101,7 +101,7 @@ export function SessionResult({
   const durationText = `${minutes} phút`;
 
   return (
-    <main className="mx-auto w-full max-w-2xl px-4 pb-12 pt-3 sm:px-6">
+    <main className="mx-auto w-full max-w-2xl px-4 md:max-w-[760px] pb-12 pt-3 sm:px-6">
       {/* Thông báo tiếp cận cho Screen Reader */}
       <div role="status" className="sr-only">
         {isDue
@@ -119,6 +119,7 @@ export function SessionResult({
 
       {/* Thẻ giấy lấn lên mép dưới tranh: số liệu và nút son duy nhất */}
       <div className="relative -mt-8">
+        <Accent kind="sprig-right" className="-right-10 -top-14 w-28" />
         <TornCard>
           <p className="font-serif text-sm font-bold tracking-wide text-primary">/ Kết quả /</p>
           {isDue ? (

@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { ArrowRight, Check, Lightbulb, Pause, Play, X } from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
 import { SpeakButton } from '@/components/SpeakButton';
-import { TornCard } from '@/components/PaperKit';
+import { Kbd, TornCard } from '@/components/PaperKit';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { answerText } from '@/lib/practice';
@@ -26,13 +26,30 @@ export function SessionShell({ className, children }: { className?: string; chil
     <main className="fixed inset-0 z-40 bg-background overflow-hidden">
       <div
         className={cn(
-          'mx-auto flex h-full w-full max-w-2xl flex-col px-4 pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] sm:px-6',
+          'mx-auto flex h-full w-full max-w-2xl flex-col md:max-w-[760px] px-4 pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] sm:px-6',
           className,
         )}
       >
         {children}
       </div>
     </main>
+  );
+}
+
+/** Ghi chú phím tắt ở lề phải, chỉ khi màn rộng và có chuột. Định vị theo `main` cố định của phiên. */
+export function KeyHints({ items }: { items: { keys: string; label: string }[] }) {
+  return (
+    <aside
+      aria-label="Phím tắt"
+      className="absolute right-6 top-20 hidden space-y-2 rounded-lg border border-border bg-card p-3 text-sm text-muted-foreground lg:[@media(hover:hover)_and_(pointer:fine)]:block"
+    >
+      {items.map(({ keys, label }) => (
+        <p key={keys} className="flex items-center gap-2">
+          <Kbd always>{keys}</Kbd>
+          {label}
+        </p>
+      ))}
+    </aside>
   );
 }
 
@@ -278,6 +295,7 @@ export function FeedbackPanel({
           <Button size="quiz" className="w-full font-semibold" onClick={onNext}>
             {isLast ? 'Xem kết quả' : 'Tiếp tục'}
             <ArrowRight aria-hidden="true" />
+            <Kbd className="bg-primary-foreground/15 text-primary-foreground border-transparent">Enter</Kbd>
           </Button>
         </TornCard>
       </div>
