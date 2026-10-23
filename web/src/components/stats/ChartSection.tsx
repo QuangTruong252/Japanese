@@ -14,6 +14,7 @@ export function ChartSection({
   title,
   tableLabel,
   table,
+  className,
   children,
 }: {
   id: string;
@@ -21,12 +22,13 @@ export function ChartSection({
   /** Tên đầy đủ của nút cho trình đọc màn hình, bắt đầu bằng chữ hiển thị "Bảng số liệu". */
   tableLabel: string;
   table: ReactNode;
+  className?: string;
   children: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <section aria-labelledby={id}>
+    <section aria-labelledby={id} className={className}>
       <div className="mb-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
         <h2 id={id} className="text-lg font-semibold text-foreground">
           {title}

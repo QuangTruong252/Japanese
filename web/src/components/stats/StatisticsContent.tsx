@@ -21,7 +21,7 @@ import {
   pickActiveLesson,
   resolveStatsEmptyState,
 } from '@/lib/stats';
-import { TornCard, SectionHeader, ListRow } from '@/components/PaperKit';
+import { BentoGrid, TornCard, SectionHeader, ListRow } from '@/components/PaperKit';
 import { FeatureIcon } from '@/components/FeatureIcon';
 import { buttonVariants } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -34,6 +34,8 @@ import { TargetDistribution } from '@/components/stats/TargetDistribution';
 import { cn } from '@/lib/utils';
 
 const TABLE_HEAD = 'sticky top-0 bg-secondary text-muted-foreground';
+// Từ md mỗi mục là một ô giấy; mobile giữ mục trần như cũ.
+const PANEL = 'md:col-span-2 md:rounded-2xl md:border md:border-border md:bg-card md:p-5 lg:p-6';
 
 export function StatisticsContent() {
   const now = useDueClock();
@@ -153,8 +155,11 @@ export function StatisticsContent() {
 
   return (
     <TooltipProvider delay={100}>
-      <div className="space-y-8">
-        <section aria-label="Các chỉ số chính" className="grid grid-cols-2 gap-3 md:grid-cols-4">
+      <BentoGrid>
+        <section
+          aria-label="Các chỉ số chính"
+          className="grid grid-cols-2 gap-3 md:col-span-2 md:grid-cols-4 lg:col-span-12 lg:gap-5"
+        >
           <StatTile
             label="Chuỗi ngày"
             value={
@@ -176,6 +181,7 @@ export function StatisticsContent() {
 
         <ChartSection
           id="heading-heatmap"
+          className={cn(PANEL, 'lg:col-span-8 lg:row-start-2')}
           title="Lịch nhiệt 12 tuần gần nhất"
           tableLabel="Bảng số liệu chi tiết theo ngày"
           table={
@@ -208,6 +214,7 @@ export function StatisticsContent() {
 
         <ChartSection
           id="heading-bar-chart"
+          className={cn(PANEL, 'lg:col-span-6 lg:row-start-3')}
           title="Phút học 14 ngày gần nhất"
           tableLabel="Bảng số liệu 14 ngày"
           table={
@@ -234,6 +241,7 @@ export function StatisticsContent() {
 
         <ChartSection
           id="heading-accuracy-chart"
+          className={cn(PANEL, 'lg:col-span-6 lg:row-start-3')}
           title="Tỷ lệ đúng 30 ngày gần nhất"
           tableLabel="Bảng số liệu 30 ngày"
           table={
@@ -271,7 +279,10 @@ export function StatisticsContent() {
           )}
         </ChartSection>
 
-        <section aria-labelledby="heading-distribution">
+        <section
+          aria-labelledby="heading-distribution"
+          className={cn(PANEL, 'lg:col-span-4 lg:col-start-9 lg:row-start-2')}
+        >
           <SectionHeader id="heading-distribution" title="Phân bố theo loại" />
           <TargetDistribution counts={targetCounts} total={totalReviews} />
         </section>
@@ -280,8 +291,9 @@ export function StatisticsContent() {
           href="/on-tap/diem-yeu"
           icon={<FeatureIcon name="weak-points" />}
           title="Điểm yếu của tôi"
+          className="md:col-span-2 lg:col-span-12"
         />
-      </div>
+      </BentoGrid>
     </TooltipProvider>
   );
 }
