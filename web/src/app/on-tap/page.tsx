@@ -4,11 +4,11 @@ import { useCallback, useEffect, useMemo, useState, useSyncExternalStore, type R
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { AlarmClock, AlertCircle, ArrowRight, Clock, RefreshCw, Volume2, WifiOff } from 'lucide-react';
+import { AlarmClock, AlertCircle, ArrowRight, ChartColumn, Clock, RefreshCw, Volume2, WifiOff } from 'lucide-react';
 import { FeatureIcon, type FeatureIconName } from '@/components/FeatureIcon';
 import { Furigana } from '@/components/Furigana';
 import { Illustration } from '@/components/Illustration';
-import { ListRow, PageTitle, SectionHeader, TornCard } from '@/components/PaperKit';
+import { Accent, BentoGrid, ListRow, PageTitle, SectionHeader, Tile, TornCard } from '@/components/PaperKit';
 import { TARGET_TYPE_LABEL, TargetTypeBadge } from '@/components/review/TargetTypeBadge';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -36,11 +36,13 @@ import {
   resolveReviewStartAction,
   resolveReviewSyncNotice,
 } from '@/lib/review-queue';
+import { forecastDayLabel, reviewForecast, type ForecastDay } from '@/lib/review-forecast';
 import { secondsPerQuestion } from '@/lib/stats';
 import { createClient, isSupabaseConfigured } from '@/lib/supabase/client';
 import { useDueQueue } from '@/lib/use-due-queue';
 import { useJapaneseVoice } from '@/lib/use-question-pool';
 import { useReviewDraft } from '@/lib/use-review-draft';
+import { cn } from '@/lib/utils';
 import type { TargetType } from '@/types';
 import { ReinforcementSection } from './ReinforcementSection';
 
@@ -54,7 +56,52 @@ const TYPE_ICON: Record<TargetType, FeatureIconName> = {
   listening: 'listening',
 };
 
-const MAIN_CLASS = 'mx-auto w-full max-w-5xl space-y-8 px-4 pb-12 pt-3 sm:px-6 lg:px-8';
+const MAIN_CLASS = 'mx-auto w-full max-w-5xl space-y-8 px-4 pb-12 pt-3 sm:px-6 lg:max-w-[1200px] lg:px-8';
+
+// Mobile xem trước 5 mục; từ md hiện 12 để lấp trọn hàng ở cả 2 và 3 cột.
+const PREVIEW_MOBILE = 5;
+const PREVIEW_WIDE = 12;
+
+/** Biểu đồ cột 7 ngày; số liệu nằm cả trên cột lẫn trong `aria-label` vì cột chỉ là hình. */
+function ForecastChart({ days }: { days: ForecastDay[] }) {
+  const max = Math.max(1, ...days.map((d) => d.count));
+  const labels = days.map(forecastDayLabel);
+  const summary = days.map((d, i) => `${labels[i]} ${d.count}`).join(', ');
+  return (
+    <div>
+      <h2 className="flex items-center gap-2 font-serif text-lg font-semibold text-foreground">
+        <ChartColumn className="size-5 text-primary" aria-hidden="true" />
+        Lịch ôn 7 ngày
+      </h2>
+      <div role="img" aria-label={`Lịch ôn 7 ngày: ${summary}`} className="mt-3 flex h-32 items-end gap-2">
+        {days.map((d, i) => (
+          <div
+            key={i}
+            className={cn('flex min-w-0 flex-col items-center justify-end gap-1', i === 0 ? 'flex-[1.7]' : 'flex-1')}
+          >
+            <span
+              className={cn('text-xs tabular-nums', i === 0 ? 'font-semibold text-foreground' : 'text-muted-foreground')}
+            >
+              {d.count}
+            </span>
+            <div
+              className={cn(
+                'w-full max-w-9 rounded-t-md',
+                i === 0 ? 'bg-primary' : 'border border-b-0 border-border bg-secondary',
+              )}
+              style={{ height: Math.max(4, Math.round((d.count / max) * 72)) }}
+            />
+            <span
+              className={cn('whitespace-nowrap text-xs', i === 0 ? 'font-medium text-foreground' : 'text-muted-foreground')}
+            >
+              {labels[i]}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function subscribeOnline(callback: () => void) {
   window.addEventListener('online', callback);
@@ -145,6 +192,20 @@ export default function ReviewTodayPage() {
     () => db.reviewItems.filter((item) => item.incorrectCount > 0).count(),
     [],
   ) ?? 0;
+
+  // Chỉ đọc cột dueAt qua index, và chỉ tới hết ngày thứ 7 của lịch ôn.
+  const forecastDueDates = useLiveQuery(
+    () => {
+      const end = new Date(queue.now.getFullYear(), queue.now.getMonth(), queue.now.getDate() + 7);
+      return db.reviewItems.where('dueAt').below(end).keys() as Promise<Date[]>;
+    },
+    [queue.now],
+    [] as Date[],
+  );
+  const forecast = useMemo(
+    () => reviewForecast(forecastDueDates ?? [], queue.now),
+    [forecastDueDates, queue.now],
+  );
 
   const loading = queue.loading || hasVoice === null;
   const dueCount = queue.dueItems.length;
@@ -297,15 +358,16 @@ export default function ReviewTodayPage() {
     </AlertDialog>
   );
 
-  // Khung chung của mọi trạng thái (trừ đang tải): tiêu đề, thông báo mạng, nháp dở, hộp thoại bỏ nháp
-  const shell = (content: ReactNode) => (
+  // Khung chung của mọi trạng thái (trừ đang tải): tiêu đề, thông báo mạng, nháp dở, hộp thoại bỏ nháp.
+  // `wide`: nội dung là lưới Bento tràn bề ngang; các trạng thái còn lại giữ cột hẹp.
+  const shell = (content: ReactNode, wide = false) => (
     <main className={MAIN_CLASS}>
       <PageTitle title="Ôn tập hôm nay" />
-      <div className="max-w-2xl space-y-8">
-        {(!isOnline || syncNotice) && <div className="space-y-2">{networkStatusNotice}</div>}
-        {draftResumeCard}
+      <div className="space-y-8">
+        {(!isOnline || syncNotice) && <div className="max-w-2xl space-y-2">{networkStatusNotice}</div>}
+        {draftResumeCard && <div className="max-w-2xl">{draftResumeCard}</div>}
         {discardDraftDialog}
-        {content}
+        {wide ? content : <div className="max-w-2xl space-y-8">{content}</div>}
       </div>
     </main>
   );
@@ -459,18 +521,21 @@ export default function ReviewTodayPage() {
 
   const remainingBatchesText = describeRemainingBatches(queue.remainingDue, queue.reviewBatchSize);
 
-  // Danh sách các mục trong lô hiện tại (tối đa 5 dòng xem trước)
+  // Danh sách các mục trong lô hiện tại (xem trước 5 dòng ở mobile, 12 từ md)
   const batchItems = [
     ...queue.dueItems.map((item) => ({ targetId: item.targetId, dueAt: item.dueAt })),
     ...queue.newTargetIds.map((targetId) => ({ targetId, dueAt: null as Date | null })),
   ];
-  const previewRows = batchItems.slice(0, 5);
-  const remainingInBatch = Math.max(0, batchItems.length - 5);
+  const previewRows = batchItems.slice(0, PREVIEW_WIDE);
+  const remainingMobile = Math.max(0, batchItems.length - PREVIEW_MOBILE);
+  const remainingWide = Math.max(0, batchItems.length - PREVIEW_WIDE);
 
   return shell(
     <>
-      <section aria-labelledby="review-today-heading">
-        <TornCard>
+      <BentoGrid className="max-w-2xl md:max-w-none">
+      <section aria-labelledby="review-today-heading" className="relative md:col-span-2 lg:col-span-7">
+        <Accent kind="sprig-left" className="-right-5 -top-10 w-32" />
+        <TornCard fill>
           <p
             id="review-today-heading"
             className="font-serif text-sm font-bold tracking-wide text-primary"
@@ -516,7 +581,7 @@ export default function ReviewTodayPage() {
           <Button
             size="quiz"
             variant={startAction.buttonVariant}
-            className="mt-5 w-full font-semibold"
+            className="mt-5 w-full font-semibold md:w-auto md:min-w-72"
             onClick={handleStartClick}
           >
             Bắt đầu ôn
@@ -529,18 +594,25 @@ export default function ReviewTodayPage() {
         </TornCard>
       </section>
 
+      <Tile as="section" span={5} full className="hidden md:block">
+        <ForecastChart days={forecast} />
+      </Tile>
+
       {/* Lô này: xem trước tối đa 5 mục của lô hiện tại (chỉ xem, không bấm) */}
-      <section aria-labelledby="batch-preview-heading">
+      <section aria-labelledby="batch-preview-heading" className="md:col-span-2 lg:col-span-12">
         <SectionHeader id="batch-preview-heading" title="Lô này" />
-        <ul className="space-y-2">
-          {previewRows.map((row) => {
+        <ul className="space-y-2 md:grid md:grid-cols-2 md:gap-2 md:space-y-0 lg:grid-cols-3">
+          {previewRows.map((row, index) => {
             const label = labels.get(row.targetId);
             const late = row.dueAt ? overdueDays(row.dueAt, queue.now) : 0;
             const type = targetTypeFromId(row.targetId);
             return (
               <li
                 key={row.targetId}
-                className="flex items-start gap-3 rounded-xl border border-border bg-card px-4 py-3"
+                className={cn(
+                  'flex items-start gap-3 rounded-xl border border-border bg-card px-4 py-3 md:min-h-14 md:items-center md:py-2',
+                  index >= PREVIEW_MOBILE && 'max-md:hidden',
+                )}
               >
                 <span
                   className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground [&_svg]:size-6"
@@ -571,14 +643,22 @@ export default function ReviewTodayPage() {
             );
           })}
         </ul>
-        {remainingInBatch > 0 && (
-          <p className="mt-2 rounded-xl border border-border bg-secondary/50 px-4 py-3 text-center text-sm text-muted-foreground">
-            và {remainingInBatch} mục khác
+        {remainingMobile > 0 && (
+          <p className="mt-2 rounded-xl border border-border bg-secondary/50 px-4 py-3 text-center text-sm text-muted-foreground md:hidden">
+            và {remainingMobile} mục khác
+          </p>
+        )}
+        {remainingWide > 0 && (
+          <p className="mt-2 hidden rounded-xl border border-dashed border-border bg-secondary/50 px-4 py-3 text-center text-sm text-muted-foreground md:block">
+            và {remainingWide} mục khác
           </p>
         )}
       </section>
 
-      <ReinforcementSection weakCount={weakCount} />
+      <div className="md:col-span-2 lg:col-span-12">
+        <ReinforcementSection weakCount={weakCount} wide />
+      </div>
+      </BentoGrid>
 
       {/* Hộp thoại xác nhận ghi đè phiên nháp ôn tập đang dở */}
       <AlertDialog
@@ -609,5 +689,6 @@ export default function ReviewTodayPage() {
         </AlertDialogContent>
       </AlertDialog>
     </>,
+    true,
   );
 }

@@ -64,8 +64,19 @@ hay `line-clamp` nội dung học. Icon và chevron giữ kích thước, bám d
 ## 5. Bố cục
 
 - Mobile trước, kiểm ở 360 và 390 px. Vùng nội dung: `mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8`.
-- Thanh điều hướng dưới trên mobile, thanh bên từ `lg` (do `AppNav` và layout lo; trang cuộn trong `#app-scroll-container`).
-- Từ `xl`: hai cột `[minmax(0,1.2fr)_minmax(21rem,0.8fr)]` — nội dung chính và cột phụ (tra cứu…).
+- Khung (`AppNav` + layout lo; trang cuộn trong `#app-scroll-container`, không phải `window`):
+  - `< md` (dưới 768): thanh đầu + thanh điều hướng dưới. Bản mobile đã duyệt; màn rộng không được làm đổi nó.
+  - `md` (768–1023): rail trái 80 px (icon trên nhãn; tìm, giao diện, cài đặt, hồ sơ ở đáy).
+  - `lg` (≥ 1024): sidebar 240 px (ô tìm `Ctrl K`, mục chọn nền sakura + `Ribbon`, hồ sơ + bánh răng ở đáy).
+- Ba khuôn màn rộng, chọn theo việc của màn:
+  - **Bento** (màn tổng quan: Bảng tin, Ôn tập, Luyện tập, Tra cứu, Cá nhân, Thống kê): `BentoGrid` + `Tile`, 2 cột ở
+    `md`, 12 cột ở `lg`. Ở 1280×800 thấy hết việc chính không cần cuộn.
+  - **Sách mở** (màn nội dung và tra cứu: Học bài, Chi tiết bài, Ngữ pháp, Kanji, Kana, Động từ, Bảng, Luyện viết,
+    Cài đặt): `BookSpread`, danh sách/mục lục một trang, chi tiết trang kia dính khi cuộn; dưới `lg` một trang.
+  - **Sân khấu** (màn phiên toàn màn hình): nội dung giữa ≤ 760 px, không điều hướng, không trang trí.
+- Mật độ: **thấp** ở màn phiên (một việc một màn); **vừa** ở tổng quan và bài học; **cao** ở tra cứu, danh sách,
+  bảng, thống kê, cài đặt (hàng 44–56 px, lưới dày, chi tiết cạnh danh sách trên PC thay vì rời trang).
+- Kiểm 768, 1024 (hẹp nhất có sidebar) và 1280. Nút và ô không kéo giãn quá ~640 px.
 - Khoảng cách: giữa các mục `space-y-8`; giữa các dòng `space-y-2`; trong thẻ `p-5 sm:p-6`.
 - Vùng chạm tối thiểu 44 px. Không lồng thẻ trong thẻ.
 
@@ -83,6 +94,12 @@ hay `line-clamp` nội dung học. Icon và chevron giữ kích thước, bám d
 | `PageTitle` | Đầu màn không có tranh | Nút quay lại (`BackLink`) cho trang con, tiêu đề serif, một dòng số liệu. Màn có tranh thì dùng `SoftScene` + `PaperCloud` như Home. |
 | `BackLink` | Quay lại từ trang con | Chữ nhỏ xám `‹ …` trên thanh cao 44 px dính đầu vùng cuộn (`sticky top-0`, nền `background/95`), luôn bấm được dù đã cuộn xa. Màn có tranh đặt nó trước `SoftScene`. Thanh dính khác trên cùng trang đặt `top-11` để nằm dưới. |
 | `Chip` | Lọc, chọn nhanh | Viên thuốc cao 44 px, `aria-pressed`; chọn = nền sakura chữ đỏ. Hàng chip xuống dòng hoặc cuộn ngang, không co chữ. |
+| `BentoGrid` / `Tile` | Lưới thẻ màn tổng quan (`md`+) | `Tile span={4–12}` cột ở `lg`, `full` chiếm 2 cột ở `md`; `bleed` bỏ padding khi nội dung tràn mép; `interactive` thêm vệt sáng theo chuột. Dưới `md` không áp lưới. |
+| `BookSpread` | Hai trang sách (`lg`+) | `leftWidth` `narrow` (trang trái tối thiểu 16.5rem) hoặc `wide`; `sticky` giữ một trang khi cuộn, `stickyTop` khi có `BackLink` dính. Dưới `lg` xếp dọc. |
+| `Ribbon` | Mục đang chọn trong mục lục, sidebar | Dải đỏ đuôi chữ V ở mép trái; cha `relative`. |
+| `Ticket` | Hành động chính dạng "vé" (tạo phiên) | Như `TornCard` + đường đục lỗ và nhãn `/ … /`. Thay cho `TornCard`, không dùng cả hai trên một màn. |
+| `Kbd` | Gợi ý phím tắt | Chỉ hiện khi có chuột (`hover:hover`), trừ `always`. |
+| `CountUp` (`PaperMotion.tsx`) | Số lớn ở ô số liệu | Chạy một lần khi hiện; giảm chuyển động thì hiện ngay. |
 | Segmented tabs (`app/hoc/[so]/_tabs.tsx`) | Chia nội dung một trang dài thành vài phần ngang hàng | Track nền `secondary` viền mảnh, ô bằng nhau cao 44 px, nhãn chỉ chữ (không số, không icon); ô chọn nền `card` chữ đỏ đậm, không nền đỏ đặc. Dính đầu vùng cuộn, dưới `BackLink` (`sticky top-11`, nền `background/95`); thanh phụ của panel (số liệu + nút icon) dính cùng. Panel ẩn vẫn render; hash URL chọn tab. |
 
 Thành phần dùng chung khác:
@@ -115,10 +132,32 @@ Thành phần dùng chung khác:
 - Bản tối: tranh giảm sáng `dark:brightness-[0.88]` (đã có trong `SoftScene`).
 - Ảnh mới tạo qua pipeline `artwork/illustrations/`, không đặt file tay vào `public/`.
 
+**Tranh phải mang nội dung** (nhất là ở tablet/PC, nơi dễ lấp chỗ trống bằng tranh):
+- Chỉ dùng tranh gắn với đúng một bài, từ, mẫu câu, tình huống hội thoại hoặc trạng thái. Không dùng tranh cảnh để
+  lấp ô (bàn học, chồng sách, đồng hồ, phố trong từng thẻ).
+- Mỗi màn tối đa **một tranh lớn**, chỉ ở màn của một bài (Bảng tin, Học bài, Chi tiết bài, Ngữ pháp, Hội thoại).
+  Tranh lặp trong danh sách là ảnh nhỏ 48–64 px (thẻ từ vựng tối đa ~120 px).
+- Màn công cụ (tra cứu, kanji, kana, động từ, bảng, luyện viết, thống kê, cài đặt) lấy chữ làm hình: Mincho cỡ lớn,
+  số serif, biểu đồ. Không tranh.
+- Màn phiên: không tranh ngoài gợi ý của câu hỏi (mặt sau thẻ từ, câu có ảnh trong dữ liệu).
+
+**Điểm nhấn** (trang trí nhẹ cho màn có sức sống, không phải lớp phủ):
+- Bộ cố định `ui/decor/*`: cành hoa anh đào (trái, phải), cụm cánh hoa, băng washi.
+- Tối đa 1–2 mỗi màn; màn mật độ cao tối đa 1; màn phiên 0 (màn kết quả được 1).
+- Đặt ở chỗ trống tự nhiên: cạnh tiêu đề trang, ló sau góc thẻ hành động chính, khoảng trống cuối trang/panel, trạng
+  thái rỗng. Không đặt trên lưới, bảng, biểu đồ, danh sách, ô nhập, điều hướng hay sau chữ.
+- 64–140 px, hơi trong (~70–85%), dark giảm sáng; `aria-hidden`, `alt=""`, `pointer-events-none`, định vị tuyệt đối
+  (không đổi bố cục); chỉ hiện khi đủ chỗ (thường từ `lg`), mobile không thêm. Đứng yên.
+
 ## 9. Chuyển động
 
-Tối thiểu, chỉ để phản hồi: chuyển trang có sẵn (`PageTransition`), rung báo sai `animate-jp-shake`,
-lật thẻ flashcard (lật qua lại được), easing `ease-smooth-out`. Không thêm animation trang trí. Mọi chuyển động tôn trọng `prefers-reduced-motion`.
+Chỉ để phản hồi và một chút sức sống "sách sống"; mọi chuyển động tắt khi `prefers-reduced-motion: reduce`, hiệu ứng
+hover chỉ cho chuột (`(hover: hover) and (pointer: fine)`), chỉ `transform`/`opacity`, không làm nhảy bố cục.
+- Có sẵn: chuyển trang (`PageTransition`), rung báo sai `animate-jp-shake`, lật thẻ flashcard, easing `ease-smooth-out`.
+- Màn rộng: vệt sáng theo chuột trên `Tile interactive` (`.spotlight`), nghiêng nhẹ ≤ 4° khi hover bìa (`.tilt-hover`),
+  số chạy một lần (`CountUp`), các mục hiện dần (`.stagger-in`, tối đa 8 bậc), hai tờ giấy lệch sau thẻ (`.paper-stack`,
+  tĩnh).
+- Không dùng: nền WebGL, hiệu ứng con trỏ toàn trang, kính mờ, gooey, animation lặp vô hạn.
 
 ## 10. Accessibility
 

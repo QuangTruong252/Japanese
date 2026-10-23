@@ -1,11 +1,32 @@
-import type { MouseEventHandler, ReactNode } from 'react';
+import type { CSSProperties, ElementType, MouseEventHandler, ReactNode } from 'react';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Illustration } from '@/components/Illustration';
 import type { IllustrationAsset } from '@/types';
 import { cn } from '@/lib/utils';
+import { SpotlightSurface } from '@/components/PaperMotion';
+import { DECOR } from '@/lib/illustrations';
 
 /** Bộ thành phần giấy v3 "Sách sống", dùng chung cho mọi màn. */
+
+/**
+ * Điểm nhấn trang trí (cành hoa, cánh hoa, băng washi). Định vị tuyệt đối nên cha cần `relative`; vị trí và cỡ truyền
+ * qua `className` (ví dụ `-right-6 -top-8 w-32`). Mặc định chỉ hiện từ `lg` vì màn hẹp không có chỗ trống để đặt;
+ * thêm `md:block` khi tablet đủ chỗ. Không đặt trên dữ liệu (lưới, bảng, biểu đồ, chữ).
+ */
+export function Accent({ kind, className }: { kind: keyof typeof DECOR; className?: string }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={cn(
+        'pointer-events-none absolute z-10 hidden w-28 select-none opacity-80 lg:block dark:opacity-70 dark:brightness-[0.8]',
+        className,
+      )}
+    >
+      <Illustration asset={DECOR[kind]} sizes="160px" className="h-auto w-full" />
+    </span>
+  );
+}
 
 /** Tranh có mép trên và dưới xé giấy. Ảnh lỗi thì chỉ còn nội dung con, chữ vẫn đọc được. */
 export function SoftScene({
@@ -43,10 +64,19 @@ export function PaperCloud({ className, children }: { className?: string; childr
 }
 
 /** Thẻ giấy washi mép xé, chứa đúng một hành động chính của màn. */
-export function TornCard({ className, children }: { className?: string; children: ReactNode }) {
+export function TornCard({
+  className,
+  fill,
+  children,
+}: {
+  className?: string;
+  /** Cao hết ô cha (dùng trong lưới để bằng chiều cao ô bên cạnh). */
+  fill?: boolean;
+  children: ReactNode;
+}) {
   return (
-    <div className="torn-card-shadow">
-      <div className={cn('torn-card p-5 sm:p-6', className)}>{children}</div>
+    <div className={cn('torn-card-shadow', fill && 'h-full')}>
+      <div className={cn('torn-card p-5 sm:p-6', fill && 'h-full', className)}>{children}</div>
     </div>
   );
 }
@@ -204,6 +234,173 @@ export function ListRow({
     <button type="button" onClick={onClick} className={rowClass}>
       {body}
     </button>
+  );
+}
+
+/**
+ * Lưới Bento cho màn tổng quan: dưới `md` là khối thường (giữ nhịp mobile), `md` hai cột, `lg` mười hai cột.
+ * Con trực tiếp nên là `Tile`; cỡ ô chọn bằng `span`/`full` của `Tile`.
+ */
+export function BentoGrid({ className, children }: { className?: string; children: ReactNode }) {
+  return (
+    <div className={cn('max-md:space-y-8 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-12 lg:gap-5', className)}>
+      {children}
+    </div>
+  );
+}
+
+// Chuỗi class tĩnh để Tailwind quét thấy.
+const TILE_SPAN = {
+  4: 'lg:col-span-4',
+  5: 'lg:col-span-5',
+  6: 'lg:col-span-6',
+  7: 'lg:col-span-7',
+  8: 'lg:col-span-8',
+  12: 'lg:col-span-12',
+} as const;
+
+/**
+ * Ô giấy của `BentoGrid`. `span` là số cột (trên 12) từ `lg`; `full` chiếm cả hai cột ở `md`.
+ * Có padding mặc định `p-5 lg:p-6`; `bleed` bỏ padding khi nội dung cần tràn mép (tranh).
+ * `interactive` thêm vệt sáng theo con trỏ (chỉ chuột). Không lồng Tile trong Tile.
+ */
+export function Tile({
+  span,
+  full,
+  interactive,
+  bleed,
+  as = 'div',
+  className,
+  children,
+}: {
+  span?: keyof typeof TILE_SPAN;
+  full?: boolean;
+  interactive?: boolean;
+  bleed?: boolean;
+  as?: 'div' | 'section' | 'article' | 'aside' | 'li';
+  className?: string;
+  children: ReactNode;
+}) {
+  const cls = cn(
+    'relative rounded-2xl border border-border bg-card shadow-[0_6px_16px_-6px_color-mix(in_oklch,var(--foreground)_12%,transparent)]',
+    !bleed && 'p-5 lg:p-6',
+    full && 'md:col-span-2',
+    span && TILE_SPAN[span],
+    interactive && 'spotlight',
+    className,
+  );
+  if (interactive) {
+    return (
+      <SpotlightSurface as={as} className={cls}>
+        {children}
+      </SpotlightSurface>
+    );
+  }
+  const Tag: ElementType = as;
+  return <Tag className={cls}>{children}</Tag>;
+}
+
+/**
+ * Hai trang sách cho màn nội dung. Dưới `lg` xếp dọc (không viền, không dính); từ `lg` hai cột với gáy sách
+ * ở rãnh giữa. `leftWidth`: `narrow` ≈ 1/3 : 2/3, `wide` ≈ 3/5 : 2/5.
+ * `sticky` giữ một cột đứng yên khi cuộn trong `#app-scroll-container`; nếu trang có `BackLink` dính (44 px)
+ * truyền `stickyTop="4.25rem"` để cột nằm dưới nó (mặc định `1.5rem`).
+ */
+export function BookSpread({
+  left,
+  right,
+  leftWidth = 'narrow',
+  sticky,
+  stickyTop,
+  className,
+}: {
+  left: ReactNode;
+  right: ReactNode;
+  leftWidth?: 'narrow' | 'wide';
+  sticky?: 'left' | 'right';
+  stickyTop?: string;
+  className?: string;
+}) {
+  const stickyCls =
+    'lg:sticky lg:top-[var(--sticky-top,1.5rem)] lg:max-h-[calc(100dvh-var(--sticky-top,1.5rem)-1.5rem)] lg:self-start lg:overflow-y-auto scrollbar-none';
+  const narrow = leftWidth === 'narrow';
+  return (
+    <div
+      className={cn(
+        'max-lg:space-y-8 lg:grid',
+        // Cột giữa 2.5rem là gáy sách; trang hẹp có bề rộng tối thiểu để thẻ hành động không bị bóp ở 1024 px.
+        narrow
+          ? 'lg:grid-cols-[minmax(16.5rem,1fr)_2.5rem_minmax(0,2fr)]'
+          : 'lg:grid-cols-[minmax(0,3fr)_2.5rem_minmax(18rem,2fr)]',
+        className,
+      )}
+      style={stickyTop ? ({ '--sticky-top': stickyTop } as CSSProperties) : undefined}
+    >
+      {/* Gáy sách: đường mảnh + bóng mờ, kéo hết chiều cao hàng. Đứng đầu vì dưới lg nó ẩn: nếu là con cuối,
+          space-y sẽ cộng lề dưới thừa cho cột phải. */}
+      <span
+        aria-hidden="true"
+        className={cn(
+          'pointer-events-none relative hidden lg:col-start-2 lg:row-start-1 lg:block',
+          'bg-[linear-gradient(to_right,transparent,color-mix(in_oklch,var(--foreground)_5%,transparent)_50%,transparent)]',
+          'after:absolute after:inset-y-0 after:left-1/2 after:border-l after:border-border/70',
+        )}
+      />
+      <div className={cn('min-w-0 lg:col-start-1 lg:row-start-1', sticky === 'left' && stickyCls)}>{left}</div>
+      <div className={cn('min-w-0 lg:col-start-3 lg:row-start-1', sticky === 'right' && stickyCls)}>{right}</div>
+    </div>
+  );
+}
+
+/**
+ * Ruy-băng đỏ đánh dấu mục đang chọn trong mục lục. Cha phải `relative`; mặc định bám mép trái, đổi `top`
+ * bằng `className` nếu cần.
+ */
+export function Ribbon({ className }: { className?: string }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={cn(
+        'absolute top-2 left-0 h-6 w-[5px] bg-primary [clip-path:polygon(0_0,100%_0,100%_100%,50%_78%,0_100%)]',
+        className,
+      )}
+    />
+  );
+}
+
+/**
+ * Thẻ "vé" cho hành động chính: như `TornCard` nhưng có đường đục lỗ ngang gần mép trên, hai khuyết tròn ở
+ * hai mép và nhãn serif đỏ phía trên đường. Mỗi màn vẫn chỉ một TornCard hoặc Ticket.
+ */
+export function Ticket({ label, className, children }: { label?: string; className?: string; children: ReactNode }) {
+  return (
+    <div className="torn-card-shadow">
+      <div className="torn-card">
+        <p className={cn('px-5 pb-3 font-serif text-sm font-semibold text-primary sm:px-6', label ? 'pt-4' : 'pt-7')}>
+          {label && `/ ${label} /`}
+        </p>
+        <div aria-hidden="true" className="relative border-t-2 border-dashed border-border">
+          <span className="absolute -top-2.5 -left-2.5 size-5 rounded-full border border-border bg-background" />
+          <span className="absolute -top-2.5 -right-2.5 size-5 rounded-full border border-border bg-background" />
+        </div>
+        <div className={cn('p-5 sm:p-6', className)}>{children}</div>
+      </div>
+    </div>
+  );
+}
+
+/** Phím tắt. Mặc định chỉ hiện khi có chuột (máy cảm ứng không có bàn phím để bấm); `always` để luôn hiện. */
+export function Kbd({ always, className, children }: { always?: boolean; className?: string; children: ReactNode }) {
+  return (
+    <kbd
+      className={cn(
+        'h-5 items-center rounded border border-border bg-secondary px-1.5 font-sans text-xs font-medium text-secondary-foreground',
+        always ? 'inline-flex' : 'hidden [@media(hover:hover)_and_(pointer:fine)]:inline-flex',
+        className,
+      )}
+    >
+      {children}
+    </kbd>
   );
 }
 

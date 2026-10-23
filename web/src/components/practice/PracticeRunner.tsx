@@ -19,7 +19,7 @@ import { QuestionMatching } from './QuestionMatching';
 import { QuestionMc } from './QuestionMc';
 import { QuestionReorder } from './QuestionReorder';
 import { SessionResult } from './SessionResult';
-import { FeedbackPanel, PauseLayer, QuestionPrompt, SessionHeader, SessionShell } from './SessionFrame';
+import { FeedbackPanel, KeyHints, PauseLayer, QuestionPrompt, SessionHeader, SessionShell } from './SessionFrame';
 import { savePracticeSession } from '@/lib/practice-write';
 import { createOnce } from '@/lib/once';
 import { summarizeIncorrect, summarizeSession } from '@/lib/practice';
@@ -150,7 +150,7 @@ export function PracticeRunner({
   // Ghi nhận đáp án: PracticeRunner giữ đồng hồ và ghi đè elapsedMs khi results.length === 1
   const handleAnswer = useCallback(
     (results: AnswerResult[]) => {
-      if (answered || isPaused) return;
+      if (answered || isPaused || exitDialogOpen) return;
       pauseQuestionTimer();
       const elapsedMs = getQuestionElapsedMs();
       const questionId = questions[currentIndex]?.id;
@@ -180,7 +180,7 @@ export function PracticeRunner({
         });
       }
     },
-    [answered, isPaused, pauseQuestionTimer, getQuestionElapsedMs, allResults, questions, currentIndex, sessionDuration, config],
+    [answered, isPaused, exitDialogOpen, pauseQuestionTimer, getQuestionElapsedMs, allResults, questions, currentIndex, sessionDuration, config],
   );
 
   // Ghi kết quả Dexie một transaction duy nhất
@@ -248,6 +248,8 @@ export function PracticeRunner({
         setExitDialogOpen(true);
         return;
       }
+
+      if (e.ctrlKey || e.altKey || e.metaKey) return;
 
       if (
         shouldAdvanceOnKey({
@@ -341,7 +343,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       case 'reorder':
@@ -351,7 +353,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       case 'listening':
@@ -361,7 +363,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       case 'cloze':
@@ -371,7 +373,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       case 'mc':
@@ -382,7 +384,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
     }
@@ -412,6 +414,13 @@ export function PracticeRunner({
         onTogglePause={togglePause}
       />
 
+      <KeyHints
+        items={[
+          ...(currentQuestion.type === 'mc' ? [{ keys: '1–4', label: 'Chọn đáp án' }] : []),
+          { keys: 'Enter', label: 'Tiếp' },
+        ]}
+      />
+
       <div className="relative flex min-h-0 flex-1 flex-col">
         {isPaused && !answered && (
           <PauseLayer title="Phiên đang tạm dừng" resumeLabel="Tiếp tục làm bài" onResume={togglePause} />
@@ -423,7 +432,7 @@ export function PracticeRunner({
           <div
             key={currentQuestion.id}
             inert={isPaused}
-            className="my-auto w-full space-y-6 py-2 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:duration-150"
+            className="my-auto lg:my-0 lg:mt-[12vh] w-full space-y-6 py-2 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:duration-150"
           >
             <QuestionPrompt question={currentQuestion} />
             {renderQuestionComponent()}

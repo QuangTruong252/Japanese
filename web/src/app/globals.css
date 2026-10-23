@@ -384,6 +384,76 @@ input[type="search"]::-webkit-search-decoration {
   }
 }
 
+/* Chuyển động nhẹ cho thẻ giấy (màn rộng). Chỉ transform/opacity/background, không đổi bố cục. */
+@media (prefers-reduced-motion: no-preference) {
+  .stagger-in > * {
+    animation: stagger-in 250ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: calc(min(var(--i, 0), 7) * 50ms);
+  }
+}
+/* Hai tờ giấy lệch sau thẻ: trang trí tĩnh, không phải chuyển động, nên giữ cả khi giảm chuyển động. */
+.paper-stack {
+  position: relative;
+  isolation: isolate;
+}
+.paper-stack::before,
+.paper-stack::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border: 1px solid var(--border);
+  border-radius: inherit;
+  background: var(--card);
+}
+.paper-stack::before {
+  transform: rotate(-2.5deg);
+}
+.paper-stack::after {
+  transform: rotate(2deg);
+}
+@keyframes stagger-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .spotlight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 200ms cubic-bezier(0.22, 1, 0.36, 1);
+    background: radial-gradient(
+      240px circle at var(--mx, 50%) var(--my, 50%),
+      color-mix(in oklch, var(--primary) 7%, transparent),
+      transparent 70%
+    );
+  }
+  .spotlight:hover::after {
+    opacity: 1;
+  }
+  .tilt-hover {
+    transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .tilt-hover:hover {
+    transform: rotate(-1.5deg) translateY(-2px);
+  }
+}
+
+/* Vân giấy rất nhẹ cho nền màn rộng: noise đen ~3% (sáng) hoặc trắng ~4% (tối). Dưới 768px không có. */
+@media (min-width: 768px) {
+  body {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0 0 0 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .dark body {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0.08 0 0 0 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
 /* Ẩn thanh cuộn nhưng vẫn cuộn được (chạm, con lăn, bàn phím) */
 @utility scrollbar-none {
   scrollbar-width: none;

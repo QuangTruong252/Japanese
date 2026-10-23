@@ -7,7 +7,8 @@ const RIGHT = 336;
 const TOP = 20;
 const BASE = 130;
 
-const FRAME = 'w-full max-w-xl overflow-visible';
+// Từ md biểu đồ lấp đầy ô thay vì dừng ở 36rem.
+const FRAME = 'w-full max-w-xl overflow-visible md:max-w-none';
 
 /** Biểu đồ cột phút học; cột cao nhất có nhãn `{n}p`. Nhãn trục X thưa dần để không chồng. */
 export function MinutesBarChart({ data }: { data: DayValue[] }) {

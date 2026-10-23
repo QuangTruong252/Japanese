@@ -6,6 +6,8 @@ import {
   AlertCircle,
   ArrowDownUp,
   ArrowRight,
+  BookOpen,
+  Clock,
   Headphones,
   Link2,
   ListChecks,
@@ -26,7 +28,7 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import { FeatureIcon } from '@/components/FeatureIcon';
-import { Chip, ListRow, PageTitle, SectionHeader, TornCard } from '@/components/PaperKit';
+import { Accent, Chip, ListRow, PageTitle, SectionHeader, Ticket, TornCard } from '@/components/PaperKit';
 import { filterExercises } from '@/lib/filter';
 import { AVAILABLE_N5_LESSONS, loadLessonSummaries } from '@/lib/lessons';
 import { buildSession } from '@/lib/practice';
@@ -49,7 +51,7 @@ import {
 import { getActivePracticeDraftInfo } from '@/lib/active-drafts';
 import { db } from '@/lib/db';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { countLearnedByLesson, pickActiveLesson } from '@/lib/stats';
+import { countLearnedByLesson, pickActiveLesson, secondsPerQuestion } from '@/lib/stats';
 import {
   computeActualQuestionCount,
   getPracticeBlockedReason,
@@ -346,6 +348,18 @@ function PracticeConfigContent() {
     sessionPreview.eligibleCount,
   );
 
+  // Thời gian thật mỗi câu từ các phiên gần đây; chưa có dữ liệu thì bỏ dòng ước lượng.
+  const recentSessions = useLiveQuery(
+    () => db.practiceSessions.orderBy('createdAt').reverse().limit(20).toArray(),
+    [],
+  );
+  const minutesEstimate = useMemo(() => {
+    const spq = secondsPerQuestion(recentSessions ?? []);
+    return spq === null || actualQuestionCount === 0
+      ? null
+      : Math.max(1, Math.round((actualQuestionCount * spq) / 60));
+  }, [recentSessions, actualQuestionCount]);
+
   const blockedReason = useMemo(
     () =>
       getPracticeBlockedReason({
@@ -417,34 +431,36 @@ function PracticeConfigContent() {
     clearPracticeDraft();
   };
 
-  const blockedAlert = blockedReason && (
-    <div
-      id="practice-blocked-reason"
-      className="mt-4 flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/10 p-3 text-sm text-destructive"
-      role="alert"
-    >
-      <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-      <div>
-        <p className="font-medium">{blockedReason}</p>
-        {sessionPreview.eligibleCount === 0 &&
-          selectedLessons.length > 0 &&
-          selectedTypes.length > 0 && (
-            <p className="mt-1 text-muted-foreground">
-              Gợi ý: Chọn thêm bài học hoặc bỏ dạng Nghe nếu máy chưa có giọng Nhật.
-            </p>
-          )}
+  // Bản mobile và bản md+ cùng nằm trong DOM (một bản bị ẩn bằng CSS) nên id phải khác nhau.
+  const blockedAlertFor = (idSuffix: string) =>
+    blockedReason && (
+      <div
+        id={`practice-blocked-reason-${idSuffix}`}
+        className="mt-4 flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/10 p-3 text-sm text-destructive"
+        role="alert"
+      >
+        <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+        <div>
+          <p className="font-medium">{blockedReason}</p>
+          {sessionPreview.eligibleCount === 0 &&
+            selectedLessons.length > 0 &&
+            selectedTypes.length > 0 && (
+              <p className="mt-1 text-muted-foreground">
+                Gợi ý: Chọn thêm bài học hoặc bỏ dạng Nghe nếu máy chưa có giọng Nhật.
+              </p>
+            )}
+        </div>
       </div>
-    </div>
-  );
+    );
 
   // Có nháp thì "Tiếp tục" giữ nút đỏ duy nhất của màn; bắt đầu phiên mới hạ xuống outline.
-  const startButton = (
+  const startButtonFor = (idSuffix: string) => (
     <Button
       size="quiz"
       variant={hasActiveDraft ? 'outline' : 'default'}
-      className="mt-5 w-full font-semibold"
+      className="mt-5 w-full font-semibold md:mt-0 lg:mt-5"
       disabled={Boolean(blockedReason) || loading}
-      aria-describedby={blockedReason ? 'practice-blocked-reason' : undefined}
+      aria-describedby={blockedReason ? `practice-blocked-reason-${idSuffix}` : undefined}
       onClick={handleStartClick}
     >
       {loading ? 'Đang chuẩn bị câu hỏi…' : startButtonText}
@@ -452,30 +468,55 @@ function PracticeConfigContent() {
     </Button>
   );
 
-  const newSessionSummary = (
-    <>
-      <p className="font-serif text-2xl font-bold tracking-tight text-foreground">{summaryTitle}</p>
-      <p className="mt-1 text-sm text-muted-foreground">{selectedTypeLabels}</p>
-      {blockedAlert}
-      {startButton}
-    </>
+  // Mobile: tiêu đề, dạng bài, nút xếp dọc. Từ md: tóm tắt (bài, dạng, phút) bên trái, nút bên phải; từ lg cột hẹp nên xếp dọc lại.
+  const newSessionSummaryFor = (idSuffix: string) => (
+    <div className="md:flex md:items-end md:gap-6 lg:block">
+      <div className="min-w-0 md:flex-1">
+        <p className="font-serif text-2xl font-bold tracking-tight text-foreground">{summaryTitle}</p>
+        <p className="mt-1 text-sm text-muted-foreground">{selectedTypeLabels}</p>
+        <ul className="mt-3 hidden flex-wrap gap-x-5 gap-y-1.5 text-sm text-foreground md:flex">
+          <li className="flex items-center gap-1.5">
+            <BookOpen className="size-4 text-muted-foreground" aria-hidden="true" />
+            {selectedLessons.length} bài đã chọn
+          </li>
+          <li className="flex items-center gap-1.5">
+            <ListChecks className="size-4 text-muted-foreground" aria-hidden="true" />
+            {selectedTypes.length} dạng bài
+          </li>
+          {minutesEstimate !== null && (
+            <li className="flex items-center gap-1.5">
+              <Clock className="size-4 text-muted-foreground" aria-hidden="true" />
+              {actualQuestionCount} câu · khoảng {minutesEstimate} phút
+            </li>
+          )}
+        </ul>
+        {blockedAlertFor(idSuffix)}
+      </div>
+      <div className="md:w-64 md:shrink-0 lg:w-full">{startButtonFor(idSuffix)}</div>
+    </div>
   );
 
+  // Từ lg vé nằm cột phải và dính; ở md vé lên đầu trang. Các ô còn lại chiếm cột trái.
+  const SIDE_CLASS =
+    'md:order-first md:col-span-12 lg:order-none lg:col-span-4 lg:col-start-9 lg:row-span-4 lg:row-start-1 lg:sticky lg:top-6 lg:self-start';
+  const LEFT_CLASS = 'md:col-span-12 lg:col-span-8 lg:col-start-1';
+
   return (
-    <main className="mx-auto w-full max-w-5xl space-y-8 px-4 pb-12 pt-3 sm:px-6 lg:px-8">
+    <main className="mx-auto w-full max-w-5xl space-y-8 px-4 pb-12 pt-3 sm:px-6 lg:max-w-[1200px] lg:px-8">
       <PageTitle title="Luyện tập" />
 
-      <div className="max-w-2xl space-y-8">
+      <div className="max-w-2xl space-y-8 md:grid md:max-w-none md:grid-cols-12 md:gap-x-6 md:gap-y-5 md:space-y-0">
         {/* Luyện viết là dạng luyện riêng (vẽ nét, lịch ôn riêng), không phải một dạng câu hỏi của phiên bên dưới. */}
         <ListRow
           href="/luyen-viet"
           icon={<FeatureIcon name="kanji" />}
           title="Luyện viết"
           detail="Kana và kanji N5, vẽ từng nét"
+          className={LEFT_CLASS}
         />
 
         {hasActiveDraft && draftInfo ? (
-          <section aria-labelledby="practice-draft-heading" className="space-y-4">
+          <section aria-labelledby="practice-draft-heading" className={cn('space-y-4', SIDE_CLASS)}>
             <TornCard>
               <p
                 id="practice-draft-heading"
@@ -514,24 +555,31 @@ function PracticeConfigContent() {
               </div>
             </TornCard>
             <div aria-label="Cấu hình phiên mới" role="group" className="rounded-xl border border-border bg-card p-4">
-              {newSessionSummary}
+              <div className="md:hidden">{newSessionSummaryFor('m')}</div>
+              <div className="max-md:hidden">{newSessionSummaryFor('w')}</div>
             </div>
           </section>
         ) : (
-          <section aria-labelledby="practice-new-heading">
-            <TornCard>
-              <p
-                id="practice-new-heading"
-                className="font-serif text-sm font-bold tracking-wide text-primary"
-              >
-                / Phiên mới /
-              </p>
-              <div className="mt-1.5">{newSessionSummary}</div>
-            </TornCard>
-          </section>
+          <>
+            <section aria-labelledby="practice-new-heading" className="md:hidden">
+              <TornCard>
+                <p
+                  id="practice-new-heading"
+                  className="font-serif text-sm font-bold tracking-wide text-primary"
+                >
+                  / Phiên mới /
+                </p>
+                <div className="mt-1.5">{newSessionSummaryFor('m')}</div>
+              </TornCard>
+            </section>
+            <section aria-label="Phiên mới" className={cn('relative max-md:hidden', SIDE_CLASS)}>
+              <Accent kind="washi" className="-top-3 left-1/2 w-24 -translate-x-1/2 md:block" />
+              <Ticket label="Phiên mới">{newSessionSummaryFor('w')}</Ticket>
+            </section>
+          </>
         )}
 
-        <section aria-labelledby="practice-lessons-heading">
+        <section aria-labelledby="practice-lessons-heading" className={LEFT_CLASS}>
           <div className="mb-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
             <h2 id="practice-lessons-heading" className="text-lg font-semibold text-foreground">
               Chọn bài
@@ -555,11 +603,12 @@ function PracticeConfigContent() {
                   type="button"
                   aria-pressed={selected}
                   aria-label={`Bài ${num}${title ? `: ${title}` : ''}`}
+                  title={title ? `Bài ${num}: ${title}` : undefined}
                   onClick={() => toggleLesson(num)}
                   className={cn(
                     'flex h-12 items-center justify-center rounded-xl border text-sm font-medium outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring active:translate-y-px',
                     selected
-                      ? 'border-primary bg-primary font-semibold text-primary-foreground'
+                      ? 'border-primary bg-primary font-semibold text-primary-foreground md:border-primary/40 md:bg-accent md:text-primary'
                       : 'border-border bg-card text-foreground hover:bg-muted/60',
                   )}
                 >
@@ -570,7 +619,7 @@ function PracticeConfigContent() {
           </div>
         </section>
 
-        <section aria-labelledby="practice-types-heading">
+        <section aria-labelledby="practice-types-heading" className={LEFT_CLASS}>
           <SectionHeader id="practice-types-heading" title="Dạng bài" />
           <div className="flex flex-wrap gap-2">
             {EXERCISE_TYPES.map(({ type, label, Icon }) => {
@@ -593,9 +642,10 @@ function PracticeConfigContent() {
           </div>
         </section>
 
-        <fieldset>
+        <fieldset className={LEFT_CLASS}>
           <legend className="mb-3 text-lg font-semibold text-foreground">Số câu</legend>
-          <div className="grid grid-cols-4 gap-1 rounded-xl border border-border bg-card p-1">
+          <div className="lg:flex lg:items-center lg:gap-4">
+          <div className="grid grid-cols-4 gap-1 rounded-xl border border-border bg-card p-1 lg:w-80 lg:shrink-0">
             {QUESTION_COUNTS.map((count) => {
               const selected = questionCount === count;
               const inputId = `question-count-${count}`;
@@ -606,7 +656,7 @@ function PracticeConfigContent() {
                   className={cn(
                     'relative flex min-h-11 cursor-pointer select-none items-center justify-center rounded-lg text-sm font-medium transition-colors has-focus-visible:ring-3 has-focus-visible:ring-ring',
                     selected
-                      ? 'bg-primary font-semibold text-primary-foreground'
+                      ? 'bg-primary font-semibold text-primary-foreground md:bg-card md:text-primary md:shadow-sm'
                       : 'text-foreground hover:bg-muted/60',
                   )}
                 >
@@ -624,7 +674,7 @@ function PracticeConfigContent() {
               );
             })}
           </div>
-          <p className="mt-2 text-sm text-muted-foreground">
+          <p className="mt-2 text-sm text-muted-foreground lg:mt-0">
             {selectedLessons.length === 0 || selectedTypes.length === 0
               ? 'Chưa chọn đủ bài học và dạng bài.'
               : `Sẵn ${sessionPreview.eligibleCount} câu${
@@ -633,6 +683,7 @@ function PracticeConfigContent() {
                     : ''
                 }`}
           </p>
+          </div>
         </fieldset>
       </div>
 

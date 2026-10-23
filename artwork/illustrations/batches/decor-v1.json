@@ -1,0 +1,33 @@
+{
+  "name": "decor-v1",
+  "description": "Bộ điểm nhấn trang trí nhẹ cho tablet/PC: cành hoa anh đào hai dáng, cụm cánh hoa, băng washi.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "group": "ui/decor",
+      "stem": "sakura-sprig-left-v1",
+      "subject": "one small slender cherry-blossom sprig lying diagonally, its thin brown twig starting at the lower right and reaching up toward the upper left, with five or six pale pink five-petal sakura flowers, two closed buds and three small fresh green leaves. Delicate, airy and light, lots of empty space between flowers; soft pale pink and blush tones with a little brick-red at the flower centers. Nothing else.",
+      "alt": { "vi": "" }
+    },
+    {
+      "group": "ui/decor",
+      "stem": "sakura-sprig-right-v1",
+      "subject": "one small slender cherry-blossom sprig lying diagonally, its thin brown twig starting at the lower left and reaching up toward the upper right, with four or five pale pink five-petal sakura flowers, three closed buds and two small fresh green leaves. Delicate, airy and light, lots of empty space between flowers; soft pale pink and blush tones with a little brick-red at the flower centers. Nothing else.",
+      "alt": { "vi": "" }
+    },
+    {
+      "group": "ui/decor",
+      "stem": "sakura-petals-v1",
+      "subject": "exactly three loose pale pink cherry-blossom petals drifting in a loose diagonal cluster, each petal a different angle and slightly different size, with a tiny notch at the tip of each petal. Soft blush watercolor, very light. Nothing else.",
+      "alt": { "vi": "" }
+    },
+    {
+      "group": "ui/decor",
+      "stem": "washi-tape-v1",
+      "subject": "one short strip of translucent Japanese washi masking tape laid horizontally and very slightly tilted, about four times longer than it is tall, with softly torn uneven ends, pale sakura-pink with a faint tiny white dot pattern and visible paper fibers. Flat, no shadow. Nothing else.",
+      "alt": { "vi": "" }
+    }
+  ]
+}

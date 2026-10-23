@@ -1,15 +1,66 @@
 'use client';
 
-import { useMemo, useState, useEffect, useRef } from 'react';
+import { useMemo, useState, useEffect, useRef, type ReactNode } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Search, X, FilterX } from 'lucide-react';
+import { Search, X, FilterX, ChevronDown, ChevronRight } from 'lucide-react';
 import type { VerbItem } from '@/types/lookup';
 import { filterVerbs } from '@/lib/lookup';
 import { Furigana } from '@/components/Furigana';
+import { SpeakButton } from '@/components/SpeakButton';
 import { VerbGroupBadge } from '@/components/VerbGroupBadge';
-import { Chip } from '@/components/PaperKit';
+import { BookSpread, Chip, Ribbon } from '@/components/PaperKit';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+
+function verbForms(v: VerbItem) {
+  return [
+    { label: 'ます', value: v.masu },
+    { label: 'て', value: v.te },
+    { label: 'Từ điển', value: v.dictionary },
+    { label: 'ない', value: v.nai ?? '—' },
+    { label: 'た', value: v.ta },
+  ];
+}
+
+/** Chi tiết một động từ ở trang phải của sách mở (PC): 5 thể, mỗi thể có nút đọc. */
+function VerbPanel({ verb }: { verb: VerbItem }) {
+  const { mainVerb, collocation } = splitCollocation(verb.verb);
+  return (
+    <div className="space-y-5">
+      <div className="space-y-2 border-b border-border pb-4">
+        <div className="flex flex-wrap items-end gap-x-4 gap-y-1">
+          <Furigana text={mainVerb} className="jp-display text-5xl font-semibold leading-tight text-foreground" />
+          {collocation && <span className="pb-1 text-sm text-muted-foreground">（{collocation}）</span>}
+        </div>
+        <p className="font-serif text-xl text-muted-foreground">{verb.meaning.vi}</p>
+        <div className="flex flex-wrap items-center gap-2">
+          <VerbGroupBadge group={verb.group} />
+          <span className="rounded-full bg-secondary px-2.5 py-0.5 text-xs text-muted-foreground">Bài {verb.lesson}</span>
+        </div>
+      </div>
+
+      <dl className="space-y-2">
+        {verbForms(verb).map((f) => (
+          <div key={f.label} className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-2">
+            <dt className="w-16 shrink-0 text-sm text-muted-foreground">{f.label}</dt>
+            <dd lang="ja" className="jp-display min-w-0 flex-1 text-2xl font-semibold text-foreground">
+              {f.value}
+            </dd>
+            {f.value !== '—' && (
+              <SpeakButton
+                text={f.value}
+                label={`${f.label}: ${f.value}`}
+                iconClassName="size-4"
+                className="size-11 w-11 rounded-full border border-border bg-secondary text-primary hover:bg-accent"
+              />
+            )}
+          </div>
+        ))}
+      </dl>
+
+    </div>
+  );
+}
 
 /** Tách cụm đi kèm ở cuối chuỗi, ví dụ `会[あ]います[ともだちに〜]`. */
 function splitCollocation(verb: string) {
@@ -22,9 +73,11 @@ function splitCollocation(verb: string) {
 
 interface VerbTableProps {
   verbs: VerbItem[];
+  /** Đầu trang (tiêu đề) nằm trong trang trái của sách mở. */
+  header: ReactNode;
 }
 
-export function VerbTable({ verbs }: VerbTableProps) {
+export function VerbTable({ verbs, header }: VerbTableProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -40,7 +93,9 @@ export function VerbTable({ verbs }: VerbTableProps) {
     paramLesson ? Number(paramLesson) : null
   );
 
-  const firstMatchDesktopRef = useRef<HTMLTableRowElement | null>(null);
+  // Hàng được chọn: tablet mở rộng tại chỗ, PC hiện ở trang phải (chưa chọn thì PC lấy hàng đầu)
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const firstMatchDesktopRef = useRef<HTMLLIElement | null>(null);
   const firstMatchMobileRef = useRef<HTMLElement | null>(null);
 
   // Cập nhật URL Search Params
@@ -98,9 +153,12 @@ export function VerbTable({ verbs }: VerbTableProps) {
   }, [query]);
 
   const hasFilter = query.trim() !== '' || selectedGroup !== null || selectedLesson !== null;
+  const activeVerb = filteredVerbs.find((v) => v.id === selectedId) ?? filteredVerbs[0];
 
-  return (
-    <div className="space-y-5">
+  const left = (
+    <div className="space-y-6">
+      {header}
+      <div className="space-y-5">
       <section aria-label="Tìm kiếm và lọc động từ" className="space-y-3">
         <div className="relative">
           <Search className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
@@ -231,76 +289,82 @@ export function VerbTable({ verbs }: VerbTableProps) {
             })}
           </div>
 
-          {/* Từ md: bảng, cột Động từ ghim bên trái */}
-          <div
-            tabIndex={0}
-            role="region"
-            aria-label="Bảng chia 156 động từ N5"
-            className="hidden overflow-x-auto rounded-xl border border-border bg-card outline-none focus-visible:ring-3 focus-visible:ring-ring md:block"
-          >
-            <table className="w-full border-collapse text-left text-sm">
-              <caption className="sr-only">
-                Bảng 156 động từ N5 với cột nghĩa ngay sau động từ và 5 thể: ます, て, từ điển, ない, た
-              </caption>
-              <thead>
-                <tr className="border-b border-border bg-secondary text-xs font-semibold text-muted-foreground">
-                  <th scope="col" className="sticky left-0 z-20 min-w-32 bg-secondary px-4 py-3 shadow-[1px_0_0_0_var(--color-border)]">
-                    Động từ
-                  </th>
-                  <th scope="col" className="min-w-36 px-4 py-3">Nghĩa</th>
-                  <th scope="col" className="min-w-24 px-3 py-3">ます</th>
-                  <th scope="col" className="min-w-24 px-3 py-3">て</th>
-                  <th scope="col" className="min-w-24 px-3 py-3">Từ điển</th>
-                  <th scope="col" className="min-w-24 px-3 py-3">ない</th>
-                  <th scope="col" className="min-w-24 px-3 py-3">た</th>
-                  <th scope="col" className="min-w-16 px-3 py-3 text-center">Bài</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {filteredVerbs.map((v, idx) => {
-                  const isFirstMatch = query.trim() !== '' && idx === 0;
-                  const { mainVerb, collocation } = splitCollocation(v.verb);
+          {/* Từ md: danh sách dày; tablet mở rộng hàng tại chỗ, PC chọn hàng để xem ở trang phải */}
+          <ul aria-label="Danh sách 156 động từ N5" className="hidden divide-y divide-border border-y border-border md:block">
+            {filteredVerbs.map((v, idx) => {
+              const isFirstMatch = query.trim() !== '' && idx === 0;
+              const isOpen = selectedId === v.id;
+              const isActive = activeVerb?.id === v.id;
+              const { mainVerb, collocation } = splitCollocation(v.verb);
 
-                  return (
-                    <tr
-                      key={v.id}
-                      ref={isFirstMatch ? firstMatchDesktopRef : undefined}
-                      className={cn('transition-colors hover:bg-muted/30', isFirstMatch && 'bg-accent')}
-                    >
-                      <th
-                        scope="row"
-                        className={cn(
-                          'sticky left-0 z-10 px-4 py-3 font-normal shadow-[1px_0_0_0_var(--color-border)]',
-                          isFirstMatch ? 'bg-accent' : 'bg-card'
-                        )}
-                      >
-                        <div className="space-y-1">
-                          <Furigana text={mainVerb} className="text-base font-bold text-foreground" />
-                          {collocation && (
-                            <span className="block text-xs font-normal leading-tight text-muted-foreground">
-                              （{collocation}）
+              return (
+                <li
+                  key={v.id}
+                  ref={isFirstMatch ? firstMatchDesktopRef : undefined}
+                  className={cn('relative transition-colors', isOpen && 'bg-accent', isActive && 'lg:bg-accent')}
+                >
+                  {isActive && <Ribbon className="top-4 max-lg:hidden" />}
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    onClick={() => setSelectedId(isOpen ? null : v.id)}
+                    className="flex min-h-14 w-full items-center gap-3 px-3 py-1 text-left outline-none transition-colors hover:bg-muted/40 focus-visible:ring-3 focus-visible:ring-ring"
+                  >
+                    <Furigana
+                      text={mainVerb}
+                      zoomable={false}
+                      className="jp-display w-32 shrink-0 text-xl font-semibold text-foreground lg:w-28 lg:text-base xl:w-36 xl:text-lg"
+                    />
+                    <span className="min-w-0 flex-1 text-sm text-foreground lg:line-clamp-2">{v.meaning.vi}</span>
+                    <span className="flex shrink-0 flex-col items-end gap-0.5 xl:flex-row xl:items-center xl:gap-3">
+                      <VerbGroupBadge group={v.group} />
+                      <span className="text-right text-xs text-muted-foreground">Bài {v.lesson}</span>
+                    </span>
+                    {isOpen ? (
+                      <ChevronDown className="size-5 shrink-0 text-muted-foreground lg:hidden" aria-hidden="true" />
+                    ) : (
+                      <ChevronRight className="size-5 shrink-0 text-muted-foreground lg:hidden" aria-hidden="true" />
+                    )}
+                  </button>
+                  {isOpen && (
+                    <div className="flex flex-col gap-2 px-3 pb-3 lg:hidden">
+                      {collocation && <p lang="ja" className="text-sm text-muted-foreground">（{collocation}）</p>}
+                      <div className="grid grid-cols-5 gap-2">
+                        {verbForms(v).map((f) => (
+                          <div key={f.label} className="rounded-lg border border-border bg-card px-1 py-2 text-center">
+                            <span className="block text-xs text-muted-foreground">{f.label}</span>
+                            <span lang="ja" className="jp-display block text-lg font-semibold text-foreground">
+                              {f.value}
                             </span>
-                          )}
-                          <VerbGroupBadge group={v.group} />
-                        </div>
-                      </th>
-                      <td className="px-4 py-3 text-foreground">{v.meaning.vi}</td>
-                      <td className="jp whitespace-nowrap px-3 py-3 text-foreground">{v.masu}</td>
-                      <td className="jp whitespace-nowrap px-3 py-3 text-foreground">{v.te}</td>
-                      <td className="jp whitespace-nowrap px-3 py-3 font-semibold text-foreground">{v.dictionary}</td>
-                      <td className="jp whitespace-nowrap px-3 py-3 text-foreground">{v.nai ?? '—'}</td>
-                      <td className="jp whitespace-nowrap px-3 py-3 text-foreground">{v.ta}</td>
-                      <td className="whitespace-nowrap px-3 py-3 text-center text-xs text-muted-foreground">
-                        Bài {v.lesson}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
         </>
       )}
+      </div>
     </div>
+  );
+
+  const right = (
+    <aside aria-label="Chi tiết động từ" aria-live="polite" className="hidden lg:block">
+      {activeVerb && <VerbPanel key={activeVerb.id} verb={activeVerb} />}
+    </aside>
+  );
+
+  return (
+    <BookSpread
+      leftWidth="wide"
+      sticky="right"
+      stickyTop="4.25rem"
+      className="max-lg:space-y-0"
+      left={left}
+      right={right}
+    />
   );
 }

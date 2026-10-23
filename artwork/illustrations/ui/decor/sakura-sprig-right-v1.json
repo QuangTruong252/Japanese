@@ -1,0 +1,51 @@
+{
+  "createdAt": "2026-10-23T02:16:07.666Z",
+  "batch": "artwork/illustrations/batches/decor-v1.json",
+  "prompt": "Create ONE square 1:1 illustration for a Japanese-learning app's small decorative accent.\n\nSTYLE: match the attached reference image exactly (\"paper town\"): hand-painted watercolor/gouache with fine dark pencil outlines, soft painted shapes, subtle paper grain only inside the painted shapes; palette of warm ivory/sand, sage/olive green, charcoal, restrained brick red (use true colors where the subject requires). Friendly everyday feeling, not photoreal, not 3D, not flat geometric cartoon.\nPeople, when present: the male student = short slightly messy dark hair, long-sleeve ivory shirt, charcoal trousers, dark backpack; the woman = dark bob haircut, cream cardigan, brick-red top, charcoal skirt, brown bag. Keep faces and proportions like the reference.\nBACKGROUND: fully TRANSPARENT (real PNG alpha channel). No white, no paper rectangle, no fake checkerboard, no soft background wash, no floor shadow spreading outward, no stray paint specks.\nABSOLUTELY NO text, letters, Japanese characters, numbers, digits, logos, brand marks, signs with writing, route numbers, labels, captions, watermark or UI anywhere. Signs, screens and destination boards stay blank.\n\nLAYOUT: a single standalone cutout vignette centered, occupying about 70% of the canvas, with wide EMPTY transparent margins on all four sides. Show every person and object completely (full figures including feet); nothing is cropped by or touches the canvas edge.\n\nSUBJECT: one small slender cherry-blossom sprig lying diagonally, its thin brown twig starting at the lower left and reaching up toward the upper right, with four or five pale pink five-petal sakura flowers, three closed buds and two small fresh green leaves. Delicate, airy and light, lots of empty space between flowers; soft pale pink and blush tones with a little brick-red at the flower centers. Nothing else.",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "output": "web/public/assets/illustrations/ui/decor/sakura-sprig-right-v1.webp",
+  "width": 512,
+  "height": 512,
+  "role": "decor-cutout",
+  "suggestedAlt": {
+    "vi": ""
+  },
+  "master": {
+    "path": "artwork/illustrations/ui/decor/sakura-sprig-right-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "hasAlpha": true
+  },
+  "export": {
+    "converter": "sharp",
+    "version": "0.35.4",
+    "subjectBox": {
+      "left": 210,
+      "top": 184,
+      "width": 954,
+      "height": 968
+    },
+    "subjectThreshold": 8,
+    "inner": 416,
+    "padding": 48,
+    "scale": 0.43,
+    "quality": 82,
+    "alphaQuality": 100,
+    "effort": 6
+  },
+  "outputVerification": {
+    "format": "webp",
+    "bytes": 46988,
+    "sha256": "24117681655e0b0f3753f94988fffc42944e66c2a2e541b324d4e152f8fa17ba",
+    "hasAlpha": true,
+    "decoded": true,
+    "alphaPixels": {
+      "transparent": 203740,
+      "partial": 56437,
+      "opaque": 1967
+    }
+  }
+}

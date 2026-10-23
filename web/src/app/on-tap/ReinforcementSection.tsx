@@ -12,8 +12,8 @@ import { useQuestionPool } from '@/lib/use-question-pool';
 
 const WEAK_LIMIT = 3;
 
-/** Mục "Cần củng cố": ba mục sai nhiều nhất và lối vào màn Điểm yếu. */
-export function ReinforcementSection({ weakCount }: { weakCount: number }) {
+/** Mục "Cần củng cố": ba mục sai nhiều nhất và lối vào màn Điểm yếu. `wide`: hàng gọn nhiều cột từ md. */
+export function ReinforcementSection({ weakCount, wide }: { weakCount: number; wide?: boolean }) {
   const rows = useLiveQuery(
     async () => {
       const items = await db.reviewItems.filter((item) => item.incorrectCount > 0).toArray();
@@ -38,7 +38,7 @@ export function ReinforcementSection({ weakCount }: { weakCount: number }) {
   return (
     <section aria-labelledby="reinforce-heading">
       <SectionHeader id="reinforce-heading" title="Cần củng cố" />
-      <div className="space-y-2">
+      <div className={wide ? 'space-y-2 md:grid md:grid-cols-2 md:gap-2 md:space-y-0 xl:grid-cols-4' : 'space-y-2'}>
         {weakCount > 0 &&
           (rows ?? []).map((row) => {
             const label = labels.get(row.targetId);
@@ -62,6 +62,7 @@ export function ReinforcementSection({ weakCount }: { weakCount: number }) {
           href="/on-tap/diem-yeu"
           icon={<FeatureIcon name="weak-points" />}
           title="Điểm yếu của tôi"
+          className={wide ? 'md:col-span-full' : undefined}
           detail={
             weakCount > 0
               ? `Xem toàn bộ ${weakCount} mục đã từng trả lời sai`

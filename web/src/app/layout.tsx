@@ -49,7 +49,7 @@ export default function RootLayout({
         <SearchDialog />
         <div
           id="app-scroll-container"
-          className="flex-1 flex flex-col min-w-0 max-w-full overflow-y-auto overflow-x-clip scrollbar-none pb-28 sm:pb-32 lg:pb-0 scroll-pb-28 sm:scroll-pb-32 lg:scroll-pb-0 lg:pl-64 overscroll-y-contain"
+          className="flex-1 flex flex-col min-w-0 max-w-full overflow-y-auto overflow-x-clip scrollbar-none pb-28 sm:pb-32 md:pb-0 scroll-pb-28 sm:scroll-pb-32 md:scroll-pb-0 md:pl-20 lg:pl-60 overscroll-y-contain"
         >
           <PageTransition>{children}</PageTransition>
         </div>

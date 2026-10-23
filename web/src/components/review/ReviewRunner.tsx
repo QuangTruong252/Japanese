@@ -20,6 +20,7 @@ import { QuestionReorder } from '@/components/practice/QuestionReorder';
 import { SessionResult } from '@/components/practice/SessionResult';
 import {
   FeedbackPanel,
+  KeyHints,
   PauseLayer,
   QuestionPrompt,
   SessionHeader,
@@ -227,7 +228,7 @@ export function ReviewRunner({
 
   const handleAnswer = useCallback(
     (results: AnswerResult[]) => {
-      if (answered || isPaused) return;
+      if (answered || isPaused || exitDialogOpen) return;
       pauseQuestionTimer();
 
       const elapsedMs = getQuestionElapsedMs();
@@ -260,6 +261,7 @@ export function ReviewRunner({
     [
       answered,
       isPaused,
+      exitDialogOpen,
       pauseQuestionTimer,
       getQuestionElapsedMs,
       allResults,
@@ -306,6 +308,8 @@ export function ReviewRunner({
         setExitDialogOpen(true);
         return;
       }
+
+      if (e.ctrlKey || e.altKey || e.metaKey) return;
 
       if (
         shouldAdvanceOnKey({
@@ -400,7 +404,7 @@ export function ReviewRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       case 'cloze':
@@ -410,7 +414,7 @@ export function ReviewRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       case 'reorder':
@@ -420,7 +424,7 @@ export function ReviewRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       case 'listening':
@@ -430,7 +434,7 @@ export function ReviewRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       default:
@@ -462,6 +466,13 @@ export function ReviewRunner({
         onTogglePause={togglePause}
       />
 
+      <KeyHints
+        items={[
+          ...(currentQuestion.type === 'mc' ? [{ keys: '1–4', label: 'Chọn đáp án' }] : []),
+          { keys: 'Enter', label: 'Tiếp' },
+        ]}
+      />
+
       <div className="relative flex min-h-0 flex-1 flex-col">
         {isPaused && (
           <PauseLayer title="Đang tạm dừng phiên ôn tập" resumeLabel="Tiếp tục ôn" onResume={togglePause} />
@@ -474,7 +485,7 @@ export function ReviewRunner({
             aria-label="Nội dung câu hỏi"
             key={currentQuestion.id}
             inert={isPaused}
-            className="my-auto w-full space-y-6 py-2"
+            className="my-auto lg:my-0 lg:mt-[12vh] w-full space-y-6 py-2"
           >
             <QuestionPrompt question={currentQuestion} />
             {renderQuestionComponent()}

@@ -44,16 +44,16 @@ export function DialogueBubble({
       </div>
       <div
         className={cn(
-          'min-w-0 max-w-[85%] rounded-2xl border border-transparent px-4 py-2 transition-colors',
+          'min-w-0 max-w-[85%] rounded-2xl border border-transparent px-4 py-2 transition-colors md:px-6 md:py-3',
           right ? 'rounded-tr-md bg-accent' : 'rounded-tl-md bg-secondary',
           active && 'border-primary',
         )}
       >
-        <div className="jp-example font-normal leading-loose text-foreground">
+        <div className="jp-example font-normal leading-loose text-foreground md:text-2xl!">
           <Furigana text={line.jp} />
         </div>
         <div className={cn('flex min-w-0 items-center gap-2', right && 'flex-row-reverse')}>
-          <p className="translation min-w-0 flex-1 text-sm leading-relaxed text-muted-foreground">
+          <p className="translation min-w-0 flex-1 text-sm leading-relaxed text-muted-foreground md:text-base">
             {line.translation.vi}
           </p>
           {showSpeak && (

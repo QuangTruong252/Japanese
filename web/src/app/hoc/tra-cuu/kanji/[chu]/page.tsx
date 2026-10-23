@@ -66,7 +66,7 @@ export default async function KanjiDetailPage({
   ];
 
   return (
-    <main className="mx-auto w-full max-w-3xl space-y-8 px-4 pb-24 pt-2 sm:px-6 lg:px-8 lg:pb-12">
+    <main className="mx-auto w-full max-w-3xl space-y-8 px-4 pb-24 pt-2 sm:px-6 md:pb-12 lg:px-8">
       <BackLink href="/hoc/tra-cuu/kanji" label="Tra cứu kanji" />
 
       <section className="flex items-center gap-4 sm:gap-6">

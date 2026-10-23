@@ -36,3 +36,11 @@ export const SECTION_THUMB = {
 
 /** Ảnh trạng thái "đã ôn xong", dùng chung giữa Bảng tin và Ôn tập. */
 export const REVIEW_COMPLETE_ART = uiArt('states/review-complete');
+
+/** Bộ điểm nhấn trang trí nhẹ cho màn rộng (dùng qua `Accent`). */
+export const DECOR = {
+  'sprig-left': uiArt('decor/sakura-sprig-left'),
+  'sprig-right': uiArt('decor/sakura-sprig-right'),
+  petals: uiArt('decor/sakura-petals'),
+  washi: uiArt('decor/washi-tape'),
+};

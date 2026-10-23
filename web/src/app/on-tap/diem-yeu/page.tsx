@@ -104,10 +104,10 @@ export default function WeakPointsPage() {
   }, [lessons]);
 
   return (
-    <main className="mx-auto w-full max-w-5xl space-y-8 px-4 pb-12 pt-3 sm:px-6 lg:px-8">
+    <main className="mx-auto w-full max-w-5xl space-y-8 px-4 pb-12 pt-3 sm:px-6 lg:max-w-[1200px] lg:px-8">
       <PageTitle back={{ href: '/on-tap', label: 'Ôn tập' }} title="Điểm yếu của tôi" />
 
-      <div className="max-w-2xl space-y-4">
+      <div className="max-w-2xl space-y-4 lg:max-w-none">
         {filterTypes.length > 0 && (
           <div
             role="group"
@@ -133,7 +133,7 @@ export default function WeakPointsPage() {
             Chưa có điểm yếu nào được ghi nhận — mọi mục bạn đã làm đều đúng.
           </p>
         ) : (
-          <ul className="space-y-2">
+          <ul className="space-y-2 lg:grid lg:grid-cols-2 lg:gap-3 lg:space-y-0">
             {rows.map((item) => {
               const label = labels.get(item.targetId);
               const total = item.correctCount + item.incorrectCount;
@@ -151,7 +151,7 @@ export default function WeakPointsPage() {
               return (
                 <li
                   key={item.targetId}
-                  className="flex flex-col gap-3 rounded-xl border border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between"
+                  className="flex flex-col gap-3 rounded-xl border border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between lg:flex-col lg:items-stretch xl:flex-row xl:items-center"
                 >
                   <div className="min-w-0 flex-1 space-y-1">
                     <div className="flex flex-wrap items-center gap-x-2 gap-y-1">

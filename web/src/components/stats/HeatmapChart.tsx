@@ -13,7 +13,8 @@ const LEVEL_CLASS: Record<HeatmapDay['level'], string> = {
   4: 'bg-primary',
 };
 
-const CELL = 'size-5 shrink-0 rounded-sm';
+// Từ md ô co giãn theo bề rộng cột để lịch lấp đầy ô bento.
+const CELL = 'size-5 shrink-0 rounded-sm md:h-7 md:w-full md:min-w-0 lg:h-8';
 
 /** Lịch nhiệt: mỗi cột một tuần (T2 → CN), ô của ngày chưa tới vẽ nét đứt. */
 export function HeatmapChart({ weeks, now }: { weeks: HeatmapWeek[]; now: Date }) {
@@ -21,16 +22,23 @@ export function HeatmapChart({ weeks, now }: { weeks: HeatmapWeek[]; now: Date }
     <div>
       {/* Cuộn ngang trong vùng này khi màn quá hẹp, không đẩy cả trang */}
       <div className="overflow-x-auto pb-1">
-        <div className="flex min-w-max gap-2">
-          <div className="flex h-[164px] w-6 select-none flex-col justify-between py-0.5 text-xs text-muted-foreground" aria-hidden="true">
+        <div className="flex min-w-max gap-2 md:min-w-0">
+          <div className="flex h-[164px] w-6 select-none flex-col justify-between py-0.5 text-xs text-muted-foreground md:hidden" aria-hidden="true">
             <span>T2</span>
             <span>T4</span>
             <span>T6</span>
             <span>CN</span>
           </div>
-          <div className="flex gap-1">
+          <div className="hidden w-6 select-none flex-col gap-1 text-xs text-muted-foreground md:flex" aria-hidden="true">
+            {['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'].map((d) => (
+              <span key={d} className="flex items-center md:h-7 lg:h-8">
+                {d}
+              </span>
+            ))}
+          </div>
+          <div className="flex gap-1 md:min-w-0 md:flex-1">
             {weeks.map((week, wIdx) => (
-              <div key={wIdx} className="flex flex-col gap-1">
+              <div key={wIdx} className="flex flex-col gap-1 md:min-w-0 md:flex-1">
                 {week.days.map((day) => (
                   <HeatmapCell key={day.dayKey} day={day} future={day.date.getTime() > now.getTime()} />
                 ))}

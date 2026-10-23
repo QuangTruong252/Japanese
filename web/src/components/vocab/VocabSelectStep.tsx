@@ -1,8 +1,9 @@
 'use client';
 
-import { Check, CheckCheck, CircleHelp } from 'lucide-react';
+import { Check, CheckCheck, ChevronRight, CircleHelp } from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
-import { Chip, PageTitle, SectionHeader } from '@/components/PaperKit';
+import { Accent, Chip, PageTitle, SectionHeader, Ticket } from '@/components/PaperKit';
+import { Illustration } from '@/components/Illustration';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
@@ -34,6 +35,8 @@ export function VocabSelectStep({
   presets,
   loading,
   draft,
+  startDisabled,
+  onStart,
   onApplyPreset,
   onToggle,
   onResumeDraft,
@@ -48,6 +51,8 @@ export function VocabSelectStep({
   presets: Preset[];
   loading: boolean;
   draft: VocabDraftSummary | null;
+  startDisabled: boolean;
+  onStart: () => void;
   onApplyPreset: (ids: Set<string>) => void;
   onToggle: (targetId: string) => void;
   onResumeDraft: () => void;
@@ -76,7 +81,8 @@ export function VocabSelectStep({
         </section>
       )}
 
-      <section aria-labelledby="vocab-selection-title" className="space-y-3">
+      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_17rem] lg:items-start lg:gap-8">
+      <section aria-labelledby="vocab-selection-title" className="min-w-0 space-y-3">
         <div>
           <SectionHeader id="vocab-selection-title" title="Chọn từ muốn học" />
           <p className="-mt-2 text-sm text-muted-foreground">
@@ -98,7 +104,7 @@ export function VocabSelectStep({
             <Skeleton className="h-24 w-full rounded-xl" />
           </div>
         ) : (
-          <ul className="space-y-2">
+          <ul className="space-y-2 md:grid md:grid-cols-2 md:gap-3 md:space-y-0 lg:grid-cols-3 xl:grid-cols-4">
             {entries.map(({ targetId, word, reviewItem }) => {
               const hasMeaning = Boolean(word.meaning.vi.trim());
               const selected = selectedIds.has(targetId);
@@ -116,14 +122,21 @@ export function VocabSelectStep({
                     aria-label={`${selected ? 'Bỏ chọn' : 'Chọn'} ${formatOptionalBrackets(stripFurigana(word.word))}`}
                     onClick={() => onToggle(targetId)}
                     className={cn(
-                      'flex min-h-[76px] w-full items-center gap-4 rounded-xl border bg-card px-4 py-3 text-left outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50',
+                      'flex min-h-[76px] w-full items-center gap-4 rounded-xl border bg-card px-4 py-3 md:h-full md:gap-3 md:px-3 text-left outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50',
                       selected ? 'border-primary/40 bg-accent/40' : 'border-border',
                     )}
                   >
+                    {word.illustration && (
+                      <Illustration
+                        asset={word.illustration}
+                        sizes="64px"
+                        className="hidden size-14 shrink-0 rounded-lg object-contain md:block"
+                      />
+                    )}
                     <span
                       aria-hidden="true"
                       className={cn(
-                        'flex size-7 shrink-0 items-center justify-center rounded-lg border-2',
+                        'flex size-7 shrink-0 items-center justify-center rounded-lg border-2 md:order-last md:size-6 md:rounded-full',
                         selected ? 'border-primary bg-primary text-primary-foreground' : 'border-muted-foreground/50 bg-card',
                       )}
                     >
@@ -139,7 +152,10 @@ export function VocabSelectStep({
                         )}
                       </span>
                       {!hasMeaning && <span className="block text-sm text-muted-foreground">Chưa có bản dịch tiếng Việt</span>}
-                      <span className="mt-1 block text-sm text-muted-foreground">
+                      {hasMeaning && (
+                        <span className="hidden text-sm text-muted-foreground md:block">{word.meaning.vi}</span>
+                      )}
+                      <span className="mt-1 block text-sm text-muted-foreground md:hidden">
                         {attempts > 0 ? `${progressText} · ôn ${formatDate(reviewItem!.dueAt)}` : progressText}
                       </span>
                     </span>
@@ -150,6 +166,21 @@ export function VocabSelectStep({
           </ul>
         )}
       </section>
+
+      <aside aria-label="Tóm tắt phiên học" className="sticky top-16 hidden lg:block">
+        <Accent kind="washi" className="-top-4 left-1/2 w-32 -translate-x-1/2" />
+        <Ticket label="Phiên học">
+          <p className="font-serif text-6xl font-bold leading-none text-foreground tabular-nums">
+            {selectedCount}
+            <span className="ml-2 text-2xl font-semibold text-muted-foreground">/ {availableCount} từ</span>
+          </p>
+          <Button type="button" size="quiz" className="mt-6 w-full min-w-0" disabled={startDisabled} onClick={onStart}>
+            {selectedCount > 0 ? `Học ${selectedCount} từ` : 'Chọn ít nhất 1 từ'}
+            {selectedCount > 0 && <ChevronRight aria-hidden="true" />}
+          </Button>
+        </Ticket>
+      </aside>
+      </div>
 
       <section aria-labelledby="memory-title">
         <SectionHeader id="memory-title" title="Theo dõi khả năng ghi nhớ" />
