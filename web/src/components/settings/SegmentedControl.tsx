@@ -3,7 +3,7 @@
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { SettingRow } from './SettingRow';
 
-/** Dòng chọn một trong vài giá trị, dạng ô liền nhau; ô đang chọn nền `primary`. Không cho bỏ chọn. */
+/** Dòng chọn một trong vài giá trị, dạng ô liền nhau; ô đang chọn nền `primary` ở mobile, nền `accent` chữ đỏ từ `md`. Không cho bỏ chọn. */
 export function SegmentedControl<T extends string>({
   label,
   labelId,
@@ -23,7 +23,7 @@ export function SegmentedControl<T extends string>({
         aria-labelledby={labelId}
         variant="outline"
         spacing={0}
-        className="overflow-hidden rounded-lg [&_[data-slot=toggle-group-item]]:min-h-11 [&_[data-slot=toggle-group-item]]:px-4 [&_[data-slot=toggle-group-item]]:text-sm [&_[data-slot=toggle-group-item]]:border-border [&_[data-slot=toggle-group-item][aria-pressed=true]]:bg-primary [&_[data-slot=toggle-group-item][aria-pressed=true]]:text-primary-foreground"
+        className="overflow-hidden rounded-lg [&_[data-slot=toggle-group-item]]:min-h-11 [&_[data-slot=toggle-group-item]]:px-4 [&_[data-slot=toggle-group-item]]:text-sm [&_[data-slot=toggle-group-item]]:border-border [&_[data-slot=toggle-group-item][aria-pressed=true]]:bg-primary [&_[data-slot=toggle-group-item][aria-pressed=true]]:text-primary-foreground md:[&_[data-slot=toggle-group-item][aria-pressed=true]]:bg-accent md:[&_[data-slot=toggle-group-item][aria-pressed=true]]:font-semibold md:[&_[data-slot=toggle-group-item][aria-pressed=true]]:text-primary"
         value={[value]}
         onValueChange={(val: string[]) => {
           const chosen = options.find((o) => o.value === val[val.length - 1]);

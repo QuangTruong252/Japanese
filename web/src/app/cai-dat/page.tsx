@@ -15,12 +15,13 @@ import {
 } from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
 import { InstallAppCard } from '@/components/InstallAppCard';
-import { PageTitle, SectionHeader } from '@/components/PaperKit';
+import { Accent, BookSpread, PageTitle, SectionHeader } from '@/components/PaperKit';
 import { AccountSection, type SettingsNotice } from '@/components/settings/AccountSection';
 import { ActionRow } from '@/components/settings/ActionRow';
 import { NumberStepper } from '@/components/settings/NumberStepper';
 import { SegmentedControl } from '@/components/settings/SegmentedControl';
 import { SettingsGroup } from '@/components/settings/SettingRow';
+import { SettingsToc } from '@/components/settings/SettingsToc';
 import { SettingSwitch } from '@/components/settings/SettingSwitch';
 import {
   AlertDialog,
@@ -229,9 +230,19 @@ export default function SettingsPage() {
   const hasAnyData = reviewCount > 0 || sessionCount > 0 || writingCount > 0;
 
   return (
-    <main className="mx-auto w-full max-w-2xl space-y-8 px-4 py-6 pb-28 lg:pb-12">
-      <PageTitle title="Cài đặt" />
-
+    <main className="mx-auto w-full max-w-2xl px-4 py-6 pb-28 md:max-w-3xl md:px-6 md:pb-12 lg:max-w-[1100px] lg:px-8">
+      <BookSpread
+        sticky="left"
+        left={
+          <div className="space-y-8">
+            <PageTitle title="Cài đặt" />
+            <div className="hidden lg:block">
+              <SettingsToc />
+            </div>
+          </div>
+        }
+        right={
+          <div className="space-y-8">
       {notification && (
         <div
           role={notification.type === 'error' ? 'alert' : 'status'}
@@ -261,7 +272,7 @@ export default function SettingsPage() {
       <AccountSection onNotify={setNotification} />
 
       {/* HIỂN THỊ */}
-      <section aria-labelledby="heading-display">
+      <section id="sec-display" aria-labelledby="heading-display" className="scroll-mt-6">
         <SectionHeader id="heading-display" title="Hiển thị" />
         <SettingsGroup>
           <SettingSwitch
@@ -308,7 +319,7 @@ export default function SettingsPage() {
       </section>
 
       {/* HỌC TẬP */}
-      <section aria-labelledby="heading-learning">
+      <section id="sec-learning" aria-labelledby="heading-learning" className="scroll-mt-6">
         <SectionHeader id="heading-learning" title="Học tập" />
         <SettingsGroup>
           <NumberStepper
@@ -377,7 +388,7 @@ export default function SettingsPage() {
       </section>
 
       {/* DỮ LIỆU */}
-      <section aria-labelledby="heading-data">
+      <section id="sec-data" aria-labelledby="heading-data" className="scroll-mt-6">
         <SectionHeader id="heading-data" title="Dữ liệu" />
         <SettingsGroup>
           <ActionRow
@@ -411,13 +422,15 @@ export default function SettingsPage() {
       </section>
 
       {/* ỨNG DỤNG (tự ẩn khi đã cài) */}
-      <InstallAppCard />
+      <div id="sec-app" className="scroll-mt-6 empty:hidden">
+        <InstallAppCard />
+      </div>
 
       <Button
         type="button"
         variant="outline"
         size="quiz"
-        className="w-full gap-2 border-destructive/40 text-destructive hover:bg-destructive/10 hover:text-destructive"
+        className="w-full gap-2 border-destructive/40 text-destructive hover:bg-destructive/10 hover:text-destructive md:mx-auto md:flex md:w-fit md:border-transparent md:bg-transparent"
         onClick={() => {
           setWipeInputText('');
           setWipeConfirmOpen(true);
@@ -439,6 +452,13 @@ export default function SettingsPage() {
         </a>{' '}
         (CC BY-SA 3.0)
       </p>
+
+      <div aria-hidden="true" className="relative hidden h-24 lg:block">
+        <Accent kind="sprig-right" className="bottom-0 right-0 w-32" />
+      </div>
+          </div>
+        }
+      />
 
       {/* DIALOG XEM TRƯỚC KHI NHẬP FILE */}
       <Dialog

@@ -17,7 +17,9 @@ import {
   triggerSync,
 } from '@/lib/sync';
 import { createClient, isSupabaseConfigured } from '@/lib/supabase/client';
-import { TornCard, SectionHeader, ListRow } from '@/components/PaperKit';
+import { Accent, BentoGrid, Tile, TornCard, SectionHeader, ListRow } from '@/components/PaperKit';
+import { Illustration } from '@/components/Illustration';
+import { N5Progress } from '@/components/N5Progress';
 import { FeatureIcon } from '@/components/FeatureIcon';
 import { Furigana } from '@/components/Furigana';
 import { StatTile } from '@/components/stats/StatTile';
@@ -209,6 +211,8 @@ export default function CaNhanPage() {
     return summaries.find((s) => s.number === activeLessonNum) ?? summaries[0];
   }, [summaries, activeLessonNum]);
 
+  const vocabCountByLesson = useMemo(() => new Map(summaries.map((s) => [s.number, s.vocabCount])), [summaries]);
+
   const learnedInActive = learnedByLesson.get(activeLessonNum) ?? 0;
   const totalInActive = activeSummary?.vocabCount ?? 0;
   const activePercent = totalInActive > 0 ? Math.min(100, Math.round((learnedInActive / totalInActive) * 100)) : 0;
@@ -245,7 +249,7 @@ export default function CaNhanPage() {
     );
   }
 
-  const accountBlock = 'rounded-xl border border-border bg-card p-4';
+  const accountBlock = 'rounded-xl border border-border bg-card p-4 md:rounded-2xl md:p-5 lg:p-6';
 
   return (
     <div className="space-y-8">
@@ -274,7 +278,9 @@ export default function CaNhanPage() {
         </div>
       )}
 
+      <BentoGrid>
       {isGuestEmpty ? (
+        <div className="md:col-span-2 lg:col-span-8">
         <TornCard className="space-y-4 text-center">
           <h2 className="font-serif text-xl font-semibold text-foreground">Chưa có tiến độ</h2>
           <Link
@@ -285,23 +291,37 @@ export default function CaNhanPage() {
             <ArrowRight aria-hidden="true" />
           </Link>
         </TornCard>
+        </div>
       ) : (
         <>
-          <section aria-labelledby="progress-active-heading" className="space-y-3">
-            <TornCard>
-              <p id="progress-active-heading" className="font-serif text-sm font-bold tracking-wide text-primary">
-                / Bài đang học /
-              </p>
-              <p className="mt-1.5 flex items-start gap-1.5 text-sm font-medium text-muted-foreground">
-                <BookOpen className="mt-0.5 size-3.5 shrink-0" aria-hidden="true" />
-                Bài {activeLessonNum} · {activeSummary?.title.vi}
-              </p>
-              {activeSummary?.jpTitle && (
-                <Furigana
-                  text={activeSummary.jpTitle}
-                  className="jp-display mt-3 block text-2xl font-bold text-foreground sm:text-3xl"
-                />
-              )}
+          <section aria-labelledby="progress-active-heading" className="space-y-3 md:contents">
+            <div className="relative md:col-span-2 lg:col-span-8 lg:row-start-1">
+              <Accent kind="sprig-left" className="-right-5 -top-10 w-32 md:block" />
+            <TornCard fill>
+              <div className="md:flex md:items-start md:gap-5">
+                <div className="min-w-0 flex-1">
+                  <p id="progress-active-heading" className="font-serif text-sm font-bold tracking-wide text-primary">
+                    / Bài đang học /
+                  </p>
+                  <p className="mt-1.5 flex items-start gap-1.5 text-sm font-medium text-muted-foreground">
+                    <BookOpen className="mt-0.5 size-3.5 shrink-0" aria-hidden="true" />
+                    Bài {activeLessonNum} · {activeSummary?.title.vi}
+                  </p>
+                  {activeSummary?.jpTitle && (
+                    <Furigana
+                      text={activeSummary.jpTitle}
+                      className="jp-display mt-3 block text-2xl font-bold text-foreground sm:text-3xl"
+                    />
+                  )}
+                </div>
+                {activeSummary?.cover && (
+                  <Illustration
+                    asset={activeSummary.cover}
+                    sizes="96px"
+                    className="hidden size-24 shrink-0 rounded-lg bg-secondary object-cover md:block dark:brightness-[0.88]"
+                  />
+                )}
+              </div>
               <div className="mt-4">
                 <Progress value={activePercent} className="gap-0" aria-label={`Bài ${activeLessonNum}: ${activePercent}% từ vựng đã học`} />
                 <p className="mt-2 text-sm text-muted-foreground tabular-nums">
@@ -316,12 +336,13 @@ export default function CaNhanPage() {
                 <ArrowRight aria-hidden="true" />
               </Link>
             </TornCard>
+            </div>
 
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-              <StatTile label="Lịch ôn tập" value={(reviewItems?.length ?? 0).toLocaleString('vi-VN')} unit="mục" />
-              <StatTile label="Đến hạn ôn" value={dueCount.toLocaleString('vi-VN')} unit="mục" />
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 md:col-span-2 lg:col-span-12 lg:row-start-2 lg:gap-5">
+              <StatTile label="Lịch ôn tập" value={reviewItems?.length ?? 0} unit="mục" />
+              <StatTile label="Đến hạn ôn" value={dueCount} unit="mục" />
               <StatTile label="Hoàn thành" value={completedLessonsCount} unit="/ 25 bài" />
-              <StatTile label="Phiên luyện" value={(sessions?.length ?? 0).toLocaleString('vi-VN')} unit="phiên" />
+              <StatTile label="Phiên luyện" value={sessions?.length ?? 0} unit="phiên" />
             </div>
 
             {dueCount > 0 && (
@@ -330,14 +351,26 @@ export default function CaNhanPage() {
                 icon={<FeatureIcon name="review" />}
                 title="Ôn tập ngay"
                 detail={`${dueCount} mục đến hạn`}
+                className="md:hidden"
               />
             )}
           </section>
+
+          <Tile full span={12} className="hidden md:block lg:row-start-3">
+            <N5Progress
+              learnedByLesson={learnedByLesson}
+              vocabCountByLesson={vocabCountByLesson}
+              activeLesson={activeLessonNum}
+              learnedThroughLesson={learnedThroughLesson}
+            />
+          </Tile>
         </>
       )}
 
-      <section aria-labelledby="account-heading">
-        <SectionHeader id="account-heading" title="Tài khoản" />
+      <section aria-labelledby="account-heading" className="md:col-span-2 lg:col-span-4 lg:col-start-9 lg:row-start-1">
+        <div className="md:sr-only">
+          <SectionHeader id="account-heading" title="Tài khoản" />
+        </div>
         <div className={accountBlock}>
           {isCheckingSession ? (
             <div className="flex items-center gap-3">
@@ -348,23 +381,23 @@ export default function CaNhanPage() {
               </div>
             </div>
           ) : currentUser ? (
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
+            <div className="space-y-3 md:space-y-4">
+              <div className="flex items-center gap-3 lg:flex-col lg:text-center">
                 {currentUser.avatarUrl ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
                   <img
                     src={currentUser.avatarUrl}
                     alt=""
-                    className="size-11 shrink-0 rounded-full border border-border object-cover"
+                    className="size-11 shrink-0 rounded-full border border-border object-cover md:size-14 lg:size-20"
                   />
                 ) : (
-                  <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground md:size-14 lg:size-20">
                     <User className="size-5" aria-hidden="true" />
                   </div>
                 )}
                 <div className="min-w-0">
                   <p className="break-words font-medium text-foreground">{currentUser.displayName}</p>
-                  <p className="flex items-center gap-1 text-sm text-muted-foreground">
+                  <p className="flex items-center gap-1 text-sm text-muted-foreground lg:justify-center">
                     <SyncIcon state={syncResolution.state} />
                     <span className="min-w-0">{syncResolution.label}</span>
                   </p>
@@ -396,15 +429,15 @@ export default function CaNhanPage() {
               </div>
             </div>
           ) : (
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
+            <div className="space-y-3 md:space-y-4">
+              <div className="flex items-start gap-3 lg:flex-col lg:items-center lg:text-center">
                 <span
                   className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground"
                   aria-hidden="true"
                 >
                   <CloudOff className="size-5" />
                 </span>
-                <div className="min-w-0 flex-1 pt-1">
+                <div className="min-w-0 flex-1 pt-1 lg:flex-none">
                   <p className="font-medium text-foreground">Chỉ lưu trên máy</p>
                   {!isSupabaseConfigured() && (
                     <p className="mt-0.5 text-sm text-muted-foreground">
@@ -428,6 +461,7 @@ export default function CaNhanPage() {
           )}
         </div>
       </section>
+      </BentoGrid>
 
       {/* ========================================================
           3. HỘP THOẠI XÁC NHẬN ĐĂNG XUẤT
