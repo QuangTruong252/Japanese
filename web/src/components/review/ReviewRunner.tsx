@@ -228,7 +228,7 @@ export function ReviewRunner({
 
   const handleAnswer = useCallback(
     (results: AnswerResult[]) => {
-      if (answered || isPaused) return;
+      if (answered || isPaused || exitDialogOpen) return;
       pauseQuestionTimer();
 
       const elapsedMs = getQuestionElapsedMs();
@@ -261,6 +261,7 @@ export function ReviewRunner({
     [
       answered,
       isPaused,
+      exitDialogOpen,
       pauseQuestionTimer,
       getQuestionElapsedMs,
       allResults,
@@ -403,7 +404,7 @@ export function ReviewRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       case 'cloze':
@@ -413,7 +414,7 @@ export function ReviewRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       case 'reorder':
@@ -423,7 +424,7 @@ export function ReviewRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       case 'listening':
@@ -433,7 +434,7 @@ export function ReviewRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       default:
@@ -484,7 +485,7 @@ export function ReviewRunner({
             aria-label="Nội dung câu hỏi"
             key={currentQuestion.id}
             inert={isPaused}
-            className="my-auto w-full space-y-6 py-2"
+            className="my-auto lg:my-0 lg:mt-[12vh] w-full space-y-6 py-2"
           >
             <QuestionPrompt question={currentQuestion} />
             {renderQuestionComponent()}

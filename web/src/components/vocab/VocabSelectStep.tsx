@@ -104,7 +104,7 @@ export function VocabSelectStep({
             <Skeleton className="h-24 w-full rounded-xl" />
           </div>
         ) : (
-          <ul className="space-y-2 md:grid md:grid-cols-2 md:gap-2 md:space-y-0 xl:grid-cols-3 min-[1360px]:grid-cols-4">
+          <ul className="space-y-2 md:grid md:grid-cols-2 md:gap-3 md:space-y-0 lg:grid-cols-3 xl:grid-cols-4">
             {entries.map(({ targetId, word, reviewItem }) => {
               const hasMeaning = Boolean(word.meaning.vi.trim());
               const selected = selectedIds.has(targetId);
@@ -130,7 +130,7 @@ export function VocabSelectStep({
                       <Illustration
                         asset={word.illustration}
                         sizes="64px"
-                        className="hidden size-14 shrink-0 rounded-lg object-contain md:block lg:size-16"
+                        className="hidden size-14 shrink-0 rounded-lg object-contain md:block"
                       />
                     )}
                     <span
@@ -153,7 +153,7 @@ export function VocabSelectStep({
                       </span>
                       {!hasMeaning && <span className="block text-sm text-muted-foreground">Chưa có bản dịch tiếng Việt</span>}
                       {hasMeaning && (
-                        <span className="hidden text-sm text-muted-foreground md:line-clamp-2 md:block">{word.meaning.vi}</span>
+                        <span className="hidden text-sm text-muted-foreground md:block">{word.meaning.vi}</span>
                       )}
                       <span className="mt-1 block text-sm text-muted-foreground md:hidden">
                         {attempts > 0 ? `${progressText} · ôn ${formatDate(reviewItem!.dueAt)}` : progressText}

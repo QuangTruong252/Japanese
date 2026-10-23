@@ -35,7 +35,7 @@ export function VocabRatingButtons({
                 <span className="font-semibold">{label}</span>
                 <span className="text-xs font-normal opacity-80">{interval}</span>
               </span>
-              <Kbd className="absolute right-2 top-2">{i + 1}</Kbd>
+              <Kbd className="max-md:hidden absolute right-2 top-2">{i + 1}</Kbd>
             </Button>
           );
         })}

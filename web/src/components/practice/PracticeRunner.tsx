@@ -150,7 +150,7 @@ export function PracticeRunner({
   // Ghi nhận đáp án: PracticeRunner giữ đồng hồ và ghi đè elapsedMs khi results.length === 1
   const handleAnswer = useCallback(
     (results: AnswerResult[]) => {
-      if (answered || isPaused) return;
+      if (answered || isPaused || exitDialogOpen) return;
       pauseQuestionTimer();
       const elapsedMs = getQuestionElapsedMs();
       const questionId = questions[currentIndex]?.id;
@@ -180,7 +180,7 @@ export function PracticeRunner({
         });
       }
     },
-    [answered, isPaused, pauseQuestionTimer, getQuestionElapsedMs, allResults, questions, currentIndex, sessionDuration, config],
+    [answered, isPaused, exitDialogOpen, pauseQuestionTimer, getQuestionElapsedMs, allResults, questions, currentIndex, sessionDuration, config],
   );
 
   // Ghi kết quả Dexie một transaction duy nhất
@@ -343,7 +343,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       case 'reorder':
@@ -353,7 +353,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       case 'listening':
@@ -363,7 +363,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       case 'cloze':
@@ -373,7 +373,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
       case 'mc':
@@ -384,7 +384,7 @@ export function PracticeRunner({
             question={currentQuestion}
             answered={answered}
             onAnswer={handleAnswer}
-            paused={isPaused}
+            paused={isPaused || exitDialogOpen}
           />
         );
     }
@@ -432,7 +432,7 @@ export function PracticeRunner({
           <div
             key={currentQuestion.id}
             inert={isPaused}
-            className="my-auto w-full space-y-6 py-2 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:duration-150"
+            className="my-auto lg:my-0 lg:mt-[12vh] w-full space-y-6 py-2 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:duration-150"
           >
             <QuestionPrompt question={currentQuestion} />
             {renderQuestionComponent()}
