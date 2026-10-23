@@ -284,7 +284,7 @@ export function VocabLearningFlow({
         <div
           className={cn(
             'mx-auto flex min-h-full w-full max-w-2xl flex-col px-4 pt-[calc(0.75rem+env(safe-area-inset-top))] pb-8 sm:px-6 sm:pt-5',
-            stage === 'select' ? 'md:max-w-4xl lg:max-w-6xl' : 'md:max-w-[760px]',
+            stage === 'select' ? 'md:max-w-4xl lg:max-w-6xl xl:max-w-7xl' : 'md:max-w-[760px]',
           )}
         >
           {/* Danh sách chọn từ dài hơn một màn: đầu màn dính để quay về bài hay thoát lượt mà không phải cuộn ngược. */}

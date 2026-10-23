@@ -41,7 +41,7 @@ export function KeyHints({ items }: { items: { keys: string; label: string }[] }
   return (
     <aside
       aria-label="Phím tắt"
-      className="absolute right-6 top-20 hidden space-y-2 rounded-lg border border-border bg-card p-3 text-sm text-muted-foreground lg:[@media(hover:hover)_and_(pointer:fine)]:block"
+      className="absolute right-6 top-20 hidden space-y-2 rounded-lg border border-border bg-card p-3 text-sm text-muted-foreground xl:[@media(hover:hover)_and_(pointer:fine)]:block"
     >
       {items.map(({ keys, label }) => (
         <p key={keys} className="flex items-center gap-2">
@@ -184,11 +184,11 @@ export function QuestionPrompt({ question }: { question: QuestionItem }) {
             text={question.prompt}
             className={cn(
               'jp-display mt-3 max-w-full justify-center font-bold text-foreground',
-              isShort ? 'text-4xl sm:text-5xl' : 'text-2xl sm:text-3xl',
+              isShort ? 'text-4xl sm:text-5xl lg:text-6xl' : 'text-2xl sm:text-3xl lg:text-4xl',
             )}
           />
         ) : (
-          <p className="mt-3 max-w-full break-words font-serif text-2xl font-semibold text-foreground sm:text-3xl">
+          <p className="mt-3 max-w-full break-words font-serif text-2xl font-semibold text-foreground sm:text-3xl lg:text-4xl">
             {question.prompt}
           </p>
         ))}
@@ -295,7 +295,7 @@ export function FeedbackPanel({
           <Button size="quiz" className="w-full font-semibold" onClick={onNext}>
             {isLast ? 'Xem kết quả' : 'Tiếp tục'}
             <ArrowRight aria-hidden="true" />
-            <Kbd className="bg-primary-foreground/15 text-primary-foreground border-transparent">Enter</Kbd>
+            <Kbd className="max-md:hidden bg-primary-foreground/15 text-primary-foreground border-transparent">Enter</Kbd>
           </Button>
         </TornCard>
       </div>
