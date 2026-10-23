@@ -48,7 +48,7 @@ export default async function LessonDetailPage({
                 sizes="(min-width: 1024px) 320px, (min-width: 768px) 50vw, 100vw"
                 eager
                 imageClassName="h-48 object-center sm:h-64 sm:object-[center_30%] md:h-80 lg:h-80 lg:object-[center_20%]"
-                className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full md:col-start-1 md:row-span-2 md:row-start-1"
+                className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full md:col-start-1 md:row-span-2 md:row-start-1 md:self-start"
               />
             )}
             <PaperCloud className={cn('w-fit max-w-full md:col-start-2 md:row-start-1 md:self-end', lesson.cover && '-mt-1.5 md:mt-0 lg:-mt-1.5')}>
@@ -56,7 +56,7 @@ export default async function LessonDetailPage({
               {lesson.jpTitle && (
                 <Furigana
                   text={lesson.jpTitle}
-                  className="jp-display block text-2xl font-bold text-foreground sm:text-3xl"
+                  className="jp-display block text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl xl:text-5xl"
                 />
               )}
               <h1 className="mt-1 font-serif text-xl font-semibold tracking-tight text-foreground sm:text-2xl">

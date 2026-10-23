@@ -295,22 +295,22 @@ export function BookSpread({
   return (
     <div
       className={cn(
-        'relative max-lg:space-y-8 lg:grid lg:gap-10',
-        narrow ? 'lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]' : 'lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]',
+        'max-lg:space-y-8 lg:grid',
+        // Cột giữa 2.5rem là gáy sách; trang hẹp có bề rộng tối thiểu để thẻ hành động không bị bóp ở 1024 px.
+        narrow
+          ? 'lg:grid-cols-[minmax(16.5rem,1fr)_2.5rem_minmax(0,2fr)]'
+          : 'lg:grid-cols-[minmax(0,3fr)_2.5rem_minmax(18rem,2fr)]',
         className,
       )}
       style={stickyTop ? ({ '--sticky-top': stickyTop } as CSSProperties) : undefined}
     >
-      <div className={cn('min-w-0', sticky === 'left' && stickyCls)}>{left}</div>
-      <div className={cn('min-w-0', sticky === 'right' && stickyCls)}>{right}</div>
-      {/* Gáy sách: đường mảnh + bóng mờ, đặt giữa rãnh theo tỉ lệ cột (rãnh rộng 2.5rem). */}
+      <div className={cn('min-w-0 lg:col-start-1 lg:row-start-1', sticky === 'left' && stickyCls)}>{left}</div>
+      <div className={cn('min-w-0 lg:col-start-3 lg:row-start-1', sticky === 'right' && stickyCls)}>{right}</div>
+      {/* Gáy sách: đường mảnh + bóng mờ, kéo hết chiều cao hàng. */}
       <span
         aria-hidden="true"
         className={cn(
-          'pointer-events-none absolute inset-y-0 hidden w-10 -translate-x-1/2 lg:block',
-          narrow
-            ? 'lg:left-[calc((100%_-_2.5rem)_/_3_+_1.25rem)]'
-            : 'lg:left-[calc((100%_-_2.5rem)_*_3_/_5_+_1.25rem)]',
+          'pointer-events-none relative hidden lg:col-start-2 lg:row-start-1 lg:block',
           'bg-[linear-gradient(to_right,transparent,color-mix(in_oklch,var(--foreground)_5%,transparent)_50%,transparent)]',
           'after:absolute after:inset-y-0 after:left-1/2 after:border-l after:border-border/70',
         )}
