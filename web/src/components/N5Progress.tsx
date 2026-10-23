@@ -7,7 +7,7 @@ import { n5Progress } from '@/lib/n5-progress';
  * Dải tiến độ N5: mỗi bài một ô bo tròn đánh số, tô `primary` từ dưới lên theo tỉ lệ từ đã vào lịch ôn.
  * "Bài xong" = mọi từ của bài đã vào lịch ôn, hoặc bài ≤ `learnedThroughLesson` (người học khai báo).
  * Bài xong tô đầy kèm dấu check; `activeLesson` có viền đỏ. Mỗi ô là link `/hoc/N`.
- * Chỉ hiện từ `md` (mobile chưa có dải này); ở `lg` ô hẹp nên số bị ẩn (hiện lại từ `xl`), số bài vẫn nằm trong `aria-label`.
+ * Chỉ hiện từ `md` (mobile chưa có dải này); lưới xuống hàng để mỗi ô đủ vùng chạm 44 px.
  */
 export function N5Progress({
   learnedByLesson,
@@ -32,7 +32,7 @@ export function N5Progress({
           {doneCount}/{lessons.length} bài xong
         </span>
       </p>
-      <ol className="grid grid-cols-[repeat(25,minmax(0,1fr))] gap-0.5 xl:gap-1">
+      <ol className="grid md:grid-cols-[repeat(auto-fit,minmax(44px,1fr))] md:gap-1">
         {lessons.map((l) => (
           <li key={l.number}>
             <Link
@@ -41,7 +41,7 @@ export function N5Progress({
               title={`Bài ${l.number} · ${l.learned}/${l.total} từ`}
               aria-current={l.number === activeLesson ? 'step' : undefined}
               className={cn(
-                'relative flex h-9 items-center justify-center overflow-hidden rounded-md border bg-card text-[11px] font-medium tabular-nums text-foreground outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring',
+                'relative flex md:min-h-11 md:min-w-11 items-center justify-center overflow-hidden rounded-md border bg-card text-[11px] font-medium tabular-nums text-foreground outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring',
                 l.number === activeLesson ? 'border-primary ring-1 ring-primary' : 'border-border hover:border-foreground/30',
               )}
             >
@@ -53,7 +53,7 @@ export function N5Progress({
               {l.done ? (
                 <Check className="relative size-3 stroke-[3] text-primary-foreground" aria-hidden="true" />
               ) : (
-                <span className="relative md:inline lg:hidden xl:inline" aria-hidden="true">
+                <span className="relative" aria-hidden="true">
                   {l.number}
                 </span>
               )}

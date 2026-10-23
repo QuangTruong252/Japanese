@@ -162,12 +162,8 @@ export function StatisticsContent() {
         >
           <StatTile
             label="Chuỗi ngày"
-            value={
-              <>
-                {streak.days}
-                {streak.truncated && '+'}
-              </>
-            }
+            value={streak.days}
+            suffix={streak.truncated ? '+' : ''}
             unit="ngày"
           />
           {todaySeconds > 0 && todaySeconds < 60 ? (
@@ -175,8 +171,8 @@ export function StatisticsContent() {
           ) : (
             <StatTile label="Hôm nay" value={todayMinutes} unit="phút" />
           )}
-          <StatTile label="Đúng 7 ngày" value={accuracy7d !== null ? `${accuracy7d}%` : '—'} />
-          <StatTile label="Đang theo dõi" value={totalReviews.toLocaleString('vi-VN')} unit="mục" />
+          <StatTile label="Đúng 7 ngày" value={accuracy7d ?? '—'} suffix={accuracy7d !== null ? '%' : ''} />
+          <StatTile label="Đang theo dõi" value={totalReviews} unit="mục" />
         </section>
 
         <ChartSection
