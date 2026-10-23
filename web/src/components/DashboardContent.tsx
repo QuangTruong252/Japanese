@@ -224,7 +224,7 @@ export function DashboardContent({
 
       <BentoGrid className="mt-6 md:mt-4">
         <section aria-labelledby="home-today-heading" className="md:col-span-2 lg:col-span-12 xl:col-span-8">
-          <TornCard className="md:grid md:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] md:p-0">
+          <TornCard fill className="md:grid md:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] md:p-0">
             <div className="min-w-0 md:p-7">
               <p
                 id="home-today-heading"
@@ -503,7 +503,7 @@ function PartTile({ part }: { part: PartData }) {
   return (
     <Tile interactive className="overflow-hidden p-0 lg:p-0">
       <Link href={part.href} className={TILE_LINK_CLASS}>
-        <span className="flex items-center gap-3 p-4">
+        <span className="flex items-center gap-3 p-4 md:max-lg:gap-2 md:max-lg:p-3">
           <span className={PART_ICON_CLASS} aria-hidden="true">
             <FeatureIcon name={part.icon} />
           </span>

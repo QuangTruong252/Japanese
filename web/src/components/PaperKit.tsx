@@ -44,10 +44,19 @@ export function PaperCloud({ className, children }: { className?: string; childr
 }
 
 /** Thẻ giấy washi mép xé, chứa đúng một hành động chính của màn. */
-export function TornCard({ className, children }: { className?: string; children: ReactNode }) {
+export function TornCard({
+  className,
+  fill,
+  children,
+}: {
+  className?: string;
+  /** Cao hết ô cha (dùng trong lưới để bằng chiều cao ô bên cạnh). */
+  fill?: boolean;
+  children: ReactNode;
+}) {
   return (
-    <div className="torn-card-shadow">
-      <div className={cn('torn-card p-5 sm:p-6', className)}>{children}</div>
+    <div className={cn('torn-card-shadow', fill && 'h-full')}>
+      <div className={cn('torn-card p-5 sm:p-6', fill && 'h-full', className)}>{children}</div>
     </div>
   );
 }

@@ -458,17 +458,17 @@ export function AppNav() {
             href="/ca-nhan"
             aria-current={isProfileActive ? 'page' : undefined}
             className={cn(
-              'flex min-w-0 flex-1 items-center gap-3 rounded-xl px-2 py-2 text-sm transition duration-150',
+              'flex min-w-0 flex-1 items-center gap-2.5 rounded-xl px-2 py-2 text-sm transition duration-150',
               FOCUS_RING,
               isProfileActive ? 'bg-accent text-primary' : 'text-foreground hover:bg-muted/60'
             )}
           >
             <Avatar user={currentUser} />
             <span className="flex min-w-0 flex-1 flex-col leading-tight">
-              <span className={cn('truncate text-sm', isProfileActive ? 'font-semibold' : 'font-medium')}>
+              <span className={cn('line-clamp-2 text-sm', isProfileActive ? 'font-semibold' : 'font-medium')}>
                 {currentUser?.displayName || 'Cá nhân & Tiến độ'}
               </span>
-              <span className="mt-0.5 flex items-center gap-1 truncate text-xs text-muted-foreground">
+              <span className="mt-0.5 flex items-start gap-1 text-xs text-muted-foreground [&>svg]:mt-0.5">
                 {syncResolution.state === 'synced' && <CloudCheck className="size-3 shrink-0 text-success" />}
                 {(syncResolution.state === 'pending' || syncResolution.state === 'syncing') && (
                   <CloudUpload
@@ -478,7 +478,7 @@ export function AppNav() {
                 {(syncResolution.state === 'offline' || syncResolution.state === 'unconfigured') && (
                   <CloudOff className="size-3 shrink-0 text-muted-foreground" />
                 )}
-                <span className="truncate">{syncResolution.label}</span>
+                <span className="min-w-0">{syncResolution.label}</span>
               </span>
             </span>
           </Link>
