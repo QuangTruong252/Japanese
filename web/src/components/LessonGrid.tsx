@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useSyncExternalStore } from 'react';
+import { useState, useMemo, useSyncExternalStore, type MouseEvent } from 'react';
 import Link from 'next/link';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db';
@@ -16,7 +16,9 @@ import { Input } from '@/components/ui/input';
 import { Progress } from '@/components/ui/progress';
 import { Furigana } from '@/components/Furigana';
 import { Illustration } from '@/components/Illustration';
-import { PaperCloud, SoftScene, TornCard } from '@/components/PaperKit';
+import { BookSpread, PaperCloud, PartRow, Ribbon, SoftScene, TornCard } from '@/components/PaperKit';
+import { FeatureIcon } from '@/components/FeatureIcon';
+import { N5Progress } from '@/components/N5Progress';
 import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
 
 const FALLBACK_SCENE_COVER: IllustrationAsset = {
@@ -174,8 +176,318 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
 
   const sceneCover = activeSummary?.cover ?? FALLBACK_SCENE_COVER;
 
+  const vocabCountByLesson = useMemo(
+    () => new Map(summaries.map((s) => [s.number, s.vocabCount])),
+    [summaries],
+  );
+  const isLessonLearned = (s: LessonSummary) =>
+    (s.vocabCount > 0 && (learnedByLesson.get(s.number) ?? 0) >= s.vocabCount) ||
+    s.number <= learnedThroughLesson;
+
+  // Xem trước chỉ có từ `lg`; chưa chọn thì theo bài đang học (bài này đến muộn vì dữ liệu ôn tải bất đồng bộ)
+  const [pickedLesson, setPickedLesson] = useState<number | null>(null);
+  const selectedNum = pickedLesson ?? activeLessonNum;
+  const selectedSummary = summaries.find((s) => s.number === selectedNum) ?? activeSummary;
+  const selectedLearned = learnedByLesson.get(selectedSummary?.number ?? 0) ?? 0;
+  const selectedTotal = selectedSummary?.vocabCount ?? 0;
+  const selectedIsActive = selectedSummary?.number === activeLessonNum;
+  const selectedCta =
+    selectedIsActive
+      ? { text: ctaText, href: ctaHref }
+      : isLessonLearned(selectedSummary)
+        ? { text: `Ôn lại Bài ${selectedSummary.number}`, href: `/hoc/${selectedSummary.number}` }
+        : {
+            text: `${selectedLearned > 0 ? 'Tiếp tục' : 'Bắt đầu'} Bài ${selectedSummary.number}`,
+            href: `/hoc/${selectedSummary.number}`,
+          };
+
+  // Từ `lg` bấm hàng là chọn để xem trước; dưới `lg` để link đi thẳng sang bài
+  const selectOnWide = (n: number) => (e: MouseEvent<HTMLAnchorElement>) => {
+    if (!window.matchMedia('(min-width: 1024px)').matches) return;
+    e.preventDefault();
+    setPickedLesson(n);
+  };
+
+  const filterInput = (id: string, className: string) => (
+    <div className={cn('relative', className)}>
+      <Search
+        className="pointer-events-none absolute left-3.5 top-1/2 size-5 -translate-y-1/2 text-muted-foreground"
+        aria-hidden="true"
+      />
+      <Input
+        id={id}
+        type="text"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        placeholder="Lọc bài học..."
+        aria-label="Lọc bài học"
+        className="h-12 rounded-xl border-border bg-card pl-11 pr-12 text-base md:text-base dark:bg-card"
+      />
+      {searchQuery && (
+        <button
+          type="button"
+          onClick={() => setSearchQuery('')}
+          className="absolute right-0 top-1/2 inline-flex size-12 -translate-y-1/2 items-center justify-center rounded-r-xl text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring"
+          aria-label="Xóa bộ lọc"
+        >
+          <X className="size-4" aria-hidden="true" />
+        </button>
+      )}
+    </div>
+  );
+
+  const wideLeft = (
+    <>
+      <header className="flex items-end justify-between gap-4">
+        <div>
+          <h1 className="font-serif text-3xl font-semibold tracking-tight text-foreground">Học bài</h1>
+          <p className="mt-0.5 text-sm text-muted-foreground">
+            {summaries.length} bài · đã học {lessonStats.completed}
+          </p>
+        </div>
+        {filterInput('lesson-filter-wide', 'hidden w-64 shrink-0 lg:block')}
+      </header>
+
+      {/* Tablet: thẻ bài đang học đứng đầu (PC thì bài đang học nằm ở trang phải) */}
+      <div className="mt-5 lg:hidden">
+        <TornCard className="grid items-center gap-5 md:grid-cols-2 md:gap-6">
+          <SoftScene asset={sceneCover} sizes="(min-width: 768px) 360px, 100vw" imageClassName="h-44 object-center" />
+          <div className="min-w-0">
+            <p className="font-serif text-sm font-bold text-primary">Bài {activeLessonNum}</p>
+            {activeSummary?.jpTitle && (
+              <Furigana
+                text={formatOptionalBrackets(activeSummary.jpTitle)}
+                zoomable={false}
+                className="jp-display mt-1 block text-3xl font-bold text-foreground"
+              />
+            )}
+            <p className="mt-1 font-serif text-lg text-muted-foreground">{activeSummary?.title?.vi}</p>
+            <div className="mt-3 flex items-center gap-3">
+              <Progress
+                value={learnedInActive}
+                max={Math.max(1, totalInActive)}
+                getAriaValueText={() => `${learnedInActive} trên ${totalInActive} từ đã vào lịch ôn`}
+                className="min-w-0 flex-1"
+              />
+              <span className="shrink-0 text-sm tabular-nums text-muted-foreground">
+                {learnedInActive}/{totalInActive} từ
+              </span>
+            </div>
+            <Link
+              href={ctaHref}
+              className={cn(
+                buttonVariants({ variant: isAllLearned ? 'secondary' : 'default', size: 'quiz' }),
+                'mt-4 h-auto min-h-12 w-full py-3 font-semibold',
+              )}
+            >
+              <span className="whitespace-normal text-center">{ctaText}</span>
+              <ArrowRight aria-hidden="true" />
+            </Link>
+          </div>
+        </TornCard>
+      </div>
+
+      <N5Progress
+        learnedByLesson={learnedByLesson}
+        vocabCountByLesson={vocabCountByLesson}
+        activeLesson={isAllLearned ? undefined : activeLessonNum}
+        learnedThroughLesson={learnedThroughLesson}
+        className="mt-5"
+      />
+
+      {filterInput('lesson-filter-tablet', 'mt-5 lg:hidden')}
+
+      <section aria-label="Mục lục bài học" className="mt-4">
+        {filteredSummaries.length === 0 ? (
+          <div className="flex flex-col items-center gap-4 rounded-xl border border-dashed border-border bg-card/50 px-4 py-10 text-center">
+            <p className="text-base font-semibold text-foreground">Không có bài khớp</p>
+            <button
+              type="button"
+              onClick={() => setSearchQuery('')}
+              className={cn(buttonVariants({ variant: 'outline' }), 'min-h-11')}
+            >
+              Xóa bộ lọc
+            </button>
+          </div>
+        ) : (
+          LESSON_GROUPS.map((group) => {
+            const groupLessons = filteredSummaries.filter(
+              (s) => s.number >= group.min && s.number <= group.max,
+            );
+            if (groupLessons.length === 0) return null;
+            return (
+              <div key={group.label}>
+                <h2 className="mt-5 border-b border-border pb-1.5 font-serif text-sm font-semibold text-primary">
+                  / {group.label} /
+                </h2>
+                <ol>
+                  {groupLessons.map((s) => {
+                    const learned = learnedByLesson.get(s.number) ?? 0;
+                    const isLearned = isLessonLearned(s);
+                    const isCurrent = !isAllLearned && s.number === activeLessonNum;
+                    const isSelected = s.number === selectedNum;
+                    const body = (
+                      <>
+                        <span className="w-9 text-center font-serif text-3xl font-semibold tabular-nums text-foreground">
+                          {s.number}
+                        </span>
+                        <Illustration
+                          asset={s.cover ?? FALLBACK_SCENE_COVER}
+                          sizes="96px"
+                          className="h-14 w-20 shrink-0 rounded-md bg-secondary object-cover md:h-16 md:w-24 dark:brightness-[0.88]"
+                        />
+                        <span className="min-w-0 flex-1">
+                          {s.jpTitle && (
+                            <span className="jp block font-medium text-foreground">
+                              <Furigana text={formatOptionalBrackets(s.jpTitle)} zoomable={false} />
+                            </span>
+                          )}
+                          <span
+                            className={cn(
+                              'block text-sm',
+                              s.jpTitle ? 'text-muted-foreground' : 'font-semibold text-foreground',
+                            )}
+                          >
+                            {s.title.vi}
+                          </span>
+                        </span>
+                        <span className="sr-only">
+                          {isLearned
+                            ? ', Đã học'
+                            : isCurrent
+                              ? `, Đang học, ${learned}/${s.vocabCount} từ`
+                              : learned > 0
+                                ? `, ${learned}/${s.vocabCount} từ`
+                                : ', Chưa học'}
+                        </span>
+                        <span aria-hidden="true" className="flex w-12 shrink-0 justify-end text-sm tabular-nums text-muted-foreground">
+                          {isLearned ? (
+                            <span className="flex size-5 items-center justify-center rounded-full bg-success text-success-foreground">
+                              <Check className="size-3 stroke-[3]" />
+                            </span>
+                          ) : learned > 0 ? (
+                            `${learned}/${s.vocabCount}`
+                          ) : (
+                            <span className="size-5 rounded-full border-2 border-muted-foreground/40" />
+                          )}
+                        </span>
+                      </>
+                    );
+                    const rowClass =
+                      'min-h-[4.5rem] w-full items-center gap-3 rounded-lg px-3 py-2 text-left outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring';
+                    return (
+                      <li
+                        key={s.number}
+                        className={cn(
+                          'relative border-b border-border/60 last:border-b-0',
+                          isCurrent && 'max-lg:rounded-lg max-lg:bg-accent',
+                          isSelected && 'lg:rounded-lg lg:bg-accent',
+                        )}
+                      >
+                        {isCurrent && <Ribbon className="top-3 lg:hidden" />}
+                        {isSelected && <Ribbon className="top-3 hidden lg:block" />}
+                        <Link
+                          href={`/hoc/${s.number}`}
+                          onClick={selectOnWide(s.number)}
+                          aria-current={isCurrent ? 'step' : undefined}
+                          className={cn('flex lg:hidden', rowClass)}
+                        >
+                          {body}
+                        </Link>
+                        {/* Từ `lg`: hàng là nút chọn xem trước, link "Mở bài" nằm riêng bên cạnh */}
+                        <div className="hidden items-center lg:flex">
+                          <button
+                            type="button"
+                            onClick={() => setPickedLesson(s.number)}
+                            aria-current={isSelected ? 'true' : undefined}
+                            className={cn('flex', rowClass)}
+                          >
+                            {body}
+                          </button>
+                          <Link
+                            href={`/hoc/${s.number}`}
+                            aria-label={`Mở Bài ${s.number}`}
+                            className="mr-1 inline-flex size-11 shrink-0 items-center justify-center rounded-full text-muted-foreground outline-none transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring"
+                          >
+                            <ArrowRight className="size-5" aria-hidden="true" />
+                          </Link>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
+            );
+          })
+        )}
+      </section>
+    </>
+  );
+
+  const widePreview = selectedSummary && (
+    <section aria-label={`Xem trước Bài ${selectedSummary.number}`} className="hidden lg:block">
+      <div className="tilt-hover">
+        <SoftScene
+          asset={selectedSummary.cover ?? FALLBACK_SCENE_COVER}
+          sizes="(min-width: 1280px) 460px, 40vw"
+          imageClassName="h-56 object-center xl:h-64"
+        />
+      </div>
+      <p className="mt-5 font-serif text-sm font-bold text-primary">Bài {selectedSummary.number}</p>
+      {selectedSummary.jpTitle && (
+        <Furigana
+          text={formatOptionalBrackets(selectedSummary.jpTitle)}
+          zoomable={false}
+          className="jp-display mt-1 block text-3xl font-bold text-foreground xl:text-4xl"
+        />
+      )}
+      <p className="mt-1 font-serif text-xl text-muted-foreground">{selectedSummary.title.vi}</p>
+      <div className="mt-4 flex items-center gap-3">
+        <Progress
+          value={selectedLearned}
+          max={Math.max(1, selectedTotal)}
+          getAriaValueText={() => `${selectedLearned} trên ${selectedTotal} từ đã vào lịch ôn`}
+          className="min-w-0 flex-1"
+        />
+        <span className="shrink-0 text-sm tabular-nums text-muted-foreground">
+          {selectedLearned}/{selectedTotal} từ
+        </span>
+      </div>
+      <div className="mt-4 space-y-2">
+        <PartRow
+          href={`/hoc/${selectedSummary.number}/tu-vung`}
+          icon={<FeatureIcon name="vocab" />}
+          title="Từ vựng"
+          detail={`${selectedSummary.vocabCount} từ`}
+        />
+        <PartRow
+          href={`/hoc/${selectedSummary.number}#ngu-phap`}
+          icon={<FeatureIcon name="grammar" />}
+          title="Ngữ pháp"
+          detail={`${selectedSummary.grammarCount} mẫu`}
+        />
+        {selectedSummary.dialogueCount > 0 && (
+          <PartRow
+            href={`/hoc/${selectedSummary.number}#hoi-thoai`}
+            icon={<FeatureIcon name="dialogue" />}
+            title="Hội thoại"
+            detail={`${selectedSummary.dialogueCount} tình huống`}
+          />
+        )}
+      </div>
+      <Link
+        href={selectedCta.href}
+        className={cn(buttonVariants({ size: 'quiz' }), 'mt-5 h-auto min-h-12 w-full py-3 font-semibold')}
+      >
+        <span className="whitespace-normal text-center">{selectedCta.text}</span>
+        <ArrowRight aria-hidden="true" />
+      </Link>
+    </section>
+  );
+
   return (
-    <main className="mx-auto w-full max-w-5xl px-4 pb-12 pt-3 sm:px-6 lg:px-8">
+    <>
+    <main className="mx-auto w-full max-w-5xl px-4 pb-12 pt-3 sm:px-6 md:hidden">
       <SoftScene
         asset={sceneCover}
         sizes="(min-width: 1024px) 1024px, 100vw"
@@ -418,5 +730,10 @@ export function LessonGrid({ summaries }: { summaries: LessonSummary[] }) {
         </div>
       </div>
     </main>
+
+    <main className="mx-auto hidden w-full max-w-[1200px] px-6 pb-12 pt-6 md:block lg:px-8">
+      <BookSpread leftWidth="wide" sticky="right" left={wideLeft} right={widePreview} />
+    </main>
+    </>
   );
 }
