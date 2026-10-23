@@ -4,8 +4,9 @@ import { useCallback, useEffect, useMemo, useState, useSyncExternalStore, type R
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { AlarmClock, AlertCircle, ArrowRight, ChartColumn, Clock, RefreshCw, Volume2, WifiOff } from 'lucide-react';
+import { AlarmClock, AlertCircle, ArrowRight, Clock, RefreshCw, Volume2, WifiOff } from 'lucide-react';
 import { FeatureIcon, type FeatureIconName } from '@/components/FeatureIcon';
+import { ForecastChart } from '@/components/ForecastChart';
 import { Furigana } from '@/components/Furigana';
 import { Illustration } from '@/components/Illustration';
 import { Accent, BentoGrid, ListRow, PageTitle, SectionHeader, Tile, TornCard } from '@/components/PaperKit';
@@ -36,7 +37,7 @@ import {
   resolveReviewStartAction,
   resolveReviewSyncNotice,
 } from '@/lib/review-queue';
-import { forecastDayLabel, reviewForecast, type ForecastDay } from '@/lib/review-forecast';
+import { reviewForecast } from '@/lib/review-forecast';
 import { secondsPerQuestion } from '@/lib/stats';
 import { createClient, isSupabaseConfigured } from '@/lib/supabase/client';
 import { useDueQueue } from '@/lib/use-due-queue';
@@ -61,47 +62,6 @@ const MAIN_CLASS = 'mx-auto w-full max-w-5xl space-y-8 px-4 pb-12 pt-3 sm:px-6 l
 // Mobile xem trước 5 mục; từ md hiện 12 để lấp trọn hàng ở cả 2 và 3 cột.
 const PREVIEW_MOBILE = 5;
 const PREVIEW_WIDE = 12;
-
-/** Biểu đồ cột 7 ngày; số liệu nằm cả trên cột lẫn trong `aria-label` vì cột chỉ là hình. */
-function ForecastChart({ days }: { days: ForecastDay[] }) {
-  const max = Math.max(1, ...days.map((d) => d.count));
-  const labels = days.map(forecastDayLabel);
-  const summary = days.map((d, i) => `${labels[i]} ${d.count}`).join(', ');
-  return (
-    <div>
-      <h2 className="flex items-center gap-2 font-serif text-lg font-semibold text-foreground">
-        <ChartColumn className="size-5 text-primary" aria-hidden="true" />
-        Lịch ôn 7 ngày
-      </h2>
-      <div role="img" aria-label={`Lịch ôn 7 ngày: ${summary}`} className="mt-3 flex h-32 items-end gap-2">
-        {days.map((d, i) => (
-          <div
-            key={i}
-            className={cn('flex min-w-0 flex-col items-center justify-end gap-1', i === 0 ? 'flex-[1.7]' : 'flex-1')}
-          >
-            <span
-              className={cn('text-xs tabular-nums', i === 0 ? 'font-semibold text-foreground' : 'text-muted-foreground')}
-            >
-              {d.count}
-            </span>
-            <div
-              className={cn(
-                'w-full max-w-9 rounded-t-md',
-                i === 0 ? 'bg-primary' : 'border border-b-0 border-border bg-secondary',
-              )}
-              style={{ height: Math.max(4, Math.round((d.count / max) * 72)) }}
-            />
-            <span
-              className={cn('whitespace-nowrap text-xs', i === 0 ? 'font-medium text-foreground' : 'text-muted-foreground')}
-            >
-              {labels[i]}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 function subscribeOnline(callback: () => void) {
   window.addEventListener('online', callback);
