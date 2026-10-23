@@ -336,9 +336,8 @@ export function BookSpread({
       )}
       style={stickyTop ? ({ '--sticky-top': stickyTop } as CSSProperties) : undefined}
     >
-      <div className={cn('min-w-0 lg:col-start-1 lg:row-start-1', sticky === 'left' && stickyCls)}>{left}</div>
-      <div className={cn('min-w-0 lg:col-start-3 lg:row-start-1', sticky === 'right' && stickyCls)}>{right}</div>
-      {/* Gáy sách: đường mảnh + bóng mờ, kéo hết chiều cao hàng. */}
+      {/* Gáy sách: đường mảnh + bóng mờ, kéo hết chiều cao hàng. Đứng đầu vì dưới lg nó ẩn: nếu là con cuối,
+          space-y sẽ cộng lề dưới thừa cho cột phải. */}
       <span
         aria-hidden="true"
         className={cn(
@@ -347,6 +346,8 @@ export function BookSpread({
           'after:absolute after:inset-y-0 after:left-1/2 after:border-l after:border-border/70',
         )}
       />
+      <div className={cn('min-w-0 lg:col-start-1 lg:row-start-1', sticky === 'left' && stickyCls)}>{left}</div>
+      <div className={cn('min-w-0 lg:col-start-3 lg:row-start-1', sticky === 'right' && stickyCls)}>{right}</div>
     </div>
   );
 }

@@ -101,9 +101,11 @@ export default function AudioSettingsPage() {
   return (
     <div className="mx-auto w-full max-w-2xl space-y-8 px-4 py-6 pb-28 md:max-w-3xl md:px-6 md:pb-12 lg:max-w-[1100px] lg:px-8">
       <BackLink href="/cai-dat" label="Cài đặt" />
+      {/* Tiêu đề nằm trong sách mở nên PageTitle thêm pt-2 như trang không có nút quay lại; bù lại để mobile giữ khoảng cũ. */}
       <BookSpread
         sticky="left"
         stickyTop="4.25rem"
+        className="max-lg:-mt-2"
         left={
           <div className="space-y-8">
             <PageTitle title="Audio đĩa CD" />

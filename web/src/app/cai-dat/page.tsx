@@ -440,7 +440,8 @@ export default function SettingsPage() {
         Xóa toàn bộ dữ liệu
       </Button>
 
-      <p className="text-sm text-muted-foreground">
+      {/* Dưới lg khối cành hoa phía sau bị ẩn nhưng vẫn là con cuối, nên bỏ lề space-y để đáy trang không dư. */}
+      <p className="text-sm text-muted-foreground max-lg:mb-0">
         Dữ liệu nét chữ:{' '}
         <a
           href="https://kanjivg.tagaini.net"
