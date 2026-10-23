@@ -47,7 +47,7 @@ export default async function LessonDetailPage({
                 asset={lesson.cover}
                 sizes="(min-width: 1024px) 320px, (min-width: 768px) 50vw, 100vw"
                 eager
-                imageClassName="h-48 object-center sm:h-64 sm:object-[center_30%] md:h-80 lg:h-80 lg:object-[center_20%]"
+                imageClassName="h-48 object-center sm:h-64 sm:object-[center_30%] md:h-64 lg:h-52 lg:object-[center_20%]"
                 className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full md:col-start-1 md:row-span-2 md:row-start-1 md:self-start"
               />
             )}

@@ -383,7 +383,7 @@ export function DashboardContent({
 
         <section
           aria-labelledby="home-parts-grid-heading"
-          className="hidden md:col-span-2 md:grid md:grid-cols-3 md:gap-4 lg:col-span-12 lg:grid-cols-[repeat(auto-fit,minmax(10rem,1fr))] lg:gap-5"
+          className="hidden md:col-span-2 md:grid md:grid-cols-2 md:gap-4 lg:col-span-12 lg:grid-cols-[repeat(auto-fit,minmax(10rem,1fr))] lg:gap-5"
         >
           <h2 id="home-parts-grid-heading" className="sr-only">
             Các phần trong bài
@@ -498,10 +498,10 @@ const PART_ICON_CLASS =
   'flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground [&_svg]:size-6';
 const TILE_LINK_CLASS = 'flex h-full flex-col rounded-2xl outline-none focus-visible:ring-3 focus-visible:ring-ring';
 
-/** Thẻ phần bài (md+): đầu thẻ là icon, tên, số liệu; tranh phủ phần dưới; cả thẻ là link. */
+/** Thẻ phần bài (md+): thấp, chỉ icon, tên, số liệu, chevron; cả thẻ là link. */
 function PartTile({ part }: { part: PartData }) {
   return (
-    <Tile interactive className="overflow-hidden p-0 lg:p-0">
+    <Tile interactive className="p-0 lg:p-0">
       <Link href={part.href} className={TILE_LINK_CLASS}>
         <span className="flex items-center gap-3 p-4 md:max-lg:gap-2 md:max-lg:p-3">
           <span className={PART_ICON_CLASS} aria-hidden="true">
@@ -513,11 +513,6 @@ function PartTile({ part }: { part: PartData }) {
           </span>
           <ChevronRight className="size-5 shrink-0 text-muted-foreground" aria-hidden="true" />
         </span>
-        <Illustration
-          asset={part.image}
-          sizes="(min-width: 1280px) 240px, 33vw"
-          className="mt-auto h-36 w-full object-cover dark:brightness-[0.88]"
-        />
       </Link>
     </Tile>
   );
@@ -527,15 +522,15 @@ function PartTile({ part }: { part: PartData }) {
 const WRITING_GRID =
   'bg-[linear-gradient(to_right,transparent_calc(50%-0.5px),var(--border)_calc(50%-0.5px),var(--border)_calc(50%+0.5px),transparent_calc(50%+0.5px)),linear-gradient(to_bottom,transparent_calc(50%-0.5px),var(--border)_calc(50%-0.5px),var(--border)_calc(50%+0.5px),transparent_calc(50%+0.5px))]';
 
-/** Thẻ "Viết chữ đến hạn" (md+) hiện vài chữ đến hạn thật; toàn ngang ở tablet, một ô ở PC. */
+/** Thẻ "Viết chữ đến hạn" (md+) hiện vài chữ đến hạn thật trong ô kẻ; một hàng ngang, rộng hai ô. */
 function WritingTile({ count, chars }: { count: number; chars: string[] }) {
   return (
-    <Tile interactive className="overflow-hidden p-0 md:col-span-3 lg:col-span-1 lg:p-0">
+    <Tile interactive className="overflow-hidden p-0 md:col-span-2 lg:p-0">
       <Link
         href="/luyen-viet/phien?mode=den-han"
-        className={cn(TILE_LINK_CLASS, 'md:flex-row md:items-center lg:flex-col lg:items-stretch')}
+        className={cn(TILE_LINK_CLASS, 'md:flex-row md:items-center')}
       >
-        <span className="flex items-center gap-3 p-4 md:flex-1 lg:flex-none">
+        <span className="flex items-center gap-3 p-4 md:flex-1">
           <span className={PART_ICON_CLASS} aria-hidden="true">
             <FeatureIcon name="kana" />
           </span>
@@ -543,17 +538,17 @@ function WritingTile({ count, chars }: { count: number; chars: string[] }) {
             <span className="block font-serif text-lg font-semibold text-foreground">Viết chữ đến hạn</span>
             <span className="block text-sm text-muted-foreground">{count} chữ</span>
           </span>
-          <ChevronRight className="size-5 shrink-0 text-muted-foreground md:hidden lg:block" aria-hidden="true" />
+          <ChevronRight className="size-5 shrink-0 text-muted-foreground md:hidden" aria-hidden="true" />
         </span>
         <span
           aria-hidden="true"
-          className="flex flex-1 items-center justify-center gap-2 p-4 pt-0 md:justify-end md:pt-4 lg:min-h-36 lg:justify-center lg:pt-0"
+          className="flex flex-1 items-center justify-center gap-2 p-4 pt-0 md:justify-end md:pt-4"
         >
           {chars.map((char) => (
             <span
               key={char}
               className={cn(
-                'jp jp-display flex size-16 items-center justify-center rounded-md border border-border bg-background text-3xl leading-none text-foreground',
+                'jp jp-display flex size-12 items-center justify-center rounded-md border border-border bg-background text-2xl leading-none text-foreground',
                 WRITING_GRID,
               )}
             >
