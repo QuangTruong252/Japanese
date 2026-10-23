@@ -188,7 +188,7 @@ export function ReferenceBook({
     <>
       {mobileBack ? (
         <>
-          <div className="contents md:hidden">
+          <div className="md:hidden">
             <BackLink {...mobileBack} />
           </div>
           <div className="hidden md:contents">{hubBack}</div>

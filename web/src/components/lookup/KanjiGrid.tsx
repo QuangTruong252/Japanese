@@ -126,8 +126,8 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds, header }: KanjiGridProps)
   }, [kanjiList]);
 
   // Từ `lg` bấm chữ là chọn để xem chi tiết ở trang phải; dưới `lg` link đi thẳng sang trang chữ
-  const [selectedChar, setSelectedChar] = useState<string | null>(null);
-  const selectedKanji = kanjiList.find((k) => k.character === selectedChar);
+  const [selectedChar, setSelectedChar] = useState<string | null>(searchParams.get('chu'));
+  const selectedKanji = filteredList.find((k) => k.character === selectedChar) ?? filteredList[0];
   const selectOnWide = (ch: string) => (e: MouseEvent<HTMLAnchorElement>) => {
     if (e.metaKey || e.ctrlKey || e.shiftKey || !window.matchMedia('(min-width: 1024px)').matches) return;
     e.preventDefault();
@@ -248,7 +248,7 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds, header }: KanjiGridProps)
         <div className="grid grid-cols-4 gap-2 sm:grid-cols-6 sm:gap-3 md:grid-cols-5 lg:grid-cols-6 lg:gap-2 xl:grid-cols-7">
           {filteredList.map((k) => {
             const isLearned = learnedKanjiSet.has(k.character);
-            const isSelected = k.character === selectedChar;
+            const isSelected = k.character === selectedKanji?.character;
             const lesson = getKanjiLesson(k);
             const reading = k.kunyomi[0] ?? k.onyomi[0] ?? '';
             const meaning = k.meanings.vi[0] ?? '';
@@ -258,11 +258,12 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds, header }: KanjiGridProps)
                 key={k.character}
                 href={`/hoc/tra-cuu/kanji/${encodeURIComponent(k.character)}`}
                 onClick={selectOnWide(k.character)}
-                aria-current={isSelected ? 'true' : undefined}
+                aria-current={k.character === selectedChar ? 'true' : undefined}
                 aria-label={`${k.character}${k.hanviet ? ` (${k.hanviet})` : ''} — ${meaning}, bài ${lesson ?? 'N5'}${isLearned ? ', đã học' : ''}`}
                 className={cn(
                   'relative flex min-w-0 flex-col items-center gap-0.5 rounded-xl border px-1 pb-2 pt-2 text-center outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring lg:gap-0 lg:pb-1.5 lg:pt-1.5',
-                  isSelected ? 'border-primary/40 bg-accent' : 'border-border bg-card hover:bg-muted/60',
+                  'border-border bg-card hover:bg-muted/60',
+                  isSelected && 'lg:border-primary/40 lg:bg-accent',
                 )}
               >
                 {isLearned && (
@@ -308,9 +309,9 @@ export function KanjiGrid({ kanjiList, kanjiTargetIds, header }: KanjiGridProps)
         <KanjiDetailPanel key={selectedKanji.character} kanji={selectedKanji} />
       ) : (
         <div className="relative flex min-h-96 flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-border p-8 text-center">
-          <p className="font-serif text-xl font-semibold text-foreground">Chọn một chữ</p>
+          <p className="font-serif text-xl font-semibold text-foreground">Không có chữ khớp bộ lọc</p>
           <p className="max-w-64 text-sm text-muted-foreground">
-            Bấm hoặc nhấn Enter trên một chữ bên trái để xem thứ tự nét, âm đọc và từ ghép ngay tại đây.
+            Đổi hoặc xóa bộ lọc để xem thứ tự nét, âm đọc và từ ghép.
           </p>
           <Link
             href="/luyen-viet?tab=kanji"

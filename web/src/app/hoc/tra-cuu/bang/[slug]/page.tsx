@@ -36,7 +36,7 @@ export default async function ReferenceDetailPage({
   }
 
   return (
-    <main className="mx-auto w-full max-w-5xl px-4 pb-24 sm:px-6 md:pb-12 lg:max-w-[1200px] lg:px-8">
+    <main className="mx-auto w-full max-w-5xl space-y-6 px-4 pb-24 sm:px-6 md:space-y-0 md:pb-12 lg:max-w-[1200px] lg:px-8">
       <ReferenceBook
         docs={getAllReferenceDocs()}
         doc={doc}

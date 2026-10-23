@@ -84,9 +84,9 @@ export default function TraCuuHubPage() {
   const samples: Record<string, { sample: ReactNode; count: string }> = {
     '/hoc/tra-cuu/kana': {
       sample: (
-        <span className="flex gap-3">
-          <RuledChar char="あ" className="size-28 lg:size-32" />
-          <RuledChar char="ア" className="size-28 lg:size-32" />
+        <span className="flex gap-3 lg:gap-2">
+          <RuledChar char="あ" className="size-28 lg:size-16 xl:size-20" />
+          <RuledChar char="ア" className="size-28 lg:size-16 xl:size-20" />
         </span>
       ),
       count: `${kanaCount} âm cơ bản`,
@@ -113,7 +113,7 @@ export default function TraCuuHubPage() {
       sample: demoCells.length === 4 && (
         <span
           lang="ja"
-          className="jp-display grid grid-cols-2 divide-x divide-y divide-border rounded-xl border border-border bg-background text-2xl font-semibold text-foreground [&>span]:px-5 [&>span]:py-3 [&>span]:text-center"
+          className="jp-display grid grid-cols-2 divide-x divide-y divide-border rounded-xl border border-border bg-background text-2xl font-semibold text-foreground lg:text-xl [&>span]:px-5 lg:[&>span]:px-2 [&>span]:py-3 [&>span]:text-center"
         >
           {demoCells.map((cell) => (
             <span key={cell}>{cell}</span>
@@ -126,26 +126,14 @@ export default function TraCuuHubPage() {
 
   return (
     <main className="mx-auto w-full max-w-5xl space-y-6 px-4 pb-24 sm:px-6 md:pb-12 lg:max-w-[1200px] lg:px-8">
-      <div className="relative">
+      <div className="relative lg:w-fit">
         <PageTitle title="Tra cứu" />
-        <Accent kind="sprig-right" className="-top-3 left-36 w-28" />
+        <Accent kind="sprig-right" className="-right-28 top-0 w-28" />
       </div>
 
       <section aria-label="Tìm kiếm nội dung">
         <SearchTrigger variant="bar" placeholder="Tìm từ, chữ, ngữ pháp…" className="rounded-xl md:min-h-14" />
       </section>
-
-      <nav aria-label="Các mục tra cứu" className="grid gap-2 md:hidden">
-        {CATEGORIES.map((cat) => (
-          <ListRow
-            key={cat.href}
-            href={cat.href}
-            icon={<FeatureIcon name={cat.icon} />}
-            title={cat.title}
-            detail={cat.description}
-          />
-        ))}
-      </nav>
 
       <BentoGrid className="max-md:hidden">
         {CATEGORIES.map((cat) => {
@@ -156,9 +144,9 @@ export default function TraCuuHubPage() {
               href={cat.href}
               className="block rounded-2xl outline-none focus-visible:ring-3 focus-visible:ring-ring lg:col-span-6"
             >
-              <Tile interactive className="flex h-full flex-col gap-5 lg:min-h-64 lg:flex-row lg:items-center lg:gap-6">
-                <div className="flex min-h-32 flex-1 items-center justify-center">{sample}</div>
-                <div className="min-w-0 lg:w-44 lg:shrink-0">
+              <Tile interactive className="flex h-full flex-col gap-5 lg:min-h-64 lg:flex-row lg:items-center lg:gap-4">
+                <div className="flex min-h-32 items-center justify-start lg:w-36 lg:shrink-0 xl:w-44">{sample}</div>
+                <div className="min-w-0 lg:flex-1">
                   <span
                     aria-hidden="true"
                     className="flex size-10 items-center justify-center rounded-lg bg-accent text-accent-foreground [&_svg]:size-6"
@@ -188,6 +176,18 @@ export default function TraCuuHubPage() {
           ))}
         </div>
       </section>
+
+      <nav aria-label="Các mục tra cứu" className="grid gap-2 md:hidden">
+        {CATEGORIES.map((cat) => (
+          <ListRow
+            key={cat.href}
+            href={cat.href}
+            icon={<FeatureIcon name={cat.icon} />}
+            title={cat.title}
+            detail={cat.description}
+          />
+        ))}
+      </nav>
     </main>
   );
 }

@@ -8,7 +8,7 @@ import { filterVerbs } from '@/lib/lookup';
 import { Furigana } from '@/components/Furigana';
 import { SpeakButton } from '@/components/SpeakButton';
 import { VerbGroupBadge } from '@/components/VerbGroupBadge';
-import { Accent, BookSpread, Chip, Ribbon } from '@/components/PaperKit';
+import { BookSpread, Chip, Ribbon } from '@/components/PaperKit';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -26,7 +26,7 @@ function verbForms(v: VerbItem) {
 function VerbPanel({ verb }: { verb: VerbItem }) {
   const { mainVerb, collocation } = splitCollocation(verb.verb);
   return (
-    <div className="relative space-y-5 pb-24">
+    <div className="space-y-5">
       <div className="space-y-2 border-b border-border pb-4">
         <div className="flex flex-wrap items-end gap-x-4 gap-y-1">
           <Furigana text={mainVerb} className="jp-display text-5xl font-semibold leading-tight text-foreground" />
@@ -58,7 +58,6 @@ function VerbPanel({ verb }: { verb: VerbItem }) {
         ))}
       </dl>
 
-      <Accent kind="sprig-left" className="bottom-0 right-0 w-28" />
     </div>
   );
 }
@@ -296,7 +295,7 @@ export function VerbTable({ verbs, header }: VerbTableProps) {
               const isFirstMatch = query.trim() !== '' && idx === 0;
               const isOpen = selectedId === v.id;
               const isActive = activeVerb?.id === v.id;
-              const { mainVerb } = splitCollocation(v.verb);
+              const { mainVerb, collocation } = splitCollocation(v.verb);
 
               return (
                 <li
@@ -314,27 +313,32 @@ export function VerbTable({ verbs, header }: VerbTableProps) {
                     <Furigana
                       text={mainVerb}
                       zoomable={false}
-                      className="jp-display w-44 shrink-0 text-xl font-semibold text-foreground"
+                      className="jp-display w-32 shrink-0 text-xl font-semibold text-foreground lg:w-28 lg:text-base xl:w-36 xl:text-lg"
                     />
-                    <span className="min-w-0 flex-1 text-sm text-foreground">{v.meaning.vi}</span>
-                    <VerbGroupBadge group={v.group} />
-                    <span className="w-14 shrink-0 text-right text-xs text-muted-foreground">Bài {v.lesson}</span>
+                    <span className="min-w-0 flex-1 text-sm text-foreground lg:line-clamp-2">{v.meaning.vi}</span>
+                    <span className="flex shrink-0 flex-col items-end gap-0.5 xl:flex-row xl:items-center xl:gap-3">
+                      <VerbGroupBadge group={v.group} />
+                      <span className="text-right text-xs text-muted-foreground">Bài {v.lesson}</span>
+                    </span>
                     {isOpen ? (
                       <ChevronDown className="size-5 shrink-0 text-muted-foreground lg:hidden" aria-hidden="true" />
                     ) : (
-                      <ChevronRight className="size-5 shrink-0 text-muted-foreground" aria-hidden="true" />
+                      <ChevronRight className="size-5 shrink-0 text-muted-foreground lg:hidden" aria-hidden="true" />
                     )}
                   </button>
                   {isOpen && (
-                    <div className="grid grid-cols-5 gap-2 px-3 pb-3 lg:hidden">
-                      {verbForms(v).map((f) => (
-                        <div key={f.label} className="rounded-lg border border-border bg-card px-1 py-2 text-center">
-                          <span className="block text-xs text-muted-foreground">{f.label}</span>
-                          <span lang="ja" className="jp-display block text-lg font-semibold text-foreground">
-                            {f.value}
-                          </span>
-                        </div>
-                      ))}
+                    <div className="flex flex-col gap-2 px-3 pb-3 lg:hidden">
+                      {collocation && <p lang="ja" className="text-sm text-muted-foreground">（{collocation}）</p>}
+                      <div className="grid grid-cols-5 gap-2">
+                        {verbForms(v).map((f) => (
+                          <div key={f.label} className="rounded-lg border border-border bg-card px-1 py-2 text-center">
+                            <span className="block text-xs text-muted-foreground">{f.label}</span>
+                            <span lang="ja" className="jp-display block text-lg font-semibold text-foreground">
+                              {f.value}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </li>
