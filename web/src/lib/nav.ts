@@ -18,7 +18,10 @@ export function isNavActive(itemHref: string, pathname: string): boolean {
     const isTraCuu = pathname === '/hoc/tra-cuu' || pathname.startsWith('/hoc/tra-cuu/');
     return !isTraCuu && (pathname === '/hoc' || pathname.startsWith('/hoc/'));
   }
-  return pathname === itemHref || pathname.startsWith(`${itemHref}/`);
+  const matches = (base: string) => pathname === base || pathname.startsWith(`${base}/`);
+  // Luyện viết là một nhánh của Luyện tập
+  if (itemHref === '/luyen-tap' && matches('/luyen-viet')) return true;
+  return matches(itemHref);
 }
 
 /**

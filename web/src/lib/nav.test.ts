@@ -40,6 +40,14 @@ test('isNavActive: "/luyen-tap" và "/on-tap" active đúng tiền tố', () => 
   assert.equal(isNavActive('/on-tap', '/hoc'), false);
 });
 
+test('isNavActive: "/luyen-tap" cũng active ở /luyen-viet và trang con', () => {
+  assert.equal(isNavActive('/luyen-tap', '/luyen-viet'), true);
+  assert.equal(isNavActive('/luyen-tap', '/luyen-viet/hiragana'), true);
+  assert.equal(isNavActive('/luyen-tap', '/luyen-vietnam'), false);
+  assert.equal(isNavActive('/on-tap', '/luyen-viet'), false);
+  assert.equal(isNavActive('/', '/luyen-viet'), false);
+});
+
 test('shouldHideAppChrome: ẩn chrome (header/dock/sidebar) trong các phiên toàn màn hình', () => {
   // Ca đúng (phải ẩn):
   assert.equal(shouldHideAppChrome('/luyen-tap/phien'), true);
