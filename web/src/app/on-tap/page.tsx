@@ -532,7 +532,7 @@ export default function ReviewTodayPage() {
 
   return shell(
     <>
-      <BentoGrid>
+      <BentoGrid className="max-w-2xl md:max-w-none">
       <section aria-labelledby="review-today-heading" className="relative md:col-span-2 lg:col-span-7">
         <Accent kind="sprig-left" className="-right-5 -top-10 w-32" />
         <TornCard fill>
@@ -628,7 +628,7 @@ export default function ReviewTodayPage() {
                       <span className="text-muted-foreground">{row.targetId}</span>
                     )}
                   </div>
-                  {label?.vi && <p className="text-sm text-muted-foreground md:truncate">{label.vi}</p>}
+                  {label?.vi && <p className="text-sm text-muted-foreground">{label.vi}</p>}
                 </div>
                 <div className="flex shrink-0 flex-col items-end gap-1">
                   <TargetTypeBadge type={type} />
