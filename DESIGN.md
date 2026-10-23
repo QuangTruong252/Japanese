@@ -184,6 +184,9 @@ hover chỉ cho chuột (`(hover: hover) and (pointer: fine)`), chỉ `transform
 G2 đợt rollout đã duyệt ngày 2026-10-09. Ảnh sáng/tối sau triển khai nằm trong các thư mục trên;
 route, trạng thái dữ liệu và cách chụp ghi tại `design/README.md`.
 
+Tablet và PC (§5): G2 đã duyệt ngày 2026-10-23 cho mọi màn trong bảng. Mỗi thư mục có thêm mockup
+`mockup-rwd-{pc,tablet}.webp` và ảnh `as-built-{pc,tablet}-{light,dark}.png` (màn đầu, 1280 và 768 px).
+
 Cập nhật bảng khi màn đổi trạng thái. Không còn thành phần legacy; màn mới tham chiếu Home (`DashboardContent.tsx`) và `PaperKit.tsx`.
 
 ## 12. Kiểm tra giao diện (trước khi người dùng review)
