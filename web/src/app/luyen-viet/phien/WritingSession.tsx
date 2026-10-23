@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { AlertCircle, ArrowRight, Check, Eraser, Eye, Pencil, RotateCw, X } from 'lucide-react';
 import { Illustration } from '@/components/Illustration';
+import { TornCard } from '@/components/PaperKit';
 import { SpeakButton } from '@/components/SpeakButton';
 import {
   PauseLayer,
@@ -95,14 +96,48 @@ function StepLine({ current }: { current: number }) {
   );
 }
 
+/** Các nét của chữ, mỗi ô thêm một nét (nét vừa thêm màu đỏ). Chỉ dùng ở bước học, nơi chữ đã hiện. */
+function StrokeOrder({ strokes }: { strokes: string[] }) {
+  return (
+    <ol aria-label="Thứ tự nét" className="grid grid-cols-2 gap-2">
+      {strokes.map((_, i) => (
+        <li key={i} className="flex items-center gap-2">
+          <span className="w-4 shrink-0 text-center text-sm tabular-nums text-muted-foreground">{i + 1}</span>
+          <svg
+            viewBox="0 0 109 109"
+            aria-hidden="true"
+            className="aspect-square min-w-0 flex-1 rounded-lg border border-border bg-card"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={5}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            {strokes.map((d, k) => (
+              <path
+                key={k}
+                d={d}
+                className={k < i ? 'text-foreground' : k === i ? 'text-primary' : 'text-muted-foreground opacity-25'}
+              />
+            ))}
+          </svg>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 /** Đề kanji: âm Hán Việt, nghĩa, On/Kun và từ ví dụ với chữ cần viết thay bằng ô trống. Không có chữ đáp án. */
-function KanjiPrompt({ info }: { info: KanjiWritingInfo }) {
-  const readings = [info.on.length > 0 && `On ${info.on.join('・')}`, info.kun.length > 0 && `Kun ${info.kun.join('・')}`]
+function KanjiPrompt({ info, className }: { info: KanjiWritingInfo; className?: string }) {
+  const readings = [
+    info.on.length > 0 && `On ${info.on.join('・')}`,
+    info.kun.length > 0 && `Kun ${info.kun.join('・')}`,
+  ]
     .filter(Boolean)
     .join(' · ');
   const { example } = info;
   return (
-    <div className="flex w-full max-w-sm flex-col items-center gap-1 text-center">
+    <div className={cn('flex w-full max-w-sm flex-col items-center gap-1 text-center', className)}>
       <p className="font-serif text-4xl font-bold leading-tight text-foreground">{info.hanviet}</p>
       <p className="font-serif text-xl font-semibold leading-snug text-foreground">{info.meaning}</p>
       {readings && (
@@ -165,7 +200,9 @@ function SessionDone({ records, kanjiInfo }: { records: WrittenChar[]; kanjiInfo
                 <span className="jp text-3xl font-bold leading-none text-foreground" lang="ja">
                   {char}
                 </span>
-                <span className="mt-1 text-sm text-muted-foreground">{kanjiInfo[char]?.hanviet ?? kanaInfo(char)?.romaji}</span>
+                <span className="mt-1 text-sm text-muted-foreground">
+                  {kanjiInfo[char]?.hanviet ?? kanaInfo(char)?.romaji}
+                </span>
               </div>
               <span aria-hidden="true" className="h-10 w-px shrink-0 bg-border" />
               <ResultLine result={result} />
@@ -237,19 +274,16 @@ function WritingRunner({ steps, kanjiInfo }: { steps: WritingStep[]; kanjiInfo: 
     if (save === 'saved') nextRef.current?.focus();
   }, [save]);
 
-  const persist = useCallback(
-    async (target: string, result: WritingResult) => {
-      setSave('saving');
-      try {
-        await recordWriting(target, result);
-        setRecords((prev) => [...prev, { char: target, result }]);
-        setSave('saved');
-      } catch {
-        setSave('error');
-      }
-    },
-    [],
-  );
+  const persist = useCallback(async (target: string, result: WritingResult) => {
+    setSave('saving');
+    try {
+      await recordWriting(target, result);
+      setRecords((prev) => [...prev, { char: target, result }]);
+      setSave('saved');
+    } catch {
+      setSave('error');
+    }
+  }, []);
 
   if (!step || !char) return <SessionDone records={records} kanjiInfo={kanjiInfo} />;
 
@@ -259,7 +293,7 @@ function WritingRunner({ steps, kanjiInfo }: { steps: WritingStep[]; kanjiInfo: 
   const boxLabel = kanji ? `Ô viết chữ Hán ${kanji.hanviet}` : `Ô viết chữ ${kanaInfo(char)?.romaji ?? char}`;
   const romaji = kanaInfo(char)?.romaji ?? char;
   // Kanji có thêm khối đề nên ô hẹp lại (320px) để cả màn 390×844 vừa không cuộn.
-  const colWidth = kanji ? 'max-w-80' : 'max-w-sm';
+  const colWidth = cn(kanji ? 'max-w-80' : 'max-w-sm', 'md:max-w-[35rem] lg:max-w-[28rem]');
   const isRecall = step.phase === 'recall';
   const mode: StrokeBoxMode = isRecall ? 'recall' : LEARN_MODES[sub];
 
@@ -287,12 +321,12 @@ function WritingRunner({ steps, kanjiInfo }: { steps: WritingStep[]; kanjiInfo: 
     setPaused(true);
   };
 
-  const stepFraction =isRecall ? (first ? 1 : 0) : sub / LEARN_MODES.length;
+  const stepFraction = isRecall ? (first ? 1 : 0) : sub / LEARN_MODES.length;
 
   const pillClass = 'min-h-11 flex-1 gap-1.5 rounded-full px-2';
 
   return (
-    <SessionShell>
+    <SessionShell className="md:max-w-3xl lg:max-w-5xl">
       <SessionHeader
         regionLabel="Phiên luyện viết"
         exitLabel="Thoát phiên"
@@ -310,127 +344,158 @@ function WritingRunner({ steps, kanjiInfo }: { steps: WritingStep[]; kanjiInfo: 
         <div inert={paused} className="flex h-full flex-col items-center gap-4 overflow-y-auto pb-4 pt-2">
           <StepLine current={isRecall ? 3 : sub} />
 
-          {kanji ? (
-            <KanjiPrompt info={kanji} />
-          ) : (
-            <div className="flex items-center gap-4">
-              <p className="text-5xl font-bold text-foreground">{romaji}</p>
-              <SpeakButton
-                text={char}
-                label={romaji}
-                className="size-11 w-11 rounded-full border border-border bg-secondary text-primary hover:bg-accent"
-              />
+          <div className="flex w-full flex-col items-center gap-4 lg:grid lg:grid-cols-[14rem_minmax(0,1fr)_14rem] lg:items-start lg:gap-8">
+            <div className="hidden lg:block">
+              <TornCard className="flex flex-col items-center gap-4 text-center">
+                {kanji ? (
+                  <KanjiPrompt info={kanji} />
+                ) : (
+                  <>
+                    <p className="text-6xl font-bold text-foreground">{romaji}</p>
+                    <SpeakButton
+                      text={char}
+                      label={romaji}
+                      className="size-14 w-14 rounded-full border border-border bg-secondary text-primary hover:bg-accent"
+                    />
+                  </>
+                )}
+                <p className="w-full border-t border-border pt-3 text-lg text-muted-foreground">
+                  {strokes?.d.length ?? 0} nét
+                </p>
+              </TornCard>
             </div>
-          )}
-
-          {strokes && (
-            <StrokeBox
-              key={`${turn}-${sub}-${attempt}`}
-              ref={boxRef}
-              strokes={strokes.d}
-              numbers={strokes.n}
-              mode={mode}
-              label={boxLabel}
-              onComplete={onComplete}
-              className={colWidth}
-            />
-          )}
-
-          {!isRecall && (
-            <div className={cn('flex w-full gap-2', colWidth)}>
-              <Button
-                type="button"
-                variant="outline"
-                className={pillClass}
-                onClick={() => {
-                  if (mode === 'watch') {
-                    // Phát lại bằng ô mới để hoạt ảnh xong lại báo hoàn tất và tự sang bước kế.
-                    setStepDone(false);
-                    setAttempt((n) => n + 1);
-                  } else boxRef.current?.replay();
-                }}
-              >
-                <RotateCw aria-hidden="true" />
-                Xem lại
-              </Button>
-              {mode !== 'watch' && (
-                <Button
-                  type="button"
-                  variant="outline"
-                  className={pillClass}
-                  onClick={() => {
-                    // Ô mới thay vì clear(): clear() giữ cờ "đã xong" nên không báo hoàn tất lần nữa, và timer tự chuyển
-                    // đã hẹn phải bị hủy (stepDone=false dọn effect).
-                    setStepDone(false);
-                    setAttempt((n) => n + 1);
-                  }}
-                >
-                  <Eraser aria-hidden="true" />
-                  Xóa nét
-                </Button>
+            <div className="flex w-full min-w-0 flex-col items-center gap-4">
+              {kanji ? (
+                <KanjiPrompt info={kanji} className="lg:hidden" />
+              ) : (
+                <div className="flex items-center gap-4 lg:hidden">
+                  <p className="text-5xl font-bold text-foreground">{romaji}</p>
+                  <SpeakButton
+                    text={char}
+                    label={romaji}
+                    className="size-11 w-11 rounded-full border border-border bg-secondary text-primary hover:bg-accent"
+                  />
+                </div>
               )}
-              <Button type="button" variant="outline" className={pillClass} onClick={() => goTo(turn + 1)}>
-                <Pencil aria-hidden="true" />
-                Tự viết
-              </Button>
-            </div>
-          )}
 
-          {isRecall && !first && (
-            <div className={cn('flex w-full gap-2', colWidth)}>
-              <Button type="button" variant="outline" className={pillClass} onClick={() => boxRef.current?.clear()}>
-                <Eraser aria-hidden="true" />
-                Xóa nét
-              </Button>
-              <Button
-                type="button"
-                variant="outline"
-                className={pillClass}
-                onClick={() => boxRef.current?.reveal()}
-              >
-                <Eye aria-hidden="true" />
-                Xem đáp án
-              </Button>
-            </div>
-          )}
+              {strokes && (
+                <StrokeBox
+                  key={`${turn}-${sub}-${attempt}`}
+                  ref={boxRef}
+                  strokes={strokes.d}
+                  numbers={strokes.n}
+                  mode={mode}
+                  label={boxLabel}
+                  onComplete={onComplete}
+                  className={colWidth}
+                />
+              )}
 
-          {isRecall && first && (
-            <div className={cn('flex w-full flex-col items-center gap-2', colWidth)} aria-live="polite">
-              <ResultLine result={first} />
-              {save === 'error' && (
-                <div role="alert" className="flex items-center gap-2 text-sm text-destructive">
-                  <AlertCircle className="size-4 shrink-0" aria-hidden="true" />
-                  Chưa lưu được kết quả.
+              {!isRecall && (
+                <div className={cn('flex w-full gap-2', colWidth)}>
                   <Button
                     type="button"
                     variant="outline"
-                    className="min-h-11 rounded-full px-3"
-                    onClick={() => void persist(char, first)}
+                    className={pillClass}
+                    onClick={() => {
+                      if (mode === 'watch') {
+                        // Phát lại bằng ô mới để hoạt ảnh xong lại báo hoàn tất và tự sang bước kế.
+                        setStepDone(false);
+                        setAttempt((n) => n + 1);
+                      } else boxRef.current?.replay();
+                    }}
                   >
-                    Thử lại
+                    <RotateCw aria-hidden="true" />
+                    Xem lại
+                  </Button>
+                  {mode !== 'watch' && (
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className={pillClass}
+                      onClick={() => {
+                        // Ô mới thay vì clear(): clear() giữ cờ "đã xong" nên không báo hoàn tất lần nữa, và timer tự chuyển
+                        // đã hẹn phải bị hủy (stepDone=false dọn effect).
+                        setStepDone(false);
+                        setAttempt((n) => n + 1);
+                      }}
+                    >
+                      <Eraser aria-hidden="true" />
+                      Xóa nét
+                    </Button>
+                  )}
+                  <Button type="button" variant="outline" className={pillClass} onClick={() => goTo(turn + 1)}>
+                    <Pencil aria-hidden="true" />
+                    Tự viết
                   </Button>
                 </div>
               )}
-              <Button
-                ref={nextRef}
-                size="quiz"
-                className="w-full font-semibold"
-                disabled={save !== 'saved'}
-                onClick={() => goTo(turn + 1)}
-              >
-                Tiếp
-                <ArrowRight aria-hidden="true" />
-              </Button>
-              <Button
-                type="button"
-                variant="ghost"
-                className="min-h-11 px-4 text-muted-foreground"
-                onClick={() => setAttempt((n) => n + 1)}
-              >
-                Viết lại
-              </Button>
+
+              {isRecall && !first && (
+                <div className={cn('flex w-full gap-2', colWidth)}>
+                  <Button type="button" variant="outline" className={pillClass} onClick={() => boxRef.current?.clear()}>
+                    <Eraser aria-hidden="true" />
+                    Xóa nét
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className={pillClass}
+                    onClick={() => boxRef.current?.reveal()}
+                  >
+                    <Eye aria-hidden="true" />
+                    Xem đáp án
+                  </Button>
+                </div>
+              )}
+
+              {isRecall && first && (
+                <div className={cn('flex w-full flex-col items-center gap-2', colWidth)} aria-live="polite">
+                  <ResultLine result={first} />
+                  {save === 'error' && (
+                    <div role="alert" className="flex items-center gap-2 text-sm text-destructive">
+                      <AlertCircle className="size-4 shrink-0" aria-hidden="true" />
+                      Chưa lưu được kết quả.
+                      <Button
+                        type="button"
+                        variant="outline"
+                        className="min-h-11 rounded-full px-3"
+                        onClick={() => void persist(char, first)}
+                      >
+                        Thử lại
+                      </Button>
+                    </div>
+                  )}
+                  <Button
+                    ref={nextRef}
+                    size="quiz"
+                    className="w-full font-semibold"
+                    disabled={save !== 'saved'}
+                    onClick={() => goTo(turn + 1)}
+                  >
+                    Tiếp
+                    <ArrowRight aria-hidden="true" />
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    className="min-h-11 px-4 text-muted-foreground"
+                    onClick={() => setAttempt((n) => n + 1)}
+                  >
+                    Viết lại
+                  </Button>
+                </div>
+              )}
             </div>
-          )}
+            {!isRecall && strokes && (
+              <div className="hidden lg:block">
+                <TornCard className="max-h-[calc(100dvh-16rem)] space-y-3 overflow-y-auto">
+                  <h2 className="font-serif text-lg font-semibold text-foreground">Thứ tự nét</h2>
+                  <StrokeOrder strokes={strokes.d} />
+                </TornCard>
+              </div>
+            )}
+          </div>
         </div>
         {paused && <PauseLayer title="Tạm dừng" resumeLabel="Tiếp tục" onResume={() => setPaused(false)} />}
       </div>
@@ -444,7 +509,10 @@ function WritingRunner({ steps, kanjiInfo }: { steps: WritingStep[]; kanjiInfo: 
  */
 export function WritingSession({ kanjiInfo }: { kanjiInfo: KanjiInfoMap }) {
   const search = useSearchParams();
-  const [params] = useState(() => ({ c: search.get('c'), mode: search.get('mode') }));
+  const [params] = useState(() => ({
+    c: search.get('c'),
+    mode: search.get('mode'),
+  }));
   const [init, setInit] = useState<Init>({ kind: 'loading' });
 
   useEffect(() => {
@@ -467,7 +535,10 @@ export function WritingSession({ kanjiInfo }: { kanjiInfo: KanjiInfoMap }) {
       const next: Init =
         chars.length === 0
           ? { kind: 'empty', message: emptyMessage }
-          : { kind: 'ready', steps: buildWritingSession(chars, new Set(cards.map((card) => card.char))) };
+          : {
+              kind: 'ready',
+              steps: buildWritingSession(chars, new Set(cards.map((card) => card.char))),
+            };
       if (alive) setInit(next);
     })().catch(() => {
       if (alive) setInit({ kind: 'error' });
