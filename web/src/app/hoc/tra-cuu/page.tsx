@@ -113,7 +113,7 @@ export default function TraCuuHubPage() {
       sample: demoCells.length === 4 && (
         <span
           lang="ja"
-          className="jp-display grid grid-cols-2 divide-x divide-y divide-border rounded-xl border border-border bg-background text-2xl font-semibold text-foreground lg:text-xl [&>span]:px-5 lg:[&>span]:px-2 [&>span]:py-3 [&>span]:text-center"
+          className="jp-display grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border text-2xl font-semibold text-foreground lg:text-xl [&>span]:px-5 lg:[&>span]:px-2 [&>span]:bg-background [&>span]:py-3 [&>span]:text-center"
         >
           {demoCells.map((cell) => (
             <span key={cell}>{cell}</span>
@@ -125,10 +125,10 @@ export default function TraCuuHubPage() {
   };
 
   return (
-    <main className="mx-auto w-full max-w-5xl space-y-6 px-4 pb-24 sm:px-6 md:pb-12 lg:max-w-[1200px] lg:px-8">
+    <main className="mx-auto w-full max-w-5xl space-y-6 px-4 pb-24 sm:px-6 md:pb-12 md:pt-3 lg:max-w-[1200px] lg:px-8">
       <div className="relative lg:w-fit">
         <PageTitle title="Tra cứu" />
-        <Accent kind="sprig-right" className="-right-28 top-0 w-28" />
+        <Accent kind="sprig-right" className="-right-20 top-0 w-16" />
       </div>
 
       <section aria-label="Tìm kiếm nội dung">
