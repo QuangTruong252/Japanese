@@ -5,11 +5,13 @@ import Link from 'next/link';
 import { ArrowLeft, ChevronLeft, ChevronRight, Undo2 } from 'lucide-react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { LazyMotion, MotionConfig, animate, domMax, useMotionValue, useTransform, type PanInfo } from 'framer-motion';
+import { KeyHints } from '@/components/practice/SessionFrame';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { db } from '@/lib/db';
 import { applyReview, Rating, type Grade } from '@/lib/fsrs';
 import { getVocabLearningTime, getVocabTargetId, saveVocabRecall, undoVocabRecall, type VocabRecallRecord } from '@/lib/vocab-learning';
 import { type RatingCounts, parseVocabDraft, readVocabDraftRaw, subscribeVocabDraft, writeVocabDraft } from '@/lib/vocab-draft';
+import { cardKeyAction } from '@/lib/session-keys';
 import { cn } from '@/lib/utils';
 import type { ExampleSentence, VocabWord } from '@/types';
 import { VocabCard } from './VocabCard';
@@ -253,19 +255,36 @@ export function VocabLearningFlow({
     dragX.set(0);
   }, [currentIndex, dragX]);
 
+  // Phím tắt học thẻ: trình xử lý đọc state mới nhất qua ref, nên listener chỉ gắn một lần theo stage.
+  const keyHandlerRef = useRef<(e: KeyboardEvent) => void>(() => {});
+  useEffect(() => {
+    keyHandlerRef.current = (e) => {
+      if (stage !== 'study' || !activeWord) return;
+      const dialogOpen = Boolean(document.querySelector('[role="dialog"],[role="alertdialog"]'));
+      const action = cardKeyAction(e, revealed, dialogOpen);
+      if (!action) return;
+      e.preventDefault();
+      if (action.type === 'flip') setRevealed((value) => !value);
+      else if (!saving) void rateCurrentWord(action.grade as Grade);
+    };
+  });
+  useEffect(() => {
+    if (stage !== 'study') return;
+    const onKey = (e: KeyboardEvent) => keyHandlerRef.current(e);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [stage]);
+
   const backHref = `/hoc/${lessonNumber}`;
 
   return (
-    <main className="fixed inset-0 z-40 bg-background">
-      <div className="absolute inset-0 overflow-x-hidden overflow-y-auto overscroll-contain">
+    <main className="fixed inset-0 z-40 flex flex-col bg-background">
+      {/* Chân trang (chấm điểm/nút học) nằm trong luồng, dưới vùng cuộn: không bao giờ đè chữ trên thẻ. */}
+      <div className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain">
         <div
           className={cn(
-            'mx-auto flex min-h-dvh w-full max-w-2xl flex-col px-4 pt-[calc(0.75rem+env(safe-area-inset-top))] sm:px-6 sm:pt-5',
-            stage === 'select'
-              ? 'pb-[calc(7rem+env(safe-area-inset-bottom))]'
-              : stage === 'study' && revealed
-                ? 'pb-[calc(11.5rem+env(safe-area-inset-bottom))]'
-                : 'pb-[calc(2rem+env(safe-area-inset-bottom))]',
+            'mx-auto flex min-h-full w-full max-w-2xl flex-col px-4 pt-[calc(0.75rem+env(safe-area-inset-top))] pb-8 sm:px-6 sm:pt-5',
+            stage === 'select' ? 'md:max-w-4xl lg:max-w-6xl' : 'md:max-w-[760px]',
           )}
         >
           {/* Danh sách chọn từ dài hơn một màn: đầu màn dính để quay về bài hay thoát lượt mà không phải cuộn ngược. */}
@@ -305,6 +324,8 @@ export function VocabLearningFlow({
               presets={presets}
               loading={storedReviewItems === undefined}
               draft={draft}
+              startDisabled={selectedCount === 0 || storedReviewItems === undefined}
+              onStart={startSession}
               onApplyPreset={setPickedIds}
               onToggle={toggleWord}
               onResumeDraft={resumeDraft}
@@ -390,20 +411,31 @@ export function VocabLearningFlow({
           )}
         </div>
       </div>
+      {stage === 'study' && (
+        <KeyHints
+          items={[
+            { keys: 'Space', label: 'Lật thẻ' },
+            { keys: '1–4', label: 'Chấm điểm' },
+          ]}
+        />
+      )}
       {stage === 'study' && activeWord && revealed && (
-        <footer className="absolute inset-x-0 bottom-0 z-10 border-t border-border bg-background px-4 pt-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] sm:px-6">
-          <div className="mx-auto w-full max-w-2xl">
+        <footer className="shrink-0 border-t border-border bg-background px-4 pt-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] sm:px-6">
+          <div className="mx-auto w-full max-w-2xl md:max-w-[760px]">
             <VocabRatingButtons intervals={ratingIntervals} saving={saving} onRate={rateCurrentWord} />
           </div>
         </footer>
       )}
       {stage === 'select' && (
-        <footer className="absolute inset-x-0 bottom-0 z-10 border-t border-border bg-background px-4 pt-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] sm:px-6">
-          <div className="mx-auto w-full max-w-2xl">
+        <footer className="shrink-0 border-t border-border bg-background px-4 pt-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] sm:px-6 lg:hidden">
+          <div className="mx-auto flex w-full max-w-2xl items-center gap-4 md:max-w-4xl">
+            <p className="hidden shrink-0 text-sm text-muted-foreground md:block">
+              Đã chọn <span className="font-semibold text-foreground">{selectedCount}</span> / {availableEntries.length} từ
+            </p>
             <Button
               type="button"
               size="quiz"
-              className="w-full min-w-0"
+              className="w-full min-w-0 md:ml-auto md:w-72"
               disabled={selectedCount === 0 || storedReviewItems === undefined}
               onClick={startSession}
             >

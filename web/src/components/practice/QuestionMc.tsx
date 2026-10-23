@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { AnswerOption, type AnswerOptionState } from './AnswerOption';
 import type { QuestionProps } from './types';
 import { checkOptionAnswer, targetTypeFromId } from '@/lib/practice';
+import { optionKeyIndex } from '@/lib/session-keys';
 
 export function QuestionMc({ question, answered, onAnswer, paused = false }: QuestionProps) {
   const [chosen, setChosen] = useState<string | null>(null);
@@ -42,13 +43,10 @@ export function QuestionMc({ question, answered, onAnswer, paused = false }: Que
   useEffect(() => {
     if (answered || paused) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      const target = e.target as HTMLElement | null;
-      if (target?.tagName === 'INPUT' || target?.tagName === 'TEXTAREA') return;
-
-      const num = Number(e.key);
-      if (num >= 1 && num <= options.length) {
+      const i = optionKeyIndex(e, options.length);
+      if (i !== null) {
         e.preventDefault();
-        pick(options[num - 1]!);
+        pick(options[i]!);
       }
     };
 
@@ -57,7 +55,7 @@ export function QuestionMc({ question, answered, onAnswer, paused = false }: Que
   }, [answered, paused, options, pick]);
 
   return (
-    <div className="flex flex-col gap-2" role="group" aria-label="Các lựa chọn đáp án">
+    <div className="flex flex-col gap-2 lg:grid lg:grid-cols-2" role="group" aria-label="Các lựa chọn đáp án">
       {options.map((option, i) => (
         <AnswerOption
           key={option}

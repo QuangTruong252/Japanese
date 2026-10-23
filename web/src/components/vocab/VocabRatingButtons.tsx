@@ -1,6 +1,7 @@
 'use client';
 
 import { Rating, type Grade } from '@/lib/fsrs';
+import { Kbd } from '@/components/PaperKit';
 import { Button } from '@/components/ui/button';
 import { RATING_OPTIONS } from './vocab-shared';
 
@@ -14,9 +15,9 @@ export function VocabRatingButtons({
   onRate: (grade: Grade) => void;
 }) {
   return (
-    <section className="mx-auto w-full max-w-xl" aria-label="Mức độ ghi nhớ">
-      <div className="grid grid-cols-2 gap-2">
-        {RATING_OPTIONS.map(({ grade, label, icon: Icon }) => {
+    <section className="mx-auto w-full max-w-xl md:max-w-[760px]" aria-label="Mức độ ghi nhớ">
+      <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
+        {RATING_OPTIONS.map(({ grade, label, icon: Icon }, i) => {
           const interval = intervals.get(grade) ?? '';
           return (
             <Button
@@ -27,13 +28,14 @@ export function VocabRatingButtons({
               title={`Ôn lại ${interval}`}
               disabled={saving}
               onClick={() => onRate(grade)}
-              className="h-auto min-h-14 min-w-0 justify-start gap-3 rounded-xl px-3 py-2 text-left"
+              className="relative h-auto min-h-14 min-w-0 justify-start gap-3 rounded-xl px-3 py-2 text-left"
             >
               <Icon aria-hidden="true" className="size-7 shrink-0" />
               <span className="flex min-w-0 flex-col">
                 <span className="font-semibold">{label}</span>
                 <span className="text-xs font-normal opacity-80">{interval}</span>
               </span>
+              <Kbd className="absolute right-2 top-2">{i + 1}</Kbd>
             </Button>
           );
         })}

@@ -4,6 +4,7 @@ import { Info, X } from 'lucide-react';
 import { m, type MotionValue, type PanInfo } from 'framer-motion';
 import { Furigana } from '@/components/Furigana';
 import { VerbGroupBadge } from '@/components/VerbGroupBadge';
+import { Kbd } from '@/components/PaperKit';
 import { Illustration } from '@/components/Illustration';
 import { SpeakButton } from '@/components/SpeakButton';
 import { Button } from '@/components/ui/button';
@@ -114,7 +115,7 @@ export function VocabCard({
       dragElastic={0.6}
       onDragEnd={onSwipeEnd}
       style={{ x: dragX, rotate: dragRotate }}
-      className="w-full max-w-xl text-left [perspective:1200px] motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-2 motion-safe:duration-250 motion-safe:ease-in-out"
+      className="w-full max-w-xl text-left md:max-w-[760px] [perspective:1200px] motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-right-2 motion-safe:duration-250 motion-safe:ease-in-out"
     >
       <div
         className={cn(
@@ -134,7 +135,7 @@ export function VocabCard({
             </div>
             <Furigana text={word.kana} zoomable={false} className="jp-example justify-center text-sm text-muted-foreground" />
           </div>
-          <p className="pointer-events-none pb-5 text-center text-sm text-muted-foreground">Chạm thẻ để xem đáp án.</p>
+          <p className="pointer-events-none flex items-center justify-center gap-2 pb-5 text-center text-sm text-muted-foreground">Chạm thẻ để xem đáp án. <Kbd>Space</Kbd></p>
         </div>
 
         <div

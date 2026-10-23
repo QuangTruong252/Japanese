@@ -19,7 +19,7 @@ import { QuestionMatching } from './QuestionMatching';
 import { QuestionMc } from './QuestionMc';
 import { QuestionReorder } from './QuestionReorder';
 import { SessionResult } from './SessionResult';
-import { FeedbackPanel, PauseLayer, QuestionPrompt, SessionHeader, SessionShell } from './SessionFrame';
+import { FeedbackPanel, KeyHints, PauseLayer, QuestionPrompt, SessionHeader, SessionShell } from './SessionFrame';
 import { savePracticeSession } from '@/lib/practice-write';
 import { createOnce } from '@/lib/once';
 import { summarizeIncorrect, summarizeSession } from '@/lib/practice';
@@ -249,6 +249,8 @@ export function PracticeRunner({
         return;
       }
 
+      if (e.ctrlKey || e.altKey || e.metaKey) return;
+
       if (
         shouldAdvanceOnKey({
           key: e.key,
@@ -410,6 +412,13 @@ export function PracticeRunner({
         pauseLabel={isPaused ? 'Tiếp tục làm bài' : 'Tạm dừng phiên'}
         pauseDisabled={answered || isFinished}
         onTogglePause={togglePause}
+      />
+
+      <KeyHints
+        items={[
+          ...(currentQuestion.type === 'mc' ? [{ keys: '1–4', label: 'Chọn đáp án' }] : []),
+          { keys: 'Enter', label: 'Tiếp' },
+        ]}
       />
 
       <div className="relative flex min-h-0 flex-1 flex-col">
