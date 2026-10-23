@@ -232,13 +232,14 @@ const TILE_SPAN = {
 
 /**
  * Ô giấy của `BentoGrid`. `span` là số cột (trên 12) từ `lg`; `full` chiếm cả hai cột ở `md`.
- * Có padding mặc định `p-5 lg:p-6`, đặt `className="p-0"` khi nội dung cần tràn mép (tranh).
+ * Có padding mặc định `p-5 lg:p-6`; `bleed` bỏ padding khi nội dung cần tràn mép (tranh).
  * `interactive` thêm vệt sáng theo con trỏ (chỉ chuột). Không lồng Tile trong Tile.
  */
 export function Tile({
   span,
   full,
   interactive,
+  bleed,
   as = 'div',
   className,
   children,
@@ -246,12 +247,14 @@ export function Tile({
   span?: keyof typeof TILE_SPAN;
   full?: boolean;
   interactive?: boolean;
+  bleed?: boolean;
   as?: 'div' | 'section' | 'article' | 'aside' | 'li';
   className?: string;
   children: ReactNode;
 }) {
   const cls = cn(
-    'relative rounded-2xl border border-border bg-card p-5 shadow-[0_6px_16px_-6px_color-mix(in_oklch,var(--foreground)_12%,transparent)] lg:p-6',
+    'relative rounded-2xl border border-border bg-card shadow-[0_6px_16px_-6px_color-mix(in_oklch,var(--foreground)_12%,transparent)]',
+    !bleed && 'p-5 lg:p-6',
     full && 'md:col-span-2',
     span && TILE_SPAN[span],
     interactive && 'spotlight',
