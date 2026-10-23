@@ -53,6 +53,24 @@ const LEGEND = Object.entries(STATUS_LABEL) as [CharStatus, string][];
 
 const ROW_GRID = 'grid grid-cols-[2.75rem_repeat(5,minmax(0,1fr))] gap-1.5 sm:gap-2';
 
+function StatusLegend() {
+  return (
+    <ul
+      aria-label="Chú giải trạng thái"
+      className="hidden flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground md:flex"
+    >
+      {LEGEND.map(([status, label]) => (
+        <li key={status} className="flex items-center gap-1.5">
+          <span className="relative size-4" aria-hidden="true">
+            <StatusMark status={status} />
+          </span>
+          {label}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function StatusMark({ status }: { status: CharStatus }) {
   if (status === 'new') return null;
   const place = 'absolute right-0.5 top-0.5';
@@ -202,19 +220,7 @@ export function WritingPicker({ kanjiGroups }: { kanjiGroups: KanjiGroup[] }) {
 
               {KANA_TABS.map(({ type }) => (
                 <Tabs.Panel key={type} value={type} className="mt-6 space-y-8 outline-none">
-                  <ul
-                    aria-label="Chú giải trạng thái"
-                    className="hidden flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground md:flex"
-                  >
-                    {LEGEND.map(([status, label]) => (
-                      <li key={status} className="flex items-center gap-1.5">
-                        <span className="relative size-4" aria-hidden="true">
-                          <StatusMark status={status} />
-                        </span>
-                        {label}
-                      </li>
-                    ))}
-                  </ul>
+                  <StatusLegend />
                   {groupsOf(type).map((group) => (
                     <section key={group.id} aria-labelledby={`write-group-${type}-${group.id}`}>
                       <SectionHeader id={`write-group-${type}-${group.id}`} title={group.title} />
@@ -308,6 +314,7 @@ export function WritingPicker({ kanjiGroups }: { kanjiGroups: KanjiGroup[] }) {
               ))}
 
               <Tabs.Panel value="kanji" className="mt-6 space-y-8 outline-none">
+                <StatusLegend />
                 {kanjiGroups.map((group) => {
                   const chars = group.cells.map((c) => c.char);
                   const allOn = chars.every((c) => selected.has(c));
