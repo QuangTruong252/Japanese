@@ -15,7 +15,7 @@ import type { LessonSummary } from '@/lib/lessons';
 import type { IllustrationAsset } from '@/types';
 import { AUDIO_IMPORT_ENABLED } from '@/lib/features';
 import { REVIEW_COMPLETE_ART, SECTION_THUMB } from '@/lib/illustrations';
-import { SoftScene, PaperCloud, TornCard, SectionHeader, ListRow, PartRow, BentoGrid, Tile } from '@/components/PaperKit';
+import { Accent, SoftScene, PaperCloud, TornCard, SectionHeader, ListRow, PartRow, BentoGrid, Tile } from '@/components/PaperKit';
 import { CountUp } from '@/components/PaperMotion';
 import { forecastDayLabel, reviewForecast, type ForecastDay } from '@/lib/review-forecast';
 import { Illustration } from '@/components/Illustration';
@@ -223,7 +223,8 @@ export function DashboardContent({
       </PaperCloud>
 
       <BentoGrid className="mt-6 md:mt-4">
-        <section aria-labelledby="home-today-heading" className="md:col-span-2 lg:col-span-12 xl:col-span-8">
+        <section aria-labelledby="home-today-heading" className="relative md:col-span-2 lg:col-span-12 xl:col-span-8">
+          <Accent kind="sprig-left" className="-right-5 -top-10 w-32" />
           <TornCard fill className="md:grid md:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] md:p-0">
             <div className="min-w-0 md:p-7">
               <p

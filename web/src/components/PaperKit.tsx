@@ -5,8 +5,28 @@ import { Illustration } from '@/components/Illustration';
 import type { IllustrationAsset } from '@/types';
 import { cn } from '@/lib/utils';
 import { SpotlightSurface } from '@/components/PaperMotion';
+import { DECOR } from '@/lib/illustrations';
 
 /** Bộ thành phần giấy v3 "Sách sống", dùng chung cho mọi màn. */
+
+/**
+ * Điểm nhấn trang trí (cành hoa, cánh hoa, băng washi). Định vị tuyệt đối nên cha cần `relative`; vị trí và cỡ truyền
+ * qua `className` (ví dụ `-right-6 -top-8 w-32`). Mặc định chỉ hiện từ `lg` vì màn hẹp không có chỗ trống để đặt;
+ * thêm `md:block` khi tablet đủ chỗ. Không đặt trên dữ liệu (lưới, bảng, biểu đồ, chữ).
+ */
+export function Accent({ kind, className }: { kind: keyof typeof DECOR; className?: string }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={cn(
+        'pointer-events-none absolute z-10 hidden w-28 select-none opacity-80 lg:block dark:opacity-70 dark:brightness-[0.8]',
+        className,
+      )}
+    >
+      <Illustration asset={DECOR[kind]} sizes="160px" className="h-auto w-full" />
+    </span>
+  );
+}
 
 /** Tranh có mép trên và dưới xé giấy. Ảnh lỗi thì chỉ còn nội dung con, chữ vẫn đọc được. */
 export function SoftScene({

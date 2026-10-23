@@ -30,6 +30,7 @@ const GROUPS = {
   characters: { kind: 'cutout', role: 'character-avatar' },
   'ui/states': { kind: 'cutout', role: 'state-cutout' },
   'ui/sections': { kind: 'cutout', role: 'section-cutout' },
+  'ui/decor': { kind: 'cutout', role: 'decor-cutout' },
   scenes: { kind: 'opaque', role: 'scene', width: 800, height: 600, shape: 'Landscape 4:3' },
   grammar: { kind: 'opaque', role: 'grammar-scene', width: 800, height: 600, shape: 'Landscape 4:3' },
   'ui/banners': { kind: 'opaque', role: 'banner', width: 1200, height: 400, shape: 'Wide 3:1 banner' },
@@ -71,7 +72,7 @@ function singlePrompt(job) {
   if (job.group === 'characters') {
     return ["Create ONE square 1:1 illustration for a Japanese-learning app's character avatar.", STYLE, CHARACTER_LAYOUT, `SUBJECT: ${job.subject}`].join('\n\n');
   }
-  const appRole = job.group === 'vocab' ? 'vocabulary card' : job.group === 'ui/sections' ? 'section thumbnail' : 'empty/finished state';
+  const appRole = job.group === 'vocab' ? 'vocabulary card' : job.group === 'ui/sections' ? 'section thumbnail' : job.group === 'ui/decor' ? 'small decorative accent' : 'empty/finished state';
   return [`Create ONE square 1:1 illustration for a Japanese-learning app's ${appRole}.`, styleFor(job), SINGLE_LAYOUT, `SUBJECT: ${job.subject}`].join('\n\n');
 }
 
