@@ -136,19 +136,22 @@ export default async function GrammarPointPage({ params }: { params: Promise<Par
           </div>
         }
         right={
-        <div className="min-w-0">
-        <header>
+        <div className="min-w-0 md:@container/grammar">
+        <header className={cn(
+          'md:grid md:items-start md:gap-4',
+          scene && 'md:grid-cols-[minmax(0,11fr)_minmax(0,9fr)] lg:grid-cols-1 lg:@min-[560px]/grammar:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]',
+        )}>
           {scene && (
             <SoftScene
               asset={scene}
               sizes="(min-width: 1024px) 300px, (min-width: 768px) 310px, 100vw"
               eager
               // Tranh 4:3 cắt còn khoảng 2:1 trên điện thoại; mặt người thường ở phần ba trên nên lấy lệch lên.
-              imageClassName="h-48 object-[center_30%] sm:h-64 md:h-56 lg:h-52"
-              className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full md:col-start-2 md:row-start-1"
+              imageClassName="h-48 object-[center_30%] sm:h-64 md:aspect-[4/3] md:h-auto"
+              className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full md:col-start-2 md:row-start-1 lg:col-start-1 lg:row-start-2 lg:w-3/5 lg:@min-[560px]/grammar:col-start-2 lg:@min-[560px]/grammar:row-start-1 lg:@min-[560px]/grammar:w-full"
             />
           )}
-          <PaperCloud className={cn('w-fit max-w-full md:col-start-1 md:row-start-1', scene && '-mt-1.5 md:mt-0')}>
+          <PaperCloud className={cn('w-fit max-w-full md:col-start-1 md:row-start-1 md:min-w-0', scene && '-mt-1.5 md:mt-0')}>
             <p className="text-sm font-bold tracking-wide text-primary">
               Ngữ pháp {index + 1}/{total}
             </p>
@@ -165,7 +168,7 @@ export default async function GrammarPointPage({ params }: { params: Promise<Par
             </p>
           </PaperCloud>
           {point.illustration && point.illustrationCaption && (
-            <p className="mt-3 text-xs text-muted-foreground md:col-span-2">
+            <p className="mt-3 text-xs text-muted-foreground md:col-span-full md:mt-0">
               <Furigana text={point.illustrationCaption.vi} />
             </p>
           )}
