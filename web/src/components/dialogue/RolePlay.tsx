@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useReducer, useRef, useState } from 'react';
+import { useEffect, useReducer, useRef, useState, useSyncExternalStore } from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, Check, X } from 'lucide-react';
 import { Furigana } from '@/components/Furigana';
@@ -10,6 +10,7 @@ import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { SessionShell } from '@/components/practice/SessionFrame';
 import { DialogueBubble } from '@/components/dialogue/DialogueBubble';
 import { RoleAvatar } from '@/components/dialogue/RoleAvatar';
+import { verticalRoleIndex } from '@/components/dialogue/role-navigation';
 import { createRolePlay, rolePlayView, stepRolePlay, type RolePlayAction } from '@/lib/roleplay';
 import { rolePitch } from '@/lib/kaiwa';
 import { toKanaSentence } from '@/lib/japanese';
@@ -21,8 +22,17 @@ function cancelSpeech() {
   if ('speechSynthesis' in window) window.speechSynthesis.cancel();
 }
 
+function subscribeWideScreen(onChange: () => void) {
+  const media = window.matchMedia('(min-width: 768px)');
+  media.addEventListener('change', onChange);
+  return () => media.removeEventListener('change', onChange);
+}
+const getWideScreen = () => window.matchMedia('(min-width: 768px)').matches;
+const getWideScreenServer = () => false;
+
 export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNum: number }) {
   const router = useRouter();
+  const wideScreen = useSyncExternalStore(subscribeWideScreen, getWideScreen, getWideScreenServer);
   const [state, dispatch] = useReducer(
     (current: ReturnType<typeof createRolePlay>, action: RolePlayAction) => stepRolePlay(dialogue, current, action),
     dialogue,
@@ -135,7 +145,16 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
               <div>
                 <h2 id="roleplay-pick-label" className="mb-3 mt-8 text-lg font-semibold lg:mt-0">Chọn vai</h2>
                 <ToggleGroup
-                  orientation="vertical"
+                  orientation={wideScreen ? 'horizontal' : 'vertical'}
+                  onKeyDownCapture={(event) => {
+                    if (!wideScreen || (event.key !== 'ArrowUp' && event.key !== 'ArrowDown')) return;
+                    const buttons = Array.from(event.currentTarget.querySelectorAll('button'));
+                    const index = buttons.indexOf(event.target as HTMLButtonElement);
+                    if (index < 0) return;
+                    event.preventDefault();
+                    event.stopPropagation();
+                    buttons[verticalRoleIndex(index, buttons.length, event.key)]?.focus();
+                  }}
                   variant="outline"
                   spacing={3}
                   value={[state.roleId]}
@@ -159,7 +178,7 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
               </div>
             </div>
           </div>
-          <footer className="shrink-0 py-4">
+          <footer className="shrink-0 py-4 md:mx-auto md:w-full md:max-w-[40rem]">
             <Button type="button" size="quiz" className="w-full" onClick={() => dispatch({ type: 'start' })}>
               Bắt đầu <ArrowRight aria-hidden="true" data-icon="inline-end" />
             </Button>
@@ -169,7 +188,7 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
 
       {state.phase === 'session' && (
         <>
-          <div ref={scrollArea} role="region" aria-label="Đoạn hội thoại" tabIndex={0} className="scrollbar-none min-h-0 flex-1 overflow-y-auto rounded-lg outline-none focus-visible:ring-3 focus-visible:ring-ring">
+          <div ref={scrollArea} role="region" aria-label="Đoạn hội thoại" tabIndex={0} className="scrollbar-none min-h-0 flex-1 overflow-y-auto rounded-lg outline-none focus-visible:ring-3 focus-visible:ring-ring md:mx-auto md:w-full md:max-w-[47.5rem]">
             <ol aria-live="polite" aria-relevant="additions text" className="flex flex-col gap-6 py-5 md:gap-8">
               {view.visibleLines.map(({ line, index, isOwn, hidden }) => {
                 const speaker = dialogue.roles.find((item) => item.id === line.speaker)!;
@@ -200,7 +219,7 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
               })}
             </ol>
           </div>
-          <footer className="shrink-0 py-4">
+          <footer className="shrink-0 py-4 md:mx-auto md:w-full md:max-w-[40rem]">
             <TornCard className="p-3 sm:p-4">
               <Button type="button" size="quiz" className="w-full" onClick={advance}>
                 {view.buttonLabel} <ArrowRight aria-hidden="true" data-icon="inline-end" />
