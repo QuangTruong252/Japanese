@@ -16,6 +16,7 @@ import {
 } from './backup.ts';
 import type { ReviewItem, PracticeSession, WritingCard } from '../types/index.ts';
 import { createDictationSession, answerDictation } from './dictation-session.ts';
+import { applyTranslationAction, createTranslationSession } from './translation-session.ts';
 
 const createMockReviewItem = (overrides?: Partial<ReviewItem>): ReviewItem => ({
   targetId: 'vocab-1-1',
@@ -294,6 +295,7 @@ test('createExportData: includes writing cards and keeps schemaVersion 1', async
   t.mock.method(db.practiceSessions, 'toArray', async () => []);
   t.mock.method(db.writingCards, 'toArray', async () => writing);
   t.mock.method(db.dictationSessions, 'toArray', async () => []);
+  t.mock.method(db.translationSessions, 'toArray', async () => []);
   const data = await createExportData();
   assert.equal(data.schemaVersion, 1);
   assert.deepEqual(data.writingCards, writing);
@@ -314,7 +316,7 @@ for (const mode of ['replace', 'merge'] as const) {
       };
       t.mock.method(db, 'transaction', async (access: unknown, tables: unknown, run: () => Promise<unknown>) => {
         assert.equal(access, 'rw');
-        assert.deepEqual(tables, [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions]);
+        assert.deepEqual(tables, [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions, db.translationSessions]);
         return run();
       });
       for (const table of [db.reviewItems, db.practiceSessions]) {
@@ -349,7 +351,7 @@ for (const mode of ['replace', 'merge'] as const) {
 }
 
 test('executeWipeAllData: clears writing cards in the same transaction as other learning tables', async (t) => {
-  const tables = [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions];
+  const tables = [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions, db.translationSessions];
   let inside = false;
   t.mock.method(db, 'transaction', async (access: unknown, actual: unknown, run: () => Promise<void>) => {
     assert.equal(access, 'rw'); assert.deepEqual(actual, tables);
@@ -399,3 +401,62 @@ for (const mode of ['merge', 'replace'] as const) {
     assert.equal('dictationSessions' in record.payload, false);
   });
 }
+
+test('translation backup roundtrip keeps self-confirmed answers, rejects forged automatic ones, and old backups stay readable', () => {
+  const base = createTranslationSession(1, 'jp-vi', 5);
+  const reviewing = applyTranslationAction(base, 0, { type: 'answer', value: 'không phải câu mẫu' });
+  const confirmed = applyTranslationAction(reviewing, 0, { type: 'confirm', correct: true });
+  const payload = { app: 'minna-n5', schemaVersion: 1, translationSessions: [confirmed] };
+  const parsed = parseAndValidateImport(JSON.stringify(payload));
+  assert.ok(parsed.ok);
+  assert.deepEqual(parsed.data.translationSessions, [confirmed]);
+  assert.equal(parsed.data.skippedTranslationSessionsCount, 0);
+
+  const forged = { ...confirmed, answers: [{ ...confirmed.answers[0], source: 'automatic' }] };
+  const mixed = parseAndValidateImport(JSON.stringify({ ...payload, reviewItems: [createMockReviewItem()], translationSessions: [forged] }));
+  assert.ok(mixed.ok);
+  assert.equal(mixed.data.translationSessions, undefined);
+  assert.equal(mixed.data.skippedTranslationSessionsCount, 1);
+
+  const old = parseAndValidateImport(JSON.stringify({ app: 'minna-n5', schemaVersion: 1, reviewItems: [createMockReviewItem()] }));
+  assert.ok(old.ok);
+  assert.equal(old.data.translationSessions, undefined);
+});
+
+for (const mode of ['merge', 'replace'] as const) {
+  test(`translation ${mode} import never erases local sessions when the backup has none`, async (t) => {
+    const base = createTranslationSession(1, 'vi-jp', 5);
+    const progressed = applyTranslationAction(base, 0, { type: 'unknown' });
+    t.mock.method(db, 'transaction', async (_access: unknown, _tables: unknown, run: () => Promise<unknown>) => run());
+    for (const table of [db.reviewItems, db.practiceSessions, db.writingCards, db.dictationSessions]) {
+      t.mock.method(table, 'clear', async () => {});
+      t.mock.method(table, 'toArray', async () => []);
+      t.mock.method(table, 'bulkPut', async () => '');
+    }
+    t.mock.method(db.pendingSync, 'add', async () => 'sync');
+    t.mock.method(db.translationSessions, 'toArray', async () => [base]);
+    const clear = t.mock.method(db.translationSessions, 'clear', async () => {});
+    const put = t.mock.method(db.translationSessions, 'bulkPut', async () => '');
+    const data: ParsedImportData = { fileName: 'test.json', schemaVersion: 1, app: 'minna-n5', exportedAt: new Date().toISOString(), reviewItems: [], practiceSessions: [], skippedReviewItemsCount: 0, skippedSessionsCount: 0, skippedWritingCardsCount: 0 };
+    await executeImport(data, mode);
+    assert.equal(put.mock.callCount(), 0);
+    assert.equal(clear.mock.callCount(), 0);
+    const result = await executeImport({ ...data, translationSessions: [progressed] }, mode);
+    assert.deepEqual(put.mock.calls[0].arguments[0], [progressed]);
+    assert.equal(clear.mock.callCount(), mode === 'replace' ? 1 : 0);
+    assert.equal(result.translationCount, 1);
+  });
+}
+
+test('wipe clears translation sessions and the saved translation config', async (t) => {
+  const clear = t.mock.method(db.translationSessions, 'clear', async () => {});
+  for (const table of [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions]) t.mock.method(table, 'clear', async () => {});
+  t.mock.method(db, 'transaction', async (_access: unknown, _tables: unknown, run: () => Promise<void>) => run());
+  const removed: string[] = [];
+  const windowDesc = Object.getOwnPropertyDescriptor(globalThis, 'window');
+  Object.defineProperty(globalThis, 'window', { value: { localStorage: { removeItem: (key: string) => removed.push(key), getItem: () => null, setItem: () => {} } }, configurable: true });
+  try { await executeWipeAllData(); }
+  finally { if (windowDesc) Object.defineProperty(globalThis, 'window', windowDesc); else delete (globalThis as { window?: unknown }).window; }
+  assert.equal(clear.mock.callCount(), 1);
+  assert.ok(removed.includes('jp:translation-config'));
+});

@@ -75,6 +75,11 @@ test('shouldHideAppChrome: ẩn chrome (header/dock/sidebar) trong các phiên t
   assert.equal(isNavActive('/luyen-tap', '/nghe-moi-ngay-khac'), false);
   assert.equal(shouldHideAppChrome('/nghe-moi-ngay/phien'), true);
   assert.equal(shouldHideAppChrome('/nghe-moi-ngay'), false);
+  assert.equal(isNavActive('/luyen-tap', '/luyen-tap/dich-cau'), true);
+  assert.equal(isNavActive('/luyen-tap', '/luyen-tap/dich-cau/phien'), true);
+  assert.equal(shouldHideAppChrome('/luyen-tap/dich-cau/phien'), true);
+  assert.equal(shouldHideAppChrome('/luyen-tap/dich-cau/phien/'), true);
+  assert.equal(shouldHideAppChrome('/luyen-tap/dich-cau'), false);
   // Ca đúng (phải ẩn):
   assert.equal(shouldHideAppChrome('/luyen-tap/phien'), true);
   assert.equal(shouldHideAppChrome('/luyen-tap/phien/'), true);

@@ -31,6 +31,7 @@
 | `/on-tap`, `/on-tap/phien`, `/on-tap/diem-yeu` | Ôn tập | `ReviewRunner` (dùng `SessionFrame`), `on-tap/ReinforcementSection` |
 | `/luyen-viet`, `/luyen-viet/phien` | Luyện viết kana và kanji N5 (vẽ nét) | `WritingPicker`, `WritingSession`, ô viết `components/writing/StrokeBox` |
 | `/nghe-moi-ngay`, `/nghe-moi-ngay/phien` | Chép chính tả theo ngày và phạm vi đã học | `DictationRunner`, bộ câu đã rà `lib/dictation.ts` |
+| `/luyen-tap/dich-cau`, `/luyen-tap/dich-cau/phien` | Dịch phản xạ Nhật ↔ Việt tự chọn chiều, bài và số câu; chấm offline | `TranslationRunner`, `lib/translation.ts` (chọn câu, chấm, ý chính), kho câu `lib/translation-data.ts` |
 | `/hoc/tra-cuu` (+ `kana`, `kanji`, `kanji/[chu]`, `dong-tu`, `bang`, `bang/[slug]`) | Tra cứu | `KanjiGrid`, `VerbTable` |
 | `/ca-nhan`, `/ca-nhan/thong-ke` | Cá nhân, thống kê | `StatisticsContent` (+ `components/stats/*`) |
 | `/cai-dat`, `/cai-dat/audio` | Cài đặt, nạp audio | `components/settings/*`, `InstallAppCard` |
@@ -49,6 +50,8 @@ tìm cả ngữ liệu và phương thức luyện. Phiên toàn màn hình ti�
 | IndexedDB `JapaneseLearningDB` (Dexie, `lib/db.ts`) | `reviewItems` (thẻ ôn FSRS), `practiceSessions`, `audioFiles`, `pendingSync`; `writingCards` (lịch FSRS luyện viết, tách khỏi ôn tập, chưa đồng bộ) | `useLiveQuery`; hàng đợi ôn qua `lib/use-due-queue.ts`, `lib/review-queue.ts`; luyện viết qua `lib/writing.ts` |
 | `localStorage` | Cài đặt `jp:settings` (`lib/settings.ts`); nháp phiên `jp:practice-draft`, `jp:vocab-draft:<bài>` | `lib/settings.ts`, `lib/practice-draft.ts`, `lib/vocab-draft.ts`, `lib/active-drafts.ts` |
 | IndexedDB `dictationSessions` | Nháp và kết quả nghe mỗi ngày; khóa ngày địa phương + phạm vi + phiên bản câu, lưu cả bộ câu để phiên dở không đổi | `lib/dictation-store.ts`; sao lưu/xóa cùng dữ liệu học, chưa đồng bộ tài khoản |
+| IndexedDB `translationSessions` | Nháp và kết quả Dịch phản xạ; khóa ngẫu nhiên, lưu id câu + chiều + gợi ý + lần trả lời đầu + nguồn chấm (`automatic`/`self`), không ghi FSRS hay thống kê | `lib/translation-store.ts`, `lib/translation-session.ts`; sao lưu/xóa cùng dữ liệu học, chưa đồng bộ tài khoản |
+| `localStorage` `jp:translation-config` | Chiều, bài, số câu lần chọn gần nhất của máy, đã validate khi đọc | `/luyen-tap/dich-cau` |
 | `localStorage` `jp:dictation-scope` | Phạm vi bài nghe riêng của máy, không đổi tiến độ học chung | `/nghe-moi-ngay` |
 | Zustand (`lib/store.ts`) | Chỉ trạng thái UI tạm (mở hộp tìm kiếm…) | — |
 | Supabase (tùy chọn) | Auth và đồng bộ từ `pendingSync` (engine khởi động một lần trong `AppNav`, tự đẩy khi có mục chờ mới). Cài đặt là riêng từng máy, không đồng bộ | `lib/sync.ts`, `lib/supabase/` |

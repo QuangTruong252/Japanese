@@ -4,16 +4,17 @@ import { FeatureIcon, type FeatureIconName } from '@/components/FeatureIcon';
 import { cn } from '@/lib/utils';
 
 export function PracticeMethods({ compact = false, lesson }: { compact?: boolean; lesson?: number }) {
-  const methods: { href: string; title: string; detail: string; icon: FeatureIconName }[] = [
+  const methods: { href: string; title: string; detail: string; icon: FeatureIconName; hubOnly?: boolean }[] = [
     { href: '/luyen-tap/bai-tap', title: 'Bài tập', detail: '5 dạng bài', icon: 'practice' },
     { href: '/nghe-moi-ngay', title: 'Nghe mỗi ngày', detail: 'Chép chính tả', icon: 'listening' },
+    { href: '/luyen-tap/dich-cau', title: 'Dịch phản xạ', detail: 'Nhật ↔ Việt', icon: 'reading', hubOnly: true },
     { href: '/luyen-viet', title: 'Luyện viết', detail: 'Kana · Kanji', icon: 'kana' },
     { href: lesson ? `/hoc/${lesson}#hoi-thoai` : '/luyen-tap/hoi-thoai', title: 'Hội thoại', detail: lesson ? `Bài ${lesson}` : 'Theo bài', icon: 'dialogue' },
   ];
 
   return (
     <div className={cn('grid grid-cols-2 gap-3', compact ? 'lg:grid-cols-4' : 'lg:gap-5')}>
-      {methods.map((method) => (
+      {methods.filter((method) => !(compact && method.hubOnly)).map((method) => (
         <Link
           key={method.href}
           href={method.href}

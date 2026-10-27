@@ -48,6 +48,7 @@ export function isNavActive(itemHref: string, pathname: string): boolean {
  */
 export function shouldHideAppChrome(pathname: string): boolean {
   if (pathname === '/nghe-moi-ngay/phien' || pathname.startsWith('/nghe-moi-ngay/phien/')) return true;
+  if (pathname === '/luyen-tap/dich-cau/phien' || pathname.startsWith('/luyen-tap/dich-cau/phien/')) return true;
   if (pathname === '/luyen-tap/phien' || pathname.startsWith('/luyen-tap/phien/')) {
     return true;
   }

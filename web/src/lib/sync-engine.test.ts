@@ -50,6 +50,7 @@ function setup() {
   const creatingHooks = new Set<() => void>();
   const fake: Record<string, unknown> = {
     dictationSessions: { clear: async () => {} },
+    translationSessions: { clear: async () => {} },
     writingCards: {
       get: async (k: string) => writingCards.get(k),
       put: async (r: Row) => void writingCards.set(r.char as string, r),

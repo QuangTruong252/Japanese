@@ -184,6 +184,7 @@ hover chỉ cho chuột (`(hover: hover) and (pointer: fine)`), chỉ `transform
 | `/luyen-tap/phien`, `/on-tap/phien` | **v3** — G2 đã duyệt | `design/phien/` |
 | `/luyen-viet`, `/luyen-viet/phien` | **v3** — kana và kanji: G2 đã duyệt 2026-10-21 | `design/luyen-viet/` |
 | `/nghe-moi-ngay`, `/nghe-moi-ngay/phien` | **v3** — đã triển khai, chờ người dùng review G2 | — |
+| `/luyen-tap/dich-cau`, `/luyen-tap/dich-cau/phien` | **v3** — đã code, chờ G2 | `design/dich-cau/` |
 | Tra cứu `/hoc/tra-cuu` và trang con | **v3** — G2 đã duyệt | `design/tra-cuu/` |
 | `/ca-nhan`, `/ca-nhan/thong-ke` | **v3** — G2 đã duyệt | `design/ca-nhan/` |
 | `/cai-dat`, `/cai-dat/audio` | **v3** — G2 đã duyệt | `design/cai-dat/` |

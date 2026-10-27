@@ -8,6 +8,7 @@ hiện; không bịa số trang hay liên kết audio.
 - Quy ước biên soạn và thuật ngữ: [`editorial-guide.md`](editorial-guide.md).
 - Thống kê bộ dữ liệu và checklist đối chiếu (tùy chọn): [`manifest.md`](manifest.md).
 - Bộ câu nghe mỗi ngày và bằng chứng phạm vi: [`dictation.md`](dictation.md).
+- Kho câu Dịch phản xạ (mốc bài, từ khóa, cách sinh lại): [`translation.md`](translation.md).
 
 ## Tiếng Nhật
 

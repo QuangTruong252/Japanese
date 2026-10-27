@@ -2,6 +2,7 @@ import { db } from './db.ts';
 import { loadSettings, type AppSettings } from './settings.ts';
 import { clearAccountLink, getOwnerUserId, signOut } from './sync.ts';
 import type { PracticeSession, ReviewItem, TargetType, WritingCard } from '../types/index.ts';
+import { mergeTranslationSessions, TRANSLATION_CONFIG_KEY, validateTranslationSession, type TranslationSession } from './translation-session.ts';
 import { DICTATION_SCOPE_KEY, mergeDictationSessions, validateDictationSession, type DictationSession } from './dictation-session.ts';
 
 export interface ExportFile {
@@ -13,6 +14,7 @@ export interface ExportFile {
   practiceSessions: PracticeSession[];
   writingCards: WritingCard[];
   dictationSessions: DictationSession[];
+  translationSessions: TranslationSession[];
 }
 
 export interface ParsedImportData {
@@ -26,6 +28,8 @@ export interface ParsedImportData {
   writingCards?: WritingCard[];
   dictationSessions?: DictationSession[];
   skippedDictationSessionsCount?: number;
+  translationSessions?: TranslationSession[];
+  skippedTranslationSessionsCount?: number;
   skippedWritingCardsCount: number;
   skippedReviewItemsCount: number;
   skippedSessionsCount: number;
@@ -241,7 +245,11 @@ export function parseAndValidateImport(
   const dictation = rawDictation.map(validateDictationSession).filter((s): s is DictationSession => s !== null);
   const keepDictation = Array.isArray(obj.dictationSessions) && (rawDictation.length === 0 || dictation.length > 0);
 
-  if (validReviewItems.length === 0 && validSessions.length === 0 && validWritingCards.length === 0 && dictation.length === 0) {
+  const rawTranslation = Array.isArray(obj.translationSessions) ? obj.translationSessions : [];
+  const translation = rawTranslation.map(validateTranslationSession).filter((s): s is TranslationSession => s !== null);
+  const keepTranslation = Array.isArray(obj.translationSessions) && (rawTranslation.length === 0 || translation.length > 0);
+
+  if (validReviewItems.length === 0 && validSessions.length === 0 && validWritingCards.length === 0 && dictation.length === 0 && translation.length === 0) {
     return {
       ok: false,
       code: 'NO_VALID_DATA',
@@ -262,6 +270,8 @@ export function parseAndValidateImport(
       ...(keepWritingCards ? { writingCards: validWritingCards } : {}),
       ...(keepDictation ? { dictationSessions: dictation } : {}),
       skippedDictationSessionsCount: rawDictation.length - dictation.length,
+      ...(keepTranslation ? { translationSessions: translation } : {}),
+      skippedTranslationSessionsCount: rawTranslation.length - translation.length,
       skippedWritingCardsCount,
       skippedReviewItemsCount,
       skippedSessionsCount,
@@ -318,11 +328,12 @@ export function mergePracticeSessions(
 }
 
 export async function createExportData(): Promise<ExportFile> {
-  const [reviewItems, practiceSessions, writingCards, dictationSessions] = await Promise.all([
+  const [reviewItems, practiceSessions, writingCards, dictationSessions, translationSessions] = await Promise.all([
     db.reviewItems.toArray(),
     db.practiceSessions.toArray(),
     db.writingCards.toArray(),
     db.dictationSessions.toArray(),
+    db.translationSessions.toArray(),
   ]);
 
   const settings = loadSettings();
@@ -336,6 +347,7 @@ export async function createExportData(): Promise<ExportFile> {
     practiceSessions,
     writingCards,
     dictationSessions,
+    translationSessions,
   };
 }
 
@@ -366,13 +378,14 @@ export function isReplacePayload(mode: 'merge' | 'replace', ownerUserId: string 
 export async function executeImport(
   importData: ParsedImportData,
   mode: 'merge' | 'replace',
-): Promise<{ reviewCount: number; sessionCount: number; writingCount: number; dictationCount: number }> {
+): Promise<{ reviewCount: number; sessionCount: number; writingCount: number; dictationCount: number; translationCount: number }> {
   let finalReviews: ReviewItem[] = [];
   let finalSessions: PracticeSession[] = [];
   let writingCount = 0;
   let dictationCount = 0;
+  let translationCount = 0;
 
-  await db.transaction('rw', [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions], async () => {
+  await db.transaction('rw', [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions, db.translationSessions], async () => {
     if (mode === 'replace') {
       await db.reviewItems.clear();
       await db.practiceSessions.clear();
@@ -409,6 +422,14 @@ export async function executeImport(
       dictationCount = sessions.length;
     }
 
+    if (importData.translationSessions !== undefined) {
+      const sessions = mode === 'replace' ? importData.translationSessions
+        : mergeTranslationSessions(await db.translationSessions.toArray(), importData.translationSessions);
+      if (mode === 'replace') await db.translationSessions.clear();
+      await db.translationSessions.bulkPut(sessions);
+      translationCount = sessions.length;
+    }
+
     const pendingId =
       typeof crypto !== 'undefined' && crypto.randomUUID
         ? crypto.randomUUID()
@@ -432,6 +453,7 @@ export async function executeImport(
     sessionCount: finalSessions.length,
     writingCount,
     dictationCount,
+    translationCount,
   };
 }
 
@@ -447,14 +469,18 @@ export async function wipeAllLocalData(): Promise<void> {
 }
 
 export async function executeWipeAllData(): Promise<void> {
-  await db.transaction('rw', [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions], async () => {
+  await db.transaction('rw', [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions, db.translationSessions], async () => {
     await db.reviewItems.clear();
     await db.practiceSessions.clear();
     await db.pendingSync.clear();
     await db.writingCards.clear();
     await db.dictationSessions.clear();
+    await db.translationSessions.clear();
   });
 
-  if (typeof window !== 'undefined') window.localStorage.removeItem(DICTATION_SCOPE_KEY);
+  if (typeof window !== 'undefined') {
+    window.localStorage.removeItem(DICTATION_SCOPE_KEY);
+    window.localStorage.removeItem(TRANSLATION_CONFIG_KEY);
+  }
   clearAccountLink();
 }
