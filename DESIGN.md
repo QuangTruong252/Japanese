@@ -65,9 +65,9 @@ hay `line-clamp` nội dung học. Icon và chevron giữ kích thước, bám d
 
 - Mobile trước, kiểm ở 360 và 390 px. Vùng nội dung: `mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8`.
 - Khung (`AppNav` + layout lo; trang cuộn trong `#app-scroll-container`, không phải `window`):
-  - `< md` (dưới 768): thanh đầu + thanh điều hướng dưới. Bản mobile đã duyệt; màn rộng không được làm đổi nó.
+  - `< md` (dưới 768): thanh đầu gồm logo, tìm kiếm và hồ sơ; hồ sơ mở Tiến độ, Thống kê, Tài khoản, Cài đặt. Thanh dưới gồm Hôm nay · Học bài · Luyện tập · Ôn tập · Tra cứu.
   - `md` (768–1023): rail trái 80 px (icon trên nhãn; tìm, giao diện, cài đặt, hồ sơ ở đáy).
-  - `lg` (≥ 1024): sidebar 240 px (ô tìm `Ctrl K`, mục chọn nền sakura + `Ribbon`, hồ sơ + bánh răng ở đáy).
+  - `lg` (≥ 1024): sidebar 240 px (ô tìm `Ctrl K`, mục chọn nền sakura + `Ribbon`, ba shortcut dưới Luyện tập: Bài tập · Nghe mỗi ngày · Luyện viết; Tiến độ và Cài đặt có nhãn ở đáy).
 - Ba khuôn màn rộng, chọn theo việc của màn:
   - **Bento** (màn tổng quan: Bảng tin, Ôn tập, Luyện tập, Tra cứu, Cá nhân, Thống kê): `BentoGrid` + `Tile`, 2 cột ở
     `md`, 12 cột ở `lg`. Ở 1280×800 thấy hết việc chính không cần cuộn.
@@ -79,6 +79,11 @@ hay `line-clamp` nội dung học. Icon và chevron giữ kích thước, bám d
 - Kiểm 768, 1024 (hẹp nhất có sidebar) và 1280. Nút và ô không kéo giãn quá ~640 px.
 - Khoảng cách: giữa các mục `space-y-8`; giữa các dòng `space-y-2`; trong thẻ `p-5 sm:p-6`.
 - Vùng chạm tối thiểu 44 px. Không lồng thẻ trong thẻ.
+
+Điều hướng học (G1 duyệt 2026-10-27, `design/navigation/`): Home có bốn lối luyện cố định;
+Luyện tập là danh mục phương thức, Bài tập là màn cấu hình riêng có quay lại. Không đặt danh mục
+phương thức trên các tùy chọn cấu hình mobile. Hội thoại giữ ngữ cảnh bài học, tra cứu và ôn theo lịch
+có đích chính riêng. Nhãn phụ “Chép chính tả” dùng để phân biệt Nghe mỗi ngày với Nghe chọn đáp án.
 
 ## 6. Thành phần (`PaperKit.tsx`)
 
@@ -169,12 +174,13 @@ hover chỉ cho chuột (`(hover: hover) and (pointer: fine)`), chỉ `transform
 
 | Màn | Trạng thái | Mockup |
 |---|---|---|
-| Bảng tin `/` | **v3** — tham chiếu chuẩn | `design/home/` |
+| Hôm nay `/`, AppNav | **v3** — nav G1 đã duyệt 2026-10-27, chờ review G2 đợt nav | `design/navigation/`, tham chiếu trước: `design/home/` |
 | `/hoc` | **v3** — G2 đã duyệt 2026-10-20 (lộ trình thẻ tranh so le, không có mockup ảnh) | `design/hoc/sketch-lo-trinh.png`, `as-built-*` |
 | `/hoc/[so]` | **v3** — G2 đã duyệt 2026-10-19 (tab Từ vựng · Ngữ pháp, lưới/danh sách) | `design/bai/mockup-v2-*` |
 | `/hoc/[so]/tu-vung` | **v3** — G2 đã duyệt | `design/tu-vung/` |
 | Tab Ngữ pháp (mục lục), `/hoc/[so]/ngu-phap/[id]` | **v3** — G2 đã duyệt 2026-10-22 (giải thích mở sẵn dưới mẫu câu, mẫu câu chia ô màu `chart-1/3/4/5`, ví dụ gạch chân cùng màu) | `design/ngu-phap/` |
-| `/luyen-tap`, `/on-tap`, `/on-tap/diem-yeu` | **v3** — G2 đã duyệt | `design/luyen-tap/`, `design/on-tap/` |
+| `/luyen-tap`, `/luyen-tap/bai-tap`, `/luyen-tap/hoi-thoai` | **v3** — nav và tách màn mobile G1 đã duyệt 2026-10-27, chờ review G2 | `design/navigation/` |
+| `/on-tap`, `/on-tap/diem-yeu` | **v3** — G2 đã duyệt | `design/on-tap/` |
 | `/luyen-tap/phien`, `/on-tap/phien` | **v3** — G2 đã duyệt | `design/phien/` |
 | `/luyen-viet`, `/luyen-viet/phien` | **v3** — kana và kanji: G2 đã duyệt 2026-10-21 | `design/luyen-viet/` |
 | `/nghe-moi-ngay`, `/nghe-moi-ngay/phien` | **v3** — đã triển khai, chờ người dùng review G2 | — |

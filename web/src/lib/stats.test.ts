@@ -394,7 +394,7 @@ test('resolveStatsEmptyState: phân biệt trạng thái rỗng Thống kê', ()
   assert.equal(noDue.type, 'has_progress_no_sessions');
   assert.match(noDue.description, /phiên luyện tập và ôn tập/);
   assert.equal(noDue.cta?.label, 'Luyện bài 3');
-  assert.equal(noDue.cta?.href, '/luyen-tap?lessons=3');
+  assert.equal(noDue.cta?.href, '/luyen-tap/bai-tap?lessons=3');
   assert.equal(noDue.cta?.action, 'practice');
 
   // Ca chỉ khai báo learnedThroughLesson (0 reviewItems, learnedThroughLesson = 2) -> CTA Luyện bài N
@@ -408,7 +408,7 @@ test('resolveStatsEmptyState: phân biệt trạng thái rỗng Thống kê', ()
   assert.equal(declaredLesson.isEmpty, true);
   assert.equal(declaredLesson.type, 'has_progress_no_sessions');
   assert.equal(declaredLesson.cta?.label, 'Luyện bài 3');
-  assert.equal(declaredLesson.cta?.href, '/luyen-tap?lessons=3');
+  assert.equal(declaredLesson.cta?.href, '/luyen-tap/bai-tap?lessons=3');
   assert.equal(declaredLesson.cta?.action, 'practice');
 
   // Ca fallback activeLessonNum thiếu hoặc không hợp lệ -> mặc định bài 1
@@ -418,6 +418,6 @@ test('resolveStatsEmptyState: phân biệt trạng thái rỗng Thống kê', ()
     dueCount: 0,
   });
   assert.equal(fallbackLesson.cta?.label, 'Luyện bài 1');
-  assert.equal(fallbackLesson.cta?.href, '/luyen-tap?lessons=1');
+  assert.equal(fallbackLesson.cta?.href, '/luyen-tap/bai-tap?lessons=1');
 });
 

@@ -4,6 +4,7 @@ import {
   getActiveVocabDraftForLesson,
   findActiveVocabDraft,
   getActivePracticeDraftInfo,
+  getActiveDraftsSnapshot,
 } from './active-drafts.ts';
 import type { PracticeDraft } from './practice-draft.ts';
 
@@ -34,6 +35,32 @@ class MemoryStorage implements Storage {
     this.store.set(key, value);
   }
 }
+
+test('snapshot nháp đổi mode và bài dù cùng tiến độ, giữ đúng đích tiếp tục', () => {
+  const storage = new MemoryStorage();
+  const previous = Object.getOwnPropertyDescriptor(globalThis, 'window');
+  Object.defineProperty(globalThis, 'window', { configurable: true, value: { localStorage: storage } });
+  try {
+    const q = { id: 'q1', type: 'mc', lesson: 1, targetId: 'vocab-01-01', prompt: 'a', answer: 'a' };
+    const base = { version: 1, questions: [q, q], currentIndex: 0, results: [], elapsedSec: 0, savedAt: Date.now(), config: { mode: 'due', lessons: [1], selectedTypes: ['mc'], questionCount: 2 } };
+    storage.setItem('jp:practice-draft', JSON.stringify(base));
+    const review = getActiveDraftsSnapshot();
+    assert.equal(review.practiceDraft?.resumeHref, '/on-tap/phien?resume=1');
+
+    storage.setItem('jp:practice-draft', JSON.stringify({ ...base, config: { ...base.config, mode: 'lesson', lessons: [2] } }));
+    const practice = getActiveDraftsSnapshot();
+    assert.notEqual(practice, review);
+    assert.equal(practice.practiceDraft?.resumeHref, '/luyen-tap/phien');
+    assert.equal(practice.practiceDraft?.label, 'Luyện tập');
+    assert.deepEqual(practice.practiceDraft?.selectedLessons, [2]);
+    assert.equal(getActiveDraftsSnapshot(), practice);
+  } finally {
+    storage.clear();
+    getActiveDraftsSnapshot();
+    if (previous) Object.defineProperty(globalThis, 'window', previous);
+    else Reflect.deleteProperty(globalThis, 'window');
+  }
+});
 
 test('getActiveVocabDraftForLesson trả về thông tin nháp từ vựng hợp lệ', () => {
   const storage = new MemoryStorage();

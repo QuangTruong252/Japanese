@@ -60,19 +60,19 @@ export function SessionResult({
   }, [config?.lessons, session.selectedLessons]);
 
   const lessonsParam = lessons.length > 0 ? lessons.join(',') : '';
-  const practiceHref = lessonsParam ? `/luyen-tap?lessons=${lessonsParam}` : '/luyen-tap';
+  const practiceHref = lessonsParam ? `/luyen-tap/bai-tap?lessons=${lessonsParam}` : '/luyen-tap/bai-tap';
   const lessonsLabel = lessons.length > 0 ? `Bài ${lessons.join(', ')}` : 'Luyện tập';
   const primaryLesson = lessons[0];
   const lessonHref = primaryLesson ? `/hoc/${primaryLesson}` : '/hoc';
 
   useEffect(() => {
-    router.prefetch('/luyen-tap');
+    router.prefetch(practiceHref);
     router.prefetch('/on-tap');
     router.prefetch('/');
     if (primaryLesson) {
       router.prefetch(lessonHref);
     }
-  }, [router, lessonHref, primaryLesson]);
+  }, [router, lessonHref, primaryLesson, practiceHref]);
 
   const handleRetryIncorrect = () => {
     if (incorrectQuestions.length === 0) return;
@@ -170,7 +170,7 @@ export function SessionResult({
                 </Button>
               ) : (
                 <Button size="quiz" className="w-full font-semibold" onClick={() => router.push('/')}>
-                  Về Bảng tin
+                  Về Hôm nay
                   <ArrowRight aria-hidden="true" />
                 </Button>
               )
@@ -324,7 +324,7 @@ export function SessionResult({
               <ListRow href={lessonHref} icon={<FeatureIcon name="lesson" />} title={`Về Bài ${lessons[0]}`} />
             )
           )}
-          <ListRow href="/" icon={<FeatureIcon name="home" />} title="Về Bảng tin" />
+          <ListRow href="/" icon={<FeatureIcon name="home" />} title="Về Hôm nay" />
         </div>
       </div>
     </main>

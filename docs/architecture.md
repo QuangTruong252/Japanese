@@ -21,11 +21,13 @@
 
 | Route | Màn | Thành phần chính |
 |---|---|---|
-| `/` | Bảng tin | `DashboardContent` |
+| `/` | Hôm nay | `DashboardContent`: việc chính, cách luyện cố định, bài đang học và nháp |
 | `/hoc` | Danh sách bài | `LessonGrid` |
 | `/hoc/[so]` | Chi tiết bài | `page.tsx` + `_parts.tsx`, `_tabs.tsx` (tab, lưới/danh sách từ) |
 | `/hoc/[so]/tu-vung` | Học từ vựng | `VocabLearningFlow` (+ `components/vocab/*`) |
-| `/luyen-tap`, `/luyen-tap/phien` | Luyện tập | `PracticeRunner`, khung phiên chung `practice/SessionFrame` |
+| `/luyen-tap` | Danh mục cách luyện | `PracticeMethods`, `ActiveDraftRows`; link cấu hình cũ có `lessons`/`type` chuyển tiếp phía client để hub vẫn được prerender/tải sẵn |
+| `/luyen-tap/bai-tap`, `/luyen-tap/phien` | Cấu hình bài tập, phiên câu hỏi | Giữ preset và bảo vệ nháp; `PracticeRunner`, khung phiên chung `practice/SessionFrame` |
+| `/luyen-tap/hoi-thoai` | Chọn bài có hội thoại | Dẫn về tab Hội thoại của bài học, sau đó đọc hoặc đóng vai bằng luồng hiện có |
 | `/on-tap`, `/on-tap/phien`, `/on-tap/diem-yeu` | Ôn tập | `ReviewRunner` (dùng `SessionFrame`), `on-tap/ReinforcementSection` |
 | `/luyen-viet`, `/luyen-viet/phien` | Luyện viết kana và kanji N5 (vẽ nét) | `WritingPicker`, `WritingSession`, ô viết `components/writing/StrokeBox` |
 | `/nghe-moi-ngay`, `/nghe-moi-ngay/phien` | Chép chính tả theo ngày và phạm vi đã học | `DictationRunner`, bộ câu đã rà `lib/dictation.ts` |
@@ -33,8 +35,10 @@
 | `/ca-nhan`, `/ca-nhan/thong-ke` | Cá nhân, thống kê | `StatisticsContent` (+ `components/stats/*`) |
 | `/cai-dat`, `/cai-dat/audio` | Cài đặt, nạp audio | `components/settings/*`, `InstallAppCard` |
 
-`AppNav` (thanh dưới trên mobile, thanh bên từ `lg`) và hộp tìm kiếm `Ctrl+K` (`components/search/`)
-dùng chung cho mọi màn. Màn nào đã sang v3: `DESIGN.md` §11.
+`AppNav`: mobile có thanh dưới 5 mục Hôm nay, Học bài, Luyện tập, Ôn tập, Tra cứu; tablet có rail;
+desktop có sidebar và ba shortcut Bài tập, Nghe mỗi ngày, Luyện viết. Header mobile giữ tìm kiếm
+và hồ sơ; hồ sơ mở Tiến độ, Thống kê, Tài khoản, Cài đặt. Tìm kiếm `Ctrl+K` (`components/search/`)
+tìm cả ngữ liệu và phương thức luyện. Phiên toàn màn hình tiếp tục ẩn chrome. Màn nào đã sang v3: `DESIGN.md` §11.
 
 ## Dữ liệu và trạng thái
 

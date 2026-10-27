@@ -218,7 +218,7 @@ export default async function GrammarPointPage({ params }: { params: Promise<Par
 
         <div className="mt-8 flex flex-col gap-2 md:max-w-xl">
           <Link
-            href={next ? pointHref(next.id) : `/luyen-tap?lessons=${lessonNum}`}
+            href={next ? pointHref(next.id) : `/luyen-tap/bai-tap?lessons=${lessonNum}`}
             className={cn(buttonVariants({ size: 'quiz' }), 'w-full')}
           >
             {next ? 'Mẫu tiếp theo' : `Luyện tập bài ${lessonNum}`}

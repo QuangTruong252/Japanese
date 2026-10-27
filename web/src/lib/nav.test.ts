@@ -1,6 +1,27 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { formatNavBadgeCount, isNavActive, shouldHideAppChrome, trackPath, writingBackHref } from './nav.ts';
+import { formatNavBadgeCount, isNavActive, legacyPracticeConfigHref, shouldHideAppChrome, trackPath, writingBackHref } from './nav.ts';
+
+test('link cấu hình cũ giữ tham số và đi thẳng vào Bài tập, hub không bị chuyển tiếp', () => {
+  assert.equal(legacyPracticeConfigHref({}), null);
+  assert.equal(legacyPracticeConfigHref({ q: 'nghe' }), null);
+  const target = legacyPracticeConfigHref({ lessons: ['1,2', '3'], type: 'listening', q: 'a&b', empty: '' });
+  assert.ok(target);
+  const url = new URL(target, 'https://maipace.test');
+  assert.equal(url.pathname, '/luyen-tap/bai-tap');
+  assert.deepEqual(url.searchParams.getAll('lessons'), ['1,2', '3']);
+  assert.equal(url.searchParams.get('type'), 'listening');
+  assert.equal(url.searchParams.get('q'), 'a&b');
+  assert.equal(url.searchParams.get('empty'), '');
+  assert.equal(legacyPracticeConfigHref({ lessons: '' }), '/luyen-tap/bai-tap?lessons=');
+});
+
+test('hub và cấu hình cùng active Luyện tập, cấu hình vẫn có app chrome', () => {
+  assert.equal(isNavActive('/luyen-tap', '/luyen-tap/bai-tap'), true);
+  assert.equal(isNavActive('/luyen-tap', '/luyen-tap/hoi-thoai'), true);
+  assert.equal(shouldHideAppChrome('/luyen-tap/bai-tap'), false);
+  assert.equal(shouldHideAppChrome('/luyen-tap/hoi-thoai'), false);
+});
 
 test('isNavActive: trang chủ "/" chỉ active khi đúng pathname "/"', () => {
   assert.equal(isNavActive('/', '/'), true);

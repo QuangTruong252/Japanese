@@ -4,8 +4,18 @@ import {
   normalizeSearchText,
   buildSearchIndex,
   executeSearch,
+  getFeatureEntries,
   type SearchEntry,
 } from './search.ts';
+
+test('tìm phương thức luyện dẫn thẳng đúng màn và phân biệt nghe chép với bài tập', () => {
+  const features = getFeatureEntries();
+  for (const query of ['chép chính tả', 'chep chinh ta', 'dictation', 'nghe moi ngay']) {
+    assert.ok(executeSearch(features, query).results.some((r) => r.href === '/nghe-moi-ngay'), query);
+  }
+  assert.equal(executeSearch(features, 'bài tập').results[0]?.href, '/luyen-tap/bai-tap');
+  assert.ok(executeSearch(features, 'đóng vai').results.some((r) => r.href === '/luyen-tap/hoi-thoai'));
+});
 
 test('normalizeSearchText chuẩn hóa chữ thường, khoảng trắng, bỏ dấu và thay đ/Đ thành d', () => {
   assert.equal(normalizeSearchText('  Học   Sinh  '), 'hoc sinh');

@@ -424,7 +424,7 @@ export interface StatsEmptyStateResult {
  * - sessions = 0, nhưng đã có reviewItems hoặc learnedThroughLesson > 0:
  *   copy nêu thống kê tính từ phiên luyện/ôn;
  *   CTA chính "Ôn tập" nếu có mục đến hạn (dueCount > 0),
- *   ngược lại "Luyện bài N" (/luyen-tap?lessons=N).
+ *   ngược lại "Luyện bài N" (/luyen-tap/bai-tap?lessons=N).
  */
 export function resolveStatsEmptyState(input: StatsEmptyStateInput): StatsEmptyStateResult {
   if (input.sessionCount > 0) {
@@ -481,7 +481,7 @@ export function resolveStatsEmptyState(input: StatsEmptyStateInput): StatsEmptyS
       'Thống kê được tính từ các phiên luyện tập và ôn tập. Hãy hoàn thành phiên luyện tập để bắt đầu theo dõi thời gian học và tỷ lệ chính xác.',
     cta: {
       label: `Luyện bài ${lesson}`,
-      href: `/luyen-tap?lessons=${lesson}`,
+      href: `/luyen-tap/bai-tap?lessons=${lesson}`,
       action: 'practice',
     },
   };

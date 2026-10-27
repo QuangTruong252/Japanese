@@ -109,7 +109,8 @@ export function getActiveDraftsSnapshot(): ActiveDraftsState {
 
   const vocab = findActiveVocabDraft();
   const practice = getActivePracticeDraftInfo(getPracticeDraftSnapshot());
-  const serialized = `${vocab ? `${vocab.lesson}:${vocab.currentWordIndex}/${vocab.totalWords}` : 'none'}|${practice ? `${practice.currentQuestionIndex}/${practice.totalQuestions}` : 'none'}`;
+  // Đổi mode hoặc bài có thể giữ nguyên số câu; cache phải đổi cả đích tiếp tục để không mở nhầm phiên ôn.
+  const serialized = JSON.stringify({ vocab, practice });
 
   if (serialized !== lastSerialized) {
     lastSerialized = serialized;

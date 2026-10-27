@@ -142,9 +142,9 @@ export default function WeakPointsPage() {
               const practiceHref =
                 lessonNum > 0
                   ? practiceType
-                    ? `/luyen-tap?lessons=${lessonNum}&type=${practiceType}`
-                    : `/luyen-tap?lessons=${lessonNum}`
-                  : '/luyen-tap';
+                    ? `/luyen-tap/bai-tap?lessons=${lessonNum}&type=${practiceType}`
+                    : `/luyen-tap/bai-tap?lessons=${lessonNum}`
+                  : '/luyen-tap/bai-tap';
 
               const studyUrl = studyHref(item.targetId, lessonNum, studyMap);
 

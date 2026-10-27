@@ -1,3 +1,14 @@
+export function legacyPracticeConfigHref(params: Record<string, string | string[] | undefined>): string | null {
+  // Link cấu hình cũ vẫn đi thẳng vào bài tập, giữ cả tham số lặp và giá trị rỗng để bộ kiểm tra hiện có xử lý.
+  if (params.lessons === undefined && params.type === undefined) return null;
+  const query = new URLSearchParams();
+  for (const [key, value] of Object.entries(params)) {
+    if (Array.isArray(value)) value.forEach((item) => query.append(key, item));
+    else if (value !== undefined) query.append(key, value);
+  }
+  return `/luyen-tap/bai-tap?${query}`;
+}
+
 /**
  * Logic xác định trạng thái active của mục điều hướng chính.
  *

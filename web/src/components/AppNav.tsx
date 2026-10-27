@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useSyncExternalStore } from 'react';
+import { Fragment, useEffect, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -53,13 +53,19 @@ const featureIcon = (name: FeatureIconName) =>
   };
 
 // 5 đích điều hướng chính:
-// Bảng tin · Học bài · Luyện tập · Ôn tập · Tra cứu
+// Hôm nay · Học bài · Luyện tập · Ôn tập · Tra cứu
 const NAV_ITEMS: NavItem[] = [
-  { href: '/', label: 'Bảng tin', icon: featureIcon('nav-home') },
+  { href: '/', label: 'Hôm nay', icon: featureIcon('nav-home') },
   { href: '/hoc', label: 'Học bài', icon: featureIcon('nav-lesson') },
   { href: '/luyen-tap', label: 'Luyện tập', icon: featureIcon('nav-practice') },
   { href: '/on-tap', label: 'Ôn tập', icon: featureIcon('nav-review'), isDueTarget: true },
   { href: '/hoc/tra-cuu', label: 'Tra cứu', icon: featureIcon('nav-lookup') },
+];
+
+const PRACTICE_SHORTCUTS: NavItem[] = [
+  { href: '/luyen-tap/bai-tap', label: 'Bài tập', icon: featureIcon('practice') },
+  { href: '/nghe-moi-ngay', label: 'Nghe mỗi ngày', icon: featureIcon('listening') },
+  { href: '/luyen-viet', label: 'Luyện viết', icon: featureIcon('kana') },
 ];
 
 // Nút icon trên thanh đầu mobile: vùng chạm 44px, không viền để nhóm bốn nút không nặng
@@ -212,25 +218,16 @@ export function AppNav() {
           </span>
         </Link>
 
-        {/* Hành động toàn cục (mobile): Tìm kiếm · Giao diện · Cài đặt · Tài khoản. Trang không tự đặt lại. */}
+        {/* Hồ sơ gom các tiện ích để thanh đầu chỉ dành chỗ cho tìm kiếm và tài khoản. */}
         <div className="flex shrink-0 items-center">
           <SearchTrigger iconOnly className={HEADER_ICON} />
-          <ThemeToggle className={HEADER_ICON} />
-          <Link
-            href="/cai-dat"
-            aria-label="Cài đặt"
-            aria-current={isSettingsActive ? 'page' : undefined}
-            className={cn(HEADER_ICON_BASE, HEADER_ICON, isSettingsActive && 'text-primary')}
-          >
-            <Settings className="size-5" aria-hidden="true" />
-          </Link>
-          <AccountButton user={currentUser}className="h-[48px] w-[48px] min-h-0 justify-center border-transparent bg-transparent p-0" />
+          <AccountButton user={currentUser} />
         </div>
       </header>
 
       {/* ========================================================
           1. Mobile Shell (< 768px): thanh dưới 5 mục
-          Bảng tin · Học · Luyện · Ôn · Tra cứu (thứ năm trỏ /hoc/tra-cuu)
+          Hôm nay · Học bài · Luyện tập · Ôn tập · Tra cứu
           ======================================================== */}
       <nav
         aria-label="Điều hướng chính"
@@ -261,7 +258,7 @@ export function AppNav() {
                   : 'text-muted-foreground hover:text-foreground'
               )}
             >
-              <div className="relative flex items-center justify-center">
+              <div className={cn('relative flex h-8 w-12 items-center justify-center rounded-full', isActive && 'bg-accent')}>
                 <Icon className="size-6 shrink-0" aria-hidden="true" />
                 {showBadge && (
                   <span
@@ -358,7 +355,7 @@ export function AppNav() {
           </Link>
           <Link
             href="/ca-nhan"
-            aria-label={currentUser?.displayName ? `Cá nhân & Tiến độ, ${currentUser.displayName}` : 'Cá nhân & Tiến độ'}
+            aria-label="Tiến độ"
             aria-current={isProfileActive ? 'page' : undefined}
             className={cn(
               'mt-1 flex size-12 items-center justify-center rounded-full',
@@ -377,9 +374,9 @@ export function AppNav() {
           ======================================================== */}
       <aside
         aria-label="Điều hướng ứng dụng"
-        className="hidden lg:flex fixed inset-y-0 left-0 w-60 z-40 flex-col justify-between border-r border-border bg-background px-4 py-6 select-none"
+        className="hidden lg:flex fixed inset-y-0 left-0 w-60 z-40 flex-col justify-between gap-6 border-r border-border bg-background px-4 py-6 select-none"
       >
-        <div>
+        <div className="min-h-0 overflow-y-auto">
           <Link
             href="/"
             aria-label="Về trang chủ MaiPace"
@@ -413,7 +410,6 @@ export function AppNav() {
                 Ctrl K
               </kbd>
             </button>
-            <ThemeToggle className="size-11 shrink-0" />
           </div>
 
           <nav className="mt-6 space-y-1" aria-label="Menu chính">
@@ -423,8 +419,8 @@ export function AppNav() {
               const badgeText = item.isDueTarget ? formatNavBadgeCount(dueCount) : null;
 
               return (
+                <Fragment key={item.href}>
                 <Link
-                  key={item.href}
                   href={item.href}
                   aria-current={isActive ? 'page' : undefined}
                   aria-label={badgeText ? `${item.label}, ${dueCount} mục đến hạn` : undefined}
@@ -448,12 +444,27 @@ export function AppNav() {
                   </span>
                   {badgeText && <NavBadge text={badgeText} />}
                 </Link>
+                {item.href === '/luyen-tap' && (
+                  <div className="ml-6 border-l border-border pl-3">
+                    {PRACTICE_SHORTCUTS.map((shortcut) => {
+                      const ShortcutIcon = shortcut.icon;
+                      const active = isNavActive(shortcut.href, pathname);
+                      return (
+                        <Link key={shortcut.href} href={shortcut.href} aria-current={active ? 'page' : undefined} className={cn('flex min-h-11 items-center gap-2 rounded-lg px-2 text-sm', FOCUS_RING, active ? 'font-semibold text-primary' : 'text-muted-foreground hover:bg-muted/60 hover:text-foreground')}>
+                          <ShortcutIcon className="size-6 shrink-0" aria-hidden="true" />
+                          {shortcut.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+                </Fragment>
               );
             })}
           </nav>
         </div>
 
-        <div className="flex items-center gap-1 border-t border-border pt-3">
+        <div className="flex shrink-0 flex-col gap-1 border-t border-border pt-3">
           <Link
             href="/ca-nhan"
             aria-current={isProfileActive ? 'page' : undefined}
@@ -466,7 +477,7 @@ export function AppNav() {
             <Avatar user={currentUser} />
             <span className="flex min-w-0 flex-1 flex-col leading-tight">
               <span className={cn('line-clamp-2 text-sm', isProfileActive ? 'font-semibold' : 'font-medium')}>
-                {currentUser?.displayName || 'Cá nhân & Tiến độ'}
+                Tiến độ
               </span>
               <span className="mt-0.5 flex items-start gap-1 text-xs text-muted-foreground [&>svg]:mt-0.5">
                 {syncResolution.state === 'synced' && <CloudCheck className="size-3 shrink-0 text-success" />}
@@ -487,12 +498,13 @@ export function AppNav() {
             aria-label="Cài đặt"
             aria-current={isSettingsActive ? 'page' : undefined}
             className={cn(
-              'flex size-11 shrink-0 items-center justify-center rounded-xl transition duration-150',
+              'flex min-h-11 items-center gap-3 rounded-xl px-2 py-2 text-sm transition duration-150',
               FOCUS_RING,
               isSettingsActive ? 'bg-accent text-primary' : 'text-muted-foreground hover:bg-muted/60 hover:text-foreground'
             )}
           >
             <Settings className="size-5" aria-hidden="true" />
+            Cài đặt
           </Link>
         </div>
       </aside>

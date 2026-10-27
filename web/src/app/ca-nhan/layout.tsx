@@ -21,7 +21,7 @@ export default function CaNhanLayout({
   return (
     <main className="mx-auto w-full max-w-5xl space-y-6 px-4 pb-12 pt-3 sm:px-6 lg:max-w-[1200px] lg:px-8">
       <div className="relative w-fit">
-        <PageTitle title="Cá nhân" />
+        <PageTitle title={isThongKe ? 'Thống kê' : 'Tiến độ'} />
         {isThongKe && <Accent kind="petals" className="left-full top-0 ml-2 w-14 md:block" />}
       </div>
 

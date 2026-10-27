@@ -68,7 +68,7 @@ export default async function LessonDetailPage({
           <div className="mt-6 space-y-3 md:col-start-2 md:row-start-2 md:mt-0 lg:mt-6">
             <LessonHeroCard lessonNum={lessonNum} totalVocab={vocab.length} />
             <ListRow
-              href={`/luyen-tap?lessons=${lessonNum}`}
+              href={`/luyen-tap/bai-tap?lessons=${lessonNum}`}
               icon={<FeatureIcon name="practice" />}
               title={`Luyện tập bài ${lesson.number}`}
               detail="Trắc nghiệm theo bài"

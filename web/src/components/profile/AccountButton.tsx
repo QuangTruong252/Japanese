@@ -1,8 +1,11 @@
 'use client';
 
-import Link from 'next/link';
+import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { User } from 'lucide-react';
+import { BarChart3, Settings, User, X } from 'lucide-react';
+import { ListRow } from '@/components/PaperKit';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 
 export interface AccountButtonUser {
@@ -12,49 +15,30 @@ export interface AccountButtonUser {
   avatarUrl?: string;
 }
 
-interface AccountButtonProps {
-  className?: string;
-  // AppNav giữ listener đăng nhập duy nhất và truyền user xuống.
-  user: AccountButtonUser | null;
-}
-
-export function AccountButton({ className, user }: AccountButtonProps) {
+export function AccountButton({ className, user }: { className?: string; user: AccountButtonUser | null }) {
   const pathname = usePathname();
-  const displayName = user?.displayName;
-  const avatarUrl = user?.avatarUrl;
-
-  // Trên /ca-nhan/**, nút header Tài khoản hiển thị trạng thái active (aria-current="page")
-  const isActive = pathname === '/ca-nhan' || pathname.startsWith('/ca-nhan/');
+  const [open, setOpen] = useState(false);
+  const isActive = pathname.startsWith('/ca-nhan') || pathname.startsWith('/cai-dat');
+  const close = () => setOpen(false);
 
   return (
-    <Link
-      href="/ca-nhan"
-      aria-current={isActive ? 'page' : undefined}
-      aria-label={user && displayName ? `Tài khoản ${displayName}` : 'Tài khoản'}
-      className={cn(
-        'inline-flex items-center gap-2 transition duration-150 outline-none select-none cursor-pointer',
-        'focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2',
-        'min-h-[48px] px-3.5 py-1.5 rounded-full text-xs font-medium border',
-        isActive
-          ? 'border-primary/50 text-primary bg-primary/10 font-semibold shadow-xs'
-          : 'border-border/80 bg-card text-foreground hover:bg-muted/70',
-        className
-      )}
-    >
-      <div className="relative shrink-0 flex items-center justify-center">
-        {avatarUrl ? (
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger render={<Button variant="ghost" size="quiz" className={cn('size-11 min-w-11 rounded-full p-0', isActive && 'bg-accent text-primary', className)} />} aria-label="Hồ sơ và cài đặt">
+        {user?.avatarUrl ? (
           /* eslint-disable-next-line @next/next/no-img-element */
-          <img
-            src={avatarUrl}
-            alt=""
-            className="size-6 rounded-full object-cover border border-border/80"
-          />
-        ) : (
-          <div className="size-6 rounded-full bg-primary/10 text-primary flex items-center justify-center font-medium">
-            <User className="size-3.5" />
-          </div>
-        )}
-      </div>
-    </Link>
+          <img src={user.avatarUrl} alt="" className="size-7 rounded-full border border-border object-cover" />
+        ) : <User className="size-5" aria-hidden="true" />}
+      </DialogTrigger>
+      <DialogContent showCloseButton={false}>
+        <DialogClose render={<Button variant="ghost" size="quiz" aria-label="Đóng" className="absolute right-1 top-1 size-11 p-0" />}><X aria-hidden="true" /></DialogClose>
+        <DialogHeader className="min-h-8 justify-center pr-9"><DialogTitle>{user?.displayName || 'Cá nhân'}</DialogTitle></DialogHeader>
+        <div className="flex flex-col gap-2">
+          <ListRow href="/ca-nhan" onClick={close} icon={<BarChart3 />} title="Tiến độ" />
+          <ListRow href="/ca-nhan/thong-ke" onClick={close} icon={<BarChart3 />} title="Thống kê" />
+          <ListRow href="/ca-nhan#account-heading" onClick={close} icon={<User />} title="Tài khoản" />
+          <ListRow href="/cai-dat" onClick={close} icon={<Settings />} title="Cài đặt" />
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }

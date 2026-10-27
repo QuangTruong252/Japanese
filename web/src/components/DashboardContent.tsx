@@ -3,25 +3,25 @@
 import { useMemo, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { ArrowRight, BookOpen, ChevronRight, Clock, TableProperties } from 'lucide-react';
+import { ArrowRight, BookOpen, ChevronRight } from 'lucide-react';
 import { db } from '@/lib/db';
 import { useDueQueue } from '@/lib/use-due-queue';
 import { countLearnedByLesson, pickActiveLesson } from '@/lib/stats';
 import { DEFAULT_SETTINGS, getSettingsSnapshot, subscribeSettings } from '@/lib/settings';
 import { useActiveDrafts } from '@/lib/active-drafts';
-import { clearNewSessionRequest } from '@/lib/practice-draft';
 import { resolveDashboardCta } from '@/lib/dashboard-cta';
 import type { LessonSummary } from '@/lib/lessons';
 import type { IllustrationAsset } from '@/types';
 import { AUDIO_IMPORT_ENABLED } from '@/lib/features';
 import { REVIEW_COMPLETE_ART, SECTION_THUMB } from '@/lib/illustrations';
-import { Accent, SoftScene, PaperCloud, TornCard, SectionHeader, ListRow, PartRow, BentoGrid, Tile } from '@/components/PaperKit';
+import { Accent, TornCard, SectionHeader, ListRow, PartRow, BentoGrid, Tile } from '@/components/PaperKit';
 import { CountUp } from '@/components/PaperMotion';
 import { reviewForecast } from '@/lib/review-forecast';
 import { ForecastChart } from '@/components/ForecastChart';
 import { Illustration } from '@/components/Illustration';
 import { FeatureIcon, type FeatureIconName } from '@/components/FeatureIcon';
-import { SearchTrigger } from '@/components/search/SearchTrigger';
+import { PracticeMethods } from '@/components/practice/PracticeMethods';
+import { ActiveDraftRows } from '@/components/practice/ActiveDraftRows';
 import { buttonVariants } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/utils';
@@ -37,7 +37,7 @@ const FALLBACK_COVER: IllustrationAsset = {
   alt: { vi: '' },
 };
 
-/** Bảng tin v3 "Sách sống", bố cục C2. */
+/** Hôm nay: việc cần làm tiếp và các cách luyện luôn có lối vào. */
 export function DashboardContent({
   summaries,
   lessonExamples = {},
@@ -92,28 +92,6 @@ export function DashboardContent({
     (vocabTargetIds?.length ?? 0) === 0 &&
     learnedThroughLesson === 0;
 
-  const draftRows = [
-    drafts.practiceDraft && {
-      key: 'practice',
-      title:
-        drafts.practiceDraft.label +
-        (drafts.practiceDraft.label === 'Luyện tập' &&
-        drafts.practiceDraft.selectedLessons?.length
-          ? ` Bài ${drafts.practiceDraft.selectedLessons.join(', ')}`
-          : ''),
-      detail: `Câu ${drafts.practiceDraft.currentQuestionIndex}/${drafts.practiceDraft.totalQuestions}`,
-      href: drafts.practiceDraft.resumeHref,
-      onClick: clearNewSessionRequest,
-    },
-    drafts.vocabDraft && {
-      key: 'vocab',
-      title: `Học từ vựng Bài ${drafts.vocabDraft.lesson}`,
-      detail: `Từ ${drafts.vocabDraft.currentWordIndex}/${drafts.vocabDraft.totalWords}`,
-      href: drafts.vocabDraft.resumeHref,
-      onClick: undefined,
-    },
-  ].filter((row) => !!row);
-
   const cta = resolveDashboardCta({
     isNewUser,
     activeLessonNum,
@@ -151,17 +129,6 @@ export function DashboardContent({
       </main>
     );
   }
-
-  const draftList = draftRows.map((row) => (
-    <ListRow
-      key={row.key}
-      href={row.href}
-      onClick={row.onClick}
-      icon={<Clock />}
-      title={row.title}
-      detail={row.detail}
-    />
-  ));
 
   const parts: PartData[] = [
     {
@@ -210,99 +177,61 @@ export function DashboardContent({
 
   return (
     <main className="mx-auto w-full max-w-5xl px-4 pb-12 pt-3 sm:px-6 lg:max-w-[1200px] lg:px-8">
-      <SoftScene
-        asset={coverAsset}
-        sizes="(min-width: 1024px) 1024px, 100vw"
-        eager
-        imageClassName="h-48 object-center sm:h-64 sm:object-[center_30%] lg:h-72 lg:object-[center_20%]"
-        className="-mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full md:hidden"
-      />
-      <PaperCloud className="-mt-1.5 w-fit md:mt-0">
-        <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl md:text-4xl">
-          {greeting}
-        </h1>
-      </PaperCloud>
+      <header className="flex flex-wrap items-center justify-between gap-2">
+        <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">{greeting}</h1>
+        <Link href="/ca-nhan" className="inline-flex min-h-11 items-center gap-1 rounded-lg px-2 text-sm text-primary outline-none focus-visible:ring-3 focus-visible:ring-ring">Tiến độ <ChevronRight className="size-4" aria-hidden="true" /></Link>
+      </header>
 
-      <BentoGrid className="mt-6 md:mt-4">
+      <BentoGrid className="mt-3 md:mt-4">
         <section aria-labelledby="home-today-heading" className="relative md:col-span-2 lg:col-span-12 xl:col-span-8">
           <Accent kind="sprig-left" className="-right-5 -top-10 w-32" />
           <TornCard fill className="md:grid md:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] md:p-0">
             <div className="min-w-0 md:p-7">
-              <p
-                id="home-today-heading"
-                className="font-serif text-sm font-bold tracking-wide text-primary"
-              >
-                / Hôm nay /
-              </p>
-              <p className="mt-1.5 flex items-start gap-1.5 text-sm font-medium text-muted-foreground">
-                <BookOpen className="mt-0.5 size-3.5 shrink-0" aria-hidden="true" />
-                Bài {activeLessonNum} · {activeSummary.title.vi}
-              </p>
-              {heroJapanese && (
-                <div className="mt-3 flex items-start gap-2">
-                  <Furigana
-                    text={heroJapanese}
-                    className="jp-display min-w-0 flex-1 text-2xl font-bold text-foreground sm:text-3xl"
-                  />
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <p id="home-today-heading" className="font-serif text-sm font-bold tracking-wide text-primary">/ Hôm nay /</p>
+                  <p className="mt-1.5 flex items-start gap-1.5 text-sm font-medium text-muted-foreground">
+                    <BookOpen className="mt-0.5 size-3.5 shrink-0" aria-hidden="true" />
+                    Bài {activeLessonNum} · {activeSummary.title.vi}
+                  </p>
+                </div>
+                <div className="flex shrink-0 items-start gap-2">
                   {todaySentence && (
-                    <SpeakButton
-                      text={todaySentence.kana || toKanaSentence(todaySentence.jp)}
-                      label={stripFurigana(todaySentence.jp)}
-                      iconClassName="size-4"
-                      className="size-11 w-11 rounded-full border border-border bg-secondary text-primary hover:bg-accent"
-                    />
+                    <SpeakButton text={todaySentence.kana || toKanaSentence(todaySentence.jp)} label={stripFurigana(todaySentence.jp)} iconClassName="size-4" className="size-11 w-11 rounded-full border border-border bg-secondary text-primary hover:bg-accent" />
                   )}
+                  <Illustration asset={coverAsset} sizes="64px" eager className="size-16 rounded-lg object-cover md:hidden" />
+                </div>
+              </div>
+              {heroJapanese && (
+                <div className="mt-3">
+                  <Furigana text={heroJapanese} className="jp-display w-full text-2xl font-bold text-foreground sm:text-3xl" />
                 </div>
               )}
               {heroTranslation && (
-                <p className="mt-1 text-sm italic leading-6 text-muted-foreground">{heroTranslation}</p>
+                <p className="mt-2 text-sm italic leading-6 text-muted-foreground">{heroTranslation}</p>
               )}
               <Link
                 href={cta.href}
-                className={cn(buttonVariants({ size: 'quiz' }), 'mt-5 w-full font-semibold')}
+                className={cn(buttonVariants({ size: 'quiz' }), 'mt-3 w-full font-semibold md:mt-5')}
               >
                 {cta.ctaText}
                 <ArrowRight aria-hidden="true" />
               </Link>
             </div>
-            {/* Tranh bìa nằm trong thẻ từ md; mép trái xé bằng clip-path, mobile giữ tranh tràn đầu trang. */}
+            {/* Thu nhỏ tranh ở phần nhãn trên mobile để câu Nhật có đủ chiều rộng. */}
             <div className="tilt-hover relative hidden min-h-72 md:block [clip-path:polygon(7%_0,3%_9%,6%_19%,1%_30%,5%_42%,0_53%,4%_65%,1%_77%,5%_89%,2%_100%,100%_100%,100%_0)]">
               <Illustration
                 asset={coverAsset}
+                eager
                 sizes="(min-width: 1280px) 400px, 45vw"
                 className="absolute inset-0 size-full object-cover dark:brightness-[0.88]"
               />
             </div>
           </TornCard>
 
-          <div className="mt-3 space-y-2 md:hidden">
-            <ListRow href="/nghe-moi-ngay" icon={<FeatureIcon name="listening" />} title="Nghe mỗi ngày" />
-            {draftList}
-            {batchCount > 0 && (
-              <ListRow
-                href={cta.reviewHref}
-                icon={<FeatureIcon name="review" />}
-                title="Ôn tập đến hạn"
-                detail={dueSummaryText || `${batchCount} mục`}
-              />
-            )}
-            {writingDueCount > 0 && (
-              <ListRow
-                href="/luyen-viet/phien?mode=den-han"
-                icon={<FeatureIcon name="kana" />}
-                title="Viết chữ đến hạn"
-                detail={`${writingDueCount} chữ`}
-              />
-            )}
-            {isDoneToday && (
-              <div className="flex items-center gap-3 rounded-xl border border-border bg-card p-3">
-                <Illustration asset={REVIEW_COMPLETE_ART} sizes="56px" className="size-14 shrink-0 object-contain" />
-                <p className="font-medium text-foreground">Đã xong phần ôn hôm nay</p>
-              </div>
-            )}
-            {isDoneToday && (
-              <ListRow href="/luyen-tap" icon={<FeatureIcon name="practice" />} title="Luyện tập tự chọn" />
-            )}
+          <div className="mt-3 flex flex-col gap-2 md:hidden">
+            <ListRow href={batchCount > 0 ? cta.reviewHref : '/on-tap'} icon={<FeatureIcon name="review" />} title="Ôn tập đến hạn" detail={isDoneToday ? 'Đã xong phần ôn hôm nay' : dueSummaryText || 'Chưa có mục đến hạn'} />
+            {writingDueCount > 0 && <ListRow href="/luyen-viet/phien?mode=den-han" icon={<FeatureIcon name="kana" />} title="Viết chữ đến hạn" detail={`${writingDueCount} chữ`} />}
           </div>
         </section>
 
@@ -380,32 +309,26 @@ export function DashboardContent({
           </Tile>
         )}
 
-        <div className="hidden md:col-span-2 md:block lg:col-span-12">
-          <ListRow href="/nghe-moi-ngay" icon={<FeatureIcon name="listening" />} title="Nghe mỗi ngày" />
-        </div>
-        {draftList.length > 0 && (
-          <div className="hidden space-y-2 md:col-span-2 md:block lg:col-span-12">{draftList}</div>
-        )}
+        <section aria-labelledby="home-methods-heading" className="md:col-span-2 lg:col-span-12">
+          <div className="[&_a]:min-h-11"><SectionHeader id="home-methods-heading" title="Cách luyện" href="/luyen-tap" /></div>
+          <PracticeMethods compact lesson={activeLessonNum} />
+        </section>
 
         <section
           aria-labelledby="home-parts-grid-heading"
-          className="hidden md:col-span-2 md:grid md:grid-cols-2 md:gap-4 lg:col-span-12 lg:grid-cols-[repeat(auto-fit,minmax(10rem,1fr))] lg:gap-5"
+          className="hidden md:col-span-2 md:block lg:col-span-12"
         >
-          <h2 id="home-parts-grid-heading" className="sr-only">
-            Các phần trong bài
-          </h2>
+          <h2 id="home-parts-grid-heading" className="mb-3 text-lg font-semibold">Bài đang học</h2>
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-[repeat(auto-fit,minmax(10rem,1fr))] lg:gap-5">
           {parts.map((part) => (
             <PartTile key={part.key} part={part} />
           ))}
           {writingDueCount > 0 && <WritingTile count={writingDueCount} chars={writingDuePreview ?? []} />}
+          </div>
         </section>
 
         <section aria-labelledby="home-parts-heading" className="md:hidden">
-          <SectionHeader
-            id="home-parts-heading"
-            title="Các phần trong bài"
-            href={`/hoc/${activeLessonNum}`}
-          />
+          <div className="[&_a]:min-h-11"><SectionHeader id="home-parts-heading" title="Bài đang học" href={`/hoc/${activeLessonNum}`} /></div>
           <div className="space-y-2">
             {parts.map((part) => (
               <PartRow
@@ -420,28 +343,7 @@ export function DashboardContent({
           </div>
         </section>
 
-        <section aria-labelledby="home-quick-search" className="md:hidden">
-          <SectionHeader id="home-quick-search" title="Tra cứu" />
-          <div className="relative">
-            <SearchTrigger
-              variant="bar"
-              placeholder="Tìm từ, ngữ pháp, kanji…"
-              className="rounded-xl pr-14 shadow-none"
-            />
-            <Link
-              href="/hoc/tra-cuu"
-              aria-label="Bảng tra"
-              title="Bảng tra"
-              className={cn(
-                buttonVariants({ variant: 'ghost', size: 'icon' }),
-                // Canh giữa bằng margin, không bằng translate: hiệu ứng nhấn của nút ghi đè translate làm nút nhảy xuống.
-                'absolute inset-y-0 right-1 my-auto size-11 rounded-lg text-muted-foreground',
-              )}
-            >
-              <TableProperties className="size-5" aria-hidden="true" />
-            </Link>
-          </div>
-        </section>
+        <div className="md:col-span-2 lg:col-span-12"><ActiveDraftRows includeVocab /></div>
       </BentoGrid>
     </main>
   );
