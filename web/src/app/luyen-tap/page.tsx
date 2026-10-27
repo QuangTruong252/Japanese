@@ -507,6 +507,7 @@ function PracticeConfigContent() {
 
       <div className="max-w-2xl space-y-8 md:grid md:max-w-none md:grid-cols-12 md:gap-x-6 md:gap-y-5 md:space-y-0">
         {/* Luyện viết là dạng luyện riêng (vẽ nét, lịch ôn riêng), không phải một dạng câu hỏi của phiên bên dưới. */}
+        <ListRow href="/nghe-moi-ngay" icon={<FeatureIcon name="listening" />} title="Nghe mỗi ngày" className={LEFT_CLASS} />
         <ListRow
           href="/luyen-viet"
           icon={<FeatureIcon name="kanji" />}

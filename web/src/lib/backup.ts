@@ -2,6 +2,7 @@ import { db } from './db.ts';
 import { loadSettings, type AppSettings } from './settings.ts';
 import { clearAccountLink, getOwnerUserId, signOut } from './sync.ts';
 import type { PracticeSession, ReviewItem, TargetType, WritingCard } from '../types/index.ts';
+import { DICTATION_SCOPE_KEY, mergeDictationSessions, validateDictationSession, type DictationSession } from './dictation-session.ts';
 
 export interface ExportFile {
   schemaVersion: 1;
@@ -11,6 +12,7 @@ export interface ExportFile {
   reviewItems: ReviewItem[];
   practiceSessions: PracticeSession[];
   writingCards: WritingCard[];
+  dictationSessions: DictationSession[];
 }
 
 export interface ParsedImportData {
@@ -22,6 +24,8 @@ export interface ParsedImportData {
   reviewItems: ReviewItem[];
   practiceSessions: PracticeSession[];
   writingCards?: WritingCard[];
+  dictationSessions?: DictationSession[];
+  skippedDictationSessionsCount?: number;
   skippedWritingCardsCount: number;
   skippedReviewItemsCount: number;
   skippedSessionsCount: number;
@@ -233,7 +237,11 @@ export function parseAndValidateImport(
   // Corrupt backup data must not erase writing progress already on this device.
   const keepWritingCards = hasWritingCards && (rawWritingCards.length === 0 || validWritingCards.length > 0);
 
-  if (validReviewItems.length === 0 && validSessions.length === 0 && validWritingCards.length === 0) {
+  const rawDictation = Array.isArray(obj.dictationSessions) ? obj.dictationSessions : [];
+  const dictation = rawDictation.map(validateDictationSession).filter((s): s is DictationSession => s !== null);
+  const keepDictation = Array.isArray(obj.dictationSessions) && (rawDictation.length === 0 || dictation.length > 0);
+
+  if (validReviewItems.length === 0 && validSessions.length === 0 && validWritingCards.length === 0 && dictation.length === 0) {
     return {
       ok: false,
       code: 'NO_VALID_DATA',
@@ -252,6 +260,8 @@ export function parseAndValidateImport(
       reviewItems: validReviewItems,
       practiceSessions: validSessions,
       ...(keepWritingCards ? { writingCards: validWritingCards } : {}),
+      ...(keepDictation ? { dictationSessions: dictation } : {}),
+      skippedDictationSessionsCount: rawDictation.length - dictation.length,
       skippedWritingCardsCount,
       skippedReviewItemsCount,
       skippedSessionsCount,
@@ -308,10 +318,11 @@ export function mergePracticeSessions(
 }
 
 export async function createExportData(): Promise<ExportFile> {
-  const [reviewItems, practiceSessions, writingCards] = await Promise.all([
+  const [reviewItems, practiceSessions, writingCards, dictationSessions] = await Promise.all([
     db.reviewItems.toArray(),
     db.practiceSessions.toArray(),
     db.writingCards.toArray(),
+    db.dictationSessions.toArray(),
   ]);
 
   const settings = loadSettings();
@@ -324,6 +335,7 @@ export async function createExportData(): Promise<ExportFile> {
     reviewItems,
     practiceSessions,
     writingCards,
+    dictationSessions,
   };
 }
 
@@ -354,12 +366,13 @@ export function isReplacePayload(mode: 'merge' | 'replace', ownerUserId: string 
 export async function executeImport(
   importData: ParsedImportData,
   mode: 'merge' | 'replace',
-): Promise<{ reviewCount: number; sessionCount: number; writingCount: number }> {
+): Promise<{ reviewCount: number; sessionCount: number; writingCount: number; dictationCount: number }> {
   let finalReviews: ReviewItem[] = [];
   let finalSessions: PracticeSession[] = [];
   let writingCount = 0;
+  let dictationCount = 0;
 
-  await db.transaction('rw', [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards], async () => {
+  await db.transaction('rw', [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions], async () => {
     if (mode === 'replace') {
       await db.reviewItems.clear();
       await db.practiceSessions.clear();
@@ -387,6 +400,15 @@ export async function executeImport(
     await db.reviewItems.bulkPut(finalReviews);
     await db.practiceSessions.bulkPut(finalSessions);
 
+    // File cũ hoặc dữ liệu hỏng không được xóa nháp/kết quả nghe đang có trên máy.
+    if (importData.dictationSessions !== undefined) {
+      const sessions = mode === 'replace' ? importData.dictationSessions
+        : mergeDictationSessions(await db.dictationSessions.toArray(), importData.dictationSessions);
+      if (mode === 'replace') await db.dictationSessions.clear();
+      await db.dictationSessions.bulkPut(sessions);
+      dictationCount = sessions.length;
+    }
+
     const pendingId =
       typeof crypto !== 'undefined' && crypto.randomUUID
         ? crypto.randomUUID()
@@ -409,6 +431,7 @@ export async function executeImport(
     reviewCount: finalReviews.length,
     sessionCount: finalSessions.length,
     writingCount,
+    dictationCount,
   };
 }
 
@@ -424,12 +447,14 @@ export async function wipeAllLocalData(): Promise<void> {
 }
 
 export async function executeWipeAllData(): Promise<void> {
-  await db.transaction('rw', [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards], async () => {
+  await db.transaction('rw', [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions], async () => {
     await db.reviewItems.clear();
     await db.practiceSessions.clear();
     await db.pendingSync.clear();
     await db.writingCards.clear();
+    await db.dictationSessions.clear();
   });
 
+  if (typeof window !== 'undefined') window.localStorage.removeItem(DICTATION_SCOPE_KEY);
   clearAccountLink();
 }

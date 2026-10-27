@@ -20,7 +20,7 @@ export function isNavActive(itemHref: string, pathname: string): boolean {
   }
   const matches = (base: string) => pathname === base || pathname.startsWith(`${base}/`);
   // Luyện viết là một nhánh của Luyện tập
-  if (itemHref === '/luyen-tap' && matches('/luyen-viet')) return true;
+  if (itemHref === '/luyen-tap' && (matches('/luyen-viet') || matches('/nghe-moi-ngay'))) return true;
   return matches(itemHref);
 }
 
@@ -36,6 +36,7 @@ export function isNavActive(itemHref: string, pathname: string): boolean {
  * - /hoc/[so]/hoi-thoai/[id] (phiên nhập vai)
  */
 export function shouldHideAppChrome(pathname: string): boolean {
+  if (pathname === '/nghe-moi-ngay/phien' || pathname.startsWith('/nghe-moi-ngay/phien/')) return true;
   if (pathname === '/luyen-tap/phien' || pathname.startsWith('/luyen-tap/phien/')) {
     return true;
   }

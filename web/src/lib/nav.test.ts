@@ -49,6 +49,11 @@ test('isNavActive: "/luyen-tap" cũng active ở /luyen-viet và trang con', () 
 });
 
 test('shouldHideAppChrome: ẩn chrome (header/dock/sidebar) trong các phiên toàn màn hình', () => {
+  assert.equal(isNavActive('/luyen-tap', '/nghe-moi-ngay'), true);
+  assert.equal(isNavActive('/luyen-tap', '/nghe-moi-ngay/phien'), true);
+  assert.equal(isNavActive('/luyen-tap', '/nghe-moi-ngay-khac'), false);
+  assert.equal(shouldHideAppChrome('/nghe-moi-ngay/phien'), true);
+  assert.equal(shouldHideAppChrome('/nghe-moi-ngay'), false);
   // Ca đúng (phải ẩn):
   assert.equal(shouldHideAppChrome('/luyen-tap/phien'), true);
   assert.equal(shouldHideAppChrome('/luyen-tap/phien/'), true);

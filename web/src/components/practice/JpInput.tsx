@@ -1,7 +1,8 @@
 'use client';
 
-import { useId } from 'react';
+import { useId, useRef } from 'react';
 import { toTypedKana } from '@/lib/japanese';
+import { canSubmitJapanese } from '@/lib/jp-input';
 import { cn } from '@/lib/utils';
 
 export function JpInput({
@@ -20,6 +21,7 @@ export function JpInput({
   state?: 'idle' | 'correct' | 'incorrect';
 }) {
   const id = useId();
+  const composing = useRef(false);
   const captionId = `${id}-caption`;
   return (
     <div className="flex flex-col gap-2">
@@ -34,9 +36,14 @@ export function JpInput({
         autoComplete="off"
         autoCapitalize="off"
         spellCheck={false}
-        onChange={(e) => onChange(toTypedKana(e.target.value))}
+        onCompositionStart={() => { composing.current = true; }}
+        onCompositionEnd={(e) => {
+          composing.current = false;
+          onChange(toTypedKana(e.currentTarget.value));
+        }}
+        onChange={(e) => onChange(composing.current ? e.target.value : toTypedKana(e.target.value))}
         onKeyDown={(e) => {
-          if (e.key === 'Enter') {
+          if (canSubmitJapanese(e.nativeEvent, composing.current)) {
             e.preventDefault();
             onSubmit();
           }

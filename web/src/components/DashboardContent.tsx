@@ -276,6 +276,7 @@ export function DashboardContent({
           </TornCard>
 
           <div className="mt-3 space-y-2 md:hidden">
+            <ListRow href="/nghe-moi-ngay" icon={<FeatureIcon name="listening" />} title="Nghe mỗi ngày" />
             {draftList}
             {batchCount > 0 && (
               <ListRow
@@ -379,6 +380,9 @@ export function DashboardContent({
           </Tile>
         )}
 
+        <div className="hidden md:col-span-2 md:block lg:col-span-12">
+          <ListRow href="/nghe-moi-ngay" icon={<FeatureIcon name="listening" />} title="Nghe mỗi ngày" />
+        </div>
         {draftList.length > 0 && (
           <div className="hidden space-y-2 md:col-span-2 md:block lg:col-span-12">{draftList}</div>
         )}

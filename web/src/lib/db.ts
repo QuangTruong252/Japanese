@@ -1,7 +1,9 @@
 import Dexie, { type Table } from 'dexie';
 import type { AudioFileRecord, PracticeSession, ReviewItem, PendingSyncRecord, WritingCard } from '@/types';
+import type { DictationSession } from './dictation-session.ts';
 
 export class AppDatabase extends Dexie {
+  dictationSessions!: Table<DictationSession, string>;
   writingCards!: Table<WritingCard, string>;
   audioFiles!: Table<AudioFileRecord, string>;
   reviewItems!: Table<ReviewItem, string>;
@@ -31,6 +33,8 @@ export class AppDatabase extends Dexie {
 
     // Lịch viết tách riêng để không trộn vào ôn tập và đồng bộ tài khoản.
     this.version(3).stores({ writingCards: 'char, dueAt' });
+    // Một khóa cho mỗi ngày/phạm vi giữ chung nháp và kết quả, tránh ghi lịch sử hai lần.
+    this.version(4).stores({ dictationSessions: 'id, scope, updatedAt' }).upgrade(() => {});
   }
 }
 

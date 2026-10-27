@@ -15,6 +15,7 @@ import {
   type ParsedImportData,
 } from './backup.ts';
 import type { ReviewItem, PracticeSession, WritingCard } from '../types/index.ts';
+import { createDictationSession, answerDictation } from './dictation-session.ts';
 
 const createMockReviewItem = (overrides?: Partial<ReviewItem>): ReviewItem => ({
   targetId: 'vocab-1-1',
@@ -292,6 +293,7 @@ test('createExportData: includes writing cards and keeps schemaVersion 1', async
   t.mock.method(db.reviewItems, 'toArray', async () => []);
   t.mock.method(db.practiceSessions, 'toArray', async () => []);
   t.mock.method(db.writingCards, 'toArray', async () => writing);
+  t.mock.method(db.dictationSessions, 'toArray', async () => []);
   const data = await createExportData();
   assert.equal(data.schemaVersion, 1);
   assert.deepEqual(data.writingCards, writing);
@@ -312,7 +314,7 @@ for (const mode of ['replace', 'merge'] as const) {
       };
       t.mock.method(db, 'transaction', async (access: unknown, tables: unknown, run: () => Promise<unknown>) => {
         assert.equal(access, 'rw');
-        assert.deepEqual(tables, [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards]);
+        assert.deepEqual(tables, [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions]);
         return run();
       });
       for (const table of [db.reviewItems, db.practiceSessions]) {
@@ -347,7 +349,7 @@ for (const mode of ['replace', 'merge'] as const) {
 }
 
 test('executeWipeAllData: clears writing cards in the same transaction as other learning tables', async (t) => {
-  const tables = [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards];
+  const tables = [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions];
   let inside = false;
   t.mock.method(db, 'transaction', async (access: unknown, actual: unknown, run: () => Promise<void>) => {
     assert.equal(access, 'rw'); assert.deepEqual(actual, tables);
@@ -357,3 +359,43 @@ test('executeWipeAllData: clears writing cards in the same transaction as other 
   await executeWipeAllData();
   for (const clear of clears) assert.equal(clear.mock.callCount(), 1);
 });
+
+test('dictation backup roundtrip rejects corrupt snapshots and does not erase all-invalid data', () => {
+  const session = createDictationSession('2026-10-27', 10);
+  const payload = { app: 'minna-n5', schemaVersion: 1, dictationSessions: [session] };
+  const parsed = parseAndValidateImport(JSON.stringify(payload));
+  assert.ok(parsed.ok);
+  assert.deepEqual(parsed.data.dictationSessions, [session]);
+  const corrupted = { ...session, answers: [{ value: '', correct: true }] };
+  const mixed = parseAndValidateImport(JSON.stringify({ ...payload, reviewItems: [createMockReviewItem()], dictationSessions: [corrupted] }));
+  assert.ok(mixed.ok);
+  assert.equal(mixed.data.dictationSessions, undefined);
+  assert.equal(mixed.data.skippedDictationSessionsCount, 1);
+});
+
+for (const mode of ['merge', 'replace'] as const) {
+  test(`dictation ${mode} import stays local and old backup preserves sessions`, async (t) => {
+    const base = createDictationSession('2026-10-27', 10);
+    const progressed = answerDictation(base, 0, base.sentences[0].kana);
+    t.mock.method(db, 'transaction', async (_access: unknown, _tables: unknown, run: () => Promise<unknown>) => run());
+    for (const table of [db.reviewItems, db.practiceSessions, db.writingCards]) {
+      t.mock.method(table, 'clear', async () => {});
+      t.mock.method(table, 'toArray', async () => []);
+      t.mock.method(table, 'bulkPut', async () => '');
+    }
+    const sync = t.mock.method(db.pendingSync, 'add', async () => 'sync');
+    t.mock.method(db.dictationSessions, 'toArray', async () => [base]);
+    const clear = t.mock.method(db.dictationSessions, 'clear', async () => {});
+    const put = t.mock.method(db.dictationSessions, 'bulkPut', async () => '');
+    const data: ParsedImportData = { fileName: 'test.json', schemaVersion: 1, app: 'minna-n5', exportedAt: new Date().toISOString(), reviewItems: [], practiceSessions: [], skippedReviewItemsCount: 0, skippedSessionsCount: 0, skippedWritingCardsCount: 0 };
+    await executeImport(data, mode);
+    assert.equal(put.mock.callCount(), 0);
+    assert.equal(clear.mock.callCount(), 0);
+    const result = await executeImport({ ...data, dictationSessions: [progressed] }, mode);
+    assert.deepEqual(put.mock.calls[0].arguments[0], [progressed]);
+    assert.equal(clear.mock.callCount(), mode === 'replace' ? 1 : 0);
+    assert.equal(result.dictationCount, 1);
+    const record = sync.mock.calls[1].arguments[0] as { payload: Record<string, unknown> };
+    assert.equal('dictationSessions' in record.payload, false);
+  });
+}

@@ -1,0 +1,1615 @@
+{
+  "version": "2026-10-27-v1",
+  "vocabulary": {
+    "1:watashi": {
+      "lesson": 1,
+      "id": "watashi",
+      "word": "私[わたし]",
+      "kana": "わたし",
+      "verbForms": null
+    },
+    "1:kaishain": {
+      "lesson": 1,
+      "id": "kaishain",
+      "word": "会社員[かいしゃいん]",
+      "kana": "かいしゃいん",
+      "verbForms": null
+    },
+    "1:hai": {
+      "lesson": 1,
+      "id": "hai",
+      "word": "はい",
+      "kana": "はい",
+      "verbForms": null
+    },
+    "1:amerika": {
+      "lesson": 1,
+      "id": "amerika",
+      "word": "アメリカ",
+      "kana": "アメリカ",
+      "verbForms": null
+    },
+    "1:jin": {
+      "lesson": 1,
+      "id": "jin",
+      "word": "〜人[じん]",
+      "kana": "じん",
+      "verbForms": null
+    },
+    "2:kore": {
+      "lesson": 2,
+      "id": "kore",
+      "word": "これ",
+      "kana": "これ",
+      "verbForms": null
+    },
+    "2:jisho": {
+      "lesson": 2,
+      "id": "jisho",
+      "word": "辞書[じしょ]",
+      "kana": "じしょ",
+      "verbForms": null
+    },
+    "2:sore": {
+      "lesson": 2,
+      "id": "sore",
+      "word": "それ",
+      "kana": "それ",
+      "verbForms": null
+    },
+    "2:boorupen": {
+      "lesson": 2,
+      "id": "boorupen",
+      "word": "ボールペン",
+      "kana": "ボールペン",
+      "verbForms": null
+    },
+    "2:are": {
+      "lesson": 2,
+      "id": "are",
+      "word": "あれ",
+      "kana": "あれ",
+      "verbForms": null
+    },
+    "2:kaban": {
+      "lesson": 2,
+      "id": "kaban",
+      "word": "かばん",
+      "kana": "かばん",
+      "verbForms": null
+    },
+    "2:kasa": {
+      "lesson": 2,
+      "id": "kasa",
+      "word": "傘[かさ]",
+      "kana": "かさ",
+      "verbForms": null
+    },
+    "3:koko": {
+      "lesson": 3,
+      "id": "koko",
+      "word": "ここ",
+      "kana": "ここ",
+      "verbForms": null
+    },
+    "3:kaigishitsu": {
+      "lesson": 3,
+      "id": "kaigishitsu",
+      "word": "会議室[かいぎしつ]",
+      "kana": "かいぎしつ",
+      "verbForms": null
+    },
+    "3:denwa": {
+      "lesson": 3,
+      "id": "denwa",
+      "word": "電話[でんわ]",
+      "kana": "でんわ",
+      "verbForms": null
+    },
+    "3:jimusho": {
+      "lesson": 3,
+      "id": "jimusho",
+      "word": "事務所[じむしょ]",
+      "kana": "じむしょ",
+      "verbForms": null
+    },
+    "3:toire": {
+      "lesson": 3,
+      "id": "toire",
+      "word": "トイレ（お 手洗[てあら]い）",
+      "kana": "トイレ（おてあらい）",
+      "verbForms": null
+    },
+    "3:doko": {
+      "lesson": 3,
+      "id": "doko",
+      "word": "どこ",
+      "kana": "どこ",
+      "verbForms": null
+    },
+    "4:mainichi": {
+      "lesson": 4,
+      "id": "mainichi",
+      "word": "毎日[まいにち]",
+      "kana": "まいにち",
+      "verbForms": null
+    },
+    "4:benkyou-shimasu": {
+      "lesson": 4,
+      "id": "benkyou-shimasu",
+      "word": "勉強[べんきょう]する",
+      "kana": "べんきょうする",
+      "verbForms": {
+        "dictionary": "勉強[べんきょう]する",
+        "dictionaryKana": "べんきょうする",
+        "masu": "勉強[べんきょう]します",
+        "masuKana": "べんきょうします",
+        "te": "勉強[べんきょう]して",
+        "teKana": "べんきょうして",
+        "nai": "勉強[べんきょう]しない",
+        "naiKana": "べんきょうしない",
+        "ta": "勉強[べんきょう]した",
+        "taKana": "べんきょうした"
+      }
+    },
+    "4:kinou": {
+      "lesson": 4,
+      "id": "kinou",
+      "word": "きのう",
+      "kana": "きのう",
+      "verbForms": null
+    },
+    "4:hatarakimasu": {
+      "lesson": 4,
+      "id": "hatarakimasu",
+      "word": "働[はたら]く",
+      "kana": "はたらく",
+      "verbForms": {
+        "dictionary": "働[はたら]く",
+        "dictionaryKana": "はたらく",
+        "masu": "働[はたら]きます",
+        "masuKana": "はたらきます",
+        "te": "働[はたら]いて",
+        "teKana": "はたらいて",
+        "nai": "働[はたら]かない",
+        "naiKana": "はたらかない",
+        "ta": "働[はたら]いた",
+        "taKana": "はたらいた"
+      }
+    },
+    "3:uchi": {
+      "lesson": 3,
+      "id": "uchi",
+      "word": "うち",
+      "kana": "うち",
+      "verbForms": null
+    },
+    "5:kaerimasu": {
+      "lesson": 5,
+      "id": "kaerimasu",
+      "word": "帰[かえ]る",
+      "kana": "かえる",
+      "verbForms": {
+        "dictionary": "帰[かえ]る",
+        "dictionaryKana": "かえる",
+        "masu": "帰[かえ]ります",
+        "masuKana": "かえります",
+        "te": "帰[かえ]って",
+        "teKana": "かえって",
+        "nai": "帰[かえ]らない",
+        "naiKana": "かえらない",
+        "ta": "帰[かえ]った",
+        "taKana": "かえった"
+      }
+    },
+    "5:densha": {
+      "lesson": 5,
+      "id": "densha",
+      "word": "電車[でんしゃ]",
+      "kana": "でんしゃ",
+      "verbForms": null
+    },
+    "3:kaisha": {
+      "lesson": 3,
+      "id": "kaisha",
+      "word": "会社[かいしゃ]",
+      "kana": "かいしゃ",
+      "verbForms": null
+    },
+    "5:ikimasu": {
+      "lesson": 5,
+      "id": "ikimasu",
+      "word": "行[い]く",
+      "kana": "いく",
+      "verbForms": {
+        "dictionary": "行[い]く",
+        "dictionaryKana": "いく",
+        "masu": "行[い]きます",
+        "masuKana": "いきます",
+        "te": "行[い]って",
+        "teKana": "いって",
+        "nai": "行[い]かない",
+        "naiKana": "いかない",
+        "ta": "行[い]った",
+        "taKana": "いった"
+      }
+    },
+    "6:pan": {
+      "lesson": 6,
+      "id": "pan",
+      "word": "パン",
+      "kana": "パン",
+      "verbForms": null
+    },
+    "6:tabemasu": {
+      "lesson": 6,
+      "id": "tabemasu",
+      "word": "食[た]べる",
+      "kana": "たべる",
+      "verbForms": {
+        "dictionary": "食[た]べる",
+        "dictionaryKana": "たべる",
+        "masu": "食[た]べます",
+        "masuKana": "たべます",
+        "te": "食[た]べて",
+        "teKana": "たべて",
+        "nai": "食[た]べない",
+        "naiKana": "たべない",
+        "ta": "食[た]べた",
+        "taKana": "たべた"
+      }
+    },
+    "6:shashin": {
+      "lesson": 6,
+      "id": "shashin",
+      "word": "写真[しゃしん]",
+      "kana": "しゃしん",
+      "verbForms": null
+    },
+    "6:torimasu": {
+      "lesson": 6,
+      "id": "torimasu",
+      "word": "撮[と]る",
+      "kana": "とる",
+      "verbForms": {
+        "dictionary": "撮[と]る",
+        "dictionaryKana": "とる",
+        "masu": "撮[と]ります",
+        "masuKana": "とります",
+        "te": "撮[と]って",
+        "teKana": "とって",
+        "nai": "撮[と]らない",
+        "naiKana": "とらない",
+        "ta": "撮[と]った",
+        "taKana": "とった"
+      }
+    },
+    "6:tenisu": {
+      "lesson": 6,
+      "id": "tenisu",
+      "word": "テニス",
+      "kana": "テニス",
+      "verbForms": null
+    },
+    "6:shimasu": {
+      "lesson": 6,
+      "id": "shimasu",
+      "word": "する",
+      "kana": "する",
+      "verbForms": {
+        "dictionary": "する",
+        "dictionaryKana": "する",
+        "masu": "します",
+        "masuKana": "します",
+        "te": "して",
+        "teKana": "して",
+        "nai": "しない",
+        "naiKana": "しない",
+        "ta": "した",
+        "taKana": "した"
+      }
+    },
+    "5:eki": {
+      "lesson": 5,
+      "id": "eki",
+      "word": "駅[えき]",
+      "kana": "えき",
+      "verbForms": null
+    },
+    "2:shinbun": {
+      "lesson": 2,
+      "id": "shinbun",
+      "word": "新聞[しんぶん]",
+      "kana": "しんぶん",
+      "verbForms": null
+    },
+    "6:kaimasu": {
+      "lesson": 6,
+      "id": "kaimasu",
+      "word": "買[か]う",
+      "kana": "かう",
+      "verbForms": {
+        "dictionary": "買[か]う",
+        "dictionaryKana": "かう",
+        "masu": "買[か]います",
+        "masuKana": "かいます",
+        "te": "買[か]って",
+        "teKana": "かって",
+        "nai": "買[か]わない",
+        "naiKana": "かわない",
+        "ta": "買[か]った",
+        "taKana": "かった"
+      }
+    },
+    "7:hashi": {
+      "lesson": 7,
+      "id": "hashi",
+      "word": "はし",
+      "kana": "はし",
+      "verbForms": null
+    },
+    "2:nihongo": {
+      "lesson": 2,
+      "id": "nihongo",
+      "word": "日本語[にほんご]",
+      "kana": "にほんご",
+      "verbForms": null
+    },
+    "6:tegami": {
+      "lesson": 6,
+      "id": "tegami",
+      "word": "手紙[てがみ]",
+      "kana": "てがみ",
+      "verbForms": null
+    },
+    "6:kakimasu": {
+      "lesson": 6,
+      "id": "kakimasu",
+      "word": "書[か]く",
+      "kana": "かく",
+      "verbForms": {
+        "dictionary": "書[か]く",
+        "dictionaryKana": "かく",
+        "masu": "書[か]きます",
+        "masuKana": "かきます",
+        "te": "書[か]いて",
+        "teKana": "かいて",
+        "nai": "書[か]かない",
+        "naiKana": "かかない",
+        "ta": "書[か]いた",
+        "taKana": "かいた"
+      }
+    },
+    "2:kono": {
+      "lesson": 2,
+      "id": "kono",
+      "word": "この〜",
+      "kana": "この",
+      "verbForms": null
+    },
+    "3:heya": {
+      "lesson": 3,
+      "id": "heya",
+      "word": "部屋[へや]",
+      "kana": "へや",
+      "verbForms": null
+    },
+    "8:shizuka": {
+      "lesson": 8,
+      "id": "shizuka",
+      "word": "静[しず]か[な]",
+      "kana": "しずか",
+      "verbForms": null
+    },
+    "2:hon": {
+      "lesson": 2,
+      "id": "hon",
+      "word": "本[ほん]",
+      "kana": "ほん",
+      "verbForms": null
+    },
+    "8:amari": {
+      "lesson": 8,
+      "id": "amari",
+      "word": "あまり",
+      "kana": "あまり",
+      "verbForms": null
+    },
+    "8:omoshiroi": {
+      "lesson": 8,
+      "id": "omoshiroi",
+      "word": "おもしろい",
+      "kana": "おもしろい",
+      "verbForms": null
+    },
+    "9:wakarimasu": {
+      "lesson": 9,
+      "id": "wakarimasu",
+      "word": "わかる",
+      "kana": "わかる",
+      "verbForms": {
+        "dictionary": "わかる",
+        "dictionaryKana": "わかる",
+        "masu": "わかります",
+        "masuKana": "わかります",
+        "te": "わかって",
+        "teKana": "わかって",
+        "nai": "わからない",
+        "naiKana": "わからない",
+        "ta": "わかった",
+        "taKana": "わかった"
+      }
+    },
+    "2:eigo": {
+      "lesson": 2,
+      "id": "eigo",
+      "word": "英語[えいご]",
+      "kana": "えいご",
+      "verbForms": null
+    },
+    "9:yoku": {
+      "lesson": 9,
+      "id": "yoku",
+      "word": "よく",
+      "kana": "よく",
+      "verbForms": null
+    },
+    "2:tsukue": {
+      "lesson": 2,
+      "id": "tsukue",
+      "word": "机[つくえ]",
+      "kana": "つくえ",
+      "verbForms": null
+    },
+    "10:ue": {
+      "lesson": 10,
+      "id": "ue",
+      "word": "上[うえ]",
+      "kana": "うえ",
+      "verbForms": null
+    },
+    "9:arimasu": {
+      "lesson": 9,
+      "id": "arimasu",
+      "word": "ある",
+      "kana": "ある",
+      "verbForms": {
+        "dictionary": "ある",
+        "dictionaryKana": "ある",
+        "masu": "あります",
+        "masuKana": "あります",
+        "te": "あって",
+        "teKana": "あって",
+        "naiKana": "",
+        "ta": "あった",
+        "taKana": "あった"
+      }
+    },
+    "6:niwa": {
+      "lesson": 6,
+      "id": "niwa",
+      "word": "庭[にわ]",
+      "kana": "にわ",
+      "verbForms": null
+    },
+    "10:inu": {
+      "lesson": 10,
+      "id": "inu",
+      "word": "犬[いぬ]",
+      "kana": "いぬ",
+      "verbForms": null
+    },
+    "10:imasu": {
+      "lesson": 10,
+      "id": "imasu",
+      "word": "いる",
+      "kana": "いる",
+      "verbForms": {
+        "dictionary": "いる",
+        "dictionaryKana": "いる",
+        "masu": "います",
+        "masuKana": "います",
+        "te": "いて",
+        "teKana": "いて",
+        "nai": "いない",
+        "naiKana": "いない",
+        "ta": "いた",
+        "taKana": "いた"
+      }
+    },
+    "10:hako": {
+      "lesson": 10,
+      "id": "hako",
+      "word": "箱[はこ]",
+      "kana": "はこ",
+      "verbForms": null
+    },
+    "10:naka": {
+      "lesson": 10,
+      "id": "naka",
+      "word": "中[なか]",
+      "kana": "なか",
+      "verbForms": null
+    },
+    "8:furui": {
+      "lesson": 8,
+      "id": "furui",
+      "word": "古[ふる]い",
+      "kana": "ふるい",
+      "verbForms": null
+    },
+    "11:mikan": {
+      "lesson": 11,
+      "id": "mikan",
+      "word": "みかん",
+      "kana": "みかん",
+      "verbForms": null
+    },
+    "11:yottsu": {
+      "lesson": 11,
+      "id": "yottsu",
+      "word": "よっつ",
+      "kana": "よっつ",
+      "verbForms": null
+    },
+    "12:ame": {
+      "lesson": 12,
+      "id": "ame",
+      "word": "雨[あめ]",
+      "kana": "あめ",
+      "verbForms": null
+    },
+    "9:ryokou": {
+      "lesson": 9,
+      "id": "ryokou",
+      "word": "旅行[りょこう]",
+      "kana": "りょこう",
+      "verbForms": null
+    },
+    "8:tanoshii": {
+      "lesson": 8,
+      "id": "tanoshii",
+      "word": "楽[たの]しい",
+      "kana": "たのしい",
+      "verbForms": null
+    },
+    "5:tomodachi": {
+      "lesson": 5,
+      "id": "tomodachi",
+      "word": "友達[ともだち]",
+      "kana": "ともだち",
+      "verbForms": null
+    },
+    "13:hoshii": {
+      "lesson": 13,
+      "id": "hoshii",
+      "word": "欲[ほ]しい",
+      "kana": "ほしい",
+      "verbForms": null
+    },
+    "12:tenpura": {
+      "lesson": 12,
+      "id": "tenpura",
+      "word": "てんぷら",
+      "kana": "てんぷら",
+      "verbForms": null
+    },
+    "6:chotto": {
+      "lesson": 6,
+      "id": "chotto",
+      "word": "ちょっと",
+      "kana": "ちょっと",
+      "verbForms": null
+    },
+    "14:machimasu": {
+      "lesson": 14,
+      "id": "machimasu",
+      "word": "待[ま]つ",
+      "kana": "まつ",
+      "verbForms": {
+        "dictionary": "待[ま]つ",
+        "dictionaryKana": "まつ",
+        "masu": "待[ま]ちます",
+        "masuKana": "まちます",
+        "te": "待[ま]って",
+        "teKana": "まって",
+        "nai": "待[ま]たない",
+        "naiKana": "またない",
+        "ta": "待[ま]った",
+        "taKana": "まった"
+      }
+    },
+    "11:ane": {
+      "lesson": 11,
+      "id": "ane",
+      "word": "姉[あね]",
+      "kana": "あね",
+      "verbForms": null
+    },
+    "15:koukou": {
+      "lesson": 15,
+      "id": "koukou",
+      "word": "高校[こうこう]",
+      "kana": "こうこう",
+      "verbForms": null
+    },
+    "7:oshiemasu": {
+      "lesson": 7,
+      "id": "oshiemasu",
+      "word": "教[おし]える",
+      "kana": "おしえる",
+      "verbForms": {
+        "dictionary": "教[おし]える",
+        "dictionaryKana": "おしえる",
+        "masu": "教[おし]えます",
+        "masuKana": "おしえます",
+        "te": "教[おし]えて",
+        "teKana": "おしえて",
+        "nai": "教[おし]えない",
+        "naiKana": "おしえない",
+        "ta": "教[おし]えた",
+        "taKana": "おしえた"
+      }
+    },
+    "4:nichiyoubi": {
+      "lesson": 4,
+      "id": "nichiyoubi",
+      "word": "日曜日[にちようび]",
+      "kana": "にちようび",
+      "verbForms": null
+    },
+    "13:kaimono-shimasu": {
+      "lesson": 13,
+      "id": "kaimono-shimasu",
+      "word": "買[か]い 物[もの]する",
+      "kana": "かいものする",
+      "verbForms": {
+        "dictionary": "買[か]い 物[もの]する",
+        "dictionaryKana": "かいものする",
+        "masu": "買[か]い 物[もの]します",
+        "masuKana": "かいものします",
+        "te": "買[か]い 物[もの]して",
+        "teKana": "かいものして",
+        "nai": "買[か]い 物[もの]しない",
+        "naiKana": "かいものしない",
+        "ta": "買[か]い 物[もの]した",
+        "taKana": "かいものした"
+      }
+    },
+    "4:eiga": {
+      "lesson": 4,
+      "id": "eiga",
+      "word": "映画[えいが]",
+      "kana": "えいが",
+      "verbForms": null
+    },
+    "6:mimasu": {
+      "lesson": 6,
+      "id": "mimasu",
+      "word": "見[み]る",
+      "kana": "みる",
+      "verbForms": {
+        "dictionary": "見[み]る",
+        "dictionaryKana": "みる",
+        "masu": "見[み]ます",
+        "masuKana": "みます",
+        "te": "見[み]て",
+        "teKana": "みて",
+        "nai": "見[み]ない",
+        "naiKana": "みない",
+        "ta": "見[み]た",
+        "taKana": "みた"
+      }
+    },
+    "6:tabako": {
+      "lesson": 6,
+      "id": "tabako",
+      "word": "たばこ",
+      "kana": "たばこ",
+      "verbForms": null
+    },
+    "6:suimasu": {
+      "lesson": 6,
+      "id": "suimasu",
+      "word": "吸[す]う",
+      "kana": "すう",
+      "verbForms": {
+        "dictionary": "吸[す]う",
+        "dictionaryKana": "すう",
+        "masu": "吸[す]います",
+        "masuKana": "すいます",
+        "te": "吸[す]って",
+        "teKana": "すって",
+        "nai": "吸[す]わない",
+        "naiKana": "すわない",
+        "ta": "吸[す]った",
+        "taKana": "すった"
+      }
+    },
+    "2:kaado": {
+      "lesson": 2,
+      "id": "kaado",
+      "word": "カード",
+      "kana": "カード",
+      "verbForms": null
+    },
+    "17:haraimasu": {
+      "lesson": 17,
+      "id": "haraimasu",
+      "word": "払[はら]う",
+      "kana": "はらう",
+      "verbForms": {
+        "dictionary": "払[はら]う",
+        "dictionaryKana": "はらう",
+        "masu": "払[はら]います",
+        "masuKana": "はらいます",
+        "te": "払[はら]って",
+        "teKana": "はらって",
+        "nai": "払[はら]わない",
+        "naiKana": "はらわない",
+        "ta": "払[はら]った",
+        "taKana": "はらった"
+      }
+    },
+    "18:dekimasu": {
+      "lesson": 18,
+      "id": "dekimasu",
+      "word": "できる",
+      "kana": "できる",
+      "verbForms": {
+        "dictionary": "できる",
+        "dictionaryKana": "できる",
+        "masu": "できます",
+        "masuKana": "できます",
+        "te": "できて",
+        "teKana": "できて",
+        "nai": "できない",
+        "naiKana": "できない",
+        "ta": "できた",
+        "taKana": "できた"
+      }
+    },
+    "19:mousugu": {
+      "lesson": 19,
+      "id": "mousugu",
+      "word": "もうすぐ",
+      "kana": "もうすぐ",
+      "verbForms": null
+    },
+    "12:atatakai": {
+      "lesson": 12,
+      "id": "atatakai",
+      "word": "暖[あたた]かい・温[あたた]かい",
+      "kana": "あたたかい",
+      "verbForms": null
+    },
+    "19:narimasu": {
+      "lesson": 19,
+      "id": "narimasu",
+      "word": "なる",
+      "kana": "なる",
+      "verbForms": {
+        "dictionary": "なる",
+        "dictionaryKana": "なる",
+        "masu": "なります",
+        "masuKana": "なります",
+        "te": "なって",
+        "teKana": "なって",
+        "nai": "ならない",
+        "naiKana": "ならない",
+        "ta": "なった",
+        "taKana": "なった"
+      }
+    },
+    "2:sono": {
+      "lesson": 2,
+      "id": "sono",
+      "word": "その〜",
+      "kana": "その",
+      "verbForms": null
+    },
+    "8:ii": {
+      "lesson": 8,
+      "id": "ii",
+      "word": "いい（よい）",
+      "kana": "いい",
+      "verbForms": null
+    },
+    "20:kedo": {
+      "lesson": 20,
+      "id": "kedo",
+      "word": "〜けど",
+      "kana": "けど",
+      "verbForms": null
+    },
+    "8:takai": {
+      "lesson": 8,
+      "id": "takai",
+      "word": "高[たか]い",
+      "kana": "たかい",
+      "verbForms": null
+    },
+    "1:nihon": {
+      "lesson": 1,
+      "id": "nihon",
+      "word": "日本[にほん]",
+      "kana": "にほん",
+      "verbForms": null
+    },
+    "21:bukka": {
+      "lesson": 21,
+      "id": "bukka",
+      "word": "物価[ぶっか]",
+      "kana": "ぶっか",
+      "verbForms": null
+    },
+    "21:omoimasu": {
+      "lesson": 21,
+      "id": "omoimasu",
+      "word": "思[おも]う",
+      "kana": "おもう",
+      "verbForms": {
+        "dictionary": "思[おも]う",
+        "dictionaryKana": "おもう",
+        "masu": "思[おも]います",
+        "masuKana": "おもいます",
+        "te": "思[おも]って",
+        "teKana": "おもって",
+        "nai": "思[おも]わない",
+        "naiKana": "おもわない",
+        "ta": "思[おも]った",
+        "taKana": "おもった"
+      }
+    },
+    "7:haha": {
+      "lesson": 7,
+      "id": "haha",
+      "word": "母[はは]",
+      "kana": "はは",
+      "verbForms": null
+    },
+    "15:tsukurimasu": {
+      "lesson": 15,
+      "id": "tsukurimasu",
+      "word": "作[つく]る",
+      "kana": "つくる",
+      "verbForms": {
+        "dictionary": "作[つく]る",
+        "dictionaryKana": "つくる",
+        "masu": "作[つく]ります",
+        "masuKana": "つくります",
+        "te": "作[つく]って",
+        "teKana": "つくって",
+        "nai": "作[つく]らない",
+        "naiKana": "つくらない",
+        "ta": "作[つく]った",
+        "taKana": "つくった"
+      }
+    },
+    "22:keeki": {
+      "lesson": 22,
+      "id": "keeki",
+      "word": "ケーキ",
+      "kana": "ケーキ",
+      "verbForms": null
+    },
+    "19:nemui": {
+      "lesson": 19,
+      "id": "nemui",
+      "word": "眠[ねむ]い",
+      "kana": "ねむい",
+      "verbForms": null
+    },
+    "2:koohii": {
+      "lesson": 2,
+      "id": "koohii",
+      "word": "コーヒー",
+      "kana": "コーヒー",
+      "verbForms": null
+    },
+    "6:nomimasu": {
+      "lesson": 6,
+      "id": "nomimasu",
+      "word": "飲[の]む",
+      "kana": "のむ",
+      "verbForms": {
+        "dictionary": "飲[の]む",
+        "dictionaryKana": "のむ",
+        "masu": "飲[の]みます",
+        "masuKana": "のみます",
+        "te": "飲[の]んで",
+        "teKana": "のんで",
+        "nai": "飲[の]まない",
+        "naiKana": "のまない",
+        "ta": "飲[の]んだ",
+        "taKana": "のんだ"
+      }
+    },
+    "11:imouto": {
+      "lesson": 11,
+      "id": "imouto",
+      "word": "妹[いもうと]",
+      "kana": "いもうと",
+      "verbForms": null
+    },
+    "6:shukudai": {
+      "lesson": 6,
+      "id": "shukudai",
+      "word": "宿題[しゅくだい]",
+      "kana": "しゅくだい",
+      "verbForms": null
+    },
+    "7:agemasu": {
+      "lesson": 7,
+      "id": "agemasu",
+      "word": "あげる",
+      "kana": "あげる",
+      "verbForms": {
+        "dictionary": "あげる",
+        "dictionaryKana": "あげる",
+        "masu": "あげます",
+        "masuKana": "あげます",
+        "te": "あげて",
+        "teKana": "あげて",
+        "nai": "あげない",
+        "naiKana": "あげない",
+        "ta": "あげた",
+        "taKana": "あげた"
+      }
+    }
+  },
+  "sentences": [
+    {
+      "id": "l01-wa-desu-1",
+      "lesson": 1,
+      "minimumLesson": 1,
+      "grammarId": "wa-desu",
+      "exampleIndex": 1,
+      "jp": "私[わたし]は 会社員[かいしゃいん]です。",
+      "vi": "Tôi là nhân viên công ty.",
+      "vocabulary": [
+        "1:watashi",
+        "1:kaishain"
+      ],
+      "grammarSnapshot": "a0c41593dbdd5a626a7843d8b765ed02dfaa566c3eafc621c0bcd0af7e04d6b1"
+    },
+    {
+      "id": "l01-desu-ka-1",
+      "lesson": 1,
+      "minimumLesson": 1,
+      "grammarId": "desu-ka",
+      "exampleIndex": 1,
+      "jp": "はい、アメリカ 人[じん]です。",
+      "vi": "Vâng, là người Mỹ.",
+      "vocabulary": [
+        "1:hai",
+        "1:amerika",
+        "1:jin"
+      ],
+      "grammarSnapshot": "5968b70c93bb08bbe36185390d3b22c16c12ac51ad135b9c3ed133f590deb157"
+    },
+    {
+      "id": "l02-kore-sore-are-0",
+      "lesson": 2,
+      "minimumLesson": 2,
+      "grammarId": "kore-sore-are",
+      "exampleIndex": 0,
+      "jp": "これは 辞書[じしょ]です。",
+      "vi": "Đây là cuốn từ điển.",
+      "vocabulary": [
+        "2:kore",
+        "2:jisho"
+      ],
+      "grammarSnapshot": "d01eeda45b086ac418813cbf995d4966ae517bc833e00277fd8d33b071e3a54f"
+    },
+    {
+      "id": "l02-kore-sore-are-1",
+      "lesson": 2,
+      "minimumLesson": 2,
+      "grammarId": "kore-sore-are",
+      "exampleIndex": 1,
+      "jp": "それはボールペンですか。",
+      "vi": "Đó có phải là bút bi không?",
+      "vocabulary": [
+        "2:sore",
+        "2:boorupen"
+      ],
+      "grammarSnapshot": "d01eeda45b086ac418813cbf995d4966ae517bc833e00277fd8d33b071e3a54f"
+    },
+    {
+      "id": "l02-kore-sore-are-2",
+      "lesson": 2,
+      "minimumLesson": 2,
+      "grammarId": "kore-sore-are",
+      "exampleIndex": 2,
+      "jp": "あれは 私[わたし]のかばんです。",
+      "vi": "Kia là chiếc cặp của tôi.",
+      "vocabulary": [
+        "2:are",
+        "1:watashi",
+        "2:kaban"
+      ],
+      "grammarSnapshot": "d01eeda45b086ac418813cbf995d4966ae517bc833e00277fd8d33b071e3a54f"
+    },
+    {
+      "id": "l02-no-posesion-1",
+      "lesson": 2,
+      "minimumLesson": 2,
+      "grammarId": "no-posesion",
+      "exampleIndex": 1,
+      "jp": "これは 私[わたし]の 傘[かさ]です。",
+      "vi": "Đây là chiếc ô của tôi.",
+      "vocabulary": [
+        "2:kore",
+        "1:watashi",
+        "2:kasa"
+      ],
+      "grammarSnapshot": "e43a1acb6e55264d17c5700efc75e069a40cf95f0ec3e2ad9be336740bd82892"
+    },
+    {
+      "id": "l03-koko-soko-asoko-0",
+      "lesson": 3,
+      "minimumLesson": 3,
+      "grammarId": "koko-soko-asoko",
+      "exampleIndex": 0,
+      "jp": "ここは 会議室[かいぎしつ]です。",
+      "vi": "Đây là phòng họp.",
+      "vocabulary": [
+        "3:koko",
+        "3:kaigishitsu"
+      ],
+      "grammarSnapshot": "dfc25850bc97702db7e55a109090b12ecde3b028027bc7127ffba0cbbc6acccf"
+    },
+    {
+      "id": "l03-wa-lugar-desu-0",
+      "lesson": 3,
+      "minimumLesson": 3,
+      "grammarId": "wa-lugar-desu",
+      "exampleIndex": 0,
+      "jp": "電話[でんわ]は 事務所[じむしょ]です。",
+      "vi": "Điện thoại ở văn phòng.",
+      "vocabulary": [
+        "3:denwa",
+        "3:jimusho"
+      ],
+      "grammarSnapshot": "ec6bd3459d5975c067c748c504c33b4a9b5249315422260081fd218ffcb88ce1"
+    },
+    {
+      "id": "l03-doko-dochira-0",
+      "lesson": 3,
+      "minimumLesson": 3,
+      "grammarId": "doko-dochira",
+      "exampleIndex": 0,
+      "jp": "トイレはどこですか。",
+      "vi": "Nhà vệ sinh ở đâu vậy?",
+      "vocabulary": [
+        "3:toire",
+        "3:doko"
+      ],
+      "grammarSnapshot": "4ecbe205b8c0cb4e2a893295f511ed866d33d56be91647f1b9234fa01ac281a8"
+    },
+    {
+      "id": "l04-verbos-masu-0",
+      "lesson": 4,
+      "minimumLesson": 4,
+      "grammarId": "verbos-masu",
+      "exampleIndex": 0,
+      "jp": "毎日[まいにち] 勉強[べんきょう]します。",
+      "vi": "Hàng ngày tôi đều học bài.",
+      "vocabulary": [
+        "4:mainichi",
+        "4:benkyou-shimasu"
+      ],
+      "grammarSnapshot": "8f806940df8b3436a3cee9184ffb6b3c803ae0492e4ebf0413b4157a9df171fd"
+    },
+    {
+      "id": "l04-verbos-masu-1",
+      "lesson": 4,
+      "minimumLesson": 4,
+      "grammarId": "verbos-masu",
+      "exampleIndex": 1,
+      "jp": "きのう 働[はたら]きませんでした。",
+      "vi": "Hôm qua tôi đã không làm việc.",
+      "vocabulary": [
+        "4:kinou",
+        "4:hatarakimasu"
+      ],
+      "grammarSnapshot": "8f806940df8b3436a3cee9184ffb6b3c803ae0492e4ebf0413b4157a9df171fd"
+    },
+    {
+      "id": "l05-e-ikimasu-1",
+      "lesson": 5,
+      "minimumLesson": 5,
+      "grammarId": "e-ikimasu",
+      "exampleIndex": 1,
+      "jp": "うちへ 帰[かえ]ります。",
+      "vi": "Tôi trở về nhà.",
+      "vocabulary": [
+        "3:uchi",
+        "5:kaerimasu"
+      ],
+      "grammarSnapshot": "9c715ca08e28eaaa25ca2199694583778c02730a2c4d0714441f761eb7360b12"
+    },
+    {
+      "id": "l05-de-vehiculo-0",
+      "lesson": 5,
+      "minimumLesson": 5,
+      "grammarId": "de-vehiculo",
+      "exampleIndex": 0,
+      "jp": "電車[でんしゃ]で 会社[かいしゃ]へ 行[い]きます。",
+      "vi": "Tôi đi đến công ty bằng tàu điện.",
+      "vocabulary": [
+        "5:densha",
+        "3:kaisha",
+        "5:ikimasu"
+      ],
+      "grammarSnapshot": "5e82746ca757a241671e643d660d8d4895813f8230e4b36614e3610de2c7f64b"
+    },
+    {
+      "id": "l06-o-transitivo-0",
+      "lesson": 6,
+      "minimumLesson": 6,
+      "grammarId": "o-transitivo",
+      "exampleIndex": 0,
+      "jp": "パンを 食[た]べます。",
+      "vi": "Tôi ăn bánh mì.",
+      "vocabulary": [
+        "6:pan",
+        "6:tabemasu"
+      ],
+      "grammarSnapshot": "1c7c586845dc83634bc74240b4b3d0cd3c0b22a12e67b9a14ea1a23aea8fd73e"
+    },
+    {
+      "id": "l06-o-transitivo-1",
+      "lesson": 6,
+      "minimumLesson": 6,
+      "grammarId": "o-transitivo",
+      "exampleIndex": 1,
+      "jp": "写真[しゃしん]を 撮[と]ります。",
+      "vi": "Tôi chụp ảnh.",
+      "vocabulary": [
+        "6:shashin",
+        "6:torimasu"
+      ],
+      "grammarSnapshot": "1c7c586845dc83634bc74240b4b3d0cd3c0b22a12e67b9a14ea1a23aea8fd73e"
+    },
+    {
+      "id": "l06-o-shimasu-0",
+      "lesson": 6,
+      "minimumLesson": 6,
+      "grammarId": "o-shimasu",
+      "exampleIndex": 0,
+      "jp": "テニスを します。",
+      "vi": "Tôi chơi quần vợt.",
+      "vocabulary": [
+        "6:tenisu",
+        "6:shimasu"
+      ],
+      "grammarSnapshot": "b39a24542cd9a80465cc9394971eb4507648bd2d4d070011b614fd9c7e191ebd"
+    },
+    {
+      "id": "l06-de-lugar-0",
+      "lesson": 6,
+      "minimumLesson": 6,
+      "grammarId": "de-lugar",
+      "exampleIndex": 0,
+      "jp": "駅[えき]で 新聞[しんぶん]を 買[か]います。",
+      "vi": "Tôi mua báo ở nhà ga.",
+      "vocabulary": [
+        "5:eki",
+        "2:shinbun",
+        "6:kaimasu"
+      ],
+      "grammarSnapshot": "37b101e942e7b79b375b4bc3953a822044501f9497e9c9ef36139d8110fb97c0"
+    },
+    {
+      "id": "l07-de-instrumento-0",
+      "lesson": 7,
+      "minimumLesson": 7,
+      "grammarId": "de-instrumento",
+      "exampleIndex": 0,
+      "jp": "はしで 食[た]べます。",
+      "vi": "Tôi ăn bằng đũa.",
+      "vocabulary": [
+        "7:hashi",
+        "6:tabemasu"
+      ],
+      "grammarSnapshot": "88c6a125a3d5a95ed29e8a70526a9b236994a6ff16cecef8c06e2593de7460a2"
+    },
+    {
+      "id": "l07-de-instrumento-1",
+      "lesson": 7,
+      "minimumLesson": 7,
+      "grammarId": "de-instrumento",
+      "exampleIndex": 1,
+      "jp": "日本語[にほんご]で 手紙[てがみ]を 書[か]きます。",
+      "vi": "Tôi viết thư bằng tiếng Nhật.",
+      "vocabulary": [
+        "2:nihongo",
+        "6:tegami",
+        "6:kakimasu"
+      ],
+      "grammarSnapshot": "88c6a125a3d5a95ed29e8a70526a9b236994a6ff16cecef8c06e2593de7460a2"
+    },
+    {
+      "id": "l08-predicado-adjetivo-1",
+      "lesson": 8,
+      "minimumLesson": 8,
+      "grammarId": "predicado-adjetivo",
+      "exampleIndex": 1,
+      "jp": "この 部屋[へや]は 静[しず]かじゃありません。",
+      "vi": "Căn phòng này không yên tĩnh.",
+      "vocabulary": [
+        "2:kono",
+        "3:heya",
+        "8:shizuka"
+      ],
+      "grammarSnapshot": "7664c55d03b44f6072b7e2059895bc7732c67cddf86688d6f32b1ef176b008fd"
+    },
+    {
+      "id": "l08-totemo-amari-1",
+      "lesson": 8,
+      "minimumLesson": 8,
+      "grammarId": "totemo-amari",
+      "exampleIndex": 1,
+      "jp": "この 本[ほん]はあまりおもしろくないです。",
+      "vi": "Cuốn sách này không thú vị lắm.",
+      "vocabulary": [
+        "2:kono",
+        "2:hon",
+        "8:amari",
+        "8:omoshiroi"
+      ],
+      "grammarSnapshot": "ed5533ebca1670c95921ed293afa00560b44761a0971b3d56777daf585a835d1"
+    },
+    {
+      "id": "l09-ga-objeto-1",
+      "lesson": 9,
+      "minimumLesson": 9,
+      "grammarId": "ga-objeto",
+      "exampleIndex": 1,
+      "jp": "日本語[にほんご]がわかります。",
+      "vi": "Tôi hiểu được tiếng Nhật.",
+      "vocabulary": [
+        "2:nihongo",
+        "9:wakarimasu"
+      ],
+      "grammarSnapshot": "259862529749d091b3f484da4afcdb2690d35fa6d5a281155a37d399cefe81e5"
+    },
+    {
+      "id": "l09-adverbios-grado-0",
+      "lesson": 9,
+      "minimumLesson": 9,
+      "grammarId": "adverbios-grado",
+      "exampleIndex": 0,
+      "jp": "英語[えいご]がよくわかります。",
+      "vi": "Tôi hiểu rất rõ tiếng Anh.",
+      "vocabulary": [
+        "2:eigo",
+        "9:yoku",
+        "9:wakarimasu"
+      ],
+      "grammarSnapshot": "f01aef105b1676ac90970470d0384f97939662a32fcaeefa5f5238f047a2b9a6"
+    },
+    {
+      "id": "l10-arimasu-imasu-0",
+      "lesson": 10,
+      "minimumLesson": 10,
+      "grammarId": "arimasu-imasu",
+      "exampleIndex": 0,
+      "jp": "机[つくえ]の 上[うえ]に 写真[しゃしん]があります。",
+      "vi": "Trên bàn có một bức ảnh.",
+      "vocabulary": [
+        "2:tsukue",
+        "10:ue",
+        "6:shashin",
+        "9:arimasu"
+      ],
+      "grammarSnapshot": "732fa072a8a251dd304e54e98c8e3bd5b70cc699885c85c46a1e476ebb076e4b"
+    },
+    {
+      "id": "l10-arimasu-imasu-1",
+      "lesson": 10,
+      "minimumLesson": 10,
+      "grammarId": "arimasu-imasu",
+      "exampleIndex": 1,
+      "jp": "庭[にわ]に 犬[いぬ]がいます。",
+      "vi": "Trong sân có một chú chó.",
+      "vocabulary": [
+        "6:niwa",
+        "10:inu",
+        "10:imasu"
+      ],
+      "grammarSnapshot": "732fa072a8a251dd304e54e98c8e3bd5b70cc699885c85c46a1e476ebb076e4b"
+    },
+    {
+      "id": "l10-posiciones-1",
+      "lesson": 10,
+      "minimumLesson": 10,
+      "grammarId": "posiciones",
+      "exampleIndex": 1,
+      "jp": "箱[はこ]の 中[なか]に 古[ふる]い 手紙[てがみ]があります。",
+      "vi": "Trong hộp có những lá thư cũ.",
+      "vocabulary": [
+        "10:hako",
+        "10:naka",
+        "8:furui",
+        "6:tegami",
+        "9:arimasu"
+      ],
+      "grammarSnapshot": "d7b17c798f3d94e261eee14ed9b939d57e531676a3903b4afc89179dc71707d6"
+    },
+    {
+      "id": "l11-numerales-0",
+      "lesson": 11,
+      "minimumLesson": 11,
+      "grammarId": "numerales",
+      "exampleIndex": 0,
+      "jp": "みかんをよっつ 買[か]いました。",
+      "vi": "Tôi đã mua 4 quả quýt.",
+      "vocabulary": [
+        "11:mikan",
+        "11:yottsu",
+        "6:kaimasu"
+      ],
+      "grammarSnapshot": "35c9f414f8de6c7ff3f3815c2d7f8096351cc4e774f31ffdf2d48db6fd3f5799"
+    },
+    {
+      "id": "l12-pasado-nominal-0",
+      "lesson": 12,
+      "minimumLesson": 12,
+      "grammarId": "pasado-nominal",
+      "exampleIndex": 0,
+      "jp": "きのうは 雨[あめ]でした。",
+      "vi": "Hôm qua trời đã mưa.",
+      "vocabulary": [
+        "4:kinou",
+        "12:ame"
+      ],
+      "grammarSnapshot": "ecd91987e42ed8b8691a2c0c1b4e824649df73dda5a811c69334e945dae8004e"
+    },
+    {
+      "id": "l12-pasado-adjetivo-i-0",
+      "lesson": 12,
+      "minimumLesson": 12,
+      "grammarId": "pasado-adjetivo-i",
+      "exampleIndex": 0,
+      "jp": "旅行[りょこう]は 楽[たの]しかったです。",
+      "vi": "Chuyến du lịch đã rất vui.",
+      "vocabulary": [
+        "9:ryokou",
+        "8:tanoshii"
+      ],
+      "grammarSnapshot": "b513df64cac08ae12518830df8a12180e466cc722abcbe3a018bfc37a139cda9"
+    },
+    {
+      "id": "l13-hoshii-0",
+      "lesson": 13,
+      "minimumLesson": 13,
+      "grammarId": "hoshii",
+      "exampleIndex": 0,
+      "jp": "私[わたし]は 友達[ともだち]が 欲[ほ]しいです。",
+      "vi": "Tôi muốn có bạn bè.",
+      "vocabulary": [
+        "1:watashi",
+        "5:tomodachi",
+        "13:hoshii"
+      ],
+      "grammarSnapshot": "c9489ac4682cfd46f5b54c65480889dea9dc4f3d20f2203745f222966f8f1db7"
+    },
+    {
+      "id": "l13-tai-desu-0",
+      "lesson": 13,
+      "minimumLesson": 13,
+      "grammarId": "tai-desu",
+      "exampleIndex": 0,
+      "jp": "てんぷらを 食[た]べたいです。",
+      "vi": "Tôi muốn ăn món tempura.",
+      "vocabulary": [
+        "12:tenpura",
+        "6:tabemasu"
+      ],
+      "grammarSnapshot": "4237fb02a7ae95a70ccee7b69f558809b3e6323330dbe7462ffe7e55f3625fc0"
+    },
+    {
+      "id": "l14-forma-te-0",
+      "lesson": 14,
+      "minimumLesson": 14,
+      "grammarId": "forma-te",
+      "exampleIndex": 0,
+      "jp": "ちょっと 待[ま]って。",
+      "vi": "Hãy đợi một chút.",
+      "vocabulary": [
+        "6:chotto",
+        "14:machimasu"
+      ],
+      "grammarSnapshot": "5932de882e443220b2bd7ad1795aee16afddb792eff0079d112adb98c814c40f"
+    },
+    {
+      "id": "l15-te-imasu-habitual-0",
+      "lesson": 15,
+      "minimumLesson": 15,
+      "grammarId": "te-imasu-habitual",
+      "exampleIndex": 0,
+      "jp": "姉[あね]は 高校[こうこう]で 英語[えいご]を 教[おし]えています。",
+      "vi": "Chị gái tôi đang dạy tiếng Anh ở trường trung học phổ thông.",
+      "vocabulary": [
+        "11:ane",
+        "15:koukou",
+        "2:eigo",
+        "7:oshiemasu"
+      ],
+      "grammarSnapshot": "872164e03d399460eaa4b04d624897bef8ab11070db3c31a1ca12bedb3b43907"
+    },
+    {
+      "id": "l16-te-encadenar-0",
+      "lesson": 16,
+      "minimumLesson": 16,
+      "grammarId": "te-encadenar",
+      "exampleIndex": 0,
+      "jp": "日曜日[にちようび]は 買[か]い 物[もの]して、 映画[えいが]を 見[み]ました。",
+      "vi": "Chủ nhật tôi đã đi mua sắm rồi xem phim.",
+      "vocabulary": [
+        "4:nichiyoubi",
+        "13:kaimono-shimasu",
+        "4:eiga",
+        "6:mimasu"
+      ],
+      "grammarSnapshot": "d07f881e713b3b04f740fc58d3ba890bf0b04da299b9f257fc4e6abf36aea164"
+    },
+    {
+      "id": "l17-naide-kudasai-0",
+      "lesson": 17,
+      "minimumLesson": 17,
+      "grammarId": "naide-kudasai",
+      "exampleIndex": 0,
+      "jp": "ここでたばこを 吸[す]わないでください。",
+      "vi": "Xin đừng hút thuốc ở đây.",
+      "vocabulary": [
+        "3:koko",
+        "6:tabako",
+        "6:suimasu"
+      ],
+      "grammarSnapshot": "51a05a2cb2727c4445632dfa02d7be3f3a21b4d559e80c3e7762ed2d578ea697"
+    },
+    {
+      "id": "l18-dekimasu-1",
+      "lesson": 18,
+      "minimumLesson": 18,
+      "grammarId": "dekimasu",
+      "exampleIndex": 1,
+      "jp": "カードで 払[はら]うことができます。",
+      "vi": "Bạn có thể thanh toán bằng thẻ.",
+      "vocabulary": [
+        "2:kaado",
+        "17:haraimasu",
+        "18:dekimasu"
+      ],
+      "grammarSnapshot": "ce68d0f51ed7b39eda7ec4c71aa76fa53d4c29f8024acee5fa77a221bd81da16"
+    },
+    {
+      "id": "l19-narimasu-1",
+      "lesson": 19,
+      "minimumLesson": 19,
+      "grammarId": "narimasu",
+      "exampleIndex": 1,
+      "jp": "もうすぐ 暖[あたた]かくなります。",
+      "vi": "Trời sắp sửa trở nên ấm áp rồi.",
+      "vocabulary": [
+        "19:mousugu",
+        "12:atatakai",
+        "19:narimasu"
+      ],
+      "grammarSnapshot": "22848377c59af44051bff38a958a2f24ba06189f9005c268f66fe7a77ed61c0e"
+    },
+    {
+      "id": "l20-conversacion-informal-1",
+      "lesson": 20,
+      "minimumLesson": 20,
+      "grammarId": "conversacion-informal",
+      "exampleIndex": 1,
+      "jp": "その 傘[かさ]、いいけど、 高[たか]かった？",
+      "vi": "Cây dù đó đẹp đấy chứ, mà có đắt không cậu?",
+      "vocabulary": [
+        "2:sono",
+        "2:kasa",
+        "8:ii",
+        "20:kedo",
+        "8:takai"
+      ],
+      "grammarSnapshot": "32cdc548fd9e08b9679b64f73c90dbc33c9cc3bdd3a671b965b83782066f70e9"
+    },
+    {
+      "id": "l21-to-omoimasu-0",
+      "lesson": 21,
+      "minimumLesson": 21,
+      "grammarId": "to-omoimasu",
+      "exampleIndex": 0,
+      "jp": "日本[にほん]は 物価[ぶっか]が 高[たか]いと 思[おも]います。",
+      "vi": "Tôi nghĩ rằng vật giá ở Nhật Bản rất đắt đỏ.",
+      "vocabulary": [
+        "1:nihon",
+        "21:bukka",
+        "8:takai",
+        "21:omoimasu"
+      ],
+      "grammarSnapshot": "46c295468a0af9c94e63551d65f75302aabcff13966eb648bd1c9aaa68efeb0f"
+    },
+    {
+      "id": "l22-oracion-modificadora-0",
+      "lesson": 22,
+      "minimumLesson": 22,
+      "grammarId": "oracion-modificadora",
+      "exampleIndex": 0,
+      "jp": "これは 母[はは]が 作[つく]ったケーキです。",
+      "vi": "Đây là chiếc bánh kem mà mẹ tôi đã làm.",
+      "vocabulary": [
+        "2:kore",
+        "7:haha",
+        "15:tsukurimasu",
+        "22:keeki"
+      ],
+      "grammarSnapshot": "30d83c619c47ab45206fb8c1cfb750c70578abbbc408a3d7b3ef1ca554d83142"
+    },
+    {
+      "id": "l23-toki-0",
+      "lesson": 23,
+      "minimumLesson": 23,
+      "grammarId": "toki",
+      "exampleIndex": 0,
+      "jp": "眠[ねむ]いとき、コーヒーを 飲[の]みます。",
+      "vi": "Khi buồn ngủ, tôi uống cà phê.",
+      "vocabulary": [
+        "19:nemui",
+        "2:koohii",
+        "6:nomimasu"
+      ],
+      "grammarSnapshot": "615769ea5fed992e285e1ad044b81e5e841143935435a46151a73a08d6a489a2"
+    },
+    {
+      "id": "l24-te-agemasu-0",
+      "lesson": 24,
+      "minimumLesson": 24,
+      "grammarId": "te-agemasu",
+      "exampleIndex": 0,
+      "jp": "私[わたし]は 妹[いもうと]に 宿題[しゅくだい]を 教[おし]えてあげました。",
+      "vi": "Tôi đã giảng bài tập giúp cho em gái tôi.",
+      "vocabulary": [
+        "1:watashi",
+        "11:imouto",
+        "6:shukudai",
+        "7:oshiemasu",
+        "7:agemasu"
+      ],
+      "grammarSnapshot": "52de4540e658b5dfdc8974f4254c528915f3e12d4f95cec5f6327426e0db37ef"
+    },
+    {
+      "id": "l25-tara-1",
+      "lesson": 25,
+      "minimumLesson": 25,
+      "grammarId": "tara",
+      "exampleIndex": 1,
+      "jp": "雨[あめ]だったら、 行[い]きません。",
+      "vi": "Nếu trời mưa thì tôi sẽ không đi.",
+      "vocabulary": [
+        "12:ame",
+        "5:ikimasu"
+      ],
+      "grammarSnapshot": "423e6ba11c5ac11b977bd79826c24207e958778a17fb3a9a810205c0fc1393f7"
+    },
+    {
+      "id": "l25-temo-0",
+      "lesson": 25,
+      "minimumLesson": 25,
+      "grammarId": "temo",
+      "exampleIndex": 0,
+      "jp": "日曜日[にちようび]でも 働[はたら]きます。",
+      "vi": "Cho dù là chủ nhật thì tôi vẫn làm việc.",
+      "vocabulary": [
+        "4:nichiyoubi",
+        "4:hatarakimasu"
+      ],
+      "grammarSnapshot": "82ac1587dd449cc2fa6553c7cbb1e7408f0a3c71b204727f3129be29c88622e9"
+    }
+  ]
+}
