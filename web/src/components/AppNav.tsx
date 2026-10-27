@@ -218,8 +218,8 @@ export function AppNav() {
           </span>
         </Link>
 
-        {/* Hồ sơ gom các tiện ích để thanh đầu chỉ dành chỗ cho tìm kiếm và tài khoản. */}
         <div className="flex shrink-0 items-center">
+          <ThemeToggle className={HEADER_ICON} />
           <SearchTrigger iconOnly className={HEADER_ICON} />
           <AccountButton user={currentUser} />
         </div>
