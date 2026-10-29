@@ -7,7 +7,7 @@ import { READING_BACKGROUNDS, READING_FONTS, type ReadingDisplay } from '@/lib/r
 import { cn } from '@/lib/utils';
 import { jpTextClass, surfaceClass, SWATCH } from './display';
 
-const BACKGROUND_LABEL = { paper: 'Giấy ngà', white: 'Trắng', dark: 'Tối' } as const;
+const BACKGROUND_LABEL = { auto: 'Theo giao diện', paper: 'Giấy ngà', white: 'Trắng', dark: 'Tối' } as const;
 const FONT_LABEL = { mincho: 'Mincho', gothic: 'Gothic' } as const;
 
 const legend = 'mb-2 text-base font-semibold text-foreground';
@@ -48,7 +48,7 @@ export function ReadingDisplaySheet({ open, onOpenChange, display, onChange, sam
 
           <fieldset>
             <legend className={legend}>Màu nền</legend>
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-x-5 gap-y-3">
               {READING_BACKGROUNDS.map((value) => (
                 <label key={value} className="flex min-h-11 cursor-pointer flex-col items-center gap-1 text-sm">
                   <input type="radio" name="reading-background" className="peer sr-only" checked={display.background === value} onChange={() => onChange({ ...display, background: value })} />

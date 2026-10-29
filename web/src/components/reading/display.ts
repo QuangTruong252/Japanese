@@ -2,13 +2,14 @@ import type { ReadingDisplay } from '@/lib/reading-display';
 import light from './reading-light.module.css';
 
 /** Cỡ chữ Nhật theo 5 nấc; mặc định (nấc 3) bằng cỡ câu hiển thị lớn của DESIGN. */
-const FONT_SIZE = ['text-lg', 'text-xl', 'text-2xl', 'text-3xl', 'text-4xl'] as const;
+const FONT_SIZE = ['text-sm', 'text-base', 'text-lg', 'text-xl', 'text-2xl'] as const;
 
 /**
- * Nền vùng đọc, độc lập với theme app: Giấy ngà/Trắng luôn dùng token sáng (lớp `light` đặt lại token), Tối đặt lớp
- * `.dark` để token tối áp cho cả vùng.
+ * Nền vùng đọc: Theo giao diện dùng token của app; Giấy ngà/Trắng luôn dùng token sáng (lớp `light` đặt lại token),
+ * Tối đặt lớp `.dark` để token tối áp cho cả vùng.
  */
 const SURFACE = {
+  auto: 'bg-background text-foreground',
   paper: `${light.light} bg-background text-foreground`,
   white: `${light.light} bg-card text-foreground`,
   dark: 'dark bg-background text-foreground',
@@ -16,6 +17,7 @@ const SURFACE = {
 
 /** Nền của ô xem trước trong sheet: cùng bộ token với vùng đọc. */
 export const SWATCH = {
+  auto: 'bg-background',
   paper: `${light.light} bg-background`,
   white: `${light.light} bg-card`,
   dark: 'dark bg-background',

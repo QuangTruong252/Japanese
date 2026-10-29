@@ -4,8 +4,9 @@ import { DEFAULT_READING_DISPLAY, loadReadingDisplay, parseReadingDisplay, READI
 
 const valid = { version: 1, fontStep: 5, background: 'dark', font: 'gothic' };
 
-test('parseReadingDisplay: hợp lệ giữ nguyên, mặc định là {3, paper, mincho}', () => {
-  assert.deepEqual(DEFAULT_READING_DISPLAY, { fontStep: 3, background: 'paper', font: 'mincho' });
+test('parseReadingDisplay: hợp lệ giữ nguyên, mặc định là {3, auto, mincho}; giá trị cũ paper vẫn hợp lệ', () => {
+  assert.deepEqual(DEFAULT_READING_DISPLAY, { fontStep: 3, background: 'auto', font: 'mincho' });
+  assert.deepEqual(parseReadingDisplay(JSON.stringify({ ...valid, background: 'paper' })), { fontStep: 5, background: 'paper', font: 'gothic' });
   assert.deepEqual(parseReadingDisplay(JSON.stringify(valid)), { fontStep: 5, background: 'dark', font: 'gothic' });
   assert.deepEqual(parseReadingDisplay(JSON.stringify({ ...valid, fontStep: 1, background: 'white', font: 'mincho' })), { fontStep: 1, background: 'white', font: 'mincho' });
 });

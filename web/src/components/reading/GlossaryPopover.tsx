@@ -10,7 +10,7 @@ import { SpeakButton } from '@/components/SpeakButton';
 import { SPEAK_CLASS } from '@/components/dialogue/reader-styles';
 import { buttonVariants, Button } from '@/components/ui/button';
 import { db } from '@/lib/db';
-import { stripFurigana } from '@/lib/japanese';
+import { glossaryLabel } from './glossary-label';
 import { addReadingWordToReview, readingReviewTargetId } from '@/lib/reading-review';
 import { cn } from '@/lib/utils';
 import type { ReadingGlossaryEntry } from '@/types/reading';
@@ -106,17 +106,19 @@ export function GlossaryPopover({ entry, anchor, onClose }: { entry: ReadingGlos
     finally { setBusy(false); }
   }
 
+  const label = glossaryLabel(entry);
+
   async function copy() {
-    try { await navigator.clipboard.writeText(entry.labelJp); setCopied(true); setTimeout(() => setCopied(false), 1500); } catch { /* Không có quyền clipboard: bỏ qua. */ }
+    try { await navigator.clipboard.writeText(label); setCopied(true); setTimeout(() => setCopied(false), 1500); } catch { /* Không có quyền clipboard: bỏ qua. */ }
   }
 
-  const speakText = entry.kind === 'grammar' && entry.exampleJp ? stripFurigana(entry.exampleJp) : entry.reading ?? entry.labelJp;
+  const speakText = entry.kind === 'grammar' && entry.exampleJp ? glossaryLabel({ labelJp: entry.exampleJp }) : entry.reading ?? label;
 
   return (
     <div
       ref={box}
       role="dialog"
-      aria-label={`Nghĩa của ${entry.labelJp}`}
+      aria-label={`Nghĩa của ${label}`}
       tabIndex={-1}
       style={{ [anchor.side === 'above' ? 'bottom' : 'top']: anchor.offset, left: anchor.left, width: anchor.width }}
       className="absolute z-30 rounded-2xl border border-border bg-popover text-popover-foreground shadow-lg outline-none motion-safe:animate-in motion-safe:fade-in-0 motion-safe:duration-150"
@@ -129,8 +131,8 @@ export function GlossaryPopover({ entry, anchor, onClose }: { entry: ReadingGlos
       <div style={{ maxHeight: anchor.maxHeight }} className="flex flex-col gap-3 overflow-y-auto rounded-2xl p-4">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <p className="jp jp-display break-words text-3xl font-semibold leading-snug">{entry.labelJp}</p>
-          {entry.reading && entry.reading !== entry.labelJp && (
+          <p className="jp jp-display break-words text-3xl font-semibold leading-snug">{label}</p>
+          {entry.reading && entry.reading !== label && (
             <p className="jp mt-1 inline-block rounded-full bg-accent px-3 text-base font-medium text-primary">{entry.reading}</p>
           )}
         </div>
@@ -149,7 +151,7 @@ export function GlossaryPopover({ entry, anchor, onClose }: { entry: ReadingGlos
               {added ? <Check className="size-5 text-success" aria-hidden="true" /> : <Plus className="size-5" aria-hidden="true" />}
             </Button>
           )}
-          <SpeakButton text={speakText} label={entry.labelJp} className={SPEAK_CLASS} />
+          <SpeakButton text={speakText} label={label} className={SPEAK_CLASS} />
           <Button type="button" variant="outline" size="icon" className="size-11 rounded-xl" aria-label={copied ? 'Đã sao chép' : 'Sao chép'} onClick={() => void copy()}>
             {copied ? <Check className="size-5 text-success" aria-hidden="true" /> : <Copy className="size-5" aria-hidden="true" />}
           </Button>

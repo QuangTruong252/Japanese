@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { cn } from '@/lib/utils';
+import { glossaryLabel } from './glossary-label';
 import type { ReadingGlossaryEntry } from '@/types/reading';
 import { GlossaryPopover, measureAnchor, usePopoverDismiss, type PopoverAnchor } from './GlossaryPopover';
 
@@ -33,8 +34,8 @@ function GlossaryChooser({ entries, anchor, onChoose, onClose }: { entries: Read
               onClick={() => onChoose(entry.id)}
               className="flex min-h-12 w-full items-center gap-3 rounded-xl px-3 py-2 text-left outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring"
             >
-              <span className="jp jp-display min-w-0 break-words text-lg font-semibold">{entry.labelJp}</span>
-              <span className="min-w-0 flex-1 truncate text-sm text-muted-foreground">{entry.meaningsVi[0]}</span>
+              <span className="jp jp-display min-w-0 break-words text-lg font-semibold">{glossaryLabel(entry)}</span>
+              <span className="min-w-0 flex-1 break-words text-sm text-muted-foreground">{entry.meaningsVi[0]}</span>
               <span className="shrink-0 rounded-full bg-accent px-2 text-xs font-medium text-accent-foreground">{KIND_LABEL[entry.kind]}</span>
             </button>
           </li>
