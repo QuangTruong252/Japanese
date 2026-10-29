@@ -82,31 +82,31 @@ export function DialogueView(props: ReadingBodyProps) {
   );
 }
 
-/** Đoạn văn: mỗi nhóm câu một hàng đánh số, bản dịch dưới hàng, vạch ngăn giữa các hàng. */
+/**
+ * Đoạn văn: một trang liền, mỗi nhóm câu là một đoạn, câu nối tiếp trong đoạn. Không đánh số, không vạch ngăn,
+ * vì hàng đánh số trông như lượt thoại và người học tưởng là hội thoại.
+ */
 export function PassageView(props: ReadingBodyProps) {
   const { passage, showVi, evidenceIds = [] } = props;
   return (
-    <ol className="divide-y divide-border rounded-2xl border border-border px-3 sm:px-5">
-      {groupSentences(passage.sentences).map((row, i) => {
+    <div className="flex flex-col gap-5 rounded-2xl border border-border px-4 py-5 sm:px-6">
+      {groupSentences(passage.sentences).map((row) => {
         const evidence = row.some((s) => evidenceIds.includes(s.id));
         return (
-          <li key={row[0]!.id} id={sentenceDomId(row[0]!.id)} className={cn('grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3 py-4', evidence && 'my-2 rounded-xl border-2 border-primary bg-accent px-2')}>
-            <span aria-hidden="true" className="mt-3 flex size-8 items-center justify-center rounded-full bg-secondary text-sm font-medium text-muted-foreground">{i + 1}</span>
-            <div className="min-w-0">
-              {evidence && <EvidenceLabel />}
-              <p>
-                {row.map((sentence, j) => (
-                  <span key={sentence.id} id={j === 0 ? undefined : sentenceDomId(sentence.id)} className="mr-[0.5em] inline">
-                    <Sentence sentence={sentence} {...props} />
-                  </span>
-                ))}
-              </p>
-              {showVi && <p className="translation text-sm leading-relaxed text-muted-foreground md:text-base">{row.map((s) => s.vi).join(' ')}</p>}
-            </div>
-          </li>
+          <div key={row[0]!.id} id={sentenceDomId(row[0]!.id)} className={cn('min-w-0', evidence && '-mx-2 rounded-xl border-2 border-primary bg-accent px-2 py-2')}>
+            {evidence && <EvidenceLabel />}
+            <p>
+              {row.map((sentence, j) => (
+                <span key={sentence.id} id={j === 0 ? undefined : sentenceDomId(sentence.id)} className="mr-[0.5em] inline">
+                  <Sentence sentence={sentence} {...props} />
+                </span>
+              ))}
+            </p>
+            {showVi && <p className="translation mt-1 text-sm leading-relaxed text-muted-foreground md:text-base">{row.map((s) => s.vi).join(' ')}</p>}
+          </div>
         );
       })}
-    </ol>
+    </div>
   );
 }
 

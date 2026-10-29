@@ -7,7 +7,7 @@ import { readingWords } from './reading-text';
 
 /**
  * Một câu Nhật; mọi đoạn thuộc mục glossary là nút bấm được (gạch chấm), còn lại là chữ thường. Cụm giữa hai dấu
- * cách không ngắt dòng. Không có `onPick` thì chỉ hiển thị (màn kết quả).
+ * cách không ngắt dòng. Không có `onPick` thì chỉ hiển thị.
  */
 export function ReadingText({
   sentenceId,
@@ -31,9 +31,10 @@ export function ReadingText({
   const words = readingWords(sentenceId, jp, glossary);
   const active = (ids: string[]) => !!activeEntryId && ids.includes(activeEntryId);
   return (
-    <span className="inline-flex max-w-full flex-wrap items-baseline gap-x-[0.3em]">
+    // Khung ngoài là inline thường để câu nối tiếp câu trước trên cùng dòng trong đoạn văn; chỉ từng cụm không ngắt.
+    <span>
       {words.map((word, w) => (
-        <span key={w} className="inline-flex max-w-full items-baseline">
+        <span key={w} className="mr-[0.3em] inline-flex max-w-full items-baseline last:mr-0">
           {word.map((run, r) =>
             run.entryIds.length > 0 && onPick ? (
               <button
@@ -45,7 +46,8 @@ export function ReadingText({
                 onClick={(e) => onPick(run.entryIds, e.currentTarget)}
                 className={cn(
                   // Không padding ngang: hai đoạn liền nhau trong cùng một từ (押し|ます) phải dính như chữ thường.
-                  'rounded-md underline decoration-primary/50 decoration-dotted decoration-2 [text-underline-offset:0.2em] outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring',
+                  // Gạch dưới bằng border vì text-decoration không lan vào khối inline-flex của Furigana.
+                  'rounded-sm border-b-2 border-dotted border-primary/60 outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring',
                   active(run.entryIds) ? 'bg-accent text-primary' : lookup && 'bg-accent/50',
                 )}
               >

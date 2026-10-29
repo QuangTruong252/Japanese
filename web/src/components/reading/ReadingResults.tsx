@@ -73,7 +73,7 @@ export function ReadingResults({ session }: { session: ReadingSession }) {
   }
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto py-4">
+    <div className="scrollbar-none flex min-h-0 flex-1 flex-col overflow-y-auto py-4">
       <div className="mx-auto flex w-full max-w-xl flex-col gap-6 pb-8">
         <header className="relative pt-4">
           <Accent kind="sprig-right" className="-right-4 -top-2 block w-40" />

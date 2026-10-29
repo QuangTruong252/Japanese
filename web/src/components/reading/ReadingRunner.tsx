@@ -119,7 +119,7 @@ function ReadingSessionView({ session }: { session: ReadingSession }) {
         </div>
       </div>
 
-      <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden pb-4 pt-1">
+      <div className="scrollbar-none min-h-0 flex-1 overflow-y-auto overflow-x-hidden pb-4 pt-1">
         <div className="flex flex-col gap-4">
           <GlossaryHost glossary={passage.glossary}>
             {({ pick, activeEntryId }) => (
