@@ -2,10 +2,12 @@ import Dexie, { type Table } from 'dexie';
 import type { AudioFileRecord, PracticeSession, ReviewItem, PendingSyncRecord, WritingCard } from '@/types';
 import type { DictationSession } from './dictation-session.ts';
 import type { TranslationSession } from './translation-session.ts';
+import type { ReadingSession } from '../types/reading.ts';
 
 export class AppDatabase extends Dexie {
   dictationSessions!: Table<DictationSession, string>;
   translationSessions!: Table<TranslationSession, string>;
+  readingSessions!: Table<ReadingSession, string>;
   writingCards!: Table<WritingCard, string>;
   audioFiles!: Table<AudioFileRecord, string>;
   reviewItems!: Table<ReviewItem, string>;
@@ -39,6 +41,8 @@ export class AppDatabase extends Dexie {
     this.version(4).stores({ dictationSessions: 'id, scope, updatedAt' }).upgrade(() => {});
     // Lượt dịch tự chọn phạm vi: mỗi phiên một khóa ngẫu nhiên, lưu cả bộ câu và chiều để reload không chọn lại.
     this.version(5).stores({ translationSessions: 'id, updatedAt' });
+    // Phiên luyện đọc: mỗi phiên một khóa ngẫu nhiên, giữ cả bản chụp bài để catalog đổi vẫn xem được kết quả cũ.
+    this.version(6).stores({ readingSessions: 'id, updatedAt' });
   }
 }
 

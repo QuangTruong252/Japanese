@@ -51,6 +51,7 @@ function setup() {
   const fake: Record<string, unknown> = {
     dictationSessions: { clear: async () => {} },
     translationSessions: { clear: async () => {} },
+    readingSessions: { clear: async () => {} },
     writingCards: {
       get: async (k: string) => writingCards.get(k),
       put: async (r: Row) => void writingCards.set(r.char as string, r),

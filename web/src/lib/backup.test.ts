@@ -17,6 +17,8 @@ import {
 import type { ReviewItem, PracticeSession, WritingCard } from '../types/index.ts';
 import { createDictationSession, answerDictation } from './dictation-session.ts';
 import { applyTranslationAction, createTranslationSession } from './translation-session.ts';
+import { applyReadingAction, createReadingSession } from './reading-session.ts';
+import { makeDialogueFixture } from './reading.test-helpers.ts';
 
 const createMockReviewItem = (overrides?: Partial<ReviewItem>): ReviewItem => ({
   targetId: 'vocab-1-1',
@@ -296,6 +298,7 @@ test('createExportData: includes writing cards and keeps schemaVersion 1', async
   t.mock.method(db.writingCards, 'toArray', async () => writing);
   t.mock.method(db.dictationSessions, 'toArray', async () => []);
   t.mock.method(db.translationSessions, 'toArray', async () => []);
+  t.mock.method(db.readingSessions, 'toArray', async () => []);
   const data = await createExportData();
   assert.equal(data.schemaVersion, 1);
   assert.deepEqual(data.writingCards, writing);
@@ -316,7 +319,7 @@ for (const mode of ['replace', 'merge'] as const) {
       };
       t.mock.method(db, 'transaction', async (access: unknown, tables: unknown, run: () => Promise<unknown>) => {
         assert.equal(access, 'rw');
-        assert.deepEqual(tables, [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions, db.translationSessions]);
+        assert.deepEqual(tables, [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions, db.translationSessions, db.readingSessions]);
         return run();
       });
       for (const table of [db.reviewItems, db.practiceSessions]) {
@@ -351,7 +354,7 @@ for (const mode of ['replace', 'merge'] as const) {
 }
 
 test('executeWipeAllData: clears writing cards in the same transaction as other learning tables', async (t) => {
-  const tables = [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions, db.translationSessions];
+  const tables = [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions, db.translationSessions, db.readingSessions];
   let inside = false;
   t.mock.method(db, 'transaction', async (access: unknown, actual: unknown, run: () => Promise<void>) => {
     assert.equal(access, 'rw'); assert.deepEqual(actual, tables);
@@ -450,6 +453,7 @@ for (const mode of ['merge', 'replace'] as const) {
 
 test('wipe clears translation sessions and the saved translation config', async (t) => {
   const clear = t.mock.method(db.translationSessions, 'clear', async () => {});
+  const readingClear = t.mock.method(db.readingSessions, 'clear', async () => {});
   for (const table of [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions]) t.mock.method(table, 'clear', async () => {});
   t.mock.method(db, 'transaction', async (_access: unknown, _tables: unknown, run: () => Promise<void>) => run());
   const removed: string[] = [];
@@ -458,5 +462,107 @@ test('wipe clears translation sessions and the saved translation config', async 
   try { await executeWipeAllData(); }
   finally { if (windowDesc) Object.defineProperty(globalThis, 'window', windowDesc); else delete (globalThis as { window?: unknown }).window; }
   assert.equal(clear.mock.callCount(), 1);
+  assert.equal(readingClear.mock.callCount(), 1);
   assert.ok(removed.includes('jp:translation-config'));
+  assert.ok(removed.includes('jp:reading-scope'));
+  assert.ok(removed.includes('jp:reading-display'));
 });
+
+const readingFixture = await makeDialogueFixture();
+const readingScope = { lesson: 10, minCoverage: 90, maxNewGrammar: 1 };
+const startedReading = () => createReadingSession(readingFixture, readingScope);
+const progressedReading = () => {
+  const s = startedReading();
+  const picked = applyReadingAction(s, { type: 'select', optionId: 'a' }, { revision: 0, questionIndex: 0 }).session;
+  return applyReadingAction(picked, { type: 'submit' }, { revision: 1, questionIndex: 0 }).session;
+};
+
+test('reading backup roundtrip: xuất có readingSessions, backup cũ thiếu trường vẫn đọc được, bản lỗi bị đếm', async (t) => {
+  const session = progressedReading();
+  t.mock.method(db.reviewItems, 'toArray', async () => [createMockReviewItem()]);
+  t.mock.method(db.practiceSessions, 'toArray', async () => []);
+  t.mock.method(db.writingCards, 'toArray', async () => []);
+  t.mock.method(db.dictationSessions, 'toArray', async () => []);
+  t.mock.method(db.translationSessions, 'toArray', async () => []);
+  t.mock.method(db.readingSessions, 'toArray', async () => [session]);
+  const exported = await createExportData();
+  assert.deepEqual(exported.readingSessions, [session]);
+  const parsed = parseAndValidateImport(JSON.stringify(exported));
+  assert.ok(parsed.ok);
+  assert.deepEqual(parsed.data.readingSessions, [session]);
+  assert.equal(parsed.data.skippedReadingSessionsCount, 0);
+
+  const forged = { ...session, answers: [{ questionId: 'q1', selectedOptionId: 'khong-co' }] };
+  const mixed = parseAndValidateImport(JSON.stringify({ ...exported, readingSessions: [session, forged] }));
+  assert.ok(mixed.ok);
+  assert.deepEqual(mixed.data.readingSessions, [session]);
+  assert.equal(mixed.data.skippedReadingSessionsCount, 1);
+
+  const badGlossary = { ...session, passage: { ...session.passage, glossary: [{ ...session.passage.glossary[0]!, exampleJp: { bad: true } }, ...session.passage.glossary.slice(1)] } };
+  const typed = parseAndValidateImport(JSON.stringify({ ...exported, readingSessions: [session, badGlossary] }));
+  assert.ok(typed.ok);
+  assert.deepEqual([typed.data.readingSessions, typed.data.skippedReadingSessionsCount], [[session], 1]);
+
+  const allBad = parseAndValidateImport(JSON.stringify({ ...exported, readingSessions: [forged] }));
+  assert.ok(allBad.ok);
+  assert.equal(allBad.data.readingSessions, undefined, 'toàn bản ghi lỗi không được hiểu là yêu cầu xóa');
+  assert.equal(allBad.data.skippedReadingSessionsCount, 1);
+
+  const old = parseAndValidateImport(JSON.stringify({ app: 'minna-n5', schemaVersion: 1, reviewItems: [createMockReviewItem()] }));
+  assert.ok(old.ok);
+  assert.equal(old.data.readingSessions, undefined);
+  const empty = parseAndValidateImport(JSON.stringify({ app: 'minna-n5', schemaVersion: 1, reviewItems: [createMockReviewItem()], readingSessions: [] }));
+  assert.ok(empty.ok);
+  assert.deepEqual(empty.data.readingSessions, []);
+
+  // Mảng đọc rỗng là ý định xóa; thiếu trường, sai kiểu hoặc toàn bản ghi lỗi vẫn là không có dữ liệu.
+  const bare = { app: 'minna-n5', schemaVersion: 1, reviewItems: [], practiceSessions: [] };
+  assert.ok(parseAndValidateImport(JSON.stringify({ ...bare, readingSessions: [] })).ok);
+  for (const readingSessions of [undefined, null, {}, 'x', [forged]]) {
+    const r = parseAndValidateImport(JSON.stringify({ ...bare, readingSessions }));
+    assert.ok(!r.ok && r.code === 'NO_VALID_DATA');
+  }
+});
+
+for (const mode of ['merge', 'replace'] as const) {
+  test(`reading ${mode} import: backup cũ không động vào bảng đọc, mảng rỗng chỉ xóa khi replace`, async (t) => {
+    const local = progressedReading();
+    t.mock.method(db, 'transaction', async (_access: unknown, _tables: unknown, run: () => Promise<unknown>) => run());
+    for (const table of [db.reviewItems, db.practiceSessions, db.writingCards, db.dictationSessions, db.translationSessions]) {
+      t.mock.method(table, 'clear', async () => {});
+      t.mock.method(table, 'toArray', async () => []);
+      t.mock.method(table, 'bulkPut', async () => '');
+    }
+    t.mock.method(db.pendingSync, 'add', async () => 'sync');
+    t.mock.method(db.readingSessions, 'toArray', async () => [local]);
+    const clear = t.mock.method(db.readingSessions, 'clear', async () => {});
+    const put = t.mock.method(db.readingSessions, 'bulkPut', async () => '');
+    const data: ParsedImportData = { fileName: 'test.json', schemaVersion: 1, app: 'minna-n5', exportedAt: new Date().toISOString(), reviewItems: [], practiceSessions: [], skippedReviewItemsCount: 0, skippedSessionsCount: 0, skippedWritingCardsCount: 0 };
+
+    await executeImport(data, mode);
+    assert.equal(put.mock.callCount() + clear.mock.callCount(), 0);
+
+    await executeImport({ ...data, readingSessions: [] }, mode);
+    assert.equal(clear.mock.callCount(), mode === 'replace' ? 1 : 0);
+
+    // Backup chỉ còn mảng đọc rỗng (mọi bảng khác rỗng) vẫn phải qua bước parse rồi xóa bảng khi replace.
+    const emptyOnly = parseAndValidateImport(JSON.stringify({ app: 'minna-n5', schemaVersion: 1, readingSessions: [], reviewItems: [], practiceSessions: [] }));
+    assert.ok(emptyOnly.ok);
+    clear.mock.resetCalls();
+    await executeImport(emptyOnly.data, mode);
+    assert.equal(clear.mock.callCount(), mode === 'replace' ? 1 : 0);
+
+    // Cùng ID với local nhưng bản chụp khác: merge giữ local và báo trùng; replace thay hẳn.
+    const sameId = { ...local, passage: { ...local.passage, titleVi: 'khác' } };
+    const fresh = { ...startedReading(), id: 'khac-id' };
+    put.mock.resetCalls();
+    const result = await executeImport({ ...data, readingSessions: [sameId, fresh] }, mode);
+    if (mode === 'merge') {
+      assert.deepEqual(put.mock.calls[0]!.arguments[0], [fresh]);
+      assert.deepEqual([result.readingCount, result.readingDuplicates], [1, 1]);
+    } else {
+      assert.deepEqual(put.mock.calls[0]!.arguments[0], [sameId, fresh]);
+      assert.deepEqual([result.readingCount, result.readingDuplicates], [2, 0]);
+    }
+  });
+}

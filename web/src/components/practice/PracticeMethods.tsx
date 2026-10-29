@@ -8,6 +8,7 @@ export function PracticeMethods({ compact = false, lesson }: { compact?: boolean
     { href: '/luyen-tap/bai-tap', title: compact ? 'Bài tập' : 'Bài tập tổng hợp', detail: '5 dạng bài', icon: 'practice' },
     { href: '/nghe-moi-ngay', title: 'Nghe mỗi ngày', detail: 'Chép chính tả', icon: 'listening' },
     { href: '/luyen-tap/dich-cau', title: 'Dịch phản xạ', detail: 'Nhật ↔ Việt', icon: 'reading', hubOnly: true },
+    { href: '/luyen-tap/doc-hieu', title: 'Luyện đọc', detail: 'Hội thoại · Đoạn văn', icon: 'lesson', hubOnly: true },
     { href: '/luyen-viet', title: 'Luyện viết', detail: 'Kana · Kanji', icon: 'kana' },
     { href: lesson ? `/hoc/${lesson}#hoi-thoai` : '/luyen-tap/hoi-thoai', title: 'Hội thoại', detail: lesson ? `Bài ${lesson}` : 'Theo bài', icon: 'dialogue' },
   ];

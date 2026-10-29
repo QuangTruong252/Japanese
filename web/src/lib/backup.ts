@@ -3,6 +3,10 @@ import { loadSettings, type AppSettings } from './settings.ts';
 import { clearAccountLink, getOwnerUserId, signOut } from './sync.ts';
 import type { PracticeSession, ReviewItem, TargetType, WritingCard } from '../types/index.ts';
 import { mergeTranslationSessions, TRANSLATION_CONFIG_KEY, validateTranslationSession, type TranslationSession } from './translation-session.ts';
+import type { ReadingSession } from '../types/reading.ts';
+import { READING_SCOPE_KEY } from './reading.ts';
+import { READING_DISPLAY_KEY } from './reading-display.ts';
+import { mergeReadingSessions, validateReadingSession } from './reading-session.ts';
 import { DICTATION_SCOPE_KEY, mergeDictationSessions, validateDictationSession, type DictationSession } from './dictation-session.ts';
 
 export interface ExportFile {
@@ -15,6 +19,7 @@ export interface ExportFile {
   writingCards: WritingCard[];
   dictationSessions: DictationSession[];
   translationSessions: TranslationSession[];
+  readingSessions: ReadingSession[];
 }
 
 export interface ParsedImportData {
@@ -30,6 +35,8 @@ export interface ParsedImportData {
   skippedDictationSessionsCount?: number;
   translationSessions?: TranslationSession[];
   skippedTranslationSessionsCount?: number;
+  readingSessions?: ReadingSession[];
+  skippedReadingSessionsCount?: number;
   skippedWritingCardsCount: number;
   skippedReviewItemsCount: number;
   skippedSessionsCount: number;
@@ -249,7 +256,14 @@ export function parseAndValidateImport(
   const translation = rawTranslation.map(validateTranslationSession).filter((s): s is TranslationSession => s !== null);
   const keepTranslation = Array.isArray(obj.translationSessions) && (rawTranslation.length === 0 || translation.length > 0);
 
-  if (validReviewItems.length === 0 && validSessions.length === 0 && validWritingCards.length === 0 && dictation.length === 0 && translation.length === 0) {
+  const rawReading = Array.isArray(obj.readingSessions) ? obj.readingSessions : [];
+  const reading = rawReading.map(validateReadingSession).filter((s): s is ReadingSession => s !== null);
+  // Mảng rỗng có chủ ý = xóa bảng đọc khi thay thế; mảng toàn bản ghi lỗi thì không động vào dữ liệu đọc trên máy.
+  const keepReading = Array.isArray(obj.readingSessions) && (rawReading.length === 0 || reading.length > 0);
+
+  // Mảng đọc rỗng tường minh là yêu cầu xóa bảng đọc nên không phải "không có dữ liệu".
+  const emptyReadingOnly = Array.isArray(obj.readingSessions) && rawReading.length === 0;
+  if (validReviewItems.length === 0 && validSessions.length === 0 && validWritingCards.length === 0 && dictation.length === 0 && translation.length === 0 && reading.length === 0 && !emptyReadingOnly) {
     return {
       ok: false,
       code: 'NO_VALID_DATA',
@@ -272,6 +286,8 @@ export function parseAndValidateImport(
       skippedDictationSessionsCount: rawDictation.length - dictation.length,
       ...(keepTranslation ? { translationSessions: translation } : {}),
       skippedTranslationSessionsCount: rawTranslation.length - translation.length,
+      ...(keepReading ? { readingSessions: reading } : {}),
+      skippedReadingSessionsCount: rawReading.length - reading.length,
       skippedWritingCardsCount,
       skippedReviewItemsCount,
       skippedSessionsCount,
@@ -328,12 +344,13 @@ export function mergePracticeSessions(
 }
 
 export async function createExportData(): Promise<ExportFile> {
-  const [reviewItems, practiceSessions, writingCards, dictationSessions, translationSessions] = await Promise.all([
+  const [reviewItems, practiceSessions, writingCards, dictationSessions, translationSessions, readingSessions] = await Promise.all([
     db.reviewItems.toArray(),
     db.practiceSessions.toArray(),
     db.writingCards.toArray(),
     db.dictationSessions.toArray(),
     db.translationSessions.toArray(),
+    db.readingSessions.toArray(),
   ]);
 
   const settings = loadSettings();
@@ -348,6 +365,7 @@ export async function createExportData(): Promise<ExportFile> {
     writingCards,
     dictationSessions,
     translationSessions,
+    readingSessions,
   };
 }
 
@@ -378,14 +396,16 @@ export function isReplacePayload(mode: 'merge' | 'replace', ownerUserId: string 
 export async function executeImport(
   importData: ParsedImportData,
   mode: 'merge' | 'replace',
-): Promise<{ reviewCount: number; sessionCount: number; writingCount: number; dictationCount: number; translationCount: number }> {
+): Promise<{ reviewCount: number; sessionCount: number; writingCount: number; dictationCount: number; translationCount: number; readingCount: number; readingDuplicates: number }> {
   let finalReviews: ReviewItem[] = [];
   let finalSessions: PracticeSession[] = [];
   let writingCount = 0;
   let dictationCount = 0;
   let translationCount = 0;
+  let readingCount = 0;
+  let readingDuplicates = 0;
 
-  await db.transaction('rw', [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions, db.translationSessions], async () => {
+  await db.transaction('rw', [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions, db.translationSessions, db.readingSessions], async () => {
     if (mode === 'replace') {
       await db.reviewItems.clear();
       await db.practiceSessions.clear();
@@ -430,6 +450,20 @@ export async function executeImport(
       translationCount = sessions.length;
     }
 
+    if (importData.readingSessions !== undefined) {
+      if (mode === 'replace') {
+        await db.readingSessions.clear();
+        await db.readingSessions.bulkPut(importData.readingSessions);
+        readingCount = importData.readingSessions.length;
+      } else {
+        // Cùng ID giữ nguyên bản local (kể cả bản chụp khác), chỉ thêm ID mới.
+        const { added, duplicates } = mergeReadingSessions(await db.readingSessions.toArray(), importData.readingSessions);
+        await db.readingSessions.bulkPut(added);
+        readingCount = added.length;
+        readingDuplicates = duplicates;
+      }
+    }
+
     const pendingId =
       typeof crypto !== 'undefined' && crypto.randomUUID
         ? crypto.randomUUID()
@@ -454,6 +488,8 @@ export async function executeImport(
     writingCount,
     dictationCount,
     translationCount,
+    readingCount,
+    readingDuplicates,
   };
 }
 
@@ -469,18 +505,21 @@ export async function wipeAllLocalData(): Promise<void> {
 }
 
 export async function executeWipeAllData(): Promise<void> {
-  await db.transaction('rw', [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions, db.translationSessions], async () => {
+  await db.transaction('rw', [db.reviewItems, db.practiceSessions, db.pendingSync, db.writingCards, db.dictationSessions, db.translationSessions, db.readingSessions], async () => {
     await db.reviewItems.clear();
     await db.practiceSessions.clear();
     await db.pendingSync.clear();
     await db.writingCards.clear();
     await db.dictationSessions.clear();
     await db.translationSessions.clear();
+    await db.readingSessions.clear();
   });
 
   if (typeof window !== 'undefined') {
     window.localStorage.removeItem(DICTATION_SCOPE_KEY);
     window.localStorage.removeItem(TRANSLATION_CONFIG_KEY);
+    window.localStorage.removeItem(READING_SCOPE_KEY);
+    window.localStorage.removeItem(READING_DISPLAY_KEY);
   }
   clearAccountLink();
 }
