@@ -44,7 +44,8 @@ export function ReadingText({
                 aria-expanded={active(run.entryIds)}
                 onClick={(e) => onPick(run.entryIds, e.currentTarget)}
                 className={cn(
-                  'rounded-md px-0.5 underline decoration-primary/50 decoration-dotted decoration-2 [text-underline-offset:0.2em] outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring',
+                  // Không padding ngang: hai đoạn liền nhau trong cùng một từ (押し|ます) phải dính như chữ thường.
+                  'rounded-md underline decoration-primary/50 decoration-dotted decoration-2 [text-underline-offset:0.2em] outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring',
                   active(run.entryIds) ? 'bg-accent text-primary' : lookup && 'bg-accent/50',
                 )}
               >
