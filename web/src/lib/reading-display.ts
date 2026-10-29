@@ -1,6 +1,6 @@
 export const READING_DISPLAY_KEY = 'jp:reading-display';
 
-export const READING_BACKGROUNDS = ['paper', 'white', 'dark'] as const;
+export const READING_BACKGROUNDS = ['auto', 'paper', 'white', 'dark'] as const;
 export const READING_FONTS = ['mincho', 'gothic'] as const;
 
 export interface ReadingDisplay {
@@ -10,7 +10,7 @@ export interface ReadingDisplay {
   font: (typeof READING_FONTS)[number];
 }
 
-export const DEFAULT_READING_DISPLAY: ReadingDisplay = { fontStep: 3, background: 'paper', font: 'mincho' };
+export const DEFAULT_READING_DISPLAY: ReadingDisplay = { fontStep: 3, background: 'auto', font: 'mincho' };
 
 /** Validate cả object: một trường sai thì dùng mặc định cho cả bộ, không nhặt từng phần. */
 export function parseReadingDisplay(raw: string | null): ReadingDisplay {
