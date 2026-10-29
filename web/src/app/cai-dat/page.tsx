@@ -96,6 +96,8 @@ export default function SettingsPage() {
   const dictationExtra = dictationCount > 0 ? `, ${dictationCount} bài nghe` : '';
   const translationCount = useLiveQuery(() => db.translationSessions.count(), []) ?? 0;
   const translationExtra = translationCount > 0 ? `, ${translationCount} lượt dịch` : '';
+  const readingCount = useLiveQuery(() => db.readingSessions.count(), []) ?? 0;
+  const readingExtra = readingCount > 0 ? `, ${readingCount} phiên đọc` : '';
   const writingExtra = writingCount > 0 ? `, ${writingCount} chữ luyện viết` : '';
   const audioCount = useLiveQuery(() => (AUDIO_IMPORT_ENABLED ? db.audioFiles.count() : 0), []) ?? 0;
 
@@ -188,7 +190,7 @@ export default function SettingsPage() {
 
       setNotification({
         type: 'success',
-        message: `Đã nhập thành công ${result.reviewCount} mục ôn tập${result.writingCount > 0 ? `, ${result.writingCount} chữ luyện viết` : ''}${result.dictationCount > 0 ? `, ${result.dictationCount} bài nghe` : ''}${result.translationCount > 0 ? `, ${result.translationCount} lượt dịch` : ''} và ${result.sessionCount} phiên luyện tập (${mode === 'replace' ? 'chế độ Thay thế' : 'chế độ Gộp'}).`,
+        message: `Đã nhập thành công ${result.reviewCount} mục ôn tập${result.writingCount > 0 ? `, ${result.writingCount} chữ luyện viết` : ''}${result.dictationCount > 0 ? `, ${result.dictationCount} bài nghe` : ''}${result.translationCount > 0 ? `, ${result.translationCount} lượt dịch` : ''}${result.readingCount > 0 ? `, ${result.readingCount} phiên đọc` : ''}${result.readingDuplicates > 0 ? ` (bỏ qua ${result.readingDuplicates} phiên đọc trùng)` : ''} và ${result.sessionCount} phiên luyện tập (${mode === 'replace' ? 'chế độ Thay thế' : 'chế độ Gộp'}).`,
       });
       setImportPreview(null);
       setConfirmReplaceOpen(false);
@@ -231,7 +233,7 @@ export default function SettingsPage() {
     );
   }
 
-  const hasAnyData = reviewCount > 0 || sessionCount > 0 || writingCount > 0 || dictationCount > 0 || translationCount > 0;
+  const hasAnyData = reviewCount > 0 || sessionCount > 0 || writingCount > 0 || dictationCount > 0 || translationCount > 0 || readingCount > 0;
 
   return (
     <main className="mx-auto w-full max-w-2xl px-4 py-6 pb-28 md:max-w-3xl md:px-6 md:pb-12 lg:max-w-[1100px] lg:px-8">
@@ -398,7 +400,7 @@ export default function SettingsPage() {
           <ActionRow
             icon={<CloudUpload />}
             title="Sao lưu dữ liệu"
-            detail={`${reviewCount} mục ôn tập · ${sessionCount} phiên luyện tập${writingCount > 0 ? ` · ${writingCount} chữ luyện viết` : ''}${dictationExtra}${translationExtra}`}
+            detail={`${reviewCount} mục ôn tập · ${sessionCount} phiên luyện tập${writingCount > 0 ? ` · ${writingCount} chữ luyện viết` : ''}${dictationExtra}${translationExtra}${readingExtra}`}
             disabled={!hasAnyData}
             onClick={handleExport}
           />
@@ -503,6 +505,9 @@ export default function SettingsPage() {
                 {importPreview.translationSessions !== undefined && (
                   <div className="flex justify-between"><span className="text-muted-foreground">Lượt dịch:</span><span className="font-medium">{importPreview.translationSessions.length}</span></div>
                 )}
+                {importPreview.readingSessions !== undefined && (
+                  <div className="flex justify-between"><span className="text-muted-foreground">Phiên đọc:</span><span className="font-medium">{importPreview.readingSessions.length}</span></div>
+                )}
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Ngày xuất:</span>
                   <span className="font-medium">
@@ -511,11 +516,11 @@ export default function SettingsPage() {
                 </div>
               </div>
 
-              {importPreview.skippedReviewItemsCount + importPreview.skippedSessionsCount + importPreview.skippedWritingCardsCount + (importPreview.skippedDictationSessionsCount ?? 0) + (importPreview.skippedTranslationSessionsCount ?? 0) > 0 && (
+              {importPreview.skippedReviewItemsCount + importPreview.skippedSessionsCount + importPreview.skippedWritingCardsCount + (importPreview.skippedDictationSessionsCount ?? 0) + (importPreview.skippedTranslationSessionsCount ?? 0) + (importPreview.skippedReadingSessionsCount ?? 0) > 0 && (
                 <div className="flex items-start gap-2 rounded-xl border border-warning/40 bg-card p-3 text-sm text-foreground">
                   <AlertCircle className="mt-0.5 size-4 shrink-0 text-warning" aria-hidden="true" />
                   <span>
-                    {importPreview.skippedReviewItemsCount + importPreview.skippedSessionsCount + importPreview.skippedWritingCardsCount + (importPreview.skippedDictationSessionsCount ?? 0) + (importPreview.skippedTranslationSessionsCount ?? 0)} bản
+                    {importPreview.skippedReviewItemsCount + importPreview.skippedSessionsCount + importPreview.skippedWritingCardsCount + (importPreview.skippedDictationSessionsCount ?? 0) + (importPreview.skippedTranslationSessionsCount ?? 0) + (importPreview.skippedReadingSessionsCount ?? 0)} bản
                     ghi không đọc được và sẽ bị bỏ qua.
                   </span>
                 </div>
@@ -615,7 +620,7 @@ export default function SettingsPage() {
             <AlertDialogDescription>
               {/* File cũ không có writingCards thì import không đụng tới chữ luyện viết, nên không nhắc xóa */}
               Thao tác này sẽ xóa {reviewCount} mục ôn tập
-              {importPreview?.writingCards !== undefined ? writingExtra : ''}{importPreview?.dictationSessions !== undefined ? dictationExtra : ''}{importPreview?.translationSessions !== undefined ? translationExtra : ''} và {sessionCount} phiên hiện có trên
+              {importPreview?.writingCards !== undefined ? writingExtra : ''}{importPreview?.dictationSessions !== undefined ? dictationExtra : ''}{importPreview?.translationSessions !== undefined ? translationExtra : ''}{importPreview?.readingSessions !== undefined ? readingExtra : ''} và {sessionCount} phiên hiện có trên
               máy thay bằng {importPreview?.reviewItems.length} mục từ bản sao lưu.
               {accountLinked && ' Dữ liệu trên tài khoản cũng bị thay ở lần đồng bộ tiếp theo.'} Hành động này không
               thể hoàn tác.
@@ -643,7 +648,7 @@ export default function SettingsPage() {
             </AlertDialogTitle>
             <AlertDialogDescription className="space-y-2">
               <span>
-                Thao tác này sẽ xóa vĩnh viễn {reviewCount} mục ôn tập{writingExtra}{dictationExtra}{translationExtra}, {sessionCount} phiên luyện
+                Thao tác này sẽ xóa vĩnh viễn {reviewCount} mục ôn tập{writingExtra}{dictationExtra}{translationExtra}{readingExtra}, {sessionCount} phiên luyện
                 tập trên máy này.
                 {accountLinked &&
                   ' Máy sẽ đăng xuất. Dữ liệu trên tài khoản được giữ nguyên và trở lại khi bạn đăng nhập lại.'}{' '}
