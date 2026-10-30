@@ -78,6 +78,14 @@ test('draft hợp lệ qua lớp 1 và coverage khớp bản tính lại', () =>
   assert.ok(draft.coverage.vocab.totalTypes > 0);
 });
 
+test('vai hội thoại phải đăng ký trong characters.json và viết đúng tên', () => {
+  const draft = { ...validDraft(), kind: 'dialogue', roles: [{ id: 'mai', name: 'マイ' }, { id: 'nobody', name: 'X' }] };
+  draft.sentences = draft.sentences.map((s, i) => ({ ...s, speaker: i % 2 ? 'nobody' : 'mai' }));
+  assert.ok(errorsOf(draft).includes('vai "nobody" chưa đăng ký trong characters.json'));
+  draft.roles[0] = { id: 'mai', name: 'X' };
+  assert.ok(errorsOf(draft).some((e) => e.startsWith('tên vai "mai" khác characters.json')));
+});
+
 test('bắt lỗi anchor: slice sai, cắt giữa ruby, thiếu anchor', () => {
   const wrongSlice = validDraft();
   wrongSlice.glossary[0].anchors[0].text = 'ZZ';

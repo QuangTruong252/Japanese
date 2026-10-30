@@ -111,7 +111,8 @@ export function loadSource() {
   }
   phrases.sort((a, b) => b.key.length - a.key.length);
   const properNames = new Set(readJson('translation.json').properNames);
-  sourceCache = { lessons, vocab, grammar, words, lexicon, readings, phrases, properNames };
+  const characters = readJson('characters.json');
+  sourceCache = { lessons, vocab, grammar, words, lexicon, readings, phrases, properNames, characters };
   return sourceCache;
 }
 
@@ -430,6 +431,11 @@ export function checkDraft(draft, { tokenizer, source }) {
   const roleIds = new Set(roles.map((r) => r?.id));
   if (kind === 'dialogue') {
     if (roles.length === 0 || roles.some((r) => !isText(r?.id) || !isText(r?.name))) err('dialogue cần roles [{id, name}]');
+    for (const r of roles.filter(isObj)) {
+      const known = Object.hasOwn(source.characters, r.id) ? source.characters[r.id] : undefined;
+      if (!known) err(`vai "${r.id}" chưa đăng ký trong characters.json`);
+      else if (r.name !== known.name) err(`tên vai "${r.id}" khác characters.json (${known.name})`);
+    }
   } else if (draft.roles) err('passage không có roles');
   sentences.forEach((s, i) => {
     if (!isText(s?.id) || !isText(s?.jp) || !isText(s?.vi)) { err(`sentence #${i + 1} thiếu id/jp/vi`); return; }

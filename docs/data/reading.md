@@ -5,6 +5,8 @@ Kho `web/src/data/n5/reading.json` (`{ version, passages }`) gồm hai dạng b�
 
 ## Soạn draft
 
+Nhân vật trong hội thoại và đoạn văn phải khớp `characters.json` (canon, cách xưng hô); thêm nhân vật mới theo [`characters.md`](characters.md).
+
 Mỗi bài một file JSON. Trường chính (kiểu đầy đủ do code app định nghĩa):
 
 | Trường | Ghi chú |

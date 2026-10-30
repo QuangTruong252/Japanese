@@ -21,7 +21,7 @@ duyệt, offline-first (dữ liệu học ở IndexedDB), giao diện tiếng Vi
 | Cấu trúc repo, routes, luồng dữ liệu | [`docs/architecture.md`](docs/architecture.md) |
 | Viết hoặc sửa code: quy ước, lệnh, test | [`docs/engineering.md`](docs/engineering.md) |
 | Giao diện | [`DESIGN.md`](DESIGN.md) |
-| Dữ liệu học, tiếng Nhật, audio | [`docs/data/README.md`](docs/data/README.md) |
+| Dữ liệu học, nhân vật, tiếng Nhật, audio | [`docs/data/README.md`](docs/data/README.md) |
 | Ảnh minh họa, icon | [`artwork/illustrations/README.md`](artwork/illustrations/README.md), [`artwork/icons/README.md`](artwork/icons/README.md) |
 | Vai trò, quy trình, brief, kiểm tra UI | [`docs/workflow/README.md`](docs/workflow/README.md) |
 

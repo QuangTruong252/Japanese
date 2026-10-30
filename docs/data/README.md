@@ -10,6 +10,7 @@ hiện; không bịa số trang hay liên kết audio.
 - Bộ câu nghe mỗi ngày và bằng chứng phạm vi: [`dictation.md`](dictation.md).
 - Kho câu Dịch phản xạ (mốc bài, từ khóa, cách sinh lại): [`translation.md`](translation.md).
 - Bài Luyện đọc (soạn draft, kiểm, phát hành): [`reading.md`](reading.md).
+- Nhân vật (canon, xưng hô, thêm nhân vật mới): [`characters.md`](characters.md). Đọc trước khi soạn hội thoại hay bài đọc.
 
 ## Tiếng Nhật
 
@@ -21,6 +22,7 @@ hiện; không bịa số trang hay liên kết audio.
 - Hội thoại phải có dấu cách sau `。？！` nếu còn chữ phía sau; mỗi cụm trong `jp` giữa hai dấu cách dài tối đa 10 ký tự (bỏ furigana, đếm code point, tính cả dấu câu), `kana` ngắt cùng vị trí.
 - Không bịa tiếng Nhật ở UI, mockup, test hay ví dụ: lấy từ các file trên và ghi rõ nguồn trong brief.
 - Chấm đáp án chỉ chuẩn hóa những khác biệt được phép; không biến đáp án sai nghĩa thành đúng.
+- Vai trong hội thoại lấy từ `characters.json`, giữ đúng canon và cách xưng hô ([`characters.md`](characters.md)).
 - Hội thoại (`Lesson.dialogues`) chỉ dùng từ vựng và thể động từ đã học đến bài đó. `web/src/lib/dialogues.test.ts`
   kiểm bằng kuromoji (chỉ là devDependency); ngoại lệ ghi vào `ALLOWED` hoặc `UNUSED_EXPRESSIONS` kèm lý do.
 

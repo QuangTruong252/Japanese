@@ -1,5 +1,20 @@
 {
   "mai": {
+    "name": "マイ",
+    "kind": "main",
+    "roleVi": "Sinh viên đại học người Việt, 19 tuổi",
+    "bioVi": "Mai là sinh viên đại học 19 tuổi đến từ Việt Nam, học tiếng Nhật vì thích các bài hát Nhật, nhất là nhạc jazz. Mai sống ở ký túc xá, dậy từ năm rưỡi để chạy bộ rồi học bài. Thầy Mori dạy Mai ở trường, anh Tanaka là bạn, còn chị Ookawa là hàng xóm.",
+    "canon": [
+      "Người Việt Nam, sinh viên đại học, 19 tuổi (l01-hajimemashite, l01-byouin); sinh viên của thầy Mori (l01-shoukai); lớp có ba du học sinh, chỉ Mai là người Việt (l11-kurasu).",
+      "Là bạn của anh Tanaka; Tanaka giới thiệu Mai với trưởng phòng là 友達の マイさん (l20-kengaku).",
+      "Đến Nhật tháng 4 năm ngoái, tháng 2 về Việt Nam (reading-p-farewell-card).",
+      "Sống ở ký túc xá mới, yên tĩnh, sạch, phòng nhỏ, nhà ăn rẻ và ngon (l08-ryou); đi tàu từ ký túc xá đến trường (l16-asa).",
+      "Gia đình ở Việt Nam: mẹ (tóc ngắn, trẻ) và chị gái (tóc dài, cao, thông minh, tốt bụng) (l16-shashin); mẹ cho Mai trà Việt Nam (l07-otaku).",
+      "Sinh nhật ngày 8 (l05-tanjoubi).",
+      "Dậy 5 rưỡi, chạy bộ từ khi vào đại học, học từ 6 giờ (l04-mainichi, l16-asa); viết nhật ký tiếng Nhật buổi tối (l18-nikki).",
+      "Thích bài hát Nhật và nhạc jazz, đó là lý do học tiếng Nhật (l09-doushite, l09-konsaato); thích mùa thu nhất (l12-kisetsu); thích chữ Hán nhưng còn kém (l09-kanji); không hiểu bóng chày (l09-doushite); chưa leo núi, chưa chơi golf, chưa cưỡi ngựa (l19-yama, l19-kyuujitsu, l18-shumi).",
+      "Xưng hô: với thầy Mori nói です/ます, gọi 先生, bản dịch xưng thầy/em. Với Tanaka gọi 田中さん; bài 1–19 nói です/ます, từ bài 20 nói thể thường khi chỉ có hai người (trước người thứ ba như trưởng phòng vẫn lịch sự, l20-kengaku); bản dịch: lần đầu gặp xưng tôi/bạn (l01-hajimemashite), sau đó anh/em. Với Ookawa nói です/ます hai chiều; bản dịch lần đầu tôi/bạn (l02-hikkoshi), từ bài 11 chị/em. Với bạn (tomodachi) thể thường, cậu/mình (l20-tomodachi)."
+    ],
     "avatar": {
       "src": "/assets/illustrations/characters/mai-portrait-v1.webp",
       "width": 512,
@@ -10,6 +25,18 @@
     }
   },
   "tanaka": {
+    "name": "田中[たなか]",
+    "kind": "main",
+    "roleVi": "Nhân viên công ty phần mềm",
+    "bioVi": "Anh Tanaka là nhân viên một công ty phần mềm máy tính, nhà gần ga. Anh thích bóng chày (dù chơi dở), nhạc cổ điển, cưỡi ngựa và chơi golf. Lúc đầu Mai và anh nói chuyện lịch sự; từ bài 20 hai người thân hơn và chuyển sang thể thường.",
+    "canon": [
+      "Nhân viên công ty, không phải sinh viên (l01-hajimemashite); công ty làm phần mềm máy tính, gần nhà (l15-shigoto); có đồng nghiệp là nhà nghiên cứu người Ấn Độ (l03-okuni); cấp trên là trưởng phòng, gọi anh là 田中君 (l20-kengaku).",
+      "Nhà gần ga, cạnh siêu thị (l15-shigoto); có mẹ (l12-tadaima) và chị gái (l22-shashin); mẹ làm bánh sinh nhật cho anh (l22-shashin).",
+      "Dậy 7 giờ; từng làm việc đến 10 giờ tối Chủ nhật (l04-mainichi); tăng ca, đi công tác (l17-shucchou).",
+      "Thích bóng chày nhưng chơi dở (l09-doushite), thích xem bóng đá (l21-shiai), nhạc cổ điển (l09-konsaato), cưỡi ngựa (l18-shumi), chơi golf (l19-kyuujitsu); có ăn cá (l06-hirugohan, l07-bangohan); có lúc ăn kiêng (l19-kanpai).",
+      "Tháng sau chuyển công tác đến Osaka (l25-tenkin).",
+      "Xưng hô: với thầy Mori nói です/ます, gọi 先生, bản dịch Tanaka xưng tôi, gọi thầy; thầy gọi anh (l01-shoukai, l03-okuni). Với Mai: xem canon của Mai. Với mẹ nói です/ます, mẹ cũng nói です/ます, bản dịch con/mẹ (l12-tadaima). Với trưởng phòng nói です/ます, xưng em; trưởng phòng gọi 田中君, bản dịch cậu (l20-kengaku). Chị gái chưa có lời thoại."
+    ],
     "avatar": {
       "src": "/assets/illustrations/characters/tanaka-portrait-v1.webp",
       "width": 512,
@@ -20,6 +47,15 @@
     }
   },
   "mori": {
+    "name": "森[もり]",
+    "kind": "main",
+    "roleVi": "Giảng viên đại học, thầy của Mai",
+    "bioVi": "Thầy Mori là giảng viên đại học và là thầy của Mai. Thầy giảng chậm rãi, thích mùa xuân, đã leo núi hai lần và lên núi thì chụp ảnh, uống trà. Mai và anh Tanaka nói với thầy bằng thể lịch sự và gọi thầy là 先生.",
+    "canon": [
+      "Giảng viên đại học, dạy Mai (l01-shoukai); giảng chậm rãi, thường có mặt ở trường (reading-p-farewell-card).",
+      "Thích mùa xuân nhất (l12-kisetsu); đã leo núi hai lần, trọ khách sạn trên núi, lên núi thì chụp ảnh, uống trà (l19-yama); cho rằng trà tốt cho sức khỏe hơn nước trái cây (l19-kanpai); có từ điển lớn cho Mai mượn (l09-kanji); đi ngắm hoa cùng Mai (l06-ohanami); khuyên Mai viết nhật ký tiếng Nhật (l18-nikki).",
+      "Xưng hô: gọi マイさん và 田中さん, nói です/ます với cả hai; bản dịch với Mai thầy/em, với Tanaka tôi/anh (l01-shoukai, l25-tenkin)."
+    ],
     "avatar": {
       "src": "/assets/illustrations/characters/mori-portrait-v1.webp",
       "width": 512,
@@ -30,6 +66,16 @@
     }
   },
   "ookawa": {
+    "name": "大川[おおかわ]",
+    "kind": "main",
+    "roleVi": "Hàng xóm của Mai",
+    "bioVi": "Chị Ookawa là hàng xóm mới của Mai. Hai người từng đi uống cà phê cùng nhau, và chị giúp Mai làm đồ ăn cho bữa tiệc. Mai và chị luôn nói chuyện lịch sự với nhau.",
+    "canon": [
+      "Hàng xóm mới của Mai (ngụ ý từ lời chào khi Mai chuyển đến, l02-hikkoshi; Mai mang đồ về tận phòng chị, l24-junbi); Mai tặng chị cà phê Việt Nam (l02-hikkoshi).",
+      "Uống cà phê cùng Mai (l21-kissa); làm đồ ăn cho tiệc của Mai (l24-junbi).",
+      "Chưa có nghề, tuổi, quê, gia đình trong dữ liệu.",
+      "Xưng hô: nói です/ます hai chiều với Mai; bản dịch lần đầu tôi/bạn (l02-hikkoshi), từ bài 11 chị/em."
+    ],
     "avatar": {
       "src": "/assets/illustrations/characters/ookawa-portrait-v1.webp",
       "width": 512,
@@ -40,6 +86,9 @@
     }
   },
   "isha": {
+    "name": "医者[いしゃ]",
+    "kind": "extra",
+    "roleVi": "Bác sĩ",
     "avatar": {
       "src": "/assets/illustrations/characters/isha-portrait-v1.webp",
       "width": 512,
@@ -50,6 +99,9 @@
     }
   },
   "uketsuke": {
+    "name": "受付[うけつけ]の 人[ひと]",
+    "kind": "extra",
+    "roleVi": "Nhân viên lễ tân",
     "avatar": {
       "src": "/assets/illustrations/characters/uketsuke-portrait-v1.webp",
       "width": 512,
@@ -60,6 +112,9 @@
     }
   },
   "ten-in": {
+    "name": "店員[てんいん]",
+    "kind": "extra",
+    "roleVi": "Nhân viên cửa hàng, nhà hàng",
     "avatar": {
       "src": "/assets/illustrations/characters/ten-in-portrait-v1.webp",
       "width": 512,
@@ -70,6 +125,9 @@
     }
   },
   "toshokan": {
+    "name": "図書館[としょかん]の 人[ひと]",
+    "kind": "extra",
+    "roleVi": "Nhân viên thư viện",
     "avatar": {
       "src": "/assets/illustrations/characters/toshokan-portrait-v1.webp",
       "width": 512,
@@ -80,6 +138,9 @@
     }
   },
   "ekiin": {
+    "name": "駅[えき]の 人[ひと]",
+    "kind": "extra",
+    "roleVi": "Nhân viên nhà ga",
     "avatar": {
       "src": "/assets/illustrations/characters/ekiin-portrait-v1.webp",
       "width": 512,
@@ -90,6 +151,9 @@
     }
   },
   "otoko": {
+    "name": "男[おとこ]の 人[ひと]",
+    "kind": "extra",
+    "roleVi": "Người đàn ông lạ",
     "avatar": {
       "src": "/assets/illustrations/characters/otoko-portrait-v1.webp",
       "width": 512,
@@ -100,6 +164,9 @@
     }
   },
   "haha": {
+    "name": "お母[かあ]さん",
+    "kind": "extra",
+    "roleVi": "Mẹ của anh Tanaka",
     "avatar": {
       "src": "/assets/illustrations/characters/haha-portrait-v1.webp",
       "width": 512,
@@ -110,6 +177,9 @@
     }
   },
   "takushii": {
+    "name": "タクシーの 人[ひと]",
+    "kind": "extra",
+    "roleVi": "Tài xế taxi",
     "avatar": {
       "src": "/assets/illustrations/characters/takushii-portrait-v1.webp",
       "width": 512,
@@ -120,6 +190,9 @@
     }
   },
   "ginkouin": {
+    "name": "銀行員[ぎんこういん]",
+    "kind": "extra",
+    "roleVi": "Nhân viên ngân hàng",
     "avatar": {
       "src": "/assets/illustrations/characters/ginkouin-portrait-v1.webp",
       "width": 512,
@@ -130,6 +203,9 @@
     }
   },
   "tomodachi": {
+    "name": "友達[ともだち]",
+    "kind": "extra",
+    "roleVi": "Bạn của Mai",
     "avatar": {
       "src": "/assets/illustrations/characters/tomodachi-portrait-v1.webp",
       "width": 512,
@@ -140,6 +216,9 @@
     }
   },
   "kachou": {
+    "name": "課長[かちょう]",
+    "kind": "extra",
+    "roleVi": "Trưởng phòng của anh Tanaka",
     "avatar": {
       "src": "/assets/illustrations/characters/kachou-portrait-v1.webp",
       "width": 512,
