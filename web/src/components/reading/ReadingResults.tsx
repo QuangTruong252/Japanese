@@ -11,27 +11,13 @@ import { isReadingSessionOutdated, readingResults, readingScore } from '@/lib/re
 import { readingPassage } from '@/lib/reading-data';
 import { restartReading } from '@/lib/reading-store';
 import { cn } from '@/lib/utils';
-import type { ReadingSession, ReadingSource } from '@/types/reading';
+import type { ReadingSession } from '@/types/reading';
 import { surfaceClass } from './display';
 import { GlossaryHost } from './GlossaryHost';
 import { ReadingBody, sentenceDomId } from './ReadingBody';
 import { scrollBehavior } from './scroll';
 
 const LIST_HREF = '/luyen-tap/doc-hieu';
-
-function sourceLine(source: ReadingSource) {
-  if (source.kind === 'minna-dialogue') return <p>Minna no Nihongo · Bài {source.lesson}</p>;
-  if (source.kind === 'original') return <p>MaiPace</p>;
-  return (
-    <>
-      <p>{source.author} · {/^https?:\/\//.test(source.url)
-        ? <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2">{source.title}</a>
-        : source.title}</p>
-      <p>Giấy phép: {source.license}</p>
-      <p>{source.notes}</p>
-    </>
-  );
-}
 
 export function ReadingResults({ session }: { session: ReadingSession }) {
   const router = useRouter();
@@ -73,8 +59,9 @@ export function ReadingResults({ session }: { session: ReadingSession }) {
   }
 
   return (
-    <div className="scrollbar-none flex min-h-0 flex-1 flex-col overflow-y-auto py-4">
-      <div className="mx-auto flex w-full max-w-xl flex-col gap-6 pb-8">
+    <>
+    <div className="scrollbar-none min-h-0 flex-1 overflow-y-auto py-4">
+      <div className="mx-auto flex w-full max-w-xl flex-col gap-6 pb-4">
         <header className="relative pt-4">
           <Accent kind="sprig-right" className="-right-4 -top-2 block w-40" />
           <Accent kind="petals" className="right-24 top-14 block w-20" />
@@ -82,14 +69,6 @@ export function ReadingResults({ session }: { session: ReadingSession }) {
           <h1 className="font-serif text-4xl font-semibold">Kết quả</h1>
           <p className="font-serif text-muted-foreground"><span className="text-6xl font-semibold text-primary">{score.correct}</span><span className="text-3xl font-semibold">/{score.total}</span></p>
         </header>
-
-        <GlossaryHost glossary={passage.glossary}>
-          {({ pick, activeEntryId }) => (
-            <div className={cn('rounded-2xl', surfaceClass(display), passage.kind === 'dialogue' && 'p-3 sm:p-4')}>
-              <ReadingBody passage={passage} display={display} showVi evidenceIds={evidence?.ids} activeEntryId={activeEntryId} onPick={pick} />
-            </div>
-          )}
-        </GlossaryHost>
 
         <section aria-label="Các câu hỏi" className="flex flex-col gap-6">
           {results.map(({ question, selectedOptionId, correct }, i) => (
@@ -118,19 +97,24 @@ export function ReadingResults({ session }: { session: ReadingSession }) {
           ))}
         </section>
 
-        <section aria-labelledby="reading-source" className="flex flex-col gap-1 border-t border-border pt-4 text-sm text-muted-foreground">
-          <h2 id="reading-source" className="font-semibold text-foreground">Nguồn</h2>
-          {sourceLine(passage.source)}
-          {passage.review.method === 'ai-multilayer' && <p>Biên soạn bằng AI, qua kiểm nhiều lớp{passage.review.nativeReviewed ? '' : ', chưa có người bản ngữ duyệt'}.</p>}
-        </section>
-
-        {error && <p role="alert" className="text-sm text-destructive">✕ {error}</p>}
-        <div className="flex flex-col gap-3">
-          {outdated && canRestart && <p className="text-sm text-muted-foreground">Bản đã cập nhật</p>}
-          <Button size="quiz" disabled={busy || !canRestart} onClick={() => void restart()}>{busy ? 'Đang mở…' : 'Làm lại bài này'}<ArrowRight aria-hidden="true" /></Button>
-          <Link href={LIST_HREF} className={buttonVariants({ size: 'quiz', variant: 'outline' })}>Về danh sách</Link>
-        </div>
+        <GlossaryHost glossary={passage.glossary}>
+          {({ pick, activeEntryId }) => (
+            <div className={cn('rounded-2xl', surfaceClass(display), passage.kind === 'dialogue' && 'p-3 sm:p-4')}>
+              <ReadingBody passage={passage} display={display} showVi evidenceIds={evidence?.ids} activeEntryId={activeEntryId} onPick={pick} />
+            </div>
+          )}
+        </GlossaryHost>
       </div>
     </div>
+
+    <div className="shrink-0 bg-background pb-3 pt-2">
+      <div className="mx-auto flex w-full max-w-xl flex-col gap-3">
+        {error && <p role="alert" className="text-sm text-destructive">✕ {error}</p>}
+        {outdated && canRestart && <p className="text-sm text-muted-foreground">Bản đã cập nhật</p>}
+        <Button size="quiz" disabled={busy || !canRestart} onClick={() => void restart()}>{busy ? 'Đang mở…' : 'Làm lại bài này'}<ArrowRight aria-hidden="true" /></Button>
+        <Link href={LIST_HREF} className={buttonVariants({ size: 'quiz', variant: 'outline' })}>Về danh sách</Link>
+      </div>
+    </div>
+    </>
   );
 }
