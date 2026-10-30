@@ -44,8 +44,10 @@ export function measureAnchor(trigger: HTMLElement, container: HTMLElement): Pop
   const width = Math.min(container.clientWidth - EDGE * 2, MAX_WIDTH);
   const center = box.left - frame.left + box.width / 2;
   const left = Math.min(Math.max(center - width / 2, EDGE), container.clientWidth - width - EDGE);
-  const below = window.innerHeight - box.bottom - GAP - EDGE;
-  const above = Math.min(box.top, box.top - frame.top) - GAP - EDGE;
+  // Vùng nhìn thấy là vùng cuộn của phiên đọc (giữa header và đáy), không phải cả cửa sổ.
+  const view = container.closest('[data-reading-scroll]')?.getBoundingClientRect();
+  const below = (view?.bottom ?? window.innerHeight) - box.bottom - GAP - EDGE;
+  const above = Math.min(box.top - (view?.top ?? 0), box.top - frame.top) - GAP - EDGE;
   const side = below < PREFERRED_HEIGHT && above > below ? 'above' : 'below';
   const room = side === 'above' ? above : below;
   return {

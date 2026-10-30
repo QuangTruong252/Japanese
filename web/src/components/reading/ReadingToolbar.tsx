@@ -16,7 +16,7 @@ function Tool({ pressed, onClick, children }: { pressed?: boolean; onClick: () =
   );
 }
 
-/** Nghe lại · Tra từ · Ẩn/Hiện dịch; ghim đáy vùng cuộn để luôn dùng được khi bài dài. Không có giọng ja-JP thì ẩn nút nghe (nút chết tệ hơn không có nút). */
+/** Nghe lại · Tra từ · Ẩn/Hiện dịch; nằm ở đáy cố định, trên panel câu hỏi. Không có giọng ja-JP thì ẩn nút nghe (nút chết tệ hơn không có nút). */
 export function ReadingToolbar({ listenText, lookup, onLookup, showVi, onShowVi }: {
   listenText: string;
   lookup: boolean;
@@ -31,7 +31,7 @@ export function ReadingToolbar({ listenText, lookup, onLookup, showVi, onShowVi 
     return () => { alive = false; };
   }, []);
   return (
-    <div role="toolbar" aria-label="Công cụ đọc" className="sticky bottom-0 z-10 flex divide-x divide-border overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+    <div role="toolbar" aria-label="Công cụ đọc" className="flex divide-x divide-border overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
       {voice && <Tool onClick={() => { speak(listenText); }}><Volume2 className="text-primary" aria-hidden="true" />Nghe lại</Tool>}
       <Tool pressed={lookup} onClick={onLookup}><BookOpen aria-hidden="true" />Tra từ</Tool>
       <Tool onClick={onShowVi}><Languages aria-hidden="true" />{showVi ? 'Ẩn dịch' : 'Hiện dịch'}</Tool>
