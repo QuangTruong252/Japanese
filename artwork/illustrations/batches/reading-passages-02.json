@@ -1,0 +1,48 @@
+{
+  "name": "reading-passages-02",
+  "description": "3 ảnh bìa hợp dạng bài cho bài đoạn văn Luyện đọc mới (đợt 2026-10-30).",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "group": "scenes",
+      "stem": "reading-souvenir-qa-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "still life on a long classroom table: a bag of coffee beans, a chocolate bar, a book and, set slightly apart, a small wrist watch; beside each item a tiny blank paper card; soft daylight from classroom windows.",
+      "alt": {
+        "vi": "Bàn dài trong lớp bày quà lưu niệm: cà phê, sô-cô-la, sách và chiếc đồng hồ."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-jazz-invitation-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "still life on a wooden table: a folded invitation letter with abstract handwriting lines and two blank concert tickets, next to a saxophone resting on its side and a cup of tea.",
+      "alt": {
+        "vi": "Thư mời và hai tấm vé cạnh cây kèn saxophone trên bàn gỗ."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-club-qa-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "evening still life on a study desk under a warm desk lamp: an open diary notebook with abstract handwriting lines and a pen; behind the desk an upright piano with its lid closed.",
+      "alt": {
+        "vi": "Cuốn nhật ký mở trên bàn học dưới đèn, phía sau là đàn piano đóng nắp."
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "name": "reading-passages-03",
+  "description": "7 ảnh bìa (vẽ lại không người, cảnh mới) cho bài đoạn văn Luyện đọc mới (đợt 2026-10-30).",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "group": "scenes",
+      "stem": "reading-weekly-timetable-v2",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "close view of a weekly class timetable sheet pinned on a classroom wall: a grid of colored boxes with no writing, one box highlighted in muted brick red; a round wall clock without digits hangs beside it. No people anywhere in the scene, an empty quiet still life.",
+      "alt": {
+        "vi": "Tờ thời khóa biểu dán tường phòng học cạnh đồng hồ treo tường."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-dorm-giveaway-v2",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "an empty dormitory corridor: one blank paper notice pinned on a cork bulletin board; below it an old bicycle leaning against the wall and a small television set on a wooden chair. No people anywhere in the scene, an empty quiet still life.",
+      "alt": {
+        "vi": "Hành lang ký túc xá: tờ thông báo trên bảng tin, xe đạp cũ và ti vi nhỏ để tặng."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-directions-home-v2",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "a quiet empty Japanese street corner seen from a small station exit in the morning: a bank, a post office, a small park, a tiny cafe and an old two-storey building with three bicycles parked in front; all signs blank. No people anywhere in the scene, an empty quiet still life.",
+      "alt": {
+        "vi": "Góc phố nhìn từ ga: ngân hàng, bưu điện, công viên và tòa nhà cũ có xe đạp."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-river-invite-v2",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "a club room corner: a bulletin board with one blank invitation sheet pinned on it; a fishing rod and a straw hat lean against the wall beside it; through the window a calm river with grassy banks. No people anywhere in the scene, an empty quiet still life.",
+      "alt": {
+        "vi": "Thư mời trên bảng tin câu lạc bộ, cạnh cần câu và mũ, ngoài cửa sổ là dòng sông."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-lobby-rules-v2",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "an empty dormitory lobby wall: one blank paper notice taped to the wall, below it a wall air conditioner, a closed window with a latch and a light switch next to the entrance door. No people anywhere in the scene, an empty quiet still life.",
+      "alt": {
+        "vi": "Tờ nội quy dán trên tường sảnh ký túc xá, cạnh điều hòa và cửa sổ đóng."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-room-listing-v2",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "an empty clean Japanese tatami room for rent: a built-in closet with its sliding door open, a wall air conditioner, a window with soft daylight; through an open sliding door a small shared kitchen-dining area with a table is visible. No people anywhere in the scene, an empty quiet still life.",
+      "alt": {
+        "vi": "Căn phòng kiểu Nhật trống có tủ âm tường, điều hòa, nhìn sang bếp ăn chung."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-canteen-review-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "a small clean canteen near a station seen from inside by the window: on the counter a tray set meal with grilled fish, a small meat dish, vegetables, rice and miso soup; empty tables and chairs behind; all signs and menus blank. No people anywhere in the scene, an empty quiet still life.",
+      "alt": {
+        "vi": "Khay cơm cá nướng, thịt và rau cạnh cửa sổ nhà ăn nhỏ gần ga."
+      }
+    }
+  ]
+}

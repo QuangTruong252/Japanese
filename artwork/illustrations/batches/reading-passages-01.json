@@ -1,0 +1,139 @@
+{
+  "name": "reading-passages-01",
+  "description": "10 ảnh bìa hợp dạng bài cho bài đoạn văn Luyện đọc (thay ảnh hai người nói chuyện).",
+  "referenceImages": [
+    "artwork/illustrations/reference/paper-town-style-v1.png"
+  ],
+  "jobs": [
+    {
+      "group": "scenes",
+      "stem": "reading-campus-note-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "close still life of a university corridor bulletin board made of cork: one handwritten paper note pinned with two round pins, its writing shown only as soft abstract pencil scribble lines, beside it a small hand-drawn floor sketch of rooms and a staircase arrow; softly blurred bright hallway behind with a staircase going down and a classroom door.",
+      "alt": {
+        "vi": "Tờ ghi chú viết tay ghim trên bảng tin hành lang trường đại học."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-museum-diary-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "still life on a wooden desk by a window at dusk: an open diary notebook with handwriting shown only as abstract ink lines, a museum ticket stub and a small postcard of a landscape painting tucked in the page, a pen and a cup of tea.",
+      "alt": {
+        "vi": "Cuốn nhật ký mở trên bàn, kẹp vé bảo tàng và tấm bưu thiếp tranh."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-lunch-message-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "close view of a hand holding a smartphone whose screen shows a simple chat with three rounded message bubbles of abstract lines and a small bento emoji-like drawing, no readable text; softly blurred university campus courtyard at noon behind.",
+      "alt": {
+        "vi": "Bàn tay cầm điện thoại hiện màn hình tin nhắn rủ ăn trưa."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-cafe-flyer-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "a small paper flyer lying on a round wooden cafe table next to a cup of coffee: the flyer has a simple drawing of a coffee cup and a cherry blossom branch and abstract lines instead of text; through the window behind, a park with a blooming cherry tree.",
+      "alt": {
+        "vi": "Tờ quảng cáo quán cà phê trên bàn, cửa sổ nhìn ra cây anh đào trong công viên."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-kitten-box-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "morning in front of a small dormitory entrance with a glass door and potted plant: a tiny white kitten sitting inside an open cardboard box on the ground, and a young Vietnamese woman about 19, dark bob hair, cream cardigan over brick-red top crouching down beside the box looking at the kitten with surprise and a gentle smile.",
+      "alt": {
+        "vi": "Mai ngồi xuống nhìn chú mèo trắng nhỏ trong thùng giấy trước ký túc xá."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-first-snow-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "still life by a window in winter: a notebook open on a desk with an essay shown only as abstract handwriting lines, a warm mug and a scarf; outside the window large soft snowflakes fall over small Japanese houses with white roofs.",
+      "alt": {
+        "vi": "Cuốn vở mở cạnh cửa sổ, ngoài trời tuyết đầu mùa đang rơi trên mái nhà."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-atm-steps-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "close view of a bank ATM front panel: a hand inserting a cash card into the slot, the screen shows only three simple numbered-looking step boxes drawn as abstract shapes and a keypad below, a small receipt slot; calm convenience store interior softly blurred behind.",
+      "alt": {
+        "vi": "Bàn tay đưa thẻ vào máy ATM, màn hình chỉ các bước rút tiền."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-sick-email-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "still life on a bedside table in a small apartment room: an open laptop whose screen shows an email window with abstract lines and no readable text, a medicine packet, a glass of water, a thermometer and tissues; a bed with a folded blanket softly visible.",
+      "alt": {
+        "vi": "Máy tính mở thư điện tử trên bàn đầu giường, cạnh thuốc và nhiệt kế."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-mountain-plan-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "still life on a wooden floor before a weekend trip: a paper hiking itinerary with a simple sketched mountain trail map and abstract lines instead of text, next to a small backpack, a water bottle, two rice balls wrapped in paper and a compact camera.",
+      "alt": {
+        "vi": "Tờ lịch trình leo núi cạnh ba lô, chai nước, cơm nắm và máy ảnh."
+      }
+    },
+    {
+      "group": "scenes",
+      "stem": "reading-farewell-card-v1",
+      "source": "image_gen",
+      "generation": {
+        "tool": "Codex built-in image_gen",
+        "orchestrator": "gpt-6-luna (effort low)"
+      },
+      "subject": "still life on a classroom desk by a window: a handmade folded thank-you card with a pressed cherry blossom on its front and abstract handwriting lines inside, an envelope and a small bouquet of flowers; a school building and spring trees outside the window.",
+      "alt": {
+        "vi": "Tấm thiệp cảm ơn tự làm, phong bì và bó hoa nhỏ trên bàn học."
+      }
+    }
+  ]
+}
