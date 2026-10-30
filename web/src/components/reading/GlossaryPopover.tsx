@@ -119,7 +119,8 @@ function GlossaryEntryBody({ entry, style }: { entry: ReadingGlossaryEntry; styl
       <div style={style} className="flex flex-col gap-3 overflow-y-auto rounded-2xl p-4">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <p className="jp jp-display break-words text-3xl font-semibold leading-snug">{label}</p>
+          {/* Nhãn mẫu ngữ pháp dài (N があります／わかります／…) ở cỡ chữ của từ đơn sẽ tràn năm sáu dòng. */}
+          <p className={cn('jp jp-display break-words font-semibold leading-snug', label.length > 8 ? 'text-xl' : 'text-3xl')}>{label}</p>
           {entry.reading && entry.reading !== label && (
             <p className="jp mt-1 inline-block rounded-full bg-accent px-3 text-base font-medium text-primary">{entry.reading}</p>
           )}
