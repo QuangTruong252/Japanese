@@ -58,7 +58,7 @@ function GlossaryChooser({ entries, anchor, onChoose, onClose }: { entries: Read
 
 /**
  * Mobile: cùng nội dung nhưng trượt từ đáy (kiểu ReadingDisplaySheet). Danh sách chọn và chi tiết đổi chỗ ngay trong
- * sheet; `onBack` chỉ có khi chi tiết đến từ danh sách. Kéo vạch để đóng chưa làm: đã có X, backdrop và Escape.
+ * sheet; `onBack` chỉ có khi chi tiết đến từ danh sách. Đóng bằng X hoặc Escape.
  */
 function GlossarySheet({ entry, choices, trigger, onChoose, onBack, onClose }: {
   entry?: ReadingGlossaryEntry;
@@ -69,13 +69,13 @@ function GlossarySheet({ entry, choices, trigger, onChoose, onBack, onClose }: {
   onClose: () => void;
 }) {
   return (
-    <DialogPrimitive.Root open onOpenChange={(next) => { if (!next) onClose(); }}>
+    // Không phủ, không khóa cuộn, chạm ngoài không đóng: người học chạm từ khác để đổi nội dung sheet.
+    <DialogPrimitive.Root open modal={false} disablePointerDismissal onOpenChange={(next) => { if (!next) onClose(); }}>
       <DialogPrimitive.Portal>
-        <DialogPrimitive.Backdrop className="fixed inset-0 z-50 bg-foreground/30 motion-safe:duration-150 motion-safe:data-open:animate-in motion-safe:data-open:fade-in-0" />
         <DialogPrimitive.Popup
           finalFocus={{ current: trigger }}
           aria-label={entry ? entryDialogLabel(entry) : 'Chọn mục cần tra'}
-          className="fixed inset-x-0 bottom-0 z-50 mx-auto flex max-h-[85dvh] w-full max-w-[760px] flex-col rounded-t-3xl bg-background pb-[max(0.5rem,env(safe-area-inset-bottom))] text-foreground outline-none motion-safe:duration-250 motion-safe:data-open:animate-in motion-safe:data-open:slide-in-from-bottom"
+          className="fixed inset-x-0 bottom-0 z-50 mx-auto flex max-h-[85dvh] w-full max-w-[760px] flex-col rounded-t-3xl border-t border-border bg-background shadow-[0_-8px_24px_rgb(0_0_0/0.18)] pb-[max(0.5rem,env(safe-area-inset-bottom))] text-foreground outline-none motion-safe:duration-250 motion-safe:data-open:animate-in motion-safe:data-open:slide-in-from-bottom"
         >
           <div className="relative flex h-14 shrink-0 items-center justify-center">
             <span aria-hidden="true" className="h-1.5 w-12 rounded-full bg-muted" />
