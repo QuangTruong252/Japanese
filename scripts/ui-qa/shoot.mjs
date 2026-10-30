@@ -31,11 +31,31 @@ mkdirSync(outDir, { recursive: true });
 const seed = readFileSync(path.join(import.meta.dirname, 'seed.js'), 'utf8');
 
 // Windows: agent-browser là shim .cmd nên gọi qua cmd.exe. JS luôn đi qua stdin để tránh lỗi quoting.
-const ab = (args, input) =>
+// Lệnh đầu của agent-browser hay treo, nên mọi lệnh có timeout (AB_TIMEOUT_MS, mặc định 60 s); treo thì kill daemon,
+// thử lại đúng một lần, vẫn lỗi thì ném lỗi rõ để script thoát mã khác 0.
+const timeout = Number(process.env.AB_TIMEOUT_MS) || 60_000;
+const run = (args, input) =>
   (process.platform === 'win32'
-    ? execFileSync('cmd.exe', ['/d', '/c', 'agent-browser', ...args], { encoding: 'utf8', input })
-    : execFileSync('agent-browser', args, { encoding: 'utf8', input })
+    ? execFileSync('cmd.exe', ['/d', '/c', 'agent-browser', ...args], { encoding: 'utf8', input, timeout })
+    : execFileSync('agent-browser', args, { encoding: 'utf8', input, timeout })
   ).trim();
+const ab = (args, input) => {
+  try {
+    return run(args, input);
+  } catch (first) {
+    if (first.code !== 'ETIMEDOUT') throw new Error(`agent-browser ${args[0]} lỗi: ${first.message}`);
+    console.error(`agent-browser ${args[0]} treo quá ${timeout} ms, kill và thử lại một lần`);
+    try {
+      if (process.platform === 'win32') execFileSync('taskkill', ['/F', '/IM', 'agent-browser-win32-x64.exe'], { stdio: 'ignore' });
+      else execFileSync('pkill', ['-f', 'agent-browser'], { stdio: 'ignore' });
+    } catch { /* không có tiến trình để kill */ }
+    try {
+      return run(args, input);
+    } catch (second) {
+      throw new Error(`agent-browser ${args[0]} vẫn lỗi sau khi thử lại: ${second.message}`);
+    }
+  }
+};
 const evalJs = (js) => ab(['eval', '--stdin'], js);
 
 const list = (s) => s.split(',').map((x) => x.trim()).filter(Boolean);

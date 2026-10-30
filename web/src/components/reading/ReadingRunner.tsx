@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { ALargeSmall, ArrowRight, ChevronDown, ChevronLeft, ChevronUp, X } from 'lucide-react';
-import { Illustration } from '@/components/Illustration';
 import { SessionShell } from '@/components/practice/SessionFrame';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -95,7 +94,6 @@ function ReadingSessionView({ session }: { session: ReadingSession }) {
   const dialogue = passage.kind === 'dialogue';
   // Lỗi lưu / phiên hỏng nằm trong panel, nên ép mở để không bị giấu khi thu gọn.
   const expanded = open || !!failed || !!broken;
-  const cover = passage.illustration;
   const chrome = 'size-11 shrink-0 rounded-full border border-border hover:bg-muted';
 
   const dragStart = useRef<number | null>(null);
@@ -113,37 +111,30 @@ function ReadingSessionView({ session }: { session: ReadingSession }) {
 
   return (
     <>
-      <header className={cn('relative -mx-4 shrink-0 overflow-hidden sm:-mx-6', cover ? 'min-h-32 rounded-b-2xl text-white' : 'pb-2 pt-2')}>
-        {cover && (
-          <>
-            <Illustration asset={cover} sizes="(min-width: 768px) 760px, 100vw" eager className="absolute inset-0 size-full object-cover" />
-            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-black/60" />
-          </>
-        )}
-        <div className="relative flex items-center gap-3 px-4 pb-3 pt-3 sm:px-6">
-          <Button type="button" variant="ghost" size="icon" className={cn(chrome, cover ? 'bg-background/85 text-foreground' : 'bg-secondary text-foreground')} aria-label="Về danh sách" onClick={() => router.push(READING_LIST_HREF)}>
-            <ChevronLeft className="size-5" aria-hidden="true" />
-          </Button>
-          <div className="min-w-0 flex-1">
-            <div className="flex items-baseline gap-3">
-              <h1 className={cn('line-clamp-2 min-w-0 flex-1 font-serif text-lg font-semibold leading-tight sm:text-xl', cover && '[text-shadow:0_1px_3px_rgb(0_0_0/0.6)]')}>{passage.titleVi}</h1>
-              <span className={cn('shrink-0 text-sm font-semibold tabular-nums', cover ? 'text-white/90' : 'text-muted-foreground')}>{current.questionIndex + 1}/{total}</span>
-            </div>
-            <div
-              role="progressbar"
-              aria-valuenow={current.questionIndex + 1}
-              aria-valuemin={1}
-              aria-valuemax={total}
-              aria-valuetext={`Câu ${current.questionIndex + 1} trên ${total}`}
-              className={cn('mt-2 h-1.5 overflow-hidden rounded-full', cover ? 'bg-white/35' : 'bg-muted')}
-            >
-              <div className={cn('h-full origin-left motion-safe:transition-transform motion-safe:duration-250 ease-smooth-out', cover ? 'bg-white' : 'bg-primary')} style={{ transform: `scaleX(${current.answers.length / total})` }} />
-            </div>
+      {/* Không ảnh bìa: header gọn nhường chỗ cho bài đọc; ảnh bìa chỉ còn ở danh sách và kết quả. */}
+      <header className="-mx-4 flex shrink-0 items-center gap-3 border-b border-border px-4 py-2 sm:-mx-6 sm:px-6">
+        <Button type="button" variant="ghost" size="icon" className={cn(chrome, 'bg-secondary text-foreground')} aria-label="Về danh sách" onClick={() => router.push(READING_LIST_HREF)}>
+          <ChevronLeft className="size-5" aria-hidden="true" />
+        </Button>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-baseline gap-3">
+            <h1 className="line-clamp-2 min-w-0 flex-1 font-serif text-lg font-semibold leading-tight sm:text-xl">{passage.titleVi}</h1>
+            <span className="shrink-0 text-sm font-semibold tabular-nums text-muted-foreground">{current.questionIndex + 1}/{total}</span>
           </div>
-          <Button type="button" variant="ghost" size="icon" className={cn(chrome, cover ? 'bg-background/85 text-foreground' : 'bg-secondary text-foreground')} aria-label="Cài đặt đọc" onClick={() => setSheet(true)}>
-            <ALargeSmall className="size-5" aria-hidden="true" />
-          </Button>
+          <div
+            role="progressbar"
+            aria-valuenow={current.questionIndex + 1}
+            aria-valuemin={1}
+            aria-valuemax={total}
+            aria-valuetext={`Câu ${current.questionIndex + 1} trên ${total}`}
+            className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-muted"
+          >
+            <div className="h-full origin-left bg-primary ease-smooth-out motion-safe:transition-transform motion-safe:duration-250" style={{ transform: `scaleX(${current.answers.length / total})` }} />
+          </div>
         </div>
+        <Button type="button" variant="ghost" size="icon" className={cn(chrome, 'bg-secondary text-foreground')} aria-label="Cài đặt đọc" onClick={() => setSheet(true)}>
+          <ALargeSmall className="size-5" aria-hidden="true" />
+        </Button>
       </header>
 
       <div data-reading-scroll className="scrollbar-none min-h-0 flex-1 overflow-y-auto overflow-x-clip pb-4 pt-3">

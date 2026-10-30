@@ -31,10 +31,11 @@ export function ReadingText({
   const words = readingWords(sentenceId, jp, glossary);
   const active = (ids: string[]) => !!activeEntryId && ids.includes(activeEntryId);
   return (
+    // Đoạn không co (shrink-0): Furigana có overflow-wrap:anywhere nên co sẽ về 1 ký tự và chữ vỡ thành nhiều hàng; cụm quá dài thì xuống dòng giữa các đoạn nhờ flex-wrap.
     // Khung ngoài là inline thường để câu nối tiếp câu trước trên cùng dòng trong đoạn văn; chỉ từng cụm không ngắt.
     <span>
       {words.map((word, w) => (
-        <span key={w} className="mr-[0.3em] inline-flex max-w-full items-baseline last:mr-0">
+        <span key={w} className="mr-[0.3em] inline-flex max-w-full flex-wrap items-baseline last:mr-0">
           {word.map((run, r) =>
             run.entryIds.length > 0 && onPick ? (
               <button
@@ -47,14 +48,14 @@ export function ReadingText({
                 className={cn(
                   // Không padding ngang: hai đoạn liền nhau trong cùng một từ (押し|ます) phải dính như chữ thường.
                   // Gạch dưới bằng border vì text-decoration không lan vào khối inline-flex của Furigana.
-                  'rounded-sm border-b-2 border-dotted border-primary/60 outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring',
+                  'shrink-0 rounded-sm border-b-2 border-dotted border-primary/60 outline-none transition-colors focus-visible:ring-3 focus-visible:ring-ring',
                   active(run.entryIds) ? 'bg-accent text-primary' : lookup && 'bg-accent/50',
                 )}
               >
                 <Furigana text={run.text} className={className} />
               </button>
             ) : (
-              <Furigana key={r} text={run.text} className={className} />
+              <Furigana key={r} text={run.text} className={cn('shrink-0', className)} />
             ),
           )}
         </span>

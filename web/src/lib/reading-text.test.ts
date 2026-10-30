@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { groupSentences, readingWords } from '../components/reading/reading-text.ts';
+import source from '../data/n5/reading.json' with { type: 'json' };
 import { stripFurigana } from './japanese.ts';
 import { makeDialogueFixture } from './reading.test-helpers.ts';
 
@@ -62,4 +63,11 @@ test('readingWords: dấu cách sau tiền tố お/ご không ngắt cụm, anc
   assert.deepEqual(text('おはよう ございます'), ['おはよう', 'ございます']);
   const [word] = readingWords('s', 'お 祭り です', glossary);
   assert.deepEqual(word!.map((r) => [r.text, r.entryIds.length]), [['お', 0], ['祭り', 1]]);
+});
+
+test('readingWords: câu thật l06-ohanami-7 (ええ、行きましょう。) tách đoạn nguyên vẹn, không đứt giữa ええ / ましょう', () => {
+  const passage = source.passages.find((p) => p.id === 'reading-l06-ohanami')!;
+  const sentence = passage.sentences.find((s) => s.id === 'l06-ohanami-7')!;
+  const [first] = readingWords(sentence.id, sentence.jp, passage.glossary as never);
+  assert.deepEqual(first!.map((r) => r.text), ['ええ', '、', '行[い]きましょう', '。']);
 });
