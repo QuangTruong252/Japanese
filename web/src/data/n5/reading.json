@@ -41751,7 +41751,7 @@
     {
       "id": "reading-p-directions-home",
       "kind": "passage",
-      "titleVi": "Cách đi từ ga đến nhà của Mai",
+      "titleVi": "Cách đi từ ga đến nhà mình",
       "sentences": [
         {
           "id": "p-directions-home-1",
@@ -53116,7 +53116,7 @@
         {
           "id": "p-lunch-message-1",
           "jp": "マイさん、田中[たなか]です。",
-          "vi": "Mai à, Tanaka đây.",
+          "vi": "Mai à, anh Tanaka đây.",
           "group": 1
         },
         {
@@ -53128,49 +53128,49 @@
         {
           "id": "p-lunch-message-3",
           "jp": "昼[ひる]ごはんを いっしょに 食[た]べませんか。",
-          "vi": "Bạn có muốn cùng ăn trưa không?",
+          "vi": "Em có muốn cùng ăn trưa không?",
           "group": 1
         },
         {
           "id": "p-lunch-message-4",
           "jp": "あの 店[みせ]で 肉[にく]を 食[た]べましょう。",
-          "vi": "Chúng ta hãy ăn thịt ở quán kia nhé.",
+          "vi": "Mình ăn thịt ở quán kia nhé.",
           "group": 2
         },
         {
           "id": "p-lunch-message-5",
-          "jp": "私[わたし]は 魚[さかな]を 食[た]べません。",
-          "vi": "Mình không ăn cá.",
+          "jp": "私[わたし]は 野菜[やさい]を 食[た]べません。",
+          "vi": "Anh không ăn rau.",
           "group": 2
         },
         {
           "id": "p-lunch-message-6",
-          "jp": "肉[にく]と 野菜[やさい]を 食[た]べます。",
-          "vi": "Mình ăn thịt và rau.",
+          "jp": "肉[にく]と 魚[さかな]を 食[た]べます。",
+          "vi": "Anh ăn thịt và cá.",
           "group": 2
         },
         {
           "id": "p-lunch-message-7",
-          "jp": "九時[くじ]から 一時[いちじ]まで 学校[がっこう]で 勉強[べんきょう]します。",
-          "vi": "Mình học ở trường từ 9 giờ đến 1 giờ.",
+          "jp": "九時[くじ]から 一時[いちじ]まで 会社[かいしゃ]で 働[はたら]きます。",
+          "vi": "Anh làm việc ở công ty từ 9 giờ đến 1 giờ.",
           "group": 3
         },
         {
           "id": "p-lunch-message-8",
           "jp": "二時[にじ]に あの 店[みせ]で 会[あ]いましょう。",
-          "vi": "Hai giờ gặp nhau ở quán kia nhé.",
+          "vi": "Hai giờ mình gặp nhau ở quán kia nhé.",
           "group": 3
         },
         {
           "id": "p-lunch-message-9",
           "jp": "それから、 駅[えき]へ 行[い]きましょう。",
-          "vi": "Sau đó, chúng ta cùng đến ga nhé.",
+          "vi": "Sau đó, mình cùng đến ga nhé.",
           "group": 3
         },
         {
           "id": "p-lunch-message-10",
           "jp": "じゃ、また あした。",
-          "vi": "Vậy mai gặp nhé.",
+          "vi": "Vậy mai gặp em nhé.",
           "group": 3
         }
       ],
@@ -53238,10 +53238,10 @@
           "glossaryId": "gw-5-eki"
         },
         {
-          "id": "5:gakkou",
-          "ref": "5:gakkou",
-          "lesson": 5,
-          "glossaryId": "gw-5-gakkou"
+          "id": "3:kaisha",
+          "ref": "3:kaisha",
+          "lesson": 3,
+          "glossaryId": "gw-3-kaisha"
         },
         {
           "id": "6:mise",
@@ -53292,10 +53292,10 @@
           "glossaryId": "gw-5-ikimasu"
         },
         {
-          "id": "4:benkyou-shimasu",
-          "ref": "4:benkyou-shimasu",
+          "id": "4:hatarakimasu",
+          "ref": "4:hatarakimasu",
           "lesson": 4,
-          "glossaryId": "gw-4-benkyou-shimasu"
+          "glossaryId": "gw-4-hatarakimasu"
         },
         {
           "id": "4:ji",
@@ -53368,9 +53368,9 @@
           "totalTypes": 20,
           "byLesson": {
             "1": 2,
-            "3": 1,
+            "3": 2,
             "4": 4,
-            "5": 3,
+            "5": 2,
             "6": 10
           },
           "unknownTypes": 0
@@ -53394,7 +53394,7 @@
           "options": [
             {
               "id": "q1-a",
-              "textVi": "Cá"
+              "textVi": "Rau"
             },
             {
               "id": "q1-b",
@@ -53402,11 +53402,11 @@
             },
             {
               "id": "q1-c",
-              "textVi": "Rau"
+              "textVi": "Cá"
             }
           ],
           "correctOptionId": "q1-a",
-          "explanationVi": "Câu 5: 魚を 食べません — Tanaka không ăn cá; thịt và rau là món Tanaka ăn (câu 4, 6).",
+          "explanationVi": "Câu 5: 野菜を 食べません — Tanaka không ăn rau; thịt và cá là món Tanaka ăn (câu 4, 6).",
           "evidenceSentenceIds": [
             "p-lunch-message-5"
           ]
@@ -53429,7 +53429,7 @@
             }
           ],
           "correctOptionId": "q2-b",
-          "explanationVi": "Câu 8: 二時に あの 店で 会いましょう — hẹn gặp lúc 2 giờ; 1 giờ là lúc Tanaka học xong, 9 giờ là lúc bắt đầu học (câu 7).",
+          "explanationVi": "Câu 8: 二時に あの 店で 会いましょう — hẹn gặp lúc 2 giờ; 1 giờ là lúc Tanaka làm việc xong, 9 giờ là lúc bắt đầu làm (câu 7).",
           "evidenceSentenceIds": [
             "p-lunch-message-8"
           ]
@@ -53444,7 +53444,7 @@
             },
             {
               "id": "q3-b",
-              "textVi": "Gặp ở trường, rồi đến quán kia"
+              "textVi": "Gặp ở công ty, rồi đến quán kia"
             },
             {
               "id": "q3-c",
@@ -53452,7 +53452,7 @@
             }
           ],
           "correctOptionId": "q3-c",
-          "explanationVi": "Câu 8 và 9: あの 店で 会います, それから 駅へ 行きます — gặp ở quán kia trước rồi mới đến ga; quán kia cũng là nơi sẽ ăn thịt (câu 4), trường là nơi Tanaka học bài (câu 7) chứ không phải nơi hẹn gặp.",
+          "explanationVi": "Câu 8 và 9: あの 店で 会います, それから 駅へ 行きます — gặp ở quán kia trước rồi mới đến ga; quán kia cũng là nơi sẽ ăn thịt (câu 4), công ty là nơi Tanaka làm việc (câu 7) chứ không phải nơi hẹn gặp.",
           "evidenceSentenceIds": [
             "p-lunch-message-8",
             "p-lunch-message-9"
@@ -53471,7 +53471,7 @@
           "3:ja",
           "6:ja-mata",
           "5:eki",
-          "5:gakkou",
+          "3:kaisha",
           "6:mise",
           "6:sakana",
           "1:watashi",
@@ -53480,7 +53480,7 @@
           "6:aimasu",
           "6:sorekara",
           "5:ikimasu",
-          "4:benkyou-shimasu",
+          "4:hatarakimasu",
           "4:ji",
           "2:kono-sono-ano",
           "5:e-ikimasu",
@@ -53691,14 +53691,14 @@
             },
             {
               "sentenceId": "p-lunch-message-5",
-              "start": 6,
-              "end": 11,
+              "start": 7,
+              "end": 12,
               "text": "食べません"
             },
             {
               "sentenceId": "p-lunch-message-6",
-              "start": 7,
-              "end": 11,
+              "start": 6,
+              "end": 10,
               "text": "食べます"
             }
           ]
@@ -53797,25 +53797,25 @@
           ]
         },
         {
-          "id": "gw-5-gakkou",
+          "id": "gw-3-kaisha",
           "kind": "word",
-          "labelJp": "学校[がっこう]",
-          "reading": "がっこう",
+          "labelJp": "会社[かいしゃ]",
+          "reading": "かいしゃ",
           "meaningsVi": [
-            "trường học"
+            "công ty"
           ],
-          "exampleJp": "明日[あした] 学校[がっこう]へ 行[い]きます。",
-          "exampleVi": "Ngày mai tôi đi đến trường.",
+          "exampleJp": "会社[かいしゃ]は どちらですか。",
+          "exampleVi": "Anh/chị làm ở công ty nào?",
           "vocabRef": {
-            "lesson": 5,
-            "wordId": "gakkou"
+            "lesson": 3,
+            "wordId": "kaisha"
           },
           "illustration": {
-            "src": "/assets/illustrations/vocab/school-v1.webp",
+            "src": "/assets/illustrations/vocab/company-building-v1.webp",
             "width": 512,
             "height": 512,
             "alt": {
-              "vi": "Tòa nhà trường học có tháp đồng hồ, cổng và cây anh đào."
+              "vi": "Tòa nhà văn phòng công ty."
             }
           },
           "anchors": [
@@ -53823,7 +53823,7 @@
               "sentenceId": "p-lunch-message-7",
               "start": 10,
               "end": 12,
-              "text": "学校"
+              "text": "会社"
             }
           ]
         },
@@ -53888,7 +53888,7 @@
           },
           "anchors": [
             {
-              "sentenceId": "p-lunch-message-5",
+              "sentenceId": "p-lunch-message-6",
               "start": 3,
               "end": 4,
               "text": "魚"
@@ -53987,7 +53987,7 @@
           },
           "anchors": [
             {
-              "sentenceId": "p-lunch-message-6",
+              "sentenceId": "p-lunch-message-5",
               "start": 3,
               "end": 5,
               "text": "野菜"
@@ -54088,33 +54088,33 @@
           ]
         },
         {
-          "id": "gw-4-benkyou-shimasu",
+          "id": "gw-4-hatarakimasu",
           "kind": "word",
-          "labelJp": "勉強[べんきょう]する",
-          "reading": "べんきょうする",
+          "labelJp": "働[はたら]く",
+          "reading": "はたらく",
           "meaningsVi": [
-            "học, học tập"
+            "làm việc"
           ],
-          "exampleJp": "毎晩[まいばん] 勉強[べんきょう]します。",
-          "exampleVi": "Mỗi tối tôi đều học bài.",
+          "exampleJp": "毎日[まいにち] 働[はたら]きます。",
+          "exampleVi": "Mỗi ngày tôi đều làm việc.",
           "vocabRef": {
             "lesson": 4,
-            "wordId": "benkyou-shimasu"
+            "wordId": "hatarakimasu"
           },
           "illustration": {
-            "src": "/assets/illustrations/vocab/study-v1.webp",
+            "src": "/assets/illustrations/vocab/work-v1.webp",
             "width": 512,
             "height": 512,
             "alt": {
-              "vi": "Chàng trai ngồi học và viết vào sổ."
+              "vi": "Cô gái làm việc với máy tính xách tay."
             }
           },
           "anchors": [
             {
               "sentenceId": "p-lunch-message-7",
               "start": 14,
-              "end": 19,
-              "text": "勉強します"
+              "end": 18,
+              "text": "働きます"
             }
           ]
         },
@@ -54365,14 +54365,14 @@
             },
             {
               "sentenceId": "p-lunch-message-5",
-              "start": 4,
-              "end": 5,
+              "start": 5,
+              "end": 6,
               "text": "を"
             },
             {
               "sentenceId": "p-lunch-message-6",
-              "start": 5,
-              "end": 6,
+              "start": 4,
+              "end": 5,
               "text": "を"
             }
           ]
@@ -54397,7 +54397,7 @@
               "sentenceId": "p-lunch-message-7",
               "start": 10,
               "end": 13,
-              "text": "学校で"
+              "text": "会社で"
             },
             {
               "sentenceId": "p-lunch-message-8",
@@ -54420,8 +54420,8 @@
             {
               "sentenceId": "p-lunch-message-6",
               "start": 0,
-              "end": 5,
-              "text": "肉と 野菜"
+              "end": 4,
+              "text": "肉と 魚"
             }
           ]
         },
@@ -54491,20 +54491,20 @@
             },
             {
               "sentenceId": "p-lunch-message-5",
-              "start": 8,
-              "end": 11,
+              "start": 9,
+              "end": 12,
               "text": "ません"
             },
             {
               "sentenceId": "p-lunch-message-6",
-              "start": 9,
-              "end": 11,
+              "start": 8,
+              "end": 10,
               "text": "ます"
             },
             {
               "sentenceId": "p-lunch-message-7",
-              "start": 17,
-              "end": 19,
+              "start": 16,
+              "end": 18,
               "text": "ます"
             }
           ]
@@ -54554,28 +54554,29 @@
           {
             "layer": 2,
             "status": "passed",
-            "note": "Duyệt lại sau khi đổi câu (đợt 2026-10-30): câu đổi/thêm qua lớp 2/3/5 bởi Sol (RV3–RV8, lớp 5 dịch Nhật trước), câu giữ nguyên đã đạt ở các vòng R1/RPa/RPb/L5 sạch trước đó."
+            "note": "Sửa theo canon nhân vật 2026-10-30 (câu 5–7, câu hỏi 1/3, xưng anh/em trong bản dịch): lớp 2/3/5 duyệt lại bởi Claude Sonnet 5.5 (reviewer độc lập, dịch ngược trước khi so), cờ xưng hô đã xử lý."
           },
           {
             "layer": 3,
             "status": "passed",
-            "note": "Duyệt lại sau khi đổi câu (đợt 2026-10-30): câu đổi/thêm qua lớp 2/3/5 bởi Sol (RV3–RV8, lớp 5 dịch Nhật trước), câu giữ nguyên đã đạt ở các vòng R1/RPa/RPb/L5 sạch trước đó."
+            "note": "Sửa theo canon nhân vật 2026-10-30 (câu 5–7, câu hỏi 1/3, xưng anh/em trong bản dịch): lớp 2/3/5 duyệt lại bởi Claude Sonnet 5.5 (reviewer độc lập, dịch ngược trước khi so), cờ xưng hô đã xử lý."
           },
           {
             "layer": 4,
             "status": "passed",
-            "note": "Lớp 4 (2026-10-30, lần 7, đo cách ly 1 câu/bài/file): mù 3 model Sol/Luna/Gemini đúng 32/32/35% (chung 33%, ngưỡng ≤ 42%); có bài 2 lượt (Sol, Gemini) đúng 60/60 kèm bằng chứng."
+            "note": "Lớp 4 (2026-10-30, lần 7, đo cách ly 1 câu/bài/file): mù 3 model Sol/Luna/Gemini đúng 32/32/35% (chung 33%, ngưỡng ≤ 42%); có bài 2 lượt (Sol, Gemini) đúng 60/60 kèm bằng chứng. Câu hỏi 1 đổi đáp án (Rau) sau lần đo này, chưa đo mù lại."
           },
           {
             "layer": 5,
             "status": "passed",
-            "note": "Duyệt lại sau khi đổi câu (đợt 2026-10-30): câu đổi/thêm qua lớp 2/3/5 bởi Sol (RV3–RV8, lớp 5 dịch Nhật trước), câu giữ nguyên đã đạt ở các vòng R1/RPa/RPb/L5 sạch trước đó."
+            "note": "Sửa theo canon nhân vật 2026-10-30 (câu 5–7, câu hỏi 1/3, xưng anh/em trong bản dịch): lớp 2/3/5 duyệt lại bởi Claude Sonnet 5.5 (reviewer độc lập, dịch ngược trước khi so), cờ xưng hô đã xử lý."
           }
         ],
         "models": [
           "Claude Sonnet 5.5 (soạn, sửa theo review)",
           "GPT-6 Codex (review nội dung lớp 2/3/5)",
-          "scripts/build-reading.mjs check (lớp 1)"
+          "scripts/build-reading.mjs check (lớp 1)",
+          "Claude Sonnet 5.5 (duyệt lại lớp 2/3/5 sau khi sửa theo canon)"
         ],
         "date": "2026-10-30",
         "nativeReviewed": false
