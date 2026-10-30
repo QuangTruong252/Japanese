@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, type RefObject } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type RefObject } from 'react';
 import Link from 'next/link';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { Check, ChevronRight, Copy, Plus } from 'lucide-react';
@@ -29,7 +29,7 @@ export interface PopoverAnchor {
   maxHeight: number;
 }
 
-const MAX_WIDTH = 416;
+export const MAX_WIDTH = 416;
 const EDGE = 8;
 const GAP = 10;
 const PREFERRED_HEIGHT = 320;
@@ -39,10 +39,10 @@ const MIN_HEIGHT = 200;
  * Đo chỗ neo từ chữ được bấm; `container` là khung `relative` chứa popover. Mặc định đặt dưới chữ; chỗ dưới chật
  * mà phía trên (trong khung, nơi popover không bị cắt) rộng hơn thì lật lên. Chiều cao giới hạn theo phía đã chọn.
  */
-export function measureAnchor(trigger: HTMLElement, container: HTMLElement): PopoverAnchor {
+export function measureAnchor(trigger: HTMLElement, container: HTMLElement, wanted: number): PopoverAnchor {
   const box = trigger.getBoundingClientRect();
   const frame = container.getBoundingClientRect();
-  const width = Math.min(container.clientWidth - EDGE * 2, MAX_WIDTH);
+  const width = Math.min(container.clientWidth - EDGE * 2, wanted);
   const center = box.left - frame.left + box.width / 2;
   const left = Math.min(Math.max(center - width / 2, EDGE), container.clientWidth - width - EDGE);
   // Vùng nhìn thấy là vùng cuộn của phiên đọc (giữa header và đáy), không phải cả cửa sổ.
@@ -86,8 +86,8 @@ export function usePopoverDismiss(box: RefObject<HTMLElement | null>, trigger: H
   }, [box, trigger, onClose]);
 }
 
-export function GlossaryPopover({ entry, anchor, onClose }: { entry: ReadingGlossaryEntry; anchor: PopoverAnchor; onClose: () => void }) {
-  const box = useRef<HTMLDivElement>(null);
+/** Nội dung chi tiết một mục; popover (tablet/PC) và bottom sheet (mobile) cùng dùng. */
+function GlossaryEntryBody({ entry, style }: { entry: ReadingGlossaryEntry; style?: CSSProperties }) {
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
@@ -98,8 +98,6 @@ export function GlossaryPopover({ entry, anchor, onClose }: { entry: ReadingGlos
     const id = await readingReviewTargetId(entry);
     return id ? !!(await db.reviewItems.get(id)) : null;
   }, [entry.id]);
-
-  usePopoverDismiss(box, anchor.trigger, onClose);
 
   async function add() {
     if (busy) return;
@@ -118,20 +116,7 @@ export function GlossaryPopover({ entry, anchor, onClose }: { entry: ReadingGlos
   const speakText = entry.kind === 'grammar' && entry.exampleJp ? glossaryLabel({ labelJp: entry.exampleJp }) : entry.reading ?? label;
 
   return (
-    <div
-      ref={box}
-      role="dialog"
-      aria-label={`Nghĩa của ${label}`}
-      tabIndex={-1}
-      style={{ [anchor.side === 'above' ? 'bottom' : 'top']: anchor.offset, left: anchor.left, width: anchor.width }}
-      className="absolute z-30 rounded-2xl border border-border bg-popover text-popover-foreground shadow-lg outline-none motion-safe:animate-in motion-safe:fade-in-0 motion-safe:duration-150"
-    >
-      <span
-        aria-hidden="true"
-        style={{ left: anchor.arrowX }}
-        className={cn('absolute size-3 -translate-x-1/2 rotate-45 border-border bg-popover', anchor.side === 'above' ? '-bottom-1.5 border-b border-r' : '-top-1.5 border-l border-t')}
-      />
-      <div style={{ maxHeight: anchor.maxHeight }} className="flex flex-col gap-3 overflow-y-auto rounded-2xl p-4">
+      <div style={style} className="flex flex-col gap-3 overflow-y-auto rounded-2xl p-4">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="jp jp-display break-words text-3xl font-semibold leading-snug">{label}</p>
@@ -191,6 +176,32 @@ export function GlossaryPopover({ entry, anchor, onClose }: { entry: ReadingGlos
         </Link>
       )}
       </div>
+  );
+}
+
+/** Tên accessible của hộp thoại một mục. */
+export const entryDialogLabel = (entry: ReadingGlossaryEntry) => `Nghĩa của ${glossaryLabel(entry)}`;
+
+export { GlossaryEntryBody };
+
+export function GlossaryPopover({ entry, anchor, onClose }: { entry: ReadingGlossaryEntry; anchor: PopoverAnchor; onClose: () => void }) {
+  const box = useRef<HTMLDivElement>(null);
+  usePopoverDismiss(box, anchor.trigger, onClose);
+  return (
+    <div
+      ref={box}
+      role="dialog"
+      aria-label={entryDialogLabel(entry)}
+      tabIndex={-1}
+      style={{ [anchor.side === 'above' ? 'bottom' : 'top']: anchor.offset, left: anchor.left, width: anchor.width }}
+      className="absolute z-30 rounded-2xl border border-border bg-popover text-popover-foreground shadow-lg outline-none motion-safe:animate-in motion-safe:fade-in-0 motion-safe:duration-150"
+    >
+      <span
+        aria-hidden="true"
+        style={{ left: anchor.arrowX }}
+        className={cn('absolute size-3 -translate-x-1/2 rotate-45 border-border bg-popover', anchor.side === 'above' ? '-bottom-1.5 border-b border-r' : '-top-1.5 border-l border-t')}
+      />
+      <GlossaryEntryBody entry={entry} style={{ maxHeight: anchor.maxHeight }} />
     </div>
   );
 }
