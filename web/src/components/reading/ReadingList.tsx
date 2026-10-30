@@ -6,8 +6,13 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { ArrowRight, BookOpen, Check, ChevronRight, MessageCircle } from 'lucide-react';
 import { Accent, BookSpread, Chip, PageTitle, TornCard } from '@/components/PaperKit';
 import { Illustration } from '@/components/Illustration';
+import { Furigana } from '@/components/Furigana';
+import { CharacterSheet } from '@/components/dialogue/CharacterSheet';
+import { RoleAvatar } from '@/components/dialogue/RoleAvatar';
+import { getCharacter, MAIN_CHARACTER_IDS } from '@/lib/characters';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
+import { stripFurigana } from '@/lib/japanese';
 import { loadSettings } from '@/lib/settings';
 import { READING_PASSAGES } from '@/lib/reading-data';
 import { DEFAULT_READING_FILTER, listReadingPassages, loadReadingScope, readingStatuses, resolveReadingScope, saveReadingScope, type ReadingListItem, type ReadingScope } from '@/lib/reading';
@@ -82,6 +87,7 @@ export function ReadingList() {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [error, setError] = useState('');
   const [opening, setOpening] = useState<string | null>(null);
+  const [profileId, setProfileId] = useState<string | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -149,8 +155,34 @@ export function ReadingList() {
     </div>
   );
 
+  const cast = (
+    <section aria-labelledby="reading-cast" className="flex flex-col gap-3">
+      <h2 id="reading-cast" className="font-serif text-xl font-semibold">Nhân vật</h2>
+      <ul className="scrollbar-none -mx-4 flex gap-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+        {MAIN_CHARACTER_IDS.map((id) => {
+          const name = getCharacter(id)!.name;
+          return (
+            <li key={id} className="shrink-0">
+              <button
+                type="button"
+                aria-label={`Xem giới thiệu ${stripFurigana(name)}`}
+                onClick={() => setProfileId(id)}
+                className="flex min-h-11 flex-col items-center gap-1 rounded-2xl outline-none focus-visible:ring-3 focus-visible:ring-ring"
+              >
+                <RoleAvatar role={{ id, name }} size={48} sizes="(min-width: 768px) 140px, 110px" className="size-16 md:size-20" />
+                <Furigana text={name} className="text-sm font-medium text-muted-foreground" />
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+      <CharacterSheet id={profileId} onClose={() => setProfileId(null)} />
+    </section>
+  );
+
   const list = (
     <div className="flex flex-col gap-5">
+      {cast}
       {unfinished && (
         <TornCard className="flex flex-col gap-3">
           <p className="text-sm text-muted-foreground">Phiên dở · {unfinished.passage.titleVi} · Câu {Math.min(unfinished.questionIndex + 1, unfinished.passage.questions.length)}/{unfinished.passage.questions.length}</p>

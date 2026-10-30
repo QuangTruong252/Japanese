@@ -14,10 +14,13 @@ const SIZE_CONFIG: Record<32 | 40 | 48, { container: string; sizes: string }> = 
 export function RoleAvatar({
   role,
   size = 32,
+  sizes,
   className,
 }: {
   role: DialogueRole;
   size?: 32 | 40 | 48;
+  /** Ghi đè khi className phóng avatar lớn hơn cỡ chuẩn, để ảnh tải đủ điểm ảnh. */
+  sizes?: string;
   className?: string;
 }) {
   const avatar = getRoleAvatar(role.id);
@@ -36,7 +39,7 @@ export function RoleAvatar({
       >
         <Illustration
           asset={asset}
-          sizes={config.sizes}
+          sizes={sizes ?? config.sizes}
           // Chân dung bán thân: đầu + cổ áo chiếm ~9–62% chiều cao ảnh, phóng 1.7 lần quanh điểm 19% để mặt đầy vòng tròn
           className="size-full origin-[50%_19%] scale-[1.7] rounded-full object-cover"
         />

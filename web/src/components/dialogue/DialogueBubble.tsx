@@ -1,6 +1,6 @@
 import { Furigana } from '@/components/Furigana';
 import { SpeakButton } from '@/components/SpeakButton';
-import { RoleAvatar } from '@/components/dialogue/RoleAvatar';
+import { ProfileAvatar } from '@/components/dialogue/CharacterSheet';
 import { SPEAK_CLASS } from '@/components/dialogue/reader-styles';
 import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
 import { cn } from '@/lib/utils';
@@ -39,7 +39,7 @@ export function DialogueBubble({
   return (
     <div id={id} className={cn('flex min-w-0 flex-col gap-1', right ? 'items-end' : 'items-start', className)}>
       <div className={cn('flex items-center gap-2', right && 'flex-row-reverse')}>
-        <RoleAvatar role={role} size={32} />
+        <ProfileAvatar role={role} size={32} />
         <Furigana text={role.name} className="text-sm font-medium text-muted-foreground" />
       </div>
       <div

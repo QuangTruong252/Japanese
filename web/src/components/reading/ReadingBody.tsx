@@ -2,7 +2,7 @@
 
 import type { ReactNode } from 'react';
 import { Furigana } from '@/components/Furigana';
-import { RoleAvatar } from '@/components/dialogue/RoleAvatar';
+import { ProfileAvatar } from '@/components/dialogue/CharacterSheet';
 import { SpeakButton } from '@/components/SpeakButton';
 import { SPEAK_CLASS } from '@/components/dialogue/reader-styles';
 import { formatOptionalBrackets, stripFurigana } from '@/lib/japanese';
@@ -70,7 +70,7 @@ export function DialogueView(props: ReadingBodyProps) {
         const evidence = evidenceIds.includes(sentence.id);
         return (
           <li key={sentence.id} id={sentenceDomId(sentence.id)} className="grid grid-cols-[3rem_minmax(0,1fr)] items-start gap-x-3 md:grid-cols-[3.5rem_minmax(0,1fr)]">
-            <RoleAvatar role={role} size={48} className="mt-5" />
+            <ProfileAvatar role={role} size={48} className="mt-5" />
             <div className="min-w-0">
               <Furigana text={role.name} className="text-sm font-medium text-muted-foreground" />
               <div

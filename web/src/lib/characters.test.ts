@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { getRoleAvatar } from './characters.ts';
+import { getCharacter, getRoleAvatar, MAIN_CHARACTER_IDS } from './characters.ts';
 import charactersData from '../data/n5/characters.json' with { type: 'json' };
 import readingData from '../data/n5/reading.json' with { type: 'json' };
 import { validateIllustrationAsset } from './illustrations.ts';
@@ -53,4 +53,17 @@ test('mọi vai trong hội thoại bài học và Luyện đọc đều có tro
     assert.ok(cast[id], `${where}: vai "${id}" chưa đăng ký trong characters.json`);
     assert.equal(name, cast[id].name, `${where}: tên vai "${id}" khác characters.json`);
   }
+});
+
+test('getCharacter trả đúng entry; id lạ trả undefined', () => {
+  for (const id of Object.keys(cast)) assert.equal(getCharacter(id)?.name, cast[id]!.name);
+  assert.equal(getCharacter('non-existent-role'), undefined);
+  assert.equal(getCharacter('toString'), undefined);
+});
+
+test('MAIN_CHARACTER_IDS khớp các entry kind main và mỗi id có bioVi', () => {
+  const expected = Object.keys(cast).filter((id) => cast[id]!.kind === 'main');
+  assert.deepEqual([...MAIN_CHARACTER_IDS], expected);
+  assert.ok(MAIN_CHARACTER_IDS.length > 0);
+  for (const id of MAIN_CHARACTER_IDS) assert.ok(getCharacter(id)?.bioVi?.trim(), `${id}: thiếu bioVi`);
 });
