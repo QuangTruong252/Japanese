@@ -5,7 +5,8 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
-import { checkDraft, computeCoverage, contentUnits, displayText, getTokenizer, loadSource, mergePassages, reviewComplete, rubyRanges, run } from './build-reading.mjs';
+import { fileURLToPath } from 'node:url';
+import { checkDraft, computeCoverage, contentUnits, displayText, getTokenizer, grammarSignals, loadSource, mergePassages, reviewComplete, rubyRanges, run, SIGNAL_IDS } from './build-reading.mjs';
 
 const ctx = { tokenizer: await getTokenizer(), source: loadSource() };
 const lines = ctx.source.lessons[7].dialogues[0].lines.slice(0, 4);
@@ -223,7 +224,7 @@ test('tên riêng: thiếu glossary kind name bị báo, name không được v�
   withRef.glossary.find((g) => g.kind === 'name').vocabRef = { lesson: 1, wordId: 'watashi' };
   assert.match(errorsOf(withRef).join('\n'), /tên riêng không có ref/);
   assert.deepEqual(errorsOf(validDraft()), []);
-  assert.equal(checkDraft(validDraft(), ctx).warnings.length, 0, 'name không bị cảnh báo thiếu trong vocabUsed/grammarUsed');
+  assert.deepEqual(checkDraft(validDraft(), ctx).warnings.filter((w) => w.startsWith('glossary ')), [], 'name không bị cảnh báo thiếu trong vocabUsed/grammarUsed');
 });
 
 test('review: models/date bắt buộc, lớp not-applicable chỉ cho lớp 2/5 hội thoại Minna và cần note', () => {
@@ -233,4 +234,55 @@ test('review: models/date bắt buộc, lớp not-applicable chỉ cho lớp 2/5
   const na = validDraft();
   na.review.layers.push({ layer: 2, status: 'not-applicable', note: 'nguyên văn' });
   assert.match(errorsOf(na).join('\n'), /chỉ được not-applicable/);
+});
+
+// Câu bên dưới copy nguyên văn từ hội thoại bài 5, 8, 9 trong lessons/*.json (displayText, không furigana).
+const rulesOf = (text) => new Map(grammarSignals(ctx.tokenizer, text).map((s) => [s.rule, s]));
+
+test('detector: trợ từ/từ vựng phổ biến của N5 được gắn cờ, ID gợi ý đều có thật trong lessons', () => {
+  const cases = [
+    ['友達と デパートへ 行きました。', ['to-noun', 'e-iku']],
+    ['難しいですが、 おもしろいです。', ['ga-but']],
+    ['日本の 生活は どうですか。', ['dou-desu-ka', 'no-genitive']],
+    ['マイさんは どんな お 茶を 飲みますか。', ['donna', 'o-object']],
+    ['いいえ、静かな 町です。 あまり 有名じゃ ありません。', ['totemo-amari']],
+    ['マイさんは 音楽が 好きですか。', ['ga-object']],
+    ['電車で 行きましたか。', ['de-particle']],
+    ['はい、来月の 一日に 来ます。', ['no-genitive']],
+  ];
+  for (const [text, expected] of cases) {
+    const found = rulesOf(text);
+    for (const rule of expected) assert.ok(found.has(rule), `${text}: thiếu ${rule}, có ${[...found.keys()]}`);
+  }
+  for (const [rule, ids] of Object.entries(SIGNAL_IDS)) for (const id of ids) assert.ok(ctx.source.grammar.has(id), `SIGNAL_IDS.${rule}: ${id} không có trong lessons`);
+});
+
+test('detector: không báo nhầm (số + 時 không phải lượng từ, ください không phải て nối)', () => {
+  assert.ok(!rulesOf('十時 十五分です。').has('quantifier'));
+  assert.ok(!rulesOf('いいえ。 また いらっしゃって ください。').has('te-encadenar'));
+  assert.ok(!rulesOf('ええ、元気ですよ。').has('dou-desu-ka'));
+});
+
+test('check: tín hiệu chưa khai báo đúng mẫu thành cảnh báo kèm ID gợi ý, khai báo rồi thì hết, advisory không gây lỗi', () => {
+  const draft = validDraft();
+  const base = checkDraft(draft, ctx);
+  assert.deepEqual(base.errors, []);
+  for (const s of base.signals.filter((x) => x.undeclared)) assert.ok(base.warnings.some((w) => w.includes(`"${s.rule}"`)), s.rule);
+  const dou = base.signals.find((s) => s.rule === 'dou-desu-ka');
+  assert.ok(dou && !dou.undeclared, 'どうですか đã khai báo 8:dou-desu-ka');
+  const stripped = structuredClone(draft);
+  stripped.grammarUsed = [];
+  stripped.glossary = stripped.glossary.filter((g) => g.kind !== 'grammar');
+  const after = checkDraft(stripped, ctx);
+  assert.ok(after.signals.find((s) => s.rule === 'dou-desu-ka')?.undeclared);
+  assert.ok(after.warnings.some((w) => w.includes('"dou-desu-ka"') && w.includes('8:dou-desu-ka')));
+  assert.ok(!after.errors.some((e) => e.includes('dou-desu-ka')));
+});
+
+test('reading.json đã commit: coverage của mọi bài khớp bản tính lại bằng computeCoverage', () => {
+  const file = path.join(path.dirname(fileURLToPath(import.meta.url)), '../web/src/data/n5/reading.json');
+  const { passages } = JSON.parse(readFileSync(file, 'utf8'));
+  assert.ok(passages.length > 0);
+  const stale = passages.filter((p) => JSON.stringify(p.coverage) !== JSON.stringify(computeCoverage(p))).map((p) => p.id);
+  assert.deepEqual(stale, [], `coverage lệch bản tính lại ở: ${stale.join(', ')} (chạy lại release cho bài đó)`);
 });

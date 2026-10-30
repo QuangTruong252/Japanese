@@ -270,7 +270,35 @@ export function contentUnits(tokenizer, text, { lexicon, readings, phrases, prop
 
 // ---------- tín hiệu ngữ pháp ----------
 
-/** Trả về [{rule, lesson}] cho các hình thái động từ/tính từ và cấu trúc đặc trưng từng bài; chỉ là dấu hiệu cần đối chiếu. */
+/**
+ * Mẫu (ID `<bài>:<id>` trong lessons) mà một tín hiệu có thể là dấu hiệu của; khai báo một trong số đó là đủ.
+ * Chỉ để liệt kê "có tín hiệu nhưng chưa khai báo"; điều kiện lỗi vẫn là "cùng bài" ở checkDraft.
+ */
+export const SIGNAL_IDS = {
+  masu: ['4:verbos-masu'], mashou: ['6:mashou'], 'masen-ka': ['6:masen-ka'], tai: ['13:tai-desu'], 'nai-form': ['17:forma-nai'],
+  'nai-to': ['21:nai-to'], 'ta-form': ['19:forma-ta'], 'ta-koto-ga-aru': ['19:ta-koto-ga-arimasu'], tari: ['19:tari-tari'],
+  'adj-past': ['12:pasado-adjetivo-i'], 'noun-past': ['12:pasado-nominal'], 'te-form': ['14:forma-te', '14:grupos-verbos'],
+  'te-kudasai': ['14:te-kudasai', '14:sumimasen-ga'], 'te-imasu': ['14:te-imasu', '15:te-imasu-estado', '15:te-imasu-habitual'],
+  'temo-ii': ['15:temo-ii'], 'tewa-ikemasen': ['15:tewa-ikemasen'], 'te-kara': ['16:te-kara'], 'adj-te': ['16:te-encadenar'],
+  'te-encadenar': ['16:te-encadenar'], 'te-agemasu': ['24:te-agemasu'], 'te-moraimasu': ['24:te-moraimasu', '24:te-kuremasu'], 'te-kuremasu': ['24:te-kuremasu', '24:wa-ga-v'],
+  temo: ['25:temo'], 'to-omou-iu': ['21:to-omoimasu', '21:to-iimasu'], deshou: ['21:deshou'], 'koto-ga-dekiru': ['18:dekimasu'],
+  'mae-ni': ['18:mae-ni'], toki: ['23:toki', '23:toki-aspecto'], 'to-cond': ['23:to-condicional'], 'rentai-modifier': ['22:oracion-modificadora', '22:v-dicc-tiempo'],
+  'plain-final': ['20:estilos', '20:uso-estilos', '20:conversacion-informal'], 'kara-reason': ['9:kara-causa'], yori: ['12:yori'], tara: ['25:tara', '25:tara-temporal'],
+  naru: ['19:narimasu'], 'ni-iku': ['13:ni-ikimasu'], 'gurai-dake': ['11:gurai-dake'], 'made-ni': ['17:made-ni'], 'nai-nakereba': ['17:nakereba-narimasen', '17:nakutemo-ii', '17:naide-kudasai'],
+  'kara-made': ['4:kara-made'], 'ni-time': ['4:ni-tiempo'], 'to-noun': ['4:to', '5:to-persona'], 'e-iku': ['5:e-ikimasu'], 'o-object': ['6:o-transitivo', '6:o-shimasu', '16:o-salir', '23:o-movimiento'],
+  'de-particle': ['6:de-lugar', '7:de-instrumento', '5:de-vehiculo', '21:de-lugar-evento'], 'ga-but': ['8:ga-pero'], 'totemo-amari': ['8:totemo-amari'], 'dou-desu-ka': ['8:dou-desu-ka'], donna: ['8:donna', '9:donna-9'],
+  'ga-object': ['9:ga-objeto', '10:arimasu-imasu', '14:ga-fenomeno', '16:wa-ga', '23:ga-adjetivo', '13:hoshii', '18:dekimasu'], doushite: ['9:doushite'],
+  'ni-lugar': ['10:ni-lugar', '10:wa-ni-arimasu'], 'ya-nado': ['10:ya-nado'], position: ['10:posiciones'], quantifier: ['11:numerales', '11:uso-cuantificador'], 'kai-count': ['11:duracion-kai'],
+  hoshii: ['13:hoshii'], 'dokoka-nanika': ['13:dokoka-nanika'], ichiban: ['12:ichiban'], 'dochira-ga': ['12:dochira-ga'], 'ageru-morau-kureru': ['7:agemasu', '7:moraimasu', '24:kuremasu'],
+  mou: ['7:mou-mashita'], dekimasu: ['18:dekimasu'], shumi: ['18:shumi'], nakanaka: ['18:nakanaka'], zehi: ['18:zehi'], 'demo-nomimasen-ka': ['21:demo-nomimasen-ka'], moshi: ['25:moshi'],
+  'mashou-ka': ['14:mashou-ka', '22:mashou-ka-22'], 'sentence-ne': ['4:ne', '5:sou-desu-ne', '8:sou-desu-ne-8'], 'sentence-yo': ['5:yo'], 'sou-desu': ['2:sou-desu', '2:sou-desu-ka', '5:sou-desu-ne', '8:sou-desu-ne-8'],
+  demonstrative: ['2:kore-sore-are', '2:kono-sono-ano', '3:ko-so-a-do', '16:dore-dono'], 'place-demonstrative': ['3:koko-soko-asoko', '3:ko-so-a-do', '3:wa-lugar-desu', '3:doko-dochira'],
+  clock: ['4:ima-nanji'], 'no-genitive': ['1:no', '2:no-posesion', '3:no-origen', '2:no-sustituto', '12:no-sustituto-12'], mo: ['1:mo', '5:doko-mo'],
+};
+/** Tín hiệu từ vựng/trợ từ phổ biến: không bao giờ gây lỗi (không có điều kiện "cùng bài"), chỉ vào danh sách "chưa khai báo". */
+const ADVISORY = new Set(['kara-made', 'ni-time', 'to-noun', 'e-iku', 'o-object', 'de-particle', 'ga-but', 'totemo-amari', 'dou-desu-ka', 'donna', 'ga-object', 'doushite', 'ni-lugar', 'ya-nado', 'position', 'quantifier', 'kai-count', 'hoshii', 'dokoka-nanika', 'ichiban', 'dochira-ga', 'ageru-morau-kureru', 'mou', 'dekimasu', 'shumi', 'nakanaka', 'zehi', 'demo-nomimasen-ka', 'moshi', 'mashou-ka', 'sentence-ne', 'sentence-yo', 'sou-desu', 'demonstrative', 'place-demonstrative', 'clock', 'no-genitive', 'mo', 'te-encadenar']);
+
+/** Trả về [{rule, lesson, ids, advisory}] cho các hình thái động từ/tính từ và cấu trúc đặc trưng từng bài; chỉ là dấu hiệu cần đối chiếu. */
 export function grammarSignals(tokenizer, text) {
   const T = tokenizer.tokenize(text).filter((t) => !/^\s*$/u.test(t.surface_form));
   const hits = [];
@@ -322,9 +350,53 @@ export function grammarSignals(tokenizer, text) {
     if (sf === 'に' && p.pos === '動詞' && p.conjugated_form === '連用形' && ['行く', '来る', '帰る'].includes(n.basic_form)) hit('ni-iku', 13);
     if (['だけ', 'ぐらい', 'くらい'].includes(sf) && t.pos === '助詞') hit('gurai-dake', 11);
     if (sf === 'まで' && n.surface_form === 'に') hit('made-ni', 17);
+    // Tín hiệu từ vựng/trợ từ (advisory): nhắc người soạn khai báo mẫu đi kèm, không phải kết luận.
+    const aux = (x) => x.pos === '動詞' && x.pos_detail_1 === '非自立';
+    const ahead = (fn, span = 3) => [1, 2, 3].slice(0, span).some((k) => fn(at(i + k)));
+    const isTime = p.pos_detail_1 === '副詞可能' || (p.pos_detail_1 === '接尾' && /^(時|分|曜日|月|年|半)$/u.test(p.surface_form)) || (isNumber(p) && n.pos === '動詞');
+    if (t.pos === '助詞' && sf === 'から' && T.some((x) => x.pos === '助詞' && x.surface_form === 'まで')) hit('kara-made', 4);
+    if (t.pos === '助詞' && sf === 'に' && isTime) hit('ni-time', 4);
+    if (t.pos === '助詞' && t.pos_detail_1 === '並立助詞' && sf === 'と') hit('to-noun', 4);
+    if (t.pos === '助詞' && t.pos_detail_1 === '格助詞' && sf === 'と' && n.pos === '動詞' && !['思う', '言う'].includes(n.basic_form)) hit('to-noun', 5);
+    if (sf === 'へ' && t.pos === '助詞' && ahead((x) => ['行く', '来る', '帰る'].includes(x.basic_form))) hit('e-iku', 5);
+    if (sf === 'を' && t.pos === '助詞') hit('o-object', 6);
+    if (sf === 'で' && t.pos === '助詞' && t.pos_detail_1 === '格助詞') hit('de-particle', 6);
+    if (sf === 'が' && t.pos === '助詞' && t.pos_detail_1 === '接続助詞') hit('ga-but', 8);
+    if (['とても', 'あまり'].includes(sf)) hit('totemo-amari', 8);
+    if (sf === 'どう' && n.basic_form === 'です') hit('dou-desu-ka', 8);
+    if (sf === 'どんな') hit('donna', 8);
+    if (sf === 'が' && t.pos_detail_1 === '格助詞' && (['あり', 'い', 'わかり', 'でき'].includes(n.surface_form) || ['好き', '嫌い', '上手', '下手', '大きい', '小さい', '欲しい', 'ほしい'].includes(n.basic_form))) hit('ga-object', 9);
+    if (sf === 'どうして') hit('doushite', 9);
+    if (sf === 'に' && t.pos === '助詞' && ahead((x) => ['ある', 'いる'].includes(x.basic_form), 2)) hit('ni-lugar', 10);
+    if (sf === 'や' && t.pos === '助詞') hit('ya-nado', 10);
+    if (sf === 'の' && ['上', '下', '前', '後ろ', '右', '左', '中', '外', '隣', '近く', '間'].includes(n.surface_form)) hit('position', 10);
+    if (t.pos_detail_1 === '接尾' && /^(人|台|枚|つ|冊|個|杯|歳)$/u.test(sf)) hit('quantifier', 11);
+    if (sf === '回' && t.pos_detail_1 === '接尾') hit('kai-count', 11);
+    if (['欲しい', 'ほしい'].includes(t.basic_form)) hit('hoshii', 13);
+    if ((sf === 'どこ' || sf === '何') && n.surface_form === 'か') hit('dokoka-nanika', 13);
+    if (sf === 'いちばん' || sf === '一番') hit('ichiban', 12);
+    if (sf === 'どちら' && n.surface_form === 'が') hit('dochira-ga', 12);
+    if (['あげる', 'もらう', 'くれる', '貸す', '借りる', '教える', '習う'].includes(t.basic_form) && !(p.pos === '助詞' && TE_ENDINGS.has(p.surface_form))) hit('ageru-morau-kureru', 7);
+    if (sf === 'もう') hit('mou', 7);
+    if (t.basic_form === 'できる') hit('dekimasu', 18);
+    if (sf === '趣味') hit('shumi', 18);
+    if (sf === 'なかなか') hit('nakanaka', 18);
+    if (sf === 'ぜひ') hit('zehi', 18);
+    if (sf === 'でも' && t.pos === '助詞' && t.pos_detail_1 === '副助詞') hit('demo-nomimasen-ka', 21);
+    if (sf === 'もし') hit('moshi', 25);
+    if (sf === 'まし' && n.surface_form === 'ょ' && n2.surface_form === 'う' && at(i + 3).surface_form === 'か') hit('mashou-ka', 14);
+    if (t.pos === '助詞' && t.pos_detail_1 === '終助詞' && sf === 'ね') hit('sentence-ne', 4);
+    if (t.pos === '助詞' && t.pos_detail_1 === '終助詞' && sf === 'よ') hit('sentence-yo', 5);
+    if (sf === 'そう' && n.basic_form === 'です') hit('sou-desu', 2);
+    if (['これ', 'それ', 'あれ', 'この', 'その', 'あの', 'どれ', 'どの'].includes(sf)) hit('demonstrative', 2);
+    if (['ここ', 'そこ', 'あそこ', 'どこ', 'こちら', 'そちら', 'あちら', 'どちら'].includes(sf)) hit('place-demonstrative', 3);
+    if (isNumber(t) && ['時', '分'].includes(n.surface_form)) hit('clock', 4);
+    if (sf === 'の' && t.pos === '助詞' && t.pos_detail_1 === '連体化') hit('no-genitive', 1);
+    if (sf === 'も' && t.pos === '助詞') hit('mo', 1);
+    if (verb(p) && sf === 'て' && n.pos === '動詞' && !aux(n) && !n.surface_form.startsWith('くださ')) hit('te-encadenar', 16);
     if (verb(p) && p.conjugated_form === '未然形' && (sf === 'なけれ' || (sf === 'なく' && n.surface_form === 'て') || (sf === 'ない' && n.surface_form === 'で'))) hit('nai-nakereba', 17);
   }
-  return [...new Map(hits.map((h) => [h.rule, h])).values()];
+  return [...new Map(hits.map((h) => [h.rule, { ...h, ids: SIGNAL_IDS[h.rule] ?? [], advisory: ADVISORY.has(h.rule) }])).values()];
 }
 
 // ---------- kiểm một draft ----------
@@ -543,8 +615,11 @@ export function checkDraft(draft, { tokenizer, source }) {
   for (const sig of byRule.values()) {
     // Cùng bài với một mẫu đã khai báo = tạm coi là khai báo; khác thì cần quyết định biên tập.
     sig.resolved = decisions.has(sig.rule) ? 'decision' : declaredLessons.has(sig.lesson) ? 'lesson-declared' : null;
+    // Chưa khai báo đúng mẫu nào trong `ids` (và chưa có quyết định biên tập) = người soạn cần đối chiếu; chỉ cảnh báo.
+    sig.undeclared = !decisions.has(sig.rule) && sig.ids.length > 0 && !sig.ids.some((id) => declared.has(id));
     signals.push(sig);
-    if (!sig.resolved) err(`tín hiệu ngữ pháp "${sig.rule}" (bài ${sig.lesson}, ${sig.sentences.join(', ')}) chưa khai báo hoặc có ngoại lệ`);
+    if (sig.undeclared) warnings.push(`mẫu có tín hiệu "${sig.rule}" nhưng chưa khai báo (${sig.ids.join(' | ')}) ở ${sig.sentences.join(', ')}`);
+    if (!sig.resolved && !sig.advisory) err(`tín hiệu ngữ pháp "${sig.rule}" (bài ${sig.lesson}, ${sig.sentences.join(', ')}) chưa khai báo hoặc có ngoại lệ`);
   }
 
   // review
