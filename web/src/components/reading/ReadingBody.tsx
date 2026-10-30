@@ -72,7 +72,7 @@ export function DialogueView(props: ReadingBodyProps) {
           <li key={sentence.id} id={sentenceDomId(sentence.id)} className="grid grid-cols-[3rem_minmax(0,1fr)] items-start gap-x-3 md:grid-cols-[3.5rem_minmax(0,1fr)]">
             <ProfileAvatar role={role} size={48} className="mt-5" />
             <div className="min-w-0">
-              <Furigana text={role.name} className="text-sm font-medium text-muted-foreground" />
+              <Furigana text={role.name} zoomable={false} className="text-sm font-medium text-muted-foreground" />
               <div
                 className={cn(
                   'rounded-2xl rounded-tl-md border px-4 py-2 md:px-6 md:py-3',

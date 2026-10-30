@@ -126,7 +126,7 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
         </div>
         {state.phase === 'session' && (
           <h1 className="text-center text-sm text-muted-foreground">
-            {dialogue.title.vi} · vai <Furigana text={role.name} />
+            {dialogue.title.vi} · vai <Furigana text={role.name} zoomable={false} />
           </h1>
         )}
       </header>
@@ -168,7 +168,7 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
                     <ToggleGroupItem key={item.id} value={item.id} className={cn('h-auto min-h-20 w-full justify-start gap-3 whitespace-normal rounded-xl p-4 md:relative md:min-h-48 md:flex-col md:justify-center md:gap-4', state.roleId === item.id && 'border-primary')}>
                       <RoleAvatar role={item} size={40} className="md:size-24" />
                       <span className="flex min-w-0 flex-1 flex-col items-start gap-1 text-left md:flex-none md:items-center md:text-center md:text-xl">
-                        <Furigana text={item.name} />
+                        <Furigana text={item.name} zoomable={false} />
                         <span className="text-sm text-muted-foreground">{dialogue.lines.filter((line) => line.speaker === item.id).length} câu</span>
                       </span>
                       {state.roleId === item.id && <Check aria-hidden="true" className="size-5 shrink-0 text-primary md:absolute md:right-3 md:top-3" />}
@@ -197,7 +197,7 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
                     <li key={index} data-line-index={index} className={cn('flex w-[90%] min-w-0 flex-col gap-2', isOwn && 'ml-auto items-end')}>
                       <div className={cn('flex items-center gap-2', isOwn && 'flex-row-reverse')}>
                         <RoleAvatar role={speaker} size={32} />
-                        <Furigana text={speaker.name} className="text-sm font-medium" />
+                        <Furigana text={speaker.name} zoomable={false} className="text-sm font-medium" />
                       </div>
                       <div className="w-full min-w-0 rounded-2xl border border-dashed border-primary bg-background p-4 sm:p-5">
                         <p className="mb-3 text-sm font-semibold text-primary">Lượt của bạn</p>
@@ -233,7 +233,7 @@ export function RolePlay({ dialogue, lessonNum }: { dialogue: Dialogue; lessonNu
         <div className="scrollbar-none flex min-h-0 flex-1 flex-col items-center justify-center gap-6 overflow-y-auto py-8 text-center">
           <RoleAvatar role={role} size={48} />
           <h1 className="font-serif text-3xl font-semibold">Xong</h1>
-          <p className="text-sm text-muted-foreground">Vai <Furigana text={role.name} /> · {view.total} câu</p>
+          <p className="text-sm text-muted-foreground">Vai <Furigana text={role.name} zoomable={false} /> · {view.total} câu</p>
           <div className="mt-2 flex w-full max-w-sm flex-col gap-3">
             <Button type="button" size="quiz" onClick={changeRole}>Đổi vai</Button>
             <Button type="button" size="quiz" variant="outline" onClick={exit}>Về bài</Button>

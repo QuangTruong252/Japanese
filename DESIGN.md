@@ -190,7 +190,7 @@ hover chỉ cho chuột (`(hover: hover) and (pointer: fine)`), chỉ `transform
 | `/luyen-tap/doc-hieu/phien` — đoạn văn | **v3** — đã code, chờ G2. Cùng bố cục phiên như hội thoại. Lệch mockup có chủ ý: văn bản liền, không hàng đánh số (theo góp ý người dùng) | `design/reading/mockup-v2-doan-van-{phien-light,phien-dark,tra-tu}.png` |
 | Kết quả Luyện đọc (trong `/luyen-tap/doc-hieu/phien`) | **v3** — đã code, chờ G2 | `design/reading/mockup-v2-{hoi-thoai,doan-van}-ket-qua.png` |
 | Sheet Cài đặt đọc (cỡ chữ, nền, font) | **v3** — đã code, chờ G2. Icon mở sheet là `ALargeSmall` | `design/reading/mockup-v2-cai-dat-doc.png` |
-| Sheet hồ sơ nhân vật (chạm avatar nhân vật `main` trong hội thoại bài học/Luyện đọc; dải "Nhân vật" ở danh sách Luyện đọc) | **v3** — đã code, chờ G2. Tên dùng `.jp-display` (Mincho); đoạn giới thiệu chữ không chân, phân cách gạch ngắn | `design/reading/mockup-v1-nhan-vat-{sheet,hub,hub-sheet}.png` (kiểu chữ theo `sheet`) |
+| Sheet hồ sơ nhân vật (chạm avatar nhân vật `main` trong hội thoại bài học/Luyện đọc; dải "Nhân vật" ở danh sách Luyện đọc) | **v3** — đã code, chờ G2. Không phủ nền (như sheet tra từ: viền trên + bóng), chạm ngoài thì đóng. Tên dùng `.jp-display` (Mincho), tên người không phóng khi hover (`zoomable={false}`); đoạn giới thiệu chữ không chân, phân cách gạch ngắn | `design/reading/mockup-v1-nhan-vat-{sheet,hub,hub-sheet}.png` (kiểu chữ theo `sheet`) |
 | Tra cứu `/hoc/tra-cuu` và trang con | **v3** — G2 đã duyệt | `design/tra-cuu/` |
 | `/ca-nhan`, `/ca-nhan/thong-ke` | **v3** — G2 đã duyệt | `design/ca-nhan/` |
 | `/cai-dat`, `/cai-dat/audio` | **v3** — G2 đã duyệt | `design/cai-dat/` |

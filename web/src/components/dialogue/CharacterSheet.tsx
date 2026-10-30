@@ -18,10 +18,10 @@ export function CharacterSheet({ id, onClose }: { id: string | null; onClose: ()
   if (!shown || !character) return null;
 
   return (
-    <DialogPrimitive.Root open={id !== null} onOpenChange={(open) => { if (!open) onClose(); }}>
+    // Không phủ, không khóa cuộn: trang phía sau vẫn nhìn rõ; chạm ra ngoài thì đóng.
+    <DialogPrimitive.Root open={id !== null} modal={false} onOpenChange={(open) => { if (!open) onClose(); }}>
       <DialogPrimitive.Portal>
-        <DialogPrimitive.Backdrop className="fixed inset-0 z-50 bg-foreground/30 motion-safe:duration-150 motion-safe:data-open:animate-in motion-safe:data-open:fade-in-0 motion-safe:data-closed:animate-out motion-safe:data-closed:fade-out-0" />
-        <DialogPrimitive.Popup className="fixed inset-x-0 bottom-0 z-50 mx-auto flex max-h-[90dvh] w-full max-w-[760px] flex-col items-center gap-4 overflow-y-auto rounded-t-3xl bg-background p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] outline-none motion-safe:duration-250 motion-safe:data-open:animate-in motion-safe:data-open:slide-in-from-bottom motion-safe:data-closed:animate-out motion-safe:data-closed:slide-out-to-bottom sm:p-6">
+        <DialogPrimitive.Popup className="fixed inset-x-0 bottom-0 z-50 mx-auto flex max-h-[90dvh] w-full max-w-[760px] flex-col items-center gap-4 overflow-y-auto rounded-t-3xl border-t border-border bg-background shadow-[0_-8px_24px_rgb(0_0_0/0.18)] p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] outline-none motion-safe:duration-250 motion-safe:data-open:animate-in motion-safe:data-open:slide-in-from-bottom motion-safe:data-closed:animate-out motion-safe:data-closed:slide-out-to-bottom sm:p-6">
           <span aria-hidden="true" className="-mt-2 h-1.5 w-12 rounded-full bg-muted" />
           <DialogPrimitive.Close
             aria-label="Đóng"
@@ -31,7 +31,7 @@ export function CharacterSheet({ id, onClose }: { id: string | null; onClose: ()
           </DialogPrimitive.Close>
           <RoleAvatar role={{ id: shown, name: character.name }} size={48} sizes="(min-width: 768px) 330px, 275px" className="mt-2 size-40 md:size-48" />
           <DialogPrimitive.Title className="text-center" aria-label={stripFurigana(character.name)}>
-            <Furigana text={character.name} className="jp-display text-4xl font-semibold" />
+            <Furigana text={character.name} zoomable={false} className="jp-display text-4xl font-semibold" />
           </DialogPrimitive.Title>
           <p className="-mt-2 text-center font-serif text-lg text-muted-foreground">{character.roleVi}</p>
           <span aria-hidden="true" className="h-1 w-10 rounded-full bg-primary/30" />

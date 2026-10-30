@@ -40,7 +40,7 @@ export function DialogueBubble({
     <div id={id} className={cn('flex min-w-0 flex-col gap-1', right ? 'items-end' : 'items-start', className)}>
       <div className={cn('flex items-center gap-2', right && 'flex-row-reverse')}>
         <ProfileAvatar role={role} size={32} />
-        <Furigana text={role.name} className="text-sm font-medium text-muted-foreground" />
+        <Furigana text={role.name} zoomable={false} className="text-sm font-medium text-muted-foreground" />
       </div>
       <div
         className={cn(

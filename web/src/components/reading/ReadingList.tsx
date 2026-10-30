@@ -170,7 +170,7 @@ export function ReadingList() {
                 className="flex min-h-11 flex-col items-center gap-1 rounded-2xl outline-none focus-visible:ring-3 focus-visible:ring-ring"
               >
                 <RoleAvatar role={{ id, name }} size={48} sizes="(min-width: 768px) 140px, 110px" className="size-16 md:size-20" />
-                <Furigana text={name} className="text-sm font-medium text-muted-foreground" />
+                <Furigana text={name} zoomable={false} className="text-sm font-medium text-muted-foreground" />
               </button>
             </li>
           );
