@@ -82,7 +82,8 @@ Ghi chú theo công cụ, không phải luật vai trò.
   chỉ đổi comment kiểm được bằng máy: so kết quả `transpileModule` (bỏ comment) của HEAD và bản mới.
 - **CLI chạy không tương tác:** đóng stdin (`< /dev/null`), nếu không một số CLI (vd. `codex exec`)
   sẽ treo chờ input. Chỉ dùng chế độ bỏ qua sandbox/approval khi người dùng đã cho phép.
-- **Tạo ảnh:** đính kèm ảnh tham chiếu bằng đường dẫn file; chép ảnh kết quả (đúng bytes) vào `.work/`.
+- **Tạo ảnh:** đính kèm ảnh tham chiếu bằng đường dẫn file. Worker chỉ tạo ảnh, **không tự ghi file ảnh** (Codex chép ảnh bằng
+  base64 qua shell rất chậm và tốn hạn mức); Điều phối lấy ảnh từ `~/.codex/generated_images/<thread>/` theo thứ tự thời gian rồi chép vào `.work/`.
 - **Trình duyệt:** `agent-browser`. Trang cuộn trong `#app-scroll-container`, nên để chụp hết trang
   hãy đặt viewport cao bằng nội dung thay vì `--full` (`shoot.mjs` đã làm). Gỡ lớp phủ dev của Next (`nextjs-portal`) trước khi chụp.
 - **Next:** không chạy `pnpm build` khi `pnpm dev` đang chạy trong cùng `web/` (dùng chung `.next`).
