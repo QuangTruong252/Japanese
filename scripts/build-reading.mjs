@@ -465,6 +465,7 @@ export function checkDraft(draft, { tokenizer, source }) {
   const questions = Array.isArray(draft.questions) ? draft.questions : [];
   if (questions.length !== 3) err(`cần đúng 3 câu hỏi (hiện: ${questions.length})`);
   const qIds = new Set();
+  let missingOptionEvidence = 0;
   questions.forEach((q, i) => {
     const at = `câu hỏi ${i + 1}`;
     if (!isText(q?.id) || qIds.has(q.id)) err(`${at}: id thiếu hoặc trùng`);
@@ -477,6 +478,23 @@ export function checkDraft(draft, { tokenizer, source }) {
     if (correct < 0) err(`${at}: correctOptionId không thuộc options`);
     const ev = q?.evidenceSentenceIds;
     if (!Array.isArray(ev) || ev.length === 0 || ev.some((id) => !sentenceById.has(id))) err(`${at}: evidenceSentenceIds rỗng hoặc trỏ ngoài bài`);
+    // Luật "mọi lựa chọn có trong bài": chỉ cảnh báo để bài cũ chưa có optionEvidence vẫn chạy.
+    const optEv = q?.optionEvidence;
+    const evProblems = [];
+    if (!isObj(optEv)) evProblems.push('thiếu optionEvidence');
+    else {
+      for (const o of options) {
+        const ids = optEv[o?.id];
+        if (!Array.isArray(ids) || ids.length === 0) evProblems.push(`lựa chọn ${o?.id} thiếu mục`);
+        else if (ids.some((id) => !sentenceById.has(id))) evProblems.push(`lựa chọn ${o?.id} trỏ ngoài bài`);
+      }
+      const right = optEv[q?.correctOptionId];
+      if (Array.isArray(ev) && Array.isArray(right) && !sameJson([...new Set(right)].sort(), [...new Set(ev)].sort())) evProblems.push('đáp án đúng không khớp evidenceSentenceIds');
+    }
+    if (evProblems.length) {
+      missingOptionEvidence += 1;
+      if (isObj(optEv)) warnings.push(`${at}: optionEvidence: ${evProblems.join('; ')}`);
+    }
     if (correct >= 0) {
       const lengths = options.map((o) => [...o.textVi].length);
       stats.correctPositions.push(correct + 1);
@@ -636,6 +654,7 @@ export function checkDraft(draft, { tokenizer, source }) {
     if (![1, 2, 3, 4, 5].includes(l?.layer) || !['passed', 'not-applicable'].includes(l?.status)) err(`review.layers: lớp không hợp lệ ${JSON.stringify(l)}`);
     else if (l.status === 'not-applicable' && !(fromMinna && [2, 5].includes(l.layer) && isText(l.note))) err(`review.layers: lớp ${l.layer} chỉ được not-applicable cho lớp 2/5 của hội thoại Minna và phải có note`);
   }
+  if (missingOptionEvidence) warnings.push(`optionEvidence: ${missingOptionEvidence}/${questions.length} câu hỏi thiếu hoặc lệch`);
   return { errors, warnings, stats, signals, coverage };
 }
 
@@ -651,13 +670,14 @@ export function reviewComplete(draft) {
 
 // ---------- phát hành ----------
 
-/** Bản phát hành chỉ có trường của app: bỏ đầu vào script (properNames), hồ sơ biên tập (signalDecisions, needsReview) và thông tin thừa của lớp duyệt. */
+/** Bản phát hành chỉ có trường của app: bỏ đầu vào script (properNames), hồ sơ biên tập (signalDecisions, needsReview, optionEvidence) và thông tin thừa của lớp duyệt. */
 export function releaseForm(draft) {
   const { properNames, review, glossary, ...rest } = draft;
   void properNames;
   const layers = (review.layers ?? []).map(({ layer, status, note }) => ({ layer, status, ...(note ? { note } : {}) })).sort((a, b) => a.layer - b.layer);
   return {
     ...rest,
+    questions: draft.questions.map(({ optionEvidence, ...question }) => (void optionEvidence, question)),
     coverage: computeCoverage(draft),
     glossary: glossary.map(({ needsReview, ...entry }) => (void needsReview, entry)),
     review: { method: review.method, layers, models: review.models, date: review.date, nativeReviewed: review.nativeReviewed },

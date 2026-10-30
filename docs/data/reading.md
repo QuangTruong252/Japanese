@@ -16,6 +16,7 @@ Mỗi bài một file JSON. Trường chính (kiểu đầy đủ do code app đ
 | `coverage` | Do script tính; chép kết quả `computeCoverage` vào draft, không nhập tay. |
 | `glossary` | Một mục cho mỗi loại từ/mẫu và mỗi tên riêng (xem dưới). |
 | `questions` | Đúng 3 câu hỏi tiếng Việt × 3 lựa chọn, một đáp án; `explanationVi`, `evidenceSentenceIds` bắt buộc. |
+| `questions[].optionEvidence` | Hồ sơ biên tập, không vào app: `{ [optionId]: sentenceId[] }`. Luật "mọi lựa chọn có trong bài": cả 3 lựa chọn là chi tiết có thật trong bài, cùng loại, chỉ một đúng với vai câu hỏi hỏi (thường thức không được loại được lựa chọn nào). Mục của đáp án đúng phải khớp `evidenceSentenceIds`. `check` chỉ cảnh báo (lựa chọn thiếu mục, câu không tồn tại, đáp án lệch, tổng số câu thiếu) để bài cũ vẫn chạy; `release` bỏ trường này. |
 | `properNames` | Đầu vào của script, không vào app: tên riêng ngoài `translation.json` và ngoài tên vai (vd 森 trong câu). |
 | `review` | `method: 'ai-multilayer'`, `layers`, `models`, `date`, `nativeReviewed`, và hồ sơ biên tập `signalDecisions`, `needsReview`. |
 

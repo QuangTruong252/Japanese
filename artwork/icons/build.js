@@ -18,6 +18,7 @@ const ATLASES = [
     keyline: { 'nav-review': 190, 'nav-lookup': 'circle' },
   },
   { file: 'atlas-dialogue-v1.png', names: ['dialogue'] },
+  { file: 'atlas-reading-v1.png', names: ['reading-practice'] },
 ];
 const BOX = 240, INNER = 222; // ~92% of the viewBox, same optical size as Lucide (20/24 + round caps)
 const KEYLINE = { square: 200, circle: 222 };
