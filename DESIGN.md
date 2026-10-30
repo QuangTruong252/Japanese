@@ -185,6 +185,11 @@ hover chỉ cho chuột (`(hover: hover) and (pointer: fine)`), chỉ `transform
 | `/luyen-viet`, `/luyen-viet/phien` | **v3** — kana và kanji: G2 đã duyệt 2026-10-21 | `design/luyen-viet/` |
 | `/nghe-moi-ngay`, `/nghe-moi-ngay/phien` | **v3** — đã triển khai, chờ người dùng review G2 | — |
 | `/luyen-tap/dich-cau`, `/luyen-tap/dich-cau/phien` | **v3** — đã code, chờ G2 | `design/dich-cau/` |
+| `/luyen-tap/doc-hieu` (danh sách) | **v3** — đã code, chờ G2 | `design/reading/mockup-v2-danh-sach.png`, as-built: `design/reading/as-built-{light,dark}.png` |
+| `/luyen-tap/doc-hieu/phien` — hội thoại | **v3** — đã code, chờ G2 | `design/reading/mockup-v2-hoi-thoai-{phien-dark,phien-tra-tu}.png`, as-built như trên |
+| `/luyen-tap/doc-hieu/phien` — đoạn văn | **v3** — đã code, chờ G2. Lệch mockup có chủ ý: văn bản liền, không hàng đánh số (theo góp ý người dùng) | `design/reading/mockup-v2-doan-van-{phien-light,phien-dark,tra-tu}.png`, as-built như trên |
+| Kết quả Luyện đọc (trong `/luyen-tap/doc-hieu/phien`) | **v3** — đã code, chờ G2 | `design/reading/mockup-v2-{hoi-thoai,doan-van}-ket-qua.png`, as-built như trên |
+| Sheet Cài đặt đọc (cỡ chữ, nền, font) | **v3** — đã code, chờ G2. Icon mở sheet là `ALargeSmall` | `design/reading/mockup-v2-cai-dat-doc.png`, as-built như trên |
 | Tra cứu `/hoc/tra-cuu` và trang con | **v3** — G2 đã duyệt | `design/tra-cuu/` |
 | `/ca-nhan`, `/ca-nhan/thong-ke` | **v3** — G2 đã duyệt | `design/ca-nhan/` |
 | `/cai-dat`, `/cai-dat/audio` | **v3** — G2 đã duyệt | `design/cai-dat/` |
@@ -194,6 +199,9 @@ route, trạng thái dữ liệu và cách chụp ghi tại `design/README.md`.
 
 Tablet và PC (§5): G2 đã duyệt ngày 2026-10-23 cho mọi màn trong bảng. Mỗi thư mục có thêm mockup
 `mockup-rwd-{pc,tablet}.webp` và ảnh `as-built-{pc,tablet}-{light,dark}.png` (màn đầu, 1280 và 768 px).
+
+Luyện đọc lệch mockup có chủ ý: nút loa dùng `SpeakButton` chung (không vẽ riêng như mockup); phiên đoạn văn
+hiển thị văn bản liền, mockup `mockup-v2-doan-van-*` còn hàng đánh số nên không còn đúng ở điểm này.
 
 Cập nhật bảng khi màn đổi trạng thái. Không còn thành phần legacy; màn mới tham chiếu Home (`DashboardContent.tsx`) và `PaperKit.tsx`.
 
