@@ -185,7 +185,7 @@ hover chỉ cho chuột (`(hover: hover) and (pointer: fine)`), chỉ `transform
 | `/luyen-viet`, `/luyen-viet/phien` | **v3** — kana và kanji: G2 đã duyệt 2026-10-21 | `design/luyen-viet/` |
 | `/nghe-moi-ngay`, `/nghe-moi-ngay/phien` | **v3** — đã triển khai, chờ người dùng review G2 | — |
 | `/luyen-tap/dich-cau`, `/luyen-tap/dich-cau/phien` | **v3** — đã code, chờ G2 | `design/dich-cau/` |
-| `/luyen-tap/doc-hieu` (danh sách) | **v3** — đã code, chờ G2 | `design/reading/mockup-v2-danh-sach.png` |
+| `/luyen-tap/doc-hieu` (danh sách) | **v3** — đã code, chờ G2. Ô tìm (không mockup, task nhỏ) dưới dải Nhân vật: đang tìm thì bỏ phạm vi, thẻ ngoài phạm vi có chip "Ngoài phạm vi" | `design/reading/mockup-v2-danh-sach.png` |
 | `/luyen-tap/doc-hieu/phien` — hội thoại | **v3** — đã code, chờ G2. Bố cục phiên: header gọn sticky (không ảnh bìa), một vùng cuộn, đáy cố định gồm thanh công cụ + panel câu hỏi trượt lên | `design/reading/mockup-v3-phien-{mo,thu-gon}.png` (bố cục), `mockup-v2-hoi-thoai-{phien-dark,phien-tra-tu}.png` (bubble), as-built: `design/reading/as-built-{light,dark,mo-dark}.png` |
 | `/luyen-tap/doc-hieu/phien` — đoạn văn | **v3** — đã code, chờ G2. Cùng bố cục phiên như hội thoại. Lệch mockup có chủ ý: văn bản liền, không hàng đánh số (theo góp ý người dùng) | `design/reading/mockup-v2-doan-van-{phien-light,phien-dark,tra-tu}.png` |
 | Kết quả Luyện đọc (trong `/luyen-tap/doc-hieu/phien`) | **v3** — đã code, chờ G2 | `design/reading/mockup-v2-{hoi-thoai,doan-van}-ket-qua.png` |

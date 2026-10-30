@@ -1,5 +1,6 @@
 import { test, type TestContext } from 'node:test';
 import assert from 'node:assert/strict';
+import { READING_PASSAGES } from './reading-data.ts';
 import type { ReadingPassage } from '../types/reading.ts';
 import {
   DEFAULT_READING_FILTER,
@@ -10,6 +11,7 @@ import {
   parseReadingScope,
   readingNewCounts,
   readingStatuses,
+  searchReadingPassages,
   resolveReadingScope,
   saveReadingScope,
   READING_SCOPE_KEY,
@@ -134,4 +136,35 @@ test('load/save scope qua localStorage; lỗi localStorage không ném', (t) => 
   stubWindow(t, { localStorage: blocked });
   assert.equal(loadReadingScope(), null);
   assert.equal(saveReadingScope(scope(6)), false);
+});
+
+const found = (q: string) => searchReadingPassages(READING_PASSAGES, q).map((p) => p.id);
+
+test('tìm bài đọc: tiêu đề không dấu, câu kanji/kana, nghĩa, glossary', () => {
+  assert.ok(found('hoa anh dao').includes('reading-l06-ohanami'));
+  assert.ok(found('Rủ thầy đi ngắm').includes('reading-l06-ohanami'));
+  assert.ok(found('花見').includes('reading-l06-ohanami'));
+  assert.ok(found('はなみ').includes('reading-l06-ohanami'));
+  assert.ok(found('khu vườn trong trường').includes('reading-l06-ohanami'));
+  assert.ok(found('ngày mai').includes('reading-p-lunch-message'));
+  assert.ok(found('にちようび').includes('reading-p-lunch-message'));
+});
+
+test('tìm bài đọc: tên nhân vật romaji, romaji ra kana, katakana, AND nhiều từ, rỗng', () => {
+  assert.ok(found('Tanaka').includes('reading-p-lunch-message'));
+  assert.ok(found('mori').includes('reading-l06-ohanami'));
+  assert.ok(found('hanami').includes('reading-l06-ohanami'));
+  assert.ok(found('まい').includes('reading-l06-ohanami') && found('マイ').includes('reading-l06-ohanami'));
+  const both = found('hoa anh dao hanami');
+  assert.ok(both.includes('reading-l06-ohanami'));
+  assert.deepEqual(found('hoa anh dao xyzxyz'), []);
+  assert.equal(found('  ').length, READING_PASSAGES.length);
+});
+
+test('tìm bài đọc: tên nhân vật chỉ khớp bài có nhân vật; từ Việt ngắn không đổi sang kana', () => {
+  const tanaka = found('tanaka');
+  assert.ok(tanaka.length > 0 && tanaka.length < READING_PASSAGES.length);
+  assert.ok(!tanaka.includes('reading-p-directions-home'));
+  // "ca" → か và "na" → な có trong gần như mọi bài; chỉ được khớp theo chữ Việt/Latin.
+  for (const q of ['ca', 'na', 'to']) assert.ok(found(q).length < READING_PASSAGES.length, q);
 });

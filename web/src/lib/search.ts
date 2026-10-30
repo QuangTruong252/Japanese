@@ -1,8 +1,11 @@
 import * as wanakana from 'wanakana';
 import { stripFurigana } from './japanese.ts';
+import { normalizeSearchText } from './search-text.ts';
 import { getAllKanji, getAllVerbs, getAllReferenceDocs } from './lookup.ts';
 import { loadLesson, loadVocab } from './lessons.ts';
 import { AUDIO_IMPORT_ENABLED } from './features.ts';
+
+export { normalizeSearchText };
 
 export type SearchKind = 'feature' | 'vocab' | 'grammar' | 'kanji' | 'verb' | 'table' | 'lesson';
 
@@ -36,26 +39,6 @@ const MAX_PER_GROUP: Record<SearchKind, number> = {
   table: 5,
   lesson: 5,
 };
-
-/**
- * Chuẩn hóa chuỗi tìm kiếm:
- * 1. Chữ thường, gộp khoảng trắng
- * 2. Bỏ dấu tiếng Việt NFD
- * 3. Bắt buộc thay đ/Đ thành d (ca kiểm thử: dong tu -> động từ, do an -> đồ ăn)
- * 4. Xóa notation Furigana nếu có
- */
-export function normalizeSearchText(text: string): string {
-  if (!text) return '';
-  const stripped = stripFurigana(text);
-  return stripped
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .normalize('NFC')
-    .replace(/[đĐ]/g, 'd')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
 
 let cachedSearchIndex: SearchEntry[] | null = null;
 

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { ArrowRight, BookOpen, Check, ChevronRight, MessageCircle } from 'lucide-react';
+import { ArrowRight, BookOpen, Check, ChevronRight, MessageCircle, Search } from 'lucide-react';
 import { Accent, BookSpread, Chip, PageTitle, TornCard } from '@/components/PaperKit';
 import { Illustration } from '@/components/Illustration';
 import { Furigana } from '@/components/Furigana';
@@ -15,7 +15,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { stripFurigana } from '@/lib/japanese';
 import { loadSettings } from '@/lib/settings';
 import { READING_PASSAGES } from '@/lib/reading-data';
-import { DEFAULT_READING_FILTER, listReadingPassages, loadReadingScope, readingStatuses, resolveReadingScope, saveReadingScope, type ReadingListItem, type ReadingScope } from '@/lib/reading';
+import { buildReadingItems, DEFAULT_READING_FILTER, isReadingEligible, listReadingPassages, loadReadingScope, readingStatuses, resolveReadingScope, saveReadingScope, searchReadingPassages, type ReadingListItem, type ReadingScope } from '@/lib/reading';
 import { pickResumableSession, readingScore } from '@/lib/reading-session';
 import { isReadingSessionValid, listReadingSessions, openReadingSession } from '@/lib/reading-store';
 import { cn } from '@/lib/utils';
@@ -44,7 +44,7 @@ function ProgressRing({ value, total }: { value: number; total: number }) {
   );
 }
 
-function ReadingCard({ item, progress, busy, onOpen }: { item: ReadingListItem; progress: ReturnType<typeof progressOf>; busy: boolean; onOpen: () => void }) {
+function ReadingCard({ item, progress, busy, outOfScope, onOpen }: { item: ReadingListItem; progress: ReturnType<typeof progressOf>; busy: boolean; outOfScope: boolean; onOpen: () => void }) {
   const { passage, status, newVocab, newGrammar } = item;
   const total = passage.questions.length;
   const dialogue = passage.kind === 'dialogue';
@@ -67,6 +67,7 @@ function ReadingCard({ item, progress, busy, onOpen }: { item: ReadingListItem; 
           <span className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-accent px-4 text-sm font-medium text-primary [&_svg]:size-5">
             {dialogue ? <MessageCircle aria-hidden="true" /> : <BookOpen aria-hidden="true" />}{dialogue ? 'Hội thoại' : 'Đoạn văn'}
           </span>
+          {outOfScope && <span className="inline-flex min-h-11 items-center rounded-xl bg-secondary px-4 text-sm font-medium text-muted-foreground">Ngoài phạm vi</span>}
           {fresh && <span className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-secondary px-4 text-sm font-medium text-muted-foreground [&_svg]:size-5"><BookOpen aria-hidden="true" />{fresh}</span>}
           <span className="ml-auto flex items-center gap-2 text-sm text-muted-foreground">
             {status === 'in-progress' && <ProgressRing value={progress.answered} total={total} />}
@@ -88,6 +89,7 @@ export function ReadingList() {
   const [error, setError] = useState('');
   const [opening, setOpening] = useState<string | null>(null);
   const [profileId, setProfileId] = useState<string | null>(null);
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
     let active = true;
@@ -109,18 +111,22 @@ export function ReadingList() {
   }
 
   async function open(item: ReadingListItem) {
-    if (!scope || opening) return;
+    if (opening) return;
     setOpening(item.passage.id);
     setError('');
     try {
-      const session = await openReadingSession(item.passage, scope);
+      const session = await openReadingSession(item.passage, scope ?? { lesson: 25, ...DEFAULT_READING_FILTER });
       router.push(`${PHIEN}?id=${encodeURIComponent(session.id)}`);
     } catch { setError('Không lưu được phiên đọc. Hãy kiểm tra dung lượng và thử lại.'); setOpening(null); }
   }
 
   const sessions = data?.sessions ?? [];
-  const items = scope ? listReadingPassages(READING_PASSAGES, scope, readingStatuses(sessions)) : [];
-  const unfinished = sessions.find((s) => !s.completedAt);
+  const searching = query.trim() !== '';
+  const statuses = readingStatuses(sessions);
+  // Đang tìm thì bỏ phạm vi; chưa có mốc thì đếm từ mới theo bài 25.
+  const items = searching ? buildReadingItems(searchReadingPassages(READING_PASSAGES, query), scope?.lesson ?? 25, statuses)
+    : scope ? listReadingPassages(READING_PASSAGES, scope, statuses) : [];
+  const unfinished = searching ? undefined : sessions.find((s) => !s.completedAt);
 
   const filters = scope === undefined ? null : (
     <div className="flex flex-col gap-6">
@@ -180,25 +186,43 @@ export function ReadingList() {
     </section>
   );
 
+  const searchBox = (
+    <div className="flex flex-col gap-2">
+      <div className="relative">
+        <Search className="pointer-events-none absolute left-3 top-1/2 size-5 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
+        <input
+          type="search"
+          aria-label="Tìm bài đọc"
+          placeholder="Tìm theo tiêu đề, câu, từ, nhân vật"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          className="h-12 w-full rounded-xl border border-border bg-card pl-10 pr-3 text-base outline-none focus-visible:ring-3 focus-visible:ring-ring"
+        />
+      </div>
+      <p aria-live="polite" className="text-sm text-muted-foreground empty:hidden">{searching ? `${items.length} bài` : ''}</p>
+    </div>
+  );
+
   const list = (
     <div className="flex flex-col gap-5">
       {cast}
+      {searchBox}
       {unfinished && (
         <TornCard className="flex flex-col gap-3">
           <p className="text-sm text-muted-foreground">Phiên dở · {unfinished.passage.titleVi} · Câu {Math.min(unfinished.questionIndex + 1, unfinished.passage.questions.length)}/{unfinished.passage.questions.length}</p>
           <Button size="quiz" variant="outline" onClick={() => router.push(`${PHIEN}?id=${encodeURIComponent(unfinished.id)}`)}>Tiếp tục<ArrowRight aria-hidden="true" /></Button>
         </TornCard>
       )}
-      {!data || scope === undefined ? <Skeleton className="h-72 w-full rounded-2xl" /> : !scope ? null : items.length === 0 ? (
+      {!data || scope === undefined ? <Skeleton className="h-72 w-full rounded-2xl" /> : !scope && !searching ? null : items.length === 0 ? (
         <div className="relative flex flex-col gap-2 rounded-2xl border border-border bg-card p-6">
           <Accent kind="petals" className="-right-2 -top-4 block w-24 lg:block" />
-          <h2 className="font-serif text-2xl font-semibold">Chưa có bài đọc</h2>
+          <h2 className="font-serif text-2xl font-semibold">{searching ? 'Không tìm thấy bài đọc' : 'Chưa có bài đọc'}</h2>
         </div>
       ) : (
         <ul className="grid gap-4 xl:grid-cols-2">
           {items.map((item) => (
             <li key={item.passage.id} className="min-w-0">
-              <ReadingCard item={item} progress={progressOf(sessions, item.passage.id)} busy={opening !== null} onOpen={() => void open(item)} />
+              <ReadingCard item={item} progress={progressOf(sessions, item.passage.id)} busy={opening !== null} outOfScope={searching && !!scope && !isReadingEligible(item.passage, scope)} onOpen={() => void open(item)} />
             </li>
           ))}
         </ul>

@@ -1,3 +1,6 @@
+import { getCharacter, MAIN_CHARACTER_IDS } from './characters.ts';
+import { stripFurigana, toKanaSentence, wanakana } from './japanese.ts';
+import { normalizeSearchText } from './search-text.ts';
 import type { ReadingCoverageBucket, ReadingFilter, ReadingPassage, ReadingSession } from '../types/reading.ts';
 
 export const READING_SCOPE_KEY = 'jp:reading-scope';
@@ -58,22 +61,65 @@ export interface ReadingListItem extends ReadingNewCounts {
 
 const STATUS_ORDER: Record<ReadingStatus, number> = { 'in-progress': 0, unread: 1, completed: 2 };
 
-/** Lọc theo mốc rồi sắp: đang dở, chưa đọc, đã xong; mỗi nhóm ít mục mới trước, rồi ID. Không dùng điểm. */
-export function listReadingPassages(
+/** Dựng mục danh sách (đếm từ mới theo mốc `lesson`) rồi sắp: đang dở, chưa đọc, đã xong; mỗi nhóm ít mục mới trước, rồi ID. Không dùng điểm. */
+export function buildReadingItems(
   passages: readonly ReadingPassage[],
-  scope: ReadingScope,
+  lesson: number,
   statuses: ReadonlyMap<string, ReadingStatus> = new Map(),
 ): ReadingListItem[] {
   return passages
-    .filter((passage) => isReadingEligible(passage, scope))
     .map((passage) => {
-      const counts = readingNewCounts(passage, scope.lesson);
+      const counts = readingNewCounts(passage, lesson);
       return { passage, ...counts, status: statuses.get(passage.id) ?? 'unread', hasNew: counts.newVocab + counts.newGrammar > 0 };
     })
     .sort((a, b) =>
       STATUS_ORDER[a.status] - STATUS_ORDER[b.status] ||
       a.newVocab + a.newGrammar - (b.newVocab + b.newGrammar) ||
       (a.passage.id < b.passage.id ? -1 : a.passage.id > b.passage.id ? 1 : 0));
+}
+
+/** Lọc theo mốc rồi sắp. */
+export function listReadingPassages(
+  passages: readonly ReadingPassage[],
+  scope: ReadingScope,
+  statuses: ReadonlyMap<string, ReadingStatus> = new Map(),
+): ReadingListItem[] {
+  return buildReadingItems(passages.filter((passage) => isReadingEligible(passage, scope)), scope.lesson, statuses);
+}
+
+interface PassageSearchText { vi: string; jp: string }
+const searchIndexes = new WeakMap<readonly ReadingPassage[], PassageSearchText[]>();
+
+/** Phần tiếng Nhật gộp thêm bản hiragana để "マイ" khớp "まい"; id romaji của nhân vật chính chỉ gắn vào bài có nhân vật đó. */
+function passageSearchText(p: ReadingPassage): PassageSearchText {
+  const jp = [
+    ...p.sentences.flatMap((s) => [stripFurigana(s.jp), toKanaSentence(s.jp)]),
+    ...p.glossary.flatMap((g) => [stripFurigana(g.labelJp), g.reading ?? '']),
+    ...(p.roles ?? []).flatMap((r) => [stripFurigana(r.name), toKanaSentence(r.name)]),
+  ].join('\n');
+  const cast = MAIN_CHARACTER_IDS.filter((id) => p.roles?.some((r) => r.id === id) || jp.includes(stripFurigana(getCharacter(id)!.name)));
+  const vi = [p.titleVi, ...p.sentences.map((s) => s.vi), ...p.glossary.flatMap((g) => g.meaningsVi), ...cast].join('\n');
+  return { vi: normalizeSearchText(vi), jp: normalizeSearchText(`${jp}\n${wanakana.toHiragana(jp)}`) };
+}
+
+/**
+ * Mọi từ của truy vấn phải khớp. Từ đọc trọn thành kana thử thêm bản hiragana trên phần tiếng Nhật (サカナ → さかな,
+ * hanami → はなみ); từ Latin dưới 3 chữ không đổi, vì từ Việt như "ca" thành か có trong gần như mọi bài. Truy vấn rỗng trả hết.
+ */
+export function searchReadingPassages(passages: readonly ReadingPassage[], query: string): ReadingPassage[] {
+  const words = normalizeSearchText(query).split(' ').filter(Boolean);
+  if (!words.length) return [...passages];
+  let index = searchIndexes.get(passages);
+  if (!index) searchIndexes.set(passages, (index = passages.map(passageSearchText)));
+  const terms = words.map((w) => {
+    const kana = wanakana.toHiragana(w);
+    const usable = kana !== w && wanakana.isKana(kana) && (!/^[a-z]+$/u.test(w) || w.length >= 3);
+    return { w, kana: usable ? kana : null };
+  });
+  return passages.filter((_, i) => {
+    const { vi, jp } = index[i]!;
+    return terms.every(({ w, kana }) => vi.includes(w) || jp.includes(w) || (kana !== null && jp.includes(kana)));
+  });
 }
 
 /** Validate cả object; sai bất kỳ trường nào thì bỏ cả cấu hình. */
