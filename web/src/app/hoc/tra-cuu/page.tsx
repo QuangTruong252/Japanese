@@ -185,6 +185,7 @@ export default function TraCuuHubPage() {
             icon={<FeatureIcon name={cat.icon} />}
             title={cat.title}
             detail={cat.description}
+            className="[&>span[aria-hidden]]:self-center"
           />
         ))}
       </nav>
