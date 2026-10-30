@@ -32,6 +32,7 @@
 | `/luyen-viet`, `/luyen-viet/phien` | Luyện viết kana và kanji N5 (vẽ nét) | `WritingPicker`, `WritingSession`, ô viết `components/writing/StrokeBox` |
 | `/nghe-moi-ngay`, `/nghe-moi-ngay/phien` | Chép chính tả theo ngày và phạm vi đã học | `DictationRunner`, bộ câu đã rà `lib/dictation.ts` |
 | `/luyen-tap/dich-cau`, `/luyen-tap/dich-cau/phien` | Dịch phản xạ Nhật ↔ Việt tự chọn chiều, bài và số câu; chấm offline | `TranslationRunner`, `lib/translation.ts` (chọn câu, chấm, ý chính), kho câu `lib/translation-data.ts` |
+| `/luyen-tap/doc-hieu`, `/luyen-tap/doc-hieu/phien?id=<phiên>` | Luyện đọc: danh sách bài theo mốc, phiên hội thoại/đoạn văn + câu hỏi, kết quả | `ReadingList`, `ReadingRunner`, `ReadingResults` (`components/reading/`), logic `lib/reading*.ts` |
 | `/hoc/tra-cuu` (+ `kana`, `kanji`, `kanji/[chu]`, `dong-tu`, `bang`, `bang/[slug]`) | Tra cứu | `KanjiGrid`, `VerbTable` |
 | `/ca-nhan`, `/ca-nhan/thong-ke` | Cá nhân, thống kê | `StatisticsContent` (+ `components/stats/*`) |
 | `/cai-dat`, `/cai-dat/audio` | Cài đặt, nạp audio | `components/settings/*`, `InstallAppCard` |
@@ -53,6 +54,10 @@ tìm cả ngữ liệu và phương thức luyện. Phiên toàn màn hình ti�
 | IndexedDB `translationSessions` | Nháp và kết quả Dịch phản xạ; khóa ngẫu nhiên, lưu id câu + chiều + gợi ý + lần trả lời đầu + nguồn chấm (`automatic`/`self`), không ghi FSRS hay thống kê | `lib/translation-store.ts`, `lib/translation-session.ts`; sao lưu/xóa cùng dữ liệu học, chưa đồng bộ tài khoản |
 | `localStorage` `jp:translation-config` | Chiều, bài, số câu lần chọn gần nhất của máy, đã validate khi đọc | `/luyen-tap/dich-cau` |
 | `localStorage` `jp:dictation-scope` | Phạm vi bài nghe riêng của máy, không đổi tiến độ học chung | `/nghe-moi-ngay` |
+| IndexedDB `readingSessions` (db v6, khóa `id`, chỉ mục `updatedAt`) | Phiên Luyện đọc: khóa ngẫu nhiên, giữ bản chụp cả bài (nguồn, đáp án) để catalog đổi vẫn xem được kết quả cũ; bản ghi hỏng được báo lỗi, không tự sửa. Từ khó thêm vào `reviewItems` qua `lib/reading-review.ts` | `lib/reading-store.ts`, `lib/reading-session.ts`; sao lưu/xóa cùng dữ liệu học (`lib/backup.ts`), chưa đồng bộ tài khoản |
+| `localStorage` `jp:reading-scope` | JSON `{version:1, lesson 1–25, minCoverage 80–100, maxNewGrammar 0–2}`; sai trường nào thì bỏ cả bộ. Chưa lưu thì lấy bài đã học xa nhất làm mốc | `lib/reading.ts` (`/luyen-tap/doc-hieu`) |
+| `localStorage` `jp:reading-display` | JSON `{version:1, fontStep 1–5 (mặc định 3), background auto/paper/white/dark, font mincho/gothic}`; chỉ đổi vùng đọc, không đổi theme app | `lib/reading-display.ts` |
+| Dữ liệu tĩnh `web/src/data/n5/reading.json` | Bài đọc đã duyệt; sinh bằng `scripts/build-reading.mjs` (`check`, `release`), quy trình ở `docs/data/reading.md` | `lib/reading-data.ts` |
 | Zustand (`lib/store.ts`) | Chỉ trạng thái UI tạm (mở hộp tìm kiếm…) | — |
 | Supabase (tùy chọn) | Auth và đồng bộ từ `pendingSync` (engine khởi động một lần trong `AppNav`, tự đẩy khi có mục chờ mới). Cài đặt là riêng từng máy, không đồng bộ | `lib/sync.ts`, `lib/supabase/` |
 
