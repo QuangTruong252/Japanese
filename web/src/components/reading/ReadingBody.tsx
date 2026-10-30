@@ -1,5 +1,6 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import { Furigana } from '@/components/Furigana';
 import { RoleAvatar } from '@/components/dialogue/RoleAvatar';
 import { SpeakButton } from '@/components/SpeakButton';
@@ -41,6 +42,18 @@ function Sentence({ sentence, passage, display, lookup, activeEntryId, onPick }:
   );
 }
 
+/** Dòng dịch thu/giãn chiều cao (0fr↔1fr) thay vì giữ chỗ; inert khi ẩn để không focus/đọc nhầm. */
+function Collapse({ open, children }: { open: boolean; children: ReactNode }) {
+  return (
+    <div
+      inert={!open}
+      className={cn('grid motion-safe:transition-[grid-template-rows,opacity] motion-safe:duration-200 ease-smooth-out', open ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0')}
+    >
+      <div className="min-h-0 overflow-hidden">{children}</div>
+    </div>
+  );
+}
+
 const EvidenceLabel = () => (
   <span className="mb-1 inline-block rounded-full bg-primary px-3 py-0.5 text-xs font-semibold text-primary-foreground">Bằng chứng</span>
 );
@@ -68,11 +81,13 @@ export function DialogueView(props: ReadingBodyProps) {
                 )}
               >
                 {evidence && <EvidenceLabel />}
-                <div><Sentence sentence={sentence} {...props} /></div>
-                <div className="flex min-w-0 items-center gap-2">
-                  {showVi ? <p className="translation min-w-0 flex-1 text-sm leading-relaxed text-muted-foreground md:text-base">{sentence.vi}</p> : <span className="flex-1" />}
+                <div className="flex min-w-0 items-start gap-2">
+                  <div className="min-w-0 flex-1"><Sentence sentence={sentence} {...props} /></div>
                   <SpeakButton text={readingSpeakText(sentence.jp)} label={readingSpeakText(sentence.jp)} className={SPEAK_CLASS} />
                 </div>
+                <Collapse open={showVi}>
+                  <p className="translation pb-1 text-sm leading-relaxed text-muted-foreground md:text-base">{sentence.vi}</p>
+                </Collapse>
               </div>
             </div>
           </li>
@@ -102,7 +117,7 @@ export function PassageView(props: ReadingBodyProps) {
                 </span>
               ))}
             </p>
-            {showVi && <p className="translation mt-1 text-sm leading-relaxed text-muted-foreground md:text-base">{row.map((s) => s.vi).join(' ')}</p>}
+            <Collapse open={showVi}><p className="translation pt-1 text-sm leading-relaxed text-muted-foreground md:text-base">{row.map((s) => s.vi).join(' ')}</p></Collapse>
           </div>
         );
       })}

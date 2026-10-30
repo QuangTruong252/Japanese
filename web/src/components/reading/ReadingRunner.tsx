@@ -119,7 +119,7 @@ function ReadingSessionView({ session }: { session: ReadingSession }) {
         </div>
       </div>
 
-      <div className="scrollbar-none min-h-0 flex-1 overflow-y-auto overflow-x-hidden pb-4 pt-1">
+      <div className="scrollbar-none min-h-0 flex-1 overflow-y-auto overflow-x-clip pb-4 pt-1">
         <div className="flex flex-col gap-4">
           <GlossaryHost glossary={passage.glossary}>
             {({ pick, activeEntryId }) => (
@@ -197,7 +197,7 @@ function QuestionCard({ question, index, total, chosen, locked, busy, onSelect }
         {question.options.map((option, i) => (
           <label
             key={option.id}
-            className="group flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border border-border bg-background px-3 py-2 transition-colors has-[:checked]:border-primary has-[:checked]:bg-accent has-[:disabled]:cursor-default has-[:focus-visible]:ring-3 has-[:focus-visible]:ring-ring"
+            className="group relative flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border border-border bg-background px-3 py-2 transition-colors has-[:checked]:border-primary has-[:checked]:bg-accent has-[:disabled]:cursor-default has-[:focus-visible]:ring-3 has-[:focus-visible]:ring-ring"
           >
             <input type="radio" name={`reading-${question.id}`} className="sr-only" checked={chosen === option.id} disabled={locked || busy} onChange={() => onSelect(option.id)} />
             <span aria-hidden="true" className="flex size-6 shrink-0 items-center justify-center rounded-full border-2 border-muted-foreground group-has-[:checked]:border-primary">
