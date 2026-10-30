@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
+import { stripFurigana } from '@/lib/japanese';
 import { cn } from '@/lib/utils';
 import { glossaryLabel } from './glossary-label';
 import type { ReadingGlossaryEntry } from '@/types/reading';
@@ -32,11 +33,12 @@ function GlossaryChooser({ entries, anchor, onChoose, onClose }: { entries: Read
             <button
               type="button"
               onClick={() => onChoose(entry.id)}
-              className="flex min-h-12 w-full items-center gap-3 rounded-xl px-3 py-2 text-left outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring"
+              // Nhãn ngữ pháp có thể rất dài; nghĩa xuống hàng riêng để ba cột không bóp nhau thành chữ dọc.
+              className="grid min-h-12 w-full grid-cols-[minmax(0,1fr)_auto] items-start gap-x-3 gap-y-0.5 rounded-xl px-3 py-2 text-left outline-none transition-colors hover:bg-muted/60 focus-visible:ring-3 focus-visible:ring-ring"
             >
-              <span className="jp jp-display min-w-0 break-words text-lg font-semibold">{glossaryLabel(entry)}</span>
-              <span className="min-w-0 flex-1 break-words text-sm text-muted-foreground">{entry.meaningsVi[0]}</span>
-              <span className="shrink-0 rounded-full bg-accent px-2 text-xs font-medium text-accent-foreground">{KIND_LABEL[entry.kind]}</span>
+              <span className="jp jp-display break-words text-lg font-semibold">{glossaryLabel(entry)}</span>
+              <span className="mt-1 rounded-full bg-accent px-2 text-xs font-medium text-accent-foreground">{KIND_LABEL[entry.kind]}</span>
+              <span className="col-span-2 break-words text-sm text-muted-foreground">{stripFurigana(entry.meaningsVi[0] ?? '')}</span>
             </button>
           </li>
         ))}

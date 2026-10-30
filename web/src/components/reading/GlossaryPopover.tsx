@@ -10,6 +10,7 @@ import { SpeakButton } from '@/components/SpeakButton';
 import { SPEAK_CLASS } from '@/components/dialogue/reader-styles';
 import { buttonVariants, Button } from '@/components/ui/button';
 import { db } from '@/lib/db';
+import { stripFurigana } from '@/lib/japanese';
 import { glossaryLabel } from './glossary-label';
 import { addReadingWordToReview, readingReviewTargetId } from '@/lib/reading-review';
 import { cn } from '@/lib/utils';
@@ -163,7 +164,8 @@ export function GlossaryPopover({ entry, anchor, onClose }: { entry: ReadingGlos
         {entry.meaningsVi.map((meaning, i) => (
           <li key={i} className="flex gap-2">
             {entry.meaningsVi.length > 1 && <span className="w-5 shrink-0 text-muted-foreground">{i + 1}.</span>}
-            <span>{meaning}</span>
+            {/* Nghĩa mẫu ngữ pháp có chép lại mẫu kèm furigana (行[い]きます); chỉ bỏ ngoặc sau chữ Hán, giữ "[món đồ]". */}
+            <span>{stripFurigana(meaning)}</span>
           </li>
         ))}
       </ol>
