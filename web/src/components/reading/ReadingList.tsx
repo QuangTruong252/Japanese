@@ -119,7 +119,7 @@ export function ReadingList() {
   const filters = scope === undefined ? null : (
     <div className="flex flex-col gap-6">
       <section className="flex flex-col gap-3">
-        <label htmlFor="reading-lesson" className="text-lg font-semibold">Đến bài</label>
+        <label htmlFor="reading-lesson" className="text-lg font-semibold">Đã học đến bài</label>
         <select
           id="reading-lesson"
           value={scope?.lesson ?? ''}
@@ -185,10 +185,13 @@ export function ReadingList() {
           stickyTop="4.25rem"
           left={
             <div className="flex flex-col gap-4">
-              <Button type="button" variant="outline" size="quiz" className="justify-between lg:hidden" aria-expanded={filtersOpen} aria-controls="reading-filters" onClick={() => setFiltersOpen((v) => !v)}>
-                <span>{scope ? `Đến bài ${scope.lesson} · ${scope.minCoverage}% · ≤${scope.maxNewGrammar} mẫu` : 'Chọn bài đã học'}</span>
-                <ChevronRight className={cn('transition-transform', (filtersOpen || !scope) && 'rotate-90')} aria-hidden="true" />
-              </Button>
+              {/* Chưa chọn mốc thì bộ lọc luôn mở và nhãn "Đã học đến bài" là tiêu đề duy nhất; nút thu gọn chỉ có nghĩa khi đã có mốc. */}
+              {scope && (
+                <Button type="button" variant="outline" size="quiz" className="justify-between lg:hidden" aria-expanded={filtersOpen} aria-controls="reading-filters" onClick={() => setFiltersOpen((v) => !v)}>
+                  <span>{`Đến bài ${scope.lesson} · ${scope.minCoverage}% · ≤${scope.maxNewGrammar} mẫu`}</span>
+                  <ChevronRight className={cn('transition-transform', filtersOpen && 'rotate-90')} aria-hidden="true" />
+                </Button>
+              )}
               <div id="reading-filters" className={cn((filtersOpen || !scope) ? 'block' : 'hidden', 'lg:block')}>{filters}</div>
               {(error || data?.error) && <p role="alert" className="text-sm text-destructive">✕ {error || data?.error}</p>}
             </div>

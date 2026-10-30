@@ -43,6 +43,10 @@ export function ReadingDisplaySheet({ open, onOpenChange, display, onChange, sam
               onChange={(e) => onChange({ ...display, fontStep: Number(e.target.value) as ReadingDisplay['fontStep'] })}
               className="h-11 w-full accent-primary"
             />
+            {/* Năm chấm mốc khớp năm nấc; nằm ngoài thanh trượt nên không đổi hành vi hay a11y của input. */}
+            <div className="-mt-3 mb-1 flex justify-between px-2" aria-hidden="true">
+              {[1, 2, 3, 4, 5].map((n) => <span key={n} className="size-1.5 rounded-full bg-border" />)}
+            </div>
             <div className="flex justify-between text-sm text-muted-foreground" aria-hidden="true"><span>A nhỏ</span><span>A lớn</span></div>
           </div>
 
