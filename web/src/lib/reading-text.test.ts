@@ -51,3 +51,15 @@ test("groupSentences: gom câu liền nhau cùng nhóm, câu không nhóm tự t
   const rows = groupSentences([{ id: "a", group: 1 }, { id: "b", group: 1 }, { id: "c" }, { id: "d" }, { id: "e", group: 1 }]);
   assert.deepEqual(rows.map((row) => row.map((s) => s.id)), [["a", "b"], ["c"], ["d"], ["e"]]);
 });
+
+test('readingWords: dấu cách sau tiền tố お/ご không ngắt cụm, anchor vẫn đúng offset gốc', () => {
+  const glossary = [{ id: 'g', kind: 'word', anchors: [{ sentenceId: 's', start: 2, end: 4 }] }] as never;
+  const text = (jp: string) => readingWords('s', jp, jp === 'お 祭り です' ? glossary : []).map((w) => w.map((r) => r.text).join(''));
+  assert.deepEqual(text('お 祭り です'), ['お祭り', 'です']);
+  assert.deepEqual(text('ご 飯[はん]を 食べます'), ['ご飯[はん]を', '食べます']);
+  assert.deepEqual(text('私は お 金[かね]が ない'), ['私は', 'お金[かね]が', 'ない']);
+  // Chỉ tiền tố đứng đầu cụm: お trong cụm dài vẫn ngắt bình thường.
+  assert.deepEqual(text('おはよう ございます'), ['おはよう', 'ございます']);
+  const [word] = readingWords('s', 'お 祭り です', glossary);
+  assert.deepEqual(word!.map((r) => [r.text, r.entryIds.length]), [['お', 0], ['祭り', 1]]);
+});

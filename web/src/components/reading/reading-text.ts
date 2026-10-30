@@ -12,6 +12,8 @@ export interface ReadingRun {
 export type ReadingWord = ReadingRun[];
 
 const SPACE = /^[ 　]$/;
+/** Tiền tố lịch sự mà dữ liệu tách khỏi từ bằng dấu cách (お 祭り, ご 飯); đứng một mình cuối dòng thì đọc sai. */
+const HONORIFIC = /^[おご]$/;
 
 /**
  * Cắt một câu thành cụm và đoạn bấm được theo anchor. Offset của anchor tính trên văn bản đã bỏ furigana và đổi
@@ -28,6 +30,8 @@ export function readingWords(sentenceId: string, jp: string, glossary: readonly 
   };
 
   const words: ReadingWord[] = [[]];
+  // Chữ gốc của cụm đang dựng, để nhận ra cụm mới chỉ có tiền tố.
+  let base = '';
   let offset = 0;
   const push = (text: string, length: number) => {
     const entryIds = covering(offset, offset + length);
@@ -37,16 +41,19 @@ export function readingWords(sentenceId: string, jp: string, glossary: readonly 
     else word.push({ text, entryIds });
     offset += length;
   };
+  const pushBase = (text: string) => { base += text; };
   for (const segment of parseFurigana(jp)) {
     if (segment.ruby) {
       push(`${segment.base}[${segment.ruby}]`, segment.base.length);
+      pushBase(segment.base);
       continue;
     }
     for (const ch of segment.base) {
       if (SPACE.test(ch)) {
-        if (words[words.length - 1]!.length > 0) words.push([]);
+        // Dấu cách sau tiền tố không ngắt cụm; offset vẫn đếm nó vì anchor tính trên chuỗi gốc.
+        if (words[words.length - 1]!.length > 0 && !HONORIFIC.test(base)) { words.push([]); base = ''; }
         offset += ch.length;
-      } else push(ch, ch.length);
+      } else { push(ch, ch.length); pushBase(ch); }
     }
   }
   return words.filter((word) => word.length > 0);
