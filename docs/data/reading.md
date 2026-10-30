@@ -64,3 +64,6 @@ cấu trúc `review`, và in thống kê vị trí/độ dài đáp án để ng
 vào `reading.json` (thay bản cùng `id`, sắp xếp theo `id`) ở **dạng phát hành**: bỏ `properNames`, `review.signalDecisions`, `review.needsReview`, `needsReview` của glossary và
 các trường thừa của lớp duyệt; ghi chú biên tập giữ ở README của bộ nội dung, không vào app. Test app có thể gọi `computeCoverage` (export từ script) để so dữ liệu đã commit
 với bản tính lại.
+
+**Tín hiệu chưa khai báo.** Ngoài lỗi "cùng bài", `check` in cảnh báo `mẫu có tín hiệu "<rule>" nhưng chưa khai báo (<id | id>)` khi một tín hiệu (kể cả trợ từ/từ vựng phổ biến: を, で, が nối câu, ね/よ, どんな, 数+人…) chưa có mẫu nào trong `SIGNAL_IDS[rule]` ở `grammarUsed` và chưa có `signalDecisions`.
+Đây là danh sách để người soạn đối chiếu (khai báo mẫu hoặc ghi quyết định), không chặn `check`/`release`; `grammarUsed` luôn chỉ là cận dưới của ngữ pháp thật trong bài. `pnpm test` (trong `web/`) cũng chạy `scripts/build-reading.test.mjs`, gồm test khóa `coverage` của `reading.json`.
