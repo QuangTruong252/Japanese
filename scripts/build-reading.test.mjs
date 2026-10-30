@@ -120,6 +120,29 @@ test('bắt câu hỏi hỏng: đáp án ngoài options, bằng chứng ngoài b
   assert.match(errorsOf(badEvidence).join('\n'), /evidenceSentenceIds/);
 });
 
+test('optionEvidence: thiếu/lệch chỉ cảnh báo, không lỗi', () => {
+  const warningsOf = (d) => checkDraft(d, ctx).warnings.filter((w) => w.includes('optionEvidence'));
+  const legacy = validDraft();
+  assert.equal(errorsOf(legacy).length, 0);
+  assert.match(warningsOf(legacy).join('\n'), /3\/3 câu hỏi thiếu/);
+
+  const full = validDraft();
+  for (const q of full.questions) q.optionEvidence = Object.fromEntries(q.options.map((o) => [o.id, ['t-1']]));
+  assert.equal(warningsOf(full).length, 0);
+
+  const bad = validDraft();
+  for (const q of bad.questions) q.optionEvidence = Object.fromEntries(q.options.map((o) => [o.id, ['t-1']]));
+  delete bad.questions[0].optionEvidence['q1-b'];
+  bad.questions[1].optionEvidence['q2-a'] = ['t-99'];
+  bad.questions[2].optionEvidence['q3-c'] = ['t-2'];
+  const text = warningsOf(bad).join('\n');
+  assert.match(text, /q1-b thiếu mục/);
+  assert.match(text, /q2-a trỏ ngoài bài/);
+  assert.match(text, /không khớp evidenceSentenceIds/);
+  assert.match(text, /3\/3 câu hỏi/);
+  assert.equal(errorsOf(bad).length, 0);
+});
+
 test('tín hiệu ngữ pháp chưa khai báo bị báo, quyết định ngoại lệ gỡ được', () => {
   const draft = validDraft();
   draft.sentences[0].jp = '友達[ともだち]と 食[た]べました。';
@@ -136,6 +159,7 @@ test('mergePassages sắp xếp ổn định theo id, thay bản cùng id, bỏ 
   draft.glossary[0].needsReview = true;
   draft.review.signalDecisions = [{ rule: 'masu', exception: { sentenceId: 't-1', reason: 'thử' } }];
   draft.review.needsReview = [draft.glossary[0].id];
+  draft.questions[0].optionEvidence = { 'q1-a': ['t-1'], 'q1-b': ['t-1'], 'q1-c': ['t-1'] };
   draft.review.layers = [{ layer: 1, status: 'passed', note: 'ghi chú', name: 'thừa', model: 'thừa' }];
   const merged = mergePassages([{ id: 'b', v: 1 }, { id: 'a', v: 1 }], [draft]);
   assert.deepEqual(merged.map((p) => p.id), ['a', 'b']);
@@ -143,6 +167,8 @@ test('mergePassages sắp xếp ổn định theo id, thay bản cùng id, bỏ 
   assert.equal(merged[1].properNames, undefined);
   assert.equal(merged[1].review.signalDecisions, undefined);
   assert.equal(merged[1].review.needsReview, undefined);
+  assert.equal(merged[1].questions[0].optionEvidence, undefined);
+  assert.equal(merged[1].questions[0].correctOptionId, 'q1-a');
   assert.equal(merged[1].glossary[0].needsReview, undefined);
   assert.deepEqual(merged[1].review.layers, [{ layer: 1, status: 'passed', note: 'ghi chú' }]);
   assert.ok(merged[1].glossary.some((g) => g.kind === 'name'), 'tên riêng vẫn vào bản phát hành');
